@@ -1,33 +1,17 @@
-import { artistContent } from '@/lib/content'
+import { getArtistBySlug } from '@/lib/content'
 import { buildMetadata } from '@/lib/metadata'
-import { SiteNav } from '@/components/SiteNav'
-import { Hero } from '@/components/Hero'
-import { Listen } from '@/components/Listen'
-import { Watch } from '@/components/Watch'
-import { Story } from '@/components/Story'
-import { Shows } from '@/components/Shows'
-import { Merch } from '@/components/Merch'
-import { Press } from '@/components/Press'
-import { SiteFooter } from '@/components/SiteFooter'
+import { ArtistPageView } from '@/components/ArtistPageView'
 
-export const metadata = buildMetadata(artistContent)
+function requireRadiohead() {
+  const artist = getArtistBySlug('radiohead')
+  if (!artist) throw new Error('content/radiohead.json is missing')
+  return artist
+}
 
-export default function ArtistPage() {
-  const content = artistContent
+const content = requireRadiohead()
 
-  return (
-    <>
-      <SiteNav />
-      <Hero hero={content.hero} />
-      <main>
-        {content.listen.enabled && <Listen listen={content.listen} />}
-        {content.watch.enabled && <Watch watch={content.watch} />}
-        {content.story.enabled && <Story story={content.story} />}
-        {content.shows.enabled && <Shows shows={content.shows} />}
-        {content.merch.enabled && <Merch merch={content.merch} />}
-        {content.press.enabled && <Press press={content.press} />}
-      </main>
-      <SiteFooter footer={content.footer} />
-    </>
-  )
+export const metadata = buildMetadata(content)
+
+export default function HomePage() {
+  return <ArtistPageView content={content} anchorBase="/" />
 }

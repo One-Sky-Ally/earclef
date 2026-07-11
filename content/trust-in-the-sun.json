@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "slug": "trust-in-the-sun",
+  "meta": {
+    "title": "Trust in the Sun — Ear Clef",
+    "description": "A Las Vegas band and recording collective blending jazz, soul, funk and pop, founded by multi-instrumentalist Stefano Kajatt.",
+    "ogImage": "/images/og-trust-in-the-sun.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/trust-in-the-sun"
+  },
+  "integrations": {
+    "spotify": { "artistId": "" },
+    "youtube": { "channelId": "" },
+    "setlistfm": { "mbid": "" }
+  },
+  "hero": {
+    "name": "Trust in the Sun",
+    "identity": "A buttery Las Vegas fusion of jazz, soul, funk and pop.",
+    "tagline": "Hear here!",
+    "location": "Las Vegas, NV",
+    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "socials": [
+      { "platform": "facebook", "url": "https://www.facebook.com/TrustInTheSun/" },
+      { "platform": "instagram", "url": "https://www.instagram.com/trustinthesun/" }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "bandcamp", "url": "https://trustinthesun.bandcamp.com" }
+    ],
+    "embeds": []
+  },
+  "watch": { "enabled": false, "videos": [] },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Trust in the Sun is a Las Vegas–based band and music recording collective that folds jazz, soul, funk and pop into what the group calls a buttery fusion of sound. It is the project of composer and multi-instrumentalist Stefano Kajatt, who also releases work under the name Aplete.",
+      "The group's recordings live on Bandcamp, where its catalogue of singles includes 'Show Me How', 'Sex Magic', 'Orange Juice', 'When It Was' (featuring Chris Mendoza), 'Empress', 'Find Love', 'I Know Something You Don't' and 'City of Stars'.",
+      "EDIT-ME: how the project started, in Stefano's own words — the players who pass through the collective, and what 'trust in the sun' means to him.",
+      "EDIT-ME: influences, the Las Vegas scene context (open jams, collaborators), and where the project is headed next."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Trust in the Sun isn't tracked on setlist.fm yet — follow the band on Facebook or Bandcamp for word of live appearances around Las Vegas.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": { "enabled": false, "items": [] },
+  "press": { "enabled": false, "items": [] },
+  "footer": { "tagline": "Music in balance", "attribution": "an Ear Clef page" }
+}

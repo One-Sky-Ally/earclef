@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function ExplorePage() {
   return (
     <>
-      <SiteNav />
+      <SiteNav showSections={false} />
       <main className={styles.main}>
         <div className={`container ${styles.header}`}>
           <p className={styles.overline}>Music time travel</p>

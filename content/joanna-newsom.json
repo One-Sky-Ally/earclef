@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "slug": "joanna-newsom",
+  "meta": {
+    "title": "Joanna Newsom — Ear Clef",
+    "description": "Harpist and songwriter Joanna Newsom — albums, official videos, shows, and merch from the Drag City universe.",
+    "ogImage": "/images/og-joanna-newsom.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/joanna-newsom"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": ""
+    },
+    "setlistfm": {
+      "mbid": "cb69e1f1-bc76-4df5-93c9-cf97dd8a3b5c"
+    }
+  },
+  "hero": {
+    "name": "Joanna Newsom",
+    "identity": "Harpist, pianist, and singer of long, luminous story-songs from the Sierra foothills.",
+    "tagline": "Hear here!",
+    "location": "Nevada City, CA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.dragcity.com/artists/joanna-newsom"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "bandcamp",
+        "url": "https://joannanewsom.bandcamp.com"
+      },
+      {
+        "platform": "dragcity",
+        "url": "https://www.dragcity.com/artists/joanna-newsom"
+      }
+    ],
+    "embeds": []
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "ky9Ro9pP2gc",
+        "title": "Sapokanikan"
+      },
+      {
+        "youtubeId": "48xlgXqQKLA",
+        "title": "Divers"
+      },
+      {
+        "youtubeId": "eGoqZ4zWSsg",
+        "title": "Make Hay"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Joanna Newsom grew up in Nevada City, California, a Gold Rush town in the Sierra Nevada foothills, where she began studying harp as a child. After early self-released EPs, she signed to Chicago's Drag City label and released The Milk-Eyed Mender in 2004 — a debut of harp, harpsichord, and a startling, keening voice that made her one of the defining artists of the decade's new folk movement.",
+      "Her second album, Ys (2006), raised the stakes dramatically: five long-form songs recorded by Steve Albini, with orchestral arrangements by Van Dyke Parks and mixing by Jim O'Rourke. It was followed in 2010 by Have One on Me, a two-hour triple album, and in 2015 by Divers, whose videos for 'Sapokanikan' and 'Divers' were directed by Paul Thomas Anderson — a collaboration that also saw Newsom narrate and appear in Anderson's film Inherent Vice.",
+      "Newsom is famously deliberate about how her music reaches listeners. She has kept her catalog off Spotify, once dismissing the service as a 'villainous cabal,' and for years her albums lived only on physical formats and downloads. Today her records stream and sell through her official Bandcamp page, run with Drag City — the only place online that carries her full catalog with her blessing.",
+      "She performs rarely and memorably: the Ys Street Band tours of the late 2000s, the world tour behind Divers in 2015-16, the harp-and-keys 'Strings/Keys Incident' shows of 2019, and a sold-out five-night residency at the Masonic Lodge at Hollywood Forever in Los Angeles in May 2024, where she debuted new material."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming shows are currently announced. Joanna Newsom tours rarely — new dates are announced via Drag City (dragcity.com).",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-05-27",
+        "venue": "Masonic Lodge at Hollywood Forever",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/joanna-newsom/2024/masonic-lodge-at-hollywood-forever-los-angeles-ca-3b56ec54.html",
+        "note": "Final night of a five-show residency"
+      },
+      {
+        "date": "2024-05-10",
+        "venue": "Utah State Fairpark (Kilby Block Party)",
+        "city": "Salt Lake City, UT, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/joanna-newsom/2024/utah-state-fairpark-lake-stage-salt-lake-city-ut-23a8903b.html",
+        "note": "Festival appearance"
+      },
+      {
+        "date": "2019-09-06",
+        "venue": "Perelman Theater",
+        "city": "Philadelphia, PA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/joanna-newsom/2019/perelman-theater-philadelphia-pa-6b9caefe.html",
+        "note": "The Strings/Keys Incident tour"
+      },
+      {
+        "date": "2016-09-09",
+        "venue": "Civic Theatre",
+        "city": "New Orleans, LA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/joanna-newsom/2016/civic-theatre-new-orleans-la-4bfdbb26.html",
+        "note": "Divers tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Divers T-Shirt (Red)",
+        "description": "Official Divers artwork tee from Drag City.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://www.dragcity.com/products/divers-t-shirt-red"
+      },
+      {
+        "name": "Joanna Newsom Record Tote Bag",
+        "description": "Official record tote from Drag City.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://www.dragcity.com/products/newsom-record-bag"
+      },
+      {
+        "name": "Divers Poster",
+        "description": "Official album poster from Drag City.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://www.dragcity.com/products/divers-poster"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "A Conversation With Joanna Newsom",
+        "outlet": "The FADER",
+        "url": "https://www.thefader.com/2015/10/19/joanna-newsom-divers-interview"
+      },
+      {
+        "title": "Joanna Newsom Announces New Album, Watch A Video For 'Sapokanikan'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2015/08/10/431236579/joanna-newsom-sapokanikan"
+      },
+      {
+        "title": "Joanna Newsom, the Changeling",
+        "outlet": "The New York Times Magazine",
+        "url": "https://www.nytimes.com/2010/03/07/magazine/07Newsom-t.html"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

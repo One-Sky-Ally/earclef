@@ -8,6 +8,7 @@ const PLATFORM_LABELS: Record<string, string> = {
   x: 'X',
   facebook: 'Facebook',
   website: 'Website',
+  dragcity: 'Drag City',
 }
 
 export function platformLabel(platform: string): string {

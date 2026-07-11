@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "slug": "bela-fleck-and-the-flecktones",
+  "meta": {
+    "title": "Béla Fleck and the Flecktones — Ear Clef",
+    "description": "Banjo-powered jazz-bluegrass fusion — official videos, setlists, and merch from Béla Fleck and the Flecktones.",
+    "ogImage": "/images/og-bela-fleck-and-the-flecktones.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/bela-fleck-and-the-flecktones"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "5Zmur9D9gpr6tXyDrpnbOe"
+    },
+    "youtube": {
+      "channelId": "UCIPqGlegPPjhwC_USix63gQ"
+    },
+    "setlistfm": {
+      "mbid": "830dce6f-c9ff-4ebe-944b-2ea2ab22fcdf"
+    }
+  },
+  "hero": {
+    "name": "Béla Fleck and the Flecktones",
+    "identity": "Banjo-led fusioneers folding bluegrass, jazz, funk, and the future into one band.",
+    "tagline": "Hear here!",
+    "location": "Nashville, TN",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.flecktones.com/"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/TheFlecktones/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/belafleckbanjo/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/user/TheFlecktones"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "spotify",
+        "url": "https://open.spotify.com/artist/5Zmur9D9gpr6tXyDrpnbOe"
+      },
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/b%C3%A9la-fleck-the-flecktones/158010792"
+      }
+    ],
+    "embeds": [
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "58VJzBF0hLb6ylVHdn1XB0",
+        "title": "Béla Fleck and the Flecktones"
+      },
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "2W76N8D76BqfRlDjzQSOKL",
+        "title": "Jingle All the Way"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "lZQeoT6rQNo",
+        "title": "Sex In A Pan — Live at The Cap"
+      },
+      {
+        "youtubeId": "8pamRlOvXCY",
+        "title": "Rocket Science"
+      },
+      {
+        "youtubeId": "lWaz2l3YsDY",
+        "title": "Recording with Victor Wooten"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Béla Fleck and the Flecktones formed in Nashville in the late 1980s, when banjoist Béla Fleck — named after composer Béla Bartók and already a progressive-bluegrass star with New Grass Revival — assembled harmonica and keyboard wizard Howard Levy, bass innovator Victor Wooten, and Victor's brother Roy 'Future Man' Wooten, who plays percussion on a guitar-shaped electronic 'Drumitar' of his own invention.",
+      "Their self-titled 1990 debut on Warner Bros. earned a Grammy nomination, and 1991's Flight of the Cosmic Hippo topped Billboard's contemporary jazz chart. The band's sound — bluegrass picking run through jazz harmony, funk grooves, and world-music rhythms — fit no existing category, so critics simply started calling it 'blu-bop,' after one of their own tunes.",
+      "The lineup has shifted and circled home over the decades: Levy left in 1992, saxophonist Jeff Coffin joined in 1997 and later departed for Dave Matthews Band, and Levy's return produced 2011's Rocket Science, a reunion of the original quartet. Along the way the band collected multiple Grammy Awards, including Best Pop Instrumental Album for their 2008 holiday record Jingle All the Way.",
+      "The Flecktones remain a beloved live act. In December 2025 the original four reunited with Jeff Coffin, Tuvan throat-singing ensemble Alash, and mandolinist Sierra Hull for the 'Jingle All the Way' tour, closing out the year with marathon shows at rooms like New York's Beacon Theatre — while Fleck's restless side projects, from African collaborations to concertos, keep the banjo moving between worlds."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No Flecktones dates are currently announced — the band last toured in December 2025; Béla Fleck's other projects tour via belafleck.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-12-10",
+        "venue": "Beacon Theatre",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/bela-fleck-and-the-flecktones/2025/beacon-theatre-new-york-ny-3b42a0a4.html",
+        "note": "Jingle All the Way Tour with Sierra Hull and Alash"
+      },
+      {
+        "date": "2023-06-15",
+        "venue": "Town Park (Telluride Bluegrass Festival)",
+        "city": "Telluride, CO, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/bela-fleck-and-the-flecktones/2023/town-park-telluride-co-ba63d46.html",
+        "note": "Telluride Bluegrass Festival"
+      },
+      {
+        "date": "2023-06-12",
+        "venue": "Kauffman Center for the Performing Arts",
+        "city": "Kansas City, MO, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/bela-fleck-and-the-flecktones/2023/kauffman-center-for-the-performing-arts-kansas-city-mo-13a6c991.html"
+      },
+      {
+        "date": "2023-06-11",
+        "venue": "Pabst Theater",
+        "city": "Milwaukee, WI, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/bela-fleck-and-the-flecktones/2023/pabst-theater-milwaukee-wi-3a6c993.html"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Official Flecktones Store",
+        "description": "T-shirts and tour merchandise via the band's official store, linked from flecktones.com.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://stores.portmerch.com/belafleck/flecktones.html"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Béla Fleck and the Flecktones in Concert",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2006/04/21/5351451/bela-fleck-and-the-flecktones-in-concert"
+      },
+      {
+        "title": "Béla Fleck and the Flecktones Usher Festive Mood & Spontaneity to Burlington's Flynn Center",
+        "outlet": "Glide Magazine",
+        "url": "https://glidemagazine.com/320761/bela-fleck-and-the-flecktones-with-jeff-coffin-alash-and-sierra-hull-usher-festive-mood-spontaneity-to-burlingtons-flynn-center-show-review/"
+      },
+      {
+        "title": "Béla Fleck and the Flecktones Reunite with Jeff Coffin and Alash for 'Jingle All the Way' Tour",
+        "outlet": "No Treble",
+        "url": "https://www.notreble.com/buzz/2025/07/19/bela-fleck-and-the-flecktones-reunite-with-jeff-coffin-and-alash-for-jingle-all-the-way-tour/"
+      },
+      {
+        "title": "Béla Fleck and the Flecktones: Life in Eleven",
+        "outlet": "JazzTimes",
+        "url": "https://www.jazztimes.com/features/profiles/bela-fleck-and-the-flecktones-life-in-eleven/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

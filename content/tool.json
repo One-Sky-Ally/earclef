@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "slug": "tool",
+  "meta": {
+    "title": "Tool — Ear Clef",
+    "description": "Artist hub for Tool — the Grammy-winning Los Angeles progressive metal band behind Lateralus and Fear Inoculum.",
+    "ogImage": "/images/og-tool.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/tool"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2yEwvVSSSUkcLeSTNyHKh8"
+    },
+    "youtube": {
+      "channelId": "UCINawo364C-NCXc_n-3bxOw"
+    },
+    "setlistfm": {
+      "mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2"
+    }
+  },
+  "hero": {
+    "name": "Tool",
+    "identity": "Los Angeles art-metal architects turning odd time signatures into ritual.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, CA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.toolband.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/toolmusic/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/tool/"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/ToolMusic/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@toolvevo4397"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "spotify",
+        "url": "https://open.spotify.com/artist/2yEwvVSSSUkcLeSTNyHKh8"
+      }
+    ],
+    "embeds": [
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "5l5m1hnH4punS1GQXgEi3T",
+        "title": "Lateralus"
+      },
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "7acEciVtnuTzmwKptkjth5",
+        "title": "Fear Inoculum"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "MM62wjLrgmA",
+        "title": "Schism"
+      },
+      {
+        "youtubeId": "nspxAG12Cpc",
+        "title": "Sober"
+      },
+      {
+        "youtubeId": "-_nQhGR0K8M",
+        "title": "Parabola"
+      },
+      {
+        "youtubeId": "h_TUP2vuaDs",
+        "title": "Vicarious"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Tool formed in Los Angeles in 1990, when vocalist Maynard James Keenan, guitarist Adam Jones, drummer Danny Carey and original bassist Paul D'Amour converged on the city's post-hardcore fringe. The Opiate EP arrived in 1992, followed by the full-length Undertow in 1993, whose singles Sober and Prison Sex — paired with Adam Jones's unsettling stop-motion videos — established the band's visual identity as firmly as its coiled, deliberate heaviness.",
+      "Justin Chancellor replaced D'Amour on bass in 1995, completing the lineup that has held ever since. Ænima (1996) won the Grammy for Best Metal Performance for its title track and pushed the band toward longer, stranger structures; Lateralus (2001), with its spiraling title track and the Grammy-winning Schism, debuted at number one and became a progressive metal landmark. 10,000 Days followed in 2006, another chart-topper built on Carey's polyrhythms and the band's patient, geometric songcraft.",
+      "Then came the wait. Thirteen years of side projects (Keenan's A Perfect Circle and Puscifer), legal entanglements and slow writing separated 10,000 Days from Fear Inoculum, released August 30, 2019 — the same month the band's catalog finally arrived on streaming services. Fear Inoculum debuted at number one on the Billboard 200, its ten-minute title track became the longest song ever to reach the Hot 100, and 7empest won the 2020 Grammy for Best Metal Performance.",
+      "Tool have toured heavily behind the record ever since, closing 2025 with a Pacific Rim run through Australia, Japan and Hawaii that leaned on covers and deep cuts as much as staples. In 2026 the band headline major American festivals, still touring an unhurried catalog of just five studio albums — each one treated by its audience less like a release than an event."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tool have confirmed 2026 US festival headline slots; no standalone headline tour is currently announced beyond these dates.",
+    "upcoming": [
+      {
+        "date": "2026-09-19",
+        "venue": "Riot Fest, Douglass Park",
+        "city": "Chicago, IL, USA",
+        "note": "Festival headline slot"
+      },
+      {
+        "date": "2026-09-20",
+        "venue": "Louder Than Life, Highland Festival Grounds",
+        "city": "Louisville, KY, USA",
+        "note": "Festival headline slot"
+      },
+      {
+        "date": "2026-10-04",
+        "venue": "Aftershock, Discovery Park",
+        "city": "Sacramento, CA, USA",
+        "note": "Festival headline slot"
+      }
+    ],
+    "past": [
+      {
+        "date": "2025-12-20",
+        "venue": "Neal S. Blaisdell Arena",
+        "city": "Honolulu, HI, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/tool/2025/neal-s-blaisdell-arena-honolulu-hi-6b43c2fa.html",
+        "note": "Pacific Rim Tour closer; Black Sabbath cover in tribute to Ozzy Osbourne"
+      },
+      {
+        "date": "2025-12-13",
+        "venue": "GLION ARENA KOBE",
+        "city": "Kobe, Japan",
+        "setlistUrl": "https://www.setlist.fm/setlist/tool/2025/glion-arena-kobe-kobe-japan-4b4537b2.html",
+        "note": "Pacific Rim Tour 2025"
+      },
+      {
+        "date": "2025-12-11",
+        "venue": "K-Arena Yokohama",
+        "city": "Yokohama, Japan",
+        "setlistUrl": "https://www.setlist.fm/setlist/tool/2025/k-arena-yokohama-yokohama-japan-5b4537bc.html",
+        "note": "Pacific Rim Tour 2025"
+      },
+      {
+        "date": "2025-12-06",
+        "venue": "ENGIE Stadium (Stage 1)",
+        "city": "Sydney, Australia",
+        "setlistUrl": "https://www.setlist.fm/setlist/tool/2025/engie-stadium-stage-1-sydney-australia-b43c10a.html",
+        "note": "Good Things Sydney 2025 festival headline"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Apparel & T-Shirts",
+        "description": "Officially licensed Tool tees, hoodies and jackets from the band's official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store.toolband.com/dept/apparel"
+      },
+      {
+        "name": "Tour Merchandise",
+        "description": "Concert shirts and merchandise from recent Tool tours.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store.toolband.com/dept/tour-merchandise"
+      },
+      {
+        "name": "New Arrivals",
+        "description": "Latest additions to the official Tool store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store.toolband.com/dept/new-arrivals"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Tool Return From a Long Hiatus With 'Fear Inoculum'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/review-tool-return-from-a-long-hiatus-with-fear-inoculum-879842/"
+      },
+      {
+        "title": "Tool Interview: The Frustrating, Exhausting Road To 'Fear Inoculum'",
+        "outlet": "Junkee",
+        "url": "https://archive.junkee.com/tool-interview/219317"
+      },
+      {
+        "title": "Official Versions Of Tool Music Videos Finally Appear On YouTube",
+        "outlet": "Kerrang!",
+        "url": "https://www.kerrang.com/official-versions-of-tool-music-videos-finally-appear-on-youtube"
+      },
+      {
+        "title": "Tool have \"tons of material\" for Fear Inoculum follow-up",
+        "outlet": "Louder",
+        "url": "https://www.loudersound.com/news/tool-have-tons-of-material-for-fear-inoculum-follow-up"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

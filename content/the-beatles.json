@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-beatles",
+  "meta": {
+    "title": "The Beatles — Ear Clef",
+    "description": "The Liverpool four who remade popular music in a single decade — explore their records, films, and final performances.",
+    "ogImage": "/images/og-the-beatles.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/the-beatles"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "3WrFJ7ztbogyGnTHbHJFl2"
+    },
+    "youtube": {
+      "channelId": "UCc4K7bAqpdBP8jh1j9XZAww"
+    },
+    "setlistfm": {
+      "mbid": "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d"
+    }
+  },
+  "hero": {
+    "name": "The Beatles",
+    "identity": "Four Liverpudlians who turned eight years of records into the common language of pop.",
+    "tagline": "Hear here!",
+    "location": "Liverpool, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.thebeatles.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/thebeatles/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/thebeatles"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/Beatles"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/thebeatles"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "spotify",
+        "url": "https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2"
+      },
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/the-beatles/136975"
+      }
+    ],
+    "embeds": [
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "0ETFjACtuP2ADo6LFhL6HN",
+        "title": "Abbey Road"
+      },
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "6QaVfG1pHYl1z15ZxkvVDW",
+        "title": "Sgt. Pepper's Lonely Hearts Club Band"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "A_MjCqQoLLA",
+        "title": "Hey Jude"
+      },
+      {
+        "youtubeId": "5XwXliCK19Y",
+        "title": "I'm Only Sleeping"
+      },
+      {
+        "youtubeId": "Opxhh9Oh3rg",
+        "title": "Now And Then"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "The Beatles formed in Liverpool in 1960: John Lennon, Paul McCartney, George Harrison, and — from 1962 — Ringo Starr. Hardened by long residencies in Hamburg clubs and the Cavern in Liverpool, they signed with EMI's Parlophone label under producer George Martin, and their first single, 'Love Me Do', charted in late 1962. Within eighteen months, Beatlemania had swept Britain; their February 1964 appearance on The Ed Sullivan Show drew a record American television audience and opened the British Invasion.",
+      "The touring years were brief and ferocious. Their first US concert at the Washington Coliseum in February 1964 gave way to stadium spectacles no band had attempted before — most famously Shea Stadium in August 1965, where roughly 55,600 fans set an attendance record for a pop concert. Exhausted by screaming crowds that drowned out the music, they played their last ticketed show at San Francisco's Candlestick Park on August 29, 1966, and retreated into the studio for good.",
+      "What followed redefined what a recording studio could be: Revolver (1966), Sgt. Pepper's Lonely Hearts Club Band (1967), the White Album (1968), and Abbey Road (1969) stretched tape manipulation, orchestration, and songcraft in ways the industry spent decades absorbing. Their final public performance was unannounced — a 42-minute set on the rooftop of their Apple Corps headquarters at 3 Savile Row, London, on January 30, 1969, halted by police and immortalized in the Let It Be and Get Back films.",
+      "The band dissolved in 1970, but the catalog never stopped moving. Remasters, the Anthology project, Peter Jackson's Get Back documentary, and the 2023 release of 'Now And Then' — completed from a John Lennon demo using audio-separation technology and billed as the last Beatles song — have kept the group among the most-streamed artists in the world, more than half a century after they stopped playing together."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "The Beatles ended in 1970; there are no upcoming shows. Archival releases and news continue at thebeatles.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1964-02-11",
+        "venue": "Washington Coliseum",
+        "city": "Washington, DC, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-beatles/1964/washington-coliseum-washington-dc-53d20701.html",
+        "note": "First concert in the United States"
+      },
+      {
+        "date": "1965-08-15",
+        "venue": "Shea Stadium",
+        "city": "Queens, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-beatles/1965/shea-stadium-queens-ny-2bd7b08e.html",
+        "note": "Record-setting stadium show, ~55,600 attendance"
+      },
+      {
+        "date": "1966-08-29",
+        "venue": "Candlestick Park",
+        "city": "San Francisco, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-beatles/1966/candlestick-park-san-francisco-ca-73d67e09.html",
+        "note": "Final ticketed concert"
+      },
+      {
+        "date": "1969-01-30",
+        "venue": "Apple Corps Rooftop",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-beatles/1969/apple-corps-rooftop-london-england-53d6f3ad.html",
+        "note": "Last public performance, cut short by police"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Now and Then — 12\" Black Vinyl",
+        "description": "The final Beatles single on 12-inch vinyl, from the official US store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://usastore.thebeatles.com/collections/vinyl"
+      },
+      {
+        "name": "I Get By With A Little Help From My Friends T-Shirt",
+        "description": "Official apparel from The Beatles US store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://usastore.thebeatles.com/collections/t-shirts"
+      },
+      {
+        "name": "White Album Set of 4 Mugs",
+        "description": "Official home goods from The Beatles US store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://usastore.thebeatles.com/collections/home-goods"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Review: The Beatles' final song, 'Now and Then,' is a wistful curiosity",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2023/11/02/1210202273/the-beatles-now-and-then"
+      },
+      {
+        "title": "The Beatles Release Final Song 'Now and Then'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/beatles-new-song-now-and-then-1234868643/"
+      },
+      {
+        "title": "The final Beatles song, 'Now and Then,' featuring all four members, is released",
+        "outlet": "NBC News",
+        "url": "https://www.nbcnews.com/news/world/final-beatles-song-now-featuring-four-members-released-rcna123304"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

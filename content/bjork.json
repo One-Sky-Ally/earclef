@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "slug": "bjork",
+  "meta": {
+    "title": "Björk — Ear Clef",
+    "description": "Björk — Icelandic singer, composer and producer whose restless art-pop has reshaped popular music since 1993.",
+    "ogImage": "/images/og-bjork.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/bjork"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "7w29UYBi0qsHi5RTcv3lmA"
+    },
+    "youtube": {
+      "channelId": "UCFbRdRGijPR4oBjQ0fVCSmw"
+    },
+    "setlistfm": {
+      "mbid": "87c5dedd-371d-4a53-9f7f-80522fb7f3cb"
+    }
+  },
+  "hero": {
+    "name": "Björk",
+    "identity": "Icelandic singer, composer and world-builder, four decades into remaking pop in her own image.",
+    "tagline": "Hear here!",
+    "location": "Reykjavík, Iceland",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://bjork.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/bjork/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/bjork"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/bjork"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCFbRdRGijPR4oBjQ0fVCSmw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "spotify",
+        "url": "https://open.spotify.com/artist/7w29UYBi0qsHi5RTcv3lmA"
+      },
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/bj%C3%B6rk/295015"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://bjork.bandcamp.com"
+      }
+    ],
+    "embeds": [
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "0HMsmYvoT1h2x1C4di5faf",
+        "title": "Homogenic"
+      },
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "5vBpIxm8ws6pWyVmTWiGE1",
+        "title": "Vespertine"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "p0mRIhK9seg",
+        "title": "Human Behaviour"
+      },
+      {
+        "youtubeId": "u0cS1FaKPWY",
+        "title": "All Is Full of Love"
+      },
+      {
+        "youtubeId": "loB0kmz_0MM",
+        "title": "Jóga"
+      },
+      {
+        "youtubeId": "htobTBlCvUU",
+        "title": "It's Oh So Quiet"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Björk Guðmundsdóttir was born in Reykjavík on 21 November 1965 and was a recording artist before she was a teenager, releasing a solo record at eleven and passing through a string of Icelandic bands before fronting the alt-pop iconoclasts The Sugarcubes. When she stepped out alone with Debut in 1993, she arrived at a moment when the walls between pop, electronic and avant-garde music were coming down — and she has spent her entire career making sure they stayed down.",
+      "Post (1995) swung from big-band brass to skittering techno, but it was Homogenic (1997) that fixed her reputation: volcanic strings and abrasive beats fused into what many still consider her masterpiece. Vespertine (2001) turned inward — a whispering, microbeat-laced record of domestic intimacy — while later albums pushed further into the unmapped: the a cappella architecture of Medúlla (2004), the app-borne science of Biophilia (2011), the raw heartbreak of Vulnicura (2015) and the flute-filled island utopia of Utopia (2017).",
+      "Her tenth album, Fossora (2022), dug downward — bass clarinets, gabber beats and mushroom imagery threaded through songs of grief and matriarchy written after her mother's death. Its themes fed into Cornucopia, the elaborate theatrical production she toured from 2019 to late 2023, a staging of climate anxiety and digital nature that Rolling Stone called a psychedelic cautionary tale.",
+      "As of 2026 Björk remains characteristically unhurried and uncontainable: a Cornucopia live album and book arrived via her official site, and in May 2026 she surfaced at the Venice Biennale for a DJ set in the Giardini. Whatever comes next will arrive, as always, on her own terms."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming shows announced — official news comes from bjork.com and Björk's newsletter.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-05-07",
+        "venue": "Giardini della Biennale",
+        "city": "Venice, Italy",
+        "setlistUrl": "https://www.setlist.fm/setlist/bjork/2026/giardini-della-biennale-venice-italy-5b7493a8.html",
+        "note": "DJ set at the Venice Biennale"
+      },
+      {
+        "date": "2023-11-28",
+        "venue": "Hallenstadion",
+        "city": "Zurich, Switzerland",
+        "setlistUrl": "https://www.setlist.fm/setlist/bjork/2023/hallenstadion-zurich-switzerland-6baeaa6e.html",
+        "note": "Cornucopia tour"
+      },
+      {
+        "date": "2023-09-08",
+        "venue": "Accor Arena",
+        "city": "Paris, France",
+        "setlistUrl": "https://www.setlist.fm/setlist/bjork/2023/accor-arena-paris-france-4ba2dfe6.html",
+        "note": "Cornucopia tour"
+      },
+      {
+        "date": "2023-09-01",
+        "venue": "Altice Arena",
+        "city": "Lisbon, Portugal",
+        "setlistUrl": "https://www.setlist.fm/setlist/bjork/2023/altice-arena-lisbon-portugal-73a2b66d.html",
+        "note": "Cornucopia tour — filmed show; live debut of 'Victimhood'"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Björk Official Store",
+        "description": "Vinyl, limited editions, art objects and the Cornucopia book, direct from Björk's own shop.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://shop.bjork.com/"
+      },
+      {
+        "name": "Björk Merch Collection",
+        "description": "Apparel and merchandise in the official store's dedicated merch collection.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://shop.bjork.com/collections/bjork-merch"
+      },
+      {
+        "name": "Björk on Bandcamp",
+        "description": "Her catalogue and merch on Bandcamp, where more of each sale goes to the artist.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://bjork.bandcamp.com"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Björk: Fossora — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/bjork-fossora/"
+      },
+      {
+        "title": "Björk's Saga",
+        "outlet": "The New Yorker",
+        "url": "https://www.newyorker.com/magazine/2004/08/23/bjorks-saga"
+      },
+      {
+        "title": "Björk's 'Cornucopia' Is a Psychedelic Cautionary Tale About the Environment",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-live-reviews/bjork-cornucopia-debut-the-shed-833943/"
+      },
+      {
+        "title": "Björk shares first details of new album Fossora",
+        "outlet": "The FADER",
+        "url": "https://www.thefader.com/2022/08/19/bjork-new-album-fossora"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

@@ -6,7 +6,7 @@
     "title": "Radiohead — Ear Clef",
     "description": "Radiohead's whole universe in one place: music, videos, story, setlists, shows, and merch. An Ear Clef page.",
     "ogImage": "/images/og-radiohead.jpg",
-    "canonicalUrl": "EDIT-ME: set after Netlify deploy, e.g. https://earclef.netlify.app"
+    "canonicalUrl": "https://earclef.netlify.app"
   },
 
   "integrations": {

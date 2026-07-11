@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "slug": "sigur-ros",
+  "meta": {
+    "title": "Sigur Rós — Ear Clef",
+    "description": "Sigur Rós — the Icelandic post-rock band whose bowed guitars and falsetto hymns have soundtracked wonder since 1994.",
+    "ogImage": "/images/og-sigur-ros.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/sigur-ros"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6UUrUCIZtQeOf8tC0WuzRy"
+    },
+    "youtube": {
+      "channelId": "UCAmt29QykFXnuIqQoEEnEFg"
+    },
+    "setlistfm": {
+      "mbid": "f6f2326f-6b25-4170-b89d-e235b25508e8"
+    }
+  },
+  "hero": {
+    "name": "Sigur Rós",
+    "identity": "Icelandic post-rock voyagers who turn glacial landscape into sound.",
+    "tagline": "Hear here!",
+    "location": "Reykjavík, Iceland",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://sigurros.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/sigurros/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/sigurros"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/sigurros"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCAmt29QykFXnuIqQoEEnEFg"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "spotify",
+        "url": "https://open.spotify.com/artist/6UUrUCIZtQeOf8tC0WuzRy"
+      },
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/sigur-r%C3%B3s/73720797"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://sigurros.bandcamp.com"
+      }
+    ],
+    "embeds": [
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "7LKQtdC6uWxqLzSbDonFij",
+        "title": "Ágætis byrjun"
+      },
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "3sE83l3A58DipFp3EzNLiE",
+        "title": "Takk..."
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "JAYb8ZyjzD0",
+        "title": "Hoppípolla"
+      },
+      {
+        "youtubeId": "8L64BcCRDAE",
+        "title": "Svefn-g-englar"
+      },
+      {
+        "youtubeId": "3sry34AOwlU",
+        "title": "Untitled #1 (Vaka)"
+      },
+      {
+        "youtubeId": "ENZsxTiVQYo",
+        "title": "Blóðberg"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Sigur Rós formed in Reykjavík in 1994, taking their name from frontman Jónsi Birgisson's newborn sister, Sigurrós. Around his cello-bowed guitar and unearthly falsetto they built a music with no obvious ancestors: slow, enormous, and strangely weightless, as if the Icelandic landscape itself had been given a voice.",
+      "Their 1999 breakthrough Ágætis byrjun carried them far beyond Iceland and became the first record ever to win the Shortlist Music Prize. Its successor, the Grammy-nominated ( ) from 2002, went further into abstraction — every song sung in Vonlenska, or 'Hopelandic', an invented language whose meaning is left entirely to the listener. Takk... (2005) gave them their most beloved song in 'Hoppípolla' and their Icelandic chart-topper 'Glósóli', pieces that have soundtracked everything from nature documentaries to weddings.",
+      "After Valtari (2012) and the darker, harder Kveikur (2013), the band went quiet for a decade, returning in June 2023 with ÁTTA — a surprise-announced eighth album recorded with a full orchestra, widely received as their most emotionally direct work. They spent 2024 touring it the way it was made: with orchestras, filling halls across North America and the Nordics with a two-set, career-spanning program.",
+      "The journey continues into 2026, as the band marks Takk...'s twentieth anniversary with a remaster and closes out its orchestral world tour across the UK, Ireland and Europe, performing with local orchestras and choirs in each city."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Final European orchestral tour dates announced for August–September 2026 — full listings at sigurros.com/tour.",
+    "upcoming": [
+      {
+        "date": "2026-08-31",
+        "venue": "Playhouse",
+        "city": "Edinburgh, United Kingdom",
+        "note": "With the Scottish Chamber Orchestra & Chorus"
+      },
+      {
+        "date": "2026-09-02",
+        "venue": "SEC Armadillo",
+        "city": "Glasgow, United Kingdom",
+        "note": "With the Scottish Chamber Orchestra & Chorus"
+      },
+      {
+        "date": "2026-09-06",
+        "venue": "Bord Gáis Energy Theatre",
+        "city": "Dublin, Ireland",
+        "note": "With the Ulster Orchestra & The Palestrina Choir"
+      },
+      {
+        "date": "2026-09-20",
+        "venue": "Uber Eats Music Hall",
+        "city": "Berlin, Germany",
+        "note": "With The Young ClassX & Choir"
+      }
+    ],
+    "past": [
+      {
+        "date": "2024-11-28",
+        "venue": "Oslo Spektrum",
+        "city": "Oslo, Norway",
+        "setlistUrl": "https://www.setlist.fm/setlist/sigur-ros/2024/oslo-spektrum-oslo-norway-3526913.html",
+        "note": "2024 Nordic Orchestral Tour"
+      },
+      {
+        "date": "2024-09-25",
+        "venue": "The Anthem",
+        "city": "Washington, DC, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/sigur-ros/2024/the-anthem-washington-dc-53526fa1.html",
+        "note": "2024 U.S. Orchestral Tour"
+      },
+      {
+        "date": "2024-09-19",
+        "venue": "Cathedral Theatre at the Masonic Temple",
+        "city": "Detroit, MI, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/sigur-ros/2024/cathedral-theatre-at-the-masonic-temple-detroit-mi-43526fdf.html",
+        "note": "2024 U.S. Orchestral Tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Sigur Rós Official Store",
+        "description": "Apparel, prints and anniversary editions from the band's official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://sigurros.com/store/"
+      },
+      {
+        "name": "Sigur Rós Music Store",
+        "description": "Vinyl, CDs and digital releases — including ÁTTA — direct from the band.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store.sigurros.com"
+      },
+      {
+        "name": "Sigur Rós on Bandcamp",
+        "description": "The band's catalogue and merch on Bandcamp.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://sigurros.bandcamp.com"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Sigur Rós: ÁTTA — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/sigur-ros-atta/"
+      },
+      {
+        "title": "Sigur Rós Returns After a Ten-Year Hiatus With 'ÁTTA': Album Review",
+        "outlet": "Variety",
+        "url": "https://variety.com/2023/music/reviews/sigur-ros-atta-album-review-1235646561/"
+      },
+      {
+        "title": "Sigur Rós announce surprise new album 'ÁTTA'",
+        "outlet": "NME",
+        "url": "https://www.nme.com/news/music/sigur-ros-announce-surprise-new-album-atta-preorder-3456535"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

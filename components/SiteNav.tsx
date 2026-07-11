@@ -3,28 +3,52 @@ import { EarClefMark } from '@/components/EarClefMark'
 import styles from './SiteNav.module.css'
 
 const SECTIONS = [
-  { href: '/#listen', label: 'Listen' },
-  { href: '/#watch', label: 'Watch' },
-  { href: '/#story', label: 'Story' },
-  { href: '/#shows', label: 'Shows' },
-  { href: '/#merch', label: 'Merch' },
-  { href: '/#press', label: 'Press' },
+  { id: 'listen', label: 'Listen' },
+  { id: 'watch', label: 'Watch' },
+  { id: 'story', label: 'Story' },
+  { id: 'shows', label: 'Shows' },
+  { id: 'merch', label: 'Merch' },
+  { id: 'press', label: 'Press' },
+]
+
+const PAGES = [
+  { href: '/artists', label: 'Artists' },
   { href: '/explore', label: 'Explore' },
 ]
 
-export function SiteNav() {
+interface SiteNavProps {
+  /** Path the section anchors belong to, e.g. "/" or "/bjork". */
+  anchorBase?: string
+  /** Hide section anchors on non-artist pages. */
+  showSections?: boolean
+}
+
+export function SiteNav({ anchorBase = '/', showSections = true }: SiteNavProps) {
+  const base = anchorBase === '/' ? '' : anchorBase
+
   return (
-    <nav className={styles.nav} aria-label="Page sections">
+    <nav className={styles.nav} aria-label="Site">
       <div className={`container ${styles.inner}`}>
         <Link className={styles.brand} href="/">
           <EarClefMark size={22} />
           <span>Ear Clef</span>
         </Link>
         <ul className={styles.links}>
-          {SECTIONS.map((section) => (
-            <li key={section.href}>
-              <Link className={styles.link} href={section.href}>
-                {section.label}
+          {showSections &&
+            SECTIONS.map((section) => (
+              <li key={section.id}>
+                <Link
+                  className={styles.link}
+                  href={`${base}#${section.id}`}
+                >
+                  {section.label}
+                </Link>
+              </li>
+            ))}
+          {PAGES.map((page) => (
+            <li key={page.href}>
+              <Link className={styles.link} href={page.href}>
+                {page.label}
               </Link>
             </li>
           ))}

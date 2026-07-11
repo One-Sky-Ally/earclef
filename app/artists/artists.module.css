@@ -1,0 +1,125 @@
+.main {
+  min-height: calc(100dvh - 200px);
+  padding-block: clamp(3rem, 8vw, 5.5rem);
+}
+
+.overline {
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.overline::before {
+  content: '';
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: var(--accent-deep);
+  vertical-align: middle;
+  margin-right: 0.9rem;
+}
+
+.title {
+  font-size: clamp(2.6rem, 7vw, 4.5rem);
+  font-weight: 480;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  color: var(--text-soft);
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 1.75rem 1.9rem 1.6rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.6);
+}
+
+.index {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.4rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  font-weight: 480;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.identity {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+
+.location {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 2.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
+}
+
+.footer p {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text-soft);
+}
+
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

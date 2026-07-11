@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-boswell-sisters",
+  "meta": {
+    "title": "The Boswell Sisters — Ear Clef",
+    "description": "The New Orleans trio whose impossibly close harmonies rewired jazz singing in the early 1930s.",
+    "ogImage": "/images/og-the-boswell-sisters.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/the-boswell-sisters"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2mflSlnegn3rBmzsh08OcN"
+    },
+    "youtube": {
+      "channelId": ""
+    },
+    "setlistfm": {
+      "mbid": "41e2d679-43a3-4b9b-8469-ce748ad7b1ca"
+    }
+  },
+  "hero": {
+    "name": "The Boswell Sisters",
+    "identity": "Three sisters from uptown New Orleans who bent tempo, key, and radio itself to their harmonies.",
+    "tagline": "Hear here!",
+    "location": "New Orleans, LA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": []
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "spotify",
+        "url": "https://open.spotify.com/artist/2mflSlnegn3rBmzsh08OcN"
+      },
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/the-boswell-sisters/858682"
+      }
+    ],
+    "embeds": [
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "3yQZ3s8FaMVOxp9KNhD6cj",
+        "title": "That's How Rhythm Was Born"
+      },
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "3TWsuRE8ERH7QnlNHTNVuZ",
+        "title": "The Boswell Sisters, Vol. 1"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": false,
+    "videos": []
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Martha, Connee, and Helvetia 'Vet' Boswell grew up in uptown New Orleans, classically trained on piano, cello, and violin, and steeped in the jazz, blues, and gospel sounds of the city around them. They were performing on local radio by the mid-1920s — first as instrumentalists, then as singers — and cut their earliest records in New Orleans before the decade was out.",
+      "When the trio reached national radio and began recording for Brunswick in 1931, nothing else on the air sounded like them. Working from Connee's arrangements, they treated hit songs as raw material: shifting tempo and meter mid-song, sliding between major and minor, dropping into scat and instrumental imitation, and singing harmonies so close and so precisely blended they seemed like one voice split in three. They recorded with the finest hot players in New York — including the Dorsey Brothers — appeared in films such as The Big Broadcast (1932) alongside Bing Crosby and Cab Calloway, and placed a string of records on the charts, among them 'The Object of My Affection'.",
+      "Connee sang seated — she had used a wheelchair since childhood — and audiences at radio microphones never knew. The group's run at the top was short: in 1936, Martha and Vet retired to family life, and the trio dissolved at the height of its powers. Connee carried on as a major solo star for decades, recording celebrated duets with Bing Crosby and performing into the 1960s.",
+      "Their influence outlasted their fame. The Andrews Sisters openly modeled themselves on the Boswell sound, and Ella Fitzgerald named Connee Boswell as her single biggest influence — a direct line from three sisters harmonizing in a New Orleans parlor to the future of American jazz singing. The Historic New Orleans Collection now stewards the Boswell Museum of Music Collection, and the trio was inducted into the Vocal Group Hall of Fame in 1998."
+    ]
+  },
+  "shows": {
+    "enabled": false,
+    "upcomingNote": "The Boswell Sisters disbanded in 1936, decades before concert setlists were systematically archived.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Shout, Sister, Shout!: The Boswell Sisters of New Orleans (virtual exhibition)",
+        "outlet": "The Historic New Orleans Collection",
+        "url": "https://hnoc.org/virtual-exhibitions/shout-sister-shout"
+      },
+      {
+        "title": "The Boswell Sisters — Vocal Group Hall of Fame inductee profile (1998)",
+        "outlet": "Vocal Group Hall of Fame",
+        "url": "https://vocalgroup.org/inductees/the-boswell-sisters/"
+      },
+      {
+        "title": "The Boswell Sisters: Let Yourself Go",
+        "outlet": "The Syncopated Times",
+        "url": "https://syncopatedtimes.com/the-boswell-sisters/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

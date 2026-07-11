@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "slug": "hiatus-kaiyote",
+  "meta": {
+    "title": "Hiatus Kaiyote — Ear Clef",
+    "description": "Melbourne's thrice Grammy-nominated future-soul four-piece — albums, videos, verified setlists, merch and press.",
+    "ogImage": "/images/og-hiatus-kaiyote.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/hiatus-kaiyote"
+  },
+  "integrations": {
+    "spotify": { "artistId": "43JlwunhXm1oqdKyOa2Z9Y" },
+    "youtube": { "channelId": "UCmD8TDgJxofPfxA8GTpaCCQ" },
+    "setlistfm": { "mbid": "55c03773-59ea-4d4e-9057-87c2ecab005d" }
+  },
+  "hero": {
+    "name": "Hiatus Kaiyote",
+    "identity": "Future-soul four-piece bending jazz, funk and electronics into something wholly Melbourne.",
+    "tagline": "Hear here!",
+    "location": "Melbourne, Australia",
+    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "socials": [
+      { "platform": "website", "url": "https://hiatuskaiyote.com" },
+      { "platform": "instagram", "url": "https://www.instagram.com/hiatuskaiyote/" },
+      { "platform": "x", "url": "https://x.com/HiatusKaiyote" },
+      { "platform": "facebook", "url": "https://www.facebook.com/hiatuskaiyote" },
+      { "platform": "youtube", "url": "https://www.youtube.com/@hiatuskaiyote" }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "spotify", "url": "https://open.spotify.com/artist/43JlwunhXm1oqdKyOa2Z9Y" },
+      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/hiatus-kaiyote/514090753" },
+      { "platform": "bandcamp", "url": "https://hiatuskaiyote.bandcamp.com" }
+    ],
+    "embeds": [
+      { "type": "spotify", "kind": "album", "id": "456WeVeZk38VJuqg2sL7QG", "title": "Mood Valiant" },
+      { "type": "spotify", "kind": "album", "id": "3qzmmmRmVBiOuMvrerfW4z", "title": "Choose Your Weapon" }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      { "youtubeId": "Uo0c3TECDkM", "title": "Nakamarra" },
+      { "youtubeId": "5auslviJaHs", "title": "Love Heart Cheat Code" },
+      { "youtubeId": "nMGOHrwmYzs", "title": "Make Friends" }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Hiatus Kaiyote formed in Melbourne in 2011: Nai Palm (Naomi Saalfield) on guitar and vocals, Paul Bender on bass, Simon Mavin on keys and Perrin Moss on drums. Their self-described 'multi-dimensional, polyrhythmic gangster shit' fuses neo-soul, jazz, funk and electronic music into a sound that made them one of Australia's most internationally beloved exports.",
+      "Debut album Tawk Tomahawk (2013) carried the single 'Nakamarra', which earned a Grammy nomination for Best R&B Performance — making them the first Australian act nominated in an R&B category. 'Breathing Underwater', from the sprawling second album Choose Your Weapon (2015), was nominated in the same category two years later.",
+      "Mood Valiant (2021), featuring the Arthur Verocai collaboration 'Get Sun', brought a third Grammy nomination — Best Progressive R&B Album — and an NPR Tiny Desk (Home) concert filmed at their Melbourne studio, The Villa. Along the way their songs have been sampled by artists including Drake and Beyoncé & JAY-Z.",
+      "Their fourth album, Love Heart Cheat Code, arrived in June 2024, followed by tours across North America, Europe, Japan and Australia — including a 2025 stop at the Hollywood Bowl."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming shows are listed here yet — check setlist.fm and the band's official channels for the latest tour dates.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-06-29",
+        "venue": "Franklin Music Hall",
+        "city": "Philadelphia, PA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/hiatus-kaiyote/2024/franklin-music-hall-philadelphia-pa-73577a4d.html",
+        "note": "Love Heart Cheat Code North American tour"
+      },
+      {
+        "date": "2024-09-17",
+        "venue": "Forum Theatre",
+        "city": "Melbourne, Australia",
+        "setlistUrl": "https://www.setlist.fm/setlist/hiatus-kaiyote/2024/forum-theatre-melbourne-australia-3357407d.html",
+        "note": "Hometown show"
+      },
+      {
+        "date": "2024-10-10",
+        "venue": "Salle Pleyel",
+        "city": "Paris, France",
+        "setlistUrl": "https://www.setlist.fm/setlist/hiatus-kaiyote/2024/salle-pleyel-paris-france-7b50fe3c.html"
+      },
+      {
+        "date": "2024-10-30",
+        "venue": "Toyosu PIT",
+        "city": "Tokyo, Japan",
+        "setlistUrl": "https://www.setlist.fm/setlist/hiatus-kaiyote/2024/toyosu-pit-tokyo-japan-6b513ec2.html"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Mood Valiant — Red In Black Inkspot LP",
+        "description": "Limited-pressing vinyl edition of the Grammy-nominated 2021 album.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://store.hiatuskaiyote.com/music-slash-merch"
+      },
+      {
+        "name": "Guitar Power Tee",
+        "description": "Official Hiatus Kaiyote t-shirt from the band's store.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://store.hiatuskaiyote.com/music-slash-merch/categories/t-shirts"
+      },
+      {
+        "name": "Mood Valiant — Tote Bag",
+        "description": "Official tote from the Mood Valiant era.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://store.hiatuskaiyote.com/music-slash-merch/categories/accessories"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Mood Valiant album review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/hiatus-kaiyote-mood-valiant/"
+      },
+      {
+        "title": "Hiatus Kaiyote: Tiny Desk (Home) Concert",
+        "outlet": "NPR Music",
+        "url": "https://www.npr.org/2021/08/04/1022247453/hiatus-kaiyote-tiny-desk-home-concert"
+      },
+      {
+        "title": "Hiatus Kaiyote — artist page (3 Grammy nominations)",
+        "outlet": "GRAMMY.com",
+        "url": "https://www.grammy.com/artists/hiatus-kaiyote/18210"
+      }
+    ]
+  },
+  "footer": { "tagline": "Music in balance", "attribution": "an Ear Clef page" }
+}

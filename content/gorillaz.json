@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "slug": "gorillaz",
+  "meta": {
+    "title": "Gorillaz — Ear Clef",
+    "description": "Artist hub for Gorillaz — the virtual band created by Damon Albarn and Jamie Hewlett, from Demon Days to The Mountain.",
+    "ogImage": "/images/og-gorillaz.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/gorillaz"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "3AA28KZvwAUcZuOKwyblJQ"
+    },
+    "youtube": {
+      "channelId": "UCfIXdjDQH9Fau7y99_Orpjw"
+    },
+    "setlistfm": {
+      "mbid": "e21857d5-3256-4547-afb3-4b6ded592596"
+    }
+  },
+  "hero": {
+    "name": "Gorillaz",
+    "identity": "Damon Albarn and Jamie Hewlett's animated band — pop's longest-running cartoon experiment.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://gorillaz.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/gorillaz/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/Gorillaz"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/Gorillaz/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@Gorillaz"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "spotify",
+        "url": "https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://gorillaz.bandcamp.com"
+      }
+    ],
+    "embeds": [
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "45IcwOkFv3YqTpU5Bal8fl",
+        "title": "Demon Days"
+      },
+      {
+        "type": "spotify",
+        "kind": "album",
+        "id": "4wtZQMNTC1O79kDxMBsEan",
+        "title": "Cracker Island"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "HyHNuVaZJ-k",
+        "title": "Feel Good Inc."
+      },
+      {
+        "youtubeId": "1V_xRb0x9aw",
+        "title": "Clint Eastwood"
+      },
+      {
+        "youtubeId": "04mfKJWDSzI",
+        "title": "On Melancholy Hill"
+      },
+      {
+        "youtubeId": "uAOR6ib95kQ",
+        "title": "DARE"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Gorillaz began in 1998 as a conspiracy between Blur frontman Damon Albarn and Tank Girl artist Jamie Hewlett: a band whose public face would be four animated characters — 2-D, Murdoc Niccals, Noodle and Russel Hobbs — while a rotating cast of real musicians worked behind the cartoon. The 2001 debut, driven by the woozy hit Clint Eastwood, sold millions and earned Gorillaz a Guinness World Records citation as the most successful virtual band.",
+      "Demon Days (2005), produced with Danger Mouse, turned the concept into a pop juggernaut: Feel Good Inc., with De La Soul, won a Grammy and remains the band's signature song, its Spotify play count now past two billion. Plastic Beach (2010) pushed the collaborative model further, folding in everyone from Lou Reed to Bobby Womack, and cemented the project's real subject — collaboration itself, with the cartoons as connective tissue.",
+      "After a hiatus, Gorillaz returned prolific: Humanz (2017), The Now Now (2018), the web-series-driven Song Machine (2020) and Cracker Island (2023), a Greg Kurstin-produced set featuring Thundercat, Stevie Nicks, Tame Impala, Bad Bunny and Beck. Through every phase, Hewlett's evolving artwork kept the virtual members aging, feuding and reinventing alongside the music.",
+      "In February 2026 the band released their ninth album, The Mountain, on their own Kong label — a meditation on grief and the afterlife recorded partly in India and sung in multiple languages, which became their third UK number-one album. The accompanying Mountain Tour brought Gorillaz their first-ever stadium headline show, a sold-out night for roughly 60,000 at London's Tottenham Hotspur Stadium in June 2026, with the tour continuing across Europe, North America and beyond into 2027."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "The Mountain Tour continues through 2026, with European dates below and a North American leg beginning mid-September.",
+    "upcoming": [
+      {
+        "date": "2026-07-14",
+        "venue": "Parkorman",
+        "city": "Istanbul, Turkey",
+        "note": "The Mountain Tour"
+      },
+      {
+        "date": "2026-07-16",
+        "venue": "Parkorman",
+        "city": "Istanbul, Turkey",
+        "note": "The Mountain Tour"
+      },
+      {
+        "date": "2026-07-18",
+        "venue": "Rowing Canal",
+        "city": "Plovdiv, Bulgaria",
+        "note": "The Mountain Tour"
+      },
+      {
+        "date": "2026-07-23",
+        "venue": "Plaine de l'Asse",
+        "city": "Nyon, Switzerland",
+        "note": "Paléo Festival"
+      },
+      {
+        "date": "2026-07-25",
+        "venue": "Piazza Unità d'Italia",
+        "city": "Trieste, Italy",
+        "note": "The Mountain Tour"
+      }
+    ],
+    "past": [
+      {
+        "date": "2026-07-02",
+        "venue": "Dyrskuepladsen",
+        "city": "Roskilde, Denmark",
+        "setlistUrl": "https://www.setlist.fm/setlist/gorillaz/2026/dyrskuepladsen-roskilde-denmark-b4f9d6e.html",
+        "note": "Roskilde Festival 2026"
+      },
+      {
+        "date": "2026-06-20",
+        "venue": "Tottenham Hotspur Stadium",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/gorillaz/2026/tottenham-hotspur-stadium-london-england-6b40767e.html",
+        "note": "First-ever stadium headline show, sold out (~60,000)"
+      },
+      {
+        "date": "2026-06-14",
+        "venue": "Beekse Bergen",
+        "city": "Hilvarenbeek, Netherlands",
+        "setlistUrl": "https://www.setlist.fm/setlist/gorillaz/2026/beekse-bergen-one-hilvarenbeek-netherlands-3b4f4474.html",
+        "note": "Best Kept Secret 2026"
+      },
+      {
+        "date": "2026-06-06",
+        "venue": "Parc del Fòrum",
+        "city": "Barcelona, Spain",
+        "setlistUrl": "https://www.setlist.fm/setlist/gorillaz/2026/parc-del-forum-estrella-damm-barcelona-spain-534e2bb9.html",
+        "note": "Primavera Sound 2026, livestreamed via Amazon Music"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "The Mountain Heads T-Shirt",
+        "description": "Official tee from The Mountain album campaign.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store.gorillaz.com/products/the-mountain-heads-t-shirt"
+      },
+      {
+        "name": "The Mountain Hoodie (Black)",
+        "description": "Black hoodie from the official Gorillaz store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store.gorillaz.com/products/the-mountain-hoodie-black"
+      },
+      {
+        "name": "The Mountain LP & Hoodie Bundle",
+        "description": "Vinyl and hoodie bundle for the 2026 album The Mountain.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store.gorillaz.com/products/the-mountain-lp-hoodie-bundle-uk"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "On The Mountain, Gorillaz Turn Grief and Global Collaboration into Their Most Ambitious Album Yet",
+        "outlet": "Consequence",
+        "url": "https://consequence.net/cover/gorillaz-the-mountain-interview/"
+      },
+      {
+        "title": "Gorillaz on New Music, Grief, AI Art, 'KPop Demon Hunters,' and More",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-features/gorillaz-new-music-grief-ai-art-interview-1235514180/"
+      },
+      {
+        "title": "Gorillaz 'The Mountain' Review: Exorcising Grief with Heavenly Hosts",
+        "outlet": "Slant Magazine",
+        "url": "https://www.slantmagazine.com/music/gorillaz-the-mountain-album-review/"
+      },
+      {
+        "title": "The Gorillaz 'The Mountain Tour 2026': setlist, dates, tickets and more",
+        "outlet": "Official Charts",
+        "url": "https://www.officialcharts.com/chart-news/the-gorillaz-the-mountain-tour-2026-setlist-dates-tickets-and-more/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}
