@@ -9,7 +9,8 @@ import {
   type CountryYearCounts,
   type DataSource,
 } from '@/lib/explore/counts'
-import { isoOf, type CountryFeature } from '@/lib/explore/geo'
+import { isoOf, roughCentroid, type CountryFeature } from '@/lib/explore/geo'
+import type { SelectedCountry } from '@/components/explore/CountryPanel'
 import styles from './GlobeScene.module.css'
 
 const SIDE_COLOR = 'rgba(242, 169, 59, 0.03)'
@@ -19,10 +20,17 @@ const ATMOSPHERE_COLOR = '#f2a93b'
 
 interface GlobeSceneProps {
   year: number
+  paused: boolean
   onDataSourceChange: (source: DataSource) => void
+  onCountryClick: (country: SelectedCountry) => void
 }
 
-export function GlobeScene({ year, onDataSourceChange }: GlobeSceneProps) {
+export function GlobeScene({
+  year,
+  paused,
+  onDataSourceChange,
+  onCountryClick,
+}: GlobeSceneProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const globeRef = useRef<GlobeInstance | null>(null)
   const countsRef = useRef<CountryYearCounts>({})
@@ -35,6 +43,11 @@ export function GlobeScene({ year, onDataSourceChange }: GlobeSceneProps) {
     applyHeat(globeRef.current)
     // eslint-disable-next-line react-hooks/exhaustive-deps -- applyHeat reads only refs; re-run on year alone
   }, [year])
+
+  useEffect(() => {
+    const globe = globeRef.current
+    if (globe) globe.controls().autoRotate = !paused
+  }, [paused])
 
   function heatFor(feature: object): number {
     const code = isoOf(feature as CountryFeature)
@@ -111,6 +124,14 @@ export function GlobeScene({ year, onDataSourceChange }: GlobeSceneProps) {
           if (globe) applyHeat(globe)
           mount.style.cursor = hovered ? 'pointer' : 'grab'
         })
+        .onPolygonClick((clicked) => {
+          const feature = clicked as CountryFeature
+          const code = isoOf(feature)
+          if (!code || !globe) return
+          const { lat, lng } = roughCentroid(feature)
+          globe.pointOfView({ lat, lng, altitude: 1.7 }, 650)
+          onCountryClick({ code, name: feature.properties.ADMIN })
+        })
         .width(mount.clientWidth)
         .height(mount.clientHeight)
 
@@ -118,6 +139,10 @@ export function GlobeScene({ year, onDataSourceChange }: GlobeSceneProps) {
       globe.pointOfView({ lat: 24, lng: -30, altitude: 2.1 }, 0)
       applyHeat(globe)
       globeRef.current = globe
+
+      if (process.env.NODE_ENV === 'development') {
+        ;(window as unknown as Record<string, unknown>).__earclefGlobe = globe
+      }
 
       const controls = globe.controls()
       controls.autoRotate = true

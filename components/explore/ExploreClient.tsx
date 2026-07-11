@@ -9,6 +9,10 @@ import {
   type DataSource,
 } from '@/lib/explore/counts'
 import { YearSlider } from '@/components/explore/YearSlider'
+import {
+  CountryPanel,
+  type SelectedCountry,
+} from '@/components/explore/CountryPanel'
 import styles from './ExploreClient.module.css'
 
 const GlobeScene = dynamic(
@@ -22,10 +26,25 @@ const GlobeScene = dynamic(
 export function ExploreClient() {
   const [year, setYear] = useState(DEFAULT_YEAR)
   const [source, setSource] = useState<DataSource | null>(null)
+  const [selected, setSelected] = useState<SelectedCountry | null>(null)
 
   return (
     <div className={styles.stage}>
-      <GlobeScene year={year} onDataSourceChange={setSource} />
+      <GlobeScene
+        year={year}
+        paused={selected !== null}
+        onDataSourceChange={setSource}
+        onCountryClick={setSelected}
+      />
+      {selected && (
+        <CountryPanel
+          key={`${selected.code}:${year}`}
+          country={selected}
+          year={year}
+          source={source}
+          onClose={() => setSelected(null)}
+        />
+      )}
       <div className={styles.controls}>
         <YearSlider
           year={year}
