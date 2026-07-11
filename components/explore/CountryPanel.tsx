@@ -28,6 +28,8 @@ type PanelState =
   | { status: 'error'; message: string }
   | { status: 'ready'; details: CountryYearDetails }
 
+const PREVIEW_COUNT = 5
+
 export function CountryPanel({
   country,
   year,
@@ -35,6 +37,8 @@ export function CountryPanel({
   onClose,
 }: CountryPanelProps) {
   const [state, setState] = useState<PanelState>({ status: 'loading' })
+  const [showAllArtists, setShowAllArtists] = useState(false)
+  const [showAllReleases, setShowAllReleases] = useState(false)
 
   // Parent keys this component by country+year, so every fetch cycle
   // starts from a fresh mount in the 'loading' state.
@@ -105,7 +109,10 @@ export function CountryPanel({
             <>
               <h3 className={styles.subheading}>Artists</h3>
               <ul className={styles.artists}>
-                {state.details.artists.map((artist) => (
+                {(showAllArtists
+                  ? state.details.artists
+                  : state.details.artists.slice(0, PREVIEW_COUNT)
+                ).map((artist) => (
                   <li key={artist.id} className={styles.artistItem}>
                     <a
                       className={styles.artistPill}
@@ -127,6 +134,17 @@ export function CountryPanel({
                   </li>
                 ))}
               </ul>
+              {state.details.artists.length > PREVIEW_COUNT && (
+                <button
+                  type="button"
+                  className={styles.showAll}
+                  onClick={() => setShowAllArtists((value) => !value)}
+                >
+                  {showAllArtists
+                    ? 'Show fewer'
+                    : `Show all ${state.details.artists.length}`}
+                </button>
+              )}
             </>
           )}
 
@@ -134,7 +152,10 @@ export function CountryPanel({
             <>
               <h3 className={styles.subheading}>Releases</h3>
               <ul className={styles.releases}>
-                {state.details.releases.map((release) => (
+                {(showAllReleases
+                  ? state.details.releases
+                  : state.details.releases.slice(0, PREVIEW_COUNT)
+                ).map((release) => (
                   <li key={release.id} className={styles.release}>
                     <div className={styles.releaseText}>
                       <a
@@ -164,6 +185,24 @@ export function CountryPanel({
                   </li>
                 ))}
               </ul>
+              {state.details.releases.length > PREVIEW_COUNT && (
+                <button
+                  type="button"
+                  className={styles.showAll}
+                  onClick={() => setShowAllReleases((value) => !value)}
+                >
+                  {showAllReleases
+                    ? 'Show fewer'
+                    : `Show all ${state.details.releases.length}`}
+                </button>
+              )}
+              {showAllReleases &&
+                state.details.totalCount > state.details.releases.length && (
+                  <p className={styles.truncationNote}>
+                    Showing the first {state.details.releases.length} of{' '}
+                    {state.details.totalCount.toLocaleString()} on record.
+                  </p>
+                )}
             </>
           )}
 

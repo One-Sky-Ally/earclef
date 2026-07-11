@@ -185,6 +185,27 @@
   color: var(--text-muted);
 }
 
+.showAll {
+  display: block;
+  margin: 0.35rem 0 1.25rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+.showAll:hover {
+  color: var(--text);
+}
+
+.truncationNote {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
 .disclaimer {
   margin-top: 1rem;
   font-size: 0.75rem;

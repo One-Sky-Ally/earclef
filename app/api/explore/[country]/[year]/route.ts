@@ -7,8 +7,8 @@ import type {
 
 const USER_AGENT =
   'EarClefExplore/0.1 (https://earclef.netlify.app; fiohmemorial@gmail.com)'
-const RELEASE_LIMIT = 20
-const ARTIST_LIMIT = 10
+const RELEASE_LIMIT = 30
+const ARTIST_LIMIT = 12
 
 // Warm-process memoization; the CDN Cache-Control header does the real work.
 const memo = new Map<string, CountryYearDetails>()
