@@ -1,0 +1,11 @@
+.embeds {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 700px) {
+  .embeds {
+    grid-template-columns: 1fr 1fr;
+  }
+}

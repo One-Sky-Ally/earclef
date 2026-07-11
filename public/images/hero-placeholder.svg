@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-label="Placeholder artwork">
+  <rect width="1200" height="1200" fill="#1e1814"/>
+  <g fill="none" stroke="#f2a93b" stroke-opacity="0.22">
+    <circle cx="600" cy="600" r="520" stroke-width="1.5"/>
+    <circle cx="600" cy="600" r="440" stroke-width="1"/>
+    <circle cx="600" cy="600" r="360" stroke-width="1.5"/>
+    <circle cx="600" cy="600" r="280" stroke-width="1"/>
+    <circle cx="600" cy="600" r="200" stroke-width="1.5"/>
+    <circle cx="600" cy="600" r="120" stroke-width="1"/>
+  </g>
+  <circle cx="600" cy="600" r="46" fill="#f2a93b" fill-opacity="0.85"/>
+  <circle cx="600" cy="600" r="12" fill="#1e1814"/>
+</svg>

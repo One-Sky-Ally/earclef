@@ -1,0 +1,83 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.player {
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: border-color 0.25s ease;
+}
+
+.player:hover {
+  border-color: var(--border-strong);
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.facade {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) brightness(0.8) sepia(0.08);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.facade:hover .thumb {
+  filter: saturate(1) brightness(1) sepia(0);
+  transform: scale(1.025);
+}
+
+.playIcon {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(22, 18, 16, 0.82);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.facade:hover .playIcon {
+  background: var(--accent);
+  color: var(--bg);
+  transform: scale(1.08);
+}
+
+.caption {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.index {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}

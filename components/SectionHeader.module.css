@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  margin-bottom: clamp(2.25rem, 5.5vw, 3.5rem);
+}
+
+.number {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.number::after {
+  content: '';
+  display: inline-block;
+  width: clamp(1.75rem, 4vw, 3rem);
+  height: 1px;
+  background: linear-gradient(to right, var(--accent-deep), transparent);
+  vertical-align: middle;
+  margin-left: 1.1rem;
+}
+
+.title {
+  font-size: clamp(2.1rem, 5vw, 3.1rem);
+  font-weight: 480;
+  letter-spacing: -0.015em;
+}

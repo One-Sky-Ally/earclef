@@ -1,0 +1,119 @@
+.subheading {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.subheading:not(:first-of-type) {
+  margin-top: 3.5rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr auto;
+  gap: 0.35rem 1.5rem;
+  align-items: baseline;
+  padding: 1.2rem 0.9rem;
+  margin-inline: -0.9rem;
+  border-top: 1px solid var(--border);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.row:hover {
+  background: var(--hover-wash);
+}
+
+.row:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.date {
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+
+.venue {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.city {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.note {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--text-soft);
+  margin-top: 0.3rem;
+}
+
+.action {
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.action:hover {
+  color: var(--text);
+}
+
+.empty {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 52ch;
+  padding: 1.75rem 2rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: 10px;
+}
+
+.songs {
+  margin-top: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.songs summary {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.songs ol {
+  margin: 0.75rem 0 0 1.25rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+@media (max-width: 640px) {
+  .row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .date {
+    grid-column: 1 / -1;
+  }
+}

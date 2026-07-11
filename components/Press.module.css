@@ -1,0 +1,66 @@
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  max-width: 46rem;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr auto;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 1.1rem 0.9rem;
+  margin-inline: -0.9rem;
+  border-top: 1px solid var(--border);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+li:last-child .item {
+  border-bottom: 1px solid var(--border);
+}
+
+.item:hover {
+  background: var(--hover-wash);
+}
+
+.index {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  transition: color 0.2s ease;
+}
+
+.item:hover .title {
+  color: var(--accent);
+}
+
+.outlet {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.arrow {
+  color: var(--text-muted);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.item:hover .arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}

@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "slug": "radiohead",
+
+  "meta": {
+    "title": "Radiohead — Ear Clef",
+    "description": "Radiohead's whole universe in one place: music, videos, story, setlists, shows, and merch. An Ear Clef page.",
+    "ogImage": "/images/og-radiohead.jpg",
+    "canonicalUrl": "EDIT-ME: set after Netlify deploy, e.g. https://earclef.netlify.app"
+  },
+
+  "integrations": {
+    "spotify": { "artistId": "4Z8W4fKeB5YxbusRsdQVPb" },
+    "youtube": { "channelId": "UCq19-LqvG35A-30oyAiPiqA" },
+    "setlistfm": { "mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711" }
+  },
+
+  "hero": {
+    "name": "Radiohead",
+    "identity": "Five musicians from Oxfordshire who keep reinventing what a rock band can be.",
+    "tagline": "Hear here!",
+    "location": "Oxford, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "EDIT-ME: placeholder — no rights-cleared band photo; Spotify API artwork replaces this at milestone 5"
+    },
+    "socials": [
+      { "platform": "website", "url": "https://www.radiohead.com" },
+      { "platform": "instagram", "url": "https://www.instagram.com/radiohead" },
+      { "platform": "x", "url": "https://x.com/radiohead" },
+      { "platform": "facebook", "url": "https://www.facebook.com/radiohead" },
+      { "platform": "youtube", "url": "https://www.youtube.com/channel/UCq19-LqvG35A-30oyAiPiqA" }
+    ]
+  },
+
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "spotify", "url": "https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb" },
+      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/radiohead/657515" },
+      { "platform": "bandcamp", "url": "https://radiohead.bandcamp.com" }
+    ],
+    "embeds": [
+      { "type": "spotify", "kind": "album", "id": "5vkqYmiPBYLaalcmjujWxK", "title": "In Rainbows" },
+      { "type": "spotify", "kind": "album", "id": "6dVIqQ8qmQ5GBnJ9shOYGE", "title": "OK Computer" }
+    ]
+  },
+
+  "watch": {
+    "enabled": true,
+    "videos": [
+      { "youtubeId": "u5CVsCnxyXg", "title": "No Surprises" },
+      { "youtubeId": "1uYWYWPc9HU", "title": "Karma Police" },
+      { "youtubeId": "fHiGbolFFGw", "title": "Paranoid Android" },
+      { "youtubeId": "TTAU7lLDZYU", "title": "Daydreaming" }
+    ]
+  },
+
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Radiohead formed in Abingdon, Oxfordshire in 1985, when five schoolmates — Thom Yorke, Jonny Greenwood, Colin Greenwood, Ed O'Brien, and Philip Selway — began rehearsing under the name On a Friday. Signed to EMI in 1991, they took their new name from a Talking Heads song and broke worldwide a year later with 'Creep,' a song whose ubiquity they would spend the next decade outrunning.",
+      "They outran it definitively. 'The Bends' (1995) traded grunge for grandeur; 'OK Computer' (1997) became a generation's portrait of pre-millennium unease and is routinely named among the greatest albums ever made. Then, at the height of their rock acclaim, they dismantled the formula entirely: 'Kid A' (2000) swapped guitars for synthesizers, samplers, and ondes Martenot, and somehow topped charts on both sides of the Atlantic doing it.",
+      "The reinventions never stopped being structural. In 2007 they released 'In Rainbows' as a pay-what-you-want download — a move that upended music-industry economics and remains one of the most discussed release strategies in history. 'A Moon Shaped Pool' (2016) distilled the band's orchestral instincts, with Jonny Greenwood's film-score work audibly in its DNA. They were inducted into the Rock and Roll Hall of Fame in 2019.",
+      "After seven years away from the stage, Radiohead returned in November 2025 with twenty arena shows across Madrid, Bologna, London, Copenhagen, and Berlin — played in the round, drawing from their whole catalog, and treating no two nights the same. The band has said it intends to keep playing roughly twenty concerts a year, on rotating continents, on its own terms — which is about as Radiohead as touring plans get."
+    ]
+  },
+
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming shows are currently announced. Official tour news comes from W.A.S.T.E. — beware lookalike announcements elsewhere.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-12-12",
+        "venue": "Uber Arena",
+        "city": "Berlin, Germany",
+        "setlistUrl": "https://www.setlist.fm/setlist/radiohead/2025/uber-arena-berlin-germany-1340c9c5.html",
+        "note": "Final night of the 2025 European tour"
+      },
+      {
+        "date": "2025-12-05",
+        "venue": "Royal Arena",
+        "city": "Copenhagen, Denmark",
+        "setlistUrl": "https://www.setlist.fm/setlist/radiohead/2025/royal-arena-copenhagen-denmark-b40c9c2.html"
+      },
+      {
+        "date": "2025-11-25",
+        "venue": "The O2 Arena",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/radiohead/2025/the-o2-arena-london-england-b40c9ce.html"
+      },
+      {
+        "date": "2025-11-04",
+        "venue": "Movistar Arena",
+        "city": "Madrid, Spain",
+        "setlistUrl": "https://www.setlist.fm/setlist/radiohead/2025/movistar-arena-madrid-spain-340c9df.html",
+        "note": "First show since 2018 — opening night of the comeback tour"
+      }
+    ]
+  },
+
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "W.A.S.T.E. — Official Store (UK)",
+        "description": "Radiohead's official merchandise operation since 1991: clothing, vinyl, and exclusives.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "EDIT-ME: placeholder card image for the W.A.S.T.E. UK store" },
+        "url": "https://store.wasteheadquarters.com/collections/radiohead"
+      },
+      {
+        "name": "W.A.S.T.E. — EU Store",
+        "description": "The official European store for EU-based fans.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "EDIT-ME: placeholder card image for the W.A.S.T.E. EU store" },
+        "url": "https://store-eu.wasteheadquarters.com/collections/radiohead"
+      },
+      {
+        "name": "Radiohead on Bandcamp",
+        "description": "Digital catalog direct from the band, including OK Computer OKNOTOK.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "EDIT-ME: placeholder card image for Radiohead's Bandcamp" },
+        "url": "https://radiohead.bandcamp.com"
+      }
+    ]
+  },
+
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Radiohead to Play 20 Concerts on Different Continents Per Year, Guitarist Says",
+        "outlet": "Variety",
+        "url": "https://variety.com/2026/music/news/radiohead-to-play-20-concerts-on-different-continents-1236691049/"
+      },
+      {
+        "title": "Radiohead's 2025 tour: every setlist and song played",
+        "outlet": "Radio X",
+        "url": "https://www.radiox.co.uk/artists/radiohead/2025-tour-every-setlist-and-song-played-so-far/"
+      },
+      {
+        "title": "W.A.S.T.E. HQ — official news and tour information",
+        "outlet": "wasteheadquarters.com",
+        "url": "https://www.wasteheadquarters.com/"
+      },
+      {
+        "title": "Radiohead",
+        "outlet": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Radiohead"
+      }
+    ]
+  },
+
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}
