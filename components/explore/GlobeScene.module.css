@@ -1,7 +1,8 @@
 .scene {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  /* Absolute so the canvas can never inflate the stage's grid sizing */
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
   cursor: grab;
 }
 

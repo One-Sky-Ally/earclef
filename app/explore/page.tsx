@@ -24,8 +24,8 @@ export default function ExplorePage() {
         </div>
         <ExploreClient />
         <p className={styles.hint}>
-          Drag to spin · scroll to zoom — year slider and country details are
-          on their way
+          Drag to spin · scroll to zoom · slide through time — country details
+          coming next
         </p>
       </main>
       <footer className={styles.footer}>
