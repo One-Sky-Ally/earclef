@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import type { GlobeInstance } from 'globe.gl'
 import {
+  heatColor,
   heatValue,
   loadCounts,
   maxForYear,
@@ -18,9 +19,16 @@ const STROKE_COLOR = 'rgba(242, 169, 59, 0.35)'
 const SPHERE_COLOR = '#1b1613'
 const ATMOSPHERE_COLOR = '#f2a93b'
 
+export interface FocusRequest {
+  code: string
+  name: string
+  nonce: number
+}
+
 interface GlobeSceneProps {
   year: number
   paused: boolean
+  focusRequest: FocusRequest | null
   onDataSourceChange: (source: DataSource) => void
   onCountryClick: (country: SelectedCountry) => void
 }
@@ -28,6 +36,7 @@ interface GlobeSceneProps {
 export function GlobeScene({
   year,
   paused,
+  focusRequest,
   onDataSourceChange,
   onCountryClick,
 }: GlobeSceneProps) {
@@ -37,6 +46,7 @@ export function GlobeScene({
   const yearRef = useRef(year)
   const yearMaxCache = useRef<Record<number, number>>({})
   const hoverRef = useRef<object | null>(null)
+  const featureByCode = useRef<Map<string, CountryFeature>>(new Map())
 
   useEffect(() => {
     yearRef.current = year
@@ -48,6 +58,24 @@ export function GlobeScene({
     const globe = globeRef.current
     if (globe) globe.controls().autoRotate = !paused
   }, [paused])
+
+  // Search resolution: fly to the country (when we have its shape) and open it.
+  useEffect(() => {
+    if (!focusRequest) return
+    const globe = globeRef.current
+    const feature = featureByCode.current.get(focusRequest.code)
+    if (globe && feature) {
+      const { lat, lng } = roughCentroid(feature)
+      globe.pointOfView({ lat, lng, altitude: 1.7 }, 650)
+      onCountryClick({
+        code: focusRequest.code,
+        name: feature.properties.ADMIN,
+      })
+    } else {
+      onCountryClick({ code: focusRequest.code, name: focusRequest.name })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- fire per resolved search only
+  }, [focusRequest])
 
   function heatFor(feature: object): number {
     const code = isoOf(feature as CountryFeature)
@@ -62,10 +90,7 @@ export function GlobeScene({
   }
 
   function capColorFor(feature: object): string {
-    const heat = heatFor(feature)
-    const hovered = feature === hoverRef.current
-    const alpha = Math.min(0.05 + heat * 0.6 + (hovered ? 0.25 : 0), 0.92)
-    return `rgba(242, 169, 59, ${alpha.toFixed(3)})`
+    return heatColor(heatFor(feature), feature === hoverRef.current)
   }
 
   function applyHeat(globe: GlobeInstance | null) {
@@ -93,9 +118,14 @@ export function GlobeScene({
       ])
       if (disposed) return
 
-      const codes = (countries.features as CountryFeature[])
-        .map(isoOf)
-        .filter((code): code is string => Boolean(code))
+      const features = countries.features as CountryFeature[]
+      featureByCode.current = new Map(
+        features.flatMap((feature) => {
+          const code = isoOf(feature)
+          return code ? [[code, feature] as const] : []
+        }),
+      )
+      const codes = [...featureByCode.current.keys()]
       const { counts, source } = await loadCounts(codes)
       if (disposed) return
       countsRef.current = counts
@@ -117,7 +147,7 @@ export function GlobeScene({
           const count = code
             ? (countsRef.current[code]?.[yearRef.current] ?? 0)
             : 0
-          return `<span class="globe-tooltip"><strong>${props.ADMIN}</strong><br/>${count.toLocaleString()} releases · ${yearRef.current}</span>`
+          return `<div class="globe-tooltip"><span class="globe-tooltip-name">${props.ADMIN}</span><span class="globe-tooltip-count">${count.toLocaleString()} releases · ${yearRef.current}</span></div>`
         })
         .onPolygonHover((hovered) => {
           hoverRef.current = hovered ?? null

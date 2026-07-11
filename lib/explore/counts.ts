@@ -39,6 +39,50 @@ export function heatValue(count: number, yearMax: number): number {
   return Math.log1p(count) / Math.log1p(yearMax)
 }
 
+// Ember → deep gold → brand gold → white-gold, all within the site palette.
+const HEAT_STOPS: { t: number; rgb: [number, number, number]; a: number }[] = [
+  { t: 0, rgb: [96, 52, 18], a: 0.22 },
+  { t: 0.4, rgb: [201, 127, 26], a: 0.55 },
+  { t: 0.72, rgb: [242, 169, 59], a: 0.8 },
+  { t: 1, rgb: [255, 236, 200], a: 0.95 },
+]
+
+const ZERO_HEAT_COLOR = 'rgba(242, 169, 59, 0.05)'
+
+/** Map 0..1 heat to a palette color; `hovered` brightens toward white. */
+export function heatColor(t: number, hovered = false): string {
+  if (t <= 0) {
+    return hovered ? 'rgba(242, 169, 59, 0.28)' : ZERO_HEAT_COLOR
+  }
+  const clamped = Math.min(t, 1)
+  let lower = HEAT_STOPS[0]
+  let upper = HEAT_STOPS[HEAT_STOPS.length - 1]
+  for (let i = 0; i < HEAT_STOPS.length - 1; i++) {
+    if (clamped >= HEAT_STOPS[i].t && clamped <= HEAT_STOPS[i + 1].t) {
+      lower = HEAT_STOPS[i]
+      upper = HEAT_STOPS[i + 1]
+      break
+    }
+  }
+  const span = upper.t - lower.t || 1
+  const mix = (clamped - lower.t) / span
+  const lerp = (a: number, b: number) => a + (b - a) * mix
+  let [r, g, b] = [
+    lerp(lower.rgb[0], upper.rgb[0]),
+    lerp(lower.rgb[1], upper.rgb[1]),
+    lerp(lower.rgb[2], upper.rgb[2]),
+  ]
+  let alpha = lerp(lower.a, upper.a)
+
+  if (hovered) {
+    r += (255 - r) * 0.25
+    g += (255 - g) * 0.25
+    b += (255 - b) * 0.25
+    alpha = Math.min(alpha + 0.15, 1)
+  }
+  return `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${alpha.toFixed(3)})`
+}
+
 export function maxForYear(counts: CountryYearCounts, year: number): number {
   let max = 0
   for (const byYear of Object.values(counts)) {

@@ -25,7 +25,7 @@ export default function ExplorePage() {
         <ExploreClient />
         <p className={styles.hint}>
           Drag to spin · scroll to zoom · slide through time · click a country
-          for its artists &amp; releases
+          or search a place for its artists &amp; releases
         </p>
       </main>
       <footer className={styles.footer}>

@@ -8,7 +8,10 @@ import {
   YEAR_MIN,
   type DataSource,
 } from '@/lib/explore/counts'
+import type { PlaceResult } from '@/lib/explore/panelData'
+import type { FocusRequest } from '@/components/explore/GlobeScene'
 import { YearSlider } from '@/components/explore/YearSlider'
+import { SearchBox } from '@/components/explore/SearchBox'
 import {
   CountryPanel,
   type SelectedCountry,
@@ -27,15 +30,26 @@ export function ExploreClient() {
   const [year, setYear] = useState(DEFAULT_YEAR)
   const [source, setSource] = useState<DataSource | null>(null)
   const [selected, setSelected] = useState<SelectedCountry | null>(null)
+  const [focusRequest, setFocusRequest] = useState<FocusRequest | null>(null)
+
+  function onPlaceResolved(place: PlaceResult) {
+    setFocusRequest({
+      code: place.country,
+      name: place.area,
+      nonce: (focusRequest?.nonce ?? 0) + 1,
+    })
+  }
 
   return (
     <div className={styles.stage}>
       <GlobeScene
         year={year}
         paused={selected !== null}
+        focusRequest={focusRequest}
         onDataSourceChange={setSource}
         onCountryClick={setSelected}
       />
+      <SearchBox onResolved={onPlaceResolved} />
       {selected && (
         <CountryPanel
           key={`${selected.code}:${year}`}

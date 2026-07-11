@@ -5,6 +5,7 @@ import {
   fetchCountryYearDetails,
   musicBrainzArtistUrl,
   musicBrainzReleaseUrl,
+  youtubeSearchUrl,
   type CountryYearDetails,
 } from '@/lib/explore/panelData'
 import type { DataSource } from '@/lib/explore/counts'
@@ -105,7 +106,7 @@ export function CountryPanel({
               <h3 className={styles.subheading}>Artists</h3>
               <ul className={styles.artists}>
                 {state.details.artists.map((artist) => (
-                  <li key={artist.id}>
+                  <li key={artist.id} className={styles.artistItem}>
                     <a
                       className={styles.artistPill}
                       href={musicBrainzArtistUrl(artist.id)}
@@ -113,6 +114,15 @@ export function CountryPanel({
                       rel="noreferrer"
                     >
                       {artist.name}
+                    </a>
+                    <a
+                      className={styles.listenBadge}
+                      href={youtubeSearchUrl(artist.name)}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Listen: search YouTube for ${artist.name}`}
+                    >
+                      ▶
                     </a>
                   </li>
                 ))}
@@ -126,18 +136,31 @@ export function CountryPanel({
               <ul className={styles.releases}>
                 {state.details.releases.map((release) => (
                   <li key={release.id} className={styles.release}>
+                    <div className={styles.releaseText}>
+                      <a
+                        className={styles.releaseTitle}
+                        href={musicBrainzReleaseUrl(release.id)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {release.title}
+                      </a>
+                      <span className={styles.releaseMeta}>
+                        {release.artist.name}
+                        {release.date ? ` · ${release.date}` : ''}
+                      </span>
+                    </div>
                     <a
-                      className={styles.releaseTitle}
-                      href={musicBrainzReleaseUrl(release.id)}
+                      className={styles.listenLink}
+                      href={youtubeSearchUrl(
+                        `${release.artist.name} ${release.title}`,
+                      )}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={`Listen: search YouTube for ${release.title} by ${release.artist.name}`}
                     >
-                      {release.title}
+                      ▶ Listen
                     </a>
-                    <span className={styles.releaseMeta}>
-                      {release.artist.name}
-                      {release.date ? ` · ${release.date}` : ''}
-                    </span>
                   </li>
                 ))}
               </ul>
