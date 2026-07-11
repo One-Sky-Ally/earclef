@@ -5,9 +5,10 @@ import styles from './Watch.module.css'
 
 interface WatchProps {
   watch: WatchContent
+  channelUrl?: string
 }
 
-export function Watch({ watch }: WatchProps) {
+export function Watch({ watch, channelUrl }: WatchProps) {
   const [featured, ...rest] = watch.videos
 
   return (
@@ -25,6 +26,16 @@ export function Watch({ watch }: WatchProps) {
               <YouTubeEmbed key={video.youtubeId} video={video} index={i + 2} />
             ))}
           </div>
+        )}
+        {channelUrl && (
+          <a
+            className={styles.more}
+            href={channelUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View all videos →
+          </a>
         )}
       </div>
     </section>

@@ -7,6 +7,20 @@
   gap: 2rem 1.25rem;
 }
 
+.more {
+  display: inline-block;
+  margin-top: 1.75rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+.more:hover {
+  color: var(--text);
+}
+
 @media (min-width: 640px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);

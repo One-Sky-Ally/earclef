@@ -140,6 +140,7 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
 - All integration IDs verified by parallel research agents + spot-checks (Spotify monthly-listener check, YouTube oEmbed author check, MusicBrainz API, setlist.fm page fetches). Verification evidence lives in the git history of this rollout's research.
 - Honest sparse handling: The Boswell Sisters (no watch/shows/merch/socials), Trust in the Sun (owner's project — story has EDIT-ME markers for Stefano; only Bandcamp verified, no Spotify/MBID exists yet), Joanna Newsom (deliberately not on Spotify — Bandcamp/Drag City links instead, empty embeds).
 - Era write-up idea for the explore panel: noted for later, per Stefano.
+- FUTURE MILESTONE: in-page full catalog via Spotify API — replace the "View full catalog →" outbound link (Listen section) with an in-page discography fetched from the Spotify Web API (falls back to the link when no key/artistId). The "View all videos →" link (Watch section) similarly becomes the YouTube Data API integration's fallback.
 
 ### Env keys needed (none yet)
 - Milestone 4: `SETLISTFM_API_KEY` (free: api.setlist.fm signup)

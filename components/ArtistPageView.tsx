@@ -15,13 +15,21 @@ interface ArtistPageViewProps {
 }
 
 export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
+  const youtubeChannelUrl =
+    content.hero.socials.find((social) => social.platform === 'youtube')?.url ??
+    (content.integrations.youtube.channelId
+      ? `https://www.youtube.com/channel/${content.integrations.youtube.channelId}`
+      : undefined)
+
   return (
     <>
       <SiteNav anchorBase={anchorBase} />
       <Hero hero={content.hero} />
       <main>
         {content.listen.enabled && <Listen listen={content.listen} />}
-        {content.watch.enabled && <Watch watch={content.watch} />}
+        {content.watch.enabled && (
+          <Watch watch={content.watch} channelUrl={youtubeChannelUrl} />
+        )}
         {content.story.enabled && <Story story={content.story} />}
         {content.shows.enabled && <Shows shows={content.shows} />}
         {content.merch.enabled && <Merch merch={content.merch} />}

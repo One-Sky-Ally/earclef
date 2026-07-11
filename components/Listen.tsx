@@ -9,6 +9,11 @@ interface ListenProps {
 }
 
 export function Listen({ listen }: ListenProps) {
+  const catalogUrl =
+    listen.platforms.find((p) => p.platform === 'spotify')?.url ??
+    listen.platforms.find((p) => p.platform === 'bandcamp')?.url ??
+    listen.platforms[0]?.url
+
   return (
     <section id="listen" className="section" aria-labelledby="listen-heading">
       <div className="container">
@@ -20,6 +25,16 @@ export function Listen({ listen }: ListenProps) {
               <SpotifyEmbed key={embed.id} embed={embed} />
             ))}
           </div>
+        )}
+        {catalogUrl && (
+          <a
+            className={styles.more}
+            href={catalogUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View full catalog →
+          </a>
         )}
       </div>
     </section>
