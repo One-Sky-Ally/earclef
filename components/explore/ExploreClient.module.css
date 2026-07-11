@@ -1,0 +1,12 @@
+.stage {
+  height: clamp(420px, calc(100dvh - 240px), 780px);
+  display: grid;
+}
+
+.loading {
+  place-self: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
