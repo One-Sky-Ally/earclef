@@ -24,7 +24,12 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
   return (
     <>
       <SiteNav anchorBase={anchorBase} />
-      <Hero hero={content.hero} />
+      <Hero
+        hero={content.hero}
+        paletteVideoId={
+          content.watch.enabled ? content.watch.videos[0]?.youtubeId : undefined
+        }
+      />
       <main>
         {content.listen.enabled && (
           <Listen

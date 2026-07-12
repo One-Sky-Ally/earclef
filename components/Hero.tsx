@@ -1,12 +1,14 @@
 import type { HeroContent } from '@/lib/types'
 import { LinkPills } from '@/components/LinkPills'
+import { HeroArt } from '@/components/HeroArt'
 import styles from './Hero.module.css'
 
 interface HeroProps {
   hero: HeroContent
+  paletteVideoId?: string
 }
 
-export function Hero({ hero }: HeroProps) {
+export function Hero({ hero, paletteVideoId }: HeroProps) {
   return (
     <header id="top" className={styles.hero}>
       <div className={`container ${styles.grid}`}>
@@ -23,8 +25,12 @@ export function Hero({ hero }: HeroProps) {
           <LinkPills links={hero.socials} ariaLabel="Social links" />
         </div>
         <div className={styles.imageFrame}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={hero.image.src} alt={hero.image.alt} />
+          <HeroArt
+            artistName={hero.name}
+            imageSrc={hero.image.src}
+            imageAlt={hero.image.alt}
+            paletteVideoId={paletteVideoId}
+          />
         </div>
       </div>
     </header>
