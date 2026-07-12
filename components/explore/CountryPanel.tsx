@@ -7,6 +7,8 @@ import {
   musicBrainzReleaseUrl,
   youtubeSearchUrl,
   type CountryYearDetails,
+  type PanelArtist,
+  type PanelRelease,
 } from '@/lib/explore/panelData'
 import type { DataSource } from '@/lib/explore/counts'
 import styles from './CountryPanel.module.css'
@@ -29,6 +31,24 @@ type PanelState =
   | { status: 'ready'; details: CountryYearDetails }
 
 const PREVIEW_COUNT = 5
+
+// Quoted phrases keep YouTube searches on-target ("Black Widow" the band,
+// not the Marvel film). Artists get their top release as a discriminator.
+function releaseSearchQuery(release: PanelRelease): string {
+  return `"${release.artist.name}" "${release.title}"`
+}
+
+function artistSearchQuery(
+  artist: PanelArtist,
+  releases: PanelRelease[],
+): string {
+  const topRelease = releases.find(
+    (release) => release.artist.id === artist.id,
+  )?.title
+  return topRelease
+    ? `"${artist.name}" "${topRelease}"`
+    : `"${artist.name}" music`
+}
 
 export function CountryPanel({
   country,
@@ -95,8 +115,14 @@ export function CountryPanel({
       {state.status === 'ready' && (
         <div className={styles.body}>
           <p className={styles.total}>
-            {state.details.totalCount.toLocaleString()} releases on record
+            {state.details.totalCount.toLocaleString()} releases issued here
           </p>
+          {state.details.totalCount > 0 && (
+            <p className={styles.methodNote}>
+              Counted by where releases were issued or distributed — artists
+              may hail from elsewhere.
+            </p>
+          )}
 
           {state.details.totalCount === 0 && (
             <p className={styles.note}>
@@ -107,7 +133,7 @@ export function CountryPanel({
 
           {state.details.artists.length > 0 && (
             <>
-              <h3 className={styles.subheading}>Artists</h3>
+              <h3 className={styles.subheading}>On these releases</h3>
               <ul className={styles.artists}>
                 {(showAllArtists
                   ? state.details.artists
@@ -124,7 +150,9 @@ export function CountryPanel({
                     </a>
                     <a
                       className={styles.listenBadge}
-                      href={youtubeSearchUrl(artist.name)}
+                      href={youtubeSearchUrl(
+                        artistSearchQuery(artist, state.details.releases),
+                      )}
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`Listen: search YouTube for ${artist.name}`}
@@ -173,9 +201,7 @@ export function CountryPanel({
                     </div>
                     <a
                       className={styles.listenLink}
-                      href={youtubeSearchUrl(
-                        `${release.artist.name} ${release.title}`,
-                      )}
+                      href={youtubeSearchUrl(releaseSearchQuery(release))}
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`Listen: search YouTube for ${release.title} by ${release.artist.name}`}

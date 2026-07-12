@@ -72,6 +72,13 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.methodNote {
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
