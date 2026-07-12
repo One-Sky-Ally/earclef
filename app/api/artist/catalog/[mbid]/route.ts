@@ -110,6 +110,7 @@ export async function GET(
         rgid: rg.id,
         title: rg.title,
         year: rg['first-release-date']?.slice(0, 4) || undefined,
+        date: rg['first-release-date'] || undefined,
       })
       buckets.set(key, list)
     }

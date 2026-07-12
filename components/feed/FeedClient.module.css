@@ -1,0 +1,116 @@
+.note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  padding-block: 3rem;
+}
+
+.incomplete {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  max-width: 46rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 1.1rem;
+  align-items: center;
+  padding: 0.9rem;
+  margin-inline: -0.9rem;
+  border-top: 1px solid var(--border);
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.row:hover {
+  background: var(--hover-wash);
+}
+
+.mediaLink {
+  display: block;
+  line-height: 0;
+}
+
+li:last-child .row {
+  border-bottom: 1px solid var(--border);
+}
+
+.cover {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.thumb {
+  width: 84px;
+  height: 63px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.badge {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent-deep);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+}
+
+.artist {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+.artist:hover {
+  color: var(--accent);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.25;
+  transition: color 0.15s ease;
+}
+
+.row:hover .title {
+  color: var(--accent);
+}
+
+.date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}

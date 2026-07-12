@@ -4,6 +4,8 @@ export interface CatalogItem {
   rgid: string
   title: string
   year?: string
+  /** Full first-release date when MusicBrainz has it (YYYY[-MM[-DD]]). */
+  date?: string
 }
 
 export interface BrowserCategory<T> {
@@ -19,6 +21,7 @@ export interface CatalogResponse {
 export interface VideoItem {
   videoId: string
   title: string
+  publishedAt?: string
 }
 
 export interface VideosResponse {

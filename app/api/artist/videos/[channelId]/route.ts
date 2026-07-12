@@ -56,12 +56,14 @@ async function fromRss(channelId: string): Promise<VideoItem[]> {
   if (!res.ok) throw new Error(`RSS HTTP ${res.status}`)
   const xml = await res.text()
   return [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)]
-    .map((match) => {
+    .map((match): VideoItem | null => {
       const videoId = match[1].match(/<yt:videoId>([^<]+)/)?.[1]
       const title = match[1].match(/<title>([^<]*)<\/title>/)?.[1]
-      return videoId && title
-        ? { videoId, title: decodeXml(title) }
-        : null
+      if (!videoId || !title) return null
+      const item: VideoItem = { videoId, title: decodeXml(title) }
+      const publishedAt = match[1].match(/<published>([^<]+)/)?.[1]
+      if (publishedAt) item.publishedAt = publishedAt
+      return item
     })
     .filter((item): item is VideoItem => item !== null)
 }
@@ -84,12 +86,20 @@ async function fromApi(channelId: string, key: string): Promise<VideoItem[]> {
     if (!res.ok) throw new Error(`YouTube API HTTP ${res.status}`)
     const body = (await res.json()) as {
       nextPageToken?: string
-      items?: { snippet?: { title?: string; resourceId?: { videoId?: string } } }[]
+      items?: {
+        snippet?: {
+          title?: string
+          publishedAt?: string
+          resourceId?: { videoId?: string }
+        }
+      }[]
     }
     for (const item of body.items ?? []) {
       const videoId = item.snippet?.resourceId?.videoId
       const title = item.snippet?.title
-      if (videoId && title) items.push({ videoId, title })
+      if (videoId && title) {
+        items.push({ videoId, title, publishedAt: item.snippet?.publishedAt })
+      }
     }
     if (!body.nextPageToken) break
     pageToken = body.nextPageToken

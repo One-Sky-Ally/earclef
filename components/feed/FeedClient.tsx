@@ -1,0 +1,207 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import {
+  fetchCatalog,
+  fetchVideos,
+  type CatalogResponse,
+  type VideosResponse,
+} from '@/lib/artist/browserData'
+import {
+  coverArtUrl,
+  quotedSearch,
+  youtubeThumbnailUrl,
+  youtubeWatchUrl,
+} from '@/lib/links'
+import styles from './FeedClient.module.css'
+
+export interface RosterEntry {
+  slug: string
+  name: string
+  mbid?: string
+  channelId?: string
+}
+
+interface FeedItem {
+  type: 'release' | 'video'
+  slug: string
+  artistName: string
+  title: string
+  date: string
+  image: string
+  href: string
+}
+
+const FEED_LIMIT = 50
+// Prolific channels (daily Shorts) shouldn't drown the rest of the roster.
+const VIDEOS_PER_ARTIST = 8
+
+function releaseItems(entry: RosterEntry, catalog: CatalogResponse): FeedItem[] {
+  return catalog.categories
+    .flatMap((category) => category.items)
+    .filter((item) => item.date)
+    .map((item) => ({
+      type: 'release' as const,
+      slug: entry.slug,
+      artistName: entry.name,
+      title: item.title,
+      date: item.date!,
+      image: coverArtUrl(item.rgid),
+      href: quotedSearch(entry.name, item.title),
+    }))
+}
+
+function videoItems(entry: RosterEntry, videos: VideosResponse): FeedItem[] {
+  return videos.categories
+    .flatMap((category) => category.items)
+    .filter((item) => item.publishedAt)
+    .map((item) => ({
+      type: 'video' as const,
+      slug: entry.slug,
+      artistName: entry.name,
+      title: item.title,
+      date: item.publishedAt!,
+      image: youtubeThumbnailUrl(item.videoId),
+      href: youtubeWatchUrl(item.videoId),
+    }))
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, VIDEOS_PER_ARTIST)
+}
+
+function formatFeedDate(date: string): string {
+  if (date.length === 4) return date
+  if (date.length === 7) {
+    const [year, month] = date.split('-')
+    const names = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ')
+    return `${names[Number(month) - 1]} ${year}`
+  }
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(date))
+}
+
+type FeedState =
+  | { status: 'loading' }
+  | { status: 'empty' }
+  | { status: 'ready'; items: FeedItem[]; incomplete: boolean }
+
+export function FeedClient({ roster }: { roster: RosterEntry[] }) {
+  const [state, setState] = useState<FeedState>({ status: 'loading' })
+
+  useEffect(() => {
+    const controller = new AbortController()
+
+    const sources = roster.flatMap((entry) => {
+      const tasks: Promise<FeedItem[]>[] = []
+      if (entry.mbid) {
+        tasks.push(
+          fetchCatalog(entry.mbid, controller.signal).then((catalog) =>
+            releaseItems(entry, catalog),
+          ),
+        )
+      }
+      if (entry.channelId) {
+        tasks.push(
+          fetchVideos(entry.channelId, controller.signal).then((videos) =>
+            videoItems(entry, videos),
+          ),
+        )
+      }
+      return tasks
+    })
+
+    Promise.allSettled(sources).then((results) => {
+      if (controller.signal.aborted) return
+      const items = results
+        .filter(
+          (result): result is PromiseFulfilledResult<FeedItem[]> =>
+            result.status === 'fulfilled',
+        )
+        .flatMap((result) => result.value)
+        .sort((a, b) => b.date.localeCompare(a.date))
+        .slice(0, FEED_LIMIT)
+      const incomplete = results.some((result) => result.status === 'rejected')
+      setState(
+        items.length > 0
+          ? { status: 'ready', items, incomplete }
+          : { status: 'empty' },
+      )
+    })
+
+    return () => controller.abort()
+  }, [roster])
+
+  if (state.status === 'loading') {
+    return (
+      <p className={styles.note}>Gathering the latest from the roster…</p>
+    )
+  }
+
+  if (state.status === 'empty') {
+    return (
+      <p className={styles.note}>
+        Nothing to show right now — please try again shortly.
+      </p>
+    )
+  }
+
+  return (
+    <>
+      {state.incomplete && (
+        <p className={styles.incomplete}>
+          Some sources didn&apos;t respond — showing what arrived.
+        </p>
+      )}
+      <ol className={styles.list}>
+        {state.items.map((item) => (
+          <li key={`${item.type}-${item.href}`} className={styles.row}>
+            <a
+              className={styles.mediaLink}
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+              tabIndex={-1}
+              aria-hidden="true"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className={
+                  item.type === 'video' ? styles.thumb : styles.cover
+                }
+                src={item.image}
+                alt=""
+                loading="lazy"
+                onError={(event) => {
+                  event.currentTarget.src = '/images/hero-placeholder.svg'
+                }}
+              />
+            </a>
+            <span className={styles.body}>
+              <span className={styles.meta}>
+                <span className={styles.badge}>
+                  {item.type === 'release' ? 'Release' : 'Video'}
+                </span>
+                <Link className={styles.artist} href={`/${item.slug}`}>
+                  {item.artistName}
+                </Link>
+              </span>
+              <a
+                className={styles.title}
+                href={item.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {item.title}
+              </a>
+              <span className={styles.date}>{formatFeedDate(item.date)}</span>
+            </span>
+          </li>
+        ))}
+      </ol>
+    </>
+  )
+}
