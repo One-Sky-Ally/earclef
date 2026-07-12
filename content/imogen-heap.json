@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "slug": "imogen-heap",
+  "meta": {
+    "title": "Imogen Heap — Ear Clef",
+    "description": "Imogen Heap, the Grammy-winning English songwriter, producer, and inventor behind Speak for Yourself and Ellipse.",
+    "ogImage": "/images/og-imogen-heap.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/imogen-heap"
+  },
+  "integrations": {
+    "spotify": { "artistId": "" },
+    "youtube": { "channelId": "UC07ZTiBUTi6qMu74EGZY8DA" },
+    "setlistfm": { "mbid": "328d146c-79f1-4eb6-9e40-8ee5710c14e5" },
+    "itunes": { "artistId": "22873602" }
+  },
+  "hero": {
+    "name": "Imogen Heap",
+    "identity": "Self-produced electronic pop from a songwriter who builds her own instruments.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "socials": [
+      { "platform": "website", "url": "https://www.imogenheap.com" },
+      { "platform": "instagram", "url": "https://www.instagram.com/imogenheap/" },
+      { "platform": "x", "url": "https://x.com/imogenheap" },
+      { "platform": "facebook", "url": "https://www.facebook.com/imogenheap" },
+      { "platform": "youtube", "url": "https://www.youtube.com/channel/UC07ZTiBUTi6qMu74EGZY8DA" }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/imogen-heap/22873602" },
+      { "platform": "bandcamp", "url": "https://imogenheap.bandcamp.com" }
+    ],
+    "featuredAlbums": [
+      { "title": "Speak for Yourself", "year": "2005", "mbReleaseGroupId": "a100260d-0576-372f-a07b-4b22db1a77e2" },
+      { "title": "Ellipse", "year": "2009", "mbReleaseGroupId": "bde4fd36-2072-4dca-a1d7-5f4a45ee2dcb" }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      { "youtubeId": "UYIAfiVGluk", "title": "Hide and Seek" },
+      { "youtubeId": "roPiy2JydwA", "title": "Headlock" },
+      { "youtubeId": "iqjWodek8ZM", "title": "Goodnight and Go" },
+      { "youtubeId": "QKiZJCFYAbg", "title": "Tiny Human" }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Imogen Heap released her debut album, iMegaphone, in 1998 at age 20, but first reached a wide audience as half of Frou Frou, her duo with producer Guy Sigsworth, whose 2002 album Details became a cult favorite. When the duo went quiet, she struck out alone — writing, performing, engineering, and producing everything herself.",
+      "Speak for Yourself (2005), self-funded and self-released, changed her career. Its a cappella closer \"Hide and Seek,\" built from her voice run through a harmonizer, became one of the most recognizable songs of the decade after appearing in The O.C. and being sampled widely across pop and hip-hop. Its follow-up, Ellipse (2009), won her a Grammy Award for Best Engineered Album, Non-Classical — a rare honor for an artist engineering her own record.",
+      "Heap has spent much of her career at the intersection of music and technology: she co-developed the Mi.Mu gestural gloves, which let her sculpt sound with hand movements on stage; launched the Creative Passport project for artist data; and composed the score for the stage play Harry Potter and the Cursed Child. Her 2014 album Sparks gathered collaborative, tech-driven experiments recorded around the world.",
+      "In 2025 she revisited her breakthrough with a 20th-anniversary remaster of Speak for Yourself, and in April 2026 she returned to the stage at London's Roundhouse. She continues to release music and build tools on her own terms from her studio in England."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming shows are officially announced right now — imogenheap.com is the place to watch for new dates.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-04-17",
+        "venue": "Roundhouse",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/imogen-heap/2026/roundhouse-london-england-6377ba13.html",
+        "note": ""
+      },
+      {
+        "date": "2021-04-20",
+        "venue": "Royal Albert Hall",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/imogen-heap/2021/royal-albert-hall-london-england-b815156.html",
+        "note": ""
+      },
+      {
+        "date": "2019-11-15",
+        "venue": "Roundhouse",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/imogen-heap/2019/roundhouse-london-england-7b9a86a0.html",
+        "note": ""
+      },
+      {
+        "date": "2019-11-12",
+        "venue": "The Bridgewater Hall",
+        "city": "Manchester, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/imogen-heap/2019/the-bridgewater-hall-manchester-england-4b9aafe2.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Speak for Yourself (20th Anniversary Remaster)",
+        "description": "CD and download edition from Imogen Heap's official shop.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://shop.imogenheap.com/release/537072-imogen-heap-speak-for-yourself-20th-anniversary-remaster"
+      },
+      {
+        "name": "Speak for Yourself (20th Anniversary Remaster) Tee",
+        "description": "Anniversary T-shirt from Imogen Heap's official shop.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://shop.imogenheap.com/release/550399-imogen-heap-speak-for-yourself-20th-anniversary-remaster-tee"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Imogen Heap: Tiny Desk Concert",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2019/06/20/733554054/imogen-heap-tiny-desk-concert"
+      },
+      {
+        "title": "Imogen Heap Brings High-Tech Wizardry to NPR's Tiny Desk Concert",
+        "outlet": "Billboard",
+        "url": "https://www.billboard.com/music/rock/imogen-heap-tiny-desk-concert-video-8516824/"
+      },
+      {
+        "title": "Imogen Heap: A Quiet Place",
+        "outlet": "The Line of Best Fit",
+        "url": "https://www.thelineofbestfit.com/features/longread/imogen-heap-a-quiet-place-interview"
+      },
+      {
+        "title": "Imogen Heap on Her New App, Making Music with Gloves & Ariana Grande",
+        "outlet": "Refinery29",
+        "url": "https://www.refinery29.com/en-gb/imogen-heap-tech-interview-creative-passport"
+      }
+    ]
+  },
+  "footer": { "tagline": "Music in balance", "attribution": "an Ear Clef page" }
+}

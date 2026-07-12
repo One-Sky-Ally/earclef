@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "slug": "modest-mouse",
+  "meta": {
+    "title": "Modest Mouse — Ear Clef",
+    "description": "Modest Mouse, the Pacific Northwest indie rock institution behind The Moon & Antarctica and Good News for People Who Love Bad News.",
+    "ogImage": "/images/og-modest-mouse.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/modest-mouse"
+  },
+  "integrations": {
+    "spotify": { "artistId": "" },
+    "youtube": { "channelId": "UCBEGcyJUC-0SFTJ1t45yOzw" },
+    "setlistfm": { "mbid": "a96ac800-bfcb-412a-8a63-0a98df600700" },
+    "itunes": { "artistId": "467112" }
+  },
+  "hero": {
+    "name": "Modest Mouse",
+    "identity": "Jagged, restless Pacific Northwest indie rock asking big questions in a cracked voice.",
+    "tagline": "Hear here!",
+    "location": "Portland, United States",
+    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "socials": [
+      { "platform": "website", "url": "https://www.modestmouse.com" },
+      { "platform": "instagram", "url": "https://www.instagram.com/modestmouse/" },
+      { "platform": "x", "url": "https://x.com/modestmouseband" },
+      { "platform": "facebook", "url": "https://www.facebook.com/modestmouse" },
+      { "platform": "youtube", "url": "https://www.youtube.com/channel/UCBEGcyJUC-0SFTJ1t45yOzw" }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/modest-mouse/467112" },
+      { "platform": "bandcamp", "url": "https://modestmouse.bandcamp.com" }
+    ],
+    "featuredAlbums": [
+      { "title": "The Moon & Antarctica", "year": "2000", "mbReleaseGroupId": "a8e26959-b3b2-3440-a74a-0dc06cd6310d" },
+      { "title": "Good News for People Who Love Bad News", "year": "2004", "mbReleaseGroupId": "65b47520-2e58-3bc2-a755-34ff35f23ad5" }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      { "youtubeId": "CTAud5O7Qqk", "title": "Float On" },
+      { "youtubeId": "penvn9VL32Y", "title": "Dashboard" },
+      { "youtubeId": "TPhnOKmhbBw", "title": "Ocean Breathes Salty" },
+      { "youtubeId": "he16ctlqAgU", "title": "Lampshades on Fire" }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Modest Mouse formed in the early 1990s in Issaquah, Washington, around singer-guitarist Isaac Brock, drummer Jeremiah Green, and bassist Eric Judy. Their sprawling early records — This Is a Long Drive for Someone with Nothing to Think About and The Lonesome Crowded West (both 1996-97) — turned highway sprawl, dead-end towns, and existential dread into some of the most influential indie rock of the decade.",
+      "The Moon & Antarctica (2000), their major-label debut, traded some of that rawness for eerie, spacious production and remains widely regarded as their masterpiece. Four years later, Good News for People Who Love Bad News made them unlikely mainstream stars: \"Float On\" became a generational hit, the album went multi-platinum, and the band earned Grammy nominations. We Were Dead Before the Ship Even Sank (2007), recorded with former Smiths guitarist Johnny Marr, debuted at number one in the US.",
+      "The band weathered long gaps and lineup changes — Strangers to Ourselves arrived in 2015 and The Golden Casket in 2021 — and suffered a profound loss when founding drummer Jeremiah Green died of cancer at the end of 2022. In June 2026 Modest Mouse released An Eraser and a Maze on Brock's own Glacial Pace label, their first fully independent album since the 1990s and their first without Green.",
+      "Now based in Portland, Oregon, the band remain a fixture of North American stages, spending summer 2026 on tour from Bonnaroo to the Pacific Northwest."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Modest Mouse are on tour in North America in 2026 — official dates and tickets are listed at modestmouse.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-07-11",
+        "venue": "5th Avenue Theatre",
+        "city": "Seattle, WA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/modest-mouse/2026/5th-avenue-theatre-seattle-wa-6377869b.html",
+        "note": ""
+      },
+      {
+        "date": "2026-07-07",
+        "venue": "Victoria Park",
+        "city": "Saskatoon, SK, Canada",
+        "setlistUrl": "https://www.setlist.fm/setlist/modest-mouse/2026/victoria-park-saskatoon-sk-canada-5b49aba0.html",
+        "note": "Saskatchewan Jazz Festival 2026"
+      },
+      {
+        "date": "2026-07-03",
+        "venue": "The Orpheum",
+        "city": "Vancouver, BC, Canada",
+        "setlistUrl": "https://www.setlist.fm/setlist/modest-mouse/2026/the-orpheum-vancouver-bc-canada-5349aba9.html",
+        "note": ""
+      },
+      {
+        "date": "2026-06-14",
+        "venue": "Great Stage Park",
+        "city": "Manchester, TN, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/modest-mouse/2026/great-stage-park-manchester-tn-734c323d.html",
+        "note": "Bonnaroo 2026"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "An Eraser And A Maze Album Tee",
+        "description": "Album tee from the official Modest Mouse shop.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://shop.modestmouse.com/products/an-eraser-and-a-maze-album-tee"
+      },
+      {
+        "name": "Vintage Earth Moth Tee",
+        "description": "T-shirt from the official Modest Mouse shop.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://shop.modestmouse.com/products/moth-tee"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "The Moon & Antarctica Turns 20",
+        "outlet": "Stereogum",
+        "url": "https://stereogum.com/2087064/modest-mouse-the-moon-antarctica-review-20-years/reviews/the-anniversary"
+      },
+      {
+        "title": "Review: Modest Mouse's Messy, Enjoyable Album 'An Eraser and a Maze'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/modest-mouse-an-eraser-and-a-maze-review-1235573152/"
+      },
+      {
+        "title": "Modest Mouse: An Eraser and a Maze — Review",
+        "outlet": "Under the Radar",
+        "url": "https://www.undertheradarmag.com/reviews/an_eraser_and_a_maze_modest_mouse"
+      }
+    ]
+  },
+  "footer": { "tagline": "Music in balance", "attribution": "an Ear Clef page" }
+}

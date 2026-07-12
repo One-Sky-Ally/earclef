@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "slug": "oumou-sangare",
+  "meta": {
+    "title": "Oumou Sangaré — Ear Clef",
+    "description": "The Songbird of Wassoulou — Malian singer whose fearless songs of women's lives made her a world music icon.",
+    "ogImage": "/images/og-oumou-sangare.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/oumou-sangare"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCdyPkcbix5sQsch8BBoeFBQ"
+    },
+    "setlistfm": {
+      "mbid": "2013f3af-51a3-404d-9afc-91b3f277ea4e"
+    },
+    "itunes": {
+      "artistId": "6760152"
+    }
+  },
+  "hero": {
+    "name": "Oumou Sangaré",
+    "identity": "The Songbird of Wassoulou, carrying Mali's hunter-society rhythms and women's stories to the world.",
+    "tagline": "Hear here!",
+    "location": "Bamako, Mali",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/oumou.sang/"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/oumousangareofficiel/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCdyPkcbix5sQsch8BBoeFBQ"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/oumou-sangar%C3%A9/6760152"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://oumousangare.bandcamp.com"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Moussolou",
+        "year": "1991",
+        "mbReleaseGroupId": "7be8494e-202a-3f8d-b6e0-8ea6d4fcfc75"
+      },
+      {
+        "title": "Mogoya",
+        "year": "2017",
+        "mbReleaseGroupId": "441c4066-148f-48d2-824e-deb7d7ff782e"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "tulfimCd6JE",
+        "title": "Wassulu Don (Official Video)"
+      },
+      {
+        "youtubeId": "t4eXmjhudb8",
+        "title": "Kamelemba (Official Video)"
+      },
+      {
+        "youtubeId": "VFPtv-MXEoE",
+        "title": "Been (Clip Officiel)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Oumou Sangaré was born in Bamako, Mali, in 1968, the daughter of Wassoulou singer Aminata Diakité. Singing at street weddings as a child to help support her family after her father left, she was touring internationally with the percussion ensemble Djoliba before she was out of her teens, steeped in the pentatonic melodies, kamele n'goni grooves and dance rhythms of the Wassoulou region south of the Niger River.",
+      "Her debut album Moussolou ('Women'), recorded at twenty-one, became a phenomenon across West Africa, selling hundreds of thousands of copies and announcing a startlingly direct new voice: songs that confronted polygamy, arranged marriage and the price of a woman's freedom. Signed to World Circuit Records, she carried that message worldwide with Ko Sira (1993) and Worotan (1996), earning the title 'The Songbird of Wassoulou'.",
+      "Sangaré's later career has balanced music with activism and business — she has served as a UN FAO Goodwill Ambassador, built enterprises in Mali, and mentored a generation of West African singers. Seya (2009) earned a Grammy nomination, and she shared a Grammy for her appearance on Herbie Hancock's 'Imagine' project. Mogoya (2017), featuring Tony Allen, boldly mixed Wassoulou tradition with electronics, while Timbuktu (2022) returned to acoustic textures and won wide critical acclaim.",
+      "Now dividing her time between Bamako and the international stage, Sangaré remains one of Africa's most commanding live performers, headlining festivals and concert halls from Berkeley to Brussels to London's Southbank."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming dates verified at publish time — check her official channels for tour news.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-11-23",
+        "venue": "Queen Elizabeth Hall",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/oumou-sangare/2025/queen-elizabeth-hall-london-england-6b4d621a.html",
+        "note": ""
+      },
+      {
+        "date": "2025-10-24",
+        "venue": "Stora Teatern",
+        "city": "Gothenburg, Sweden",
+        "setlistUrl": "https://www.setlist.fm/setlist/oumou-sangare/2025/stora-teatern-gothenburg-sweden-b4e1d82.html",
+        "note": ""
+      },
+      {
+        "date": "2024-07-06",
+        "venue": "Ossegempark / Parc d'Osseghem",
+        "city": "Laken / Laeken, Belgium",
+        "setlistUrl": "https://www.setlist.fm/setlist/oumou-sangare/2024/ossegempark-parc-dosseghem-laken-laeken-belgium-4b54836e.html",
+        "note": ""
+      },
+      {
+        "date": "2024-04-10",
+        "venue": "Freight & Salvage",
+        "city": "Berkeley, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/oumou-sangare/2024/freight-and-salvage-berkeley-ca-7bab52a8.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Official World Circuit Store",
+        "description": "Vinyl, CDs and merchandise from the official Oumou Sangaré World Circuit Records store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://oumousangare.tmstor.es/"
+      },
+      {
+        "name": "Bandcamp",
+        "description": "Music and releases direct from Oumou Sangaré on Bandcamp.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://oumousangare.bandcamp.com"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Oumou Sangaré — Timbuktu (Album Review)",
+        "outlet": "Uncut",
+        "url": "https://www.uncut.co.uk/reviews/album/oumou-sangare-timbuktu-138197/"
+      },
+      {
+        "title": "Oumou Sangaré: Timbuktu (Album Review)",
+        "outlet": "PopMatters",
+        "url": "https://www.popmatters.com/oumou-sangare-timbuktu-review"
+      },
+      {
+        "title": "Oumou Sangaré — Timbuktu (Album Review)",
+        "outlet": "Loud And Quiet",
+        "url": "https://www.loudandquiet.com/reviews/oumou-sangare-timbuktu/"
+      },
+      {
+        "title": "Oumou Sangaré — Artist Page",
+        "outlet": "World Circuit Records",
+        "url": "https://www.worldcircuit.co.uk/artists/oumou-sangare/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

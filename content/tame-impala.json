@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "slug": "tame-impala",
+  "meta": {
+    "title": "Tame Impala — Ear Clef",
+    "description": "Tame Impala's whole universe in one place: music, videos, story, setlists, shows, and merch. An Ear Clef page.",
+    "ogImage": "/images/og-tame-impala.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/tame-impala"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCdI8MAC5HoPJSJ4zrgDDI-Q"
+    },
+    "setlistfm": {
+      "mbid": "63aa26c3-d59b-4da4-84ac-716b54f1ef4d"
+    },
+    "itunes": {
+      "artistId": "290242959"
+    }
+  },
+  "hero": {
+    "name": "Tame Impala",
+    "identity": "Kevin Parker's one-man psychedelic universe from Perth, built alone in the studio and unleashed as a band onstage.",
+    "tagline": "Hear here!",
+    "location": "Perth, Australia",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://tameimpala.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/tameimpala"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/tameimpala"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCdI8MAC5HoPJSJ4zrgDDI-Q"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/tame-impala/290242959"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Currents",
+        "year": "2015",
+        "mbReleaseGroupId": "08aa7a6c-3e43-4459-87b2-e47faf3a088a"
+      },
+      {
+        "title": "Lonerism",
+        "year": "2012",
+        "mbReleaseGroupId": "b0864c80-2726-4761-bf66-a97610162a2c"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "sBzrzS1Ag_g",
+        "title": "The Less I Know the Better"
+      },
+      {
+        "youtubeId": "pFptt7Cargc",
+        "title": "Let It Happen"
+      },
+      {
+        "youtubeId": "wycjnCCgUes",
+        "title": "Feels Like We Only Go Backwards"
+      },
+      {
+        "youtubeId": "utCjuKDXQsE",
+        "title": "Lost in Yesterday"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Tame Impala is the recording project of Kevin Parker, who writes, performs, and produces essentially everything himself in Perth, Western Australia — one of the most isolated major cities on Earth, a fact that has always colored the music's dreamy self-containment. What began as home-recorded psych-rock jams became a debut album, 'InnerSpeaker' (2010), that announced a rare talent for melting sixties psychedelia into modern headphone sound.",
+      "'Lonerism' (2012) sharpened the songwriting and won worldwide acclaim, but it was 'Currents' (2015) that transformed the project: Parker traded fuzz guitars for synthesizers and disco basslines, and songs like 'The Less I Know the Better' and 'Let It Happen' became generational staples. The pivot made Tame Impala a festival headliner and made Parker an in-demand collaborator for artists from Rihanna to Dua Lipa.",
+      "'The Slow Rush' (2020) meditated on time and arrived days before the world shut down; its tour eventually filled arenas anyway. Onstage, Tame Impala expands from a solo project into a full live band, wrapped in one of the most celebrated light shows in contemporary music.",
+      "In October 2025 Parker released 'Deadbeat', a fifth album inspired by the outdoor rave culture — the 'bush doofs' — of Western Australia, and took its harder, dancefloor-leaning material on a world arena tour through 2026, from European arenas in the spring to North American dates in the summer."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "The Deadbeat Tour continues through 2026 — official dates and tickets are announced at tameimpala.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-07-07",
+        "venue": "Kaseya Center",
+        "city": "Miami, FL, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/tame-impala/2026/kaseya-center-miami-fl-b4b1dca.html",
+        "note": "Deadbeat Tour"
+      },
+      {
+        "date": "2026-05-13",
+        "venue": "3Arena",
+        "city": "Dublin, Ireland",
+        "setlistUrl": "https://www.setlist.fm/setlist/tame-impala/2026/3arena-dublin-ireland-3341cce1.html",
+        "note": "Deadbeat Tour"
+      },
+      {
+        "date": "2026-05-07",
+        "venue": "The O2 Arena",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/tame-impala/2026/the-o2-arena-london-england-2b41cc1a.html",
+        "note": "Deadbeat Tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Tame Impala Official Store",
+        "description": "The official store hub — pick your region for apparel, vinyl, and Deadbeat merch.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://tameimpala.lnk.to/tameimpalastore"
+      },
+      {
+        "name": "Tame Impala US Store",
+        "description": "The North American official store for clothing, music, and accessories.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://storeus.tameimpala.com/"
+      },
+      {
+        "name": "tameimpala.com",
+        "description": "The official site — tour dates, news, and store links straight from the source.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://tameimpala.com"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Tame Impala: Deadbeat — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/tame-impala-deadbeat/"
+      },
+      {
+        "title": "Tame Impala 'Deadbeat' Review",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/tame-impala-deadbeat-review-1235448413/"
+      },
+      {
+        "title": "Premature Evaluation: Tame Impala — Deadbeat",
+        "outlet": "Stereogum",
+        "url": "https://stereogum.com/2326587/premature-evaluation-tame-impala-deadbeat/reviews/premature-evaluation"
+      },
+      {
+        "title": "Deadbeat (album)",
+        "outlet": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Deadbeat_(album)"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "slug": "nick-drake",
+  "meta": {
+    "title": "Nick Drake — Ear Clef",
+    "description": "Three quiet albums, barely heard in his lifetime, that became some of the most loved English folk music ever recorded.",
+    "ogImage": "/images/og-nick-drake.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/nick-drake"
+  },
+  "integrations": {
+    "spotify": { "artistId": "" },
+    "youtube": { "channelId": "UCw00GrG5ax6BsymeAgU3wmw" },
+    "setlistfm": { "mbid": "99ea432a-e3d8-42cb-9d5e-db316a6a8458" },
+    "itunes": { "artistId": "1285818" }
+  },
+  "hero": {
+    "name": "Nick Drake",
+    "identity": "A voice like evening light on an English garden — gone at 26, still arriving.",
+    "tagline": "Hear here!",
+    "location": "Tanworth-in-Arden, United Kingdom",
+    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "socials": [
+      { "platform": "website", "url": "https://www.brytermusic.com" },
+      { "platform": "instagram", "url": "https://www.instagram.com/nickdrakeofficial" },
+      { "platform": "facebook", "url": "https://www.facebook.com/NickDrakeOfficial" },
+      { "platform": "youtube", "url": "https://www.youtube.com/channel/UCw00GrG5ax6BsymeAgU3wmw" }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/nick-drake/1285818" }
+    ],
+    "featuredAlbums": [
+      { "title": "Five Leaves Left", "year": "1969", "mbReleaseGroupId": "b9c4fc17-0dc5-3aa5-b1b9-08e1446e5bea" },
+      { "title": "Pink Moon", "year": "1972", "mbReleaseGroupId": "740ec10a-e887-38a6-a04d-fe2069c9e2a7" }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      { "youtubeId": "fv49xKB8xUI", "title": "River Man" },
+      { "youtubeId": "DJ6fGiw1Ts0", "title": "River Man — Famous Blue Cable feat. Feist (Official Film)" },
+      { "youtubeId": "oDDUf6WK_ys", "title": "Which Will — Christian Lee Hutson & Elanor Moss (Official Film)" }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Nick Drake was born in 1948 and raised in the Warwickshire village of Tanworth-in-Arden. Discovered while a student at Cambridge and signed to Island Records, he recorded his debut, Five Leaves Left, in 1969 with producer Joe Boyd — a set of hushed, harmonically sophisticated songs framed by Robert Kirby's string arrangements, released to little commercial notice.",
+      "Bryter Layter followed in 1971 with a fuller, jazz-tinged band sound, but sales again disappointed. For his final album, Pink Moon, Drake stripped everything away: recorded with engineer John Wood in two late-night sessions in October 1971, it is just voice and acoustic guitar, with a single piano overdub on the title track. Released in February 1972, it barely registered at the time.",
+      "Drake was intensely shy and rarely performed; his documented live appearances number only in the dozens, and he gave up playing to audiences well before his death. Struggling with depression, he died at his family home on 25 November 1974, aged 26, leaving three albums that had sold only a few thousand copies between them.",
+      "The decades since have reversed that verdict completely. Championed by musicians, reissues, and — famously — a 1999 Volkswagen commercial that introduced Pink Moon to millions, Drake is now recognised as one of the most influential English songwriters of his era, his catalogue tended by Bryter Music, the estate run on behalf of his family."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Nick Drake died in 1974; the shows below are historical performances documented by the setlist.fm community.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1970-08-01",
+        "venue": "Les Cousins",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/nick-drake/1970/les-cousins-london-england-33be6009.html",
+        "note": "One of his last documented club appearances"
+      },
+      {
+        "date": "1970-03-30",
+        "venue": "Royal Festival Hall",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/nick-drake/1970/royal-festival-hall-london-england-1bd9c1ec.html",
+        "note": ""
+      },
+      {
+        "date": "1970-03-23",
+        "venue": "Broadcasting House",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/nick-drake/1970/broadcasting-house-london-england-7b522e5c.html",
+        "note": "BBC radio session"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      { "title": "Nick Drake — Reflecting on the 50th Anniversary of Pink Moon", "outlet": "Under the Radar", "url": "https://www.undertheradarmag.com/news/nick_drake_reflecting_on_the_50th_anniversary_of_pink_moon/" },
+      { "title": "Cally Callomon and Jeremy Lascelles on the legacy of Nick Drake", "outlet": "Music Week", "url": "https://www.musicweek.com/labels/read/cally-callomon-and-jeremy-lascelles-on-the-legacy-of-nick-drake/088185" },
+      { "title": "Nick Drake's estate agrees global publishing deal for his back catalogue", "outlet": "NME", "url": "https://www.nme.com/news/music/nick-drakes-estate-agrees-global-publishing-deal-for-his-back-catalogue-2859857" }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

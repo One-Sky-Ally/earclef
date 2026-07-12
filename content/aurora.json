@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "slug": "aurora",
+  "meta": {
+    "title": "AURORA — Ear Clef",
+    "description": "Norwegian singer-songwriter Aurora Aksnes, whose otherworldly electro-folk pop has grown from viral debut \"Runaway\" into a global movement.",
+    "ogImage": "/images/og-aurora.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/aurora"
+  },
+  "integrations": {
+    "spotify": { "artistId": "" },
+    "youtube": { "channelId": "UC7Lhhngb9lLW6tuPddEM62A" },
+    "setlistfm": { "mbid": "484a4e90-6899-4e4b-a948-a2255d365340" },
+    "itunes": { "artistId": "947171999" }
+  },
+  "hero": {
+    "name": "AURORA",
+    "identity": "A voice from the Norwegian fjords, singing for nature, warriors, and weirdos alike.",
+    "tagline": "Hear here!",
+    "location": "Stavanger, Norway",
+    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "socials": [
+      { "platform": "website", "url": "https://www.aurora-music.com/" },
+      { "platform": "instagram", "url": "https://www.instagram.com/auroramusic/" },
+      { "platform": "x", "url": "https://x.com/AURORAmusic" },
+      { "platform": "facebook", "url": "https://www.facebook.com/iamAURORA" },
+      { "platform": "youtube", "url": "https://www.youtube.com/@iamAURORAVEVO" }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/aurora/947171999" }
+    ],
+    "featuredAlbums": [
+      { "title": "All My Demons Greeting Me as a Friend", "year": "2016", "mbReleaseGroupId": "59f6afa7-b6c7-4120-b16e-f0a7d6360da9" },
+      { "title": "The Gods We Can Touch", "year": "2022", "mbReleaseGroupId": "8a6b101d-1cf1-4b43-813a-8bac67462495" }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      { "youtubeId": "d_HlPboLRL8", "title": "Runaway" },
+      { "youtubeId": "K17df81RL9Y", "title": "Cure For Me" },
+      { "youtubeId": "_Mc_OM5oNA8", "title": "The Seed" }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Aurora Aksnes was born in Stavanger, Norway, and grew up writing songs in near-secrecy before her early demos — starting with \"Puppet\" in 2012 — found their way online. By 2015 her cover of Oasis' \"Half the World Away\" was soundtracking the John Lewis Christmas advert, and \"Runaway,\" the song she wrote at eleven, would go on to become a slow-burning global phenomenon with well over a billion streams and a fiercely devoted fanbase she calls her warriors and weirdos.",
+      "Her 2016 debut, All My Demons Greeting Me as a Friend, established the AURORA blueprint: crystalline electro-folk built on Nordic melancholy, nature mysticism, and an unmistakable voice. She followed it with the two-part Infections of a Different Kind (Step I) and A Different Kind of Human (Step II), lent her voice to Frozen II as the call of \"Into the Unknown,\" and scored the animated film WolfWalkers.",
+      "The Gods We Can Touch (2022) reimagined Greek mythology as glittering art-pop, while What Happened to the Heart? (2024) turned inward and outward at once — an album about apathy, empathy, and staying human in a manipulated world, which she unpacked in interviews with NME and DIY. An outspoken environmentalist, she remains one of Norway's most singular pop exports.",
+      "On stage she is a force: recent tours have carried her from London's Union Chapel to Mexico City's Corona Capital festival and a headline night at Barcelona's Palau Sant Jordi, with a return to London's Roundhouse announced for late 2026."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "One officially announced date so far — more are typically added throughout the year via aurora-music.com.",
+    "upcoming": [
+      {
+        "date": "2026-10-28",
+        "venue": "Roundhouse",
+        "city": "London, UK",
+        "note": "Announced via Ticketmaster and Songkick"
+      }
+    ],
+    "past": [
+      {
+        "date": "2026-01-29",
+        "venue": "Palau Sant Jordi",
+        "city": "Barcelona, Spain",
+        "setlistUrl": "https://www.setlist.fm/setlist/aurora/2026/palau-sant-jordi-barcelona-spain-5b4a47fc.html"
+      },
+      {
+        "date": "2025-12-10",
+        "venue": "Union Chapel",
+        "city": "London, UK",
+        "setlistUrl": "https://www.setlist.fm/setlist/aurora/2025/union-chapel-london-england-234c540f.html"
+      },
+      {
+        "date": "2025-11-15",
+        "venue": "Autódromo Hermanos Rodríguez",
+        "city": "Mexico City, Mexico",
+        "setlistUrl": "https://www.setlist.fm/setlist/aurora/2025/autodromo-hermanos-rodriguez-mexico-city-mexico-2b44d0b6.html",
+        "note": "Corona Capital festival"
+      },
+      {
+        "date": "2025-11-08",
+        "venue": "Ciudad Empresarial",
+        "city": "Santiago, Chile",
+        "setlistUrl": "https://www.setlist.fm/setlist/aurora/2025/ciudad-empresarial-santiago-chile-b4325c6.html"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Official Artist Store",
+        "description": "Apparel, music, and books from AURORA's official store, linked from aurora-music.com.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://shop.aurora-music.com/"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "AURORA talks 'What Happened To The Heart?': \"Apathy is the biggest enemy to progress\"",
+        "outlet": "NME",
+        "url": "https://www.nme.com/features/music-interviews/aurora-interview-2024-what-happened-to-the-heart-3610710"
+      },
+      {
+        "title": "Aurora on festivals, finding connection, and fourth album 'What Happened To The Heart?'",
+        "outlet": "DIY Magazine",
+        "url": "https://diymag.com/interview/aurora-what-happened-to-the-heart"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

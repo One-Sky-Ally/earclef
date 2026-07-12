@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "slug": "florence-and-the-machine",
+  "meta": {
+    "title": "Florence + the Machine — Ear Clef",
+    "description": "Florence + the Machine, the London art-rock band led by Florence Welch, from Lungs to Everybody Scream.",
+    "ogImage": "/images/og-florence-and-the-machine.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/florence-and-the-machine"
+  },
+  "integrations": {
+    "spotify": { "artistId": "" },
+    "youtube": { "channelId": "UC5MujsH-hrVWHBBfSSmv18A" },
+    "setlistfm": { "mbid": "5fee3020-513b-48c2-b1f7-4681b01db0c6" },
+    "itunes": { "artistId": "281070699" }
+  },
+  "hero": {
+    "name": "Florence + the Machine",
+    "identity": "Cathedral-sized art rock built on Florence Welch's hurricane of a voice.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "socials": [
+      { "platform": "website", "url": "https://florenceandthemachine.net" },
+      { "platform": "instagram", "url": "https://www.instagram.com/florenceandthemachine/" },
+      { "platform": "x", "url": "https://x.com/florencemachine" },
+      { "platform": "facebook", "url": "https://www.facebook.com/florenceandthemachine" },
+      { "platform": "youtube", "url": "https://www.youtube.com/channel/UC5MujsH-hrVWHBBfSSmv18A" }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/florence-the-machine/281070699" }
+    ],
+    "featuredAlbums": [
+      { "title": "Lungs", "year": "2009", "mbReleaseGroupId": "50fe703f-173e-496a-9155-b2a495d704e5" },
+      { "title": "Ceremonials", "year": "2011", "mbReleaseGroupId": "998f1bc8-6703-49fe-8aed-028ec04a14f2" }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      { "youtubeId": "iWOyfLBYtuU", "title": "Dog Days Are Over" },
+      { "youtubeId": "WbN0nX61rIs", "title": "Shake It Out" },
+      { "youtubeId": "B9v8jLBrvug", "title": "Ship to Wreck" },
+      { "youtubeId": "L62LtChAwww", "title": "King" }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Florence + the Machine took shape in London in 2007 around singer and songwriter Florence Welch and keyboardist Isabella Summers, whose early studio experiments as \"Florence Robot / Isa Machine\" gave the band its name. Welch's voice — enormous, raw, and theatrical — quickly set the project apart from the indie pack, and a run of early singles made them one of the most talked-about new British acts of the late 2000s.",
+      "Their 2009 debut, Lungs, climbed to number one in the UK and won the Brit Award for best British album, powered by songs like \"Dog Days Are Over\" and their cover of \"You've Got the Love.\" The follow-up, Ceremonials (2011), went bigger and darker — chamber-pop arrangements, harps, and choirs behind hymns like \"Shake It Out\" and \"Never Let Me Go\" — and cemented the band as festival headliners, including a top-billing slot at Glastonbury in 2015.",
+      "Later albums traced Welch's own arc: How Big, How Blue, How Beautiful (2015) stripped things back after a period of burnout, High as Hope (2018) turned confessional, and Dance Fever (2022) — another UK number one — wrestled with performance, folklore, and the pull of the stage. In 2025 the band released their sixth album, Everybody Scream, written in the wake of a life-threatening health emergency Welch suffered while touring, and greeted with wide critical acclaim.",
+      "Nearly two decades in, Florence + the Machine remain one of the biggest live draws in British music, spending summer 2026 headlining festivals across Europe — from Milan's I-Days to Mad Cool in Madrid and NOS Alive in Lisbon."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Florence + the Machine are touring Europe through summer 2026 — official dates and tickets are listed at florenceandthemachine.net.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-07-11",
+        "venue": "Passeio Marítimo de Algés",
+        "city": "Oeiras, Portugal",
+        "setlistUrl": "https://www.setlist.fm/setlist/florence-the-machine/2026/passeio-maritimo-de-alges-oeiras-portugal-334ee8dd.html",
+        "note": "NOS Alive 2026"
+      },
+      {
+        "date": "2026-07-09",
+        "venue": "Iberdrola Music",
+        "city": "Madrid, Spain",
+        "setlistUrl": "https://www.setlist.fm/setlist/florence-the-machine/2026/iberdrola-music-region-of-madrid-madrid-spain-3b4fc4d8.html",
+        "note": "Mad Cool Festival 2026"
+      },
+      {
+        "date": "2026-07-03",
+        "venue": "Ippodromo del Galoppo di San Siro",
+        "city": "Milan, Italy",
+        "setlistUrl": "https://www.setlist.fm/setlist/florence-the-machine/2026/ippodromo-del-galoppo-di-san-siro-milan-italy-234ee8fb.html",
+        "note": "I-Days 2026"
+      },
+      {
+        "date": "2026-06-28",
+        "venue": "Marlay Park",
+        "city": "Dublin, Ireland",
+        "setlistUrl": "https://www.setlist.fm/setlist/florence-the-machine/2026/marlay-park-dublin-ireland-234c1483.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Everybody Scream Album T-Shirt",
+        "description": "Album tee from the official Florence + the Machine store.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://store.florenceandthemachine.net/products/everybody-scream-album-t-shirt"
+      },
+      {
+        "name": "Too Feminine To Function Hoodie",
+        "description": "Hoodie from the official Florence + the Machine store.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://store.florenceandthemachine.net/products/too-feminine-to-function-hoodie"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Florence + the Machine 'Everybody Scream' Review",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/florence-and-the-machine-everybody-scream-review-1235457557/"
+      },
+      {
+        "title": "Florence + The Machine — 'Everybody Scream' Review",
+        "outlet": "NME",
+        "url": "https://www.nme.com/reviews/album/florence-and-the-machine-everybody-scream-review-3903901"
+      },
+      {
+        "title": "Florence + the Machine Bring Brutal Honesty and Cathartic Transformations to Everybody Scream",
+        "outlet": "Consequence",
+        "url": "https://consequence.net/2025/10/florence-and-the-machine-everybody-scream-album-review/"
+      },
+      {
+        "title": "Florence Welch: 'Anxiety Is the Hum of My Life — Until I Step Onstage'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-features/florence-welch-new-album-everybody-scream-interview-1235456844/"
+      }
+    ]
+  },
+  "footer": { "tagline": "Music in balance", "attribution": "an Ear Clef page" }
+}

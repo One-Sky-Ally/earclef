@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "slug": "hundred-waters",
+  "meta": {
+    "title": "Hundred Waters — Ear Clef",
+    "description": "Florida-born electronic trio whose fragile, luminous songcraft earned Pitchfork acclaim and founded the FORM Arcosanti festival before going quiet.",
+    "ogImage": "/images/og-hundred-waters.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/hundred-waters"
+  },
+  "integrations": {
+    "spotify": { "artistId": "" },
+    "youtube": { "channelId": "UCPQSuyuiW5IdvEjgjzA-NbQ" },
+    "setlistfm": { "mbid": "49d461f0-3abf-422e-9569-8813e90074d7" },
+    "itunes": { "artistId": "515391293" }
+  },
+  "hero": {
+    "name": "Hundred Waters",
+    "identity": "Fragile electronics and Nicole Miglis' hushed voice, ringing like a bell from somewhere far off.",
+    "tagline": "Hear here!",
+    "location": "Gainesville, United States",
+    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "socials": [
+      { "platform": "instagram", "url": "https://www.instagram.com/hundredwaters/" },
+      { "platform": "x", "url": "https://x.com/hundredwaters" },
+      { "platform": "facebook", "url": "https://www.facebook.com/hundredwaters" },
+      { "platform": "youtube", "url": "https://www.youtube.com/@hundredwatersband" }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/hundred-waters/515391293" },
+      { "platform": "bandcamp", "url": "https://hundredwaters.bandcamp.com/" }
+    ],
+    "featuredAlbums": [
+      { "title": "The Moon Rang Like a Bell", "year": "2014", "mbReleaseGroupId": "18a8d305-ebf4-465e-9da6-f09fc0bc9627" },
+      { "title": "Communicating", "year": "2017", "mbReleaseGroupId": "0522609c-deda-45f1-8a9a-4ef9e6520ab3" }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      { "youtubeId": "vo-8Oa2t4Ro", "title": "Murmurs (Official Video)" },
+      { "youtubeId": "3Ph13QzfQHU", "title": "Cavity (Official Video)" },
+      { "youtubeId": "_2Nh-gbEs5o", "title": "Show Me Love" }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Hundred Waters formed in Gainesville, Florida in 2011 around singer and multi-instrumentalist Nicole Miglis, producer Trayer Tryon, and drummer Zach Tetreault. Their self-titled 2012 debut — a strange, gorgeous weave of folk instrumentation and electronic texture — caught the ear of an unlikely patron: Skrillex, who signed the band to his OWSLA label despite them sounding like nothing else on its roster.",
+      "Their second album, The Moon Rang Like a Bell (2014), distilled the project into something spare and haunted, earning Pitchfork's Best New Music designation. The band's ambitions reached beyond records: in 2014 they co-founded FORM Arcosanti, an intimate, invite-driven festival held in Paolo Soleri's experimental desert town in Arizona, which grew into one of the most beloved small gatherings in American music.",
+      "Communicating (2017) expanded their palette and sent them on a final stretch of touring — including Coachella and a hometown-adjacent FORM appearance in 2018 — before the band stepped back from the road. They have been largely quiet as a live act since.",
+      "Quiet, but not gone: now based in Los Angeles, the band has continued to surface music on Bandcamp, releasing the collection Towers in 2024 and Re: Communicating, a reworking of their 2017 album, in 2025. No new shows have been announced."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "The band has been quiet as a live act since 2018 and has no announced shows — though new music has surfaced on their Bandcamp as recently as 2025.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2018-05-13",
+        "venue": "Arcosanti",
+        "city": "Arcosanti, AZ, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/hundred-waters/2018/arcosanti-arcosanti-az-23ed88f7.html",
+        "note": "FORM Arcosanti, the festival the band co-founded"
+      },
+      {
+        "date": "2018-04-14",
+        "venue": "Empire Polo Club",
+        "city": "Indio, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/hundred-waters/2018/empire-polo-club-indio-ca-1becf9a8.html",
+        "note": "Coachella"
+      },
+      {
+        "date": "2017-12-08",
+        "venue": "The Crocodile",
+        "city": "Seattle, WA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/hundred-waters/2017/the-crocodile-seattle-wa-734de6bd.html"
+      },
+      {
+        "date": "2017-12-01",
+        "venue": "El Rey Theatre",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/hundred-waters/2017/el-rey-theatre-los-angeles-ca-53e06fa1.html",
+        "note": "Communicating tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "The Moon Rang Like a Bell (Best New Music review)",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/19311-hundred-waters-the-moon-rang-like-a-bell/"
+      },
+      {
+        "title": "Communicating (album review)",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/hundred-waters-communicating/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

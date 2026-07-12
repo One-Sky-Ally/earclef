@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "slug": "thom-yorke",
+  "meta": {
+    "title": "Thom Yorke — Ear Clef",
+    "description": "Radiohead's singer alone at the machines — restless electronic songcraft from The Eraser to ANIMA and beyond.",
+    "ogImage": "/images/og-thom-yorke.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/thom-yorke"
+  },
+  "integrations": {
+    "spotify": { "artistId": "" },
+    "youtube": { "channelId": "UC9BJwi8Q2AiLtLHdGlWqsrQ" },
+    "setlistfm": { "mbid": "8ed2e0b3-aa4c-4e13-bec3-dc7393ed4d6b" },
+    "itunes": { "artistId": "39753073" }
+  },
+  "hero": {
+    "name": "Thom Yorke",
+    "identity": "A falsetto threaded through circuitry — Radiohead's voice, wandering alone into the glitch.",
+    "tagline": "Hear here!",
+    "location": "Oxford, United Kingdom",
+    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "socials": [
+      { "platform": "website", "url": "https://www.thomyorke.com" },
+      { "platform": "youtube", "url": "https://www.youtube.com/channel/UC9BJwi8Q2AiLtLHdGlWqsrQ" }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/thom-yorke/39753073" }
+    ],
+    "featuredAlbums": [
+      { "title": "The Eraser", "year": "2006", "mbReleaseGroupId": "2a971a81-2f4d-333b-8327-8b2d73c649cf" },
+      { "title": "ANIMA", "year": "2019", "mbReleaseGroupId": "447435e2-8395-45f5-812b-f03f7525c8d6" }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      { "youtubeId": "I03xFqbxUp8", "title": "Last I Heard (…He Was Circling the Drain)" },
+      { "youtubeId": "DL4mtAIpPcU", "title": "Dialing In" },
+      { "youtubeId": "V-PPMG_hGoQ", "title": "Four Ways in Time" },
+      { "youtubeId": "zLvrbxv2J-Q", "title": "Confidenza" }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Thom Yorke is best known as the singer of Radiohead, but his solo catalogue is a body of work with its own gravity. Born in 1968 and raised around Oxford, he stepped out alone in 2006 with The Eraser, an album of clipped beats and processed piano assembled largely on laptops with longtime producer Nigel Godrich — anxious, melodic, and unmistakably his.",
+      "Rather than repeat the trick, Yorke kept mutating. He formed Atoms for Peace to play The Eraser live, then released Tomorrow's Modern Boxes in 2014 through an experimental pay-gated BitTorrent bundle, sidestepping the industry's usual channels entirely. His restlessness extended to film: his 2018 score for Luca Guadagnino's Suspiria remake earned wide acclaim, followed later by music for the Italian thriller Confidenza.",
+      "ANIMA, released in 2019 alongside a Paul Thomas Anderson short film on Netflix, is widely regarded as his strongest solo statement — a dream-logic song cycle about anxiety and sleep, built from the dance-floor materials he had been bending for a decade. Critics called it the first Yorke solo record that felt complete on its own terms.",
+      "He has since kept moving between projects — the band The Smile with Jonny Greenwood and Tom Skinner, and Tall Tales, a 2025 collaborative album with electronic producer Mark Pritchard — while touring solo sets that reassemble his whole catalogue live, one loop at a time."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No officially announced upcoming solo dates verified at the moment — check thomyorke.com for announcements.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-04-22",
+        "venue": "Royal Albert Hall",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/thom-yorke/2026/royal-albert-hall-london-england-377f12f.html",
+        "note": ""
+      },
+      {
+        "date": "2024-11-26",
+        "venue": "ROHM Theatre Kyoto",
+        "city": "Kyoto, Japan",
+        "setlistUrl": "https://www.setlist.fm/setlist/thom-yorke/2024/rohm-theatre-kyoto-kyoto-japan-5b562b08.html",
+        "note": "Everything solo tour"
+      },
+      {
+        "date": "2024-11-24",
+        "venue": "Tokyo Garden Theater",
+        "city": "Tokyo, Japan",
+        "setlistUrl": "https://www.setlist.fm/setlist/thom-yorke/2024/tokyo-garden-theater-tokyo-japan-43562b0b.html",
+        "note": ""
+      },
+      {
+        "date": "2024-11-21",
+        "venue": "Century Hall",
+        "city": "Nagoya, Japan",
+        "setlistUrl": "https://www.setlist.fm/setlist/thom-yorke/2024/century-hall-nagoya-japan-43562b17.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      { "title": "Thom Yorke: ANIMA", "outlet": "Pitchfork", "url": "https://pitchfork.com/reviews/albums/thom-yorke-anima/" },
+      { "title": "Thom Yorke — ANIMA · Album Review", "outlet": "Resident Advisor", "url": "https://ra.co/reviews/23933" }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

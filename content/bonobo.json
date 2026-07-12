@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "slug": "bonobo",
+  "meta": {
+    "title": "Bonobo — Ear Clef",
+    "description": "Bonobo's whole universe in one place: music, videos, story, setlists, shows, and merch. An Ear Clef page.",
+    "ogImage": "/images/og-bonobo.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/bonobo"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCgyl5xVlLLUZVpgfMGw-ETA"
+    },
+    "setlistfm": {
+      "mbid": "9a709693-b4f8-4da9-8cc1-038c911a61be"
+    },
+    "itunes": {
+      "artistId": "416281071"
+    }
+  },
+  "hero": {
+    "name": "Bonobo",
+    "identity": "Simon Green, the Brighton-born producer who turned downtempo electronica into a full live orchestra of sound.",
+    "tagline": "Hear here!",
+    "location": "Brighton, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://bonobomusic.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/si_bonobo"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/bonoboofficial"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCgyl5xVlLLUZVpgfMGw-ETA"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/bonobo/416281071"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://bonobomusic.bandcamp.com"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Black Sands",
+        "year": "2010",
+        "mbReleaseGroupId": "f382cd44-9195-46ce-9362-dadbe16cefe9"
+      },
+      {
+        "title": "Migration",
+        "year": "2017",
+        "mbReleaseGroupId": "d9a5aa9a-6e35-47b1-b74e-b83cb5b3beed"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "WF34N4gJAKE",
+        "title": "Cirrus"
+      },
+      {
+        "youtubeId": "S0Q4gqBUs7c",
+        "title": "Kerala"
+      },
+      {
+        "youtubeId": "ebzEEEdjHj0",
+        "title": "No Reason (feat. Nick Murphy)"
+      },
+      {
+        "youtubeId": "0W-a11Tdk7Y",
+        "title": "Linked"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Bonobo is Simon Green, a producer and DJ from Brighton who emerged from the town's late-nineties downtempo scene and quietly became one of electronic music's most reliable craftsmen. After his 2000 debut 'Animal Magic', he signed to London's Ninja Tune label, where he has remained ever since — an unusually long and steady partnership in a genre that burns through careers quickly.",
+      "'Black Sands' (2010) was the turning point: a record that fused jazz drumming, string arrangements, and club low-end into something warm and cinematic, and gave him the material to build a formidable live band. From there each album widened the aperture — 'The North Borders' (2013) leaned into vocal collaborations, while 'Migration' (2017) and 'Fragments' (2022) both earned Grammy nominations and pushed him into arena and festival headline slots without ever losing the music's patience and detail.",
+      "Green has long balanced two performing lives: the Bonobo live show, a full-band production with strings and guest vocalists, and marathon DJ sets — including his Outlier club night and a celebrated entry in fabric's mix series. That double identity is why he can headline the Hollywood Bowl one month and a Brighton beach or a Shanghai club the next.",
+      "In 2026 he announced 'Distance In Static', his first album since 'Fragments', due 11 September on Ninja Tune. The record features collaborators including Arooj Aftab, Joy Crookes, Nilüfer Yanya, and Ichiko Aoba, with much of it completed at Neil Young's Broken Arrow Ranch in California, and a newly designed live show set to tour North America from November."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "A new Bonobo live tour supporting 'Distance In Static' begins in North America in November 2026 — official dates and tickets via bonobomusic.com and Ninja Tune.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-05-04",
+        "venue": "VAS ear",
+        "city": "Shanghai, China",
+        "setlistUrl": "https://www.setlist.fm/setlist/bonobo/2026/vas-ear-shanghai-china-3741993.html"
+      },
+      {
+        "date": "2025-09-21",
+        "venue": "Hollywood Bowl",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/bonobo/2025/hollywood-bowl-los-angeles-ca-53418f49.html",
+        "note": "DJ set"
+      },
+      {
+        "date": "2025-08-08",
+        "venue": "Golden Gate Park",
+        "city": "San Francisco, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/bonobo/2025/golden-gate-park-san-francisco-ca-b43c1ae.html",
+        "note": "Outside Lands Music & Arts Festival 2025"
+      },
+      {
+        "date": "2025-07-18",
+        "venue": "Brighton Beach",
+        "city": "Brighton, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/bonobo/2025/brighton-beach-brighton-england-634796a3.html",
+        "note": "On The Beach 2025 — a hometown show"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Bonobo on Bandcamp — Merch",
+        "description": "Vinyl, apparel, and the full digital catalog direct from the artist's official Bandcamp.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://bonobomusic.bandcamp.com/merch"
+      },
+      {
+        "name": "Distance In Static — Ninja Tune",
+        "description": "The new album on Ninja Tune, out 11 September 2026 — formats and pre-orders on the label's release page.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://ninjatune.net/release/bonobo/distance-in-static"
+      },
+      {
+        "name": "Bonobo at Ninja Tune",
+        "description": "The label home since 2003: releases, news, and store links for the whole catalog.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://ninjatune.net/artist/bonobo"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Bonobo reveals new album Distance In Static",
+        "outlet": "Resident Advisor",
+        "url": "https://ra.co/news/85385"
+      },
+      {
+        "title": "Bonobo Maps Out North American Tour in Support of 'Distance in Static'",
+        "outlet": "Exclaim!",
+        "url": "https://exclaim.ca/music/article/bonobo-maps-out-north-american-tour-in-support-of-distance-in-static"
+      },
+      {
+        "title": "Bonobo: Fragments — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/bonobo-fragments/"
+      },
+      {
+        "title": "Bonobo announces new album Distance In Static",
+        "outlet": "Northern Transmissions",
+        "url": "https://northerntransmissions.com/bonobo-announces-new-album-distance-in-static/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

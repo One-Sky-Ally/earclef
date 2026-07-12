@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-smile",
+  "meta": {
+    "title": "The Smile — Ear Clef",
+    "description": "The Smile's whole universe in one place: music, videos, story, setlists, shows, and merch. An Ear Clef page.",
+    "ogImage": "/images/og-the-smile.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/the-smile"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCym53v2ao-wXBhSUIKxAekw"
+    },
+    "setlistfm": {
+      "mbid": "9055fca5-69bc-4d47-b569-ab2012a19565"
+    },
+    "itunes": {
+      "artistId": "1603491177"
+    }
+  },
+  "hero": {
+    "name": "The Smile",
+    "identity": "Thom Yorke, Jonny Greenwood, and Tom Skinner — Radiohead's restless core rewired through jazz drumming and krautrock nerve.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://thesmiletheband.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/thesmiletheband"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCym53v2ao-wXBhSUIKxAekw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/the-smile/1603491177"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://thesmile.bandcamp.com"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "A Light for Attracting Attention",
+        "year": "2022",
+        "mbReleaseGroupId": "50b9771f-40fd-4511-bc8e-408cd3358b12"
+      },
+      {
+        "title": "Wall of Eyes",
+        "year": "2024",
+        "mbReleaseGroupId": "87f4d5ae-5e94-4768-b8ee-f52fbabfbaa6"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "-EB5NhI2RQQ",
+        "title": "You Will Never Work in Television Again"
+      },
+      {
+        "youtubeId": "tEPEqZnTwdo",
+        "title": "The Smoke"
+      },
+      {
+        "youtubeId": "IsqqjOxEuAg",
+        "title": "Wall of Eyes"
+      },
+      {
+        "youtubeId": "WhivN4GJQCQ",
+        "title": "Friend of a Friend"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "The Smile began in lockdown, when Radiohead's Thom Yorke and Jonny Greenwood started trading ideas with Tom Skinner, the London jazz drummer then known for Sons of Kemet. The trio revealed themselves without warning in May 2021, appearing inside Glastonbury's 'Live at Worthy Farm' livestream to play a set of entirely unheard songs — a debut watched by fans who had tuned in expecting nothing of the sort.",
+      "Their first album, 'A Light for Attracting Attention' (2022), arrived on XL Recordings, produced by longtime Radiohead collaborator Nigel Godrich. Wiry, angular, and looser-limbed than the day jobs that preceded it, the record drew on krautrock, post-punk, and Greenwood's orchestral writing, and made clear this was a real band rather than a side project marking time.",
+      "The pace since has been un-Radiohead-like in the best way: a live album recorded at the Montreux Jazz Festival (2022), then two studio albums in a single year — 'Wall of Eyes' in January 2024, produced by Sam Petts-Davies and met with some of the strongest reviews of Yorke and Greenwood's late career, followed by 'Cutouts' that October, drawn largely from the same fertile sessions.",
+      "Onstage, expanded by saxophonist Robert Stillman, The Smile toured Europe and North America through 2022-2024, including a March 2024 UK and European run behind 'Wall of Eyes'. With Radiohead returning to arenas in late 2025, The Smile remains the outlet where its two central figures move fastest and loosest."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming shows are currently announced. Official word comes from thesmiletheband.com and XL Recordings — treat anything else with suspicion.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-03-23",
+        "venue": "Alexandra Palace",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-smile/2024/alexandra-palace-london-england-3baa0424.html",
+        "note": "Wall of Eyes tour"
+      },
+      {
+        "date": "2024-03-13",
+        "venue": "KB Hallen",
+        "city": "Copenhagen, Denmark",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-smile/2024/kb-hallen-copenhagen-denmark-3baaf4e8.html",
+        "note": "Wall of Eyes tour"
+      },
+      {
+        "date": "2024-03-10",
+        "venue": "Eventim Apollo",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-smile/2024/eventim-apollo-london-england-5baa9710.html",
+        "note": "Wall of Eyes tour"
+      },
+      {
+        "date": "2024-03-07",
+        "venue": "3Arena",
+        "city": "Dublin, Ireland",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-smile/2024/3arena-dublin-ireland-43aabb6b.html",
+        "note": "Tour opener — live debut of 'Wall of Eyes'"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "The Smile on Bandcamp — Merch",
+        "description": "Official vinyl, CDs, and apparel direct from the band's Bandcamp store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://thesmile.bandcamp.com/merch"
+      },
+      {
+        "name": "The Smile on Bandcamp — Music",
+        "description": "The full digital catalog, from 'A Light for Attracting Attention' to 'Cutouts'.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://thesmile.bandcamp.com/music"
+      },
+      {
+        "name": "thesmiletheband.com",
+        "description": "The official site — releases, news, and store links straight from the band.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://thesmiletheband.com"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "The Smile: Wall of Eyes — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/the-smile-wall-of-eyes/"
+      },
+      {
+        "title": "The Smile 'Wall of Eyes' Review",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/the-smile-wall-of-eyes-review-1234952183/"
+      },
+      {
+        "title": "The Smile: Tiny Desk Concert",
+        "outlet": "NPR Music",
+        "url": "https://www.npr.org/2023/01/03/1144994454/the-smile-tiny-desk-concert"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

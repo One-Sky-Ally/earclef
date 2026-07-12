@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "slug": "james-blake",
+  "meta": {
+    "title": "James Blake — Ear Clef",
+    "description": "The post-dubstep singer and producer who turned negative space into songwriting, from bedroom EPs to Mercury Prize and beyond.",
+    "ogImage": "/images/og-james-blake.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/james-blake"
+  },
+  "integrations": {
+    "spotify": { "artistId": "" },
+    "youtube": { "channelId": "UCIZ4NEJamsWybup2TJUdoPA" },
+    "setlistfm": { "mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8" },
+    "itunes": { "artistId": "59504818" }
+  },
+  "hero": {
+    "name": "James Blake",
+    "identity": "A choirboy's voice suspended in sub-bass — songs built from silence as much as sound.",
+    "tagline": "Hear here!",
+    "location": "London, United Kingdom",
+    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "socials": [
+      { "platform": "website", "url": "https://jamesblakemusic.com" },
+      { "platform": "instagram", "url": "https://www.instagram.com/jamesblake/" },
+      { "platform": "x", "url": "https://twitter.com/jamesblake" },
+      { "platform": "facebook", "url": "https://www.facebook.com/jamesblakemusic" },
+      { "platform": "youtube", "url": "https://www.youtube.com/channel/UCIZ4NEJamsWybup2TJUdoPA" }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/james-blake/59504818" }
+    ],
+    "featuredAlbums": [
+      { "title": "James Blake", "year": "2011", "mbReleaseGroupId": "e2c51226-996b-4f7c-9bdf-d52d63c46a26" },
+      { "title": "Overgrown", "year": "2013", "mbReleaseGroupId": "b9a4e9ad-400c-4219-ae45-519c2d8167f7" }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      { "youtubeId": "Jg6ngjH2tCc", "title": "Trying Times" },
+      { "youtubeId": "cGDEVsjBhz0", "title": "Death of Love" },
+      { "youtubeId": "ia9N2IjoFGY", "title": "Doesn't Just Happen (ft. Dave)" },
+      { "youtubeId": "6p6PcFFUm5I", "title": "Retrograde" }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "James Blake emerged from London's post-dubstep scene in 2010 with a run of EPs — CMYK, Klavierwerke — that chopped R&B vocals into ghostly fragments over cavernous sub-bass. His self-titled 2011 debut inverted the formula, placing his own hymn-like voice at the centre of skeletal electronic arrangements, and its cover of Feist's Limit to Your Love became an unlikely calling card.",
+      "Overgrown (2013) won the Mercury Prize and produced Retrograde, still his best-known song. From there his fingerprints spread across modern pop: writing and production with Beyoncé, Kendrick Lamar, Frank Ocean, Travis Scott and others, Grammy recognition, and albums — The Colour in Anything, the love-struck Assume Form (2019), Friends That Break Your Heart (2021) — that moved his sound steadily toward open-hearted songwriting.",
+      "He has stayed restless in form as well as feeling: Playing Robots Into Heaven (2023) returned to his club-music roots, Bad Cameo (2024) paired him with Lil Yachty for a full collaborative album, and he has been outspoken about fairer economics for artists, launching direct-to-fan experiments outside the streaming system.",
+      "His 2026 album Trying Times arrived alongside a North American tour of rooms like the Greek Theatre and The Anthem, where the songs' negative space — the silences he has always treated as an instrument — still does the loudest talking."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No officially announced upcoming dates verified at the moment — check jamesblakemusic.com for tour news.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-06-12",
+        "venue": "Greek Theatre",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/james-blake/2026/greek-theatre-los-angeles-ca-7b4b1ea4.html",
+        "note": "Trying Times tour"
+      },
+      {
+        "date": "2026-06-08",
+        "venue": "The Salt Shed",
+        "city": "Chicago, IL, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/james-blake/2026/the-salt-shed-chicago-il-734b1ea1.html",
+        "note": ""
+      },
+      {
+        "date": "2026-06-06",
+        "venue": "History",
+        "city": "Toronto, ON, Canada",
+        "setlistUrl": "https://www.setlist.fm/setlist/james-blake/2026/history-toronto-on-canada-734b1e65.html",
+        "note": ""
+      },
+      {
+        "date": "2026-06-02",
+        "venue": "The Anthem",
+        "city": "Washington, DC, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/james-blake/2026/the-anthem-washington-dc-634b1eaf.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Official Store",
+        "description": "Apparel, vinyl and more from the official James Blake store.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://shop.jamesblakemusic.com"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      { "title": "James Blake: Overgrown — review", "outlet": "The Guardian", "url": "https://www.theguardian.com/music/2013/apr/04/james-blake-overgrown-review" },
+      { "title": "James Blake — Overgrown", "outlet": "The Quietus", "url": "https://thequietus.com/quietus-reviews/james-blake-overgrown-review/" }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

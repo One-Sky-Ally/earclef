@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "slug": "beats-antique",
+  "meta": {
+    "title": "Beats Antique — Ear Clef",
+    "description": "Oakland's experimental world-fusion trio blending brass bands, belly dance, and bass-heavy electronics since 2007.",
+    "ogImage": "/images/og-beats-antique.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/beats-antique"
+  },
+  "integrations": {
+    "spotify": { "artistId": "" },
+    "youtube": { "channelId": "UCNvD7-2NpnvLY2YhUZFVmUA" },
+    "setlistfm": { "mbid": "5eb38f71-96c3-48a3-9b69-2995cfb74982" },
+    "itunes": { "artistId": "275162219" }
+  },
+  "hero": {
+    "name": "Beats Antique",
+    "identity": "A traveling mechanical circus of Turkish banjo, marching drums, and glitching bass.",
+    "tagline": "Hear here!",
+    "location": "Oakland, United States",
+    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "socials": [
+      { "platform": "website", "url": "https://www.beatsantique.com/" },
+      { "platform": "instagram", "url": "https://www.instagram.com/beatsantique/" },
+      { "platform": "x", "url": "https://x.com/beatsantique" },
+      { "platform": "facebook", "url": "https://www.facebook.com/beatsantique" },
+      { "platform": "youtube", "url": "https://www.youtube.com/@beatsantique" }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/beats-antique/275162219" },
+      { "platform": "bandcamp", "url": "https://beatsantique.bandcamp.com/" }
+    ],
+    "featuredAlbums": [
+      { "title": "Tribal Derivations", "year": "2007", "mbReleaseGroupId": "21d8f285-edcb-37be-80cb-295be172727d" },
+      { "title": "Blind Threshold", "year": "2010", "mbReleaseGroupId": "8becd406-e80b-4e13-bc29-81c6ace8f8f4" }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      { "youtubeId": "Rf6Mlb_K3fA", "title": "Flying Machines (Official Video)" },
+      { "youtubeId": "yl58QllW2QM", "title": "Beelzebub feat. Les Claypool" },
+      { "youtubeId": "zDiNSyJRDhY", "title": "Skeleton Key (Official Music Video)" },
+      { "youtubeId": "_SA_kvN3pVk", "title": "Revival (Official Video)" }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Beats Antique formed in Oakland, California in 2007, when producers David Satori and Tommy \"Sidecar\" Cappel joined forces with dancer and percussionist Zoe Jakes. What began as a studio project scoring music for belly dance quickly outgrew the format: their debut, Tribal Derivations, fused Middle Eastern and Balkan brass traditions with hip-hop drums and modern electronic production, sketching a genre the band has been happily distorting ever since.",
+      "On stage the trio plays like a traveling mechanical circus — live drums, marching bass drum, electric Turkish banjo, and viola colliding with heavy low-end electronics while Jakes leads choreographed spectacle out front. That theatrical streak runs through records like 2010's Blind Threshold, which featured Primus frontman Les Claypool on the crawling single \"Beelzebub,\" and the two-act concept album A Thousand Faces, inspired by Joseph Campbell's hero's journey.",
+      "The band has kept restlessly itinerant in the studio too: 2016's Shadowbox was recorded in sessions spanning Moscow, London, and Tel Aviv, folding in collaborators from Russian brass players to klezmer clarinet. Nearly two decades in, Beats Antique remain a fixture of the West Coast festival circuit and still tour steadily — recent setlists run from the 9:30 Club in Washington, DC to Denver's Mission Ballroom."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming dates are announced right now — the band's tour page is currently quiet between runs.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-06-06",
+        "venue": "Mission Ballroom",
+        "city": "Denver, CO, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/beats-antique/2026/mission-ballroom-denver-co-6b7502a6.html"
+      },
+      {
+        "date": "2026-02-28",
+        "venue": "The UC Theatre Taube Family Music Hall",
+        "city": "Berkeley, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/beats-antique/2026/the-uc-theatre-taube-family-music-hall-berkeley-ca-734832d9.html",
+        "note": "Hometown Bay Area show"
+      },
+      {
+        "date": "2026-01-22",
+        "venue": "9:30 Club",
+        "city": "Washington, DC, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/beats-antique/2026/930-club-washington-dc-334d9851.html"
+      },
+      {
+        "date": "2025-12-10",
+        "venue": "Joy Theater",
+        "city": "New Orleans, LA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/beats-antique/2025/joy-theater-new-orleans-la-1b4aa598.html"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Official Merch Store",
+        "description": "Apparel and more from the band's official store, linked from beatsantique.com.",
+        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "url": "https://shop.kt8merch.com/collections/beats-antique"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Summer Stars: Beats Antique",
+        "outlet": "Relix",
+        "url": "https://relix.com/articles/detail/summer-stars-beats-antique/"
+      },
+      {
+        "title": "Beats Antique on Recording \"Shadowbox\" in Moscow, London, and Tel Aviv",
+        "outlet": "Bandcamp Daily",
+        "url": "https://daily.bandcamp.com/features/beats-antique-shadowbox-interview"
+      },
+      {
+        "title": "Relix Premieres Beats Antique's \"Beelzebub\" Featuring Les Claypool",
+        "outlet": "Relix",
+        "url": "https://relix.com/news/detail/relix_premieres_beats_antiques_beelzebub_featuring_les_claypool/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

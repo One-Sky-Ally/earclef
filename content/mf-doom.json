@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "slug": "mf-doom",
+  "meta": {
+    "title": "MF DOOM — Ear Clef",
+    "description": "MF DOOM — the masked supervillain of underground hip-hop, whose intricate rhymes made him your favorite rapper's favorite rapper.",
+    "ogImage": "/images/og-mf-doom.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/mf-doom"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UC6Y8dX3XdGsp2akU-SKfreA"
+    },
+    "setlistfm": {
+      "mbid": "188711ed-c99b-439c-844a-ca831f63a727"
+    },
+    "itunes": {
+      "artistId": "3864756"
+    }
+  },
+  "hero": {
+    "name": "MF DOOM",
+    "identity": "The man behind the metal mask — hip-hop's supervillain laureate, 1971–2020. ALL CAPS when you spell the man name.",
+    "tagline": "Hear here!",
+    "location": "New York, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://gasdrawls.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/mfdoom/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/mfdoom"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/mfdoom/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC6Y8dX3XdGsp2akU-SKfreA"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/mf-doom/3864756"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://mfdoom.bandcamp.com"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Operation: Doomsday",
+        "year": "1999",
+        "mbReleaseGroupId": "66f1ac02-2eb6-31dc-ab33-6eaa603f41cd"
+      },
+      {
+        "title": "MM..FOOD",
+        "year": "2004",
+        "mbReleaseGroupId": "ec84ab32-eb41-3d91-a099-7a01c72f21d2"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "dERcdvcXuE0",
+        "title": "Rapp Snitch Knishes (ft. Mr. Fantastik)"
+      },
+      {
+        "youtubeId": "_JUpTOFJUTU",
+        "title": "Vomitspit"
+      },
+      {
+        "youtubeId": "gSJeHDlhYls",
+        "title": "Madvillain — All Caps"
+      },
+      {
+        "youtubeId": "ru2IrTY2UG0",
+        "title": "Madvillain — Accordion (4K remaster)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Daniel Dumile was born in Hounslow, London on July 13, 1971 and raised in Long Beach, New York. As Zev Love X he broke through with the group KMD, but the 1993 death of his brother and bandmate DJ Subroc — followed by their label shelving the album Black Bastards — knocked him out of music entirely. When he resurfaced in New York's open-mic scene in the late 1990s, his face was hidden behind a metal mask modeled on Marvel's Doctor Doom, and the rapper Daniel Dumile had been replaced, permanently, by a supervillain.",
+      "Operation: Doomsday (1999), released on Fondle 'Em and later reissued through his own Metal Face Records, rebuilt underground rap in his image: cartoon-sampling beats, free-associative internal rhyme, and a persona that treated the industry as an enemy to be plotted against. What followed was one of the great runs in hip-hop history — the Madvillainy album with Madlib and the food-obsessed solo classic MM..FOOD (both 2004), plus records as King Geedorah and Viktor Vaughn, instrumental Special Herbs volumes, and later collaborations with Danger Mouse, Czarface and Bishop Nehru.",
+      "Born in the UK and never a US citizen, DOOM was denied re-entry to the United States after a 2010 tour and spent his final decade based in London — still masked, still elusive, occasionally sending imposters to lip-sync shows as a piece of villainous theater. He died on October 31, 2020, at age 49; his family announced the news on New Year's Eve, and tributes cast him as exactly what the mask promised: your favorite rapper's favorite rapper.",
+      "His estate keeps the catalog alive through the official Gas Drawls store and Metalface Records — including a 20th-anniversary edition of MM..FOOD in 2024, accompanied by an official animated video for 'Vomitspit' released on DOOMSDAY, the annual October 31 remembrance. Just remember: ALL CAPS when you spell the man name."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "MF DOOM died on October 31, 2020 — there will be no more shows. Archival releases and reissues continue through his estate via Gas Drawls and Metalface Records.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2014-10-18",
+        "venue": "KVS",
+        "city": "Brussels, Belgium",
+        "setlistUrl": "https://www.setlist.fm/setlist/mf-doom/2014/kvs-brussels-belgium-1bf3cd34.html",
+        "note": "One of his final documented live shows"
+      },
+      {
+        "date": "2013-11-16",
+        "venue": "The Forum",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/mf-doom/2013/the-forum-london-england-53c4fb91.html",
+        "note": "London-era headline show"
+      },
+      {
+        "date": "2003-11-23",
+        "venue": "Temple Bar",
+        "city": "Santa Monica, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/mf-doom/2003/temple-bar-santa-monica-ca-383e9d3.html"
+      },
+      {
+        "date": "2000-10-01",
+        "venue": "Metro",
+        "city": "Chicago, IL, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/mf-doom/2000/metro-chicago-il-234588eb.html",
+        "note": "Flower Booking 10th Anniversary"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Gas Drawls — Official MF DOOM Store",
+        "description": "The estate-run official source for all things MF DOOM, Metalface Records and Gas Drawls.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://gasdrawls.com"
+      },
+      {
+        "name": "Operation: Doomsday (Vinyl)",
+        "description": "DOOM's 1999 solo debut on vinyl from the official Gas Drawls store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://gasdrawls.com/products/operation-doomsday"
+      },
+      {
+        "name": "Metalface Records Collection",
+        "description": "Releases on DOOM's own Metalface Records imprint, direct from the official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://gasdrawls.com/collections/metalface-records"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "The Mask of Doom",
+        "outlet": "The New Yorker",
+        "url": "https://www.newyorker.com/magazine/2009/09/21/the-mask-of-doom"
+      },
+      {
+        "title": "MF DOOM Dead at 49",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/news/mf-doom-dead-at-49/"
+      },
+      {
+        "title": "Rapper And Producer MF DOOM Dead At 49",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2021/01/01/952626042/rapper-and-producer-mf-doom-dead-at-49"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

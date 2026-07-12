@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "slug": "chance-the-rapper",
+  "meta": {
+    "title": "Chance the Rapper — Ear Clef",
+    "description": "Chance the Rapper — Chicago's fiercely independent rapper who turned free mixtapes into Grammy history.",
+    "ogImage": "/images/og-chance-the-rapper.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/chance-the-rapper"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCeXp3EC97_rUl_e2vgM3gLg"
+    },
+    "setlistfm": {
+      "mbid": "373a4c98-a46b-48e4-86ec-f6ca65b4f438"
+    },
+    "itunes": {
+      "artistId": "563355119"
+    }
+  },
+  "hero": {
+    "name": "Chance the Rapper",
+    "identity": "Chicago's independent son, who gave his music away free and won Grammys doing it.",
+    "tagline": "Hear here!",
+    "location": "Chicago, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.chanceraps.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/chancetherapper/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/chancetherapper"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/chancetherapper"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCeXp3EC97_rUl_e2vgM3gLg"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/chance-the-rapper/563355119"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Coloring Book",
+        "year": "2016",
+        "mbReleaseGroupId": "2e93b949-f480-475b-a1bd-bbf9723ba13d"
+      },
+      {
+        "title": "The Big Day",
+        "year": "2019",
+        "mbReleaseGroupId": "20802b79-0b52-4053-9f7b-fad69d4a34f7"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "be37-T72DNk",
+        "title": "Same Drugs"
+      },
+      {
+        "youtubeId": "DVkkYlQNmbc",
+        "title": "No Problem (ft. 2 Chainz & Lil Wayne)"
+      },
+      {
+        "youtubeId": "eedeXTWZUn8",
+        "title": "Angels (ft. Saba)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Chancelor Johnathan Bennett was born on Chicago's South Side on April 16, 1993, and released his first mixtape, 10 Day, in 2012 — written during a ten-day high-school suspension. Its follow-up, 2013's Acid Rap, turned a local kid into a national phenomenon: a giddy, gospel-tinged collision of juke, soul and psychedelia that critics ranked among the year's best releases, all given away for free.",
+      "That refusal to sign remains the defining fact of his career. Coloring Book (2016), recorded after his scene-stealing turn on Kanye West's The Life of Pablo, became the first streaming-only release to win a Grammy — he took home three, including Best Rap Album — while Chance remained unsigned and kept his masters. The mixtape's mix of choirs, horns and open-hearted faith made it a landmark of 2010s hip-hop, and Pitchfork scored it a 9.1.",
+      "His official debut album, The Big Day (2019), a sprawling celebration of his marriage, drew a more divided reception, and Chance spent the following years on family, philanthropy — his SocialWorks nonprofit has funneled millions into Chicago public schools — and independent singles. In August 2025 he returned with STAR LINE, a dense, Pan-Africanist second album that arrived alongside a Soldier Field hometown show and the And We Back Tour across North America.",
+      "In 2026 he announced the Coloring Book Ten Year Anniversary Tour, a 30-plus-date North American run from August to October in which he performs the Grammy-winning mixtape in full — a victory lap for the project that proved an artist could reach the top of the industry without ever joining it."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "The Coloring Book Ten Year Anniversary Tour runs August–October 2026 across North America — full dates and tickets via chanceraps.com.",
+    "upcoming": [
+      {
+        "date": "2026-08-08",
+        "venue": "Ravinia Festival",
+        "city": "Highland Park, IL, USA",
+        "note": "Coloring Book Ten Year Anniversary Tour"
+      },
+      {
+        "date": "2026-08-11",
+        "venue": "House of Blues",
+        "city": "Cleveland, OH, USA",
+        "note": "Coloring Book Ten Year Anniversary Tour"
+      },
+      {
+        "date": "2026-10-11",
+        "venue": "Citizens Live at The Wylie",
+        "city": "Pittsburgh, PA, USA",
+        "note": "Coloring Book Ten Year Anniversary Tour — closing night"
+      }
+    ],
+    "past": [
+      {
+        "date": "2025-10-04",
+        "venue": "MGM Music Hall at Fenway",
+        "city": "Boston, MA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/chance-the-rapper/2025/mgm-music-hall-at-fenway-boston-ma-5b43c75c.html",
+        "note": "And We Back Tour"
+      },
+      {
+        "date": "2025-10-01",
+        "venue": "The Fillmore Philadelphia",
+        "city": "Philadelphia, PA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/chance-the-rapper/2025/the-fillmore-philadelphia-philadelphia-pa-4b43c75e.html",
+        "note": "And We Back Tour"
+      },
+      {
+        "date": "2025-08-02",
+        "venue": "Grant Park",
+        "city": "Chicago, IL, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/chance-the-rapper/2025/grant-park-chicago-il-7b43b624.html",
+        "note": "Lollapalooza 2025"
+      },
+      {
+        "date": "2025-07-26",
+        "venue": "Soldier Field",
+        "city": "Chicago, IL, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/chance-the-rapper/2025/soldier-field-chicago-il-2b45b032.html",
+        "note": "Hometown stadium show in the week of STAR LINE's release"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Chance Stuff — Official Store",
+        "description": "The official Chance the Rapper store: STAR LINE vinyl, apparel and exclusives.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://chancestuff.com"
+      },
+      {
+        "name": "Star Line Vinyl (Complete Edition)",
+        "description": "The 2025 album STAR LINE on vinyl, direct from the official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://chancestuff.com/products/star-line-vinyl"
+      },
+      {
+        "name": "Star Line Solidarity Hoodie",
+        "description": "Exclusive STAR LINE-era hoodie from the official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://chancestuff.com/products/star-line-solidarity-hoodie"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Chance the Rapper: Coloring Book — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/21909-coloring-book/"
+      },
+      {
+        "title": "Chance the Rapper 'Coloring Book' Album Review",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/coloring-book-202384/"
+      },
+      {
+        "title": "Chance the Rapper Just Announced the Coloring Book 10th Anniversary Tour for 2026",
+        "outlet": "VICE",
+        "url": "https://www.vice.com/en/via/chance-the-rapper-just-announced-the-coloring-book-10th-anniversary-tour-for-2026/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "slug": "esperanza-spalding",
+  "meta": {
+    "title": "Esperanza Spalding — Ear Clef",
+    "description": "Grammy-winning jazz bassist, vocalist and composer from Portland, Oregon — the first jazz artist ever named Best New Artist.",
+    "ogImage": "/images/og-esperanza-spalding.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/esperanza-spalding"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UC_ghFm78RhT2eg6rPIVHRVg"
+    },
+    "setlistfm": {
+      "mbid": "5c12b265-5e59-44e0-b657-5cf4169f7316"
+    },
+    "itunes": {
+      "artistId": "73212782"
+    }
+  },
+  "hero": {
+    "name": "Esperanza Spalding",
+    "identity": "Bassist, vocalist and composer bending jazz toward chamber music, art-rock and ritual song.",
+    "tagline": "Hear here!",
+    "location": "Portland, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://esperanzaspalding.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/esperanzaspalding/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/EspeSpalding"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/EsperanzaSpalding/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC_ghFm78RhT2eg6rPIVHRVg"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/esperanza-spalding/73212782"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://esperanzaspalding.bandcamp.com"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Chamber Music Society",
+        "year": "2010",
+        "mbReleaseGroupId": "bf1b856c-e3c7-47c4-9a35-8fa4e6c1f89e"
+      },
+      {
+        "title": "12 Little Spells",
+        "year": "2018",
+        "mbReleaseGroupId": "00974814-f612-4c1c-8b94-5f60be0c988b"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "Nppb01xhfe0",
+        "title": "Black Gold (Official Music Video)"
+      },
+      {
+        "youtubeId": "w2JRGv91urY",
+        "title": "Little Fly (Music Video)"
+      },
+      {
+        "youtubeId": "YGet4Tt1Mek",
+        "title": "Formwela 12 ft. Carmen de Lavallade (Official Video)"
+      },
+      {
+        "youtubeId": "wcpKypZ72ts",
+        "title": "Black Gold (Official Visualizer)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Esperanza Spalding grew up in Portland, Oregon, a self-taught violin prodigy who joined the Chamber Music Society of Oregon as a child before discovering the bass in high school. She earned a scholarship to Berklee College of Music and, at twenty, became one of the youngest instructors in the school's history — all before releasing her debut album, Junjo, in 2006.",
+      "Her breakthrough came fast. Esperanza (2008) topped Billboard's contemporary jazz chart, and Chamber Music Society (2010) fused jazz trio, strings and wordless vocals into something entirely her own. In February 2011 she stunned the industry by winning the Grammy for Best New Artist — the first jazz musician ever to do so — beating Justin Bieber, Drake, Florence + the Machine and Mumford & Sons.",
+      "Rather than settle into a lane, Spalding kept reinventing: the horn-driven Radio Music Society (2012), the theatrical alter-ego project Emily's D+Evolution (2016), and 12 Little Spells (2018), a song cycle mapping music onto parts of the body that the New York Times ranked among the best albums of its year. Songwrights Apothecary Lab (2021) — part album, part research practice into music as healing — extended her run of Grammy-winning work.",
+      "Now a professor at Harvard and a frequent collaborator across genres, Spalding released Milton + esperanza with Brazilian legend Milton Nascimento in 2024 and continues to tour worldwide, from South American concert halls to European jazz festivals."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming dates verified at publish time — check esperanzaspalding.com for tour news.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-07-10",
+        "venue": "Ahoy",
+        "city": "Rotterdam, Netherlands",
+        "setlistUrl": "https://www.setlist.fm/setlist/esperanza-spalding/2026/ahoy-rotterdam-netherlands-b489dda.html",
+        "note": ""
+      },
+      {
+        "date": "2026-07-09",
+        "venue": "Oper Bonn",
+        "city": "Bonn, Germany",
+        "setlistUrl": "https://www.setlist.fm/setlist/esperanza-spalding/2026/oper-bonn-bonn-germany-2b73e0f2.html",
+        "note": ""
+      },
+      {
+        "date": "2026-05-24",
+        "venue": "Piedmont Park",
+        "city": "Atlanta, GA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/esperanza-spalding/2026/piedmont-park-atlanta-ga-1b48f168.html",
+        "note": ""
+      },
+      {
+        "date": "2026-02-11",
+        "venue": "Divadlo Hybernia",
+        "city": "Prague, Czechia",
+        "setlistUrl": "https://www.setlist.fm/setlist/esperanza-spalding/2026/divadlo-hybernia-prague-czechia-b4c715e.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Bandcamp Merch",
+        "description": "Records and merchandise direct from the artist on Bandcamp.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://esperanzaspalding.bandcamp.com/merch"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "GRAMMY Rewind: Esperanza Spalding Elatedly Wins Best New Artist in 2011",
+        "outlet": "GRAMMY.com",
+        "url": "https://www.grammy.com/news/2021-grammy-rewind-esperanza-spalding-best-new-artist-2011"
+      },
+      {
+        "title": "Wait, Who Is This Esperanza Spalding?",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/sections/ablogsupreme/2011/02/17/133748183/wait-who-is-this-esperanza-spalding"
+      },
+      {
+        "title": "Review: Esperanza Spalding's Strikingly Original '12 Little Spells'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/esperanza-spalding-12-little-spells-739288/"
+      },
+      {
+        "title": "Esperanza Spalding: 12 Little Spells (Review)",
+        "outlet": "DownBeat",
+        "url": "https://downbeat.com/reviews/detail/12-little-spells"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}

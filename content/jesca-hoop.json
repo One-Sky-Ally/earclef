@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 1,
+  "slug": "jesca-hoop",
+  "meta": {
+    "title": "Jesca Hoop — Ear Clef",
+    "description": "California-born, Manchester-based songwriter whose intricate folk-art songs earned acclaim from NPR and a home on Sub Pop.",
+    "ogImage": "/images/og-jesca-hoop.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/jesca-hoop"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCTgE1c7tDrDMPuGb5kmYVjA"
+    },
+    "setlistfm": {
+      "mbid": "b5330942-ffdf-49cb-8a13-b5d7b5d67bff"
+    },
+    "itunes": {
+      "artistId": "41870788"
+    }
+  },
+  "hero": {
+    "name": "Jesca Hoop",
+    "identity": "A Californian folk experimentalist weaving strange, luminous songs from her adopted home in Manchester.",
+    "tagline": "Hear here!",
+    "location": "Manchester, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.jescahoop.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/jescahoopster/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/JescaHoop"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/JescaHoopMusic/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@JescaHoop"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/jesca-hoop/41870788"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://jescahoop.bandcamp.com"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Memories Are Now",
+        "year": "2017",
+        "mbReleaseGroupId": "0f843344-01b0-4b18-a7f6-568f2f0b0d57"
+      },
+      {
+        "title": "Stonechild",
+        "year": "2019",
+        "mbReleaseGroupId": "888a5f23-6794-44f0-af28-9acf802e7c9e"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "s79pNrycneQ",
+        "title": "Memories Are Now (Official Video)"
+      },
+      {
+        "youtubeId": "c3GelY-QrAA",
+        "title": "Pegasi (Official Video)"
+      },
+      {
+        "youtubeId": "py7Xqn85-No",
+        "title": "Shoulder Charge ft. Lucius (Official Video)"
+      },
+      {
+        "youtubeId": "Vyrwh0qRGEI",
+        "title": "The Lost Sky (Official Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Jesca Hoop was born in Santa Rosa, California, and raised in a Mormon household where family harmony singing was a daily practice. After leaving the church and a stretch of itinerant living across the American West, she landed in Los Angeles, where a job as nanny to Tom Waits and Kathleen Brennan's children became an unlikely apprenticeship — Waits championed her early demos and helped her songs find their first radio audience.",
+      "Her debut album Kismet arrived in 2007, followed by Hunting My Dress (2009), The House That Jack Built (2012) and Undress (2014), records that established her reputation for intricate fingerstyle guitar, unpredictable melodies and imagery that splits the difference between folk tale and fever dream. Along the way she relocated to Manchester, England, which has remained her home base ever since.",
+      "In 2016 she released Love Letter for Fire, a duet album written with Sam Beam of Iron & Wine, and the following year she signed to Sub Pop for Memories Are Now, a stark, nine-song set that NPR praised for its capacity to surprise. Stonechild followed in 2019, produced by John Parish (PJ Harvey) and featuring guest vocals from Lucius, and topped the UK Official Independent Album Breakers Chart.",
+      "Hoop continues to write, record and tour on both sides of the Atlantic, with the album Order of Romance (2022) extending a catalog that critics routinely describe as one of the best-kept secrets in modern songwriting. In summer 2026 she completed a headline tour of the United States, from Seattle and Portland to New York and Philadelphia's Main Line."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming dates verified at publish time — check jescahoop.com for tour news.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-07-01",
+        "venue": "118 North",
+        "city": "Wayne, PA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/jesca-hoop/2026/118-north-wayne-pa-37691e3.html",
+        "note": "Closing night of the summer 2026 US tour"
+      },
+      {
+        "date": "2026-06-29",
+        "venue": "Le Poisson Rouge",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/jesca-hoop/2026/le-poisson-rouge-new-york-ny-b7691da.html",
+        "note": ""
+      },
+      {
+        "date": "2026-06-27",
+        "venue": "City Winery",
+        "city": "Boston, MA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/jesca-hoop/2026/city-winery-boston-ma-1374e981.html",
+        "note": ""
+      },
+      {
+        "date": "2026-06-17",
+        "venue": "The Chapel",
+        "city": "San Francisco, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/jesca-hoop/2026/the-chapel-san-francisco-ca-1b7691e4.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Official Store",
+        "description": "Vinyl, CDs and apparel from Jesca Hoop's official web store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://www.jescahoop.com/store"
+      },
+      {
+        "name": "Bandcamp Merch",
+        "description": "Records and merchandise direct from the artist on Bandcamp.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://jescahoop.bandcamp.com/merch"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "First Listen: Jesca Hoop, 'Memories Are Now'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2017/02/02/512636457/first-listen-jesca-hoop-memories-are-now"
+      },
+      {
+        "title": "Jesca Hoop — Stonechild (Album Review)",
+        "outlet": "Loud And Quiet",
+        "url": "https://www.loudandquiet.com/reviews/jesca-hoop-stonechild/"
+      },
+      {
+        "title": "Watch Jesca Hoop's Official Video for 'Memories Are Now'",
+        "outlet": "Sub Pop Records",
+        "url": "https://www.subpop.com/news/2017/02/09/watch_jesca_hoops_official_video_for_memories_are_now_title_track_from_her_acclaimed_new_album_out_tomorrow_feb_10"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
+}
