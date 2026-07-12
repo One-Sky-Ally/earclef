@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import {
   fetchCatalog,
+  fetchSpotifyReleases,
   fetchVideos,
   type CatalogResponse,
+  type SpotifyReleasesResponse,
   type VideosResponse,
 } from '@/lib/artist/browserData'
 import {
@@ -21,6 +23,7 @@ export interface RosterEntry {
   name: string
   mbid?: string
   channelId?: string
+  spotifyId?: string
 }
 
 interface FeedItem {
@@ -37,7 +40,10 @@ const FEED_LIMIT = 50
 // Prolific channels (daily Shorts) shouldn't drown the rest of the roster.
 const VIDEOS_PER_ARTIST = 8
 
-function releaseItems(entry: RosterEntry, catalog: CatalogResponse): FeedItem[] {
+function mbReleaseItems(
+  entry: RosterEntry,
+  catalog: CatalogResponse,
+): FeedItem[] {
   return catalog.categories
     .flatMap((category) => category.items)
     .filter((item) => item.date)
@@ -50,6 +56,45 @@ function releaseItems(entry: RosterEntry, catalog: CatalogResponse): FeedItem[] 
       image: coverArtUrl(item.rgid),
       href: quotedSearch(entry.name, item.title),
     }))
+}
+
+function spotifyReleaseItems(
+  entry: RosterEntry,
+  releases: SpotifyReleasesResponse,
+): FeedItem[] {
+  return releases.items.map((item) => ({
+    type: 'release' as const,
+    slug: entry.slug,
+    artistName: entry.name,
+    title: item.title,
+    date: item.date,
+    image: item.image ?? '/images/hero-placeholder.svg',
+    href: quotedSearch(entry.name, item.title),
+  }))
+}
+
+/** "OK Computer (Deluxe Edition)" and "OK Computer" are the same drop. */
+function normalizedTitle(title: string): string {
+  return title
+    .normalize('NFKD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/\((deluxe|expanded|remaster(ed)?|special)[^)]*\)/g, '')
+    .replace(/[^a-z0-9]+/g, '')
+}
+
+/**
+ * Merge the freshness overlay (Spotify) with the backbone (MusicBrainz):
+ * on a duplicate title, the Spotify entry wins (fresher dates on new
+ * drops); everything unique from either source stays.
+ */
+function mergeReleases(spotify: FeedItem[], musicbrainz: FeedItem[]): FeedItem[] {
+  const seen = new Map<string, FeedItem>()
+  for (const item of [...spotify, ...musicbrainz]) {
+    const key = normalizedTitle(item.title)
+    if (!seen.has(key)) seen.set(key, item)
+  }
+  return [...seen.values()]
 }
 
 function videoItems(entry: RosterEntry, videos: VideosResponse): FeedItem[] {
@@ -97,10 +142,22 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
 
     const sources = roster.flatMap((entry) => {
       const tasks: Promise<FeedItem[]>[] = []
-      if (entry.mbid) {
+      if (entry.mbid || entry.spotifyId) {
+        // Backbone (MusicBrainz) + freshness overlay (Spotify, data only —
+        // clicks still go to YouTube). Either may fail independently.
+        const mbTask: Promise<FeedItem[]> = entry.mbid
+          ? fetchCatalog(entry.mbid, controller.signal).then((catalog) =>
+              mbReleaseItems(entry, catalog),
+            )
+          : Promise.resolve([])
+        const spotifyTask: Promise<FeedItem[]> = entry.spotifyId
+          ? fetchSpotifyReleases(entry.spotifyId, controller.signal)
+              .then((releases) => spotifyReleaseItems(entry, releases))
+              .catch(() => []) // overlay is best-effort by design
+          : Promise.resolve([])
         tasks.push(
-          fetchCatalog(entry.mbid, controller.signal).then((catalog) =>
-            releaseItems(entry, catalog),
+          Promise.all([spotifyTask, mbTask]).then(([spotify, musicbrainz]) =>
+            mergeReleases(spotify, musicbrainz),
           ),
         )
       }

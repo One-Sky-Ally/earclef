@@ -34,6 +34,16 @@ export interface AlbumDetails {
   tracks: string[]
 }
 
+export interface SpotifyRelease {
+  title: string
+  date: string
+  image?: string
+}
+
+export interface SpotifyReleasesResponse {
+  items: SpotifyRelease[]
+}
+
 async function getJson<T>(url: string, signal: AbortSignal): Promise<T> {
   const res = await fetch(url, { signal })
   if (!res.ok) throw new Error(`HTTP ${res.status}`)
@@ -59,4 +69,11 @@ export function fetchAlbumDetails(
   signal: AbortSignal,
 ): Promise<AlbumDetails> {
   return getJson(`/api/artist/album/${rgid}`, signal)
+}
+
+export function fetchSpotifyReleases(
+  spotifyId: string,
+  signal: AbortSignal,
+): Promise<SpotifyReleasesResponse> {
+  return getJson(`/api/artist/releases/${spotifyId}`, signal)
 }
