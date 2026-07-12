@@ -44,7 +44,9 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
         {content.story.enabled && <Story story={content.story} />}
         {content.shows.enabled && <Shows shows={content.shows} />}
         {content.merch.enabled && <Merch merch={content.merch} />}
-        {content.press.enabled && <Press press={content.press} />}
+        {content.press.enabled && (
+          <Press press={content.press} artistName={content.hero.name} />
+        )}
       </main>
       <SiteFooter footer={content.footer} />
     </>

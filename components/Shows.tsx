@@ -1,6 +1,7 @@
 import type { PastShow, ShowsContent, UpcomingShow } from '@/lib/types'
 import { byDateAscending, byDateDescending, formatShowDate } from '@/lib/format'
 import { SectionHeader } from '@/components/SectionHeader'
+import { LinkifiedText } from '@/components/LinkifiedText'
 import styles from './Shows.module.css'
 
 interface ShowsProps {
@@ -81,7 +82,9 @@ export function Shows({ shows }: ShowsProps) {
           </ul>
         ) : (
           <p className={styles.empty}>
-            {shows.upcomingNote ?? 'No upcoming shows announced.'}
+            <LinkifiedText
+              text={shows.upcomingNote ?? 'No upcoming shows announced.'}
+            />
           </p>
         )}
 

@@ -4,9 +4,13 @@ import styles from './Press.module.css'
 
 interface PressProps {
   press: PressContent
+  artistName: string
 }
 
-export function Press({ press }: PressProps) {
+export function Press({ press, artistName }: PressProps) {
+  const moreUrl = `https://www.ecosia.org/search?q=${encodeURIComponent(
+    `"${artistName}" music press news`,
+  )}`
   return (
     <section id="press" className="section" aria-labelledby="press-heading">
       <div className="container">
@@ -38,6 +42,14 @@ export function Press({ press }: PressProps) {
             </li>
           ))}
         </ul>
+        <a
+          className={styles.moreLink}
+          href={moreUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          More →
+        </a>
       </div>
     </section>
   )

@@ -38,3 +38,13 @@
   text-transform: uppercase;
   color: var(--text-muted);
 }
+
+.sources {
+  margin-top: 1.1rem;
+  font-size: 0.7rem;
+  font-style: italic;
+  color: var(--text-muted);
+  opacity: 0.75;
+  max-width: 46ch;
+  text-align: center;
+}

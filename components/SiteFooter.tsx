@@ -15,6 +15,10 @@ export function SiteFooter({ footer }: SiteFooterProps) {
         </span>
         <p className={styles.tagline}>{footer.tagline}</p>
         <p className={styles.attribution}>{footer.attribution}</p>
+        <p className={styles.sources}>
+          Compiled from official artist sites, MusicBrainz, setlist.fm, and
+          the press linked above.
+        </p>
       </div>
     </footer>
   )
