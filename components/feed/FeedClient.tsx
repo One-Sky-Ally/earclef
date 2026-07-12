@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import {
   fetchCatalog,
-  fetchSpotifyReleases,
+  fetchItunesReleases,
   fetchVideos,
   type CatalogResponse,
-  type SpotifyReleasesResponse,
+  type ItunesReleasesResponse,
   type VideosResponse,
 } from '@/lib/artist/browserData'
 import {
@@ -23,7 +23,7 @@ export interface RosterEntry {
   name: string
   mbid?: string
   channelId?: string
-  spotifyId?: string
+  itunesId?: string
 }
 
 interface FeedItem {
@@ -58,9 +58,9 @@ function mbReleaseItems(
     }))
 }
 
-function spotifyReleaseItems(
+function itunesReleaseItems(
   entry: RosterEntry,
-  releases: SpotifyReleasesResponse,
+  releases: ItunesReleasesResponse,
 ): FeedItem[] {
   return releases.items.map((item) => ({
     type: 'release' as const,
@@ -73,24 +73,28 @@ function spotifyReleaseItems(
   }))
 }
 
-/** "OK Computer (Deluxe Edition)" and "OK Computer" are the same drop. */
+/**
+ * "OK Computer (Deluxe Edition)" and "OK Computer" are the same drop, as are
+ * "X (feat. Y) / Z" and "X / Z" — edition tags and feature credits vary by
+ * source, so both are stripped from the dedupe key.
+ */
 function normalizedTitle(title: string): string {
   return title
     .normalize('NFKD')
     .replace(/[̀-ͯ]/g, '')
     .toLowerCase()
-    .replace(/\((deluxe|expanded|remaster(ed)?|special)[^)]*\)/g, '')
+    .replace(/[([](feat|ft|with|deluxe|expanded|remaster(ed)?|special)[^)\]]*[)\]]/g, '')
     .replace(/[^a-z0-9]+/g, '')
 }
 
 /**
- * Merge the freshness overlay (Spotify) with the backbone (MusicBrainz):
- * on a duplicate title, the Spotify entry wins (fresher dates on new
+ * Merge the freshness overlay (iTunes) with the backbone (MusicBrainz):
+ * on a duplicate title, the iTunes entry wins (release-day dates on new
  * drops); everything unique from either source stays.
  */
-function mergeReleases(spotify: FeedItem[], musicbrainz: FeedItem[]): FeedItem[] {
+function mergeReleases(overlay: FeedItem[], musicbrainz: FeedItem[]): FeedItem[] {
   const seen = new Map<string, FeedItem>()
-  for (const item of [...spotify, ...musicbrainz]) {
+  for (const item of [...overlay, ...musicbrainz]) {
     const key = normalizedTitle(item.title)
     if (!seen.has(key)) seen.set(key, item)
   }
@@ -142,22 +146,22 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
 
     const sources = roster.flatMap((entry) => {
       const tasks: Promise<FeedItem[]>[] = []
-      if (entry.mbid || entry.spotifyId) {
-        // Backbone (MusicBrainz) + freshness overlay (Spotify, data only —
+      if (entry.mbid || entry.itunesId) {
+        // Backbone (MusicBrainz) + freshness overlay (iTunes, data only —
         // clicks still go to YouTube). Either may fail independently.
         const mbTask: Promise<FeedItem[]> = entry.mbid
           ? fetchCatalog(entry.mbid, controller.signal).then((catalog) =>
               mbReleaseItems(entry, catalog),
             )
           : Promise.resolve([])
-        const spotifyTask: Promise<FeedItem[]> = entry.spotifyId
-          ? fetchSpotifyReleases(entry.spotifyId, controller.signal)
-              .then((releases) => spotifyReleaseItems(entry, releases))
+        const overlayTask: Promise<FeedItem[]> = entry.itunesId
+          ? fetchItunesReleases(entry.itunesId, controller.signal)
+              .then((releases) => itunesReleaseItems(entry, releases))
               .catch(() => []) // overlay is best-effort by design
           : Promise.resolve([])
         tasks.push(
-          Promise.all([spotifyTask, mbTask]).then(([spotify, musicbrainz]) =>
-            mergeReleases(spotify, musicbrainz),
+          Promise.all([overlayTask, mbTask]).then(([overlay, musicbrainz]) =>
+            mergeReleases(overlay, musicbrainz),
           ),
         )
       }

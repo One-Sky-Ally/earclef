@@ -17,7 +17,7 @@ export default function FeedPage() {
     name: artist.hero.name,
     mbid: artist.integrations.setlistfm.mbid || undefined,
     channelId: artist.integrations.youtube.channelId || undefined,
-    spotifyId: artist.integrations.spotify.artistId || undefined,
+    itunesId: artist.integrations.itunes?.artistId || undefined,
   }))
 
   return (

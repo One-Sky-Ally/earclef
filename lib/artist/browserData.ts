@@ -34,14 +34,14 @@ export interface AlbumDetails {
   tracks: string[]
 }
 
-export interface SpotifyRelease {
+export interface ItunesRelease {
   title: string
   date: string
   image?: string
 }
 
-export interface SpotifyReleasesResponse {
-  items: SpotifyRelease[]
+export interface ItunesReleasesResponse {
+  items: ItunesRelease[]
 }
 
 async function getJson<T>(url: string, signal: AbortSignal): Promise<T> {
@@ -71,9 +71,9 @@ export function fetchAlbumDetails(
   return getJson(`/api/artist/album/${rgid}`, signal)
 }
 
-export function fetchSpotifyReleases(
-  spotifyId: string,
+export function fetchItunesReleases(
+  itunesId: string,
   signal: AbortSignal,
-): Promise<SpotifyReleasesResponse> {
-  return getJson(`/api/artist/releases/${spotifyId}`, signal)
+): Promise<ItunesReleasesResponse> {
+  return getJson(`/api/artist/releases/${itunesId}`, signal)
 }

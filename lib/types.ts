@@ -30,6 +30,7 @@ export interface Integrations {
   spotify: { artistId: string }
   youtube: { channelId: string }
   setlistfm: { mbid: string }
+  itunes?: { artistId: string }
 }
 
 export interface HeroContent {
