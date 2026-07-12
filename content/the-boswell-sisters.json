@@ -33,25 +33,17 @@
     "enabled": true,
     "platforms": [
       {
-        "platform": "spotify",
-        "url": "https://open.spotify.com/artist/2mflSlnegn3rBmzsh08OcN"
-      },
-      {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/the-boswell-sisters/858682"
       }
     ],
-    "embeds": [
+    "featuredAlbums": [
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "3yQZ3s8FaMVOxp9KNhD6cj",
-        "title": "That's How Rhythm Was Born"
+        "title": "That's How Rhythm Was Born",
+        "year": "1995",
+        "mbReleaseGroupId": "5ee5ec60-2c95-3b84-a1f4-96fdfc0853ff"
       },
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "3TWsuRE8ERH7QnlNHTNVuZ",
         "title": "The Boswell Sisters, Vol. 1"
       }
     ]

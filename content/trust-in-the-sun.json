@@ -8,29 +8,57 @@
     "canonicalUrl": "https://earclef.netlify.app/trust-in-the-sun"
   },
   "integrations": {
-    "spotify": { "artistId": "" },
-    "youtube": { "channelId": "" },
-    "setlistfm": { "mbid": "" }
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": ""
+    },
+    "setlistfm": {
+      "mbid": ""
+    }
   },
   "hero": {
     "name": "Trust in the Sun",
     "identity": "A buttery Las Vegas fusion of jazz, soul, funk and pop.",
     "tagline": "Hear here!",
     "location": "Las Vegas, NV",
-    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
     "socials": [
-      { "platform": "facebook", "url": "https://www.facebook.com/TrustInTheSun/" },
-      { "platform": "instagram", "url": "https://www.instagram.com/trustinthesun/" }
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/TrustInTheSun/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/trustinthesun/"
+      }
     ]
   },
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "bandcamp", "url": "https://trustinthesun.bandcamp.com" }
+      {
+        "platform": "bandcamp",
+        "url": "https://trustinthesun.bandcamp.com"
+      }
     ],
-    "embeds": []
+    "featuredAlbums": [
+      {
+        "title": "Show Me How"
+      },
+      {
+        "title": "City of Stars"
+      }
+    ]
   },
-  "watch": { "enabled": false, "videos": [] },
+  "watch": {
+    "enabled": false,
+    "videos": []
+  },
   "story": {
     "enabled": true,
     "heading": "The Story",
@@ -47,7 +75,16 @@
     "upcoming": [],
     "past": []
   },
-  "merch": { "enabled": false, "items": [] },
-  "press": { "enabled": false, "items": [] },
-  "footer": { "tagline": "Music in balance", "attribution": "an Ear Clef page" }
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
 }

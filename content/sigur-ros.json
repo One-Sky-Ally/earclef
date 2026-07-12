@@ -54,10 +54,6 @@
     "enabled": true,
     "platforms": [
       {
-        "platform": "spotify",
-        "url": "https://open.spotify.com/artist/6UUrUCIZtQeOf8tC0WuzRy"
-      },
-      {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/sigur-r%C3%B3s/73720797"
       },
@@ -66,18 +62,16 @@
         "url": "https://sigurros.bandcamp.com"
       }
     ],
-    "embeds": [
+    "featuredAlbums": [
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "7LKQtdC6uWxqLzSbDonFij",
-        "title": "Ágætis byrjun"
+        "title": "Ágætis byrjun",
+        "year": "1999",
+        "mbReleaseGroupId": "62b427b8-1c52-34e7-b250-da2aa3e44860"
       },
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "3sE83l3A58DipFp3EzNLiE",
-        "title": "Takk..."
+        "title": "Takk…",
+        "year": "2005",
+        "mbReleaseGroupId": "47d8e9e2-dc13-3d94-afee-1f8c38cec091"
       }
     ]
   },

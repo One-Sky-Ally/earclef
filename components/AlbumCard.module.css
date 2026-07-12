@@ -1,0 +1,92 @@
+.card {
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--bg-card);
+  padding: 1.1rem;
+  transition: border-color 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 1.1rem;
+  align-items: center;
+}
+
+.cover {
+  width: 108px;
+  height: 108px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.year {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.listenHint {
+  margin-top: 0.3rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.tracksToggle {
+  margin-top: 0.9rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.tracksToggle:hover {
+  color: var(--accent);
+}
+
+.tracksNote {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.tracks {
+  margin: 0.75rem 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.track {
+  color: var(--text-soft);
+  transition: color 0.15s ease;
+}
+
+.track:hover {
+  color: var(--accent);
+}

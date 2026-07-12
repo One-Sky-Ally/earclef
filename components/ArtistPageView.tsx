@@ -26,9 +26,20 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
       <SiteNav anchorBase={anchorBase} />
       <Hero hero={content.hero} />
       <main>
-        {content.listen.enabled && <Listen listen={content.listen} />}
+        {content.listen.enabled && (
+          <Listen
+            listen={content.listen}
+            artistName={content.hero.name}
+            mbid={content.integrations.setlistfm.mbid || undefined}
+          />
+        )}
         {content.watch.enabled && (
-          <Watch watch={content.watch} channelUrl={youtubeChannelUrl} />
+          <Watch
+            watch={content.watch}
+            artistName={content.hero.name}
+            channelId={content.integrations.youtube.channelId || undefined}
+            channelUrl={youtubeChannelUrl}
+          />
         )}
         {content.story.enabled && <Story story={content.story} />}
         {content.shows.enabled && <Shows shows={content.shows} />}

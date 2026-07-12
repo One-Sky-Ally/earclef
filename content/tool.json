@@ -52,24 +52,17 @@
   },
   "listen": {
     "enabled": true,
-    "platforms": [
+    "platforms": [],
+    "featuredAlbums": [
       {
-        "platform": "spotify",
-        "url": "https://open.spotify.com/artist/2yEwvVSSSUkcLeSTNyHKh8"
-      }
-    ],
-    "embeds": [
-      {
-        "type": "spotify",
-        "kind": "album",
-        "id": "5l5m1hnH4punS1GQXgEi3T",
-        "title": "Lateralus"
+        "title": "Lateralus",
+        "year": "2001",
+        "mbReleaseGroupId": "02f79295-21e1-34cc-82f2-63219eec4f0a"
       },
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "7acEciVtnuTzmwKptkjth5",
-        "title": "Fear Inoculum"
+        "title": "Fear Inoculum",
+        "year": "2019",
+        "mbReleaseGroupId": "76203bd0-466b-4802-a7ca-9b0097a3f862"
       }
     ]
   },

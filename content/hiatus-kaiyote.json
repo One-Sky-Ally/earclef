@@ -8,42 +8,88 @@
     "canonicalUrl": "https://earclef.netlify.app/hiatus-kaiyote"
   },
   "integrations": {
-    "spotify": { "artistId": "43JlwunhXm1oqdKyOa2Z9Y" },
-    "youtube": { "channelId": "UCmD8TDgJxofPfxA8GTpaCCQ" },
-    "setlistfm": { "mbid": "55c03773-59ea-4d4e-9057-87c2ecab005d" }
+    "spotify": {
+      "artistId": "43JlwunhXm1oqdKyOa2Z9Y"
+    },
+    "youtube": {
+      "channelId": "UCmD8TDgJxofPfxA8GTpaCCQ"
+    },
+    "setlistfm": {
+      "mbid": "55c03773-59ea-4d4e-9057-87c2ecab005d"
+    }
   },
   "hero": {
     "name": "Hiatus Kaiyote",
     "identity": "Future-soul four-piece bending jazz, funk and electronics into something wholly Melbourne.",
     "tagline": "Hear here!",
     "location": "Melbourne, Australia",
-    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
     "socials": [
-      { "platform": "website", "url": "https://hiatuskaiyote.com" },
-      { "platform": "instagram", "url": "https://www.instagram.com/hiatuskaiyote/" },
-      { "platform": "x", "url": "https://x.com/HiatusKaiyote" },
-      { "platform": "facebook", "url": "https://www.facebook.com/hiatuskaiyote" },
-      { "platform": "youtube", "url": "https://www.youtube.com/@hiatuskaiyote" }
+      {
+        "platform": "website",
+        "url": "https://hiatuskaiyote.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/hiatuskaiyote/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/HiatusKaiyote"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/hiatuskaiyote"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@hiatuskaiyote"
+      }
     ]
   },
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "spotify", "url": "https://open.spotify.com/artist/43JlwunhXm1oqdKyOa2Z9Y" },
-      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/hiatus-kaiyote/514090753" },
-      { "platform": "bandcamp", "url": "https://hiatuskaiyote.bandcamp.com" }
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/hiatus-kaiyote/514090753"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://hiatuskaiyote.bandcamp.com"
+      }
     ],
-    "embeds": [
-      { "type": "spotify", "kind": "album", "id": "456WeVeZk38VJuqg2sL7QG", "title": "Mood Valiant" },
-      { "type": "spotify", "kind": "album", "id": "3qzmmmRmVBiOuMvrerfW4z", "title": "Choose Your Weapon" }
+    "featuredAlbums": [
+      {
+        "title": "Mood Valiant",
+        "year": "2021",
+        "mbReleaseGroupId": "22440c59-8982-4aa3-b04e-f91973a4d7b2"
+      },
+      {
+        "title": "Choose Your Weapon",
+        "year": "2015",
+        "mbReleaseGroupId": "bc1208bf-df41-4f30-ae95-4b54a12ba5aa"
+      }
     ]
   },
   "watch": {
     "enabled": true,
     "videos": [
-      { "youtubeId": "Uo0c3TECDkM", "title": "Nakamarra" },
-      { "youtubeId": "5auslviJaHs", "title": "Love Heart Cheat Code" },
-      { "youtubeId": "nMGOHrwmYzs", "title": "Make Friends" }
+      {
+        "youtubeId": "Uo0c3TECDkM",
+        "title": "Nakamarra"
+      },
+      {
+        "youtubeId": "5auslviJaHs",
+        "title": "Love Heart Cheat Code"
+      },
+      {
+        "youtubeId": "nMGOHrwmYzs",
+        "title": "Make Friends"
+      }
     ]
   },
   "story": {
@@ -95,19 +141,28 @@
       {
         "name": "Mood Valiant — Red In Black Inkspot LP",
         "description": "Limited-pressing vinyl edition of the Grammy-nominated 2021 album.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://store.hiatuskaiyote.com/music-slash-merch"
       },
       {
         "name": "Guitar Power Tee",
         "description": "Official Hiatus Kaiyote t-shirt from the band's store.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://store.hiatuskaiyote.com/music-slash-merch/categories/t-shirts"
       },
       {
         "name": "Mood Valiant — Tote Bag",
         "description": "Official tote from the Mood Valiant era.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://store.hiatuskaiyote.com/music-slash-merch/categories/accessories"
       }
     ]
@@ -132,5 +187,8 @@
       }
     ]
   },
-  "footer": { "tagline": "Music in balance", "attribution": "an Ear Clef page" }
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "an Ear Clef page"
+  }
 }

@@ -46,7 +46,18 @@
         "url": "https://www.dragcity.com/artists/joanna-newsom"
       }
     ],
-    "embeds": []
+    "featuredAlbums": [
+      {
+        "title": "Ys",
+        "year": "2006",
+        "mbReleaseGroupId": "34315f68-08a5-3637-8da7-deaad8f45514"
+      },
+      {
+        "title": "Divers",
+        "year": "2015",
+        "mbReleaseGroupId": "099da227-07ea-42fd-b46e-9e1938fe18d3"
+      }
+    ]
   },
   "watch": {
     "enabled": true,

@@ -54,26 +54,20 @@
     "enabled": true,
     "platforms": [
       {
-        "platform": "spotify",
-        "url": "https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2"
-      },
-      {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/the-beatles/136975"
       }
     ],
-    "embeds": [
+    "featuredAlbums": [
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "0ETFjACtuP2ADo6LFhL6HN",
-        "title": "Abbey Road"
+        "title": "Abbey Road",
+        "year": "1969",
+        "mbReleaseGroupId": "9162580e-5df4-32de-80cc-f45a8d8a9b1d"
       },
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "6QaVfG1pHYl1z15ZxkvVDW",
-        "title": "Sgt. Pepper's Lonely Hearts Club Band"
+        "title": "Sgt. Pepper's Lonely Hearts Club Band",
+        "year": "1967",
+        "mbReleaseGroupId": "9f7a4c28-8fa2-3113-929c-c47a9f7982c3"
       }
     ]
   },

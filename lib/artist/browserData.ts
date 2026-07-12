@@ -1,0 +1,59 @@
+/** Client-side types + fetchers for the catalog and videos popups. */
+
+export interface CatalogItem {
+  rgid: string
+  title: string
+  year?: string
+}
+
+export interface BrowserCategory<T> {
+  key: string
+  label: string
+  items: T[]
+}
+
+export interface CatalogResponse {
+  categories: BrowserCategory<CatalogItem>[]
+}
+
+export interface VideoItem {
+  videoId: string
+  title: string
+}
+
+export interface VideosResponse {
+  source: 'api' | 'rss'
+  partial: boolean
+  categories: BrowserCategory<VideoItem>[]
+}
+
+export interface AlbumDetails {
+  tracks: string[]
+}
+
+async function getJson<T>(url: string, signal: AbortSignal): Promise<T> {
+  const res = await fetch(url, { signal })
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  return res.json()
+}
+
+export function fetchCatalog(
+  mbid: string,
+  signal: AbortSignal,
+): Promise<CatalogResponse> {
+  return getJson(`/api/artist/catalog/${mbid}`, signal)
+}
+
+export function fetchVideos(
+  channelId: string,
+  signal: AbortSignal,
+): Promise<VideosResponse> {
+  return getJson(`/api/artist/videos/${channelId}`, signal)
+}
+
+export function fetchAlbumDetails(
+  rgid: string,
+  signal: AbortSignal,
+): Promise<AlbumDetails> {
+  return getJson(`/api/artist/album/${rgid}`, signal)
+}

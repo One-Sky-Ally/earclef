@@ -54,26 +54,20 @@
     "enabled": true,
     "platforms": [
       {
-        "platform": "spotify",
-        "url": "https://open.spotify.com/artist/3AA28KZvwAUcZuOKwyblJQ"
-      },
-      {
         "platform": "bandcamp",
         "url": "https://gorillaz.bandcamp.com"
       }
     ],
-    "embeds": [
+    "featuredAlbums": [
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "45IcwOkFv3YqTpU5Bal8fl",
-        "title": "Demon Days"
+        "title": "Demon Days",
+        "year": "2005",
+        "mbReleaseGroupId": "f959a46a-a136-3134-9412-6572b23fad95"
       },
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "4wtZQMNTC1O79kDxMBsEan",
-        "title": "Cracker Island"
+        "title": "Cracker Island",
+        "year": "2023",
+        "mbReleaseGroupId": "160bc106-a0d1-456e-b704-6f91b05dfa04"
       }
     ]
   },

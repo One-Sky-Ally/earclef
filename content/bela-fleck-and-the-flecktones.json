@@ -50,26 +50,20 @@
     "enabled": true,
     "platforms": [
       {
-        "platform": "spotify",
-        "url": "https://open.spotify.com/artist/5Zmur9D9gpr6tXyDrpnbOe"
-      },
-      {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/b%C3%A9la-fleck-the-flecktones/158010792"
       }
     ],
-    "embeds": [
+    "featuredAlbums": [
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "58VJzBF0hLb6ylVHdn1XB0",
-        "title": "Béla Fleck and the Flecktones"
+        "title": "Béla Fleck and the Flecktones",
+        "year": "1990",
+        "mbReleaseGroupId": "35a0a631-c711-3818-b726-b0d63b2bf602"
       },
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "2W76N8D76BqfRlDjzQSOKL",
-        "title": "Jingle All the Way"
+        "title": "Jingle All the Way",
+        "year": "2008",
+        "mbReleaseGroupId": "9643cc4c-e0a5-3428-82b9-cadcf2c00d65"
       }
     ]
   },

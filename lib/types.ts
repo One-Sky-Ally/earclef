@@ -41,17 +41,17 @@ export interface HeroContent {
   socials: PlatformLink[]
 }
 
-export interface EmbedRef {
-  type: 'spotify' | 'bandcamp'
-  kind: 'album' | 'track' | 'artist' | 'playlist'
-  id: string
+export interface FeaturedAlbum {
   title: string
+  year?: string
+  /** MusicBrainz release-group id — powers artwork and tracklists. */
+  mbReleaseGroupId?: string
 }
 
 export interface ListenContent {
   enabled: boolean
   platforms: PlatformLink[]
-  embeds: EmbedRef[]
+  featuredAlbums: FeaturedAlbum[]
 }
 
 export interface VideoRef {

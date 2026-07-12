@@ -1,14 +1,17 @@
 import type { WatchContent } from '@/lib/types'
 import { SectionHeader } from '@/components/SectionHeader'
 import { YouTubeEmbed } from '@/components/YouTubeEmbed'
+import { VideosLauncher } from '@/components/VideosLauncher'
 import styles from './Watch.module.css'
 
 interface WatchProps {
   watch: WatchContent
+  artistName: string
+  channelId?: string
   channelUrl?: string
 }
 
-export function Watch({ watch, channelUrl }: WatchProps) {
+export function Watch({ watch, artistName, channelId, channelUrl }: WatchProps) {
   const [featured, ...rest] = watch.videos
 
   return (
@@ -27,16 +30,12 @@ export function Watch({ watch, channelUrl }: WatchProps) {
             ))}
           </div>
         )}
-        {channelUrl && (
-          <a
-            className={styles.more}
-            href={channelUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            View all videos →
-          </a>
-        )}
+        <VideosLauncher
+          artistName={artistName}
+          channelId={channelId}
+          fallbackUrl={channelUrl}
+          className={styles.more}
+        />
       </div>
     </section>
   )

@@ -54,10 +54,6 @@
     "enabled": true,
     "platforms": [
       {
-        "platform": "spotify",
-        "url": "https://open.spotify.com/artist/7w29UYBi0qsHi5RTcv3lmA"
-      },
-      {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/bj%C3%B6rk/295015"
       },
@@ -66,18 +62,16 @@
         "url": "https://bjork.bandcamp.com"
       }
     ],
-    "embeds": [
+    "featuredAlbums": [
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "0HMsmYvoT1h2x1C4di5faf",
-        "title": "Homogenic"
+        "title": "Homogenic",
+        "year": "1997",
+        "mbReleaseGroupId": "810272e0-aef1-3d85-b2d3-e512e87fc38c"
       },
       {
-        "type": "spotify",
-        "kind": "album",
-        "id": "5vBpIxm8ws6pWyVmTWiGE1",
-        "title": "Vespertine"
+        "title": "Vespertine",
+        "year": "2001",
+        "mbReleaseGroupId": "271faeb3-fdd1-3ebb-80aa-97b3116e9341"
       }
     ]
   },

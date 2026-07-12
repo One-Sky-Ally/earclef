@@ -1,20 +1,23 @@
 {
   "schemaVersion": 1,
   "slug": "radiohead",
-
   "meta": {
     "title": "Radiohead — Ear Clef",
     "description": "Radiohead's whole universe in one place: music, videos, story, setlists, shows, and merch. An Ear Clef page.",
     "ogImage": "/images/og-radiohead.jpg",
     "canonicalUrl": "https://earclef.netlify.app"
   },
-
   "integrations": {
-    "spotify": { "artistId": "4Z8W4fKeB5YxbusRsdQVPb" },
-    "youtube": { "channelId": "UCq19-LqvG35A-30oyAiPiqA" },
-    "setlistfm": { "mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711" }
+    "spotify": {
+      "artistId": "4Z8W4fKeB5YxbusRsdQVPb"
+    },
+    "youtube": {
+      "channelId": "UCq19-LqvG35A-30oyAiPiqA"
+    },
+    "setlistfm": {
+      "mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711"
+    }
   },
-
   "hero": {
     "name": "Radiohead",
     "identity": "Five musicians from Oxfordshire who keep reinventing what a rock band can be.",
@@ -22,40 +25,77 @@
     "location": "Oxford, England",
     "image": {
       "src": "/images/hero-placeholder.svg",
-      "alt": "EDIT-ME: placeholder — no rights-cleared band photo; Spotify API artwork replaces this at milestone 5"
+      "alt": "Placeholder artwork"
     },
     "socials": [
-      { "platform": "website", "url": "https://www.radiohead.com" },
-      { "platform": "instagram", "url": "https://www.instagram.com/radiohead" },
-      { "platform": "x", "url": "https://x.com/radiohead" },
-      { "platform": "facebook", "url": "https://www.facebook.com/radiohead" },
-      { "platform": "youtube", "url": "https://www.youtube.com/channel/UCq19-LqvG35A-30oyAiPiqA" }
+      {
+        "platform": "website",
+        "url": "https://www.radiohead.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/radiohead"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/radiohead"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/radiohead"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCq19-LqvG35A-30oyAiPiqA"
+      }
     ]
   },
-
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "spotify", "url": "https://open.spotify.com/artist/4Z8W4fKeB5YxbusRsdQVPb" },
-      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/radiohead/657515" },
-      { "platform": "bandcamp", "url": "https://radiohead.bandcamp.com" }
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/radiohead/657515"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://radiohead.bandcamp.com"
+      }
     ],
-    "embeds": [
-      { "type": "spotify", "kind": "album", "id": "5vkqYmiPBYLaalcmjujWxK", "title": "In Rainbows" },
-      { "type": "spotify", "kind": "album", "id": "6dVIqQ8qmQ5GBnJ9shOYGE", "title": "OK Computer" }
+    "featuredAlbums": [
+      {
+        "title": "In Rainbows",
+        "year": "2007",
+        "mbReleaseGroupId": "6e335887-60ba-38f0-95af-fae7774336bf"
+      },
+      {
+        "title": "OK Computer",
+        "year": "1997",
+        "mbReleaseGroupId": "b1392450-e666-3926-a536-22c65f834433"
+      }
     ]
   },
-
   "watch": {
     "enabled": true,
     "videos": [
-      { "youtubeId": "u5CVsCnxyXg", "title": "No Surprises" },
-      { "youtubeId": "1uYWYWPc9HU", "title": "Karma Police" },
-      { "youtubeId": "fHiGbolFFGw", "title": "Paranoid Android" },
-      { "youtubeId": "TTAU7lLDZYU", "title": "Daydreaming" }
+      {
+        "youtubeId": "u5CVsCnxyXg",
+        "title": "No Surprises"
+      },
+      {
+        "youtubeId": "1uYWYWPc9HU",
+        "title": "Karma Police"
+      },
+      {
+        "youtubeId": "fHiGbolFFGw",
+        "title": "Paranoid Android"
+      },
+      {
+        "youtubeId": "TTAU7lLDZYU",
+        "title": "Daydreaming"
+      }
     ]
   },
-
   "story": {
     "enabled": true,
     "heading": "The Story",
@@ -66,7 +106,6 @@
       "After seven years away from the stage, Radiohead returned in November 2025 with twenty arena shows across Madrid, Bologna, London, Copenhagen, and Berlin — played in the round, drawing from their whole catalog, and treating no two nights the same. The band has said it intends to keep playing roughly twenty concerts a year, on rotating continents, on its own terms — which is about as Radiohead as touring plans get."
     ]
   },
-
   "shows": {
     "enabled": true,
     "upcomingNote": "No upcoming shows are currently announced. Official tour news comes from W.A.S.T.E. — beware lookalike announcements elsewhere.",
@@ -100,31 +139,38 @@
       }
     ]
   },
-
   "merch": {
     "enabled": true,
     "items": [
       {
         "name": "W.A.S.T.E. — Official Store (UK)",
         "description": "Radiohead's official merchandise operation since 1991: clothing, vinyl, and exclusives.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "EDIT-ME: placeholder card image for the W.A.S.T.E. UK store" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://store.wasteheadquarters.com/collections/radiohead"
       },
       {
         "name": "W.A.S.T.E. — EU Store",
         "description": "The official European store for EU-based fans.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "EDIT-ME: placeholder card image for the W.A.S.T.E. EU store" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://store-eu.wasteheadquarters.com/collections/radiohead"
       },
       {
         "name": "Radiohead on Bandcamp",
         "description": "Digital catalog direct from the band, including OK Computer OKNOTOK.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "EDIT-ME: placeholder card image for Radiohead's Bandcamp" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://radiohead.bandcamp.com"
       }
     ]
   },
-
   "press": {
     "enabled": true,
     "items": [
@@ -150,7 +196,6 @@
       }
     ]
   },
-
   "footer": {
     "tagline": "Music in balance",
     "attribution": "an Ear Clef page"
