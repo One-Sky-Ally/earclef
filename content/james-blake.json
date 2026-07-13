@@ -8,42 +8,91 @@
     "canonicalUrl": "https://earclef.netlify.app/james-blake"
   },
   "integrations": {
-    "spotify": { "artistId": "" },
-    "youtube": { "channelId": "UCIZ4NEJamsWybup2TJUdoPA" },
-    "setlistfm": { "mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8" },
-    "itunes": { "artistId": "59504818" }
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCIZ4NEJamsWybup2TJUdoPA"
+    },
+    "setlistfm": {
+      "mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8"
+    },
+    "itunes": {
+      "artistId": "59504818"
+    }
   },
   "hero": {
     "name": "James Blake",
     "identity": "A choirboy's voice suspended in sub-bass — songs built from silence as much as sound.",
     "tagline": "Hear here!",
     "location": "London, United Kingdom",
-    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
     "socials": [
-      { "platform": "website", "url": "https://jamesblakemusic.com" },
-      { "platform": "instagram", "url": "https://www.instagram.com/jamesblake/" },
-      { "platform": "x", "url": "https://twitter.com/jamesblake" },
-      { "platform": "facebook", "url": "https://www.facebook.com/jamesblakemusic" },
-      { "platform": "youtube", "url": "https://www.youtube.com/channel/UCIZ4NEJamsWybup2TJUdoPA" }
+      {
+        "platform": "website",
+        "url": "https://jamesblakemusic.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/jamesblake/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/jamesblake"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/jamesblakemusic"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCIZ4NEJamsWybup2TJUdoPA"
+      }
     ]
   },
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/james-blake/59504818" }
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/james-blake/59504818"
+      }
     ],
     "featuredAlbums": [
-      { "title": "James Blake", "year": "2011", "mbReleaseGroupId": "e2c51226-996b-4f7c-9bdf-d52d63c46a26" },
-      { "title": "Overgrown", "year": "2013", "mbReleaseGroupId": "b9a4e9ad-400c-4219-ae45-519c2d8167f7" }
+      {
+        "title": "James Blake",
+        "year": "2011",
+        "mbReleaseGroupId": "e2c51226-996b-4f7c-9bdf-d52d63c46a26"
+      },
+      {
+        "title": "Overgrown",
+        "year": "2013",
+        "mbReleaseGroupId": "b9a4e9ad-400c-4219-ae45-519c2d8167f7"
+      }
     ]
   },
   "watch": {
     "enabled": true,
     "videos": [
-      { "youtubeId": "Jg6ngjH2tCc", "title": "Trying Times" },
-      { "youtubeId": "cGDEVsjBhz0", "title": "Death of Love" },
-      { "youtubeId": "ia9N2IjoFGY", "title": "Doesn't Just Happen (ft. Dave)" },
-      { "youtubeId": "6p6PcFFUm5I", "title": "Retrograde" }
+      {
+        "youtubeId": "Jg6ngjH2tCc",
+        "title": "Trying Times"
+      },
+      {
+        "youtubeId": "cGDEVsjBhz0",
+        "title": "Death of Love"
+      },
+      {
+        "youtubeId": "ia9N2IjoFGY",
+        "title": "Doesn't Just Happen (ft. Dave)"
+      },
+      {
+        "youtubeId": "6p6PcFFUm5I",
+        "title": "Retrograde"
+      }
     ]
   },
   "story": {
@@ -97,7 +146,10 @@
       {
         "name": "Official Store",
         "description": "Apparel, vinyl and more from the official James Blake store.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://shop.jamesblakemusic.com"
       }
     ]
@@ -105,12 +157,20 @@
   "press": {
     "enabled": true,
     "items": [
-      { "title": "James Blake: Overgrown — review", "outlet": "The Guardian", "url": "https://www.theguardian.com/music/2013/apr/04/james-blake-overgrown-review" },
-      { "title": "James Blake — Overgrown", "outlet": "The Quietus", "url": "https://thequietus.com/quietus-reviews/james-blake-overgrown-review/" }
+      {
+        "title": "James Blake: Overgrown — review",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2013/apr/04/james-blake-overgrown-review"
+      },
+      {
+        "title": "James Blake — Overgrown",
+        "outlet": "The Quietus",
+        "url": "https://thequietus.com/quietus-reviews/james-blake-overgrown-review/"
+      }
     ]
   },
   "footer": {
     "tagline": "Music in balance",
-    "attribution": "an Ear Clef page"
+    "attribution": "A One Sky Ally project"
   }
 }

@@ -8,43 +8,95 @@
     "canonicalUrl": "https://earclef.netlify.app/imogen-heap"
   },
   "integrations": {
-    "spotify": { "artistId": "" },
-    "youtube": { "channelId": "UC07ZTiBUTi6qMu74EGZY8DA" },
-    "setlistfm": { "mbid": "328d146c-79f1-4eb6-9e40-8ee5710c14e5" },
-    "itunes": { "artistId": "22873602" }
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UC07ZTiBUTi6qMu74EGZY8DA"
+    },
+    "setlistfm": {
+      "mbid": "328d146c-79f1-4eb6-9e40-8ee5710c14e5"
+    },
+    "itunes": {
+      "artistId": "22873602"
+    }
   },
   "hero": {
     "name": "Imogen Heap",
     "identity": "Self-produced electronic pop from a songwriter who builds her own instruments.",
     "tagline": "Hear here!",
     "location": "London, England",
-    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
     "socials": [
-      { "platform": "website", "url": "https://www.imogenheap.com" },
-      { "platform": "instagram", "url": "https://www.instagram.com/imogenheap/" },
-      { "platform": "x", "url": "https://x.com/imogenheap" },
-      { "platform": "facebook", "url": "https://www.facebook.com/imogenheap" },
-      { "platform": "youtube", "url": "https://www.youtube.com/channel/UC07ZTiBUTi6qMu74EGZY8DA" }
+      {
+        "platform": "website",
+        "url": "https://www.imogenheap.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/imogenheap/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/imogenheap"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/imogenheap"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC07ZTiBUTi6qMu74EGZY8DA"
+      }
     ]
   },
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/imogen-heap/22873602" },
-      { "platform": "bandcamp", "url": "https://imogenheap.bandcamp.com" }
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/imogen-heap/22873602"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://imogenheap.bandcamp.com"
+      }
     ],
     "featuredAlbums": [
-      { "title": "Speak for Yourself", "year": "2005", "mbReleaseGroupId": "a100260d-0576-372f-a07b-4b22db1a77e2" },
-      { "title": "Ellipse", "year": "2009", "mbReleaseGroupId": "bde4fd36-2072-4dca-a1d7-5f4a45ee2dcb" }
+      {
+        "title": "Speak for Yourself",
+        "year": "2005",
+        "mbReleaseGroupId": "a100260d-0576-372f-a07b-4b22db1a77e2"
+      },
+      {
+        "title": "Ellipse",
+        "year": "2009",
+        "mbReleaseGroupId": "bde4fd36-2072-4dca-a1d7-5f4a45ee2dcb"
+      }
     ]
   },
   "watch": {
     "enabled": true,
     "videos": [
-      { "youtubeId": "UYIAfiVGluk", "title": "Hide and Seek" },
-      { "youtubeId": "roPiy2JydwA", "title": "Headlock" },
-      { "youtubeId": "iqjWodek8ZM", "title": "Goodnight and Go" },
-      { "youtubeId": "QKiZJCFYAbg", "title": "Tiny Human" }
+      {
+        "youtubeId": "UYIAfiVGluk",
+        "title": "Hide and Seek"
+      },
+      {
+        "youtubeId": "roPiy2JydwA",
+        "title": "Headlock"
+      },
+      {
+        "youtubeId": "iqjWodek8ZM",
+        "title": "Goodnight and Go"
+      },
+      {
+        "youtubeId": "QKiZJCFYAbg",
+        "title": "Tiny Human"
+      }
     ]
   },
   "story": {
@@ -98,13 +150,19 @@
       {
         "name": "Speak for Yourself (20th Anniversary Remaster)",
         "description": "CD and download edition from Imogen Heap's official shop.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://shop.imogenheap.com/release/537072-imogen-heap-speak-for-yourself-20th-anniversary-remaster"
       },
       {
         "name": "Speak for Yourself (20th Anniversary Remaster) Tee",
         "description": "Anniversary T-shirt from Imogen Heap's official shop.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://shop.imogenheap.com/release/550399-imogen-heap-speak-for-yourself-20th-anniversary-remaster-tee"
       }
     ]
@@ -134,5 +192,8 @@
       }
     ]
   },
-  "footer": { "tagline": "Music in balance", "attribution": "an Ear Clef page" }
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
 }

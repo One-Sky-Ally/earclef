@@ -35,9 +35,7 @@ function checkStructure(slug, c) {
   }
   if (issues.length) return issues
 
-  const expectedCanonical = slug === 'radiohead'
-    ? 'https://earclef.netlify.app'
-    : `https://earclef.netlify.app/${slug}`
+  const expectedCanonical = `https://earclef.netlify.app/${slug}`
   if (c.meta.canonicalUrl !== expectedCanonical) {
     issues.push(`canonicalUrl ${c.meta.canonicalUrl}`)
   }

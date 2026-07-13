@@ -8,39 +8,79 @@
     "canonicalUrl": "https://earclef.netlify.app/thom-yorke"
   },
   "integrations": {
-    "spotify": { "artistId": "" },
-    "youtube": { "channelId": "UC9BJwi8Q2AiLtLHdGlWqsrQ" },
-    "setlistfm": { "mbid": "8ed2e0b3-aa4c-4e13-bec3-dc7393ed4d6b" },
-    "itunes": { "artistId": "39753073" }
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UC9BJwi8Q2AiLtLHdGlWqsrQ"
+    },
+    "setlistfm": {
+      "mbid": "8ed2e0b3-aa4c-4e13-bec3-dc7393ed4d6b"
+    },
+    "itunes": {
+      "artistId": "39753073"
+    }
   },
   "hero": {
     "name": "Thom Yorke",
     "identity": "A falsetto threaded through circuitry — Radiohead's voice, wandering alone into the glitch.",
     "tagline": "Hear here!",
     "location": "Oxford, United Kingdom",
-    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
     "socials": [
-      { "platform": "website", "url": "https://www.thomyorke.com" },
-      { "platform": "youtube", "url": "https://www.youtube.com/channel/UC9BJwi8Q2AiLtLHdGlWqsrQ" }
+      {
+        "platform": "website",
+        "url": "https://www.thomyorke.com"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC9BJwi8Q2AiLtLHdGlWqsrQ"
+      }
     ]
   },
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/thom-yorke/39753073" }
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/thom-yorke/39753073"
+      }
     ],
     "featuredAlbums": [
-      { "title": "The Eraser", "year": "2006", "mbReleaseGroupId": "2a971a81-2f4d-333b-8327-8b2d73c649cf" },
-      { "title": "ANIMA", "year": "2019", "mbReleaseGroupId": "447435e2-8395-45f5-812b-f03f7525c8d6" }
+      {
+        "title": "The Eraser",
+        "year": "2006",
+        "mbReleaseGroupId": "2a971a81-2f4d-333b-8327-8b2d73c649cf"
+      },
+      {
+        "title": "ANIMA",
+        "year": "2019",
+        "mbReleaseGroupId": "447435e2-8395-45f5-812b-f03f7525c8d6"
+      }
     ]
   },
   "watch": {
     "enabled": true,
     "videos": [
-      { "youtubeId": "I03xFqbxUp8", "title": "Last I Heard (…He Was Circling the Drain)" },
-      { "youtubeId": "DL4mtAIpPcU", "title": "Dialing In" },
-      { "youtubeId": "V-PPMG_hGoQ", "title": "Four Ways in Time" },
-      { "youtubeId": "zLvrbxv2J-Q", "title": "Confidenza" }
+      {
+        "youtubeId": "I03xFqbxUp8",
+        "title": "Last I Heard (…He Was Circling the Drain)"
+      },
+      {
+        "youtubeId": "DL4mtAIpPcU",
+        "title": "Dialing In"
+      },
+      {
+        "youtubeId": "V-PPMG_hGoQ",
+        "title": "Four Ways in Time"
+      },
+      {
+        "youtubeId": "zLvrbxv2J-Q",
+        "title": "Confidenza"
+      }
     ]
   },
   "story": {
@@ -95,12 +135,20 @@
   "press": {
     "enabled": true,
     "items": [
-      { "title": "Thom Yorke: ANIMA", "outlet": "Pitchfork", "url": "https://pitchfork.com/reviews/albums/thom-yorke-anima/" },
-      { "title": "Thom Yorke — ANIMA · Album Review", "outlet": "Resident Advisor", "url": "https://ra.co/reviews/23933" }
+      {
+        "title": "Thom Yorke: ANIMA",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/thom-yorke-anima/"
+      },
+      {
+        "title": "Thom Yorke — ANIMA · Album Review",
+        "outlet": "Resident Advisor",
+        "url": "https://ra.co/reviews/23933"
+      }
     ]
   },
   "footer": {
     "tagline": "Music in balance",
-    "attribution": "an Ear Clef page"
+    "attribution": "A One Sky Ally project"
   }
 }

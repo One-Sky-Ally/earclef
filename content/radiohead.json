@@ -5,7 +5,7 @@
     "title": "Radiohead — Ear Clef",
     "description": "Radiohead's whole universe in one place: music, videos, story, setlists, shows, and merch. An Ear Clef page.",
     "ogImage": "/images/og-radiohead.jpg",
-    "canonicalUrl": "https://earclef.netlify.app"
+    "canonicalUrl": "https://earclef.netlify.app/radiohead"
   },
   "integrations": {
     "spotify": {
@@ -201,6 +201,6 @@
   },
   "footer": {
     "tagline": "Music in balance",
-    "attribution": "an Ear Clef page"
+    "attribution": "A One Sky Ally project"
   }
 }

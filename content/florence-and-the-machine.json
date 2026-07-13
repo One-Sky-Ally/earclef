@@ -8,42 +8,91 @@
     "canonicalUrl": "https://earclef.netlify.app/florence-and-the-machine"
   },
   "integrations": {
-    "spotify": { "artistId": "" },
-    "youtube": { "channelId": "UC5MujsH-hrVWHBBfSSmv18A" },
-    "setlistfm": { "mbid": "5fee3020-513b-48c2-b1f7-4681b01db0c6" },
-    "itunes": { "artistId": "281070699" }
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UC5MujsH-hrVWHBBfSSmv18A"
+    },
+    "setlistfm": {
+      "mbid": "5fee3020-513b-48c2-b1f7-4681b01db0c6"
+    },
+    "itunes": {
+      "artistId": "281070699"
+    }
   },
   "hero": {
     "name": "Florence + the Machine",
     "identity": "Cathedral-sized art rock built on Florence Welch's hurricane of a voice.",
     "tagline": "Hear here!",
     "location": "London, England",
-    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
     "socials": [
-      { "platform": "website", "url": "https://florenceandthemachine.net" },
-      { "platform": "instagram", "url": "https://www.instagram.com/florenceandthemachine/" },
-      { "platform": "x", "url": "https://x.com/florencemachine" },
-      { "platform": "facebook", "url": "https://www.facebook.com/florenceandthemachine" },
-      { "platform": "youtube", "url": "https://www.youtube.com/channel/UC5MujsH-hrVWHBBfSSmv18A" }
+      {
+        "platform": "website",
+        "url": "https://florenceandthemachine.net"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/florenceandthemachine/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/florencemachine"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/florenceandthemachine"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC5MujsH-hrVWHBBfSSmv18A"
+      }
     ]
   },
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/florence-the-machine/281070699" }
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/florence-the-machine/281070699"
+      }
     ],
     "featuredAlbums": [
-      { "title": "Lungs", "year": "2009", "mbReleaseGroupId": "50fe703f-173e-496a-9155-b2a495d704e5" },
-      { "title": "Ceremonials", "year": "2011", "mbReleaseGroupId": "998f1bc8-6703-49fe-8aed-028ec04a14f2" }
+      {
+        "title": "Lungs",
+        "year": "2009",
+        "mbReleaseGroupId": "50fe703f-173e-496a-9155-b2a495d704e5"
+      },
+      {
+        "title": "Ceremonials",
+        "year": "2011",
+        "mbReleaseGroupId": "998f1bc8-6703-49fe-8aed-028ec04a14f2"
+      }
     ]
   },
   "watch": {
     "enabled": true,
     "videos": [
-      { "youtubeId": "iWOyfLBYtuU", "title": "Dog Days Are Over" },
-      { "youtubeId": "WbN0nX61rIs", "title": "Shake It Out" },
-      { "youtubeId": "B9v8jLBrvug", "title": "Ship to Wreck" },
-      { "youtubeId": "L62LtChAwww", "title": "King" }
+      {
+        "youtubeId": "iWOyfLBYtuU",
+        "title": "Dog Days Are Over"
+      },
+      {
+        "youtubeId": "WbN0nX61rIs",
+        "title": "Shake It Out"
+      },
+      {
+        "youtubeId": "B9v8jLBrvug",
+        "title": "Ship to Wreck"
+      },
+      {
+        "youtubeId": "L62LtChAwww",
+        "title": "King"
+      }
     ]
   },
   "story": {
@@ -97,13 +146,19 @@
       {
         "name": "Everybody Scream Album T-Shirt",
         "description": "Album tee from the official Florence + the Machine store.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://store.florenceandthemachine.net/products/everybody-scream-album-t-shirt"
       },
       {
         "name": "Too Feminine To Function Hoodie",
         "description": "Hoodie from the official Florence + the Machine store.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://store.florenceandthemachine.net/products/too-feminine-to-function-hoodie"
       }
     ]
@@ -133,5 +188,8 @@
       }
     ]
   },
-  "footer": { "tagline": "Music in balance", "attribution": "an Ear Clef page" }
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
 }

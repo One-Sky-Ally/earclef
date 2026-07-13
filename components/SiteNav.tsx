@@ -12,9 +12,9 @@ const SECTIONS = [
 ]
 
 const PAGES = [
+  { href: '/', label: 'Explore' },
   { href: '/feed', label: 'Latest' },
   { href: '/artists', label: 'Artists' },
-  { href: '/explore', label: 'Explore' },
 ]
 
 interface SiteNavProps {

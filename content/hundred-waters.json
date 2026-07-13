@@ -8,41 +8,87 @@
     "canonicalUrl": "https://earclef.netlify.app/hundred-waters"
   },
   "integrations": {
-    "spotify": { "artistId": "" },
-    "youtube": { "channelId": "UCPQSuyuiW5IdvEjgjzA-NbQ" },
-    "setlistfm": { "mbid": "49d461f0-3abf-422e-9569-8813e90074d7" },
-    "itunes": { "artistId": "515391293" }
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCPQSuyuiW5IdvEjgjzA-NbQ"
+    },
+    "setlistfm": {
+      "mbid": "49d461f0-3abf-422e-9569-8813e90074d7"
+    },
+    "itunes": {
+      "artistId": "515391293"
+    }
   },
   "hero": {
     "name": "Hundred Waters",
     "identity": "Fragile electronics and Nicole Miglis' hushed voice, ringing like a bell from somewhere far off.",
     "tagline": "Hear here!",
     "location": "Gainesville, United States",
-    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
     "socials": [
-      { "platform": "instagram", "url": "https://www.instagram.com/hundredwaters/" },
-      { "platform": "x", "url": "https://x.com/hundredwaters" },
-      { "platform": "facebook", "url": "https://www.facebook.com/hundredwaters" },
-      { "platform": "youtube", "url": "https://www.youtube.com/@hundredwatersband" }
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/hundredwaters/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/hundredwaters"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/hundredwaters"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@hundredwatersband"
+      }
     ]
   },
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/hundred-waters/515391293" },
-      { "platform": "bandcamp", "url": "https://hundredwaters.bandcamp.com/" }
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/hundred-waters/515391293"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://hundredwaters.bandcamp.com/"
+      }
     ],
     "featuredAlbums": [
-      { "title": "The Moon Rang Like a Bell", "year": "2014", "mbReleaseGroupId": "18a8d305-ebf4-465e-9da6-f09fc0bc9627" },
-      { "title": "Communicating", "year": "2017", "mbReleaseGroupId": "0522609c-deda-45f1-8a9a-4ef9e6520ab3" }
+      {
+        "title": "The Moon Rang Like a Bell",
+        "year": "2014",
+        "mbReleaseGroupId": "18a8d305-ebf4-465e-9da6-f09fc0bc9627"
+      },
+      {
+        "title": "Communicating",
+        "year": "2017",
+        "mbReleaseGroupId": "0522609c-deda-45f1-8a9a-4ef9e6520ab3"
+      }
     ]
   },
   "watch": {
     "enabled": true,
     "videos": [
-      { "youtubeId": "vo-8Oa2t4Ro", "title": "Murmurs (Official Video)" },
-      { "youtubeId": "3Ph13QzfQHU", "title": "Cavity (Official Video)" },
-      { "youtubeId": "_2Nh-gbEs5o", "title": "Show Me Love" }
+      {
+        "youtubeId": "vo-8Oa2t4Ro",
+        "title": "Murmurs (Official Video)"
+      },
+      {
+        "youtubeId": "3Ph13QzfQHU",
+        "title": "Cavity (Official Video)"
+      },
+      {
+        "youtubeId": "_2Nh-gbEs5o",
+        "title": "Show Me Love"
+      }
     ]
   },
   "story": {
@@ -110,6 +156,6 @@
   },
   "footer": {
     "tagline": "Music in balance",
-    "attribution": "an Ear Clef page"
+    "attribution": "A One Sky Ally project"
   }
 }

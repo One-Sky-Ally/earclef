@@ -8,43 +8,95 @@
     "canonicalUrl": "https://earclef.netlify.app/beats-antique"
   },
   "integrations": {
-    "spotify": { "artistId": "" },
-    "youtube": { "channelId": "UCNvD7-2NpnvLY2YhUZFVmUA" },
-    "setlistfm": { "mbid": "5eb38f71-96c3-48a3-9b69-2995cfb74982" },
-    "itunes": { "artistId": "275162219" }
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCNvD7-2NpnvLY2YhUZFVmUA"
+    },
+    "setlistfm": {
+      "mbid": "5eb38f71-96c3-48a3-9b69-2995cfb74982"
+    },
+    "itunes": {
+      "artistId": "275162219"
+    }
   },
   "hero": {
     "name": "Beats Antique",
     "identity": "A traveling mechanical circus of Turkish banjo, marching drums, and glitching bass.",
     "tagline": "Hear here!",
     "location": "Oakland, United States",
-    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
     "socials": [
-      { "platform": "website", "url": "https://www.beatsantique.com/" },
-      { "platform": "instagram", "url": "https://www.instagram.com/beatsantique/" },
-      { "platform": "x", "url": "https://x.com/beatsantique" },
-      { "platform": "facebook", "url": "https://www.facebook.com/beatsantique" },
-      { "platform": "youtube", "url": "https://www.youtube.com/@beatsantique" }
+      {
+        "platform": "website",
+        "url": "https://www.beatsantique.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/beatsantique/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/beatsantique"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/beatsantique"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@beatsantique"
+      }
     ]
   },
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/beats-antique/275162219" },
-      { "platform": "bandcamp", "url": "https://beatsantique.bandcamp.com/" }
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/beats-antique/275162219"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://beatsantique.bandcamp.com/"
+      }
     ],
     "featuredAlbums": [
-      { "title": "Tribal Derivations", "year": "2007", "mbReleaseGroupId": "21d8f285-edcb-37be-80cb-295be172727d" },
-      { "title": "Blind Threshold", "year": "2010", "mbReleaseGroupId": "8becd406-e80b-4e13-bc29-81c6ace8f8f4" }
+      {
+        "title": "Tribal Derivations",
+        "year": "2007",
+        "mbReleaseGroupId": "21d8f285-edcb-37be-80cb-295be172727d"
+      },
+      {
+        "title": "Blind Threshold",
+        "year": "2010",
+        "mbReleaseGroupId": "8becd406-e80b-4e13-bc29-81c6ace8f8f4"
+      }
     ]
   },
   "watch": {
     "enabled": true,
     "videos": [
-      { "youtubeId": "Rf6Mlb_K3fA", "title": "Flying Machines (Official Video)" },
-      { "youtubeId": "yl58QllW2QM", "title": "Beelzebub feat. Les Claypool" },
-      { "youtubeId": "zDiNSyJRDhY", "title": "Skeleton Key (Official Music Video)" },
-      { "youtubeId": "_SA_kvN3pVk", "title": "Revival (Official Video)" }
+      {
+        "youtubeId": "Rf6Mlb_K3fA",
+        "title": "Flying Machines (Official Video)"
+      },
+      {
+        "youtubeId": "yl58QllW2QM",
+        "title": "Beelzebub feat. Les Claypool"
+      },
+      {
+        "youtubeId": "zDiNSyJRDhY",
+        "title": "Skeleton Key (Official Music Video)"
+      },
+      {
+        "youtubeId": "_SA_kvN3pVk",
+        "title": "Revival (Official Video)"
+      }
     ]
   },
   "story": {
@@ -94,7 +146,10 @@
       {
         "name": "Official Merch Store",
         "description": "Apparel and more from the band's official store, linked from beatsantique.com.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://shop.kt8merch.com/collections/beats-antique"
       }
     ]
@@ -121,6 +176,6 @@
   },
   "footer": {
     "tagline": "Music in balance",
-    "attribution": "an Ear Clef page"
+    "attribution": "A One Sky Ally project"
   }
 }

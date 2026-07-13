@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getAllArtists } from '@/lib/content'
+import { youtubeThumbnailUrl } from '@/lib/links'
 import { SiteNav } from '@/components/SiteNav'
 import { EarClefMark } from '@/components/EarClefMark'
 import styles from './artists.module.css'
@@ -25,22 +26,44 @@ export default function ArtistsPage() {
             One page per universe. {artists.length} and counting.
           </p>
           <ul className={styles.grid}>
-            {artists.map((artist, index) => (
-              <li key={artist.slug}>
-                <Link className={styles.card} href={`/${artist.slug}`}>
-                  <span className={styles.index} aria-hidden="true">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <span className={styles.name}>{artist.hero.name}</span>
-                  <span className={styles.identity}>
-                    {artist.hero.identity}
-                  </span>
-                  <span className={styles.location}>
-                    {artist.hero.location}
-                  </span>
-                </Link>
-              </li>
-            ))}
+            {artists.map((artist, index) => {
+              const firstVideo = artist.watch.enabled
+                ? artist.watch.videos[0]
+                : undefined
+              return (
+                <li key={artist.slug}>
+                  <Link className={styles.card} href={`/${artist.slug}`}>
+                    <span
+                      className={`${styles.visual} ${firstVideo ? styles.duotone : ''}`}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        className={firstVideo ? styles.thumb : styles.placeholder}
+                        src={
+                          firstVideo
+                            ? youtubeThumbnailUrl(firstVideo.youtubeId)
+                            : '/images/hero-placeholder.svg'
+                        }
+                        alt=""
+                        loading="lazy"
+                      />
+                    </span>
+                    <span className={styles.cardBody}>
+                      <span className={styles.index} aria-hidden="true">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <span className={styles.name}>{artist.hero.name}</span>
+                      <span className={styles.identity}>
+                        {artist.hero.identity}
+                      </span>
+                      <span className={styles.location}>
+                        {artist.hero.location}
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </div>
       </main>

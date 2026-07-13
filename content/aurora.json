@@ -8,41 +8,87 @@
     "canonicalUrl": "https://earclef.netlify.app/aurora"
   },
   "integrations": {
-    "spotify": { "artistId": "" },
-    "youtube": { "channelId": "UC7Lhhngb9lLW6tuPddEM62A" },
-    "setlistfm": { "mbid": "484a4e90-6899-4e4b-a948-a2255d365340" },
-    "itunes": { "artistId": "947171999" }
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UC7Lhhngb9lLW6tuPddEM62A"
+    },
+    "setlistfm": {
+      "mbid": "484a4e90-6899-4e4b-a948-a2255d365340"
+    },
+    "itunes": {
+      "artistId": "947171999"
+    }
   },
   "hero": {
     "name": "AURORA",
     "identity": "A voice from the Norwegian fjords, singing for nature, warriors, and weirdos alike.",
     "tagline": "Hear here!",
     "location": "Stavanger, Norway",
-    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
     "socials": [
-      { "platform": "website", "url": "https://www.aurora-music.com/" },
-      { "platform": "instagram", "url": "https://www.instagram.com/auroramusic/" },
-      { "platform": "x", "url": "https://x.com/AURORAmusic" },
-      { "platform": "facebook", "url": "https://www.facebook.com/iamAURORA" },
-      { "platform": "youtube", "url": "https://www.youtube.com/@iamAURORAVEVO" }
+      {
+        "platform": "website",
+        "url": "https://www.aurora-music.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/auroramusic/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AURORAmusic"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/iamAURORA"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@iamAURORAVEVO"
+      }
     ]
   },
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/aurora/947171999" }
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/aurora/947171999"
+      }
     ],
     "featuredAlbums": [
-      { "title": "All My Demons Greeting Me as a Friend", "year": "2016", "mbReleaseGroupId": "59f6afa7-b6c7-4120-b16e-f0a7d6360da9" },
-      { "title": "The Gods We Can Touch", "year": "2022", "mbReleaseGroupId": "8a6b101d-1cf1-4b43-813a-8bac67462495" }
+      {
+        "title": "All My Demons Greeting Me as a Friend",
+        "year": "2016",
+        "mbReleaseGroupId": "59f6afa7-b6c7-4120-b16e-f0a7d6360da9"
+      },
+      {
+        "title": "The Gods We Can Touch",
+        "year": "2022",
+        "mbReleaseGroupId": "8a6b101d-1cf1-4b43-813a-8bac67462495"
+      }
     ]
   },
   "watch": {
     "enabled": true,
     "videos": [
-      { "youtubeId": "d_HlPboLRL8", "title": "Runaway" },
-      { "youtubeId": "K17df81RL9Y", "title": "Cure For Me" },
-      { "youtubeId": "_Mc_OM5oNA8", "title": "The Seed" }
+      {
+        "youtubeId": "d_HlPboLRL8",
+        "title": "Runaway"
+      },
+      {
+        "youtubeId": "K17df81RL9Y",
+        "title": "Cure For Me"
+      },
+      {
+        "youtubeId": "_Mc_OM5oNA8",
+        "title": "The Seed"
+      }
     ]
   },
   "story": {
@@ -100,7 +146,10 @@
       {
         "name": "Official Artist Store",
         "description": "Apparel, music, and books from AURORA's official store, linked from aurora-music.com.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://shop.aurora-music.com/"
       }
     ]
@@ -122,6 +171,6 @@
   },
   "footer": {
     "tagline": "Music in balance",
-    "attribution": "an Ear Clef page"
+    "attribution": "A One Sky Ally project"
   }
 }

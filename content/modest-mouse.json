@@ -8,43 +8,95 @@
     "canonicalUrl": "https://earclef.netlify.app/modest-mouse"
   },
   "integrations": {
-    "spotify": { "artistId": "" },
-    "youtube": { "channelId": "UCBEGcyJUC-0SFTJ1t45yOzw" },
-    "setlistfm": { "mbid": "a96ac800-bfcb-412a-8a63-0a98df600700" },
-    "itunes": { "artistId": "467112" }
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCBEGcyJUC-0SFTJ1t45yOzw"
+    },
+    "setlistfm": {
+      "mbid": "a96ac800-bfcb-412a-8a63-0a98df600700"
+    },
+    "itunes": {
+      "artistId": "467112"
+    }
   },
   "hero": {
     "name": "Modest Mouse",
     "identity": "Jagged, restless Pacific Northwest indie rock asking big questions in a cracked voice.",
     "tagline": "Hear here!",
     "location": "Portland, United States",
-    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
     "socials": [
-      { "platform": "website", "url": "https://www.modestmouse.com" },
-      { "platform": "instagram", "url": "https://www.instagram.com/modestmouse/" },
-      { "platform": "x", "url": "https://x.com/modestmouseband" },
-      { "platform": "facebook", "url": "https://www.facebook.com/modestmouse" },
-      { "platform": "youtube", "url": "https://www.youtube.com/channel/UCBEGcyJUC-0SFTJ1t45yOzw" }
+      {
+        "platform": "website",
+        "url": "https://www.modestmouse.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/modestmouse/"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/modestmouseband"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/modestmouse"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCBEGcyJUC-0SFTJ1t45yOzw"
+      }
     ]
   },
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/modest-mouse/467112" },
-      { "platform": "bandcamp", "url": "https://modestmouse.bandcamp.com" }
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/modest-mouse/467112"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://modestmouse.bandcamp.com"
+      }
     ],
     "featuredAlbums": [
-      { "title": "The Moon & Antarctica", "year": "2000", "mbReleaseGroupId": "a8e26959-b3b2-3440-a74a-0dc06cd6310d" },
-      { "title": "Good News for People Who Love Bad News", "year": "2004", "mbReleaseGroupId": "65b47520-2e58-3bc2-a755-34ff35f23ad5" }
+      {
+        "title": "The Moon & Antarctica",
+        "year": "2000",
+        "mbReleaseGroupId": "a8e26959-b3b2-3440-a74a-0dc06cd6310d"
+      },
+      {
+        "title": "Good News for People Who Love Bad News",
+        "year": "2004",
+        "mbReleaseGroupId": "65b47520-2e58-3bc2-a755-34ff35f23ad5"
+      }
     ]
   },
   "watch": {
     "enabled": true,
     "videos": [
-      { "youtubeId": "CTAud5O7Qqk", "title": "Float On" },
-      { "youtubeId": "penvn9VL32Y", "title": "Dashboard" },
-      { "youtubeId": "TPhnOKmhbBw", "title": "Ocean Breathes Salty" },
-      { "youtubeId": "he16ctlqAgU", "title": "Lampshades on Fire" }
+      {
+        "youtubeId": "CTAud5O7Qqk",
+        "title": "Float On"
+      },
+      {
+        "youtubeId": "penvn9VL32Y",
+        "title": "Dashboard"
+      },
+      {
+        "youtubeId": "TPhnOKmhbBw",
+        "title": "Ocean Breathes Salty"
+      },
+      {
+        "youtubeId": "he16ctlqAgU",
+        "title": "Lampshades on Fire"
+      }
     ]
   },
   "story": {
@@ -98,13 +150,19 @@
       {
         "name": "An Eraser And A Maze Album Tee",
         "description": "Album tee from the official Modest Mouse shop.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://shop.modestmouse.com/products/an-eraser-and-a-maze-album-tee"
       },
       {
         "name": "Vintage Earth Moth Tee",
         "description": "T-shirt from the official Modest Mouse shop.",
-        "image": { "src": "/images/merch-placeholder.svg", "alt": "Placeholder card image" },
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
         "url": "https://shop.modestmouse.com/products/moth-tee"
       }
     ]
@@ -129,5 +187,8 @@
       }
     ]
   },
-  "footer": { "tagline": "Music in balance", "attribution": "an Ear Clef page" }
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
 }

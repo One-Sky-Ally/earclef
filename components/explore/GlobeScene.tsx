@@ -47,6 +47,16 @@ export function GlobeScene({
   const yearMaxCache = useRef<Record<number, number>>({})
   const hoverRef = useRef<object | null>(null)
   const featureByCode = useRef<Map<string, CountryFeature>>(new Map())
+  const pausedRef = useRef(paused)
+  const cursorOverGlobeRef = useRef(false)
+
+  function syncRotation() {
+    const globe = globeRef.current
+    if (globe) {
+      globe.controls().autoRotate =
+        !pausedRef.current && !cursorOverGlobeRef.current
+    }
+  }
 
   useEffect(() => {
     yearRef.current = year
@@ -55,8 +65,9 @@ export function GlobeScene({
   }, [year])
 
   useEffect(() => {
-    const globe = globeRef.current
-    if (globe) globe.controls().autoRotate = !paused
+    pausedRef.current = paused
+    syncRotation()
+     
   }, [paused])
 
   // Search resolution: fly to the country (when we have its shape) and open it.
@@ -175,11 +186,22 @@ export function GlobeScene({
       }
 
       const controls = globe.controls()
-      controls.autoRotate = true
       controls.autoRotateSpeed = 0.45
       controls.enablePan = false
       controls.minDistance = 160
       controls.maxDistance = 480
+      syncRotation()
+
+      // Chasing small countries on a spinning globe is maddening —
+      // rest the cursor on the globe and it holds still.
+      mount.addEventListener('pointerenter', () => {
+        cursorOverGlobeRef.current = true
+        syncRotation()
+      })
+      mount.addEventListener('pointerleave', () => {
+        cursorOverGlobeRef.current = false
+        syncRotation()
+      })
 
       observer = new ResizeObserver(() => {
         globe?.width(mount.clientWidth).height(mount.clientHeight)

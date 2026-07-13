@@ -8,40 +8,83 @@
     "canonicalUrl": "https://earclef.netlify.app/nick-drake"
   },
   "integrations": {
-    "spotify": { "artistId": "" },
-    "youtube": { "channelId": "UCw00GrG5ax6BsymeAgU3wmw" },
-    "setlistfm": { "mbid": "99ea432a-e3d8-42cb-9d5e-db316a6a8458" },
-    "itunes": { "artistId": "1285818" }
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCw00GrG5ax6BsymeAgU3wmw"
+    },
+    "setlistfm": {
+      "mbid": "99ea432a-e3d8-42cb-9d5e-db316a6a8458"
+    },
+    "itunes": {
+      "artistId": "1285818"
+    }
   },
   "hero": {
     "name": "Nick Drake",
     "identity": "A voice like evening light on an English garden — gone at 26, still arriving.",
     "tagline": "Hear here!",
     "location": "Tanworth-in-Arden, United Kingdom",
-    "image": { "src": "/images/hero-placeholder.svg", "alt": "Placeholder artwork" },
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
     "socials": [
-      { "platform": "website", "url": "https://www.brytermusic.com" },
-      { "platform": "instagram", "url": "https://www.instagram.com/nickdrakeofficial" },
-      { "platform": "facebook", "url": "https://www.facebook.com/NickDrakeOfficial" },
-      { "platform": "youtube", "url": "https://www.youtube.com/channel/UCw00GrG5ax6BsymeAgU3wmw" }
+      {
+        "platform": "website",
+        "url": "https://www.brytermusic.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/nickdrakeofficial"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/NickDrakeOfficial"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCw00GrG5ax6BsymeAgU3wmw"
+      }
     ]
   },
   "listen": {
     "enabled": true,
     "platforms": [
-      { "platform": "appleMusic", "url": "https://music.apple.com/us/artist/nick-drake/1285818" }
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/nick-drake/1285818"
+      }
     ],
     "featuredAlbums": [
-      { "title": "Five Leaves Left", "year": "1969", "mbReleaseGroupId": "b9c4fc17-0dc5-3aa5-b1b9-08e1446e5bea" },
-      { "title": "Pink Moon", "year": "1972", "mbReleaseGroupId": "740ec10a-e887-38a6-a04d-fe2069c9e2a7" }
+      {
+        "title": "Five Leaves Left",
+        "year": "1969",
+        "mbReleaseGroupId": "b9c4fc17-0dc5-3aa5-b1b9-08e1446e5bea"
+      },
+      {
+        "title": "Pink Moon",
+        "year": "1972",
+        "mbReleaseGroupId": "740ec10a-e887-38a6-a04d-fe2069c9e2a7"
+      }
     ]
   },
   "watch": {
     "enabled": true,
     "videos": [
-      { "youtubeId": "fv49xKB8xUI", "title": "River Man" },
-      { "youtubeId": "DJ6fGiw1Ts0", "title": "River Man — Famous Blue Cable feat. Feist (Official Film)" },
-      { "youtubeId": "oDDUf6WK_ys", "title": "Which Will — Christian Lee Hutson & Elanor Moss (Official Film)" }
+      {
+        "youtubeId": "fv49xKB8xUI",
+        "title": "River Man"
+      },
+      {
+        "youtubeId": "DJ6fGiw1Ts0",
+        "title": "River Man — Famous Blue Cable feat. Feist (Official Film)"
+      },
+      {
+        "youtubeId": "oDDUf6WK_ys",
+        "title": "Which Will — Christian Lee Hutson & Elanor Moss (Official Film)"
+      }
     ]
   },
   "story": {
@@ -89,13 +132,25 @@
   "press": {
     "enabled": true,
     "items": [
-      { "title": "Nick Drake — Reflecting on the 50th Anniversary of Pink Moon", "outlet": "Under the Radar", "url": "https://www.undertheradarmag.com/news/nick_drake_reflecting_on_the_50th_anniversary_of_pink_moon/" },
-      { "title": "Cally Callomon and Jeremy Lascelles on the legacy of Nick Drake", "outlet": "Music Week", "url": "https://www.musicweek.com/labels/read/cally-callomon-and-jeremy-lascelles-on-the-legacy-of-nick-drake/088185" },
-      { "title": "Nick Drake's estate agrees global publishing deal for his back catalogue", "outlet": "NME", "url": "https://www.nme.com/news/music/nick-drakes-estate-agrees-global-publishing-deal-for-his-back-catalogue-2859857" }
+      {
+        "title": "Nick Drake — Reflecting on the 50th Anniversary of Pink Moon",
+        "outlet": "Under the Radar",
+        "url": "https://www.undertheradarmag.com/news/nick_drake_reflecting_on_the_50th_anniversary_of_pink_moon/"
+      },
+      {
+        "title": "Cally Callomon and Jeremy Lascelles on the legacy of Nick Drake",
+        "outlet": "Music Week",
+        "url": "https://www.musicweek.com/labels/read/cally-callomon-and-jeremy-lascelles-on-the-legacy-of-nick-drake/088185"
+      },
+      {
+        "title": "Nick Drake's estate agrees global publishing deal for his back catalogue",
+        "outlet": "NME",
+        "url": "https://www.nme.com/news/music/nick-drakes-estate-agrees-global-publishing-deal-for-his-back-catalogue-2859857"
+      }
     ]
   },
   "footer": {
     "tagline": "Music in balance",
-    "attribution": "an Ear Clef page"
+    "attribution": "A One Sky Ally project"
   }
 }
