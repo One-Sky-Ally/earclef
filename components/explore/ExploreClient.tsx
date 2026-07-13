@@ -14,6 +14,7 @@ import { YearSlider } from '@/components/explore/YearSlider'
 import { SearchBox } from '@/components/explore/SearchBox'
 import {
   CountryPanel,
+  type RosterByMbid,
   type SelectedCountry,
 } from '@/components/explore/CountryPanel'
 import styles from './ExploreClient.module.css'
@@ -26,7 +27,7 @@ const GlobeScene = dynamic(
   },
 )
 
-export function ExploreClient() {
+export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
   const [year, setYear] = useState(DEFAULT_YEAR)
   const [source, setSource] = useState<DataSource | null>(null)
   const [selected, setSelected] = useState<SelectedCountry | null>(null)
@@ -56,6 +57,7 @@ export function ExploreClient() {
           country={selected}
           year={year}
           source={source}
+          roster={roster}
           onClose={() => setSelected(null)}
         />
       )}

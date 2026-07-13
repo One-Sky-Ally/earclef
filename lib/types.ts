@@ -134,6 +134,11 @@ export interface FooterContent {
 export interface ArtistContent {
   schemaVersion: number
   slug: string
+  /**
+   * Owner's curation level (see lib/tiers.ts). Optional — untiered artists
+   * always show. Moves to a per-user store when accounts exist.
+   */
+  tier?: import('@/lib/tiers').ArtistTier
   meta: PageMeta
   integrations: Integrations
   hero: HeroContent

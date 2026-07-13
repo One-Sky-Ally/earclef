@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { getAllArtists } from '@/lib/content'
 import { youtubeThumbnailUrl } from '@/lib/links'
 import { SiteNav } from '@/components/SiteNav'
 import { EarClefMark } from '@/components/EarClefMark'
+import {
+  ArtistIndexGrid,
+  type ArtistCardData,
+} from '@/components/ArtistIndexGrid'
 import styles from './artists.module.css'
 
 export const metadata: Metadata = {
@@ -13,7 +16,19 @@ export const metadata: Metadata = {
 }
 
 export default function ArtistsPage() {
-  const artists = getAllArtists()
+  const cards: ArtistCardData[] = getAllArtists().map((artist) => {
+    const firstVideo = artist.watch.enabled
+      ? artist.watch.videos[0]
+      : undefined
+    return {
+      slug: artist.slug,
+      name: artist.hero.name,
+      identity: artist.hero.identity,
+      location: artist.hero.location,
+      thumbUrl: firstVideo ? youtubeThumbnailUrl(firstVideo.youtubeId) : null,
+      tier: artist.tier,
+    }
+  })
 
   return (
     <>
@@ -23,48 +38,9 @@ export default function ArtistsPage() {
           <p className={styles.overline}>The roster</p>
           <h1 className={styles.title}>Artists</h1>
           <p className={styles.subtitle}>
-            One page per universe. {artists.length} and counting.
+            One page per universe. {cards.length} and counting.
           </p>
-          <ul className={styles.grid}>
-            {artists.map((artist, index) => {
-              const firstVideo = artist.watch.enabled
-                ? artist.watch.videos[0]
-                : undefined
-              return (
-                <li key={artist.slug}>
-                  <Link className={styles.card} href={`/${artist.slug}`}>
-                    <span
-                      className={`${styles.visual} ${firstVideo ? styles.duotone : ''}`}
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        className={firstVideo ? styles.thumb : styles.placeholder}
-                        src={
-                          firstVideo
-                            ? youtubeThumbnailUrl(firstVideo.youtubeId)
-                            : '/images/hero-placeholder.svg'
-                        }
-                        alt=""
-                        loading="lazy"
-                      />
-                    </span>
-                    <span className={styles.cardBody}>
-                      <span className={styles.index} aria-hidden="true">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                      <span className={styles.name}>{artist.hero.name}</span>
-                      <span className={styles.identity}>
-                        {artist.hero.identity}
-                      </span>
-                      <span className={styles.location}>
-                        {artist.hero.location}
-                      </span>
-                    </span>
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
+          <ArtistIndexGrid cards={cards} />
         </div>
       </main>
       <footer className={styles.footer}>

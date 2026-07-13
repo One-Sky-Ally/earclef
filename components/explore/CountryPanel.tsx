@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import {
   fetchCountryYearDetails,
   musicBrainzArtistUrl,
@@ -19,10 +20,14 @@ export interface SelectedCountry {
   name: string
 }
 
+/** MBID → roster page, so globe artists who live here link home. */
+export type RosterByMbid = Record<string, { slug: string; name: string }>
+
 interface CountryPanelProps {
   country: SelectedCountry
   year: number
   source: DataSource | null
+  roster?: RosterByMbid
   onClose: () => void
 }
 
@@ -57,6 +62,7 @@ export function CountryPanel({
   country,
   year,
   source,
+  roster = {},
   onClose,
 }: CountryPanelProps) {
   const [state, setState] = useState<PanelState>({ status: 'loading' })
@@ -143,14 +149,24 @@ export function CountryPanel({
                   : state.details.artists.slice(0, PREVIEW_COUNT)
                 ).map((artist) => (
                   <li key={artist.id} className={styles.artistItem}>
-                    <a
-                      className={styles.artistPill}
-                      href={musicBrainzArtistUrl(artist.id)}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {artist.name}
-                    </a>
+                    {roster[artist.id] ? (
+                      <Link
+                        className={`${styles.artistPill} ${styles.onRoster}`}
+                        href={`/${roster[artist.id].slug}`}
+                        title="On the Ear Clef roster — opens their page here"
+                      >
+                        {artist.name}
+                      </Link>
+                    ) : (
+                      <a
+                        className={styles.artistPill}
+                        href={musicBrainzArtistUrl(artist.id)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {artist.name}
+                      </a>
+                    )}
                     <a
                       className={styles.listenBadge}
                       href={artistSearchHref(artist, state.details.releases)}

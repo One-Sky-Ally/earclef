@@ -16,6 +16,8 @@ import {
   youtubeThumbnailUrl,
   youtubeWatchUrl,
 } from '@/lib/links'
+import type { ArtistTier } from '@/lib/tiers'
+import { TierFilter, type TierChoice } from '@/components/TierFilter'
 import styles from './FeedClient.module.css'
 
 export interface RosterEntry {
@@ -24,6 +26,7 @@ export interface RosterEntry {
   mbid?: string
   channelId?: string
   itunesId?: string
+  tier?: ArtistTier
 }
 
 interface FeedItem {
@@ -140,6 +143,7 @@ type FeedState =
 
 export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   const [state, setState] = useState<FeedState>({ status: 'loading' })
+  const [tierChoice, setTierChoice] = useState<TierChoice>('all')
 
   useEffect(() => {
     const controller = new AbortController()
@@ -184,7 +188,6 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         )
         .flatMap((result) => result.value)
         .sort((a, b) => b.date.localeCompare(a.date))
-        .slice(0, FEED_LIMIT)
       const incomplete = results.some((result) => result.status === 'rejected')
       setState(
         items.length > 0
@@ -210,15 +213,35 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
     )
   }
 
+  // Filter before the newest-50 cut so each tier surfaces its own latest,
+  // not just its members of the overall top 50.
+  const tierBySlug = new Map(roster.map((entry) => [entry.slug, entry.tier]))
+  const availableTiers = [
+    ...new Set(roster.flatMap((entry) => (entry.tier ? [entry.tier] : []))),
+  ]
+  const visible = (
+    tierChoice === 'all'
+      ? state.items
+      : state.items.filter((item) => tierBySlug.get(item.slug) === tierChoice)
+  ).slice(0, FEED_LIMIT)
+
   return (
     <>
+      <TierFilter
+        available={availableTiers}
+        active={tierChoice}
+        onChange={setTierChoice}
+      />
       {state.incomplete && (
         <p className={styles.incomplete}>
           Some sources didn&apos;t respond — showing what arrived.
         </p>
       )}
+      {visible.length === 0 && (
+        <p className={styles.note}>Nothing in this tier yet.</p>
+      )}
       <ol className={styles.list}>
-        {state.items.map((item) => (
+        {visible.map((item) => (
           <li key={`${item.type}-${item.href}`} className={styles.row}>
             <a
               className={styles.mediaLink}

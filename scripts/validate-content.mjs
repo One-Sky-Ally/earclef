@@ -40,6 +40,10 @@ function checkStructure(slug, c) {
     issues.push(`canonicalUrl ${c.meta.canonicalUrl}`)
   }
   if (c.hero.tagline !== 'Hear here!') issues.push('hero.tagline drift')
+  const TIERS = ['heavy-rotation', 'in-the-mix', 'on-the-radar']
+  if ('tier' in c && !TIERS.includes(c.tier)) {
+    issues.push(`bad tier "${c.tier}" (expected one of ${TIERS.join(', ')})`)
+  }
 
   const { youtube, setlistfm, itunes } = c.integrations
   if (youtube.channelId && !YT_CHANNEL.test(youtube.channelId)) {

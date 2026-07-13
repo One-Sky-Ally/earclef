@@ -126,6 +126,21 @@
   color: var(--accent);
 }
 
+/* Roster artists link home instead of MusicBrainz — marked with our gold. */
+.onRoster {
+  color: var(--accent);
+}
+
+.onRoster::after {
+  content: ' \2302';
+  font-size: 0.7em;
+  opacity: 0.7;
+}
+
+.onRoster:hover {
+  color: var(--text);
+}
+
 .listenBadge {
   display: grid;
   place-items: center;

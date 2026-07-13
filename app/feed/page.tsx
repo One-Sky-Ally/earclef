@@ -18,6 +18,7 @@ export default function FeedPage() {
     mbid: artist.integrations.setlistfm.mbid || undefined,
     channelId: artist.integrations.youtube.channelId || undefined,
     itunesId: artist.integrations.itunes?.artistId || undefined,
+    tier: artist.tier,
   }))
 
   return (
