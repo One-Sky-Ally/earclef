@@ -10,10 +10,32 @@ interface EarClefMarkProps {
   label?: string
 }
 
+/**
+ * TEMPORARY: Stefano's original Canva-era mark, extracted to a transparent
+ * PNG (public/images/earclef-mark.png), is displayed while he hand-draws
+ * the final version. Flip this flag to false to return to the original
+ * hand-drawn SVG below — nothing else needs to change.
+ */
+const USE_IMAGE_MARK = true
+
 export function EarClefMark({ size = 32, label }: EarClefMarkProps) {
   const accessibility = label
-    ? { role: 'img', 'aria-label': label }
+    ? { role: 'img' as const, 'aria-label': label }
     : { 'aria-hidden': true as const }
+
+  if (USE_IMAGE_MARK) {
+    return (
+      /* eslint-disable-next-line @next/next/no-img-element */
+      <img
+        src="/images/earclef-mark.png"
+        width={size}
+        height={size}
+        style={{ maxWidth: 'none' }}
+        alt={label ?? ''}
+        {...accessibility}
+      />
+    )
+  }
 
   return (
     <svg
