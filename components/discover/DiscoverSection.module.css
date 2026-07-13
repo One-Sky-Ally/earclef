@@ -1,0 +1,114 @@
+.section {
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 480;
+  margin-bottom: 0.35rem;
+}
+
+.heading::before {
+  content: '';
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: var(--accent-deep);
+  vertical-align: middle;
+  margin-right: 0.9rem;
+}
+
+.note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.4rem;
+  text-wrap: pretty;
+}
+
+.quiet {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text-muted);
+  padding-block: 0.75rem;
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--accent-deep);
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 480;
+  line-height: 1.2;
+}
+
+.why {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+
+.listen {
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+.listen:hover {
+  color: var(--text);
+}
+
+.more {
+  margin-top: 1.25rem;
+  padding: 0.45rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.more:hover {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}
+
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

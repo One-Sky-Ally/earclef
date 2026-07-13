@@ -8,6 +8,7 @@ import {
   ArtistIndexGrid,
   type ArtistCardData,
 } from '@/components/ArtistIndexGrid'
+import { DiscoverSection } from '@/components/discover/DiscoverSection'
 import styles from './artists.module.css'
 
 export const metadata: Metadata = {
@@ -41,6 +42,7 @@ export default function ArtistsPage() {
           <p className={styles.subtitle}>
             One page per universe. {cards.length} and counting.
           </p>
+          <DiscoverSection />
           <ArtistIndexGrid cards={cards} />
           <p className={styles.suggest}>
             Know someone who belongs here?{' '}

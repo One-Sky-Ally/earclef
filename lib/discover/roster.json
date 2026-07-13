@@ -1,0 +1,198 @@
+[
+  {
+    "slug": "aurora",
+    "name": "AURORA",
+    "identity": "A voice from the Norwegian fjords, singing for nature, warriors, and weirdos alike.",
+    "tier": "in-the-mix",
+    "mbid": "484a4e90-6899-4e4b-a948-a2255d365340"
+  },
+  {
+    "slug": "beats-antique",
+    "name": "Beats Antique",
+    "identity": "A traveling mechanical circus of Turkish banjo, marching drums, and glitching bass.",
+    "tier": "in-the-mix",
+    "mbid": "5eb38f71-96c3-48a3-9b69-2995cfb74982"
+  },
+  {
+    "slug": "bela-fleck-and-the-flecktones",
+    "name": "Béla Fleck and the Flecktones",
+    "identity": "Banjo-led fusioneers folding bluegrass, jazz, funk, and the future into one band.",
+    "tier": "heavy-rotation",
+    "mbid": "830dce6f-c9ff-4ebe-944b-2ea2ab22fcdf"
+  },
+  {
+    "slug": "bjork",
+    "name": "Björk",
+    "identity": "Icelandic singer, composer and world-builder, four decades into remaking pop in her own image.",
+    "tier": "heavy-rotation",
+    "mbid": "87c5dedd-371d-4a53-9f7f-80522fb7f3cb"
+  },
+  {
+    "slug": "bonobo",
+    "name": "Bonobo",
+    "identity": "Simon Green, the Brighton-born producer who turned downtempo electronica into a full live orchestra of sound.",
+    "tier": "heavy-rotation",
+    "mbid": "9a709693-b4f8-4da9-8cc1-038c911a61be"
+  },
+  {
+    "slug": "chance-the-rapper",
+    "name": "Chance the Rapper",
+    "identity": "Chicago's independent son, who gave his music away free and won Grammys doing it.",
+    "tier": "in-the-mix",
+    "mbid": "373a4c98-a46b-48e4-86ec-f6ca65b4f438"
+  },
+  {
+    "slug": "esperanza-spalding",
+    "name": "Esperanza Spalding",
+    "identity": "Bassist, vocalist and composer bending jazz toward chamber music, art-rock and ritual song.",
+    "tier": "in-the-mix",
+    "mbid": "5c12b265-5e59-44e0-b657-5cf4169f7316"
+  },
+  {
+    "slug": "florence-and-the-machine",
+    "name": "Florence + the Machine",
+    "identity": "Cathedral-sized art rock built on Florence Welch's hurricane of a voice.",
+    "tier": "in-the-mix",
+    "mbid": "5fee3020-513b-48c2-b1f7-4681b01db0c6"
+  },
+  {
+    "slug": "gorillaz",
+    "name": "Gorillaz",
+    "identity": "Damon Albarn and Jamie Hewlett's animated band — pop's longest-running cartoon experiment.",
+    "tier": "in-the-mix",
+    "mbid": "e21857d5-3256-4547-afb3-4b6ded592596"
+  },
+  {
+    "slug": "hiatus-kaiyote",
+    "name": "Hiatus Kaiyote",
+    "identity": "Future-soul four-piece bending jazz, funk and electronics into something wholly Melbourne.",
+    "tier": "heavy-rotation",
+    "mbid": "55c03773-59ea-4d4e-9057-87c2ecab005d"
+  },
+  {
+    "slug": "hundred-waters",
+    "name": "Hundred Waters",
+    "identity": "Fragile electronics and Nicole Miglis' hushed voice, ringing like a bell from somewhere far off.",
+    "tier": "in-the-mix",
+    "mbid": "49d461f0-3abf-422e-9569-8813e90074d7"
+  },
+  {
+    "slug": "imogen-heap",
+    "name": "Imogen Heap",
+    "identity": "Self-produced electronic pop from a songwriter who builds her own instruments.",
+    "tier": "in-the-mix",
+    "mbid": "328d146c-79f1-4eb6-9e40-8ee5710c14e5"
+  },
+  {
+    "slug": "james-blake",
+    "name": "James Blake",
+    "identity": "A choirboy's voice suspended in sub-bass — songs built from silence as much as sound.",
+    "tier": "in-the-mix",
+    "mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8"
+  },
+  {
+    "slug": "jesca-hoop",
+    "name": "Jesca Hoop",
+    "identity": "A Californian folk experimentalist weaving strange, luminous songs from her adopted home in Manchester.",
+    "tier": "in-the-mix",
+    "mbid": "b5330942-ffdf-49cb-8a13-b5d7b5d67bff"
+  },
+  {
+    "slug": "joanna-newsom",
+    "name": "Joanna Newsom",
+    "identity": "Harpist, pianist, and singer of long, luminous story-songs from the Sierra foothills.",
+    "tier": "heavy-rotation",
+    "mbid": "cb69e1f1-bc76-4df5-93c9-cf97dd8a3b5c"
+  },
+  {
+    "slug": "mf-doom",
+    "name": "MF DOOM",
+    "identity": "The man behind the metal mask — hip-hop's supervillain laureate, 1971–2020. ALL CAPS when you spell the man name.",
+    "tier": "in-the-mix",
+    "mbid": "188711ed-c99b-439c-844a-ca831f63a727"
+  },
+  {
+    "slug": "modest-mouse",
+    "name": "Modest Mouse",
+    "identity": "Jagged, restless Pacific Northwest indie rock asking big questions in a cracked voice.",
+    "tier": "in-the-mix",
+    "mbid": "a96ac800-bfcb-412a-8a63-0a98df600700"
+  },
+  {
+    "slug": "nick-drake",
+    "name": "Nick Drake",
+    "identity": "A voice like evening light on an English garden — gone at 26, still arriving.",
+    "tier": "heavy-rotation",
+    "mbid": "99ea432a-e3d8-42cb-9d5e-db316a6a8458"
+  },
+  {
+    "slug": "oumou-sangare",
+    "name": "Oumou Sangaré",
+    "identity": "The Songbird of Wassoulou, carrying Mali's hunter-society rhythms and women's stories to the world.",
+    "tier": "in-the-mix",
+    "mbid": "2013f3af-51a3-404d-9afc-91b3f277ea4e"
+  },
+  {
+    "slug": "radiohead",
+    "name": "Radiohead",
+    "identity": "Five musicians from Oxfordshire who keep reinventing what a rock band can be.",
+    "tier": "heavy-rotation",
+    "mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711"
+  },
+  {
+    "slug": "sigur-ros",
+    "name": "Sigur Rós",
+    "identity": "Icelandic post-rock voyagers who turn glacial landscape into sound.",
+    "tier": "heavy-rotation",
+    "mbid": "f6f2326f-6b25-4170-b89d-e235b25508e8"
+  },
+  {
+    "slug": "tame-impala",
+    "name": "Tame Impala",
+    "identity": "Kevin Parker's one-man psychedelic universe from Perth, built alone in the studio and unleashed as a band onstage.",
+    "tier": "heavy-rotation",
+    "mbid": "63aa26c3-d59b-4da4-84ac-716b54f1ef4d"
+  },
+  {
+    "slug": "the-beatles",
+    "name": "The Beatles",
+    "identity": "Four Liverpudlians who turned eight years of records into the common language of pop.",
+    "tier": "in-the-mix",
+    "mbid": "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d"
+  },
+  {
+    "slug": "the-boswell-sisters",
+    "name": "The Boswell Sisters",
+    "identity": "Three sisters from uptown New Orleans who bent tempo, key, and radio itself to their harmonies.",
+    "tier": "in-the-mix",
+    "mbid": "41e2d679-43a3-4b9b-8469-ce748ad7b1ca"
+  },
+  {
+    "slug": "the-smile",
+    "name": "The Smile",
+    "identity": "Thom Yorke, Jonny Greenwood, and Tom Skinner — Radiohead's restless core rewired through jazz drumming and krautrock nerve.",
+    "tier": "heavy-rotation",
+    "mbid": "9055fca5-69bc-4d47-b569-ab2012a19565"
+  },
+  {
+    "slug": "thom-yorke",
+    "name": "Thom Yorke",
+    "identity": "A falsetto threaded through circuitry — Radiohead's voice, wandering alone into the glitch.",
+    "tier": "heavy-rotation",
+    "mbid": "8ed2e0b3-aa4c-4e13-bec3-dc7393ed4d6b"
+  },
+  {
+    "slug": "tool",
+    "name": "Tool",
+    "identity": "Los Angeles art-metal architects turning odd time signatures into ritual.",
+    "tier": "heavy-rotation",
+    "mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2"
+  },
+  {
+    "slug": "trust-in-the-sun",
+    "name": "Trust in the Sun",
+    "identity": "A buttery Las Vegas fusion of jazz, soul, funk and pop.",
+    "tier": "in-the-mix",
+    "mbid": null
+  }
+]
