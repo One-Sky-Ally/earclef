@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "slug": "tool",
+  "tier": "heavy-rotation",
   "meta": {
     "title": "Tool — Ear Clef",
     "description": "Artist hub for Tool — the Grammy-winning Los Angeles progressive metal band behind Lateralus and Fear Inoculum.",

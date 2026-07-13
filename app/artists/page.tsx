@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getAllArtists } from '@/lib/content'
 import { youtubeThumbnailUrl } from '@/lib/links'
 import { SiteNav } from '@/components/SiteNav'
@@ -41,6 +42,12 @@ export default function ArtistsPage() {
             One page per universe. {cards.length} and counting.
           </p>
           <ArtistIndexGrid cards={cards} />
+          <p className={styles.suggest}>
+            Know someone who belongs here?{' '}
+            <Link className={styles.suggestLink} href="/suggest">
+              Suggest an artist →
+            </Link>
+          </p>
         </div>
       </main>
       <footer className={styles.footer}>

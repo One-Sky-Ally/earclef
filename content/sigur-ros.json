@@ -1,6 +1,7 @@
 {
   "schemaVersion": 1,
   "slug": "sigur-ros",
+  "tier": "heavy-rotation",
   "meta": {
     "title": "Sigur Rós — Ear Clef",
     "description": "Sigur Rós — the Icelandic post-rock band whose bowed guitars and falsetto hymns have soundtracked wonder since 1994.",

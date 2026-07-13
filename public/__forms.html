@@ -1,0 +1,22 @@
+<!doctype html>
+<!--
+  Netlify form detection stub. The build serves pages from functions, so
+  Netlify's crawler can't see the React form — this static file declares it.
+  The visible form at /suggest POSTs here. Field names must stay in sync
+  with components/SuggestForm.tsx.
+-->
+<html>
+  <body>
+    <form
+      name="suggest-artist"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="text" name="bot-field" />
+      <input type="text" name="artist" />
+      <input type="url" name="link" />
+      <textarea name="why"></textarea>
+    </form>
+  </body>
+</html>

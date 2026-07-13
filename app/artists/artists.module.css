@@ -156,6 +156,23 @@
   color: var(--text-muted);
 }
 
+.suggest {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text-soft);
+}
+
+.suggestLink {
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+.suggestLink:hover {
+  color: var(--text);
+}
+
 .footer {
   display: flex;
   flex-direction: column;

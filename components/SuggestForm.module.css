@@ -1,0 +1,100 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  max-width: 480px;
+}
+
+/* Honeypot — visually gone, still in the POST body. */
+.trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.label em {
+  text-transform: none;
+  letter-spacing: normal;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.input,
+.textarea {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--accent-deep);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 5rem;
+  font-family: inherit;
+}
+
+.submit {
+  align-self: flex-start;
+  padding: 0.6rem 1.5rem;
+  border: 1px solid var(--accent-deep);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+}
+
+.error {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.sent {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-soft);
+  max-width: 480px;
+}
