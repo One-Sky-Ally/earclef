@@ -11,6 +11,7 @@ import {
   type PanelRelease,
 } from '@/lib/explore/panelData'
 import type { DataSource } from '@/lib/explore/counts'
+import { archiveAudioSearchUrl, listenSearch } from '@/lib/links'
 import styles from './CountryPanel.module.css'
 
 export interface SelectedCountry {
@@ -32,13 +33,15 @@ type PanelState =
 
 const PREVIEW_COUNT = 5
 
-// Quoted phrases keep YouTube searches on-target ("Black Widow" the band,
-// not the Marvel film). Artists get their top release as a discriminator.
-function releaseSearchQuery(release: PanelRelease): string {
-  return `"${release.artist.name}" "${release.title}"`
+// listenSearch quotes the title but leaves the artist bare, so name variants
+// can't zero out the results while the search stays on-target ("Black Widow"
+// the band, not the Marvel film). Artists get their top release as a
+// discriminator.
+function releaseSearchHref(release: PanelRelease): string {
+  return listenSearch(release.artist.name, release.title)
 }
 
-function artistSearchQuery(
+function artistSearchHref(
   artist: PanelArtist,
   releases: PanelRelease[],
 ): string {
@@ -46,8 +49,8 @@ function artistSearchQuery(
     (release) => release.artist.id === artist.id,
   )?.title
   return topRelease
-    ? `"${artist.name}" "${topRelease}"`
-    : `"${artist.name}" music`
+    ? listenSearch(artist.name, topRelease)
+    : youtubeSearchUrl(`"${artist.name}" music`)
 }
 
 export function CountryPanel({
@@ -150,9 +153,7 @@ export function CountryPanel({
                     </a>
                     <a
                       className={styles.listenBadge}
-                      href={youtubeSearchUrl(
-                        artistSearchQuery(artist, state.details.releases),
-                      )}
+                      href={artistSearchHref(artist, state.details.releases)}
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`Listen: search YouTube for ${artist.name}`}
@@ -201,13 +202,27 @@ export function CountryPanel({
                     </div>
                     <a
                       className={styles.listenLink}
-                      href={youtubeSearchUrl(releaseSearchQuery(release))}
+                      href={releaseSearchHref(release)}
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`Listen: search YouTube for ${release.title} by ${release.artist.name}`}
                     >
                       ▶ Listen
                     </a>
+                    {year < 1950 && (
+                      <a
+                        className={styles.listenLink}
+                        href={archiveAudioSearchUrl(
+                          release.artist.name,
+                          release.title,
+                        )}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`Search the Internet Archive for ${release.title} by ${release.artist.name}`}
+                      >
+                        Archive ↗
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

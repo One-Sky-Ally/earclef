@@ -60,6 +60,12 @@
   gap: 1.1rem;
 }
 
+.tileWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
 .tile {
   display: flex;
   flex-direction: column;
@@ -96,8 +102,39 @@
 }
 
 .tileMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-size: 0.75rem;
   color: var(--text-muted);
+}
+
+.rareChip {
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: help;
+}
+
+.sources {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.sourceLink {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+.sourceLink:hover {
+  color: var(--accent);
 }
 
 .note {

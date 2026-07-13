@@ -3,12 +3,19 @@
 import { useState } from 'react'
 import type { FeaturedAlbum } from '@/lib/types'
 import { fetchAlbumDetails } from '@/lib/artist/browserData'
-import { coverArtUrl, quotedSearch } from '@/lib/links'
+import {
+  archiveAudioSearchUrl,
+  bandcampSearchUrl,
+  coverArtUrl,
+  listenSearch,
+} from '@/lib/links'
 import styles from './AlbumCard.module.css'
 
 interface AlbumCardProps {
   album: FeaturedAlbum
   artistName: string
+  /** Show a Bandcamp search when the artist's catalog lives there. */
+  hasBandcamp?: boolean
 }
 
 type TracksState =
@@ -17,7 +24,11 @@ type TracksState =
   | { status: 'error' }
   | { status: 'ready'; tracks: string[] }
 
-export function AlbumCard({ album, artistName }: AlbumCardProps) {
+export function AlbumCard({
+  album,
+  artistName,
+  hasBandcamp = false,
+}: AlbumCardProps) {
   const [tracksState, setTracksState] = useState<TracksState>({
     status: 'closed',
   })
@@ -44,7 +55,8 @@ export function AlbumCard({ album, artistName }: AlbumCardProps) {
     }
   }
 
-  const searchHref = quotedSearch(artistName, album.title)
+  const searchHref = listenSearch(artistName, album.title)
+  const pre1950 = album.year !== undefined && Number(album.year) < 1950
 
   return (
     <article className={styles.card}>
@@ -76,6 +88,32 @@ export function AlbumCard({ album, artistName }: AlbumCardProps) {
         </span>
       </a>
 
+      {(hasBandcamp || pre1950) && (
+        <p className={styles.sources}>
+          Also try:{' '}
+          {hasBandcamp && (
+            <a
+              className={styles.sourceLink}
+              href={bandcampSearchUrl(artistName, album.title)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Bandcamp ↗
+            </a>
+          )}
+          {pre1950 && (
+            <a
+              className={styles.sourceLink}
+              href={archiveAudioSearchUrl(artistName, album.title)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Internet Archive ↗
+            </a>
+          )}
+        </p>
+      )}
+
       {album.mbReleaseGroupId && (
         <button
           type="button"
@@ -100,7 +138,7 @@ export function AlbumCard({ album, artistName }: AlbumCardProps) {
             <li key={`${index}-${track}`}>
               <a
                 className={styles.track}
-                href={quotedSearch(artistName, track)}
+                href={listenSearch(artistName, track)}
                 target="_blank"
                 rel="noreferrer"
               >

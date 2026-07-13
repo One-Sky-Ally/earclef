@@ -3,15 +3,23 @@
 import { useEffect, useState } from 'react'
 import {
   fetchCatalog,
+  type CatalogItem,
   type CatalogResponse,
 } from '@/lib/artist/browserData'
-import { coverArtUrl, quotedSearch } from '@/lib/links'
+import {
+  archiveAudioSearchUrl,
+  bandcampSearchUrl,
+  coverArtUrl,
+  listenSearch,
+} from '@/lib/links'
 import { Modal } from '@/components/Modal'
 import styles from './popupBrowser.module.css'
 
 interface CatalogPopupProps {
   mbid: string
   artistName: string
+  /** Show a Bandcamp search per item when the artist's catalog lives there. */
+  hasBandcamp?: boolean
   onClose: () => void
 }
 
@@ -20,7 +28,16 @@ type PopupState =
   | { status: 'error' }
   | { status: 'ready'; catalog: CatalogResponse }
 
-export function CatalogPopup({ mbid, artistName, onClose }: CatalogPopupProps) {
+function isPre1950(item: CatalogItem): boolean {
+  return item.year !== undefined && Number(item.year) < 1950
+}
+
+export function CatalogPopup({
+  mbid,
+  artistName,
+  hasBandcamp = false,
+  onClose,
+}: CatalogPopupProps) {
   const [state, setState] = useState<PopupState>({ status: 'loading' })
   const [activeKey, setActiveKey] = useState<string | null>(null)
 
@@ -42,7 +59,7 @@ export function CatalogPopup({ mbid, artistName, onClose }: CatalogPopupProps) {
   return (
     <Modal
       title="Full catalog"
-      subtitle={`${artistName} — every click opens a YouTube search`}
+      subtitle={`${artistName} — every click opens a search, not a guaranteed match`}
       onClose={onClose}
     >
       {state.status === 'loading' && (
@@ -74,10 +91,10 @@ export function CatalogPopup({ mbid, artistName, onClose }: CatalogPopupProps) {
           <div className={styles.main}>
             <ul className={styles.grid}>
               {active.items.map((item) => (
-                <li key={item.rgid}>
+                <li key={item.rgid} className={styles.tileWrap}>
                   <a
                     className={styles.tile}
-                    href={quotedSearch(artistName, item.title)}
+                    href={listenSearch(artistName, item.title)}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -93,10 +110,44 @@ export function CatalogPopup({ mbid, artistName, onClose }: CatalogPopupProps) {
                       }}
                     />
                     <span className={styles.tileTitle}>{item.title}</span>
-                    {item.year && (
-                      <span className={styles.tileMeta}>{item.year}</span>
+                    {(item.year || item.rare) && (
+                      <span className={styles.tileMeta}>
+                        {item.year}
+                        {item.rare && (
+                        <span
+                          className={styles.rareChip}
+                          title="May be hard to find online — links open a search, not a guaranteed match"
+                        >
+                            rare
+                          </span>
+                        )}
+                      </span>
                     )}
                   </a>
+                  {(hasBandcamp || isPre1950(item)) && (
+                    <span className={styles.sources}>
+                      {hasBandcamp && (
+                        <a
+                          className={styles.sourceLink}
+                          href={bandcampSearchUrl(artistName, item.title)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Bandcamp ↗
+                        </a>
+                      )}
+                      {isPre1950(item) && (
+                        <a
+                          className={styles.sourceLink}
+                          href={archiveAudioSearchUrl(artistName, item.title)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Archive ↗
+                        </a>
+                      )}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>

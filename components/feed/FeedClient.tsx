@@ -12,7 +12,7 @@ import {
 } from '@/lib/artist/browserData'
 import {
   coverArtUrl,
-  quotedSearch,
+  listenSearch,
   youtubeThumbnailUrl,
   youtubeWatchUrl,
 } from '@/lib/links'
@@ -54,7 +54,7 @@ function mbReleaseItems(
       title: item.title,
       date: item.date!,
       image: coverArtUrl(item.rgid),
-      href: quotedSearch(entry.name, item.title),
+      href: listenSearch(entry.name, item.title),
     }))
 }
 
@@ -69,7 +69,7 @@ function itunesReleaseItems(
     title: item.title,
     date: item.date,
     image: item.image ?? '/images/hero-placeholder.svg',
-    href: quotedSearch(entry.name, item.title),
+    href: listenSearch(entry.name, item.title),
   }))
 }
 

@@ -50,6 +50,18 @@ function categoryOf(rg: MbReleaseGroup): string {
   }
 }
 
+/**
+ * Releases unlikely to surface on YouTube: demos and field recordings, or
+ * anything from before 1950 (the 78 rpm era lives on Internet Archive).
+ */
+function isRare(rg: MbReleaseGroup, year: string | undefined): boolean {
+  const secondary = rg['secondary-types'] ?? []
+  if (secondary.includes('Demo') || secondary.includes('Field recording')) {
+    return true
+  }
+  return year !== undefined && Number(year) < 1950
+}
+
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 async function mbFetch(url: string): Promise<Response> {
@@ -106,11 +118,13 @@ export async function GET(
     for (const rg of groups) {
       const key = categoryOf(rg)
       const list = buckets.get(key) ?? []
+      const year = rg['first-release-date']?.slice(0, 4) || undefined
       list.push({
         rgid: rg.id,
         title: rg.title,
-        year: rg['first-release-date']?.slice(0, 4) || undefined,
+        year,
         date: rg['first-release-date'] || undefined,
+        rare: isRare(rg, year) || undefined,
       })
       buckets.set(key, list)
     }

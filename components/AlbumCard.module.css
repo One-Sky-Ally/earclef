@@ -53,6 +53,25 @@
   color: var(--accent);
 }
 
+.sources {
+  margin-top: 0.7rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: flex;
+  gap: 0.7rem;
+}
+
+.sourceLink {
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+.sourceLink:hover {
+  color: var(--accent);
+}
+
 .tracksToggle {
   margin-top: 0.9rem;
   font-size: 0.72rem;

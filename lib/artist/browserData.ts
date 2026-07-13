@@ -6,6 +6,8 @@ export interface CatalogItem {
   year?: string
   /** Full first-release date when MusicBrainz has it (YYYY[-MM[-DD]]). */
   date?: string
+  /** Demos, field recordings, pre-1950 — unlikely to surface on YouTube. */
+  rare?: boolean
 }
 
 export interface BrowserCategory<T> {

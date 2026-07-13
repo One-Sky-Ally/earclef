@@ -12,10 +12,14 @@ interface ListenProps {
 }
 
 export function Listen({ listen, artistName, mbid }: ListenProps) {
+  const bandcampUrl = listen.platforms.find(
+    (p) => p.platform === 'bandcamp',
+  )?.url
   const fallbackUrl =
-    listen.platforms.find((p) => p.platform === 'bandcamp')?.url ??
+    bandcampUrl ??
     listen.platforms.find((p) => p.platform === 'appleMusic')?.url ??
     listen.platforms[0]?.url
+  const hasBandcamp = Boolean(bandcampUrl)
 
   return (
     <section id="listen" className="section" aria-labelledby="listen-heading">
@@ -29,6 +33,7 @@ export function Listen({ listen, artistName, mbid }: ListenProps) {
                 key={album.title}
                 album={album}
                 artistName={artistName}
+                hasBandcamp={hasBandcamp}
               />
             ))}
           </div>
@@ -37,6 +42,7 @@ export function Listen({ listen, artistName, mbid }: ListenProps) {
           artistName={artistName}
           mbid={mbid}
           fallbackUrl={fallbackUrl}
+          hasBandcamp={hasBandcamp}
           className={styles.more}
         />
       </div>
