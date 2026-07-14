@@ -24,17 +24,22 @@ interface SiteNavProps {
   showSections?: boolean
   /** Artists with native audio get a Play anchor ahead of the rest. */
   includePlay?: boolean
+  /** Artists with a membership get their perk anchor after the rest. */
+  universeLabel?: string
 }
 
 export function SiteNav({
   anchorBase = '/',
   showSections = true,
   includePlay = false,
+  universeLabel,
 }: SiteNavProps) {
   const base = anchorBase === '/' ? '' : anchorBase
-  const sections = includePlay
-    ? [{ id: 'play', label: 'Play' }, ...SECTIONS]
-    : SECTIONS
+  const sections = [
+    ...(includePlay ? [{ id: 'play', label: 'Play' }] : []),
+    ...SECTIONS,
+    ...(universeLabel ? [{ id: 'universe', label: universeLabel }] : []),
+  ]
 
   return (
     <nav className={styles.nav} aria-label="Site">

@@ -19,6 +19,7 @@ const roster = readdirSync(CONTENT_DIR)
     identity: artist.hero.identity,
     tier: artist.tier ?? null,
     mbid: artist.integrations?.setlistfm?.mbid || null,
+    membership: Boolean(artist.membership?.enabled),
   }))
   .sort((a, b) => a.name.localeCompare(b.name))
 

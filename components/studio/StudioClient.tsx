@@ -12,12 +12,14 @@ import {
   setOwnerKey,
 } from '@/lib/curation/ownerClient'
 import type { FollowEntry } from '@/lib/curation/followStore'
+import { UniversePanel } from '@/components/studio/UniversePanel'
 import styles from './StudioClient.module.css'
 
 interface RosterRow {
   slug: string
   name: string
   tier: ArtistTier | null
+  membership?: boolean
 }
 
 interface StudioData {
@@ -240,6 +242,24 @@ export function StudioClient() {
           pages go through the same verified research as everyone else.
         </p>
       </section>
+
+      {roster.some((row) => row.membership) && (
+        <section aria-labelledby="universe-heading">
+          <h2 id="universe-heading" className={styles.heading}>
+            The Universe
+          </h2>
+          {roster
+            .filter((row) => row.membership)
+            .map((row) => (
+              <UniversePanel
+                key={row.slug}
+                ownerKey={state.key}
+                slug={row.slug}
+                artistName={row.name}
+              />
+            ))}
+        </section>
+      )}
 
       <section aria-labelledby="tiers-heading">
         <h2 id="tiers-heading" className={styles.heading}>

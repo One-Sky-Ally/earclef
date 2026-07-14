@@ -18,6 +18,7 @@ export async function GET(request: Request) {
       slug: artist.slug,
       name: artist.name,
       tier: artist.tier,
+      membership: artist.membership,
     })),
     retierConfigured: Boolean(process.env.GITHUB_CONTENT_TOKEN),
   })

@@ -8,6 +8,7 @@ import { Story } from '@/components/Story'
 import { Shows } from '@/components/Shows'
 import { Merch } from '@/components/Merch'
 import { Press } from '@/components/Press'
+import { UniverseSection } from '@/components/universe/UniverseSection'
 import { SiteFooter } from '@/components/SiteFooter'
 
 interface ArtistPageViewProps {
@@ -27,6 +28,11 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
       <SiteNav
         anchorBase={anchorBase}
         includePlay={Boolean(content.play?.enabled)}
+        universeLabel={
+          content.membership?.enabled
+            ? content.membership.perkTitle
+            : undefined
+        }
       />
       <Hero
         hero={content.hero}
@@ -62,6 +68,13 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
         {content.merch.enabled && <Merch merch={content.merch} />}
         {content.press.enabled && (
           <Press press={content.press} artistName={content.hero.name} />
+        )}
+        {content.membership?.enabled && (
+          <UniverseSection
+            slug={content.slug}
+            artistName={content.hero.name}
+            membership={content.membership}
+          />
         )}
       </main>
       <SiteFooter footer={content.footer} />

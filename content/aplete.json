@@ -42,6 +42,12 @@
       }
     ]
   },
+  "membership": {
+    "enabled": true,
+    "priceUsd": 20,
+    "perkTitle": "The Universe",
+    "teaser": "The inner circle of Aplete's world — songs before they're anywhere else, art, ideas, and One Sky Ally works-in-progress. One year, twenty dollars, and nothing renews itself."
+  },
   "listen": {
     "enabled": true,
     "platforms": [

@@ -1,0 +1,378 @@
+.quiet {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.error {
+  color: #e08f8f;
+  font-size: 0.88rem;
+  margin-top: 0.6rem;
+}
+
+.bannerGood,
+.bannerBad {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+}
+
+.bannerGood {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+  background: var(--accent-soft);
+}
+
+.bannerBad {
+  color: #e08f8f;
+}
+
+/* ---- locked view ---- */
+
+.locked {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.teaserCopy {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--text-soft);
+  max-width: 46rem;
+  text-wrap: pretty;
+}
+
+.teaserGrid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 0.9rem;
+}
+
+.teaserCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px dashed var(--border-strong);
+  border-radius: 10px;
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+.lockMark {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.9rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.teaserKind {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.teaserTitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.25;
+  /* Titles tease; the content stays behind the gate. */
+  filter: none;
+}
+
+.teaserDate {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ---- join card ---- */
+
+.joinCard {
+  max-width: 40rem;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border: 1px solid var(--accent-deep);
+  border-radius: 12px;
+  background: var(--bg-card);
+}
+
+.joinPrice {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.9rem;
+}
+
+.joinPriceUnit {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-soft);
+}
+
+.joinPoints {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.3rem;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.joinPoints li::before {
+  content: '— ';
+  color: var(--accent-deep);
+}
+
+.joinButton {
+  padding: 0.75rem 1.6rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.joinButton:hover:not(:disabled) {
+  background: var(--accent-deep);
+  box-shadow: 0 0 0 4px rgba(242, 169, 59, 0.12);
+}
+
+.joinButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.signIn {
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border);
+}
+
+.signInLabel {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.signInForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.signInInput {
+  flex: 1 1 14rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.signInButton {
+  padding: 0.55rem 1.1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.signInButton:hover:not(:disabled) {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}
+
+.signInButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.devLink {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ---- member view ---- */
+
+.memberBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.memberStatus {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.memberActions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.renewButton {
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--accent-deep);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  transition: background-color 0.2s ease;
+}
+
+.renewButton:hover:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.signOutButton {
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.signOutButton:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.feed {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  max-width: 46rem;
+}
+
+.post {
+  padding: clamp(1.2rem, 2.5vw, 1.7rem);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+}
+
+.postMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.postKind {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.postDate {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.postTitle {
+  font-size: 1.35rem;
+  margin-bottom: 0.8rem;
+}
+
+.postImage {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.9rem;
+}
+
+.postBody {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  margin-bottom: 0.7rem;
+  text-wrap: pretty;
+}
+
+.postBody:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- audio post player ---- */
+
+.audioPlayer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-elevated);
+  margin-bottom: 0.9rem;
+}
+
+.audioToggle {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid var(--accent-deep);
+  border-radius: 50%;
+  font-size: 0.8rem;
+  color: var(--accent);
+  transition: background-color 0.2s ease;
+}
+
+.audioToggle:hover {
+  background: var(--accent-soft);
+}
+
+.audioTime {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.4rem;
+}
+
+.audioSeek {
+  flex: 1;
+  appearance: none;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--border);
+  cursor: pointer;
+}
+
+.audioSeek::-webkit-slider-thumb {
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+}
+
+.audioSeek::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+}

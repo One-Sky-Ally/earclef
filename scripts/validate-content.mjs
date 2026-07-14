@@ -67,6 +67,26 @@ function checkStructure(slug, c) {
     }
   }
 
+  // Membership: price and honest public copy are mandatory when enabled;
+  // a connected-account id must look like a Stripe acct id.
+  if ('membership' in c) {
+    const m = c.membership
+    if (m.enabled) {
+      if (!(typeof m.priceUsd === 'number' && m.priceUsd > 0)) {
+        issues.push('membership.enabled requires a positive priceUsd')
+      }
+      if (!(typeof m.perkTitle === 'string' && m.perkTitle.length >= 3)) {
+        issues.push('membership.enabled requires a perkTitle')
+      }
+      if (!(typeof m.teaser === 'string' && m.teaser.length >= 20)) {
+        issues.push('membership.enabled requires substantive teaser copy')
+      }
+    }
+    if (m.stripeAccountId && !/^acct_[A-Za-z0-9]+$/.test(m.stripeAccountId)) {
+      issues.push(`bad stripeAccountId "${m.stripeAccountId}"`)
+    }
+  }
+
   const { youtube, setlistfm, itunes } = c.integrations
   if (youtube.channelId && !YT_CHANNEL.test(youtube.channelId)) {
     issues.push(`bad channelId ${youtube.channelId}`)

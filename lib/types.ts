@@ -78,6 +78,24 @@ export interface PlayContent {
   tracks: PlayTrack[]
 }
 
+/**
+ * Stage 2 — the yearly membership. `enabled` turns on the members-only
+ * Universe section. No `stripeAccountId` means the platform's own Stripe
+ * account (the Aplete prototype); a Connect Standard account id routes
+ * payments directly to that artist — the federated model.
+ */
+export interface MembershipContent {
+  enabled: boolean
+  /** Whole dollars for one year — a one-time payment, never a subscription. */
+  priceUsd: number
+  /** What the members-only section is called, e.g. "The Universe". */
+  perkTitle: string
+  /** Public copy under the locked section — the honest sales pitch. */
+  teaser: string
+  /** Stripe Connect Standard account of a federated artist. */
+  stripeAccountId?: string
+}
+
 export interface VideoRef {
   youtubeId: string
   title: string
@@ -167,6 +185,8 @@ export interface ArtistContent {
   hero: HeroContent
   /** Native audio hosting — optional; see PlayContent for the legal bar. */
   play?: PlayContent
+  /** Yearly membership + members-only feed — optional; see MembershipContent. */
+  membership?: MembershipContent
   listen: ListenContent
   watch: WatchContent
   story: StoryContent
