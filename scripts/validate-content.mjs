@@ -45,6 +45,28 @@ function checkStructure(slug, c) {
     issues.push(`bad tier "${c.tier}" (expected one of ${TIERS.join(', ')})`)
   }
 
+  // Native audio: the one exception to "we never host audio" — a rights
+  // statement is mandatory whenever it's enabled.
+  if ('play' in c) {
+    const p = c.play
+    if (p.enabled && !(typeof p.rights === 'string' && p.rights.length >= 20)) {
+      issues.push('play.enabled requires a substantive play.rights statement')
+    }
+    if (!Array.isArray(p.tracks)) {
+      issues.push('play.tracks must be an array')
+    } else {
+      for (const t of p.tracks) {
+        if (!t.title || typeof t.title !== 'string') issues.push('play track missing title')
+        if (!/^[a-z0-9._-]+\.(m4a|mp3)$/i.test(t.file ?? '')) {
+          issues.push(`bad play track file "${t.file}"`)
+        }
+        if (typeof t.duration !== 'number' || t.duration <= 0) {
+          issues.push(`play track "${t.title}" needs a positive duration in seconds`)
+        }
+      }
+    }
+  }
+
   const { youtube, setlistfm, itunes } = c.integrations
   if (youtube.channelId && !YT_CHANNEL.test(youtube.channelId)) {
     issues.push(`bad channelId ${youtube.channelId}`)

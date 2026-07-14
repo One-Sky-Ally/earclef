@@ -1,6 +1,7 @@
 import type { ArtistContent } from '@/lib/types'
 import { SiteNav } from '@/components/SiteNav'
 import { Hero } from '@/components/Hero'
+import { PlaySection } from '@/components/PlaySection'
 import { Listen } from '@/components/Listen'
 import { Watch } from '@/components/Watch'
 import { Story } from '@/components/Story'
@@ -23,7 +24,10 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
 
   return (
     <>
-      <SiteNav anchorBase={anchorBase} />
+      <SiteNav
+        anchorBase={anchorBase}
+        includePlay={Boolean(content.play?.enabled)}
+      />
       <Hero
         hero={content.hero}
         paletteVideoId={
@@ -31,6 +35,13 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
         }
       />
       <main>
+        {content.play?.enabled && (
+          <PlaySection
+            play={content.play}
+            artistName={content.hero.name}
+            slug={content.slug}
+          />
+        )}
         {content.listen.enabled && (
           <Listen
             listen={content.listen}

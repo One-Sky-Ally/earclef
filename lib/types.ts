@@ -55,6 +55,28 @@ export interface ListenContent {
   featuredAlbums: FeaturedAlbum[]
 }
 
+export interface PlayTrack {
+  title: string
+  /** File name within the artist's audio folder, e.g. "01-song.m4a". */
+  file: string
+  /** Seconds — stored in JSON so no track needs preloading to render. */
+  duration: number
+}
+
+/**
+ * Natively hosted audio — the one sanctioned exception to "we never host
+ * audio", allowed ONLY for artists whose masters the site has explicit
+ * legal rights to serve. The rights statement is mandatory by schema.
+ */
+export interface PlayContent {
+  enabled: boolean
+  /** Human-readable provenance/permission statement. Required when enabled. */
+  rights: string
+  album?: string
+  note?: string
+  tracks: PlayTrack[]
+}
+
 export interface VideoRef {
   youtubeId: string
   title: string
@@ -142,6 +164,8 @@ export interface ArtistContent {
   meta: PageMeta
   integrations: Integrations
   hero: HeroContent
+  /** Native audio hosting — optional; see PlayContent for the legal bar. */
+  play?: PlayContent
   listen: ListenContent
   watch: WatchContent
   story: StoryContent

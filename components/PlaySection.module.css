@@ -1,0 +1,179 @@
+.rights {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.75rem;
+  text-wrap: pretty;
+}
+
+.player {
+  max-width: 640px;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+}
+
+.transport {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.1rem;
+}
+
+.playPause {
+  display: grid;
+  place-items: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border: 1px solid var(--accent-deep);
+  border-radius: 50%;
+  font-size: 1rem;
+  color: var(--accent);
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.playPause:hover {
+  background: var(--accent-soft);
+  box-shadow: 0 0 0 4px rgba(242, 169, 59, 0.08);
+}
+
+.skip {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-size: 0.7rem;
+  color: var(--text-soft);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.skip:hover {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}
+
+.nowPlaying {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.trackTitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 480;
+  line-height: 1.2;
+}
+
+.albumTitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.seekRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.4rem;
+}
+
+.time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 2.6rem;
+}
+
+.time:last-child {
+  text-align: right;
+}
+
+.seek {
+  flex: 1;
+  appearance: none;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--border);
+  cursor: pointer;
+}
+
+.seek::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+  transition: transform 0.15s ease;
+}
+
+.seek::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.seek::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+}
+
+.tracklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.trackRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 0.6rem 0.4rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  color: var(--text-soft);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.trackRow:hover {
+  color: var(--accent);
+}
+
+.trackActive {
+  color: var(--accent);
+}
+
+.trackIndex {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  min-width: 1.6rem;
+}
+
+.trackActive .trackIndex {
+  color: var(--accent);
+}
+
+.trackName {
+  flex: 1;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+}
+
+.trackTime {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}

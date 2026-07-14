@@ -22,10 +22,19 @@ interface SiteNavProps {
   anchorBase?: string
   /** Hide section anchors on non-artist pages. */
   showSections?: boolean
+  /** Artists with native audio get a Play anchor ahead of the rest. */
+  includePlay?: boolean
 }
 
-export function SiteNav({ anchorBase = '/', showSections = true }: SiteNavProps) {
+export function SiteNav({
+  anchorBase = '/',
+  showSections = true,
+  includePlay = false,
+}: SiteNavProps) {
   const base = anchorBase === '/' ? '' : anchorBase
+  const sections = includePlay
+    ? [{ id: 'play', label: 'Play' }, ...SECTIONS]
+    : SECTIONS
 
   return (
     <nav className={styles.nav} aria-label="Site">
@@ -36,7 +45,7 @@ export function SiteNav({ anchorBase = '/', showSections = true }: SiteNavProps)
         </Link>
         <ul className={styles.links}>
           {showSections &&
-            SECTIONS.map((section) => (
+            sections.map((section) => (
               <li key={section.id}>
                 <Link
                   className={styles.link}

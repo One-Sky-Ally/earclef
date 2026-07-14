@@ -42,6 +42,24 @@
       }
     ]
   },
+  "play": {
+    "enabled": true,
+    "rights": "Owner-provided masters — Trust in the Sun owns these recordings and hosts them here with full legal permission.",
+    "album": "Placeholder Sketches",
+    "note": "Hosted by Ear Clef — Trust in the Sun owns these masters. Placeholder tones for now; the real recordings are on their way.",
+    "tracks": [
+      {
+        "title": "Placeholder — First Light (tone sketch)",
+        "file": "01-placeholder-first-light.m4a",
+        "duration": 20
+      },
+      {
+        "title": "Placeholder — Golden Hour (tone sketch)",
+        "file": "02-placeholder-golden-hour.m4a",
+        "duration": 20
+      }
+    ]
+  },
   "listen": {
     "enabled": true,
     "platforms": [
