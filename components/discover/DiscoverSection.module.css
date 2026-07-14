@@ -112,3 +112,28 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.follow {
+  align-self: flex-start;
+  margin-top: 0.4rem;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--accent-deep);
+  border-radius: 999px;
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.follow:hover:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.follow:disabled {
+  border-color: var(--border);
+  color: var(--text-muted);
+  cursor: default;
+}

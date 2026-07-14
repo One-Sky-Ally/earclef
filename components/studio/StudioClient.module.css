@@ -1,0 +1,233 @@
+.studio {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6vw, 4rem);
+  max-width: 760px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 480;
+  margin-bottom: 1rem;
+}
+
+.quiet,
+.hint {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.hint {
+  margin-top: 1rem;
+}
+
+.error {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* Passcode gate */
+.gate {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 320px;
+}
+
+.gateLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.gateInput {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.gateInput:focus {
+  outline: none;
+  border-color: var(--accent-deep);
+}
+
+.gateSubmit {
+  align-self: flex-start;
+  padding: 0.55rem 1.4rem;
+  border: 1px solid var(--accent-deep);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: background-color 0.2s ease;
+}
+
+.gateSubmit:hover {
+  background: var(--accent-soft);
+}
+
+/* Following queue */
+.queue {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.queueRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-card);
+}
+
+.queueText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.queueName {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 480;
+}
+
+.queueWhy {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.queueMeta {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.queueActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.action,
+.actionMuted {
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.action:hover {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}
+
+.actionMuted:hover {
+  color: var(--text);
+}
+
+/* Tier board */
+.tierGroup {
+  margin-bottom: 1.75rem;
+}
+
+.tierLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+}
+
+.tierCount {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.tierList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.tierRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.tierName {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  min-width: 16rem;
+}
+
+.tierSelect {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-soft);
+  font-size: 0.8rem;
+}
+
+.tierSelect:focus {
+  outline: none;
+  border-color: var(--accent-deep);
+}
+
+.status {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.statusError {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+.signOut {
+  align-self: flex-start;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.signOut:hover {
+  color: var(--accent);
+}

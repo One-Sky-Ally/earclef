@@ -1,0 +1,40 @@
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.9rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  padding: 0.9rem 1.25rem;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+}
+
+.label {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  display: inline-block;
+  padding: 0.28rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+a.pill:hover {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}

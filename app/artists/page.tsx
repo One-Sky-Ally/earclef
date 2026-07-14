@@ -9,6 +9,7 @@ import {
   type ArtistCardData,
 } from '@/components/ArtistIndexGrid'
 import { DiscoverSection } from '@/components/discover/DiscoverSection'
+import { PendingStrip } from '@/components/curation/PendingStrip'
 import styles from './artists.module.css'
 
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ export default function ArtistsPage() {
             One page per universe. {cards.length} and counting.
           </p>
           <DiscoverSection />
+          <PendingStrip />
           <ArtistIndexGrid cards={cards} />
           <p className={styles.suggest}>
             Know someone who belongs here?{' '}
