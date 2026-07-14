@@ -13,7 +13,7 @@
       "artistId": ""
     },
     "youtube": {
-      "channelId": ""
+      "channelId": "UCGKURphmIziTYopcAlNb6Iw"
     },
     "setlistfm": {
       "mbid": ""
@@ -78,8 +78,13 @@
     ]
   },
   "watch": {
-    "enabled": false,
-    "videos": []
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "OzJ_lUNKENA",
+        "title": "Orange Juice (Official Music Video)"
+      }
+    ]
   },
   "story": {
     "enabled": true,

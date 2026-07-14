@@ -13,6 +13,7 @@ export type Platform =
   | 'x'
   | 'facebook'
   | 'website'
+  | 'soundcloud'
 
 export interface PlatformLink {
   platform: Platform | string

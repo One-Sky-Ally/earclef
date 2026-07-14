@@ -14,7 +14,7 @@ const YT_VIDEO = /^[\w-]{11}$/
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/
 const PLATFORMS = new Set([
   'appleMusic', 'bandcamp', 'website', 'instagram', 'x', 'facebook',
-  'youtube', 'tiktok', 'dragcity',
+  'youtube', 'tiktok', 'dragcity', 'soundcloud',
 ])
 const UA = 'EarClefValidator/0.1 (https://earclef.netlify.app)'
 

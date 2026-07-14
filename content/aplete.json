@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "slug": "aplete",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Aplete — Ear Clef",
+    "description": "The creative universe of Las Vegas multi-instrumentalist Stefano Kajatt — songs, art, ideas, and One Sky Ally works-in-progress.",
+    "ogImage": "/images/og-aplete.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/aplete"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "1WmHXbIPo4ynWlVTnqDNYA"
+    },
+    "youtube": {
+      "channelId": "UC2Yf-Wykss1jm73UAiIzmPw"
+    },
+    "setlistfm": {
+      "mbid": ""
+    },
+    "itunes": {
+      "artistId": "1517579184"
+    }
+  },
+  "hero": {
+    "name": "Aplete",
+    "identity": "A creative universe from Las Vegas — songs, art and ideas from multi-instrumentalist Stefano Kajatt.",
+    "tagline": "Hear here!",
+    "location": "Las Vegas, NV",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/aplete"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/aplete.art/"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/aplete"
+      },
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/aplete/1517579184"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "FIOH, Vol. 1",
+        "year": "2024"
+      },
+      {
+        "title": "You Better Lay Low",
+        "year": "2023"
+      },
+      {
+        "title": "Little Bird",
+        "year": "2022"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "Iytcj8Y7Smk",
+        "title": "Little Bird"
+      },
+      {
+        "youtubeId": "p1B22jE7zX0",
+        "title": "You Better Lay Low (with Kella T.)"
+      },
+      {
+        "youtubeId": "f0uLwn91J7E",
+        "title": "In Harmony"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Aplete is the solo universe of Stefano Kajatt, a Las Vegas multi-instrumentalist who also leads the band and recording collective Trust in the Sun. The name holds more than a discography: Aplete is where Kajatt shares whatever he is making — songs first, but also art, ideas, and works-in-progress from One Sky Ally, the umbrella for his creative projects.",
+      "The streaming catalogue is small and deliberate: 'Little Bird' (2022), 'You Better Lay Low' with Kella T. (2023), and 'FIOH, Vol. 1' (2024) — three pieces ('In Harmony', 'Mending's Meditation', 'A Concord Goodbye') written for FIOH, a One Sky Ally project. Off the charts, the SoundCloud page runs deeper: twenty-eight tracks of originals, sketches and covers, from 'Hand in Hand' to takes on 'Jolene', 'Hallelujah' and 'Song to the Siren'.",
+      "Aplete also turns up in other people's worlds — with River Rhythm on 'Lotus Pond' and 'Mystery of Life', with Red Grooves on 'When We All Are One', with Souza on 'Closure', and with Christina Lakis on 'Tunnel Vision'.",
+      "EDIT-ME: where the name Aplete comes from, and what this project means to Stefano — in his own words.",
+      "EDIT-ME: what is in motion right now — the art, the ideas, the One Sky Ally works-in-progress this universe will share next."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Aplete has no tracked live dates — Stefano plays around Las Vegas with Trust in the Sun; word of appearances travels through the band's channels.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
