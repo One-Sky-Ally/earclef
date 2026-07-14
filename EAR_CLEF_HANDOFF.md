@@ -109,14 +109,31 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
 
 ## 7. BUILD LOG (maintained by Claude Code — read this to resume cold)
 
-**Last updated: July 10, 2026 · v1 build in progress**
+**Last updated: July 14, 2026 · v1 shipped and far surpassed — see Current state**
 
-### Current state
-- **Milestone 1 done (revised):** guinea-pig artist switched from Trust in the Sun (hiatus) to **Radiohead** to prove API auto-pull with rich public data. Schema approved. All content lives in `content/radiohead.json` — components read ONLY from it.
-- **Milestone 2 done:** Next.js 16 (App Router, TypeScript, Turbopack) scaffolded at repo root; full page renders statically from the JSON. `npm run build` passes; ESLint clean. Preview via `.claude/launch.json` (`npm run dev`, port 3000).
-- **Milestone 3 done (design polish):** film-grain overlay (pure-CSS feTurbulence data URI), sticky Ear Clef section nav with backdrop blur + mobile scroll-fade hint, dramatic hero (Fraunces w/ italic axis, gold period, tilted vinyl-sleeve image frame), vinyl-groove Spotify facades, featured-video layout in Watch, gold drop cap + lede emphasis in Story, refined show rows/press index numbers/footer moment. Facades and empty states unchanged. Build static + lint clean.
-- **Logo shipped (July 10, 2026):** the Ear Clef mark now lives as `components/EarClefMark.tsx` — an ORIGINAL inline-SVG redraw (yin-yang, treble clef in the open half, ear knocked out of the filled half, head-in-profile nose/lips on the left edge). Zero third-party content — hand-authored paths, no Canva tracing, so it's trademark-clean for web use (the paper original remains the authorship evidence). Single-color via currentColor; works on dark/light. Used at 22px in the nav, 52px in the footer. Taglines: hero uses "Hear here!" (from `hero.tagline` in the content JSON), footer keeps "Music in balance"; the old "Your Ultimate Music Destination" line is retired and must not be reintroduced.
-- **Next (artist page): Milestone 4** — setlist.fm integration, then Spotify (5), YouTube (6), README (7). Site is deployed: https://earclef.netlify.app (Netlify auto-deploys `main`; netlify.toml holds build config).
+### Current state (July 14, 2026 — cold-start summary; details per feature in the dated entries below)
+
+**Live at https://earclef.netlify.app** (Netlify auto-deploys `main` from https://github.com/One-Sky-Ally/earclef.git):
+- **Homepage = the Explore globe** (music time travel, 1900–2026, full MusicBrainz dataset); /explore 308→/. 28 verified artist pages at /[slug] (SSG, one JSON per artist in content/), curation tiers live (12 heavy-rotation / 16 in-the-mix; on-the-radar reserved), tier filters on /artists + /feed. Music-only feed at /feed (MB backbone + iTunes freshness overlay). De-Spotified listening: all listen actions → title-quoted YouTube searches (lib/links.ts listenSearch), Bandcamp/Internet Archive secondary links, rarity chips.
+- **AI Discover** on /artists: 3 daily off-roster picks (Claude Opus 4.8, one 12-pick pool/day, MusicBrainz-verified, ~$1/mo). Working in production.
+- **Follow queue + Curation Studio** (/studio, owner passcode): follow Discover picks → pending queue; tier board with direct-to-GitHub retier commits. Server code live; BLOCKED on Netlify env vars (see actions below).
+- **Suggest-an-artist** (/suggest, Netlify Forms): page live; submissions BLOCKED on form detection (see actions below).
+- **Native audio v1** on /trust-in-the-sun: Play section (player: tracklist/seek/auto-advance/Media Session), currently serving two labeled PLACEHOLDER tone sketches from public/audio/; real masters + Cloudflare R2 pending.
+
+**Stack:** Next.js 16 App Router + plain CSS Modules + next/font (Fraunces/Inter). Deps: globe.gl, @anthropic-ai/sdk, @netlify/blobs (each Stefano-approved). Netlify Blobs stores: "discover" (daily pools + history), "curation" (following queue). Netlify functions: discover-generate-background + discover-schedule (00:10 UTC). scripts/validate-content.mjs = schema guard (tiers, play.rights, IDs; --remote verifies IDs). scripts/build-roster.mjs runs in npm build (roster snapshot for serverless).
+
+**Env vars** — local .env.local (gitignored): YOUTUBE_API_KEY, ANTHROPIC_API_KEY, OWNER_KEY (=owner passcode). Netlify: YOUTUBE_API_KEY ✓, ANTHROPIC_API_KEY ✓ (Discover verified working in prod).
+
+**⚠️ STEFANO ACTION QUEUE (verified still pending July 14 via live probes):**
+1. Netlify: enable Forms detection (Site config → Forms) + redeploy — /suggest submissions 404 until then; optional email notification.
+2. Netlify env: add OWNER_KEY + redeploy — until then prod /studio and Follow buttons reject the passcode (verified 401).
+3. Netlify env: add GITHUB_CONTENT_TOKEN (fine-grained PAT, contents read/write on One-Sky-Ally/earclef — minting walkthrough was given in chat July 13) — tier board is read-only until then.
+4. Cloudflare account + R2 for native audio (buckets earclef-audio public / earclef-masters private), then hand over WAV masters + track titles → Claude encodes AAC 256k, uploads, sets NEXT_PUBLIC_AUDIO_BASE, removes placeholders.
+5. Content: two EDIT-ME story paragraphs in content/trust-in-the-sun.json.
+6. Hygiene: the repo push PAT given July 11 expires ~Aug 10 — mint a replacement; optionally API-restrict the YouTube key in Google Cloud.
+
+**Operational notes:** push flow = temporarily embed Stefano's PAT in the remote URL, push, reset URL (never write the token to a file). Netlify deploys land in ~30–105s; one webhook drop ever (fixed by empty retrigger commit). Browser-pane quirks: no rAF outside forced frames (globe testing recipe below), scrolled screenshots composite black, JS scrollTo inert — use real input events, read state via javascript_tool.
+
 - **NEW TRACK — /explore music time-travel globe (approved July 10, 2026):** interactive 3D globe, year slider 1900–present, country click → artists/releases panel (MusicBrainz links), area search. v1 scope ONLY — no accounts, no era media, no city data. Its milestones: (1) ✓ library+data proposal approved — globe.gl dependency approved by Stefano; (2) ✓ static globe at /explore in design language, Explore nav link added; (3) ✓ year slider + log-scaled gold choropleth (per-year normalized) with hover counts — runs on simulated data (lib/explore/mockCounts.ts, honest badge shown) until the real dataset is copied to public/data/country-year-counts.json, at which point loadCounts() upgrades automatically; (4) ✓ country click panel — /api/explore/[country]/[year] proxies MusicBrainz (validated params, 1 retry, memo + s-maxage=30d CDN caching), CountryPanel shows total/artist pills/release list with MusicBrainz links, honest empty state, Esc/✕ close, bottom-sheet on mobile; click flies camera to rough centroid and pauses auto-rotation; (5) ✓ search — SearchBox (top-left of stage) → /api/explore/search → MusicBrainz area lookup, walking "part of" parents up to 4 hops for cities (Manchester→England→GB), memoized + CDN-cached; resolves → camera flies to country + panel opens. Refinements shipped: stacked tooltip, ember→gold→white-gold heat spectrum (heatColor in lib/explore/counts.ts), YouTube-search "Listen" actions on panel artists/releases alongside MusicBrainz links. /explore v1 COMPLETE: real 1950–2026 MusicBrainz dataset live in production (badge shows "MusicBrainz release data"); 1900–1949 backfill COMPLETE July 12 — full 127-year dataset (22,225 pairs) live in production. Precompute scripts remain resumable for future refreshes (re-run scripts/build-music-data.mjs with year args).
 - **Verifying WebGL interaction in the Claude browser pane:** requestAnimationFrame does NOT fire in the pane except when a screenshot forces a frame, and globe.gl computes hover/click inside its rAF loop. Recipe that works: freeze rotation via the dev-only `window.__earclefGlobe` handle → compute aim with `getScreenCoords` → real `hover` → screenshot (forces raycast frame) → `left_click` → screenshot (forces click-dispatch frame). Real browsers are unaffected.
 - **/explore data:** `scripts/build-music-data.mjs` precomputes MusicBrainz release counts per country/year → `data/country-year-counts.json` (committed; grows as script runs). Script is RESUMABLE (skips existing pairs), respects 1 req/s, runs detached via nohup (log: data/precompute.log, gitignored). Started July 10 ~22:15 covering 1950–2026 (~4.5h); backfill 1900–1949 later by re-running with args `1900 1949`. Detail-on-click will use a cached route handler (approved deviation: public catalog data only, no user data).
@@ -129,7 +146,7 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
 
 ### Decisions made
 - No dependencies beyond Next.js: plain CSS Modules, `next/font` (Fraunces display serif + Inter), no Tailwind/zod/test framework (adding any requires Stefano's OK).
-- Embeds stored as `{type, kind, id}` — components build official embed URLs (Spotify `open.spotify.com/embed/…`, YouTube `youtube-nocookie.com/embed/…`). Audio files are structurally inexpressible: the no-hosting rule is enforced by the schema.
+- Embeds stored as `{type, kind, id}` — components build official embed URLs. ~~Audio files are structurally inexpressible~~ SUPERSEDED July 14, 2026: the `play` schema section hosts audio for artists whose masters the site has explicit rights to (owner-provided only; validator requires a rights statement) — see NATIVE AUDIO v1 entry.
 - All iframes are click-to-load facades (performance); YouTube facades use i.ytimg.com thumbnails.
 - `shows.upcoming` is EMPTY on purpose: no official 2026 dates exist (W.A.S.T.E. schedule + Ticketmaster both empty as of July 2026). A fan/tribute page ("Just Radiohead") and an AI-clickbait site (aesplora.com) publish fake "2026 tour announcements" — do not import them. Only trust wasteheadquarters.com.
 - Hero/merch images are local SVG placeholders — no rights-cleared band photos; Spotify API artwork replaces them at milestone 5.
@@ -151,16 +168,18 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
 - MUSIC-ONLY FEED v1 SHIPPED (July 12, 2026): /feed "Latest" — reverse-chron releases (MB release-groups w/ dates) + videos (YouTube) across the roster, per-artist video cap 8, badges/covers/dates, clicks → YouTube; nav gains Latest. The 2023 vision's music-only feed, realized as v1. Freshness note: MB can lag day-one drops; iTunes Search API (keyless) identified as the v1.1 freshness overlay if needed.
 - DE-SPOTIFY MILESTONE SHIPPED (July 12, 2026): album embeds → AlbumCard (Cover Art Archive artwork + MusicBrainz tracklists, clicks → quoted YouTube searches); "View full catalog" → CatalogPopup (MB release-groups via /api/artist/catalog, categorized Albums/EPs/Singles/Live/Compilations/Remixes/Other); "View all videos" → VideosPopup (/api/artist/videos: YouTube Data API when YOUTUBE_API_KEY is set, else RSS latest-15 fallback with honest note — key still pending from Stefano); Spotify pills/socials removed from all content JSONs (integrations.spotify kept dormant). MB remasters live inside their album release-group (no separate category by design).
 
-### Env keys needed (none yet)
-- Milestone 4: `SETLISTFM_API_KEY` (free: api.setlist.fm signup)
-- Milestone 5: `SPOTIFY_CLIENT_ID` + `SPOTIFY_CLIENT_SECRET` (free dev tier)
-- Milestone 6: `YOUTUBE_API_KEY` (Google Cloud console)
-- All in `.env.local`, never committed. Every section must render from JSON alone when keys are absent.
+### Env keys (current)
+- In use — local .env.local AND Netlify: `YOUTUBE_API_KEY`, `ANTHROPIC_API_KEY`.
+- In use locally, PENDING on Netlify: `OWNER_KEY` (studio/follow auth).
+- Pending everywhere: `GITHUB_CONTENT_TOKEN` (tier-board retier), `NEXT_PUBLIC_AUDIO_BASE` (R2 cutover; defaults to /audio).
+- Never needed after all: SETLISTFM key (URLs only), SPOTIFY creds (de-Spotified; iTunes overlay is keyless).
+- All secrets in `.env.local`, never committed. Every page must render from JSON alone when keys are absent (Discover/studio degrade gracefully).
 
 ### Known issues
-- `meta.ogImage` points to `/images/og-radiohead.jpg` which doesn't exist yet — generate a real 1200×630 card during polish/deploy.
-- `meta.canonicalUrl` is EDIT-ME until the Netlify URL exists (build warns about metadataBase; harmless).
-- No test suite yet (would require a dependency decision).
+- `meta.ogImage` still points to non-existent files (e.g. /images/og-radiohead.jpg) across all 28 artists — generate real 1200×630 cards in a polish pass.
+- No test suite (adding one requires a dependency decision; validate-content.mjs + build + lint are the current gate).
+- Trust in the Sun Play section serves labeled placeholder tones until the R2 cutover.
+- Discover UI can render stale API responses for up to the CDN stale-while-revalidate window after a deploy changes response shape (self-heals).
 
 ## 8. Constraints & operating principles
 
