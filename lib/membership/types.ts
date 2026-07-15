@@ -16,6 +16,12 @@ export interface MemberRecord {
   source: 'stripe' | 'comp'
   /** Stripe Checkout session id of the most recent payment. */
   stripeSessionId?: string
+  /**
+   * When the current session id was exchanged for a sign-in cookie. A
+   * success URL mints a cookie ONCE — replaying it from history or logs
+   * signs nobody in (it lands on the magic-link form instead).
+   */
+  claimedAt?: string
   /** Count of years beyond the first. */
   renewals: number
   /** ISO datetime the ~2-weeks-out reminder went out (once per year). */
@@ -123,4 +129,7 @@ export function normalizeEmail(raw: string): string {
   return raw.trim().toLowerCase()
 }
 
-export const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+// Strict charset on purpose: normalized emails become Blob-store key
+// segments, so no slashes, no dot-dot tricks, no whitespace.
+export const EMAIL_PATTERN =
+  /^[a-z0-9._%+-]+@[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)*\.[a-z]{2,}$/i

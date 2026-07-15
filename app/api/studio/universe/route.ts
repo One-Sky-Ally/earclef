@@ -69,6 +69,13 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   if (!isOwner(request)) return unauthorized()
 
+  // Reject oversized payloads before buffering the body: 4 MB of media
+  // is ~5.4 MB in base64, plus JSON envelope headroom.
+  const declaredBytes = Number(request.headers.get('content-length') ?? 0)
+  if (declaredBytes > 6_500_000) {
+    return noStore({ error: 'Payload too large' }, 413)
+  }
+
   let body: UniverseAction
   try {
     body = await request.json()

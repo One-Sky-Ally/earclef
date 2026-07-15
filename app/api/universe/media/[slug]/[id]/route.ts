@@ -32,10 +32,17 @@ export async function GET(
   }
 
   const bytes = media.data.byteLength
-  const baseHeaders = {
+  const baseHeaders: Record<string, string> = {
     'Content-Type': media.contentType,
     'Accept-Ranges': 'bytes',
     'Cache-Control': 'private, no-store',
+    'X-Content-Type-Options': 'nosniff',
+  }
+  // SVG can carry scripts: <img> rendering is inert, but direct
+  // navigation would execute them in the site origin — force download
+  // there instead. Media elements ignore Content-Disposition.
+  if (media.contentType === 'image/svg+xml') {
+    baseHeaders['Content-Disposition'] = 'attachment'
   }
 
   const range = request.headers.get('range')

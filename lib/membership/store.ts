@@ -29,6 +29,67 @@ export async function getMember(
   }
 }
 
+export interface MemberSnapshot {
+  record: MemberRecord | null
+  /** Blob ETag for compare-and-set; null when the record does not exist. */
+  etag: string | null
+  /** True when Blobs is unreachable and the dev fallback answered. */
+  dev: boolean
+}
+
+/** Read a record together with its ETag, for guarded writes. */
+export async function getMemberSnapshot(
+  artistSlug: string,
+  email: string,
+): Promise<MemberSnapshot> {
+  try {
+    const entry = await store().getWithMetadata(key(artistSlug, email), {
+      type: 'json',
+    })
+    if (!entry) return { record: null, etag: null, dev: false }
+    return {
+      record: entry.data as MemberRecord,
+      etag: entry.etag ?? null,
+      dev: false,
+    }
+  } catch {
+    return {
+      record: devRecords.get(key(artistSlug, email)) ?? null,
+      etag: null,
+      dev: true,
+    }
+  }
+}
+
+/**
+ * Compare-and-set write: succeeds only if the record is still at the
+ * snapshot's version (or still absent). Payment recording goes through
+ * this so concurrent claim/webhook deliveries can never stack years —
+ * the loser re-reads and sees the session id already applied.
+ */
+export async function putMemberGuarded(
+  record: MemberRecord,
+  snapshot: MemberSnapshot,
+): Promise<boolean> {
+  const recordKey = key(record.artistSlug, record.email)
+  if (snapshot.dev) {
+    devRecords = new Map(devRecords).set(recordKey, record)
+    return true
+  }
+  try {
+    const result = await store().setJSON(
+      recordKey,
+      record,
+      snapshot.etag ? { onlyIfMatch: snapshot.etag } : { onlyIfNew: true },
+    )
+    return Boolean(result.modified)
+  } catch {
+    // Store reachable at read time but not at write time — do not treat
+    // as success; the caller retries or fails closed.
+    return false
+  }
+}
+
 export async function putMember(record: MemberRecord): Promise<void> {
   const recordKey = key(record.artistSlug, record.email)
   try {

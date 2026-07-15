@@ -31,6 +31,12 @@ function readBanner(params: URLSearchParams): Banner {
   if (params.get('signin') === 'ok') {
     return { tone: 'good', text: 'Signed in.' }
   }
+  if (params.get('signin') === 'needed') {
+    return {
+      tone: 'good',
+      text: 'Your membership is active — sign in with your email below to open it.',
+    }
+  }
   if (params.get('renew') === 'unavailable' || params.get('renew') === 'failed') {
     return {
       tone: 'bad',

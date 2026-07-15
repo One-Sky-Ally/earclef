@@ -1,7 +1,10 @@
 import { NextResponse } from 'next/server'
 import type Stripe from 'stripe'
 import { getArtistBySlug } from '@/lib/content'
-import { getMember, putMember } from '@/lib/membership/store'
+import {
+  getMemberSnapshot,
+  putMemberGuarded,
+} from '@/lib/membership/store'
 import { verifyWebhook } from '@/lib/membership/stripeClient'
 import { extendMembership, normalizeEmail } from '@/lib/membership/types'
 
@@ -44,16 +47,26 @@ export async function POST(request: Request) {
     return NextResponse.json({ received: true })
   }
 
-  const existing = await getMember(slug, email)
-  if (existing?.stripeSessionId !== session.id) {
-    await putMember(
-      extendMembership(existing, {
+  // Compare-and-set loop shared with the claim route: whichever writer
+  // lands first records the year; the other sees the session id applied
+  // and stops. Concurrent deliveries can never stack extra years.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const snapshot = await getMemberSnapshot(slug, email)
+    if (snapshot.record?.stripeSessionId === session.id) break
+    const applied = await putMemberGuarded(
+      extendMembership(snapshot.record, {
         email,
         artistSlug: slug,
         source: 'stripe',
         stripeSessionId: session.id,
       }),
+      snapshot,
     )
+    if (applied) break
+    if (attempt === 2) {
+      // Fail loud so Stripe retries the delivery later.
+      return NextResponse.json({ error: 'Write contention' }, { status: 500 })
+    }
   }
   return NextResponse.json({ received: true })
 }

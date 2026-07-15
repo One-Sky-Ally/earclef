@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getArtistBySlug } from '@/lib/content'
 import { sendMagicLink } from '@/lib/membership/email'
+import { throttleGate } from '@/lib/membership/markers'
 import { siteOrigin } from '@/lib/membership/origin'
 import {
   MAGIC_LINK_TTL_MS,
@@ -14,11 +15,22 @@ import { EMAIL_PATTERN, normalizeEmail } from '@/lib/membership/types'
  * email (no membership enumeration); whether the inbox holds a usable
  * link is between the member and their email. Dev mode without Resend
  * returns the link directly so the loop stays testable.
+ *
+ * Send throttles live in the shared "auth" Blobs store (per email AND
+ * per client IP) so they hold across serverless instances — an
+ * in-process map would reset on every cold start.
  */
 
-// Per-process brake on repeat sends; real abuse control is Resend's quota.
-const lastSend = new Map<string, number>()
-const RESEND_COOLDOWN_MS = 60 * 1000
+const EMAIL_COOLDOWN_MS = 60 * 1000
+const IP_COOLDOWN_MS = 15 * 1000
+
+function clientIp(request: Request): string {
+  return (
+    request.headers.get('x-nf-client-connection-ip') ??
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+    'unknown'
+  )
+}
 
 function noStore(body: unknown, status = 200): NextResponse {
   const response = NextResponse.json(body, { status })
@@ -48,18 +60,23 @@ export async function POST(request: Request) {
     return noStore({ error: 'No membership here' }, 404)
   }
 
-  const now = Date.now()
-  const last = lastSend.get(email) ?? 0
-  if (now - last < RESEND_COOLDOWN_MS) {
+  const emailOk = await throttleGate(
+    `throttle/email/${email}`,
+    EMAIL_COOLDOWN_MS,
+  )
+  const ipOk = await throttleGate(
+    `throttle/ip/${clientIp(request)}`,
+    IP_COOLDOWN_MS,
+  )
+  if (!emailOk || !ipOk) {
     return noStore({ sent: true, throttled: true })
   }
-  lastSend.set(email, now)
 
   const token = signToken({
     t: 'magic',
     email,
     slug,
-    exp: now + MAGIC_LINK_TTL_MS,
+    exp: Date.now() + MAGIC_LINK_TTL_MS,
   })
   const link = `${siteOrigin(request)}/api/auth/verify?token=${encodeURIComponent(token)}`
 
