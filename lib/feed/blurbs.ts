@@ -96,13 +96,29 @@ function buildPrompt(items: BlurbRequestItem[]): string {
 Rules:
 - Use ONLY the metadata given plus your own general knowledge of the artist and their catalog. Nothing else exists.
 - If you genuinely recognize the release or video, be specific: its place in the artist's arc, its sound, what it is.
-- If you don't recognize it, write a graceful generic line built from the metadata alone (e.g. "A new single from X, released March 2026 — their first release since Y." or simply what the metadata supports). NEVER invent collaborators, chart positions, genres you're unsure of, or reception.
-- Never quote or paraphrase critics, reviews, or other people's writing.
+- If you don't recognize it, write a graceful generic line built from the metadata alone (e.g. "A new single from X, released March 2026." or simply what the metadata supports).
+- Name a specific fact — a producer, collaborator, label, or context — ONLY if you are certain it belongs to THIS exact release, not a different album by the same artist. When in doubt, describe the artist's known style instead. A vague true sentence always beats a specific wrong one.
+- Never quote or paraphrase critics, reviews, or other people's writing. Never invent reception or chart positions.
 - Plain warm tone. No hype words ("stunning", "must-listen"), no exclamation points, no first person.
+- Keep each blurb under 200 characters — it must end as a complete sentence.
 - Echo each item's key exactly.
 
 Items:
 ${lines}`
+}
+
+/**
+ * Overlong blurbs are trimmed at a sentence boundary, never mid-word; a
+ * runaway single sentence is dropped entirely — no blurb beats a
+ * fragment that ends "…one of the decade's most innova".
+ */
+function tidyBlurb(raw: string | undefined): string | null {
+  const text = raw?.trim()
+  if (!text) return null
+  if (text.length <= MAX_BLURB_CHARS) return text
+  const cut = text.slice(0, MAX_BLURB_CHARS)
+  const lastSentenceEnd = cut.lastIndexOf('. ')
+  return lastSentenceEnd > 60 ? cut.slice(0, lastSentenceEnd + 1) : null
 }
 
 /**
@@ -135,7 +151,7 @@ export async function generateBlurbs(
     )
     const produced: Record<string, string> = {}
     for (const blurb of parsed.blurbs) {
-      const clean = blurb.text?.trim().slice(0, MAX_BLURB_CHARS)
+      const clean = tidyBlurb(blurb.text)
       if (!validKeys.has(blurb.key) || !clean) continue
       produced[blurb.key] = clean
       await cacheBlurb(blurb.key, clean)

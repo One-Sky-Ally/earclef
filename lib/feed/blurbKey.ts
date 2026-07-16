@@ -19,11 +19,16 @@ export function normalizedTitle(title: string): string {
 
 export type FeedItemType = 'release' | 'video'
 
-/** Blob key: one blurb per item, ever — the whole cost model hangs on this. */
+/**
+ * Blob key: one blurb per item, ever — the whole cost model hangs on
+ * this. The version prefix orphans every older generation when the
+ * prompt or trimming rules change materially (v2: sentence-safe trim +
+ * stricter certainty rule after a hallucinated-producer incident).
+ */
 export function blurbKey(
   slug: string,
   type: FeedItemType,
   title: string,
 ): string {
-  return `${slug}/${type}/${normalizedTitle(title) || 'untitled'}`
+  return `v2/${slug}/${type}/${normalizedTitle(title) || 'untitled'}`
 }
