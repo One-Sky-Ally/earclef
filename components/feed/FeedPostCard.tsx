@@ -17,6 +17,8 @@ export interface FeedPostItem {
 interface FeedPostCardProps {
   item: FeedPostItem
   blurb?: string
+  /** True while this card's blurb fetch is still in flight — shimmer. */
+  blurbPending?: boolean
 }
 
 /**
@@ -24,7 +26,7 @@ interface FeedPostCardProps {
  * to the source, same hotlink pattern as the artist cards), title, and
  * an original Ear Clef blurb that pops in once generated.
  */
-export function FeedPostCard({ item, blurb }: FeedPostCardProps) {
+export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
   return (
     <article className={styles.card}>
       <a
@@ -69,7 +71,13 @@ export function FeedPostCard({ item, blurb }: FeedPostCardProps) {
         >
           {item.title}
         </a>
-        {blurb && <p className={styles.blurb}>{blurb}</p>}
+        {blurb ? (
+          <p className={styles.blurb}>{blurb}</p>
+        ) : (
+          blurbPending && (
+            <span className={styles.blurbPending} aria-hidden="true" />
+          )
+        )}
       </div>
     </article>
   )

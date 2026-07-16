@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import Link from 'next/link'
 import {
   fetchCatalog,
   fetchItunesReleases,
@@ -22,6 +21,7 @@ import { blurbKey, normalizedTitle } from '@/lib/feed/blurbKey'
 import type { ArtistTier } from '@/lib/tiers'
 import { TierFilter, type TierChoice } from '@/components/TierFilter'
 import { FeedPostCard } from '@/components/feed/FeedPostCard'
+import { FeedSkeleton } from '@/components/feed/FeedSkeleton'
 import styles from './FeedClient.module.css'
 
 export interface RosterEntry {
@@ -46,8 +46,11 @@ interface FeedItem {
 }
 
 const FEED_LIMIT = 50
-// The top of the feed reads like posts; the rest stays a compact list.
-const FEATURED_COUNT = 7
+// Every entry gets the rich treatment, revealed a page at a time.
+const PAGE_SIZE = 10
+// A batch that hits the server's generation throttle retries once, after
+// the throttle window has passed.
+const BLURB_RETRY_MS = 22 * 1000
 // Prolific channels (daily Shorts) shouldn't drown the rest of the roster.
 const VIDEOS_PER_ARTIST = 8
 
@@ -143,11 +146,16 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   const [state, setState] = useState<FeedState>({ status: 'loading' })
   const [tierChoice, setTierChoice] = useState<TierChoice>('all')
   const [blurbs, setBlurbs] = useState<Record<string, string>>({})
-  const [showAll, setShowAll] = useState(false)
+  // Keys whose blurb fetch finished (with or without a blurb) — cards
+  // shimmer until their key settles, then show the blurb or nothing.
+  const [settledKeys, setSettledKeys] = useState<Set<string>>(new Set())
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+  const [retryTick, setRetryTick] = useState(0)
   // null = signed out (or unknown): the Following pill stays hidden.
   const [follows, setFollows] = useState<string[] | null>(null)
   const [followingOnly, setFollowingOnly] = useState(false)
   const requestedBlurbs = useRef(new Set<string>())
+  const retriedBlurbs = useRef(new Set<string>())
 
   useEffect(() => {
     let cancelled = false
@@ -240,25 +248,31 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
       .slice(0, FEED_LIMIT)
   }, [state, tierChoice, roster, follows, followingOnly])
 
-  const featured = useMemo(
-    () => visible.slice(0, FEATURED_COUNT),
-    [visible],
+  const rendered = useMemo(
+    () => visible.slice(0, visibleCount),
+    [visible, visibleCount],
   )
 
-  // Blurbs for the featured items: cached ones come back instantly, fresh
-  // ones pop in when generated. One request per key per mount, tracked in
-  // a ref so a throttled generation can't cause a refetch loop.
+  // Blurbs for whatever is on screen: cached ones come back instantly
+  // (and free), fresh ones pop in when generated. One request per key per
+  // mount, tracked in a ref; a batch that hit the server's generation
+  // throttle retries exactly once after the window passes.
   useEffect(() => {
-    const missing = featured.filter((item) => {
+    const missing = rendered.filter((item) => {
       const key = blurbKey(item.slug, item.type, item.title)
       return !requestedBlurbs.current.has(key)
     })
     if (missing.length === 0) return
-    for (const item of missing) {
-      requestedBlurbs.current.add(blurbKey(item.slug, item.type, item.title))
-    }
+    const keys = missing.map((item) =>
+      blurbKey(item.slug, item.type, item.title),
+    )
+    for (const key of keys) requestedBlurbs.current.add(key)
 
-    let cancelled = false
+    // No cancellation: the effect re-runs whenever another batch reveals
+    // or retries, and cancelling an in-flight batch would strand its keys
+    // (marked requested, never settled). Keys are deduped via refs, so
+    // letting every started batch run to completion is both safe and
+    // required. Post-unmount setState is a no-op in React 18+.
     ;(async () => {
       try {
         const res = await fetch('/api/feed/blurbs', {
@@ -274,23 +288,40 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
             })),
           }),
         })
-        if (!res.ok) return
-        const body = (await res.json()) as { blurbs?: Record<string, string> }
-        if (!cancelled && body.blurbs) {
+        const body = res.ok
+          ? ((await res.json()) as { blurbs?: Record<string, string> })
+          : {}
+        if (body.blurbs) {
           setBlurbs((current) => ({ ...current, ...body.blurbs }))
+        }
+
+        const unanswered = keys.filter(
+          (key) =>
+            !(key in (body.blurbs ?? {})) && !retriedBlurbs.current.has(key),
+        )
+        if (unanswered.length > 0) {
+          setTimeout(() => {
+            for (const key of unanswered) {
+              retriedBlurbs.current.add(key)
+              requestedBlurbs.current.delete(key)
+            }
+            setRetryTick((tick) => tick + 1)
+          }, BLURB_RETRY_MS)
         }
       } catch (error) {
         console.error('Blurb fetch failed:', error)
+      } finally {
+        setSettledKeys((current) => new Set([...current, ...keys]))
       }
     })()
-    return () => {
-      cancelled = true
-    }
-  }, [featured])
+  }, [rendered, retryTick])
 
   if (state.status === 'loading') {
     return (
-      <p className={styles.note}>Gathering the latest from the roster…</p>
+      <>
+        <p className={styles.note}>Gathering the latest from the roster…</p>
+        <FeedSkeleton count={4} />
+      </>
     )
   }
 
@@ -305,7 +336,7 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   const availableTiers = [
     ...new Set(roster.flatMap((entry) => (entry.tier ? [entry.tier] : []))),
   ]
-  const rest = visible.slice(FEATURED_COUNT)
+  const remaining = visible.length - rendered.length
 
   return (
     <>
@@ -313,7 +344,10 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         <TierFilter
           available={availableTiers}
           active={tierChoice}
-          onChange={setTierChoice}
+          onChange={(choice) => {
+            setTierChoice(choice)
+            setVisibleCount(PAGE_SIZE)
+          }}
         />
         {follows && follows.length > 0 && (
           <button
@@ -321,7 +355,10 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
             className={
               followingOnly ? styles.followPillActive : styles.followPill
             }
-            onClick={() => setFollowingOnly((current) => !current)}
+            onClick={() => {
+              setFollowingOnly((current) => !current)
+              setVisibleCount(PAGE_SIZE)
+            }}
           >
             ♥ Following
           </button>
@@ -341,69 +378,27 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         <p className={styles.note}>Nothing in this tier yet.</p>
       )}
       <div className={styles.featured}>
-        {featured.map((item) => (
-          <FeedPostCard
-            key={`${item.type}-${item.href}`}
-            item={{ ...item, dateLabel: formatFeedDate(item.date) }}
-            blurb={blurbs[blurbKey(item.slug, item.type, item.title)]}
-          />
-        ))}
+        {rendered.map((item) => {
+          const key = blurbKey(item.slug, item.type, item.title)
+          return (
+            <FeedPostCard
+              key={`${item.type}-${item.href}`}
+              item={{ ...item, dateLabel: formatFeedDate(item.date) }}
+              blurb={blurbs[key]}
+              blurbPending={!settledKeys.has(key)}
+            />
+          )
+        })}
       </div>
-      {rest.length > 0 && !showAll && (
+      {remaining > 0 && (
         <button
           type="button"
           className={styles.showMore}
-          onClick={() => setShowAll(true)}
+          onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
         >
-          Show {rest.length} more from the roster ↓
+          Show {Math.min(PAGE_SIZE, remaining)} more ↓
         </button>
       )}
-      <ol className={styles.list}>
-        {(showAll ? rest : []).map((item) => (
-          <li key={`${item.type}-${item.href}`} className={styles.row}>
-            <a
-              className={styles.mediaLink}
-              href={item.href}
-              target="_blank"
-              rel="noreferrer"
-              tabIndex={-1}
-              aria-hidden="true"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className={
-                  item.type === 'video' ? styles.thumb : styles.cover
-                }
-                src={item.image}
-                alt=""
-                loading="lazy"
-                onError={(event) => {
-                  event.currentTarget.src = '/images/hero-placeholder.svg'
-                }}
-              />
-            </a>
-            <span className={styles.body}>
-              <span className={styles.meta}>
-                <span className={styles.badge}>
-                  {item.type === 'release' ? 'Release' : 'Video'}
-                </span>
-                <Link className={styles.artist} href={`/${item.slug}`}>
-                  {item.artistName}
-                </Link>
-              </span>
-              <a
-                className={styles.title}
-                href={item.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {item.title}
-              </a>
-              <span className={styles.date}>{formatFeedDate(item.date)}</span>
-            </span>
-          </li>
-        ))}
-      </ol>
     </>
   )
 }
