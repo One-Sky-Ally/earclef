@@ -17,6 +17,19 @@ export function coverArtUrl(releaseGroupId: string): string {
   return `https://coverartarchive.org/release-group/${releaseGroupId}/front-250`
 }
 
+/** 500px variant for featured feed cards — same source, bigger render. */
+export function coverArtUrlLarge(releaseGroupId: string): string {
+  return `https://coverartarchive.org/release-group/${releaseGroupId}/front-500`
+}
+
+/**
+ * Highest-quality YouTube thumbnail. maxresdefault 404s on some videos —
+ * callers fall back (maxres → mqdefault → placeholder) via onError.
+ */
+export function youtubeThumbnailLargeUrl(videoId: string): string {
+  return `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+}
+
 /** Quoted phrases keep YouTube on-target (the band, not the movie). */
 export function quotedSearch(artist: string, title: string): string {
   return youtubeSearchUrl(`"${artist}" "${title}"`)

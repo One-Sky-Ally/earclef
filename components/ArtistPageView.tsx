@@ -39,6 +39,7 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
         paletteVideoId={
           content.watch.enabled ? content.watch.videos[0]?.youtubeId : undefined
         }
+        followSlug={content.slug}
       />
       <main>
         {content.play?.enabled && (

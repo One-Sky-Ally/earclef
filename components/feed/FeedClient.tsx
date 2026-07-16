@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import {
   fetchCatalog,
@@ -12,12 +12,16 @@ import {
 } from '@/lib/artist/browserData'
 import {
   coverArtUrl,
+  coverArtUrlLarge,
   listenSearch,
   youtubeThumbnailUrl,
+  youtubeThumbnailLargeUrl,
   youtubeWatchUrl,
 } from '@/lib/links'
+import { blurbKey, normalizedTitle } from '@/lib/feed/blurbKey'
 import type { ArtistTier } from '@/lib/tiers'
 import { TierFilter, type TierChoice } from '@/components/TierFilter'
+import { FeedPostCard } from '@/components/feed/FeedPostCard'
 import styles from './FeedClient.module.css'
 
 export interface RosterEntry {
@@ -36,10 +40,14 @@ interface FeedItem {
   title: string
   date: string
   image: string
+  /** Bigger art for the featured cards; falls back to image, then placeholder. */
+  imageLarge?: string
   href: string
 }
 
 const FEED_LIMIT = 50
+// The top of the feed reads like posts; the rest stays a compact list.
+const FEATURED_COUNT = 7
 // Prolific channels (daily Shorts) shouldn't drown the rest of the roster.
 const VIDEOS_PER_ARTIST = 8
 
@@ -57,6 +65,7 @@ function mbReleaseItems(
       title: item.title,
       date: item.date!,
       image: coverArtUrl(item.rgid),
+      imageLarge: coverArtUrlLarge(item.rgid),
       href: listenSearch(entry.name, item.title),
     }))
 }
@@ -72,22 +81,10 @@ function itunesReleaseItems(
     title: item.title,
     date: item.date,
     image: item.image ?? '/images/hero-placeholder.svg',
+    // iTunes artwork URLs encode their size — request a bigger render.
+    imageLarge: item.image?.replace('100x100', '600x600'),
     href: listenSearch(entry.name, item.title),
   }))
-}
-
-/**
- * "OK Computer (Deluxe Edition)" and "OK Computer" are the same drop, as are
- * "X (feat. Y) / Z" and "X / Z" — edition tags and feature credits vary by
- * source, so both are stripped from the dedupe key.
- */
-function normalizedTitle(title: string): string {
-  return title
-    .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase()
-    .replace(/[([](feat|ft|with|deluxe|expanded|remaster(ed)?|special)[^)\]]*[)\]]/g, '')
-    .replace(/[^a-z0-9]+/g, '')
 }
 
 /**
@@ -115,6 +112,7 @@ function videoItems(entry: RosterEntry, videos: VideosResponse): FeedItem[] {
       title: item.title,
       date: item.publishedAt!,
       image: youtubeThumbnailUrl(item.videoId),
+      imageLarge: youtubeThumbnailLargeUrl(item.videoId),
       href: youtubeWatchUrl(item.videoId),
     }))
     .sort((a, b) => b.date.localeCompare(a.date))
@@ -144,6 +142,32 @@ type FeedState =
 export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   const [state, setState] = useState<FeedState>({ status: 'loading' })
   const [tierChoice, setTierChoice] = useState<TierChoice>('all')
+  const [blurbs, setBlurbs] = useState<Record<string, string>>({})
+  const [showAll, setShowAll] = useState(false)
+  // null = signed out (or unknown): the Following pill stays hidden.
+  const [follows, setFollows] = useState<string[] | null>(null)
+  const [followingOnly, setFollowingOnly] = useState(false)
+  const requestedBlurbs = useRef(new Set<string>())
+
+  useEffect(() => {
+    let cancelled = false
+    ;(async () => {
+      try {
+        const res = await fetch('/api/fan')
+        if (!res.ok) return
+        const body = (await res.json()) as {
+          signedIn: boolean
+          follows: string[]
+        }
+        if (!cancelled && body.signedIn) setFollows(body.follows)
+      } catch {
+        // Signed-out rendering is the safe default.
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   useEffect(() => {
     const controller = new AbortController()
@@ -199,6 +223,71 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
     return () => controller.abort()
   }, [roster])
 
+  // Filter before the newest-50 cut so each tier surfaces its own latest,
+  // not just its members of the overall top 50.
+  const visible = useMemo(() => {
+    if (state.status !== 'ready') return []
+    const tierBySlug = new Map(roster.map((entry) => [entry.slug, entry.tier]))
+    const followSet = new Set(follows ?? [])
+    return state.items
+      .filter(
+        (item) =>
+          tierChoice === 'all' || tierBySlug.get(item.slug) === tierChoice,
+      )
+      .filter(
+        (item) => !followingOnly || followSet.has(item.slug),
+      )
+      .slice(0, FEED_LIMIT)
+  }, [state, tierChoice, roster, follows, followingOnly])
+
+  const featured = useMemo(
+    () => visible.slice(0, FEATURED_COUNT),
+    [visible],
+  )
+
+  // Blurbs for the featured items: cached ones come back instantly, fresh
+  // ones pop in when generated. One request per key per mount, tracked in
+  // a ref so a throttled generation can't cause a refetch loop.
+  useEffect(() => {
+    const missing = featured.filter((item) => {
+      const key = blurbKey(item.slug, item.type, item.title)
+      return !requestedBlurbs.current.has(key)
+    })
+    if (missing.length === 0) return
+    for (const item of missing) {
+      requestedBlurbs.current.add(blurbKey(item.slug, item.type, item.title))
+    }
+
+    let cancelled = false
+    ;(async () => {
+      try {
+        const res = await fetch('/api/feed/blurbs', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            items: missing.map((item) => ({
+              slug: item.slug,
+              artistName: item.artistName,
+              title: item.title,
+              type: item.type,
+              date: item.date,
+            })),
+          }),
+        })
+        if (!res.ok) return
+        const body = (await res.json()) as { blurbs?: Record<string, string> }
+        if (!cancelled && body.blurbs) {
+          setBlurbs((current) => ({ ...current, ...body.blurbs }))
+        }
+      } catch (error) {
+        console.error('Blurb fetch failed:', error)
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [featured])
+
   if (state.status === 'loading') {
     return (
       <p className={styles.note}>Gathering the latest from the roster…</p>
@@ -213,25 +302,36 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
     )
   }
 
-  // Filter before the newest-50 cut so each tier surfaces its own latest,
-  // not just its members of the overall top 50.
-  const tierBySlug = new Map(roster.map((entry) => [entry.slug, entry.tier]))
   const availableTiers = [
     ...new Set(roster.flatMap((entry) => (entry.tier ? [entry.tier] : []))),
   ]
-  const visible = (
-    tierChoice === 'all'
-      ? state.items
-      : state.items.filter((item) => tierBySlug.get(item.slug) === tierChoice)
-  ).slice(0, FEED_LIMIT)
+  const rest = visible.slice(FEATURED_COUNT)
 
   return (
     <>
-      <TierFilter
-        available={availableTiers}
-        active={tierChoice}
-        onChange={setTierChoice}
-      />
+      <div className={styles.filters}>
+        <TierFilter
+          available={availableTiers}
+          active={tierChoice}
+          onChange={setTierChoice}
+        />
+        {follows && follows.length > 0 && (
+          <button
+            type="button"
+            className={
+              followingOnly ? styles.followPillActive : styles.followPill
+            }
+            onClick={() => setFollowingOnly((current) => !current)}
+          >
+            ♥ Following
+          </button>
+        )}
+      </div>
+      {followingOnly && visible.length === 0 && (
+        <p className={styles.note}>
+          Nothing new from the artists you follow yet.
+        </p>
+      )}
       {state.incomplete && (
         <p className={styles.incomplete}>
           Some sources didn&apos;t respond — showing what arrived.
@@ -240,8 +340,26 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
       {visible.length === 0 && (
         <p className={styles.note}>Nothing in this tier yet.</p>
       )}
+      <div className={styles.featured}>
+        {featured.map((item) => (
+          <FeedPostCard
+            key={`${item.type}-${item.href}`}
+            item={{ ...item, dateLabel: formatFeedDate(item.date) }}
+            blurb={blurbs[blurbKey(item.slug, item.type, item.title)]}
+          />
+        ))}
+      </div>
+      {rest.length > 0 && !showAll && (
+        <button
+          type="button"
+          className={styles.showMore}
+          onClick={() => setShowAll(true)}
+        >
+          Show {rest.length} more from the roster ↓
+        </button>
+      )}
       <ol className={styles.list}>
-        {visible.map((item) => (
+        {(showAll ? rest : []).map((item) => (
           <li key={`${item.type}-${item.href}`} className={styles.row}>
             <a
               className={styles.mediaLink}

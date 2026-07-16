@@ -1,14 +1,17 @@
 import type { HeroContent } from '@/lib/types'
 import { LinkPills } from '@/components/LinkPills'
 import { HeroArt } from '@/components/HeroArt'
+import { FollowButton } from '@/components/fans/FollowButton'
 import styles from './Hero.module.css'
 
 interface HeroProps {
   hero: HeroContent
   paletteVideoId?: string
+  /** Artist slug — enables the fan Follow button on artist pages. */
+  followSlug?: string
 }
 
-export function Hero({ hero, paletteVideoId }: HeroProps) {
+export function Hero({ hero, paletteVideoId, followSlug }: HeroProps) {
   return (
     <header id="top" className={styles.hero}>
       <div className={`container ${styles.grid}`}>
@@ -23,6 +26,9 @@ export function Hero({ hero, paletteVideoId }: HeroProps) {
           <p className={styles.identity}>{hero.identity}</p>
           {hero.tagline && <p className={styles.tagline}>{hero.tagline}</p>}
           <LinkPills links={hero.socials} ariaLabel="Social links" />
+          {followSlug && (
+            <FollowButton slug={followSlug} artistName={hero.name} />
+          )}
         </div>
         <div className={styles.imageFrame}>
           <HeroArt

@@ -30,6 +30,8 @@ export default function FeedPage() {
           <h1 className={styles.title}>Latest</h1>
           <p className={styles.subtitle}>
             New releases and videos from the whole roster, newest first.
+            Descriptions are original Ear Clef summaries written from public
+            release metadata; artwork links to the source.
           </p>
           <FeedClient roster={roster} />
         </div>

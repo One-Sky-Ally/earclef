@@ -56,8 +56,10 @@ export async function POST(request: Request) {
   if (!EMAIL_PATTERN.test(email) || email.length > 254) {
     return noStore({ error: 'A valid email is required' }, 400)
   }
-  if (!content?.membership?.enabled) {
-    return noStore({ error: 'No membership here' }, 404)
+  // Any roster page can request sign-in: the session is the site-wide fan
+  // identity (follows), and doubles as membership access where one exists.
+  if (!content) {
+    return noStore({ error: 'Unknown artist' }, 404)
   }
 
   const emailOk = await throttleGate(
