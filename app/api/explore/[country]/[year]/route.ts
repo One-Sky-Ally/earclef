@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { isGenreLens } from '@/lib/explore/genreData'
 import type {
   CountryYearDetails,
   PanelArtist,
@@ -62,19 +63,25 @@ function activeByRangeEnd(artist: MbArtist, rangeEnd: number): boolean {
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-/** One MusicBrainz GET with a single backoff retry on 429/503. */
+/** One MusicBrainz GET; backoff-retries rate limits AND network drops. */
 async function mbJson(url: string): Promise<unknown> {
-  for (let attempt = 1; attempt <= 2; attempt++) {
-    const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } })
-    if (res.status === 503 || res.status === 429) {
-      if (attempt === 1) {
-        await sleep(1200)
-        continue
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } })
+      if (res.status === 503 || res.status === 429) {
+        if (attempt < 3) {
+          await sleep(1500 * attempt)
+          continue
+        }
+        throw new RateLimitError()
       }
-      throw new RateLimitError()
+      if (!res.ok) throw new Error(`MusicBrainz HTTP ${res.status}`)
+      return res.json()
+    } catch (error) {
+      if (error instanceof RateLimitError) throw error
+      if (attempt === 3) throw error
+      await sleep(1500 * attempt)
     }
-    if (!res.ok) throw new Error(`MusicBrainz HTTP ${res.status}`)
-    return res.json()
   }
   throw new Error('Unreachable')
 }
@@ -86,26 +93,31 @@ class RateLimitError extends Error {}
  * overlaps the range, ranked by tag richness (tag vote counts come free
  * in the search response — Björk carries hundreds, a one-compilation
  * band carries none). Returns the ranked top plus the full id set for
- * re-ranking releases. Failures degrade to empty — the panel still works.
+ * re-ranking releases. Returns null on failure — callers must never
+ * cache a failure as an empty result.
  */
 async function fetchOriginArtists(
   country: string,
   start: number,
   end: number,
-): Promise<{ top: PanelArtist[]; ids: Set<string> }> {
+  genre: string | null,
+): Promise<{ top: PanelArtist[]; ids: Set<string>; count: number } | null> {
   // Active in range: began by the range's end, didn't end before its start.
   // (For people MB's "begin" is the birth date — a coarse but honest proxy.)
+  const genreClause = genre ? ` AND tag:"${genre}"` : ''
   const query = encodeURIComponent(
-    `country:${country} AND begin:[* TO ${end}] AND NOT end:[* TO ${start - 1}]`,
+    `country:${country} AND begin:[* TO ${end}] AND NOT end:[* TO ${start - 1}]${genreClause}`,
   )
 
   const weighted: { artist: PanelArtist; weight: number }[] = []
   const ids = new Set<string>()
+  let count = 0
   try {
     for (let page = 0; page < ORIGIN_PAGES; page++) {
       const body = (await mbJson(
         `https://musicbrainz.org/ws/2/artist?query=${query}&limit=${ORIGIN_PAGE_SIZE}&offset=${page * ORIGIN_PAGE_SIZE}&fmt=json`,
       )) as { count?: number; artists?: MbArtist[] }
+      count = body.count ?? 0
       for (const artist of body.artists ?? []) {
         if (ids.has(artist.id) || !activeByRangeEnd(artist, end)) continue
         ids.add(artist.id)
@@ -124,14 +136,14 @@ async function fetchOriginArtists(
   } catch (error) {
     if (error instanceof RateLimitError) throw error
     console.error(`origin artists ${country} failed:`, error)
-    return { top: [], ids: new Set() }
+    return null
   }
 
   const top = weighted
     .sort((a, b) => b.weight - a.weight)
     .slice(0, ORIGIN_LIMIT)
     .map((entry) => entry.artist)
-  return { top, ids }
+  return { top, ids, count }
 }
 
 function toDetails(
@@ -173,10 +185,15 @@ function toDetails(
 }
 
 export async function GET(
-  _request: Request,
+  request: Request,
   ctx: { params: Promise<{ country: string; year: string }> },
 ) {
   const { country, year } = await ctx.params
+  const genreParam = new URL(request.url).searchParams.get('genre')
+  const genre = isGenreLens(genreParam) ? genreParam : null
+  if (genreParam && !genre) {
+    return NextResponse.json({ error: 'Unknown genre' }, { status: 400 })
+  }
 
   // "1969" (single year) or "1965-1975" (inclusive span).
   if (!/^[A-Z]{2}$/.test(country) || !/^\d{4}(-\d{4})?$/.test(year)) {
@@ -189,7 +206,7 @@ export async function GET(
     return NextResponse.json({ error: 'Year out of range' }, { status: 400 })
   }
 
-  const key = `${country}:${year}`
+  const key = `${country}:${year}:${genre ?? ''}`
   const cached = memo.get(key)
   if (cached) return withCacheHeaders(NextResponse.json(cached))
 
@@ -198,11 +215,40 @@ export async function GET(
   )
 
   try {
+    // Lens mode is artists-only: release tags are too sparse to filter
+    // honestly (the coverage diagnosis that shaped this feature).
+    if (genre) {
+      const origin = await fetchOriginArtists(country, start, end, genre)
+      if (!origin) {
+        return NextResponse.json(
+          { error: 'MusicBrainz unavailable' },
+          { status: 502 },
+        )
+      }
+      const details: CountryYearDetails = {
+        totalCount: origin.count,
+        originArtists: origin.top,
+        artists: [],
+        releases: [],
+      }
+      memo.set(key, details)
+      return withCacheHeaders(NextResponse.json(details))
+    }
+
     const releasesBody = (await mbJson(
       `https://musicbrainz.org/ws/2/release?query=${releaseQuery}&limit=${RELEASE_LIMIT}&fmt=json`,
     )) as { count?: number; releases?: MbRelease[] }
     await sleep(MB_DELAY_MS)
-    const origin = await fetchOriginArtists(country, start, end)
+    const origin = await fetchOriginArtists(country, start, end, null)
+
+    if (!origin) {
+      // Serve a degraded (origin-less) panel, but never cache it — a
+      // transient failure must not become the 30-day cached answer.
+      const degraded = toDetails(releasesBody, { top: [], ids: new Set() })
+      const response = NextResponse.json(degraded)
+      response.headers.set('Cache-Control', 'no-store')
+      return response
+    }
 
     const details = toDetails(releasesBody, origin)
     memo.set(key, details)
@@ -227,5 +273,8 @@ function withCacheHeaders(response: NextResponse): NextResponse {
     'Cache-Control',
     'public, s-maxage=2592000, stale-while-revalidate=604800',
   )
+  // The genre lens rides a query param — without this the CDN would
+  // serve one cached panel for every genre (see the search-route bug).
+  response.headers.set('Netlify-Vary', 'query=genre')
   return response
 }

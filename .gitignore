@@ -35,3 +35,4 @@ data/precompute.log
 data/precompute-backfill.log
 # Local Netlify folder
 .netlify
+data/genre-precompute.log

@@ -12,6 +12,11 @@ import {
   type CountryYearCounts,
   type DataSource,
 } from '@/lib/explore/counts'
+import {
+  genreCountInRange,
+  genreMaxForRange,
+  type GenreCountryDecades,
+} from '@/lib/explore/genreData'
 import { isoOf, roughCentroid, type CountryFeature } from '@/lib/explore/geo'
 import type { SelectedCountry } from '@/components/explore/CountryPanel'
 import styles from './GlobeScene.module.css'
@@ -31,9 +36,16 @@ export interface FocusRequest {
   nonce: number
 }
 
+interface LensState {
+  label: string
+  countries: GenreCountryDecades
+}
+
 interface GlobeSceneProps {
   yearStart: number
   yearEnd: number
+  /** Active genre lens — null shows the release heat map. */
+  lens: LensState | null
   paused: boolean
   focusRequest: FocusRequest | null
   onDataSourceChange: (source: DataSource) => void
@@ -43,6 +55,7 @@ interface GlobeSceneProps {
 export function GlobeScene({
   yearStart,
   yearEnd,
+  lens,
   paused,
   focusRequest,
   onDataSourceChange,
@@ -52,6 +65,7 @@ export function GlobeScene({
   const globeRef = useRef<GlobeInstance | null>(null)
   const countsRef = useRef<CountryYearCounts>({})
   const rangeRef = useRef<[number, number]>([yearStart, yearEnd])
+  const lensRef = useRef<LensState | null>(lens)
   const rangeMaxCache = useRef<Record<string, number>>({})
   const hoverRef = useRef<object | null>(null)
   const featureByCode = useRef<Map<string, CountryFeature>>(new Map())
@@ -68,9 +82,11 @@ export function GlobeScene({
 
   useEffect(() => {
     rangeRef.current = [yearStart, yearEnd]
+    lensRef.current = lens
+    rangeMaxCache.current = {}
     applyHeat(globeRef.current)
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- applyHeat reads only refs; re-run on range alone
-  }, [yearStart, yearEnd])
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- applyHeat reads only refs; re-run on inputs alone
+  }, [yearStart, yearEnd, lens])
 
   useEffect(() => {
     pausedRef.current = paused
@@ -100,6 +116,13 @@ export function GlobeScene({
     const code = isoOf(feature as CountryFeature)
     if (!code) return 0
     const [start, end] = rangeRef.current
+    const activeLens = lensRef.current
+    if (activeLens) {
+      const count = genreCountInRange(activeLens.countries[code], start, end)
+      const max = (rangeMaxCache.current[`g:${start}:${end}`] ??=
+        genreMaxForRange(activeLens.countries, start, end))
+      return heatValue(count, max)
+    }
     const count = countInRange(countsRef.current[code], start, end)
     const max = (rangeMaxCache.current[`${start}:${end}`] ??= maxForRange(
       countsRef.current,
@@ -171,10 +194,17 @@ export function GlobeScene({
           const props = (feature as CountryFeature).properties
           const code = isoOf(feature as CountryFeature)
           const [start, end] = rangeRef.current
+          const span = start === end ? `${start}` : `${start}–${end}`
+          const activeLens = lensRef.current
+          if (activeLens) {
+            const count = code
+              ? genreCountInRange(activeLens.countries[code], start, end)
+              : 0
+            return `<div class="globe-tooltip"><span class="globe-tooltip-name">${props.ADMIN}</span><span class="globe-tooltip-count">${count.toLocaleString()} ${activeLens.label} artists emerged · ${span}</span></div>`
+          }
           const count = code
             ? countInRange(countsRef.current[code], start, end)
             : 0
-          const span = start === end ? `${start}` : `${start}–${end}`
           return `<div class="globe-tooltip"><span class="globe-tooltip-name">${props.ADMIN}</span><span class="globe-tooltip-count">${count.toLocaleString()} releases · ${span}</span></div>`
         })
         .onPolygonHover((hovered) => {

@@ -8,6 +8,12 @@ import {
   YEAR_MIN,
   type DataSource,
 } from '@/lib/explore/counts'
+import {
+  isGenreLens,
+  loadGenreData,
+  type GenreEmergenceData,
+  type GenreLens,
+} from '@/lib/explore/genreData'
 import type { PlaceResult } from '@/lib/explore/panelData'
 import type { FocusRequest } from '@/components/explore/GlobeScene'
 import { YearSlider } from '@/components/explore/YearSlider'
@@ -36,8 +42,22 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
   const [source, setSource] = useState<DataSource | null>(null)
   const [selected, setSelected] = useState<SelectedCountry | null>(null)
   const [focusRequest, setFocusRequest] = useState<FocusRequest | null>(null)
+  const [genreData, setGenreData] = useState<GenreEmergenceData | null>(null)
+  const [lens, setLens] = useState<GenreLens | null>(null)
   // Deep-linked country (?c=JM), held until the globe can fly to it.
   const pendingCountry = useRef<string | null>(null)
+
+  // The lens dataset is optional — absent file, hidden pills.
+  useEffect(() => {
+    let cancelled = false
+    ;(async () => {
+      const data = await loadGenreData()
+      if (!cancelled && data) setGenreData(data)
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   // Read the shareable state once on mount: /?from=1969&to=1975&c=JM.
   // Captured synchronously — the URL-writer effect below runs right
@@ -60,6 +80,8 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
       }
       const code = params.get('c')
       if (code && /^[A-Z]{2}$/.test(code)) pendingCountry.current = code
+      const genre = params.get('g')
+      if (isGenreLens(genre)) setLens(genre)
     }, 0)
     return () => clearTimeout(timer)
   }, [])
@@ -72,9 +94,10 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
       params.set('to', String(yearEnd))
     }
     if (selected) params.set('c', selected.code)
+    if (lens) params.set('g', lens)
     const query = params.toString()
     window.history.replaceState(null, '', query ? `/?${query}` : '/')
-  }, [yearStart, yearEnd, selected])
+  }, [yearStart, yearEnd, selected, lens])
 
   function onPlaceResolved(place: PlaceResult) {
     setFocusRequest({
@@ -102,6 +125,11 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
       <GlobeScene
         yearStart={yearStart}
         yearEnd={yearEnd}
+        lens={
+          lens && genreData?.genres[lens]
+            ? { label: lens, countries: genreData.genres[lens] }
+            : null
+        }
         paused={selected !== null}
         focusRequest={focusRequest}
         onDataSourceChange={onGlobeReady}
@@ -110,16 +138,40 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
       <SearchBox onResolved={onPlaceResolved} />
       {selected && (
         <CountryPanel
-          key={`${selected.code}:${yearStart}-${yearEnd}`}
+          key={`${selected.code}:${yearStart}-${yearEnd}:${lens ?? ''}`}
           country={selected}
           yearStart={yearStart}
           yearEnd={yearEnd}
+          genre={lens}
           source={source}
           roster={roster}
           onClose={() => setSelected(null)}
         />
       )}
       <div className={styles.controls}>
+        {genreData && (
+          <div className={styles.lensRow}>
+            <button
+              type="button"
+              className={lens === null ? styles.lensPillActive : styles.lensPill}
+              onClick={() => setLens(null)}
+            >
+              All music
+            </button>
+            {Object.keys(genreData.genres).map((genre) => (
+              <button
+                key={genre}
+                type="button"
+                className={
+                  lens === genre ? styles.lensPillActive : styles.lensPill
+                }
+                onClick={() => setLens(isGenreLens(genre) ? genre : null)}
+              >
+                {genre}
+              </button>
+            ))}
+          </div>
+        )}
         <YearSlider
           start={yearStart}
           end={yearEnd}
@@ -129,9 +181,11 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
         />
         {source && (
           <p className={styles.source}>
-            {source === 'live'
-              ? 'MusicBrainz release data'
-              : 'Simulated preview data — the real dataset is precomputing'}
+            {lens
+              ? `${lens} lens — where artists emerged, by decade`
+              : source === 'live'
+                ? 'MusicBrainz release data'
+                : 'Simulated preview data — the real dataset is precomputing'}
           </p>
         )}
       </div>

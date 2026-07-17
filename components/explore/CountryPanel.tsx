@@ -31,6 +31,8 @@ interface CountryPanelProps {
   country: SelectedCountry
   yearStart: number
   yearEnd: number
+  /** Active genre lens — switches the panel to emerged-artist mode. */
+  genre?: string | null
   source: DataSource | null
   roster?: RosterByMbid
   onClose: () => void
@@ -160,6 +162,7 @@ export function CountryPanel({
   country,
   yearStart,
   yearEnd,
+  genre = null,
   source,
   roster = {},
   onClose,
@@ -177,7 +180,13 @@ export function CountryPanel({
   useEffect(() => {
     const controller = new AbortController()
 
-    fetchCountryYearDetails(country.code, yearStart, yearEnd, controller.signal)
+    fetchCountryYearDetails(
+      country.code,
+      yearStart,
+      yearEnd,
+      genre,
+      controller.signal,
+    )
       .then((details) => setState({ status: 'ready', details }))
       .catch((error: Error) => {
         if (controller.signal.aborted) return
@@ -185,7 +194,7 @@ export function CountryPanel({
       })
 
     return () => controller.abort()
-  }, [country.code, yearStart, yearEnd])
+  }, [country.code, yearStart, yearEnd, genre])
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -243,7 +252,8 @@ export function CountryPanel({
       {state.status === 'ready' && (
         <div className={styles.body}>
           <p className={styles.total}>
-            {state.details.totalCount.toLocaleString()} releases issued here
+            {state.details.totalCount.toLocaleString()}{' '}
+            {genre ? `${genre} artists from here` : 'releases issued here'}
           </p>
           {state.details.totalCount > 0 && (
             <p className={styles.methodNote}>
@@ -268,7 +278,9 @@ export function CountryPanel({
 
           {state.details.originArtists.length > 0 && (
             <>
-              <h3 className={styles.subheading}>Top artists from {country.name}</h3>
+              <h3 className={styles.subheading}>
+                Top {genre ? `${genre} ` : ''}artists from {country.name}
+              </h3>
               <ul className={styles.artists}>
                 {(showAllOrigin
                   ? state.details.originArtists

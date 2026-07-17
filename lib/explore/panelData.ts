@@ -84,11 +84,15 @@ export async function fetchCountryYearDetails(
   country: string,
   yearStart: number,
   yearEnd: number,
+  genre: string | null,
   signal: AbortSignal,
 ): Promise<CountryYearDetails> {
   const span =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}-${yearEnd}`
-  const res = await fetch(`/api/explore/${country}/${span}`, { signal })
+  const genreQuery = genre ? `?genre=${encodeURIComponent(genre)}` : ''
+  const res = await fetch(`/api/explore/${country}/${span}${genreQuery}`, {
+    signal,
+  })
   if (res.status === 429) {
     throw new Error('MusicBrainz is busy right now — try again in a moment.')
   }

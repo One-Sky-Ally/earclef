@@ -36,3 +36,38 @@
   text-transform: uppercase;
   color: var(--text-muted);
 }
+
+.lensRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-bottom: 0.7rem;
+}
+
+.lensPill,
+.lensPillActive {
+  padding: 0.28rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: capitalize;
+  transition: color 0.2s ease, border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.lensPill {
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+}
+
+.lensPill:hover {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}
+
+.lensPillActive {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
