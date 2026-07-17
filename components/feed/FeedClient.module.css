@@ -170,3 +170,33 @@ li:last-child .row {
   background: var(--accent);
   color: var(--bg);
 }
+
+.followList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.followChip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.followChip:hover {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}
+
+.followNumber {
+  font-size: 0.7rem;
+  color: var(--accent);
+}

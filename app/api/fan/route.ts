@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server'
 import { getArtistBySlug } from '@/lib/content'
+import {
+  ensureFollowNumber,
+  getFollowStamps,
+} from '@/lib/fans/followNumbers'
 import { getFan, setFollow, setListenService } from '@/lib/fans/store'
 import { isListenService } from '@/lib/listen/services'
 import { sessionEmail } from '@/lib/membership/session'
@@ -20,10 +24,12 @@ export async function GET(request: Request) {
   const email = sessionEmail(request)
   if (!email) return noStore({ signedIn: false, follows: [] })
   const fan = await getFan(email)
+  const follows = fan?.follows ?? []
   return noStore({
     signedIn: true,
     email,
-    follows: fan?.follows ?? [],
+    follows,
+    stamps: await getFollowStamps(email, follows),
     listenService: fan?.listenService,
   })
 }
@@ -53,6 +59,14 @@ export async function POST(request: Request) {
   if (!getArtistBySlug(slug)) {
     return noStore({ error: 'Unknown artist' }, 404)
   }
-  const follows = await setFollow(email, slug, body.following !== false)
-  return noStore({ signedIn: true, email, follows })
+  const following = body.following !== false
+  const follows = await setFollow(email, slug, following)
+  // First follow mints a permanent number; refollows return the original.
+  if (following) await ensureFollowNumber(slug, email)
+  return noStore({
+    signedIn: true,
+    email,
+    follows,
+    stamps: await getFollowStamps(email, follows),
+  })
 }

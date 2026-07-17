@@ -12,6 +12,14 @@ interface FanProfile {
   signedIn: boolean
   email?: string
   follows: string[]
+  stamps?: Record<string, { number: number; since: string }>
+}
+
+/** "2026-07-16" → "July 2026". */
+function sinceLabel(iso: string): string {
+  const date = new Date(`${iso}T00:00:00`)
+  if (Number.isNaN(date.getTime())) return iso
+  return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
 }
 
 type SignInState =
@@ -94,6 +102,8 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
 
   if (!profile) return null
 
+  const stamp = profile.stamps?.[slug]
+
   return (
     <div className={styles.wrap}>
       <button
@@ -104,6 +114,13 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
       >
         {following ? '♥ Following' : '♡ Follow'}
       </button>
+      {following && stamp && (
+        <p className={styles.stamp}>
+          You&rsquo;re fan&nbsp;
+          <span className={styles.stampNumber}>#{stamp.number}</span> —
+          following since {sinceLabel(stamp.since)}
+        </p>
+      )}
 
       {signIn.status !== 'closed' && !profile.signedIn && (
         <div className={styles.signIn}>

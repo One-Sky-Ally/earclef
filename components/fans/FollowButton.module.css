@@ -83,3 +83,16 @@
   color: var(--accent);
   border-color: var(--accent-deep);
 }
+
+.stamp {
+  margin-top: 0.55rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.stampNumber {
+  color: var(--accent);
+  font-style: normal;
+}

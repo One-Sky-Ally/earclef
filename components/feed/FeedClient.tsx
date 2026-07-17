@@ -159,6 +159,9 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   const [retryTick, setRetryTick] = useState(0)
   // null = signed out (or unknown): the Following pill stays hidden.
   const [follows, setFollows] = useState<string[] | null>(null)
+  const [stamps, setStamps] = useState<
+    Record<string, { number: number; since: string }>
+  >({})
   const [followingOnly, setFollowingOnly] = useState(false)
   const requestedBlurbs = useRef(new Set<string>())
   const retriedBlurbs = useRef(new Set<string>())
@@ -172,8 +175,12 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         const body = (await res.json()) as {
           signedIn: boolean
           follows: string[]
+          stamps?: Record<string, { number: number; since: string }>
         }
-        if (!cancelled && body.signedIn) setFollows(body.follows)
+        if (!cancelled && body.signedIn) {
+          setFollows(body.follows)
+          setStamps(body.stamps ?? {})
+        }
       } catch {
         // Signed-out rendering is the safe default.
       }
@@ -371,6 +378,25 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         )}
         <ServicePicker />
       </div>
+      {followingOnly && follows && follows.length > 0 && (
+        <ul className={styles.followList}>
+          {follows.map((slug) => {
+            const entry = roster.find((artist) => artist.slug === slug)
+            if (!entry) return null
+            const stamp = stamps[slug]
+            return (
+              <li key={slug}>
+                <a className={styles.followChip} href={`/${slug}`}>
+                  {entry.name}
+                  {stamp && (
+                    <span className={styles.followNumber}>#{stamp.number}</span>
+                  )}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      )}
       {followingOnly && visible.length === 0 && (
         <p className={styles.note}>
           Nothing new from the artists you follow yet.
