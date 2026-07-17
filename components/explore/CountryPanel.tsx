@@ -68,6 +68,7 @@ export function CountryPanel({
   onClose,
 }: CountryPanelProps) {
   const [state, setState] = useState<PanelState>({ status: 'loading' })
+  const [showAllOrigin, setShowAllOrigin] = useState(false)
   const [showAllArtists, setShowAllArtists] = useState(false)
   const [showAllReleases, setShowAllReleases] = useState(false)
 
@@ -145,7 +146,61 @@ export function CountryPanel({
             </p>
           )}
 
-          {state.details.artists.length > 0 && (
+          {state.details.originArtists.length > 0 && (
+            <>
+              <h3 className={styles.subheading}>From {country.name}</h3>
+              <ul className={styles.artists}>
+                {(showAllOrigin
+                  ? state.details.originArtists
+                  : state.details.originArtists.slice(0, PREVIEW_COUNT)
+                ).map((artist) => (
+                  <li key={artist.id} className={styles.artistItem}>
+                    {roster[artist.id] ? (
+                      <Link
+                        className={`${styles.artistPill} ${styles.onRoster}`}
+                        href={`/${roster[artist.id].slug}`}
+                        title="On the Ear Clef roster — opens their page here"
+                      >
+                        {artist.name}
+                      </Link>
+                    ) : (
+                      <a
+                        className={styles.artistPill}
+                        href={musicBrainzArtistUrl(artist.id)}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {artist.name}
+                      </a>
+                    )}
+                    <a
+                      className={styles.listenBadge}
+                      href={artistSearchHref(artist, state.details.releases)}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Listen: search YouTube for ${artist.name}`}
+                    >
+                      ▶
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              {state.details.originArtists.length > PREVIEW_COUNT && (
+                <button
+                  type="button"
+                  className={styles.showAll}
+                  onClick={() => setShowAllOrigin((value) => !value)}
+                >
+                  {showAllOrigin
+                    ? 'Show fewer'
+                    : `Show all ${state.details.originArtists.length}`}
+                </button>
+              )}
+            </>
+          )}
+
+          {state.details.originArtists.length === 0 &&
+            state.details.artists.length > 0 && (
             <>
               <h3 className={styles.subheading}>On these releases</h3>
               <ul className={styles.artists}>
@@ -200,7 +255,11 @@ export function CountryPanel({
 
           {state.details.releases.length > 0 && (
             <>
-              <h3 className={styles.subheading}>Releases</h3>
+              <h3 className={styles.subheading}>
+                {state.details.originArtists.length > 0
+                  ? 'Issued here'
+                  : 'Releases'}
+              </h3>
               <ul className={styles.releases}>
                 {(showAllReleases
                   ? state.details.releases

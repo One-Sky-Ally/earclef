@@ -12,6 +12,13 @@ export interface PanelRelease {
 
 export interface CountryYearDetails {
   totalCount: number
+  /**
+   * Artists whose MusicBrainz origin is this country, active in the
+   * range, ranked by significance — shown before the pressing-derived
+   * results. Empty when the origin lookup found nothing (or failed).
+   */
+  originArtists: PanelArtist[]
+  /** Artists credited on the issued-here releases (the fallback list). */
   artists: PanelArtist[]
   releases: PanelRelease[]
 }

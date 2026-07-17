@@ -9,6 +9,16 @@ const USER_AGENT =
   'EarClefExplore/0.1 (https://earclef.netlify.app; fiohmemorial@gmail.com)'
 const RELEASE_LIMIT = 30
 const ARTIST_LIMIT = 12
+/**
+ * Origin-artist sweep: two pages of 100. MusicBrainz row order for
+ * filter queries roughly tracks registration age, and famous artists
+ * were catalogued earliest, so the significant names live in the first
+ * pages; tag-weight ranking cleans up the order.
+ */
+const ORIGIN_PAGE_SIZE = 100
+const ORIGIN_PAGES = 2
+const ORIGIN_LIMIT = 12
+const MB_DELAY_MS = 1100
 
 // Warm-process memoization; the CDN Cache-Control header does the real work.
 const memo = new Map<string, CountryYearDetails>()
@@ -24,10 +34,110 @@ interface MbRelease {
   'artist-credit'?: MbArtistCredit[]
 }
 
-function toDetails(body: {
-  count?: number
-  releases?: MbRelease[]
-}): CountryYearDetails {
+interface MbArtist {
+  id: string
+  name: string
+  type?: string
+  'life-span'?: { begin?: string }
+  tags?: { count?: number; name?: string }[]
+}
+
+/**
+ * For people, MusicBrainz "begin" is the BIRTH date — a newborn isn't
+ * active. Treat a person's career as starting ~15 years after birth so
+ * Sean Paul (b. 1973) stops appearing in Jamaica 1969–1975. Groups use
+ * their formation date as-is.
+ */
+const PERSON_CAREER_OFFSET_YEARS = 15
+
+function activeByRangeEnd(artist: MbArtist, rangeEnd: number): boolean {
+  const beginYear = Number(artist['life-span']?.begin?.slice(0, 4))
+  if (!Number.isFinite(beginYear)) return true
+  const careerStart =
+    artist.type === 'Person'
+      ? beginYear + PERSON_CAREER_OFFSET_YEARS
+      : beginYear
+  return careerStart <= rangeEnd
+}
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
+/** One MusicBrainz GET with a single backoff retry on 429/503. */
+async function mbJson(url: string): Promise<unknown> {
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } })
+    if (res.status === 503 || res.status === 429) {
+      if (attempt === 1) {
+        await sleep(1200)
+        continue
+      }
+      throw new RateLimitError()
+    }
+    if (!res.ok) throw new Error(`MusicBrainz HTTP ${res.status}`)
+    return res.json()
+  }
+  throw new Error('Unreachable')
+}
+
+class RateLimitError extends Error {}
+
+/**
+ * Artists whose MusicBrainz ORIGIN is this country and whose life-span
+ * overlaps the range, ranked by tag richness (tag vote counts come free
+ * in the search response — Björk carries hundreds, a one-compilation
+ * band carries none). Returns the ranked top plus the full id set for
+ * re-ranking releases. Failures degrade to empty — the panel still works.
+ */
+async function fetchOriginArtists(
+  country: string,
+  start: number,
+  end: number,
+): Promise<{ top: PanelArtist[]; ids: Set<string> }> {
+  // Active in range: began by the range's end, didn't end before its start.
+  // (For people MB's "begin" is the birth date — a coarse but honest proxy.)
+  const query = encodeURIComponent(
+    `country:${country} AND begin:[* TO ${end}] AND NOT end:[* TO ${start - 1}]`,
+  )
+
+  const weighted: { artist: PanelArtist; weight: number }[] = []
+  const ids = new Set<string>()
+  try {
+    for (let page = 0; page < ORIGIN_PAGES; page++) {
+      const body = (await mbJson(
+        `https://musicbrainz.org/ws/2/artist?query=${query}&limit=${ORIGIN_PAGE_SIZE}&offset=${page * ORIGIN_PAGE_SIZE}&fmt=json`,
+      )) as { count?: number; artists?: MbArtist[] }
+      for (const artist of body.artists ?? []) {
+        if (ids.has(artist.id) || !activeByRangeEnd(artist, end)) continue
+        ids.add(artist.id)
+        const weight = (artist.tags ?? []).reduce(
+          (sum, tag) => sum + (tag.count ?? 0),
+          0,
+        )
+        weighted.push({
+          artist: { id: artist.id, name: artist.name },
+          weight,
+        })
+      }
+      if ((body.count ?? 0) <= (page + 1) * ORIGIN_PAGE_SIZE) break
+      await sleep(MB_DELAY_MS)
+    }
+  } catch (error) {
+    if (error instanceof RateLimitError) throw error
+    console.error(`origin artists ${country} failed:`, error)
+    return { top: [], ids: new Set() }
+  }
+
+  const top = weighted
+    .sort((a, b) => b.weight - a.weight)
+    .slice(0, ORIGIN_LIMIT)
+    .map((entry) => entry.artist)
+  return { top, ids }
+}
+
+function toDetails(
+  body: { count?: number; releases?: MbRelease[] },
+  origin: { top: PanelArtist[]; ids: Set<string> },
+): CountryYearDetails {
   const releases: PanelRelease[] = []
   const artistById = new Map<string, PanelArtist>()
 
@@ -45,12 +155,18 @@ function toDetails(body: {
     })
   }
 
-  const sorted = [...releases].sort((a, b) =>
-    (a.date ?? '9999').localeCompare(b.date ?? '9999'),
-  )
+  // Releases by artists FROM this country outrank foreign pressings;
+  // chronological within each group.
+  const sorted = [...releases].sort((a, b) => {
+    const aOrigin = origin.ids.has(a.artist.id)
+    const bOrigin = origin.ids.has(b.artist.id)
+    if (aOrigin !== bOrigin) return aOrigin ? -1 : 1
+    return (a.date ?? '9999').localeCompare(b.date ?? '9999')
+  })
 
   return {
     totalCount: body.count ?? 0,
+    originArtists: origin.top,
     artists: [...artistById.values()],
     releases: sorted,
   }
@@ -77,40 +193,33 @@ export async function GET(
   const cached = memo.get(key)
   if (cached) return withCacheHeaders(NextResponse.json(cached))
 
-  const query = encodeURIComponent(
+  const releaseQuery = encodeURIComponent(
     `country:${country} AND date:[${start} TO ${end}-12-31]`,
   )
-  const url = `https://musicbrainz.org/ws/2/release?query=${query}&limit=${RELEASE_LIMIT}&fmt=json`
 
-  for (let attempt = 1; attempt <= 2; attempt++) {
-    try {
-      const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } })
-      if (res.status === 503 || res.status === 429) {
-        if (attempt === 1) {
-          await new Promise((resolve) => setTimeout(resolve, 1200))
-          continue
-        }
-        return NextResponse.json(
-          { error: 'MusicBrainz rate limit' },
-          { status: 429 },
-        )
-      }
-      if (!res.ok) throw new Error(`MusicBrainz HTTP ${res.status}`)
+  try {
+    const releasesBody = (await mbJson(
+      `https://musicbrainz.org/ws/2/release?query=${releaseQuery}&limit=${RELEASE_LIMIT}&fmt=json`,
+    )) as { count?: number; releases?: MbRelease[] }
+    await sleep(MB_DELAY_MS)
+    const origin = await fetchOriginArtists(country, start, end)
 
-      const details = toDetails(await res.json())
-      memo.set(key, details)
-      return withCacheHeaders(NextResponse.json(details))
-    } catch (error) {
-      if (attempt === 2) {
-        console.error(`explore api ${key} failed:`, error)
-        return NextResponse.json(
-          { error: 'MusicBrainz unavailable' },
-          { status: 502 },
-        )
-      }
+    const details = toDetails(releasesBody, origin)
+    memo.set(key, details)
+    return withCacheHeaders(NextResponse.json(details))
+  } catch (error) {
+    if (error instanceof RateLimitError) {
+      return NextResponse.json(
+        { error: 'MusicBrainz rate limit' },
+        { status: 429 },
+      )
     }
+    console.error(`explore api ${key} failed:`, error)
+    return NextResponse.json(
+      { error: 'MusicBrainz unavailable' },
+      { status: 502 },
+    )
   }
-  return NextResponse.json({ error: 'Unreachable' }, { status: 500 })
 }
 
 function withCacheHeaders(response: NextResponse): NextResponse {
