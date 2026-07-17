@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import type { ArtistServicePresence } from '@/lib/listen/services'
 import { CatalogPopup } from '@/components/CatalogPopup'
 
 interface CatalogLauncherProps {
@@ -8,6 +9,7 @@ interface CatalogLauncherProps {
   mbid?: string
   fallbackUrl?: string
   hasBandcamp?: boolean
+  presence?: ArtistServicePresence
   className: string
 }
 
@@ -16,6 +18,7 @@ export function CatalogLauncher({
   mbid,
   fallbackUrl,
   hasBandcamp = false,
+  presence,
   className,
 }: CatalogLauncherProps) {
   const [open, setOpen] = useState(false)
@@ -39,6 +42,7 @@ export function CatalogLauncher({
           mbid={mbid}
           artistName={artistName}
           hasBandcamp={hasBandcamp}
+          presence={presence}
           onClose={() => setOpen(false)}
         />
       )}

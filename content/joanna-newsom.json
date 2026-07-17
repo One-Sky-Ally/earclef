@@ -40,6 +40,12 @@
   },
   "listen": {
     "enabled": true,
+    "notOn": [
+      {
+        "platform": "spotify",
+        "note": "Not on Spotify — by her choice."
+      }
+    ],
     "platforms": [
       {
         "platform": "bandcamp",

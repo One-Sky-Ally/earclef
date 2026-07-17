@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { getAllArtists } from '@/lib/content'
+import { presenceFromContent } from '@/lib/listen/services'
 import { SiteNav } from '@/components/SiteNav'
 import { EarClefMark } from '@/components/EarClefMark'
 import { FeedClient, type RosterEntry } from '@/components/feed/FeedClient'
@@ -19,6 +20,7 @@ export default function FeedPage() {
     channelId: artist.integrations.youtube.channelId || undefined,
     itunesId: artist.integrations.itunes?.artistId || undefined,
     tier: artist.tier,
+    presence: presenceFromContent(artist),
   }))
 
   return (

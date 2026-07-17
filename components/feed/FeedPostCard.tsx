@@ -1,6 +1,11 @@
 'use client'
 
 import Link from 'next/link'
+import {
+  resolveListenHref,
+  type ArtistServicePresence,
+} from '@/lib/listen/services'
+import { useListenService } from '@/components/listen/ServiceProvider'
 import styles from './FeedPostCard.module.css'
 
 export interface FeedPostItem {
@@ -12,6 +17,7 @@ export interface FeedPostItem {
   image: string
   imageLarge?: string
   href: string
+  presence?: ArtistServicePresence
 }
 
 interface FeedPostCardProps {
@@ -27,11 +33,19 @@ interface FeedPostCardProps {
  * an original Ear Clef blurb that pops in once generated.
  */
 export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
+  const { service } = useListenService()
+  // Videos ARE YouTube; only release links follow the chosen service.
+  const href =
+    item.type === 'release'
+      ? resolveListenHref(service, item.presence, item.artistName, item.title)
+          .href
+      : item.href
+
   return (
     <article className={styles.card}>
       <a
         className={styles.media}
-        href={item.href}
+        href={href}
         target="_blank"
         rel="noreferrer"
         aria-label={`Open ${item.title} at the source`}
@@ -65,7 +79,7 @@ export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
         </p>
         <a
           className={styles.title}
-          href={item.href}
+          href={href}
           target="_blank"
           rel="noreferrer"
         >

@@ -7,8 +7,13 @@ import {
   archiveAudioSearchUrl,
   bandcampSearchUrl,
   coverArtUrl,
-  listenSearch,
 } from '@/lib/links'
+import {
+  SERVICE_LABELS,
+  resolveListenHref,
+  type ArtistServicePresence,
+} from '@/lib/listen/services'
+import { useListenService } from '@/components/listen/ServiceProvider'
 import styles from './AlbumCard.module.css'
 
 interface AlbumCardProps {
@@ -16,6 +21,7 @@ interface AlbumCardProps {
   artistName: string
   /** Show a Bandcamp search when the artist's catalog lives there. */
   hasBandcamp?: boolean
+  presence?: ArtistServicePresence
 }
 
 type TracksState =
@@ -28,7 +34,9 @@ export function AlbumCard({
   album,
   artistName,
   hasBandcamp = false,
+  presence,
 }: AlbumCardProps) {
+  const { service } = useListenService()
   const [tracksState, setTracksState] = useState<TracksState>({
     status: 'closed',
   })
@@ -55,17 +63,18 @@ export function AlbumCard({
     }
   }
 
-  const searchHref = listenSearch(artistName, album.title)
+  const resolved = resolveListenHref(service, presence, artistName, album.title)
+  const serviceLabel = SERVICE_LABELS[resolved.service]
   const pre1950 = album.year !== undefined && Number(album.year) < 1950
 
   return (
     <article className={styles.card}>
       <a
         className={styles.head}
-        href={searchHref}
+        href={resolved.href}
         target="_blank"
         rel="noreferrer"
-        aria-label={`Listen: search YouTube for ${album.title} by ${artistName}`}
+        aria-label={`Listen: search ${serviceLabel} for ${album.title} by ${artistName}`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -84,7 +93,7 @@ export function AlbumCard({
         <span className={styles.info}>
           <span className={styles.title}>{album.title}</span>
           {album.year && <span className={styles.year}>{album.year}</span>}
-          <span className={styles.listenHint}>▶ Listen on YouTube</span>
+          <span className={styles.listenHint}>▶ Listen on {serviceLabel}</span>
         </span>
       </a>
 
@@ -138,7 +147,9 @@ export function AlbumCard({
             <li key={`${index}-${track}`}>
               <a
                 className={styles.track}
-                href={listenSearch(artistName, track)}
+                href={
+                  resolveListenHref(service, presence, artistName, track).href
+                }
                 target="_blank"
                 rel="noreferrer"
               >

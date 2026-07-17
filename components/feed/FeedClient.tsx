@@ -18,10 +18,12 @@ import {
   youtubeWatchUrl,
 } from '@/lib/links'
 import { blurbKey, normalizedTitle } from '@/lib/feed/blurbKey'
+import type { ArtistServicePresence } from '@/lib/listen/services'
 import type { ArtistTier } from '@/lib/tiers'
 import { TierFilter, type TierChoice } from '@/components/TierFilter'
 import { FeedPostCard } from '@/components/feed/FeedPostCard'
 import { FeedSkeleton } from '@/components/feed/FeedSkeleton'
+import { ServicePicker } from '@/components/listen/ServicePicker'
 import styles from './FeedClient.module.css'
 
 export interface RosterEntry {
@@ -31,6 +33,7 @@ export interface RosterEntry {
   channelId?: string
   itunesId?: string
   tier?: ArtistTier
+  presence?: ArtistServicePresence
 }
 
 interface FeedItem {
@@ -43,6 +46,7 @@ interface FeedItem {
   /** Bigger art for the featured cards; falls back to image, then placeholder. */
   imageLarge?: string
   href: string
+  presence?: ArtistServicePresence
 }
 
 const FEED_LIMIT = 50
@@ -70,6 +74,7 @@ function mbReleaseItems(
       image: coverArtUrl(item.rgid),
       imageLarge: coverArtUrlLarge(item.rgid),
       href: listenSearch(entry.name, item.title),
+      presence: entry.presence,
     }))
 }
 
@@ -87,6 +92,7 @@ function itunesReleaseItems(
     // iTunes artwork URLs encode their size — request a bigger render.
     imageLarge: item.image?.replace('100x100', '600x600'),
     href: listenSearch(entry.name, item.title),
+    presence: entry.presence,
   }))
 }
 
@@ -363,6 +369,7 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
             ♥ Following
           </button>
         )}
+        <ServicePicker />
       </div>
       {followingOnly && visible.length === 0 && (
         <p className={styles.note}>

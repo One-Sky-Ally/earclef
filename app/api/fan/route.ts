@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getArtistBySlug } from '@/lib/content'
-import { getFan, setFollow } from '@/lib/fans/store'
+import { getFan, setFollow, setListenService } from '@/lib/fans/store'
+import { isListenService } from '@/lib/listen/services'
 import { sessionEmail } from '@/lib/membership/session'
 
 /**
@@ -19,20 +20,33 @@ export async function GET(request: Request) {
   const email = sessionEmail(request)
   if (!email) return noStore({ signedIn: false, follows: [] })
   const fan = await getFan(email)
-  return noStore({ signedIn: true, email, follows: fan?.follows ?? [] })
+  return noStore({
+    signedIn: true,
+    email,
+    follows: fan?.follows ?? [],
+    listenService: fan?.listenService,
+  })
 }
 
 export async function POST(request: Request) {
   const email = sessionEmail(request)
   if (!email) {
-    return noStore({ error: 'Sign in to follow artists' }, 401)
+    return noStore({ error: 'Sign in to save preferences' }, 401)
   }
 
-  let body: { slug?: string; following?: boolean }
+  let body: { slug?: string; following?: boolean; listenService?: string }
   try {
     body = await request.json()
   } catch {
     return noStore({ error: 'Invalid JSON body' }, 400)
+  }
+
+  if (body.listenService !== undefined) {
+    if (!isListenService(body.listenService)) {
+      return noStore({ error: 'Unknown service' }, 400)
+    }
+    await setListenService(email, body.listenService)
+    return noStore({ signedIn: true, listenService: body.listenService })
   }
 
   const slug = body.slug ?? ''

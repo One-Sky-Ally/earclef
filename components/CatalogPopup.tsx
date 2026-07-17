@@ -10,8 +10,12 @@ import {
   archiveAudioSearchUrl,
   bandcampSearchUrl,
   coverArtUrl,
-  listenSearch,
 } from '@/lib/links'
+import {
+  resolveListenHref,
+  type ArtistServicePresence,
+} from '@/lib/listen/services'
+import { useListenService } from '@/components/listen/ServiceProvider'
 import { Modal } from '@/components/Modal'
 import styles from './popupBrowser.module.css'
 
@@ -20,6 +24,7 @@ interface CatalogPopupProps {
   artistName: string
   /** Show a Bandcamp search per item when the artist's catalog lives there. */
   hasBandcamp?: boolean
+  presence?: ArtistServicePresence
   onClose: () => void
 }
 
@@ -36,8 +41,10 @@ export function CatalogPopup({
   mbid,
   artistName,
   hasBandcamp = false,
+  presence,
   onClose,
 }: CatalogPopupProps) {
+  const { service } = useListenService()
   const [state, setState] = useState<PopupState>({ status: 'loading' })
   const [activeKey, setActiveKey] = useState<string | null>(null)
 
@@ -94,7 +101,10 @@ export function CatalogPopup({
                 <li key={item.rgid} className={styles.tileWrap}>
                   <a
                     className={styles.tile}
-                    href={listenSearch(artistName, item.title)}
+                    href={
+                      resolveListenHref(service, presence, artistName, item.title)
+                        .href
+                    }
                     target="_blank"
                     rel="noreferrer"
                   >

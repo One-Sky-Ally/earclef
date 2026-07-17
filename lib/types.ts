@@ -50,10 +50,21 @@ export interface FeaturedAlbum {
   mbReleaseGroupId?: string
 }
 
+/**
+ * Owner-asserted absence from a streaming service. The ONLY source of
+ * "not on X" claims — missing platform IDs never imply absence.
+ */
+export interface ListenAbsence {
+  platform: 'spotify' | 'appleMusic' | 'amazonMusic'
+  /** Owner-written line, e.g. "Not on Spotify — by her choice." */
+  note?: string
+}
+
 export interface ListenContent {
   enabled: boolean
   platforms: PlatformLink[]
   featuredAlbums: FeaturedAlbum[]
+  notOn?: ListenAbsence[]
 }
 
 export interface PlayTrack {

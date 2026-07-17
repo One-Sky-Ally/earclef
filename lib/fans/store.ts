@@ -10,6 +10,8 @@ import { normalizeEmail } from '../membership/types'
 export interface FanRecord {
   email: string
   follows: string[]
+  /** Preferred streaming service — follows the fan across devices. */
+  listenService?: string
   createdAt: string
 }
 
@@ -56,7 +58,23 @@ export async function setFollow(
   await putFan({
     email: normalized,
     follows: next,
+    listenService: existing?.listenService,
     createdAt: existing?.createdAt ?? new Date().toISOString(),
   })
   return next
+}
+
+/** Persists the fan's preferred streaming service. */
+export async function setListenService(
+  email: string,
+  listenService: string,
+): Promise<void> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  await putFan({
+    email: normalized,
+    follows: existing?.follows ?? [],
+    listenService,
+    createdAt: existing?.createdAt ?? new Date().toISOString(),
+  })
 }

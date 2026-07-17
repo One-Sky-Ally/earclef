@@ -112,6 +112,16 @@ function checkStructure(slug, c) {
   if (c.listen.enabled && !('featuredAlbums' in c.listen)) {
     issues.push('listen.featuredAlbums missing')
   }
+  // Service absences are owner-asserted claims — keep them well-formed.
+  const ABSENT_PLATFORMS = new Set(['spotify', 'appleMusic', 'amazonMusic'])
+  for (const absence of c.listen.notOn ?? []) {
+    if (!ABSENT_PLATFORMS.has(absence.platform)) {
+      issues.push(`bad notOn platform "${absence.platform}"`)
+    }
+    if (absence.note !== undefined && (typeof absence.note !== 'string' || absence.note.length > 160)) {
+      issues.push('notOn note must be a string ≤160 chars')
+    }
+  }
   for (const video of c.watch.videos) {
     if (!YT_VIDEO.test(video.youtubeId)) issues.push(`bad videoId ${video.youtubeId}`)
   }

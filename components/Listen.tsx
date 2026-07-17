@@ -1,17 +1,20 @@
 import type { ListenContent } from '@/lib/types'
+import type { ArtistServicePresence } from '@/lib/listen/services'
 import { SectionHeader } from '@/components/SectionHeader'
 import { LinkPills } from '@/components/LinkPills'
 import { AlbumCard } from '@/components/AlbumCard'
 import { CatalogLauncher } from '@/components/CatalogLauncher'
+import { ServiceAbsenceNote } from '@/components/listen/ServiceAbsenceNote'
 import styles from './Listen.module.css'
 
 interface ListenProps {
   listen: ListenContent
   artistName: string
   mbid?: string
+  presence: ArtistServicePresence
 }
 
-export function Listen({ listen, artistName, mbid }: ListenProps) {
+export function Listen({ listen, artistName, mbid, presence }: ListenProps) {
   const bandcampUrl = listen.platforms.find(
     (p) => p.platform === 'bandcamp',
   )?.url
@@ -26,6 +29,7 @@ export function Listen({ listen, artistName, mbid }: ListenProps) {
       <div className="container">
         <SectionHeader number="01" title="Listen" headingId="listen-heading" />
         <LinkPills links={listen.platforms} ariaLabel="Streaming platforms" />
+        <ServiceAbsenceNote presence={presence} />
         {listen.featuredAlbums.length > 0 && (
           <div className={styles.embeds}>
             {listen.featuredAlbums.map((album) => (
@@ -34,6 +38,7 @@ export function Listen({ listen, artistName, mbid }: ListenProps) {
                 album={album}
                 artistName={artistName}
                 hasBandcamp={hasBandcamp}
+                presence={presence}
               />
             ))}
           </div>
@@ -43,6 +48,7 @@ export function Listen({ listen, artistName, mbid }: ListenProps) {
           mbid={mbid}
           fallbackUrl={fallbackUrl}
           hasBandcamp={hasBandcamp}
+          presence={presence}
           className={styles.more}
         />
       </div>

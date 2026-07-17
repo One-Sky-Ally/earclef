@@ -1,4 +1,5 @@
 import { Fraunces, Inter } from 'next/font/google'
+import { ServiceProvider } from '@/components/listen/ServiceProvider'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -20,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ServiceProvider>{children}</ServiceProvider>
+      </body>
     </html>
   )
 }

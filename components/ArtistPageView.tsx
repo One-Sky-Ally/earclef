@@ -1,4 +1,5 @@
 import type { ArtistContent } from '@/lib/types'
+import { presenceFromContent } from '@/lib/listen/services'
 import { SiteNav } from '@/components/SiteNav'
 import { Hero } from '@/components/Hero'
 import { PlaySection } from '@/components/PlaySection'
@@ -54,6 +55,7 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
             listen={content.listen}
             artistName={content.hero.name}
             mbid={content.integrations.setlistfm.mbid || undefined}
+            presence={presenceFromContent(content)}
           />
         )}
         {content.watch.enabled && (
