@@ -45,11 +45,11 @@ export default function ManifestoPage() {
               musicians I know can&rsquo;t pay rent from their music.
             </p>
 
-            <h2>
-              So I used my notes from the past 15 years, and with the help of
-              AI being so advanced now, built it with the help of AI. My
-              ideas and the AI helped with the infrastructure.
-            </h2>
+            <p>
+              So I took my notes from the past 15 years and with the help of
+              AI finally advanced enough, built it. My ideas with AI handling
+              the infrastructure.
+            </p>
             <p>It&rsquo;s called Ear Clef, and it&rsquo;s live right now.</p>
             <p>
               Every artist gets one page, their music, videos, full
