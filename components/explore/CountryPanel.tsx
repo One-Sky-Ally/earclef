@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import {
+  fetchArtistLinks,
   fetchCountryYearDetails,
   musicBrainzArtistUrl,
   musicBrainzReleaseUrl,
@@ -13,6 +14,9 @@ import {
 } from '@/lib/explore/panelData'
 import type { DataSource } from '@/lib/explore/counts'
 import { archiveAudioSearchUrl, listenSearch } from '@/lib/links'
+import { useListenService } from '@/components/listen/ServiceProvider'
+import type { ListenService } from '@/lib/listen/services'
+import type { ArtistLinks } from '@/lib/explore/panelData'
 import styles from './CountryPanel.module.css'
 
 export interface SelectedCountry {
@@ -57,6 +61,99 @@ function artistSearchHref(
   return topRelease
     ? listenSearch(artist.name, topRelease)
     : youtubeSearchUrl(`"${artist.name}" music`)
+}
+
+
+/** Session-lived client cache; the API layer caches for 30 days. */
+const artistLinksCache = new Map<string, ArtistLinks>()
+
+function smartArtistHref(
+  links: ArtistLinks,
+  service: ListenService,
+): string | null {
+  const serviceLink =
+    service === 'spotify'
+      ? links.spotify
+      : service === 'appleMusic'
+        ? links.appleMusic
+        : service === 'amazonMusic'
+          ? links.amazonMusic
+          : links.youtube
+  return serviceLink ?? links.website ?? links.wikipedia ?? null
+}
+
+interface PanelArtistPillProps {
+  artist: PanelArtist
+  releases: PanelRelease[]
+  rosterEntry?: { slug: string; name: string }
+}
+
+/**
+ * Artist pill: roster artists keep the gold home link; everyone else
+ * gets a lazy smart chain on the name — the fan's streaming service if
+ * MusicBrainz knows the link, else official site, else Wikipedia, else
+ * MusicBrainz itself. Links resolve on first click (~1s) and cache.
+ */
+function PanelArtistPill({
+  artist,
+  releases,
+  rosterEntry,
+}: PanelArtistPillProps) {
+  const { service } = useListenService()
+  const [resolving, setResolving] = useState(false)
+
+  async function openSmartLink(event: React.MouseEvent) {
+    // Plain left-clicks resolve the chain; modified clicks keep the
+    // MusicBrainz href for open-in-new-tab muscle memory.
+    if (event.metaKey || event.ctrlKey || event.shiftKey) return
+    event.preventDefault()
+    let links = artistLinksCache.get(artist.id)
+    if (!links) {
+      setResolving(true)
+      try {
+        links = await fetchArtistLinks(artist.id, new AbortController().signal)
+      } catch {
+        links = {}
+      }
+      artistLinksCache.set(artist.id, links)
+      setResolving(false)
+    }
+    const href = smartArtistHref(links, service) ?? musicBrainzArtistUrl(artist.id)
+    window.open(href, '_blank', 'noopener,noreferrer')
+  }
+
+  return (
+    <li className={styles.artistItem}>
+      {rosterEntry ? (
+        <Link
+          className={`${styles.artistPill} ${styles.onRoster}`}
+          href={`/${rosterEntry.slug}`}
+          title="On the Ear Clef roster — opens their page here"
+        >
+          {artist.name}
+        </Link>
+      ) : (
+        <a
+          className={`${styles.artistPill} ${resolving ? styles.pillResolving : ''}`}
+          href={musicBrainzArtistUrl(artist.id)}
+          onClick={openSmartLink}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {resolving ? `${artist.name}…` : artist.name}
+        </a>
+      )}
+      <a
+        className={styles.listenBadge}
+        href={artistSearchHref(artist, releases)}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Listen: search YouTube for ${artist.name}`}
+      >
+        ▶
+      </a>
+    </li>
+  )
 }
 
 export function CountryPanel({
@@ -120,7 +217,23 @@ export function CountryPanel({
       </header>
 
       {state.status === 'loading' && (
-        <p className={styles.note}>Listening for {spanLabel} in {country.name}…</p>
+        <>
+          <p className={styles.note}>
+            Listening for {spanLabel} in {country.name}…
+          </p>
+          <div className={styles.skeleton} aria-hidden="true">
+            <div className={styles.skeletonPills}>
+              {Array.from({ length: 5 }, (_, index) => (
+                <span key={index} className={styles.skeletonPill} />
+              ))}
+            </div>
+            <div className={styles.skeletonRows}>
+              {Array.from({ length: 4 }, (_, index) => (
+                <span key={index} className={styles.skeletonRow} />
+              ))}
+            </div>
+          </div>
+        </>
       )}
 
       {state.status === 'error' && (
@@ -148,41 +261,18 @@ export function CountryPanel({
 
           {state.details.originArtists.length > 0 && (
             <>
-              <h3 className={styles.subheading}>From {country.name}</h3>
+              <h3 className={styles.subheading}>Top artists from {country.name}</h3>
               <ul className={styles.artists}>
                 {(showAllOrigin
                   ? state.details.originArtists
                   : state.details.originArtists.slice(0, PREVIEW_COUNT)
                 ).map((artist) => (
-                  <li key={artist.id} className={styles.artistItem}>
-                    {roster[artist.id] ? (
-                      <Link
-                        className={`${styles.artistPill} ${styles.onRoster}`}
-                        href={`/${roster[artist.id].slug}`}
-                        title="On the Ear Clef roster — opens their page here"
-                      >
-                        {artist.name}
-                      </Link>
-                    ) : (
-                      <a
-                        className={styles.artistPill}
-                        href={musicBrainzArtistUrl(artist.id)}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {artist.name}
-                      </a>
-                    )}
-                    <a
-                      className={styles.listenBadge}
-                      href={artistSearchHref(artist, state.details.releases)}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Listen: search YouTube for ${artist.name}`}
-                    >
-                      ▶
-                    </a>
-                  </li>
+                  <PanelArtistPill
+                    key={artist.id}
+                    artist={artist}
+                    releases={state.details.releases}
+                    rosterEntry={roster[artist.id]}
+                  />
                 ))}
               </ul>
               {state.details.originArtists.length > PREVIEW_COUNT && (
@@ -208,35 +298,12 @@ export function CountryPanel({
                   ? state.details.artists
                   : state.details.artists.slice(0, PREVIEW_COUNT)
                 ).map((artist) => (
-                  <li key={artist.id} className={styles.artistItem}>
-                    {roster[artist.id] ? (
-                      <Link
-                        className={`${styles.artistPill} ${styles.onRoster}`}
-                        href={`/${roster[artist.id].slug}`}
-                        title="On the Ear Clef roster — opens their page here"
-                      >
-                        {artist.name}
-                      </Link>
-                    ) : (
-                      <a
-                        className={styles.artistPill}
-                        href={musicBrainzArtistUrl(artist.id)}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {artist.name}
-                      </a>
-                    )}
-                    <a
-                      className={styles.listenBadge}
-                      href={artistSearchHref(artist, state.details.releases)}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Listen: search YouTube for ${artist.name}`}
-                    >
-                      ▶
-                    </a>
-                  </li>
+                  <PanelArtistPill
+                    key={artist.id}
+                    artist={artist}
+                    releases={state.details.releases}
+                    rosterEntry={roster[artist.id]}
+                  />
                 ))}
               </ul>
               {state.details.artists.length > PREVIEW_COUNT && (
@@ -257,7 +324,7 @@ export function CountryPanel({
             <>
               <h3 className={styles.subheading}>
                 {state.details.originArtists.length > 0
-                  ? 'Issued here'
+                  ? `Released in ${country.name}`
                   : 'Releases'}
               </h3>
               <ul className={styles.releases}>

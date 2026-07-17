@@ -27,6 +27,25 @@ export function musicBrainzArtistUrl(id: string): string {
   return `https://musicbrainz.org/artist/${id}`
 }
 
+/** An artist's outbound links, classified from MusicBrainz URL relations. */
+export interface ArtistLinks {
+  spotify?: string
+  appleMusic?: string
+  amazonMusic?: string
+  youtube?: string
+  website?: string
+  wikipedia?: string
+}
+
+export async function fetchArtistLinks(
+  mbid: string,
+  signal: AbortSignal,
+): Promise<ArtistLinks> {
+  const res = await fetch(`/api/explore/artist-links/${mbid}`, { signal })
+  if (!res.ok) throw new Error('Could not load artist links')
+  return res.json()
+}
+
 export function musicBrainzReleaseUrl(id: string): string {
   return `https://musicbrainz.org/release/${id}`
 }
