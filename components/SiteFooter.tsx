@@ -18,7 +18,9 @@ export function SiteFooter({ footer }: SiteFooterProps) {
         <p className={styles.attribution}>{footer.attribution}</p>
         <p className={styles.sources}>
           Compiled from official artist sites, MusicBrainz, setlist.fm, and
-          the press linked above. <Link href="/privacy">Privacy</Link>.
+          the press linked above. <Link href="/manifesto">Manifesto</Link> ·{' '}
+          <Link href="/for-artists">For artists</Link> ·{' '}
+          <Link href="/privacy">Privacy</Link>.
         </p>
       </div>
     </footer>

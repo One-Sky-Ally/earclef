@@ -1,0 +1,93 @@
+.main {
+  padding-block: clamp(4rem, 10vw, 6rem);
+}
+
+.overline {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+}
+
+.title {
+  font-size: clamp(2.6rem, 7vw, 4.2rem);
+  max-width: 18ch;
+  margin-bottom: 1rem;
+}
+
+.byline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text-soft);
+  margin-bottom: 2.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--border);
+  max-width: 42rem;
+}
+
+.prose {
+  max-width: 42rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  font-size: 1.02rem;
+  color: var(--text-soft);
+}
+
+.prose h2 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  color: var(--text);
+  margin-top: 1.6rem;
+  text-wrap: balance;
+}
+
+.prose p {
+  text-wrap: pretty;
+}
+
+.prose strong {
+  color: var(--text);
+}
+
+.prose ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding-left: 0;
+}
+
+.prose li {
+  padding-left: 1.4rem;
+  position: relative;
+  text-wrap: pretty;
+}
+
+.prose li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--accent-deep);
+}
+
+.closing {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  color: var(--text);
+  margin-top: 1.2rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding-block: 3rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-style: italic;
+}
