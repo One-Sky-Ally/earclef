@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import type { GlobeInstance } from 'globe.gl'
 import {
+  bandedHeat,
   countInRange,
   heatColor,
   heatValue,
@@ -17,6 +18,10 @@ import styles from './GlobeScene.module.css'
 
 const SIDE_COLOR = 'rgba(242, 169, 59, 0.03)'
 const STROKE_COLOR = 'rgba(242, 169, 59, 0.35)'
+// Hot neighbors need a dark seam between their gold fills; cool
+// countries keep the translucent gold wireframe against the dark sea.
+const HOT_STROKE_COLOR = 'rgba(20, 14, 9, 0.95)'
+const HOT_STROKE_THRESHOLD = 3 / 7
 const SPHERE_COLOR = '#1b1613'
 const ATMOSPHERE_COLOR = '#f2a93b'
 
@@ -105,13 +110,20 @@ export function GlobeScene({
   }
 
   function capColorFor(feature: object): string {
-    return heatColor(heatFor(feature), feature === hoverRef.current)
+    return heatColor(bandedHeat(heatFor(feature)), feature === hoverRef.current)
+  }
+
+  function strokeColorFor(feature: object): string {
+    return bandedHeat(heatFor(feature)) >= HOT_STROKE_THRESHOLD
+      ? HOT_STROKE_COLOR
+      : STROKE_COLOR
   }
 
   function applyHeat(globe: GlobeInstance | null) {
     if (!globe) return
     globe
       .polygonCapColor(capColorFor)
+      .polygonStrokeColor(strokeColorFor)
       .polygonAltitude((feature) => 0.008 + heatFor(feature) * 0.05)
   }
 
@@ -153,7 +165,7 @@ export function GlobeScene({
         .atmosphereAltitude(0.14)
         .polygonsData(countries.features)
         .polygonSideColor(() => SIDE_COLOR)
-        .polygonStrokeColor(() => STROKE_COLOR)
+        .polygonStrokeColor(strokeColorFor)
         .polygonsTransitionDuration(150)
         .polygonLabel((feature) => {
           const props = (feature as CountryFeature).properties

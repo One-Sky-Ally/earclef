@@ -39,6 +39,19 @@ export function heatValue(count: number, yearMax: number): number {
   return Math.log1p(count) / Math.log1p(yearMax)
 }
 
+export const HEAT_BANDS = 7
+
+/**
+ * Posterize heat into discrete choropleth steps — neighbors at 0.78 vs
+ * 0.84 look identical on a continuous ramp but land in different bands
+ * here, which is what keeps dense regions (South America, Europe) from
+ * blurring into one gold mass. Ceil, so any nonzero count stays visible.
+ */
+export function bandedHeat(t: number): number {
+  if (t <= 0) return 0
+  return Math.ceil(Math.min(t, 1) * HEAT_BANDS) / HEAT_BANDS
+}
+
 // Ember → deep gold → brand gold → white-gold, all within the site palette.
 const HEAT_STOPS: { t: number; rgb: [number, number, number]; a: number }[] = [
   { t: 0, rgb: [96, 52, 18], a: 0.22 },
