@@ -83,10 +83,29 @@ export function heatColor(t: number, hovered = false): string {
   return `rgba(${Math.round(r)}, ${Math.round(g)}, ${Math.round(b)}, ${alpha.toFixed(3)})`
 }
 
-export function maxForYear(counts: CountryYearCounts, year: number): number {
+/** Total releases for one country across an inclusive year span. */
+export function countInRange(
+  byYear: Record<string, number> | undefined,
+  start: number,
+  end: number,
+): number {
+  if (!byYear) return 0
+  let total = 0
+  for (let year = start; year <= end; year++) {
+    total += byYear[year] ?? 0
+  }
+  return total
+}
+
+/** The hottest country's total across the span — the heat ceiling. */
+export function maxForRange(
+  counts: CountryYearCounts,
+  start: number,
+  end: number,
+): number {
   let max = 0
   for (const byYear of Object.values(counts)) {
-    const value = byYear[year] ?? 0
+    const value = countInRange(byYear, start, end)
     if (value > max) max = value
   }
   return max

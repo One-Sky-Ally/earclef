@@ -3,10 +3,11 @@
 import { useEffect, useRef } from 'react'
 import type { GlobeInstance } from 'globe.gl'
 import {
+  countInRange,
   heatColor,
   heatValue,
   loadCounts,
-  maxForYear,
+  maxForRange,
   type CountryYearCounts,
   type DataSource,
 } from '@/lib/explore/counts'
@@ -26,7 +27,8 @@ export interface FocusRequest {
 }
 
 interface GlobeSceneProps {
-  year: number
+  yearStart: number
+  yearEnd: number
   paused: boolean
   focusRequest: FocusRequest | null
   onDataSourceChange: (source: DataSource) => void
@@ -34,7 +36,8 @@ interface GlobeSceneProps {
 }
 
 export function GlobeScene({
-  year,
+  yearStart,
+  yearEnd,
   paused,
   focusRequest,
   onDataSourceChange,
@@ -43,8 +46,8 @@ export function GlobeScene({
   const containerRef = useRef<HTMLDivElement>(null)
   const globeRef = useRef<GlobeInstance | null>(null)
   const countsRef = useRef<CountryYearCounts>({})
-  const yearRef = useRef(year)
-  const yearMaxCache = useRef<Record<number, number>>({})
+  const rangeRef = useRef<[number, number]>([yearStart, yearEnd])
+  const rangeMaxCache = useRef<Record<string, number>>({})
   const hoverRef = useRef<object | null>(null)
   const featureByCode = useRef<Map<string, CountryFeature>>(new Map())
   const pausedRef = useRef(paused)
@@ -59,10 +62,10 @@ export function GlobeScene({
   }
 
   useEffect(() => {
-    yearRef.current = year
+    rangeRef.current = [yearStart, yearEnd]
     applyHeat(globeRef.current)
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- applyHeat reads only refs; re-run on year alone
-  }, [year])
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- applyHeat reads only refs; re-run on range alone
+  }, [yearStart, yearEnd])
 
   useEffect(() => {
     pausedRef.current = paused
@@ -91,11 +94,12 @@ export function GlobeScene({
   function heatFor(feature: object): number {
     const code = isoOf(feature as CountryFeature)
     if (!code) return 0
-    const activeYear = yearRef.current
-    const count = countsRef.current[code]?.[activeYear] ?? 0
-    const max = (yearMaxCache.current[activeYear] ??= maxForYear(
+    const [start, end] = rangeRef.current
+    const count = countInRange(countsRef.current[code], start, end)
+    const max = (rangeMaxCache.current[`${start}:${end}`] ??= maxForRange(
       countsRef.current,
-      activeYear,
+      start,
+      end,
     ))
     return heatValue(count, max)
   }
@@ -140,7 +144,7 @@ export function GlobeScene({
       const { counts, source } = await loadCounts(codes)
       if (disposed) return
       countsRef.current = counts
-      yearMaxCache.current = {}
+      rangeMaxCache.current = {}
       onDataSourceChange(source)
 
       globe = new Globe(mount)
@@ -155,10 +159,12 @@ export function GlobeScene({
         .polygonLabel((feature) => {
           const props = (feature as CountryFeature).properties
           const code = isoOf(feature as CountryFeature)
+          const [start, end] = rangeRef.current
           const count = code
-            ? (countsRef.current[code]?.[yearRef.current] ?? 0)
+            ? countInRange(countsRef.current[code], start, end)
             : 0
-          return `<div class="globe-tooltip"><span class="globe-tooltip-name">${props.ADMIN}</span><span class="globe-tooltip-count">${count.toLocaleString()} releases · ${yearRef.current}</span></div>`
+          const span = start === end ? `${start}` : `${start}–${end}`
+          return `<div class="globe-tooltip"><span class="globe-tooltip-name">${props.ADMIN}</span><span class="globe-tooltip-count">${count.toLocaleString()} releases · ${span}</span></div>`
         })
         .onPolygonHover((hovered) => {
           hoverRef.current = hovered ?? null

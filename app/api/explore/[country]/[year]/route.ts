@@ -62,11 +62,14 @@ export async function GET(
 ) {
   const { country, year } = await ctx.params
 
-  if (!/^[A-Z]{2}$/.test(country) || !/^\d{4}$/.test(year)) {
+  // "1969" (single year) or "1965-1975" (inclusive span).
+  if (!/^[A-Z]{2}$/.test(country) || !/^\d{4}(-\d{4})?$/.test(year)) {
     return NextResponse.json({ error: 'Invalid country or year' }, { status: 400 })
   }
-  const yearNum = Number(year)
-  if (yearNum < 1900 || yearNum > 2100) {
+  const [startRaw, endRaw = startRaw] = year.split('-')
+  const start = Number(startRaw)
+  const end = Number(endRaw)
+  if (start < 1900 || end > 2100 || start > end) {
     return NextResponse.json({ error: 'Year out of range' }, { status: 400 })
   }
 
@@ -75,7 +78,7 @@ export async function GET(
   if (cached) return withCacheHeaders(NextResponse.json(cached))
 
   const query = encodeURIComponent(
-    `country:${country} AND date:[${year} TO ${year}-12-31]`,
+    `country:${country} AND date:[${start} TO ${end}-12-31]`,
   )
   const url = `https://musicbrainz.org/ws/2/release?query=${query}&limit=${RELEASE_LIMIT}&fmt=json`
 

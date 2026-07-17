@@ -15,24 +15,45 @@
   font-variant-numeric: tabular-nums;
 }
 
-.range {
-  appearance: none;
-  -webkit-appearance: none;
+/* Two overlaid native ranges: the track paints the span between the
+   thumbs; the inputs are click-through except at their thumbs. */
+.track {
+  position: relative;
   width: 100%;
-  height: 4px;
+  height: 22px;
+  margin-block: 0.6rem;
+}
+
+.track::before {
+  content: '';
+  position: absolute;
+  inset: 9px 0;
   border-radius: 999px;
   background: linear-gradient(
     to right,
-    var(--accent) var(--fill),
-    rgba(242, 237, 228, 0.16) var(--fill)
+    rgba(242, 237, 228, 0.16) var(--fill-start),
+    var(--accent) var(--fill-start),
+    var(--accent) var(--fill-end),
+    rgba(242, 237, 228, 0.16) var(--fill-end)
   );
-  cursor: pointer;
-  margin-block: 0.6rem;
+}
+
+.range {
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: none;
+  pointer-events: none;
+  margin: 0;
 }
 
 .range::-webkit-slider-thumb {
   appearance: none;
   -webkit-appearance: none;
+  pointer-events: auto;
   width: 22px;
   height: 22px;
   border-radius: 50%;
@@ -40,6 +61,7 @@
   border: 3px solid var(--bg);
   box-shadow: 0 0 14px rgba(242, 169, 59, 0.55);
   transition: transform 0.15s ease;
+  cursor: pointer;
 }
 
 .range::-webkit-slider-thumb:hover {
@@ -47,12 +69,14 @@
 }
 
 .range::-moz-range-thumb {
+  pointer-events: auto;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background: var(--accent);
   border: 3px solid var(--bg);
   box-shadow: 0 0 14px rgba(242, 169, 59, 0.55);
+  cursor: pointer;
 }
 
 .range:focus-visible {

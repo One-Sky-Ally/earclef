@@ -25,7 +25,8 @@ export type RosterByMbid = Record<string, { slug: string; name: string }>
 
 interface CountryPanelProps {
   country: SelectedCountry
-  year: number
+  yearStart: number
+  yearEnd: number
   source: DataSource | null
   roster?: RosterByMbid
   onClose: () => void
@@ -60,7 +61,8 @@ function artistSearchHref(
 
 export function CountryPanel({
   country,
-  year,
+  yearStart,
+  yearEnd,
   source,
   roster = {},
   onClose,
@@ -69,12 +71,15 @@ export function CountryPanel({
   const [showAllArtists, setShowAllArtists] = useState(false)
   const [showAllReleases, setShowAllReleases] = useState(false)
 
-  // Parent keys this component by country+year, so every fetch cycle
+  const spanLabel =
+    yearStart === yearEnd ? `${yearStart}` : `${yearStart}–${yearEnd}`
+
+  // Parent keys this component by country+range, so every fetch cycle
   // starts from a fresh mount in the 'loading' state.
   useEffect(() => {
     const controller = new AbortController()
 
-    fetchCountryYearDetails(country.code, year, controller.signal)
+    fetchCountryYearDetails(country.code, yearStart, yearEnd, controller.signal)
       .then((details) => setState({ status: 'ready', details }))
       .catch((error: Error) => {
         if (controller.signal.aborted) return
@@ -82,7 +87,7 @@ export function CountryPanel({
       })
 
     return () => controller.abort()
-  }, [country.code, year])
+  }, [country.code, yearStart, yearEnd])
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -96,12 +101,12 @@ export function CountryPanel({
     <aside
       className={styles.panel}
       role="dialog"
-      aria-label={`${country.name}, ${year}`}
+      aria-label={`${country.name}, ${spanLabel}`}
     >
       <header className={styles.header}>
         <div>
           <h2 className={styles.country}>{country.name}</h2>
-          <p className={styles.year}>{year}</p>
+          <p className={styles.year}>{spanLabel}</p>
         </div>
         <button
           type="button"
@@ -114,7 +119,7 @@ export function CountryPanel({
       </header>
 
       {state.status === 'loading' && (
-        <p className={styles.note}>Listening for {year} in {country.name}…</p>
+        <p className={styles.note}>Listening for {spanLabel} in {country.name}…</p>
       )}
 
       {state.status === 'error' && (
@@ -135,7 +140,7 @@ export function CountryPanel({
 
           {state.details.totalCount === 0 && (
             <p className={styles.note}>
-              Nothing on record here for {year} — yet. MusicBrainz grows every
+              Nothing on record here for {spanLabel} — yet. MusicBrainz grows every
               day.
             </p>
           )}
@@ -225,7 +230,7 @@ export function CountryPanel({
                     >
                       ▶ Listen
                     </a>
-                    {year < 1950 && (
+                    {yearEnd < 1950 && (
                       <a
                         className={styles.listenLink}
                         href={archiveAudioSearchUrl(

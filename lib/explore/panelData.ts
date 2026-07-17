@@ -56,10 +56,13 @@ export async function searchPlace(
 
 export async function fetchCountryYearDetails(
   country: string,
-  year: number,
+  yearStart: number,
+  yearEnd: number,
   signal: AbortSignal,
 ): Promise<CountryYearDetails> {
-  const res = await fetch(`/api/explore/${country}/${year}`, { signal })
+  const span =
+    yearStart === yearEnd ? `${yearStart}` : `${yearStart}-${yearEnd}`
+  const res = await fetch(`/api/explore/${country}/${span}`, { signal })
   if (res.status === 429) {
     throw new Error('MusicBrainz is busy right now — try again in a moment.')
   }

@@ -28,7 +28,11 @@ const GlobeScene = dynamic(
 )
 
 export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
-  const [year, setYear] = useState(DEFAULT_YEAR)
+  const [range, setRange] = useState<[number, number]>([
+    DEFAULT_YEAR,
+    DEFAULT_YEAR,
+  ])
+  const [yearStart, yearEnd] = range
   const [source, setSource] = useState<DataSource | null>(null)
   const [selected, setSelected] = useState<SelectedCountry | null>(null)
   const [focusRequest, setFocusRequest] = useState<FocusRequest | null>(null)
@@ -44,7 +48,8 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
   return (
     <div className={styles.stage}>
       <GlobeScene
-        year={year}
+        yearStart={yearStart}
+        yearEnd={yearEnd}
         paused={selected !== null}
         focusRequest={focusRequest}
         onDataSourceChange={setSource}
@@ -53,9 +58,10 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
       <SearchBox onResolved={onPlaceResolved} />
       {selected && (
         <CountryPanel
-          key={`${selected.code}:${year}`}
+          key={`${selected.code}:${yearStart}-${yearEnd}`}
           country={selected}
-          year={year}
+          yearStart={yearStart}
+          yearEnd={yearEnd}
           source={source}
           roster={roster}
           onClose={() => setSelected(null)}
@@ -63,10 +69,11 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
       )}
       <div className={styles.controls}>
         <YearSlider
-          year={year}
+          start={yearStart}
+          end={yearEnd}
           min={YEAR_MIN}
           max={YEAR_MAX}
-          onChange={setYear}
+          onChange={(start, end) => setRange([start, end])}
         />
         {source && (
           <p className={styles.source}>
