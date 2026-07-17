@@ -1,7 +1,6 @@
 'use client'
 
-import { Suspense, useEffect, useState } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import type { MembershipContent } from '@/lib/types'
 import type { UniverseResponse } from '@/lib/membership/types'
 import { SectionHeader } from '@/components/SectionHeader'
@@ -17,7 +16,14 @@ interface UniverseSectionProps {
 
 type Banner = { tone: 'good' | 'bad'; text: string } | null
 
-/** One-shot flags the auth/claim redirects leave in the query string. */
+/**
+ * One-shot flags the auth/claim redirects leave in the query string.
+ * Those redirects are always full-document loads (server 302s), so the
+ * query only needs reading once on mount — deliberately NOT
+ * useSearchParams: its Suspense boundary re-rendered on every hash
+ * navigation, collapsing this section mid smooth-scroll and cancelling
+ * the section-tab scroll on membership pages.
+ */
 function readBanner(params: URLSearchParams): Banner {
   if (params.get('joined') === '1') {
     return { tone: 'good', text: "You're in — welcome to the inner circle." }
@@ -46,32 +52,13 @@ function readBanner(params: URLSearchParams): Banner {
   return null
 }
 
-export function UniverseSection(props: UniverseSectionProps) {
-  return (
-    <section
-      id="universe"
-      className="section"
-      aria-labelledby="universe-heading"
-    >
-      <div className="container">
-        <SectionHeader
-          number="∞"
-          title={props.membership.perkTitle}
-          headingId="universe-heading"
-        />
-        {/* useSearchParams below requires a Suspense boundary during SSG. */}
-        <Suspense fallback={<p className={styles.quiet}>Opening…</p>}>
-          <UniverseBody {...props} />
-        </Suspense>
-      </div>
-    </section>
-  )
-}
-
-function UniverseBody({ slug, artistName, membership }: UniverseSectionProps) {
-  const searchParams = useSearchParams()
-  const banner = readBanner(searchParams)
+export function UniverseSection({
+  slug,
+  artistName,
+  membership,
+}: UniverseSectionProps) {
   const [data, setData] = useState<UniverseResponse | null>(null)
+  const [banner, setBanner] = useState<Banner>(null)
   const [failed, setFailed] = useState(false)
   const [fetchCount, setFetchCount] = useState(0)
 
@@ -84,6 +71,7 @@ function UniverseBody({ slug, artistName, membership }: UniverseSectionProps) {
         const body = (await res.json()) as UniverseResponse
         if (!cancelled) {
           setData(body)
+          setBanner(readBanner(new URLSearchParams(window.location.search)))
           setFailed(false)
         }
       } catch (error) {
@@ -97,33 +85,44 @@ function UniverseBody({ slug, artistName, membership }: UniverseSectionProps) {
   }, [slug, fetchCount])
 
   return (
-    <>
-      {banner && (
-        <p
-          className={
-            banner.tone === 'good' ? styles.bannerGood : styles.bannerBad
-          }
-        >
-          {banner.text}
-        </p>
-      )}
-      {failed && (
-        <p className={styles.quiet}>
-          The Universe could not load — please try again shortly.
-        </p>
-      )}
-      {!failed && !data && <p className={styles.quiet}>Opening…</p>}
-      {data?.locked === false && (
-        <UniverseFeed
-          slug={slug}
-          artistName={artistName}
-          data={data}
-          onSignedOut={() => setFetchCount((count) => count + 1)}
+    <section
+      id="universe"
+      className="section"
+      aria-labelledby="universe-heading"
+    >
+      <div className="container">
+        <SectionHeader
+          number="∞"
+          title={membership.perkTitle}
+          headingId="universe-heading"
         />
-      )}
-      {data?.locked === true && (
-        <UniverseLocked slug={slug} membership={membership} data={data} />
-      )}
-    </>
+        {banner && (
+          <p
+            className={
+              banner.tone === 'good' ? styles.bannerGood : styles.bannerBad
+            }
+          >
+            {banner.text}
+          </p>
+        )}
+        {failed && (
+          <p className={styles.quiet}>
+            The Universe could not load — please try again shortly.
+          </p>
+        )}
+        {!failed && !data && <p className={styles.quiet}>Opening…</p>}
+        {data?.locked === false && (
+          <UniverseFeed
+            slug={slug}
+            artistName={artistName}
+            data={data}
+            onSignedOut={() => setFetchCount((count) => count + 1)}
+          />
+        )}
+        {data?.locked === true && (
+          <UniverseLocked slug={slug} membership={membership} data={data} />
+        )}
+      </div>
+    </section>
   )
 }

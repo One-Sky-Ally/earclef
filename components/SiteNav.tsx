@@ -13,7 +13,7 @@ const SECTIONS = [
 
 const PAGES = [
   { href: '/', label: 'Explore' },
-  { href: '/feed', label: 'Latest' },
+  { href: '/feed', label: 'Feed' },
   { href: '/artists', label: 'Artists' },
 ]
 
