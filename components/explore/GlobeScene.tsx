@@ -145,7 +145,6 @@ export function GlobeScene({
       if (disposed) return
       countsRef.current = counts
       rangeMaxCache.current = {}
-      onDataSourceChange(source)
 
       globe = new Globe(mount)
         .backgroundColor('rgba(0,0,0,0)')
@@ -186,6 +185,9 @@ export function GlobeScene({
       globe.pointOfView({ lat: 24, lng: -30, altitude: 2.1 }, 0)
       applyHeat(globe)
       globeRef.current = globe
+      // Announced only once the globe can act on focus requests — URL
+      // deep links (?c=JM) rely on this ordering to fly the camera.
+      onDataSourceChange(source)
 
       if (process.env.NODE_ENV === 'development') {
         ;(window as unknown as Record<string, unknown>).__earclefGlobe = globe

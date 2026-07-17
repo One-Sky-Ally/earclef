@@ -251,6 +251,13 @@ export function CountryPanel({
               may hail from elsewhere.
             </p>
           )}
+          {country.code === 'AQ' && (
+            <p className={styles.penguinNote}>
+              Yes, really — no one lives here, but some artists register
+              Antarctica as home as a running joke. We report the database
+              faithfully, penguins and all.
+            </p>
+          )}
 
           {state.details.totalCount === 0 && (
             <p className={styles.note}>

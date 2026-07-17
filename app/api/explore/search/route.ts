@@ -120,5 +120,9 @@ function withCacheHeaders(response: NextResponse): NextResponse {
     'Cache-Control',
     'public, s-maxage=2592000, stale-while-revalidate=604800',
   )
+  // Netlify's CDN ignores query strings in function cache keys unless
+  // told otherwise — without this, the first cached search is served
+  // for EVERY query (the "everything resolves to Iceland" bug).
+  response.headers.set('Netlify-Vary', 'query=q')
   return response
 }

@@ -336,3 +336,13 @@
     background-position: -100% 0;
   }
 }
+
+/* Antarctica only — the database contains multitudes */
+.penguinNote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  text-wrap: pretty;
+}
