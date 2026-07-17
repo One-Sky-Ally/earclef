@@ -55,8 +55,8 @@ export default function ForArtistsPage() {
             One page that gathers your whole world — music, videos,
             discography, shows, story, merch — and a membership model built
             around a different deal. Read the{' '}
-            <Link href="/manifesto">manifesto</Link> for the why; here&rsquo;s
-            the what.
+            <Link href="/manifesto">manifesto</Link>
+            {' for the why; here’s the what.'}
           </p>
 
           <section className={styles.section} aria-labelledby="deal-heading">
