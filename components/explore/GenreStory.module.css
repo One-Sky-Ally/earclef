@@ -1,0 +1,102 @@
+.card {
+  position: absolute;
+  top: 5.2rem;
+  left: 1rem;
+  z-index: 4;
+  width: min(340px, calc(100% - 2rem));
+  padding: 0.9rem 1.1rem;
+  border-radius: 14px;
+  background: rgba(22, 18, 16, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-strong);
+  max-height: min(52vh, 21rem);
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.6rem;
+  text-align: left;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  text-transform: capitalize;
+  color: var(--text);
+}
+
+.chevron {
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.story {
+  margin-top: 0.55rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+
+.artistLink {
+  color: var(--accent);
+  border-bottom: 1px dotted var(--accent-deep);
+  transition: color 0.2s ease;
+}
+
+.artistLink:hover {
+  color: var(--accent-deep);
+}
+
+.label {
+  margin-top: 0.55rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.shimmerBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.7rem;
+}
+
+.shimmer {
+  height: 0.8rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    100deg,
+    var(--bg-elevated) 35%,
+    var(--accent-soft) 50%,
+    var(--bg-elevated) 65%
+  );
+  background-size: 220% 100%;
+  animation: storyShimmer 1.8s ease-in-out infinite;
+}
+
+.shimmerShort {
+  width: 62%;
+}
+
+@keyframes storyShimmer {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    top: 4.6rem;
+    max-height: 38vh;
+  }
+}

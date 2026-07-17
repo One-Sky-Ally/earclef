@@ -18,6 +18,7 @@ import type { PlaceResult } from '@/lib/explore/panelData'
 import type { FocusRequest } from '@/components/explore/GlobeScene'
 import { YearSlider } from '@/components/explore/YearSlider'
 import { SearchBox } from '@/components/explore/SearchBox'
+import { GenreStory } from '@/components/explore/GenreStory'
 import {
   CountryPanel,
   type RosterByMbid,
@@ -136,6 +137,7 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
         onCountryClick={setSelected}
       />
       <SearchBox onResolved={onPlaceResolved} />
+      {lens && <GenreStory key={lens} genre={lens} />}
       {selected && (
         <CountryPanel
           key={`${selected.code}:${yearStart}-${yearEnd}:${lens ?? ''}`}
