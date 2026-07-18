@@ -111,15 +111,48 @@
     "enabled": true,
     "upcomingNote": "No upcoming shows announced — news lands at ratatatmusic.com.",
     "upcoming": [],
-    "past": []
+    "past": [
+      {
+        "date": "2015-04-11",
+        "venue": "Empire Polo Club",
+        "city": "Indio, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/ratatat/2015/empire-polo-club-indio-ca-3c8a987.html",
+        "note": "Coachella 2015 — 'Cream on Chrome' played hours after its release that day"
+      },
+      {
+        "date": "2016-07-04",
+        "venue": "L'Olympia Bruno Coquatrix",
+        "city": "Paris, France",
+        "setlistUrl": "https://www.setlist.fm/setlist/ratatat/2016/lolympia-bruno-coquatrix-paris-france-33ffec11.html",
+        "note": "21 songs at the storied Paris venue, encore of 'Gettysburg' and 'Shempi'"
+      },
+      {
+        "date": "2016-10-08",
+        "venue": "Urban Stage, Popload Festival",
+        "city": "São Paulo, Brazil",
+        "setlistUrl": "https://www.setlist.fm/setlist/ratatat/2016/urban-stage-sao-paulo-brazil-2bfd20ce.html",
+        "note": "Among the last documented shows before their long hiatus"
+      }
+    ]
   },
   "merch": {
     "enabled": false,
     "items": []
   },
   "press": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "title": "Ratatat: Magnifique review – cranking up the noise",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2015/jul/16/ratatat-magnifique-review"
+      },
+      {
+        "title": "First Listen: Ratatat, 'Magnifique'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2015/07/08/420581193/first-listen-ratatat-magnifique"
+      }
+    ]
   },
   "footer": {
     "tagline": "Music in balance",

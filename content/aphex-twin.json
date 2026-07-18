@@ -115,15 +115,81 @@
     "enabled": true,
     "upcomingNote": "Live dates are announced at aphextwin.warp.net.",
     "upcoming": [],
-    "past": []
+    "past": [
+      {
+        "date": "2017-06-03",
+        "venue": "Victoria Park",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/aphex-twin/2017/victoria-park-london-england-23e708b7.html",
+        "note": "Field Day 2017 — 51 tracks, his first London show in years"
+      },
+      {
+        "date": "2019-04-13",
+        "venue": "Empire Polo Club",
+        "city": "Indio, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/aphex-twin/2019/empire-polo-club-indio-ca-73933609.html",
+        "note": "Coachella 2019 — 47 tracks, opened with a Tod Dockstader cover"
+      },
+      {
+        "date": "2023-08-19",
+        "venue": "Victoria Park",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/aphex-twin/2023/victoria-park-london-england-3ba5f09c.html",
+        "note": "All Points East 2023 headline set"
+      }
+    ]
   },
   "merch": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "name": "Official Merch",
+        "description": "Apparel from aphextwin.warp.net — the official store, run with Warp.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://aphextwin.warp.net/merch"
+      },
+      {
+        "name": "Aphex Heavyweight Logo Hoodie",
+        "description": "White Aphex logo screen-printed on 400gsm organic French Terry.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://aphextwin.warp.net/release/587792-aphex-twin-aphex-heavyweight-logo-hoodie-black"
+      },
+      {
+        "name": "Aphex Logo Black T-Shirt",
+        "description": "The logo tee, from the official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://aphextwin.warp.net/release/503299-aphex-twin-aphex-logo-black-t-shirt"
+      }
+    ]
   },
   "press": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "title": "Aphex Twin: Syro — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/19755-aphex-twin-syro/"
+      },
+      {
+        "title": "Aphex Twin: Syro review – a tour through brain-bending avenues",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2014/sep/18/aphex-twin-syro-review-brain-bending-richard-d-james"
+      },
+      {
+        "title": "Aphex Twin — Syro",
+        "outlet": "Resident Advisor",
+        "url": "https://ra.co/reviews/15620"
+      }
+    ]
   },
   "footer": {
     "tagline": "Music in balance",

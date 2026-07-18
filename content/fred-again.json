@@ -115,15 +115,79 @@
     "enabled": true,
     "upcomingNote": "Tour dates are announced at fredagain.com and on his socials.",
     "upcoming": [],
-    "past": []
+    "past": [
+      {
+        "date": "2023-02-18",
+        "venue": "Madison Square Garden",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/fred-again-skrillex-and-four-tet/2023/madison-square-garden-new-york-ny-23baa4a3.html",
+        "note": "The famous three-way b2b with Skrillex & Four Tet — 72 tracks documented"
+      },
+      {
+        "date": "2023-04-23",
+        "venue": "Empire Polo Club",
+        "city": "Indio, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/fred-again-skrillex-and-four-tet/2023/empire-polo-club-indio-ca-4bb8c3aa.html",
+        "note": "Coachella 2023 weekend two, with Skrillex & Four Tet"
+      },
+      {
+        "date": "2023-06-23",
+        "venue": "Worthy Farm, Other Stage",
+        "city": "Pilton, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/fred-again/2023/worthy-farm-pilton-england-63a66e73.html",
+        "note": "Glastonbury 2023 solo set"
+      },
+      {
+        "date": "2026-02-27",
+        "venue": "Alexandra Palace",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/fred-again/2026/alexandra-palace-london-england-5b4db758.html",
+        "note": "47 documented songs, including a Thomas Bangalter b2b segment"
+      }
+    ]
   },
   "merch": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "name": "ten days — White Vinyl",
+        "description": "12\" 140g white vinyl gatefold with A2 poster, from the official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://shop.fredagain.com/collections/homepage/products/ten-days-vinyl"
+      },
+      {
+        "name": "USB002 — Double Vinyl",
+        "description": "2×12\" black vinyl in a 350gsm gatefold with reflective silkscreen, 16 tracks.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://shop.fredagain.com/collections/homepage/products/usb002-vinyl"
+      }
+    ]
   },
   "press": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "title": "How Fred Again Pulled Off His First-Ever Stadium Show",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-features/fred-again-first-ever-stadium-show-behind-the-scenes-1235046459/"
+      },
+      {
+        "title": "In-demand producer Fred again..: 'I was fortunate not to be good at anything else'",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2022/oct/17/fred-again-interview"
+      },
+      {
+        "title": "Actual Life 3 (January 1 - September 9 2022) — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/fred-again-actual-life-3-january-1-september-9-2022/"
+      }
+    ]
   },
   "footer": {
     "tagline": "Music in balance",

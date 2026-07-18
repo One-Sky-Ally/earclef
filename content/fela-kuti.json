@@ -115,15 +115,72 @@
     "enabled": true,
     "upcomingNote": "Fela Kuti died in 1997; his catalog and story are kept alive at felakuti.com.",
     "upcoming": [],
-    "past": []
+    "past": [
+      {
+        "date": "1986-11-07",
+        "venue": "Fox Theatre",
+        "city": "Detroit, MI, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/fela-kuti/1986/fox-theatre-detroit-mi-5be553c0.html",
+        "note": "1986 US tour — 'Teacher Don't Teach Me Nonsense', 'Beasts of No Nation'"
+      },
+      {
+        "date": "1992-10-31",
+        "venue": "Brixton Academy",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/fela-kuti/1992/brixton-academy-london-england-5b546b70.html",
+        "note": "Part of his final European tour — 'Water No Get Enemy', 'Lady'"
+      },
+      {
+        "date": "1997-03-07",
+        "venue": "Muson Centre",
+        "city": "Lagos, Nigeria",
+        "setlistUrl": "https://www.setlist.fm/setlist/fela-kuti/1997/muson-centre-lagos-nigeria-235460d7.html",
+        "note": "A Lagos show months before his death that August"
+      }
+    ]
   },
   "merch": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "name": "Fela Kuti Official Store",
+        "description": "Vinyl, CDs, films, and box sets from the estate's own store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://felakuti.com/store"
+      },
+      {
+        "name": "Merchandise",
+        "description": "Estate-issued apparel, including Online Ceramics and Brain Dead collaborations.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://felakuti.com/store/merchandise"
+      }
+    ]
   },
   "press": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "title": "Beyond Fela Kuti, The Enduring Appeal Of Afrobeat",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2010/06/21/127853859/beyond-fela-kuti-the-enduring-appeal-of-afrobeat"
+      },
+      {
+        "title": "Jad Abumrad analyzes Fela Kuti's career in new podcast 'Fela Kuti: Fear No Man'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2025/10/15/nx-s1-5539126/fela-kuti-podcast-fear-no-man"
+      },
+      {
+        "title": "Fela Kuti remembered: 'He was a tornado of a man, but he loved humanity'",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2010/oct/31/fela-kuti-musical-neil-spencer"
+      }
+    ]
   },
   "footer": {
     "tagline": "Music in balance",

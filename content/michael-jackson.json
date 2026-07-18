@@ -115,15 +115,67 @@
     "enabled": true,
     "upcomingNote": "Michael Jackson died in 2009; the estate's projects continue at michaeljackson.com.",
     "upcoming": [],
-    "past": []
+    "past": [
+      {
+        "date": "1988-07-16",
+        "venue": "Wembley Stadium",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/michael-jackson/1988/wembley-stadium-london-england-3bd6748c.html",
+        "note": "Bad tour night attended by Princess Diana — released as 'Live at Wembley'"
+      },
+      {
+        "date": "1992-10-01",
+        "venue": "Stadionul Național",
+        "city": "Bucharest, Romania",
+        "setlistUrl": "https://www.setlist.fm/setlist/michael-jackson/1992/stadionul-naional-bucharest-romania-33d67409.html",
+        "note": "The HBO-broadcast Dangerous tour show, later 'Live in Bucharest'"
+      },
+      {
+        "date": "1997-10-15",
+        "venue": "Kings Park Stadium",
+        "city": "Durban, South Africa",
+        "setlistUrl": "https://www.setlist.fm/setlist/michael-jackson/1997/kings-park-stadium-durban-south-africa-43d67703.html",
+        "note": "Last show of the HIStory tour — the final full concert of his career"
+      }
+    ]
   },
   "merch": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "name": "Thriller Album T-Shirt",
+        "description": "White tee with the Thriller album art, from the official US store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store-us.michaeljackson.com/products/thriller-album-t-shirt"
+      },
+      {
+        "name": "Vinyl — Collection",
+        "description": "Thriller, Bad, and Off the Wall LPs plus picture discs, from the official US store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store-us.michaeljackson.com/collections/vinyl"
+      }
+    ]
   },
   "press": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "title": "Michael Jackson 'Bad' Reissue to Feature Unreleased Wembley Show",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/michael-jackson-bad-reissue-to-feature-unreleased-wembley-show-124830/"
+      },
+      {
+        "title": "The Billboard Cover Story: The Touring Afterlife of Michael Jackson",
+        "outlet": "Billboard",
+        "url": "https://www.billboard.com/music/music-news/the-billboard-cover-story-the-touring-afterlife-of-michael-jackson-5785614/"
+      }
+    ]
   },
   "footer": {
     "tagline": "Music in balance",

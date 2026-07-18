@@ -115,15 +115,88 @@
     "enabled": true,
     "upcomingNote": "Queen + Adam Lambert have no shows currently scheduled — new dates are announced at queenonline.com.",
     "upcoming": [],
-    "past": []
+    "past": [
+      {
+        "date": "1985-07-13",
+        "venue": "Wembley Stadium",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/queen/1985/wembley-stadium-london-england-5bd47f28.html",
+        "note": "Live Aid — twenty minutes routinely ranked rock's greatest live set"
+      },
+      {
+        "date": "1985-01-18",
+        "venue": "Cidade do Rock",
+        "city": "Rio de Janeiro, Brazil",
+        "setlistUrl": "https://www.setlist.fm/setlist/queen/1985/cidade-do-rock-rio-de-janeiro-brazil-63d5969b.html",
+        "note": "Rock in Rio headline set on The Works tour"
+      },
+      {
+        "date": "1986-07-12",
+        "venue": "Wembley Stadium",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/queen/1986/wembley-stadium-london-england-7bd6aa80.html",
+        "note": "Magic Tour — released as 'Live at Wembley', 32 songs"
+      },
+      {
+        "date": "1986-08-09",
+        "venue": "Knebworth House",
+        "city": "Knebworth, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/queen/1986/knebworth-house-knebworth-england-2bd7fce2.html",
+        "note": "The final Queen concert with Freddie Mercury"
+      }
+    ]
   },
   "merch": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "name": "Queen Apparel",
+        "description": "T-shirts, hoodies, and jackets with album artwork, from the official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store.queenonline.com/collections/queen-apparel"
+      },
+      {
+        "name": "Queen Music",
+        "description": "Vinyl, CDs, boxsets, and Blu-rays from the official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store.queenonline.com/collections/queen-music"
+      },
+      {
+        "name": "A Night at the Opera — Collection",
+        "description": "Album-themed apparel and collectibles from the official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://store.queenonline.com/collections/a-night-at-the-opera-merch"
+      }
+    ]
   },
   "press": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "title": "Flashback: Queen Steal the Show at Live Aid",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/flashback-queen-steal-the-show-at-live-aid-60831/"
+      },
+      {
+        "title": "Tension, 'Tepid' Talks: Why Queen Almost Skipped Live Aid",
+        "outlet": "Billboard",
+        "url": "https://www.billboard.com/music/rock/queen-live-aid-performance-1236018863/"
+      },
+      {
+        "title": "Freddie Mercury Honored With Royal Coin Celebrating 40 Years of Live Aid Concert",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/freddie-mercury-commemorative-royal-coin-1235466989/"
+      }
+    ]
   },
   "footer": {
     "tagline": "Music in balance",

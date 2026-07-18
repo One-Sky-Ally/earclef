@@ -102,12 +102,51 @@
     "past": []
   },
   "merch": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "name": "Burial at Hyperdub — Records & Apparel",
+        "description": "The full Burial collection sold direct by Hyperdub, his label and only official outlet.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://hyperdub.net/en-us/collections/burial"
+      },
+      {
+        "name": "Untrue — 20th Anniversary Edition",
+        "description": "2×LP crystal-clear vinyl with artwork returned to Burial's original hand-drawn image.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://hyperdub.net/en-us/products/burial-untrue"
+      },
+      {
+        "name": "Untrue Tee",
+        "description": "Official album-art T-shirt, sold direct from Hyperdub.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://hyperdub.net/en-us/products/burial-untrue-tee"
+      }
+    ]
   },
   "press": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "title": "Why Burial's Untrue Is the Most Important Electronic Album of the Century So Far",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/features/article/why-burials-untrue-is-the-most-important-electronic-album-of-the-century-so-far/"
+      },
+      {
+        "title": "'Only five people know I make tunes'",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2007/oct/26/urban"
+      }
+    ]
   },
   "footer": {
     "tagline": "Music in balance",

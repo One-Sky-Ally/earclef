@@ -115,15 +115,67 @@
     "enabled": true,
     "upcomingNote": "Bob Marley died in 1981; his music and legacy are kept at bobmarley.com.",
     "upcoming": [],
-    "past": []
+    "past": [
+      {
+        "date": "1977-06-04",
+        "venue": "Rainbow Theatre",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/bob-marley-and-the-wailers/1977/rainbow-theatre-london-england-7bdc020c.html",
+        "note": "Final night of the Exodus-tour Rainbow run — source of 'Live at the Rainbow'"
+      },
+      {
+        "date": "1978-04-22",
+        "venue": "National Heroes Park",
+        "city": "Kingston, Jamaica",
+        "setlistUrl": "https://www.setlist.fm/setlist/bob-marley-and-the-wailers/1978/national-heroes-park-kingston-jamaica-33dc7c65.html",
+        "note": "The One Love Peace Concert"
+      },
+      {
+        "date": "1980-09-23",
+        "venue": "Stanley Theatre",
+        "city": "Pittsburgh, PA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/bob-marley-and-the-wailers/1980/stanley-theatre-pittsburgh-pa-23dce023.html",
+        "note": "His final show — 'Redemption Song', 'Get Up Stand Up'"
+      }
+    ]
   },
   "merch": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "name": "Live Forever: The Stanley Theatre — 2CD/3LP",
+        "description": "The official release of his final concert, from the official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://shop.bobmarley.com/products/live-forever-the-stanley-theatre-pittsburgh-pa-september-23-1980-2cd-3lp"
+      },
+      {
+        "name": "Legend — Collection",
+        "description": "Picture disc, 30th-anniversary 2LP, and apparel from the official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://shop.bobmarley.com/collections/legend"
+      }
+    ]
   },
   "press": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "title": "Live Forever: The Stanley Theatre, Pittsburgh, PA, September 23, 1980 — Review",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/live-forever-the-stanley-theatre-pittsburgh-pa-september-23-1980-86014/"
+      },
+      {
+        "title": "'Everything Was Working Fine, Up to a Point': Inside Bob Marley's Last Tour",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/inside-bob-marleys-last-tour-1235450397/"
+      }
+    ]
   },
   "footer": {
     "tagline": "Music in balance",

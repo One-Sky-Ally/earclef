@@ -115,15 +115,88 @@
     "enabled": true,
     "upcomingNote": "Pink Floyd ended as an active band in 2014; archival releases continue at pinkfloyd.com.",
     "upcoming": [],
-    "past": []
+    "past": [
+      {
+        "date": "1980-08-04",
+        "venue": "Earls Court",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/pink-floyd/1980/earls-court-london-england-73d76ea9.html",
+        "note": "Opening night of The Wall performed in full at Earls Court"
+      },
+      {
+        "date": "1981-06-17",
+        "venue": "Earls Court",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/pink-floyd/1981/earls-court-london-england-1bd61544.html",
+        "note": "Roger Waters' last performance as a member — until Live 8"
+      },
+      {
+        "date": "1994-10-29",
+        "venue": "Earls Court",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/pink-floyd/1994/earls-court-london-england-53d76799.html",
+        "note": "Final night of the Division Bell tour — their last full concert, with Dark Side complete"
+      },
+      {
+        "date": "2005-07-02",
+        "venue": "Hyde Park",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/pink-floyd/2005/hyde-park-london-england-53d62bd9.html",
+        "note": "Live 8 — the reunion with Roger Waters, their first show together since 1981"
+      }
+    ]
   },
   "merch": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "name": "The Dark Side of the Moon — Collection",
+        "description": "50th-anniversary remaster LP, apparel, and accessories from the official store.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://shop.pinkfloyd.com/collections/the-dark-side-of-the-moon"
+      },
+      {
+        "name": "Vinyl",
+        "description": "The catalog on vinyl, including the Wish You Were Here 50th-anniversary 3LP set.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://shop.pinkfloyd.com/collections/vinyl"
+      },
+      {
+        "name": "Wish You Were Here 50 — Collection",
+        "description": "The 50th-anniversary collection: vinyl, CD, Blu-ray, and apparel.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://shop.pinkfloyd.com/collections/wish-you-were-here-50"
+      }
+    ]
   },
   "press": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "title": "Pink Floyd Announce Massive 'Dark Side of the Moon' 50th Anniversary Box Set",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/pink-floyd-dark-side-of-the-moon-50th-anniversary-box-set-1234663778/"
+      },
+      {
+        "title": "Psychologist Daniel Levitin dissects Pink Floyd's 'Dark Side of the Moon'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/transcripts/1159798950"
+      },
+      {
+        "title": "New Pink Floyd Box Set Finally Reveals Which One's 'Pink'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/pink-floyd-wish-you-were-here-50th-anniversary-box-review-1235482511/"
+      }
+    ]
   },
   "footer": {
     "tagline": "Music in balance",

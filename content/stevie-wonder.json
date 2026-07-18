@@ -111,15 +111,48 @@
     "enabled": true,
     "upcomingNote": "No upcoming shows listed here — announcements land at steviewonder.net.",
     "upcoming": [],
-    "past": []
+    "past": [
+      {
+        "date": "2010-06-27",
+        "venue": "Worthy Farm, Pyramid Stage",
+        "city": "Pilton, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/stevie-wonder/2010/worthy-farm-pilton-england-2bd408be.html",
+        "note": "Closing headline set of Glastonbury's 40th anniversary"
+      },
+      {
+        "date": "2014-11-06",
+        "venue": "Madison Square Garden",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/stevie-wonder/2014/madison-square-garden-new-york-ny-6bcc0ae2.html",
+        "note": "Songs in the Key of Life performed in full — tour opener"
+      },
+      {
+        "date": "2025-07-12",
+        "venue": "Hyde Park",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/stevie-wonder/2025/hyde-park-london-england-b58e156.html",
+        "note": "BST Hyde Park headline set — 'Superstition', 'Sir Duke', 'I Wish'"
+      }
+    ]
   },
   "merch": {
     "enabled": false,
     "items": []
   },
   "press": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "title": "Stevie Wonder Opens 'Songs in the Key of Life' Tour With Emotional MSG Show",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-live-reviews/stevie-wonder-opens-songs-in-the-key-of-life-tour-with-emotional-msg-show-180684/"
+      },
+      {
+        "title": "Stevie Wonder to Headline London's 2025 BST Hyde Park Series",
+        "outlet": "Billboard",
+        "url": "https://www.billboard.com/music/rb-hip-hop/stevie-wonder-headline-london-2025-bst-hyde-park-series-1235923346/"
+      }
+    ]
   },
   "footer": {
     "tagline": "Music in balance",

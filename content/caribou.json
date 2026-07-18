@@ -115,15 +115,79 @@
     "enabled": true,
     "upcomingNote": "Tour dates are announced at caribou.fm.",
     "upcoming": [],
-    "past": []
+    "past": [
+      {
+        "date": "2011-07-24",
+        "venue": "Alexandra Palace",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/caribou/2011/alexandra-palace-london-england-43f553eb.html",
+        "note": "ATP's 'I'll Be Your Mirror' 2011"
+      },
+      {
+        "date": "2025-12-13",
+        "venue": "Depot Mayfield",
+        "city": "Manchester, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/caribou/2025/depot-mayfield-manchester-england-4b4db3ea.html",
+        "note": "70-minute Repercussion set — 'Sun', 'Never Come Back', 'Can't Do Without You'"
+      },
+      {
+        "date": "2026-01-31",
+        "venue": "East End Studios",
+        "city": "Queens, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/caribou/2026/east-end-studios-queens-ny-5b4b9f98.html",
+        "note": "Same-night bill with Fred again.. and Ben UFO"
+      },
+      {
+        "date": "2026-07-17",
+        "venue": "SWG3 Galvanizers Yard",
+        "city": "Glasgow, Scotland",
+        "setlistUrl": "https://www.setlist.fm/setlist/caribou/2026/swg3-galvanizers-yard-glasgow-scotland-7b4982a8.html",
+        "note": "80-minute headline set"
+      }
+    ]
   },
   "merch": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "name": "Honey — Collection",
+        "description": "Vinyl, CD, and the Caribou mask from the official store on caribou.fm.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://us.caribou.fm/collections/honey"
+      },
+      {
+        "name": "Honey — LP",
+        "description": "Black vinyl in a spot-gloss jacket with full-color inner sleeve.",
+        "image": {
+          "src": "/images/merch-placeholder.svg",
+          "alt": "Placeholder card image"
+        },
+        "url": "https://us.caribou.fm/products/honey-copy"
+      }
+    ]
   },
   "press": {
-    "enabled": false,
-    "items": []
+    "enabled": true,
+    "items": [
+      {
+        "title": "Caribou: Our Love — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/19762-caribou-our-love/"
+      },
+      {
+        "title": "Caribou – Our Love review: spellbindingly ambiguous, endlessly fascinating electronica",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2014/oct/02/caribou-our-love-review"
+      },
+      {
+        "title": "Caribou: Honey — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/caribou-honey/"
+      }
+    ]
   },
   "footer": {
     "tagline": "Music in balance",
