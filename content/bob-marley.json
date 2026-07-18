@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "slug": "bob-marley",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Bob Marley — Ear Clef",
+    "description": "From Nine Mile to the whole world — the reggae voice that carried Jamaica's rhythm and a message of resistance everywhere music travels.",
+    "ogImage": "/images/og-bob-marley.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/bob-marley"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCAlTDckOOQ2jREOvuCShGbw"
+    },
+    "setlistfm": {
+      "mbid": "ed2ac1e9-d51d-4eff-a2c2-85e81abd6360"
+    },
+    "itunes": {
+      "artistId": "121982"
+    }
+  },
+  "hero": {
+    "name": "Bob Marley",
+    "identity": "One small island's rhythm, carried to every corner of the earth on a voice that never stopped believing.",
+    "tagline": "Hear here!",
+    "location": "Nine Mile, Jamaica",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.bobmarley.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/bobmarley"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/bobmarley"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/BobMarley"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@BobMarley"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/bob-marley/121982"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Exodus",
+        "year": "1977",
+        "mbReleaseGroupId": "c5650313-60f3-34d3-92e4-300545133792"
+      },
+      {
+        "title": "Uprising",
+        "year": "1980",
+        "mbReleaseGroupId": "6dd29c00-7539-319d-98e0-b2f07e861497"
+      },
+      {
+        "title": "Legend: The Best of Bob Marley and The Wailers",
+        "year": "1984",
+        "mbReleaseGroupId": "1a4c52cd-483a-347c-93f9-4d512767c7ba"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "69RdQFDuYPI",
+        "title": "Is This Love"
+      },
+      {
+        "youtubeId": "1ti2YCFgCoI",
+        "title": "Could You Be Loved"
+      },
+      {
+        "youtubeId": "HNBCVM4KbUM",
+        "title": "Three Little Birds"
+      },
+      {
+        "youtubeId": "uMUQMSXLlHM",
+        "title": "Buffalo Soldier"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Robert Nesta Marley was born on 6 February 1945 in Nine Mile, a village in the Jamaican hills. His career began in 1963 in Kingston, where he formed the group that became The Wailers with Peter Tosh and Bunny Wailer — three voices that would carry ska and rocksteady into something slower, heavier, and entirely Jamaica's own.",
+      "The international breakthrough came with Island Records: Catch a Fire and Burnin', both released in 1973, introduced reggae to rock audiences on reggae's own terms. In December 1976, gunmen stormed his home in a politically motivated assassination attempt days before a peace concert; he played the show anyway, then left for London — where he recorded Exodus (1977), the album that made him a global figure, with 'Jamming', 'One Love', and the title track.",
+      "Diagnosed with acral lentiginous melanoma in 1977, he kept working — Survival, Uprising, and relentless touring — until the illness overtook him. He died on 11 May 1981, aged 36.",
+      "Three years later, the compilation Legend gathered the hits and became one of the best-selling albums in history — the door through which most of the world still first meets him. What's behind that door is deeper: a catalog of protest, faith, and groove that made one small island's music a permanent part of the world's."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Bob Marley died in 1981; his music and legacy are kept at bobmarley.com.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

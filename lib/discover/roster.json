@@ -1,5 +1,13 @@
 [
   {
+    "slug": "aphex-twin",
+    "name": "Aphex Twin",
+    "identity": "Machines taught to giggle, ambient music with teeth — electronic music's great grinning trickster.",
+    "tier": "in-the-mix",
+    "mbid": "f22942a1-6f70-4f48-866e-238cb2308fbd",
+    "membership": false
+  },
+  {
     "slug": "aplete",
     "name": "Aplete",
     "identity": "A creative universe from Las Vegas — songs, art and ideas from multi-instrumentalist Stefano Kajatt.",
@@ -40,11 +48,35 @@
     "membership": false
   },
   {
+    "slug": "bob-marley",
+    "name": "Bob Marley",
+    "identity": "One small island's rhythm, carried to every corner of the earth on a voice that never stopped believing.",
+    "tier": "in-the-mix",
+    "mbid": "ed2ac1e9-d51d-4eff-a2c2-85e81abd6360",
+    "membership": false
+  },
+  {
     "slug": "bonobo",
     "name": "Bonobo",
     "identity": "Simon Green, the Brighton-born producer who turned downtempo electronica into a full live orchestra of sound.",
     "tier": "heavy-rotation",
     "mbid": "9a709693-b4f8-4da9-8cc1-038c911a61be",
+    "membership": false
+  },
+  {
+    "slug": "burial",
+    "name": "Burial",
+    "identity": "Rain on a night-bus window, a voice you half-remember — dance music for the hours after the dance.",
+    "tier": "in-the-mix",
+    "mbid": "9ddce51c-2b75-4b3e-ac8c-1db09e7c89c6",
+    "membership": false
+  },
+  {
+    "slug": "caribou",
+    "name": "Caribou",
+    "identity": "Songs built like proofs and sung like confessions — electronic music with a heartbeat.",
+    "tier": "in-the-mix",
+    "mbid": "735e3514-a8ae-401f-af3b-6300df1b8d2c",
     "membership": false
   },
   {
@@ -64,11 +96,27 @@
     "membership": false
   },
   {
+    "slug": "fela-kuti",
+    "name": "Fela Kuti",
+    "identity": "Ten-minute grooves as political weapons — the bandleader who made Lagos the loudest capital of courage.",
+    "tier": "in-the-mix",
+    "mbid": "6514cffa-fbe0-4965-ad88-e998ead8a82a",
+    "membership": false
+  },
+  {
     "slug": "florence-and-the-machine",
     "name": "Florence + the Machine",
     "identity": "Cathedral-sized art rock built on Florence Welch's hurricane of a voice.",
     "tier": "in-the-mix",
     "mbid": "5fee3020-513b-48c2-b1f7-4681b01db0c6",
+    "membership": false
+  },
+  {
+    "slug": "fred-again",
+    "name": "Fred again..",
+    "identity": "Diary entries built from voice notes and friends' voices, played back to the biggest rooms in dance music.",
+    "tier": "in-the-mix",
+    "mbid": "bca46a0c-25c9-42ca-98c2-e64c8a5e337e",
     "membership": false
   },
   {
@@ -136,6 +184,14 @@
     "membership": false
   },
   {
+    "slug": "michael-jackson",
+    "name": "Michael Jackson",
+    "identity": "Rhythm turned into spectacle — the performer who made the whole planet watch a song.",
+    "tier": "in-the-mix",
+    "mbid": "f27ec8db-af05-4f36-916e-3d57f91ecf5e",
+    "membership": false
+  },
+  {
     "slug": "modest-mouse",
     "name": "Modest Mouse",
     "identity": "Jagged, restless Pacific Northwest indie rock asking big questions in a cracked voice.",
@@ -160,6 +216,22 @@
     "membership": false
   },
   {
+    "slug": "pink-floyd",
+    "name": "Pink Floyd",
+    "identity": "Albums built like cathedrals — enter anywhere, look up, stay a while.",
+    "tier": "in-the-mix",
+    "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+    "membership": false
+  },
+  {
+    "slug": "queen",
+    "name": "Queen",
+    "identity": "Opera in a rock band's hands — four songwriters and a frontman the stage still misses.",
+    "tier": "in-the-mix",
+    "mbid": "0383dadf-2a4e-4d10-a46a-e9e041da8eb3",
+    "membership": false
+  },
+  {
     "slug": "radiohead",
     "name": "Radiohead",
     "identity": "Five musicians from Oxfordshire who keep reinventing what a rock band can be.",
@@ -168,11 +240,27 @@
     "membership": false
   },
   {
+    "slug": "ratatat",
+    "name": "Ratatat",
+    "identity": "Guitars harmonized like synthesizers, synthesizers strutting like guitars — instrumental rock with no singer and no gaps.",
+    "tier": "in-the-mix",
+    "mbid": "f467181e-d5e0-4285-b47e-e853dcc89ee7",
+    "membership": false
+  },
+  {
     "slug": "sigur-ros",
     "name": "Sigur Rós",
     "identity": "Icelandic post-rock voyagers who turn glacial landscape into sound.",
     "tier": "heavy-rotation",
     "mbid": "f6f2326f-6b25-4170-b89d-e235b25508e8",
+    "membership": false
+  },
+  {
+    "slug": "stevie-wonder",
+    "name": "Stevie Wonder",
+    "identity": "Joy as a musical instrument — played by a man who heard more in the dark than most ever see.",
+    "tier": "in-the-mix",
+    "mbid": "1ee18fb3-18a6-4c7f-8ba0-bc41cdd0462e",
     "membership": false
   },
   {

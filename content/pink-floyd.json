@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "slug": "pink-floyd",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Pink Floyd — Ear Clef",
+    "description": "The Dark Side of the Moon, Wish You Were Here, The Wall — London's architects of the album as a single, immersive thought.",
+    "ogImage": "/images/og-pink-floyd.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/pink-floyd"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCY2qt3dw2TQJxvBrDiYGHdQ"
+    },
+    "setlistfm": {
+      "mbid": "83d91898-7763-47d7-b03b-b92132375c47"
+    },
+    "itunes": {
+      "artistId": "487143"
+    }
+  },
+  "hero": {
+    "name": "Pink Floyd",
+    "identity": "Albums built like cathedrals — enter anywhere, look up, stay a while.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.pinkfloyd.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/pinkfloyd/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/PinkFloyd"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/pinkfloyd"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@pinkfloyd"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/pink-floyd/487143"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "The Dark Side of the Moon",
+        "year": "1973",
+        "mbReleaseGroupId": "f5093c06-23e3-404f-aeaa-40f72885ee3a"
+      },
+      {
+        "title": "Wish You Were Here",
+        "year": "1975",
+        "mbReleaseGroupId": "1a272023-10d3-38ee-bab3-317b55fcc21d"
+      },
+      {
+        "title": "The Wall",
+        "year": "1979",
+        "mbReleaseGroupId": "f2026101-945b-3d05-9ef4-aa718fc3feef"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "HrxX9TBj2zY",
+        "title": "Another Brick in the Wall, Part Two"
+      },
+      {
+        "youtubeId": "K6qj09OHvjw",
+        "title": "Wish You Were Here"
+      },
+      {
+        "youtubeId": "7jMlFXouPk8",
+        "title": "High Hopes"
+      },
+      {
+        "youtubeId": "nVhNCTH8pDs",
+        "title": "Learning To Fly"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Pink Floyd formed in London in 1965 around Syd Barrett's playful, English psychedelia, with Nick Mason, Roger Waters, and Richard Wright; David Gilmour joined at the end of 1967. Within months Barrett — the band's first songwriter and singer — left as his mental health deteriorated, and the remaining four spent years finding a new shape in long-form, texture-first music.",
+      "They found it completely with The Dark Side of the Moon (1973): a single continuous meditation on time, money, and madness that stayed on the American charts for most of two decades. Wish You Were Here (1975) mourned Barrett in absentia; Animals (1977) snarled; and The Wall (1979) built Roger Waters' alienation into a double album, a film, and one of rock's most staged spectacles.",
+      "The classic lineup frayed — Wright left in 1981, Waters in 1985 — but Gilmour and Mason carried the name through A Momentary Lapse of Reason and The Division Bell, and all four reunited for one final performance at Live 8 in 2005. Barrett died in 2006; Wright in 2008.",
+      "The Endless River (2014), assembled from Division Bell-era sessions as a farewell to Wright, closed the book. What remains open is the catalog: records designed to be heard whole, in the dark, from the first heartbeat to the last."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Pink Floyd ended as an active band in 2014; archival releases continue at pinkfloyd.com.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

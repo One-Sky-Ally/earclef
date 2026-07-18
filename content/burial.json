@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "slug": "burial",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Burial — Ear Clef",
+    "description": "South London night-bus music — crackle, rain, and pitched-up voices from the producer who made Untrue and never showed his face on stage.",
+    "ogImage": "/images/og-burial.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/burial"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCNvfjGiZOuh78KYMojvugeQ"
+    },
+    "setlistfm": {
+      "mbid": "9ddce51c-2b75-4b3e-ac8c-1db09e7c89c6"
+    },
+    "itunes": {
+      "artistId": "468355684"
+    }
+  },
+  "hero": {
+    "name": "Burial",
+    "identity": "Rain on a night-bus window, a voice you half-remember — dance music for the hours after the dance.",
+    "tagline": "Hear here!",
+    "location": "South London, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@hyperdubrecords"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/burial/468355684"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Burial",
+        "year": "2006",
+        "mbReleaseGroupId": "2c28f0ee-bab8-30e1-94bb-399e1916d039"
+      },
+      {
+        "title": "Untrue",
+        "year": "2007",
+        "mbReleaseGroupId": "fddedc4f-7a2e-3d7d-9ec5-1705c416f3f4"
+      },
+      {
+        "title": "Tunes 2011 to 2019",
+        "year": "2019",
+        "mbReleaseGroupId": "a09aabc8-8111-4c56-84d4-5c7ab4a3955d"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "8k_f2QK77ew",
+        "title": "Archangel"
+      },
+      {
+        "youtubeId": "vGEy1nBUBuE",
+        "title": "Chemz"
+      },
+      {
+        "youtubeId": "TK7aQmdqCj8",
+        "title": "Near Dark"
+      },
+      {
+        "youtubeId": "9rsJAJ_ya-U",
+        "title": "Dreamfear"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Burial is William Emmanuel Bevan, born in 1979 and raised in South London. His first record, the South London Boroughs EP, arrived on Kode9's Hyperdub label in 2005 — garage and 2-step rhythms submerged in vinyl crackle, rain, and city ambience, sounding less like club music than like its memory.",
+      "The self-titled debut album followed in May 2006 and was named album of the year by The Wire. Untrue, released in November 2007, went further: pitched and stretched vocal fragments turned into ghost melodies over off-grid beats. It was nominated for the 2008 Mercury Prize and is now routinely counted among the landmark electronic albums of its era.",
+      "For years nobody knew who he was. Bevan recorded anonymously until early 2008, when — with tabloids hunting the name — Hyperdub confirmed his identity that August. He has kept the same distance ever since: no live shows, next to no interviews, music appearing unannounced through the label.",
+      "The work since Untrue has come as a steady drip of EPs and singles rather than albums — collaborations with Four Tet and, in 2020, with Thom Yorke; the Rival Dealer EP (2013); the Tunes 2011–2019 collection; Antidawn (2022); and, in 2024, film scores for Bird and Baby Invasion."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Burial doesn't perform live — new music simply appears, usually through Hyperdub.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

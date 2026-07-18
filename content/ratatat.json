@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "slug": "ratatat",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Ratatat — Ear Clef",
+    "description": "Two Brooklyn instrumentalists, harmonized guitars, and beats that ended up everywhere — the duo behind Classics, LP3, and Magnifique.",
+    "ogImage": "/images/og-ratatat.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/ratatat"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCTcraSQKl7F8GFiLydv6eDg"
+    },
+    "setlistfm": {
+      "mbid": "f467181e-d5e0-4285-b47e-e853dcc89ee7"
+    },
+    "itunes": {
+      "artistId": "7057812"
+    }
+  },
+  "hero": {
+    "name": "Ratatat",
+    "identity": "Guitars harmonized like synthesizers, synthesizers strutting like guitars — instrumental rock with no singer and no gaps.",
+    "tagline": "Hear here!",
+    "location": "Brooklyn, New York, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.ratatatmusic.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/ratatatmusic"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/RATATAT"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@ratatatmusic"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/ratatat/7057812"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Classics",
+        "year": "2006",
+        "mbReleaseGroupId": "986def88-cf90-3c76-a46c-fdf026b2ded1"
+      },
+      {
+        "title": "LP3",
+        "year": "2008",
+        "mbReleaseGroupId": "4e2182a5-2a11-38d7-9529-a6d718cf8d86"
+      },
+      {
+        "title": "Magnifique",
+        "year": "2015",
+        "mbReleaseGroupId": "a388e804-eb23-40c8-ba19-3adb1fa3f81b"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "xlcywgEMuGI",
+        "title": "Cream on Chrome"
+      },
+      {
+        "youtubeId": "kLUthOxfpMo",
+        "title": "Shempi"
+      },
+      {
+        "youtubeId": "Fk8qcGOtBFw",
+        "title": "Mirando"
+      },
+      {
+        "youtubeId": "f7wkRET0hbo",
+        "title": "Abrasive"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Ratatat is Mike Stroud and Evan Mast, who met at Skidmore College and formed the duo in Brooklyn in 2001. The blueprint was set early: layered electric guitars harmonized into fanfares, chewy synth bass, drum-machine strut, and no vocals anywhere — first heard on the 2003 single 'Seventeen Years' and the self-titled debut album, released on XL Recordings in April 2004.",
+      "Classics (2006) sharpened the formula — 'Wildcat' with its sampled snarl, and 'Loud Pipes', which went on to be certified Gold. That October they became the first band to perform publicly inside the Guggenheim Museum in New York, an oddly fitting venue for music that treats riffs like architecture.",
+      "LP3 (2008) and LP4 (2010) — recorded in the same sessions — folded in harpsichords, strings, and stranger percussion. Their reach spread well past their own records: Kid Cudi's 'Pursuit of Happiness', built with Ratatat and MGMT, went Diamond in the United States, and their instrumentals became a quiet backbone of hip-hop remixes, film cues, and sports montages.",
+      "After a five-year gap, Magnifique (2015) arrived with 'Cream on Chrome' and a run of festival headline sets. The duo has stayed characteristically quiet since — no singer to interview, just the records."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming shows announced — news lands at ratatatmusic.com.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

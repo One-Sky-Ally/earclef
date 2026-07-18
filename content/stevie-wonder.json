@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "slug": "stevie-wonder",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Stevie Wonder — Ear Clef",
+    "description": "Child prodigy, one-man band, and author of the greatest five-album run in popular music — Motown's brightest light.",
+    "ogImage": "/images/og-stevie-wonder.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/stevie-wonder"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCGD7CfG3JgZF52QpIRivV1Q"
+    },
+    "setlistfm": {
+      "mbid": "1ee18fb3-18a6-4c7f-8ba0-bc41cdd0462e"
+    },
+    "itunes": {
+      "artistId": "46726"
+    }
+  },
+  "hero": {
+    "name": "Stevie Wonder",
+    "identity": "Joy as a musical instrument — played by a man who heard more in the dark than most ever see.",
+    "tagline": "Hear here!",
+    "location": "Saginaw, Michigan, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.steviewonder.net/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/StevieWonder"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/StevieWonder"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@steviewonder"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/stevie-wonder/46726"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Talking Book",
+        "year": "1972",
+        "mbReleaseGroupId": "58c6d809-bfa7-3b25-acf3-a99d53402b08"
+      },
+      {
+        "title": "Innervisions",
+        "year": "1973",
+        "mbReleaseGroupId": "e626b377-74c5-3b97-8f16-8cef5e1c04ea"
+      },
+      {
+        "title": "Songs in the Key of Life",
+        "year": "1976",
+        "mbReleaseGroupId": "ea88b09b-fd34-33cf-a3e5-25a3a2fb4c6f"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "pUj9frKY46E",
+        "title": "Signed, Sealed, Delivered I'm Yours"
+      },
+      {
+        "youtubeId": "oktYKjgPrzs",
+        "title": "For Once In My Life"
+      },
+      {
+        "youtubeId": "9DYCYeHqM8s",
+        "title": "My Cherie Amour (Live)"
+      },
+      {
+        "youtubeId": "hNMMN46uFCc",
+        "title": "Faith feat. Ariana Grande"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Stevland Hardaway Morris was born on 13 May 1950 in Saginaw, Michigan, and has been blind since shortly after birth. Motown signed him to its Tamla label at eleven as 'Little Stevie Wonder,' and at thirteen his live recording 'Fingertips' hit number one on the Billboard Hot 100 — making him the youngest solo artist ever to top that chart.",
+      "The astonishing part came after the child stardom. Winning creative control of his own records in the early seventies, he embarked on what fans simply call the classic period: Music of My Mind and Talking Book (1972), Innervisions (1973), Fulfillingness' First Finale (1974), and Songs in the Key of Life (1976) — five albums in five years on which he wrote, produced, and played most of the instruments himself, folding synthesizers into soul music and social conscience into hit singles.",
+      "The recognition matched the run. He became the first Black musician to win the Grammy for Album of the Year, and remains the only artist to win it with three consecutive album releases.",
+      "His influence runs well past music: in 1980 he led the campaign to make Martin Luther King Jr.'s birthday a national holiday in the United States. The songs, meanwhile — 'Superstition', 'Sir Duke', 'Isn't She Lovely', 'As' — have simply become part of the air."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No upcoming shows listed here — announcements land at steviewonder.net.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "slug": "michael-jackson",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Michael Jackson — Ear Clef",
+    "description": "Off the Wall, Thriller, Bad — the Gary, Indiana child star who rewired pop music, music video, and the modern idea of stardom itself.",
+    "ogImage": "/images/og-michael-jackson.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/michael-jackson"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UC5OrDvL9DscpcAstz7JnQGA"
+    },
+    "setlistfm": {
+      "mbid": "f27ec8db-af05-4f36-916e-3d57f91ecf5e"
+    },
+    "itunes": {
+      "artistId": "32940"
+    }
+  },
+  "hero": {
+    "name": "Michael Jackson",
+    "identity": "Rhythm turned into spectacle — the performer who made the whole planet watch a song.",
+    "tagline": "Hear here!",
+    "location": "Gary, Indiana, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.michaeljackson.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/michaeljackson/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/michaeljackson"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/michaeljackson"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@michaeljackson"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/michael-jackson/32940"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Off the Wall",
+        "year": "1979",
+        "mbReleaseGroupId": "ee749c63-5699-38e0-b565-7e84414648d9"
+      },
+      {
+        "title": "Thriller",
+        "year": "1982",
+        "mbReleaseGroupId": "f32fab67-77dd-3937-addc-9062e28e4c37"
+      },
+      {
+        "title": "Bad",
+        "year": "1987",
+        "mbReleaseGroupId": "a5711a77-42d1-3f4c-830c-e27a96f0800f"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "sOnqjkJTMaA",
+        "title": "Thriller"
+      },
+      {
+        "youtubeId": "Zi_XLOBDo_Y",
+        "title": "Billie Jean"
+      },
+      {
+        "youtubeId": "oRdxUFDoQe0",
+        "title": "Beat It"
+      },
+      {
+        "youtubeId": "h_D3VFfhvs4",
+        "title": "Smooth Criminal"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Michael Joseph Jackson was born on 29 August 1958 in Gary, Indiana, the eighth of ten children, and made his public debut at six as the lead voice of the Jackson 5 — a child singer with an adult's instincts for melody and movement.",
+      "Solo adulthood arrived with Off the Wall (1979), his first collaboration with producer Quincy Jones: disco engineering with a jazz brain, and still one of the most joyful records pop has produced. Then came Thriller (1982) — the best-selling album in history — whose short films for 'Billie Jean', 'Beat It', and the title track effectively invented the music video as an event, and whose Motown 25 moonwalk became one of television's most replayed moments.",
+      "Bad (1987) answered the impossible follow-up question by becoming the first album ever to send five singles to number one on the Billboard Hot 100. Across his career he collected 13 Grammy Awards, 13 number-one singles, two inductions into the Rock and Roll Hall of Fame, and worldwide sales estimated beyond 500 million records.",
+      "Jackson died on 25 June 2009, aged 50, while preparing the This Is It concert residency. The catalog he left — from 'I Want You Back' to 'Man in the Mirror' — remains the common ground of global pop: whatever else changed, the records still move every room they're played in."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Michael Jackson died in 2009; the estate's projects continue at michaeljackson.com.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

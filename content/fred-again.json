@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "slug": "fred-again",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Fred again.. — Ear Clef",
+    "description": "Voice notes, friends' names, and dance floors — the London producer who turned everyday audio into stadium-sized electronic music.",
+    "ogImage": "/images/og-fred-again.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/fred-again"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCXF6DMVLIVRr2OQAqyfEGeg"
+    },
+    "setlistfm": {
+      "mbid": "bca46a0c-25c9-42ca-98c2-e64c8a5e337e"
+    },
+    "itunes": {
+      "artistId": "1455262408"
+    }
+  },
+  "hero": {
+    "name": "Fred again..",
+    "identity": "Diary entries built from voice notes and friends' voices, played back to the biggest rooms in dance music.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.fredagain.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/fredagainagainagainagainagain/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/fredagainagain1"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/fredagainagain"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@Fredagainagain"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/fred-again/1455262408"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Actual Life (April 14 – December 17 2020)",
+        "year": "2021",
+        "mbReleaseGroupId": "f55cf7f5-d4b9-4621-a797-52ad168a9252"
+      },
+      {
+        "title": "Actual Life 3 (January 1 – September 9 2022)",
+        "year": "2022",
+        "mbReleaseGroupId": "fd4a7d8c-1bf1-4906-a46c-1ef2e64b6eaf"
+      },
+      {
+        "title": "ten days",
+        "year": "2024",
+        "mbReleaseGroupId": "48282ba2-a382-45ff-81bf-670565dd65de"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "yMJswjcD8Fg",
+        "title": "Marea (We've Lost Dancing) feat. The Blessed Madonna"
+      },
+      {
+        "youtubeId": "Cl6Rz1Uvi2M",
+        "title": "Delilah (pull me out of this)"
+      },
+      {
+        "youtubeId": "Q22MCFC0CP0",
+        "title": "Turn On The Lights again.. — with Swedish House Mafia feat. Future"
+      },
+      {
+        "youtubeId": "peIBCNTY8hA",
+        "title": "adore u — with Obongjayar"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Frederick John Philip Gibson was born in 1993 and grew up in Balham, South London. At sixteen he was invited into an a cappella group run by Brian Eno, an apprenticeship that led to collaborating on two albums with Eno and Karl Hyde in 2014 — and to a decade of quiet ubiquity as a producer and songwriter for other people.",
+      "That behind-the-scenes run included George Ezra's UK number one 'Shotgun' and the bulk of Ed Sheeran's No.6 Collaborations Project, and in 2020 it made him the youngest-ever winner of the BRIT Award for Producer of the Year. Then he stepped out from behind the desk: the Actual Life albums (2021–2022) stitched voice notes, FaceTime clips, and friends' names into diaristic dance music, each track titled after the person sampled inside it.",
+      "The ascent that followed was steep even by dance-music standards. A July 2022 Boiler Room set in London became one of the series' most-watched broadcasts; February 2023 brought a sold-out Madison Square Garden; that April he closed Coachella alongside Skrillex and Four Tet. At the 2024 Grammys, Actual Life 3 won Best Dance/Electronic Album and 'Rumble' — with Skrillex and Flowdan — took Best Dance/Electronic Recording.",
+      "The 2024 album ten days carried the diary format forward: ten songs, ten days, the same insistence that the most ordinary recorded moments — a friend's voicemail, a kitchen conversation — can hold up a room of thousands."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at fredagain.com and on his socials.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

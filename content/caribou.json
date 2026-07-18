@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "slug": "caribou",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Caribou — Ear Clef",
+    "description": "Dan Snaith's warm-blooded electronic music — a mathematician's ear for pattern, a pop heart, and two decades of gently mutating albums.",
+    "ogImage": "/images/og-caribou.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/caribou"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCBvCrmhpqZpDdyy4f4uwVXA"
+    },
+    "setlistfm": {
+      "mbid": "735e3514-a8ae-401f-af3b-6300df1b8d2c"
+    },
+    "itunes": {
+      "artistId": "45464574"
+    }
+  },
+  "hero": {
+    "name": "Caribou",
+    "identity": "Songs built like proofs and sung like confessions — electronic music with a heartbeat.",
+    "tagline": "Hear here!",
+    "location": "Dundas, Ontario, Canada",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.caribou.fm"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/cariboumusic/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/caribouband"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/caribouband"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@caribou"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/caribou/45464574"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Swim",
+        "year": "2010",
+        "mbReleaseGroupId": "1e103be2-b071-40da-a88b-8e2f4732a8eb"
+      },
+      {
+        "title": "Our Love",
+        "year": "2014",
+        "mbReleaseGroupId": "f90aafb2-e44b-452e-b0a1-69030fddae6b"
+      },
+      {
+        "title": "Honey",
+        "year": "2024",
+        "mbReleaseGroupId": "224850e8-6a9d-4351-8401-1ec2d3585219"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "BI2Et19vDCM",
+        "title": "Can't Do Without You"
+      },
+      {
+        "youtubeId": "aiSa7THgxrI",
+        "title": "Odessa"
+      },
+      {
+        "youtubeId": "euS2SlC68q8",
+        "title": "Sun"
+      },
+      {
+        "youtubeId": "yC0r8RCYyvY",
+        "title": "Honey"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Caribou is Daniel Victor Snaith, born in 1978 in Dundas, Ontario. He first recorded as Manitoba, until a lawsuit threat from punk singer Richard 'Handsome Dick' Manitoba forced a rename in 2004 — by which point he was already known for psychedelic, sample-thick electronic records made almost entirely alone. He is also, improbably, Dr. Snaith: a 2005 PhD in mathematics from Imperial College London, with a dissertation on overconvergent Siegel modular symbols.",
+      "Andorra (2007) — a sunburst of sixties-tinged psych-pop — won the 2008 Polaris Music Prize as Canada's album of the year. Then Swim (2010) turned toward the dance floor, its liquid, off-kilter house earning a whole new audience, and in 2011 he opened a second lane entirely with Daphni, an alias reserved for club tracks.",
+      "Our Love (2014) carried 'Can't Do Without You', the closest thing modern electronic music has to a group hug; Suddenly (2020) folded family life and grief into his warmest songwriting; and Honey (2024) came out swinging with some of the most direct dance music of his career.",
+      "Across every name change and stylistic swerve, the through-line holds: meticulous construction that never sounds cold, and a falsetto that makes even the most engineered track feel hand-made."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at caribou.fm.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

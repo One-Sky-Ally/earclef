@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "slug": "fela-kuti",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Fela Kuti — Ear Clef",
+    "description": "The Afrobeat pioneer whose horn-driven grooves doubled as political fire — Lagos's most fearless bandleader, still setting the tempo.",
+    "ogImage": "/images/og-fela-kuti.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/fela-kuti"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCiSx_RyMYooNKnxTl80983w"
+    },
+    "setlistfm": {
+      "mbid": "6514cffa-fbe0-4965-ad88-e998ead8a82a"
+    },
+    "itunes": {
+      "artistId": "55088"
+    }
+  },
+  "hero": {
+    "name": "Fela Kuti",
+    "identity": "Ten-minute grooves as political weapons — the bandleader who made Lagos the loudest capital of courage.",
+    "tagline": "Hear here!",
+    "location": "Lagos, Nigeria",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://felakuti.com"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/felakutiofficial"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/felakuti"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://facebook.com/felakuti"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@felakuti"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/fela-kuti/55088"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Zombie",
+        "year": "1976",
+        "mbReleaseGroupId": "517cbfb2-2279-4af9-8ca7-1c4c1a444925"
+      },
+      {
+        "title": "Expensive Shit",
+        "year": "1975",
+        "mbReleaseGroupId": "b16d9280-f25e-3648-8a8e-1141efd55669"
+      },
+      {
+        "title": "Gentleman",
+        "year": "1973",
+        "mbReleaseGroupId": "d23c4512-1ef6-3adb-8c4d-f4c13ed096e2"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "-3j0nugz1Pw",
+        "title": "Zombie"
+      },
+      {
+        "youtubeId": "8PXIPIkujfY",
+        "title": "Coffin for Head of State"
+      },
+      {
+        "youtubeId": "5Vg9cWwBUVc",
+        "title": "Let's Start"
+      },
+      {
+        "youtubeId": "23RfilgY1Es",
+        "title": "Alagbon Close"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Olufela Olusegun Oludotun Ransome-Kuti was born in 1938 in Abeokuta, Nigeria, into a family of activists and educators. Sent to London in 1958 to study medicine, he enrolled at Trinity College of Music instead and formed his first band, Koola Lobitos. Back in Lagos, through the late sixties and into the seventies, he and his band — renamed Africa '70 — forged Afrobeat: jazz harmony, funk drive, highlife lilt, and Nigerian rhythm fused into hypnotic grooves that could run a quarter of an hour without losing their grip.",
+      "The music was inseparable from the politics. In 1975 he dropped 'Ransome' as a slave name and took 'Anikulapo' — 'he who carries death in his pouch.' Albums like Gentleman (1973), Expensive Shit (1975), and Zombie (1976) mocked colonial hangovers, police corruption, and the military with a directness no one else dared.",
+      "The state answered. In 1977, roughly a thousand soldiers raided and burned his Kalakuta Republic commune in reprisal for Zombie; his mother, the pioneering activist Funmilayo Ransome-Kuti, was thrown from a window and later died of her injuries. He answered back by founding a political party, Movement of the People, in 1979 — and by refusing to soften a single lyric. In 1984 he was jailed on currency charges that Amnesty International condemned, naming him a prisoner of conscience; he served twenty months.",
+      "Fela died in Lagos on 2 August 1997. The groove he built has since gone everywhere — into hip-hop samples, a Broadway musical, and the DNA of half of modern dance music — and the catalog remains one of the deepest wells in recorded music."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Fela Kuti died in 1997; his catalog and story are kept alive at felakuti.com.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

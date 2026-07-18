@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "slug": "aphex-twin",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Aphex Twin — Ear Clef",
+    "description": "Richard D. James — the Cornwall-raised electronic shape-shifter behind Selected Ambient Works, Windowlicker, and thirty years of beautiful mischief.",
+    "ogImage": "/images/og-aphex-twin.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/aphex-twin"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UC4hfA78X-lqiRERBZLTnLBw"
+    },
+    "setlistfm": {
+      "mbid": "f22942a1-6f70-4f48-866e-238cb2308fbd"
+    },
+    "itunes": {
+      "artistId": "39883194"
+    }
+  },
+  "hero": {
+    "name": "Aphex Twin",
+    "identity": "Machines taught to giggle, ambient music with teeth — electronic music's great grinning trickster.",
+    "tagline": "Hear here!",
+    "location": "Cornwall, United Kingdom",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://aphextwin.warp.net"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/aphextwin.afx/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/AphexTwin"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/aphextwinafx"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@aphextwin9341"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/aphex-twin/39883194"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Selected Ambient Works 85–92",
+        "year": "1992",
+        "mbReleaseGroupId": "6842c81d-ea77-3dfd-abf7-4323add3f4d4"
+      },
+      {
+        "title": "Richard D. James Album",
+        "year": "1996",
+        "mbReleaseGroupId": "84d79dbe-7ac1-3ebc-9b36-238ddfb8229c"
+      },
+      {
+        "title": "Syro",
+        "year": "2014",
+        "mbReleaseGroupId": "11a7c281-a260-4f77-a1d5-1ff2d4c917eb"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "e_Ue_P7vcRE",
+        "title": "Blackbox Life Recorder 21f"
+      },
+      {
+        "youtubeId": "38RMZ9H7Cg8",
+        "title": "On"
+      },
+      {
+        "youtubeId": "G0qV2t7JCAQ",
+        "title": "Donkey Rhubarb"
+      },
+      {
+        "youtubeId": "MW3tcBRe41w",
+        "title": "Selected Ambient Works Volume II (Expanded Edition) — Full Album"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Richard David James was born in Limerick, Ireland, in 1971 to Welsh parents and raised in Lanner, Cornwall — about as far from any music-industry center as England gets, which may explain everything. In 1991 he co-founded Rephlex Records with Grant Wilson-Claridge, and in November 1992 released Selected Ambient Works 85–92: home-recorded ambient techno, some of it made in his teens, that quietly became one of the most revered electronic albums ever issued.",
+      "Through the nineties on Warp he seemed to invent a new dialect per record — the beatless drift of Selected Ambient Works Volume II, the hyperactive drill of the Richard D. James Album (1996), and the era of grinning-face provocations: 'Come to Daddy' and 'Windowlicker' (1999), the latter's Chris Cunningham video a landmark of the form.",
+      "After Drukqs (2001) he mostly went quiet under the Aphex name — releasing as AFX and other aliases — until Syro appeared in 2014 and won the Grammy for Best Dance/Electronic Album. The releases since have kept the pattern: long silences, then a sudden generosity, like 2023's 'Blackbox Life Recorder 21f', which earned another Grammy nomination.",
+      "Few artists have stayed this unpredictable for this long while remaining this loved. The catalog rewards wandering: start anywhere, expect whiplash."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Live dates are announced at aphextwin.warp.net.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

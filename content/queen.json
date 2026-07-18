@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "slug": "queen",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Queen — Ear Clef",
+    "description": "Four writers, one impossible voice — the London band behind Bohemian Rhapsody, News of the World, and rock's greatest live twenty minutes.",
+    "ogImage": "/images/og-queen.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/queen"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCiMhD4jzUqG-IgPzUmmytRQ"
+    },
+    "setlistfm": {
+      "mbid": "0383dadf-2a4e-4d10-a46a-e9e041da8eb3"
+    },
+    "itunes": {
+      "artistId": "3296287"
+    }
+  },
+  "hero": {
+    "name": "Queen",
+    "identity": "Opera in a rock band's hands — four songwriters and a frontman the stage still misses.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.queenonline.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/officialqueenmusic/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/QueenWillRock"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/Queen"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@Queen"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/queen/3296287"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "A Night at the Opera",
+        "year": "1975",
+        "mbReleaseGroupId": "6b47c9a0-b9e1-3df9-a5e8-50a6ce0dbdbd"
+      },
+      {
+        "title": "News of the World",
+        "year": "1977",
+        "mbReleaseGroupId": "c172ea98-3a82-3254-b8ad-25a4f465ba03"
+      },
+      {
+        "title": "The Game",
+        "year": "1980",
+        "mbReleaseGroupId": "75702ddf-a46c-3cac-bace-0a466eb3c37c"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "fJ9rUzIMcZQ",
+        "title": "Bohemian Rhapsody"
+      },
+      {
+        "youtubeId": "HgzGwKwLmgM",
+        "title": "Don't Stop Me Now"
+      },
+      {
+        "youtubeId": "rY0WxgSXdEE",
+        "title": "Another One Bites the Dust"
+      },
+      {
+        "youtubeId": "f4Mc-NYPHaQ",
+        "title": "I Want To Break Free"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Queen formed in London in 1970: Freddie Mercury on voice and piano, Brian May on a guitar he built with his father, Roger Taylor on drums, with John Deacon completing the lineup on bass. All four wrote hits — a rarity that gave the band its unusual range, from vaudeville to hard rock to funk.",
+      "A Night at the Opera (1975) brought international success and 'Bohemian Rhapsody', which held the UK number one for nine weeks and — with its promotional film — helped invent the music video as a form. News of the World (1977) supplied the stadiums with 'We Will Rock You' and 'We Are the Champions'; The Game (1980) added 'Another One Bites the Dust' and 'Crazy Little Thing Called Love'.",
+      "The live band may have been the greatest of its era, a case settled in twenty minutes at Live Aid in 1985 — routinely ranked among the finest performances in rock history. Freddie Mercury died on 24 November 1991, the day after publicly confirming he had AIDS; John Deacon retired from music in 1997.",
+      "May and Taylor have carried the songbook forward since 2004 under the Queen + banner — first with Paul Rodgers, and since 2011 with Adam Lambert — while the original records keep doing what they always did: making everyone in the room sing the parts they can't reach."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Queen + Adam Lambert have no shows currently scheduled — new dates are announced at queenonline.com.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
