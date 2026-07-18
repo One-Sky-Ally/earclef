@@ -10,6 +10,7 @@ import { Shows } from '@/components/Shows'
 import { Merch } from '@/components/Merch'
 import { Press } from '@/components/Press'
 import { UniverseSection } from '@/components/universe/UniverseSection'
+import { StorySection } from '@/components/stories/StorySection'
 import { SiteFooter } from '@/components/SiteFooter'
 
 interface ArtistPageViewProps {
@@ -79,6 +80,7 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
             membership={content.membership}
           />
         )}
+        <StorySection slug={content.slug} artistName={content.hero.name} />
       </main>
       <SiteFooter footer={content.footer} />
     </>

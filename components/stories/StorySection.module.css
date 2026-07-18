@@ -1,0 +1,39 @@
+.toggle {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--border-strong);
+  padding: 1.4rem 0 0.4rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  color: var(--text);
+}
+
+.count {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}

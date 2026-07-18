@@ -1,0 +1,131 @@
+.panel {
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quiet {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.pageButton {
+  background: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  padding: 0.25rem 0.8rem;
+  cursor: pointer;
+}
+
+.pageButton:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.pageLabel {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  text-align: center;
+}
+
+.holdReason {
+  font-size: 0.78rem;
+  color: #d9a05b;
+  font-style: italic;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.input,
+.textarea {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.88rem;
+  padding: 0.5rem 0.65rem;
+  font-family: inherit;
+}
+
+.mediaList,
+.sourceList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-left: 1rem;
+  font-size: 0.78rem;
+}
+
+.mediaList a {
+  color: var(--accent);
+}
+
+.sourceList a {
+  color: var(--text-muted);
+  border-bottom: 1px dotted var(--border-strong);
+}
+
+.sourceList a:hover,
+.mediaList a:hover {
+  color: var(--accent-deep);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.approve {
+  background: var(--accent);
+  color: #1c1610;
+  border: none;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+}
+
+.reject {
+  background: none;
+  border: 1px solid #a04b3b;
+  color: #d97b5b;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+}
+
+.actionMuted {
+  background: none;
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+}
+
+.decided {
+  font-size: 0.85rem;
+  color: var(--accent);
+}

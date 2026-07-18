@@ -19,10 +19,12 @@ import {
 } from '@/lib/links'
 import { blurbKey, normalizedTitle } from '@/lib/feed/blurbKey'
 import type { ArtistServicePresence } from '@/lib/listen/services'
+import type { StoryCard } from '@/lib/stories/types'
 import type { ArtistTier } from '@/lib/tiers'
 import { TierFilter, type TierChoice } from '@/components/TierFilter'
 import { FeedPostCard } from '@/components/feed/FeedPostCard'
 import { FeedSkeleton } from '@/components/feed/FeedSkeleton'
+import { StoryCardView } from '@/components/stories/StoryCardView'
 import { ServicePicker } from '@/components/listen/ServicePicker'
 import styles from './FeedClient.module.css'
 
@@ -49,9 +51,73 @@ interface FeedItem {
   presence?: ArtistServicePresence
 }
 
+interface StoryRow {
+  type: 'story'
+  card: StoryCard
+}
+
+type FeedRow = FeedItem | StoryRow
+
 const FEED_LIMIT = 50
 // Every entry gets the rich treatment, revealed a page at a time.
 const PAGE_SIZE = 10
+// One story card woven in after every N feed items.
+const STORY_INTERVAL = 5
+const UPCOMING_LIMIT = 6
+
+// --- Daily-seeded shuffle: same order all day, fresh order tomorrow. ---
+
+function daySeed(): number {
+  const day = new Date().toISOString().slice(0, 10)
+  let hash = 0
+  for (const char of day) hash = (hash * 31 + char.charCodeAt(0)) | 0
+  return hash >>> 0
+}
+
+function mulberry32(seed: number): () => number {
+  let a = seed
+  return () => {
+    a |= 0
+    a = (a + 0x6d2b79f5) | 0
+    let t = Math.imul(a ^ (a >>> 15), 1 | a)
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  }
+}
+
+function seededShuffle<T>(items: T[], random: () => number): T[] {
+  const result = [...items]
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1))
+    const swap = result[i]
+    result[i] = result[j]
+    result[j] = swap
+  }
+  return result
+}
+
+/**
+ * Shuffle WITHIN each month bucket: recency ordering holds (this month
+ * before last month), but the order inside a month rotates daily — fresh
+ * without being manipulative.
+ */
+function monthShuffled(items: FeedItem[]): FeedItem[] {
+  const random = mulberry32(daySeed())
+  const out: FeedItem[] = []
+  let bucket: FeedItem[] = []
+  let currentMonth = ''
+  for (const item of items) {
+    const month = item.date.slice(0, 7)
+    if (month !== currentMonth) {
+      out.push(...seededShuffle(bucket, random))
+      bucket = []
+      currentMonth = month
+    }
+    bucket.push(item)
+  }
+  out.push(...seededShuffle(bucket, random))
+  return out
+}
 // A batch that hits the server's generation throttle retries once, after
 // the throttle window has passed.
 const BLURB_RETRY_MS = 22 * 1000
@@ -193,77 +259,173 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   useEffect(() => {
     const controller = new AbortController()
 
-    const sources = roster.flatMap((entry) => {
-      const tasks: Promise<FeedItem[]>[] = []
-      if (entry.mbid || entry.itunesId) {
-        // Backbone (MusicBrainz) + freshness overlay (iTunes, data only —
-        // clicks still go to YouTube). Either may fail independently.
-        const mbTask: Promise<FeedItem[]> = entry.mbid
-          ? fetchCatalog(entry.mbid, controller.signal).then((catalog) =>
-              mbReleaseItems(entry, catalog),
-            )
-          : Promise.resolve([])
-        const overlayTask: Promise<FeedItem[]> = entry.itunesId
-          ? fetchItunesReleases(entry.itunesId, controller.signal)
-              .then((releases) => itunesReleaseItems(entry, releases))
-              .catch(() => []) // overlay is best-effort by design
-          : Promise.resolve([])
-        tasks.push(
-          Promise.all([overlayTask, mbTask]).then(([overlay, musicbrainz]) =>
-            mergeReleases(overlay, musicbrainz),
-          ),
+    async function loadFromSnapshot(): Promise<boolean> {
+      // The precomputed feed: one fetch instead of ~100. Presence isn't
+      // stored in the snapshot — re-attach it from the roster prop.
+      try {
+        const res = await fetch('/api/feed/snapshot', {
+          signal: controller.signal,
+        })
+        if (!res.ok) return false
+        const body = (await res.json()) as {
+          items?: Omit<FeedItem, 'presence'>[]
+        }
+        if (!body.items || body.items.length === 0) return false
+        const presenceBySlug = new Map(
+          roster.map((entry) => [entry.slug, entry.presence]),
         )
+        const items: FeedItem[] = body.items.map((item) => ({
+          ...item,
+          presence: presenceBySlug.get(item.slug),
+        }))
+        setState({ status: 'ready', items, incomplete: false })
+        return true
+      } catch {
+        return false
       }
-      if (entry.channelId) {
-        tasks.push(
-          fetchVideos(entry.channelId, controller.signal).then((videos) =>
-            videoItems(entry, videos),
-          ),
-        )
-      }
-      return tasks
-    })
+    }
 
-    Promise.allSettled(sources).then((results) => {
-      if (controller.signal.aborted) return
-      const items = results
-        .filter(
-          (result): result is PromiseFulfilledResult<FeedItem[]> =>
-            result.status === 'fulfilled',
+    function loadLive() {
+      // Fallback while the first snapshot builds: the original
+      // per-artist fan-out.
+      const sources = roster.flatMap((entry) => {
+        const tasks: Promise<FeedItem[]>[] = []
+        if (entry.mbid || entry.itunesId) {
+          // Backbone (MusicBrainz) + freshness overlay (iTunes, data only —
+          // clicks still go to YouTube). Either may fail independently.
+          const mbTask: Promise<FeedItem[]> = entry.mbid
+            ? fetchCatalog(entry.mbid, controller.signal).then((catalog) =>
+                mbReleaseItems(entry, catalog),
+              )
+            : Promise.resolve([])
+          const overlayTask: Promise<FeedItem[]> = entry.itunesId
+            ? fetchItunesReleases(entry.itunesId, controller.signal)
+                .then((releases) => itunesReleaseItems(entry, releases))
+                .catch(() => []) // overlay is best-effort by design
+            : Promise.resolve([])
+          tasks.push(
+            Promise.all([overlayTask, mbTask]).then(([overlay, musicbrainz]) =>
+              mergeReleases(overlay, musicbrainz),
+            ),
+          )
+        }
+        if (entry.channelId) {
+          tasks.push(
+            fetchVideos(entry.channelId, controller.signal).then((videos) =>
+              videoItems(entry, videos),
+            ),
+          )
+        }
+        return tasks
+      })
+
+      Promise.allSettled(sources).then((results) => {
+        if (controller.signal.aborted) return
+        const items = results
+          .filter(
+            (result): result is PromiseFulfilledResult<FeedItem[]> =>
+              result.status === 'fulfilled',
+          )
+          .flatMap((result) => result.value)
+          .sort((a, b) => b.date.localeCompare(a.date))
+        const incomplete = results.some(
+          (result) => result.status === 'rejected',
         )
-        .flatMap((result) => result.value)
-        .sort((a, b) => b.date.localeCompare(a.date))
-      const incomplete = results.some((result) => result.status === 'rejected')
-      setState(
-        items.length > 0
-          ? { status: 'ready', items, incomplete }
-          : { status: 'empty' },
-      )
-    })
+        setState(
+          items.length > 0
+            ? { status: 'ready', items, incomplete }
+            : { status: 'empty' },
+        )
+      })
+    }
+
+    ;(async () => {
+      const served = await loadFromSnapshot()
+      if (!served && !controller.signal.aborted) loadLive()
+    })()
 
     return () => controller.abort()
   }, [roster])
 
+  // Published story cards — editorial entries woven into the feed.
+  const [storyCards, setStoryCards] = useState<StoryCard[]>([])
+  useEffect(() => {
+    let cancelled = false
+    ;(async () => {
+      try {
+        const res = await fetch('/api/stories')
+        if (!res.ok) return
+        const body = (await res.json()) as { cards?: StoryCard[] }
+        if (!cancelled && body.cards) setStoryCards(body.cards)
+      } catch {
+        // No stories is a fine feed.
+      }
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const todayIso = new Date().toISOString().slice(0, 10)
+
   // Filter before the newest-50 cut so each tier surfaces its own latest,
-  // not just its members of the overall top 50.
-  const visible = useMemo(() => {
-    if (state.status !== 'ready') return []
+  // not just its members of the overall top 50. Future-dated releases
+  // split into the "Coming" strip; on release day they flow back in here.
+  const { upcoming, visible } = useMemo(() => {
+    if (state.status !== 'ready')
+      return { upcoming: [] as FeedItem[], visible: [] as FeedItem[] }
     const tierBySlug = new Map(roster.map((entry) => [entry.slug, entry.tier]))
     const followSet = new Set(follows ?? [])
-    return state.items
+    const filtered = state.items
       .filter(
         (item) =>
           tierChoice === 'all' || tierBySlug.get(item.slug) === tierChoice,
       )
-      .filter(
-        (item) => !followingOnly || followSet.has(item.slug),
-      )
-      .slice(0, FEED_LIMIT)
-  }, [state, tierChoice, roster, follows, followingOnly])
+      .filter((item) => !followingOnly || followSet.has(item.slug))
+    const isUpcoming = (item: FeedItem) =>
+      item.type === 'release' && item.date.slice(0, 10) > todayIso
+    return {
+      upcoming: filtered
+        .filter(isUpcoming)
+        .sort((a, b) => a.date.localeCompare(b.date))
+        .slice(0, UPCOMING_LIMIT),
+      visible: monthShuffled(filtered.filter((item) => !isUpcoming(item))).slice(
+        0,
+        FEED_LIMIT,
+      ),
+    }
+  }, [state, tierChoice, roster, follows, followingOnly, todayIso])
+
+  // Weave one story card in after every STORY_INTERVAL feed items —
+  // story order rotates with the same daily seed.
+  const rows = useMemo<FeedRow[]>(() => {
+    if (visible.length === 0) return []
+    const tierBySlug = new Map(roster.map((entry) => [entry.slug, entry.tier]))
+    const followSet = new Set(follows ?? [])
+    const cards = seededShuffle(
+      storyCards
+        .filter(
+          (card) =>
+            tierChoice === 'all' || tierBySlug.get(card.slug) === tierChoice,
+        )
+        .filter((card) => !followingOnly || followSet.has(card.slug)),
+      mulberry32(daySeed() ^ 0x9e3779b9),
+    )
+    const out: FeedRow[] = []
+    let cardIndex = 0
+    visible.forEach((item, index) => {
+      out.push(item)
+      if ((index + 1) % STORY_INTERVAL === 0 && cardIndex < cards.length) {
+        out.push({ type: 'story', card: cards[cardIndex] })
+        cardIndex += 1
+      }
+    })
+    return out
+  }, [visible, storyCards, tierChoice, followingOnly, follows, roster])
 
   const rendered = useMemo(
-    () => visible.slice(0, visibleCount),
-    [visible, visibleCount],
+    () => rows.slice(0, visibleCount),
+    [rows, visibleCount],
   )
 
   // Blurbs for whatever is on screen: cached ones come back instantly
@@ -271,7 +433,10 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   // mount, tracked in a ref; a batch that hit the server's generation
   // throttle retries exactly once after the window passes.
   useEffect(() => {
-    const missing = rendered.filter((item) => {
+    const feedItems = rendered.filter(
+      (row): row is FeedItem => row.type !== 'story',
+    )
+    const missing = feedItems.filter((item) => {
       const key = blurbKey(item.slug, item.type, item.title)
       return !requestedBlurbs.current.has(key)
     })
@@ -349,7 +514,7 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   const availableTiers = [
     ...new Set(roster.flatMap((entry) => (entry.tier ? [entry.tier] : []))),
   ]
-  const remaining = visible.length - rendered.length
+  const remaining = rows.length - rendered.length
 
   return (
     <>
@@ -410,13 +575,36 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
       {visible.length === 0 && (
         <p className={styles.note}>Nothing in this tier yet.</p>
       )}
+      {upcoming.length > 0 && (
+        <div className={styles.upcomingStrip}>
+          {upcoming.map((item) => (
+            <a
+              key={`${item.slug}-${item.title}`}
+              className={styles.upcomingCard}
+              href={item.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className={styles.comingBadge}>
+                Coming {formatFeedDate(item.date)}
+              </span>
+              <span className={styles.upcomingTitle}>
+                {item.artistName} — {item.title}
+              </span>
+            </a>
+          ))}
+        </div>
+      )}
       <div className={styles.featured}>
-        {rendered.map((item) => {
-          const key = blurbKey(item.slug, item.type, item.title)
+        {rendered.map((row) => {
+          if (row.type === 'story') {
+            return <StoryCardView key={row.card.id} card={row.card} showArtist />
+          }
+          const key = blurbKey(row.slug, row.type, row.title)
           return (
             <FeedPostCard
-              key={`${item.type}-${item.href}`}
-              item={{ ...item, dateLabel: formatFeedDate(item.date) }}
+              key={`${row.type}-${row.href}`}
+              item={{ ...row, dateLabel: formatFeedDate(row.date) }}
               blurb={blurbs[key]}
               blurbPending={!settledKeys.has(key)}
             />

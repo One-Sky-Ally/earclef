@@ -13,6 +13,7 @@ import {
 } from '@/lib/curation/ownerClient'
 import type { FollowEntry } from '@/lib/curation/followStore'
 import { UniversePanel } from '@/components/studio/UniversePanel'
+import { StoriesPanel } from '@/components/studio/StoriesPanel'
 import styles from './StudioClient.module.css'
 
 interface RosterRow {
@@ -260,6 +261,13 @@ export function StudioClient() {
             ))}
         </section>
       )}
+
+      <section aria-labelledby="stories-heading">
+        <h2 id="stories-heading" className={styles.heading}>
+          Story drafts
+        </h2>
+        <StoriesPanel ownerKey={state.key} />
+      </section>
 
       <section aria-labelledby="tiers-heading">
         <h2 id="tiers-heading" className={styles.heading}>

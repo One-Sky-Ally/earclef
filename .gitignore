@@ -36,3 +36,6 @@ data/precompute-backfill.log
 # Local Netlify folder
 .netlify
 data/genre-precompute.log
+data/story-cards-work/
+data/story-farm.log
+data/story-farm-run.log
