@@ -54,6 +54,10 @@
       {
         "platform": "dragcity",
         "url": "https://www.dragcity.com/artists/joanna-newsom"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000W181C6"
       }
     ],
     "featuredAlbums": [

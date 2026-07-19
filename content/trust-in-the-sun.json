@@ -66,6 +66,10 @@
       {
         "platform": "bandcamp",
         "url": "https://trustinthesun.bandcamp.com"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B09YCWJV2T"
       }
     ],
     "featuredAlbums": [
