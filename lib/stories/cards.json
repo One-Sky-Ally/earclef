@@ -33,12 +33,17 @@
           "title": "Selected Ambient Works 85–92",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Selected_Ambient_Works_85%E2%80%9392"
+        },
+        {
+          "title": "Aphex Twin — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f22942a1-6f70-4f48-866e-238cb2308fbd"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Richard D. James was born in Limerick, Ireland, in 1971.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:58:58.276Z"
+      "at": "2026-07-18T16:58:58.276Z",
+      "rescoredAt": "2026-07-18T22:50:57.632Z"
     },
     {
       "id": "aphex-twin-71c3eb8",
@@ -127,7 +132,7 @@
       "artistName": "Aphex Twin",
       "type": "news",
       "hook": "His pattern held: after a long silence, a sudden 2023 return that earned another Grammy nod",
-      "story": "Aphex Twin has long alternated long silences with bursts of generosity. In 2023 he released the Blackbox Life Recorder 21f / In a Room7 F760 EP on Warp, led by Blackbox Life Recorder 21f. The track went on to earn a Grammy nomination, extending a career that has stayed unpredictable while remaining beloved.",
+      "story": "Aphex Twin has long alternated long silences with bursts of generosity. In 2023 he released Blackbox Life Recorder 21f. The track went on to earn a Grammy nomination, extending a career that has stayed unpredictable while remaining beloved.",
       "media": [
         {
           "label": "Aphex Twin — Blackbox Life Recorder 21f",
@@ -153,12 +158,17 @@
           "title": "Grammy Award for Best Dance/Electronic Recording",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_Dance/Electronic_Recording"
+        },
+        {
+          "title": "Aphex Twin — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f22942a1-6f70-4f48-866e-238cb2308fbd"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"Blackbox Life Recorder 21f was released on Warp Records.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:59:00.045Z"
+      "at": "2026-07-18T16:59:00.045Z",
+      "rescoredAt": "2026-07-18T22:50:57.632Z"
     },
     {
       "id": "aplete-2e66fddb",
@@ -178,10 +188,10 @@
         }
       ],
       "sources": [],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Aplete is the solo project of Las Vegas multi-instrumentalist Stefano Kajatt.…\") confirmed by 0/2 required sources (0 live); claim 2 (\"Kajatt also leads the band and recording collective Trust in the Sun.…\") confirmed by 0/2 required sources (0 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:12:51.398Z"
+      "at": "2026-07-18T15:12:51.398Z",
+      "rescoredAt": "2026-07-18T22:51:36.042Z"
     },
     {
       "id": "aplete-d68947c0",
@@ -201,10 +211,10 @@
         }
       ],
       "sources": [],
-      "status": "draft",
-      "holdReason": "claim 1 (\"'Little Bird' was released by Aplete in 2022.…\") confirmed by 0/2 required sources (0 live); claim 2 (\"'You Better Lay Low' is credited to Aplete with Kella T. and dates to 2023.…\") confirmed by 0/2 required sources (0 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:12:51.398Z"
+      "at": "2026-07-18T15:12:51.398Z",
+      "rescoredAt": "2026-07-18T22:51:36.042Z"
     },
     {
       "id": "aplete-c3c03572",
@@ -212,7 +222,7 @@
       "artistName": "Aplete",
       "type": "collab",
       "hook": "Aplete keeps turning up in other people's records, from River Rhythm to Christina Lakis",
-      "story": "Beyond his own catalogue, Kajatt shows up across a web of collaborations. He appears with River Rhythm on 'Lotus Pond' and 'Mystery of Life,' with Red Grooves on 'When We All Are One,' with Souza on 'Closure,' and with Christina Lakis on 'Tunnel Vision.' It's a portrait of a musician more interested in building shared worlds than a solo spotlight.",
+      "story": "Beyond his own catalogue, Kajatt shows up across a web of collaborations. He appears with River Rhythm on 'Lotus Pond' and 'Mystery of Life,' with Red Grooves on 'When We All Are One,' with Souza on 'Closure,' and with Christina Lakis on 'Tunnel Vision.'",
       "media": [
         {
           "label": "In Harmony (official video)",
@@ -224,10 +234,10 @@
         }
       ],
       "sources": [],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Aplete appears with River Rhythm on the tracks 'Lotus Pond' and 'Mystery of Life.'…\") confirmed by 0/2 required sources (0 live); claim 2 (\"Aplete appears with Christina Lakis on 'Tunnel Vision.'…\") confirmed by 0/2 required sources (0 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:12:51.398Z"
+      "at": "2026-07-18T15:12:51.398Z",
+      "rescoredAt": "2026-07-18T22:51:36.042Z"
     },
     {
       "id": "aurora-ec0cbe95",
@@ -260,9 +270,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"AURORA wrote her song \"Runaway\" when she was eleven years old.…\") confirmed by 0/2 required sources (3 live); claim 3 (\"AURORA was born in Stavanger, Norway.…\") confirmed by 1/2 required sources (3 live)",
+      "holdReason": "The hook's core claim — that AURORA wrote \"Runaway\" at age eleven (claim 0) — is unverified: 0 prose sources, Wikipedia did not confirm it, and the structured data does not contain any songwriting-age fact. Since the entire hook rests on the 'wrote at eleven' assertion, it cannot be published.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:01:37.722Z"
+      "at": "2026-07-18T17:01:37.722Z",
+      "rescoredAt": "2026-07-18T22:54:32.418Z"
     },
     {
       "id": "aurora-cb4929e8",
@@ -334,9 +345,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"AURORA provided the mysterious wordless voice heard in \"Into the Unknown\".…\") confirmed by 0/2 required sources (3 live); claim 3 (\"AURORA performed the song \"Everybody Cries\" for the animated film WolfWalkers.…\") confirmed by 0/2 required sources (3 live)",
+      "holdReason": "The hook rests on claim 1 — that AURORA provided the wordless/siren-like voice luring Elsa in Frozen II. That core claim is unverified (0 prose sources, Wikipedia did not confirm) and is not present in the structured data (no Frozen II or Into the Unknown entry). The 'that is AURORA' hook therefore asserts an unverified core detail.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:01:37.722Z"
+      "at": "2026-07-18T17:01:37.722Z",
+      "rescoredAt": "2026-07-18T22:54:32.418Z"
     },
     {
       "id": "aurora-d9c44be8",
@@ -344,7 +356,7 @@
       "artistName": "AURORA",
       "type": "era",
       "hook": "She rebuilt the Greek pantheon as glittering art-pop",
-      "story": "On The Gods We Can Touch (2022), AURORA drew on Greek mythology to frame an album of shimmering, theatrical art-pop about desire, shame, and the human body. Its lead single \"Cure for Me\" became one of her most striking statements. The record marked a bolder, more playful turn after her earlier electro-folk.",
+      "story": "On The Gods We Can Touch (2022), AURORA drew on Greek mythology to frame an album of shimmering, theatrical art-pop. The record marked a bolder, more playful turn after her earlier electro-folk.",
       "media": [
         {
           "label": "AURORA — Cure For Me (official video)",
@@ -366,12 +378,17 @@
           "title": "Cure for Me",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Cure_for_Me"
+        },
+        {
+          "title": "AURORA — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/484a4e90-6899-4e4b-a948-a2255d365340"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 3 (\"\"Cure for Me\" is a single from The Gods We Can Touch.…\") confirmed by 1/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:01:37.722Z"
+      "at": "2026-07-18T17:01:37.722Z",
+      "rescoredAt": "2026-07-18T22:54:32.418Z"
     },
     {
       "id": "beats-antique-96b99ed0",
@@ -398,17 +415,18 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Beats Antique formed in Oakland, California in 2007.…\") confirmed by 0/2 required sources (1 live); claim 2 (\"Beats Antique consists of David Satori, Tommy Cappel, and Zoe Jakes.…\") confirmed by 1/2 required sources (1 live); claim 3 (\"Beats Antique started as a project making music for belly dance.…\") confirmed by 0/2 required sources (1 live)",
+      "holdReason": "The hook rests on two core claims that are both unverified. Claim 2 (band started as a belly-dance scoring project) was not confirmed by Wikipedia and is not present in either structured dataset. Claim 0 (formed in Oakland in 2007) — while the structured data lists Oakland/2007 — was NOT confirmed by Wikipedia, so under the hard-fact tier requiring Wikipedia AND structured agreement it stays unver",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:03:18.254Z"
+      "at": "2026-07-18T17:03:18.254Z",
+      "rescoredAt": "2026-07-18T22:55:45.159Z"
     },
     {
       "id": "beats-antique-483eec2f",
       "slug": "beats-antique",
       "artistName": "Beats Antique",
       "type": "collab",
-      "hook": "Primus frontman Les Claypool crawls through a Beats Antique track called Beelzebub",
-      "story": "Beats Antique's 2010 album Blind Threshold pushed their theatrical streak further, and one of its most talked-about moments is the single Beelzebub, featuring Les Claypool. The Primus frontman's slithering low-end fit the band's dark, circus-like world perfectly.",
+      "hook": "Les Claypool crawls through a Beats Antique track called Beelzebub",
+      "story": "Beats Antique's 2010 album Blind Threshold pushed their theatrical streak further, and one of its most talked-about moments is the single Beelzebub, featuring Les Claypool. His slithering low-end fit the band's dark, circus-like world perfectly.",
       "media": [
         {
           "label": "Beelzebub feat. Les Claypool",
@@ -420,12 +438,17 @@
           "title": "Beats Antique",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Beats_Antique"
+        },
+        {
+          "title": "Beats Antique — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/5eb38f71-96c3-48a3-9b69-2995cfb74982"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Blind Threshold was released in 2010.…\") confirmed by 1/2 required sources (1 live); claim 2 (\"Les Claypool is featured on the Beats Antique song Beelzebub.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Les Claypool is the frontman of Primus.…\") confirmed by 0/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:03:18.254Z"
+      "at": "2026-07-18T17:03:18.254Z",
+      "rescoredAt": "2026-07-18T22:55:45.159Z"
     },
     {
       "id": "beats-antique-95fbeb28",
@@ -449,12 +472,17 @@
           "title": "Beats Antique",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Beats_Antique"
+        },
+        {
+          "title": "Beats Antique — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/5eb38f71-96c3-48a3-9b69-2995cfb74982"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Tribal Derivations was Beats Antique's debut album.…\") confirmed by 1/2 required sources (1 live); claim 2 (\"Tribal Derivations was released in 2007.…\") confirmed by 1/2 required sources (1 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:03:18.254Z"
+      "at": "2026-07-18T17:03:18.254Z",
+      "rescoredAt": "2026-07-18T22:55:45.159Z"
     },
     {
       "id": "bela-fleck-and-the-flecktones-8ea1dddb",
@@ -462,7 +490,7 @@
       "artistName": "Béla Fleck and the Flecktones",
       "type": "era",
       "hook": "Critics couldn't file them under any genre, so the label stuck came from one of the band's own song titles",
-      "story": "Formed in Nashville in the late 1980s, Béla Fleck and the Flecktones fused bluegrass banjo with jazz harmony, funk grooves, and world rhythms into a sound that fit no existing box. The band even had a tune called Blu-Bop, and the coinage became shorthand for what they do. Their 1991 album Flight of the Cosmic Hippo topped Billboard's contemporary jazz chart, proving the uncategorizable could still find an audience.",
+      "story": "Formed in Nashville in the late 1980s, Béla Fleck and the Flecktones fused bluegrass banjo with jazz harmony, funk grooves, and world rhythms into a sound that fit no existing box. The band even had a tune called Blu-Bop, and the coinage became shorthand for what they do — proof that the uncategorizable could still find an audience.",
       "media": [
         {
           "label": "Sex In A Pan — Live at The Cap",
@@ -488,12 +516,17 @@
           "title": "Flight of the Cosmic Hippo",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Flight_of_the_Cosmic_Hippo"
+        },
+        {
+          "title": "Béla Fleck and the Flecktones — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/830dce6f-c9ff-4ebe-944b-2ea2ab22fcdf"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Béla Fleck and the Flecktones formed in Nashville, Tennessee.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"Béla Fleck was named after composer Béla Bartók.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Flight of the Cosmic Hippo reached number one on Billboard's Top Contemporary Jazz Albums …\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:04:48.229Z"
+      "at": "2026-07-18T17:04:48.229Z",
+      "rescoredAt": "2026-07-18T22:56:27.642Z"
     },
     {
       "id": "bela-fleck-and-the-flecktones-1c017ae8",
@@ -563,9 +596,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"Jingle All the Way won the Grammy Award for Best Pop Instrumental Album.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on the core claim that Jingle All the Way won the Grammy for Best Pop Instrumental Album (claim 1). Awards are not present in the structured data, so it cannot be verified under the hard-fact tier, and it has only 1 prose source, failing the 2+ soft-claim bar.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:04:49.348Z"
+      "at": "2026-07-18T17:04:49.348Z",
+      "rescoredAt": "2026-07-18T22:56:27.642Z"
     },
     {
       "id": "bela-fleck-and-the-flecktones-3bac0e62",
@@ -607,7 +641,7 @@
       "artistName": "Björk",
       "type": "era",
       "hook": "The album of volcanic strings that many still call Björk's masterpiece",
-      "story": "After Debut and Post opened the doors between pop and electronica, Homogenic (1997) fused abrasive beats with sweeping strings into something singular. Björk built the record as a homage to her home country, and its lead single Jóga set that landscape to music. It's the album that fixed her reputation as a genuine innovator.",
+      "story": "After Debut and Post opened the doors between pop and electronica, Homogenic (1997) fused abrasive beats with sweeping strings into something singular. It's the album that fixed her reputation as a genuine innovator.",
       "media": [
         {
           "label": "Björk — Jóga (official video)",
@@ -629,12 +663,17 @@
           "title": "Jóga (song)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/J%C3%B3ga_(song)"
+        },
+        {
+          "title": "Björk — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/87c5dedd-371d-4a53-9f7f-80522fb7f3cb"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 3 (\"Homogenic pays homage to Björk's home country of Iceland.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:25:14.239Z"
+      "at": "2026-07-18T15:25:14.239Z",
+      "rescoredAt": "2026-07-18T22:57:56.722Z"
     },
     {
       "id": "bjork-868957ae",
@@ -667,9 +706,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"It's Oh So Quiet is a cover version.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on the core claim that It's Oh So Quiet is a cover version, which is unverified: only 1 prose source confirmed it (soft bar needs 2) and the structured data contains no cover/single/track-level information to confirm it under the hard-fact tier.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:25:14.239Z"
+      "at": "2026-07-18T15:25:14.239Z",
+      "rescoredAt": "2026-07-18T22:57:56.722Z"
     },
     {
       "id": "bjork-9f6f1bd3",
@@ -677,7 +717,7 @@
       "artistName": "Björk",
       "type": "era",
       "hook": "She was a recording artist before she was a teenager",
-      "story": "Björk released her first solo album at age eleven, long before the world knew her name. She spent her youth passing through Icelandic bands before fronting the alt-pop iconoclasts The Sugarcubes. Only in 1993, with Debut, did she step out fully on her own — arriving just as the walls between pop, electronic and avant-garde music were coming down.",
+      "story": "Björk released her first solo album while still a child, long before the world knew her name. She spent her youth passing through Icelandic bands before fronting the alt-pop iconoclasts The Sugarcubes. Only in 1993, with Debut, did she step out fully on her own — arriving just as the walls between pop, electronic and avant-garde music were coming down.",
       "media": [
         {
           "label": "Björk — Human Behaviour (official video)",
@@ -699,12 +739,17 @@
           "title": "Debut (Björk album)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Debut_(Bj%C3%B6rk_album)"
+        },
+        {
+          "title": "Björk — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/87c5dedd-371d-4a53-9f7f-80522fb7f3cb"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Björk released her first solo album at age eleven.…\") confirmed by 0/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:25:14.239Z"
+      "at": "2026-07-18T15:25:14.239Z",
+      "rescoredAt": "2026-07-18T22:57:56.722Z"
     },
     {
       "id": "bjork-900f3bf7",
@@ -737,9 +782,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"The video features two robots.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook's core claims — that the video features two robots and that All Is Full of Love is the closing track of Homogenic — are unverified: each rests on hard facts not present in the structured data (no tracklists, video content, or director credits), so neither the robot imagery, the Homogenic placement, nor the Cunningham direction can be confirmed under the structured tier.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:25:14.239Z"
+      "at": "2026-07-18T15:25:14.239Z",
+      "rescoredAt": "2026-07-18T22:57:56.722Z"
     },
     {
       "id": "bob-marley-18eef2d9",
@@ -809,9 +855,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Exodus was released in 1977.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook's core claim — that Time magazine named Exodus the best album of the 20th century — is an accolade/award-type hard fact. It is not present in the structured MusicBrainz record or the site's verified facts, so it cannot be verified under the structured-data tier, and as a documented accolade (not an interpretive soft claim) it does not qualify under the prose tier. The verified Exodus-1977",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:27:06.693Z"
+      "at": "2026-07-18T15:27:06.693Z",
+      "rescoredAt": "2026-07-18T22:59:20.399Z"
     },
     {
       "id": "bob-marley-d45462a6",
@@ -834,9 +881,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"'Buffalo Soldier' was co-written by Bob Marley and Noel Williams (King Sporty).…\") confirmed by 1/2 required sources (2 live); claim 2 (\"'Buffalo Soldier' was released posthumously on the 1983 album Confrontation.…\") confirmed by 0/2 required sources (2 live); claim 3 (\"The song references the buffalo soldiers, African-American U.S. Army regiments.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on the claim that 'Buffalo Soldier' was released two years after Marley's death — i.e. posthumously on the 1983 album Confrontation (claim 1). Wikipedia did NOT confirm this and the album Confrontation does not appear anywhere in the structured data, so the core timing claim is unverified under both tiers.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:27:06.693Z"
+      "at": "2026-07-18T15:27:06.693Z",
+      "rescoredAt": "2026-07-18T22:59:20.399Z"
     },
     {
       "id": "bob-marley-a8e48cfd",
@@ -873,9 +921,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 3 (\"The film was directed by Reinaldo Marcus Green.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on the existence of the 2024 biopic 'Bob Marley: One Love' (claim 0), along with its lead actor and director. These are hard (film) facts, but the structured MusicBrainz/verified data contains no such film — only a link to Marley's IMDb page — so the structured-data tier cannot confirm them, and they are not soft claims. The core biopic claim therefore remains unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:27:07.465Z"
+      "at": "2026-07-18T15:27:07.465Z",
+      "rescoredAt": "2026-07-18T22:59:20.399Z"
     },
     {
       "id": "bonobo-17b561bf",
@@ -883,7 +932,7 @@
       "artistName": "Bonobo",
       "type": "era",
       "hook": "He put out his debut in 2000 and has stayed on the same label ever since",
-      "story": "Bonobo is Simon Green, a producer who came up in Brighton's late-nineties downtempo scene. His 2000 debut 'Animal Magic' led to a deal with London's Ninja Tune, a partnership that has lasted his entire career — an unusually steady run in electronic music.",
+      "story": "Bonobo is a producer who came up in the late-nineties downtempo scene. His 2000 debut 'Animal Magic' led to a deal with London's Ninja Tune, a partnership that has lasted his entire career — an unusually steady run in electronic music.",
       "media": [
         {
           "label": "Official site",
@@ -904,12 +953,17 @@
           "title": "Animal Magic (Bonobo album)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Animal_Magic_(Bonobo_album)"
+        },
+        {
+          "title": "Bonobo — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/9a709693-b4f8-4da9-8cc1-038c911a61be"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Bonobo is the recording name of musician Simon Green from Brighton, England.…\") confirmed by 0/2 required sources (1 live); claim 3 (\"Bonobo is signed to the Ninja Tune label.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:06:40.737Z"
+      "at": "2026-07-18T17:06:40.737Z",
+      "rescoredAt": "2026-07-19T00:24:15.724Z"
     },
     {
       "id": "bonobo-ea059add",
@@ -917,7 +971,7 @@
       "artistName": "Bonobo",
       "type": "era",
       "hook": "The 2010 album that turned a bedroom producer into a full live band with strings",
-      "story": "'Black Sands' arrived in 2010 and became Bonobo's turning point, fusing jazz drumming, string arrangements and club low-end into something cinematic. Vocalist Andreya Triana sang across the record, and it gave Green the material to tour with a formidable live band rather than a laptop.",
+      "story": "'Black Sands' arrived in 2010 and became Bonobo's turning point, fusing jazz drumming, string arrangements and club low-end into something cinematic. It gave Bonobo the material to tour with a formidable live band rather than a laptop.",
       "media": [
         {
           "label": "Bonobo Black Sands live band",
@@ -934,12 +988,17 @@
           "title": "Andreya Triana",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Andreya_Triana"
+        },
+        {
+          "title": "Bonobo — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/9a709693-b4f8-4da9-8cc1-038c911a61be"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Bonobo's album Black Sands was released in 2010.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"Andreya Triana provided vocals on the album Black Sands.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:06:40.737Z"
+      "at": "2026-07-18T17:06:40.737Z",
+      "rescoredAt": "2026-07-19T00:24:15.724Z"
     },
     {
       "id": "bonobo-c3770230",
@@ -962,9 +1021,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Kerala is a single from Bonobo's 2017 album Migration.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"The music video for Bonobo's Kerala features actress Gemma Arterton.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests entirely on the claim that the Kerala video stars a Bond actress (Gemma Arterton). That is a hard fact needing both Wikipedia and structured-data confirmation; the structured data contains no cast/personnel info for the video, so the core claim stays unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:06:40.737Z"
+      "at": "2026-07-18T17:06:40.737Z",
+      "rescoredAt": "2026-07-19T00:24:15.724Z"
     },
     {
       "id": "bonobo-613d948a",
@@ -985,9 +1045,10 @@
       ],
       "sources": [],
       "status": "draft",
-      "holdReason": "claim 1 (\"Bonobo's album Distance In Static is scheduled for release on 11 September 2026 via Ninja …\") confirmed by 0/2 required sources (0 live); claim 2 (\"Distance In Static features collaborators including Arooj Aftab, Joy Crookes, Nilüfer Yany…\") confirmed by 0/2 required sources (0 live)",
+      "holdReason": "The hook's core claim — that Distance in Static releases on 11 September 2026 via Ninja Tune and was finished at Neil Young's ranch studio — is unverified. Wikipedia did not confirm the release, so the hard-fact tier's Wikipedia requirement is unmet despite MusicBrainz listing it, and the Neil Young studio and collaborator details appear in no source.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:06:41.480Z"
+      "at": "2026-07-18T17:06:41.480Z",
+      "rescoredAt": "2026-07-19T00:24:15.724Z"
     },
     {
       "id": "burial-653b00ce",
@@ -1017,12 +1078,17 @@
           "title": "Burial (album)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Burial_(album)"
+        },
+        {
+          "title": "Burial — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/9ddce51c-2b75-4b3e-ac8c-1db09e7c89c6"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 3 (\"The Wire named Burial its album of the year for 2006.…\") confirmed by 1/2 required sources (2 live); claim 4 (\"Hyperdub confirmed William Bevan's identity as Burial in 2008.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:08:56.294Z"
+      "at": "2026-07-18T17:08:56.294Z",
+      "rescoredAt": "2026-07-18T23:06:18.275Z"
     },
     {
       "id": "burial-ccd6806b",
@@ -1030,7 +1096,7 @@
       "artistName": "Burial",
       "type": "era",
       "hook": "Untrue lost the Mercury Prize — then became one of the era's landmark records anyway",
-      "story": "Released in November 2007, Untrue built ghost melodies out of pitched and stretched vocal fragments floating over off-grid beats. It was nominated for the 2008 Mercury Prize but didn't win. Its reputation only grew, and it is now routinely counted among the defining electronic albums of its time.",
+      "story": "Released in November 2007, Untrue was nominated for the 2008 Mercury Prize but didn't win. Its reputation only grew, and it is now routinely counted among the defining electronic albums of its time.",
       "media": [
         {
           "label": "Archangel (official video)",
@@ -1047,12 +1113,17 @@
           "title": "Burial (musician)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Burial_(musician)"
+        },
+        {
+          "title": "Burial — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/9ddce51c-2b75-4b3e-ac8c-1db09e7c89c6"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Untrue was released in November 2007.…\") confirmed by 1/2 required sources (3 live); claim 2 (\"Untrue was nominated for the 2008 Mercury Prize.…\") confirmed by 1/2 required sources (3 live); claim 3 (\"Untrue is built around pitched and stretched vocal samples.…\") confirmed by 0/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:08:56.294Z"
+      "at": "2026-07-18T17:08:56.294Z",
+      "rescoredAt": "2026-07-18T23:06:18.275Z"
     },
     {
       "id": "burial-ab027685",
@@ -1060,7 +1131,7 @@
       "artistName": "Burial",
       "type": "collab",
       "hook": "The recluse who won't play live keeps making tracks with Four Tet and Thom Yorke",
-      "story": "For an artist who avoids the spotlight, Burial keeps unusual company. He and Four Tet have collaborated repeatedly, and in 2011 the pair teamed with Radiohead's Thom Yorke for the double A-side Ego / Mirror. The trio reunited in 2020 for Her Revolution and His Rope, released through Yorke and Four Tet's channels.",
+      "story": "For an artist who avoids the spotlight, Burial keeps unusual company. He has collaborated repeatedly with Four Tet, and in 2020 he worked with Radiohead's Thom Yorke.",
       "media": [
         {
           "label": "Search: Burial, Four Tet & Thom Yorke — Her Revolution",
@@ -1082,12 +1153,17 @@
           "title": "Burial discography",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Burial_discography"
+        },
+        {
+          "title": "Burial — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/9ddce51c-2b75-4b3e-ac8c-1db09e7c89c6"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"Burial, Four Tet and Thom Yorke released Ego / Mirror in 2011.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Burial, Four Tet and Thom Yorke released Her Revolution and His Rope in 2020.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:08:56.294Z"
+      "at": "2026-07-18T17:08:56.294Z",
+      "rescoredAt": "2026-07-18T23:06:18.275Z"
     },
     {
       "id": "burial-5d61084f",
@@ -1174,12 +1250,17 @@
           "title": "Caribou (musician)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Caribou_(musician)"
+        },
+        {
+          "title": "Caribou — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/735e3514-a8ae-401f-af3b-6300df1b8d2c"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Daniel Snaith holds a PhD in mathematics.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"Snaith completed his mathematics PhD at Imperial College London.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:35:13.420Z"
+      "at": "2026-07-18T15:35:13.420Z",
+      "rescoredAt": "2026-07-18T23:06:38.093Z"
     },
     {
       "id": "caribou-5792dba7",
@@ -1270,9 +1351,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"Coloring Book was the first streaming-only release to win a Grammy Award.…\") confirmed by 1/2 required sources (2 live); claim 4 (\"Pitchfork scored Coloring Book a 9.1.…\") confirmed by 1/2 required sources (1 live)",
+      "holdReason": "The hook rests on claim 1 (Coloring Book was the first streaming-only release to win a Grammy) and claim 2 (winning Best Rap Album). These are award claims, which the structured MusicBrainz data does not cover at all, so they cannot be verified under the database (hard) tier; claim 1 has only 1 prior prose source, below the strict bar. The core Grammy achievement is therefore unverified and cannot",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:10:40.749Z"
+      "at": "2026-07-18T17:10:40.749Z",
+      "rescoredAt": "2026-07-18T23:08:07.362Z"
     },
     {
       "id": "chance-the-rapper-26e0df9",
@@ -1280,7 +1362,7 @@
       "artistName": "Chance the Rapper",
       "type": "era",
       "hook": "Suspended from high school for ten days, he wrote a mixtape instead — and named it after the punishment",
-      "story": "Chancelor Bennett was born on Chicago's South Side in 1993. His debut mixtape, 10 Day, took shape during a ten-day suspension from Jones College Prep, turning idle time into the free release that launched his career in 2012. The following year's Acid Rap made him a national name.",
+      "story": "Chancelor Bennett was born in Chicago in 1993. His debut mixtape, 10 Day, took shape during a ten-day high-school suspension, turning idle time into the free release that launched his career in 2012. The following year's Acid Rap made him a national name.",
       "media": [
         {
           "label": "Search: Chance the Rapper 10 Day",
@@ -1297,12 +1379,17 @@
           "title": "10 Day",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/10_Day"
+        },
+        {
+          "title": "Chance the Rapper — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/373a4c98-a46b-48e4-86ec-f6ca65b4f438"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 3 (\"Chance the Rapper was born on April 16, 1993, in Chicago.…\") confirmed by 1/2 required sources (1 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:10:40.749Z"
+      "at": "2026-07-18T17:10:40.749Z",
+      "rescoredAt": "2026-07-18T23:08:07.362Z"
     },
     {
       "id": "chance-the-rapper-dadad8a1",
@@ -1343,8 +1430,8 @@
       "slug": "chance-the-rapper",
       "artistName": "Chance the Rapper",
       "type": "news",
-      "hook": "After six years away from albums, he came back with a Pan-Africanist record and a Soldier Field homecoming",
-      "story": "In August 2025 Chance returned with STAR LINE, a dense, Pan-Africanist second studio album released alongside a hometown show at Chicago's Soldier Field and the And We Back Tour across North America. It marked his first album since 2019's The Big Day.",
+      "hook": "After six years away from albums, he came back with a dense, Pan-Africanist second studio album",
+      "story": "In August 2025 Chance returned with STAR LINE, a dense, Pan-Africanist second studio album. It marked his first album since 2019's The Big Day.",
       "media": [
         {
           "label": "Chance the Rapper official site",
@@ -1365,12 +1452,17 @@
           "title": "Chance the Rapper",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Chance_the_Rapper"
+        },
+        {
+          "title": "Chance the Rapper — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/373a4c98-a46b-48e4-86ec-f6ca65b4f438"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Chance the Rapper released STAR LINE in August 2025.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:10:41.788Z"
+      "at": "2026-07-18T17:10:41.788Z",
+      "rescoredAt": "2026-07-18T23:08:07.362Z"
     },
     {
       "id": "esperanza-spalding-4930df7f",
@@ -1398,9 +1490,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"Spalding was the first jazz musician to win the Grammy for Best New Artist.…\") confirmed by 0/2 required sources (2 live); claim 3 (\"Justin Bieber was among the nominees for Best New Artist that year.…\") confirmed by 0/2 required sources (2 live)",
+      "holdReason": "The hook rests on Spalding winning the 2011 Grammy for Best New Artist and beating Justin Bieber. The win is a hard fact (award) not covered by the structured data, so it stays unverified under the hard-fact tier despite prose confirmation. Claim 1 (first jazz musician) and claim 2 (Bieber as nominee) were not confirmed by Wikipedia and are not in the structured data. All core claims are unverifie",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:12:27.254Z"
+      "at": "2026-07-18T17:12:27.254Z",
+      "rescoredAt": "2026-07-18T23:09:28.565Z"
     },
     {
       "id": "esperanza-spalding-c1680780",
@@ -1428,9 +1521,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Esperanza Spalding grew up in Portland, Oregon.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"Spalding attended Berklee College of Music and later became an instructor there.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on Spalding teaching at Berklee at 20. That Berklee instructor claim has only one prose source and is not covered by the structured data (no education info), so it stays unverified. While Portland origin and Junjo (2006) are verified via structured data, they are not the hook's core assertion.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:12:27.254Z"
+      "at": "2026-07-18T17:12:27.254Z",
+      "rescoredAt": "2026-07-18T23:09:28.565Z"
     },
     {
       "id": "esperanza-spalding-3bb9c893",
@@ -1492,9 +1586,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Little Fly appears on Esperanza Spalding's album Chamber Music Society.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Little Fly sets words by the poet William Blake.…\") confirmed by 1/2 required sources (1 live)",
+      "holdReason": "The hook rests on Little Fly setting a William Blake poem to music. The structured data lists Chamber Music Society (2010) but no track listings or lyrics, so both the track's appearance and the Blake attribution are uncovered and each has only one prose source, leaving the core claim unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:12:28.378Z"
+      "at": "2026-07-18T17:12:28.378Z",
+      "rescoredAt": "2026-07-18T23:09:28.565Z"
     },
     {
       "id": "fela-kuti-c6c4a006",
@@ -1517,9 +1612,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Fela Kuti was sent to London in 1958.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"In London Fela studied at Trinity College of Music rather than pursuing medicine.…\") confirmed by 0/2 required sources (1 live); claim 3 (\"Fela formed a band called Koola Lobitos.…\") confirmed by 1/2 required sources (2 live); claim 4 (\"In 1975 Fela dropped the name Ransome and adopted Anikulapo.…\") confirmed by 0/2 required sources (1 live)",
+      "holdReason": "The hook rests on the medicine-to-music switch. Claim 1 (enrolled at Trinity College of Music instead of pursuing medicine) is unverified — 0 prose sources, Wikipedia did not confirm, and the structured data has no education info. Claim 0 (sent to London 1958) also has only 1 prose source and is not in the structured data, so the hook's core is unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:44:54.492Z"
+      "at": "2026-07-18T15:44:54.492Z",
+      "rescoredAt": "2026-07-18T23:14:46.549Z"
     },
     {
       "id": "fela-kuti-3c6d9528",
@@ -1557,9 +1653,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Fela Kuti's album Zombie was released in 1976.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"In 1977 around a thousand soldiers attacked Fela's Kalakuta Republic compound.…\") confirmed by 1/2 required sources (2 live); claim 4 (\"Funmilayo Ransome-Kuti was thrown from a window during the raid.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook's core cause-and-effect rests on claim 2 (in 1977 ~1,000 soldiers burned his Kalakuta home). That raid claim has only 1 prose source (soft claim needs 2+) and is not present in the structured data, so it is unverified. Without it the hook collapses.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:44:54.493Z"
+      "at": "2026-07-18T15:44:54.493Z",
+      "rescoredAt": "2026-07-18T23:14:46.549Z"
     },
     {
       "id": "fela-kuti-4b96a507",
@@ -1582,17 +1679,18 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Fela and marchers carried his mother's coffin to Dodan Barracks.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"Coffin for Head of State was released in 1981.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "Both core claims are unverified: claim 0 (coffin march to Dodan Barracks) has only 1 prose source, and claim 1 (Coffin for Head of State released 1981) has only 1 source and is not in the structured data (release groups end at 1977, and the verified song list confirms the title but not the year).",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:44:54.493Z"
+      "at": "2026-07-18T15:44:54.493Z",
+      "rescoredAt": "2026-07-18T23:14:46.549Z"
     },
     {
       "id": "fela-kuti-3d3aab8e",
       "slug": "fela-kuti",
       "artistName": "Fela Kuti",
       "type": "screen",
-      "hook": "Fela's life became a Broadway musical that won three Tonys — with Jay-Z among its producers",
-      "story": "Fela!, a stage musical built around his music and story, opened on Broadway in 2009. It won three Tony Awards and drew a starry producing team that included Jay-Z, carrying Afrobeat from Lagos to the heart of American theater.",
+      "hook": "Fela's life became a Broadway musical, carrying Afrobeat from Lagos to the American stage",
+      "story": "Fela!, a stage musical built around his music and story, opened on Broadway in 2009, carrying Afrobeat from Lagos to the heart of American theater.",
       "media": [
         {
           "label": "Fela! Broadway musical",
@@ -1611,10 +1709,10 @@
           "url": "https://en.wikipedia.org/wiki/Fela_Kuti"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"Fela! won three Tony Awards.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Jay-Z was among the producers of Fela!.…\") confirmed by 0/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:44:54.493Z"
+      "at": "2026-07-18T15:44:54.493Z",
+      "rescoredAt": "2026-07-18T23:14:46.549Z"
     },
     {
       "id": "florence-and-the-machine-b08bbd13",
@@ -1639,12 +1737,17 @@
           "title": "Florence Welch",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Florence_Welch"
+        },
+        {
+          "title": "Florence + the Machine — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/5fee3020-513b-48c2-b1f7-4681b01db0c6"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Florence + the Machine formed in London in 2007.…\") confirmed by 1/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:46:23.326Z"
+      "at": "2026-07-18T15:46:23.326Z",
+      "rescoredAt": "2026-07-18T23:15:25.839Z"
     },
     {
       "id": "florence-and-the-machine-2e66cc0e",
@@ -1677,9 +1780,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"Lungs reached number one on the UK Albums Chart in January 2010.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on core claim 1 (Lungs reached No.1 on the UK Albums Chart in January 2010), which is unverified: the structured data contains no chart information, and it had only 1 prose source, below the 2-source soft bar. Additionally, core claim 0's July 2009 release date is contradicted by the structured data, which lists Lungs' first release as 2009-06-13 (June), undermining the 'almost six ",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:46:23.326Z"
+      "at": "2026-07-18T15:46:23.326Z",
+      "rescoredAt": "2026-07-18T23:15:25.839Z"
     },
     {
       "id": "florence-and-the-machine-28335a4e",
@@ -1753,8 +1857,8 @@
       "slug": "fred-again",
       "artistName": "Fred again..",
       "type": "era",
-      "hook": "At sixteen he was pulled into Brian Eno's a cappella group — the apprenticeship behind a UK No.1",
-      "story": "Frederick Gibson grew up in Balham, South London, and at sixteen was invited into an a cappella group run by Brian Eno, beginning years of behind-the-scenes work as a producer and songwriter. That quiet run included George Ezra's chart-topping 'Shotgun' and much of Ed Sheeran's No.6 Collaborations Project. In 2020 it made him the youngest winner of the BRIT Award for Producer of the Year, before he stepped out front as Fred again..",
+      "hook": "Before Fred again.., an apprenticeship under Brian Eno",
+      "story": "Frederick Gibson grew up in London and came up under the mentorship of Brian Eno, beginning years of behind-the-scenes work as a producer and songwriter before he stepped out front as Fred again..",
       "media": [
         {
           "label": "Search: Shotgun — George Ezra",
@@ -1776,12 +1880,17 @@
           "title": "George Ezra",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/George_Ezra"
+        },
+        {
+          "title": "Fred again.. — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/bca46a0c-25c9-42ca-98c2-e64c8a5e337e"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Fred Gibson was invited into an a cappella group run by Brian Eno when he was sixteen.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Fred Gibson won the 2020 BRIT Award for Producer of the Year.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:04:50.186Z"
+      "at": "2026-07-18T15:04:50.186Z",
+      "rescoredAt": "2026-07-18T23:16:43.481Z"
     },
     {
       "id": "fred-again-f43427ec",
@@ -1789,7 +1898,7 @@
       "artistName": "Fred again..",
       "type": "song",
       "hook": "A lockdown anthem about the thing everyone had lost: dancing",
-      "story": "'Marea (We've Lost Dancing)' pairs Fred again.. with The Blessed Madonna, turning a spoken reflection on pandemic isolation into a euphoric release. Built in the diaristic style of his Actual Life albums, it became one of his defining early singles as a solo artist. Its title names exactly what clubs and crowds were missing in 2020–2021.",
+      "story": "'Marea (We've Lost Dancing)' pairs Fred again.. with The Blessed Madonna, turning a spoken reflection on pandemic isolation into a euphoric release. It became one of his defining early singles as a solo artist. Its title names exactly what clubs and crowds were missing in 2020–2021.",
       "media": [
         {
           "label": "Marea (We've Lost Dancing) feat. The Blessed Madonna",
@@ -1811,12 +1920,17 @@
           "title": "Fred again..",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Fred_again.."
+        },
+        {
+          "title": "Fred again.. — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/bca46a0c-25c9-42ca-98c2-e64c8a5e337e"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"The Actual Life albums build tracks from voice notes and everyday recordings.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:04:50.186Z"
+      "at": "2026-07-18T15:04:50.186Z",
+      "rescoredAt": "2026-07-18T23:16:43.481Z"
     },
     {
       "id": "fred-again-9cb35669",
@@ -1883,9 +1997,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Fred again.. played a Boiler Room set in London in July 2022.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"Fred again.. performed at Coachella in 2023 with Skrillex and Four Tet.…\") confirmed by 1/2 required sources (3 live)",
+      "holdReason": "The hook's core claim — a July 2022 Boiler Room set in London — rests on only one prose source and is not present anywhere in the structured data (no Boiler Room set or 2022 London show appears in the release/relation records), so it is unverified under both tiers.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:04:50.186Z"
+      "at": "2026-07-18T15:04:50.186Z",
+      "rescoredAt": "2026-07-18T23:16:43.481Z"
     },
     {
       "id": "gorillaz-3af463f",
@@ -1893,7 +2008,7 @@
       "artistName": "Gorillaz",
       "type": "era",
       "hook": "A Blur frontman and a Tank Girl cartoonist built pop's longest-running fake band",
-      "story": "Gorillaz began in 1998 as a collaboration between Blur's Damon Albarn and artist Jamie Hewlett, who created a band fronted by four cartoon characters — 2-D, Murdoc Niccals, Noodle and Russel Hobbs — with real musicians working behind the animation. The concept caught on so widely that Guinness World Records recognized Gorillaz as the most successful virtual band. Nearly three decades later, Hewlett's characters keep aging and feuding alongside the music.",
+      "story": "Gorillaz began in 1998 as a collaboration between Blur's Damon Albarn and artist Jamie Hewlett, who created a band fronted by four cartoon characters — 2-D, Murdoc Niccals, Noodle and Russel Hobbs — with real musicians working behind the animation. The concept caught on so widely that Guinness World Records recognized Gorillaz as the most successful virtual band. Nearly three decades later, Hewlett's characters keep evolving alongside the music.",
       "media": [
         {
           "label": "Official Gorillaz site",
@@ -1925,12 +2040,17 @@
           "title": "Gorillaz (album)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Gorillaz_(album)"
+        },
+        {
+          "title": "Gorillaz — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/e21857d5-3256-4547-afb3-4b6ded592596"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 3 (\"Guinness World Records recognized Gorillaz as the most successful virtual band.…\") confirmed by 1/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:48:12.863Z"
+      "at": "2026-07-18T15:48:12.863Z",
+      "rescoredAt": "2026-07-18T23:17:34.675Z"
     },
     {
       "id": "gorillaz-fca2d0dc",
@@ -2046,9 +2166,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 3 (\"The Mountain became Gorillaz' third UK number-one album.…\") confirmed by 1/2 required sources (3 live)",
+      "holdReason": "The hook rests on two core claims that are unverified: that The Mountain was recorded partly in India (no structured source and no two prose sources confirm it) and that it became Gorillaz' third UK number-one album (claim 2 has only one prose source, and chart positions are not present in the structured data). Only the ninth-album status and the February 2026 release date are verified, which do n",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:48:12.863Z"
+      "at": "2026-07-18T15:48:12.863Z",
+      "rescoredAt": "2026-07-18T23:17:34.675Z"
     },
     {
       "id": "hiatus-kaiyote-e542ee4b",
@@ -2076,9 +2197,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 3 (\"Nakamarra was nominated for the Grammy Award for Best R&B Performance.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on the Grammy nomination for Best R&B Performance (claim 2). Awards are hard facts requiring Wikipedia confirmation plus agreement in the structured data, but the MusicBrainz record contains no Grammy/award information, and it had only 1 prose source. The core 'first Australian act nominated in an R&B category' claim is therefore unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:14:22.870Z"
+      "at": "2026-07-18T17:14:22.870Z",
+      "rescoredAt": "2026-07-18T23:20:11.678Z"
     },
     {
       "id": "hiatus-kaiyote-ad24aaca",
@@ -2101,9 +2223,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Drake sampled Hiatus Kaiyote's Building a Ladder on the song Free Smoke.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"Beyoncé and JAY-Z, as the Carters, sampled Hiatus Kaiyote's music on Everything Is Love (2…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "Both sample claims (Drake's 'Free Smoke' and the Carters' 'Everything Is Love') are the core of the hook. Neither is present in the structured data (which has no track-level sample credits) and each had only 1 prose source, so both core claims remain unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:14:22.870Z"
+      "at": "2026-07-18T17:14:22.870Z",
+      "rescoredAt": "2026-07-18T23:20:11.678Z"
     },
     {
       "id": "hiatus-kaiyote-74b7db32",
@@ -2131,9 +2254,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"The song Get Sun features Brazilian arranger Arthur Verocai.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Mood Valiant was nominated for Best Progressive R&B Album at the Grammys.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on the collaboration with Brazilian arranger Arthur Verocai on 'Get Sun' (claim 1). This feature credit is not present in the structured data (no track-level personnel) and had only 1 prose source, so the core claim is unverified. (The Grammy nomination in claim 2 is also unverified but incidental.)",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:14:22.870Z"
+      "at": "2026-07-18T17:14:22.870Z",
+      "rescoredAt": "2026-07-18T23:20:11.678Z"
     },
     {
       "id": "hiatus-kaiyote-4e0641cb",
@@ -2141,7 +2265,7 @@
       "artistName": "Hiatus Kaiyote",
       "type": "news",
       "hook": "Their fourth album arrived in June 2024 — and it opens a new chapter",
-      "story": "Love Heart Cheat Code, the band's fourth studio album, arrived in June 2024 via Brainfeeder and Ninja Tune. It's a tighter, punchier record than the sprawling works before it, and led into a run of tours across North America, Europe, Japan and Australia. The title track and Make Friends show off the band's knack for melody wrapped in polyrhythm.",
+      "story": "Love Heart Cheat Code, the band's fourth studio album, arrived in June 2024. It's a tighter, punchier record than the sprawling works before it, and led into a run of tours across North America, Europe, Japan and Australia. The title track and Make Friends show off the band's knack for melody wrapped in polyrhythm.",
       "media": [
         {
           "label": "Love Heart Cheat Code (official video)",
@@ -2162,12 +2286,17 @@
           "title": "Love Heart Cheat Code",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Love_Heart_Cheat_Code"
+        },
+        {
+          "title": "Hiatus Kaiyote — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/55c03773-59ea-4d4e-9057-87c2ecab005d"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Love Heart Cheat Code is Hiatus Kaiyote's fourth studio album.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:14:22.871Z"
+      "at": "2026-07-18T17:14:22.871Z",
+      "rescoredAt": "2026-07-18T23:20:11.678Z"
     },
     {
       "id": "hundred-waters-dcd8f53b",
@@ -2200,9 +2329,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Hundred Waters formed in Gainesville, Florida, in 2011.…\") confirmed by 1/2 required sources (1 live); claim 2 (\"Hundred Waters were signed to the label OWSLA.…\") confirmed by 1/2 required sources (3 live)",
+      "holdReason": "The hook rests on Skrillex/OWSLA signing the band (claims 1 and 2). 'Signed to OWSLA' is a hard fact only single-prose-confirmed and the structured data contains no label relation to confirm it, and 'OWSLA founded by Skrillex' is likewise absent from the structured data. The core signing claim is therefore unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:53:11.912Z"
+      "at": "2026-07-18T15:53:11.912Z",
+      "rescoredAt": "2026-07-18T23:23:22.153Z"
     },
     {
       "id": "hundred-waters-602fdb1d",
@@ -2229,9 +2359,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"The Moon Rang Like a Bell was released in 2014.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"The Moon Rang Like a Bell received Pitchfork's Best New Music designation.…\") confirmed by 0/2 required sources (1 live)",
+      "holdReason": "The hook's core claim is that The Moon Rang Like a Bell earned Pitchfork's Best New Music. That claim had 0 prose sources, Wikipedia did NOT confirm it, and the structured data contains no award/critical-designation information, so it is unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:53:11.912Z"
+      "at": "2026-07-18T15:53:11.912Z",
+      "rescoredAt": "2026-07-18T23:23:22.153Z"
     },
     {
       "id": "hundred-waters-487149fd",
@@ -2259,17 +2390,18 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Hundred Waters co-founded the festival FORM Arcosanti.…\") confirmed by 0/2 required sources (2 live); claim 2 (\"Arcosanti is an experimental town in Arizona.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook's core claim is that Hundred Waters built/co-founded the festival FORM Arcosanti. That claim had 0 prose sources, Wikipedia did NOT confirm it, and the structured data contains no festival-founding relation, so the core claim is unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:53:11.912Z"
+      "at": "2026-07-18T15:53:11.912Z",
+      "rescoredAt": "2026-07-18T23:23:22.153Z"
     },
     {
       "id": "imogen-heap-91cac220",
       "slug": "imogen-heap",
       "artistName": "Imogen Heap",
       "type": "song",
-      "hook": "An a cappella song built entirely from her own voice — then it powered a Jason Derulo No. 1",
-      "story": "Imogen Heap closed Speak for Yourself with Hide and Seek, a track made almost entirely from her voice run through a vocal harmonizer. It reached a huge audience after appearing in a season-two finale of The O.C., and years later its melody became the backbone of Jason Derulo's debut hit Whatcha Say, introducing Heap's sound to a new generation.",
+      "hook": "An a cappella song built entirely from her own voice — then it powered Jason Derulo's Whatcha Say",
+      "story": "Imogen Heap closed Speak for Yourself with Hide and Seek, a track made almost entirely from her voice run through a vocal harmonizer. It reached a huge audience after appearing in a season-two finale of The O.C., and years later its melody became the backbone of Jason Derulo's 2009 single Whatcha Say, introducing Heap's sound to a new generation.",
       "media": [
         {
           "label": "Imogen Heap — Hide and Seek (official video)",
@@ -2296,12 +2428,17 @@
           "title": "Jason Derulo",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Jason_Derulo"
+        },
+        {
+          "title": "Imogen Heap — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/328d146c-79f1-4eb6-9e40-8ee5710c14e5"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Hide and Seek was built largely from Heap's voice processed through a vocal harmonizer.…\") confirmed by 1/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:57:14.805Z"
+      "at": "2026-07-18T15:57:14.805Z",
+      "rescoredAt": "2026-07-18T23:24:05.908Z"
     },
     {
       "id": "imogen-heap-629405bb",
@@ -2402,12 +2539,17 @@
           "title": "Mi.Mu Gloves",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Mi.Mu_Gloves"
+        },
+        {
+          "title": "Imogen Heap — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/328d146c-79f1-4eb6-9e40-8ee5710c14e5"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"The Mi.Mu gloves let performers control sound through hand gestures and movement.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:57:16.287Z"
+      "at": "2026-07-18T15:57:16.287Z",
+      "rescoredAt": "2026-07-18T23:24:05.908Z"
     },
     {
       "id": "james-blake-2a192113",
@@ -2528,9 +2670,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"James Blake performs on the song Forward on Beyoncé's album Lemonade.…\") confirmed by 0/2 required sources (3 live)",
+      "holdReason": "Both core claims are hard feature/production credit facts, and neither is verified under the two-tier policy. Claim 0 (Blake on Beyoncé's 'Forward' from Lemonade) has zero prose sources and no Wikipedia confirmation, and the structured data contains no such collaboration. Claim 1 (production credit on Kendrick's DAMN) was Wikipedia-confirmed but the MusicBrainz structured data contains no DAMN/Ken",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:16:31.732Z"
+      "at": "2026-07-18T17:16:31.732Z",
+      "rescoredAt": "2026-07-18T23:24:21.879Z"
     },
     {
       "id": "james-blake-ae3beefc",
@@ -2584,12 +2727,17 @@
           "title": "Kismet (Jesca Hoop album)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Kismet_(Jesca_Hoop_album)"
+        },
+        {
+          "title": "Jesca Hoop — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/b5330942-ffdf-49cb-8a13-b5d7b5d67bff"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Jesca Hoop was born in Santa Rosa, California.…\") confirmed by 1/2 required sources (1 live); claim 2 (\"Jesca Hoop worked as a nanny for Tom Waits and Kathleen Brennan's children.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:03:51.823Z"
+      "at": "2026-07-18T16:03:51.823Z",
+      "rescoredAt": "2026-07-18T23:26:58.227Z"
     },
     {
       "id": "jesca-hoop-f0917665",
@@ -2658,12 +2806,17 @@
           "title": "PJ Harvey",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/PJ_Harvey"
+        },
+        {
+          "title": "Jesca Hoop — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/b5330942-ffdf-49cb-8a13-b5d7b5d67bff"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Stonechild was produced by John Parish.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Stonechild features guest vocals from Lucius.…\") confirmed by 0/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:03:51.823Z"
+      "at": "2026-07-18T16:03:51.823Z",
+      "rescoredAt": "2026-07-18T23:26:58.227Z"
     },
     {
       "id": "jesca-hoop-6d881e28",
@@ -2683,20 +2836,25 @@
           "title": "Jesca Hoop",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Jesca_Hoop"
+        },
+        {
+          "title": "Jesca Hoop — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/b5330942-ffdf-49cb-8a13-b5d7b5d67bff"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Memories Are Now was released on Sub Pop in 2017.…\") confirmed by 1/2 required sources (1 live); claim 2 (\"Memories Are Now contains nine songs.…\") confirmed by 0/2 required sources (1 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:03:51.823Z"
+      "at": "2026-07-18T16:03:51.823Z",
+      "rescoredAt": "2026-07-18T23:26:58.227Z"
     },
     {
       "id": "joanna-newsom-62b2517e",
       "slug": "joanna-newsom",
       "artistName": "Joanna Newsom",
       "type": "collab",
-      "hook": "One album, three legends of the studio: Albini recorded it, Van Dyke Parks scored it, Jim O'Rourke mixed it",
-      "story": "For Ys, her 2006 second album, Joanna Newsom assembled an extraordinary crew. Steve Albini engineered the recordings, Van Dyke Parks wrote the sweeping orchestral arrangements, and Jim O'Rourke handled the mix. The result was just five long-form songs, some stretching past ten minutes, built around harp and voice.",
+      "hook": "One album, two legends of the studio: Albini recorded it and Van Dyke Parks scored it",
+      "story": "For Ys, her 2006 second album, Joanna Newsom assembled an extraordinary crew. Steve Albini engineered the recordings and Van Dyke Parks wrote the sweeping orchestral arrangements. The result was just five long-form songs, some stretching past ten minutes, built around harp and voice.",
       "media": [
         {
           "label": "Joanna Newsom — Ys era live",
@@ -2713,20 +2871,25 @@
           "title": "Joanna Newsom",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Joanna_Newsom"
+        },
+        {
+          "title": "Joanna Newsom — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/cb69e1f1-bc76-4df5-93c9-cf97dd8a3b5c"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"Ys was recorded by Steve Albini.…\") confirmed by 1/2 required sources (2 live); claim 4 (\"Ys was mixed by Jim O'Rourke.…\") confirmed by 0/2 required sources (2 live); claim 5 (\"Ys consists of five songs.…\") confirmed by 1/2 required sources (1 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:18:21.638Z"
+      "at": "2026-07-18T17:18:21.638Z",
+      "rescoredAt": "2026-07-19T00:41:25.944Z"
     },
     {
       "id": "joanna-newsom-313398d8",
       "slug": "joanna-newsom",
       "artistName": "Joanna Newsom",
       "type": "screen",
-      "hook": "Paul Thomas Anderson directed two of her music videos — and cast her as the narrator of a whole feature film",
-      "story": "The bond between Joanna Newsom and filmmaker Paul Thomas Anderson runs both ways. She narrates and appears in his 2014 Thomas Pynchon adaptation Inherent Vice as the character Sortilège, and the following year Anderson directed the videos for Sapokanikan and Divers, two songs from her 2015 album Divers.",
+      "hook": "Paul Thomas Anderson cast her as the narrator of a whole feature film",
+      "story": "The bond between Joanna Newsom and filmmaker Paul Thomas Anderson is real: she narrates and appears in his film Inherent Vice. Sapokanikan and Divers, meanwhile, are two songs from her 2015 album Divers.",
       "media": [
         {
           "label": "Sapokanikan (dir. Paul Thomas Anderson)",
@@ -2747,20 +2910,25 @@
           "title": "Divers (Joanna Newsom album)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Divers_(Joanna_Newsom_album)"
+        },
+        {
+          "title": "Joanna Newsom — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/cb69e1f1-bc76-4df5-93c9-cf97dd8a3b5c"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Joanna Newsom appears in and narrates Paul Thomas Anderson's film Inherent Vice.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"Paul Thomas Anderson directed the music video for Sapokanikan.…\") confirmed by 0/2 required sources (2 live); claim 3 (\"Sapokanikan and Divers are songs from the album Divers.…\") confirmed by 1/2 required sources (1 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:18:21.638Z"
+      "at": "2026-07-18T17:18:21.638Z",
+      "rescoredAt": "2026-07-19T00:41:25.944Z"
     },
     {
       "id": "joanna-newsom-41491d8b",
       "slug": "joanna-newsom",
       "artistName": "Joanna Newsom",
       "type": "era",
-      "hook": "A harp-playing kid from a Gold Rush town whose 2004 debut helped define a whole folk movement",
-      "story": "Joanna Newsom grew up in Nevada City, California, a Gold Rush town in the Sierra Nevada foothills, and began studying harp as a child. In 2004 she released her debut, The Milk-Eyed Mender, on Chicago label Drag City — an album of harp, harpsichord and a striking, keening voice that made her one of the defining figures of the era's new folk wave.",
+      "hook": "A harp-playing kid whose 2004 debut helped define a whole folk movement",
+      "story": "Joanna Newsom began studying harp as a child. In 2004 she released her debut, The Milk-Eyed Mender, on Chicago label Drag City — an album of harp, harpsichord and a striking, keening voice that made her one of the defining figures of the era's new folk wave.",
       "media": [
         {
           "label": "Joanna Newsom — Peach, Plum, Pear",
@@ -2777,12 +2945,17 @@
           "title": "Joanna Newsom",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Joanna_Newsom"
+        },
+        {
+          "title": "Joanna Newsom — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/cb69e1f1-bc76-4df5-93c9-cf97dd8a3b5c"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Joanna Newsom grew up in Nevada City, California.…\") confirmed by 0/2 required sources (2 live); claim 3 (\"The Milk-Eyed Mender was released on Drag City.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:18:21.638Z"
+      "at": "2026-07-18T17:18:21.638Z",
+      "rescoredAt": "2026-07-19T00:41:25.944Z"
     },
     {
       "id": "joanna-newsom-119107b5",
@@ -2799,9 +2972,10 @@
       ],
       "sources": [],
       "status": "draft",
-      "holdReason": "claim 1 (\"Joanna Newsom criticized Spotify, describing it as a villainous cabal of major labels.…\") confirmed by 0/2 required sources (1 live); claim 2 (\"Joanna Newsom kept her music off Spotify.…\") confirmed by 0/2 required sources (1 live)",
+      "holdReason": "Both core claims are unverified: the 'villainous cabal' remark is a soft/anecdotal quote with 0 prose sources (fails the strict 2-source bar), and the 'kept her catalog off Spotify' claim has no Wikipedia confirmation — and MusicBrainz actually lists an active Spotify streaming link, so structured data does not support it.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:18:23.056Z"
+      "at": "2026-07-18T17:18:23.056Z",
+      "rescoredAt": "2026-07-19T00:41:25.944Z"
     },
     {
       "id": "mf-doom-dde2f713",
@@ -2839,9 +3013,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Daniel Dumile was born in London in 1971…\") confirmed by 1/2 required sources (2 live); claim 4 (\"The KMD album Black Bastards was shelved by their label…\") confirmed by 1/2 required sources (3 live); claim 5 (\"DOOM's mask was modeled on Marvel's Doctor Doom…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on the KMD/Subroc narrative — that his brother DJ Subroc's death and the shelving of Black Bastards drove him out of rap, prompting a masked return. The structured data contains no KMD membership, no Subroc, no Black Bastards, and no mask detail, so these hard biographical claims fail the structured-data tier. The shelved-album and Doctor Doom mask facts have only 1 prose source and",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:20:03.498Z"
+      "at": "2026-07-18T17:20:03.498Z",
+      "rescoredAt": "2026-07-19T00:44:45.926Z"
     },
     {
       "id": "mf-doom-5c0a8cef",
@@ -2879,9 +3054,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 4 (\"An unfinished version of Madvillainy leaked in 2003…\") confirmed by 1/2 required sources (1 live)",
+      "holdReason": "The hook's core claim is the 2003 leak-and-rebuild story (claim 3), a single-source anecdotal/soft claim not present in the structured data (Madvillainy is not among the release groups here). The core narrative is therefore unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:20:03.498Z"
+      "at": "2026-07-18T17:20:03.498Z",
+      "rescoredAt": "2026-07-19T00:44:45.926Z"
     },
     {
       "id": "mf-doom-c8efc8e1",
@@ -2915,12 +3091,17 @@
           "title": "Rapp Snitch Knishes",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Rapp_Snitch_Knishes"
+        },
+        {
+          "title": "MF DOOM — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/188711ed-c99b-439c-844a-ca831f63a727"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"The title MM..FOOD is an anagram of MF DOOM…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:20:03.498Z"
+      "at": "2026-07-18T17:20:03.498Z",
+      "rescoredAt": "2026-07-19T00:44:45.926Z"
     },
     {
       "id": "mf-doom-11c54199",
@@ -2943,9 +3124,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"DOOM was denied re-entry to the United States after a 2010 tour…\") confirmed by 1/2 required sources (1 live); claim 2 (\"MF DOOM died on October 31, 2020…\") confirmed by 1/2 required sources (1 live); claim 3 (\"DOOM was 49 years old when he died…\") confirmed by 1/2 required sources (1 live); claim 4 (\"His family announced his death on December 31, 2020…\") confirmed by 1/2 required sources (1 live)",
+      "holdReason": "The hook's core twist — that the world didn't learn of his death until New Year's Eve (the Dec 31, 2020 family announcement, claim 3) — is a single-source anecdotal claim absent from the structured data. The death date (Oct 31, 2020) and age 49 are verified via the structured lifeSpan, but the announcement-delay that the hook is built on is unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:20:05.101Z"
+      "at": "2026-07-18T17:20:05.101Z",
+      "rescoredAt": "2026-07-19T00:44:45.926Z"
     },
     {
       "id": "michael-jackson-bab781ac",
@@ -2953,7 +3135,7 @@
       "artistName": "Michael Jackson",
       "type": "era",
       "hook": "The album so big it made Michael Jackson the first artist to send five singles to #1",
-      "story": "After Thriller, the question was how to possibly follow it. Bad (1987), again produced with Quincy Jones, answered by becoming the first album to spawn five Billboard Hot 100 number-one singles. It cemented Jackson's dominance of late-'80s pop.",
+      "story": "After Thriller, the question was how to possibly follow it. Bad (1987) answered by becoming the first album to spawn five Billboard Hot 100 number-one singles. It cemented Jackson's dominance of late-'80s pop.",
       "media": [
         {
           "label": "Smooth Criminal (official video)",
@@ -2975,12 +3157,17 @@
           "title": "Quincy Jones",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Quincy_Jones"
+        },
+        {
+          "title": "Michael Jackson — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f27ec8db-af05-4f36-916e-3d57f91ecf5e"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 3 (\"Bad was produced by Quincy Jones with Michael Jackson.…\") confirmed by 1/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:12:41.830Z"
+      "at": "2026-07-18T16:12:41.830Z",
+      "rescoredAt": "2026-07-18T23:39:20.988Z"
     },
     {
       "id": "michael-jackson-5795dfd6",
@@ -3014,12 +3201,17 @@
           "title": "List of best-selling albums",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/List_of_best-selling_albums"
+        },
+        {
+          "title": "Michael Jackson — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f27ec8db-af05-4f36-916e-3d57f91ecf5e"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 3 (\"Billie Jean, Beat It, and Thriller were released as singles from the album Thriller.…\") confirmed by 1/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:12:41.830Z"
+      "at": "2026-07-18T16:12:41.830Z",
+      "rescoredAt": "2026-07-18T23:39:20.988Z"
     },
     {
       "id": "michael-jackson-3ac567c7",
@@ -3131,12 +3323,17 @@
           "title": "The Lonesome Crowded West",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/The_Lonesome_Crowded_West"
+        },
+        {
+          "title": "Modest Mouse — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/a96ac800-bfcb-412a-8a63-0a98df600700"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Modest Mouse formed in Issaquah, Washington…\") confirmed by 1/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:18:27.272Z"
+      "at": "2026-07-18T16:18:27.272Z",
+      "rescoredAt": "2026-07-18T23:40:07.005Z"
     },
     {
       "id": "modest-mouse-b9f88ae7",
@@ -3169,9 +3366,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Float On was the lead single from Good News for People Who Love Bad News…\") confirmed by 0/2 required sources (2 live)",
+      "holdReason": "The hook rests on the band becoming 'unlikely Grammy nominees' (claim 2). Grammy nominations are a hard fact (award) not contained in the structured data, so even though Wikipedia confirmed it, it stays unverified under the hard-fact tier.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:18:27.272Z"
+      "at": "2026-07-18T16:18:27.272Z",
+      "rescoredAt": "2026-07-18T23:40:07.005Z"
     },
     {
       "id": "modest-mouse-d79b4aa5",
@@ -3209,9 +3407,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"Johnny Marr was the guitarist of The Smiths…\") confirmed by 1/2 required sources (2 live); claim 3 (\"We Were Dead Before the Ship Even Sank debuted at number one on the Billboard 200…\") confirmed by 0/2 required sources (2 live)",
+      "holdReason": "The hook rests on the band 'landing a number-one album' (claim 2, a #1 Billboard 200 debut). Wikipedia did not confirm this and the structured data contains no chart positions, so this core claim is unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:18:27.272Z"
+      "at": "2026-07-18T16:18:27.272Z",
+      "rescoredAt": "2026-07-18T23:40:07.005Z"
     },
     {
       "id": "modest-mouse-887f8c4c",
@@ -3313,12 +3512,17 @@
           "title": "Nick Drake",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Nick_Drake"
+        },
+        {
+          "title": "Nick Drake — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/99ea432a-e3d8-42cb-9d5e-db316a6a8458"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 3 (\"Pink Moon was released in February 1972.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:21:48.527Z"
+      "at": "2026-07-18T17:21:48.527Z",
+      "rescoredAt": "2026-07-18T23:43:44.440Z"
     },
     {
       "id": "nick-drake-9c59105",
@@ -3326,7 +3530,7 @@
       "artistName": "Nick Drake",
       "type": "screen",
       "hook": "A 1999 car advert introduced Pink Moon to millions who'd never heard him",
-      "story": "Decades after his death, a Volkswagen commercial did what his lifetime never could. The 1999 ad for the VW Cabrio used the title track of Pink Moon, and the exposure sparked a surge of interest in Drake, boosting sales of an album that had languished for years. It remains one of the most cited examples of a commercial reviving a neglected artist.",
+      "story": "Decades after his death, a Volkswagen commercial did what his lifetime never could. The 1999 ad used the title track of Pink Moon, and the exposure introduced Drake to a mass audience that had never heard him — helping reverse years of neglect. It remains one of the most cited examples of a commercial reviving an overlooked artist.",
       "media": [
         {
           "label": "Official site: Bryter Music",
@@ -3338,20 +3542,25 @@
           "title": "Pink Moon",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Pink_Moon"
+        },
+        {
+          "title": "Nick Drake — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/99ea432a-e3d8-42cb-9d5e-db316a6a8458"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"A 1999 Volkswagen Cabrio commercial featured Nick Drake's song Pink Moon.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"The Volkswagen commercial boosted sales of the Pink Moon album.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:21:49.959Z"
+      "at": "2026-07-18T17:21:49.959Z",
+      "rescoredAt": "2026-07-18T23:43:44.440Z"
     },
     {
       "id": "nick-drake-59952acd",
       "slug": "nick-drake",
       "artistName": "Nick Drake",
       "type": "collab",
-      "hook": "In 2023 a new generation lined up to cover the songs almost nobody bought when he was alive",
-      "story": "The Endless Coloured Ways: The Songs of Nick Drake, released in 2023, gathered contemporary artists to reinterpret his catalogue. Feist reworked River Man, while Christian Lee Hutson and Elanor Moss took on Which Will — both accompanied by official films. It's a vivid measure of how completely the verdict on Drake has reversed since his death in 1974.",
+      "hook": "A new generation lined up to cover the songs almost nobody bought when he was alive",
+      "story": "Contemporary artists have reinterpreted Nick Drake's catalogue. Feist reworked River Man, while Christian Lee Hutson and Elanor Moss took on Which Will — both accompanied by official films. It's a vivid measure of how completely the verdict on Drake has reversed since his death in 1974.",
       "media": [
         {
           "label": "River Man — Famous Blue Cable feat. Feist (Official Film)",
@@ -3377,12 +3586,17 @@
           "title": "Five Leaves Left",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Five_Leaves_Left"
+        },
+        {
+          "title": "Nick Drake — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/99ea432a-e3d8-42cb-9d5e-db316a6a8458"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"The Endless Coloured Ways: The Songs of Nick Drake is a 2023 tribute album of Nick Drake c…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:21:49.959Z"
+      "at": "2026-07-18T17:21:49.959Z",
+      "rescoredAt": "2026-07-18T23:43:44.440Z"
     },
     {
       "id": "oumou-sangare-1c2d6c78",
@@ -3390,7 +3604,7 @@
       "artistName": "Oumou Sangaré",
       "type": "era",
       "hook": "At barely 21 she cut a debut about polygamy and arranged marriage — and it sold hundreds of thousands",
-      "story": "Raised in Bamako and steeped in the pentatonic sound of the Wassoulou region, Oumou Sangaré made her debut with Moussolou, whose title means Women. Its songs confronted polygamy, arranged marriage and the constraints on women's lives with startling directness, and it became a phenomenon across West Africa. The record introduced a voice that would soon travel far beyond Mali.",
+      "story": "Raised in Bamako, Oumou Sangaré made her debut with Moussolou. Its songs confronted polygamy, arranged marriage and the constraints on women's lives with startling directness, and it became a phenomenon across West Africa. The record introduced a voice that would soon travel far beyond Mali.",
       "media": [
         {
           "label": "Wassulu Don (Official Video)",
@@ -3407,12 +3621,17 @@
           "title": "Moussolou",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Moussolou"
+        },
+        {
+          "title": "Oumou Sangaré — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/2013f3af-51a3-404d-9afc-91b3f277ea4e"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Oumou Sangaré was born in Bamako, Mali, in 1968.…\") confirmed by 1/2 required sources (1 live); claim 3 (\"The title Moussolou translates as Women.…\") confirmed by 0/2 required sources (2 live); claim 4 (\"Oumou Sangaré's music is rooted in the Wassoulou region south of the Niger River in Mali.…\") confirmed by 0/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:23:54.616Z"
+      "at": "2026-07-18T17:23:54.616Z",
+      "rescoredAt": "2026-07-18T23:48:39.096Z"
     },
     {
       "id": "oumou-sangare-3710e861",
@@ -3447,12 +3666,17 @@
           "title": "Afrobeat",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Afrobeat"
+        },
+        {
+          "title": "Oumou Sangaré — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/2013f3af-51a3-404d-9afc-91b3f277ea4e"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"Mogoya features drummer Tony Allen.…\") confirmed by 1/2 required sources (1 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:23:54.616Z"
+      "at": "2026-07-18T17:23:54.616Z",
+      "rescoredAt": "2026-07-18T23:48:39.096Z"
     },
     {
       "id": "oumou-sangare-1f59886c",
@@ -3511,12 +3735,17 @@
           "title": "Oumou Sangaré",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Oumou_Sangar%C3%A9"
+        },
+        {
+          "title": "Oumou Sangaré — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/2013f3af-51a3-404d-9afc-91b3f277ea4e"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Oumou Sangaré released the album Timbuktu in 2022.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"Oumou Sangaré is known as The Songbird of Wassoulou.…\") confirmed by 0/2 required sources (1 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:23:54.616Z"
+      "at": "2026-07-18T17:23:54.616Z",
+      "rescoredAt": "2026-07-18T23:48:39.096Z"
     },
     {
       "id": "pink-floyd-9e7c5a7a",
@@ -3548,9 +3777,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"The Dark Side of the Moon is one of the best-selling albums of all time.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"The Dark Side of the Moon spent 741 weeks on the US Billboard 200 chart.…\") confirmed by 0/2 required sources (2 live)",
+      "holdReason": "The hook's core claim is the album's decade-plus US chart longevity (claim 2: 741 weeks on the Billboard 200), which has 0 confirming prose sources and was explicitly NOT confirmed by Wikipedia, and no chart-run data appears in the structured data. The 'best-selling' claim also has only 1 source. The hook cannot stand without an unverified chart-longevity claim.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:27:40.220Z"
+      "at": "2026-07-18T16:27:40.220Z",
+      "rescoredAt": "2026-07-18T22:49:51.725Z"
     },
     {
       "id": "pink-floyd-f3b523a2",
@@ -3583,9 +3813,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"Syd Barrett unexpectedly visited the studio during the Wish You Were Here sessions and mem…\") confirmed by 0/2 required sources (2 live)",
+      "holdReason": "The hook rests on claim 1 — that Barrett unexpectedly visited the Wish You Were Here sessions and was not recognized. This anecdote has 0 confirming prose sources, was not confirmed by Wikipedia, and is not in the structured data. The core anecdotal claim is unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:27:40.220Z"
+      "at": "2026-07-18T16:27:40.220Z",
+      "rescoredAt": "2026-07-18T22:49:51.725Z"
     },
     {
       "id": "pink-floyd-d481785",
@@ -3620,12 +3851,17 @@
           "title": "Pink Floyd",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Pink_Floyd"
+        },
+        {
+          "title": "Pink Floyd — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/83d91898-7763-47d7-b03b-b92132375c47"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Pink Floyd's classic four-member lineup reunited at Live 8 on 2 July 2005.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:27:40.220Z"
+      "at": "2026-07-18T16:27:40.220Z",
+      "rescoredAt": "2026-07-18T22:49:51.725Z"
     },
     {
       "id": "pink-floyd-dd32e1b8",
@@ -3653,9 +3889,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Another Brick in the Wall, Part 2 was Pink Floyd's only single to reach number one in both…\") confirmed by 1/2 required sources (2 live); claim 2 (\"Another Brick in the Wall, Part 2 was banned in South Africa in 1980.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "Both core claims are unverified: claim 0 (only single to hit #1 in both UK and US) has just 1 prose source and no chart data in the structured record, and claim 1 (1980 South Africa ban) also has only 1 prose source and is not in the structured data. Neither meets the soft-claim 2-source bar and neither is a hard fact covered by the structured data, so the hook's core rests on unverified claims.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:27:40.220Z"
+      "at": "2026-07-18T16:27:40.220Z",
+      "rescoredAt": "2026-07-18T22:49:51.725Z"
     },
     {
       "id": "queen-39ef875e",
@@ -3696,8 +3933,8 @@
       "slug": "queen",
       "artistName": "Queen",
       "type": "performance",
-      "hook": "Twenty minutes at Wembley in 1985 that keeps topping lists of rock's greatest live sets",
-      "story": "Queen took the stage at Live Aid at Wembley Stadium on 13 July 1985, blazing through a compressed medley of their biggest songs. The set is frequently ranked among the greatest live performances in rock history, and it remains the case cited when people call Queen the era's best live band.",
+      "hook": "Twenty minutes at Live Aid in 1985 that keeps topping lists of rock's greatest live sets",
+      "story": "Queen took the stage at Live Aid in 1985, blazing through a compressed medley of their biggest songs. The set is frequently ranked among the greatest live performances in rock history, and it remains the case cited when people call Queen the era's best live band.",
       "media": [
         {
           "label": "Search: Queen Live Aid 1985",
@@ -3714,12 +3951,17 @@
           "title": "Live Aid",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Live_Aid"
+        },
+        {
+          "title": "Queen — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/0383dadf-2a4e-4d10-a46a-e9e041da8eb3"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Queen performed at Live Aid at Wembley Stadium on 13 July 1985.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:29:25.642Z"
+      "at": "2026-07-18T16:29:25.642Z",
+      "rescoredAt": "2026-07-18T23:51:55.991Z"
     },
     {
       "id": "queen-25801d69",
@@ -3770,8 +4012,8 @@
       "slug": "queen",
       "artistName": "Queen",
       "type": "screen",
-      "hook": "A video where the band mowed the housework in drag — and it caused a stir on US TV",
-      "story": "The 1984 clip for 'I Want To Break Free' opened with Queen dressed in women's clothing, parodying a British soap opera. The camp visual was received differently across markets and proved controversial in the United States, even as the single became a favourite elsewhere in the world.",
+      "hook": "A video where the band did the housework in drag",
+      "story": "The 1984 clip for 'I Want To Break Free' opened with Queen dressed in women's clothing. The camp visual became a favourite with fans around the world.",
       "media": [
         {
           "label": "I Want To Break Free (official video)",
@@ -3790,18 +4032,18 @@
           "url": "https://en.wikipedia.org/wiki/Queen_(band)"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"The 'I Want To Break Free' video was controversial in the United States.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:29:25.642Z"
+      "at": "2026-07-18T16:29:25.642Z",
+      "rescoredAt": "2026-07-18T23:51:55.991Z"
     },
     {
       "id": "radiohead-b734d88a",
       "slug": "radiohead",
       "artistName": "Radiohead",
       "type": "era",
-      "hook": "Radiohead spent five years rehearsing before the world knew their name",
-      "story": "Five schoolmates from Abingdon School in Oxfordshire started playing together in 1985 under the name On a Friday, the only day they could all rehearse. When they signed to EMI, they renamed themselves after a Talking Heads song. The rest of the decade was spent building — and then outrunning — the reputation of a single early hit.",
+      "hook": "Before the world knew them as Radiohead, they were a band called On a Friday",
+      "story": "Five bandmates from Abingdon in Oxfordshire — Thom Yorke, Jonny Greenwood, Colin Greenwood, Ed O'Brien, and Philip Selway — started out under the name On a Friday before renaming themselves Radiohead. What followed was a career spent building, and then reinventing, a sound that would reshape rock.",
       "media": [
         {
           "label": "Radiohead — official site",
@@ -3813,20 +4055,25 @@
           "title": "Radiohead",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Radiohead"
+        },
+        {
+          "title": "Radiohead — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/a74b1b7f-71a5-4011-9441-d0b5e4122711"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Radiohead formed in Abingdon, Oxfordshire in 1985.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"The band originally performed under the name On a Friday.…\") confirmed by 1/2 required sources (1 live); claim 3 (\"Radiohead took their name from a Talking Heads song.…\") confirmed by 1/2 required sources (1 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:00:36.118Z"
+      "at": "2026-07-18T15:00:36.118Z",
+      "rescoredAt": "2026-07-18T23:57:27.687Z"
     },
     {
       "id": "radiohead-aec43de3",
       "slug": "radiohead",
       "artistName": "Radiohead",
       "type": "era",
-      "hook": "An album about pre-millennium dread keeps landing on lists of the greatest records ever made",
-      "story": "Released in 1997, OK Computer traded the guitar heroics of The Bends for something colder and stranger — a portrait of technology, alienation, and unease at the edge of a new century. It became a critical landmark and is routinely ranked among the greatest albums of all time. Its singles, from Paranoid Android to Karma Police, still define the era.",
+      "hook": "The 1997 album that gave us Paranoid Android and Karma Police",
+      "story": "Released in 1997, OK Computer followed The Bends with something colder and stranger — a portrait of technology and unease at the edge of a new century. Its singles, from Paranoid Android to Karma Police, still define the era.",
       "media": [
         {
           "label": "Paranoid Android (official video)",
@@ -3847,12 +4094,17 @@
           "title": "Radiohead",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Radiohead"
+        },
+        {
+          "title": "Radiohead — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/a74b1b7f-71a5-4011-9441-d0b5e4122711"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"OK Computer is routinely named among the greatest albums of all time.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:00:36.118Z"
+      "at": "2026-07-18T15:00:36.118Z",
+      "rescoredAt": "2026-07-18T23:57:27.687Z"
     },
     {
       "id": "radiohead-502972dc",
@@ -3902,17 +4154,18 @@
       ],
       "sources": [],
       "status": "draft",
-      "holdReason": "claim 1 (\"Radiohead returned to touring in November 2025 after seven years away.…\") confirmed by 0/2 required sources (1 live); claim 2 (\"The 2025 tour visited Madrid, Bologna, London, Copenhagen, and Berlin.…\") confirmed by 0/2 required sources (1 live)",
+      "holdReason": "The core claim that Radiohead returned to touring in November 2025 after seven years away (and the specific cities visited) is unverified — Wikipedia did not confirm it and the structured data contains no touring information.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:00:36.997Z"
+      "at": "2026-07-18T15:00:36.997Z",
+      "rescoredAt": "2026-07-18T23:57:27.687Z"
     },
     {
       "id": "ratatat-cc190df1",
       "slug": "ratatat",
       "artistName": "Ratatat",
       "type": "era",
-      "hook": "Two Skidmore College kids built a band with no singer and no gaps",
-      "story": "Mike Stroud and Evan Mast met as students at Skidmore College and formed Ratatat in Brooklyn, trading vocals for layered electric guitars harmonized into fanfares over chewy synth bass and drum-machine strut. Their self-titled debut arrived in 2004, laying down a blueprint they'd spend the next decade sharpening.",
+      "hook": "Two guys built a band with no singer and no gaps",
+      "story": "Mike Stroud and Evan Mast formed Ratatat in Brooklyn, trading vocals for layered electric guitars harmonized into fanfares over chewy synth bass and drum-machine strut. Their self-titled debut arrived in 2004, laying down a blueprint they'd spend the next decade sharpening.",
       "media": [
         {
           "label": "Search: Ratatat — Seventeen Years",
@@ -3929,12 +4182,17 @@
           "title": "Ratatat (album)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Ratatat_(album)"
+        },
+        {
+          "title": "Ratatat — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f467181e-d5e0-4285-b47e-e853dcc89ee7"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"Mike Stroud and Evan Mast met at Skidmore College.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Ratatat's self-titled debut album was released in 2004.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:33:28.615Z"
+      "at": "2026-07-18T16:33:28.615Z",
+      "rescoredAt": "2026-07-18T23:58:34.822Z"
     },
     {
       "id": "ratatat-5d34cd9c",
@@ -3976,7 +4234,7 @@
       "artistName": "Ratatat",
       "type": "anniversary",
       "hook": "The album that sharpened their formula turns 20 in 2026",
-      "story": "Classics, released in 2006, tightened everything Ratatat did well — the sampled snarl of 'Wildcat' and the strutting riffs of 'Loud Pipes' among them. Two decades on, it still reads as the moment the duo's guitars-as-synthesizers idea clicked fully into place.",
+      "story": "Classics, released in 2006, tightened everything Ratatat did well. Two decades on, it still reads as the moment the duo's guitars-as-synthesizers idea clicked fully into place.",
       "media": [
         {
           "label": "Search: Ratatat — Wildcat",
@@ -3993,12 +4251,17 @@
           "title": "Ratatat",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Ratatat"
+        },
+        {
+          "title": "Ratatat — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f467181e-d5e0-4285-b47e-e853dcc89ee7"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"'Wildcat' and 'Loud Pipes' are tracks on Classics.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:33:28.615Z"
+      "at": "2026-07-18T16:33:28.615Z",
+      "rescoredAt": "2026-07-18T23:58:34.822Z"
     },
     {
       "id": "ratatat-e0ae96dd",
@@ -4006,7 +4269,7 @@
       "artistName": "Ratatat",
       "type": "era",
       "hook": "After five quiet years they came back with a chrome-plated fanfare",
-      "story": "Following LP4 in 2010, Ratatat went silent for half a decade before returning with Magnifique in 2015. Its lead single 'Cream on Chrome' brought back the harmonized-guitar strut and set up a run of festival sets. The duo has stayed characteristically quiet since — no singer to interview, just the records.",
+      "story": "Following LP4 in 2010, Ratatat went silent for half a decade before returning with Magnifique in 2015. The 2015 single 'Cream on Chrome' brought back the harmonized-guitar strut.",
       "media": [
         {
           "label": "Ratatat — Cream on Chrome (official video)",
@@ -4023,12 +4286,17 @@
           "title": "Ratatat",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Ratatat"
+        },
+        {
+          "title": "Ratatat — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f467181e-d5e0-4285-b47e-e853dcc89ee7"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"'Cream on Chrome' was the lead single from Magnifique.…\") confirmed by 1/2 required sources (1 live); claim 3 (\"Magnifique followed a gap of about five years after LP4 (2010).…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:33:28.615Z"
+      "at": "2026-07-18T16:33:28.615Z",
+      "rescoredAt": "2026-07-18T23:58:34.822Z"
     },
     {
       "id": "sigur-ros-1857fb0d",
@@ -4061,9 +4329,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Sigur Rós formed in Reykjavík, Iceland, in 1994.…\") confirmed by 1/2 required sources (3 live); claim 2 (\"The band's name comes from Jónsi Birgisson's sister, Sigurrós.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests entirely on claim 1 — that the band took its name from Jónsi's newborn sister Sigurrós. That is an anecdotal/soft claim with only one prose source and no support in the structured data, so it stays unverified. (Formation in Reykjavík in 1994 is verified via the structured record, but it does not carry the hook.)",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:25:48.044Z"
+      "at": "2026-07-18T17:25:48.044Z",
+      "rescoredAt": "2026-07-19T00:48:20.595Z"
     },
     {
       "id": "sigur-ros-90751811",
@@ -4096,17 +4365,18 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 3 (\"Hoppípolla was re-released as a single in 2006.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on claim 1 — that the BBC used 'Hoppípolla' to promote Planet Earth. This is a documented film/TV feature credit that must appear in the structured data to pass the hard-fact tier, and it does not (MusicBrainz carries no sync/usage data). Without it the hook has no verified core to salvage.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:25:48.044Z"
+      "at": "2026-07-18T17:25:48.044Z",
+      "rescoredAt": "2026-07-19T00:48:20.595Z"
     },
     {
       "id": "sigur-ros-a9635f8a",
       "slug": "sigur-ros",
       "artistName": "Sigur Rós",
       "type": "era",
-      "hook": "An album with no title, no track names, and lyrics in a language they invented",
-      "story": "In 2002 Sigur Rós released ( ) — an album whose title is a pair of empty brackets. Every track is untitled, and the vocals are sung entirely in Vonlenska, or Hopelandic, an invented tongue with no fixed meaning, leaving interpretation to the listener. It remains one of the boldest gestures in their catalog.",
+      "hook": "An album whose title is nothing but a pair of empty brackets",
+      "story": "In 2002 Sigur Rós released ( ), an album whose title is nothing but a pair of empty brackets — one of the boldest gestures in their catalog.",
       "media": [
         {
           "label": "Untitled #1 (Vaka) — official video",
@@ -4123,20 +4393,25 @@
           "title": "Vonlenska",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Vonlenska"
+        },
+        {
+          "title": "Sigur Rós — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f6f2326f-6b25-4170-b89d-e235b25508e8"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Sigur Rós's album ( ) was released in 2002.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"The songs on ( ) are untitled.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:25:48.044Z"
+      "at": "2026-07-18T17:25:48.044Z",
+      "rescoredAt": "2026-07-19T00:48:20.595Z"
     },
     {
       "id": "sigur-ros-3f22e5d1",
       "slug": "sigur-ros",
       "artistName": "Sigur Rós",
       "type": "news",
-      "hook": "After a decade of near-silence, they returned with an entire orchestra behind them",
-      "story": "In June 2023 Sigur Rós broke a ten-year album gap with ÁTTA, their eighth studio record, made with a full orchestra and received as their most emotionally direct work. They carried that vision on the road, touring with local orchestras and choirs — a run that stretches into 2026 alongside a twentieth-anniversary remaster of Takk...",
+      "hook": "After a decade of near-silence, they returned with their eighth album",
+      "story": "In June 2023 Sigur Rós broke a ten-year album gap with ÁTTA, their eighth studio record and their first since 2013's Kveikur.",
       "media": [
         {
           "label": "Blóðberg (official video)",
@@ -4157,12 +4432,17 @@
           "title": "Sigur Rós",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Sigur_R%C3%B3s"
+        },
+        {
+          "title": "Sigur Rós — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/f6f2326f-6b25-4170-b89d-e235b25508e8"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"ÁTTA is Sigur Rós's eighth studio album.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"ÁTTA was recorded with an orchestra.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:25:49.056Z"
+      "at": "2026-07-18T17:25:49.056Z",
+      "rescoredAt": "2026-07-19T00:48:20.595Z"
     },
     {
       "id": "stevie-wonder-d10eefb4",
@@ -4185,9 +4465,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"Stevie Wonder was born on May 13, 1950 in Saginaw, Michigan.…\") confirmed by 1/2 required sources (2 live); claim 2 (\"Stevie Wonder was signed to Motown's Tamla label as a child.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Fingertips reached number one on the Billboard Hot 100 in 1963.…\") confirmed by 1/2 required sources (2 live); claim 4 (\"Stevie Wonder was the youngest solo artist to top the Billboard Hot 100.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook's core claims — that Fingertips reached #1 on the Billboard Hot 100 in 1963 (claim 2) and that Stevie Wonder was the youngest solo artist ever to top that chart (claim 3) — are chart/record facts not present in the structured data, so under the hard-fact tier they cannot be verified (only 1 prose source each). The birthplace (claim 0) is verified by structured data but is incidental; the ",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:39:01.723Z"
+      "at": "2026-07-18T16:39:01.723Z",
+      "rescoredAt": "2026-07-19T00:05:23.909Z"
     },
     {
       "id": "stevie-wonder-c3717861",
@@ -4215,9 +4496,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"Superstition originated from a collaboration involving Jeff Beck.…\") confirmed by 1/2 required sources (3 live); claim 3 (\"Superstition reached number one on the Billboard Hot 100.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on claim 1 — that Superstition originated from a studio jam/collaboration involving Jeff Beck. Jeff Beck does not appear anywhere in the structured data, so this hard collaboration/feature claim cannot be verified via the structured tier, and it has only 1 prose source, failing the soft-claim bar. The Talking Book 1972 release (claim 0) is verified but is incidental to the hook.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:39:01.723Z"
+      "at": "2026-07-18T16:39:01.723Z",
+      "rescoredAt": "2026-07-19T00:05:23.909Z"
     },
     {
       "id": "stevie-wonder-e1d9dcef",
@@ -4250,9 +4532,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 3 (\"Stevie Wonder is the only artist to win Album of the Year with three consecutive album rel…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on claim 2 — that Stevie Wonder is the only artist to win Album of the Year with three consecutive releases — an award/record fact not present in the structured data (which contains no Grammy information), leaving it verifiable only by 1 prose source. The underlying AOTY wins for Innervisions (claim 0) and Songs in the Key of Life (claim 1) are likewise awards not covered by the str",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:39:01.723Z"
+      "at": "2026-07-18T16:39:01.723Z",
+      "rescoredAt": "2026-07-19T00:05:23.909Z"
     },
     {
       "id": "stevie-wonder-629e7abc",
@@ -4342,7 +4625,7 @@
       "artistName": "Tame Impala",
       "type": "era",
       "hook": "The album where Kevin Parker ditched fuzz guitars for synths — and became a festival headliner",
-      "story": "Tame Impala's first two albums leaned on swirling psychedelic guitar, but 2015's 'Currents' swapped much of that for synthesizers and dancefloor basslines. The pivot reshaped the project's sound and its scale, turning Parker into an arena and festival draw and an in-demand collaborator. Its opening track 'Let It Happen' stretched past seven minutes and became one of the era's defining songs.",
+      "story": "Tame Impala's first two albums leaned on swirling psychedelic guitar, but 2015's 'Currents' swapped much of that for synthesizers and dancefloor basslines. The pivot reshaped the project's sound and its scale, turning Parker into an arena and festival draw and an in-demand collaborator. Songs like 'Let It Happen' became defining tracks of the era.",
       "media": [
         {
           "label": "Let It Happen (official video)",
@@ -4373,12 +4656,17 @@
           "title": "Let It Happen (Tame Impala song)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Let_It_Happen_(Tame_Impala_song)"
+        },
+        {
+          "title": "Tame Impala — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/63aa26c3-d59b-4da4-84ac-716b54f1ef4d"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"On Currents, Parker shifted from a guitar-driven sound toward synthesizers.…\") confirmed by 1/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:41:53.661Z"
+      "at": "2026-07-18T16:41:53.661Z",
+      "rescoredAt": "2026-07-19T00:06:13.450Z"
     },
     {
       "id": "tame-impala-f630b7ef",
@@ -4410,9 +4698,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 3 (\"New Person, Same Old Mistakes appears on Tame Impala's album Currents.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The core claim — that Rihanna covered 'New Person, Same Old Mistakes' (retitled 'Same Ol' Mistakes') on her 2016 album 'Anti' — cannot be verified under the hard-fact tier because the structured data contains no Rihanna, 'Anti', or cover-credit information, and it is not a soft claim meeting the 2+ prose bar for that tier.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:41:53.661Z"
+      "at": "2026-07-18T16:41:53.661Z",
+      "rescoredAt": "2026-07-19T00:06:13.450Z"
     },
     {
       "id": "tame-impala-9b363c9c",
@@ -4444,9 +4733,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"Deadbeat is Tame Impala's fifth studio album.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Deadbeat was inspired by Western Australia's bush doof outdoor rave culture.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on the interpretive claim that 'Deadbeat' was inspired by Western Australia's bush doof outdoor rave culture. This is a soft claim with only 1 confirmed prose source (needs 2+), and the structured data does not cover musical inspiration, so the core claim remains unverified.",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:41:54.463Z"
+      "at": "2026-07-18T16:41:54.463Z",
+      "rescoredAt": "2026-07-19T00:06:13.450Z"
     },
     {
       "id": "the-beatles-cd42ee34",
@@ -4485,12 +4775,17 @@
           "title": "The Beatles discography",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/The_Beatles_discography"
+        },
+        {
+          "title": "The Beatles — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"The Beatles formed in Liverpool in 1960.…\") confirmed by 1/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:44:51.357Z"
+      "at": "2026-07-18T16:44:51.357Z",
+      "rescoredAt": "2026-07-19T00:07:18.573Z"
     },
     {
       "id": "the-beatles-137f342d",
@@ -4586,9 +4881,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"'Now and Then' originated from a John Lennon home demo.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"'Now and Then' reached number one on the UK Singles Chart.…\") confirmed by 1/2 required sources (3 live)",
+      "holdReason": "The hook's core claims — that 'Now and Then' was released November 2, 2023 as the last Beatles single and reached UK No. 1 — cannot be verified under the structured tier. 'Now and Then' does not appear in the MusicBrainz release groups (which end in 1970), and the structured data contains no release date, 'last single' status, or chart-position information. The verified-facts data only lists it as",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:44:51.357Z"
+      "at": "2026-07-18T16:44:51.357Z",
+      "rescoredAt": "2026-07-19T00:07:18.573Z"
     },
     {
       "id": "the-boswell-sisters-b32e8f83",
@@ -4613,12 +4909,17 @@
           "title": "Connee Boswell",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Connee_Boswell"
+        },
+        {
+          "title": "The Boswell Sisters — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/41e2d679-43a3-4b9b-8469-ce748ad7b1ca"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"The Boswell Sisters were three sisters — Martha, Connee, and Helvetia — from New Orleans.…\") confirmed by 1/2 required sources (3 live); claim 3 (\"Connee Boswell created the trio's vocal arrangements.…\") confirmed by 0/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:47:31.674Z"
+      "at": "2026-07-18T16:47:31.674Z",
+      "rescoredAt": "2026-07-19T00:51:17.792Z"
     },
     {
       "id": "the-boswell-sisters-932084b6",
@@ -4643,12 +4944,17 @@
           "title": "The Boswell Sisters",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/The_Boswell_Sisters"
+        },
+        {
+          "title": "The Boswell Sisters — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/41e2d679-43a3-4b9b-8469-ce748ad7b1ca"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"The Big Broadcast featured Bing Crosby.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Cab Calloway appeared in The Big Broadcast.…\") confirmed by 0/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:47:31.674Z"
+      "at": "2026-07-18T16:47:31.674Z",
+      "rescoredAt": "2026-07-19T00:51:17.792Z"
     },
     {
       "id": "the-boswell-sisters-2addf3ab",
@@ -4681,17 +4987,18 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 1 (\"The Andrews Sisters modeled their vocal style on the Boswell Sisters.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"Connee Boswell continued as a solo artist and recorded with Bing Crosby.…\") confirmed by 0/2 required sources (2 live)",
+      "holdReason": "The core hook claim that the Andrews Sisters modeled their vocal style on the Boswell Sisters is an interpretive/soft claim with only 1 confirmed prose source (soft bar needs 2+) and it is not present as a database fact in the structured data or the verified bio. The secondary hook claim of disbanding 'in 1936' also cannot stand: the structured data's lifeSpan ends in 1935, contradicting the year,",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:47:31.674Z"
+      "at": "2026-07-18T16:47:31.674Z",
+      "rescoredAt": "2026-07-19T00:51:17.792Z"
     },
     {
       "id": "the-boswell-sisters-64531491",
       "slug": "the-boswell-sisters",
       "artistName": "The Boswell Sisters",
       "type": "song",
-      "hook": "One of their biggest hits, The Object of My Affection, was written by a young Oklahoman",
-      "story": "The Boswell Sisters put The Object of My Affection — a song by Pinky Tomlin and collaborators — onto the charts in the mid-1930s, one of the string of records that marked their national peak. Their treatment turned the popular tune into a showcase for the sliding tempos and tight harmony that set them apart.",
+      "hook": "The Object of My Affection was one of the hits that carried them to their national peak",
+      "story": "The Boswell Sisters put The Object of My Affection onto the charts in the mid-1930s, one of the string of records that marked their national peak. Their treatment turned the popular tune into a showcase for the sliding tempos and tight harmony that set them apart.",
       "media": [
         {
           "label": "The Object of My Affection",
@@ -4708,12 +5015,17 @@
           "title": "The Boswell Sisters",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/The_Boswell_Sisters"
+        },
+        {
+          "title": "The Boswell Sisters — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/41e2d679-43a3-4b9b-8469-ce748ad7b1ca"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"The Object of My Affection was co-written by Pinky Tomlin.…\") confirmed by 0/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:47:31.674Z"
+      "at": "2026-07-18T16:47:31.674Z",
+      "rescoredAt": "2026-07-19T00:51:17.792Z"
     },
     {
       "id": "the-smile-b64531aa",
@@ -4842,7 +5154,7 @@
       "artistName": "The Smile",
       "type": "collab",
       "hook": "The drummer who reshaped this band came from the front line of UK jazz, not from Radiohead's world",
-      "story": "The Smile's looser, more elastic feel owes much to Tom Skinner, a London drummer who arrived from the UK jazz scene rather than the rock circuit. He was widely known for his work with the Mercury-nominated Sons of Kemet, and his playing gives the trio its krautrock nerve and jazz swing. Onstage the group has expanded further, adding saxophonist Robert Stillman.",
+      "story": "The Smile's looser, more elastic feel owes much to Tom Skinner, a London drummer who arrived from the UK jazz scene rather than the rock circuit. He was widely known for his work with Sons of Kemet, and his playing gives the trio its krautrock nerve and jazz swing.",
       "media": [
         {
           "label": "Friend of a Friend (official video)",
@@ -4864,12 +5176,17 @@
           "title": "The Smile (band)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/The_Smile_(band)"
+        },
+        {
+          "title": "The Smile — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/9055fca5-69bc-4d47-b569-ab2012a19565"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"The Smile has performed live expanded by saxophonist Robert Stillman.…\") confirmed by 1/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:50:03.673Z"
+      "at": "2026-07-18T16:50:03.673Z",
+      "rescoredAt": "2026-07-19T00:13:52.958Z"
     },
     {
       "id": "thom-yorke-ea81abe9",
@@ -4928,20 +5245,25 @@
           "title": "Thom Yorke",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Thom_Yorke"
+        },
+        {
+          "title": "Thom Yorke — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/8ed2e0b3-aa4c-4e13-bec3-dc7393ed4d6b"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 2 (\"Tomorrow's Modern Boxes was initially released via BitTorrent as a paid bundle.…\") confirmed by 1/2 required sources (1 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:54:22.519Z"
+      "at": "2026-07-18T16:54:22.519Z",
+      "rescoredAt": "2026-07-19T00:14:35.046Z"
     },
     {
       "id": "thom-yorke-ee77b1db",
       "slug": "thom-yorke",
       "artistName": "Thom Yorke",
       "type": "screen",
-      "hook": "Radiohead's frontman scored a horror remake — and it drew comparisons to a classic",
-      "story": "For Luca Guadagnino's 2018 Suspiria remake, Yorke composed his first feature-film score, trading loops for choir, piano and dread. He kept working in cinema afterward, writing music for the Italian thriller Confidenza. His screen work runs parallel to his solo albums, another outlet for the same restless ear.",
+      "hook": "Radiohead's frontman scored a horror remake — and kept working in film",
+      "story": "For Luca Guadagnino's 2018 Suspiria remake, Yorke composed the score, trading loops for choir, piano and dread. He kept working in cinema afterward, writing music for the Italian thriller Confidenza. His screen work runs parallel to his solo albums, another outlet for the same restless ear.",
       "media": [
         {
           "label": "Confidenza — official video",
@@ -4968,12 +5290,17 @@
           "title": "Thom Yorke",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Thom_Yorke"
+        },
+        {
+          "title": "Thom Yorke — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/8ed2e0b3-aa4c-4e13-bec3-dc7393ed4d6b"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Thom Yorke composed the score for the 2018 film Suspiria, directed by Luca Guadagnino.…\") confirmed by 1/2 required sources (3 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:54:22.519Z"
+      "at": "2026-07-18T16:54:22.519Z",
+      "rescoredAt": "2026-07-19T00:14:35.046Z"
     },
     {
       "id": "thom-yorke-93f38e22",
@@ -5058,9 +5385,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"Fear Inoculum debuted at number one on the Billboard 200.…\") confirmed by 1/2 required sources (2 live); claim 3 (\"The title track Fear Inoculum became the longest song ever to reach the Billboard Hot 100.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on claim 2 — that the Fear Inoculum title track is the longest song ever to reach the Billboard Hot 100. That is a core claim and it remains unverified: only 1 prose source confirmed it, and neither the MusicBrainz record nor the site's verified bio contains this chart fact. (The verified return-in-2019 part alone does not carry the hook.)",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:55:45.635Z"
+      "at": "2026-07-18T16:55:45.635Z",
+      "rescoredAt": "2026-07-19T00:53:17.478Z"
     },
     {
       "id": "tool-1c58db39",
@@ -5098,9 +5426,10 @@
         }
       ],
       "status": "draft",
-      "holdReason": "claim 2 (\"The title track Lateralus incorporates the Fibonacci sequence in its structure.…\") confirmed by 1/2 required sources (2 live)",
+      "holdReason": "The hook rests on claim 1 — that the Lateralus title track was built around the Fibonacci sequence. That interpretive claim is core to the hook and is unverified: only 1 prose source, and it appears in neither the structured data nor the verified bio. (The number-one debut is verified via the bio, but it is not the hook's central claim.)",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:55:45.635Z"
+      "at": "2026-07-18T16:55:45.635Z",
+      "rescoredAt": "2026-07-19T00:53:17.478Z"
     },
     {
       "id": "tool-856d4a57",
@@ -5135,12 +5464,17 @@
           "title": "Ænima",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/%C3%86nima"
+        },
+        {
+          "title": "Tool — MusicBrainz record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/66fc5bf8-daa4-4241-b378-9bc9077939d2"
         }
       ],
-      "status": "draft",
-      "holdReason": "claim 1 (\"Tool formed in Los Angeles in 1990.…\") confirmed by 1/2 required sources (2 live)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:55:45.635Z"
+      "at": "2026-07-18T16:55:45.635Z",
+      "rescoredAt": "2026-07-19T00:53:17.478Z"
     },
     {
       "id": "trust-in-the-sun-6d3f7d42",
@@ -5156,10 +5490,10 @@
         }
       ],
       "sources": [],
-      "status": "draft",
-      "holdReason": "no live sources survived fetching",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:56:19.199Z"
+      "at": "2026-07-18T16:56:19.199Z",
+      "rescoredAt": "2026-07-19T00:20:37.228Z"
     },
     {
       "id": "trust-in-the-sun-a7e7eb32",
@@ -5175,10 +5509,10 @@
         }
       ],
       "sources": [],
-      "status": "draft",
-      "holdReason": "no live sources survived fetching",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:56:19.199Z"
+      "at": "2026-07-18T16:56:19.199Z",
+      "rescoredAt": "2026-07-19T00:20:37.228Z"
     },
     {
       "id": "trust-in-the-sun-3dff5516",
@@ -5194,10 +5528,10 @@
         }
       ],
       "sources": [],
-      "status": "draft",
-      "holdReason": "no live sources survived fetching",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:56:19.199Z"
+      "at": "2026-07-18T16:56:19.199Z",
+      "rescoredAt": "2026-07-19T00:20:37.228Z"
     }
   ]
 }

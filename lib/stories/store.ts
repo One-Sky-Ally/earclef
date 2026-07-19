@@ -36,10 +36,19 @@ export async function writeDecision(
   id: string,
   decision: StoryDecision | null,
 ): Promise<void> {
+  await writeDecisions([{ id, decision }])
+}
+
+/** Batch write: one read-modify-write for any number of decisions. */
+export async function writeDecisions(
+  entries: { id: string; decision: StoryDecision | null }[],
+): Promise<void> {
   const current = await readDecisions()
   const next = { ...current }
-  if (decision) next[id] = decision
-  else delete next[id]
+  for (const entry of entries) {
+    if (entry.decision) next[entry.id] = entry.decision
+    else delete next[entry.id]
+  }
   try {
     await store().setJSON(DECISIONS_KEY, next)
   } catch {

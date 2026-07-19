@@ -129,3 +129,101 @@
   font-size: 0.85rem;
   color: var(--accent);
 }
+
+.modeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modeButton,
+.modeActive {
+  background: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  padding: 0.3rem 0.9rem;
+  cursor: pointer;
+}
+
+.modeActive {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.modeCount {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.bulkBar {
+  display: flex;
+  gap: 0.7rem;
+  position: sticky;
+  top: 0.5rem;
+  z-index: 2;
+}
+
+.group {
+  border-top: 1px solid var(--border);
+  padding-top: 0.6rem;
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+}
+
+.groupName {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.groupCount {
+  font-size: 0.72rem;
+  color: var(--accent);
+}
+
+.rowList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0.2rem;
+  padding-left: 0.2rem;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.rowDecided {
+  width: 13px;
+  text-align: center;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+.rowText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.rowHook {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.rowHold {
+  font-size: 0.7rem;
+  color: #d9a05b;
+  font-style: italic;
+}

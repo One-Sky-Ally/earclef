@@ -77,7 +77,14 @@ async function claude(messages, schema, maxTokens) {
       const body = await stream.finalMessage()
       if (body.stop_reason === 'refusal') throw new Error('model refusal')
       const text = body.content.find((block) => block.type === 'text')
-      if (!text) throw new Error('no text block')
+      if (!text) {
+        // Adaptive thinking can burn the whole budget on hard batches —
+        // retry once with double the room before giving up.
+        if (body.stop_reason === 'max_tokens' && maxTokens < 64000) {
+          return claude(messages, schema, maxTokens * 2)
+        }
+        throw new Error(`no text block (stop_reason: ${body.stop_reason})`)
+      }
       return JSON.parse(text.text)
     } catch (error) {
       if (attempt === 3) throw error
@@ -106,6 +113,16 @@ const GENERATE_SCHEMA = {
               type: 'object',
               properties: {
                 claim: { type: 'string' },
+                kind: {
+                  type: 'string',
+                  enum: ['hard', 'soft'],
+                  description:
+                    'hard = database-style fact (birthplace, membership, discography, release year, screen role, award, feature credit); soft = interpretive/anecdotal (sentiments, motivations, single-interview stories)',
+                },
+                core: {
+                  type: 'boolean',
+                  description: 'true if the hook rests on this claim',
+                },
                 sources: {
                   type: 'array',
                   items: {
@@ -120,7 +137,7 @@ const GENERATE_SCHEMA = {
                   },
                 },
               },
-              required: ['claim', 'sources'],
+              required: ['claim', 'kind', 'core', 'sources'],
               additionalProperties: false,
             },
           },
@@ -196,7 +213,8 @@ HARD RULES:
 3. Decompose each card's story into its checkable factual claims (1-5). Each claim must be ATOMIC — exactly one fact ("In Rainbows was released as a pay-what-you-want download", NOT "…and it was released in October 2007 and reshaped economics"). Composite claims fail verification. For each claim list 3 REAL text sources that genuinely document it. Sources are MACHINE-FETCHED and checked: a URL that 404s, paywalls, or does not plainly state the fact in its text does not count, and a claim needs TWO counting sources to publish. Your best bets: DISTINCT en.wikipedia.org articles (the artist page, the album page, and the song page are three separate sources — use exact URLs like https://en.wikipedia.org/wiki/OK_Computer), plus Guardian/NPR/Billboard/Pitchfork pieces you are confident exist. Never use YouTube, social media, or video pages as claim sources (those belong in media). Avoid hard-paywalled outlets (NYT, The Times, WSJ).
 4. Media per card (1-2): either kind "verifiedVideo" with a videoId FROM THE LIST ABOVE ONLY, or kind "youtubeSearch" with a search query (e.g. "Radiohead Creep live Glastonbury 2009"), or kind "externalLink" with a URL you are certain is official and live. Never invent a YouTube video ID.
 5. Hooks: specific and irresistible but never overpromising. "The song X got sick of playing" style — only if true.
-6. Precision about attribution: whose show/award/record was it? Playing at someone else's sold-out show is not selling it out yourself; a featured credit is not a lead single. Overreach fails verification.`
+6. Precision about attribution: whose show/award/record was it? Playing at someone else's sold-out show is not selling it out yourself; a featured credit is not a lead single. Overreach fails verification.
+7. Tag every claim: kind "hard" for database-style facts (birthplace, band membership, discography, release years, film/TV roles, awards, documented feature credits) or "soft" for interpretive/anecdotal material (sentiments, motivations, single-interview stories). Mark core=true on the claim(s) the hook rests on. Hard facts verify against Wikipedia plus structured databases; soft claims need two independent prose sources — so a card whose CORE is soft needs its strongest sourcing.`
 }
 
 /**
@@ -234,8 +252,9 @@ function claimExcerpt(text, claim, cap = 2600) {
   return parts.join('\n[...]\n')
 }
 
-function verifyPrompt(artistName, cards, sourceTexts) {
+function verifyPrompt(artistName, cards, sourceTexts, structuredText) {
   const byUrl = new Map(sourceTexts.map((s, i) => [s.url, { ...s, index: i }]))
+  const structuredIndex = sourceTexts.length
   const flat = cards.flatMap((card) =>
     card.claims.map((c) => ({
       claim: c.claim,
@@ -253,7 +272,10 @@ function verifyPrompt(artistName, cards, sourceTexts) {
     }
     return lines.join('\n\n')
   })
-  return `You are a strict fact-checker for a music site. Below are claims about ${artistName}. Under each claim are keyword-selected excerpts from the sources proposed for it (excerpts of larger pages — judge only from the text shown). For each claim, list the indexes of sources whose excerpt EXPLICITLY STATES or directly entails the claim. Be strict: partial or vague support does not count. A claim with an empty list is fine — accuracy beats generosity.
+  const structuredBlock = structuredText
+    ? `\n\nSOURCE ${structuredIndex} is the artist's MusicBrainz DATABASE RECORD (applies to every claim; list index ${structuredIndex} for any claim whose fact the record directly evidences — a release title with its first-release date, membership relation, origin area, life-span, official link):\n${structuredText.slice(0, 14000)}`
+    : ''
+  return `You are a strict fact-checker for a music site. Below are claims about ${artistName}. Under each claim are keyword-selected excerpts from the sources proposed for it (excerpts of larger pages — judge only from the text shown). For each claim, list the indexes of sources whose excerpt EXPLICITLY STATES or directly entails the claim. Be strict: partial or vague support does not count. A claim with an empty list is fine — accuracy beats generosity.${structuredBlock}
 
 ${blocks.join('\n\n=====\n\n')}`
 }
@@ -332,6 +354,85 @@ async function fetchSourceText(url) {
   return result
 }
 
+// --- structured source (MusicBrainz) ---------------------------------------
+
+/**
+ * The artist's MusicBrainz record, trimmed to the fields that settle hard
+ * facts: identity, origin, life-span, membership relations, discography
+ * with first-release dates, official links. Hard facts live in databases,
+ * not prose — this is the second leg of the hard-fact verification tier.
+ */
+async function mbStructured(artist) {
+  const mbid = artist.integrations?.setlistfm?.mbid
+  if (!mbid) return null
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await fetch(
+        `https://musicbrainz.org/ws/2/artist/${mbid}?inc=release-groups+url-rels+artist-rels+aliases&fmt=json`,
+        { headers: { 'User-Agent': 'EarClefStories/0.1 (fiohmemorial@gmail.com)' } },
+      )
+      if (res.status === 503 || res.status === 429) {
+        await sleep(2500 * attempt)
+        continue
+      }
+      if (!res.ok) return null
+      const body = await res.json()
+      return JSON.stringify({
+        name: body.name,
+        type: body.type,
+        area: body.area?.name,
+        beginArea: body['begin-area']?.name,
+        lifeSpan: body['life-span'],
+        aliases: (body.aliases ?? []).map((a) => a.name).slice(0, 12),
+        releaseGroups: (body['release-groups'] ?? [])
+          .map((rg) => ({
+            title: rg.title,
+            firstRelease: rg['first-release-date'],
+            type: rg['primary-type'],
+          }))
+          .slice(0, 150),
+        relations: (body.relations ?? [])
+          .map((r) => ({
+            type: r.type,
+            direction: r.direction,
+            artist: r.artist?.name,
+            url: r.url?.resource,
+          }))
+          .slice(0, 80),
+      })
+    } catch {
+      if (attempt === 3) return null
+      await sleep(2500 * attempt)
+    }
+  }
+  return null
+}
+
+const REVISE_SCHEMA = {
+  type: 'object',
+  properties: {
+    hook: { type: 'string', description: 'Revised hook, only if the original asserted a dropped detail' },
+    story: { type: 'string', description: 'Revised story asserting only verified content' },
+  },
+  required: ['story'],
+  additionalProperties: false,
+}
+
+/** Drop/soften unverified incidental details instead of holding the card. */
+async function reviseCard(candidate, failingClaims) {
+  const revision = await claude(
+    [
+      {
+        role: 'user',
+        content: `This story card is publishable EXCEPT that the following incidental claims could not be verified:\n${failingClaims.map((c) => `- ${c}`).join('\n')}\n\nHook: ${candidate.hook}\nStory: ${candidate.story}\n\nRewrite the story to DROP or clearly soften those unverified details (softening means hedged framing like "reportedly" is NOT allowed — either drop the detail or restate it in a way that no longer asserts the unverified part). Do not add any new facts. Keep the length and tone. Revise the hook only if it asserted a dropped detail.`,
+      },
+    ],
+    REVISE_SCHEMA,
+    3000,
+  )
+  return revision
+}
+
 // --- media resolution ------------------------------------------------------
 
 function youtubeSearchUrl(query) {
@@ -395,14 +496,22 @@ async function farmArtist(slug) {
   }
   const liveByUrl = new Map(fetched.map((s, i) => [s.url, i]))
 
-  // One verify call covering all cards' claims against all live sources.
+  // One verify call covering all cards' claims against all live sources,
+  // plus the MusicBrainz record as a structured source for hard facts.
+  const structured = await mbStructured(artist)
+  const structuredIndex = fetched.length
   const flatClaims = candidates.flatMap((card, cardIndex) =>
     card.claims.map((c) => ({ cardIndex, claim: c.claim, proposed: c.sources })),
   )
   let verified = { results: [] }
-  if (fetched.length > 0 && flatClaims.length > 0) {
+  if ((fetched.length > 0 || structured) && flatClaims.length > 0) {
     verified = await claude(
-      [{ role: 'user', content: verifyPrompt(artist.hero.name, candidates, fetched) }],
+      [
+        {
+          role: 'user',
+          content: verifyPrompt(artist.hero.name, candidates, fetched, structured),
+        },
+      ],
       VERIFY_SCHEMA,
       6000,
     )
@@ -410,49 +519,95 @@ async function farmArtist(slug) {
   const supportByClaim = new Map(
     (verified.results ?? []).map((r) => [r.claimIndex, new Set(r.supportedBySourceIndexes ?? [])]),
   )
+  const wikiIndexes = new Set(
+    fetched.flatMap((s, i) => (/en\.wikipedia\.org/.test(s.url) ? [i] : [])),
+  )
+  const mbid = artist.integrations?.setlistfm?.mbid
+  const mbSource = mbid
+    ? {
+        title: `${artist.hero.name} — MusicBrainz record`,
+        publisher: 'MusicBrainz',
+        url: `https://musicbrainz.org/artist/${mbid}`,
+      }
+    : null
 
   const cards = []
   for (const [cardIndex, candidate] of candidates.entries()) {
     const holdReasons = []
+    const incidentalFails = []
     const usedSources = new Map()
     const claimReport = []
+    let structuredUsed = false
 
     candidate.claims.forEach((claimSpec, localIndex) => {
       const globalIndex = flatClaims.findIndex(
         (f) => f.cardIndex === cardIndex && f.claim === claimSpec.claim,
       )
       const supported = supportByClaim.get(globalIndex) ?? new Set()
-      // Count only sources that are BOTH live and verifier-confirmed.
+      // Sources that are BOTH live and verifier-confirmed.
       const confirmed = claimSpec.sources.filter((s) => {
         const liveIndex = liveByUrl.get(s.url)
         return liveIndex !== undefined && supported.has(liveIndex)
       })
-      if (confirmed.length < 2) {
-        const liveCount = claimSpec.sources.filter((s) => liveByUrl.has(s.url)).length
-        holdReasons.push(
-          `claim ${localIndex + 1} ("${claimSpec.claim.slice(0, 90)}…") confirmed by ${confirmed.length}/2 required sources (${liveCount} live)`,
-        )
+      // Two verification tiers:
+      //   soft  — 2+ confirmed prose sources (strict bar stays)
+      //   hard  — database-style fact: one confirmed Wikipedia source AND
+      //           the MusicBrainz structured record agreeing is sufficient
+      const wikiOk = confirmed.some(
+        (s) => supported.has(liveByUrl.get(s.url)) && /en\.wikipedia\.org/.test(s.url),
+      ) || [...supported].some((i) => wikiIndexes.has(i))
+      const structuredOk = Boolean(structured) && supported.has(structuredIndex)
+      const hard = claimSpec.kind === 'hard'
+      const passed =
+        confirmed.length >= 2 || (hard && wikiOk && structuredOk)
+      if (passed && hard && structuredOk && confirmed.length < 2) {
+        structuredUsed = true
+      }
+      if (!passed) {
+        const label = `claim ${localIndex + 1} ("${claimSpec.claim.slice(0, 90)}…") ${claimSpec.kind ?? 'soft'}/${claimSpec.core ? 'core' : 'incidental'}: ${confirmed.length}/2 prose sources${hard ? `, structured ${structuredOk ? 'agrees but no Wikipedia confirm' : 'does not confirm'}` : ''}`
+        if (claimSpec.core) holdReasons.push(label)
+        else incidentalFails.push({ label, claim: claimSpec.claim })
       }
       for (const s of confirmed) usedSources.set(s.url, s)
-      // Sources shown on a card are only ones that actually back it.
       claimReport.push({
         claim: claimSpec.claim,
+        kind: claimSpec.kind,
+        core: claimSpec.core,
+        passed,
         proposed: claimSpec.sources.map((s) => ({
           url: s.url,
           live: liveByUrl.has(s.url),
           supported: confirmed.some((c) => c.url === s.url),
         })),
+        structuredOk,
       })
     })
 
     const media = await resolveMedia(candidate.media, artist)
-    const hook = candidate.hook.slice(0, 160)
-    const story = candidate.story.slice(0, 700)
+    let hook = candidate.hook.slice(0, 160)
+    let story = candidate.story.slice(0, 700)
+
+    // Incidental failures don't hold a card — the detail gets dropped.
+    if (holdReasons.length === 0 && incidentalFails.length > 0) {
+      try {
+        const revision = await reviseCard(candidate, incidentalFails.map((f) => f.claim))
+        story = revision.story.slice(0, 700)
+        if (revision.hook) hook = revision.hook.slice(0, 160)
+      } catch {
+        // Revision failed — fall back to holding rather than shipping
+        // a story that asserts unverified details.
+        holdReasons.push(...incidentalFails.map((f) => f.label))
+      }
+    }
+
     const sources = [...usedSources.values()].map((s) => ({
       title: s.title.slice(0, 160),
       publisher: s.publisher.slice(0, 60),
       url: s.url,
     }))
+    if (structuredUsed && mbSource && holdReasons.length === 0) {
+      sources.push(mbSource)
+    }
 
     // Absolute floor even for drafts: something checkable must exist.
     if (sources.length === 0 && holdReasons.length === 0) {
@@ -501,6 +656,145 @@ function assemble() {
   console.log(`assembled ${cards.length} cards (${published} published, ${cards.length - published} draft) -> lib/stories/cards.json`)
 }
 
+// --- rescore: re-gate existing drafts under the two-tier rules -------------
+
+const RESCORE_SCHEMA = {
+  type: 'object',
+  properties: {
+    cards: {
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          cardIndex: { type: 'integer' },
+          decision: { type: 'string', enum: ['publish', 'hold'] },
+          usedStructuredTier: { type: 'boolean' },
+          revisedHook: { type: 'string' },
+          revisedStory: { type: 'string' },
+          holdReason: { type: 'string', description: 'Required when decision is hold: why the CORE claim is unverified' },
+        },
+        required: ['cardIndex', 'decision', 'usedStructuredTier'],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ['cards'],
+  additionalProperties: false,
+}
+
+function rescorePrompt(artist, structured, drafts) {
+  const facts = {
+    name: artist.hero.name,
+    location: artist.hero.location,
+    featuredAlbums: artist.listen?.featuredAlbums ?? [],
+    verifiedVideos: (artist.watch?.videos ?? []).map((v) => v.title),
+    bio: (artist.story?.paragraphs ?? []).join(' ').slice(0, 1200),
+  }
+  const cardsBlock = drafts
+    .map((entry) => {
+      const claims = entry.card.claimReport
+        .map((cr, i) => {
+          const wikiSupported = cr.proposed.some(
+            (p) => p.supported && /en\.wikipedia\.org/.test(p.url),
+          )
+          const confirmedCount = cr.proposed.filter((p) => p.supported).length
+          return `  claim ${i}: ${cr.claim} [previously: ${confirmedCount} prose source(s) confirmed${wikiSupported ? ', incl. Wikipedia' : ', Wikipedia did NOT confirm'}]`
+        })
+        .join('\n')
+      return `CARD ${entry.index}\nhook: ${entry.card.hook}\nstory: ${entry.card.story}\n${claims}`
+    })
+    .join('\n\n')
+  return `You are re-scoring held story cards about ${facts.name} for a music site under a corrected two-tier verification policy.
+
+STRUCTURED DATA — the artist's MusicBrainz database record:
+${structured ? structured.slice(0, 14000) : '(no MusicBrainz record available)'}
+
+STRUCTURED DATA — the site's own verified artist facts (IDs and content were human-verified against live sources):
+${JSON.stringify(facts)}
+
+POLICY:
+- HARD FACTS (birthplace/origin, band membership, discography and release years, film/TV roles, awards, documented feature credits) are database facts. A hard claim is VERIFIED if a Wikipedia source previously confirmed it (see each claim's bracket) AND the structured data above agrees with it. Be conservative: the structured data must actually contain the fact (a release title + year, a membership relation, an origin area…). If the structured data doesn't cover it (e.g. most awards), the claim stays unverified under this tier.
+- SOFT CLAIMS (interpretive/anecdotal: sentiments, motivations, single-interview stories, "the song that made them quit") keep the strict bar: 2+ previously-confirmed prose sources. None of these drafts met that, so an unverified soft claim stays unverified.
+- CORE vs INCIDENTAL: identify the claim(s) the hook rests on. PUBLISH a card when its core claim(s) are verified (either tier). If incidental claims remain unverified, provide revisedStory (and revisedHook only if the hook asserted the dropped detail) that DROPS or restates those details so nothing unverified is asserted — never hedge with "reportedly", never add new facts. HOLD only when a core claim itself is unverified, with a holdReason saying which core claim and why.
+
+${cardsBlock}`
+}
+
+async function rescoreArtist(slug) {
+  const workPath = join(WORK_DIR, `${slug}.json`)
+  const work = JSON.parse(readFileSync(workPath, 'utf8'))
+  const drafts = work.cards
+    .map((card, index) => ({ card, index }))
+    // Resumable: cards already judged under the two-tier rules are final.
+    .filter((entry) => entry.card.status === 'draft' && !entry.card.rescoredAt)
+  if (drafts.length === 0) return { promoted: 0, held: 0 }
+
+  const artist = JSON.parse(readFileSync(join(CONTENT_DIR, `${slug}.json`), 'utf8'))
+  const structured = await mbStructured(artist)
+  await sleep(1200)
+
+  const result = await claude(
+    [{ role: 'user', content: rescorePrompt(artist, structured, drafts) }],
+    RESCORE_SCHEMA,
+    20000,
+  )
+
+  const mbid = artist.integrations?.setlistfm?.mbid
+  let promoted = 0
+  for (const verdict of result.cards ?? []) {
+    const entry = drafts.find((d) => d.index === verdict.cardIndex)
+    if (!entry) continue
+    const card = work.cards[entry.index]
+    if (verdict.decision === 'publish') {
+      promoted += 1
+      card.status = 'published'
+      delete card.holdReason
+      if (verdict.revisedHook) card.hook = verdict.revisedHook.slice(0, 160)
+      if (verdict.revisedStory) card.story = verdict.revisedStory.slice(0, 700)
+      if (verdict.usedStructuredTier && mbid) {
+        const url = `https://musicbrainz.org/artist/${mbid}`
+        if (!card.sources.some((s) => s.url === url)) {
+          card.sources.push({
+            title: `${artist.hero.name} — MusicBrainz record`,
+            publisher: 'MusicBrainz',
+            url,
+          })
+        }
+      }
+      card.rescoredAt = new Date().toISOString()
+    } else {
+      card.holdReason = (verdict.holdReason ?? card.holdReason ?? 'soft core claim below the 2-source bar').slice(0, 400)
+      card.rescoredAt = new Date().toISOString()
+    }
+  }
+  writeFileSync(workPath, JSON.stringify(work, null, 2))
+  const held = drafts.length - promoted
+  log(`rescore ${slug}: ${promoted} promoted, ${held} still held`)
+  return { promoted, held }
+}
+
+async function rescoreAll() {
+  const files = readdirSync(WORK_DIR).filter((f) => f.endsWith('.json')).sort()
+  let totals = { promoted: 0, held: 0, failed: 0 }
+  for (const file of files) {
+    const slug = file.slice(0, -5)
+    try {
+      const result = await rescoreArtist(slug)
+      totals = {
+        ...totals,
+        promoted: totals.promoted + result.promoted,
+        held: totals.held + result.held,
+      }
+    } catch (error) {
+      totals = { ...totals, failed: totals.failed + 1 }
+      log(`rescore ${slug}: FAILED — ${error.message}`)
+    }
+    await sleep(1500)
+  }
+  log(`rescore done: ${totals.promoted} promoted, ${totals.held} still held, ${totals.failed} artists failed`)
+  assemble()
+}
+
 // --- main ------------------------------------------------------------------
 
 loadEnv()
@@ -514,6 +808,24 @@ if (process.argv.includes('--assemble')) {
 if (!process.env.ANTHROPIC_API_KEY) {
   console.error('ANTHROPIC_API_KEY missing (checked env + .env.local)')
   process.exit(1)
+}
+
+if (process.argv.includes('--rescore')) {
+  const only = process.argv.indexOf('--artists')
+  if (only !== -1) {
+    for (const slug of process.argv[only + 1].split(',')) {
+      try {
+        await rescoreArtist(slug)
+      } catch (error) {
+        log(`rescore ${slug}: FAILED — ${error.message}`)
+      }
+      await sleep(1500)
+    }
+    assemble()
+  } else {
+    await rescoreAll()
+  }
+  process.exit(0)
 }
 
 const artistsArg = process.argv.indexOf('--artists')
