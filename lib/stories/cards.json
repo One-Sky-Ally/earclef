@@ -4069,6 +4069,173 @@
       "at": "2026-07-18T16:27:40.220Z"
     },
     {
+      "id": "portishead-d2714802",
+      "slug": "portishead",
+      "artistName": "Portishead",
+      "type": "era",
+      "hook": "Portishead have made three studio albums — every single one peaked at No. 2 in the UK",
+      "story": "Dummy (1994) climbed to No. 2 on the UK Albums Chart and stayed on the chart for 111 weeks. Portishead (1997) reached No. 2. Then came the long silence — eleven years between studio albums — before Third (2008) arrived and landed at No. 2 as well. Three records across fourteen years, each one stopping exactly one rung from the top.",
+      "media": [
+        {
+          "label": "Portishead — Glory Box",
+          "url": "https://www.youtube.com/watch?v=4qQyUi4zfDs"
+        },
+        {
+          "label": "Portishead — Machine Gun",
+          "url": "https://www.youtube.com/watch?v=zFwPBhKwZLc"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Portishead — full Official Chart history",
+          "publisher": "Official Charts Company",
+          "url": "https://www.officialcharts.com/artist/30605/portishead/"
+        },
+        {
+          "title": "Portishead — MusicBrainz artist record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/8f6bd1e4-fbe1-4f50-aa9b-94c450ec0f11"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T06:46:35.000Z"
+    },
+    {
+      "id": "portishead-8e03c2d4",
+      "slug": "portishead",
+      "artistName": "Portishead",
+      "type": "era",
+      "hook": "Dummy beat Definitely Maybe to the 1995 Mercury Music Prize",
+      "story": "Portishead's debut won the 1995 Mercury Music Prize over a shortlist that included Oasis' Definitely Maybe, PJ Harvey's To Bring You My Love and Leftfield's Leftism. Released in August 1994 on Go! Beat — three years after Geoff Barrow and Beth Gibbons met on an Enterprise Allowance course in Bristol — Dummy turned crackle, spy-film strings and Gibbons' wounded voice into a defining record of the Bristol sound they shaped alongside Massive Attack and Tricky.",
+      "media": [
+        {
+          "label": "Portishead — Sour Times",
+          "url": "https://www.youtube.com/watch?v=un8EW82GwKc"
+        },
+        {
+          "label": "Portishead — Glory Box",
+          "url": "https://www.youtube.com/watch?v=4qQyUi4zfDs"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Dummy (album)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Dummy_(album)"
+        },
+        {
+          "title": "Mercury Prize",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Mercury_Prize"
+        },
+        {
+          "title": "Portishead (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Portishead_(band)"
+        },
+        {
+          "title": "Mercury Prize: past winners",
+          "publisher": "NME",
+          "url": "https://www.nme.com/features/mercury-prize-pulp-suede-portishead-past-winners-2759594"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T06:46:35.000Z"
+    },
+    {
+      "id": "portishead-876ba490",
+      "slug": "portishead",
+      "artistName": "Portishead",
+      "type": "performance",
+      "hook": "Portishead's first show in seven years was a war-relief benefit in their hometown",
+      "story": "On 2 May 2022, Portishead stepped onto the O2 Academy Bristol stage for HELP! — a War Child UK benefit for children affected by the war in Ukraine — their first performance since 2015, on a bill with fellow Bristol band IDLES. The five-song set reached back across their whole catalog: Mysterons, Magic Doors, Wandering Star, The Rip, Roads. Three years later they gathered for a cause again, recording 'Roads' at Bristol's The Cube for Together For Palestine in September 2025.",
+      "media": [
+        {
+          "label": "'Roads' 2025 — Together For Palestine",
+          "url": "https://www.youtube.com/watch?v=g2AmYPyXoUQ"
+        },
+        {
+          "label": "Portishead at the 2022 War Child benefit",
+          "url": "https://www.youtube.com/results?search_query=Portishead%20War%20Child%20benefit%20Bristol%202022"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Portishead Concert Setlist at Help - A War Child Benefit Show 2022",
+          "publisher": "setlist.fm",
+          "url": "https://www.setlist.fm/setlist/portishead/2022/o2-academy-bristol-bristol-england-3b7a90f.html"
+        },
+        {
+          "title": "Watch Portishead perform live for the first time since 2015",
+          "publisher": "NME",
+          "url": "https://www.nme.com/news/music/watch-portishead-perform-live-for-the-first-time-since-2015-3216974"
+        },
+        {
+          "title": "Watch Portishead Play Their First Show In 7 Years At War Child UK Benefit In Bristol",
+          "publisher": "Stereogum",
+          "url": "https://stereogum.com/2185427/watch-portishead-play-their-first-show-in-7-years-at-war-child-uk-benefit-in-bristol/news"
+        },
+        {
+          "title": "Portishead (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Portishead_(band)"
+        },
+        {
+          "title": "Portishead Concert Setlist at The Cube, Bristol on September 2, 2025",
+          "publisher": "setlist.fm",
+          "url": "https://www.setlist.fm/setlist/portishead/2025/the-cube-bristol-england-1b41a938.html"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T06:46:35.000Z"
+    },
+    {
+      "id": "portishead-2306c764",
+      "slug": "portishead",
+      "artistName": "Portishead",
+      "type": "screen",
+      "hook": "Portishead covered ABBA for a dystopian film — then gave the streaming profits to charity",
+      "story": "Portishead recorded a stark, drumless reading of ABBA's 'SOS' for Ben Wheatley's film High-Rise. Years later, in 2021, the band put the cover on SoundCloud — with all streaming profits donated to charity. It remains one of the very few recordings they have released since Third (2008): the others include 2009's Amnesty single 'Chase the Tear' and 2025's 'Roads' for Together For Palestine.",
+      "media": [
+        {
+          "label": "Portishead — SOS (ABBA cover)",
+          "url": "https://www.youtube.com/results?search_query=Portishead%20SOS%20ABBA%20cover%20High-Rise"
+        },
+        {
+          "label": "Portishead — The Rip",
+          "url": "https://www.youtube.com/watch?v=kBOaLjtR4mw"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Portishead (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Portishead_(band)"
+        },
+        {
+          "title": "Portishead Releases ABBA 'SOS' Cover Exclusively on SoundCloud",
+          "publisher": "Rolling Stone",
+          "url": "https://www.rollingstone.com/pro/news/portishead-abba-cover-soundcloud-royalty-1193818/"
+        },
+        {
+          "title": "Portishead release ABBA 'SOS' cover in aid of mental health charity Mind",
+          "publisher": "NME",
+          "url": "https://www.nme.com/news/music/portishead-release-abba-sos-cover-aid-mental-health-charity-mind-listen-2988937"
+        },
+        {
+          "title": "Portishead — MusicBrainz artist record",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/8f6bd1e4-fbe1-4f50-aa9b-94c450ec0f11"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T06:46:35.000Z"
+    },
+    {
       "id": "queen-39ef875e",
       "slug": "queen",
       "artistName": "Queen",

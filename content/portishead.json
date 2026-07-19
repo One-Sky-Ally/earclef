@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "slug": "portishead",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Portishead — Ear Clef",
+    "description": "Bristol noir: Dummy, Portishead, Third — three albums, thirty years, and not one wasted word. The band that made slowness a superpower.",
+    "ogImage": "/images/og-portishead.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/portishead"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6liAMWkVf5LH7YR9yfFy1Y"
+    },
+    "youtube": {
+      "channelId": "UC243a5RnwmItLvwhl0YOxbg"
+    },
+    "setlistfm": {
+      "mbid": "8f6bd1e4-fbe1-4f50-aa9b-94c450ec0f11"
+    },
+    "itunes": {
+      "artistId": "853090"
+    }
+  },
+  "hero": {
+    "name": "Portishead",
+    "identity": "Spectral Bristol soul built from crackle, spy-film strings, and a voice that aches in slow motion.",
+    "tagline": "Hear here!",
+    "location": "Bristol, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.portishead.co.uk/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/portisheadofficial"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/Portisheadinfo"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/portishead"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/portishead-official"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@Portishead_Official"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/portishead/853090"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJP3XO"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Dummy",
+        "year": "1994",
+        "mbReleaseGroupId": "48140466-cff6-3222-bd55-63c27e43190d"
+      },
+      {
+        "title": "Portishead",
+        "year": "1997",
+        "mbReleaseGroupId": "46b38f09-e90b-39eb-b04f-002da20f7f96"
+      },
+      {
+        "title": "Third",
+        "year": "2008",
+        "mbReleaseGroupId": "163339ab-813b-3d29-bba8-e1d5acf63cab"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "4qQyUi4zfDs",
+        "title": "Glory Box"
+      },
+      {
+        "youtubeId": "un8EW82GwKc",
+        "title": "Sour Times"
+      },
+      {
+        "youtubeId": "zFwPBhKwZLc",
+        "title": "Machine Gun"
+      },
+      {
+        "youtubeId": "kBOaLjtR4mw",
+        "title": "The Rip"
+      },
+      {
+        "youtubeId": "g2AmYPyXoUQ",
+        "title": "'Roads' 2025 — Together For Palestine"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Geoff Barrow and Beth Gibbons met during a coffee break at an Enterprise Allowance course in Bristol in February 1991. With jazz guitarist Adrian Utley they became Portishead, named after Barrow's home town eight miles west of the city — and set about making music that moved at its own unhurried pace.",
+      "Dummy (1994, Go! Beat) won the 1995 Mercury Music Prize ahead of shortlisted records by PJ Harvey, Oasis and Tricky, and spent 111 weeks on the UK albums chart. Built from scratchy samples, spy-soundtrack guitar and Gibbons' wounded voice, it became shorthand for the Bristol sound they shaped alongside Massive Attack and Tricky.",
+      "Portishead (1997) darkened the palette, and Roseland NYC Live (1998) — cut with a full orchestra in New York — proved the songs could bleed on stage. Then came the long silence: eleven years between studio albums before Third (2008) swapped turntables for krautrock pulse and the air-raid panic of 'Machine Gun'. Every studio album they have released peaked at No. 2 in the UK.",
+      "Since then Portishead surface only when it matters: an ABBA 'SOS' cover for Ben Wheatley's film High-Rise, a 2022 War Child benefit in Bristol — their first performance in seven years — and a 2025 recording of 'Roads' for Together For Palestine. Beth Gibbons released her debut solo album Lives Outgrown in 2024."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No dates are scheduled — news lands at portishead.co.uk.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1997-07-24",
+        "venue": "Roseland Ballroom",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/portishead/1997/roseland-ballroom-new-york-ny-1bd77d2c.html",
+        "note": "The orchestral show released as Roseland NYC Live"
+      },
+      {
+        "date": "2011-07-24",
+        "venue": "Alexandra Palace",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/portishead/2011/alexandra-palace-london-england-2bd0ac22.html",
+        "note": "ATP's 'I'll Be Your Mirror' — the festival Portishead curated"
+      },
+      {
+        "date": "2013-06-28",
+        "venue": "Worthy Farm",
+        "city": "Pilton, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/portishead/2013/worthy-farm-pilton-england-3d911d7.html",
+        "note": "Glastonbury Festival 2013"
+      },
+      {
+        "date": "2022-05-02",
+        "venue": "O2 Academy Bristol",
+        "city": "Bristol, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/portishead/2022/o2-academy-bristol-bristol-england-3b7a90f.html",
+        "note": "War Child benefit for Ukraine — first performance since 2015"
+      },
+      {
+        "date": "2025-09-02",
+        "venue": "The Cube",
+        "city": "Bristol, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/portishead/2025/the-cube-bristol-england-1b41a938.html",
+        "note": "'Roads' recorded for Together For Palestine"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Dummy — Vinyl",
+        "description": "The Mercury-winning debut on vinyl, from the official Portishead store.",
+        "image": {
+          "src": "https://cdn.shopify.com/s/files/1/1330/7175/files/Dummy.jpg?v=1739203507",
+          "alt": "Dummy — Vinyl"
+        },
+        "url": "https://shop.portishead.co.uk/products/dummy-reissue-vinyl"
+      },
+      {
+        "name": "Portishead — 2LP",
+        "description": "The self-titled second album across two discs.",
+        "image": {
+          "src": "https://cdn.shopify.com/s/files/1/1330/7175/files/portisheadportishead.png?v=1739363483",
+          "alt": "Portishead — 2LP"
+        },
+        "url": "https://shop.portishead.co.uk/products/portishead-2lp"
+      },
+      {
+        "name": "Outline Logo Navy T-Shirt",
+        "description": "The P outline mark on navy, printed on demand.",
+        "image": {
+          "src": "https://cdn.shopify.com/s/files/1/1330/7175/products/PORTISHEAD_OUTLINE-LOGO_NAVY-TEE_c8a4617a-c25e-4ffb-8995-b7660fdeeebf.jpg?v=1613755760",
+          "alt": "Outline Logo Navy T-Shirt"
+        },
+        "url": "https://shop.portishead.co.uk/products/portishead-outline-logo-navy-t-shirt-pod-por"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Portishead: Dummy — Sunday Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/23079-dummy/"
+      },
+      {
+        "title": "Portishead Masters Audio Glue on 'Third'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2008/04/26/89951300/portishead-masters-audio-glue-on-third-album"
+      },
+      {
+        "title": "Portishead Releases ABBA 'SOS' Cover Exclusively on SoundCloud",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/pro/news/portishead-abba-cover-soundcloud-royalty-1193818/"
+      },
+      {
+        "title": "Watch Portishead perform live for the first time since 2015",
+        "outlet": "NME",
+        "url": "https://www.nme.com/news/music/watch-portishead-perform-live-for-the-first-time-since-2015-3216974"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

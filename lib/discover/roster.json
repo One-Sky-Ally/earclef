@@ -280,6 +280,16 @@
     "membership": false
   },
   {
+    "slug": "portishead",
+    "name": "Portishead",
+    "identity": "Spectral Bristol soul built from crackle, spy-film strings, and a voice that aches in slow motion.",
+    "tier": "in-the-mix",
+    "mbid": "8f6bd1e4-fbe1-4f50-aa9b-94c450ec0f11",
+    "channelId": "UC243a5RnwmItLvwhl0YOxbg",
+    "itunesId": "853090",
+    "membership": false
+  },
+  {
     "slug": "queen",
     "name": "Queen",
     "identity": "Opera in a rock band's hands — four songwriters and a frontman the stage still misses.",
