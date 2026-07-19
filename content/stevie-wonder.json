@@ -56,6 +56,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/stevie-wonder/46726"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B001Q58YX8"
       }
     ],
     "featuredAlbums": [

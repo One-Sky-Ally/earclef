@@ -60,6 +60,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/queen/3296287"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B001DTRO4M"
       }
     ],
     "featuredAlbums": [

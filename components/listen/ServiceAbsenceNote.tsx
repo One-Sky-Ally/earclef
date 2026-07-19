@@ -28,10 +28,12 @@ export function ServiceAbsenceNote({
   const target =
     service !== 'appleMusic' && presence.appleMusicUrl
       ? { href: presence.appleMusicUrl, label: 'Listen on Apple Music →' }
-      : {
-          href: `https://www.youtube.com/results?search_query=${encodeURIComponent(presence.artistName)}`,
-          label: 'Find them on YouTube →',
-        }
+      : service !== 'amazonMusic' && presence.amazonMusicUrl
+        ? { href: presence.amazonMusicUrl, label: 'Listen on Amazon Music →' }
+        : {
+            href: `https://www.youtube.com/results?search_query=${encodeURIComponent(presence.artistName)}`,
+            label: 'Find them on YouTube →',
+          }
 
   return (
     <p className={styles.note}>

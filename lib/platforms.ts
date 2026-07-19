@@ -1,6 +1,7 @@
 const PLATFORM_LABELS: Record<string, string> = {
   spotify: 'Spotify',
   appleMusic: 'Apple Music',
+  amazonMusic: 'Amazon Music',
   bandcamp: 'Bandcamp',
   instagram: 'Instagram',
   youtube: 'YouTube',

@@ -60,6 +60,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/michael-jackson/32940"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJK2YE"
       }
     ],
     "featuredAlbums": [

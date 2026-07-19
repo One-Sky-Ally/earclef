@@ -56,7 +56,12 @@
   },
   "listen": {
     "enabled": true,
-    "platforms": [],
+    "platforms": [
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B003X8C1O4"
+      }
+    ],
     "featuredAlbums": [
       {
         "title": "Lateralus",

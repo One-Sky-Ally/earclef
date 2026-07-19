@@ -56,6 +56,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/tame-impala/290242959"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B001FEAEBU"
       }
     ],
     "featuredAlbums": [

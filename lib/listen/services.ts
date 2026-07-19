@@ -50,6 +50,8 @@ export interface ArtistServicePresence {
   appleMusicUrl?: string
   /** Artist page on Spotify, when a dormant id exists. */
   spotifyUrl?: string
+  /** Artist page on Amazon Music, when a verified link exists. */
+  amazonMusicUrl?: string
 }
 
 /** Everything the listen surfaces need, derived once per artist. */
@@ -64,11 +66,15 @@ export function presenceFromContent(
   const spotifyUrl = content.integrations.spotify.artistId
     ? `https://open.spotify.com/artist/${content.integrations.spotify.artistId}`
     : undefined
+  const amazonMusicUrl = content.listen.platforms.find(
+    (p) => p.platform === 'amazonMusic',
+  )?.url
   return {
     artistName: content.hero.name,
     notOn: content.listen.notOn,
     appleMusicUrl,
     spotifyUrl,
+    amazonMusicUrl,
   }
 }
 
@@ -119,7 +125,9 @@ export function resolveListenHref(
     const fallback: ListenService =
       service !== 'appleMusic' && presence?.appleMusicUrl
         ? 'appleMusic'
-        : 'youtube'
+        : service !== 'amazonMusic' && presence?.amazonMusicUrl
+          ? 'amazonMusic'
+          : 'youtube'
     return {
       href: serviceSearchUrl(fallback, artistName, title),
       service: fallback,
