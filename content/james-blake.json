@@ -60,6 +60,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/james-blake/59504818"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000V63W6W"
       }
     ],
     "featuredAlbums": [

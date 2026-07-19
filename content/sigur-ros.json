@@ -62,6 +62,10 @@
         "url": "https://music.apple.com/us/artist/sigur-r%C3%B3s/73720797"
       },
       {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000RHO8M2"
+      },
+      {
         "platform": "bandcamp",
         "url": "https://sigurros.bandcamp.com"
       }

@@ -60,6 +60,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/chance-the-rapper/563355119"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B00B97VG2E"
       }
     ],
     "featuredAlbums": [

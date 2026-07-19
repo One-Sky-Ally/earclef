@@ -60,6 +60,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/fred-again/1455262408"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B07YYM9F5V"
       }
     ],
     "featuredAlbums": [

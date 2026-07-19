@@ -54,6 +54,10 @@
         "url": "https://music.apple.com/us/artist/oumou-sangar%C3%A9/6760152"
       },
       {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJU3CK"
+      },
+      {
         "platform": "bandcamp",
         "url": "https://oumousangare.bandcamp.com"
       }

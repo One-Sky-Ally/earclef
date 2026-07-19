@@ -56,6 +56,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/ratatat/7057812"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000S27WTC"
       }
     ],
     "featuredAlbums": [

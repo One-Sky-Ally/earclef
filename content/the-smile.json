@@ -54,6 +54,10 @@
         "url": "https://music.apple.com/us/artist/the-smile/1603491177"
       },
       {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B00UELU35M"
+      },
+      {
         "platform": "bandcamp",
         "url": "https://thesmile.bandcamp.com"
       }

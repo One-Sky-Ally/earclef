@@ -48,6 +48,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/thom-yorke/39753073"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000S29CYK"
       }
     ],
     "featuredAlbums": [

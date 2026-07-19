@@ -58,6 +58,10 @@
         "url": "https://music.apple.com/us/artist/hundred-waters/515391293"
       },
       {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B007Q5GJ70"
+      },
+      {
         "platform": "bandcamp",
         "url": "https://hundredwaters.bandcamp.com/"
       }

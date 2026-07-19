@@ -56,6 +56,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/b%C3%A9la-fleck-the-flecktones/158010792"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B00137LGL6"
       }
     ],
     "featuredAlbums": [

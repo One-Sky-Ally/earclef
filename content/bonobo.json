@@ -58,6 +58,10 @@
         "url": "https://music.apple.com/us/artist/bonobo/416281071"
       },
       {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJZ2AS"
+      },
+      {
         "platform": "bandcamp",
         "url": "https://bonobomusic.bandcamp.com"
       }

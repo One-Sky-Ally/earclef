@@ -60,6 +60,10 @@
       {
         "platform": "bandcamp",
         "url": "https://gorillaz.bandcamp.com"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000S282KK"
       }
     ],
     "featuredAlbums": [

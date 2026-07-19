@@ -56,6 +56,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/nick-drake/1285818"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJHVH0"
       }
     ],
     "featuredAlbums": [

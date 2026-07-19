@@ -62,6 +62,10 @@
         "url": "https://music.apple.com/us/artist/beats-antique/275162219"
       },
       {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B0014ZQ1PS"
+      },
+      {
         "platform": "bandcamp",
         "url": "https://beatsantique.bandcamp.com/"
       }

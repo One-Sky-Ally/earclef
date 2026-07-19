@@ -39,6 +39,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/the-boswell-sisters/858682"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B00GR65IXU"
       }
     ],
     "featuredAlbums": [

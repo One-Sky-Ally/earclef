@@ -58,6 +58,10 @@
       {
         "platform": "appleMusic",
         "url": "https://music.apple.com/us/artist/aplete/1517579184"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B08B1VQQWM"
       }
     ],
     "featuredAlbums": [
