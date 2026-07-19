@@ -11,9 +11,15 @@
  *   2. FETCH every proposed source live (Wikipedia via the extracts API,
  *      others as HTML). Dead link = the source doesn't count.
  *   3. VERIFY with a second model call: per claim, which fetched sources
- *      explicitly support it (strict — unsupported wins ties).
- *   4. GATE: every claim supported by 2+ live sources -> status published.
- *      Anything less -> status draft + holdReason (owner reviews in /studio).
+ *      explicitly support it, and which of those are AUTHORITATIVE for
+ *      that specific claim (strict — unsupported wins ties).
+ *   4. TIERED GATE (no drafts, no review queue): Tier 1 — one source
+ *      publishes a claim when it is THE authority for it (awarding body,
+ *      chart authority, IMDb, MusicBrainz for discography/membership, the
+ *      artist's own documented words for their own history — never for
+ *      superlatives). Tier 2 — anything else needs 2+ reputable sources.
+ *      Trim failed incidentals, salvage-rewrite failed cores around the
+ *      verified claims, DISCARD only when nothing verifiable survives.
  *   5. MEDIA: only pre-verified video IDs from the artist's own content
  *      JSON, YouTube search URLs, or live-checked external links — a model
  *      can propose media, it can never invent a video ID into the site.
@@ -224,8 +230,14 @@ const VERIFY_SCHEMA = {
             type: 'array',
             items: { type: 'integer' },
           },
+          authoritativeSourceIndexes: {
+            type: 'array',
+            items: { type: 'integer' },
+            description:
+              'Subset of supporting sources that are THE authority for this specific claim per the tier rules',
+          },
         },
-        required: ['claimIndex', 'supportedBySourceIndexes'],
+        required: ['claimIndex', 'supportedBySourceIndexes', 'authoritativeSourceIndexes'],
         additionalProperties: false,
       },
     },
@@ -321,7 +333,16 @@ function verifyPrompt(artistName, cards, sourceTexts, structuredText) {
   const structuredBlock = structuredText
     ? `\n\nSOURCE ${structuredIndex} is the artist's MusicBrainz DATABASE RECORD (applies to every claim; list index ${structuredIndex} for any claim whose fact the record directly evidences — a release title with its first-release date, membership relation, origin area, life-span, official link):\n${structuredText.slice(0, 14000)}`
     : ''
-  return `You are a strict fact-checker for a music site. Below are claims about ${artistName}. Under each claim are keyword-selected excerpts from the sources proposed for it (excerpts of larger pages — judge only from the text shown). For each claim, list the indexes of sources whose excerpt EXPLICITLY STATES or directly entails the claim. Be strict: partial or vague support does not count. A claim with an empty list is fine — accuracy beats generosity.${structuredBlock}
+  return `You are a strict fact-checker for a music site. Below are claims about ${artistName}. Under each claim are keyword-selected excerpts from the sources proposed for it (excerpts of larger pages — judge only from the text shown). For each claim:
+
+1. supportedBySourceIndexes: indexes of sources whose excerpt EXPLICITLY STATES or directly entails the claim. Be strict: partial or vague support does not count. An empty list is fine — accuracy beats generosity.
+2. authoritativeSourceIndexes: the SUBSET of those supporting sources that are THE authority for this specific kind of claim (a single authoritative source is enough to publish). Authority mapping:
+   - Awards → the awarding body itself (grammy.com, brit awards, polarismusicprize.ca…)
+   - Chart positions/records → Billboard or the Official Charts Company (officialcharts.com)
+   - Film/TV roles and syncs → IMDb or the production's official source
+   - Discography, band membership, release dates → MusicBrainz (the structured database record)
+   - An artist's own history or intent → their official site, or their own words in a published interview
+   GUARDRAILS: the source must be authoritative FOR THAT fact — grammy.com verifies awards, not birthplaces; an artist's own site verifies their own history but NOT self-promotional superlatives ("best-selling ever", "first artist to…"), which need independent confirmation and get NO authority flag from the artist's own properties. Wikipedia is reputable but never authoritative. When unsure, leave the authority list empty.${structuredBlock}
 
 ${blocks.join('\n\n=====\n\n')}`
 }
@@ -464,6 +485,67 @@ const REVISE_SCHEMA = {
   additionalProperties: false,
 }
 
+const SALVAGE_SCHEMA = {
+  type: 'object',
+  properties: {
+    discard: {
+      type: 'boolean',
+      description: 'true if the verified claims cannot sustain a compelling, honest card',
+    },
+    hook: { type: 'string' },
+    story: { type: 'string' },
+  },
+  required: ['discard'],
+  additionalProperties: false,
+}
+
+/**
+ * Core claim failed but other claims verified: rebuild the card around
+ * ONLY the verified material, or discard if nothing compelling survives.
+ */
+async function salvageCard(candidate, verifiedClaims, failedClaims) {
+  return claude(
+    [
+      {
+        role: 'user',
+        content: `This story card FAILED verification on its core claim. Rebuild it around ONLY the verified claims, or discard it.
+
+Original hook: ${candidate.hook}
+Original story: ${candidate.story}
+
+VERIFIED claims (the only things the new card may assert):
+${verifiedClaims.map((c) => `- ${c}`).join('\n')}
+
+UNVERIFIED claims (must not appear in any form — no hedging like "reportedly"):
+${failedClaims.map((c) => `- ${c}`).join('\n')}
+
+If the verified claims support a genuinely compelling, honest card, return discard=false with a new hook (<=120 chars, true-clickbait style) and story (2-4 sentences, <=650 chars) asserting only verified content. If they don't add up to a card worth publishing, return discard=true.`,
+      },
+    ],
+    SALVAGE_SCHEMA,
+    4000,
+  )
+}
+
+/** A discarded candidate, kept in the work file for the audit trail only. */
+function rejectedCard(slug, artist, candidate, claimReport, reason) {
+  return {
+    id: cardId(slug, candidate.hook.slice(0, 160)),
+    slug,
+    artistName: artist.hero.name,
+    type: candidate.type,
+    hook: candidate.hook.slice(0, 160),
+    story: candidate.story.slice(0, 700),
+    media: [],
+    sources: [],
+    status: 'rejected',
+    holdReason: `rejected: ${reason}`,
+    model: MODEL,
+    at: new Date().toISOString(),
+    claimReport,
+  }
+}
+
 /** Drop/soften unverified incidental details instead of holding the card. */
 async function reviseCard(candidate, failingClaims) {
   const revision = await claude(
@@ -565,8 +647,8 @@ async function farmArtist(slug) {
   const supportByClaim = new Map(
     (verified.results ?? []).map((r) => [r.claimIndex, new Set(r.supportedBySourceIndexes ?? [])]),
   )
-  const wikiIndexes = new Set(
-    fetched.flatMap((s, i) => (/en\.wikipedia\.org/.test(s.url) ? [i] : [])),
+  const authorityByClaim = new Map(
+    (verified.results ?? []).map((r) => [r.claimIndex, new Set(r.authoritativeSourceIndexes ?? [])]),
   )
   const mbid = artist.integrations?.setlistfm?.mbid
   const mbSource = mbid
@@ -577,12 +659,22 @@ async function farmArtist(slug) {
       }
     : null
 
+  // TIERED, AUTHORITY-AWARE GATE (no drafts, no review queue):
+  //   Tier 1 — ONE source suffices when it is THE authority for that
+  //            specific claim (awarding body, chart authority, IMDb,
+  //            MusicBrainz for discography/membership, the artist's own
+  //            documented words for their own history — never for
+  //            self-promotional superlatives).
+  //   Tier 2 — everything else needs 2+ reputable supporting sources.
+  //   Trim, don't reject: failed incidental claims get cut; a failed core
+  //   gets a salvage rewrite around the verified claims; a card is
+  //   discarded ONLY when nothing verifiable survives.
   const cards = []
   for (const [cardIndex, candidate] of candidates.entries()) {
-    const holdReasons = []
-    const incidentalFails = []
     const usedSources = new Map()
     const claimReport = []
+    const passedClaims = []
+    const failedClaims = []
     let structuredUsed = false
 
     candidate.claims.forEach((claimSpec, localIndex) => {
@@ -590,59 +682,75 @@ async function farmArtist(slug) {
         (f) => f.cardIndex === cardIndex && f.claim === claimSpec.claim,
       )
       const supported = supportByClaim.get(globalIndex) ?? new Set()
+      const authoritative = authorityByClaim.get(globalIndex) ?? new Set()
       // Sources that are BOTH live and verifier-confirmed.
       const confirmed = claimSpec.sources.filter((s) => {
         const liveIndex = liveByUrl.get(s.url)
         return liveIndex !== undefined && supported.has(liveIndex)
       })
-      // Two verification tiers:
-      //   soft  — 2+ confirmed prose sources (strict bar stays)
-      //   hard  — database-style fact: one confirmed Wikipedia source AND
-      //           the MusicBrainz structured record agreeing is sufficient
-      const wikiOk = confirmed.some(
-        (s) => supported.has(liveByUrl.get(s.url)) && /en\.wikipedia\.org/.test(s.url),
-      ) || [...supported].some((i) => wikiIndexes.has(i))
-      const structuredOk = Boolean(structured) && supported.has(structuredIndex)
-      const hard = claimSpec.kind === 'hard'
-      const passed =
-        confirmed.length >= 2 || (hard && wikiOk && structuredOk)
-      if (passed && hard && structuredOk && confirmed.length < 2) {
-        structuredUsed = true
+      const structuredSupports = Boolean(structured) && supported.has(structuredIndex)
+      const supportedCount = confirmed.length + (structuredSupports ? 1 : 0)
+      // Authority must also actually support the claim to count.
+      const tier1 = [...authoritative].some((i) => supported.has(i))
+      const tier2 = supportedCount >= 2
+      const passed = tier1 || tier2
+      if (passed && structuredSupports) structuredUsed = true
+      if (passed) {
+        passedClaims.push(claimSpec.claim)
+        for (const s of confirmed) usedSources.set(s.url, s)
+      } else {
+        failedClaims.push({ claim: claimSpec.claim, core: Boolean(claimSpec.core) })
       }
-      if (!passed) {
-        const label = `claim ${localIndex + 1} ("${claimSpec.claim.slice(0, 90)}…") ${claimSpec.kind ?? 'soft'}/${claimSpec.core ? 'core' : 'incidental'}: ${confirmed.length}/2 prose sources${hard ? `, structured ${structuredOk ? 'agrees but no Wikipedia confirm' : 'does not confirm'}` : ''}`
-        if (claimSpec.core) holdReasons.push(label)
-        else incidentalFails.push({ label, claim: claimSpec.claim })
-      }
-      for (const s of confirmed) usedSources.set(s.url, s)
       claimReport.push({
         claim: claimSpec.claim,
         kind: claimSpec.kind,
         core: claimSpec.core,
         passed,
+        tier: passed ? (tier1 ? 1 : 2) : null,
         proposed: claimSpec.sources.map((s) => ({
           url: s.url,
           live: liveByUrl.has(s.url),
           supported: confirmed.some((c) => c.url === s.url),
         })),
-        structuredOk,
+        structuredSupports,
       })
     })
+
+    // Nothing verifiable survived — discard, never park for review.
+    if (passedClaims.length === 0) {
+      log(`${slug}: discarded "${candidate.hook.slice(0, 60)}…" — no claim verified`)
+      cards.push(rejectedCard(slug, artist, candidate, claimReport, 'no claim verified'))
+      continue
+    }
 
     const media = await resolveMedia(candidate.media, artist)
     let hook = candidate.hook.slice(0, 160)
     let story = candidate.story.slice(0, 700)
 
-    // Incidental failures don't hold a card — the detail gets dropped.
-    if (holdReasons.length === 0 && incidentalFails.length > 0) {
+    if (failedClaims.length > 0) {
+      const coreFailed = failedClaims.some((f) => f.core)
       try {
-        const revision = await reviseCard(candidate, incidentalFails.map((f) => f.claim))
-        story = revision.story.slice(0, 700)
-        if (revision.hook) hook = revision.hook.slice(0, 160)
-      } catch {
-        // Revision failed — fall back to holding rather than shipping
-        // a story that asserts unverified details.
-        holdReasons.push(...incidentalFails.map((f) => f.label))
+        if (coreFailed) {
+          // Salvage: rebuild the card around what DID verify.
+          const salvage = await salvageCard(candidate, passedClaims, failedClaims.map((f) => f.claim))
+          if (salvage.discard || !salvage.story) {
+            log(`${slug}: discarded "${candidate.hook.slice(0, 60)}…" — core unverified, no salvage`)
+            cards.push(rejectedCard(slug, artist, candidate, claimReport, 'core unverified, salvage declined'))
+            continue
+          }
+          hook = (salvage.hook ?? hook).slice(0, 160)
+          story = salvage.story.slice(0, 700)
+        } else {
+          // Incidental failures: cut just those details.
+          const revision = await reviseCard(candidate, failedClaims.map((f) => f.claim))
+          story = revision.story.slice(0, 700)
+          if (revision.hook) hook = revision.hook.slice(0, 160)
+        }
+      } catch (error) {
+        // A failed rewrite must not ship unverified text — discard.
+        log(`${slug}: discarded "${candidate.hook.slice(0, 60)}…" — revision failed (${error.message})`)
+        cards.push(rejectedCard(slug, artist, candidate, claimReport, 'revision failed'))
+        continue
       }
     }
 
@@ -651,13 +759,15 @@ async function farmArtist(slug) {
       publisher: s.publisher.slice(0, 60),
       url: s.url,
     }))
-    if (structuredUsed && mbSource && holdReasons.length === 0) {
-      sources.push(mbSource)
-    }
-
-    // Absolute floor even for drafts: something checkable must exist.
-    if (sources.length === 0 && holdReasons.length === 0) {
-      holdReasons.push('no live sources survived fetching')
+    if (structuredUsed && mbSource) sources.push(mbSource)
+    if (sources.length === 0) {
+      // Verified purely via the structured record with no prose source at
+      // all still needs SOMETHING citable on the card.
+      if (mbSource) sources.push(mbSource)
+      else {
+        cards.push(rejectedCard(slug, artist, candidate, claimReport, 'no citable source'))
+        continue
+      }
     }
 
     cards.push({
@@ -669,8 +779,7 @@ async function farmArtist(slug) {
       story,
       media,
       sources,
-      status: holdReasons.length === 0 ? 'published' : 'draft',
-      ...(holdReasons.length > 0 ? { holdReason: holdReasons.join('; ') } : {}),
+      status: 'published',
       model: MODEL,
       at: new Date().toISOString(),
       claimReport,
@@ -682,9 +791,9 @@ async function farmArtist(slug) {
     JSON.stringify({ slug, generatedAt: new Date().toISOString(), cards }, null, 2),
   )
   const published = cards.filter((c) => c.status === 'published').length
-  const drafts = cards.length - published
-  log(`${slug}: ${published} published, ${drafts} draft${drafts === 1 ? '' : 's'}`)
-  return { published, drafts }
+  const rejected = cards.length - published
+  log(`${slug}: ${published} published, ${rejected} discarded`)
+  return { published, drafts: rejected }
 }
 
 // --- assemble --------------------------------------------------------------
@@ -701,7 +810,7 @@ function assemble() {
     .map(({ claimReport, reviewCut, reviewedAt, rescoredAt, ...card }) => card)
   writeFileSync(OUT_PATH, JSON.stringify({ version: 1, cards }, null, 2) + '\n')
   const published = cards.filter((c) => c.status === 'published').length
-  console.log(`assembled ${cards.length} cards (${published} published, ${cards.length - published} draft) -> lib/stories/cards.json`)
+  console.log(`assembled ${cards.length} cards (${published} published, ${cards.length - published} legacy-draft) -> lib/stories/cards.json`)
 }
 
 // --- rescore: re-gate existing drafts under the two-tier rules -------------
@@ -760,10 +869,10 @@ ${structured ? structured.slice(0, 14000) : '(no MusicBrainz record available)'}
 STRUCTURED DATA — the site's own verified artist facts (IDs and content were human-verified against live sources):
 ${JSON.stringify(facts)}
 
-POLICY:
-- HARD FACTS (birthplace/origin, band membership, discography and release years, film/TV roles, awards, documented feature credits) are database facts. A hard claim is VERIFIED if a Wikipedia source previously confirmed it (see each claim's bracket) AND the structured data above agrees with it. Be conservative: the structured data must actually contain the fact (a release title + year, a membership relation, an origin area…). If the structured data doesn't cover it (e.g. most awards), the claim stays unverified under this tier.
-- SOFT CLAIMS (interpretive/anecdotal: sentiments, motivations, single-interview stories, "the song that made them quit") keep the strict bar: 2+ previously-confirmed prose sources. None of these drafts met that, so an unverified soft claim stays unverified.
-- CORE vs INCIDENTAL: identify the claim(s) the hook rests on. PUBLISH a card when its core claim(s) are verified (either tier). If incidental claims remain unverified, provide revisedStory (and revisedHook only if the hook asserted the dropped detail) that DROPS or restates those details so nothing unverified is asserted — never hedge with "reportedly", never add new facts. HOLD only when a core claim itself is unverified, with a holdReason saying which core claim and why.
+POLICY (tiered, authority-aware):
+- TIER 1 — ONE authoritative source suffices when it is THE authority for that specific claim: the awarding body for awards; Billboard/Official Charts Company for chart facts; IMDb or the production's official source for film/TV roles; MusicBrainz (the structured record above) for discography, membership, and release dates; the artist's own official site or own published words for their own history. GUARDRAILS: authority must match the fact's domain (grammy.com verifies awards, not birthplaces); an artist's own properties never verify self-promotional superlatives ("best-selling ever", "first to…") — those need independent confirmation. Wikipedia is reputable but never authoritative.
+- TIER 2 — everything else (interpretive/anecdotal: sentiments, motivations, single-interview stories) needs 2+ reputable supporting sources.
+- TRIM, DON'T REJECT: publish a card whose core verifies, cutting any unverified incidental clause (no hedging like "reportedly" — drop or restate, never soften). If the core fails but other claims verified, rebuild the card around the verified claims. DISCARD (decision "hold" with holdReason "rejected: …") ONLY when nothing verifiable survives — never park a card for human review.
 
 ${cardsBlock}`
 }
@@ -901,5 +1010,5 @@ for (const slug of pending) {
   }
   await sleep(3000)
 }
-log(`farm done: ${totals.published} published, ${totals.drafts} drafts, ${totals.failed} failed`)
+log(`farm done: ${totals.published} published, ${totals.drafts} discarded, ${totals.failed} failed`)
 assemble()

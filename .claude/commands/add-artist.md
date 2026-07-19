@@ -53,10 +53,21 @@ exact rules (read scripts/build-story-cards.mjs generatePrompt for the
 authoritative wording): verifiable-facts-first (rule 0), atomic claims
 tagged hard/soft + core, plural framing, no invented quotes, no hedging,
 media only from the artist's verified video IDs or YouTube search URLs.
-VERIFY every core claim against live sources yourself (Wikipedia +
-structured sources for hard facts; 2+ reputable prose sources for soft
-claims) — you have the browser and web search; use them. Drop shaky
-incidental details instead of holding cards.
+
+VERIFY under the TIERED, AUTHORITY-AWARE GATE:
+- Tier 1 — ONE source publishes a claim when it is THE authority for that
+  specific claim: awarding body for awards (grammy.com…), Billboard/
+  Official Charts for chart facts, IMDb/production source for screen
+  roles, MusicBrainz for discography/membership/dates, the artist's own
+  site or own published words for their own history. Guardrails: the
+  authority must match the fact's domain, and an artist's own properties
+  never verify self-promotional superlatives — those need an independent
+  reputable source. Wikipedia is reputable, never authoritative.
+- Tier 2 — interpretive/anecdotal claims need 2+ reputable sources.
+- TRIM, DON'T REJECT: cut unverified incidental clauses (no "reportedly");
+  if a core fails, rebuild the card around what verified; discard the
+  card only when nothing verifiable survives. NEVER produce a draft or
+  park anything for owner review — publish the true, discard the rest.
 
 Write the results as data/story-cards-work/<slug>.json (same shape as the
 existing work files: cards[] with id "<slug>-<hex-hash-of-hook>", slug,

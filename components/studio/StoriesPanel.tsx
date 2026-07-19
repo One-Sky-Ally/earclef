@@ -142,8 +142,9 @@ export function StoriesPanel({ ownerKey }: StoriesPanelProps) {
   if (drafts.length === 0) {
     return (
       <p className={styles.quiet}>
-        No story drafts waiting — everything the farm produced either passed
-        the source gate or hasn&apos;t run yet.
+        No story drafts — the farm publishes what verifies and discards the
+        rest, so nothing waits for review. This panel only fills if legacy
+        drafts ever reappear.
       </p>
     )
   }
