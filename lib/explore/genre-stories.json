@@ -48,5 +48,55 @@
     "story": "K-pop took shape in South Korea, which anchors the genre with over 1,100 registered artists and a clear peak in the 2010s of 506. Among its pioneers, [[Seo Taiji and Boys]] mixed rap and rock into Korean pop in the early 1990s, while [[H.O.T.]], [[S.E.S.]], and [[g.o.d]] helped define the idol-group template that followed. Later acts like [[BoA]] and [[TVXQ]] pushed the sound outward, first into Japan and across Asia. The dataset shows small clusters emerging abroad too, with a handful of artists in the US, Japan, and China, though the numbers there stay modest.",
     "model": "claude-opus-4-8",
     "at": "2026-07-17T22:58:13.638Z"
+  },
+  "electronic": {
+    "story": "Electronic music is the broadest lens here — an umbrella that took shape in the 1970s as synthesizers left the laboratory, with [[Kraftwerk]], [[Tangerine Dream]], [[Wendy Carlos]], and [[Giorgio Moroder]] among its pioneers across Germany, the US, and Italy. Cheap gear and home studios then spread it everywhere at once. Our dataset counts over 3,500 tagged artists, led by the US (762) and Britain (687), both peaking in the 2000s as production software made everyone a potential producer.",
+    "model": "claude-fable-5 (in-session)",
+    "at": "2026-07-19T05:41:18.341Z"
+  },
+  "house": {
+    "story": "House was born on Chicago dance floors in the early 1980s, built from disco records and drum machines by pioneers including [[Frankie Knuckles]], [[Ron Hardy]], [[Larry Heard]], and [[Marshall Jefferson]]. Britain caught it fast — the 1988 acid-house summer made it a UK institution, and our dataset now counts Britain (281 artists) neck and neck with the US (280). Germany, France, and the Netherlands built their own 1990s scenes that never really ended.",
+    "model": "claude-fable-5 (in-session)",
+    "at": "2026-07-19T05:41:18.341Z"
+  },
+  "soul": {
+    "story": "Soul emerged in the 1950s United States as gospel fervor met rhythm and blues, with [[Ray Charles]], [[Sam Cooke]], and [[James Brown]] among its architects and [[Aretha Franklin]] soon its defining voice. Motown, Stax, and Muscle Shoals industrialized the feeling in the 1960s. The US dominates our dataset — 1,572 of 2,600 artists, anchored in that founding era — while Britain's 310, peaking in the 2000s, trace the northern-soul obsession and the neo-soul revival that followed.",
+    "model": "claude-fable-5 (in-session)",
+    "at": "2026-07-19T05:41:18.341Z"
+  },
+  "country": {
+    "story": "Country grew out of the folk songs, church music, and string bands of the American South, put on record in the 1920s by early figures like [[The Carter Family]] and [[Jimmie Rodgers]]. Nashville turned it into an industry, and the US still holds 1,329 of our 1,769 tagged artists, peaking in the 1990s arena era. Canada and Australia run their own traditions — and the dataset's scattering across Norway and Britain shows how far the twang carries.",
+    "model": "claude-fable-5 (in-session)",
+    "at": "2026-07-19T05:41:18.341Z"
+  },
+  "salsa": {
+    "story": "Salsa's roots are genuinely contested — Cuban son and mambo supplied the engine, but the sound was assembled in New York's Latin neighborhoods in the late 1960s and 70s, with [[Willie Colón]], [[Héctor Lavoe]], [[Celia Cruz]], and [[Rubén Blades]] among the figures who defined it on Fania Records. Our dataset's geography tells that spread: Puerto Rico leads (69 artists, peaking in the 1970s), with Colombia's Cali scene close behind (55, peaking in the 1980s) and Cuba and Venezuela carrying their own lines.",
+    "model": "claude-fable-5 (in-session)",
+    "at": "2026-07-19T05:41:18.341Z"
+  },
+  "afrobeat": {
+    "story": "Afrobeat was forged in 1960s-70s Lagos, where [[Fela Kuti]] and drummer [[Tony Allen]] fused highlife, jazz, and funk into long-form political groove. Nigeria still anchors the lens with 76 of our 210 tagged artists — peaking in the 2010s, when a new generation and bands abroad like [[Antibalas]] revived the form and the closely-named afrobeats wave brought new attention. Ghana, Britain, and the US carry the diaspora's share.",
+    "model": "claude-fable-5 (in-session)",
+    "at": "2026-07-19T05:41:18.341Z"
+  },
+  "ambient": {
+    "story": "Ambient coalesced in the 1970s between Britain and Germany: [[Brian Eno]] named it and framed its intent with Music for Airports, while kosmische travelers like [[Tangerine Dream]] and [[Cluster]] had been drifting there already. Britain's 254 dataset artists peak in the 1980s, closest to the founding moment; the US total (325) peaks in the 2000s, when laptops made stillness a global pursuit. Over 1,500 artists carry the tag across 60-plus countries.",
+    "model": "claude-fable-5 (in-session)",
+    "at": "2026-07-19T05:41:18.341Z"
+  },
+  "flamenco": {
+    "story": "Flamenco is far older than recording — it grew over centuries among the Roma communities of Andalusia, and Spain holds 91 of our 130 tagged artists, the deepest home-country concentration of any lens here. The dataset peaks in the 1960s, the recorded era of masters like [[Paco de Lucía]] and [[Camarón de la Isla]], with earlier giants like [[La Niña de los Peines]] preserved on shellac. The small numbers abroad mark emigres and devoted students, not a second home.",
+    "model": "claude-fable-5 (in-session)",
+    "at": "2026-07-19T05:41:18.341Z"
+  },
+  "bluegrass": {
+    "story": "Bluegrass takes its very name from [[Bill Monroe]]'s Blue Grass Boys, the 1940s Kentucky band where [[Earl Scruggs]]' banjo rolls and [[Lester Flatt]]'s guitar runs set the template. It stayed strikingly American: 269 of our 302 tagged artists are US-based, peaking in the 1950s founding wave. The handful abroad — Canada, Britain, Japan — reflect one of the world's most devoted small scenes.",
+    "model": "claude-fable-5 (in-session)",
+    "at": "2026-07-19T05:41:18.341Z"
+  },
+  "drum and bass": {
+    "story": "Drum and bass accelerated out of Britain's early-90s jungle and rave scenes, with [[Goldie]], [[LTJ Bukem]], [[Roni Size]], and [[4hero]] among the pioneers who stretched breakbeats into something both furious and elegant. Britain still owns the lens — 209 of our 482 tagged artists, peaking in the 1990s. The 2000s and 2010s took it global, with the US, Russia, and the Netherlands building scenes of their own.",
+    "model": "claude-fable-5 (in-session)",
+    "at": "2026-07-19T05:41:18.341Z"
   }
 }

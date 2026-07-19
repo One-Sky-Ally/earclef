@@ -15,6 +15,16 @@ export const GENRE_LENSES = [
   'techno',
   'bossa nova',
   'k-pop',
+  'electronic',
+  'house',
+  'soul',
+  'country',
+  'salsa',
+  'afrobeat',
+  'ambient',
+  'flamenco',
+  'bluegrass',
+  'drum and bass',
 ] as const
 
 export type GenreLens = (typeof GENRE_LENSES)[number]

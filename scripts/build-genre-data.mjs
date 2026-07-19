@@ -30,6 +30,16 @@ const GENRES = [
   'techno',
   'bossa nova',
   'k-pop',
+  'electronic',
+  'house',
+  'soul',
+  'country',
+  'salsa',
+  'afrobeat',
+  'ambient',
+  'flamenco',
+  'bluegrass',
+  'drum and bass',
 ]
 
 const PAGE_SIZE = 100
