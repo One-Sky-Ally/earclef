@@ -208,6 +208,7 @@ ${website ? `- Official site: ${website}` : ''}
 Write 2-4 cards. Good card types: era/origin stories, the story behind a song, screen appearances (film/documentary/soundtrack), collaboration webs, anniversaries (only if the date is documented and near ${TODAY}), legendary performances, documented recent news.
 
 HARD RULES:
+0. FACT SELECTION DEFAULT: pull only clearly-true, easily-verifiable facts — the kind found in liner notes, Wikipedia, AllMusic, and official sources. Prioritize hard facts (membership, discography, awards, film/TV placements, documented collaborations and features, chart records) over interpretive stories, anecdotes, or single-interview quotes. When a fact is solid but one detail is shaky, state the solid fact and OMIT the shaky detail — never sacrifice the card for a garnish, and never hedge.
 1. Everything must be true and documented. NO invented quotes — never use quotation marks except around titles of works. Paraphrase documented sentiments ("he has spoken about tiring of playing it") only when that sentiment is well documented.
 2. Contested histories get plural framing ("among the pioneers", "one of the first") — never crown a single inventor of anything contested.
 3. Decompose each card's story into its checkable factual claims (1-5). Each claim must be ATOMIC — exactly one fact ("In Rainbows was released as a pay-what-you-want download", NOT "…and it was released in October 2007 and reshaped economics"). Composite claims fail verification. For each claim list 3 REAL text sources that genuinely document it. Sources are MACHINE-FETCHED and checked: a URL that 404s, paywalls, or does not plainly state the fact in its text does not count, and a claim needs TWO counting sources to publish. Your best bets: DISTINCT en.wikipedia.org articles (the artist page, the album page, and the song page are three separate sources — use exact URLs like https://en.wikipedia.org/wiki/OK_Computer), plus Guardian/NPR/Billboard/Pitchfork pieces you are confident exist. Never use YouTube, social media, or video pages as claim sources (those belong in media). Avoid hard-paywalled outlets (NYT, The Times, WSJ).
@@ -649,8 +650,10 @@ function assemble() {
     : []
   const cards = files
     .flatMap((file) => JSON.parse(readFileSync(join(WORK_DIR, file), 'utf8')).cards)
+    // Review-rejected cards stay in the work files only.
+    .filter((card) => card.status !== 'rejected')
     // Gate detail stays in the work files; the shipped file is lean.
-    .map(({ claimReport, ...card }) => card)
+    .map(({ claimReport, reviewCut, reviewedAt, rescoredAt, ...card }) => card)
   writeFileSync(OUT_PATH, JSON.stringify({ version: 1, cards }, null, 2) + '\n')
   const published = cards.filter((c) => c.status === 'published').length
   console.log(`assembled ${cards.length} cards (${published} published, ${cards.length - published} draft) -> lib/stories/cards.json`)

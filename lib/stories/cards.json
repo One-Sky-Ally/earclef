@@ -42,8 +42,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:58:58.276Z",
-      "rescoredAt": "2026-07-18T22:50:57.632Z"
+      "at": "2026-07-18T16:58:58.276Z"
     },
     {
       "id": "aphex-twin-71c3eb8",
@@ -167,8 +166,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:59:00.045Z",
-      "rescoredAt": "2026-07-18T22:50:57.632Z"
+      "at": "2026-07-18T16:59:00.045Z"
     },
     {
       "id": "aplete-2e66fddb",
@@ -190,8 +188,7 @@
       "sources": [],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:12:51.398Z",
-      "rescoredAt": "2026-07-18T22:51:36.042Z"
+      "at": "2026-07-18T15:12:51.398Z"
     },
     {
       "id": "aplete-d68947c0",
@@ -213,8 +210,7 @@
       "sources": [],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:12:51.398Z",
-      "rescoredAt": "2026-07-18T22:51:36.042Z"
+      "at": "2026-07-18T15:12:51.398Z"
     },
     {
       "id": "aplete-c3c03572",
@@ -236,8 +232,7 @@
       "sources": [],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:12:51.398Z",
-      "rescoredAt": "2026-07-18T22:51:36.042Z"
+      "at": "2026-07-18T15:12:51.398Z"
     },
     {
       "id": "aurora-ec0cbe95",
@@ -245,7 +240,7 @@
       "artistName": "AURORA",
       "type": "era",
       "hook": "The song she wrote at eleven became a slow-burning global phenomenon",
-      "story": "Before she was AURORA the pop export, she was a kid in Stavanger writing songs almost in secret. One of them, \"Runaway,\" she wrote at age eleven — and years later it quietly grew into one of her most-loved tracks, finding new life with a devoted fanbase she calls her warriors and weirdos. It anchored her 2016 debut, All My Demons Greeting Me as a Friend.",
+      "story": "Before she was AURORA the pop export, she was a kid in western Norway writing songs almost in secret. One of them, \"Runaway,\" she wrote at age eleven — and years later it quietly grew into one of her most-loved tracks, finding new life with a devoted fanbase she calls her warriors and weirdos. It anchored her 2016 debut, All My Demons Greeting Me as a Friend.",
       "media": [
         {
           "label": "AURORA — Runaway (official video)",
@@ -267,13 +262,21 @@
           "title": "Aurora (Norwegian singer)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Aurora_(Norwegian_singer)"
+        },
+        {
+          "title": "AURORA opens up about 'Runaway' – the song that inspired Billie Eilish",
+          "publisher": "NME",
+          "url": "https://www.nme.com/news/music/aurora-runaway-lyrics-meaning-video-billie-eilish-2482989"
+        },
+        {
+          "title": "Aurora (singer)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Aurora_(singer)"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core claim — that AURORA wrote \"Runaway\" at age eleven (claim 0) — is unverified: 0 prose sources, Wikipedia did not confirm it, and the structured data does not contain any songwriting-age fact. Since the entire hook rests on the 'wrote at eleven' assertion, it cannot be published.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:01:37.722Z",
-      "rescoredAt": "2026-07-18T22:54:32.418Z"
+      "at": "2026-07-18T17:01:37.722Z"
     },
     {
       "id": "aurora-cb4929e8",
@@ -325,7 +328,7 @@
       "artistName": "AURORA",
       "type": "screen",
       "hook": "That wordless call luring Elsa in Frozen II? That is AURORA",
-      "story": "The haunting siren-like voice that beckons Elsa in Disney's Frozen II belongs to AURORA — the song \"Into the Unknown\" was performed by Idina Menzel featuring AURORA. She has also lent her voice to animation beyond Disney, performing the song \"Everybody Cries\" for the acclaimed film WolfWalkers. Both roles put her unmistakable tone at the emotional core of the films.",
+      "story": "The haunting siren-like voice that beckons Elsa in Disney's Frozen II belongs to AURORA — the song \"Into the Unknown\" was performed by Idina Menzel featuring AURORA. She has also lent her voice to animation beyond Disney, recording a reworked version of her song \"Running with the Wolves\" for the acclaimed film WolfWalkers. Both roles put her unmistakable tone at the emotional core of the films.",
       "media": [
         {
           "label": "Search: AURORA Into the Unknown Frozen 2",
@@ -342,13 +345,31 @@
           "title": "Aurora (Norwegian singer)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Aurora_(Norwegian_singer)"
+        },
+        {
+          "title": "Aurora On 'Frozen 2's 'Into the Unknown': Emerging Artists Spotlight",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/pro/aurora-frozen-2-into-the-unknown-emerging-artists-spotlight/"
+        },
+        {
+          "title": "Into the Unknown (Frozen song)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Into_the_Unknown_(Frozen_song)"
+        },
+        {
+          "title": "AURORA Voices The North Wind in Frozen 2",
+          "publisher": "Music Vein",
+          "url": "https://musicvein.co.uk/2019/12/06/aurora-voices-the-north-wind-in-frozen-2/"
+        },
+        {
+          "title": "Running with the Wolves (song)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Running_with_the_Wolves_(song)"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on claim 1 — that AURORA provided the wordless/siren-like voice luring Elsa in Frozen II. That core claim is unverified (0 prose sources, Wikipedia did not confirm) and is not present in the structured data (no Frozen II or Into the Unknown entry). The 'that is AURORA' hook therefore asserts an unverified core detail.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:01:37.722Z",
-      "rescoredAt": "2026-07-18T22:54:32.418Z"
+      "at": "2026-07-18T17:01:37.722Z"
     },
     {
       "id": "aurora-d9c44be8",
@@ -387,15 +408,14 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:01:37.722Z",
-      "rescoredAt": "2026-07-18T22:54:32.418Z"
+      "at": "2026-07-18T17:01:37.722Z"
     },
     {
       "id": "beats-antique-96b99ed0",
       "slug": "beats-antique",
       "artistName": "Beats Antique",
       "type": "era",
-      "hook": "A belly-dance scoring project quietly grew into Oakland's mechanical circus",
+      "hook": "A belly-dance scoring project quietly grew into the Bay Area's mechanical circus",
       "story": "Beats Antique began in 2007 as a studio collaboration between producers David Satori and Tommy \"Sidecar\" Cappel and dancer-percussionist Zoe Jakes, originally making music for belly dance. The format couldn't contain them for long — the trio soon fused Middle Eastern and Balkan traditions with hip-hop drums and heavy electronics, and turned the live show into a theatrical spectacle with Jakes out front.",
       "media": [
         {
@@ -412,13 +432,21 @@
           "title": "Beats Antique",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Beats_Antique"
+        },
+        {
+          "title": "Beats Antique: Organic and Electronic, Heavy Bass and Belly Dancing",
+          "publisher": "Jambands",
+          "url": "https://jambands.com/features/2011/05/13/beats-antique-organic-and-electronic-heavy-bass-and-belly-dancing/"
+        },
+        {
+          "title": "Beats Antique on Apple Music (editorial bio)",
+          "publisher": "Apple Music",
+          "url": "https://music.apple.com/us/artist/beats-antique/275162219"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on two core claims that are both unverified. Claim 2 (band started as a belly-dance scoring project) was not confirmed by Wikipedia and is not present in either structured dataset. Claim 0 (formed in Oakland in 2007) — while the structured data lists Oakland/2007 — was NOT confirmed by Wikipedia, so under the hard-fact tier requiring Wikipedia AND structured agreement it stays unver",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:03:18.254Z",
-      "rescoredAt": "2026-07-18T22:55:45.159Z"
+      "at": "2026-07-18T17:03:18.254Z"
     },
     {
       "id": "beats-antique-483eec2f",
@@ -447,8 +475,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:03:18.254Z",
-      "rescoredAt": "2026-07-18T22:55:45.159Z"
+      "at": "2026-07-18T17:03:18.254Z"
     },
     {
       "id": "beats-antique-95fbeb28",
@@ -481,8 +508,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:03:18.254Z",
-      "rescoredAt": "2026-07-18T22:55:45.159Z"
+      "at": "2026-07-18T17:03:18.254Z"
     },
     {
       "id": "bela-fleck-and-the-flecktones-8ea1dddb",
@@ -525,8 +551,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:04:48.229Z",
-      "rescoredAt": "2026-07-18T22:56:27.642Z"
+      "at": "2026-07-18T17:04:48.229Z"
     },
     {
       "id": "bela-fleck-and-the-flecktones-1c017ae8",
@@ -593,13 +618,16 @@
           "title": "Béla Fleck and the Flecktones",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/B%C3%A9la_Fleck_and_the_Flecktones"
+        },
+        {
+          "title": "Grammy Award for Best Pop Instrumental Album",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_Pop_Instrumental_Album"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on the core claim that Jingle All the Way won the Grammy for Best Pop Instrumental Album (claim 1). Awards are not present in the structured data, so it cannot be verified under the hard-fact tier, and it has only 1 prose source, failing the 2+ soft-claim bar.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:04:49.348Z",
-      "rescoredAt": "2026-07-18T22:56:27.642Z"
+      "at": "2026-07-18T17:04:49.348Z"
     },
     {
       "id": "bela-fleck-and-the-flecktones-3bac0e62",
@@ -672,8 +700,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:25:14.239Z",
-      "rescoredAt": "2026-07-18T22:57:56.722Z"
+      "at": "2026-07-18T15:25:14.239Z"
     },
     {
       "id": "bjork-868957ae",
@@ -703,13 +730,16 @@
           "title": "Spike Jonze",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Spike_Jonze"
+        },
+        {
+          "title": "One Great Cover: Bjork's \"It's Oh So Quiet\"",
+          "publisher": "Cover Me Songs",
+          "url": "https://www.covermesongs.com/2025/12/one-great-cover-bjorks-its-oh-so-quiet.html"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on the core claim that It's Oh So Quiet is a cover version, which is unverified: only 1 prose source confirmed it (soft bar needs 2) and the structured data contains no cover/single/track-level information to confirm it under the hard-fact tier.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:25:14.239Z",
-      "rescoredAt": "2026-07-18T22:57:56.722Z"
+      "at": "2026-07-18T15:25:14.239Z"
     },
     {
       "id": "bjork-9f6f1bd3",
@@ -748,8 +778,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:25:14.239Z",
-      "rescoredAt": "2026-07-18T22:57:56.722Z"
+      "at": "2026-07-18T15:25:14.239Z"
     },
     {
       "id": "bjork-900f3bf7",
@@ -779,13 +808,16 @@
           "title": "Homogenic",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Homogenic"
+        },
+        {
+          "title": "How Bjork's robots influenced the way we think about the future",
+          "publisher": "Slate",
+          "url": "https://slate.com/technology/2018/01/how-bjrk-robots-influenced-the-way-we-think-about-the-future.html"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core claims — that the video features two robots and that All Is Full of Love is the closing track of Homogenic — are unverified: each rests on hard facts not present in the structured data (no tracklists, video content, or director credits), so neither the robot imagery, the Homogenic placement, nor the Cunningham direction can be confirmed under the structured tier.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:25:14.239Z",
-      "rescoredAt": "2026-07-18T22:57:56.722Z"
+      "at": "2026-07-18T15:25:14.239Z"
     },
     {
       "id": "bob-marley-18eef2d9",
@@ -852,13 +884,16 @@
           "title": "Bob Marley",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Bob_Marley"
+        },
+        {
+          "title": "Bob Marley & The Wailers' 'Exodus' | For The Record",
+          "publisher": "GRAMMY.com",
+          "url": "https://www.grammy.com/news/bob-marley-wailers-exodus-record"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core claim — that Time magazine named Exodus the best album of the 20th century — is an accolade/award-type hard fact. It is not present in the structured MusicBrainz record or the site's verified facts, so it cannot be verified under the structured-data tier, and as a documented accolade (not an interpretive soft claim) it does not qualify under the prose tier. The verified Exodus-1977",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:27:06.693Z",
-      "rescoredAt": "2026-07-18T22:59:20.399Z"
+      "at": "2026-07-18T15:27:06.693Z"
     },
     {
       "id": "bob-marley-d45462a6",
@@ -878,13 +913,16 @@
           "title": "Buffalo Soldier (song)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Buffalo_Soldier_(song)"
+        },
+        {
+          "title": "Confrontation (Bob Marley and the Wailers album)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Confrontation_(Bob_Marley_and_the_Wailers_album)"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on the claim that 'Buffalo Soldier' was released two years after Marley's death — i.e. posthumously on the 1983 album Confrontation (claim 1). Wikipedia did NOT confirm this and the album Confrontation does not appear anywhere in the structured data, so the core timing claim is unverified under both tiers.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:27:06.693Z",
-      "rescoredAt": "2026-07-18T22:59:20.399Z"
+      "at": "2026-07-18T15:27:06.693Z"
     },
     {
       "id": "bob-marley-a8e48cfd",
@@ -918,13 +956,16 @@
           "title": "Kingsley Ben-Adir",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Kingsley_Ben-Adir"
+        },
+        {
+          "title": "Bob Marley: One Love",
+          "publisher": "Rotten Tomatoes",
+          "url": "https://www.rottentomatoes.com/m/bob_marley_one_love"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on the existence of the 2024 biopic 'Bob Marley: One Love' (claim 0), along with its lead actor and director. These are hard (film) facts, but the structured MusicBrainz/verified data contains no such film — only a link to Marley's IMDb page — so the structured-data tier cannot confirm them, and they are not soft claims. The core biopic claim therefore remains unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:27:07.465Z",
-      "rescoredAt": "2026-07-18T22:59:20.399Z"
+      "at": "2026-07-18T15:27:07.465Z"
     },
     {
       "id": "bonobo-17b561bf",
@@ -962,8 +1003,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:06:40.737Z",
-      "rescoredAt": "2026-07-19T00:24:15.724Z"
+      "at": "2026-07-18T17:06:40.737Z"
     },
     {
       "id": "bonobo-ea059add",
@@ -997,8 +1037,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:06:40.737Z",
-      "rescoredAt": "2026-07-19T00:24:15.724Z"
+      "at": "2026-07-18T17:06:40.737Z"
     },
     {
       "id": "bonobo-c3770230",
@@ -1006,7 +1045,7 @@
       "artistName": "Bonobo",
       "type": "screen",
       "hook": "A Bonobo single's video stars a Bond actress dancing through an empty landscape",
-      "story": "'Kerala', the lead single from 2017's 'Migration', got a striking one-take-style video directed by Bison that features British actress Gemma Arterton moving through a series of glitching, repeating moments. The track and its clip helped push Bonobo further into festival-headline territory.",
+      "story": "'Kerala', the lead single from 2017's 'Migration', got a striking video directed by Bison that features British actress Gemma Arterton moving through a series of glitching, repeating moments. The track and its clip helped push Bonobo further into festival-headline territory.",
       "media": [
         {
           "label": "Kerala (official video)",
@@ -1018,13 +1057,21 @@
           "title": "Migration (Bonobo album)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Migration_(Bonobo_album)"
+        },
+        {
+          "title": "Bonobo: Kerala",
+          "publisher": "Cool Hunting",
+          "url": "https://coolhunting.com/culture/bonobo-kerala/"
+        },
+        {
+          "title": "Gemma Arterton",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Gemma_Arterton"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests entirely on the claim that the Kerala video stars a Bond actress (Gemma Arterton). That is a hard fact needing both Wikipedia and structured-data confirmation; the structured data contains no cast/personnel info for the video, so the core claim stays unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:06:40.737Z",
-      "rescoredAt": "2026-07-19T00:24:15.724Z"
+      "at": "2026-07-18T17:06:40.737Z"
     },
     {
       "id": "bonobo-613d948a",
@@ -1032,7 +1079,7 @@
       "artistName": "Bonobo",
       "type": "news",
       "hook": "His first album since 2022 is out this September, finished at Neil Young's ranch studio",
-      "story": "In 2026 Bonobo announced 'Distance In Static', his first record since 'Fragments', set for release on 11 September on Ninja Tune. The album brings in collaborators including Arooj Aftab, Joy Crookes, Nilüfer Yanya and Ichiko Aoba, with much of it completed at Neil Young's Broken Arrow studio.",
+      "story": "In 2026 Bonobo announced 'Distance In Static', his first record since 'Fragments', set for release on 11 September on Ninja Tune. The album brings in collaborators including Arooj Aftab, Joy Crookes, Nilüfer Yanya and Ichiko Aoba, with much of it completed at Neil Young's Broken Arrow ranch.",
       "media": [
         {
           "label": "Distance In Static news",
@@ -1043,12 +1090,21 @@
           "url": "https://bonobomusic.com"
         }
       ],
-      "sources": [],
-      "status": "draft",
-      "holdReason": "The hook's core claim — that Distance in Static releases on 11 September 2026 via Ninja Tune and was finished at Neil Young's ranch studio — is unverified. Wikipedia did not confirm the release, so the hard-fact tier's Wikipedia requirement is unmet despite MusicBrainz listing it, and the Neil Young studio and collaborator details appear in no source.",
+      "sources": [
+        {
+          "title": "Bonobo's New Album 'Distance in Static' Release Date Announced",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/music/music-news/bonobo-new-album-distance-in-static-release-date-1236267876/"
+        },
+        {
+          "title": "Bonobo reveals new album Distance In Static",
+          "publisher": "Resident Advisor",
+          "url": "https://ra.co/news/85385"
+        }
+      ],
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:06:41.480Z",
-      "rescoredAt": "2026-07-19T00:24:15.724Z"
+      "at": "2026-07-18T17:06:41.480Z"
     },
     {
       "id": "burial-653b00ce",
@@ -1087,8 +1143,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:08:56.294Z",
-      "rescoredAt": "2026-07-18T23:06:18.275Z"
+      "at": "2026-07-18T17:08:56.294Z"
     },
     {
       "id": "burial-ccd6806b",
@@ -1122,8 +1177,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:08:56.294Z",
-      "rescoredAt": "2026-07-18T23:06:18.275Z"
+      "at": "2026-07-18T17:08:56.294Z"
     },
     {
       "id": "burial-ab027685",
@@ -1162,8 +1216,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:08:56.294Z",
-      "rescoredAt": "2026-07-18T23:06:18.275Z"
+      "at": "2026-07-18T17:08:56.294Z"
     },
     {
       "id": "burial-5d61084f",
@@ -1259,8 +1312,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:35:13.420Z",
-      "rescoredAt": "2026-07-18T23:06:38.093Z"
+      "at": "2026-07-18T15:35:13.420Z"
     },
     {
       "id": "caribou-5792dba7",
@@ -1348,13 +1400,16 @@
           "title": "Chance the Rapper",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Chance_the_Rapper"
+        },
+        {
+          "title": "Chance The Rapper's 'Coloring Book' Is First Streaming-Only Album To Win a Grammy",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/music/awards/chance-the-rapper-coloring-book-first-streaming-only-album-grammy-7686341/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on claim 1 (Coloring Book was the first streaming-only release to win a Grammy) and claim 2 (winning Best Rap Album). These are award claims, which the structured MusicBrainz data does not cover at all, so they cannot be verified under the database (hard) tier; claim 1 has only 1 prior prose source, below the strict bar. The core Grammy achievement is therefore unverified and cannot",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:10:40.749Z",
-      "rescoredAt": "2026-07-18T23:08:07.362Z"
+      "at": "2026-07-18T17:10:40.749Z"
     },
     {
       "id": "chance-the-rapper-26e0df9",
@@ -1388,8 +1443,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:10:40.749Z",
-      "rescoredAt": "2026-07-18T23:08:07.362Z"
+      "at": "2026-07-18T17:10:40.749Z"
     },
     {
       "id": "chance-the-rapper-dadad8a1",
@@ -1461,8 +1515,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:10:41.788Z",
-      "rescoredAt": "2026-07-18T23:08:07.362Z"
+      "at": "2026-07-18T17:10:41.788Z"
     },
     {
       "id": "esperanza-spalding-4930df7f",
@@ -1487,13 +1540,26 @@
           "title": "53rd Annual Grammy Awards",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/53rd_Annual_Grammy_Awards"
+        },
+        {
+          "title": "Grammy Award for Best New Artist",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Grammy_Award_for_Best_New_Artist"
+        },
+        {
+          "title": "GRAMMY Rewind: Esperanza Spalding Elatedly Wins Best New Artist In 2011",
+          "publisher": "GRAMMY.com (Recording Academy)",
+          "url": "https://www.grammy.com/news/2021-grammy-rewind-esperanza-spalding-best-new-artist-2011"
+        },
+        {
+          "title": "How Esperanza Spalding's Grammy Win Shook the Music World",
+          "publisher": "Jazzfuel",
+          "url": "https://jazzfuel.com/esperanza-spalding-grammy-award/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on Spalding winning the 2011 Grammy for Best New Artist and beating Justin Bieber. The win is a hard fact (award) not covered by the structured data, so it stays unverified under the hard-fact tier despite prose confirmation. Claim 1 (first jazz musician) and claim 2 (Bieber as nominee) were not confirmed by Wikipedia and are not in the structured data. All core claims are unverifie",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:12:27.254Z",
-      "rescoredAt": "2026-07-18T23:09:28.565Z"
+      "at": "2026-07-18T17:12:27.254Z"
     },
     {
       "id": "esperanza-spalding-c1680780",
@@ -1518,13 +1584,16 @@
           "title": "Junjo (album)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Junjo"
+        },
+        {
+          "title": "Esperanza Spalding",
+          "publisher": "Academy of Achievement",
+          "url": "https://achievement.org/achiever/esperanza-spalding/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on Spalding teaching at Berklee at 20. That Berklee instructor claim has only one prose source and is not covered by the structured data (no education info), so it stays unverified. While Portland origin and Junjo (2006) are verified via structured data, they are not the hook's core assertion.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:12:27.254Z",
-      "rescoredAt": "2026-07-18T23:09:28.565Z"
+      "at": "2026-07-18T17:12:27.254Z"
     },
     {
       "id": "esperanza-spalding-3bb9c893",
@@ -1583,13 +1652,21 @@
           "title": "Esperanza Spalding",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Esperanza_Spalding"
+        },
+        {
+          "title": "Chamber Music Society (album)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Chamber_Music_Society"
+        },
+        {
+          "title": "A Review of Esperanza Spalding's Chamber Music Society",
+          "publisher": "No Treble",
+          "url": "https://www.notreble.com/buzz/2010/08/17/a-review-esperanza-spaldings-chamber-music-society/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on Little Fly setting a William Blake poem to music. The structured data lists Chamber Music Society (2010) but no track listings or lyrics, so both the track's appearance and the Blake attribution are uncovered and each has only one prose source, leaving the core claim unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:12:28.378Z",
-      "rescoredAt": "2026-07-18T23:09:28.565Z"
+      "at": "2026-07-18T17:12:28.378Z"
     },
     {
       "id": "fela-kuti-c6c4a006",
@@ -1597,7 +1674,7 @@
       "artistName": "Fela Kuti",
       "type": "era",
       "hook": "Sent to London to become a doctor, he enrolled in music school instead",
-      "story": "In 1958 Fela's family sent him to London to study medicine. He walked into Trinity College of Music instead and formed his first band, Koola Lobitos. Back in Lagos he fused jazz, funk, highlife and Yoruba rhythm into Afrobeat — and in 1975 he shed the surname Ransome as a colonial relic, taking Anikulapo.",
+      "story": "In 1958 Fela's family sent him to London to study medicine. He walked into Trinity College of Music instead and formed the band Koola Lobitos. Back in Lagos he fused jazz, funk, highlife and Yoruba rhythm into Afrobeat — and in 1975 he shed the surname Ransome as a colonial relic, taking Anikulapo.",
       "media": [
         {
           "label": "Fela Kuti — Let's Start",
@@ -1609,13 +1686,26 @@
           "title": "Fela Kuti",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Fela_Kuti"
+        },
+        {
+          "title": "About Fela",
+          "publisher": "Finding Fela (official documentary site)",
+          "url": "https://findingfela.com/about-fela/"
+        },
+        {
+          "title": "Story: 1958",
+          "publisher": "felakuti.com (official)",
+          "url": "https://felakuti.com/story/1958"
+        },
+        {
+          "title": "Story: 1975",
+          "publisher": "felakuti.com (official)",
+          "url": "https://felakuti.com/story/1975"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on the medicine-to-music switch. Claim 1 (enrolled at Trinity College of Music instead of pursuing medicine) is unverified — 0 prose sources, Wikipedia did not confirm, and the structured data has no education info. Claim 0 (sent to London 1958) also has only 1 prose source and is not in the structured data, so the hook's core is unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:44:54.492Z",
-      "rescoredAt": "2026-07-18T23:14:46.549Z"
+      "at": "2026-07-18T15:44:54.492Z"
     },
     {
       "id": "fela-kuti-3c6d9528",
@@ -1650,13 +1740,16 @@
           "title": "Kalakuta Republic",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Kalakuta_Republic"
+        },
+        {
+          "title": "1977 — Fela Kuti official story timeline",
+          "publisher": "felakuti.com (official site)",
+          "url": "https://felakuti.com/story/1977"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core cause-and-effect rests on claim 2 (in 1977 ~1,000 soldiers burned his Kalakuta home). That raid claim has only 1 prose source (soft claim needs 2+) and is not present in the structured data, so it is unverified. Without it the hook collapses.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:44:54.493Z",
-      "rescoredAt": "2026-07-18T23:14:46.549Z"
+      "at": "2026-07-18T15:44:54.493Z"
     },
     {
       "id": "fela-kuti-4b96a507",
@@ -1676,13 +1769,21 @@
           "title": "Fela Kuti",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Fela_Kuti"
+        },
+        {
+          "title": "Coffin For Head Of State (1981)",
+          "publisher": "Fela Kuti official store",
+          "url": "https://felakuti.com/products/156563-coffin-for-head-of-state-1981"
+        },
+        {
+          "title": "Fela's stories: Coffin for Head of State",
+          "publisher": "Pan African Music",
+          "url": "https://pan-african-music.com/en/felas-stories-coffin-for-head-of-state/"
         }
       ],
-      "status": "draft",
-      "holdReason": "Both core claims are unverified: claim 0 (coffin march to Dodan Barracks) has only 1 prose source, and claim 1 (Coffin for Head of State released 1981) has only 1 source and is not in the structured data (release groups end at 1977, and the verified song list confirms the title but not the year).",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:44:54.493Z",
-      "rescoredAt": "2026-07-18T23:14:46.549Z"
+      "at": "2026-07-18T15:44:54.493Z"
     },
     {
       "id": "fela-kuti-3d3aab8e",
@@ -1711,8 +1812,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:44:54.493Z",
-      "rescoredAt": "2026-07-18T23:14:46.549Z"
+      "at": "2026-07-18T15:44:54.493Z"
     },
     {
       "id": "florence-and-the-machine-b08bbd13",
@@ -1746,15 +1846,14 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:46:23.326Z",
-      "rescoredAt": "2026-07-18T23:15:25.839Z"
+      "at": "2026-07-18T15:46:23.326Z"
     },
     {
       "id": "florence-and-the-machine-2e66cc0e",
       "slug": "florence-and-the-machine",
       "artistName": "Florence + the Machine",
       "type": "era",
-      "hook": "Their debut needed almost six months to finally hit No.1",
+      "hook": "Their debut needed over six months to finally hit No.1",
       "story": "Lungs arrived in July 2009 and became one of the defining British debuts of its era, but its climb to the summit was a slow burn. The album didn't reach number one on the UK Albums Chart until January 2010, powered along by singles like Dog Days Are Over and the band's cover of You've Got the Love.",
       "media": [
         {
@@ -1777,13 +1876,16 @@
           "title": "You've Got the Love",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/You%27ve_Got_the_Love"
+        },
+        {
+          "title": "'Lungs': How Florence + The Machine Breathed New Life Into Pop",
+          "publisher": "uDiscoverMusic",
+          "url": "https://www.udiscovermusic.com/stories/florence-the-machine-lungs-album/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on core claim 1 (Lungs reached No.1 on the UK Albums Chart in January 2010), which is unverified: the structured data contains no chart information, and it had only 1 prose source, below the 2-source soft bar. Additionally, core claim 0's July 2009 release date is contradicted by the structured data, which lists Lungs' first release as 2009-06-13 (June), undermining the 'almost six ",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:46:23.326Z",
-      "rescoredAt": "2026-07-18T23:15:25.839Z"
+      "at": "2026-07-18T15:46:23.326Z"
     },
     {
       "id": "florence-and-the-machine-28335a4e",
@@ -1889,8 +1991,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:04:50.186Z",
-      "rescoredAt": "2026-07-18T23:16:43.481Z"
+      "at": "2026-07-18T15:04:50.186Z"
     },
     {
       "id": "fred-again-f43427ec",
@@ -1929,8 +2030,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:04:50.186Z",
-      "rescoredAt": "2026-07-18T23:16:43.481Z"
+      "at": "2026-07-18T15:04:50.186Z"
     },
     {
       "id": "fred-again-9cb35669",
@@ -1982,7 +2082,7 @@
       "artistName": "Fred again..",
       "type": "performance",
       "hook": "July 2022: a Boiler Room set in London became a word-of-mouth landmark of his rise",
-      "story": "In July 2022 Fred again.. played a Boiler Room set in London that spread far beyond the room, becoming one of the most-watched broadcasts in the series' history. Momentum carried into a sold-out Madison Square Garden show in February 2023, then a Coachella appearance that April alongside Skrillex and Four Tet. The stretch marked one of the steepest ascents in recent dance music.",
+      "story": "In July 2022 Fred again.. played a Boiler Room set in London that spread far beyond the room, becoming one of the most-watched broadcasts in the series' history. Momentum carried into a sold-out Madison Square Garden show alongside Skrillex and Four Tet in February 2023, then a Coachella closing set that April with the same trio. The stretch marked one of the steepest ascents in recent dance music.",
       "media": [
         {
           "label": "Search: Fred again.. Boiler Room London 2022",
@@ -1994,13 +2094,21 @@
           "title": "Fred again..",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Fred_again.."
+        },
+        {
+          "title": "Fred Again",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Fred_Again"
+        },
+        {
+          "title": "Boiler Room: Fred again.. in London, Jul 29, 2022 (DJ Mix)",
+          "publisher": "Apple Music",
+          "url": "https://music.apple.com/us/album/boiler-room-fred-again-in-london-jul-29-2022-dj-mix/1653471640"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core claim — a July 2022 Boiler Room set in London — rests on only one prose source and is not present anywhere in the structured data (no Boiler Room set or 2022 London show appears in the release/relation records), so it is unverified under both tiers.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:04:50.186Z",
-      "rescoredAt": "2026-07-18T23:16:43.481Z"
+      "at": "2026-07-18T15:04:50.186Z"
     },
     {
       "id": "gorillaz-3af463f",
@@ -2049,8 +2157,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:48:12.863Z",
-      "rescoredAt": "2026-07-18T23:17:34.675Z"
+      "at": "2026-07-18T15:48:12.863Z"
     },
     {
       "id": "gorillaz-fca2d0dc",
@@ -2163,20 +2270,23 @@
           "title": "Gorillaz discography",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Gorillaz_discography"
+        },
+        {
+          "title": "Gorillaz plant Number 1 flag atop The Mountain",
+          "publisher": "Official Charts Company",
+          "url": "https://www.officialcharts.com/chart-news/the-mountain-gorillaz-number-1-album/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on two core claims that are unverified: that The Mountain was recorded partly in India (no structured source and no two prose sources confirm it) and that it became Gorillaz' third UK number-one album (claim 2 has only one prose source, and chart positions are not present in the structured data). Only the ninth-album status and the February 2026 release date are verified, which do n",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:48:12.863Z",
-      "rescoredAt": "2026-07-18T23:17:34.675Z"
+      "at": "2026-07-18T15:48:12.863Z"
     },
     {
       "id": "hiatus-kaiyote-e542ee4b",
       "slug": "hiatus-kaiyote",
       "artistName": "Hiatus Kaiyote",
       "type": "era",
-      "hook": "Their debut single made them the first Australian act nominated in a Grammy R&B category",
+      "hook": "Their breakout single made them the first Australian act nominated in a Grammy R&B category",
       "story": "Hiatus Kaiyote came together in Melbourne in 2011, and by their debut album Tawk Tomahawk they'd caught the ear of the wider soul world. The single Nakamarra, featuring a guest verse from A Tribe Called Quest's Q-Tip, earned a nomination for Best R&B Performance at the 2014 Grammys — a first for an Australian act in an R&B category.",
       "media": [
         {
@@ -2194,13 +2304,21 @@
           "title": "Tawk Tomahawk",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Tawk_Tomahawk"
+        },
+        {
+          "title": "Hiatus Kaiyote Nominated For A Grammy",
+          "publisher": "Beat Magazine",
+          "url": "https://beat.com.au/hiatus-kaiyote-nominated-for-a-grammy/"
+        },
+        {
+          "title": "Melbourne's Hiatus Kaiyote 'Completely Floored' By Grammys Nomination",
+          "publisher": "Tone Deaf",
+          "url": "https://tonedeaf.thebrag.com/melbournes-hiatus-kaiyote-completely-floored-by-grammys-nomination/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on the Grammy nomination for Best R&B Performance (claim 2). Awards are hard facts requiring Wikipedia confirmation plus agreement in the structured data, but the MusicBrainz record contains no Grammy/award information, and it had only 1 prose source. The core 'first Australian act nominated in an R&B category' claim is therefore unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:14:22.870Z",
-      "rescoredAt": "2026-07-18T23:20:11.678Z"
+      "at": "2026-07-18T17:14:22.870Z"
     },
     {
       "id": "hiatus-kaiyote-ad24aaca",
@@ -2220,13 +2338,21 @@
           "title": "Hiatus Kaiyote",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Hiatus_Kaiyote"
+        },
+        {
+          "title": "Drake's 'More Life': How His Love of Hiatus Kaiyote Turned Into a Sample",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/music/rb-hip-hop/drake-more-life-hiatus-kaiyote-nai-palm-sample-interview-7735768/"
+        },
+        {
+          "title": "Everything Is Love (sample credits: '713' samples 'The World It Softly Lulls')",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Everything_Is_Love"
         }
       ],
-      "status": "draft",
-      "holdReason": "Both sample claims (Drake's 'Free Smoke' and the Carters' 'Everything Is Love') are the core of the hook. Neither is present in the structured data (which has no track-level sample credits) and each had only 1 prose source, so both core claims remain unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:14:22.870Z",
-      "rescoredAt": "2026-07-18T23:20:11.678Z"
+      "at": "2026-07-18T17:14:22.870Z"
     },
     {
       "id": "hiatus-kaiyote-74b7db32",
@@ -2251,13 +2377,21 @@
           "title": "Hiatus Kaiyote",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Hiatus_Kaiyote"
+        },
+        {
+          "title": "Hiatus Kaiyote Preview New Album With 'Get Sun'",
+          "publisher": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-news/hiatus-kaiyote-mood-valiant-album-get-sun-song-1143089/"
+        },
+        {
+          "title": "Arthur Verocai",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Arthur_Verocai"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on the collaboration with Brazilian arranger Arthur Verocai on 'Get Sun' (claim 1). This feature credit is not present in the structured data (no track-level personnel) and had only 1 prose source, so the core claim is unverified. (The Grammy nomination in claim 2 is also unverified but incidental.)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:14:22.870Z",
-      "rescoredAt": "2026-07-18T23:20:11.678Z"
+      "at": "2026-07-18T17:14:22.870Z"
     },
     {
       "id": "hiatus-kaiyote-4e0641cb",
@@ -2295,8 +2429,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:14:22.871Z",
-      "rescoredAt": "2026-07-18T23:20:11.678Z"
+      "at": "2026-07-18T17:14:22.871Z"
     },
     {
       "id": "hundred-waters-dcd8f53b",
@@ -2326,13 +2459,16 @@
           "title": "Skrillex",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Skrillex"
+        },
+        {
+          "title": "Hundred Waters and Skrillex's New Team-Up Will Make You Feel Better",
+          "publisher": "Vice",
+          "url": "https://www.vice.com/en/article/hundred-waters-skrillex-particle-currency-ep/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on Skrillex/OWSLA signing the band (claims 1 and 2). 'Signed to OWSLA' is a hard fact only single-prose-confirmed and the structured data contains no label relation to confirm it, and 'OWSLA founded by Skrillex' is likewise absent from the structured data. The core signing claim is therefore unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:53:11.912Z",
-      "rescoredAt": "2026-07-18T23:23:22.153Z"
+      "at": "2026-07-18T15:53:11.912Z"
     },
     {
       "id": "hundred-waters-602fdb1d",
@@ -2356,13 +2492,16 @@
           "title": "Hundred Waters",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Hundred_Waters"
+        },
+        {
+          "title": "Hundred Waters on Life After Pitchfork's 'Best New Music' Tag",
+          "publisher": "Washington City Paper",
+          "url": "https://www.washingtoncitypaper.com/arts/music/blog/13080910/hundred-waters-on-life-after-pitchforks-best-new-music-tag"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core claim is that The Moon Rang Like a Bell earned Pitchfork's Best New Music. That claim had 0 prose sources, Wikipedia did NOT confirm it, and the structured data contains no award/critical-designation information, so it is unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:53:11.912Z",
-      "rescoredAt": "2026-07-18T23:23:22.153Z"
+      "at": "2026-07-18T15:53:11.912Z"
     },
     {
       "id": "hundred-waters-487149fd",
@@ -2370,7 +2509,7 @@
       "artistName": "Hundred Waters",
       "type": "collab",
       "hook": "They didn't just make records — they built a festival in a utopian desert town",
-      "story": "In 2014 Hundred Waters helped launch FORM Arcosanti, an intimate, invite-driven festival. It's held at Arcosanti, an experimental town in the Arizona high desert designed by architect Paolo Soleri. The gathering grew into one of the most beloved small festivals in American music.",
+      "story": "In 2014 Hundred Waters helped launch FORM Arcosanti, an intimate, application-driven festival. It's held at Arcosanti, an experimental town in the Arizona high desert designed by architect Paolo Soleri. The gathering grew into one of the most beloved small festivals in American music.",
       "media": [
         {
           "label": "Search: Hundred Waters at FORM Arcosanti",
@@ -2387,13 +2526,21 @@
           "title": "Paolo Soleri",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Paolo_Soleri"
+        },
+        {
+          "title": "Meet FORM: Arcosanti, The Tiny Desert Festival With A Big Dream",
+          "publisher": "The FADER",
+          "url": "https://www.thefader.com/2015/05/29/social-anxiety-form-arcosanti"
+        },
+        {
+          "title": "Hundred Waters",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Hundred_Waters"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core claim is that Hundred Waters built/co-founded the festival FORM Arcosanti. That claim had 0 prose sources, Wikipedia did NOT confirm it, and the structured data contains no festival-founding relation, so the core claim is unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:53:11.912Z",
-      "rescoredAt": "2026-07-18T23:23:22.153Z"
+      "at": "2026-07-18T15:53:11.912Z"
     },
     {
       "id": "imogen-heap-91cac220",
@@ -2437,8 +2584,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:57:14.805Z",
-      "rescoredAt": "2026-07-18T23:24:05.908Z"
+      "at": "2026-07-18T15:57:14.805Z"
     },
     {
       "id": "imogen-heap-629405bb",
@@ -2548,8 +2694,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:57:16.287Z",
-      "rescoredAt": "2026-07-18T23:24:05.908Z"
+      "at": "2026-07-18T15:57:16.287Z"
     },
     {
       "id": "james-blake-2a192113",
@@ -2667,13 +2812,21 @@
           "title": "Element (song)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Element_(song)"
+        },
+        {
+          "title": "Forward (feat. James Blake) — Beyoncé, Lemonade",
+          "publisher": "Apple Music",
+          "url": "https://music.apple.com/us/song/forward-feat-james-blake/1460430750"
+        },
+        {
+          "title": "Lemonade (Beyoncé album)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Forward_(Beyonc%C3%A9_song)"
         }
       ],
-      "status": "draft",
-      "holdReason": "Both core claims are hard feature/production credit facts, and neither is verified under the two-tier policy. Claim 0 (Blake on Beyoncé's 'Forward' from Lemonade) has zero prose sources and no Wikipedia confirmation, and the structured data contains no such collaboration. Claim 1 (production credit on Kendrick's DAMN) was Wikipedia-confirmed but the MusicBrainz structured data contains no DAMN/Ken",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:16:31.732Z",
-      "rescoredAt": "2026-07-18T23:24:21.879Z"
+      "at": "2026-07-18T17:16:31.732Z"
     },
     {
       "id": "james-blake-ae3beefc",
@@ -2736,8 +2889,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:03:51.823Z",
-      "rescoredAt": "2026-07-18T23:26:58.227Z"
+      "at": "2026-07-18T16:03:51.823Z"
     },
     {
       "id": "jesca-hoop-f0917665",
@@ -2815,8 +2967,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:03:51.823Z",
-      "rescoredAt": "2026-07-18T23:26:58.227Z"
+      "at": "2026-07-18T16:03:51.823Z"
     },
     {
       "id": "jesca-hoop-6d881e28",
@@ -2845,8 +2996,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:03:51.823Z",
-      "rescoredAt": "2026-07-18T23:26:58.227Z"
+      "at": "2026-07-18T16:03:51.823Z"
     },
     {
       "id": "joanna-newsom-62b2517e",
@@ -2880,8 +3030,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:18:21.638Z",
-      "rescoredAt": "2026-07-19T00:41:25.944Z"
+      "at": "2026-07-18T17:18:21.638Z"
     },
     {
       "id": "joanna-newsom-313398d8",
@@ -2919,8 +3068,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:18:21.638Z",
-      "rescoredAt": "2026-07-19T00:41:25.944Z"
+      "at": "2026-07-18T17:18:21.638Z"
     },
     {
       "id": "joanna-newsom-41491d8b",
@@ -2954,8 +3102,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:18:21.638Z",
-      "rescoredAt": "2026-07-19T00:41:25.944Z"
+      "at": "2026-07-18T17:18:21.638Z"
     },
     {
       "id": "joanna-newsom-119107b5",
@@ -2970,12 +3117,21 @@
           "url": "https://www.dragcity.com/artists/joanna-newsom"
         }
       ],
-      "sources": [],
-      "status": "draft",
-      "holdReason": "Both core claims are unverified: the 'villainous cabal' remark is a soft/anecdotal quote with 0 prose sources (fails the strict 2-source bar), and the 'kept her catalog off Spotify' claim has no Wikipedia confirmation — and MusicBrainz actually lists an active Spotify streaming link, so structured data does not support it.",
+      "sources": [
+        {
+          "title": "Joanna Newsom slams Spotify as 'built from the ground up to circumvent the idea of paying artists'",
+          "publisher": "NME",
+          "url": "https://www.nme.com/news/music/joanna-newsom-4-1207010"
+        },
+        {
+          "title": "Joanna Newsom official Bandcamp page (full catalog, Drag City)",
+          "publisher": "Bandcamp",
+          "url": "https://joannanewsom.bandcamp.com"
+        }
+      ],
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:18:23.056Z",
-      "rescoredAt": "2026-07-19T00:41:25.944Z"
+      "at": "2026-07-18T17:18:23.056Z"
     },
     {
       "id": "mf-doom-dde2f713",
@@ -3010,21 +3166,29 @@
           "title": "Black Bastards",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Black_Bastards"
+        },
+        {
+          "title": "MF Doom Dead: Rapper Was 49",
+          "publisher": "Variety",
+          "url": "https://variety.com/2020/music/obituaries-people-news/mf-doom-dead-rapper-1234877295/"
+        },
+        {
+          "title": "MF DOOM, Intricate And Enigmatic Rapper And Producer, Dead At 49",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2021/01/01/952519277/mf-doom-enigmatic-rapper-and-producer-dead-at-49"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on the KMD/Subroc narrative — that his brother DJ Subroc's death and the shelving of Black Bastards drove him out of rap, prompting a masked return. The structured data contains no KMD membership, no Subroc, no Black Bastards, and no mask detail, so these hard biographical claims fail the structured-data tier. The shelved-album and Doctor Doom mask facts have only 1 prose source and",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:20:03.498Z",
-      "rescoredAt": "2026-07-19T00:44:45.926Z"
+      "at": "2026-07-18T17:20:03.498Z"
     },
     {
       "id": "mf-doom-5c0a8cef",
       "slug": "mf-doom",
       "artistName": "MF DOOM",
       "type": "collab",
-      "hook": "An unfinished version leaked online in 2003 — so DOOM and Madlib rebuilt it into Madvillainy",
-      "story": "Madvillainy paired MF DOOM's dense internal rhyme with producer Madlib's crate-dug beats. When early demos leaked in 2003, the pair regrouped and reworked the record before its 2004 release on Stones Throw. It became one of the most acclaimed underground rap albums ever made.",
+      "hook": "An unfinished version leaked online in 2002 — so DOOM and Madlib rebuilt it into Madvillainy",
+      "story": "Madvillainy paired MF DOOM's dense internal rhyme with producer Madlib's crate-dug beats. When early demos leaked in 2002, the pair regrouped and reworked the record before its 2004 release on Stones Throw. It became one of the most acclaimed underground rap albums ever made.",
       "media": [
         {
           "label": "Madvillain — All Caps",
@@ -3051,13 +3215,16 @@
           "title": "Stones Throw Records",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Stones_Throw_Records"
+        },
+        {
+          "title": "Madvillainy Demos",
+          "publisher": "Stones Throw Records",
+          "url": "https://www.stonesthrow.com/store/madvillainy-demos/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core claim is the 2003 leak-and-rebuild story (claim 3), a single-source anecdotal/soft claim not present in the structured data (Madvillainy is not among the release groups here). The core narrative is therefore unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:20:03.498Z",
-      "rescoredAt": "2026-07-19T00:44:45.926Z"
+      "at": "2026-07-18T17:20:03.498Z"
     },
     {
       "id": "mf-doom-c8efc8e1",
@@ -3100,8 +3267,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:20:03.498Z",
-      "rescoredAt": "2026-07-19T00:44:45.926Z"
+      "at": "2026-07-18T17:20:03.498Z"
     },
     {
       "id": "mf-doom-11c54199",
@@ -3109,7 +3275,7 @@
       "artistName": "MF DOOM",
       "type": "news",
       "hook": "He died on Halloween 2020 — but the world didn't learn of it until New Year's Eve",
-      "story": "Born in the UK and never a US citizen, DOOM was denied re-entry to the United States after a 2010 tour and spent his final decade based in London. He died on October 31, 2020, at age 49. His family did not announce the news until December 31, 2020, keeping his passing hidden for two months.",
+      "story": "Born in the UK and never a US citizen, DOOM was denied re-entry to the United States after a 2010 tour and spent his final decade in England. He died on October 31, 2020, at age 49. His family did not announce the news until December 31, 2020, keeping his passing hidden for two months.",
       "media": [
         {
           "label": "Official site — Gas Drawls",
@@ -3121,13 +3287,16 @@
           "title": "MF Doom",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/MF_Doom"
+        },
+        {
+          "title": "MF Doom's Wife Reveals Rapper's Cause of Death",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/music/rb-hip-hop/mf-doom-wife-reveals-cause-of-death-1235366617/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core twist — that the world didn't learn of his death until New Year's Eve (the Dec 31, 2020 family announcement, claim 3) — is a single-source anecdotal claim absent from the structured data. The death date (Oct 31, 2020) and age 49 are verified via the structured lifeSpan, but the announcement-delay that the hook is built on is unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:20:05.101Z",
-      "rescoredAt": "2026-07-19T00:44:45.926Z"
+      "at": "2026-07-18T17:20:05.101Z"
     },
     {
       "id": "michael-jackson-bab781ac",
@@ -3166,8 +3335,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:12:41.830Z",
-      "rescoredAt": "2026-07-18T23:39:20.988Z"
+      "at": "2026-07-18T16:12:41.830Z"
     },
     {
       "id": "michael-jackson-5795dfd6",
@@ -3210,8 +3378,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:12:41.830Z",
-      "rescoredAt": "2026-07-18T23:39:20.988Z"
+      "at": "2026-07-18T16:12:41.830Z"
     },
     {
       "id": "michael-jackson-3ac567c7",
@@ -3332,8 +3499,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:18:27.272Z",
-      "rescoredAt": "2026-07-18T23:40:07.005Z"
+      "at": "2026-07-18T16:18:27.272Z"
     },
     {
       "id": "modest-mouse-b9f88ae7",
@@ -3363,13 +3529,16 @@
           "title": "Float On (Modest Mouse song)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Float_On_(Modest_Mouse_song)"
+        },
+        {
+          "title": "47th Annual Grammy Awards (nominee listings)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/47th_Annual_Grammy_Awards"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on the band becoming 'unlikely Grammy nominees' (claim 2). Grammy nominations are a hard fact (award) not contained in the structured data, so even though Wikipedia confirmed it, it stays unverified under the hard-fact tier.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:18:27.272Z",
-      "rescoredAt": "2026-07-18T23:40:07.005Z"
+      "at": "2026-07-18T16:18:27.272Z"
     },
     {
       "id": "modest-mouse-d79b4aa5",
@@ -3404,13 +3573,16 @@
           "title": "The Smiths",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/The_Smiths"
+        },
+        {
+          "title": "Modest Mouse Steers Its 'Ship' To No. 1 Debut",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/music/music-news/modest-mouse-steers-its-ship-to-no-1-debut-1053393/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on the band 'landing a number-one album' (claim 2, a #1 Billboard 200 debut). Wikipedia did not confirm this and the structured data contains no chart positions, so this core claim is unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:18:27.272Z",
-      "rescoredAt": "2026-07-18T23:40:07.005Z"
+      "at": "2026-07-18T16:18:27.272Z"
     },
     {
       "id": "modest-mouse-887f8c4c",
@@ -3521,8 +3693,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:21:48.527Z",
-      "rescoredAt": "2026-07-18T23:43:44.440Z"
+      "at": "2026-07-18T17:21:48.527Z"
     },
     {
       "id": "nick-drake-9c59105",
@@ -3551,8 +3722,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:21:49.959Z",
-      "rescoredAt": "2026-07-18T23:43:44.440Z"
+      "at": "2026-07-18T17:21:49.959Z"
     },
     {
       "id": "nick-drake-59952acd",
@@ -3595,8 +3765,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:21:49.959Z",
-      "rescoredAt": "2026-07-18T23:43:44.440Z"
+      "at": "2026-07-18T17:21:49.959Z"
     },
     {
       "id": "oumou-sangare-1c2d6c78",
@@ -3630,8 +3799,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:23:54.616Z",
-      "rescoredAt": "2026-07-18T23:48:39.096Z"
+      "at": "2026-07-18T17:23:54.616Z"
     },
     {
       "id": "oumou-sangare-3710e861",
@@ -3675,8 +3843,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:23:54.616Z",
-      "rescoredAt": "2026-07-18T23:48:39.096Z"
+      "at": "2026-07-18T17:23:54.616Z"
     },
     {
       "id": "oumou-sangare-1f59886c",
@@ -3744,8 +3911,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:23:54.616Z",
-      "rescoredAt": "2026-07-18T23:48:39.096Z"
+      "at": "2026-07-18T17:23:54.616Z"
     },
     {
       "id": "pink-floyd-9e7c5a7a",
@@ -3774,13 +3940,16 @@
           "title": "Pink Floyd",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Pink_Floyd"
+        },
+        {
+          "title": "Pink Floyd's 'Dark Side of the Moon': Most Weeks on Billboard 200 By Title",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/pro/pink-floyd-dark-side-of-the-moon-most-weeks-billboard-200-title/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core claim is the album's decade-plus US chart longevity (claim 2: 741 weeks on the Billboard 200), which has 0 confirming prose sources and was explicitly NOT confirmed by Wikipedia, and no chart-run data appears in the structured data. The 'best-selling' claim also has only 1 source. The hook cannot stand without an unverified chart-longevity claim.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:27:40.220Z",
-      "rescoredAt": "2026-07-18T22:49:51.725Z"
+      "at": "2026-07-18T16:27:40.220Z"
     },
     {
       "id": "pink-floyd-f3b523a2",
@@ -3810,13 +3979,16 @@
           "title": "Syd Barrett",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Syd_Barrett"
+        },
+        {
+          "title": "When Syd Barrett Visited a Pink Floyd Recording Session",
+          "publisher": "Ultimate Classic Rock",
+          "url": "https://ultimateclassicrock.com/syd-barrett-wish-you-were-here-sessions/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on claim 1 — that Barrett unexpectedly visited the Wish You Were Here sessions and was not recognized. This anecdote has 0 confirming prose sources, was not confirmed by Wikipedia, and is not in the structured data. The core anecdotal claim is unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:27:40.220Z",
-      "rescoredAt": "2026-07-18T22:49:51.725Z"
+      "at": "2026-07-18T16:27:40.220Z"
     },
     {
       "id": "pink-floyd-d481785",
@@ -3860,8 +4032,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:27:40.220Z",
-      "rescoredAt": "2026-07-18T22:49:51.725Z"
+      "at": "2026-07-18T16:27:40.220Z"
     },
     {
       "id": "pink-floyd-dd32e1b8",
@@ -3886,13 +4057,16 @@
           "title": "Another Brick in the Wall",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Another_Brick_in_the_Wall"
+        },
+        {
+          "title": "The Number Ones: Pink Floyd's \"Another Brick In The Wall (Part II)\"",
+          "publisher": "Stereogum",
+          "url": "https://stereogum.com/2077211/the-number-ones-pink-floyds-another-brick-in-the-wall-part-ii/columns/the-number-ones"
         }
       ],
-      "status": "draft",
-      "holdReason": "Both core claims are unverified: claim 0 (only single to hit #1 in both UK and US) has just 1 prose source and no chart data in the structured record, and claim 1 (1980 South Africa ban) also has only 1 prose source and is not in the structured data. Neither meets the soft-claim 2-source bar and neither is a hard fact covered by the structured data, so the hook's core rests on unverified claims.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:27:40.220Z",
-      "rescoredAt": "2026-07-18T22:49:51.725Z"
+      "at": "2026-07-18T16:27:40.220Z"
     },
     {
       "id": "queen-39ef875e",
@@ -3960,8 +4134,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:29:25.642Z",
-      "rescoredAt": "2026-07-18T23:51:55.991Z"
+      "at": "2026-07-18T16:29:25.642Z"
     },
     {
       "id": "queen-25801d69",
@@ -4034,8 +4207,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:29:25.642Z",
-      "rescoredAt": "2026-07-18T23:51:55.991Z"
+      "at": "2026-07-18T16:29:25.642Z"
     },
     {
       "id": "radiohead-b734d88a",
@@ -4064,8 +4236,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:00:36.118Z",
-      "rescoredAt": "2026-07-18T23:57:27.687Z"
+      "at": "2026-07-18T15:00:36.118Z"
     },
     {
       "id": "radiohead-aec43de3",
@@ -4103,8 +4274,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:00:36.118Z",
-      "rescoredAt": "2026-07-18T23:57:27.687Z"
+      "at": "2026-07-18T15:00:36.118Z"
     },
     {
       "id": "radiohead-502972dc",
@@ -4152,12 +4322,21 @@
           "url": "https://www.radiohead.com"
         }
       ],
-      "sources": [],
-      "status": "draft",
-      "holdReason": "The core claim that Radiohead returned to touring in November 2025 after seven years away (and the specific cities visited) is unverified — Wikipedia did not confirm it and the structured data contains no touring information.",
+      "sources": [
+        {
+          "title": "2025 Radiohead tour",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/2025_Radiohead_tour"
+        },
+        {
+          "title": "Radiohead Concert Setlist at Movistar Arena, Madrid on November 4, 2025",
+          "publisher": "setlist.fm",
+          "url": "https://www.setlist.fm/setlist/radiohead/2025/movistar-arena-madrid-spain-340c9df.html"
+        }
+      ],
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T15:00:36.997Z",
-      "rescoredAt": "2026-07-18T23:57:27.687Z"
+      "at": "2026-07-18T15:00:36.997Z"
     },
     {
       "id": "ratatat-cc190df1",
@@ -4191,8 +4370,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:33:28.615Z",
-      "rescoredAt": "2026-07-18T23:58:34.822Z"
+      "at": "2026-07-18T16:33:28.615Z"
     },
     {
       "id": "ratatat-5d34cd9c",
@@ -4260,8 +4438,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:33:28.615Z",
-      "rescoredAt": "2026-07-18T23:58:34.822Z"
+      "at": "2026-07-18T16:33:28.615Z"
     },
     {
       "id": "ratatat-e0ae96dd",
@@ -4295,8 +4472,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:33:28.615Z",
-      "rescoredAt": "2026-07-18T23:58:34.822Z"
+      "at": "2026-07-18T16:33:28.615Z"
     },
     {
       "id": "sigur-ros-1857fb0d",
@@ -4326,13 +4502,16 @@
           "title": "Shortlist Music Prize",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Shortlist_Music_Prize"
+        },
+        {
+          "title": "Sigur Rós (artist bio)",
+          "publisher": "LA Phil",
+          "url": "https://www.laphil.com/musicdb/artists/4563/sigur-ros"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests entirely on claim 1 — that the band took its name from Jónsi's newborn sister Sigurrós. That is an anecdotal/soft claim with only one prose source and no support in the structured data, so it stays unverified. (Formation in Reykjavík in 1994 is verified via the structured record, but it does not carry the hook.)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:25:48.044Z",
-      "rescoredAt": "2026-07-19T00:48:20.595Z"
+      "at": "2026-07-18T17:25:48.044Z"
     },
     {
       "id": "sigur-ros-90751811",
@@ -4362,13 +4541,16 @@
           "title": "Planet Earth (2006 TV series)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Planet_Earth_(2006_TV_series)"
+        },
+        {
+          "title": "Planet Earth II: Sigur Rós share new version of 'Hoppípolla' for TV series",
+          "publisher": "NME",
+          "url": "https://www.nme.com/news/music/planet-earth-sigur-ros-hoppipolla-1871112"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on claim 1 — that the BBC used 'Hoppípolla' to promote Planet Earth. This is a documented film/TV feature credit that must appear in the structured data to pass the hard-fact tier, and it does not (MusicBrainz carries no sync/usage data). Without it the hook has no verified core to salvage.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:25:48.044Z",
-      "rescoredAt": "2026-07-19T00:48:20.595Z"
+      "at": "2026-07-18T17:25:48.044Z"
     },
     {
       "id": "sigur-ros-a9635f8a",
@@ -4402,8 +4584,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:25:48.044Z",
-      "rescoredAt": "2026-07-19T00:48:20.595Z"
+      "at": "2026-07-18T17:25:48.044Z"
     },
     {
       "id": "sigur-ros-3f22e5d1",
@@ -4441,8 +4622,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T17:25:49.056Z",
-      "rescoredAt": "2026-07-19T00:48:20.595Z"
+      "at": "2026-07-18T17:25:49.056Z"
     },
     {
       "id": "stevie-wonder-d10eefb4",
@@ -4462,13 +4642,21 @@
           "title": "Stevie Wonder",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Stevie_Wonder"
+        },
+        {
+          "title": "Fingertips",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Fingertips"
+        },
+        {
+          "title": "1963: Youngest Solo Artist at No.1",
+          "publisher": "Guinness World Records",
+          "url": "https://www.guinnessworldrecords.com/news/2015/8/60/1963-youngest-solo-artist-at-no-1-392993"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core claims — that Fingertips reached #1 on the Billboard Hot 100 in 1963 (claim 2) and that Stevie Wonder was the youngest solo artist ever to top that chart (claim 3) — are chart/record facts not present in the structured data, so under the hard-fact tier they cannot be verified (only 1 prose source each). The birthplace (claim 0) is verified by structured data but is incidental; the ",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:39:01.723Z",
-      "rescoredAt": "2026-07-19T00:05:23.909Z"
+      "at": "2026-07-18T16:39:01.723Z"
     },
     {
       "id": "stevie-wonder-c3717861",
@@ -4493,13 +4681,16 @@
           "title": "Talking Book",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Talking_Book"
+        },
+        {
+          "title": "How Stevie Wonder's Apology Led to One of Jeff Beck's Signature Tunes",
+          "publisher": "Guitar Player",
+          "url": "https://www.guitarplayer.com/players/jeff-beck-stevie-wonder"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on claim 1 — that Superstition originated from a studio jam/collaboration involving Jeff Beck. Jeff Beck does not appear anywhere in the structured data, so this hard collaboration/feature claim cannot be verified via the structured tier, and it has only 1 prose source, failing the soft-claim bar. The Talking Book 1972 release (claim 0) is verified but is incidental to the hook.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:39:01.723Z",
-      "rescoredAt": "2026-07-19T00:05:23.909Z"
+      "at": "2026-07-18T16:39:01.723Z"
     },
     {
       "id": "stevie-wonder-e1d9dcef",
@@ -4507,7 +4698,7 @@
       "artistName": "Stevie Wonder",
       "type": "anniversary",
       "hook": "The only artist to win Album of the Year with three album releases in a row",
-      "story": "During his celebrated classic period, Stevie Wonder took home the Grammy for Album of the Year three times for consecutive releases — Innervisions, Fulfillingness' First Finale, and Songs in the Key of Life. No other artist has matched that feat of three consecutive Album of the Year wins. It capped a run of albums on which he wrote, produced, and played most of the instruments himself.",
+      "story": "During his celebrated classic period, Stevie Wonder took home the Grammy for Album of the Year three times for consecutive releases — Innervisions, Fulfillingness' First Finale, and Songs in the Key of Life. No other artist has matched that feat of winning with three consecutive album releases. It capped a run of albums on which he wrote, produced, and played most of the instruments himself.",
       "media": [
         {
           "label": "Stevie Wonder — Sir Duke",
@@ -4529,13 +4720,16 @@
           "title": "Grammy Award for Album of the Year",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Grammy_Award_for_Album_of_the_Year"
+        },
+        {
+          "title": "Songs In The Key Of Stevie Wonder",
+          "publisher": "GRAMMY.com",
+          "url": "https://www.grammy.com/news/a-wonderful-history/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on claim 2 — that Stevie Wonder is the only artist to win Album of the Year with three consecutive releases — an award/record fact not present in the structured data (which contains no Grammy information), leaving it verifiable only by 1 prose source. The underlying AOTY wins for Innervisions (claim 0) and Songs in the Key of Life (claim 1) are likewise awards not covered by the str",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:39:01.723Z",
-      "rescoredAt": "2026-07-19T00:05:23.909Z"
+      "at": "2026-07-18T16:39:01.723Z"
     },
     {
       "id": "stevie-wonder-629e7abc",
@@ -4665,8 +4859,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:41:53.661Z",
-      "rescoredAt": "2026-07-19T00:06:13.450Z"
+      "at": "2026-07-18T16:41:53.661Z"
     },
     {
       "id": "tame-impala-f630b7ef",
@@ -4695,13 +4888,21 @@
           "title": "Anti (album)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Anti_(album)"
+        },
+        {
+          "title": "Same Ol' Mistakes",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Same_Ol%27_Mistakes"
+        },
+        {
+          "title": "Currents (Tame Impala album)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Currents_(Tame_Impala_album)"
         }
       ],
-      "status": "draft",
-      "holdReason": "The core claim — that Rihanna covered 'New Person, Same Old Mistakes' (retitled 'Same Ol' Mistakes') on her 2016 album 'Anti' — cannot be verified under the hard-fact tier because the structured data contains no Rihanna, 'Anti', or cover-credit information, and it is not a soft claim meeting the 2+ prose bar for that tier.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:41:53.661Z",
-      "rescoredAt": "2026-07-19T00:06:13.450Z"
+      "at": "2026-07-18T16:41:53.661Z"
     },
     {
       "id": "tame-impala-9b363c9c",
@@ -4730,13 +4931,21 @@
           "title": "Tame Impala",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Tame_Impala"
+        },
+        {
+          "title": "Deadbeat Tour",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Deadbeat_Tour"
+        },
+        {
+          "title": "Tame Impala - Deadbeat album review",
+          "publisher": "Resident Advisor",
+          "url": "https://ra.co/reviews/36320"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on the interpretive claim that 'Deadbeat' was inspired by Western Australia's bush doof outdoor rave culture. This is a soft claim with only 1 confirmed prose source (needs 2+), and the structured data does not cover musical inspiration, so the core claim remains unverified.",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:41:54.463Z",
-      "rescoredAt": "2026-07-19T00:06:13.450Z"
+      "at": "2026-07-18T16:41:54.463Z"
     },
     {
       "id": "the-beatles-cd42ee34",
@@ -4784,8 +4993,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:44:51.357Z",
-      "rescoredAt": "2026-07-19T00:07:18.573Z"
+      "at": "2026-07-18T16:44:51.357Z"
     },
     {
       "id": "the-beatles-137f342d",
@@ -4878,13 +5086,16 @@
           "title": "The Beatles",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/The_Beatles"
+        },
+        {
+          "title": "The Beatles' Now And Then is UK's Official Number 1 song in record-breaking return",
+          "publisher": "Official Charts Company",
+          "url": "https://www.officialcharts.com/chart-news/beatles-now-then-number-1-song-record/"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook's core claims — that 'Now and Then' was released November 2, 2023 as the last Beatles single and reached UK No. 1 — cannot be verified under the structured tier. 'Now and Then' does not appear in the MusicBrainz release groups (which end in 1970), and the structured data contains no release date, 'last single' status, or chart-position information. The verified-facts data only lists it as",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:44:51.357Z",
-      "rescoredAt": "2026-07-19T00:07:18.573Z"
+      "at": "2026-07-18T16:44:51.357Z"
     },
     {
       "id": "the-boswell-sisters-b32e8f83",
@@ -4918,8 +5129,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:47:31.674Z",
-      "rescoredAt": "2026-07-19T00:51:17.792Z"
+      "at": "2026-07-18T16:47:31.674Z"
     },
     {
       "id": "the-boswell-sisters-932084b6",
@@ -4953,8 +5163,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:47:31.674Z",
-      "rescoredAt": "2026-07-19T00:51:17.792Z"
+      "at": "2026-07-18T16:47:31.674Z"
     },
     {
       "id": "the-boswell-sisters-2addf3ab",
@@ -4986,11 +5195,9 @@
           "url": "https://en.wikipedia.org/wiki/Connee_Boswell"
         }
       ],
-      "status": "draft",
-      "holdReason": "The core hook claim that the Andrews Sisters modeled their vocal style on the Boswell Sisters is an interpretive/soft claim with only 1 confirmed prose source (soft bar needs 2+) and it is not present as a database fact in the structured data or the verified bio. The secondary hook claim of disbanding 'in 1936' also cannot stand: the structured data's lifeSpan ends in 1935, contradicting the year,",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:47:31.674Z",
-      "rescoredAt": "2026-07-19T00:51:17.792Z"
+      "at": "2026-07-18T16:47:31.674Z"
     },
     {
       "id": "the-boswell-sisters-64531491",
@@ -5024,8 +5231,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:47:31.674Z",
-      "rescoredAt": "2026-07-19T00:51:17.792Z"
+      "at": "2026-07-18T16:47:31.674Z"
     },
     {
       "id": "the-smile-b64531aa",
@@ -5185,8 +5391,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:50:03.673Z",
-      "rescoredAt": "2026-07-19T00:13:52.958Z"
+      "at": "2026-07-18T16:50:03.673Z"
     },
     {
       "id": "thom-yorke-ea81abe9",
@@ -5254,8 +5459,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:54:22.519Z",
-      "rescoredAt": "2026-07-19T00:14:35.046Z"
+      "at": "2026-07-18T16:54:22.519Z"
     },
     {
       "id": "thom-yorke-ee77b1db",
@@ -5299,8 +5503,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:54:22.519Z",
-      "rescoredAt": "2026-07-19T00:14:35.046Z"
+      "at": "2026-07-18T16:54:22.519Z"
     },
     {
       "id": "thom-yorke-93f38e22",
@@ -5355,8 +5558,8 @@
       "slug": "tool",
       "artistName": "Tool",
       "type": "era",
-      "hook": "After 13 silent years, Tool returned in 2019 — and put the longest song ever on the Hot 100",
-      "story": "Thirteen years separated 10,000 Days from Fear Inoculum, released August 30, 2019. The album debuted at number one on the Billboard 200, its sprawling ten-minute title track became the longest song ever to reach the Billboard Hot 100, and the seething 7empest later won the 2020 Grammy for Best Metal Performance. It was a defiant reminder that a band can vanish for over a decade and come back on top.",
+      "hook": "After 13 silent years, Tool returned in 2019 — and put a ten-minute song on the Hot 100",
+      "story": "Thirteen years separated 10,000 Days from Fear Inoculum, released August 30, 2019. The album debuted at number one on the Billboard 200, its sprawling ten-minute title track became the longest song ever to reach the Billboard Hot 100 at the time — a record it held until 2023 — and the seething 7empest later won the 2020 Grammy for Best Metal Performance. It was a defiant reminder that a band can vanish for over a decade and come back on top.",
       "media": [
         {
           "label": "Search: Tool - Fear Inoculum",
@@ -5382,13 +5585,16 @@
           "title": "Fear Inoculum (song)",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Fear_Inoculum_(song)"
+        },
+        {
+          "title": "Tool's 'Fear Inoculum' Is The Longest Hot 100 Hit",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/articles/business/chart-beat/8527264/tool-fear-inoculum-longest-hot-100-hit"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on claim 2 — that the Fear Inoculum title track is the longest song ever to reach the Billboard Hot 100. That is a core claim and it remains unverified: only 1 prose source confirmed it, and neither the MusicBrainz record nor the site's verified bio contains this chart fact. (The verified return-in-2019 part alone does not carry the hook.)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:55:45.635Z",
-      "rescoredAt": "2026-07-19T00:53:17.478Z"
+      "at": "2026-07-18T16:55:45.635Z"
     },
     {
       "id": "tool-1c58db39",
@@ -5423,13 +5629,16 @@
           "title": "Schism",
           "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Schism_(song)"
+        },
+        {
+          "title": "Why some Tool fans think their Lateralus album is hiding a huge secret",
+          "publisher": "Kerrang!",
+          "url": "https://www.kerrang.com/why-some-tool-fans-think-their-lateralus-album-is-hiding-a-huge-secret"
         }
       ],
-      "status": "draft",
-      "holdReason": "The hook rests on claim 1 — that the Lateralus title track was built around the Fibonacci sequence. That interpretive claim is core to the hook and is unverified: only 1 prose source, and it appears in neither the structured data nor the verified bio. (The number-one debut is verified via the bio, but it is not the hook's central claim.)",
+      "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:55:45.635Z",
-      "rescoredAt": "2026-07-19T00:53:17.478Z"
+      "at": "2026-07-18T16:55:45.635Z"
     },
     {
       "id": "tool-856d4a57",
@@ -5473,8 +5682,7 @@
       ],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:55:45.635Z",
-      "rescoredAt": "2026-07-19T00:53:17.478Z"
+      "at": "2026-07-18T16:55:45.635Z"
     },
     {
       "id": "trust-in-the-sun-6d3f7d42",
@@ -5492,8 +5700,7 @@
       "sources": [],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:56:19.199Z",
-      "rescoredAt": "2026-07-19T00:20:37.228Z"
+      "at": "2026-07-18T16:56:19.199Z"
     },
     {
       "id": "trust-in-the-sun-a7e7eb32",
@@ -5511,8 +5718,7 @@
       "sources": [],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:56:19.199Z",
-      "rescoredAt": "2026-07-19T00:20:37.228Z"
+      "at": "2026-07-18T16:56:19.199Z"
     },
     {
       "id": "trust-in-the-sun-3dff5516",
@@ -5530,8 +5736,7 @@
       "sources": [],
       "status": "published",
       "model": "claude-opus-4-8",
-      "at": "2026-07-18T16:56:19.199Z",
-      "rescoredAt": "2026-07-19T00:20:37.228Z"
+      "at": "2026-07-18T16:56:19.199Z"
     }
   ]
 }
