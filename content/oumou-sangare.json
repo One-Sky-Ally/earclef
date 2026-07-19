@@ -149,8 +149,8 @@
         "name": "Bandcamp",
         "description": "Music and releases direct from Oumou Sangaré on Bandcamp.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://f4.bcbits.com/img/0011498915_23.jpg",
+          "alt": "Bandcamp"
         },
         "url": "https://oumousangare.bandcamp.com"
       }

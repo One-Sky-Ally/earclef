@@ -146,8 +146,8 @@
         "name": "Official Merch",
         "description": "Apparel from aphextwin.warp.net — the official store, run with Warp.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://d1rgjmn2wmqeif.cloudfront.net/r/l/d64fd4ad-2a38-49b6-a282-89257ce01fcb.png",
+          "alt": "Official Merch"
         },
         "url": "https://aphextwin.warp.net/merch"
       },
@@ -155,8 +155,8 @@
         "name": "Aphex Heavyweight Logo Hoodie",
         "description": "White Aphex logo screen-printed on 400gsm organic French Terry.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://d1rgjmn2wmqeif.cloudfront.net/extra/l/ReleaseFormat-1947414-349186.png",
+          "alt": "Aphex Heavyweight Logo Hoodie"
         },
         "url": "https://aphextwin.warp.net/release/587792-aphex-twin-aphex-heavyweight-logo-hoodie-black"
       },
@@ -164,8 +164,8 @@
         "name": "Aphex Logo Black T-Shirt",
         "description": "The logo tee, from the official store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://d1rgjmn2wmqeif.cloudfront.net/r/l/503299-1.png",
+          "alt": "Aphex Logo Black T-Shirt"
         },
         "url": "https://aphextwin.warp.net/release/503299-aphex-twin-aphex-logo-black-t-shirt"
       }

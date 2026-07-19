@@ -146,8 +146,8 @@
         "name": "Fela Kuti Official Store",
         "description": "Vinyl, CDs, films, and box sets from the estate's own store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://d1rgjmn2wmqeif.cloudfront.net/extra/l/HomePageModule-42772-94534.jpg",
+          "alt": "Fela Kuti Official Store"
         },
         "url": "https://felakuti.com/store"
       },
@@ -155,8 +155,8 @@
         "name": "Merchandise",
         "description": "Estate-issued apparel, including Online Ceramics and Brain Dead collaborations.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://d1rgjmn2wmqeif.cloudfront.net/r/l/426700-1.jpg",
+          "alt": "Merchandise"
         },
         "url": "https://felakuti.com/store/merchandise"
       }

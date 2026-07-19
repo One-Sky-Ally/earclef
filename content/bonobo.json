@@ -147,8 +147,8 @@
         "name": "Bonobo on Bandcamp — Merch",
         "description": "Vinyl, apparel, and the full digital catalog direct from the artist's official Bandcamp.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://f4.bcbits.com/img/0045441543_23.jpg",
+          "alt": "Bonobo on Bandcamp — Merch"
         },
         "url": "https://bonobomusic.bandcamp.com/merch"
       },
@@ -156,8 +156,8 @@
         "name": "Distance In Static — Ninja Tune",
         "description": "The new album on Ninja Tune, out 11 September 2026 — formats and pre-orders on the label's release page.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://ninjatune.net/images/releases/distance-in-static-main.jpg",
+          "alt": "Distance In Static — Ninja Tune"
         },
         "url": "https://ninjatune.net/release/bonobo/distance-in-static"
       },
@@ -165,8 +165,8 @@
         "name": "Bonobo at Ninja Tune",
         "description": "The label home since 2003: releases, news, and store links for the whole catalog.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://ninjatune.net/images/artists/bonobo-crop.jpg",
+          "alt": "Bonobo at Ninja Tune"
         },
         "url": "https://ninjatune.net/artist/bonobo"
       }

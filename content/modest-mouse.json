@@ -152,8 +152,8 @@
         "name": "An Eraser And A Maze Album Tee",
         "description": "Album tee from the official Modest Mouse shop.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://shop.modestmouse.com/cdn/shop/files/XZCTMU75.png?v=1776277375",
+          "alt": "An Eraser And A Maze Album Tee"
         },
         "url": "https://shop.modestmouse.com/products/an-eraser-and-a-maze-album-tee"
       },
@@ -161,8 +161,8 @@
         "name": "Vintage Earth Moth Tee",
         "description": "T-shirt from the official Modest Mouse shop.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://shop.modestmouse.com/cdn/shop/files/XZCTMU74.png?v=1777053121",
+          "alt": "Vintage Earth Moth Tee"
         },
         "url": "https://shop.modestmouse.com/products/moth-tee"
       }

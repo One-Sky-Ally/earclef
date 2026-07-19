@@ -170,26 +170,17 @@
         "name": "Sigur Rós Official Store",
         "description": "Apparel, prints and anniversary editions from the band's official store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://sigurros.com/wp-content/uploads/2025/08/2024_US_tourheader-scaled-1.jpg",
+          "alt": "Sigur Rós Official Store"
         },
         "url": "https://sigurros.com/store/"
-      },
-      {
-        "name": "Sigur Rós Music Store",
-        "description": "Vinyl, CDs and digital releases — including ÁTTA — direct from the band.",
-        "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
-        },
-        "url": "https://store.sigurros.com"
       },
       {
         "name": "Sigur Rós on Bandcamp",
         "description": "The band's catalogue and merch on Bandcamp.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://f4.bcbits.com/img/0032681268_23.jpg",
+          "alt": "Sigur Rós on Bandcamp"
         },
         "url": "https://sigurros.bandcamp.com"
       }

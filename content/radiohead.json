@@ -154,26 +154,17 @@
         "name": "W.A.S.T.E. — Official Store (UK)",
         "description": "Radiohead's official merchandise operation since 1991: clothing, vinyl, and exclusives.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://store.wasteheadquarters.com/cdn/shop/files/logo-image-file_3.jpg?height=628&pad_color=fff&v=1699010583&width=1200",
+          "alt": "W.A.S.T.E. — Official Store (UK)"
         },
         "url": "https://store.wasteheadquarters.com/collections/radiohead"
-      },
-      {
-        "name": "W.A.S.T.E. — EU Store",
-        "description": "The official European store for EU-based fans.",
-        "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
-        },
-        "url": "https://store-eu.wasteheadquarters.com/collections/radiohead"
       },
       {
         "name": "Radiohead on Bandcamp",
         "description": "Digital catalog direct from the band, including OK Computer OKNOTOK.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://f4.bcbits.com/img/a0454733928_5.jpg",
+          "alt": "Radiohead on Bandcamp"
         },
         "url": "https://radiohead.bandcamp.com"
       }

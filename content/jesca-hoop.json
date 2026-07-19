@@ -149,20 +149,11 @@
     "enabled": true,
     "items": [
       {
-        "name": "Official Store",
-        "description": "Vinyl, CDs and apparel from Jesca Hoop's official web store.",
-        "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
-        },
-        "url": "https://www.jescahoop.com/store"
-      },
-      {
         "name": "Bandcamp Merch",
         "description": "Records and merchandise direct from the artist on Bandcamp.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://f4.bcbits.com/img/0042634353_23.jpg",
+          "alt": "Bandcamp Merch"
         },
         "url": "https://jescahoop.bandcamp.com/merch"
       }

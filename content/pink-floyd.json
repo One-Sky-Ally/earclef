@@ -157,8 +157,8 @@
         "name": "The Dark Side of the Moon — Collection",
         "description": "50th-anniversary remaster LP, apparel, and accessories from the official store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://shop.pinkfloyd.com/cdn/shop/collections/PF_Album_768x768_TheDarkSideOfTheMoon_87e0f561-5c85-4e57-a86a-f9e07b413f51.jpg?v=1748040767",
+          "alt": "The Dark Side of the Moon — Collection"
         },
         "url": "https://shop.pinkfloyd.com/collections/the-dark-side-of-the-moon"
       },
@@ -166,8 +166,8 @@
         "name": "Vinyl",
         "description": "The catalog on vinyl, including the Wish You Were Here 50th-anniversary 3LP set.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://shop.pinkfloyd.com/cdn/shop/files/PF_Social_1200x628_39af0513-85fb-4e33-9383-72fa463ee8f7.jpg?v=1743542758",
+          "alt": "Vinyl"
         },
         "url": "https://shop.pinkfloyd.com/collections/vinyl"
       },
@@ -175,8 +175,8 @@
         "name": "Wish You Were Here 50 — Collection",
         "description": "The 50th-anniversary collection: vinyl, CD, Blu-ray, and apparel.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://shop.pinkfloyd.com/cdn/shop/collections/1000016214.png?v=1757694056",
+          "alt": "Wish You Were Here 50 — Collection"
         },
         "url": "https://shop.pinkfloyd.com/collections/wish-you-were-here-50"
       }

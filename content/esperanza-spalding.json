@@ -152,8 +152,8 @@
         "name": "Bandcamp Merch",
         "description": "Records and merchandise direct from the artist on Bandcamp.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://f4.bcbits.com/img/0024148906_23.jpg",
+          "alt": "Bandcamp Merch"
         },
         "url": "https://esperanzaspalding.bandcamp.com/merch"
       }

@@ -138,8 +138,8 @@
         "name": "Divers T-Shirt (Red)",
         "description": "Official Divers artwork tee from Drag City.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://www.dragcity.com/uploads/products/2826/images/1390/large_WEB_SITE_SHIRT_RED.jpg",
+          "alt": "Divers T-Shirt (Red)"
         },
         "url": "https://www.dragcity.com/products/divers-t-shirt-red"
       },
@@ -147,8 +147,8 @@
         "name": "Joanna Newsom Record Tote Bag",
         "description": "Official record tote from Drag City.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://www.dragcity.com/uploads/products/1741/images/710/large_dc390bag.jpg",
+          "alt": "Joanna Newsom Record Tote Bag"
         },
         "url": "https://www.dragcity.com/products/newsom-record-bag"
       },
@@ -156,8 +156,8 @@
         "name": "Divers Poster",
         "description": "Official album poster from Drag City.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://www.dragcity.com/uploads/products/3241/images/1659/large_DC561_Joanna_S1.jpg",
+          "alt": "Divers Poster"
         },
         "url": "https://www.dragcity.com/products/divers-poster"
       }

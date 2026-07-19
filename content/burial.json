@@ -108,8 +108,8 @@
         "name": "Burial at Hyperdub — Records & Apparel",
         "description": "The full Burial collection sold direct by Hyperdub, his label and only official outlet.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://hyperdub.net/cdn/shop/t/8/assets/logo.png?v=80699831569793249911524060259",
+          "alt": "Burial at Hyperdub — Records & Apparel"
         },
         "url": "https://hyperdub.net/en-us/collections/burial"
       },
@@ -117,8 +117,8 @@
         "name": "Untrue — 20th Anniversary Edition",
         "description": "2×LP crystal-clear vinyl with artwork returned to Burial's original hand-drawn image.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://hyperdub.net/cdn/shop/files/HDBLP002packshot1000_site_grande.png?v=1725536191",
+          "alt": "Untrue — 20th Anniversary Edition"
         },
         "url": "https://hyperdub.net/en-us/products/burial-untrue"
       },
@@ -126,8 +126,8 @@
         "name": "Untrue Tee",
         "description": "Official album-art T-shirt, sold direct from Hyperdub.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://hyperdub.net/cdn/shop/files/untrue_tee_grande.jpg?v=1781170845",
+          "alt": "Untrue Tee"
         },
         "url": "https://hyperdub.net/en-us/products/burial-untrue-tee"
       }

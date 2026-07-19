@@ -163,8 +163,8 @@
         "name": "Chance Stuff — Official Store",
         "description": "The official Chance the Rapper store: STAR LINE vinyl, apparel and exclusives.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://chancestuff.com/cdn/shop/files/sharlink.jpg?v=1753926380",
+          "alt": "Chance Stuff — Official Store"
         },
         "url": "https://chancestuff.com"
       },
@@ -172,8 +172,8 @@
         "name": "Star Line Vinyl (Complete Edition)",
         "description": "The 2025 album STAR LINE on vinyl, direct from the official store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://chancestuff.com/cdn/shop/files/Untitled-15.png?v=1760385488",
+          "alt": "Star Line Vinyl (Complete Edition)"
         },
         "url": "https://chancestuff.com/products/star-line-vinyl"
       },
@@ -181,8 +181,8 @@
         "name": "Star Line Solidarity Hoodie",
         "description": "Exclusive STAR LINE-era hoodie from the official store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://chancestuff.com/cdn/shop/files/solhoodie.png?v=1773321520",
+          "alt": "Star Line Solidarity Hoodie"
         },
         "url": "https://chancestuff.com/products/star-line-solidarity-hoodie"
       }

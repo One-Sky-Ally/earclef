@@ -150,8 +150,8 @@
         "name": "Thriller Album T-Shirt",
         "description": "White tee with the Thriller album art, from the official US store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://store-us.michaeljackson.com/cdn/shop/files/mj-tee12-wht-front.png?v=1773257398",
+          "alt": "Thriller Album T-Shirt"
         },
         "url": "https://store-us.michaeljackson.com/products/thriller-album-t-shirt"
       },
@@ -159,8 +159,8 @@
         "name": "Vinyl — Collection",
         "description": "Thriller, Bad, and Off the Wall LPs plus picture discs, from the official US store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://store-us.michaeljackson.com/cdn/shop/files/MJ_SOCIAL_SHARING.png?v=1773405130",
+          "alt": "Vinyl — Collection"
         },
         "url": "https://store-us.michaeljackson.com/collections/vinyl"
       }

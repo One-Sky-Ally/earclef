@@ -138,31 +138,13 @@
     "enabled": true,
     "items": [
       {
-        "name": "Tame Impala Official Store",
-        "description": "The official store hub — pick your region for apparel, vinyl, and Deadbeat merch.",
-        "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
-        },
-        "url": "https://tameimpala.lnk.to/tameimpalastore"
-      },
-      {
         "name": "Tame Impala US Store",
         "description": "The North American official store for clothing, music, and accessories.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://storeus.tameimpala.com/cdn/shop/files/TI_textured_stacked_1.png?v=1752789581",
+          "alt": "Tame Impala US Store"
         },
         "url": "https://storeus.tameimpala.com/"
-      },
-      {
-        "name": "tameimpala.com",
-        "description": "The official site — tour dates, news, and store links straight from the source.",
-        "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
-        },
-        "url": "https://tameimpala.com"
       }
     ]
   },

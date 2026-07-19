@@ -152,8 +152,8 @@
         "name": "Speak for Yourself (20th Anniversary Remaster)",
         "description": "CD and download edition from Imogen Heap's official shop.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://d1rgjmn2wmqeif.cloudfront.net/r/l/537072.png",
+          "alt": "Speak for Yourself (20th Anniversary Remaster)"
         },
         "url": "https://shop.imogenheap.com/release/537072-imogen-heap-speak-for-yourself-20th-anniversary-remaster"
       },
@@ -161,8 +161,8 @@
         "name": "Speak for Yourself (20th Anniversary Remaster) Tee",
         "description": "Anniversary T-shirt from Imogen Heap's official shop.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://d1rgjmn2wmqeif.cloudfront.net/r/l/550399.png",
+          "alt": "Speak for Yourself (20th Anniversary Remaster) Tee"
         },
         "url": "https://shop.imogenheap.com/release/550399-imogen-heap-speak-for-yourself-20th-anniversary-remaster-tee"
       }

@@ -144,28 +144,19 @@
         "name": "The Smile on Bandcamp — Merch",
         "description": "Official vinyl, CDs, and apparel direct from the band's Bandcamp store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://f4.bcbits.com/img/0027261084_23.jpg",
+          "alt": "The Smile on Bandcamp — Merch"
         },
         "url": "https://thesmile.bandcamp.com/merch"
       },
       {
-        "name": "The Smile on Bandcamp — Music",
-        "description": "The full digital catalog, from 'A Light for Attracting Attention' to 'Cutouts'.",
+        "name": "The Smile Official Store",
+        "description": "The official store, linked from thesmiletheband.com.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://store-usd.thesmiletheband.com/cdn/shop/t/6/assets/logo-image-file.png?v=17523568054547590831724756711",
+          "alt": "The Smile Official Store"
         },
-        "url": "https://thesmile.bandcamp.com/music"
-      },
-      {
-        "name": "thesmiletheband.com",
-        "description": "The official site — releases, news, and store links straight from the band.",
-        "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
-        },
-        "url": "https://thesmiletheband.com"
+        "url": "https://store-usd.thesmiletheband.com/"
       }
     ]
   },

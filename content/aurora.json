@@ -152,8 +152,8 @@
         "name": "Official Artist Store",
         "description": "Apparel, music, and books from AURORA's official store, linked from aurora-music.com.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://shop.aurora-music.com/cdn/shop/files/Social_Sharing_Image.png?v=1769608787",
+          "alt": "Official Artist Store"
         },
         "url": "https://shop.aurora-music.com/"
       }

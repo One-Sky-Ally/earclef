@@ -153,8 +153,8 @@
         "name": "Honey — Collection",
         "description": "Vinyl, CD, and the Caribou mask from the official store on caribou.fm.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://us.caribou.fm/cdn/shop/collections/MRG848_Caribou.jpg?v=1725484328",
+          "alt": "Honey — Collection"
         },
         "url": "https://us.caribou.fm/collections/honey"
       },
@@ -162,8 +162,8 @@
         "name": "Honey — LP",
         "description": "Black vinyl in a spot-gloss jacket with full-color inner sleeve.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://us.caribou.fm/cdn/shop/files/848_caribou_honey_LP1_78c59d4f-61e8-4f9e-b06a-8c99fa36541e.jpg?v=1725484663",
+          "alt": "Honey — LP"
         },
         "url": "https://us.caribou.fm/products/honey-copy"
       }

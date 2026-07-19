@@ -179,8 +179,8 @@
         "name": "The Mountain Heads T-Shirt",
         "description": "Official tee from The Mountain album campaign.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://store.gorillaz.com/cdn/shop/files/26GRZ003_A_MountainHeadTShirtBlack_Updated.png?v=1770920785",
+          "alt": "The Mountain Heads T-Shirt"
         },
         "url": "https://store.gorillaz.com/products/the-mountain-heads-t-shirt"
       },
@@ -188,8 +188,8 @@
         "name": "The Mountain Hoodie (Black)",
         "description": "Black hoodie from the official Gorillaz store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://store.gorillaz.com/cdn/shop/files/TheMountainHoodieBlack_Group-Online.png?v=1757366031",
+          "alt": "The Mountain Hoodie (Black)"
         },
         "url": "https://store.gorillaz.com/products/the-mountain-hoodie-black"
       },
@@ -197,8 +197,8 @@
         "name": "The Mountain LP & Hoodie Bundle",
         "description": "Vinyl and hoodie bundle for the 2026 album The Mountain.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://store.gorillaz.com/cdn/shop/files/Hoodie-LP.webp?v=1776067384",
+          "alt": "The Mountain LP & Hoodie Bundle"
         },
         "url": "https://store.gorillaz.com/products/the-mountain-lp-hoodie-bundle-uk"
       }

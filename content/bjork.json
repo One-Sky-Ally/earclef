@@ -149,20 +149,11 @@
     "enabled": true,
     "items": [
       {
-        "name": "Björk Official Store",
-        "description": "Vinyl, limited editions, art objects and the Cornucopia book, direct from Björk's own shop.",
-        "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
-        },
-        "url": "https://shop.bjork.com/"
-      },
-      {
         "name": "Björk Merch Collection",
         "description": "Apparel and merchandise in the official store's dedicated merch collection.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://shop.bjork.com/cdn/shop/files/oli-share.png?v=1746561692",
+          "alt": "Björk Merch Collection"
         },
         "url": "https://shop.bjork.com/collections/bjork-merch"
       },
@@ -170,8 +161,8 @@
         "name": "Björk on Bandcamp",
         "description": "Her catalogue and merch on Bandcamp, where more of each sale goes to the artist.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://f4.bcbits.com/img/0039111510_23.jpg",
+          "alt": "Björk on Bandcamp"
         },
         "url": "https://bjork.bandcamp.com"
       }

@@ -151,8 +151,8 @@
         "name": "Gas Drawls — Official MF DOOM Store",
         "description": "The estate-run official source for all things MF DOOM, Metalface Records and Gas Drawls.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://gasdrawls.com/cdn/shop/files/M_NJerseyBlue-Stacked.jpg?v=1761774274&width=1200",
+          "alt": "Gas Drawls — Official MF DOOM Store"
         },
         "url": "https://gasdrawls.com"
       },
@@ -160,8 +160,8 @@
         "name": "Operation: Doomsday (Vinyl)",
         "description": "DOOM's 1999 solo debut on vinyl from the official Gas Drawls store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://gasdrawls.com/cdn/shop/files/VinylFront_a959c701-2f6d-44bb-afa8-a1200cec609a.jpg?v=1686757397",
+          "alt": "Operation: Doomsday (Vinyl)"
         },
         "url": "https://gasdrawls.com/products/operation-doomsday"
       },
@@ -169,8 +169,8 @@
         "name": "Metalface Records Collection",
         "description": "Releases on DOOM's own Metalface Records imprint, direct from the official store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://gasdrawls.com/cdn/shop/files/Metalface_Shirt_Army.jpg?v=1723597913&width=1200",
+          "alt": "Metalface Records Collection"
         },
         "url": "https://gasdrawls.com/collections/metalface-records"
       }

@@ -157,8 +157,8 @@
         "name": "Queen Apparel",
         "description": "T-shirts, hoodies, and jackets with album artwork, from the official store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://store.queenonline.com/cdn/shop/files/queen.jpg?v=1746022300&width=2048",
+          "alt": "Queen Apparel"
         },
         "url": "https://store.queenonline.com/collections/queen-apparel"
       },
@@ -166,8 +166,8 @@
         "name": "Queen Music",
         "description": "Vinyl, CDs, boxsets, and Blu-rays from the official store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://store.queenonline.com/cdn/shop/files/queen.jpg?v=1746022300&width=2048",
+          "alt": "Queen Music"
         },
         "url": "https://store.queenonline.com/collections/queen-music"
       },
@@ -175,8 +175,8 @@
         "name": "A Night at the Opera — Collection",
         "description": "Album-themed apparel and collectibles from the official store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://store.queenonline.com/cdn/shop/files/queen.jpg?v=1746022300&width=2048",
+          "alt": "A Night at the Opera — Collection"
         },
         "url": "https://store.queenonline.com/collections/a-night-at-the-opera-merch"
       }

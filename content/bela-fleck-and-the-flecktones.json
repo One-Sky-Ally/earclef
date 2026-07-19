@@ -135,13 +135,13 @@
     "enabled": true,
     "items": [
       {
-        "name": "Official Flecktones Store",
-        "description": "T-shirts and tour merchandise via the band's official store, linked from flecktones.com.",
+        "name": "Official Store",
+        "description": "Béla Fleck’s official store — records and merch, direct.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://shop.belafleck.com/cdn/shop/files/1RF_TheFiddleAndTheDrum_LPMockup_Front.jpg?v=1773848301&width=533",
+          "alt": "Official Store"
         },
-        "url": "https://stores.portmerch.com/belafleck/flecktones.html"
+        "url": "https://shop.belafleck.com/"
       }
     ]
   },

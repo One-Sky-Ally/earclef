@@ -152,19 +152,19 @@
         "name": "Everybody Scream Album T-Shirt",
         "description": "Album tee from the official Florence + the Machine store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://store.florenceandthemachine.net/cdn/shop/files/FATM_ALBUM_BLACK-T_FT.png?v=1779275287",
+          "alt": "Everybody Scream Album T-Shirt"
         },
         "url": "https://store.florenceandthemachine.net/products/everybody-scream-album-t-shirt"
       },
       {
-        "name": "Too Feminine To Function Hoodie",
-        "description": "Hoodie from the official Florence + the Machine store.",
+        "name": "Official Store",
+        "description": "Apparel and music from the official Florence + the Machine store.",
         "image": {
           "src": "/images/merch-placeholder.svg",
           "alt": "Placeholder card image"
         },
-        "url": "https://store.florenceandthemachine.net/products/too-feminine-to-function-hoodie"
+        "url": "https://store.florenceandthemachine.net/"
       }
     ]
   },

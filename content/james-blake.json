@@ -148,8 +148,8 @@
         "name": "Official Store",
         "description": "Apparel, vinyl and more from the official James Blake store.",
         "image": {
-          "src": "/images/merch-placeholder.svg",
-          "alt": "Placeholder card image"
+          "src": "https://shop.jamesblakemusic.com/cdn/shop/files/JB_SSI.png?v=1736347611",
+          "alt": "Official Store"
         },
         "url": "https://shop.jamesblakemusic.com"
       }
