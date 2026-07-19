@@ -1,0 +1,52 @@
+{
+  "jazz": {
+    "story": "Jazz took shape in the United States around the turn of the 20th century, most closely tied to New Orleans, and among its pioneers were [[Louis Armstrong]], [[Jelly Roll Morton]], [[King Oliver]], and [[Duke Ellington]]. The US remains the deepest well in our data, with 4819 artists and a peak in the 1940s. From there it crossed the Atlantic, with early European figures like [[Django Reinhardt]] and [[Sidney Bechet]] helping it settle in France and Britain. Later waves surfaced across Germany, France, Britain, and Japan, most clustering in the 1970s, while Norway's registered artists peak later in the 1990s.",
+    "model": "claude-opus-4-8",
+    "at": "2026-07-17T22:56:58.707Z"
+  },
+  "blues": {
+    "story": "Blues took shape in the American South around the turn of the 20th century, growing from work songs, spirituals, and field hollers rather than any single inventor. Among its pioneers were [[W. C. Handy]], [[Ma Rainey]], [[Bessie Smith]], and [[Charley Patton]], with later figures like [[Robert Johnson]] and [[Muddy Waters]] shaping its sound. The US accounts for some 1,500 registered blues artists, and the music spread north with the Great Migration and abroad after the war. Britain caught the fire in the 1960s, its peak decade with 133 artists, while Canada, Australia, France, and Germany each grew smaller but lasting scenes.",
+    "model": "claude-opus-4-8",
+    "at": "2026-07-17T22:57:06.547Z"
+  },
+  "folk": {
+    "story": "Folk grew from older oral and roots traditions, but its modern form took shape in the US, where among its pioneers were [[Woody Guthrie]], [[Lead Belly]], and [[Pete Seeger]], with [[Joan Baez]] and [[Bob Dylan]] carrying it further. It spread to Britain, home to key early figures like [[Ewan MacColl]], and our dataset counts 631 UK artists against 1347 in the US. From there it reached Canada, Germany, and France, each seeing steady growth into the 2000s. The numbers only reflect registered artists, but they trace a genre that traveled widely while staying close to its plain-spoken roots.",
+    "model": "claude-opus-4-8",
+    "at": "2026-07-17T22:57:15.080Z"
+  },
+  "reggae": {
+    "story": "Reggae grew out of Jamaica in the 1960s, evolving from ska and rocksteady, with 272 JM artists in the dataset and a peak of 95 in that decade. Among its pioneers were [[Toots and the Maytals]], [[Jimmy Cliff]], [[Desmond Dekker]], and the Wailers of [[Bob Marley]], [[Peter Tosh]], and [[Bunny Wailer]], with producer [[Lee \"Scratch\" Perry]] shaping the sound. It reached Britain next, peaking in the 1970s (31 of 120 artists), then spread to the US and France, which each saw later booms. Smaller scenes later took root in Germany and Argentina.",
+    "model": "claude-opus-4-8",
+    "at": "2026-07-17T22:56:51.099Z"
+  },
+  "punk": {
+    "story": "Punk took shape in the mid-1970s on both sides of the Atlantic, and its origins are lightly contested between New York and London. Among its US pioneers were [[Ramones]], [[Patti Smith]], and the earlier proto-punk of [[The Stooges]], while key early British figures included [[Sex Pistols]] and [[The Clash]], with Britain's 1970s peak of 314 registered artists. From there it spread widely: the US logged the most artists overall (1607), and scenes later took root in Germany, Sweden, France, and Japan, each with a couple hundred acts of their own.",
+    "model": "claude-opus-4-8",
+    "at": "2026-07-17T22:57:26.565Z"
+  },
+  "metal": {
+    "story": "Metal took shape around 1970, with British and American bands among its pioneers: [[Black Sabbath]], [[Deep Purple]], and [[Judas Priest]] are the widely-agreed key figures, with [[Led Zeppelin]] often named too. The US grew the largest scene, some 3381 artists over time, peaking in the 2000s. It spread hard across Germany, where [[Scorpions]] and later thrash acts took hold, giving 1419 artists overall. Scandinavia became a stronghold too, with Sweden's death and Finland's melodic scenes each fielding roughly a thousand acts, showing how far the genre traveled.",
+    "model": "claude-opus-4-8",
+    "at": "2026-07-17T22:57:35.095Z"
+  },
+  "hip hop": {
+    "story": "Hip hop took shape in 1970s New York, and among its pioneers were [[DJ Kool Herc]], [[Afrika Bambaataa]], and [[Grandmaster Flash]], soon joined by voices like [[Run-DMC]]. The US remains the deepest well in our dataset, with 2148 tagged artists and a 1990s peak of 694. From there it crossed the Atlantic and found strong local scenes: France registers 764 artists (peaking in the 1990s with early figures like [[IAM]] and [[MC Solaar]]), and Germany 419. Britain's 273 artists lean later, peaking in the 2000s, while Canada and Italy round out the map.",
+    "model": "claude-opus-4-8",
+    "at": "2026-07-17T22:57:42.460Z"
+  },
+  "techno": {
+    "story": "Techno took shape in Detroit in the 1980s, where key early figures like [[Juan Atkins]], [[Derrick May]], and [[Kevin Saunderson]] built a machine-driven sound from funk and electronics; our data logs 103 US artists, peaking that decade. It crossed to Europe fast, finding a second home in Germany, where [[Sven Väth]] helped it swell to a 1990s peak of 73 artists. Britain joined the surge with figures like [[Richie Hawtin]] active across borders, reaching 153 UK artists overall. From there it spread to the Netherlands, Japan, and Italy, each adding local color to a genre with contested but shared roots.",
+    "model": "claude-opus-4-8",
+    "at": "2026-07-17T22:57:52.577Z"
+  },
+  "bossa nova": {
+    "story": "Bossa nova took shape in late-1950s Brazil, which still accounts for most of its registered artists (68, peaking in the 1950s). Among its pioneers were [[João Gilberto]], whose soft guitar and hushed voice set the tone, alongside composer [[Antônio Carlos Jobim]] and poet-lyricist [[Vinícius de Moraes]]. It spread quickly to the United States, where [[Stan Getz]] and singer [[Astrud Gilberto]] helped carry it to wider audiences. From there the sound drifted further, later finding a steady home in Japan, which shows a small revival of about a dozen artists into the 2000s.",
+    "model": "claude-opus-4-8",
+    "at": "2026-07-17T22:58:00.136Z"
+  },
+  "k-pop": {
+    "story": "K-pop took shape in South Korea, which anchors the genre with over 1,100 registered artists and a clear peak in the 2010s of 506. Among its pioneers, [[Seo Taiji and Boys]] mixed rap and rock into Korean pop in the early 1990s, while [[H.O.T.]], [[S.E.S.]], and [[g.o.d]] helped define the idol-group template that followed. Later acts like [[BoA]] and [[TVXQ]] pushed the sound outward, first into Japan and across Asia. The dataset shows small clusters emerging abroad too, with a handful of artists in the US, Japan, and China, though the numbers there stay modest.",
+    "model": "claude-opus-4-8",
+    "at": "2026-07-17T22:58:13.638Z"
+  }
+}

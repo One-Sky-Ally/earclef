@@ -1,23 +1,17 @@
 import { NextResponse } from 'next/server'
 import { getArtistBySlug } from '@/lib/content'
 import { blurbKey } from '@/lib/feed/blurbKey'
-import {
-  generateBlurbs,
-  readCachedBlurbs,
-  type BlurbRequestItem,
-} from '@/lib/feed/blurbs'
-import { throttleGate } from '@/lib/membership/markers'
+import { readCachedBlurbs, type BlurbRequestItem } from '@/lib/feed/blurbs'
 
 /**
- * Blurbs for the feed's featured items. Cached answers are free and
- * always served; misses trigger at most one batched model call, gated by
- * a shared throttle so refresh storms (or abuse) can't stack Haiku calls
- * — un-generated items just come back without a blurb until a later
- * request fills them in.
+ * Blurbs for the feed's featured items — SERVE-FROM-CACHE ONLY. This
+ * route never calls a model: generation happens locally in Claude Code
+ * (scripts/warm-blurbs.mjs, on the owner's plan) and lands in the Blobs
+ * cache via the owner-gated /api/studio/seed-blurbs endpoint. Cache
+ * misses simply come back without a blurb until the next local warm run.
  */
 
 const MAX_ITEMS = 12
-const GENERATE_COOLDOWN_MS = 20 * 1000
 
 interface RawItem {
   slug?: string
@@ -63,20 +57,7 @@ export async function POST(request: Request) {
   const keys = items.map((item) => blurbKey(item.slug, item.type, item.title))
   const cached = await readCachedBlurbs(keys)
 
-  const misses = items.filter(
-    (item) => !(blurbKey(item.slug, item.type, item.title) in cached),
-  )
-
-  let generated: Record<string, string> = {}
-  if (
-    misses.length > 0 &&
-    process.env.ANTHROPIC_API_KEY &&
-    (await throttleGate('throttle/blurbs', GENERATE_COOLDOWN_MS))
-  ) {
-    generated = await generateBlurbs(misses)
-  }
-
-  const response = NextResponse.json({ blurbs: { ...cached, ...generated } })
+  const response = NextResponse.json({ blurbs: cached })
   response.headers.set('Cache-Control', 'no-store')
   return response
 }

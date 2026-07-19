@@ -8,11 +8,10 @@ import {
 
 /**
  * Serves the daily Discover pool. This route only ever READS — generation
- * runs in the background function (15-minute budget for the model call plus
- * MusicBrainz verification, far beyond a synchronous function's limit). On a
- * cache miss it fires the trigger and serves the previous day's pool so no
- * visitor ever waits on the model. Local dev has no Blobs or background
- * functions, so there — and only there — it generates inline.
+ * runs solely in the SCHEDULED background function (00:10 UTC daily); page
+ * loads never trigger a model call. A cache miss serves the previous
+ * day's pool until the schedule fires. Local dev has no Blobs or
+ * background functions, so there — and only there — it generates inline.
  */
 
 type DiscoverResponse =
@@ -43,20 +42,6 @@ function json(body: DiscoverResponse, maxAge: number): NextResponse {
   return response
 }
 
-async function triggerBackgroundGeneration(): Promise<void> {
-  const base = process.env.URL
-  if (!base) return
-  try {
-    // Background functions ack with a 202 immediately; the work continues
-    // server-side after this resolves.
-    await fetch(`${base}/.netlify/functions/discover-generate-background`, {
-      method: 'POST',
-    })
-  } catch (error) {
-    console.error('Discover trigger failed:', error)
-  }
-}
-
 async function devGenerate(today: string): Promise<DiscoverPool> {
   // Inline generation for local dev only — no function timeout applies.
   const { generatePool } = await import('@/lib/discover/generate')
@@ -82,8 +67,8 @@ export async function GET() {
   }
 
   if (process.env.NETLIFY === 'true') {
-    await triggerBackgroundGeneration()
-    // Yesterday's pool keeps the section alive while today's generates.
+    // No page-load generation: yesterday's pool carries the section until
+    // the 00:10 UTC schedule produces today's.
     const stale = await readLatestPool()
     if (stale) return json({ status: 'ready', pool: stale }, 300)
     return json({ status: 'warming' }, 60)

@@ -21,6 +21,7 @@
  * Resumable: artists with an existing work file are skipped. Progress logs
  * to data/story-farm.log (one line per artist) for the morning report.
  */
+import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync, appendFileSync } from 'node:fs'
 import { join } from 'node:path'
 import Anthropic from '@anthropic-ai/sdk'
@@ -63,7 +64,51 @@ let anthropicClient = null
 
 // Streaming via the SDK: long Opus generations (adaptive thinking) drop
 // plain non-streaming fetch sockets — SSE keeps the connection alive.
+// Two billing paths:
+//   claude CLI (default when installed) — the owner's Claude subscription;
+//   Anthropic API (fallback, or FORCE_API=1) — the pay-as-you-go wallet.
+
+function cliAvailable() {
+  if (process.env.FORCE_API === '1') return false
+  try {
+    execFileSync('claude', ['--version'], { encoding: 'utf8', timeout: 15000 })
+    return true
+  } catch {
+    return false
+  }
+}
+
+const USE_CLI = cliAvailable()
+
+function claudeViaCli(messages, schema, attempt = 1) {
+  const prompt = `${messages[0].content}
+
+Respond with ONLY a single JSON object (no prose, no code fences) that validates against this JSON Schema:
+${JSON.stringify(schema)}`
+  const out = execFileSync(
+    'claude',
+    ['-p', '--model', MODEL, '--output-format', 'text'],
+    { input: prompt, encoding: 'utf8', timeout: 600000, maxBuffer: 8 * 1024 * 1024 },
+  )
+  const jsonMatch = out.match(/\{[\s\S]*\}/)
+  if (!jsonMatch) {
+    if (attempt < 2) return claudeViaCli(messages, schema, attempt + 1)
+    throw new Error('no JSON in CLI output')
+  }
+  try {
+    return JSON.parse(jsonMatch[0])
+  } catch (error) {
+    if (attempt < 2) return claudeViaCli(messages, schema, attempt + 1)
+    throw error
+  }
+}
+
 async function claude(messages, schema, maxTokens) {
+  if (USE_CLI) return claudeViaCli(messages, schema)
+  return claudeViaApi(messages, schema, maxTokens)
+}
+
+async function claudeViaApi(messages, schema, maxTokens) {
   anthropicClient ??= new Anthropic()
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
@@ -81,7 +126,7 @@ async function claude(messages, schema, maxTokens) {
         // Adaptive thinking can burn the whole budget on hard batches —
         // retry once with double the room before giving up.
         if (body.stop_reason === 'max_tokens' && maxTokens < 64000) {
-          return claude(messages, schema, maxTokens * 2)
+          return claudeViaApi(messages, schema, maxTokens * 2)
         }
         throw new Error(`no text block (stop_reason: ${body.stop_reason})`)
       }
@@ -808,10 +853,11 @@ if (process.argv.includes('--assemble')) {
   process.exit(0)
 }
 
-if (!process.env.ANTHROPIC_API_KEY) {
-  console.error('ANTHROPIC_API_KEY missing (checked env + .env.local)')
+if (!USE_CLI && !process.env.ANTHROPIC_API_KEY) {
+  console.error('Neither the claude CLI (subscription) nor ANTHROPIC_API_KEY (wallet) is available')
   process.exit(1)
 }
+log(`model path: ${USE_CLI ? 'claude CLI (subscription)' : 'Anthropic API (wallet)'}`)
 
 if (process.argv.includes('--rescore')) {
   const only = process.argv.indexOf('--artists')
