@@ -1815,6 +1815,97 @@
       "at": "2026-07-18T15:44:54.493Z"
     },
     {
+      "id": "flea-2480e8ea",
+      "slug": "flea",
+      "artistName": "Flea",
+      "type": "news",
+      "hook": "After 40-plus years in Red Hot Chili Peppers, Flea finally made a solo album — on trumpet",
+      "story": "Flea co-founded Red Hot Chili Peppers in 1983, but it took until 2026 for him to release a debut album under his own name. Honora, out via Nonesuch Records, is built around the instrument he played before he ever picked up a bass: he plays trumpet and bass across the record.",
+      "media": [
+        {
+          "label": "A Plea",
+          "url": "https://www.youtube.com/watch?v=TmyjzvQv5bA"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flea Reveals Debut Solo Album 'Honora'",
+          "publisher": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-news/flea-honora-album-release-date-tour-1235499268/"
+        },
+        {
+          "title": "Flea Jazzes Up for Debut Solo Album 'Honora'",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/music/rock/flea-debut-solo-album-honora-stream-it-now-1236208219/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
+      "id": "flea-90dd95c0",
+      "slug": "flea",
+      "artistName": "Flea",
+      "type": "collab",
+      "hook": "Flea's solo debut pulled in Thom Yorke and Nick Cave",
+      "story": "Honora is a covers-and-originals record with a striking guest list. Thom Yorke and Nick Cave both contribute vocals, and the single 'Traffic Lights' was co-written with Yorke — the loudest bassist in rock trading the arena for something hushed and collaborative.",
+      "media": [
+        {
+          "label": "Traffic Lights (feat. Thom Yorke)",
+          "url": "https://www.youtube.com/watch?v=iDdl-cwIXJU"
+        },
+        {
+          "label": "Wichita Lineman (feat. Nick Cave)",
+          "url": "https://www.youtube.com/watch?v=73P2drWXulM"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flea Reveals Debut Solo Album 'Honora'",
+          "publisher": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-news/flea-honora-album-release-date-tour-1235499268/"
+        },
+        {
+          "title": "Flea Jazzes Up for Debut Solo Album 'Honora'",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/music/rock/flea-debut-solo-album-honora-stream-it-now-1236208219/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
+      "id": "flea-57c182b2",
+      "slug": "flea",
+      "artistName": "Flea",
+      "type": "era",
+      "hook": "The Chili Peppers bassist co-founded a nonprofit music school for kids",
+      "story": "In 2001, Flea and Chili Peppers collaborator Keith 'Tree' Barry opened the Silverlake Conservatory of Music, a nonprofit community music school in Los Angeles. It has become one of his life's largest projects — a school built to keep music education alive for kids in the city he came up in.",
+      "media": [
+        {
+          "label": "Flea — Silverlake Conservatory of Music",
+          "url": "https://www.youtube.com/results?search_query=Flea%20Silverlake%20Conservatory%20of%20Music"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flea (musician)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Flea_(musician)"
+        },
+        {
+          "title": "Silverlake Conservatory of Music",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Silverlake_Conservatory_of_Music"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
       "id": "florence-and-the-machine-b08bbd13",
       "slug": "florence-and-the-machine",
       "artistName": "Florence + the Machine",
@@ -3132,6 +3223,177 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T17:18:23.056Z"
+    },
+    {
+      "id": "john-frusciante-e359152b",
+      "slug": "john-frusciante",
+      "artistName": "John Frusciante",
+      "type": "era",
+      "hook": "In a single year, John Frusciante released six solo albums",
+      "story": "In 2004, away from Red Hot Chili Peppers, Frusciante went on a tear: six solo albums in one year, each chasing a different genre and recording method. The run included Shadows Collide With People — his first solo record to reach a chart — alongside The Will to Death, Inside of Emptiness, A Sphere in the Heart of Silence and Curtains.",
+      "media": [
+        {
+          "label": "The Past Recedes",
+          "url": "https://www.youtube.com/watch?v=If35MGu2g7Y"
+        },
+        {
+          "label": "Going Inside",
+          "url": "https://www.youtube.com/watch?v=fevXKsQuk8E"
+        }
+      ],
+      "sources": [
+        {
+          "title": "John Frusciante",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/John_Frusciante"
+        },
+        {
+          "title": "John Frusciante discography",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/John_Frusciante_discography"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
+      "id": "john-frusciante-36180f68",
+      "slug": "john-frusciante",
+      "artistName": "John Frusciante",
+      "type": "era",
+      "hook": "The Chili Peppers guitarist quietly became an acid-house producer named Trickfinger",
+      "story": "Better known for melodic guitar, Frusciante spent the 2010s teaching himself hardware synthesis and drum programming, releasing acid-house and electronic records under the alias Trickfinger. In 2020 he brought that world back to his own name with Maya, an instrumental electronic album.",
+      "media": [
+        {
+          "label": "John Frusciante — Trickfinger",
+          "url": "https://www.youtube.com/results?search_query=John%20Frusciante%20Trickfinger%20acid%20house"
+        },
+        {
+          "label": "Murderers",
+          "url": "https://www.youtube.com/watch?v=KnzJtm6h9SE"
+        }
+      ],
+      "sources": [
+        {
+          "title": "John Frusciante",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/John_Frusciante"
+        },
+        {
+          "title": "Trickfinger: Letting Go",
+          "publisher": "Resident Advisor",
+          "url": "https://ra.co/features/2103"
+        },
+        {
+          "title": "John Frusciante Preps 'Experimental' Electronic LP",
+          "publisher": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-news/john-frusciante-preps-experimental-electronic-lp-46490/"
+        },
+        {
+          "title": "John Frusciante: Maya",
+          "publisher": "Loud and Quiet",
+          "url": "https://www.loudandquiet.com/reviews/john-frusciante-maya/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
+      "id": "jonny-greenwood-7c656f7d",
+      "slug": "jonny-greenwood",
+      "artistName": "Jonny Greenwood",
+      "type": "screen",
+      "hook": "Radiohead's guitarist has three Oscar nominations — for film scores",
+      "story": "Alongside his day jobs in Radiohead and The Smile, Jonny Greenwood has become one of cinema's most sought-after composers. He has been nominated for the Academy Award for Best Original Score three times: for Phantom Thread, The Power of the Dog and One Battle After Another.",
+      "media": [
+        {
+          "label": "House of Woodcock (Phantom Thread)",
+          "url": "https://www.youtube.com/watch?v=bT_XjcdgT6g"
+        },
+        {
+          "label": "One Battle After Another",
+          "url": "https://www.youtube.com/watch?v=YzhjTeSz9y4"
+        }
+      ],
+      "sources": [
+        {
+          "title": "List of awards and nominations received by Jonny Greenwood",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/List_of_awards_and_nominations_received_by_Jonny_Greenwood"
+        },
+        {
+          "title": "Why Jonny Greenwood Deserves to Win the Oscar for 'One Battle After Another'",
+          "publisher": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-features/jonny-greenwood-one-battle-after-another-oscar-1235498554/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
+      "id": "jonny-greenwood-5f5d60d",
+      "slug": "jonny-greenwood",
+      "artistName": "Jonny Greenwood",
+      "type": "collab",
+      "hook": "Greenwood has scored every Paul Thomas Anderson film since There Will Be Blood",
+      "story": "The partnership began with There Will Be Blood in 2007 and never stopped: Greenwood went on to score The Master, Inherent Vice, Phantom Thread, Licorice Pizza and One Battle After Another for director Paul Thomas Anderson — one of the longest-running composer-director teams in modern film.",
+      "media": [
+        {
+          "label": "Spooks (Inherent Vice)",
+          "url": "https://www.youtube.com/watch?v=-a2NebxdGs4"
+        },
+        {
+          "label": "Battle After Battle",
+          "url": "https://www.youtube.com/watch?v=BDJ9axXiHOk"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jonny Greenwood",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jonny_Greenwood"
+        },
+        {
+          "title": "Jonny Greenwood",
+          "publisher": "IMDb",
+          "url": "https://www.imdb.com/name/nm0339351/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
+      "id": "jonny-greenwood-91bbf272",
+      "slug": "jonny-greenwood",
+      "artistName": "Jonny Greenwood",
+      "type": "screen",
+      "hook": "One of the most acclaimed scores of the 2000s was ruled ineligible for an Oscar",
+      "story": "Greenwood's There Will Be Blood score was widely tipped for the Academy Award for Best Original Score — but it was ruled ineligible because it drew on pre-existing music, including his own concert piece Popcorn Superhet Receiver. The rules disqualified exactly what made the score singular.",
+      "media": [
+        {
+          "label": "There Will Be Blood — Jonny Greenwood",
+          "url": "https://www.youtube.com/results?search_query=Jonny%20Greenwood%20There%20Will%20Be%20Blood%20score"
+        }
+      ],
+      "sources": [
+        {
+          "title": "There Will Be Blood (soundtrack)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/There_Will_Be_Blood_(soundtrack)"
+        },
+        {
+          "title": "Jonny Greenwood",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jonny_Greenwood"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T08:32:27.000Z"
     },
     {
       "id": "mf-doom-dde2f713",
@@ -5719,6 +5981,64 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:54:22.519Z"
+    },
+    {
+      "id": "tipper-637046e0",
+      "slug": "tipper",
+      "artistName": "Tipper",
+      "type": "era",
+      "hook": "Tipper is so obsessed with sound that he made an album built for surround speakers",
+      "story": "David Tipper's whole reputation rests on detail. He is among the electronic producers most identified with surround and multichannel audio: his album Surrounded was conceived entirely as a surround-sound listening experience, a record you were meant to sit inside rather than just hear.",
+      "media": [
+        {
+          "label": "6 Pono",
+          "url": "https://www.youtube.com/watch?v=vtwWC0NcGAg"
+        }
+      ],
+      "sources": [
+        {
+          "title": "David Tipper",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/David_Tipper"
+        },
+        {
+          "title": "Tipper",
+          "publisher": "Clash",
+          "url": "https://www.clashmusic.com/features/tipper/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
+      "id": "tipper-d20f88f2",
+      "slug": "tipper",
+      "artistName": "Tipper",
+      "type": "performance",
+      "hook": "The studio obsessive filled Red Rocks two nights running",
+      "story": "For all his laptop-scientist reputation, Tipper is a live force in the North American festival scene. In September 2025 he headlined Colorado's Red Rocks Amphitheatre on two consecutive nights — the kind of natural-amphitheatre room usually reserved for the biggest names in music.",
+      "media": [
+        {
+          "label": "Tipper Red Rocks 2025",
+          "url": "https://www.youtube.com/results?search_query=Tipper%20Red%20Rocks%202025%20live%20set"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tipper at Red Rocks Amphitheatre, Sep 20 2025",
+          "publisher": "setlist.fm",
+          "url": "https://www.setlist.fm/setlist/tipper/2025/red-rocks-amphitheatre-morrison-co-7b419688.html"
+        },
+        {
+          "title": "Tipper at Red Rocks Amphitheatre, Sep 21 2025",
+          "publisher": "setlist.fm",
+          "url": "https://www.setlist.fm/setlist/tipper/2025/red-rocks-amphitheatre-morrison-co-6341968f.html"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-19T08:32:27.000Z"
     },
     {
       "id": "tool-22fd3f0",

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "slug": "tipper",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Tipper — Ear Clef",
+    "description": "David Tipper's obsessively detailed electronic music — glitch, bass and downtempo built for big rooms and immersive surround sound.",
+    "ogImage": "/images/og-tipper.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/tipper"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "1soJ22UMyjIw6SYFtoFJwe"
+    },
+    "youtube": {
+      "channelId": "UCRNYMDBXBW9t0rjuGpJltlA"
+    },
+    "setlistfm": {
+      "mbid": "c3cf7f15-4a5e-4e9e-bce7-5e5b101fa29c"
+    },
+    "itunes": {
+      "artistId": "79601102"
+    }
+  },
+  "hero": {
+    "name": "Tipper",
+    "identity": "Sound design as its own genre — glitch, bass and downtempo cut with surgical detail and built to move air.",
+    "tagline": "Hear here!",
+    "location": "United Kingdom",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://tippermusic.net/"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/tippermusic"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/tippermusic"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCRNYMDBXBW9t0rjuGpJltlA"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/tipper/79601102"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://tipper.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Broken Soul Jamboree",
+        "year": "2010",
+        "mbReleaseGroupId": "ce7fd233-9861-4540-bd2e-bbba4c5232ba"
+      },
+      {
+        "title": "Forward Escape",
+        "year": "2014",
+        "mbReleaseGroupId": "f66bfd61-226a-48e4-a378-fba8a0ab4424"
+      },
+      {
+        "title": "Jettison Mind Hatch",
+        "year": "2019",
+        "mbReleaseGroupId": "c46e08e7-aa2a-43fc-b8fa-d5cbbf36d5b1"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "vtwWC0NcGAg",
+        "title": "6 Pono"
+      },
+      {
+        "youtubeId": "sKHXPI7Vq04",
+        "title": "7 Magpies"
+      },
+      {
+        "youtubeId": "e2Ul_ZVECz8",
+        "title": "13 Launchers"
+      },
+      {
+        "youtubeId": "GSp642KyYAo",
+        "title": "12 Preparations For Departure"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Tipper is David Tipper, a British electronic producer whose whole reputation rests on detail. Emerging in the late 1990s — first on vinyl for Fuel Records, then through Sony's Higher Ground imprint — he built a sound out of glitch, breakbeat, downtempo and bass, edited with a precision that made even his heaviest tracks feel finely machined.",
+      "In 2005 he founded his own label, Tippermusic, and has released through it ever since, from The Critical Path and Broken Soul Jamboree to Forward Escape, Jettison Mind Hatch and Marble Hunting. Away from the dance floor he is among the artists most associated with immersive, multichannel audio: his album Surrounded was conceived entirely as a 5.1 surround-sound listening experience.",
+      "Live, Tipper became a cornerstone of the North American festival and immersive-sound scene, known for painstakingly tuned sound systems and headlining rooms as large as Red Rocks Amphitheatre, where he played a two-night stand in 2025.",
+      "It is deliberately non-commercial music — long, patient, texturally obsessive — that found a devoted audience precisely by refusing to simplify."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates appear at tippermusic.net and songkick.com/artists/399153.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-08-31",
+        "venue": "The Orion Amphitheater",
+        "city": "Huntsville, AL, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/tipper/2025/the-orion-amphitheater-huntsville-al-1340f19d.html",
+        "note": "Two-night stand at The Orion"
+      },
+      {
+        "date": "2025-09-20",
+        "venue": "Red Rocks Amphitheatre",
+        "city": "Morrison, CO, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/tipper/2025/red-rocks-amphitheatre-morrison-co-7b419688.html",
+        "note": "Night one of a Red Rocks weekend"
+      },
+      {
+        "date": "2025-09-21",
+        "venue": "Red Rocks Amphitheatre",
+        "city": "Morrison, CO, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/tipper/2025/red-rocks-amphitheatre-morrison-co-6341968f.html",
+        "note": "Night two at Red Rocks"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Signed Red Rocks Poster",
+        "description": "Signed commemorative poster from the official Tippermusic store.",
+        "image": {
+          "src": "https://store.tippermusic.net/cdn/shop/files/Red_Rocks.png?v=1759166369",
+          "alt": "Signed Red Rocks Poster"
+        },
+        "url": "https://store.tippermusic.net/products/pre-order-tipper-signed-red-rocks-poster"
+      },
+      {
+        "name": "Broken Soul Jamboree Poster",
+        "description": "Signed original poster for the Broken Soul Jamboree album.",
+        "image": {
+          "src": "https://store.tippermusic.net/cdn/shop/files/Broken_Soul_Jamboree.png?v=1781491640",
+          "alt": "Broken Soul Jamboree Poster"
+        },
+        "url": "https://store.tippermusic.net/products/signed-original-broken-soul-jamboree-poster"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Tipper",
+        "outlet": "Clash",
+        "url": "https://www.clashmusic.com/features/tipper/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

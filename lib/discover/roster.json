@@ -130,6 +130,16 @@
     "membership": false
   },
   {
+    "slug": "flea",
+    "name": "Flea",
+    "identity": "The most kinetic bassist in rock, alone at last — trumpet first, voice second, and a covers-and-originals record made under his own name.",
+    "tier": "in-the-mix",
+    "mbid": "2dc7a305-7a8c-4fcc-add4-5e9def0a9a0d",
+    "channelId": "UCRdIhqH_RuIdhtEa9gjwYQg",
+    "itunesId": "463953572",
+    "membership": false
+  },
+  {
     "slug": "florence-and-the-machine",
     "name": "Florence + the Machine",
     "identity": "Cathedral-sized art rock built on Florence Welch's hurricane of a voice.",
@@ -217,6 +227,26 @@
     "mbid": "cb69e1f1-bc76-4df5-93c9-cf97dd8a3b5c",
     "channelId": null,
     "itunesId": "5565555",
+    "membership": false
+  },
+  {
+    "slug": "john-frusciante",
+    "name": "John Frusciante",
+    "identity": "A guitarist's guitarist chasing every other sound — folk, four-track, prog, and pure electronics — under his own name.",
+    "tier": "in-the-mix",
+    "mbid": "f1571db1-c672-4a54-a2cf-aaa329f26f0b",
+    "channelId": "UC5euVM9CQMQHsJr6syGXwUw",
+    "itunesId": "876741",
+    "membership": false
+  },
+  {
+    "slug": "jonny-greenwood",
+    "name": "Jonny Greenwood",
+    "identity": "Guitar in one hand, orchestra in the other — the Radiohead multi-instrumentalist who became one of film's defining composers.",
+    "tier": "in-the-mix",
+    "mbid": "e9fcfbbf-1743-4f73-8744-ada8da7394ea",
+    "channelId": null,
+    "itunesId": "5787786",
     "membership": false
   },
   {
@@ -387,6 +417,16 @@
     "mbid": "8ed2e0b3-aa4c-4e13-bec3-dc7393ed4d6b",
     "channelId": "UC9BJwi8Q2AiLtLHdGlWqsrQ",
     "itunesId": "39753073",
+    "membership": false
+  },
+  {
+    "slug": "tipper",
+    "name": "Tipper",
+    "identity": "Sound design as its own genre — glitch, bass and downtempo cut with surgical detail and built to move air.",
+    "tier": "in-the-mix",
+    "mbid": "c3cf7f15-4a5e-4e9e-bce7-5e5b101fa29c",
+    "channelId": "UCRNYMDBXBW9t0rjuGpJltlA",
+    "itunesId": "79601102",
     "membership": false
   },
   {

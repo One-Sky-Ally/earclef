@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "slug": "flea",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Flea — Ear Clef",
+    "description": "The Red Hot Chili Peppers bassist steps out alone on trumpet and voice — a lifelong sideman's first record under his own name.",
+    "ogImage": "/images/og-flea.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/flea"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "0Xl5J6iOgiQHFqgri7TF8j"
+    },
+    "youtube": {
+      "channelId": "UCRdIhqH_RuIdhtEa9gjwYQg"
+    },
+    "setlistfm": {
+      "mbid": "2dc7a305-7a8c-4fcc-add4-5e9def0a9a0d"
+    },
+    "itunes": {
+      "artistId": "463953572"
+    }
+  },
+  "hero": {
+    "name": "Flea",
+    "identity": "The most kinetic bassist in rock, alone at last — trumpet first, voice second, and a covers-and-originals record made under his own name.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/flea333/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/flea333"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/flea"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCRdIhqH_RuIdhtEa9gjwYQg"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/flea/463953572"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://officialflea.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Honora",
+        "year": "2026",
+        "mbReleaseGroupId": "72a726f5-5a54-4f32-a5bf-fd63289eed20"
+      },
+      {
+        "title": "Helen Burns",
+        "year": "2012",
+        "mbReleaseGroupId": "e09c8c67-9538-41e8-896f-a4837b8a51a7"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "TmyjzvQv5bA",
+        "title": "A Plea"
+      },
+      {
+        "youtubeId": "iDdl-cwIXJU",
+        "title": "Traffic Lights (feat. Thom Yorke)"
+      },
+      {
+        "youtubeId": "73P2drWXulM",
+        "title": "Wichita Lineman (feat. Nick Cave)"
+      },
+      {
+        "youtubeId": "I6rB5I7QV1Y",
+        "title": "Maggot Brain"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Michael Peter Balzary — Flea — was born in Melbourne in 1962 and co-founded Red Hot Chili Peppers in Los Angeles in 1983, where his slap-and-pop bass became one of the most recognizable sounds in rock. But the trumpet came first: he took up brass as a kid and only later learned bass, and that early instrument is at the center of his solo life.",
+      "For decades his own music stayed almost entirely inside the band. The 2012 EP Helen Burns was a rare solo outing; otherwise Flea poured his teaching energy into the Silverlake Conservatory of Music, the nonprofit community music school he co-founded in Los Angeles in 2001. In 2019 he published a memoir, Acid for the Children.",
+      "In 2026 he finally released a full debut album under his own name: Honora, a record built around his trumpet, bass and singing voice. It threads originals together with covers — a horn-led reading of Funkadelic's 'Maggot Brain', Jimmy Webb's 'Wichita Lineman' with Nick Cave, and 'Traffic Lights' with Thom Yorke among the guests.",
+      "For the first time, Flea is touring as a headliner in his own right — small halls and jazz stages rather than arenas, the loudest bassist in the world playing something quiet and searching."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Flea is touring the Honora album solo; new dates appear on his socials and at officialflea.bandcamp.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-05-14",
+        "venue": "Tiny Desk Concerts",
+        "city": "Washington, DC, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/flea/2026/tiny-desk-concerts-washington-dc-2b733076.html",
+        "note": "A trumpet-and-bass Tiny Desk set"
+      },
+      {
+        "date": "2026-05-16",
+        "venue": "The Fonda Theatre",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/flea/2026/the-fonda-theatre-los-angeles-ca-b4aedda.html",
+        "note": "Hometown Honora show"
+      },
+      {
+        "date": "2026-05-26",
+        "venue": "KOKO",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/flea/2026/koko-london-england-34aedd3.html",
+        "note": "First European solo dates"
+      },
+      {
+        "date": "2026-07-11",
+        "venue": "Ahoy",
+        "city": "Rotterdam, Netherlands",
+        "setlistUrl": "https://www.setlist.fm/setlist/flea/2026/ahoy-rotterdam-netherlands-3b771870.html",
+        "note": "North Sea Jazz Festival 2026"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Honora",
+        "description": "Flea's debut solo album on vinyl, CD and digital from his official Bandcamp.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/a0084861691_5.jpg",
+          "alt": "Honora"
+        },
+        "url": "https://officialflea.bandcamp.com/album/honora"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Flea Reveals Debut Solo Album 'Honora' Release Date, Announces Tour",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/flea-honora-album-release-date-tour-1235499268/"
+      },
+      {
+        "title": "Flea Jazzes Up for Debut Solo Album 'Honora': Stream It Now",
+        "outlet": "Billboard",
+        "url": "https://www.billboard.com/music/rock/flea-debut-solo-album-honora-stream-it-now-1236208219/"
+      },
+      {
+        "title": "Flea Makes His Solo Billboard Chart Debut With 'Honora'",
+        "outlet": "Billboard",
+        "url": "https://www.billboard.com/music/chart-beat/flea-honora-album-billboard-chart-debut-1236218335/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

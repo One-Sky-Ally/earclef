@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "slug": "john-frusciante",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "John Frusciante — Ear Clef",
+    "description": "The Red Hot Chili Peppers guitarist's restless solo world — home-recorded confessionals, a six-album year, and a late turn into acid-house machines.",
+    "ogImage": "/images/og-john-frusciante.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/john-frusciante"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "7rN3Agir6FaZNfhf5V7mfN"
+    },
+    "youtube": {
+      "channelId": "UC5euVM9CQMQHsJr6syGXwUw"
+    },
+    "setlistfm": {
+      "mbid": "f1571db1-c672-4a54-a2cf-aaa329f26f0b"
+    },
+    "itunes": {
+      "artistId": "876741"
+    }
+  },
+  "hero": {
+    "name": "John Frusciante",
+    "identity": "A guitarist's guitarist chasing every other sound — folk, four-track, prog, and pure electronics — under his own name.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@JohnFrusciantetv"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/johnfrusciante"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/Johnfrusciante"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/johnfruscianteofficial"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/john-frusciante/876741"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://johnfrusciante.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Niandra LaDes and Usually Just a T‑Shirt",
+        "year": "1994",
+        "mbReleaseGroupId": "2a52f6e3-0622-3d60-947a-a75b0673f096"
+      },
+      {
+        "title": "Shadows Collide With People",
+        "year": "2004",
+        "mbReleaseGroupId": "4d8c3354-7397-3f79-81dd-b2a4d39459ee"
+      },
+      {
+        "title": "Maya",
+        "year": "2020",
+        "mbReleaseGroupId": "56e5ba53-53a4-4d01-ae2c-ad5b12b8cafb"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "If35MGu2g7Y",
+        "title": "The Past Recedes"
+      },
+      {
+        "youtubeId": "fevXKsQuk8E",
+        "title": "Going Inside"
+      },
+      {
+        "youtubeId": "SKAjPu1_TK4",
+        "title": "Song to the Siren"
+      },
+      {
+        "youtubeId": "KnzJtm6h9SE",
+        "title": "Murderers"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "John Frusciante, born in 1970, is best known as the guitarist of Red Hot Chili Peppers — but his solo catalog is a parallel life entirely his own. It opened in 1994 with Niandra LaDes and Usually Just a T‑Shirt, a raw, largely home-recorded double album that had almost nothing to do with the funk-rock day job.",
+      "In 2004 he went on one of the great creative benders in modern rock: across roughly a year on the Record Collection label he released a run of solo records — Shadows Collide With People, The Will to Death, Inside of Emptiness, A Sphere in the Heart of Silence and Curtains among them — several tracked fast and deliberately unpolished. Shadows Collide With People became his first solo album to chart.",
+      "The Empyrean (2009) pulled the other direction: a single continuous song-cycle, orchestrated and dense, with Chili Peppers bandmates and guests woven through it. Then Frusciante largely stepped away from the guitar-hero frame altogether.",
+      "Since the 2010s his solo work has turned electronic — programming breakbeats and acid-house lines on hardware, releasing club records under the alias Trickfinger and, under his own name, the sampler-built Maya (2020). One instrument to the next, the through-line is a musician following his ear wherever it goes."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Frusciante does not tour as a solo act; his solo catalog is a studio project. Past solo appearances are archived below.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2008-09-04",
+        "venue": "Troubadour",
+        "city": "West Hollywood, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/john-frusciante/2008/troubadour-west-hollywood-ca-2bc9f80a.html",
+        "note": "A rare solo club appearance"
+      },
+      {
+        "date": "2004-03-24",
+        "venue": "Knitting Factory",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/john-frusciante/2004/knitting-factory-los-angeles-ca-43de1347.html",
+        "note": "An intimate solo club show"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "John Frusciante: Maya",
+        "outlet": "Loud and Quiet",
+        "url": "https://www.loudandquiet.com/reviews/john-frusciante-maya/"
+      },
+      {
+        "title": "Album Review: John Frusciante – Enclosure",
+        "outlet": "Consequence",
+        "url": "https://consequence.net/2014/04/album-review-john-frusciante-enclosure/"
+      },
+      {
+        "title": "Trickfinger: Letting Go",
+        "outlet": "Resident Advisor",
+        "url": "https://ra.co/features/2103"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

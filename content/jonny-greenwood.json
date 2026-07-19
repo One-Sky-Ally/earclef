@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "slug": "jonny-greenwood",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Jonny Greenwood — Ear Clef",
+    "description": "Radiohead's sonic architect and one of cinema's most restless composers — from There Will Be Blood to a shelf of Oscar nominations.",
+    "ogImage": "/images/og-jonny-greenwood.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/jonny-greenwood"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "0z9s3P5vCzKcUBSxgBDyLU"
+    },
+    "youtube": {
+      "channelId": ""
+    },
+    "setlistfm": {
+      "mbid": "e9fcfbbf-1743-4f73-8744-ada8da7394ea"
+    },
+    "itunes": {
+      "artistId": "5787786"
+    }
+  },
+  "hero": {
+    "name": "Jonny Greenwood",
+    "identity": "Guitar in one hand, orchestra in the other — the Radiohead multi-instrumentalist who became one of film's defining composers.",
+    "tagline": "Hear here!",
+    "location": "Oxford, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "x",
+        "url": "https://twitter.com/JnnyG"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/people/Jonny-Greenwood/100043982716438"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/jonny-greenwood/5787786"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://jonnygreenwood.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "There Will Be Blood",
+        "year": "2007",
+        "mbReleaseGroupId": "d9826f87-c0ff-3245-be59-503e0bf35332"
+      },
+      {
+        "title": "Phantom Thread",
+        "year": "2018",
+        "mbReleaseGroupId": "24d69ed1-96d3-488e-ab55-d6426b0620c4"
+      },
+      {
+        "title": "The Power of the Dog",
+        "year": "2021",
+        "mbReleaseGroupId": "cf532500-c666-4941-b46e-f4160d5f2633"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "bT_XjcdgT6g",
+        "title": "House of Woodcock (Phantom Thread)"
+      },
+      {
+        "youtubeId": "-a2NebxdGs4",
+        "title": "Spooks (Inherent Vice)"
+      },
+      {
+        "youtubeId": "YzhjTeSz9y4",
+        "title": "One Battle After Another"
+      },
+      {
+        "youtubeId": "BDJ9axXiHOk",
+        "title": "Battle After Battle"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Jonny Greenwood, born in 1971, is the multi-instrumentalist at the heart of Radiohead and a member of The Smile — the guitarist who is just as likely to pick up an ondes Martenot, the eerie early electronic instrument that threads through his work. But over the last two decades he has built a second career that stands entirely on its own: film composer.",
+      "It began in earnest with Paul Thomas Anderson's There Will Be Blood (2007), whose string writing — jagged, dissonant, borrowing from his concert pieces — helped redraw what a Hollywood score could sound like. The partnership with Anderson deepened across The Master, Inherent Vice, Phantom Thread, Licorice Pizza and One Battle After Another.",
+      "Beyond Anderson he scored Jane Campion's The Power of the Dog, Lynne Ramsay's You Were Never Really Here and Pablo Larraín's Spencer. The work has drawn Academy Award nominations for Best Original Score for Phantom Thread, The Power of the Dog and One Battle After Another, alongside BAFTA and Grammy nominations.",
+      "Greenwood has no artist channel of his own; his scores reach listeners through his labels, chiefly Nonesuch Records. Between films he writes for the concert hall too, in works such as Popcorn Superhet Receiver and 48 Responses to Polymorphia — a rock guitarist who kept teaching himself to be a composer, in public, one score at a time."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Solo and orchestral appearances are listed at songkick.com/artists/330185.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2014-10-10",
+        "venue": "Albert Hall",
+        "city": "Manchester, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/jonny-greenwood/2014/albert-hall-manchester-england-1bcc9d58.html",
+        "note": "Solo program with Steve Reich's Electric Counterpoint and 'Suite From There Will Be Blood'"
+      },
+      {
+        "date": "2019-10-25",
+        "venue": "Teatro dell'Aquila",
+        "city": "Fermo, Italy",
+        "setlistUrl": "https://www.setlist.fm/setlist/jonny-greenwood/2019/teatro-dellaquila-fermo-italy-4b9dcf92.html",
+        "note": "Bach, Electric Counterpoint and 'Three Miniatures From Water'"
+      },
+      {
+        "date": "2026-05-16",
+        "venue": "Concertgebouw",
+        "city": "Amsterdam, Netherlands",
+        "setlistUrl": "https://www.setlist.fm/setlist/jonny-greenwood/2026/concertgebouw-amsterdam-netherlands-3b49b494.html",
+        "note": "Orchestral program with the Radio Filharmonisch Orkest"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Jonny Greenwood's Lavish Score Emboldens the Already Brilliant Phantom Thread",
+        "outlet": "Consequence",
+        "url": "https://consequence.net/2018/02/album-review-jonny-greenwoods-lavish-score-emboldens-the-already-brilliant-phantom-thread/"
+      },
+      {
+        "title": "For Radiohead's Jonny Greenwood, there are no rules to composing for film",
+        "outlet": "NPR / YourClassical",
+        "url": "https://www.yourclassical.org/story/2022/02/07/npr-radiohead-jonny-greenwood-the-power-of-the-dog"
+      },
+      {
+        "title": "Why Jonny Greenwood Deserves to Win the Oscar for 'One Battle After Another'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-features/jonny-greenwood-one-battle-after-another-oscar-1235498554/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
