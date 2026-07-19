@@ -93,3 +93,13 @@
   color: var(--text-muted);
   font-variant-numeric: tabular-nums;
 }
+
+@media (max-width: 640px) {
+  .readout {
+    font-size: 1.45rem;
+  }
+
+  .track {
+    margin-block: 0.25rem;
+  }
+}

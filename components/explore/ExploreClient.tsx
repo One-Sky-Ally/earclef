@@ -45,6 +45,8 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
   const [focusRequest, setFocusRequest] = useState<FocusRequest | null>(null)
   const [genreData, setGenreData] = useState<GenreEmergenceData | null>(null)
   const [lens, setLens] = useState<GenreLens | null>(null)
+  // Mobile: pills live in a collapsed menu so results stay visible.
+  const [lensOpen, setLensOpen] = useState(false)
   // Deep-linked country (?c=JM), held until the globe can fly to it.
   const pendingCountry = useRef<string | null>(null)
 
@@ -150,29 +152,52 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
           onClose={() => setSelected(null)}
         />
       )}
-      <div className={styles.controls}>
+      <div
+        className={`${styles.controls} ${
+          selected ? styles.controlsBehindPanel : ''
+        }`}
+      >
         {genreData && (
-          <div className={styles.lensRow}>
+          <>
             <button
               type="button"
-              className={lens === null ? styles.lensPillActive : styles.lensPill}
-              onClick={() => setLens(null)}
+              className={styles.lensToggle}
+              onClick={() => setLensOpen((open) => !open)}
+              aria-expanded={lensOpen}
             >
-              All music
+              ♪ {lens ?? 'All music'}
+              <span aria-hidden="true"> {lensOpen ? '▾' : '▸'}</span>
             </button>
-            {Object.keys(genreData.genres).map((genre) => (
+            <div className={lensOpen ? styles.lensRowOpen : styles.lensRow}>
               <button
-                key={genre}
                 type="button"
                 className={
-                  lens === genre ? styles.lensPillActive : styles.lensPill
+                  lens === null ? styles.lensPillActive : styles.lensPill
                 }
-                onClick={() => setLens(isGenreLens(genre) ? genre : null)}
+                onClick={() => {
+                  setLens(null)
+                  setLensOpen(false)
+                }}
               >
-                {genre}
+                All music
               </button>
-            ))}
-          </div>
+              {Object.keys(genreData.genres).map((genre) => (
+                <button
+                  key={genre}
+                  type="button"
+                  className={
+                    lens === genre ? styles.lensPillActive : styles.lensPill
+                  }
+                  onClick={() => {
+                    setLens(isGenreLens(genre) ? genre : null)
+                    setLensOpen(false)
+                  }}
+                >
+                  {genre}
+                </button>
+              ))}
+            </div>
+          </>
         )}
         <YearSlider
           start={yearStart}
