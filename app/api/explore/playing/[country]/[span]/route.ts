@@ -42,10 +42,13 @@ export async function GET(
       { error: 'No snapshot yet' },
       { status: 404 },
     )
-    // Misses are cacheable too — the file only changes on deploy.
+    // Misses cache briefly only: a 404 cached mid-rollout can outlive
+    // the deploy that fixes it (seen in prod July 20, 2026 — GB/2018
+    // pinned for the full window on some CDN nodes), so a wrong "no
+    // snapshot" must age out in an hour, not a week.
     miss.headers.set(
       'Cache-Control',
-      'public, s-maxage=604800, stale-while-revalidate=86400',
+      'public, s-maxage=3600, stale-while-revalidate=3600',
     )
     return miss
   }
