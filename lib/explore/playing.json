@@ -497,6 +497,326 @@
       ],
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-20T04:12:16.000Z"
+    },
+    {
+      "country": "US",
+      "from": 2015,
+      "to": 2019,
+      "era": "Streaming takes the chart",
+      "kind": "charted",
+      "basis": "Anchored to the Billboard Hot 100 archive — the streaming-era chart, browsable week by week.",
+      "story": "By the mid-2010s the Hot 100 counted streams, and America's chart moved at internet speed. [[Mark Ronson]] and [[Bruno Mars]] opened the era with retro-funk, [[Adele]]'s Hello proved the event single still worked, [[Drake]] made streaming dominance routine, [[Luis Fonsi]] and [[Daddy Yankee]]'s Despacito held #1 for sixteen weeks — and [[Lil Nas X]]'s Old Town Road, a country-rap single born as a meme, outlasted them all with the longest #1 run in the chart's history.",
+      "items": [
+        {
+          "artist": "Mark Ronson",
+          "work": "Uptown Funk",
+          "note": "with Bruno Mars — Hot 100 #1 for 14 weeks, 2015"
+        },
+        {
+          "artist": "Adele",
+          "work": "Hello",
+          "note": "Hot 100 #1, 2015"
+        },
+        {
+          "artist": "Drake",
+          "work": "One Dance",
+          "note": "Hot 100 #1, 2016"
+        },
+        {
+          "artist": "Luis Fonsi",
+          "work": "Despacito",
+          "note": "with Daddy Yankee & Justin Bieber — Hot 100 #1 for 16 weeks, 2017"
+        },
+        {
+          "artist": "Lil Nas X",
+          "work": "Old Town Road",
+          "note": "Hot 100 #1 for a record 19 weeks, 2019"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Billboard Hot 100 archive",
+          "url": "https://www.billboard.com/charts/hot-100/"
+        },
+        {
+          "label": "Wikipedia — 2010s Hot 100 number ones",
+          "url": "https://en.wikipedia.org/wiki/List_of_Billboard_Hot_100_number-one_singles_of_the_2010s"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T05:02:21.000Z"
+    },
+    {
+      "country": "GB",
+      "from": 2015,
+      "to": 2019,
+      "era": "Streaming Britain",
+      "kind": "charted",
+      "basis": "Anchored to the Official Charts Company archive; the UK chart has counted streams alongside sales since 2014.",
+      "story": "Britain's chart started counting streams in 2014, and the late 2010s belonged to the artists who mastered the new mathematics: [[Ed Sheeran]]'s Shape of You logged fourteen weeks at #1 in 2017, [[Drake]]'s One Dance managed fifteen the year before, and [[Adele]]'s Hello proved the old-fashioned event single still worked. By decade's end, homegrown voices closed the era — [[Stormzy]] took UK rap to #1 with Vossi Bop, and [[Lewis Capaldi]]'s Someone You Loved held on for seven weeks.",
+      "items": [
+        {
+          "artist": "Mark Ronson",
+          "work": "Uptown Funk",
+          "note": "with Bruno Mars — UK #1, 2015"
+        },
+        {
+          "artist": "Adele",
+          "work": "Hello",
+          "note": "UK #1, 2015"
+        },
+        {
+          "artist": "Drake",
+          "work": "One Dance",
+          "note": "UK #1 for 15 weeks, 2016"
+        },
+        {
+          "artist": "Ed Sheeran",
+          "work": "Shape of You",
+          "note": "UK #1 for 14 weeks, 2017"
+        },
+        {
+          "artist": "Stormzy",
+          "work": "Vossi Bop",
+          "note": "UK #1, 2019"
+        },
+        {
+          "artist": "Lewis Capaldi",
+          "work": "Someone You Loved",
+          "note": "UK #1 for 7 weeks, 2019"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Official Charts archive",
+          "url": "https://www.officialcharts.com/charts/singles-chart/"
+        },
+        {
+          "label": "Wikipedia — 2010s UK number ones",
+          "url": "https://en.wikipedia.org/wiki/List_of_UK_Singles_Chart_number_ones_of_the_2010s"
+        },
+        {
+          "label": "Wikipedia — UK Singles Chart",
+          "url": "https://en.wikipedia.org/wiki/UK_Singles_Chart"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T05:02:21.000Z"
+    },
+    {
+      "country": "MX",
+      "from": 1950,
+      "to": 1959,
+      "era": "Boleros, rancheras, and the mambo craze",
+      "kind": "charted",
+      "basis": "Anchored to the reconstructed weekly charts of Selecciones Musicales magazine (sales, jukeboxes, airplay, and sheet music), aggregated by chart historian Fernando Mejía Barquera.",
+      "story": "Mexico's golden decade ran on XEW radio, and its weekly charts survive through the pages of Selecciones Musicales magazine. [[Pedro Infante]], the ranchera film idol, put Pobre corazón and Cien años at #1; [[José Alfredo Jiménez]] wrote the decade's songbook, sung by [[Jorge Negrete]] and [[Miguel Aceves Mejía]]; trios like [[Los Panchos]] made the bolero the language of romance across Latin America; and [[Pérez Prado]], Cuban-born and Mexico City-based, set the whole world dancing mambo.",
+      "items": [
+        {
+          "artist": "Pedro Infante",
+          "work": "Pobre corazón",
+          "note": "#1, 1950"
+        },
+        {
+          "artist": "José Alfredo Jiménez",
+          "work": "Ella",
+          "note": "his signature song, a top-ten staple of the early 1950s"
+        },
+        {
+          "artist": "Pérez Prado",
+          "work": "Qué rico el mambo",
+          "note": "the mambo craze goes global"
+        },
+        {
+          "artist": "Jorge Negrete",
+          "work": "El jinete",
+          "note": "a José Alfredo Jiménez ranchera"
+        },
+        {
+          "artist": "Pedro Infante",
+          "work": "Cien años",
+          "note": "#1, 1954"
+        },
+        {
+          "artist": "Lucho Gatica",
+          "work": "No me platiques más",
+          "note": "#1, 1956"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — Mexico's 1950s top-ten songs",
+          "url": "https://en.wikipedia.org/wiki/List_of_top-ten_songs_for_the_1950s_in_Mexico"
+        },
+        {
+          "label": "Wikipedia — Pedro Infante",
+          "url": "https://en.wikipedia.org/wiki/Pedro_Infante"
+        },
+        {
+          "label": "Wikipedia — José Alfredo Jiménez",
+          "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Alfredo_Jim%C3%A9nez"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T05:02:21.000Z"
+    },
+    {
+      "country": "ES",
+      "from": 1966,
+      "to": 1975,
+      "era": "Pop under Franco",
+      "kind": "charted",
+      "basis": "Anchored to the Los 40 Principales countdown — an airplay chart launched in July 1966; Spain had no official sales chart in this era. Number ones per the archived weekly lists.",
+      "story": "Late-Franco Spain had a real pop scoreboard: Los 40 Principales, the radio countdown launched in July 1966. [[Raphael]] and [[Julio Iglesias]] rose through it, [[Massiel]] won Eurovision 1968 with La, la, la — after the regime refused to let [[Joan Manuel Serrat]] sing it in Catalan — and [[Nino Bravo]] and [[Fórmula V]] owned the early-seventies summers. Beneath the countdown ran a censored counter-current: more than 4,300 songs were banned from radio and TV under Franco, while nova cançó singers like [[Raimon]] made Catalan song itself an act of defiance.",
+      "items": [
+        {
+          "artist": "Raphael",
+          "work": "Hablemos del amor",
+          "note": "Los 40 #1, 1967"
+        },
+        {
+          "artist": "Massiel",
+          "work": "La, la, la",
+          "note": "Eurovision winner and Los 40 #1, 1968"
+        },
+        {
+          "artist": "Julio Iglesias",
+          "work": "Gwendolyne",
+          "note": "Los 40 #1 for 9 weeks, 1970"
+        },
+        {
+          "artist": "Joan Manuel Serrat",
+          "work": "Mediterráneo",
+          "note": "voted among the greatest Spanish-language albums, 1971"
+        },
+        {
+          "artist": "Nino Bravo",
+          "work": "Un beso y una flor",
+          "note": "Los 40 #1, 1972"
+        },
+        {
+          "artist": "Fórmula V",
+          "work": "Eva María",
+          "note": "Los 40 #1, summer 1973"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia (es) — Los 40 number-one archives",
+          "url": "https://es.wikipedia.org/wiki/Anexo:Los_n%C3%BAmeros_uno_de_LOS40"
+        },
+        {
+          "label": "Wikipedia (es) — Spain at Eurovision 1968",
+          "url": "https://es.wikipedia.org/wiki/Espa%C3%B1a_en_el_Festival_de_la_Canci%C3%B3n_de_Eurovisi%C3%B3n_1968"
+        },
+        {
+          "label": "Wikipedia (es) — Nova cançó",
+          "url": "https://es.wikipedia.org/wiki/Nova_can%C3%A7%C3%B3"
+        },
+        {
+          "label": "elDiario.es — music censorship under Franco",
+          "url": "https://www.eldiario.es/cultura/historia/franco-pop-musica-censurada-perdimos-dictadura_1_3897554.html"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T05:02:21.000Z"
+    },
+    {
+      "country": "PE",
+      "from": 1968,
+      "to": 1977,
+      "era": "Psychedelic cumbia and the Amazon sound",
+      "kind": "documented",
+      "basis": "Peru had no national chart in this era — its industry body only began charting in the 2000s. This snapshot draws on documented scene history and the compilation scholarship (The Roots of Chicha) that later carried the music worldwide.",
+      "story": "Peru rewired cumbia through the electric guitar. In Lima, [[Los Destellos]] — founded by guitarist [[Enrique Delgado]] — cut the records that made Peruvian cumbia a genre of its own, while out of the Amazon boom towns came [[Juaneco y Su Combo]], who lost five members, including guitarist Noé Fachín, in a 1977 plane crash, and [[Los Mirlos]], whose jungle-guitar sound became a style in itself. At home this was working-class dance music, long looked down on; abroad, decades later, the 2007 Roots of Chicha compilation made it a cult sound and sent Peru back to re-hear its own past.",
+      "items": [
+        {
+          "artist": "Los Destellos",
+          "work": "Elsa",
+          "note": "1970"
+        },
+        {
+          "artist": "Los Destellos",
+          "work": "A Patricia",
+          "note": "psychedelic cumbia landmark, early 1970s"
+        },
+        {
+          "artist": "Juaneco y Su Combo",
+          "work": "Mujer Hilandera",
+          "note": "their first big hit"
+        },
+        {
+          "artist": "Los Mirlos",
+          "work": "Sonido Amazónico",
+          "note": "the track that opens The Roots of Chicha"
+        },
+        {
+          "artist": "Los Mirlos",
+          "work": "La Danza de los Mirlos",
+          "note": "Amazonian cumbia's calling card"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — Peruvian cumbia",
+          "url": "https://en.wikipedia.org/wiki/Peruvian_cumbia"
+        },
+        {
+          "label": "Barbès Records — The Roots of Chicha",
+          "url": "https://barbes.bandcamp.com/album/the-roots-of-chicha"
+        },
+        {
+          "label": "Bandcamp Daily — Chicha Forever",
+          "url": "https://daily.bandcamp.com/lists/chicha-cumbia-peru-guide"
+        },
+        {
+          "label": "Vice — Juaneco y Su Combo",
+          "url": "https://www.vice.com/es/article/juaneco-y-su-combo-reconstruyendo-la-raiz/"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T05:02:21.000Z"
+    },
+    {
+      "country": "PE",
+      "from": 1978,
+      "to": 1990,
+      "era": "Chicha — the sound of the migrant city",
+      "kind": "documented",
+      "basis": "No chart existed — chicha's dominance is documented in scene history and press: the most widespread urban music of 1980s Peru, made by and for Andean migrants in Lima.",
+      "story": "As Andean migrants filled Lima, their music fused huayno with electric cumbia into chicha — dismissed by the middle class, inescapable everywhere else. [[Chacalón]] y La Nueva Crema sang directly to the new arrivals, and Soy provinciano became their anthem; [[Los Shapis]] carried chicha to national stardom in rainbow costumes. When Chacalón died in 1994, Peruvian press counted tens of thousands at his funeral — one of the largest Lima has ever seen.",
+      "items": [
+        {
+          "artist": "Chacalón y La Nueva Crema",
+          "work": "Soy provinciano",
+          "note": "the migrant anthem, 1978"
+        },
+        {
+          "artist": "Los Shapis",
+          "work": "El Aguajal",
+          "note": "breakthrough hit, adapted from a traditional huayno, 1981"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — Chacalón",
+          "url": "https://en.wikipedia.org/wiki/Chacal%C3%B3n"
+        },
+        {
+          "label": "Wikipedia — Los Shapis",
+          "url": "https://en.wikipedia.org/wiki/Los_Shapis"
+        },
+        {
+          "label": "Bandcamp Daily — Chicha Forever",
+          "url": "https://daily.bandcamp.com/lists/chicha-cumbia-peru-guide"
+        },
+        {
+          "label": "El Comercio — Chacalón's funeral",
+          "url": "https://elcomercio.pe/mag/retro/chacalon-a-29-anos-de-su-fallecimiento-recordemos-su-multitudinario-entierro-lorenzo-palacios-musica-chicha-cumbia-nndasp-noticia/"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T05:02:21.000Z"
     }
   ]
 }
