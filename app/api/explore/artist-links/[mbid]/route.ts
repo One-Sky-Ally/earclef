@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import type { ArtistLinks } from '@/lib/explore/panelData'
 
 const USER_AGENT =
-  'EarClefExplore/0.1 (https://earclef.netlify.app; fiohmemorial@gmail.com)'
+  'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 
 // Warm-process memoization; the CDN Cache-Control header does the real work.

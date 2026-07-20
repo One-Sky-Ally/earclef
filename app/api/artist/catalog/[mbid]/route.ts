@@ -6,7 +6,7 @@ import type {
 } from '@/lib/artist/browserData'
 
 const USER_AGENT =
-  'EarClefExplore/0.1 (https://earclef.netlify.app; fiohmemorial@gmail.com)'
+  'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 const PAGE_SIZE = 100
 const MAX_ITEMS = 600

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import type { PlaceResult } from '@/lib/explore/panelData'
 
 const USER_AGENT =
-  'EarClefExplore/0.1 (https://earclef.netlify.app; fiohmemorial@gmail.com)'
+  'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 const MAX_PARENT_HOPS = 4
 
 const memo = new Map<string, PlaceResult | null>()

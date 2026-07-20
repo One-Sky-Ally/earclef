@@ -43,7 +43,7 @@ export async function GET(
       try {
         res = await fetch(
           `https://itunes.apple.com/lookup?id=${itunesId}&entity=album&limit=200&sort=recent`,
-          { headers: { 'User-Agent': 'EarClef/0.1 (https://earclef.netlify.app)' } },
+          { headers: { 'User-Agent': 'EarClef/0.1 (https://earclef.com)' } },
         )
       } catch (error) {
         if (attempt === 2) throw error

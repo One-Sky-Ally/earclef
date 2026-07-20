@@ -173,7 +173,7 @@ export default function ManifestoPage() {
               anyway.
             </p>
             <p>
-              <strong>earclef.netlify.app</strong> — come find me.
+              <strong>earclef.com</strong> — come find me.
             </p>
           </div>
         </div>

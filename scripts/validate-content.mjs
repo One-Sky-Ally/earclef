@@ -16,7 +16,7 @@ const PLATFORMS = new Set([
   'appleMusic', 'amazonMusic', 'bandcamp', 'website', 'instagram', 'x',
   'facebook', 'youtube', 'tiktok', 'dragcity', 'soundcloud',
 ])
-const UA = 'EarClefValidator/0.1 (https://earclef.netlify.app)'
+const UA = 'EarClefValidator/0.1 (https://earclef.com)'
 
 const remote = process.argv.includes('--remote')
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
@@ -35,7 +35,7 @@ function checkStructure(slug, c) {
   }
   if (issues.length) return issues
 
-  const expectedCanonical = `https://earclef.netlify.app/${slug}`
+  const expectedCanonical = `https://earclef.com/${slug}`
   if (c.meta.canonicalUrl !== expectedCanonical) {
     issues.push(`canonicalUrl ${c.meta.canonicalUrl}`)
   }

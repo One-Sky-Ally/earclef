@@ -36,7 +36,7 @@ export interface FeedSnapshot {
 
 const SNAPSHOT_KEY = 'snapshot/v1'
 const USER_AGENT =
-  'EarClefFeed/0.1 (https://earclef.netlify.app; fiohmemorial@gmail.com)'
+  'EarClefFeed/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 const VIDEOS_PER_ARTIST = 8
 const MAX_ITEMS = 600
 

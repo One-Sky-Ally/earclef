@@ -17,7 +17,7 @@ const END_YEAR = Number(process.argv[3] ?? 2026)
 const DELAY_MS = 1100
 const MAX_RETRIES = 5
 const USER_AGENT =
-  'EarClefExplore/0.1 (https://earclef.netlify.app; fiohmemorial@gmail.com)'
+  'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 
 // Natural Earth marks some territories -99; map the ones MusicBrainz knows.
 const ISO_FIXES = { France: 'FR', Norway: 'NO' }

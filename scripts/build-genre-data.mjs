@@ -17,7 +17,7 @@ import { dirname, join } from 'node:path'
 
 const OUT_PATH = join(process.cwd(), 'public', 'data', 'genre-artist-emergence.json')
 const USER_AGENT =
-  'EarClefGenrePrecompute/0.1 (https://earclef.netlify.app; fiohmemorial@gmail.com)'
+  'EarClefGenrePrecompute/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 
 const GENRES = [
   'jazz',

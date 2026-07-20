@@ -17,7 +17,7 @@ import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-const SITE = process.env.EARCLEF_SITE ?? 'https://earclef.netlify.app'
+const SITE = process.env.EARCLEF_SITE ?? 'https://earclef.com'
 const MODEL = 'claude-haiku-4-5'
 const BATCH = 10
 

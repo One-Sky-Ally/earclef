@@ -6,7 +6,7 @@
 import { readFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 
-const SITE = process.env.EARCLEF_SITE ?? 'https://earclef.netlify.app'
+const SITE = process.env.EARCLEF_SITE ?? 'https://earclef.com'
 
 function normalizedTitle(title) {
   return title

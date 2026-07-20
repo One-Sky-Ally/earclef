@@ -7,7 +7,7 @@ import type {
 } from '@/lib/explore/panelData'
 
 const USER_AGENT =
-  'EarClefExplore/0.1 (https://earclef.netlify.app; fiohmemorial@gmail.com)'
+  'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 const RELEASE_LIMIT = 30
 const ARTIST_LIMIT = 12
 /**

@@ -33,7 +33,7 @@ interface RawPick {
 
 const POOL_SIZE = 12
 const MB_USER_AGENT =
-  'EarClefDiscover/0.1 (https://earclef.netlify.app; fiohmemorial@gmail.com)'
+  'EarClefDiscover/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 
 const PICKS_SCHEMA = {
   type: 'object',
