@@ -8,3 +8,12 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# earclef.com is the primary domain (July 2026). Netlify was observed
+# serving the netlify.app subdomain as 200 duplicate content rather
+# than auto-redirecting, so the 301 is forced here.
+[[redirects]]
+  from = "https://earclef.netlify.app/*"
+  to = "https://earclef.com/:splat"
+  status = 301
+  force = true
