@@ -817,6 +817,125 @@
       ],
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-20T05:02:21.000Z"
+    },
+    {
+      "country": "CN",
+      "from": 1978,
+      "to": 1992,
+      "era": "Smuggled pop and the birth of yaogun",
+      "kind": "documented",
+      "basis": "Mainland China's record industry was a state monopoly with no sales chart to cite — this snapshot draws on documented press, scholarship, and the era's own retellings.",
+      "story": "China's reopening had a soundtrack it wasn't supposed to have: [[Teresa Teng]]'s pop from Taiwan and Hong Kong, banned in the early 1980s as 'spiritual pollution' yet everywhere on smuggled cassettes — the era's saying held that Old Deng ruled by day and Little Deng by night. Homegrown pop pushed through the same door: [[Li Guyi]]'s Xiangnian was banned, then sung on the first CCTV New Year Gala in 1983 by viewer request. And on 9 May 1986 at the Beijing Workers' Gymnasium, [[Cui Jian]] played Nothing to My Name — the moment Chinese rock, yaogun, was born. Three years later the students at Tiananmen Square made it their anthem, and Cui played for them there.",
+      "items": [
+        {
+          "artist": "Teresa Teng",
+          "work": "The Moon Represents My Heart",
+          "note": "1977 — later voted the century's top Chinese classic"
+        },
+        {
+          "artist": "Hou Dejian",
+          "work": "Descendants of the Dragon",
+          "note": "a cross-strait anthem, 1978"
+        },
+        {
+          "artist": "Li Guyi",
+          "work": "Xiangnian",
+          "note": "banned, then sung on the first CCTV gala — 1980"
+        },
+        {
+          "artist": "Cui Jian",
+          "work": "Nothing to My Name",
+          "note": "yaogun's birth cry, 1986"
+        },
+        {
+          "artist": "Cui Jian",
+          "work": "A Piece of Red Cloth",
+          "note": "performed for the students at Tiananmen Square, 1989"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — Teresa Teng",
+          "url": "https://en.wikipedia.org/wiki/Teresa_Teng"
+        },
+        {
+          "label": "SCMP — Teresa Teng's banned music",
+          "url": "https://www.scmp.com/magazines/post-magazine/short-reads/article/3083310/teresa-tengs-music-was-banned-beijing-didnt"
+        },
+        {
+          "label": "Encyclopedia of Contemporary Chinese Culture — Deng Lijun",
+          "url": "https://contemporary_chinese_culture.en-academic.com/183/Deng_Lijun"
+        },
+        {
+          "label": "Wikipedia — Nothing to My Name",
+          "url": "https://en.wikipedia.org/wiki/Nothing_to_My_Name"
+        },
+        {
+          "label": "Wikipedia — CMG Spring Festival Gala",
+          "url": "https://en.wikipedia.org/wiki/CMG_Spring_Festival_Gala"
+        },
+        {
+          "label": "Wikipedia — Descendants of the Dragon",
+          "url": "https://en.wikipedia.org/wiki/Descendants_of_the_Dragon"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T06:38:04.000Z"
+    },
+    {
+      "country": "CN",
+      "from": 1927,
+      "to": 1949,
+      "era": "Shidaiqu — Shanghai's jazz age",
+      "kind": "documented",
+      "basis": "No chart existed — this snapshot draws on documented film-and-record history and the scholarship on Shanghai's 'yellow music' era.",
+      "story": "Modern Chinese pop was born in Shanghai, where [[Li Jinhui]] fused folk melody with American jazz — his 1927 Drizzle is often called China's first pop song — and laid foundations that critics on all sides condemned as 'yellow music'. The Seven Great Singing Stars ruled the film-and-record age: [[Zhou Xuan]], the Golden Voice, sang The Wandering Songstress in 1937's Street Angel, and [[Yao Lee]]'s Rose, Rose, I Love You crossed the Pacific to become an American hit. After 1949 the Party banned pop outright as pornographic and the industry moved to Hong Kong; Li Jinhui himself was hounded to his death in the Cultural Revolution.",
+      "items": [
+        {
+          "artist": "Li Minghui",
+          "work": "Drizzle",
+          "note": "written by her father Li Jinhui — often called China's first pop song, 1927"
+        },
+        {
+          "artist": "Zhou Xuan",
+          "work": "The Wandering Songstress",
+          "note": "from the film Street Angel, 1937"
+        },
+        {
+          "artist": "Zhou Xuan",
+          "work": "When Will You Return?",
+          "note": "1937 — banned on both sides of the strait, later a Teresa Teng signature"
+        },
+        {
+          "artist": "Yao Lee",
+          "work": "Rose, Rose, I Love You",
+          "note": "1940 — a US #3 hit in Frankie Laine's 1951 cover"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — Shidaiqu",
+          "url": "https://en.wikipedia.org/wiki/Shidaiqu"
+        },
+        {
+          "label": "Sixth Tone — Li Jinhui",
+          "url": "https://www.sixthtone.com/news/1018104"
+        },
+        {
+          "label": "Wikipedia — Seven Great Singing Stars",
+          "url": "https://en.wikipedia.org/wiki/Seven_Great_Singing_Stars"
+        },
+        {
+          "label": "Wikipedia — When Will You Return?",
+          "url": "https://en.wikipedia.org/wiki/When_Will_You_Return%3F"
+        },
+        {
+          "label": "Duke University Press — Yellow Music (Andrew F. Jones)",
+          "url": "https://www.dukeupress.edu/yellow-music"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T06:38:04.000Z"
     }
   ]
 }
