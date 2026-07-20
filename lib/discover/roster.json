@@ -80,6 +80,16 @@
     "membership": false
   },
   {
+    "slug": "braids",
+    "name": "BRAIDS",
+    "identity": "Slow-building, shimmering art-pop from Montreal — loops and live drums that swell into something enormous.",
+    "tier": "in-the-mix",
+    "mbid": "c391fd22-da05-4e97-ad55-41bf91e0c1cc",
+    "channelId": "UC0eI3QLoAt9jWvJ8WmTNyzA",
+    "itunesId": "404011901",
+    "membership": false
+  },
+  {
     "slug": "burial",
     "name": "Burial",
     "identity": "Rain on a night-bus window, a voice you half-remember — dance music for the hours after the dance.",
@@ -107,6 +117,16 @@
     "mbid": "373a4c98-a46b-48e4-86ec-f6ca65b4f438",
     "channelId": "UCeXp3EC97_rUl_e2vgM3gLg",
     "itunesId": "563355119",
+    "membership": false
+  },
+  {
+    "slug": "dirty-projectors",
+    "name": "Dirty Projectors",
+    "identity": "Art-rock as a moving target — intricate guitar, gymnastic vocal harmony, and a new shape every album.",
+    "tier": "in-the-mix",
+    "mbid": "71a94ed8-03cc-459a-bd35-a081ca88a402",
+    "channelId": "UCl7tq6_e6cnyzt8eXlsH4FA",
+    "itunesId": "42056970",
     "membership": false
   },
   {
@@ -250,6 +270,16 @@
     "membership": false
   },
   {
+    "slug": "low-roar",
+    "name": "Low Roar",
+    "identity": "Glacial, aching electronic folk from Reykjavík — the sound of walking a long way home in the cold.",
+    "tier": "in-the-mix",
+    "mbid": "2921ca1d-206e-411a-8d2e-e12494dcfa9a",
+    "channelId": "UCyhqBfYUdAlECQtfmNIlbuw",
+    "itunesId": "475538413",
+    "membership": false
+  },
+  {
     "slug": "mf-doom",
     "name": "MF DOOM",
     "identity": "The man behind the metal mask — hip-hop's supervillain laureate, 1971–2020. ALL CAPS when you spell the man name.",
@@ -280,6 +310,16 @@
     "membership": false
   },
   {
+    "slug": "moses-sumney",
+    "name": "Moses Sumney",
+    "identity": "A weightless falsetto and a refusal of category — avant-soul that makes solitude sound limitless.",
+    "tier": "in-the-mix",
+    "mbid": "89c081d4-2ab2-4d3e-8589-ad77dfc40384",
+    "channelId": "UCdmO-zG8p3fN_qZDwS9_n3A",
+    "itunesId": "843536848",
+    "membership": false
+  },
+  {
     "slug": "nick-drake",
     "name": "Nick Drake",
     "identity": "A voice like evening light on an English garden — gone at 26, still arriving.",
@@ -297,6 +337,16 @@
     "mbid": "2013f3af-51a3-404d-9afc-91b3f277ea4e",
     "channelId": "UCdyPkcbix5sQsch8BBoeFBQ",
     "itunesId": "6760152",
+    "membership": false
+  },
+  {
+    "slug": "perfume-genius",
+    "name": "Perfume Genius",
+    "identity": "Piano-bench confessions that grew into towering, physical art-pop — beauty and menace in the same breath.",
+    "tier": "in-the-mix",
+    "mbid": "c4ff10e0-ae5a-467d-a409-6e0b4bf241eb",
+    "channelId": "UCbdULJagJxPyVr3mad8qUcg",
+    "itunesId": "374887266",
     "membership": false
   },
   {

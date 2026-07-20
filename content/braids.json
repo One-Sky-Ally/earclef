@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "slug": "braids",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "BRAIDS — Ear Clef",
+    "description": "Montreal's BRAIDS build shimmering, slow-building art-pop around Raphaelle Standell-Preston's voice — patient, physical, quietly ferocious.",
+    "ogImage": "/images/og-braids.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/braids"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6JX35IQ1Yw84Yjzq2Y5p5i"
+    },
+    "youtube": {
+      "channelId": "UC0eI3QLoAt9jWvJ8WmTNyzA"
+    },
+    "setlistfm": {
+      "mbid": "c391fd22-da05-4e97-ad55-41bf91e0c1cc"
+    },
+    "itunes": {
+      "artistId": "404011901"
+    }
+  },
+  "hero": {
+    "name": "BRAIDS",
+    "identity": "Slow-building, shimmering art-pop from Montreal — loops and live drums that swell into something enormous.",
+    "tagline": "Hear here!",
+    "location": "Montreal, Quebec, Canada",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://braidsmusic.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/braidsmusic/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/braidsmusic"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/braidsmusic"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/user/braidsmusic"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/braids/404011901"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://braidsmontreal.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Native Speaker",
+        "year": "2011",
+        "mbReleaseGroupId": "2c7af95e-27e2-4528-8977-ff61936d5987"
+      },
+      {
+        "title": "Deep in the Iris",
+        "year": "2015",
+        "mbReleaseGroupId": "9276c385-8965-43c7-a757-07c8adf73a0c"
+      },
+      {
+        "title": "Euphoric Recall",
+        "year": "2023",
+        "mbReleaseGroupId": "dbe545a0-7571-4b3a-8adf-8d7c01f61add"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "0knjy5l62hk",
+        "title": "Miniskirt"
+      },
+      {
+        "youtubeId": "xhRv7wmnBTA",
+        "title": "Snow Angel"
+      },
+      {
+        "youtubeId": "rjSMsYN-44s",
+        "title": "Lucky Star"
+      },
+      {
+        "youtubeId": "fu0dJ7wI-Gc",
+        "title": "Apple"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "BRAIDS grew out of a friendship: four schoolmates who started the band in Calgary in the mid-2000s and then relocated to Montreal, where they self-produced their 2011 debut Native Speaker. Built from patient loops, live drums and Raphaelle Standell-Preston's soaring, wordy vocals, it was longlisted and then shortlisted for Canada's Polaris Music Prize.",
+      "Flourish // Perish (2013) pulled the sound into cooler, more synthetic territory, and Deep in the Iris (2015) brought it back to warmth and clarity — another Polaris shortlisting for a band that kept refining rather than reinventing.",
+      "Standell-Preston has always worked in more than one place at once, also making music as half of the duo Blue Hawaii. That restlessness feeds back into BRAIDS: songs that begin as almost nothing and slowly gather into something overwhelming.",
+      "Shadow Offering (2020) and Euphoric Recall (2023) widened the palette again — bigger arrangements, sharper songwriting — while keeping the band's signature move intact: the long, deliberate build toward release."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at braidsmusic.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2023-05-30",
+        "venue": "Paradise Theatre",
+        "city": "Toronto, ON, Canada",
+        "setlistUrl": "https://www.setlist.fm/setlist/braids/2023/paradise-theatre-toronto-on-canada-7ba69e38.html",
+        "note": "Euphoric Recall tour"
+      },
+      {
+        "date": "2023-06-10",
+        "venue": "Kings Place Hall One",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/braids/2023/kings-place-hall-one-london-england-23a6ec0f.html",
+        "note": "London headline show"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Native Speaker — Vinyl",
+        "description": "The debut album on vinyl from the band's official Bandcamp.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/a3713491272_5.jpg",
+          "alt": "Native Speaker — Vinyl"
+        },
+        "url": "https://braidsmontreal.bandcamp.com/album/native-speaker"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "BRAIDS: Euphoric Recall — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/braids-euphoric-recall/"
+      },
+      {
+        "title": "BRAIDS: Shadow Offering — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/braids-shadow-offering/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

@@ -1107,6 +1107,59 @@
       "at": "2026-07-18T17:06:41.480Z"
     },
     {
+      "id": "braids-95b2fbd3",
+      "slug": "braids",
+      "artistName": "BRAIDS",
+      "type": "era",
+      "hook": "BRAIDS self-produced their debut — and it landed on the Polaris shortlist",
+      "story": "BRAIDS began as four friends in Calgary before relocating to Montreal, where they self-produced their 2011 debut Native Speaker. Built from patient loops, live drums and Raphaelle Standell-Preston's soaring vocals, the album was shortlisted for the 2011 Polaris Music Prize.",
+      "media": [
+        {
+          "label": "Miniskirt",
+          "url": "https://www.youtube.com/watch?v=0knjy5l62hk"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Braids (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Braids_(band)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T00:38:33.000Z"
+    },
+    {
+      "id": "braids-2755001e",
+      "slug": "braids",
+      "artistName": "BRAIDS",
+      "type": "collab",
+      "hook": "The voice of BRAIDS fronts a second band, too",
+      "story": "Raphaelle Standell-Preston has never worked in just one place. Alongside BRAIDS she is one half of the Montreal electronic duo Blue Hawaii, with Alex 'Agor' Kirby — a parallel project that feeds the restless, shape-shifting quality of everything she sings.",
+      "media": [
+        {
+          "label": "Snow Angel",
+          "url": "https://www.youtube.com/watch?v=xhRv7wmnBTA"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Braids (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Braids_(band)"
+        },
+        {
+          "title": "Blue Hawaii (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Blue_Hawaii_(band)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T00:38:33.000Z"
+    },
+    {
       "id": "burial-653b00ce",
       "slug": "burial",
       "artistName": "Burial",
@@ -1516,6 +1569,68 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T17:10:41.788Z"
+    },
+    {
+      "id": "dirty-projectors-d332d370",
+      "slug": "dirty-projectors",
+      "artistName": "Dirty Projectors",
+      "type": "collab",
+      "hook": "Dirty Projectors made an EP with Björk — and gave the proceeds to the ocean",
+      "story": "In 2010 Dirty Projectors and Björk released Mount Wittenberg Orca, a collaborative EP built around the band's interlocking harmonies and Björk's voice. The money raised from the self-released digital EP was donated to the National Geographic Society's Oceans Initiatives, which helps create marine protected areas.",
+      "media": [
+        {
+          "label": "Dirty Projectors + Björk — Mount Wittenberg Orca",
+          "url": "https://www.youtube.com/results?search_query=Dirty%20Projectors%20Bjork%20Mount%20Wittenberg%20Orca"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Mount Wittenberg Orca",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Mount_Wittenberg_Orca"
+        },
+        {
+          "title": "Dirty Projectors",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Dirty_Projectors"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T00:38:33.000Z"
+    },
+    {
+      "id": "dirty-projectors-d3edc907",
+      "slug": "dirty-projectors",
+      "artistName": "Dirty Projectors",
+      "type": "era",
+      "hook": "Bitte Orca braided three lead singers into one sound",
+      "story": "After Rise Above (2007) — an album of Black Flag songs re-imagined from memory — Dirty Projectors broke through with Bitte Orca in 2009. Its knotty, R&B-flecked art-rock ran on the interlocking lead vocals of Dave Longstreth, Amber Coffman and Angel Deradoorian, and drew widespread critical acclaim.",
+      "media": [
+        {
+          "label": "Stillness Is the Move",
+          "url": "https://www.youtube.com/watch?v=YMPF6lpM0XM"
+        },
+        {
+          "label": "Gun Has No Trigger",
+          "url": "https://www.youtube.com/watch?v=o_qFaFl7JVc"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Dirty Projectors",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Dirty_Projectors"
+        },
+        {
+          "title": "Bitte Orca",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Bitte_Orca"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T00:38:33.000Z"
     },
     {
       "id": "esperanza-spalding-4930df7f",
@@ -3396,6 +3511,69 @@
       "at": "2026-07-19T08:32:27.000Z"
     },
     {
+      "id": "low-roar-7c6f596e",
+      "slug": "low-roar",
+      "artistName": "Low Roar",
+      "type": "era",
+      "hook": "An American moved to Iceland and turned the loneliness into a band",
+      "story": "Ryan Karazija had fronted the Oakland indie band Audrye Sessions when he relocated to Reykjavík, Iceland — and out of that displacement founded Low Roar, whose self-titled 2011 debut turned homesickness and distance into hushed, glacial electronic folk.",
+      "media": [
+        {
+          "label": "House in the Woods",
+          "url": "https://www.youtube.com/watch?v=apyofTSQ6tY"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Ryan Karazija",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Ryan_Karazija"
+        },
+        {
+          "title": "Obituary: Death Stranding musician Ryan Karazija has passed away at 40",
+          "publisher": "Game Developer",
+          "url": "https://www.gamedeveloper.com/game-platforms/obituary-i-death-stranding-i-musician-ryan-karazija-has-passed-away-at-40"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T00:38:33.000Z"
+    },
+    {
+      "id": "low-roar-161dc9bf",
+      "slug": "low-roar",
+      "artistName": "Low Roar",
+      "type": "screen",
+      "hook": "Low Roar's songs became the emotional core of Death Stranding",
+      "story": "Low Roar's music was woven through Hideo Kojima's 2019 game Death Stranding — the track 'I'll Keep Coming' had already scored the game's first reveal trailer — and it is how the band reached a global audience. Ryan Karazija died in October 2022 at the age of 40.",
+      "media": [
+        {
+          "label": "Low Roar — I'll Keep Coming (Death Stranding)",
+          "url": "https://www.youtube.com/results?search_query=Low%20Roar%20I'll%20Keep%20Coming%20Death%20Stranding"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Ryan Karazija",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Ryan_Karazija"
+        },
+        {
+          "title": "Obituary: Death Stranding musician Ryan Karazija has passed away at 40",
+          "publisher": "Game Developer",
+          "url": "https://www.gamedeveloper.com/game-platforms/obituary-i-death-stranding-i-musician-ryan-karazija-has-passed-away-at-40"
+        },
+        {
+          "title": "Death Stranding composer Ryan Karazija dies at 40",
+          "publisher": "PC Gamer",
+          "url": "https://www.pcgamer.com/death-stranding-composer-ryan-karazija-dies-at-40/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T00:38:33.000Z"
+    },
+    {
       "id": "mf-doom-dde2f713",
       "slug": "mf-doom",
       "artistName": "MF DOOM",
@@ -3885,6 +4063,73 @@
       "at": "2026-07-18T16:18:28.421Z"
     },
     {
+      "id": "moses-sumney-52ab8d25",
+      "slug": "moses-sumney",
+      "artistName": "Moses Sumney",
+      "type": "screen",
+      "hook": "The genre-defying singer turned up acting in The Weeknd's HBO show",
+      "story": "Beyond the music, Moses Sumney has moved into screen work — in 2023 he appeared in The Idol, the HBO series co-created by The Weeknd. It is of a piece with a career that has always spilled past the edges of 'musician'.",
+      "media": [
+        {
+          "label": "Moses Sumney — The Idol",
+          "url": "https://www.youtube.com/results?search_query=Moses%20Sumney%20The%20Idol%20HBO"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Moses Sumney",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Moses_Sumney"
+        },
+        {
+          "title": "Moses Sumney",
+          "publisher": "IMDb",
+          "url": "https://www.imdb.com/name/nm6938015/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T00:38:33.000Z"
+    },
+    {
+      "id": "moses-sumney-451caff7",
+      "slug": "moses-sumney",
+      "artistName": "Moses Sumney",
+      "type": "era",
+      "hook": "Two albums, no fixed genre: Aromanticism and the two-part græ",
+      "story": "Moses Sumney's debut Aromanticism (2017), on Jagjaguwar, framed an entire record around the absence of romantic love. His second album, græ (2020), arrived in two parts — a sprawling statement about refusing to be pinned to any single category, sound or self.",
+      "media": [
+        {
+          "label": "Doomed",
+          "url": "https://www.youtube.com/watch?v=CMyRfIpNvPs"
+        },
+        {
+          "label": "Virile",
+          "url": "https://www.youtube.com/watch?v=-Cq8zRq0G9I"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Moses Sumney",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Moses_Sumney"
+        },
+        {
+          "title": "Moses Sumney: Aromanticism",
+          "publisher": "Pitchfork",
+          "url": "https://pitchfork.com/reviews/albums/moses-sumney-aromanticism/"
+        },
+        {
+          "title": "Moses Sumney: græ",
+          "publisher": "Pitchfork",
+          "url": "https://pitchfork.com/reviews/albums/moses-sumney-grae/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T00:38:33.000Z"
+    },
+    {
       "id": "nick-drake-19a3b979",
       "slug": "nick-drake",
       "artistName": "Nick Drake",
@@ -4174,6 +4419,63 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T17:23:54.616Z"
+    },
+    {
+      "id": "perfume-genius-bfd80f84",
+      "slug": "perfume-genius",
+      "artistName": "Perfume Genius",
+      "type": "era",
+      "hook": "Perfume Genius wrote an entire album as the score for a modern-dance piece",
+      "story": "Ugly Season (2022) did not begin as a set of songs. Mike Hadreas composed it as the music for choreographer Kate Wallich's contemporary-dance work 'The Sun Still Burns Here' — which is why it stands as his most abstract, largely instrumental record, closer to a suite than to pop.",
+      "media": [
+        {
+          "label": "Perfume Genius — The Sun Still Burns Here",
+          "url": "https://www.youtube.com/results?search_query=Perfume%20Genius%20Sun%20Still%20Burns%20Here%20Kate%20Wallich"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Perfume Genius",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Perfume_Genius"
+        },
+        {
+          "title": "Ugly Season",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Ugly_Season"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T00:38:33.000Z"
+    },
+    {
+      "id": "perfume-genius-f9793956",
+      "slug": "perfume-genius",
+      "artistName": "Perfume Genius",
+      "type": "era",
+      "hook": "He started with a hushed 2010 debut — and grew into towering art-pop",
+      "story": "Mike Hadreas released his first album as Perfume Genius, Learning, in 2010 — spare, quiet, piano-led songs on Matador. Over the following albums, from Too Bright to No Shape to Glory (2025), the project swelled into lush, physical art-pop without ever losing the tenderness that started it.",
+      "media": [
+        {
+          "label": "Slip Away",
+          "url": "https://www.youtube.com/watch?v=-EVhFTw4igw"
+        },
+        {
+          "label": "Queen",
+          "url": "https://www.youtube.com/watch?v=Z7OSSUwPVM4"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Perfume Genius",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Perfume_Genius"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T00:38:33.000Z"
     },
     {
       "id": "pink-floyd-9e7c5a7a",

@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "slug": "perfume-genius",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Perfume Genius — Ear Clef",
+    "description": "Mike Hadreas turned fragile piano confessions into some of the most physical, maximal art-pop of the era — tenderness with teeth.",
+    "ogImage": "/images/og-perfume-genius.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/perfume-genius"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2ueoLVCXQ948OfhVvAy3Nn"
+    },
+    "youtube": {
+      "channelId": "UCbdULJagJxPyVr3mad8qUcg"
+    },
+    "setlistfm": {
+      "mbid": "c4ff10e0-ae5a-467d-a409-6e0b4bf241eb"
+    },
+    "itunes": {
+      "artistId": "374887266"
+    }
+  },
+  "hero": {
+    "name": "Perfume Genius",
+    "identity": "Piano-bench confessions that grew into towering, physical art-pop — beauty and menace in the same breath.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://perfumegenius.org/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/perfumegenius/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/perfumegenius"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/PerfumeGenius"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@perfumegenius"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/perfume-genius/374887266"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://perfumegenius.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "No Shape",
+        "year": "2017",
+        "mbReleaseGroupId": "06e1f743-b02e-4162-a9bb-d7cdb478a308"
+      },
+      {
+        "title": "Set My Heart on Fire Immediately",
+        "year": "2020",
+        "mbReleaseGroupId": "cbf252c7-bb3f-484f-825e-fc2a42b55849"
+      },
+      {
+        "title": "Glory",
+        "year": "2025",
+        "mbReleaseGroupId": "9026098c-a577-4097-8274-944db1536d13"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "-EVhFTw4igw",
+        "title": "Slip Away"
+      },
+      {
+        "youtubeId": "ln4S83JeY2Y",
+        "title": "On the Floor"
+      },
+      {
+        "youtubeId": "vAoWMJTClqo",
+        "title": "Describe"
+      },
+      {
+        "youtubeId": "Z7OSSUwPVM4",
+        "title": "Queen"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Perfume Genius is Mike Hadreas, who introduced himself in 2010 with Learning — a debut of hushed, damaged piano songs recorded at home, so intimate they felt almost too close to hear. Almost nothing about that record predicted where he would take the project.",
+      "Album by album he grew louder and stranger without losing the tenderness: Too Bright (2014) sharpened into glam menace, and No Shape (2017) and Set My Heart on Fire Immediately (2020) built cathedral-sized art-pop around that same fragile voice — lush, physical, and unafraid of beauty.",
+      "In 2019 he worked in a new form entirely, composing the music for 'The Sun Still Burns Here', a live contemporary-dance work by choreographer Kate Wallich. The score he wrote for it grew into the abstract, largely instrumental album Ugly Season (2022).",
+      "Glory (2025) returned to songcraft with some of his warmest, most expansive writing yet. Across it all, Perfume Genius has turned private fragility into public grandeur — proof that the most delicate voice in the room can fill the largest space in it."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Perfume Genius announced a 2026 'Duo Tour' with Alan Wyffels; dates are at perfumegenius.org/tour.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-10-04",
+        "venue": "John Anson Ford Amphitheatre",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/perfume-genius/2025/john-anson-ford-amphitheatre-los-angeles-ca-43415bdb.html",
+        "note": "Hometown show on the Glory tour"
+      },
+      {
+        "date": "2025-11-11",
+        "venue": "Roundhouse",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/perfume-genius/2025/roundhouse-london-england-1359a1e1.html",
+        "note": "19-song headline set"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Ugly Season — 2LP",
+        "description": "The double-vinyl edition from the official Perfume Genius store.",
+        "image": {
+          "src": "https://perfume-genius-us.myshopify.com/cdn/shop/products/Perfume-Genius---Ugly-Season-Packshot_grande.png?v=1655301732",
+          "alt": "Ugly Season — 2LP"
+        },
+        "url": "https://perfume-genius-us.myshopify.com/products/ugly-season-2-lp"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Perfume Genius: Glory — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/perfume-genius-glory/"
+      },
+      {
+        "title": "The Story Behind Every Song On Perfume Genius' New Album Glory",
+        "outlet": "Stereogum",
+        "url": "https://stereogum.com/2301844/perfume-genius-new-album-glory/interviews/footnotes-interview"
+      },
+      {
+        "title": "Perfume Genius Announces 2026 'Duo Tour,' Releases 'Me & Angel' Video",
+        "outlet": "Consequence",
+        "url": "https://consequence.net/2025/11/perfume-genius-2026-duo-tour-dates-me-angel-video/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

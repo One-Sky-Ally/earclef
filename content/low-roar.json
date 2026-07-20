@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "slug": "low-roar",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Low Roar — Ear Clef",
+    "description": "Ryan Karazija's Reykjavík project — fragile, glacial electronic folk that became the emotional voice of Hideo Kojima's Death Stranding.",
+    "ogImage": "/images/og-low-roar.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/low-roar"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "5WoWlP0ihSFIxnppxjwSgE"
+    },
+    "youtube": {
+      "channelId": "UCyhqBfYUdAlECQtfmNIlbuw"
+    },
+    "setlistfm": {
+      "mbid": "2921ca1d-206e-411a-8d2e-e12494dcfa9a"
+    },
+    "itunes": {
+      "artistId": "475538413"
+    }
+  },
+  "hero": {
+    "name": "Low Roar",
+    "identity": "Glacial, aching electronic folk from Reykjavík — the sound of walking a long way home in the cold.",
+    "tagline": "Hear here!",
+    "location": "Reykjavík, Iceland",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.lowroarmusic.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/lowroar/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/LOWROAR"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/lowroar.music"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCyhqBfYUdAlECQtfmNIlbuw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/low-roar/475538413"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://lowroar.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Low Roar",
+        "year": "2011",
+        "mbReleaseGroupId": "7967d110-fcee-4f55-9bab-a63bd3b922ae"
+      },
+      {
+        "title": "0",
+        "year": "2014",
+        "mbReleaseGroupId": "0745b812-4e4a-458e-a0b6-1bdb8b52a5bf"
+      },
+      {
+        "title": "Once in a Long, Long While…",
+        "year": "2017",
+        "mbReleaseGroupId": "60734d05-3c1b-415a-a5df-565b2c0ba418"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "apyofTSQ6tY",
+        "title": "House in the Woods"
+      },
+      {
+        "youtubeId": "6BIUQHG59n0",
+        "title": "Field of Dreams"
+      },
+      {
+        "youtubeId": "QMjICX6690c",
+        "title": "David"
+      },
+      {
+        "youtubeId": "7xP7VruhzRM",
+        "title": "Slow Down"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Low Roar began when American musician Ryan Karazija left California and moved to Reykjavík, Iceland, around 2010. Out of that displacement came a self-titled 2011 debut of hushed, homesick electronic folk — songs built from acoustic fragments, tape hiss and slowly gathering electronics.",
+      "Across 0 (2014), Once in a Long, Long While… (2017) and ross. (2019), the project grew colder and grander without losing its intimacy: glacial, patient music that always sounded like it was recorded somewhere very quiet and very far north.",
+      "In 2019 that sound reached millions when Hideo Kojima built Low Roar into the emotional fabric of the video game Death Stranding — the track 'I'll Keep Coming' had already anchored the game's first reveal trailer, and Kojima has credited the band as central to the project's feeling.",
+      "Ryan Karazija died in October 2022 at the age of 40. The album House in the Woods, released in 2025, stands as a final chapter — a project that turned loneliness and distance into something strangely warm."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Ryan Karazija died in October 2022; there are no upcoming shows. His recorded work remains.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2013-10-31",
+        "venue": "Iceland Airwaves",
+        "city": "Reykjavík, Iceland",
+        "setlistUrl": "https://www.setlist.fm/setlist/low-roar/2013/ino-reykjavik-iceland-5bc74704.html",
+        "note": "Home-city festival set"
+      },
+      {
+        "date": "2014-02-15",
+        "venue": "Harpa",
+        "city": "Reykjavík, Iceland",
+        "setlistUrl": "https://www.setlist.fm/setlist/low-roar/2014/harpa-reykjavik-iceland-73f32ee9.html",
+        "note": "Sónar Reykjavík 2014"
+      },
+      {
+        "date": "2022-07-21",
+        "venue": "Warsaw",
+        "city": "Warsaw, Poland",
+        "setlistUrl": "https://www.setlist.fm/setlist/low-roar/2022/private-venue-warsaw-poland-5bbb4b48.html",
+        "note": "Among the band's final performances"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "House in the Woods — Forest Green Vinyl",
+        "description": "The final album on colored vinyl from Low Roar's official store.",
+        "image": {
+          "src": "https://shop.bandwear.com/cdn/shop/files/HITW_3_larger_grande.jpg?v=1778268015",
+          "alt": "House in the Woods — Forest Green Vinyl"
+        },
+        "url": "https://shop.bandwear.com/products/lwr057"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Obituary: Death Stranding musician Ryan Karazija has passed away at 40",
+        "outlet": "Game Developer",
+        "url": "https://www.gamedeveloper.com/game-platforms/obituary-i-death-stranding-i-musician-ryan-karazija-has-passed-away-at-40"
+      },
+      {
+        "title": "Death Stranding composer Ryan Karazija dies at 40",
+        "outlet": "PC Gamer",
+        "url": "https://www.pcgamer.com/death-stranding-composer-ryan-karazija-dies-at-40/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

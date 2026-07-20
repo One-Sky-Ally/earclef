@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "slug": "dirty-projectors",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Dirty Projectors — Ear Clef",
+    "description": "Dave Longstreth's ever-mutating art-rock — knotty guitar, spiraling harmonies, and a refusal to make the same record twice.",
+    "ogImage": "/images/og-dirty-projectors.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/dirty-projectors"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "5VF0YkVLeVD4ytyiyVSIiF"
+    },
+    "youtube": {
+      "channelId": "UCl7tq6_e6cnyzt8eXlsH4FA"
+    },
+    "setlistfm": {
+      "mbid": "71a94ed8-03cc-459a-bd35-a081ca88a402"
+    },
+    "itunes": {
+      "artistId": "42056970"
+    }
+  },
+  "hero": {
+    "name": "Dirty Projectors",
+    "identity": "Art-rock as a moving target — intricate guitar, gymnastic vocal harmony, and a new shape every album.",
+    "tagline": "Hear here!",
+    "location": "New York, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.dirtyprojectors.net/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/DirtyProjectors"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/dirtyprojectors"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCl7tq6_e6cnyzt8eXlsH4FA"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/dirty-projectors/42056970"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://dirtyprojectors.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Bitte Orca",
+        "year": "2009",
+        "mbReleaseGroupId": "3e7bd1f6-f27d-3514-bb34-955d00eb6533"
+      },
+      {
+        "title": "Swing Lo Magellan",
+        "year": "2012",
+        "mbReleaseGroupId": "3ca01a97-80ee-40f5-8934-3ead90095f33"
+      },
+      {
+        "title": "Lamp Lit Prose",
+        "year": "2018",
+        "mbReleaseGroupId": "2e4747fc-d869-4f7e-92cf-ec8b8f494635"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "YMPF6lpM0XM",
+        "title": "Stillness Is the Move"
+      },
+      {
+        "youtubeId": "o_qFaFl7JVc",
+        "title": "Gun Has No Trigger"
+      },
+      {
+        "youtubeId": "CYq5Ch-FFcs",
+        "title": "Break-Thru"
+      },
+      {
+        "youtubeId": "Ckp0Rlhka_o",
+        "title": "Up in Hudson"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Dirty Projectors is the vehicle of composer and guitarist Dave Longstreth, a band that has treated every album as a chance to start over. The early records were conceptual to the point of stubbornness, but Bitte Orca (2009) was the breakthrough — knotty rhythms, R&B-flecked pop hooks and the interlocking soprano harmonies of Amber Coffman, Angel Deradoorian and Haley Dekle.",
+      "In 2010 the band recorded Mount Wittenberg Orca with Björk, a collaborative EP whose proceeds went to ocean conservation. Swing Lo Magellan (2012) then pulled toward something looser and more handmade, songs that sounded caught in the act of being written.",
+      "The 2017 self-titled album marked a hard reset: made largely alone by Longstreth after his split with Coffman — both his bandmate and his partner — it was the sound of a group dismantling and rebuilding around a single voice.",
+      "From Lamp Lit Prose (2018) onward the harmonies and collaborators returned, and the band kept moving. What holds across two decades is the through-line of Longstreth's writing: rigorous, restless, and constitutionally unable to repeat itself."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are posted at dirtyprojectors.net/concerts.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-09-18",
+        "venue": "Muziekgebouw aan 't IJ",
+        "city": "Amsterdam, Netherlands",
+        "setlistUrl": "https://www.setlist.fm/setlist/dirty-projectors/2024/muziekgebouw-aan-t-ij-amsterdam-netherlands-7b53dea0.html",
+        "note": "European concert-hall date"
+      },
+      {
+        "date": "2026-04-30",
+        "venue": "Public Records",
+        "city": "Brooklyn, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/dirty-projectors/2026/public-records-brooklyn-ny-4b74938e.html",
+        "note": "Two-night Brooklyn stand"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Song of the Earth",
+        "description": "The band's 2025 album on vinyl and more from their official Bandcamp.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/a2804385559_5.jpg",
+          "alt": "Song of the Earth"
+        },
+        "url": "https://dirtyprojectors.bandcamp.com/album/song-of-the-earth"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Dirty Projectors: Lamp Lit Prose — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/dirty-projectors-lamp-lit-prose/"
+      },
+      {
+        "title": "Dirty Projectors' Self-Titled Album, Reviewed",
+        "outlet": "Slate",
+        "url": "https://slate.com/culture/2017/02/dirty-projectors-self-titled-new-album-reviewed.html"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

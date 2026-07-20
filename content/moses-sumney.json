@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "slug": "moses-sumney",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Moses Sumney — Ear Clef",
+    "description": "A voice with no fixed genre — Moses Sumney's weightless falsetto and avant-soul songcraft turn solitude into something vast.",
+    "ogImage": "/images/og-moses-sumney.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/moses-sumney"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "5W10uJRsbt9bROJDKoI1Wn"
+    },
+    "youtube": {
+      "channelId": "UCdmO-zG8p3fN_qZDwS9_n3A"
+    },
+    "setlistfm": {
+      "mbid": "89c081d4-2ab2-4d3e-8589-ad77dfc40384"
+    },
+    "itunes": {
+      "artistId": "843536848"
+    }
+  },
+  "hero": {
+    "name": "Moses Sumney",
+    "identity": "A weightless falsetto and a refusal of category — avant-soul that makes solitude sound limitless.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://mosessumney.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/moses/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/MosesSumney"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/mosessumney"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/user/mosessumney"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/moses-sumney/843536848"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://mosessumney.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Aromanticism",
+        "year": "2017",
+        "mbReleaseGroupId": "d4f0da2e-2c29-4364-af7b-500eec2270dc"
+      },
+      {
+        "title": "græ",
+        "year": "2020",
+        "mbReleaseGroupId": "1c50740c-1acb-4bd8-bf54-fc6a6dc859cb"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "CMyRfIpNvPs",
+        "title": "Doomed"
+      },
+      {
+        "youtubeId": "9GeAoj-nxLk",
+        "title": "Cut Me"
+      },
+      {
+        "youtubeId": "-Cq8zRq0G9I",
+        "title": "Virile"
+      },
+      {
+        "youtubeId": "IN2YrKRzRjw",
+        "title": "Quarrel"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Moses Sumney was born in California to Ghanaian parents and spent part of his childhood in Accra before returning to Southern California as a teenager — a between-worlds upbringing that shows up in music that refuses to sit in one place. His voice, a weightless multi-tracked falsetto, is the instrument everything else orbits.",
+      "His 2017 debut Aromanticism, on Jagjaguwar, built an entire album around the idea of lovelessness — not heartbreak but the absence of romantic love as a subject worth taking seriously. It established him as an artist working somewhere between soul, folk, jazz and the avant-garde without committing to any of them.",
+      "græ (2020) went bigger and stranger: a double album, released in two parts, about the refusal to be defined — by genre, gender, or category of any kind. Interludes, spoken word and orchestral swells surrounded songs like 'Cut Me' and 'Virile'.",
+      "Sumney has since widened into performance and screen work, including an acting role in the HBO series The Idol (2023), and has lent his voice to work by artists from Sufjan Stevens to Solange. The constant is that voice — and a career built on staying uncategorizable."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates appear at mosessumney.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2022-03-30",
+        "venue": "Brooklyn Academy of Music",
+        "city": "Brooklyn, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/moses-sumney/2022/brooklyn-academy-of-music-brooklyn-ny-1bb6b9d4.html",
+        "note": "Full-production show at BAM"
+      },
+      {
+        "date": "2024-10-15",
+        "venue": "EartH",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/moses-sumney/2024/earth-hackney-england-6b50222a.html",
+        "note": "Hackney headline show"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "græ",
+        "description": "The double album on vinyl and more from Moses Sumney's official Bandcamp.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/a2251086377_5.jpg",
+          "alt": "græ"
+        },
+        "url": "https://mosessumney.bandcamp.com/album/gr-2"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Moses Sumney: Aromanticism — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/moses-sumney-aromanticism/"
+      },
+      {
+        "title": "Moses Sumney: græ — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/moses-sumney-grae/"
+      },
+      {
+        "title": "Moses Sumney's græ is a Sophomore Triumph",
+        "outlet": "Atwood Magazine",
+        "url": "https://atwoodmagazine.com/msgr-moses-sumney-grae-album-review/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
