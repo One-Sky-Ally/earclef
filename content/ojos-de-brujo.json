@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "slug": "ojos-de-brujo",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Ojos de Brujo — Ear Clef",
+    "description": "Barcelona's flamenco-hip-hop collective — rumba catalana wired through turntables, self-released on their own label, and gone too soon.",
+    "ogImage": "/images/og-ojos-de-brujo.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/ojos-de-brujo"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6iKnagOuTEr3kLRAJlXRjq"
+    },
+    "youtube": {
+      "channelId": "UCJkO_DGRZiFcKx8oW8OmIpw"
+    },
+    "setlistfm": {
+      "mbid": "ab1b3f93-99ba-4a5b-868f-e412ab0a57fb"
+    },
+    "itunes": {
+      "artistId": "2901257"
+    }
+  },
+  "hero": {
+    "name": "Ojos de Brujo",
+    "identity": "Flamenco palmas over scratched vinyl — a Barcelona collective that wired rumba catalana into hip-hop and kept the copyright for themselves.",
+    "tagline": "Hear here!",
+    "location": "Barcelona, Spain",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.ojosdebrujo.com/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@ojosdebrujo"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/ojos-de-brujo/2901257"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Barí",
+        "year": "2002",
+        "mbReleaseGroupId": "d919798b-5049-39fe-a65e-270283e957ff"
+      },
+      {
+        "title": "Techarí",
+        "year": "2006",
+        "mbReleaseGroupId": "43b664f1-e27a-3cc0-a9d6-cbbc51c9a36e"
+      },
+      {
+        "title": "Aocaná",
+        "year": "2009",
+        "mbReleaseGroupId": "7af17197-b8f8-38e9-8c84-68bbbab927b7"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "35jswgBc0lY",
+        "title": "Corriente vital"
+      },
+      {
+        "youtubeId": "GRKftchBk8E",
+        "title": "Nueva vida"
+      },
+      {
+        "youtubeId": "ug-RzrSytDM",
+        "title": "Todos mortales"
+      },
+      {
+        "youtubeId": "WK2amWu5FGw",
+        "title": "Rumba del adios"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Ojos de Brujo — 'eyes of the sorcerer' — grew out of Barcelona's late-'90s street-jam scene: a collective, not a band, mixing flamenco and rumba catalana with hip-hop turntablism and electronics. They called the blend 'jipjop flamenkillo', and nobody else sounded like it.",
+      "After friction with the industry over their debut Vengue, they founded their own label, La Fábrica de Colores, and self-released Barí (2002) — which went on to sell over 100,000 copies with no major behind it. The follow-up Techarí (2006) won the Latin Grammy for Best Flamenco Album in 2007, and the collective took the Europe prize at the BBC Radio 3 Awards for World Music in 2004.",
+      "Aocaná (2009) and the ten-year celebration Corriente Vital (2010) closed the arc; the group announced its farewell in 2011 and played its last regular shows in 2012. Members carried the fire onward — vocalist Marina 'Marinah' Abad solo, others in La Nave Bruja and Lenacay.",
+      "Their catalog remains a blueprint for what city flamenco could be: proudly Catalan, globally wired, and owned by the people who made it."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Ojos de Brujo said farewell in the early 2010s; there are no upcoming shows. Their recorded catalog remains.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2011-12-11",
+        "venue": "Paradiso",
+        "city": "Amsterdam, Netherlands",
+        "setlistUrl": "https://www.setlist.fm/setlist/ojos-de-brujo/2011/paradiso-grote-zaal-amsterdam-netherlands-3392a049.html",
+        "note": "From the farewell era"
+      },
+      {
+        "date": "2012-07-10",
+        "venue": "Plaza de los Fueros",
+        "city": "Pamplona, Spain",
+        "setlistUrl": "https://www.setlist.fm/setlist/ojos-de-brujo/2012/plaza-de-los-fueros-pamplona-spain-1b9e95c4.html",
+        "note": "San Fermín festival, among their final shows"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Ojos de Brujo: Techarí — Review",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2006/mar/17/worldmusic.shopping"
+      },
+      {
+        "title": "Ojos de Brujo: Setting Sights on America",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2007/06/22/11277645/ojos-de-brujo-setting-sights-on-america"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

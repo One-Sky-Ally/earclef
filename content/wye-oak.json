@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "slug": "wye-oak",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Wye Oak — Ear Clef",
+    "description": "Baltimore's two-person storm — Jenn Wasner's voice and guitar over Andy Stack's one-man rhythm section, reinventing themselves album by album.",
+    "ogImage": "/images/og-wye-oak.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/wye-oak"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "5SjNVG3L9mgWQPsfp1sFDB"
+    },
+    "youtube": {
+      "channelId": "UC7EnxwiT0NeM83IAlSXJRgw"
+    },
+    "setlistfm": {
+      "mbid": "3c8ff4c9-b5b9-4e78-ad9d-5157c323de24"
+    },
+    "itunes": {
+      "artistId": "276566673"
+    }
+  },
+  "hero": {
+    "name": "Wye Oak",
+    "identity": "Two people, a wall of sound — smoky indie rock that keeps shedding its skin.",
+    "tagline": "Hear here!",
+    "location": "Baltimore, Maryland, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.wyeoakmusic.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/wyeoakmusic/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/wyeoak"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/wyeoak"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC7EnxwiT0NeM83IAlSXJRgw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/wye-oak/276566673"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://wyeoak.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Civilian",
+        "year": "2011",
+        "mbReleaseGroupId": "6ac512b1-60b5-4c7b-a923-f2699cb3addc"
+      },
+      {
+        "title": "Shriek",
+        "year": "2014",
+        "mbReleaseGroupId": "9671bae9-68e1-4e63-9efd-736d69bf319d"
+      },
+      {
+        "title": "The Louder I Call, the Faster It Runs",
+        "year": "2018",
+        "mbReleaseGroupId": "e0663598-ce07-4287-9324-87220341b2fa"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "NU-BcwG8dfM",
+        "title": "Civilian"
+      },
+      {
+        "youtubeId": "rmjMFPSLXI4",
+        "title": "Holy Holy"
+      },
+      {
+        "youtubeId": "tMOcpGKTh84",
+        "title": "Glory"
+      },
+      {
+        "youtubeId": "sOiuE8Fn-Ro",
+        "title": "The Louder I Call, the Faster It Runs"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Wye Oak is Jenn Wasner and Andy Stack of Baltimore, named after Maryland's former state tree. Live, they are a magic trick: Wasner sings and plays guitar while Stack plays drums with his feet and right hand and bass lines with his left — two people producing a band's worth of sound with nothing hidden.",
+      "Civilian (2011), on Merge Records, was the breakthrough — smoky, surging indie rock whose title track traveled far beyond the album, appearing in The Walking Dead. Then, instead of repeating the formula, Shriek (2014) removed the guitar entirely and rebuilt the band around bass and synthesizers.",
+      "The Louder I Call, the Faster It Runs (2018) folded both identities together, and the compilation Every Day Like the Last (2023) gathered the singles that followed. The pattern is the point: every era of Wye Oak sounds like a band unwilling to coast.",
+      "Both halves stay busy beyond the duo — Wasner records as Flock of Dimes and joined Bon Iver's touring band as a guitarist in 2019 — and Wye Oak remains the home they keep returning to."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates appear at wyeoakmusic.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2020-03-01",
+        "venue": "2640 Space",
+        "city": "Baltimore, MD, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/wye-oak/2020/2640-space-baltimore-md-4399a347.html",
+        "note": "Hometown Baltimore show"
+      },
+      {
+        "date": "2024-07-26",
+        "venue": "Cat's Cradle",
+        "city": "Carrboro, NC, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/wye-oak/2024/cats-cradle-carrboro-nc-bab2dda.html",
+        "note": "Merge Records' 35th-anniversary festival"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Every Day Like the Last",
+        "description": "The singles collection on vinyl from Wye Oak's official Bandcamp.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/a2695259553_5.jpg",
+          "alt": "Every Day Like the Last"
+        },
+        "url": "https://wyeoak.bandcamp.com/album/every-day-like-the-last"
+      },
+      {
+        "name": "Shriek",
+        "description": "The guitar-less reinvention, on vinyl and digital.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/a3187686797_5.jpg",
+          "alt": "Shriek"
+        },
+        "url": "https://wyeoak.bandcamp.com/album/shriek"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Wye Oak: Every Day Like the Last — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/wye-oak-every-day-like-the-last/"
+      },
+      {
+        "title": "Flock of Dimes: Tiny Desk (Home) Concert",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2021/08/10/1021264105/flock-of-dimes-tiny-desk-home-concert"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

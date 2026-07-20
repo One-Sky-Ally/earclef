@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "slug": "badbadnotgood",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "BADBADNOTGOOD — Ear Clef",
+    "description": "The Toronto jazz kids who covered hip-hop until the rappers came to them — now one of the great live instrumental bands of their era.",
+    "ogImage": "/images/og-badbadnotgood.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/badbadnotgood"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "65dGLGjkw3UbddUg2GKQoZ"
+    },
+    "youtube": {
+      "channelId": "UCoYAFe4DypQIUqMd1YynPVg"
+    },
+    "setlistfm": {
+      "mbid": "754294d5-d7d2-4ea2-8184-1dcaaf55a56f"
+    },
+    "itunes": {
+      "artistId": "505464105"
+    }
+  },
+  "hero": {
+    "name": "BADBADNOTGOOD",
+    "identity": "Jazz chops, hip-hop instincts — a rhythm section that turned crate-digger taste into a live force.",
+    "tagline": "Hear here!",
+    "location": "Toronto, Ontario, Canada",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://badbadnotgood.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/badbadnotgood/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/badbadnotgood"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/badbadnotgood"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@BADBADNOTGOOD"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/badbadnotgood/505464105"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://badbadnotgoodofficial.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "III",
+        "year": "2014",
+        "mbReleaseGroupId": "5bc3a657-dbb0-46ce-a3aa-afbd5fd9b402"
+      },
+      {
+        "title": "IV",
+        "year": "2016",
+        "mbReleaseGroupId": "16297acb-896e-48e4-8390-f9ca95c4f0d9"
+      },
+      {
+        "title": "Talk Memory",
+        "year": "2021",
+        "mbReleaseGroupId": "441eca34-2e70-4ecb-8b07-da009aa1680f"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "2AJOqx6_UKQ",
+        "title": "Lavender (feat. KAYTRANADA)"
+      },
+      {
+        "youtubeId": "GpSWv71IsVw",
+        "title": "Time Moves Slow (feat. Samuel T. Herring)"
+      },
+      {
+        "youtubeId": "-PCauQozne0",
+        "title": "In Your Eyes (feat. Charlotte Day Wilson)"
+      },
+      {
+        "youtubeId": "ov1DNwDk6Qs",
+        "title": "Talk Meaning"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "BADBADNOTGOOD formed in 2010 when Chester Hansen, Matthew Tavares and Alexander Sowinski met in the jazz program at Toronto's Humber College — and promptly used their training on the wrong repertoire. Their jazz reworkings of hip-hop tracks, including Odd Future material, went viral on YouTube, and a basement session with Tyler, the Creator pulled them into the orbit of the artists they'd been covering.",
+      "Saxophonist Leland Whitty grew from collaborator into full member, and the band's own records — III (2014), IV (2016) — turned heads for original writing that kept the crate-digger warmth: analog, patient, groove-first. In 2015 they made a full album with Ghostface Killah, Sour Soul.",
+      "Their collaborator list reads like a map of modern music: Kaytranada on 'Lavender', Charlotte Day Wilson on 'In Your Eyes', Samuel T. Herring of Future Islands on 'Time Moves Slow', and string arrangements from Brazilian legend Arthur Verocai on Talk Memory (2021).",
+      "Mid Spiral (2024) arrived as a triple-EP cycle, and the band remains above all a live proposition — a working rhythm section that treats the festival stage like a jazz club and gets away with it."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are listed at badbadnotgood.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-06-19",
+        "venue": "Confederation Park",
+        "city": "Ottawa, ON, Canada",
+        "setlistUrl": "https://www.setlist.fm/setlist/badbadnotgood/2026/main-stage-confederation-park-ottawa-on-canada-6374d28f.html",
+        "note": "Ottawa Jazz Festival 2026 main stage"
+      },
+      {
+        "date": "2026-07-21",
+        "venue": "VAS est",
+        "city": "Shanghai, China",
+        "setlistUrl": "https://www.setlist.fm/setlist/badbadnotgood/2026/vas-est-shanghai-china-1b72c9d4.html",
+        "note": "From their 2026 Asia run"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "IV Tee",
+        "description": "The IV album shirt from the band's official Bandcamp merch store.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/0007955450_36.jpg",
+          "alt": "IV Tee"
+        },
+        "url": "https://badbadnotgoodofficial.bandcamp.com/merch/iv-tee"
+      },
+      {
+        "name": "Talk Memory VHS",
+        "description": "A limited VHS edition of Talk Memory visuals.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/0026637133_36.jpg",
+          "alt": "Talk Memory VHS"
+        },
+        "url": "https://badbadnotgoodofficial.bandcamp.com/merch/talk-memory-vhs"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "BADBADNOTGOOD: Talk Memory — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/badbadnotgood-talk-memory/"
+      },
+      {
+        "title": "Ghostface Killah & BADBADNOTGOOD: Sour Soul — Review",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2015/feb/22/ghostface-killah-badbadnotgood-sour-soul-review-versatile-hip-hop"
+      },
+      {
+        "title": "BADBADNOTGOOD: jazz improv meets hip-hop",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2016/jul/05/canadian-band-badbadnotgood-jazz-improv-meets-hiphop"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

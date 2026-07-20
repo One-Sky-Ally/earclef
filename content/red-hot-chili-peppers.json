@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "slug": "red-hot-chili-peppers",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Red Hot Chili Peppers — Ear Clef",
+    "description": "Four decades of funk-rock from Fairfax High to stadiums everywhere — the band that turned rhythm-section chemistry into one of rock's longest runs.",
+    "ogImage": "/images/og-red-hot-chili-peppers.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/red-hot-chili-peppers"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "0L8ExT028jH3ddEcZwqJJ5"
+    },
+    "youtube": {
+      "channelId": "UCEuOwB9vSL1oPKGNdONB4ig"
+    },
+    "setlistfm": {
+      "mbid": "8bfac288-ccc5-448d-9573-c33ea2aa5c30"
+    },
+    "itunes": {
+      "artistId": "889780"
+    }
+  },
+  "hero": {
+    "name": "Red Hot Chili Peppers",
+    "identity": "Funk-rock's longest conversation — bass, drums, guitar and a frontman locked in for four decades.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://redhotchilipeppers.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/chilipeppers/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/chilipeppers"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/ChiliPeppers"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCEuOwB9vSL1oPKGNdONB4ig"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/red-hot-chili-peppers/889780"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B001E79NGK"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Blood Sugar Sex Magik",
+        "year": "1991",
+        "mbReleaseGroupId": "68bee70d-b425-3813-aca7-dd7b912c3d11"
+      },
+      {
+        "title": "Californication",
+        "year": "1999",
+        "mbReleaseGroupId": "ca5dfcc3-83fb-3eee-9061-c27296b77b2c"
+      },
+      {
+        "title": "Stadium Arcadium",
+        "year": "2006",
+        "mbReleaseGroupId": "19181d75-deda-366e-ace5-622293be9ef0"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "GLvohMXgcBo",
+        "title": "Under the Bridge"
+      },
+      {
+        "youtubeId": "YlUKcNNmywk",
+        "title": "Californication"
+      },
+      {
+        "youtubeId": "mzJj5-lubeM",
+        "title": "Scar Tissue"
+      },
+      {
+        "youtubeId": "OS8taasZl8k",
+        "title": "Black Summer"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Red Hot Chili Peppers began as Fairfax High classmates in early-'80s Los Angeles — Anthony Kiedis, Flea, Hillel Slovak and Jack Irons — playing a hyperactive fusion of funk and punk that no one else was playing. The lineup weathered real loss and real change, and the chemistry at its center never dissolved.",
+      "Blood Sugar Sex Magik (1991), produced by Rick Rubin in a Hollywood mansion, turned them from cult heroes into one of the biggest bands alive — 'Under the Bridge' and 'Give It Away' both live there, and 'Give It Away' won the band a Grammy for Best Hard Rock Performance. With John Frusciante's return, Californication (1999) and By the Way (2002) built the band's second imperial era.",
+      "Stadium Arcadium (2006) — a 28-song double album — became their first record to debut at No. 1 on the Billboard 200 and won the Grammy for Best Rock Album. In 2012 the band was inducted into the Rock and Roll Hall of Fame, with inducted members spanning every era of the lineup.",
+      "Frusciante rejoined again in 2019, and Unlimited Love and Return of the Dream Canteen both arrived in 2022. Two of the four chairs on this roster already belong to their members — Flea and John Frusciante each have their own Ear Clef page — which tells you something about how much music this one band contains."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at redhotchilipeppers.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2003-08-23",
+        "venue": "Slane Castle",
+        "city": "Slane, Ireland",
+        "setlistUrl": "https://www.setlist.fm/setlist/red-hot-chili-peppers/2003/slane-castle-slane-ireland-4bd677a2.html",
+        "note": "The show released as Live at Slane Castle"
+      },
+      {
+        "date": "2025-01-30",
+        "venue": "Kia Forum",
+        "city": "Inglewood, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/red-hot-chili-peppers/2025/kia-forum-inglewood-ca-usa-635dca27.html",
+        "note": "FireAid benefit for LA wildfire relief"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Mugshot Tee",
+        "description": "From the band's official store at shop.redhotchilipeppers.com.",
+        "image": {
+          "src": "https://shop.redhotchilipeppers.com/cdn/shop/files/RHCP_31_9b38734f-c73b-487c-aa61-7a73b75d51ca.jpg?v=1770068391",
+          "alt": "Mugshot Tee"
+        },
+        "url": "https://shop.redhotchilipeppers.com/products/mugshot-tee"
+      },
+      {
+        "name": "Classic Logo Dream Canteen Tee",
+        "description": "The asterisk logo in rainbow, Return of the Dream Canteen era.",
+        "image": {
+          "src": "https://shop.redhotchilipeppers.com/cdn/shop/files/REDHOTCHILIPEPPERS_17.jpg?v=1716759167",
+          "alt": "Classic Logo Dream Canteen Tee"
+        },
+        "url": "https://shop.redhotchilipeppers.com/products/classic-logo-dream-canteen-tee-rainbow"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Red Hot Chili Peppers — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/red-hot-chili-peppers/16367"
+      },
+      {
+        "title": "Red Hot Chili Peppers — Rock & Roll Hall of Fame",
+        "outlet": "Rock Hall",
+        "url": "https://www.rockhall.com/inductees/red-hot-chili-peppers/"
+      },
+      {
+        "title": "Rock and Roll Hall of Fame induction ceremony report",
+        "outlet": "CNN",
+        "url": "https://www.cnn.com/2012/04/16/showbiz/music/rock-roll-hall-fame-induction-rs/index.html"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

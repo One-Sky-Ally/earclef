@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "slug": "jeff-buckley",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Jeff Buckley — Ear Clef",
+    "description": "One finished album, an endless echo — Grace, the Sin-é residency, and the voice that made 'Hallelujah' eternal.",
+    "ogImage": "/images/og-jeff-buckley.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/jeff-buckley"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "3nnQpaTvKb5jCQabZefACI"
+    },
+    "youtube": {
+      "channelId": "UCK5ogJnijds9TBP8lcKo6iA"
+    },
+    "setlistfm": {
+      "mbid": "e6e879c0-3d56-4f12-b3c5-3ce459661a8e"
+    },
+    "itunes": {
+      "artistId": "872190"
+    }
+  },
+  "hero": {
+    "name": "Jeff Buckley",
+    "identity": "A four-octave ache — one finished album and a voice that keeps outliving everything around it.",
+    "tagline": "Hear here!",
+    "location": "Memphis, Tennessee, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://jeffbuckley.com/"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/JeffBuckley"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCK5ogJnijds9TBP8lcKo6iA"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/jeff-buckley/872190"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Grace",
+        "year": "1994",
+        "mbReleaseGroupId": "ea29c347-696f-3165-986d-7bad1394b178"
+      },
+      {
+        "title": "Sketches for My Sweetheart the Drunk",
+        "year": "1998",
+        "mbReleaseGroupId": "98dd8826-eae5-3700-957e-397bd0cf82d4"
+      },
+      {
+        "title": "Live at Sin-É",
+        "year": "2003",
+        "mbReleaseGroupId": "a65d62a6-fe2c-3a2e-8c1a-98081d7c7e15"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "y8AWFf7EAc4",
+        "title": "Hallelujah (Live at Bearsville)"
+      },
+      {
+        "youtubeId": "3MMXjunSx80",
+        "title": "Last Goodbye"
+      },
+      {
+        "youtubeId": "A3adFWKE9JE",
+        "title": "Grace"
+      },
+      {
+        "youtubeId": "EcaxrqhUJ4c",
+        "title": "So Real"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Jeff Buckley arrived in New York with a borrowed guitar and a voice nobody could file away — a soaring, grief-lit instrument he sharpened through a legendary 1993 residency at Sin-é, a tiny East Village café where he played covers and fragments for whoever showed up. Columbia signed him out of that room.",
+      "Grace (1994) was the only studio album he completed: ten songs of cathedral rock, torch balladry and his reading of Leonard Cohen's 'Hallelujah', drawn from John Cale's arrangement. It sold modestly at first and then never stopped growing — Rolling Stone's 500 Greatest Albums list moved it from No. 303 in 2003 to No. 147 in its 2020 revision.",
+      "He drowned in Memphis's Wolf River Harbor on May 29, 1997, at 30, while working toward a second album; the sessions surfaced posthumously as Sketches for My Sweetheart the Drunk (1998). In 2008, after a televised performance revived the song, his 'Hallelujah' reached No. 1 on Billboard's Digital Songs chart — his first American No. 1, eleven years after his death. The recording was added to the Library of Congress's National Recording Registry in 2014.",
+      "Son of the folk singer Tim Buckley, whom he barely knew, Jeff Buckley left one of music's most complete small catalogs: every note of it is still in circulation, still finding first-time listeners, still doing what that voice did."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Jeff Buckley died on May 29, 1997. The archive of his performances remains below.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1993-07-19",
+        "venue": "Sin-é",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/jeff-buckley/1993/sin-e-new-york-ny-43dd8b67.html",
+        "note": "From the café residency that became Live at Sin-É"
+      },
+      {
+        "date": "1995-07-06",
+        "venue": "L'Olympia Bruno Coquatrix",
+        "city": "Paris, France",
+        "setlistUrl": "https://www.setlist.fm/setlist/jeff-buckley/1995/lolympia-bruno-coquatrix-paris-france-3d101db.html",
+        "note": "Released as Live à L'Olympia"
+      },
+      {
+        "date": "1997-05-26",
+        "venue": "Barristers",
+        "city": "Memphis, TN, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/jeff-buckley/1997/barristers-memphis-tn-63fa12a3.html",
+        "note": "His final performance"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Peyote Radio Theater V-Neck Tee",
+        "description": "Official Jeff Buckley merch by Kin Ship Goods, linked from the estate's site.",
+        "image": {
+          "src": "https://cdn.shopify.com/s/files/1/0210/1512/files/jbwhitevredux.jpg?v=1754682795",
+          "alt": "Peyote Radio Theater V-Neck Tee"
+        },
+        "url": "https://kinshipgoods.com/products/jeff-buckley-peyote-radio-theater-v-neck-tee"
+      },
+      {
+        "name": "Peyote Radio Theater Sweatshirt",
+        "description": "Black crewneck from the official Kin Ship Goods collection.",
+        "image": {
+          "src": "https://cdn.shopify.com/s/files/1/0210/1512/files/jbblacksweatshirtredux.jpg?v=1754683277",
+          "alt": "Peyote Radio Theater Sweatshirt"
+        },
+        "url": "https://kinshipgoods.com/products/jeff-buckley-peyote-radio-theater-sweatshirt-black"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Grace — The 500 Greatest Albums of All Time",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-lists/best-albums-of-all-time-1062063/jeff-buckley-grace-4-1063086/"
+      },
+      {
+        "title": "Rock & Roll Hall of Fame 2026 Nominees",
+        "outlet": "Billboard",
+        "url": "https://www.billboard.com/music/awards/rock-hall-fame-nominees-2026-list-1236186061/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

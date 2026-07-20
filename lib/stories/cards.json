@@ -411,6 +411,82 @@
       "at": "2026-07-18T17:01:37.722Z"
     },
     {
+      "id": "badbadnotgood-87fcec5",
+      "slug": "badbadnotgood",
+      "artistName": "BADBADNOTGOOD",
+      "type": "era",
+      "hook": "Three jazz students covered Odd Future — and the rappers came calling",
+      "story": "Chester Hansen, Matthew Tavares and Alexander Sowinski met in 2010 in Humber College's jazz program in Toronto and started posting jazz reworkings of hip-hop tracks, including Odd Future material. The covers went viral, Tyler, the Creator amplified them, and within a few years the trio had gone from covering rap records to making one: Sour Soul, a full album with Ghostface Killah, in 2015.",
+      "media": [
+        {
+          "label": "BBNG x Tyler, the Creator session",
+          "url": "https://www.youtube.com/results?search_query=BADBADNOTGOOD%20Tyler%20the%20Creator%20basement%20session"
+        },
+        {
+          "label": "Time Moves Slow",
+          "url": "https://www.youtube.com/watch?v=GpSWv71IsVw"
+        }
+      ],
+      "sources": [
+        {
+          "title": "BadBadNotGood",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/BadBadNotGood"
+        },
+        {
+          "title": "BADBADNOTGOOD: jazz improv meets hip-hop",
+          "publisher": "The Guardian",
+          "url": "https://www.theguardian.com/music/2016/jul/05/canadian-band-badbadnotgood-jazz-improv-meets-hiphop"
+        },
+        {
+          "title": "Ghostface Killah & BADBADNOTGOOD: Sour Soul review",
+          "publisher": "The Guardian",
+          "url": "https://www.theguardian.com/music/2015/feb/22/ghostface-killah-badbadnotgood-sour-soul-review-versatile-hip-hop"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
+    },
+    {
+      "id": "badbadnotgood-967c760b",
+      "slug": "badbadnotgood",
+      "artistName": "BADBADNOTGOOD",
+      "type": "collab",
+      "hook": "For Talk Memory, they flew in the Brazilian legend who scored their record collection",
+      "story": "BADBADNOTGOOD's Talk Memory (2021) put the band side by side with Arthur Verocai — the cult Brazilian composer whose 1972 debut they had long cited as an influence. Verocai contributed string arrangements across the record and appears on 'Beside April', the kind of full-circle collaboration crate-diggers dream about.",
+      "media": [
+        {
+          "label": "Talk Meaning",
+          "url": "https://www.youtube.com/watch?v=ov1DNwDk6Qs"
+        },
+        {
+          "label": "BBNG & Arthur Verocai — Beside April",
+          "url": "https://www.youtube.com/results?search_query=BADBADNOTGOOD%20Arthur%20Verocai%20Beside%20April"
+        }
+      ],
+      "sources": [
+        {
+          "title": "BADBADNOTGOOD: Talk Memory",
+          "publisher": "Pitchfork",
+          "url": "https://pitchfork.com/reviews/albums/badbadnotgood-talk-memory/"
+        },
+        {
+          "title": "BADBADNOTGOOD: Talk Memory review",
+          "publisher": "The Guardian",
+          "url": "https://www.theguardian.com/music/2021/oct/10/badbadnotgood-talk-memory-review"
+        },
+        {
+          "title": "BadBadNotGood",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/BadBadNotGood"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
+    },
+    {
       "id": "beats-antique-96b99ed0",
       "slug": "beats-antique",
       "artistName": "Beats Antique",
@@ -3069,6 +3145,97 @@
       "at": "2026-07-18T17:16:31.732Z"
     },
     {
+      "id": "jeff-buckley-dcb3e6cb",
+      "slug": "jeff-buckley",
+      "artistName": "Jeff Buckley",
+      "type": "song",
+      "hook": "Jeff Buckley's 'Hallelujah' hit No. 1 eleven years after his death",
+      "story": "Buckley's reading of Leonard Cohen's 'Hallelujah' — learned from John Cale's recording on a Cohen tribute album — was never a hit in his lifetime. In March 2008, after a performance of the song on American Idol sent listeners searching, his version debuted at No. 1 on Billboard's Hot Digital Songs chart: his first No. 1 on any Billboard chart, eleven years after he died. In 2014 the recording entered the Library of Congress's National Recording Registry.",
+      "media": [
+        {
+          "label": "Hallelujah (Live at Bearsville)",
+          "url": "https://www.youtube.com/watch?v=y8AWFf7EAc4"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jeff Buckley",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jeff_Buckley"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
+    },
+    {
+      "id": "jeff-buckley-a44caaca",
+      "slug": "jeff-buckley",
+      "artistName": "Jeff Buckley",
+      "type": "era",
+      "hook": "Grace climbed 156 places on Rolling Stone's greatest-albums list — decades after release",
+      "story": "Grace (1994) was the only studio album Jeff Buckley completed, and it wasn't a blockbuster on arrival. Its stature has only grown: Rolling Stone's 500 Greatest Albums list ranked it No. 303 in 2003, and the 2020 revision moved it up to No. 147. In 2026 Buckley received his first Rock and Roll Hall of Fame nomination.",
+      "media": [
+        {
+          "label": "Grace",
+          "url": "https://www.youtube.com/watch?v=A3adFWKE9JE"
+        },
+        {
+          "label": "Last Goodbye",
+          "url": "https://www.youtube.com/watch?v=3MMXjunSx80"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Grace (Jeff Buckley album)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Grace_(Jeff_Buckley_album)"
+        },
+        {
+          "title": "Grace — The 500 Greatest Albums of All Time",
+          "publisher": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-lists/best-albums-of-all-time-1062063/jeff-buckley-grace-4-1063086/"
+        },
+        {
+          "title": "Jeff Buckley",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jeff_Buckley"
+        },
+        {
+          "title": "Rock Hall 2026 nominees list",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/music/awards/rock-hall-fame-nominees-2026-list-1236186061/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
+    },
+    {
+      "id": "jeff-buckley-7b371a01",
+      "slug": "jeff-buckley",
+      "artistName": "Jeff Buckley",
+      "type": "performance",
+      "hook": "A tiny café residency became one of the most famous live records of the '90s",
+      "story": "Before Grace, Buckley spent 1993 playing Monday nights at Sin-é, a small East Village café — just voice and electric guitar, covers and works in progress. Columbia signed him out of that room, and the recordings became Live at Sin-É. His last performance was at Barristers in Memphis on May 26, 1997, three days before he drowned in the Wolf River Harbor.",
+      "media": [
+        {
+          "label": "Jeff Buckley Live at Sin-é",
+          "url": "https://www.youtube.com/results?search_query=Jeff%20Buckley%20Live%20at%20Sin-e"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jeff Buckley",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jeff_Buckley"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
+    },
+    {
       "id": "jesca-hoop-54240ae4",
       "slug": "jesca-hoop",
       "artistName": "Jesca Hoop",
@@ -4275,6 +4442,78 @@
       "at": "2026-07-18T17:21:49.959Z"
     },
     {
+      "id": "ojos-de-brujo-a9d05a24",
+      "slug": "ojos-de-brujo",
+      "artistName": "Ojos de Brujo",
+      "type": "era",
+      "hook": "They left the industry, built their own label — and sold 100,000 records anyway",
+      "story": "After friction with the music industry over their debut, Barcelona's Ojos de Brujo founded their own label, La Fábrica de Colores, and self-released Barí (2002). The album — flamenco palmas and rumba catalana wired through hip-hop turntablism, a sound they called 'jipjop flamenkillo' — sold over 100,000 copies with no major label behind it.",
+      "media": [
+        {
+          "label": "Corriente vital",
+          "url": "https://www.youtube.com/watch?v=35jswgBc0lY"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Ojos de Brujo",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Ojos_de_Brujo"
+        },
+        {
+          "title": "Ojos de Brujo: Techarí — review",
+          "publisher": "The Guardian",
+          "url": "https://www.theguardian.com/music/2006/mar/17/worldmusic.shopping"
+        },
+        {
+          "title": "Ojos de Brujo: Setting Sights on America",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2007/06/22/11277645/ojos-de-brujo-setting-sights-on-america"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
+    },
+    {
+      "id": "ojos-de-brujo-a342860",
+      "slug": "ojos-de-brujo",
+      "artistName": "Ojos de Brujo",
+      "type": "era",
+      "hook": "A self-run Barcelona collective won a Latin Grammy — and a BBC world-music prize",
+      "story": "Ojos de Brujo took the Europe award at the BBC Radio 3 Awards for World Music in 2004, and in 2007 their album Techarí won the Latin Grammy for Best Flamenco Album — institutional recognition for a collective that ran its own label and answered to nobody. They said farewell in 2011 and played their final shows in 2012, leaving one of the most distinctive catalogs in modern flamenco.",
+      "media": [
+        {
+          "label": "Todos mortales",
+          "url": "https://www.youtube.com/watch?v=ug-RzrSytDM"
+        },
+        {
+          "label": "Ojos de Brujo — Techarí",
+          "url": "https://www.youtube.com/results?search_query=Ojos%20de%20Brujo%20Techari"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Latin Grammy Award for Best Flamenco Album",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Latin_Grammy_Award_for_Best_Flamenco_Album"
+        },
+        {
+          "title": "BBC Radio 3 Awards for World Music",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/BBC_Radio_3_Awards_for_World_Music"
+        },
+        {
+          "title": "Ojos de Brujo",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Ojos_de_Brujo"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
+    },
+    {
       "id": "oumou-sangare-1c2d6c78",
       "slug": "oumou-sangare",
       "artistName": "Oumou Sangaré",
@@ -5204,6 +5443,83 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:33:28.615Z"
+    },
+    {
+      "id": "red-hot-chili-peppers-c9e93a3c",
+      "slug": "red-hot-chili-peppers",
+      "artistName": "Red Hot Chili Peppers",
+      "type": "era",
+      "hook": "Blood Sugar Sex Magik was recorded in a mansion where Houdini allegedly lived",
+      "story": "For their 1991 breakthrough, producer Rick Rubin moved Red Hot Chili Peppers out of the studio entirely — into The Mansion, a Laurel Canyon house where the magician Harry Houdini allegedly once lived. The album that came out of it, Blood Sugar Sex Magik, carried 'Under the Bridge' and 'Give It Away', which became the band's first No. 1 single on a Billboard chart and won the Grammy for Best Hard Rock Performance.",
+      "media": [
+        {
+          "label": "Under the Bridge",
+          "url": "https://www.youtube.com/watch?v=GLvohMXgcBo"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Blood Sugar Sex Magik",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Blood_Sugar_Sex_Magik"
+        },
+        {
+          "title": "Red Hot Chili Peppers",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Red_Hot_Chili_Peppers"
+        },
+        {
+          "title": "Red Hot Chili Peppers — Grammy artist page",
+          "publisher": "Recording Academy",
+          "url": "https://www.grammy.com/artists/red-hot-chili-peppers/16367"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
+    },
+    {
+      "id": "red-hot-chili-peppers-9e89ff15",
+      "slug": "red-hot-chili-peppers",
+      "artistName": "Red Hot Chili Peppers",
+      "type": "era",
+      "hook": "Their first Billboard No. 1 debut took 23 years — with a 28-song double album",
+      "story": "Stadium Arcadium (2006) sold 442,000 US copies in its first week and debuted at No. 1 on the Billboard 200 — the first chart-topping debut of the band's career, more than two decades in. It also won the Grammy for Best Rock Album. Six years later, the band was inducted into the Rock and Roll Hall of Fame.",
+      "media": [
+        {
+          "label": "Californication",
+          "url": "https://www.youtube.com/watch?v=YlUKcNNmywk"
+        },
+        {
+          "label": "Scar Tissue",
+          "url": "https://www.youtube.com/watch?v=mzJj5-lubeM"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Stadium Arcadium",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Stadium_Arcadium"
+        },
+        {
+          "title": "Red Hot Chili Peppers — Grammy artist page",
+          "publisher": "Recording Academy",
+          "url": "https://www.grammy.com/artists/red-hot-chili-peppers/16367"
+        },
+        {
+          "title": "Red Hot Chili Peppers — Rock & Roll Hall of Fame",
+          "publisher": "Rock Hall",
+          "url": "https://www.rockhall.com/inductees/red-hot-chili-peppers/"
+        },
+        {
+          "title": "Rock hall induction ceremony report",
+          "publisher": "CNN",
+          "url": "https://www.cnn.com/2012/04/16/showbiz/music/rock-roll-hall-fame-induction-rs/index.html"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
     },
     {
       "id": "sigur-ros-1857fb0d",
@@ -6526,6 +6842,97 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:56:19.199Z"
+    },
+    {
+      "id": "wye-oak-651941ed",
+      "slug": "wye-oak",
+      "artistName": "Wye Oak",
+      "type": "era",
+      "hook": "Wye Oak's drummer plays the bass line with one hand — while drumming with the other three limbs",
+      "story": "Live, the Baltimore duo is a magic trick. Andy Stack plays drums with his feet and right hand while his left hand plays bass and keyboard parts, and Jenn Wasner covers voice and guitar — two people making a full band's sound in plain sight. The band is named after Maryland's former state tree, a giant white oak that fell in 2002.",
+      "media": [
+        {
+          "label": "Civilian",
+          "url": "https://www.youtube.com/watch?v=NU-BcwG8dfM"
+        },
+        {
+          "label": "Holy Holy",
+          "url": "https://www.youtube.com/watch?v=rmjMFPSLXI4"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Wye Oak (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Wye_Oak_(band)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
+    },
+    {
+      "id": "wye-oak-1242e9c5",
+      "slug": "wye-oak",
+      "artistName": "Wye Oak",
+      "type": "song",
+      "hook": "'Civilian' escaped the album — all the way to The Walking Dead",
+      "story": "The title track of Wye Oak's 2011 breakthrough Civilian traveled far beyond the indie circuit: it appeared in the season 2 trailer and in the closing scene of a season 2 episode of The Walking Dead, and in the film Safety Not Guaranteed. After that peak, the band's next move was to delete their signature sound entirely — Shriek (2014) was written without guitar.",
+      "media": [
+        {
+          "label": "Civilian",
+          "url": "https://www.youtube.com/watch?v=NU-BcwG8dfM"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Civilian (Wye Oak album)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Civilian_(Wye_Oak_album)"
+        },
+        {
+          "title": "Wye Oak (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Wye_Oak_(band)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
+    },
+    {
+      "id": "wye-oak-2cbdff3b",
+      "slug": "wye-oak",
+      "artistName": "Wye Oak",
+      "type": "collab",
+      "hook": "Half of Wye Oak spent 2019 on stage with Bon Iver",
+      "story": "Jenn Wasner has never been just one band. Alongside Wye Oak she records as Flock of Dimes — with an NPR Tiny Desk concert to its name — and in 2019 she joined Bon Iver's touring band as a guitarist. All of it feeds back into the duo she and Andy Stack keep reinventing.",
+      "media": [
+        {
+          "label": "Glory",
+          "url": "https://www.youtube.com/watch?v=tMOcpGKTh84"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jenn Wasner",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jenn_Wasner"
+        },
+        {
+          "title": "Flock of Dimes: Tiny Desk (Home) Concert",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2021/08/10/1021264105/flock-of-dimes-tiny-desk-home-concert"
+        },
+        {
+          "title": "Wye Oak (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Wye_Oak_(band)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:20:41.000Z"
     }
   ]
 }

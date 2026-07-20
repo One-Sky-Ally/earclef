@@ -30,6 +30,16 @@
     "membership": false
   },
   {
+    "slug": "badbadnotgood",
+    "name": "BADBADNOTGOOD",
+    "identity": "Jazz chops, hip-hop instincts — a rhythm section that turned crate-digger taste into a live force.",
+    "tier": "in-the-mix",
+    "mbid": "754294d5-d7d2-4ea2-8184-1dcaaf55a56f",
+    "channelId": "UCoYAFe4DypQIUqMd1YynPVg",
+    "itunesId": "505464105",
+    "membership": false
+  },
+  {
     "slug": "beats-antique",
     "name": "Beats Antique",
     "identity": "A traveling mechanical circus of Turkish banjo, marching drums, and glitching bass.",
@@ -230,6 +240,16 @@
     "membership": false
   },
   {
+    "slug": "jeff-buckley",
+    "name": "Jeff Buckley",
+    "identity": "A four-octave ache — one finished album and a voice that keeps outliving everything around it.",
+    "tier": "in-the-mix",
+    "mbid": "e6e879c0-3d56-4f12-b3c5-3ce459661a8e",
+    "channelId": "UCK5ogJnijds9TBP8lcKo6iA",
+    "itunesId": "872190",
+    "membership": false
+  },
+  {
     "slug": "jesca-hoop",
     "name": "Jesca Hoop",
     "identity": "A Californian folk experimentalist weaving strange, luminous songs from her adopted home in Manchester.",
@@ -330,6 +350,16 @@
     "membership": false
   },
   {
+    "slug": "ojos-de-brujo",
+    "name": "Ojos de Brujo",
+    "identity": "Flamenco palmas over scratched vinyl — a Barcelona collective that wired rumba catalana into hip-hop and kept the copyright for themselves.",
+    "tier": "in-the-mix",
+    "mbid": "ab1b3f93-99ba-4a5b-868f-e412ab0a57fb",
+    "channelId": "UCJkO_DGRZiFcKx8oW8OmIpw",
+    "itunesId": "2901257",
+    "membership": false
+  },
+  {
     "slug": "oumou-sangare",
     "name": "Oumou Sangaré",
     "identity": "The Songbird of Wassoulou, carrying Mali's hunter-society rhythms and women's stories to the world.",
@@ -397,6 +427,16 @@
     "mbid": "f467181e-d5e0-4285-b47e-e853dcc89ee7",
     "channelId": "UCTcraSQKl7F8GFiLydv6eDg",
     "itunesId": "7057812",
+    "membership": false
+  },
+  {
+    "slug": "red-hot-chili-peppers",
+    "name": "Red Hot Chili Peppers",
+    "identity": "Funk-rock's longest conversation — bass, drums, guitar and a frontman locked in for four decades.",
+    "tier": "in-the-mix",
+    "mbid": "8bfac288-ccc5-448d-9573-c33ea2aa5c30",
+    "channelId": "UCEuOwB9vSL1oPKGNdONB4ig",
+    "itunesId": "889780",
     "membership": false
   },
   {
@@ -497,6 +537,16 @@
     "mbid": null,
     "channelId": "UCGKURphmIziTYopcAlNb6Iw",
     "itunesId": "1620116878",
+    "membership": false
+  },
+  {
+    "slug": "wye-oak",
+    "name": "Wye Oak",
+    "identity": "Two people, a wall of sound — smoky indie rock that keeps shedding its skin.",
+    "tier": "in-the-mix",
+    "mbid": "3c8ff4c9-b5b9-4e78-ad9d-5157c323de24",
+    "channelId": "UC7EnxwiT0NeM83IAlSXJRgw",
+    "itunesId": "276566673",
     "membership": false
   }
 ]
