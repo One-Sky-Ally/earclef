@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "slug": "autolux",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Autolux — Ear Clef",
+    "description": "T-Bone Burnett's protégés and one of noise-pop's great slow-burn discographies — three albums in over two decades, each one worth the wait.",
+    "ogImage": "/images/og-autolux.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/autolux"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "7HizNYe1mSfmvbXlx3la3m"
+    },
+    "youtube": {
+      "channelId": "UC51Uv4RHH2JGEOQpSsngvoA"
+    },
+    "setlistfm": {
+      "mbid": "78404fdf-23b4-465e-ab02-21adf9ad6d28"
+    },
+    "itunes": {
+      "artistId": "22482658"
+    }
+  },
+  "hero": {
+    "name": "Autolux",
+    "identity": "Noise-pop built for the long game — three albums in two decades, each one a small, exacting world.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.autolux.net/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/autolux_autolux/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/autolux"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/autolux"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@autoluxbandofficial"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B0012F4TMM"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://autolux.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Future Perfect",
+        "year": "2004",
+        "mbReleaseGroupId": "b43acf06-d9f3-32a9-bb0c-1a724c5e2a55"
+      },
+      {
+        "title": "Transit Transit",
+        "year": "2010",
+        "mbReleaseGroupId": "19502223-9f0f-47d0-a00a-ec8ed1584a8d"
+      },
+      {
+        "title": "PUSSY'S DEAD",
+        "year": "2016",
+        "mbReleaseGroupId": "5815e332-a2c7-45a1-bc28-f48709238e4b"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "UoC-tSER6I0",
+        "title": "Turnstile Blues"
+      },
+      {
+        "youtubeId": "K7j9iiR1vrQ",
+        "title": "The Science of Imaginary Solutions"
+      },
+      {
+        "youtubeId": "Ch2WpOzIqxU",
+        "title": "Soft Scene"
+      },
+      {
+        "youtubeId": "Vth-n34LK8E",
+        "title": "Selectallcopy"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Autolux formed in Los Angeles in 2001 around drummer-vocalist Carla Azar, guitarist-vocalist Greg Edwards and bassist-vocalist Eugene Goreshter. Edwards had come from the band Failure; Azar met him while touring with it. After a self-released debut EP, T-Bone Burnett signed the trio to DMZ, the small label he ran with the Coen Brothers, and personally nurtured the band into their first album.",
+      "Future Perfect (2004) arrived after Burnett pushed the band to capture their live sound in the studio rather than lean on the 8-track demos that built the EP. It was met with critical praise, and the band spent 2005 touring behind it alongside Clinic, Broadcast, Shellac, Deerhoof and The White Stripes.",
+      "Autolux have never rushed: six years passed before Transit Transit (2010), another six before PUSSY'S DEAD (2016). The gaps are part of the band's character — records made only when they're ready, not on a schedule.",
+      "Carla Azar's other life runs through Jack White's band, where she has drummed on Blunderbuss, Lazaretto and Boarding House Reach and toured alongside him — proof that even between Autolux albums, the rhythm section never really stops."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates, when announced, appear at autolux.net.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2005-10-01",
+        "venue": "Hollywood Bowl",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/autolux/2005/hollywood-bowl-los-angeles-ca-7bd73298.html",
+        "note": "Opening for Nine Inch Nails with Queens of the Stone Age"
+      },
+      {
+        "date": "2016-07-28",
+        "venue": "Grant Park",
+        "city": "Chicago, IL, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/autolux/2016/grant-park-chicago-il-1bff5538.html",
+        "note": "Lollapalooza 2016"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Future Perfect — Double Vinyl",
+        "description": "The 2004 debut on double LP from the band's official store.",
+        "image": {
+          "src": "https://shop.autolux.net/cdn/shop/files/FP-dbl_vinyl_1200x1200.jpg?v=1766990492",
+          "alt": "Future Perfect — Double Vinyl"
+        },
+        "url": "https://shop.autolux.net/products/future-perfect-dbl-vinyl-lp-no-booklet"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Autolux Announce New Album Pussy's Dead, Share Tour Dates",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/news/62167-autolux-announce-new-album-pussys-dead-tour/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

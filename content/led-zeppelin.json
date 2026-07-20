@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "slug": "led-zeppelin",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Led Zeppelin — Ear Clef",
+    "description": "Four musicians, nine albums, and the blueprint for hard rock — Led Zeppelin turned blues, folk and volume into a genre of their own.",
+    "ogImage": "/images/og-led-zeppelin.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/led-zeppelin"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "36QJpDe2go2KgaRleHCDTp"
+    },
+    "youtube": {
+      "channelId": "UCaKZA66vM_TUpetUNohmR0A"
+    },
+    "setlistfm": {
+      "mbid": "678d88b2-87b0-403b-b63d-5da7465aecc3"
+    },
+    "itunes": {
+      "artistId": "994656"
+    }
+  },
+  "hero": {
+    "name": "Led Zeppelin",
+    "identity": "Blues turned to thunder — the band that wrote the blueprint for hard rock and heavy metal in four albums flat.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.ledzeppelin.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/ledzeppelin/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/ledzeppelin"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/ledzeppelin"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/ledzeppelin"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCaKZA66vM_TUpetUNohmR0A"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/gb/artist/994656"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.co.uk/artists/B001E7BL7Y"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Led Zeppelin",
+        "year": "1969",
+        "mbReleaseGroupId": "0f18ec88-aa87-38a9-8a65-f03d81763560"
+      },
+      {
+        "title": "Led Zeppelin IV",
+        "year": "1971",
+        "mbReleaseGroupId": "2e61da88-39e9-3473-81d2-c964cb394952"
+      },
+      {
+        "title": "Physical Graffiti",
+        "year": "1975",
+        "mbReleaseGroupId": "116c9490-6af4-3827-8261-2d5b1f508fe7"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "QkF3oxziUI4",
+        "title": "Stairway to Heaven"
+      },
+      {
+        "youtubeId": "HQmmM_qwG4k",
+        "title": "Whole Lotta Love"
+      },
+      {
+        "youtubeId": "ww9484EM2OQ",
+        "title": "Kashmir"
+      },
+      {
+        "youtubeId": "P3Y8OWkiUts",
+        "title": "Immigrant Song"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Led Zeppelin formed in London in 1968 around Jimmy Page's guitar, Robert Plant's voice, John Paul Jones's arrangements and John Bonham's drums — a chemistry so complete that their self-titled 1969 debut arrived already sounding like nothing else in rock. Across nine studio albums they fused blues, folk, Eastern modes and sheer volume into what became the template for hard rock and heavy metal.",
+      "After the tepid reception to Led Zeppelin III, the band's fourth album deliberately carried no title and no band name on its cover — just four symbols, one chosen by each member. It became one of the best-selling albums in history, with an estimated 37 million copies sold, built around 'Black Dog', 'Rock and Roll' and 'Stairway to Heaven'.",
+      "John Bonham died on September 25, 1980, and the surviving members disbanded that year rather than continue without him. They reunited only rarely: a shortened set at Live Aid in 1985, and — most fully — the 2007 Ahmet Ertegun Tribute Concert at London's O2 Arena, with Bonham's son Jason on drums, released as the film and album Celebration Day.",
+      "Led Zeppelin were inducted into the Rock and Roll Hall of Fame in 1995 and received the Grammy Lifetime Achievement Award in 2005. With an estimated 200 to 300 million records sold worldwide, they remain among the best-selling music artists of all time."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Led Zeppelin has not toured as a full band since 1980; the archive below documents their history.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1973-07-27",
+        "venue": "Madison Square Garden",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/led-zeppelin/1973/madison-square-garden-new-york-ny-2bd600de.html",
+        "note": "Filmed for The Song Remains the Same"
+      },
+      {
+        "date": "1979-08-04",
+        "venue": "Knebworth House",
+        "city": "Knebworth, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/led-zeppelin/1979/knebworth-house-knebworth-england-13d6316d.html",
+        "note": "Among their last shows before Bonham's death"
+      },
+      {
+        "date": "1985-07-13",
+        "venue": "John F. Kennedy Stadium",
+        "city": "Philadelphia, PA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/led-zeppelin/1985/john-f-kennedy-stadium-philadelphia-pa-2bd66c56.html",
+        "note": "Live Aid reunion"
+      },
+      {
+        "date": "2007-12-10",
+        "venue": "The O2 Arena",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/led-zeppelin/2007/the-o2-arena-london-england-13d6bd65.html",
+        "note": "Ahmet Ertegun Tribute Concert — Jason Bonham on drums"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Earl's Court 75 Blimp — Black Tee",
+        "description": "From the official Led Zeppelin store.",
+        "image": {
+          "src": "https://enterprise-ecommerce-store-images.freetls.fastly.net/resize?u=aHR0cHM6Ly9lY29tbWVyY2UtcHVibGljLWFzc2V0cy5zdG9yYWdlLmdvb2dsZWFwaXMuY29tLzMyZThmYWU2LWRmNjAtNDFhNC04NDQ0LTRlMzQ1YTNiODEwNS8yMDI1LzcvMjIvOC82L2JhOTQ0MjJkLWQxMmYtNDNlZi1hNmUwLWE3ZjFmYWU2ZjZhZQ%3D%3D&height=1000&mode=cover&width=1000&v=1",
+          "alt": "Earl's Court 75 Blimp — Black Tee"
+        },
+        "url": "https://store.ledzeppelin.com/vendors/e0cb5e1b-7af9-5bf2-bd30-b5d6b5b95d4f/products/earls-court-75-blimp-black-tee"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Led Zeppelin IV — The 500 Greatest Albums of All Time",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-lists/best-albums-of-all-time-1062063/led-zeppelin-led-zeppelin-iv-2-1063005/"
+      },
+      {
+        "title": "Led Zeppelin — Rock & Roll Hall of Fame",
+        "outlet": "Rock Hall",
+        "url": "https://www.rockhall.com/inductees/led-zeppelin/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

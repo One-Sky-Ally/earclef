@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "slug": "suuns",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "SUUNS — Ear Clef",
+    "description": "Montreal's SUUNS turn krautrock pulse and post-punk unease into something coiled and physical — motorik rock with the wiring exposed.",
+    "ogImage": "/images/og-suuns.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/suuns"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "3UkN1XeK2D4wD4uhtJx4vb"
+    },
+    "youtube": {
+      "channelId": "UCLP4QDvzdH9lyyHoPAYiH0g"
+    },
+    "setlistfm": {
+      "mbid": "f2394946-07cc-4af7-8d77-58fea451dd59"
+    },
+    "itunes": {
+      "artistId": "443465419"
+    }
+  },
+  "hero": {
+    "name": "SUUNS",
+    "identity": "Motorik rock with the wiring exposed — krautrock pulse, post-punk nerves and a sound that never sits still.",
+    "tagline": "Hear here!",
+    "location": "Montreal, Quebec, Canada",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.suuns.net/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/suuns_mtl/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/suunsband"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/suunsband"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@SUUNS"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/suuns/443465419"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://suuns.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Zeroes QC",
+        "year": "2010",
+        "mbReleaseGroupId": "5a1dfd52-8482-4344-a164-249ee309d2f8"
+      },
+      {
+        "title": "Images du futur",
+        "year": "2013",
+        "mbReleaseGroupId": "f0309824-1f3a-4f7a-89ec-80cbfecbd854"
+      },
+      {
+        "title": "The Breaks",
+        "year": "2024",
+        "mbReleaseGroupId": "02d679f8-4fde-4c30-9ad2-7da280262044"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "jfBOLI6u-OY",
+        "title": "Overture"
+      },
+      {
+        "youtubeId": "4bp3WgdCC3Q",
+        "title": "Doreen"
+      },
+      {
+        "youtubeId": "oQgicu6G6n8",
+        "title": "2020"
+      },
+      {
+        "youtubeId": "uSOly5EKyOE",
+        "title": "Translate"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "SUUNS came together in Montreal when Ben Shemie and Joseph Yarmush started making beats that quickly turned into songs; drummer Liam O'Neill and bassist-keyboardist Max Henry completed the original lineup. Their 2010 debut Zeroes QC arrived on Secretly Canadian, tense and motorik, indebted to krautrock's engine-room pulse as much as to post-punk's nerves.",
+      "Images du futur (2013) sharpened that sound into something colder and more electronic, and was longlisted for the Polaris Music Prize. In 2015 the band stepped outside their own catalog entirely for Suuns and Jerusalem In My Heart, a full collaborative album with the Montreal experimental duo, recorded together over a single week.",
+      "In 2020 SUUNS signed with Joyful Noise Recordings, releasing the Fiction EP followed by The Witness (2021) and The Breaks (2024) — records that kept pushing the tension between live-band chaos and machine precision that has defined them from the start.",
+      "Live, SUUNS remain a coiled, physical band — the same restlessness that has carried them through more than fifteen years and half a dozen albums without ever settling into one shape."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at suuns.net.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-09-20",
+        "venue": "LantarenVenster",
+        "city": "Rotterdam, Netherlands",
+        "setlistUrl": "https://www.setlist.fm/setlist/suuns/2024/lantarenvenster-rotterdam-netherlands-b53d97e.html",
+        "note": "European tour stop"
+      },
+      {
+        "date": "2026-07-10",
+        "venue": "Théâtre Antique de Fourvière",
+        "city": "Lyon, France",
+        "setlistUrl": "https://www.setlist.fm/setlist/suuns/2026/theatre-antique-de-fourviere-lyon-france-43492b83.html",
+        "note": "Les Nuits de Fourvière festival"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "The Breaks — LP",
+        "description": "SUUNS' 2024 album from their label Joyful Noise Recordings.",
+        "image": {
+          "src": "https://www.joyfulnoiserecordings.com/cdn/shop/files/JNR456_SUUNS_the-breaks_1200x1200.jpg?v=1759331196",
+          "alt": "The Breaks — LP"
+        },
+        "url": "https://www.joyfulnoiserecordings.com/products/the-breaks"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Suuns and Jerusalem In My Heart — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/20348-suuns-and-jerusalem-in-my-heart/"
+      },
+      {
+        "title": "SUUNS: The Witness — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/suuns-the-witness/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

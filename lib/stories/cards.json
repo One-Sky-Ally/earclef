@@ -411,6 +411,59 @@
       "at": "2026-07-18T17:01:37.722Z"
     },
     {
+      "id": "autolux-459d48bf",
+      "slug": "autolux",
+      "artistName": "Autolux",
+      "type": "collab",
+      "hook": "T-Bone Burnett signed Autolux to a label he ran with the Coen Brothers",
+      "story": "Autolux formed in Los Angeles in 2001, and their self-released debut EP caught the ear of producer T-Bone Burnett, who signed the trio to DMZ — a small label he created with the Coen Brothers — and personally nurtured the band through their first album, Future Perfect.",
+      "media": [
+        {
+          "label": "Turnstile Blues",
+          "url": "https://www.youtube.com/watch?v=UoC-tSER6I0"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Autolux",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Autolux"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T07:14:38.000Z"
+    },
+    {
+      "id": "autolux-89f229af",
+      "slug": "autolux",
+      "artistName": "Autolux",
+      "type": "collab",
+      "hook": "Autolux's drummer has spent years behind Jack White's kit too",
+      "story": "Carla Azar, Autolux's drummer and one of its lead vocalists, has drummed on three Jack White solo albums — Blunderbuss, Lazaretto and Boarding House Reach — and toured live with him. It's the kind of double life that has let Autolux release only three albums across two-plus decades without the band ever really stopping.",
+      "media": [
+        {
+          "label": "The Science of Imaginary Solutions",
+          "url": "https://www.youtube.com/watch?v=K7j9iiR1vrQ"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Carla Azar",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Carla_Azar"
+        },
+        {
+          "title": "Autolux",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Autolux"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T07:14:38.000Z"
+    },
+    {
       "id": "badbadnotgood-87fcec5",
       "slug": "badbadnotgood",
       "artistName": "BADBADNOTGOOD",
@@ -1949,6 +2002,68 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T17:12:28.378Z"
+    },
+    {
+      "id": "explosions-in-the-sky-2023897d",
+      "slug": "explosions-in-the-sky",
+      "artistName": "Explosions in the Sky",
+      "type": "screen",
+      "hook": "A film director came calling — and an instrumental band scored Friday Night Lights without changing a thing",
+      "story": "After the acclaim for The Earth Is Not a Cold Dead Place, Explosions in the Sky were contacted to score the 2004 film Friday Night Lights. Despite having access to rare studio equipment for the project, the band stuck to the same wordless, guitar-built language that had always defined them — the score became inseparable from the film's identity.",
+      "media": [
+        {
+          "label": "Explosions in the Sky — Friday Night Lights score",
+          "url": "https://www.youtube.com/results?search_query=Explosions%20in%20the%20Sky%20Friday%20Night%20Lights%20soundtrack"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Explosions in the Sky",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Explosions_in_the_Sky"
+        },
+        {
+          "title": "Friday Night Lights (film soundtrack)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Friday_Night_Lights_(film_soundtrack)"
+        },
+        {
+          "title": "Behind the Scenes of Friday Night Lights",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2011/07/15/137826323/behind-the-scenes-of-friday-night-lights"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T07:14:38.000Z"
+    },
+    {
+      "id": "explosions-in-the-sky-e6b9eb84",
+      "slug": "explosions-in-the-sky",
+      "artistName": "Explosions in the Sky",
+      "type": "era",
+      "hook": "A wordless band once explained their music as love songs without the words",
+      "story": "Explosions in the Sky have never used vocals — three interlocking electric guitars and drums do all the talking. Guitarist Munaf Rayani has described the band's instrumentals as their version of love songs, just without any words to get in the way.",
+      "media": [
+        {
+          "label": "The Ecstatics",
+          "url": "https://www.youtube.com/watch?v=iOwOUvdmsn8"
+        },
+        {
+          "label": "All Mountains",
+          "url": "https://www.youtube.com/watch?v=AASj-Wfbnxc"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Explosions in the Sky",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Explosions_in_the_Sky"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T07:14:38.000Z"
     },
     {
       "id": "fela-kuti-c6c4a006",
@@ -3767,6 +3882,92 @@
       "status": "published",
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
+      "id": "led-zeppelin-30686339",
+      "slug": "led-zeppelin",
+      "artistName": "Led Zeppelin",
+      "type": "era",
+      "hook": "Led Zeppelin's biggest album has no title and no band name on the cover",
+      "story": "After lukewarm reviews for Led Zeppelin III, the band's fourth album carried no title, no artist name and nothing on the cover but four symbols — one chosen by each member. It became one of the best-selling albums in history, with an estimated 37 million copies sold, and carried 'Black Dog', 'Rock and Roll' and 'Stairway to Heaven'.",
+      "media": [
+        {
+          "label": "Stairway to Heaven",
+          "url": "https://www.youtube.com/watch?v=QkF3oxziUI4"
+        },
+        {
+          "label": "Black Dog",
+          "url": "https://www.youtube.com/watch?v=HQmmM_qwG4k"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Led Zeppelin",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Led_Zeppelin"
+        },
+        {
+          "title": "Led Zeppelin IV",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Led_Zeppelin_IV"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T07:14:38.000Z"
+    },
+    {
+      "id": "led-zeppelin-217ded78",
+      "slug": "led-zeppelin",
+      "artistName": "Led Zeppelin",
+      "type": "performance",
+      "hook": "Led Zeppelin's fullest reunion came 27 years after they disbanded — with the drummer's son on drums",
+      "story": "John Bonham died on September 25, 1980, and the surviving members disbanded rather than continue without him. They reunited only rarely — most fully at the 2007 Ahmet Ertegun Tribute Concert at London's O2 Arena, with Jason Bonham, John's son, on drums. The show was later released as the film and album Celebration Day.",
+      "media": [
+        {
+          "label": "Led Zeppelin — Ahmet Ertegun Tribute Concert 2007",
+          "url": "https://www.youtube.com/results?search_query=Led%20Zeppelin%20O2%20Arena%202007%20reunion"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Led Zeppelin",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Led_Zeppelin"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T07:14:38.000Z"
+    },
+    {
+      "id": "led-zeppelin-1a4a7bc2",
+      "slug": "led-zeppelin",
+      "artistName": "Led Zeppelin",
+      "type": "era",
+      "hook": "Led Zeppelin entered the Rock Hall in 1995 and got a Grammy for their whole career a decade later",
+      "story": "Led Zeppelin were inducted into the Rock and Roll Hall of Fame in 1995, and in 2005 the Recording Academy gave them the Grammy Lifetime Achievement Award. Between the two, an estimated 200 to 300 million records sold worldwide place them among the best-selling music artists of all time.",
+      "media": [
+        {
+          "label": "Kashmir",
+          "url": "https://www.youtube.com/watch?v=ww9484EM2OQ"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Led Zeppelin",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Led_Zeppelin"
+        },
+        {
+          "title": "Led Zeppelin — Rock & Roll Hall of Fame",
+          "publisher": "Rock Hall",
+          "url": "https://www.rockhall.com/inductees/led-zeppelin/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T07:14:38.000Z"
     },
     {
       "id": "low-roar-7c6f596e",
@@ -6120,6 +6321,54 @@
       "at": "2026-07-20T01:48:06.000Z"
     },
     {
+      "id": "suuns-ca29c053",
+      "slug": "suuns",
+      "artistName": "SUUNS",
+      "type": "era",
+      "hook": "SUUNS made a whole album with another Montreal band — recorded in a single week",
+      "story": "In 2015, SUUNS stepped outside their own catalog to release Suuns and Jerusalem In My Heart, a full collaborative album with fellow Montreal experimental act Jerusalem In My Heart. The tracks were recorded together over a single week — a genuine group effort, not a remix trade.",
+      "media": [
+        {
+          "label": "SUUNS and Jerusalem In My Heart",
+          "url": "https://www.youtube.com/results?search_query=SUUNS%20Jerusalem%20In%20My%20Heart%20album"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Suuns",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Suuns"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T07:14:38.000Z"
+    },
+    {
+      "id": "suuns-ed784b74",
+      "slug": "suuns",
+      "artistName": "SUUNS",
+      "type": "era",
+      "hook": "SUUNS' second album got a Polaris Music Prize longlist nod",
+      "story": "Images du futur (2013), the band's colder, more electronic second album, was longlisted for the Polaris Music Prize — Canada's award for the year's best album regardless of genre or sales. Seven years later they signed to Joyful Noise Recordings, a relationship that has produced the Fiction EP, The Witness and The Breaks.",
+      "media": [
+        {
+          "label": "2020",
+          "url": "https://www.youtube.com/watch?v=oQgicu6G6n8"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Suuns",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Suuns"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T07:14:38.000Z"
+    },
+    {
       "id": "tame-impala-52467987",
       "slug": "tame-impala",
       "artistName": "Tame Impala",
@@ -7157,6 +7406,58 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:55:45.635Z"
+    },
+    {
+      "id": "tortoise-20793a0d",
+      "slug": "tortoise",
+      "artistName": "Tortoise",
+      "type": "era",
+      "hook": "Tortoise are credited as one of the prime forces behind post-rock — a genre that barely had a name when they started",
+      "story": "Tortoise formed in Chicago in 1990 around a rotating cast of multi-instrumentalists — nearly every member plays nearly every instrument. Critics reached for a new word to describe what they were doing: Tortoise have been consistently credited, as part of the Chicago school, as one of the prime forces behind the rise of post-rock in the 1990s.",
+      "media": [
+        {
+          "label": "Galapagos",
+          "url": "https://www.youtube.com/watch?v=-Pd7DKXZPxo"
+        },
+        {
+          "label": "Glass Museum",
+          "url": "https://www.youtube.com/watch?v=Dd8aF07DK4w"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tortoise (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Tortoise_(band)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T07:14:38.000Z"
+    },
+    {
+      "id": "tortoise-8ec56919",
+      "slug": "tortoise",
+      "artistName": "Tortoise",
+      "type": "era",
+      "hook": "TNT won over critics for sounding like nothing else in 1998",
+      "story": "Tortoise's third album, TNT (1998), folded funk, ambient and the band's ongoing krautrock influence into their established postmodern range, and was critically acclaimed on release for that very range — a record that has only grown in stature since.",
+      "media": [
+        {
+          "label": "Oganesson",
+          "url": "https://www.youtube.com/watch?v=p2DZa3V5CQo"
+        }
+      ],
+      "sources": [
+        {
+          "title": "TNT (Tortoise album)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/TNT_(Tortoise_album)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T07:14:38.000Z"
     },
     {
       "id": "trust-in-the-sun-6d3f7d42",

@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 1,
+  "slug": "tortoise",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Tortoise — Ear Clef",
+    "description": "Chicago's post-rock architects — jazz, dub, krautrock and electronics played by a rotating cast of virtuoso multi-instrumentalists.",
+    "ogImage": "/images/og-tortoise.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/tortoise"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "3WggbHDpj4rPKbL97zG5MQ"
+    },
+    "youtube": {
+      "channelId": ""
+    },
+    "setlistfm": {
+      "mbid": "e0953daa-860f-4dc8-9f1a-b12587cdaf17"
+    },
+    "itunes": {
+      "artistId": "5506415"
+    }
+  },
+  "hero": {
+    "name": "Tortoise",
+    "identity": "Instrumental music built like architecture — jazz, dub, minimalism and krautrock, played by a band of interchangeable virtuosos.",
+    "tagline": "Hear here!",
+    "location": "Chicago, Illinois, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.trts.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/trts/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/TRTS"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/TRTSband"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/tortoise/5506415"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://tortoise.bandcamp.com/music"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Millions Now Living Will Never Die",
+        "year": "1996",
+        "mbReleaseGroupId": "7bb7debb-bdcf-3991-aa19-2937a1ad4fa9"
+      },
+      {
+        "title": "TNT",
+        "year": "1998",
+        "mbReleaseGroupId": "45f5f27c-9f31-32bd-bff3-1a89d53549ec"
+      },
+      {
+        "title": "Touch",
+        "year": "2025",
+        "mbReleaseGroupId": "72a3632f-0466-4ce9-bc64-0ee5aff91d4a"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "-Pd7DKXZPxo",
+        "title": "Galapagos"
+      },
+      {
+        "youtubeId": "Dd8aF07DK4w",
+        "title": "Glass Museum"
+      },
+      {
+        "youtubeId": "p2DZa3V5CQo",
+        "title": "Oganesson"
+      },
+      {
+        "youtubeId": "6BFiC-KJ8pU",
+        "title": "A Title Comes"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Tortoise formed in Chicago in 1990 around bassist Doug McCombs and drummer John Herndon, who soon brought in John McEntire and Bundy K. Brown — both formerly of Bastro and Gastr del Sol — plus percussionist Dan Bitney. The rotating, multi-instrumentalist lineup became the band's defining trait: nearly everyone plays nearly everything.",
+      "Across Tortoise (1994), Millions Now Living Will Never Die (1996) and TNT (1998), the band folded dub, minimalism, jazz, krautrock and electronics into something that had no ready name — critics reached for 'post-rock', and Tortoise have been consistently credited as one of the prime forces behind that movement's rise in the 1990s.",
+      "TNT in particular drew wide critical acclaim for its postmodern range, blending live playing with production techniques borrowed from electronic music — a hybrid approach that still sounds ahead of its moment. The band kept working steadily through Standards (2001), It's All Around You (2004), Beacons of Ancestorship (2009) and The Catastrophist (2016).",
+      "In 2025, Tortoise released Touch on International Anthem, their first album in nearly a decade — proof that a band built on patience and craft was never really finished."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates appear at trts.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-01-24",
+        "venue": "Flagey Studio 4",
+        "city": "Elsene/Ixelles, Belgium",
+        "setlistUrl": "https://www.setlist.fm/setlist/tortoise/2026/flagey-studio-4-elsene-ixelles-belgium-3b4c3c68.html",
+        "note": "Touch-era European show"
+      },
+      {
+        "date": "2026-02-27",
+        "venue": "Great American Music Hall",
+        "city": "San Francisco, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/tortoise/2026/great-american-music-hall-san-francisco-ca-1b4dadd0.html",
+        "note": "Noise Pop Festival 2026"
+      },
+      {
+        "date": "2026-06-28",
+        "venue": "9:30 Club",
+        "city": "Washington, DC, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/tortoise/2026/930-club-washington-dc-7b76aa2c.html",
+        "note": "Touch tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "TNT Shirt",
+        "description": "A shirt honoring the band's 1998 landmark, from the official Tortoise store.",
+        "image": {
+          "src": "https://shirtkiller.com/cdn/shop/files/unisex-garment-dyed-heavyweight-t-shirt-pepper-front-69b41fe763980_1200x1200.png?v=1773412335",
+          "alt": "TNT Shirt"
+        },
+        "url": "https://shirtkiller.com/collections/tortoise/products/tortoise-tnt-shirt"
+      },
+      {
+        "name": "Touch — LP",
+        "description": "Tortoise's 2025 album on vinyl from International Anthem.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/a2905449829_5.jpg",
+          "alt": "Touch — LP"
+        },
+        "url": "https://intlanthem.bandcamp.com/album/touch"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Tortoise: Touch — Album Review",
+        "outlet": "The Quietus",
+        "url": "https://thequietus.com/quietus-reviews/tortoise-touch-review/"
+      },
+      {
+        "title": "Tortoise: Touch — Album Review",
+        "outlet": "Treble",
+        "url": "https://www.treblezine.com/tortoise-touch-review/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

@@ -30,6 +30,16 @@
     "membership": false
   },
   {
+    "slug": "autolux",
+    "name": "Autolux",
+    "identity": "Noise-pop built for the long game — three albums in two decades, each one a small, exacting world.",
+    "tier": "in-the-mix",
+    "mbid": "78404fdf-23b4-465e-ab02-21adf9ad6d28",
+    "channelId": "UC51Uv4RHH2JGEOQpSsngvoA",
+    "itunesId": "22482658",
+    "membership": false
+  },
+  {
     "slug": "badbadnotgood",
     "name": "BADBADNOTGOOD",
     "identity": "Jazz chops, hip-hop instincts — a rhythm section that turned crate-digger taste into a live force.",
@@ -157,6 +167,16 @@
     "mbid": "5c12b265-5e59-44e0-b657-5cf4169f7316",
     "channelId": "UC_ghFm78RhT2eg6rPIVHRVg",
     "itunesId": "73212782",
+    "membership": false
+  },
+  {
+    "slug": "explosions-in-the-sky",
+    "name": "Explosions in the Sky",
+    "identity": "Wordless, cinematic post-rock built from interlocking guitars — songs that swell like weather.",
+    "tier": "in-the-mix",
+    "mbid": "4236acde-2ce2-441c-a3d4-38d55f1b5474",
+    "channelId": "UCbEPHUUi5JgsLMfA6S_R-Yg",
+    "itunesId": "27051074",
     "membership": false
   },
   {
@@ -297,6 +317,16 @@
     "mbid": "e9fcfbbf-1743-4f73-8744-ada8da7394ea",
     "channelId": null,
     "itunesId": "5787786",
+    "membership": false
+  },
+  {
+    "slug": "led-zeppelin",
+    "name": "Led Zeppelin",
+    "identity": "Blues turned to thunder — the band that wrote the blueprint for hard rock and heavy metal in four albums flat.",
+    "tier": "in-the-mix",
+    "mbid": "678d88b2-87b0-403b-b63d-5da7465aecc3",
+    "channelId": "UCaKZA66vM_TUpetUNohmR0A",
+    "itunesId": "994656",
     "membership": false
   },
   {
@@ -500,6 +530,16 @@
     "membership": false
   },
   {
+    "slug": "suuns",
+    "name": "SUUNS",
+    "identity": "Motorik rock with the wiring exposed — krautrock pulse, post-punk nerves and a sound that never sits still.",
+    "tier": "in-the-mix",
+    "mbid": "f2394946-07cc-4af7-8d77-58fea451dd59",
+    "channelId": "UCLP4QDvzdH9lyyHoPAYiH0g",
+    "itunesId": "443465419",
+    "membership": false
+  },
+  {
     "slug": "tame-impala",
     "name": "Tame Impala",
     "identity": "Kevin Parker's one-man psychedelic universe from Perth, built alone in the studio and unleashed as a band onstage.",
@@ -577,6 +617,16 @@
     "mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
     "channelId": "UCINawo364C-NCXc_n-3bxOw",
     "itunesId": "140870416",
+    "membership": false
+  },
+  {
+    "slug": "tortoise",
+    "name": "Tortoise",
+    "identity": "Instrumental music built like architecture — jazz, dub, minimalism and krautrock, played by a band of interchangeable virtuosos.",
+    "tier": "in-the-mix",
+    "mbid": "e0953daa-860f-4dc8-9f1a-b12587cdaf17",
+    "channelId": null,
+    "itunesId": "5506415",
     "membership": false
   },
   {
