@@ -1,0 +1,502 @@
+{
+  "entries": [
+    {
+      "country": "US",
+      "from": 1964,
+      "to": 1969,
+      "era": "British Invasion, Motown, and soul",
+      "kind": "charted",
+      "basis": "Anchored to the Billboard Hot 100 archive — every chart week since 1958 is browsable, and each pick here held the #1 spot.",
+      "story": "When [[The Beatles]] hit America in early 1964 they opened the door for a British Invasion, but the charts they stormed were shared ground: [[The Supremes]] and the Motown hit machine answered from Detroit, and by decade's end [[Aretha Franklin]], [[Marvin Gaye]], and [[Sly and the Family Stone]] had made soul the sound of American radio.",
+      "items": [
+        {
+          "artist": "The Beatles",
+          "work": "I Want to Hold Your Hand",
+          "note": "Hot 100 #1, 1964"
+        },
+        {
+          "artist": "The Supremes",
+          "work": "Where Did Our Love Go",
+          "note": "Hot 100 #1, 1964"
+        },
+        {
+          "artist": "Aretha Franklin",
+          "work": "Respect",
+          "note": "Hot 100 #1, 1967"
+        },
+        {
+          "artist": "Marvin Gaye",
+          "work": "I Heard It Through the Grapevine",
+          "note": "Hot 100 #1, 1968"
+        },
+        {
+          "artist": "Sly and the Family Stone",
+          "work": "Everyday People",
+          "note": "Hot 100 #1, 1969"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Billboard Hot 100 archive",
+          "url": "https://www.billboard.com/charts/hot-100/"
+        },
+        {
+          "label": "Wikipedia — 1960s Hot 100 number ones",
+          "url": "https://en.wikipedia.org/wiki/List_of_Billboard_Hot_100_number-one_singles_of_the_1960s"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T04:12:16.000Z"
+    },
+    {
+      "country": "GB",
+      "from": 1976,
+      "to": 1979,
+      "era": "Punk vs. the pop charts",
+      "kind": "charted",
+      "basis": "Anchored to the Official Charts Company archive — every UK chart week since 1952 is browsable.",
+      "story": "Punk detonated in Britain while the singles chart stayed stubbornly mainstream: [[Sex Pistols]]' God Save the Queen was famously held at #2 in Jubilee week 1977 while [[Wings]]' Mull of Kintyre became the first UK single to sell two million. [[Donna Summer]]'s I Feel Love pointed at the dance future, and by 1979 punk's new-wave children — [[Ian Dury and the Blockheads]], [[Blondie]] — were topping the chart itself.",
+      "items": [
+        {
+          "artist": "Sex Pistols",
+          "work": "God Save the Queen",
+          "note": "UK #2 in Jubilee week, 1977"
+        },
+        {
+          "artist": "Wings",
+          "work": "Mull of Kintyre",
+          "note": "first UK single to sell two million, 1977"
+        },
+        {
+          "artist": "Donna Summer",
+          "work": "I Feel Love",
+          "note": "UK #1, 1977"
+        },
+        {
+          "artist": "Ian Dury and the Blockheads",
+          "work": "Hit Me with Your Rhythm Stick",
+          "note": "UK #1, 1979"
+        },
+        {
+          "artist": "Blondie",
+          "work": "Heart of Glass",
+          "note": "UK #1, 1979"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Official Charts archive",
+          "url": "https://www.officialcharts.com/charts/singles-chart/"
+        },
+        {
+          "label": "Wikipedia — 1970s UK number ones",
+          "url": "https://en.wikipedia.org/wiki/List_of_UK_Singles_Chart_number_ones_of_the_1970s"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T04:12:16.000Z"
+    },
+    {
+      "country": "JM",
+      "from": 1960,
+      "to": 1974,
+      "era": "Ska, rocksteady, and the birth of reggae",
+      "kind": "documented",
+      "basis": "Jamaica's radio charts from this era barely survive — this snapshot draws on documented sound-system and studio history.",
+      "story": "Jamaica's hits were made in the dance, not on a sales chart: Kingston sound systems run by producers like Coxsone Dodd and Duke Reid decided what the island moved to. [[Derrick Morgan]] and [[Prince Buster]] ruled the ska years, [[The Wailers]]' Simmer Down announced a new generation, and when the beat slowed in 1966, [[Alton Ellis]] and [[Hopeton Lewis]] made rocksteady the sound of Kingston. By 1968 [[Toots and the Maytals]] had given the next thing its name — reggae — and deejays like [[U-Roy]] turned the sound system itself into an instrument.",
+      "items": [
+        {
+          "artist": "Derrick Morgan",
+          "work": "Forward March",
+          "note": "independence anthem, 1962"
+        },
+        {
+          "artist": "The Wailers",
+          "work": "Simmer Down",
+          "note": "Jamaican radio-chart #1, 1964"
+        },
+        {
+          "artist": "Hopeton Lewis",
+          "work": "Take It Easy",
+          "note": "rocksteady's founding record, 1966"
+        },
+        {
+          "artist": "Alton Ellis",
+          "work": "Rock Steady",
+          "note": "named the style, 1966"
+        },
+        {
+          "artist": "Toots and the Maytals",
+          "work": "Do the Reggay",
+          "note": "gave reggae its name, 1968"
+        },
+        {
+          "artist": "U-Roy",
+          "work": "Wake the Town",
+          "note": "the deejay era begins, 1970"
+        }
+      ],
+      "sources": [
+        {
+          "label": "niceup.com — Jamaican music 1959–73",
+          "url": "https://niceup.com/history/ja_music_59-73.html"
+        },
+        {
+          "label": "Wikipedia — Rocksteady",
+          "url": "https://en.wikipedia.org/wiki/Rocksteady"
+        },
+        {
+          "label": "Wikipedia — Jamaican sound systems",
+          "url": "https://en.wikipedia.org/wiki/Sound_system_(Jamaican)"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T04:12:16.000Z"
+    },
+    {
+      "country": "BR",
+      "from": 1965,
+      "to": 1969,
+      "era": "Jovem Guarda and the festival era",
+      "kind": "documented",
+      "basis": "No national chart existed — but the televised festival placements are real, documented rankings, and Jovem Guarda's dominance is television history.",
+      "story": "Brazil had no national chart, but it had something better documented: televised song festivals whose rankings the whole country argued about. [[Elis Regina]] won the first in 1965 with Arrastão, [[Chico Buarque]] shared the 1966 crown with A Banda, and in 1967 [[Caetano Veloso]] and [[Gilberto Gil]] detonated Tropicália from the festival stage — to boos as much as cheers. The biggest audience of all belonged to [[Roberto Carlos]] and the Jovem Guarda TV show, Brazil's own beat-pop craze.",
+      "items": [
+        {
+          "artist": "Elis Regina",
+          "work": "Arrastão",
+          "note": "1965 festival winner"
+        },
+        {
+          "artist": "Chico Buarque",
+          "work": "A Banda",
+          "note": "1966 festival co-winner"
+        },
+        {
+          "artist": "Edu Lobo",
+          "work": "Ponteio",
+          "note": "1967 festival winner"
+        },
+        {
+          "artist": "Gilberto Gil",
+          "work": "Domingo no Parque",
+          "note": "1967 festival runner-up, with Os Mutantes"
+        },
+        {
+          "artist": "Caetano Veloso",
+          "work": "Alegria, Alegria",
+          "note": "Tropicália's opening shot, 1967"
+        },
+        {
+          "artist": "Roberto Carlos",
+          "work": "Quero que vá tudo pro inferno",
+          "note": "Jovem Guarda's biggest hit, 1965"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Folha festival history (Google Arts & Culture)",
+          "url": "https://artsandculture.google.com/story/brazilian-popular-music-festivals-folha-de-sp/vQWhvQRW4Z8X9g"
+        },
+        {
+          "label": "Memórias da Ditadura — a era dos festivais",
+          "url": "https://memoriasdaditadura.org.br/a-era-dos-festivais/"
+        },
+        {
+          "label": "Wikipedia — Jovem Guarda",
+          "url": "https://en.wikipedia.org/wiki/Jovem_Guarda"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T04:12:16.000Z"
+    },
+    {
+      "country": "NG",
+      "from": 1970,
+      "to": 1979,
+      "era": "Afrobeat, juju, and highlife",
+      "kind": "documented",
+      "basis": "Nigeria's first real chart launched in 2020 — nothing from this era was charted. This snapshot leans on documented scene history and compilation liner scholarship (Strut's Nigeria 70, Soundway's Nigeria Special).",
+      "story": "Nigeria in the 1970s had no chart at all — popularity lived in Lagos clubs, on radio, and in record sales only anecdote recorded. [[Fela Kuti]] and Africa 70, powered by drummer [[Tony Allen]], made Afrobeat the country's political lightning rod, while the everyday commercial giants were the juju bandleaders [[King Sunny Adé]] and [[Ebenezer Obey]], trading album releases by the dozen. And the decade's biggest single came from highlife: [[Prince Nico Mbarga]]'s Sweet Mother, one of the best-selling African records ever made.",
+      "items": [
+        {
+          "artist": "Fela Kuti",
+          "work": "Zombie",
+          "note": "the era's most incendiary record, 1976"
+        },
+        {
+          "artist": "Fela Kuti",
+          "work": "Water No Get Enemy",
+          "note": "Afrobeat at full power, 1975"
+        },
+        {
+          "artist": "Prince Nico Mbarga",
+          "work": "Sweet Mother",
+          "note": "one of Africa's best-selling singles ever, 1976"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Strut — Nigeria 70 (liner documentation)",
+          "url": "https://nigeria70.bandcamp.com/album/nigeria-70-sweet-times-afro-funk-highlife-juju-from-1970s-lagos"
+        },
+        {
+          "label": "Red Bull Music Academy — King Sunny Adé",
+          "url": "https://daily.redbullmusicacademy.com/2014/07/king-sunny-ade-from-lagos-to-hollywood/"
+        },
+        {
+          "label": "Wikipedia — Sweet Mother",
+          "url": "https://en.wikipedia.org/wiki/Sweet_Mother"
+        },
+        {
+          "label": "Wikipedia — Fela Kuti",
+          "url": "https://en.wikipedia.org/wiki/Fela_Kuti"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T04:12:16.000Z"
+    },
+    {
+      "country": "FR",
+      "from": 1962,
+      "to": 1966,
+      "era": "The yé-yé years",
+      "kind": "documented",
+      "basis": "France had no official chart before November 1984 — this snapshot follows Salut les copains-era documentation; pre-1984 chart positions are later reconstructions.",
+      "story": "France's arbiter wasn't a chart — official charts only began in 1984 — it was Salut les copains, the radio show and million-selling magazine that crowned the yé-yé generation. [[Johnny Hallyday]] and [[Sylvie Vartan]] were its royal couple, [[Françoise Hardy]] turned Tous les garçons et les filles into the bedroom anthem of a generation, and [[France Gall]] took yé-yé to Eurovision victory in 1965. When Salut les copains threw a free concert at Place de la Nation in 1963, some 150,000 kids showed up.",
+      "items": [
+        {
+          "artist": "Johnny Hallyday",
+          "work": "L'idole des jeunes",
+          "note": "1962"
+        },
+        {
+          "artist": "Françoise Hardy",
+          "work": "Tous les garçons et les filles",
+          "note": "1962"
+        },
+        {
+          "artist": "Sylvie Vartan",
+          "work": "La plus belle pour aller danser",
+          "note": "1964"
+        },
+        {
+          "artist": "France Gall",
+          "work": "Poupée de cire, poupée de son",
+          "note": "Eurovision winner, 1965"
+        },
+        {
+          "artist": "Claude François",
+          "work": "Belles ! Belles ! Belles !",
+          "note": "1962"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — Salut les copains",
+          "url": "https://en.wikipedia.org/wiki/Salut_les_copains_(magazine)"
+        },
+        {
+          "label": "Wikipedia — Yé-yé",
+          "url": "https://en.wikipedia.org/wiki/Y%C3%A9-y%C3%A9"
+        },
+        {
+          "label": "Red Bull Music Academy — yé-yé",
+          "url": "https://daily.redbullmusicacademy.com/2014/02/ye-ye-introduction/"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T04:12:16.000Z"
+    },
+    {
+      "country": "DE",
+      "from": 1970,
+      "to": 1975,
+      "era": "Schlager, Anglo pop — and a krautrock underground",
+      "kind": "charted",
+      "basis": "Anchored to the German number-one archives; the split between what charted and what was later canonized is documented music history.",
+      "story": "West Germany's charts told an honest, unglamorous truth: the country bought schlager and international pop. [[Vicky Leandros]] and [[Heino]] ruled the German-language side while [[George Harrison]] and [[ABBA]] took the #1 spots from abroad. The krautrock now canonized worldwide — [[Can]], [[Neu!]], [[Faust]] — barely touched the domestic charts at the time; the great exception was [[Kraftwerk]], whose Autobahn drove into the German top ten and changed pop's future.",
+      "items": [
+        {
+          "artist": "George Harrison",
+          "work": "My Sweet Lord",
+          "note": "German #1, 1971"
+        },
+        {
+          "artist": "ABBA",
+          "work": "Waterloo",
+          "note": "German #1, 1974"
+        },
+        {
+          "artist": "Vicky Leandros",
+          "work": "Theo, wir fahr'n nach Lodz",
+          "note": "German #1, 1974"
+        },
+        {
+          "artist": "Heino",
+          "work": "Blau blüht der Enzian",
+          "note": "schlager staple, 1972"
+        },
+        {
+          "artist": "Kraftwerk",
+          "work": "Autobahn",
+          "note": "krautrock's rare chart crossover, 1974"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — German number ones, 1971",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_hits_of_1971_(Germany)"
+        },
+        {
+          "label": "Wikipedia — German number ones, 1974",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_hits_of_1974_(Germany)"
+        },
+        {
+          "label": "Wikipedia — Krautrock",
+          "url": "https://en.wikipedia.org/wiki/Krautrock"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T04:12:16.000Z"
+    },
+    {
+      "country": "IN",
+      "from": 1955,
+      "to": 1975,
+      "era": "Playback's golden age",
+      "kind": "documented",
+      "basis": "No sales chart existed — Binaca Geetmala's radio countdown (1952–1994) is the documented arbiter; its annual lists survive as reconstructions, so exact ranks are soft while the songs themselves are solid.",
+      "story": "India's popularity record wasn't a sales chart — it was Binaca Geetmala, the Radio Ceylon countdown the whole subcontinent tuned into for four decades. The playback singers were the real stars behind the screen idols: [[Lata Mangeshkar]] and [[Mohammed Rafi]] dominated the countdown's golden years, [[Mukesh]] gave Raj Kapoor his voice, and after the film Aradhana in 1969, [[Kishore Kumar]] became the defining male voice of the new decade.",
+      "items": [
+        {
+          "artist": "Mukesh",
+          "work": "Mera Joota Hai Japani",
+          "note": "from Shree 420, 1955"
+        },
+        {
+          "artist": "Lata Mangeshkar",
+          "work": "Pyar Kiya To Darna Kya",
+          "note": "from Mughal-e-Azam, 1960"
+        },
+        {
+          "artist": "Mohammed Rafi",
+          "work": "Baharon Phool Barsao",
+          "note": "Binaca Geetmala annual topper, 1966"
+        },
+        {
+          "artist": "Kishore Kumar",
+          "work": "Roop Tera Mastana",
+          "note": "from Aradhana, 1969"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — Binaca Geetmala",
+          "url": "https://en.wikipedia.org/wiki/Binaca_Geetmala"
+        },
+        {
+          "label": "Scroll.in — Binaca Geetmala retrospective",
+          "url": "https://scroll.in/reel/1066351/how-ameen-sayanis-binaca-geetmala-took-film-songs-to-listeners-in-jhumri-talaiya-and-beyond"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T04:12:16.000Z"
+    },
+    {
+      "country": "ES",
+      "from": 1980,
+      "to": 1989,
+      "era": "La Movida and the pop boom",
+      "kind": "documented",
+      "basis": "Spain's official sales chart only starts in 1986 — this snapshot draws on documented Movida history and the Los 40 Principales airplay era.",
+      "story": "After Franco, Madrid exploded. La Movida Madrileña turned the city into an all-night laboratory: [[Alaska]] fronting Pegamoides and then Dinarama, [[Radio Futura]], and [[Nacha Pop]] — whose Chica de ayer became the movement's signature song. The honest footnote: Spain's best-selling pop of the decade belonged to [[Mecano]] and [[Hombres G]], the chart-friendly edge of the same generation.",
+      "items": [
+        {
+          "artist": "Nacha Pop",
+          "work": "Chica de ayer",
+          "note": "the Movida's signature song, 1980"
+        },
+        {
+          "artist": "Radio Futura",
+          "work": "Escuela de calor",
+          "note": "1984"
+        },
+        {
+          "artist": "Alaska y Dinarama",
+          "work": "A quién le importa",
+          "note": "1986"
+        },
+        {
+          "artist": "Mecano",
+          "work": "Me colé en una fiesta",
+          "note": "1981"
+        },
+        {
+          "artist": "Hombres G",
+          "work": "Devuélveme a mi chica",
+          "note": "1985"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — La Movida Madrileña",
+          "url": "https://en.wikipedia.org/wiki/La_Movida_Madrile%C3%B1a"
+        },
+        {
+          "label": "Rolling Stone en Español — La Movida",
+          "url": "https://es.rollingstone.com/la-movida-madrilena-la-revolucion-cultural-que-cambio-para-siempre-la-musica-y-el-cine-espanol/"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T04:12:16.000Z"
+    },
+    {
+      "country": "RU",
+      "from": 1980,
+      "to": 1990,
+      "era": "Estrada above, magnitizdat below",
+      "kind": "documented",
+      "basis": "The USSR had no sales chart — Melodiya held a state monopoly on records. This snapshot presents the documented two-tier reality: official estrada on television, rock spread by hand-copied cassette.",
+      "story": "Soviet music ran on two levels. Above ground were the state-approved estrada stars and VIA ensembles: [[Alla Pugacheva]], the USSR's biggest performer, and bands like [[Zemlyane]], whose cosmonaut anthem Trava u doma every Soviet citizen could hum. Underground, the Leningrad Rock Club generation — [[Kino]], [[Akvarium]], [[Alisa]] — spread on hand-copied cassettes called magnitizdat, until glasnost let [[Viktor Tsoi]]'s call for change fill stadiums.",
+      "items": [
+        {
+          "artist": "Alla Pugacheva",
+          "work": "Million Alykh Roz",
+          "note": "A Million Scarlet Roses, 1982"
+        },
+        {
+          "artist": "Zemlyane",
+          "work": "Trava u doma",
+          "note": "the cosmonauts' anthem, 1983"
+        },
+        {
+          "artist": "Kino",
+          "work": "Gruppa krovi",
+          "note": "1988"
+        },
+        {
+          "artist": "Akvarium",
+          "work": "Gorod zolotoy",
+          "note": "from the film Assa, 1988"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — Kino",
+          "url": "https://en.wikipedia.org/wiki/Kino_(band)"
+        },
+        {
+          "label": "Wikipedia — VIA ensembles",
+          "url": "https://en.wikipedia.org/wiki/VIA_(music)"
+        },
+        {
+          "label": "RFE/RL — the Leningrad Rock Club",
+          "url": "https://www.rferl.org/a/leningrad-rock-club-scorpions-meine-soviet-union-wind-of-change-tsoi/31157285.html"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T04:12:16.000Z"
+    }
+  ]
+}

@@ -17,6 +17,7 @@ import { archiveAudioSearchUrl, listenSearch } from '@/lib/links'
 import { useListenService } from '@/components/listen/ServiceProvider'
 import type { ListenService } from '@/lib/listen/services'
 import type { ArtistLinks } from '@/lib/explore/panelData'
+import { WhatWasPlaying } from '@/components/explore/WhatWasPlaying'
 import styles from './CountryPanel.module.css'
 
 export interface SelectedCountry {
@@ -171,6 +172,8 @@ export function CountryPanel({
   const [showAllOrigin, setShowAllOrigin] = useState(false)
   const [showAllArtists, setShowAllArtists] = useState(false)
   const [showAllReleases, setShowAllReleases] = useState(false)
+  // "Released in" is demoted: collapsed behind a small pill until asked.
+  const [releasesOpen, setReleasesOpen] = useState(false)
 
   const spanLabel =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}–${yearEnd}`
@@ -276,6 +279,15 @@ export function CountryPanel({
             </p>
           )}
 
+          {!genre && (
+            <WhatWasPlaying
+              countryCode={country.code}
+              countryName={country.name}
+              yearStart={yearStart}
+              yearEnd={yearEnd}
+            />
+          )}
+
           {state.details.originArtists.length > 0 && (
             <>
               <h3 className={styles.subheading}>
@@ -340,12 +352,22 @@ export function CountryPanel({
           )}
 
           {state.details.releases.length > 0 && (
-            <>
-              <h3 className={styles.subheading}>
+            <div className={styles.releasesFold}>
+              <button
+                type="button"
+                className={styles.releasesPill}
+                onClick={() => setReleasesOpen((value) => !value)}
+                aria-expanded={releasesOpen}
+              >
                 {state.details.originArtists.length > 0
                   ? `Released in ${country.name}`
                   : 'Releases'}
-              </h3>
+                {' · '}
+                {state.details.totalCount.toLocaleString()}
+                <span aria-hidden="true"> {releasesOpen ? '▾' : '▸'}</span>
+              </button>
+              {releasesOpen && (
+                <>
               <ul className={styles.releases}>
                 {(showAllReleases
                   ? state.details.releases
@@ -410,7 +432,9 @@ export function CountryPanel({
                     {state.details.totalCount.toLocaleString()} on record.
                   </p>
                 )}
-            </>
+                </>
+              )}
+            </div>
           )}
 
           {source === 'simulated' && (

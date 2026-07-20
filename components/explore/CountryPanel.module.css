@@ -207,6 +207,30 @@
   color: var(--text-muted);
 }
 
+/* "Released in" demoted: a quiet fold at the bottom for the curious */
+.releasesFold {
+  margin-top: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.releasesPill {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s ease, border-color 0.2s ease;
+  margin-bottom: 0.6rem;
+}
+
+.releasesPill:hover {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}
+
 .showAll {
   display: block;
   margin: 0.35rem 0 1.25rem;
