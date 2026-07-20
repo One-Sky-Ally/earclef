@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "slug": "mariachi-el-bronx",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Mariachi El Bronx — Ear Clef",
+    "description": "LA punks in charro suits — The Bronx's mariachi alter ego, played straight, played beautifully, and still going after four albums.",
+    "ogImage": "/images/og-mariachi-el-bronx.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/mariachi-el-bronx"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "0SidyBOAgQzRSreRRnsqUb"
+    },
+    "youtube": {
+      "channelId": "UCvsE0LFDNAdH4lCd0HH3Dag"
+    },
+    "setlistfm": {
+      "mbid": "ccecffbf-6631-46a3-8e32-ece2669ace37"
+    },
+    "itunes": {
+      "artistId": "321268620"
+    }
+  },
+  "hero": {
+    "name": "Mariachi El Bronx",
+    "identity": "A hardcore band's second life in charro suits — mariachi played with total sincerity and punk stamina.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.mariachielbronx.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/bronxovision"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/mariachielbronx"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/mariachi-el-bronx"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/user/thebronxmusic"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/mariachi-el-bronx/321268620"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://mariachielbronxii.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Mariachi El Bronx (I)",
+        "year": "2009",
+        "mbReleaseGroupId": "cc027738-bac3-4352-a66c-4d0b7172bd12"
+      },
+      {
+        "title": "Mariachi El Bronx (II)",
+        "year": "2011",
+        "mbReleaseGroupId": "74744284-1774-4d0e-9da4-8dbc26d10587"
+      },
+      {
+        "title": "Mariachi El Bronx (IV)",
+        "year": "2026",
+        "mbReleaseGroupId": "53cbc7b5-6e23-4430-8c84-3eef9446092b"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "A3u4gOc72BE",
+        "title": "48 Roses"
+      },
+      {
+        "youtubeId": "aQMH9fOl4Xw",
+        "title": "Loteria"
+      },
+      {
+        "youtubeId": "TFoQe-9O4dk",
+        "title": "Wildfires"
+      },
+      {
+        "youtubeId": "lDAempFiI_I",
+        "title": "El Borracho (Live in Tijuana)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Mariachi El Bronx began with a refusal. In 2006, Los Angeles punk band The Bronx were asked to play an acoustic 'unplugged' version of one of their songs for television — and instead of strumming softly, they arranged it as mariachi. The joke lasted about one rehearsal; the love was real.",
+      "The same musicians — Matt Caughthran's voice out front, with vihuela, requinto, guitarrón, trumpets and violin replacing the amps — released Mariachi El Bronx (I) in 2009 and have kept both bands running in parallel ever since, four mariachi albums deep.",
+      "The project earned its respect the honest way: NPR sessions and a Tiny Desk Concert, festival stages from Bonnaroo to Punk Rock Bowling, and a collaboration with The Killers on the 2009 single '¡Happy Birthday Guadalupe!'.",
+      "Mariachi El Bronx (IV) arrived in February 2026 — seventeen years into a dare that became a discography — with the Live in Tijuana EP close behind. Two bands, one crew, zero irony."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Mariachi El Bronx tours in its own right — dates at mariachielbronx.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2012-06-07",
+        "venue": "Great Stage Park",
+        "city": "Manchester, TN, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/mariachi-el-bronx/2012/great-stage-park-manchester-tn-73dfc6b1.html",
+        "note": "Bonnaroo 2012"
+      },
+      {
+        "date": "2024-12-31",
+        "venue": "Hollywood Palladium",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/mariachi-el-bronx/2024/hollywood-palladium-los-angeles-ca-7b5c06f8.html",
+        "note": "New Year's Eve in their hometown"
+      },
+      {
+        "date": "2025-05-23",
+        "venue": "Citrus Grand Pool Deck",
+        "city": "Las Vegas, NV, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/mariachi-el-bronx/2025/citrus-grand-pool-deck-las-vegas-nv-6b5d3a76.html",
+        "note": "Punk Rock Bowling 2025"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "MEB IV — Transparent Orange Vinyl",
+        "description": "The 2026 album on colored vinyl from the band's official store.",
+        "image": {
+          "src": "https://shop.thebronxxx.com/cdn/shop/files/MEB_Wide_NoBackground_1200x1200.png?v=1775158333",
+          "alt": "MEB IV — Transparent Orange Vinyl"
+        },
+        "url": "https://shop.thebronxxx.com/products/meb-iv-transparent-orange-vinyl"
+      },
+      {
+        "name": "MEB IV Tee",
+        "description": "Album shirt from the official Bronx/Mariachi El Bronx store.",
+        "image": {
+          "src": "https://shop.thebronxxx.com/cdn/shop/files/meb_4_bundle_group_color_SS_black_front_1200x1200.jpg?v=1762235901",
+          "alt": "MEB IV Tee"
+        },
+        "url": "https://shop.thebronxxx.com/products/meb-4-tee"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Mariachi Punk: The Bronx at Home in L.A.",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/transcripts/112966664"
+      },
+      {
+        "title": "Mariachi El Bronx on World Cafe",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2012/07/12/156511907/mariachi-el-bronx-on-world-cafe"
+      },
+      {
+        "title": "Mariachi Punks Put It All on the Line",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/transcripts/138792665"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "slug": "mimicking-birds",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Mimicking Birds — Ear Clef",
+    "description": "Nate Lacy's quiet Portland project on Isaac Brock's Glacial Pace — patient, nature-haunted songs that grew from home recordings.",
+    "ogImage": "/images/og-mimicking-birds.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/mimicking-birds"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UC9cXNJvBCiG0Qg6Xjkp7P9w"
+    },
+    "setlistfm": {
+      "mbid": "9d607685-73ff-49e4-9ac5-479142b4e651"
+    },
+    "itunes": {
+      "artistId": "354711782"
+    }
+  },
+  "hero": {
+    "name": "Mimicking Birds",
+    "identity": "Slow-orbit songs about deep time and small lives — home-recorded intimacy that never got loud on purpose.",
+    "tagline": "Hear here!",
+    "location": "Portland, Oregon, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/mimickingbirdsmusic"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/MimickingBirds"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@MimickingBirds"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/mimicking-birds/354711782"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://mimickingbirds.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Mimicking Birds",
+        "year": "2010",
+        "mbReleaseGroupId": "833ae4aa-93f6-4eaf-8f01-8579df593cef"
+      },
+      {
+        "title": "EONS",
+        "year": "2014",
+        "mbReleaseGroupId": "89abc6a5-0cdf-40c9-94a2-a2bb808eab98"
+      },
+      {
+        "title": "Layers of Us",
+        "year": "2018",
+        "mbReleaseGroupId": "4adc0085-1595-443f-8b04-c00c577a0c9e"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "7Oll2BY3bb4",
+        "title": "Bloodlines"
+      },
+      {
+        "youtubeId": "dndXgQ8iykA",
+        "title": "Sunlight Daze"
+      },
+      {
+        "youtubeId": "XHNJW4kRVUM",
+        "title": "Owl Hoots"
+      },
+      {
+        "youtubeId": "lRUcOFA6-4o",
+        "title": "Belongings"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Mimicking Birds began as Nate Lacy's home-recording project in Portland, Oregon — hushed, looping songs about geologic time, cells, water and the strangeness of being alive at all. Isaac Brock of Modest Mouse heard them and signed the project to his label, Glacial Pace Recordings, in 2008.",
+      "The self-titled 2010 debut was recorded largely at Brock's Portland home, and the project grew into a trio with Aaron Hanson and Adam Trachsel. EONS (2014) and Layers of Us (2018) deepened the sound without ever hurrying it — drum machines and layered guitars orbiting Lacy's near-whisper.",
+      "They are a genuinely quiet presence in every sense: touring stopped after 2018, their old website lapsed, and the music mostly lives on Bandcamp and streaming now. But the project isn't gone — a new self-released single, 'Crowns', appeared in October 2025.",
+      "For listeners who found them — often through the Modest Mouse family tree — Mimicking Birds remain a secret worth keeping: songs that treat smallness as a subject, not a limitation."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "No shows are scheduled; the band last toured in 2018. New music still surfaces on their Bandcamp.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2018-05-13",
+        "venue": "Red Rocks Amphitheatre",
+        "city": "Morrison, CO, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/mimicking-birds/2018/red-rocks-amphitheatre-morrison-co-4bedf336.html",
+        "note": "Opening at Red Rocks on the Layers of Us tour"
+      },
+      {
+        "date": "2018-09-24",
+        "venue": "Valley Bar",
+        "city": "Phoenix, AZ, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/mimicking-birds/2018/valley-bar-phoenix-az-23e93077.html",
+        "note": "From their most recent tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Album Review: Mimicking Birds",
+        "outlet": "Willamette Week",
+        "url": "https://www.wweek.com/portland/article-22556-album-review-mimicking-birds.html"
+      },
+      {
+        "title": "Mimicking Birds: Layers of Us — Live at OPB",
+        "outlet": "OPB",
+        "url": "https://www.opb.org/opbmusic/series/sessions/mimicking-birds-layers-of-us-live-at-opb/"
+      },
+      {
+        "title": "Mimicking Birds: The Best of What's Next",
+        "outlet": "Paste",
+        "url": "https://www.pastemagazine.com/articles/2014/06/mimicking-birds-the-best-of-whats-next.html"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

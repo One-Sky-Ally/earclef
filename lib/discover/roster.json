@@ -80,6 +80,16 @@
     "membership": false
   },
   {
+    "slug": "bon-iver",
+    "name": "Bon Iver",
+    "identity": "A falsetto born in a Wisconsin winter that grew into one of modern music's strangest, warmest bands.",
+    "tier": "in-the-mix",
+    "mbid": "437a0e49-c6ae-42f6-a6c1-84f25ed366bc",
+    "channelId": "UCci2c90HJbY0VAS3_eLF3Wg",
+    "itunesId": "273428126",
+    "membership": false
+  },
+  {
     "slug": "bonobo",
     "name": "Bonobo",
     "identity": "Simon Green, the Brighton-born producer who turned downtempo electronica into a full live orchestra of sound.",
@@ -300,6 +310,16 @@
     "membership": false
   },
   {
+    "slug": "mariachi-el-bronx",
+    "name": "Mariachi El Bronx",
+    "identity": "A hardcore band's second life in charro suits — mariachi played with total sincerity and punk stamina.",
+    "tier": "in-the-mix",
+    "mbid": "ccecffbf-6631-46a3-8e32-ece2669ace37",
+    "channelId": "UCvsE0LFDNAdH4lCd0HH3Dag",
+    "itunesId": "321268620",
+    "membership": false
+  },
+  {
     "slug": "mf-doom",
     "name": "MF DOOM",
     "identity": "The man behind the metal mask — hip-hop's supervillain laureate, 1971–2020. ALL CAPS when you spell the man name.",
@@ -317,6 +337,16 @@
     "mbid": "f27ec8db-af05-4f36-916e-3d57f91ecf5e",
     "channelId": "UC5OrDvL9DscpcAstz7JnQGA",
     "itunesId": "32940",
+    "membership": false
+  },
+  {
+    "slug": "mimicking-birds",
+    "name": "Mimicking Birds",
+    "identity": "Slow-orbit songs about deep time and small lives — home-recorded intimacy that never got loud on purpose.",
+    "tier": "in-the-mix",
+    "mbid": "9d607685-73ff-49e4-9ac5-479142b4e651",
+    "channelId": "UC9cXNJvBCiG0Qg6Xjkp7P9w",
+    "itunesId": "354711782",
     "membership": false
   },
   {
@@ -460,6 +490,16 @@
     "membership": false
   },
   {
+    "slug": "sufjan-stevens",
+    "name": "Sufjan Stevens",
+    "identity": "Whispered epics — a songwriter who orchestrates grief, faith and American myth like nobody else alive.",
+    "tier": "in-the-mix",
+    "mbid": "01d3c51b-9b98-418a-8d8e-37f6fab59d8c",
+    "channelId": "UCMi8tQF_L7rd6YcmSt7MXrQ",
+    "itunesId": "4273404",
+    "membership": false
+  },
+  {
     "slug": "tame-impala",
     "name": "Tame Impala",
     "identity": "Kevin Parker's one-man psychedelic universe from Perth, built alone in the studio and unleashed as a band onstage.",
@@ -477,6 +517,16 @@
     "mbid": "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
     "channelId": "UCc4K7bAqpdBP8jh1j9XZAww",
     "itunesId": "136975",
+    "membership": false
+  },
+  {
+    "slug": "the-books",
+    "name": "The Books",
+    "identity": "Found-sound collage as songwriting — cello, guitar and a library of voices nobody else thought to keep.",
+    "tier": "in-the-mix",
+    "mbid": "1270af14-9c17-4400-8ebb-3f0ac40dcfb0",
+    "channelId": null,
+    "itunesId": "105400698",
     "membership": false
   },
   {

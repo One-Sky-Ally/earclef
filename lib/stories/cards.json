@@ -1044,6 +1044,97 @@
       "at": "2026-07-18T15:27:07.465Z"
     },
     {
+      "id": "bon-iver-94a939f9",
+      "slug": "bon-iver",
+      "artistName": "Bon Iver",
+      "type": "era",
+      "hook": "For Emma, Forever Ago started as 500 self-released CDs from a hunting cabin",
+      "story": "In the winter of 2006–07, after his band broke up and his health and a relationship gave out, Justin Vernon holed up in his father's hunting cabin in northwestern Wisconsin and recorded For Emma, Forever Ago. He self-released it in July 2007; Jagjaguwar gave it a wide release in early 2008, and the cabin record became one of the defining folk albums of its generation.",
+      "media": [
+        {
+          "label": "Holocene",
+          "url": "https://www.youtube.com/watch?v=TWcyIpul8OE"
+        }
+      ],
+      "sources": [
+        {
+          "title": "For Emma, Forever Ago",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/For_Emma,_Forever_Ago"
+        },
+        {
+          "title": "Bon Iver",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Bon_Iver"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
+    },
+    {
+      "id": "bon-iver-a5cc354f",
+      "slug": "bon-iver",
+      "artistName": "Bon Iver",
+      "type": "era",
+      "hook": "Bon Iver won Best New Artist at the Grammys — five years after their debut",
+      "story": "At the 2012 Grammys, Bon Iver took home Best New Artist and Best Alternative Music Album for Bon Iver, Bon Iver — a 'new artist' whose debut had come out five years earlier. The recognition kept coming: per the Recording Academy, the band has 2 wins and 11 nominations, the most recent pair arriving in 2026 for SABLE, fABLE and 'Everything Is Peaceful Love'.",
+      "media": [
+        {
+          "label": "Everything Is Peaceful Love",
+          "url": "https://www.youtube.com/watch?v=yaPX-i1TjCc"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Bon Iver — Grammy Awards artist page",
+          "publisher": "Recording Academy",
+          "url": "https://www.grammy.com/artists/bon-iver/8342"
+        },
+        {
+          "title": "Bon Iver",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Bon_Iver"
+        },
+        {
+          "title": "Bon Iver 'Everything Is Peaceful Love' video",
+          "publisher": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-news/bon-iver-everything-is-peaceful-love-video-john-wilson-1235267752/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
+    },
+    {
+      "id": "bon-iver-d4f096fa",
+      "slug": "bon-iver",
+      "artistName": "Bon Iver",
+      "type": "collab",
+      "hook": "Bon Iver's first Billboard top ten came from a Taylor Swift duet",
+      "story": "For all the acclaim, Bon Iver's first top-ten hit on the Billboard Hot 100 arrived in 2020 through 'exile', the duet with Taylor Swift on her album folklore. The band's collaborative web keeps widening — its current lineup includes Jenn Wasner of Wye Oak, and Justin Vernon's other lives run through Big Red Machine and Volcano Choir.",
+      "media": [
+        {
+          "label": "Hey, Ma",
+          "url": "https://www.youtube.com/watch?v=HDAKS18Gv1U"
+        },
+        {
+          "label": "Taylor Swift — exile feat. Bon Iver",
+          "url": "https://www.youtube.com/results?search_query=Taylor%20Swift%20exile%20Bon%20Iver"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Bon Iver",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Bon_Iver"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
+    },
+    {
       "id": "bonobo-17b561bf",
       "slug": "bonobo",
       "artistName": "Bonobo",
@@ -3741,6 +3832,73 @@
       "at": "2026-07-20T00:38:33.000Z"
     },
     {
+      "id": "mariachi-el-bronx-9ae9a24d",
+      "slug": "mariachi-el-bronx",
+      "artistName": "Mariachi El Bronx",
+      "type": "era",
+      "hook": "Asked to play 'unplugged' on TV, a punk band showed up as a mariachi ensemble instead",
+      "story": "In 2006, LA punk band The Bronx were booked to play an acoustic version of one of their songs for television. Rather than do the soft-strummed 'unplugged' cliché, they arranged it as mariachi — and the disguise became a real band. Mariachi El Bronx has now released four albums of sincere, fully-costumed mariachi, the latest in February 2026.",
+      "media": [
+        {
+          "label": "48 Roses",
+          "url": "https://www.youtube.com/watch?v=A3u4gOc72BE"
+        },
+        {
+          "label": "Loteria",
+          "url": "https://www.youtube.com/watch?v=aQMH9fOl4Xw"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Mariachi El Bronx — official bio",
+          "publisher": "musicglue.com (band's own bio)",
+          "url": "https://www.musicglue.com/mariachi-el-bronx/about/"
+        },
+        {
+          "title": "The Bronx (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Bronx_(band)"
+        },
+        {
+          "title": "Mariachi Punk: The Bronx at Home in L.A.",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/transcripts/112966664"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
+    },
+    {
+      "id": "mariachi-el-bronx-46236006",
+      "slug": "mariachi-el-bronx",
+      "artistName": "Mariachi El Bronx",
+      "type": "collab",
+      "hook": "The Killers put a mariachi punk band on their Christmas single",
+      "story": "In 2009, The Killers released the charity single '¡Happy Birthday Guadalupe!' featuring Wild Light and Mariachi El Bronx — trumpets, vihuela and all. It stands as one of the stranger and warmer crossovers of the era: an arena-rock band handing its holiday song to punks in charro suits.",
+      "media": [
+        {
+          "label": "The Killers — ¡Happy Birthday Guadalupe!",
+          "url": "https://www.youtube.com/results?search_query=The%20Killers%20Happy%20Birthday%20Guadalupe%20Mariachi%20El%20Bronx"
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Bronx (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Bronx_(band)"
+        },
+        {
+          "title": "Mariachi El Bronx on World Cafe",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2012/07/12/156511907/mariachi-el-bronx-on-world-cafe"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
+    },
+    {
       "id": "mf-doom-dde2f713",
       "slug": "mf-doom",
       "artistName": "MF DOOM",
@@ -4063,6 +4221,63 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:12:42.865Z"
+    },
+    {
+      "id": "mimicking-birds-50c9c418",
+      "slug": "mimicking-birds",
+      "artistName": "Mimicking Birds",
+      "type": "era",
+      "hook": "Modest Mouse's Isaac Brock signed Mimicking Birds — and recorded them in his house",
+      "story": "Mimicking Birds began as Nate Lacy's home-recording project before Isaac Brock of Modest Mouse signed it to his label, Glacial Pace Recordings, in 2008. The self-titled 2010 debut was largely recorded at Brock's Portland home, and the project grew into a trio — quiet, looping songs about deep time that found their audience through the Modest Mouse family tree.",
+      "media": [
+        {
+          "label": "Bloodlines",
+          "url": "https://www.youtube.com/watch?v=7Oll2BY3bb4"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Mimicking Birds",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Mimicking_Birds"
+        },
+        {
+          "title": "Mimicking Birds — Glacial Pace",
+          "publisher": "Glacial Pace Recordings",
+          "url": "https://www.glacialpace.com/mimicking-birds"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
+    },
+    {
+      "id": "mimicking-birds-c84151c3",
+      "slug": "mimicking-birds",
+      "artistName": "Mimicking Birds",
+      "type": "news",
+      "hook": "Seven years of silence, then a new Mimicking Birds song appeared",
+      "story": "Mimicking Birds last toured in 2018 behind Layers of Us, and then went quiet — no shows, an expired website, the catalog resting on Bandcamp. In October 2025 a new self-released single, 'Crowns', surfaced without fanfare: proof the project is still breathing, on its own unhurried clock.",
+      "media": [
+        {
+          "label": "Sunlight Daze",
+          "url": "https://www.youtube.com/watch?v=dndXgQ8iykA"
+        },
+        {
+          "label": "Mimicking Birds — Crowns",
+          "url": "https://www.youtube.com/results?search_query=Mimicking%20Birds%20Crowns"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Mimicking Birds",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Mimicking_Birds"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
     },
     {
       "id": "modest-mouse-463fb9be",
@@ -5818,6 +6033,93 @@
       "at": "2026-07-18T16:39:01.724Z"
     },
     {
+      "id": "sufjan-stevens-c358fa5f",
+      "slug": "sufjan-stevens",
+      "artistName": "Sufjan Stevens",
+      "type": "era",
+      "hook": "Sufjan promised an album for all 50 states — and later admitted it was a gimmick",
+      "story": "After Michigan (2003), Sufjan Stevens announced the Fifty States Project: one album per US state. He completed exactly two — Michigan and Illinois — and later admitted the plan had been a 'promotional gimmick' he never seriously intended to finish. The gimmick still produced Illinois (2005), Pitchfork's best album of 2005 and a summit of modern American songwriting.",
+      "media": [
+        {
+          "label": "Sufjan Stevens — Chicago",
+          "url": "https://www.youtube.com/results?search_query=Sufjan%20Stevens%20Chicago%20Illinois"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Sufjan Stevens",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sufjan_Stevens"
+        },
+        {
+          "title": "Illinois (Sufjan Stevens album)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Illinois_(Sufjan_Stevens_album)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
+    },
+    {
+      "id": "sufjan-stevens-1ee0e3b8",
+      "slug": "sufjan-stevens",
+      "artistName": "Sufjan Stevens",
+      "type": "screen",
+      "hook": "Sufjan performed at the Oscars — nominated for the Call Me by Your Name song",
+      "story": "'Mystery of Love', written for Call Me by Your Name, was nominated for Best Original Song at the 90th Academy Awards, and Stevens performed it on the Oscars stage on March 4, 2018. That televised performance is also, fittingly, among his last documented live appearances — he has not toured since 2018.",
+      "media": [
+        {
+          "label": "Mystery of Love (Demo)",
+          "url": "https://www.youtube.com/watch?v=gNDuNpxpRkY"
+        }
+      ],
+      "sources": [
+        {
+          "title": "90th Academy Awards",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/90th_Academy_Awards"
+        },
+        {
+          "title": "Sufjan Stevens",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sufjan_Stevens"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
+    },
+    {
+      "id": "sufjan-stevens-e1c0368f",
+      "slug": "sufjan-stevens",
+      "artistName": "Sufjan Stevens",
+      "type": "screen",
+      "hook": "Illinois became a Broadway musical — and won a Tony",
+      "story": "In 2024, Sufjan Stevens' album Illinois was transformed into Illinoise, a Broadway musical at the St. James Theatre directed and choreographed by Justin Peck. It was nominated for four Tony Awards including Best Musical, and won the Tony for Peck's choreography — a 2005 indie concept album, reborn as award-winning theater.",
+      "media": [
+        {
+          "label": "Illinoise Broadway — Sufjan Stevens",
+          "url": "https://www.youtube.com/results?search_query=Illinoise%20Broadway%20musical%20Sufjan%20Stevens"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Illinoise",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Illinoise"
+        },
+        {
+          "title": "Sufjan Stevens",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sufjan_Stevens"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
+    },
+    {
       "id": "tame-impala-52467987",
       "slug": "tame-impala",
       "artistName": "Tame Impala",
@@ -6143,6 +6445,73 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:44:51.357Z"
+    },
+    {
+      "id": "the-books-5e17ce66",
+      "slug": "the-books",
+      "artistName": "The Books",
+      "type": "era",
+      "hook": "The Books built four albums out of other people's discarded tapes",
+      "story": "The Books formed in 1999 after cellist Paul de Jong invited his neighbor Nick Zammuto to dinner and played him pieces of his enormous collection of found audio. The duo built their entire catalog — from Thought for Food (2002) to The Way Out (2010) — around samples of obscure speech and salvaged recordings, woven through live guitar and cello into something no genre label ever quite fit.",
+      "media": [
+        {
+          "label": "A Cold Freezin' Night",
+          "url": "https://www.youtube.com/watch?v=TqlVCKfX3hk"
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Books",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Books"
+        },
+        {
+          "title": "The Books: Making Music Through Found Sound",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2010/09/03/129607098/the-books-making-music-through-found-sound"
+        },
+        {
+          "title": "The Books: The Lemon of Pink — review",
+          "publisher": "Pitchfork",
+          "url": "https://pitchfork.com/reviews/albums/855-the-lemon-of-pink/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
+    },
+    {
+      "id": "the-books-87dd6298",
+      "slug": "the-books",
+      "artistName": "The Books",
+      "type": "performance",
+      "hook": "Their concerts ran in sync with films they cut themselves",
+      "story": "The Books were as much a video band as an audio one: they performed live against their own video collages, cut from the same thrift-store archives as the songs, timed so sound and image landed together. The band disbanded in 2012 — Zammuto continues under his own name, de Jong solo — leaving a sealed, four-album world.",
+      "media": [
+        {
+          "label": "I Didn't Know That",
+          "url": "https://www.youtube.com/watch?v=ZP88rsuQ0K0"
+        },
+        {
+          "label": "The Books live with video projections",
+          "url": "https://www.youtube.com/results?search_query=The%20Books%20live%20video%20projections"
+        }
+      ],
+      "sources": [
+        {
+          "title": "The Books",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Books"
+        },
+        {
+          "title": "Nick Zammuto talks about ending The Books",
+          "publisher": "Pitchfork",
+          "url": "https://pitchfork.com/news/45239-nick-zammuto-talks-about-ending-the-books-starting-his-new-project/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T01:48:06.000Z"
     },
     {
       "id": "the-boswell-sisters-b32e8f83",

@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "slug": "sufjan-stevens",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Sufjan Stevens — Ear Clef",
+    "description": "Banjos, electronics, orchestras, grief and grace — Sufjan Stevens' catalog is one long act of ambition disguised as gentleness.",
+    "ogImage": "/images/og-sufjan-stevens.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/sufjan-stevens"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "4MXUO7sVCaFgFjoTI5ox5c"
+    },
+    "youtube": {
+      "channelId": "UCMi8tQF_L7rd6YcmSt7MXrQ"
+    },
+    "setlistfm": {
+      "mbid": "01d3c51b-9b98-418a-8d8e-37f6fab59d8c"
+    },
+    "itunes": {
+      "artistId": "4273404"
+    }
+  },
+  "hero": {
+    "name": "Sufjan Stevens",
+    "identity": "Whispered epics — a songwriter who orchestrates grief, faith and American myth like nobody else alive.",
+    "tagline": "Hear here!",
+    "location": "New York, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://sufjan.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/sufjan/"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/sufjan-stevens"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@SufjanStevensOfficial"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/sufjan-stevens/4273404"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://sufjanstevens.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Illinois",
+        "year": "2005",
+        "mbReleaseGroupId": "1fb75447-c513-38c4-ad8f-1bfc441aa74c"
+      },
+      {
+        "title": "Carrie & Lowell",
+        "year": "2015",
+        "mbReleaseGroupId": "21666540-83c8-4c54-9be1-0363a0848f33"
+      },
+      {
+        "title": "Javelin",
+        "year": "2023",
+        "mbReleaseGroupId": "56dba069-d0a1-4353-b786-db6fc8269139"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "gNDuNpxpRkY",
+        "title": "Mystery of Love (Demo)"
+      },
+      {
+        "youtubeId": "56bU7xAU1tM",
+        "title": "Sugar"
+      },
+      {
+        "youtubeId": "3fCdZzsP4U0",
+        "title": "Video Game"
+      },
+      {
+        "youtubeId": "OLeCIRC4taY",
+        "title": "Will Anybody Ever Love Me?"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Sufjan Stevens announced, after Michigan (2003), that he would write an album for all fifty American states — a plan he later admitted was more promotional gimmick than promise. It produced exactly two: Michigan and Illinois (2005), and the second was enough. Illinois — 'Chicago', 'Casimir Pulaski Day', 'John Wayne Gacy, Jr.' — was named the best album of 2005 by Pitchfork and remains a summit of American songwriting.",
+      "His range is the point. The Age of Adz (2010) traded banjos for glitching electronics; Carrie & Lowell (2015), written after his mother's death, is one of the most direct grief records ever made; Javelin (2023) folded the whole catalog's palette into one album. He releases it all through Asthmatic Kitty, the label he co-founded in 1999 with his stepfather Lowell Brams.",
+      "'Mystery of Love', written for the film Call Me by Your Name, brought an Academy Award nomination for Best Original Song, and Stevens performed it at the 2018 Oscars ceremony. In 2024 his Illinois became Illinoise, a Broadway musical directed and choreographed by Justin Peck, which won the Tony Award for Best Choreography.",
+      "He hasn't toured since 2018, and rarity has only concentrated the devotion. Few catalogs move between banjo hymn and electronic maximalism, states and saints, this freely — and make it all sound like one voice."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Sufjan Stevens has not toured since 2018; releases and news arrive via sufjan.com and Asthmatic Kitty.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2015-11-11",
+        "venue": "Ryman Auditorium",
+        "city": "Nashville, TN, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/sufjan-stevens/2015/ryman-auditorium-nashville-tn-43f50fe7.html",
+        "note": "Carrie & Lowell tour at the Ryman"
+      },
+      {
+        "date": "2018-03-04",
+        "venue": "Dolby Theatre",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/sufjan-stevens/2018/dolby-theatre-los-angeles-ca-53efb351.html",
+        "note": "Performing 'Mystery of Love' at the 90th Academy Awards"
+      },
+      {
+        "date": "2018-04-21",
+        "venue": "The Town Hall",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/sufjan-stevens/2018/the-town-hall-new-york-ny-2bec28de.html",
+        "note": "His most recent documented concert"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Illinois — LP",
+        "description": "The 2005 landmark on vinyl from the official Asthmatic Kitty store.",
+        "image": {
+          "src": "https://store.asthmatickitty.com/cdn/shop/products/AKR014_900.jpeg?v=1757963614",
+          "alt": "Illinois — LP"
+        },
+        "url": "https://store.asthmatickitty.com/products/illinois"
+      },
+      {
+        "name": "Javelin — LP",
+        "description": "The 2023 album on vinyl from Asthmatic Kitty.",
+        "image": {
+          "src": "https://store.asthmatickitty.com/cdn/shop/files/APD_SufjanStevens_Javelin03_Square.jpg?v=1777673360",
+          "alt": "Javelin — LP"
+        },
+        "url": "https://store.asthmatickitty.com/products/sufjan-stevens-javelin"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Sufjan Stevens: Javelin — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/sufjan-stevens-javelin/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

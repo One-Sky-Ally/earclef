@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-books",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "The Books — Ear Clef",
+    "description": "Two collectors of forgotten sound — Nick Zammuto and Paul de Jong built entire albums from thrift-store tapes, and nothing has sounded like them since.",
+    "ogImage": "/images/og-the-books.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/the-books"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "4UvhuGdFf75Cfan7lEU1J1"
+    },
+    "youtube": {
+      "channelId": ""
+    },
+    "setlistfm": {
+      "mbid": "1270af14-9c17-4400-8ebb-3f0ac40dcfb0"
+    },
+    "itunes": {
+      "artistId": "105400698"
+    }
+  },
+  "hero": {
+    "name": "The Books",
+    "identity": "Found-sound collage as songwriting — cello, guitar and a library of voices nobody else thought to keep.",
+    "tagline": "Hear here!",
+    "location": "New York, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": []
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/the-books/105400698"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://books.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Thought for Food",
+        "year": "2002",
+        "mbReleaseGroupId": "2645e496-648d-3388-98ad-1c3d8edf113d"
+      },
+      {
+        "title": "The Lemon of Pink",
+        "year": "2003",
+        "mbReleaseGroupId": "bdf39686-159d-34e4-9d85-b60e5776e01f"
+      },
+      {
+        "title": "The Way Out",
+        "year": "2010",
+        "mbReleaseGroupId": "60bdccd3-1b8a-49bd-a8ca-e7ee262fe22f"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "TqlVCKfX3hk",
+        "title": "A Cold Freezin' Night"
+      },
+      {
+        "youtubeId": "ZP88rsuQ0K0",
+        "title": "I Didn't Know That"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "The Books began over dinner in a New York apartment building in 1999, when cellist Paul de Jong played his neighbor Nick Zammuto pieces of his enormous collection of found audio. What they built from it — guitar, cello and hundreds of samples of answering machines, home movies, thrift-store tapes and instructional records — belonged to no genre, so critics invented words like folktronica trying to keep up.",
+      "Thought for Food (2002) and The Lemon of Pink (2003), released on the German label Tomlab, made them cult heroes; Lost and Safe (2005) let their own voices further in. Every album was a collage that somehow behaved like a song cycle — funny, tender and structurally unlike anything around it.",
+      "They were as much a video band as an audio one: live shows ran in sync with their own video collages cut from the same salvaged archives, and The Way Out (2010), on Temporary Residence, arrived with videos built the same way.",
+      "The duo disbanded in 2012 — Zammuto continues as the band Zammuto, de Jong as a solo artist — and their small catalog has only grown in stature: a complete, sealed world of American found sound, four albums deep."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "The Books disbanded in 2012; there are no upcoming shows. Their synced-video performances live on in the archive below.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2011-06-17",
+        "venue": "Prospect Park",
+        "city": "Brooklyn, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-books/2011/prospect-park-brooklyn-ny-1bd31108.html",
+        "note": "Celebrate Brooklyn"
+      },
+      {
+        "date": "2011-07-23",
+        "venue": "Alexandra Palace",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-books/2011/alexandra-palace-london-england-13cdb531.html",
+        "note": "ATP's 'I'll Be Your Mirror' 2011"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "A Dot in Time — Box Set",
+        "description": "The complete works: 7 LPs, DVD and book from their label Temporary Residence.",
+        "image": {
+          "src": "https://www.temporaryresidence.com/cdn/shop/products/TRR207_theBooks_HI-RES.jpg?v=1527360040&width=800",
+          "alt": "A Dot in Time — Box Set"
+        },
+        "url": "https://www.temporaryresidence.com/products/trr207"
+      },
+      {
+        "name": "The Way Out — Vinyl",
+        "description": "Their final album on double LP from Temporary Residence.",
+        "image": {
+          "src": "https://www.temporaryresidence.com/cdn/shop/products/TRR183_TheBooks-V1_HI-RES.jpg?v=1527360135&width=800",
+          "alt": "The Way Out — Vinyl"
+        },
+        "url": "https://www.temporaryresidence.com/products/trr183"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "The Books: The Lemon of Pink — Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/855-the-lemon-of-pink/"
+      },
+      {
+        "title": "The Books: Making Music Through Found Sound",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2010/09/03/129607098/the-books-making-music-through-found-sound"
+      },
+      {
+        "title": "Nick Zammuto Talks About Ending the Books",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/news/45239-nick-zammuto-talks-about-ending-the-books-starting-his-new-project/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

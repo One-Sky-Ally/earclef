@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "slug": "bon-iver",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Bon Iver — Ear Clef",
+    "description": "From a Wisconsin hunting cabin to a whole musical language — Justin Vernon's band keeps dismantling its own myth and building something warmer.",
+    "ogImage": "/images/og-bon-iver.jpg",
+    "canonicalUrl": "https://earclef.netlify.app/bon-iver"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "4LEiUm1SRbFMgfqnQTwUbQ"
+    },
+    "youtube": {
+      "channelId": "UCci2c90HJbY0VAS3_eLF3Wg"
+    },
+    "setlistfm": {
+      "mbid": "437a0e49-c6ae-42f6-a6c1-84f25ed366bc"
+    },
+    "itunes": {
+      "artistId": "273428126"
+    }
+  },
+  "hero": {
+    "name": "Bon Iver",
+    "identity": "A falsetto born in a Wisconsin winter that grew into one of modern music's strangest, warmest bands.",
+    "tagline": "Hear here!",
+    "location": "Eau Claire, Wisconsin, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://boniver.org/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/boniver/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/boniver"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/boniverwi"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCci2c90HJbY0VAS3_eLF3Wg"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/bon-iver/273428126"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://boniver.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "For Emma, Forever Ago",
+        "year": "2007",
+        "mbReleaseGroupId": "187935b5-a0a4-3e6f-9684-48b67a5190a1"
+      },
+      {
+        "title": "22, A Million",
+        "year": "2016",
+        "mbReleaseGroupId": "f0e8f425-a941-48df-b5d7-2ceeaaf77c71"
+      },
+      {
+        "title": "SABLE, fABLE",
+        "year": "2025",
+        "mbReleaseGroupId": "4843294e-a8ab-4a39-864b-36faa09a2dd8"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "TWcyIpul8OE",
+        "title": "Holocene"
+      },
+      {
+        "youtubeId": "HDAKS18Gv1U",
+        "title": "Hey, Ma"
+      },
+      {
+        "youtubeId": "yaPX-i1TjCc",
+        "title": "Everything Is Peaceful Love"
+      },
+      {
+        "youtubeId": "th4u1yrpuRE",
+        "title": "S P E Y S I D E"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "The origin story is true: after his band broke up and his health and a relationship collapsed, Justin Vernon spent the winter of 2006–07 in his father's hunting cabin in northwestern Wisconsin and came out with For Emma, Forever Ago — five hundred self-released CDs of layered falsetto that became one of the defining folk records of its era once Jagjaguwar picked it up.",
+      "Instead of repeating the cabin, Vernon kept burning it down. Bon Iver, Bon Iver (2011) swapped solitude for a full band and won two Grammys — Best New Artist and Best Alternative Music Album. 22, A Million (2016) shredded the songs through processors and invented glyphs; i,i (2019) reassembled them into community.",
+      "The community is literal: Bon Iver is a band — its current lineup includes Sean Carey, Mike Lewis, Andrew Fitzpatrick, Matthew McCaughan and Jenn Wasner of Wye Oak — and Vernon's orbit runs through Volcano Choir, Big Red Machine and the folklore-era Taylor Swift duet 'exile', his first Billboard Hot 100 top ten.",
+      "SABLE, fABLE (2025) brought the warmest writing of the catalog and two more Grammy nominations. Nearly two decades on, the project that started as one man in the cold keeps insisting on the opposite: more people, more color, more room."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour news lands at boniver.org/tour.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2019-09-03",
+        "venue": "Red Rocks Amphitheatre",
+        "city": "Morrison, CO, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/bon-iver/2019/red-rocks-amphitheatre-morrison-co-3b9f4448.html",
+        "note": "i,i tour at Red Rocks"
+      },
+      {
+        "date": "2024-08-07",
+        "venue": "Eau Claire Event District",
+        "city": "Eau Claire, WI, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/bon-iver/2024/eau-claire-event-district-eau-claire-wi-5b55d3f4.html",
+        "note": "Hometown Eau Claire show"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "VOLUMES Photo Book",
+        "description": "A photographic history from the official Bon Iver store.",
+        "image": {
+          "src": "https://store.boniver.org/cdn/shop/files/BI_Web_VOLUMES_Photo-Book_Cover_1024x1024.jpg?v=1775163730",
+          "alt": "VOLUMES Photo Book"
+        },
+        "url": "https://store.boniver.org/collections/featured/products/volumes-photo-book"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Bon Iver — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/bon-iver/8342"
+      },
+      {
+        "title": "Bon Iver Release John Wilson-Directed 'Everything Is Peaceful Love' Video",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/bon-iver-everything-is-peaceful-love-video-john-wilson-1235267752/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
