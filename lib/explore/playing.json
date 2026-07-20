@@ -936,6 +936,205 @@
       ],
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-20T06:38:04.000Z"
+    },
+    {
+      "country": "US",
+      "from": 2020,
+      "to": 2026,
+      "era": "The chart at feed speed",
+      "kind": "charted",
+      "basis": "Anchored to the Billboard Hot 100 archive, documented week by week through the present.",
+      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen.",
+      "items": [
+        {
+          "artist": "The Weeknd",
+          "work": "Blinding Lights",
+          "note": "Hot 100 #1, 2020"
+        },
+        {
+          "artist": "Olivia Rodrigo",
+          "work": "Drivers License",
+          "note": "Hot 100 #1 for 8 weeks, 2021"
+        },
+        {
+          "artist": "Harry Styles",
+          "work": "As It Was",
+          "note": "Hot 100 #1 for 15 weeks, 2022"
+        },
+        {
+          "artist": "Shaboozey",
+          "work": "A Bar Song (Tipsy)",
+          "note": "Hot 100 #1 for 19 weeks, 2024 — tying the all-time record"
+        },
+        {
+          "artist": "Kendrick Lamar",
+          "work": "Luther",
+          "note": "with SZA — Hot 100 #1 for 13 weeks, 2025"
+        },
+        {
+          "artist": "HUNTR/X",
+          "work": "Golden",
+          "note": "from KPop Demon Hunters — Hot 100 #1 for 8 weeks, 2025"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Billboard Hot 100 archive",
+          "url": "https://www.billboard.com/charts/hot-100/"
+        },
+        {
+          "label": "Wikipedia — 2020s Hot 100 number ones",
+          "url": "https://en.wikipedia.org/wiki/List_of_Billboard_Hot_100_number-one_singles_of_the_2020s"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T06:55:36.000Z"
+    },
+    {
+      "country": "GB",
+      "from": 2020,
+      "to": 2026,
+      "era": "Streaming Britain, homegrown edition",
+      "kind": "charted",
+      "basis": "Anchored to the Official Charts Company archive, documented week by week through the present.",
+      "story": "Britain's 2020s chart is a streaming ledger with a local accent. [[Dave]] and [[Central Cee]]'s Sprinter gave UK rap a ten-week #1 in 2023, [[Ed Sheeran]] kept his grip with Bad Habits, and [[Miley Cyrus]]'s Flowers matched Sprinter's ten weeks the same year. [[Sabrina Carpenter]] stacked twenty-one #1 weeks in a single calendar year — a record for a female artist — and in 2025 [[Alex Warren]]'s Ordinary ran twelve straight weeks, the longest uninterrupted UK #1 ever by a US male solo artist.",
+      "items": [
+        {
+          "artist": "The Weeknd",
+          "work": "Blinding Lights",
+          "note": "UK #1, 2020"
+        },
+        {
+          "artist": "Ed Sheeran",
+          "work": "Bad Habits",
+          "note": "UK #1, 2021"
+        },
+        {
+          "artist": "Dave",
+          "work": "Sprinter",
+          "note": "with Central Cee — UK #1 for 10 weeks, 2023"
+        },
+        {
+          "artist": "Miley Cyrus",
+          "work": "Flowers",
+          "note": "UK #1 for 10 weeks, 2023"
+        },
+        {
+          "artist": "Sabrina Carpenter",
+          "work": "Espresso",
+          "note": "2024 — part of a record 21-week #1 year"
+        },
+        {
+          "artist": "Alex Warren",
+          "work": "Ordinary",
+          "note": "UK #1 for 12 straight weeks, 2025"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Official Charts archive",
+          "url": "https://www.officialcharts.com/charts/singles-chart/"
+        },
+        {
+          "label": "Wikipedia — 2020s UK number ones",
+          "url": "https://en.wikipedia.org/wiki/List_of_UK_singles_chart_number_ones_of_the_2020s"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T06:55:36.000Z"
+    },
+    {
+      "country": "DE",
+      "from": 2020,
+      "to": 2026,
+      "era": "Shanties, party schlager, and rap royalty",
+      "kind": "charted",
+      "basis": "Anchored to Germany's official chart archives (GfK Entertainment), via the year-by-year number-one lists.",
+      "story": "Germany's 2020s chart swung between internet moments and homegrown giants. [[Nathan Evans]]' sea shanty Wellerman sailed off TikTok to #1 in 2021; the party-schlager Layla by [[DJ Robin]] and Schürze topped the chart in 2022 even as cities like Würzburg kept it off their volksfest stages; and in 2023 [[Udo Lindenberg]], German rock's elder statesman, joined rapper [[Apache 207]] on Komet — #1 for 21 non-consecutive weeks, the longest-running German chart-topper of all time.",
+      "items": [
+        {
+          "artist": "Nathan Evans",
+          "work": "Wellerman",
+          "note": "from TikTok to German #1, 2021"
+        },
+        {
+          "artist": "DJ Robin",
+          "work": "Layla",
+          "note": "with Schürze — German #1 amid the volksfest bans, 2022"
+        },
+        {
+          "artist": "Udo Lindenberg",
+          "work": "Komet",
+          "note": "with Apache 207 — German #1 for 21 weeks, an all-time record, 2023"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — German number ones, 2021",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_hits_of_2021_(Germany)"
+        },
+        {
+          "label": "Wikipedia — German number ones, 2022",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_hits_of_2022_(Germany)"
+        },
+        {
+          "label": "Wikipedia — Layla",
+          "url": "https://en.wikipedia.org/wiki/Layla_(DJ_Robin_and_Sch%C3%BCrze_song)"
+        },
+        {
+          "label": "Wikipedia — Komet",
+          "url": "https://en.wikipedia.org/wiki/Komet_(song)"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T06:55:36.000Z"
+    },
+    {
+      "country": "ES",
+      "from": 2020,
+      "to": 2026,
+      "era": "The Bizarrap decade",
+      "kind": "charted",
+      "basis": "Anchored to Promusicae's official singles chart — Spain's sales-and-streaming chart — via the archived year-by-year number-one lists.",
+      "story": "Spain's 2020s chart speaks the global language of Spanish-language pop. A Canary Islands rapper and an Argentine producer set the decade's template: [[Quevedo]]'s Bzrp session Quédate went from viral freestyle to #1 in 2022, [[Rosalía]]'s Despechá ruled the same summer, [[Bad Bunny]] was never far from the top — and in 2023 [[Shakira]] recorded a Bizarrap session of her own that was heard around the world.",
+      "items": [
+        {
+          "artist": "Quevedo",
+          "work": "Quédate",
+          "note": "with Bizarrap — Spanish #1, 2022"
+        },
+        {
+          "artist": "Rosalía",
+          "work": "Despechá",
+          "note": "Spanish #1, 2022"
+        },
+        {
+          "artist": "Bad Bunny",
+          "work": "Tití Me Preguntó",
+          "note": "Spanish #1, 2022"
+        },
+        {
+          "artist": "Shakira",
+          "work": "Shakira: Bzrp Music Sessions, Vol. 53",
+          "note": "with Bizarrap — Spanish #1, 2023"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — Spanish number ones, 2022",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_singles_of_2022_(Spain)"
+        },
+        {
+          "label": "Wikipedia — Spanish number ones, 2023",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_singles_of_2023_(Spain)"
+        },
+        {
+          "label": "Promusicae — El Portal de Música",
+          "url": "https://www.elportaldemusica.es/"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-20T06:55:36.000Z"
     }
   ]
 }
