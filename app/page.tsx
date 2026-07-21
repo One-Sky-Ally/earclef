@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getAllArtists } from '@/lib/content'
 import { SiteNav } from '@/components/SiteNav'
 import { EarClefMark } from '@/components/EarClefMark'
@@ -42,6 +43,11 @@ export default function HomePage() {
       <footer className={styles.footer}>
         <EarClefMark size={30} label="Ear Clef" />
         <p>Music in balance</p>
+        <p className={styles.footerLinks}>
+          <Link href="/manifesto">Manifesto</Link> ·{' '}
+          <Link href="/for-artists">For artists</Link> ·{' '}
+          <Link href="/privacy">Privacy</Link>
+        </p>
       </footer>
     </>
   )

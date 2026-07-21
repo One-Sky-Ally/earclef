@@ -65,3 +65,16 @@
   font-style: italic;
   color: var(--text-soft);
 }
+
+.footerLinks {
+  font-size: 0.85rem;
+}
+
+.footerLinks a {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.footerLinks a:hover {
+  color: var(--accent);
+}
