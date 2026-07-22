@@ -20,6 +20,16 @@
     "membership": true
   },
   {
+    "slug": "atoms-for-peace",
+    "name": "Atoms for Peace",
+    "identity": "A rhythm section built by a producer, a bass icon and a drummer — assembled to bring Thom Yorke's solo record to life on stage.",
+    "tier": "in-the-mix",
+    "mbid": "9e299bee-d7e2-49f3-8cd7-d6b28ab204d1",
+    "channelId": "UCRSuBl_3qMMTjwpa18X74kA",
+    "itunesId": "547192558",
+    "membership": false
+  },
+  {
     "slug": "aurora",
     "name": "AURORA",
     "identity": "A voice from the Norwegian fjords, singing for nature, warriors, and weirdos alike.",
@@ -130,6 +140,16 @@
     "membership": false
   },
   {
+    "slug": "can",
+    "name": "CAN",
+    "identity": "The Cologne band that built its own studio and invented a rhythm — the most cited influence in experimental rock.",
+    "tier": "in-the-mix",
+    "mbid": "13501c7d-d181-45ba-af52-5f101d8516a0",
+    "channelId": null,
+    "itunesId": "647564",
+    "membership": false
+  },
+  {
     "slug": "caribou",
     "name": "Caribou",
     "identity": "Songs built like proofs and sung like confessions — electronic music with a heartbeat.",
@@ -200,6 +220,16 @@
     "membership": false
   },
   {
+    "slug": "flogging-molly",
+    "name": "Flogging Molly",
+    "identity": "Tin whistle and distortion, built on a Monday-night pub residency — Celtic punk's most enduring band.",
+    "tier": "in-the-mix",
+    "mbid": "c3694ddc-f7e5-40dd-9fad-90d11a2c50fa",
+    "channelId": "UC8zwfTwx1vTZzM-fEclayuw",
+    "itunesId": "22327570",
+    "membership": false
+  },
+  {
     "slug": "florence-and-the-machine",
     "name": "Florence + the Machine",
     "identity": "Cathedral-sized art rock built on Florence Welch's hurricane of a voice.",
@@ -267,6 +297,16 @@
     "mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
     "channelId": "UCIZ4NEJamsWybup2TJUdoPA",
     "itunesId": "59504818",
+    "membership": false
+  },
+  {
+    "slug": "jason-mraz",
+    "name": "Jason Mraz",
+    "identity": "The easygoing hitmaker behind 'I'm Yours' — a Billboard chart record and two decades of warm, wordy pop songwriting.",
+    "tier": "in-the-mix",
+    "mbid": "82eb8936-7bf6-4577-8320-a2639465206d",
+    "channelId": "UC8ey1FYCmgHPa9f5KxWb0mw",
+    "itunesId": "156987",
     "membership": false
   },
   {
@@ -637,6 +677,16 @@
     "mbid": null,
     "channelId": "UCGKURphmIziTYopcAlNb6Iw",
     "itunesId": "1620116878",
+    "membership": false
+  },
+  {
+    "slug": "tune-yards",
+    "name": "tUnE-yArDs",
+    "identity": "Loop pedals, ukulele and a voice that builds whole songs from scratch, live — art-pop with the wiring showing.",
+    "tier": "in-the-mix",
+    "mbid": "fac3ff34-6ba4-425a-8f01-b181ef4a908a",
+    "channelId": "UCeo49u1owRF9cHq8F8FiJGw",
+    "itunesId": "308179967",
     "membership": false
   },
   {

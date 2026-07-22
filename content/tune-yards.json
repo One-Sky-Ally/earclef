@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "slug": "tune-yards",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "tUnE-yArDs — Ear Clef",
+    "description": "Merrill Garbus builds whole songs live out of loop pedals, ukulele and her own voice — art-pop with the machinery on full display.",
+    "ogImage": "/images/og-tune-yards.jpg",
+    "canonicalUrl": "https://earclef.com/tune-yards"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "0asVlqLu3TimnYVyY5Jxi"
+    },
+    "youtube": {
+      "channelId": "UCeo49u1owRF9cHq8F8FiJGw"
+    },
+    "setlistfm": {
+      "mbid": "fac3ff34-6ba4-425a-8f01-b181ef4a908a"
+    },
+    "itunes": {
+      "artistId": "308179967"
+    }
+  },
+  "hero": {
+    "name": "tUnE-yArDs",
+    "identity": "Loop pedals, ukulele and a voice that builds whole songs from scratch, live — art-pop with the wiring showing.",
+    "tagline": "Hear here!",
+    "location": "Oakland, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://tune-yards.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/tuneyards/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/tuneyards"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/tuneyards"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCeo49u1owRF9cHq8F8FiJGw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/308179967"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://tune-yards.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "w h o k i l l",
+        "year": "2011",
+        "mbReleaseGroupId": "e5435856-6ec5-4771-b31f-608413576eca"
+      },
+      {
+        "title": "Nikki Nack",
+        "year": "2014",
+        "mbReleaseGroupId": "95610184-0523-4fa5-92b9-3cb12425062a"
+      },
+      {
+        "title": "Better Dreaming",
+        "year": "2025",
+        "mbReleaseGroupId": "8a2218e9-cd28-45eb-a712-0f945bf20d8c"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "jbiFcPhccu8",
+        "title": "Water Fountain"
+      },
+      {
+        "youtubeId": "tpFlVpqAjco",
+        "title": "Heartbreak"
+      },
+      {
+        "youtubeId": "YQ1LI-NTa2s",
+        "title": "Bizness"
+      },
+      {
+        "youtubeId": "EbkMPHW67xM",
+        "title": "Gangsta"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "tUnE-yArDs is the project of Merrill Garbus, built around loop pedals, ukulele, lo-fi percussion and a voice that layers into its own choir in real time — with bassist Nate Brenner as her core collaborator. The stylized lowercase-and-capital name is part of the project's identity, right down to how it's written.",
+      "The 2009 debut BiRd-BrAiNs announced the method; w h o k i l l (2011) broke it wide open, folding funk, punk and pop into songs that stayed live-wire even on record. It was named the number one album of 2011 on The Village Voice's Pazz & Jop critics' poll and was later named among Pitchfork's 100 Best Albums of the Decade So Far.",
+      "Garbus and Brenner have kept moving — Nikki Nack (2014), I can feel you creep into my private life (2018), sketchy. (2021) and Better Dreaming (2025) — alongside side work scoring the 2018 film Sorry to Bother You.",
+      "Live, the appeal has never dimmed: watching Garbus construct a song from nothing, loop by loop, remains one of the most physically compelling things in current music."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates appear at tune-yards.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-06-11",
+        "venue": "The Bellwether",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/tune-yards/2025/the-bellwether-los-angeles-ca-34605e3.html",
+        "note": "Better Dreaming tour"
+      },
+      {
+        "date": "2025-11-29",
+        "venue": "Whelan's",
+        "city": "Dublin, Ireland",
+        "setlistUrl": "https://www.setlist.fm/setlist/tune-yards/2025/whelans-dublin-ireland-13434d01.html",
+        "note": "European tour stop"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Better Dreaming — Blue LP",
+        "description": "The 2025 album on limited blue vinyl from the band's official Bandcamp.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/a1656015819_5.jpg",
+          "alt": "Better Dreaming — Blue LP"
+        },
+        "url": "https://tune-yards.bandcamp.com/album/better-dreaming"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "First Listen: Tune-Yards, 'w h o k i l l'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2011/04/21/135175577/first-listen-tune-yards-w-h-o-k-i-l-l"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

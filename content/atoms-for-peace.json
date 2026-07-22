@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "slug": "atoms-for-peace",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Atoms for Peace — Ear Clef",
+    "description": "Thom Yorke's rhythm-obsessed supergroup, built to take The Eraser on the road — with Flea, Nigel Godrich, Joey Waronker and Mauro Refosco.",
+    "ogImage": "/images/og-atoms-for-peace.jpg",
+    "canonicalUrl": "https://earclef.com/atoms-for-peace"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "7tA9Eeeb68kkiG9Nrvuzmi"
+    },
+    "youtube": {
+      "channelId": "UCRSuBl_3qMMTjwpa18X74kA"
+    },
+    "setlistfm": {
+      "mbid": "9e299bee-d7e2-49f3-8cd7-d6b28ab204d1"
+    },
+    "itunes": {
+      "artistId": "547192558"
+    }
+  },
+  "hero": {
+    "name": "Atoms for Peace",
+    "identity": "A rhythm section built by a producer, a bass icon and a drummer — assembled to bring Thom Yorke's solo record to life on stage.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/atomsforpeace"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/atomsforpeace"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@atomsforpeacetv"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/547192558"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Amok",
+        "year": "2013",
+        "mbReleaseGroupId": "8fce1d86-c5fb-44b7-939c-53554d5a40eb"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "ZWrUEsVrdSU",
+        "title": "Before Your Very Eyes..."
+      },
+      {
+        "youtubeId": "a_N-7yjBAqY",
+        "title": "Default (Live from Club AMOK)"
+      },
+      {
+        "youtubeId": "HZd0K1KVyrQ",
+        "title": "Dropped (Live from Club AMOK)"
+      },
+      {
+        "youtubeId": "r4tW3mhp9io",
+        "title": "Judge, Jury and Executioner"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Thom Yorke assembled Atoms for Peace in 2009 to do something his 2006 solo album The Eraser had never done: play live as a full band. He recruited his longtime producer Nigel Godrich, Red Hot Chili Peppers bassist Flea, R.E.M./Beck drummer Joey Waronker and Forró in the Dark percussionist Mauro Refosco — a rhythm section built by people who understood groove from the inside.",
+      "The band's name comes from a song title on The Eraser, which itself references Dwight D. Eisenhower's 1953 'Atoms for Peace' speech. After debuting live in October 2009 and touring the US through 2010, the group released its one studio album, Amok, in 2013 on XL Recordings — a record that carried the same rhythmic obsession into fully collaborative songwriting.",
+      "Amok reached No. 5 on the UK Albums Chart and No. 2 on the Billboard Alternative Albums chart, and drew comparisons to Yorke's solo work while standing as something distinct: warmer, groovier, built by five specific musicians rather than one.",
+      "The band toured through 2013 and has been dormant since, with every member's other projects — Radiohead, the Chili Peppers, Godrich's production work — remaining very much alive."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Atoms for Peace has been inactive since 2013; the archive below documents their touring years.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2010-04-18",
+        "venue": "Empire Polo Club",
+        "city": "Indio, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/atoms-for-peace/2010/empire-polo-club-indio-ca-1bd4f550.html",
+        "note": "Coachella 2010"
+      },
+      {
+        "date": "2013-07-25",
+        "venue": "Roundhouse",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/atoms-for-peace/2013/roundhouse-london-england-23c6901f.html",
+        "note": "Amok-era London show, later released as a live album"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Amok — Double LP",
+        "description": "The band's sole studio album on vinyl, via Radiohead's official W.A.S.T.E. store.",
+        "image": {
+          "src": "https://store.wasteheadquarters.com/cdn/shop/files/amok-misc-181.webp?v=1737550290",
+          "alt": "Amok — Double LP"
+        },
+        "url": "https://store.wasteheadquarters.com/products/amok-double-lp"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Atoms for Peace: Amok — Album Review",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/amok-119223/"
+      },
+      {
+        "title": "Atoms for Peace's Amok Turns 10",
+        "outlet": "Stereogum",
+        "url": "https://www.stereogum.com/2213243/atoms-for-peace-amok-review/reviews/the-anniversary/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

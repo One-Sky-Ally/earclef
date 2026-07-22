@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 1,
+  "slug": "flogging-molly",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Flogging Molly — Ear Clef",
+    "description": "Irish traditional music and punk energy, born from a weekly residency at an LA pub — Celtic punk's most enduring band.",
+    "ogImage": "/images/og-flogging-molly.jpg",
+    "canonicalUrl": "https://earclef.com/flogging-molly"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "5kQGFREO5FzMBMsAO3cEtj"
+    },
+    "youtube": {
+      "channelId": "UC8zwfTwx1vTZzM-fEclayuw"
+    },
+    "setlistfm": {
+      "mbid": "c3694ddc-f7e5-40dd-9fad-90d11a2c50fa"
+    },
+    "itunes": {
+      "artistId": "22327570"
+    }
+  },
+  "hero": {
+    "name": "Flogging Molly",
+    "identity": "Tin whistle and distortion, built on a Monday-night pub residency — Celtic punk's most enduring band.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.floggingmolly.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/floggingmollyband/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/floggingmolly"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/floggingmolly"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/floggingmolly"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC8zwfTwx1vTZzM-fEclayuw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/22327570"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://floggingmolly.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Swagger",
+        "year": "2000",
+        "mbReleaseGroupId": "0da9a4e5-752d-3fdc-b66f-6ccd9f2a9893"
+      },
+      {
+        "title": "Within a Mile of Home",
+        "year": "2004",
+        "mbReleaseGroupId": "4cc9d375-dbd8-3846-80cb-07f5a0e6a8ad"
+      },
+      {
+        "title": "Anthem",
+        "year": "2022",
+        "mbReleaseGroupId": "0a5c8245-5e58-4b59-83da-b4d5407788f8"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "89NjEeHku8o",
+        "title": "Drunken Lullabies"
+      },
+      {
+        "youtubeId": "Trkx9xLb5X8",
+        "title": "What's Left of the Flag"
+      },
+      {
+        "youtubeId": "R-PmyAfQ5xY",
+        "title": "Float"
+      },
+      {
+        "youtubeId": "_XUVEyOwnAU",
+        "title": "Swagger"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Flogging Molly formed in Los Angeles in 1997 around Dublin-born vocalist Dave King, previously the frontman of the hard rock band Fastway. King and his bandmates began playing a mix of Irish traditional and rock music every week at Molly Malone's, an LA pub — building the loyal following, and the songs, that became the band's foundation.",
+      "That residency gave the band its name and its sound: tin whistle, fiddle, mandolin and banjo running alongside distorted guitars and King's poetic, political lyrics. Swagger (2000) and Drunken Lullabies (2002) established the template, and the band has released eight studio albums since, most recently Anthem in 2022.",
+      "Flogging Molly run their own record label, Borstal Beat Records, and have built one of Celtic punk's most devoted fan communities — including the band's own annual Salty Dog Cruise, sailing musicians and fans together since 2015.",
+      "Nearly three decades on from that first Monday night at Molly Malone's, the band remains a rare thing: a genre-crossing act that never diluted either half of its sound to serve the other."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates, including the annual Salty Dog Cruise, are announced at floggingmolly.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-10-08",
+        "venue": "The Majestic Ventura Theater",
+        "city": "Ventura, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/flogging-molly/2024/the-majestic-ventura-theater-ventura-ca-4350fb03.html",
+        "note": "2024 fall tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Anthem Box Set",
+        "description": "The 2022 album with vinyl and 7-inch, from the official Flogging Molly store.",
+        "image": {
+          "src": "https://shopfloggingmolly.com/cdn/shop/products/FM-BOX-MOCKUP_V2.jpg?v=1654555423",
+          "alt": "Anthem Box Set"
+        },
+        "url": "https://shopfloggingmolly.com/products/pre-order-anthem-box-set"
+      }
+    ]
+  },
+  "press": {
+    "enabled": false,
+    "items": []
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

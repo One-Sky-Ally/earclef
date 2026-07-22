@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "slug": "can",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "CAN — Ear Clef",
+    "description": "Cologne, 1968 — the band that built its own studio, invented a rhythm, and became the most cited influence in experimental rock.",
+    "ogImage": "/images/og-can.jpg",
+    "canonicalUrl": "https://earclef.com/can"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "4l8xPGtl6DHR2uvunqrl8r"
+    },
+    "youtube": {
+      "channelId": ""
+    },
+    "setlistfm": {
+      "mbid": "13501c7d-d181-45ba-af52-5f101d8516a0"
+    },
+    "itunes": {
+      "artistId": "647564"
+    }
+  },
+  "hero": {
+    "name": "CAN",
+    "identity": "The Cologne band that built its own studio and invented a rhythm — the most cited influence in experimental rock.",
+    "tagline": "Hear here!",
+    "location": "Cologne, West Germany",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.spoonrecords.com/"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/officialCan"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/can-official"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/647564"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QKKMXY"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://canofficial.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Tago Mago",
+        "year": "1971",
+        "mbReleaseGroupId": "13d08c0e-14e2-30b2-9ad7-5f501761a8ea"
+      },
+      {
+        "title": "Ege Bamyası",
+        "year": "1972",
+        "mbReleaseGroupId": "a4b405a6-0577-3b77-b46d-06af1b98fbd2"
+      },
+      {
+        "title": "Future Days",
+        "year": "1973",
+        "mbReleaseGroupId": "aa41b178-9f16-3dc4-84b6-e9ad8b5be4b8"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "1yai756NPy0",
+        "title": "Future Days"
+      },
+      {
+        "youtubeId": "C6kmbW8tmZg",
+        "title": "Nineteen Century Man"
+      },
+      {
+        "youtubeId": "YmN9oHa3ZIQ",
+        "title": "Vitamin C"
+      },
+      {
+        "youtubeId": "l6PH7a4RptU",
+        "title": "Spoon"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "CAN formed in Cologne in 1968 around Holger Czukay, Irmin Schmidt, Michael Karoli and Jaki Liebezeit, with Malcolm Mooney and later Damo Suzuki taking the vocal role. They built their own studio and recorded obsessively, editing hours of improvisation into songs — a working method that made the band as much a compositional laboratory as a rock group.",
+      "Tago Mago (1971), Ege Bamyası (1972) and Future Days (1973) form the core of a run that helped define what became known as krautrock: hypnotic, cyclical rhythm — Liebezeit's steady 'motorik' pulse — wrapped around dub-like production and funk, jazz and electronic textures years ahead of their wider adoption.",
+      "Few bands are cited as an influence as often or as specifically. Radiohead have named CAN as a direct influence on Kid A and Amnesiac, going so far as to build their own studio partly inspired by CAN's example; Stereolab built a career on the same motorik pulse; Talk Talk, Sonic Youth and countless others have acknowledged the debt.",
+      "The band's four core instrumentalists have all since died — Karoli in 2001, Liebezeit and Czukay both in 2017 — but the catalog they built keeps finding new listeners, reissued and championed by the band's own label, Spoon Records, and by Mute."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "CAN stopped regular touring decades ago; no shows are scheduled.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1977-05-15",
+        "venue": "Hochschule der Künste",
+        "city": "Berlin, Germany",
+        "setlistUrl": "https://www.setlist.fm/setlist/can/1977/hochschule-der-kunste-berlin-germany-23c63c47.html",
+        "note": "From the band's late-'70s European tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Tago Mago — The 500 Greatest Albums of All Time",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-lists/best-albums-of-all-time-1062063/can-tago-mago-2-1063005/"
+      },
+      {
+        "title": "Future Days: How Krautrock Reinvented Rock — Review",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/books/2014/aug/17/future-days-krautrock-review-david-stubbs-kraftwerk-can"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

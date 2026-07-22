@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "slug": "jason-mraz",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Jason Mraz — Ear Clef",
+    "description": "The guy behind 'I'm Yours' — a chart record, a Grammy, and two decades of easygoing pop songwriting from an avocado farm in Oceanside.",
+    "ogImage": "/images/og-jason-mraz.jpg",
+    "canonicalUrl": "https://earclef.com/jason-mraz"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "4phGZZrJZRo4ElhRtViYdl"
+    },
+    "youtube": {
+      "channelId": "UC8ey1FYCmgHPa9f5KxWb0mw"
+    },
+    "setlistfm": {
+      "mbid": "82eb8936-7bf6-4577-8320-a2639465206d"
+    },
+    "itunes": {
+      "artistId": "156987"
+    }
+  },
+  "hero": {
+    "name": "Jason Mraz",
+    "identity": "The easygoing hitmaker behind 'I'm Yours' — a Billboard chart record and two decades of warm, wordy pop songwriting.",
+    "tagline": "Hear here!",
+    "location": "Oceanside, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://jasonmraz.com/"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/jasonmraz"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC8ey1FYCmgHPa9f5KxWb0mw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/156987"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Waiting for My Rocket to Come",
+        "year": "2002",
+        "mbReleaseGroupId": "4895bcaf-b6c2-305d-b56e-ca6011a51d51"
+      },
+      {
+        "title": "We Sing. We Dance. We Steal Things.",
+        "year": "2008",
+        "mbReleaseGroupId": "0fba4366-e58e-30b3-814c-42f4cfbae464"
+      },
+      {
+        "title": "Mystical Magical Rhythmical Radical Ride",
+        "year": "2023",
+        "mbReleaseGroupId": "1b8aae9d-27bd-4c91-92e3-8f46fa6c3aad"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "EkHTsc9PU2A",
+        "title": "I'm Yours"
+      },
+      {
+        "youtubeId": "acvIVA9-FMQ",
+        "title": "Lucky (feat. Colbie Caillat)"
+      },
+      {
+        "youtubeId": "BW17WAwMcoQ",
+        "title": "The Remedy (I Won't Worry)"
+      },
+      {
+        "youtubeId": "bcQwIxRcaYs",
+        "title": "93 Million Miles"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Jason Mraz built his following the acoustic-coffeehouse way, and broke wide with 'I'm Yours', the loose, ukulele-driven single from We Sing. We Dance. We Steal Things. (2008). The song peaked at No. 6 on the Billboard Hot 100 but spent 76 weeks on the chart, breaking the record for longest-charting Hot 100 song at the time — a record that has since been surpassed by Teddy Swims' 'Lose Control'.",
+      "In 2010, Mraz and Colbie Caillat won the Grammy Award for Best Pop Collaboration with Vocals for 'Lucky', a duet the two co-wrote together. Across albums from Waiting for My Rocket to Come (2002) through Mystical Magical Rhythmical Radical Ride (2023), Mraz has kept his sound consistent: warm, wordplay-heavy pop built for singing along.",
+      "Off stage, Mraz owns a five-and-a-half-acre avocado farm in Oceanside, California, now run as Mraz Family Farms — a working organic operation, not a hobby prop, and part of a broader environmental and food-system advocacy that runs alongside his music.",
+      "Two decades after 'The Remedy' and 'I'm Yours' made him a radio fixture, Mraz remains one of pop's steadiest working songwriters — still touring, still releasing albums, still easygoing by design."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates appear at jasonmraz.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2017-06-23",
+        "venue": "Hollywood Bowl",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/jason-mraz/2017/hollywood-bowl-hollywood-ca-be4f542.html",
+        "note": "28-song set with guests Colbie Caillat, Sara Bareilles and Raining Jane"
+      },
+      {
+        "date": "2024-07-28",
+        "venue": "Red Rocks Amphitheatre",
+        "city": "Morrison, CO, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/jason-mraz/2024/red-rocks-amphitheatre-morrison-co-1b55b188.html",
+        "note": "With the Colorado Symphony"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Grandma's Gospel Favorites T-Shirt",
+        "description": "From the official Jason Mraz store.",
+        "image": {
+          "src": "https://shop.jasonmraz.com/cdn/shop/files/JZCT158.jpg",
+          "alt": "Grandma's Gospel Favorites T-Shirt"
+        },
+        "url": "https://shop.jasonmraz.com/products/grandmas-gospel-favorites-t-shirt"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Jason Mraz — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/jason-mraz"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

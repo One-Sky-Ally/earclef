@@ -235,6 +235,54 @@
       "at": "2026-07-18T15:12:51.398Z"
     },
     {
+      "id": "atoms-for-peace-a1d4a604",
+      "slug": "atoms-for-peace",
+      "artistName": "Atoms for Peace",
+      "type": "era",
+      "hook": "Atoms for Peace exists because Thom Yorke wanted to play his solo album live",
+      "story": "Thom Yorke's 2006 solo album The Eraser was built almost entirely alone, and it needed a band to exist on stage. In 2009 he assembled one: producer Nigel Godrich, Red Hot Chili Peppers bassist Flea, drummer Joey Waronker and percussionist Mauro Refosco. They played their first shows that October and toured the US through 2010.",
+      "media": [
+        {
+          "label": "Before Your Very Eyes...",
+          "url": "https://www.youtube.com/watch?v=ZWrUEsVrdSU"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Atoms for Peace (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Atoms_for_Peace_(band)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:02:47.000Z"
+    },
+    {
+      "id": "atoms-for-peace-dc1fea8d",
+      "slug": "atoms-for-peace",
+      "artistName": "Atoms for Peace",
+      "type": "era",
+      "hook": "The band's name traces back to an Eisenhower speech — by way of a song title",
+      "story": "Atoms for Peace took its name from a track on The Eraser, which itself references Dwight D. Eisenhower's 1953 'Atoms for Peace' speech to the United Nations. The one album they made together, Amok (2013), reached No. 5 on the UK charts.",
+      "media": [
+        {
+          "label": "Default (Live from Club AMOK)",
+          "url": "https://www.youtube.com/watch?v=a_N-7yjBAqY"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Atoms for Peace (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Atoms_for_Peace_(band)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:02:47.000Z"
+    },
+    {
       "id": "aurora-ec0cbe95",
       "slug": "aurora",
       "artistName": "AURORA",
@@ -1530,6 +1578,62 @@
       "at": "2026-07-18T17:08:56.294Z"
     },
     {
+      "id": "can-8ccba87f",
+      "slug": "can",
+      "artistName": "CAN",
+      "type": "collab",
+      "hook": "Radiohead built their own studio partly because of CAN",
+      "story": "CAN's influence runs unusually deep: Radiohead have named the band as a direct influence on Kid A and Amnesiac, and — inspired by CAN's own studio — built a recording space of their own. Stereolab's whole rhythmic identity leans on the motorik pulse CAN's drummer Jaki Liebezeit helped popularize.",
+      "media": [
+        {
+          "label": "Future Days",
+          "url": "https://www.youtube.com/watch?v=1yai756NPy0"
+        },
+        {
+          "label": "Vitamin C",
+          "url": "https://www.youtube.com/watch?v=YmN9oHa3ZIQ"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Can (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Can_(band)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:02:47.000Z"
+    },
+    {
+      "id": "can-4281d1da",
+      "slug": "can",
+      "artistName": "CAN",
+      "type": "era",
+      "hook": "CAN built its own studio and edited hours of jamming into songs",
+      "story": "CAN recorded obsessively in a studio the band built themselves, turning long stretches of improvisation into finished tracks through editing — a working method that made records like Tago Mago and Ege Bamyası feel composed and improvised at once. All four of the band's core instrumentalists have since died, but the label they founded, Spoon Records, keeps the catalog in print.",
+      "media": [
+        {
+          "label": "Spoon",
+          "url": "https://www.youtube.com/watch?v=l6PH7a4RptU"
+        },
+        {
+          "label": "Nineteen Century Man",
+          "url": "https://www.youtube.com/watch?v=C6kmbW8tmZg"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Can (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Can_(band)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:02:47.000Z"
+    },
+    {
       "id": "caribou-5cb74321",
       "slug": "caribou",
       "artistName": "Caribou",
@@ -2301,6 +2405,58 @@
       "status": "published",
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
+      "id": "flogging-molly-ff6c5de8",
+      "slug": "flogging-molly",
+      "artistName": "Flogging Molly",
+      "type": "era",
+      "hook": "Flogging Molly's whole sound was born from a Monday-night pub residency",
+      "story": "Dave King, previously the frontman of the hard rock band Fastway, started playing Irish traditional music mixed with rock at a weekly residency at Molly Malone's, an LA pub. The band built its earliest songs and its following there — the pub gave Flogging Molly both its name and its entire musical premise.",
+      "media": [
+        {
+          "label": "Drunken Lullabies",
+          "url": "https://www.youtube.com/watch?v=89NjEeHku8o"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flogging Molly",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Flogging_Molly"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:02:47.000Z"
+    },
+    {
+      "id": "flogging-molly-63ca5d0",
+      "slug": "flogging-molly",
+      "artistName": "Flogging Molly",
+      "type": "era",
+      "hook": "Flogging Molly run their own label — and their own cruise",
+      "story": "Rather than stay tied to outside labels, Flogging Molly release music through Borstal Beat Records, their own imprint. They've built the same independence into their live world: the band's own annual Salty Dog Cruise has sailed musicians and fans together since 2015.",
+      "media": [
+        {
+          "label": "Float",
+          "url": "https://www.youtube.com/watch?v=R-PmyAfQ5xY"
+        },
+        {
+          "label": "What's Left of the Flag",
+          "url": "https://www.youtube.com/watch?v=Trkx9xLb5X8"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Flogging Molly",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Flogging_Molly"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:02:47.000Z"
     },
     {
       "id": "florence-and-the-machine-b08bbd13",
@@ -3349,6 +3505,54 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T17:16:31.732Z"
+    },
+    {
+      "id": "jason-mraz-c9489ab4",
+      "slug": "jason-mraz",
+      "artistName": "Jason Mraz",
+      "type": "song",
+      "hook": "'I'm Yours' broke a chart record it took over a decade to lose",
+      "story": "Jason Mraz's 'I'm Yours' peaked at only No. 6 on the Billboard Hot 100 — but it spent 76 weeks on the chart, breaking the previous record for longest-charting Hot 100 song, LeAnn Rimes' 'How Do I Live' (69 weeks). The record stood until Teddy Swims' 'Lose Control' passed it with 100 weeks.",
+      "media": [
+        {
+          "label": "I'm Yours",
+          "url": "https://www.youtube.com/watch?v=EkHTsc9PU2A"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jason Mraz",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jason_Mraz"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:02:47.000Z"
+    },
+    {
+      "id": "jason-mraz-7025d849",
+      "slug": "jason-mraz",
+      "artistName": "Jason Mraz",
+      "type": "era",
+      "hook": "Jason Mraz won a Grammy for a song he wrote with Colbie Caillat",
+      "story": "In 2010, Mraz and Colbie Caillat won the Grammy Award for Best Pop Collaboration with Vocals for 'Lucky', a duet the two co-wrote together. Away from music, Mraz runs a working organic avocado farm in Oceanside, California — Mraz Family Farms — not a side hobby but a real operating orchard.",
+      "media": [
+        {
+          "label": "Lucky (feat. Colbie Caillat)",
+          "url": "https://www.youtube.com/watch?v=acvIVA9-FMQ"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jason Mraz",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jason_Mraz"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:02:47.000Z"
     },
     {
       "id": "jeff-buckley-dcb3e6cb",
@@ -7512,6 +7716,62 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:56:19.199Z"
+    },
+    {
+      "id": "tune-yards-ae465e13",
+      "slug": "tune-yards",
+      "artistName": "tUnE-yArDs",
+      "type": "era",
+      "hook": "tUnE-yArDs' breakthrough album was named the best of 2011 by a major critics' poll",
+      "story": "w h o k i l l (2011) — built the same way as everything Merrill Garbus makes, from loop pedals, ukulele and layered vocals — was named the number one album of 2011 on The Village Voice's Pazz & Jop critics' poll. Pitchfork later named it among the 100 Best Albums of the Decade So Far.",
+      "media": [
+        {
+          "label": "Water Fountain",
+          "url": "https://www.youtube.com/watch?v=jbiFcPhccu8"
+        },
+        {
+          "label": "Bizness",
+          "url": "https://www.youtube.com/watch?v=YQ1LI-NTa2s"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Whokill",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Whokill"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:02:47.000Z"
+    },
+    {
+      "id": "tune-yards-643432f5",
+      "slug": "tune-yards",
+      "artistName": "tUnE-yArDs",
+      "type": "era",
+      "hook": "tUnE-yArDs is built from loop pedals and a ukulele — and one songwriter's voice, multiplied",
+      "story": "Merrill Garbus's project is defined by its method: loop pedals, ukulele, lo-fi percussion and layered vocals, built live into songs that sound like a full band from just her and bassist Nate Brenner. The stylized capitalization of the name — tUnE-yArDs — carries through every release, right down to the band's own branding.",
+      "media": [
+        {
+          "label": "Gangsta",
+          "url": "https://www.youtube.com/watch?v=EbkMPHW67xM"
+        },
+        {
+          "label": "Heartbreak",
+          "url": "https://www.youtube.com/watch?v=tpFlVpqAjco"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Tune-Yards",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Tune-Yards"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:02:47.000Z"
     },
     {
       "id": "wye-oak-651941ed",
