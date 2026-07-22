@@ -1895,6 +1895,164 @@
       "at": "2026-07-18T17:10:41.788Z"
     },
     {
+      "id": "coldplay-5276baa4",
+      "slug": "coldplay",
+      "artistName": "Coldplay",
+      "type": "era",
+      "hook": "Coldplay started as two guys who met during their first week of university",
+      "story": "Chris Martin and Jonny Buckland met during Freshers' Week at University College London in September 1996, and started writing songs together the following year. Guy Berryman and Will Champion soon joined, and by 1998 the band had settled on the name Coldplay.",
+      "media": [
+        {
+          "label": "Yellow",
+          "url": "https://www.youtube.com/watch?v=yKNxeF4KMsY"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Coldplay",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Coldplay"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
+      "id": "coldplay-66fafee4",
+      "slug": "coldplay",
+      "artistName": "Coldplay",
+      "type": "era",
+      "hook": "Coldplay's last world tour became the most-attended concert tour ever — and it's on pause until 2027",
+      "story": "The Music of the Spheres World Tour ran from March 2022 through a paused close at Wembley Stadium in September 2025: 225 shows, 13.1 million tickets and a $1.52 billion box office, making it the most-attended tour in history. The band expects to resume it in 2027.",
+      "media": [
+        {
+          "label": "A Sky Full of Stars",
+          "url": "https://www.youtube.com/watch?v=VPRjCeoBqrI"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Music of the Spheres World Tour",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Music_of_the_Spheres_World_Tour"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
+      "id": "coldplay-63080929",
+      "slug": "coldplay",
+      "artistName": "Coldplay",
+      "type": "era",
+      "hook": "Coldplay built kinetic dance floors and rider-powered bikes to cut their touring emissions",
+      "story": "Coldplay designed the Music of the Spheres World Tour around a specific sustainability program — kinetic dance floors that generate power from crowd movement, power bikes for the audience to pedal, solar panels, and a mobile battery built from recycled BMW electric-car cells — aiming to cut the carbon footprint of stadium touring, not just play the songs at that scale.",
+      "media": [
+        {
+          "label": "Fix You",
+          "url": "https://www.youtube.com/watch?v=k4V3Mo61fJM"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Music of the Spheres World Tour",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Music_of_the_Spheres_World_Tour"
+        },
+        {
+          "title": "Coldplay's Green Machine",
+          "publisher": "Variety",
+          "url": "https://variety.com/2023/music/news/coldplay-tour-carbon-footprint-sustainability-green-1235632704/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
+      "id": "dave-matthews-band-b160c157",
+      "slug": "dave-matthews-band",
+      "artistName": "Dave Matthews Band",
+      "type": "era",
+      "hook": "Dave Matthews Band's original lineup had no lead guitarist — a violin and a saxophone filled the gap instead",
+      "story": "When Dave Matthews Band formed in Charlottesville in 1991, the founding lineup paired Dave Matthews's rhythm guitar with Boyd Tinsley's violin and LeRoi Moore's saxophone rather than a dedicated lead guitarist — an absence that became the band's defining sound rather than a gap to fill.",
+      "media": [
+        {
+          "label": "Ants Marching",
+          "url": "https://www.youtube.com/watch?v=MNgJBIx-hK8"
+        },
+        {
+          "label": "Satellite",
+          "url": "https://www.youtube.com/watch?v=GAamgBPebsk"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Dave Matthews Band",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Dave_Matthews_Band"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
+      "id": "dave-matthews-band-b6d9c77f",
+      "slug": "dave-matthews-band",
+      "artistName": "Dave Matthews Band",
+      "type": "era",
+      "hook": "The band lost its saxophonist to a farm accident — and kept touring within days",
+      "story": "On June 30, 2008, LeRoi Moore was injured in an ATV accident on his farm near Charlottesville. Jeff Coffin of Béla Fleck and the Flecktones filled in for the rest of that tour, and the band played a scheduled Los Angeles show the same day Moore later died of complications from the accident. Coffin has remained the band's saxophonist since.",
+      "media": [
+        {
+          "label": "Dave Matthews Band live LeRoi Moore tribute",
+          "url": "https://www.youtube.com/results?search_query=Dave%20Matthews%20Band%20LeRoi%20Moore"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Dave Matthews Band",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Dave_Matthews_Band"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
+      "id": "dave-matthews-band-6dba260",
+      "slug": "dave-matthews-band",
+      "artistName": "Dave Matthews Band",
+      "type": "era",
+      "hook": "Dave Matthews Band entered the Rock and Roll Hall of Fame in 2024",
+      "story": "After more than three decades built almost entirely on live performance and a philosophy of never playing a song the same way twice, Dave Matthews Band was inducted into the Rock and Roll Hall of Fame in 2024.",
+      "media": [
+        {
+          "label": "Crash Into Me",
+          "url": "https://www.youtube.com/watch?v=k7in-9E3ImQ"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Dave Matthews Band",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Dave_Matthews_Band"
+        },
+        {
+          "title": "Dave Matthews Band's Rock and Roll Hall of Fame Speech",
+          "publisher": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-news/dave-matthews-band-rock-and-roll-hall-of-fame-2024-speech-2-1235138349/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
       "id": "dirty-projectors-d332d370",
       "slug": "dirty-projectors",
       "artistName": "Dirty Projectors",
@@ -3076,6 +3234,83 @@
       "at": "2026-07-18T17:14:22.871Z"
     },
     {
+      "id": "hozier-35b93302",
+      "slug": "hozier",
+      "artistName": "Hozier",
+      "type": "song",
+      "hook": "Hozier is only the fourth Irish act ever to top the Billboard Hot 100",
+      "story": "'Too Sweet' reached No. 1 on the Billboard Hot 100 in 2024, surpassing the No. 2 peak of 'Take Me to Church' a decade earlier and giving Hozier his first US chart-topper. It made him the first Irish act to top the Hot 100 since Sinéad O'Connor's 'Nothing Compares 2 U' in 1990 — and only the fourth ever, alongside O'Connor, Gilbert O'Sullivan and U2.",
+      "media": [
+        {
+          "label": "Too Sweet",
+          "url": "https://www.youtube.com/watch?v=NTpbbQUBbuo"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Too Sweet",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Too_Sweet"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
+      "id": "hozier-480da2a9",
+      "slug": "hozier",
+      "artistName": "Hozier",
+      "type": "song",
+      "hook": "'Too Sweet' broke a chart-longevity record on its way to becoming a hit",
+      "story": "In October 2025, 'Too Sweet' broke the record for most weeks ever on the American Top 40 chart, reaching its 76th week on the countdown. 'Take Me to Church', Hozier's earlier breakthrough, had already been certified Diamond in the US, Australia, Canada and France.",
+      "media": [
+        {
+          "label": "Take Me to Church",
+          "url": "https://www.youtube.com/watch?v=MYSVMgRr6pw"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Too Sweet",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Too_Sweet"
+        },
+        {
+          "title": "Take Me to Church",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Take_Me_to_Church"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
+      "id": "hozier-508d68b",
+      "slug": "hozier",
+      "artistName": "Hozier",
+      "type": "era",
+      "hook": "Hozier built a whole album around Dante's nine circles of Hell",
+      "story": "Unreal Unearth (2023) is structured loosely around Dante Alighieri's Inferno, its songs mapped onto the nine circles of Hell as a framework for working through pandemic-era isolation — a genuinely documented concept, not a marketing gloss, confirmed in Hozier's own words to the Recording Academy.",
+      "media": [
+        {
+          "label": "Someone New",
+          "url": "https://www.youtube.com/watch?v=bPJSsAr2iu0"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Hozier on Unreal Unearth, Dante's Inferno and His Pandemic Inspirations",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/news/hozier-unreal-unearth-interview-dante-inferno-poem-inspirations-irish/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
       "id": "hundred-waters-dcd8f53b",
       "slug": "hundred-waters",
       "artistName": "Hundred Waters",
@@ -3339,6 +3574,59 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T15:57:16.287Z"
+    },
+    {
+      "id": "jacob-collier-9be3c5c6",
+      "slug": "jacob-collier",
+      "artistName": "Jacob Collier",
+      "type": "screen",
+      "hook": "A Stevie Wonder cover on YouTube got Jacob Collier discovered by Quincy Jones himself",
+      "story": "Jacob Collier's early homemade videos — split-screen arrangements where he sang and played every part himself — included a cover of Stevie Wonder's 'Don't You Worry 'Bout a Thing' that drew millions of views. It caught the attention of Quincy Jones, who flew Collier to the Montreux Jazz Festival and introduced him to Herbie Hancock.",
+      "media": [
+        {
+          "label": "You'll Find",
+          "url": "https://www.youtube.com/watch?v=InpikZXv_tw"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jacob Collier",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Jacob_Collier"
+        },
+        {
+          "title": "With 'In My Room,' Jazz Phenom Jacob Collier Is Bringing Jubilation Back",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/sections/therecord/2016/07/11/485261328/with-in-my-room-jazz-phenom-jacob-collier-is-bringing-jubilation-back"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
+      "id": "jacob-collier-40870202",
+      "slug": "jacob-collier",
+      "artistName": "Jacob Collier",
+      "type": "era",
+      "hook": "Jacob Collier has 7 Grammys — almost all for the same rare skill: arranging",
+      "story": "Jacob Collier has won 7 Grammy Awards from 16 nominations, the vast majority in the arranging categories — Best Arrangement, Instruments and Vocals and Best Arrangement, Instrumental or A Cappella. It's a level of recognition in that specific, technical corner of music that almost no one his age has matched.",
+      "media": [
+        {
+          "label": "All I Need (with Mahalia & Ty Dolla $ign)",
+          "url": "https://www.youtube.com/watch?v=MJpiozQUJvE"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Jacob Collier — Grammy Awards artist page",
+          "publisher": "Recording Academy",
+          "url": "https://www.grammy.com/artists/jacob-collier/19622"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
     },
     {
       "id": "james-blake-2a192113",
@@ -6436,6 +6724,87 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:39:01.724Z"
+    },
+    {
+      "id": "sublime-d8efedef",
+      "slug": "sublime",
+      "artistName": "Sublime",
+      "type": "era",
+      "hook": "Sublime's biggest album came out two months after its singer died",
+      "story": "Bradley Nowell, Sublime's singer and guitarist, died of a heroin overdose on May 25, 1996. The band's self-titled third album arrived two months later and went on to sell millions of copies, carried by 'What I Got', 'Santeria' and 'Wrong Way' — songs whose creator never heard the reception they received.",
+      "media": [
+        {
+          "label": "What I Got",
+          "url": "https://www.youtube.com/watch?v=0Uc3ZrmhDN4"
+        },
+        {
+          "label": "Santeria",
+          "url": "https://www.youtube.com/watch?v=AEYN5w4T_aM"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Sublime (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sublime_(band)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
+      "id": "sublime-3529d411",
+      "slug": "sublime",
+      "artistName": "Sublime",
+      "type": "performance",
+      "hook": "Bradley Nowell's son now fronts Sublime — the band debuted its new lineup at Coachella",
+      "story": "Nearly three decades after the band went silent, surviving members Eric Wilson and Bud Gaugh reunited under the Sublime name in 2024 with a new singer and guitarist: Jakob Nowell, Bradley Nowell's son. The lineup debuted publicly at Coachella that year.",
+      "media": [
+        {
+          "label": "Sublime Coachella 2024 reunion",
+          "url": "https://www.youtube.com/results?search_query=Sublime%20Jakob%20Nowell%20Coachella%202024"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Sublime (band)",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sublime_(band)"
+        },
+        {
+          "title": "Sublime's Coachella Reunion, Reviewed",
+          "publisher": "Consequence",
+          "url": "https://consequence.net/2024/04/sublime-coachella-reunion-video-setlist/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
+    },
+    {
+      "id": "sublime-e3d1c759",
+      "slug": "sublime",
+      "artistName": "Sublime",
+      "type": "news",
+      "hook": "Thirty years after their last album, Sublime released a new one",
+      "story": "In 2026, the reunited Sublime — Wilson, Gaugh and Jakob Nowell — released Until the Sun Explodes, a full-length album and the band's first new full-length since the 1996 self-titled record that followed Bradley Nowell's death.",
+      "media": [
+        {
+          "label": "Sublime Until the Sun Explodes",
+          "url": "https://www.youtube.com/results?search_query=Sublime%20Until%20the%20Sun%20Explodes"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Sublime Readies Fourth Era With Until the Sun Explodes",
+          "publisher": "Billboard",
+          "url": "https://www.billboard.com/music/rock/sublime-readies-fourth-era-until-the-sun-explodes-1236269052/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-22T03:47:54.000Z"
     },
     {
       "id": "sufjan-stevens-c358fa5f",

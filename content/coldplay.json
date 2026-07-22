@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "slug": "coldplay",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Coldplay — Ear Clef",
+    "description": "From a UCL dorm room to the most-attended tour in history — Coldplay's arena-scale melancholy, seven Grammys deep.",
+    "ogImage": "/images/og-coldplay.jpg",
+    "canonicalUrl": "https://earclef.com/coldplay"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "4gzpq5DPGxSnKTe4SA8HAU"
+    },
+    "youtube": {
+      "channelId": "UCDPM_n1atn2ijUwHd0NNRQw"
+    },
+    "setlistfm": {
+      "mbid": "cc197bad-dc9c-440d-a5b5-d52ba2e14234"
+    },
+    "itunes": {
+      "artistId": "471744"
+    }
+  },
+  "hero": {
+    "name": "Coldplay",
+    "identity": "Arena-scale melancholy built from a UCL dorm-room friendship — the most-attended tour in music history, still touring.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.coldplay.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/coldplay/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/coldplay"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/coldplay"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/coldplay"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCDPM_n1atn2ijUwHd0NNRQw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/gb/artist/471744"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QKGN8W"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Parachutes",
+        "year": "2000",
+        "mbReleaseGroupId": "1dc4c347-a1db-32aa-b14f-bc9cc507b843"
+      },
+      {
+        "title": "A Rush of Blood to the Head",
+        "year": "2002",
+        "mbReleaseGroupId": "120c786d-a3b2-3c19-b4ff-2b7b3b4435bf"
+      },
+      {
+        "title": "Moon Music",
+        "year": "2024",
+        "mbReleaseGroupId": "3988c875-b35f-4c3e-b143-ccb484d45347"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "yKNxeF4KMsY",
+        "title": "Yellow"
+      },
+      {
+        "youtubeId": "dvgZkm1xWPE",
+        "title": "Viva la Vida"
+      },
+      {
+        "youtubeId": "k4V3Mo61fJM",
+        "title": "Fix You"
+      },
+      {
+        "youtubeId": "VPRjCeoBqrI",
+        "title": "A Sky Full of Stars"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Coldplay trace back to Chris Martin and Jonny Buckland meeting during Freshers' Week at University College London in September 1996. Guy Berryman and Will Champion joined soon after, and by 1998 the band had settled on the name Coldplay. Parachutes (2000) and A Rush of Blood to the Head (2002) turned a UCL friendship into one of the era's defining arena-rock acts.",
+      "The catalog since has moved through Viva la Vida or Death and All His Friends (2008), Mylo Xyloto, Ghost Stories, and into the more electronic, communal sound of Music of the Spheres (2021) and Moon Music (2024). Along the way the band has won seven Grammy Awards.",
+      "The Music of the Spheres World Tour, which ran from March 2022 to a paused close at Wembley Stadium in September 2025, became the most-attended concert tour in history — 13.1 million tickets across 225 shows and a $1.52 billion box office, with the band expecting to resume it in 2027.",
+      "That tour was also built around an unusually specific sustainability program — kinetic dance floors, rider-powered bikes, solar panels and a recycled-battery power system — aimed at cutting the carbon footprint of touring at that scale, not just playing the songs at it."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "The Music of the Spheres World Tour paused after its September 2025 Wembley Stadium run; the band expects to resume touring in 2027.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-09-12",
+        "venue": "Wembley Stadium",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/coldplay/2025/wembley-stadium-london-england-3b40e8d4.html",
+        "note": "Final show before the tour's 2027 pause"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Parachutes Longsleeve Tee",
+        "description": "From the official Coldplay US store.",
+        "image": {
+          "src": "https://usstore.coldplay.com/cdn/shop/products/COLPARAUPDATEFRONT.png?v=1626790511",
+          "alt": "Parachutes Longsleeve Tee"
+        },
+        "url": "https://usstore.coldplay.com/products/parachutes-longsleeve"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Coldplay's Green Machine",
+        "outlet": "Variety",
+        "url": "https://variety.com/2023/music/news/coldplay-tour-carbon-footprint-sustainability-green-1235632704/"
+      },
+      {
+        "title": "Coldplay — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/coldplay"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

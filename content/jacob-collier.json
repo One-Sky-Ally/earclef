@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "slug": "jacob-collier",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Jacob Collier — Ear Clef",
+    "description": "From homemade YouTube harmony videos to seven Grammys in arranging — Jacob Collier turns music theory into pure joy.",
+    "ogImage": "/images/og-jacob-collier.jpg",
+    "canonicalUrl": "https://earclef.com/jacob-collier"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "0QWrMNukfcVOmgEU0FEDyD"
+    },
+    "youtube": {
+      "channelId": "UCtmY49Zn4l0RMJnTWfV7Wsg"
+    },
+    "setlistfm": {
+      "mbid": "1df15ee0-b52b-4315-9cb9-bc5a27a685e9"
+    },
+    "itunes": {
+      "artistId": "730498854"
+    }
+  },
+  "hero": {
+    "name": "Jacob Collier",
+    "identity": "A one-man harmony lab, discovered on YouTube by Quincy Jones — seven Grammys deep in the art of the arrangement.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.jacobcollier.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/jacobcollier/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/jacobcollier"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/JCollierMusic"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/jacobcollier"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCtmY49Zn4l0RMJnTWfV7Wsg"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/730498854"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://jacobcollier.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "In My Room",
+        "year": "2016",
+        "mbReleaseGroupId": "9d4bb149-53e3-4f1d-9e35-9d17866b18e2"
+      },
+      {
+        "title": "Djesse, Vol. 1",
+        "year": "2018",
+        "mbReleaseGroupId": "f6723676-6955-4dbc-96fe-4373e24d92ba"
+      },
+      {
+        "title": "Djesse Vol. 4",
+        "year": "2024",
+        "mbReleaseGroupId": "fb672dab-672f-4134-bec3-d29c2ec3f8b8"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "MJpiozQUJvE",
+        "title": "All I Need (with Mahalia & Ty Dolla $ign)"
+      },
+      {
+        "youtubeId": "nspqYGz-Z1s",
+        "title": "All Night Long"
+      },
+      {
+        "youtubeId": "InpikZXv_tw",
+        "title": "You'll Find"
+      },
+      {
+        "youtubeId": "VPLCk-FTVvw",
+        "title": "Moon River"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Jacob Collier started posting homemade videos in 2011 — split-screen arrangements where he sang and played every part of a song's harmony himself. A cover of Stevie Wonder's 'Don't You Worry 'Bout a Thing' caught the attention of Quincy Jones, who reached out and brought the then-19-year-old to the Montreux Jazz Festival in 2014.",
+      "In My Room (2016) formalized that one-man-orchestra method into a debut album, all of it built the same way: every instrument and vocal part performed and layered by Collier alone. The Djesse series that followed — four volumes released between 2018 and 2024 — expanded outward instead, filling records with collaborators across jazz, folk, gospel and pop.",
+      "Collier has won 7 Grammy Awards from 16 nominations, nearly all of them in the arranging categories — Best Arrangement, Instruments and Vocals, and Best Arrangement, Instrumental or A Cappella — a level of recognition in that specific, technical corner of the awards matched by almost no one his age. He was also nominated alongside Coldplay as a credited arranger on their Album of the Year-nominated Music of the Spheres.",
+      "He studied at the Purcell School for Young Musicians and the Royal Academy of Music, and still performs with the same instinct that made those early bedroom videos work: treating harmony like something to play with, not just follow."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates for the Djesse World Tour appear at jacobcollier.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-10-27",
+        "venue": "Louise M. Davies Symphony Hall",
+        "city": "San Francisco, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/jacob-collier/2025/louise-m-davies-symphony-hall-san-francisco-ca-4b432fba.html",
+        "note": "Djesse World Tour"
+      },
+      {
+        "date": "2025-12-13",
+        "venue": "Margaret Court Arena",
+        "city": "Melbourne, Australia",
+        "setlistUrl": "https://www.setlist.fm/setlist/jacob-collier/2025/margaret-court-arena-melbourne-australia-2b44d84a.html",
+        "note": "Djesse World Tour, Australia leg"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Djesse Vol. 4 — Vinyl",
+        "description": "From the official Jacob Collier store.",
+        "image": {
+          "src": "https://shop.jacobcollier.com/cdn/shop/files/JCVinyltransparent.png?v=1695314117",
+          "alt": "Djesse Vol. 4 — Vinyl"
+        },
+        "url": "https://shop.jacobcollier.com/collections/all/products/djesse-vol-4-vinyl"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "With 'In My Room,' Jazz Phenom Jacob Collier Is Bringing Jubilation Back",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/sections/therecord/2016/07/11/485261328/with-in-my-room-jazz-phenom-jacob-collier-is-bringing-jubilation-back"
+      },
+      {
+        "title": "Jacob Collier — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/jacob-collier/19622"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

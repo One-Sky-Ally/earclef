@@ -170,6 +170,26 @@
     "membership": false
   },
   {
+    "slug": "coldplay",
+    "name": "Coldplay",
+    "identity": "Arena-scale melancholy built from a UCL dorm-room friendship — the most-attended tour in music history, still touring.",
+    "tier": "in-the-mix",
+    "mbid": "cc197bad-dc9c-440d-a5b5-d52ba2e14234",
+    "channelId": "UCDPM_n1atn2ijUwHd0NNRQw",
+    "itunesId": "471744",
+    "membership": false
+  },
+  {
+    "slug": "dave-matthews-band",
+    "name": "Dave Matthews Band",
+    "identity": "Violin and saxophone where a lead guitar should be — the Charlottesville jam band built for the road, not the record.",
+    "tier": "in-the-mix",
+    "mbid": "07e748f1-075e-428d-85dc-ce3be434e906",
+    "channelId": "UCQv0bxIpI_K0zmmCBTOttAQ",
+    "itunesId": "60288452",
+    "membership": false
+  },
+  {
     "slug": "dirty-projectors",
     "name": "Dirty Projectors",
     "identity": "Art-rock as a moving target — intricate guitar, gymnastic vocal harmony, and a new shape every album.",
@@ -270,6 +290,16 @@
     "membership": false
   },
   {
+    "slug": "hozier",
+    "name": "Hozier",
+    "identity": "Gospel, blues and Irish folk fused into songs built for both a candlelit room and a stadium singalong.",
+    "tier": "in-the-mix",
+    "mbid": "b4691384-50c3-4afd-9988-51d3ec5db65d",
+    "channelId": "UCwAam3W_VLfb6mEKPW2nDFg",
+    "itunesId": "342260741",
+    "membership": false
+  },
+  {
     "slug": "hundred-waters",
     "name": "Hundred Waters",
     "identity": "Fragile electronics and Nicole Miglis' hushed voice, ringing like a bell from somewhere far off.",
@@ -287,6 +317,16 @@
     "mbid": "328d146c-79f1-4eb6-9e40-8ee5710c14e5",
     "channelId": "UC07ZTiBUTi6qMu74EGZY8DA",
     "itunesId": "22873602",
+    "membership": false
+  },
+  {
+    "slug": "jacob-collier",
+    "name": "Jacob Collier",
+    "identity": "A one-man harmony lab, discovered on YouTube by Quincy Jones — seven Grammys deep in the art of the arrangement.",
+    "tier": "in-the-mix",
+    "mbid": "1df15ee0-b52b-4315-9cb9-bc5a27a685e9",
+    "channelId": "UCtmY49Zn4l0RMJnTWfV7Wsg",
+    "itunesId": "730498854",
     "membership": false
   },
   {
@@ -557,6 +597,16 @@
     "mbid": "1ee18fb3-18a6-4c7f-8ba0-bc41cdd0462e",
     "channelId": "UCGD7CfG3JgZF52QpIRivV1Q",
     "itunesId": "46726",
+    "membership": false
+  },
+  {
+    "slug": "sublime",
+    "name": "Sublime",
+    "identity": "Long Beach ska, punk and reggae in one sun-warped sound — a catalog that keeps growing decades after it should have stopped.",
+    "tier": "in-the-mix",
+    "mbid": "95f5b748-d370-47fe-85bd-0af2dc450bc0",
+    "channelId": "UCEJ-A6sXsxg0PxdUjgrF2Jw",
+    "itunesId": "63480",
     "membership": false
   },
   {

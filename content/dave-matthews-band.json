@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "slug": "dave-matthews-band",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Dave Matthews Band — Ear Clef",
+    "description": "Violin, saxophone, no lead guitarist — the Charlottesville jam band that never plays a song the same way twice, now in the Rock and Roll Hall of Fame.",
+    "ogImage": "/images/og-dave-matthews-band.jpg",
+    "canonicalUrl": "https://earclef.com/dave-matthews-band"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2TI7qyDE0QfyOlnbtfDo7L"
+    },
+    "youtube": {
+      "channelId": "UCQv0bxIpI_K0zmmCBTOttAQ"
+    },
+    "setlistfm": {
+      "mbid": "07e748f1-075e-428d-85dc-ce3be434e906"
+    },
+    "itunes": {
+      "artistId": "60288452"
+    }
+  },
+  "hero": {
+    "name": "Dave Matthews Band",
+    "identity": "Violin and saxophone where a lead guitar should be — the Charlottesville jam band built for the road, not the record.",
+    "tagline": "Hear here!",
+    "location": "Charlottesville, Virginia, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://davematthewsband.com/"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/davematthewsband"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/davematthewsbnd"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCQv0bxIpI_K0zmmCBTOttAQ"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/60288452"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B001E8RHTO"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Under the Table and Dreaming",
+        "year": "1994",
+        "mbReleaseGroupId": "b080cf2f-fbd2-3f6c-82ff-d30314464ac7"
+      },
+      {
+        "title": "Crash",
+        "year": "1996",
+        "mbReleaseGroupId": "aff320c8-c7ae-3421-80d1-c1f61500e7fd"
+      },
+      {
+        "title": "Walk Around the Moon",
+        "year": "2023",
+        "mbReleaseGroupId": "fd5a2277-69b3-4120-b4a2-37fec1606920"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "k7in-9E3ImQ",
+        "title": "Crash Into Me"
+      },
+      {
+        "youtubeId": "MNgJBIx-hK8",
+        "title": "Ants Marching"
+      },
+      {
+        "youtubeId": "GAamgBPebsk",
+        "title": "Satellite"
+      },
+      {
+        "youtubeId": "psIuidkkLjI",
+        "title": "Don't Drink the Water"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Dave Matthews Band formed in Charlottesville, Virginia in 1991 around a lineup with no dedicated lead guitarist: Dave Matthews on vocals and guitar, Stefan Lessard on bass, Carter Beauford on drums, Boyd Tinsley on violin and LeRoi Moore on saxophone. That absence became the sound — melody carried by strings and horns instead of distortion.",
+      "The band built its following the hard way, through constant touring and a live catalog that treats every song as unfinished — Dave Matthews Band is known for reworking arrangements night to night, a practice that has become the whole point of seeing them live. Under the Table and Dreaming (1994) and Crash (1996) turned that touring base into a national one.",
+      "On June 30, 2008, LeRoi Moore was injured in an ATV accident on his farm near Charlottesville; he died weeks later from complications. Jeff Coffin of Béla Fleck and the Flecktones filled in for the rest of that tour and stayed on. The band has kept playing new configurations of the same songs ever since, most recently on 2023's Walk Around the Moon.",
+      "In 2024, Dave Matthews Band was inducted into the Rock and Roll Hall of Fame — recognition for a band whose real catalog was never quite the records, but the decades of shows that came out different every night."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at davematthewsband.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1995-08-15",
+        "venue": "Red Rocks Amphitheatre",
+        "city": "Morrison, CO, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/dave-matthews-band/1995/red-rocks-amphitheatre-morrison-co-6bd6e656.html",
+        "note": "Source of the live album Live at Red Rocks 8.15.95"
+      },
+      {
+        "date": "2003-09-24",
+        "venue": "Central Park",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/dave-matthews-band/2003/central-park-new-york-ny-13d6e901.html",
+        "note": "Free concert for ~120,000, released as The Central Park Concert"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Everyday 2LP",
+        "description": "The 2001 album on vinyl from the official Dave Matthews Band store.",
+        "image": {
+          "src": "https://shop.davematthewsband.com/cdn/shop/files/ED9846216584.jpg?v=1781108544",
+          "alt": "Everyday 2LP"
+        },
+        "url": "https://shop.davematthewsband.com/products/everyday-2lp-black"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Dave Matthews Band's Rock and Roll Hall of Fame Speech",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/dave-matthews-band-rock-and-roll-hall-of-fame-2024-speech-2-1235138349/"
+      },
+      {
+        "title": "Dave Matthews Band — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/dave-matthews-band/14764"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "slug": "hozier",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Hozier — Ear Clef",
+    "description": "From 'Take Me to Church' to a Dante-structured concept album — the Wicklow songwriter whose gospel-blues has topped the Hot 100 twice a decade apart.",
+    "ogImage": "/images/og-hozier.jpg",
+    "canonicalUrl": "https://earclef.com/hozier"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2FXC3k01G6Gw61bmprjgqS"
+    },
+    "youtube": {
+      "channelId": "UCwAam3W_VLfb6mEKPW2nDFg"
+    },
+    "setlistfm": {
+      "mbid": "b4691384-50c3-4afd-9988-51d3ec5db65d"
+    },
+    "itunes": {
+      "artistId": "342260741"
+    }
+  },
+  "hero": {
+    "name": "Hozier",
+    "identity": "Gospel, blues and Irish folk fused into songs built for both a candlelit room and a stadium singalong.",
+    "tagline": "Hear here!",
+    "location": "County Wicklow, Ireland",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://hozier.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/hozier/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/Hozier"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/hoziermusic"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/hozier"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCwAam3W_VLfb6mEKPW2nDFg"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/ie/artist/342260741"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://hoziermusic.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Hozier",
+        "year": "2014",
+        "mbReleaseGroupId": "06af18b0-1f97-4282-8a4d-af53ae8d9377"
+      },
+      {
+        "title": "Wasteland, Baby!",
+        "year": "2019",
+        "mbReleaseGroupId": "29cffbed-9ae1-4e75-be82-6058c7e9e9b4"
+      },
+      {
+        "title": "Unreal Unearth",
+        "year": "2023",
+        "mbReleaseGroupId": "7f7d47f8-a97b-420b-b2f8-c3dfd6ca505c"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "MYSVMgRr6pw",
+        "title": "Take Me to Church"
+      },
+      {
+        "youtubeId": "NTpbbQUBbuo",
+        "title": "Too Sweet"
+      },
+      {
+        "youtubeId": "bPJSsAr2iu0",
+        "title": "Someone New"
+      },
+      {
+        "youtubeId": "nH7bjV0Q_44",
+        "title": "Work Song"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Andrew Hozier-Byrne, born near Bray, County Wicklow in 1990, broke through in 2013 with 'Take Me to Church' — a slow-building gospel-blues single that reached No. 2 on the Billboard Hot 100 for three consecutive weeks and earned a Grammy nomination for Song of the Year. His self-titled debut album followed in 2014.",
+      "Wasteland, Baby! (2019) and Unreal Unearth (2023) deepened both the sound and the ambition: Unreal Unearth is structured around Dante's Inferno, its songs mapped loosely onto the nine circles of Hell as a way of working through pandemic-era isolation.",
+      "In 2024, 'Too Sweet' reached No. 1 on the Billboard Hot 100 — Hozier's first US chart-topper, surpassing even 'Take Me to Church''s peak a decade earlier, and making him the first Irish act to top the Hot 100 since Sinéad O'Connor in 1990.",
+      "A decade in, Hozier remains one of the few artists moving comfortably between hushed, literary songwriting and genuine mainstream chart dominance — often in the same album."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates appear at hozier.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-09-19",
+        "venue": "Hersheypark Stadium",
+        "city": "Hershey, PA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/hozier/2025/hersheypark-stadium-hershey-pa-135ac185.html",
+        "note": "Unreal Unearth Tour"
+      },
+      {
+        "date": "2025-10-14",
+        "venue": "Palacio de los Deportes",
+        "city": "Mexico City, Mexico",
+        "setlistUrl": "https://www.setlist.fm/setlist/hozier/2025/palacio-de-los-deportes-mexico-city-mexico-34ee96f.html",
+        "note": "Unreal Unearth Tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Hozier — 2CD",
+        "description": "The self-titled debut on 2CD, from the official Hozier store.",
+        "image": {
+          "src": "https://store.hozier.com/cdn/shop/files/Standard_20cd4.png?v=1746526145",
+          "alt": "Hozier — 2CD"
+        },
+        "url": "https://store.hozier.com/products/hozier-2cd"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Hozier on Unreal Unearth, Dante's Inferno and His Pandemic Inspirations",
+        "outlet": "Recording Academy (Grammy.com)",
+        "url": "https://www.grammy.com/news/hozier-unreal-unearth-interview-dante-inferno-poem-inspirations-irish/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

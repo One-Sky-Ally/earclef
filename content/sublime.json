@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "slug": "sublime",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Sublime — Ear Clef",
+    "description": "Long Beach ska-punk that never stopped moving — from Bradley Nowell's self-titled breakthrough to a 2024 reunion led by his son.",
+    "ogImage": "/images/og-sublime.jpg",
+    "canonicalUrl": "https://earclef.com/sublime"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "0EdvGhlC1FkGItLOWQzG4J"
+    },
+    "youtube": {
+      "channelId": "UCEJ-A6sXsxg0PxdUjgrF2Jw"
+    },
+    "setlistfm": {
+      "mbid": "95f5b748-d370-47fe-85bd-0af2dc450bc0"
+    },
+    "itunes": {
+      "artistId": "63480"
+    }
+  },
+  "hero": {
+    "name": "Sublime",
+    "identity": "Long Beach ska, punk and reggae in one sun-warped sound — a catalog that keeps growing decades after it should have stopped.",
+    "tagline": "Hear here!",
+    "location": "Long Beach, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.sublimelbc.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/sublime/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/sublime"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/Sublime"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCEJ-A6sXsxg0PxdUjgrF2Jw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/63480"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "40 oz. to Freedom",
+        "year": "1992",
+        "mbReleaseGroupId": "8e874f9b-7630-3a4c-baf4-73e0e553b2b4"
+      },
+      {
+        "title": "Sublime",
+        "year": "1996",
+        "mbReleaseGroupId": "0430d8c5-7417-3c4c-9f2a-b7d02ef7d164"
+      },
+      {
+        "title": "Until the Sun Explodes",
+        "year": "2026",
+        "mbReleaseGroupId": "ae252fb0-b8e2-4e85-99bb-e6d7a1bb637f"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "AEYN5w4T_aM",
+        "title": "Santeria"
+      },
+      {
+        "youtubeId": "0Uc3ZrmhDN4",
+        "title": "What I Got"
+      },
+      {
+        "youtubeId": "2yT8RsCarJA",
+        "title": "Doin' Time"
+      },
+      {
+        "youtubeId": "uLifSFBs_Lk",
+        "title": "Wrong Way"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Sublime came together in Long Beach, California around Bradley Nowell on vocals and guitar, Eric Wilson on bass and Bud Gaugh on drums — a band that folded ska, punk, reggae, hip-hop and surf rock into one loose, sun-bleached sound. 40 oz. to Freedom (1992) and Robbin' the Hood (1994) built a devoted following well before the mainstream noticed.",
+      "Bradley Nowell died of a heroin overdose on May 25, 1996, two months before the release of the band's self-titled third album. Sublime went on to sell millions of copies, carried by 'What I Got', 'Santeria' and 'Wrong Way' — a breakthrough its own songwriter never lived to see.",
+      "The band's catalog stayed frozen for decades, covered but not extended. Then in 2024, Eric Wilson and Bud Gaugh reunited under the Sublime name with a new vocalist and guitarist: Jakob Nowell, Bradley's son, debuting the lineup at Coachella.",
+      "In 2026 that reunited band released Until the Sun Explodes, a new full-length album — the first new Sublime record in three decades, extending a catalog that had been sealed since 1996."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "The reunited band tours regularly; dates are announced at sublimelbc.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1995-10-21",
+        "venue": "The Palace",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/sublime/1995/the-palace-los-angeles-ca-63d66abf.html",
+        "note": "From the original Bradley Nowell-era lineup"
+      },
+      {
+        "date": "2026-06-27",
+        "venue": "Tom McCall Waterfront Park",
+        "city": "Portland, OR, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/sublime/2026/tom-mccall-waterfront-park-portland-or-6b4b7272.html",
+        "note": "Sublime Fest 2026, with the reunited lineup"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Until the Sun Explodes — CD",
+        "description": "The 2026 album from the reunited band, via the official Sublime store.",
+        "image": {
+          "src": "https://sublimelbc.store/cdn/shop/files/UTSE_CD.png?v=1774379024",
+          "alt": "Until the Sun Explodes — CD"
+        },
+        "url": "https://sublimelbc.store/products/until-the-sun-explodes-cd"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Sublime Readies Fourth Era With Until the Sun Explodes",
+        "outlet": "Billboard",
+        "url": "https://www.billboard.com/music/rock/sublime-readies-fourth-era-until-the-sun-explodes-1236269052/"
+      },
+      {
+        "title": "Sublime's Coachella Reunion, Reviewed",
+        "outlet": "Consequence",
+        "url": "https://consequence.net/2024/04/sublime-coachella-reunion-video-setlist/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
