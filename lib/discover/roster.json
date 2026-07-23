@@ -560,6 +560,16 @@
     "membership": false
   },
   {
+    "slug": "rage-against-the-machine",
+    "name": "Rage Against the Machine",
+    "identity": "Rap, funk and metal fused into a weapon — Zack de la Rocha's fury over Tom Morello's turntable-mimicking guitar.",
+    "tier": "in-the-mix",
+    "mbid": "3798b104-01cb-484c-a3b0-56adc6399b80",
+    "channelId": "UCm_W_hbwbzJE8w52jZ2NO0A",
+    "itunesId": "899409",
+    "membership": false
+  },
+  {
     "slug": "ratatat",
     "name": "Ratatat",
     "identity": "Guitars harmonized like synthesizers, synthesizers strutting like guitars — instrumental rock with no singer and no gaps.",

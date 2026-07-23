@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "slug": "rage-against-the-machine",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Rage Against the Machine — Ear Clef",
+    "description": "Rap-metal built as a weapon — the L.A. band that turned confrontation into arena rock and never softened it, now in the Rock and Roll Hall of Fame.",
+    "ogImage": "/images/og-rage-against-the-machine.jpg",
+    "canonicalUrl": "https://earclef.com/rage-against-the-machine"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2d0hyoQ5ynDBnkvAbJKORj"
+    },
+    "youtube": {
+      "channelId": "UCm_W_hbwbzJE8w52jZ2NO0A"
+    },
+    "setlistfm": {
+      "mbid": "3798b104-01cb-484c-a3b0-56adc6399b80"
+    },
+    "itunes": {
+      "artistId": "899409"
+    }
+  },
+  "hero": {
+    "name": "Rage Against the Machine",
+    "identity": "Rap, funk and metal fused into a weapon — Zack de la Rocha's fury over Tom Morello's turntable-mimicking guitar.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.ratm.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/rageagainstthemachine/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/ratm"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/RATM"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCm_W_hbwbzJE8w52jZ2NO0A"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/rage-against-the-machine/899409"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000XEE3CO/rage-against-the-machine"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Rage Against the Machine",
+        "year": "1992",
+        "mbReleaseGroupId": "1305859b-8937-397f-9c33-39f62eb672fb"
+      },
+      {
+        "title": "Evil Empire",
+        "year": "1996",
+        "mbReleaseGroupId": "1b469da1-e542-346b-84e6-4d7fe45be181"
+      },
+      {
+        "title": "The Battle of Los Angeles",
+        "year": "1999",
+        "mbReleaseGroupId": "25e72bf4-09fc-3e66-9d31-9247d91b4819"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "bWXazVhlyxQ",
+        "title": "Killing in the Name"
+      },
+      {
+        "youtubeId": "3L4YrGaR8E4",
+        "title": "Bulls on Parade"
+      },
+      {
+        "youtubeId": "Rm1nCYOZB-s",
+        "title": "Guerrilla Radio"
+      },
+      {
+        "youtubeId": "Q3dvbM6Pias",
+        "title": "Testify"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Rage Against the Machine formed in Los Angeles in 1991, when Zack de la Rocha and Tom Morello brought together Tim Commerford on bass and Brad Wilk on drums around a shared idea: rap vocals delivered with the force of metal, over a guitar sound built to mimic turntable scratching and samples without using either. Their self-titled 1992 debut, built on that idea, became a foundational rap-metal record.",
+      "Evil Empire (1996) and The Battle of Los Angeles (1999) carried the sound into arenas without changing its politics — the band's lyrics targeted corporate power, US foreign policy, police violence and mass incarceration directly, and that activism was never separated from the music. Rage Against the Machine has treated its own political identity as the point of the band, not a marketing layer on top of it.",
+      "In December 2009, a Facebook-driven campaign pushed 'Killing in the Name' to the UK Christmas No. 1, beating the winner of televised talent show The X Factor to the top of the chart — a symbolic win the band embraced as a continuation of the same anti-establishment stance the song was written with in 1992.",
+      "The band broke up and reunited twice before a 2022 reunion tour was cut short by Zack de la Rocha's Achilles tendon injury; Brad Wilk announced the band's dissolution again on January 3, 2024. In November 2023, between those events, Rage Against the Machine was inducted into the Rock and Roll Hall of Fame as Performers, inducted by Ice-T with Tom Morello accepting."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "The band announced its dissolution on January 3, 2024; no future tour dates are expected.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1999-07-24",
+        "venue": "Griffiss Air Force Base",
+        "city": "Rome, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/rage-against-the-machine/1999/griffiss-air-force-base-rome-ny-4bd77bc2.html",
+        "note": "Woodstock '99"
+      },
+      {
+        "date": "2022-08-08",
+        "venue": "Madison Square Garden",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/rage-against-the-machine/2022/madison-square-garden-new-york-ny-7bb3b2e0.html",
+        "note": "2022 reunion tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Ice-T, Tom Morello Bring Rage Against the Machine Into The Rock Hall",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/rage-against-the-machine-rock-hall-of-fame-induction-1234869662/"
+      },
+      {
+        "title": "Rage Against the Machine Break Up…Again",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/rage-against-the-machine-break-up-again-2024-1234939808/"
+      },
+      {
+        "title": "Rage Against the Machine — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/rage-against-machine/7839"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

@@ -6217,6 +6217,73 @@
       "at": "2026-07-18T15:00:36.997Z"
     },
     {
+      "id": "rage-against-the-machine-7d305a9c",
+      "slug": "rage-against-the-machine",
+      "artistName": "Rage Against the Machine",
+      "type": "song",
+      "hook": "Rage Against the Machine beat The X Factor to Christmas No. 1",
+      "story": "By 2009, The X Factor had owned the UK's Christmas No. 1 for four straight years. A fan-organised Facebook campaign pushed Rage Against the Machine's 1992 single 'Killing in the Name' to re-enter the Official Singles Chart at No. 1 the week of December 20, 2009, beating that year's X Factor winner Joe McElderry to the festive top spot — one of the first viral grassroots chart campaigns of the social-media era.",
+      "media": [
+        {
+          "label": "Killing in the Name",
+          "url": "https://www.youtube.com/watch?v=bWXazVhlyxQ"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Christmas Number 1 Flashback 2009: Rage Against The Machine take on The X Factor...and win",
+          "publisher": "Official Charts",
+          "url": "https://www.officialcharts.com/chart-news/christmas-number-1-flashback-2009-rage-against-the-machine-take-on-the-x-factorand-win__38096/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:02:20.000Z"
+    },
+    {
+      "id": "rage-against-the-machine-b875292e",
+      "slug": "rage-against-the-machine",
+      "artistName": "Rage Against the Machine",
+      "type": "award",
+      "hook": "Rage Against the Machine's two Grammys came from deep cuts, not singles",
+      "story": "Rage Against the Machine won two Grammy Awards for Best Metal or Hard Rock Performance: 'Tire Me' from Evil Empire at the 1997 ceremony, and 'Guerrilla Radio' from The Battle of Los Angeles at the 2001 ceremony — recognition built on the band's heaviest album tracks rather than its best-known singles.",
+      "media": [
+        {
+          "label": "Guerrilla Radio",
+          "url": "https://www.youtube.com/watch?v=Rm1nCYOZB-s"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Rage Against the Machine — Grammy Awards artist page",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/rage-against-machine/7839"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:02:20.000Z"
+    },
+    {
+      "id": "rage-against-the-machine-760ff54",
+      "slug": "rage-against-the-machine",
+      "artistName": "Rage Against the Machine",
+      "type": "milestone",
+      "hook": "Rage Against the Machine's Rock Hall induction had only one member on stage",
+      "story": "Rage Against the Machine was inducted into the Rock and Roll Hall of Fame as Performers in 2023, inducted by Ice-T — but Tom Morello was the only member of the band to accept in person, reflecting the band's fractured state between its 2022 reunion tour and its final breakup announcement two months later.",
+      "media": [],
+      "sources": [
+        {
+          "title": "Rage Against the Machine | Rock & Roll Hall of Fame",
+          "publisher": "Rock & Roll Hall of Fame",
+          "url": "https://www.rockhall.com/inductees/rage-against-the-machine/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:02:20.000Z"
+    },
+    {
       "id": "ratatat-cc190df1",
       "slug": "ratatat",
       "artistName": "Ratatat",
