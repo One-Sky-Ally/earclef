@@ -47,12 +47,24 @@ async function claimLock(today: string): Promise<boolean> {
   return true
 }
 
-function triggerNextBatch(): void {
+/**
+ * MUST be awaited by the caller. A fire-and-forget fetch here is not
+ * safe: Netlify's background functions run on Lambda, and the execution
+ * environment can freeze right after the handler returns — an unawaited
+ * self-trigger can be abandoned mid-dispatch, which is exactly what
+ * silently stalled the very first verification of this rebuild (progress
+ * persisted correctly at cursor 15/87, but the chain never continued).
+ */
+async function triggerNextBatch(): Promise<void> {
   const base = process.env.URL
   if (!base) return
-  fetch(`${base}/.netlify/functions/feed-snapshot-background`, {
-    method: 'POST',
-  }).catch(() => {})
+  try {
+    await fetch(`${base}/.netlify/functions/feed-snapshot-background`, {
+      method: 'POST',
+    })
+  } catch {
+    // best effort — the nightly cron or next lazy-route trigger resumes it
+  }
 }
 
 export default async function handler(): Promise<Response> {
@@ -91,7 +103,7 @@ export default async function handler(): Promise<Response> {
 
   await clearLock()
   if (!done) {
-    triggerNextBatch()
+    await triggerNextBatch()
     return new Response(`batch progress: ${cursor}/${rosterLength}`)
   }
   return new Response('built')
