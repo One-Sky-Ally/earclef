@@ -31,6 +31,8 @@ export interface SnapshotItem {
 
 export interface FeedSnapshot {
   builtAt: string
+  /** Roster size this snapshot covers — used to detect a grown roster. */
+  rosterLength: number
   items: SnapshotItem[]
 }
 
@@ -131,6 +133,9 @@ interface RosterEntry {
   channelId: string | null
   itunesId: string | null
 }
+
+/** Current roster size — a snapshot covering fewer artists is stale. */
+export const ROSTER_LENGTH = (roster as RosterEntry[]).length
 
 async function mbReleases(entry: RosterEntry): Promise<SnapshotItem[]> {
   if (!entry.mbid) return []
@@ -295,9 +300,20 @@ export async function buildBatch(
 /** Sort, cap, and stamp a completed progress pass as the live snapshot. */
 export function finalizeSnapshot(progress: BuildProgress): FeedSnapshot {
   const items = [...progress.items].sort((a, b) => b.date.localeCompare(a.date))
-  return { builtAt: new Date().toISOString(), items: items.slice(0, MAX_ITEMS) }
+  return {
+    builtAt: new Date().toISOString(),
+    rosterLength: progress.rosterLength,
+    items: items.slice(0, MAX_ITEMS),
+  }
 }
 
+/**
+ * A snapshot is fresh only if it's recent AND covers the current roster.
+ * Age alone isn't enough — a same-day snapshot built before new artists
+ * were added would otherwise pass the age check and silently block a
+ * rebuild for up to 26h every time the roster grows.
+ */
 export function isFresh(snapshot: FeedSnapshot): boolean {
+  if (snapshot.rosterLength !== ROSTER_LENGTH) return false
   return Date.now() - Date.parse(snapshot.builtAt) < 26 * 60 * 60 * 1000
 }
