@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "iron-and-wine",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Iron and Wine — Ear Clef",
+    "description": "Sam Beam's whispered, home-recorded folk that grew into full-band Americana — a Sub Pop signing that started on a mix CD passed between friends.",
+    "ogImage": "/images/og-iron-and-wine.jpg",
+    "canonicalUrl": "https://earclef.com/iron-and-wine"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "4M5nCE77Qaxayuhp3fVn4V"
+    },
+    "youtube": {
+      "channelId": "UCzEOgPvZv8BZjVkfmwjtpAQ"
+    },
+    "setlistfm": {
+      "mbid": "c3f28da8-662d-4f09-bdc7-3084bf685930"
+    },
+    "itunes": {
+      "artistId": "3274302"
+    }
+  },
+  "hero": {
+    "name": "Iron and Wine",
+    "identity": "Sam Beam's whispered, bearded folk — home-recorded intimacy that grew into a full-band Americana catalog.",
+    "tagline": "Hear here!",
+    "location": "Chapin, South Carolina, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.ironandwine.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/ironandwinetour/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/IronAndWine"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/ironandwine"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCzEOgPvZv8BZjVkfmwjtpAQ"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/iron-wine/3274302"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QK05OA/iron-wine"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "The Creek Drank the Cradle",
+        "year": "2002",
+        "mbReleaseGroupId": "8d9f43cb-ad78-34e2-b91d-93a5c350876b"
+      },
+      {
+        "title": "Our Endless Numbered Days",
+        "year": "2004",
+        "mbReleaseGroupId": "e73745df-c2de-374a-818b-bcedc03ac655"
+      },
+      {
+        "title": "The Shepherd's Dog",
+        "year": "2007",
+        "mbReleaseGroupId": "2b701e39-8a06-3ec0-bb30-f1cb1f291d1f"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "KHw7gdJ14uQ",
+        "title": "Boy with a Coin"
+      },
+      {
+        "youtubeId": "Nd-A-iiPoLg",
+        "title": "Naked As We Came"
+      },
+      {
+        "youtubeId": "BzeSLkzJdos",
+        "title": "Wait Up (feat. I'm With Her)"
+      },
+      {
+        "youtubeId": "0Y5GXK4zqFs",
+        "title": "In Your Ocean"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Sam Beam was teaching film production in Florida, recording songs alone on a four-track at home, when a demo he'd shared with childhood friend Ben Bridwell began circulating hand to hand on mix CDs. It reached Sub Pop, and in 2002 the label released those home recordings almost as they were: The Creek Drank the Cradle became Iron and Wine's debut, whispery and intimate by necessity rather than design.",
+      "Our Endless Numbered Days (2004) and The Shepherd's Dog (2007) gradually opened the sound up from bedroom folk into fuller, more rhythmically adventurous arrangements, without losing the hushed core of Beam's songwriting. Kiss Each Other Clean (2011), Ghost on Ghost (2013) and Beast Epic (2017) kept moving between spare and full-band versions of the same project.",
+      "In 2004, Iron and Wine's cover of The Postal Service's 'Such Great Heights' appeared on the soundtrack to Garden State. In his own words, the exposure changed the size of his audience overnight: the shows doubled almost immediately after the film's release, turning a home-recording project into a touring band.",
+      "Beam has continued releasing music steadily into the 2020s, including 2024's Light Verse and 2025's Hen's Teeth, still moving between the hushed intimacy of the early records and full-band arrangements built for the road."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at ironandwine.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-05-17",
+        "venue": "Cat's Cradle",
+        "city": "Carrboro, NC, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/iron-and-wine/2026/cats-cradle-carrboro-nc-34c55ff.html",
+        "note": "Hen's Teeth tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Tomato Tee",
+        "description": "From the official Iron and Wine store.",
+        "image": {
+          "src": "https://merch.ambientinks.com/cdn/shop/files/IW_Web_Tomato_Tee_White_large.png?v=1776098192",
+          "alt": "Tomato Tee"
+        },
+        "url": "https://merch.ambientinks.com/collections/ironandwine/products/tomato-tee"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Iron And Wine: Tiny Desk Concert",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2011/01/21/133059550/iron-and-wine-tiny-desk-concert"
+      },
+      {
+        "title": "Iron and Wine Haunt 'Ghost on Ghost' With Strings and Horns",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/iron-and-wine-haunt-ghost-on-ghost-with-strings-and-horns-238752/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

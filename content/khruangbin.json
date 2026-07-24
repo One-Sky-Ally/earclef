@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "slug": "khruangbin",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Khruangbin — Ear Clef",
+    "description": "Thai funk, dub and psych-soul from a Houston barn — three musicians in wigs, anonymous by design, named after the Thai word for airplane.",
+    "ogImage": "/images/og-khruangbin.jpg",
+    "canonicalUrl": "https://earclef.com/khruangbin"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2mVVjNmdjXZZDvhgQWiakk"
+    },
+    "youtube": {
+      "channelId": "UCZGBua-dvwfSdcF9AskDIgw"
+    },
+    "setlistfm": {
+      "mbid": "aea4c9b9-9f8d-49dc-b2ca-57d6f26e8634"
+    },
+    "itunes": {
+      "artistId": "478520598"
+    }
+  },
+  "hero": {
+    "name": "Khruangbin",
+    "identity": "Thai funk, dub and psych-soul instrumentals from a Houston trio who perform behind wigs, staying anonymous on purpose.",
+    "tagline": "Hear here!",
+    "location": "Houston, Texas, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.khruangbin.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/khruangbin/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/Khruangbin"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/khruangbin"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCZGBua-dvwfSdcF9AskDIgw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/khruangbin/478520598"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B0063PID9G/khruangbin"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "The Universe Smiles Upon You",
+        "year": "2015",
+        "mbReleaseGroupId": "312457e5-660b-4a7f-b3a0-89cb94bd4458"
+      },
+      {
+        "title": "Con Todo El Mundo",
+        "year": "2018",
+        "mbReleaseGroupId": "62074290-985b-4220-a796-b752112e73c7"
+      },
+      {
+        "title": "Mordechai",
+        "year": "2020",
+        "mbReleaseGroupId": "53e6ec80-ddc7-4db8-80f8-5e081545c856"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "7hlGqj3ImQI",
+        "title": "Maria También"
+      },
+      {
+        "youtubeId": "UULIfPLMuDw",
+        "title": "Pelota"
+      },
+      {
+        "youtubeId": "oc50wHexbwg",
+        "title": "Time (You and I)"
+      },
+      {
+        "youtubeId": "LNZhElGF6Y4",
+        "title": "White Gloves ii"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Guitarist Mark Speer and drummer Donald 'DJ' Johnson met in 2004 playing together in a Houston church gospel band. Bassist Laura Lee joined a few years later, and the trio started rehearsing in a barn in Burton, Texas, developing a largely instrumental sound built from Thai funk, dub, psych-rock and soul. They named the project Khruangbin — Thai for 'airplane' or 'engine fly' — a word Lee picked up while learning the language, reflecting the international sweep of their influences.",
+      "The Universe Smiles Upon You (2015) introduced that sound; Con Todo El Mundo (2018) is generally considered the commercial breakthrough, expanding the palette toward Middle Eastern and Latin American influences. Mordechai (2020) added more vocals to the mix, and the band has continued building a festival-headlining career through A LA SALA (2024).",
+      "Onstage and in nearly all promotional photography, Speer and Lee perform behind black wigs, deliberately obscuring their identities — a choice that started, by their own account, so they could keep playing in other local Houston bands without being recognized. It's become a core part of the group's visual identity.",
+      "In 2020, Khruangbin released Texas Sun with Leon Bridges, following it with a second collaborative EP, Texas Moon, in 2022 — pairing their instrumental grooves with Bridges' voice across two records that became a project of their own alongside the main catalog."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at khruangbin.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-11-14",
+        "venue": "First Avenue",
+        "city": "Minneapolis, MN, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/khruangbin/2025/first-avenue-minneapolis-mn-234e94b7.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Pocket Overshirt",
+        "description": "From the official Khruangbin store.",
+        "image": {
+          "src": "https://shop.khruangbin.com/cdn/shop/files/2604_Khruangbin_ACMH_Pocket-Overshirt_Forest-Green_A_v01.jpg?v=1778097873&width=1946",
+          "alt": "Pocket Overshirt"
+        },
+        "url": "https://shop.khruangbin.com/products/pocket-overshirt"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Khruangbin's Vibrant 'Con Todo El Mundo' Is Drawn From Life",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/sections/allsongs/2018/01/26/580429575/khruangbins-vibrant-con-todo-el-mundo-is-drawn-from-life"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

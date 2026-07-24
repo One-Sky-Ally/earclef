@@ -2115,6 +2115,49 @@
       "at": "2026-07-20T00:38:33.000Z"
     },
     {
+      "id": "erykah-badu-87a131d7",
+      "slug": "erykah-badu",
+      "artistName": "Erykah Badu",
+      "type": "song",
+      "hook": "A witness who watched Erykah Badu's video shoot live still called the police",
+      "story": "For the 2010 video for 'Window Seat,' Badu stripped naked while walking through Dallas' Dealey Plaza — the site of the JFK assassination — in front of hundreds of onlookers, none of whom called police at the time. It was only after the video went viral online that a witness came forward, saying she and her two children had been offended, leading to a disorderly conduct citation. Badu pleaded not guilty before eventually paying the fine.",
+      "media": [
+        {
+          "label": "Window Seat",
+          "url": "https://www.youtube.com/watch?v=9hVp47f5YZg"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Erykah Badu Pleads Not Guilty to \"Window Seat\" Charge",
+          "publisher": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-news/erykah-badu-pleads-not-guilty-to-window-seat-charge-193513/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:55:33.000Z"
+    },
+    {
+      "id": "erykah-badu-67ab78d5",
+      "slug": "erykah-badu",
+      "artistName": "Erykah Badu",
+      "type": "award",
+      "hook": "Erykah Badu's newest Grammy win came nearly three decades after her first",
+      "story": "Badu's Grammy history spans 20 nominations and 5 wins across almost 30 years — from Baduizm-era wins in the late 1990s through a 2003 Best R&B Song win for 'Love of My Life (An Ode to Hip Hop)' with Common, up to Best Melodic Rap Performance in 2025 for her feature on Rapsody's '3:AM.'",
+      "media": [],
+      "sources": [
+        {
+          "title": "Erykah Badu Grammy Awards and Nominations, Song & Bio",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/erykah-badu"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:55:33.000Z"
+    },
+    {
       "id": "esperanza-spalding-4930df7f",
       "slug": "esperanza-spalding",
       "artistName": "Esperanza Spalding",
@@ -3576,6 +3619,49 @@
       "at": "2026-07-18T15:57:16.287Z"
     },
     {
+      "id": "iron-and-wine-d054dbdc",
+      "slug": "iron-and-wine",
+      "artistName": "Iron and Wine",
+      "type": "era",
+      "hook": "Iron and Wine was discovered through a mix CD passed hand to hand",
+      "story": "Before Iron and Wine existed as a project, Sam Beam was a Florida State University film student recording late-night songs at home with future sound designer EJ Holowicki. One of those recordings was shared, untitled, with childhood friend Ben Bridwell (later of Band of Horses), who passed it around on mix CDs during what Sub Pop calls 'the golden era of mix CDs' — eventually reaching Sub Pop, who signed Beam and released those home recordings almost as they were.",
+      "media": [
+        {
+          "label": "Boy with a Coin",
+          "url": "https://www.youtube.com/watch?v=KHw7gdJ14uQ"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Archive Series Volume No. 5: Tallahassee Recordings",
+          "publisher": "Sub Pop Records",
+          "url": "https://www.subpop.com/releases/iron_and_wine/archive_series_volume_no_5_tallahassee_recordings"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:36:13.000Z"
+    },
+    {
+      "id": "iron-and-wine-156298d5",
+      "slug": "iron-and-wine",
+      "artistName": "Iron and Wine",
+      "type": "song",
+      "hook": "A movie soundtrack, not radio, built Iron and Wine's early audience",
+      "story": "Iron and Wine's cover of The Postal Service's 'Such Great Heights' appeared on the 2004 Garden State soundtrack. In Sam Beam's own words: 'It was night and day. You'd be playing to 200 people, and then all of a sudden you're playing to 2,000' — though he notes the biggest jump actually came a few years later, after a song appeared on the Twilight soundtrack.",
+      "media": [],
+      "sources": [
+        {
+          "title": "\"You Gotta Hear This One Song\": The Oral History of the Garden State Soundtrack",
+          "publisher": "The Ringer",
+          "url": "https://www.theringer.com/2024/07/24/movies/garden-state-soundtrack-album-music-20th-anniversary-zach-braff"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:36:13.000Z"
+    },
+    {
       "id": "jacob-collier-9be3c5c6",
       "slug": "jacob-collier",
       "artistName": "Jacob Collier",
@@ -4374,6 +4460,49 @@
       "status": "published",
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
+      "id": "khruangbin-816ed2e5",
+      "slug": "khruangbin",
+      "artistName": "Khruangbin",
+      "type": "era",
+      "hook": "Khruangbin is named after the Thai word for airplane",
+      "story": "Bassist Laura Lee named the band while she was learning Thai — 'Khruangbin' translates to 'airplane' or 'engine fly,' a nod to the international sweep of Thai funk, dub, psych-rock and soul the trio pulls from. The name has turned out fitting for a band that built its career on nearly constant touring.",
+      "media": [
+        {
+          "label": "Time (You and I)",
+          "url": "https://www.youtube.com/watch?v=oc50wHexbwg"
+        }
+      ],
+      "sources": [
+        {
+          "title": "On The Cover – Khruangbin: \"We planned our entire world tour around Glastonbury\"",
+          "publisher": "NME",
+          "url": "https://www.nme.com/big-reads/khruangbin-cover-interview-2020-mordechai-glastonbury-2696013"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:39:10.000Z"
+    },
+    {
+      "id": "khruangbin-68648ae4",
+      "slug": "khruangbin",
+      "artistName": "Khruangbin",
+      "type": "era",
+      "hook": "Khruangbin's wigs are a persona Laura Lee can leave on stage",
+      "story": "Onstage, Laura Lee and Mark Speer perform behind black wigs. In her own words: 'I definitely feel like a character when I'm on stage and wearing the wig... Having a costume helped me think that I was bigger than I am, because I was quite a nervous player at first. And now it protects me in a different way — it's protecting my privacy.' The band didn't anticipate how much significance the costumes would take on when they started wearing them.",
+      "media": [],
+      "sources": [
+        {
+          "title": "On The Cover – Khruangbin: \"We planned our entire world tour around Glastonbury\"",
+          "publisher": "NME",
+          "url": "https://www.nme.com/big-reads/khruangbin-cover-interview-2020-mordechai-glastonbury-2696013"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:39:10.000Z"
     },
     {
       "id": "led-zeppelin-30686339",
@@ -6497,6 +6626,49 @@
       "at": "2026-07-20T01:20:41.000Z"
     },
     {
+      "id": "santigold-cc827728",
+      "slug": "santigold",
+      "artistName": "Santigold",
+      "type": "era",
+      "hook": "Santigold released her debut album under a different name",
+      "story": "Santi White's 2008 debut album was released as Santogold, and she performed under that name for its first year. In 2009 she changed her stage name to Santigold — the name every release since has carried, and the one MusicBrainz lists as canonical, with Santogold recorded as a former alias rather than a separate artist.",
+      "media": [
+        {
+          "label": "L.E.S. Artistes",
+          "url": "https://www.youtube.com/watch?v=ciJDA0tcQfs"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Santigold (MusicBrainz artist entry)",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/97b20fe3-0924-4a5f-9955-d0b5c5f9587f"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:50:14.000Z"
+    },
+    {
+      "id": "santigold-6a34368b",
+      "slug": "santigold",
+      "artistName": "Santigold",
+      "type": "era",
+      "hook": "Before Santigold existed, she wrote an entire album for someone else",
+      "story": "Before her own solo career, Santi White worked inside the industry she'd go on to reshape: she did A&R work at Epic Records and sang in the punk band Stiffed. In 2001, she wrote soul singer Res's debut album How I Do in its entirety alongside producer Martin 'Doc' McKinney — a record that moved through reggae, trip-hop and rock, previewing the genre-hopping that would define her own music years later.",
+      "media": [],
+      "sources": [
+        {
+          "title": "Tribute to Res' 2001 Debut Album, 'How I Do'",
+          "publisher": "The Root",
+          "url": "https://www.theroot.com/an-ode-to-res-debut-album-how-i-do"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:50:14.000Z"
+    },
+    {
       "id": "sigur-ros-1857fb0d",
       "slug": "sigur-ros",
       "artistName": "Sigur Rós",
@@ -7697,6 +7869,44 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:50:03.673Z"
+    },
+    {
+      "id": "thievery-corporation-9c3e9d18",
+      "slug": "thievery-corporation",
+      "artistName": "Thievery Corporation",
+      "type": "era",
+      "hook": "Thievery Corporation started because world music wasn't danceable",
+      "story": "Rob Garza and Eric Hilton met in 1995 at Hilton's Washington, D.C. club, the Eighteenth Street Lounge. In Garza's words: 'We wanted to find a way to make it a bit more modern and incorporate electronic production and bring it into the future' — bossa nova, reggae, Indian sitar and old European soundtrack music, reworked with a danceable electronic beat. Their first day working together, they finished a song that ended up on their debut album, and eventually moved into the top floor of the Lounge itself to keep recording.",
+      "media": [],
+      "sources": [
+        {
+          "title": "Thievery Corporation Churns Beats Of 'Retaliation'",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2008/12/04/97789906/thievery-corporation-churns-beats-of-retaliation"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:44:21.000Z"
+    },
+    {
+      "id": "thievery-corporation-914cd376",
+      "slug": "thievery-corporation",
+      "artistName": "Thievery Corporation",
+      "type": "era",
+      "hook": "Thievery Corporation stayed in Washington, DC on purpose",
+      "story": "Unlike many producers who relocate to New York or Los Angeles once they've built a career, Garza and Hilton have stayed based in Washington, D.C. since forming the group in 1995 — running their own label and studio from the same city where they started, rather than the industry's usual coastal hubs.",
+      "media": [],
+      "sources": [
+        {
+          "title": "Thievery Corporation Churns Beats Of 'Retaliation'",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2008/12/04/97789906/thievery-corporation-churns-beats-of-retaliation"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-23T23:44:21.000Z"
     },
     {
       "id": "thom-yorke-ea81abe9",

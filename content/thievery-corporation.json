@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "slug": "thievery-corporation",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Thievery Corporation — Ear Clef",
+    "description": "Bossa nova, dub and Middle Eastern strings turned into downtempo electronica — born in the top floor of a Washington, D.C. lounge.",
+    "ogImage": "/images/og-thievery-corporation.jpg",
+    "canonicalUrl": "https://earclef.com/thievery-corporation"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "25KNo5GDS6ZpLkjasaecA3"
+    },
+    "youtube": {
+      "channelId": "UCzFpkcvn4ulINJsS5SpLaJQ"
+    },
+    "setlistfm": {
+      "mbid": "a505bb48-ad65-4af4-ae47-29149715bff9"
+    },
+    "itunes": {
+      "artistId": "2726532"
+    }
+  },
+  "hero": {
+    "name": "Thievery Corporation",
+    "identity": "Rob Garza and Eric Hilton's downtempo world-music fusion, run out of their own Washington, D.C. lounge and label for three decades.",
+    "tagline": "Hear here!",
+    "location": "Washington, D.C., USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://thieverycorporation.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/thieverycorporation/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/ThieveryCorpDC"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/thieverycorporation"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCzFpkcvn4ulINJsS5SpLaJQ"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/thievery-corporation/2726532"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJJPHO/thievery-corporation"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "The Mirror Conspiracy",
+        "year": "2000",
+        "mbReleaseGroupId": "31fb1b7d-c860-3150-b3e5-8b9951f2dfe4"
+      },
+      {
+        "title": "Radio Retaliation",
+        "year": "2008",
+        "mbReleaseGroupId": "ba5e6de7-49e4-3cb4-b903-2eaf5ae32991"
+      },
+      {
+        "title": "Saudade",
+        "year": "2014",
+        "mbReleaseGroupId": "ba9a0970-bf2b-4f04-a022-f7b7f12e2f06"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "ApK0kcy7U0Q",
+        "title": "Culture of Fear"
+      },
+      {
+        "youtubeId": "2xAJVri2a1U",
+        "title": "The Numbers Game"
+      },
+      {
+        "youtubeId": "eD7lML9XRL4",
+        "title": "Warning Shots"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Rob Garza and Eric Hilton met in 1995 at Hilton's Washington, D.C. club, the Eighteenth Street Lounge, and started talking about the music they loved — bossa nova, reggae, Indian sitar, old European soundtracks — and how to bring it into the present with electronic production. Their first day working together, they finished a song that ended up on their debut album; they eventually moved into the top floor of the Lounge itself to keep recording, and launched their own label, ESL Music, in 1996.",
+      "The Mirror Conspiracy (2000) established the duo's downtempo, genre-blending sound on a wider stage. By Radio Retaliation (2008), the music had become explicitly political, addressing war and civil liberties directly rather than staying purely atmospheric — a shift NPR covered as part of the album's release.",
+      "Rather than working with a fixed lineup, Thievery Corporation records and tours with a rotating cast of vocalists and musicians, keeping the two founders as the constant thread across a catalog that runs from Saudade (2014) through Treasures from the Temple (2018).",
+      "Garza and Hilton have stayed based in Washington, D.C. since 1995, running their studio, label and club out of the same city rather than relocating to a coastal industry hub — 'we're from here,' as Hilton put it, simply."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at thieverycorporation.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-12-20",
+        "venue": "9:30 Club",
+        "city": "Washington, D.C., USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/thievery-corporation/2025/930-club-washington-dc-63409e73.html",
+        "note": "Home-city show"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Thievery Corporation Churns Beats Of 'Retaliation'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2008/12/04/97789906/thievery-corporation-churns-beats-of-retaliation"
+      },
+      {
+        "title": "Thievery Corporation: 'Retaliation' Music",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2009/04/02/99456187/thievery-corporation-retaliation-music"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

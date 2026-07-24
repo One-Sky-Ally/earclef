@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "slug": "erykah-badu",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Erykah Badu — Ear Clef",
+    "description": "The Dallas singer who helped found neo-soul with Baduizm and has spent three decades refusing to repeat herself since.",
+    "ogImage": "/images/og-erykah-badu.jpg",
+    "canonicalUrl": "https://earclef.com/erykah-badu"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "7IfculRW2WXyzNQ8djX8WX"
+    },
+    "youtube": {
+      "channelId": "UCDOZs-fcPo0ab9mqUnyN4cw"
+    },
+    "setlistfm": {
+      "mbid": "321531fc-db73-4ffa-a959-61a61a2908c1"
+    },
+    "itunes": {
+      "artistId": "54556"
+    }
+  },
+  "hero": {
+    "name": "Erykah Badu",
+    "identity": "A founding voice of neo-soul out of Dallas, still restless and genre-crossing three decades into her catalog.",
+    "tagline": "Hear here!",
+    "location": "Dallas, Texas, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.erykahbadu.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/fatbellybella"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/erykahbadu"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCDOZs-fcPo0ab9mqUnyN4cw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/erykah-badu/54556"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000RHUCA4/erykah-badu"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Baduizm",
+        "year": "1997",
+        "mbReleaseGroupId": "45536412-c62c-34fc-9524-0bac1d2542c1"
+      },
+      {
+        "title": "Mama's Gun",
+        "year": "2000",
+        "mbReleaseGroupId": "25bdfd28-72ca-3d1f-88fc-dcf67df91720"
+      },
+      {
+        "title": "New Amerykah Part One (4th World War)",
+        "year": "2008",
+        "mbReleaseGroupId": "c418cb3c-047e-32c1-b899-54cbce4be8e8"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "-CPCs7vVz6s",
+        "title": "On & On"
+      },
+      {
+        "youtubeId": "OqN0jsSeqPo",
+        "title": "Bag Lady"
+      },
+      {
+        "youtubeId": "9hVp47f5YZg",
+        "title": "Window Seat"
+      },
+      {
+        "youtubeId": "YY2-mrsXgMM",
+        "title": "Tyrone (Live)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Erykah Badu's 1997 debut, Baduizm, arrived alongside D'Angelo's Brown Sugar and Lauryn Hill's early work as one of the records that put a name to neo-soul — an alternative to the era's dominant pop-R&B that leaned into jazz phrasing, live instrumentation and Afrocentric imagery. The album's success established her as one of the movement's defining voices.",
+      "Mama's Gun (2000) and Worldwide Underground (2003) kept pushing the sound further into loose, groove-driven territory, and New Amerykah Part One (4th World War) (2008) and Part Two (Return of the Ankh) (2010) split her ambitions across two records — one dense and political, one warmer and more melodic.",
+      "In 2010, the video for 'Window Seat' was filmed guerrilla-style at Dealey Plaza in Dallas, the site of the JFK assassination, and showed Badu undressing in public before a simulated gunshot and collapse. It drew significant controversy and a disorderly-conduct citation, and remains one of the most talked-about visuals of her career.",
+      "Badu has continued working across mediums and generations of collaborators since, most recently earning a Grammy in 2025 for 'featuring on Rapsody's '3:AM,' bringing her career total to five wins from twenty nominations."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at erykahbadu.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-10-03",
+        "venue": "Hollywood Bowl",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/erykah-badu/2025/hollywood-bowl-los-angeles-ca-23417c63.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "New Amerykah Part One (2008) CD",
+        "description": "From Badu World Market, the official Erykah Badu store.",
+        "image": {
+          "src": "https://baduworld.market/cdn/shop/files/IMG_5904.png?v=1768840101",
+          "alt": "New Amerykah Part One (2008) CD"
+        },
+        "url": "https://baduworld.market/collections/music/products/new-amerykah-part-one-2008-cd-see-deez"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Erykah Badu's goals are intentionally unreachable",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2024/11/14/1244131246/erykah-badu-on-the-piano-lesson-anxiety-and-making-new-music"
+      },
+      {
+        "title": "Erykah Badu and Summer Walker: Musicians on Musicians",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-features/erykah-badu-summer-walker-musicians-on-musicians-1091052/"
+      },
+      {
+        "title": "Erykah Badu — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/erykah-badu"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

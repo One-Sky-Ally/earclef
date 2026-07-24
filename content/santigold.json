@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "santigold",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Santigold — Ear Clef",
+    "description": "New wave, reggae, punk and pop collapsed into one restless sound — the songwriter who renamed herself mid-career and kept moving anyway.",
+    "ogImage": "/images/og-santigold.jpg",
+    "canonicalUrl": "https://earclef.com/santigold"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6Jrxnp0JgqmeUX1veU591p"
+    },
+    "youtube": {
+      "channelId": "UCai-drGTTaIIvJ6OTnn5ixw"
+    },
+    "setlistfm": {
+      "mbid": "97b20fe3-0924-4a5f-9955-d0b5c5f9587f"
+    },
+    "itunes": {
+      "artistId": "271500846"
+    }
+  },
+  "hero": {
+    "name": "Santigold",
+    "identity": "New wave, reggae, punk and pop collapsed into one restless sound, from a Philadelphia songwriter who renamed herself mid-career.",
+    "tagline": "Hear here!",
+    "location": "Philadelphia, Pennsylvania, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.santigold.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/santivision/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/Santigold"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/Santigold"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCai-drGTTaIIvJ6OTnn5ixw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/santigold/271500846"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B001U80X0I/santigold"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Santogold",
+        "year": "2008",
+        "mbReleaseGroupId": "7f97b291-3e30-3ff4-b7fb-b9e7ff4539fd"
+      },
+      {
+        "title": "Master of My Make-Believe",
+        "year": "2012",
+        "mbReleaseGroupId": "0bda1b63-9601-4456-9574-5cef953dd214"
+      },
+      {
+        "title": "Spirituals",
+        "year": "2022",
+        "mbReleaseGroupId": "273c7e33-ce6f-42bf-8cd0-97965be68ee6"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "ciJDA0tcQfs",
+        "title": "L.E.S. Artistes"
+      },
+      {
+        "youtubeId": "mIMMZQJ1H6E",
+        "title": "Disparate Youth"
+      },
+      {
+        "youtubeId": "l0x1zL_QMnk",
+        "title": "Witness"
+      },
+      {
+        "youtubeId": "cPogPn35v4E",
+        "title": "My Horror"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Santi White, born in Philadelphia, worked inside the music industry before stepping in front of it — doing A&R work at Epic Records, singing in the punk band Stiffed, and writing and producing most of Res's 2001 debut album How I Do. Her own solo debut, released in 2008 as Santogold, collapsed new wave, reggae, punk and dancehall into a sound that didn't sit still.",
+      "In 2009, she changed her stage name from Santogold to Santigold, a change that has stuck for every release since. The music itself kept the same restlessness: Master of My Make-Believe (2012), 99¢ (2016) and Spirituals (2022) each moved the sound in a different direction without smoothing out the edges.",
+      "Beyond her own records, White has written for other artists — including co-writing songs on Christina Aguilera's Bionic and Ashlee Simpson's Bittersweet World — and toured supporting M.I.A., Björk, Jay-Z and Kanye West early in her career, before headlining on her own.",
+      "She's continued to work across mediums, including scoring and appearing in projects like the film Witness, while keeping the sound of each new Santigold record distinct from the last."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at santigold.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-08-23",
+        "venue": "Terminal 5",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/santigold/2024/terminal-5-new-york-ny-3528d3f.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Witness Film Poster Hoodie",
+        "description": "From the official Santigold store.",
+        "image": {
+          "src": "https://shop.santigold.com/cdn/shop/files/SantigoldHoodieFront.png?v=1701457692&width=1946",
+          "alt": "Witness Film Poster Hoodie"
+        },
+        "url": "https://shop.santigold.com/products/witness-film-poster-hoodie"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "On 'Spirituals,' Santigold is still living in pop's future",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2022/11/15/1136082576/santigold-spirituals-review-career-longevity-industry-future"
+      },
+      {
+        "title": "Santigold releases new album 'Spirituals'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2022/09/11/1122250617/santigold-releases-new-album-spirituals"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
