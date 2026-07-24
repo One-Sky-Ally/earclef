@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "slug": "little-dragon",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Little Dragon — Ear Clef",
+    "description": "Gothenburg electronic-soul built on a decades-long friendship — Yukimi Nagano's voice over synths that move between dance floor and headphones.",
+    "ogImage": "/images/og-little-dragon.jpg",
+    "canonicalUrl": "https://earclef.com/little-dragon"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6Tyzp9KzpiZ04DABQoedps"
+    },
+    "youtube": {
+      "channelId": "UC9BvsAu_LU1McWVnpSKmReA"
+    },
+    "setlistfm": {
+      "mbid": "c8a9ae11-63bf-409b-8bf3-a96b3712a2ff"
+    },
+    "itunes": {
+      "artistId": "258535972"
+    }
+  },
+  "hero": {
+    "name": "Little Dragon",
+    "identity": "Gothenburg electronic-soul built on a friendship that started in high school — Yukimi Nagano's voice over synths built for both club and headphones.",
+    "tagline": "Hear here!",
+    "location": "Gothenburg, Sweden",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://little-dragon.net/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/littledragonflicks/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/LittleDragon"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/LittleDragon"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC9BvsAu_LU1McWVnpSKmReA"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/little-dragon/258535972"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B001686NE2/little-dragon"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Ritual Union",
+        "year": "2011",
+        "mbReleaseGroupId": "46c8cfa5-5314-46a5-812c-7bee280bbfe9"
+      },
+      {
+        "title": "Nabuma Rubberband",
+        "year": "2014",
+        "mbReleaseGroupId": "ef2ff639-244d-4ae7-9e53-9cc3fd64a9aa"
+      },
+      {
+        "title": "New Me, Same Us",
+        "year": "2020",
+        "mbReleaseGroupId": "174dbace-45b6-446e-98ba-b3a0e9f0aadb"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "0Yeb3q5nqWA",
+        "title": "Ritual Union"
+      },
+      {
+        "youtubeId": "UM--TtkGNa4",
+        "title": "Klapp Klapp"
+      },
+      {
+        "youtubeId": "TrpMncSZe-I",
+        "title": "Twice"
+      },
+      {
+        "youtubeId": "EFEyHkW5MCs",
+        "title": "Paris"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Yukimi Nagano met Fredrik Källgren Wallin and Erik Bodin in high school in Gothenburg, Sweden, where they'd jam together after class. Håkan Wirenstrand joined later, and the band formed in 1996 — a friendship that predates the group's music by years and has held the same lineup together for decades since.",
+      "The band's self-titled debut arrived in 2007, and Ritual Union (2011) and Nabuma Rubberband (2014) built out a sound that moves between synth-pop, soul and dance music without settling fully into any of them. New Me, Same Us (2020) continued that pattern into a fourth decade of the band's existence.",
+      "In 2010, Little Dragon co-wrote and performed on two tracks from Gorillaz's Plastic Beach — 'Empire Ants' and 'To Binge' — making them the only guest act to appear twice on that record. Yukimi's voice has also shown up as a featured vocalist for SBTRKT and Flume, among others.",
+      "The band continues to tour steadily behind each new release, keeping the same four-person lineup that first started playing together as teenagers in Gothenburg."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at little-dragon.net.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2023-10-13",
+        "venue": "9:30 Club",
+        "city": "Washington, D.C., USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/little-dragon/2023/930-club-washington-dc-73a34625.html",
+        "note": "Slugs of Love tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Little Dragon LP",
+        "description": "From the official Little Dragon store.",
+        "image": {
+          "src": "https://little-dragon.net/cdn/shop/files/qwe.jpg?v=1733152670",
+          "alt": "Little Dragon LP"
+        },
+        "url": "https://little-dragon.net/products/little-dragon-vinyl"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Little Dragon: Tiny Desk Concert",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2023/08/11/1192463246/little-dragon-tiny-desk-concert"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

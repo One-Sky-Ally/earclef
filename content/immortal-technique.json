@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "slug": "immortal-technique",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Immortal Technique — Ear Clef",
+    "description": "Peruvian-born, Harlem-raised political rap built entirely outside the label system — battle-rap money funded the first record.",
+    "ogImage": "/images/og-immortal-technique.jpg",
+    "canonicalUrl": "https://earclef.com/immortal-technique"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "7h8ja4JSORo2sXJPmCXRxa"
+    },
+    "youtube": {
+      "channelId": "UC877kk3HLR31M26Xst_0ENA"
+    },
+    "setlistfm": {
+      "mbid": "ef4db186-ff43-4708-a713-3ce1e05657a1"
+    },
+    "itunes": {
+      "artistId": "19999718"
+    }
+  },
+  "hero": {
+    "name": "Immortal Technique",
+    "identity": "Peruvian-born, Harlem-raised political rap, funded and released entirely outside the major-label system.",
+    "tagline": "Hear here!",
+    "location": "Harlem, New York, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.immortaltechnique.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/techimmortal/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/immortaltech"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/SapaInca"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC877kk3HLR31M26Xst_0ENA"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/immortal-technique/19999718"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJQRCK/immortal-technique"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Revolutionary Vol. 1",
+        "year": "2001",
+        "mbReleaseGroupId": "dd8f08de-8250-303a-8e73-591b6bf331ff"
+      },
+      {
+        "title": "Revolutionary Vol. 2",
+        "year": "2003",
+        "mbReleaseGroupId": "caba7ee4-4caa-3961-bba2-c9534f607dd7"
+      },
+      {
+        "title": "The 3rd World",
+        "year": "2008",
+        "mbReleaseGroupId": "250c5909-e5dd-3d1b-9bcf-bd46965af233"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "Ef1fy2k_EYI",
+        "title": "Dance with the Devil"
+      },
+      {
+        "youtubeId": "8ClyXbLv7pA",
+        "title": "The Point of No Return"
+      },
+      {
+        "youtubeId": "Dd4b3dhTmkU",
+        "title": "You Never Know (feat. Jean Grae)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Felipe Andres Coronel was born in a military hospital in Lima, Peru, in 1978; his family relocated to Harlem when he was two, fleeing Peru's internal conflict. He built a reputation as a battle rapper — winning competitions like Braggin' Rites and the Rock Steady Anniversary battle — before using that prize money to self-finance his 2001 debut, Revolutionary Vol. 1, entirely outside the major-label system.",
+      "Revolutionary Vol. 2 (2003) and The 3rd World (2008) continued that independent run, released through his own label infrastructure rather than any major. Every record in his catalog carries the same throughline: explicitly political lyrics addressing systemic injustice, delivered without label oversight softening the message.",
+      "In 2008, Immortal Technique partnered with the nonprofit Omeid International, using proceeds from The 3rd World and related benefit shows — roughly $50,000 — to help fund a school, orphanage and medical center in Kabul, Afghanistan, traveling there personally as part of the project.",
+      "He has remained independent throughout his career, releasing music via his own Viper Records and Rebel Army Records infrastructure rather than signing to a major label."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at immortaltechnique.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2022-04-20",
+        "venue": "Amazura Concert Hall",
+        "city": "Queens, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/immortal-technique/2022/amazura-concert-hall-queens-ny-53b61379.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Immortal Technique Hoodie - Black",
+        "description": "The original Guerrilla Republik collaboration hoodie, made in the USA. From the official Immortal Technique store.",
+        "image": {
+          "src": "https://www.immortaltechnique.com/cdn/shop/products/blackhoodie.jpg?v=1647899331",
+          "alt": "Immortal Technique Hoodie - Black"
+        },
+        "url": "https://www.immortaltechnique.com/products/immortal-technique-hoodie-black"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Portrait Of: Rapper Immortal Technique",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2019/01/09/683654271/portrait-of-rapper-immortal-technique"
+      },
+      {
+        "title": "Portrait Of: Immortal Technique",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2020/05/05/851106879/portrait-of-immortal-technique"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

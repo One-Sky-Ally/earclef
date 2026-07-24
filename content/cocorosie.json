@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "cocorosie",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "CocoRosie — Ear Clef",
+    "description": "Two sisters, a Paris bathroom, and a mix of opera, hip-hop and toy instruments — freak-folk built from a decade-long silence between them.",
+    "ogImage": "/images/og-cocorosie.jpg",
+    "canonicalUrl": "https://earclef.com/cocorosie"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "05fo024EFotg9songSENOZ"
+    },
+    "youtube": {
+      "channelId": "UC7jSCj67GB8OFGEm_hwR2DQ"
+    },
+    "setlistfm": {
+      "mbid": "e162b2eb-6a42-4240-8c1b-c94d9a0acb73"
+    },
+    "itunes": {
+      "artistId": "14945387"
+    }
+  },
+  "hero": {
+    "name": "CocoRosie",
+    "identity": "Sisters Bianca and Sierra Casady mixing opera, hip-hop, folk and found sounds into a genre of their own making.",
+    "tagline": "Hear here!",
+    "location": "Paris, France",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.cocorosiemusic.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/cocorosie_official/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/LaRealCocoRosie"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/LaRealCocoRosie"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC7jSCj67GB8OFGEm_hwR2DQ"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/cocorosie/14945387"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000S2H6YI/cocorosie"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "La Maison de Mon Rêve",
+        "year": "2004",
+        "mbReleaseGroupId": "dfe39d7e-f7f5-364f-8240-47ca0d63f633"
+      },
+      {
+        "title": "Noah's Ark",
+        "year": "2005",
+        "mbReleaseGroupId": "13e3ea15-2154-3bcd-8123-773ad049d080"
+      },
+      {
+        "title": "Grey Oceans",
+        "year": "2010",
+        "mbReleaseGroupId": "e6b1945d-ac17-4dae-87b8-6381b8d4ca56"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "tu3EcAHdHlE",
+        "title": "Lemonade"
+      },
+      {
+        "youtubeId": "oiEqWYawpeU",
+        "title": "Gallows"
+      },
+      {
+        "youtubeId": "Y2o_dRvpBYE",
+        "title": "Cut Stitch Scar"
+      },
+      {
+        "youtubeId": "_yYk0Ht4tp8",
+        "title": "Least I Have You"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Sisters Bianca 'Coco' and Sierra 'Rosie' Casady spent years largely apart before reconnecting in Paris in 2003, where Sierra was studying opera at the Conservatoire. Recording together for the first time in the bathroom of Sierra's apartment — chosen for its acoustics — using guitars, harps, toy instruments and found sounds, they produced the demos that became La Maison de Mon Rêve (2004), released through Touch and Go Records.",
+      "Noah's Ark (2005) brought guests from the mid-2000s freak-folk scene into the mix, including Antony Hegarty (later Anohni) and Devendra Banhart, cementing CocoRosie's place alongside that cohort while keeping their sound distinct — a blend of opera, hip-hop, blues, electronica and folk built as much from toy instruments and found sounds as conventional ones.",
+      "The Adventures of Ghosthorse and Stillborn (2007) and Grey Oceans (2010) continued the group's genre-blending approach, and the duo has kept working with Anohni since — including 2017's protest song 'Smoke 'Em Out.'",
+      "CocoRosie marked 2024 as twenty years of records together, with 2025's Little Death Wishes continuing a catalog that has never settled into one fixed sound."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at cocorosiemusic.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-06-09",
+        "venue": "Paradiso (Grote Zaal)",
+        "city": "Amsterdam, Netherlands",
+        "setlistUrl": "https://www.setlist.fm/setlist/cocorosie/2025/paradiso-grote-zaal-amsterdam-netherlands-1b5cb1cc.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Little Death Wishes – CD + Digital",
+        "description": "From the official CocoRosie Bandcamp store.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/a0803335113_5.jpg",
+          "alt": "Little Death Wishes – CD + Digital"
+        },
+        "url": "https://cocorosiemusic.bandcamp.com/album/little-death-wishes"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "CocoRosie: Mystic Sisters",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2010/07/27/128773413/cocorosie-mystic-sisters"
+      },
+      {
+        "title": "Hear Anohni, CocoRosie's Anti-Trump Song 'Smoke 'Em Out'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/news/hear-anohni-cocorosies-anti-trump-song-smoke-em-out-w461355"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

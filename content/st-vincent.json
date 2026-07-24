@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "st-vincent",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "St. Vincent — Ear Clef",
+    "description": "Annie Clark's art-rock guitar project — six Grammy wins deep, from touring sideman to one of the era's defining guitarists.",
+    "ogImage": "/images/og-st-vincent.jpg",
+    "canonicalUrl": "https://earclef.com/st-vincent"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "7bcbShaqKdcyjnmv4Ix8j6"
+    },
+    "youtube": {
+      "channelId": "UC76cjhGZXsVeYcC2ERml_BA"
+    },
+    "setlistfm": {
+      "mbid": "5334edc0-5faf-4ca5-b1df-000de3e1f752"
+    },
+    "itunes": {
+      "artistId": "198271209"
+    }
+  },
+  "hero": {
+    "name": "St. Vincent",
+    "identity": "Annie Clark's art-rock guitar project, built from a touring sideman's apprenticeship into one of the era's defining catalogs.",
+    "tagline": "Hear here!",
+    "location": "Tulsa, Oklahoma, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://ilovestvincent.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/st_vincent/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/st_vincent"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/St.Vincent"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC76cjhGZXsVeYcC2ERml_BA"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/st-vincent/198271209"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000TDS4F6/st-vincent"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Marry Me",
+        "year": "2007",
+        "mbReleaseGroupId": "8365293a-becb-3c63-a2d7-663fe4d4f97f"
+      },
+      {
+        "title": "Strange Mercy",
+        "year": "2011",
+        "mbReleaseGroupId": "a9c80acf-5017-4301-8da0-2d6dfb502400"
+      },
+      {
+        "title": "MASSEDUCTION",
+        "year": "2017",
+        "mbReleaseGroupId": "53dd291e-372f-4f76-844b-1b5b42df6832"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "h9TlaYxoOO8",
+        "title": "Los Ageless"
+      },
+      {
+        "youtubeId": "Itt0rALeHE8",
+        "title": "Cruel"
+      },
+      {
+        "youtubeId": "4TPqUvy1vYU",
+        "title": "New York"
+      },
+      {
+        "youtubeId": "fpT6O9wQhAE",
+        "title": "Digital Witness (Live at BBC Proms)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Annie Clark, born in Tulsa and raised in Dallas, spent her early twenties as a touring sideman before stepping out on her own — playing in the choral rock band the Polyphonic Spree, then joining Sufjan Stevens' touring band, before forming St. Vincent in 2006. Marry Me (2007) introduced the project; Strange Mercy (2011) became her first album to reach the Billboard 200's Top 20.",
+      "St. Vincent (2014), MASSEDUCTION (2017), Daddy's Home (2021) and All Born Screaming (2024) built out a catalog defined by precise, distorted guitar playing and increasingly theatrical production — MASSEDUCTION was co-written and produced with Jack Antonoff, while All Born Screaming marked her first time producing an album entirely on her own.",
+      "In 2012, Clark released Love This Giant, a full collaborative album with Talking Heads' David Byrne, pairing her guitar work with a horn-driven arrangement style far outside her solo catalog.",
+      "St. Vincent has won six Grammy Awards from eight nominations, including three wins for Best Alternative Music Album across three different records (2015, 2022, 2025) — a run the Recording Academy's own data ties to St. Vincent, MASSEDUCTION-era single 'Masseduction,' Daddy's Home, and 2025's 'Broken Man,' 'Flea' and All Born Screaming sweep."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at ilovestvincent.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-07-16",
+        "venue": "Somerset House",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/st-vincent/2025/somerset-house-london-england-435bcf5f.html",
+        "note": "Somerset House Summer Series"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "St. Vincent 2026 Tour T-Shirt",
+        "description": "From the official St. Vincent store.",
+        "image": {
+          "src": "https://ilovestvincent.com/cdn/shop/files/tourfront_1200x1200.png?v=1779825878",
+          "alt": "St. Vincent 2026 Tour T-Shirt"
+        },
+        "url": "https://ilovestvincent.com/collections/live-in-london/products/st-vincent-2026-tour-t-shirt"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Ambien Dreams And Naked Desert Walks: St. Vincent On Her New Album",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/sections/allsongs/2014/01/08/249345302/ambien-dreams-and-naked-desert-walks-st-vincent-on-her-new-album"
+      },
+      {
+        "title": "St. Vincent — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/st-vincent/18723"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

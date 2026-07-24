@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "slug": "jurassic-5",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Jurassic 5 — Ear Clef",
+    "description": "Old-school four-MC trading bars, built from two merged LA crews as a direct reaction against 90s gangsta rap's dominance.",
+    "ogImage": "/images/og-jurassic-5.jpg",
+    "canonicalUrl": "https://earclef.com/jurassic-5"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6wFId9Jhuf9AKVzWboOj2B"
+    },
+    "youtube": {
+      "channelId": "UCChAp5Odpt8t65nDhWUilfw"
+    },
+    "setlistfm": {
+      "mbid": "11c6b106-1c1f-429d-8407-b1ee155d7f72"
+    },
+    "itunes": {
+      "artistId": "107156"
+    }
+  },
+  "hero": {
+    "name": "Jurassic 5",
+    "identity": "Old-school four-MC trading bars over turntablist production — a deliberate throwback built as a reaction against 90s gangsta rap's dominance.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, California, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://jurassic-five.squarespace.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/jurassic5"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/Jurassic5"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/J5Official"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/jurassic-5/107156"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJR7JC"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Jurassic 5 EP",
+        "year": "1997",
+        "mbReleaseGroupId": "a575fa2e-2822-393f-b250-098d18eaf66c"
+      },
+      {
+        "title": "Quality Control",
+        "year": "2000",
+        "mbReleaseGroupId": "6d26408b-cf94-3dac-926a-c7f309ab017c"
+      },
+      {
+        "title": "Power in Numbers",
+        "year": "2002",
+        "mbReleaseGroupId": "3ec846cc-e07a-3734-836c-822d10ab10d0"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "XsZKrctSDaw",
+        "title": "What's Golden"
+      },
+      {
+        "youtubeId": "PgpDN-bARwc",
+        "title": "Quality Control"
+      },
+      {
+        "youtubeId": "dNPHJxU2Af8",
+        "title": "Customer Service"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Jurassic 5 formed in 1993 from the merger of two Los Angeles crews out of the Good Life Cafe open-mic scene: Unity Committee (Chali 2na, Cut Chemist, Marc 7) and Rebels of Rhythm (Akil, Zaakir/Soup), later joined by DJ Nu-Mark. The group first released a joint single, 'Unified Rebelution,' under both crew names before settling on Jurassic 5, a name shortened for record-label purposes.",
+      "At a moment when gangsta rap dominated the mainstream, Jurassic 5 deliberately revived an older style — tightly interlocked four-MC verse-trading built on positive, conscious lyrical content rather than confrontational themes, echoing groups like the Cold Crush Brothers. Cut Chemist and DJ Nu-Mark split production duties, with Cut Chemist rooted in bassline- and loop-driven, crate-digging production and Nu-Mark focused on chopped-up drum programming.",
+      "Quality Control (2000) and Power in Numbers (2002) built the group's catalog around that turntablist-driven, old-school-revival sound, before Feedback (2006) closed out their original run. The group has been reunion-only since around 2007, playing occasional shows without a steady stream of new material.",
+      "The current lineup — Akil, Chali 2na, Cut Chemist, DJ Nu-Mark, Marc 7 and Soup — still performs together periodically, running their own merch operation directly rather than through a label."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at jurassic-five.squarespace.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2002-10-19",
+        "venue": "Showbox Comedy and Supper Club",
+        "city": "Seattle, WA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/jurassic-5/2002/showbox-comedy-and-supper-club-seattle-wa-63c44647.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Official J5 Logo Black Shirt",
+        "description": "From the band's own official store.",
+        "image": {
+          "src": "https://static1.squarespace.com/static/56de20ce2fe1318cf0aad8ae/57528beef0bc33c5ab0c419f/584881af893fc006be2b3d5d/1587050850144/J5-Logo-BlackWhite-1000Square.png?format=1500w",
+          "alt": "Official J5 Logo Black Shirt"
+        },
+        "url": "https://jurassic-five.squarespace.com/products/official-logo-black-shirt"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "20 Years Ago, Jurassic 5's Debut EP Made Underground Rap the Place to Be",
+        "outlet": "LA Weekly",
+        "url": "https://www.laweekly.com/20-years-ago-jurassic-5s-debut-ep-made-underground-rap-the-place-to-be/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

@@ -170,6 +170,16 @@
     "membership": false
   },
   {
+    "slug": "cocorosie",
+    "name": "CocoRosie",
+    "identity": "Sisters Bianca and Sierra Casady mixing opera, hip-hop, folk and found sounds into a genre of their own making.",
+    "tier": "in-the-mix",
+    "mbid": "e162b2eb-6a42-4240-8c1b-c94d9a0acb73",
+    "channelId": "UC7jSCj67GB8OFGEm_hwR2DQ",
+    "itunesId": "14945387",
+    "membership": false
+  },
+  {
     "slug": "coldplay",
     "name": "Coldplay",
     "identity": "Arena-scale melancholy built from a UCL dorm-room friendship — the most-attended tour in music history, still touring.",
@@ -320,6 +330,16 @@
     "membership": false
   },
   {
+    "slug": "immortal-technique",
+    "name": "Immortal Technique",
+    "identity": "Peruvian-born, Harlem-raised political rap, funded and released entirely outside the major-label system.",
+    "tier": "in-the-mix",
+    "mbid": "ef4db186-ff43-4708-a713-3ce1e05657a1",
+    "channelId": "UC877kk3HLR31M26Xst_0ENA",
+    "itunesId": "19999718",
+    "membership": false
+  },
+  {
     "slug": "imogen-heap",
     "name": "Imogen Heap",
     "identity": "Self-produced electronic pop from a songwriter who builds her own instruments.",
@@ -420,6 +440,16 @@
     "membership": false
   },
   {
+    "slug": "jurassic-5",
+    "name": "Jurassic 5",
+    "identity": "Old-school four-MC trading bars over turntablist production — a deliberate throwback built as a reaction against 90s gangsta rap's dominance.",
+    "tier": "in-the-mix",
+    "mbid": "11c6b106-1c1f-429d-8407-b1ee155d7f72",
+    "channelId": "UCChAp5Odpt8t65nDhWUilfw",
+    "itunesId": "107156",
+    "membership": false
+  },
+  {
     "slug": "khruangbin",
     "name": "Khruangbin",
     "identity": "Thai funk, dub and psych-soul instrumentals from a Houston trio who perform behind wigs, staying anonymous on purpose.",
@@ -437,6 +467,16 @@
     "mbid": "678d88b2-87b0-403b-b63d-5da7465aecc3",
     "channelId": "UCaKZA66vM_TUpetUNohmR0A",
     "itunesId": "994656",
+    "membership": false
+  },
+  {
+    "slug": "little-dragon",
+    "name": "Little Dragon",
+    "identity": "Gothenburg electronic-soul built on a friendship that started in high school — Yukimi Nagano's voice over synths built for both club and headphones.",
+    "tier": "in-the-mix",
+    "mbid": "c8a9ae11-63bf-409b-8bf3-a96b3712a2ff",
+    "channelId": "UC9BvsAu_LU1McWVnpSKmReA",
+    "itunesId": "258535972",
     "membership": false
   },
   {
@@ -640,6 +680,16 @@
     "membership": false
   },
   {
+    "slug": "st-vincent",
+    "name": "St. Vincent",
+    "identity": "Annie Clark's art-rock guitar project, built from a touring sideman's apprenticeship into one of the era's defining catalogs.",
+    "tier": "in-the-mix",
+    "mbid": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
+    "channelId": "UC76cjhGZXsVeYcC2ERml_BA",
+    "itunesId": "198271209",
+    "membership": false
+  },
+  {
     "slug": "stevie-wonder",
     "name": "Stevie Wonder",
     "identity": "Joy as a musical instrument — played by a man who heard more in the dark than most ever see.",
@@ -767,6 +817,16 @@
     "mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
     "channelId": "UCINawo364C-NCXc_n-3bxOw",
     "itunesId": "140870416",
+    "membership": false
+  },
+  {
+    "slug": "tori-amos",
+    "name": "Tori Amos",
+    "identity": "Classically trained, confessional and unflinching — piano-driven songwriting that's stayed sharp across three decades.",
+    "tier": "in-the-mix",
+    "mbid": "c0b2500e-0cef-4130-869d-732b23ed9df5",
+    "channelId": "UCd1WSgpR4RrgyYaBjA7eYHQ",
+    "itunesId": "163916",
     "membership": false
   },
   {

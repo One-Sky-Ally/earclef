@@ -1895,6 +1895,54 @@
       "at": "2026-07-18T17:10:41.788Z"
     },
     {
+      "id": "cocorosie-7cc971dc",
+      "slug": "cocorosie",
+      "artistName": "CocoRosie",
+      "type": "era",
+      "hook": "CocoRosie's sisters barely spoke for a decade before making music together",
+      "story": "By their own account, Bianca and Sierra Casady had 'hardly spoke a word to each other for ten years' before Bianca made an impromptu trip to Paris in early 2003 to rejoin her sister. 'It was less of children being split up and more of us choosing not to connect,' Bianca said. Once reunited, they spent months recording in Sierra's bathroom — the most isolated room in the apartment, and the one with the best acoustics — using one microphone and a broken pair of headphones. Those sessions became their 2004 debut, La Maison de Mon Rêve.",
+      "media": [
+        {
+          "label": "Lemonade",
+          "url": "https://www.youtube.com/watch?v=tu3EcAHdHlE"
+        }
+      ],
+      "sources": [
+        {
+          "title": "CocoRosie",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/CocoRosie"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:47:35.000Z"
+    },
+    {
+      "id": "cocorosie-39d46df",
+      "slug": "cocorosie",
+      "artistName": "CocoRosie",
+      "type": "era",
+      "hook": "CocoRosie's second album gathered three future freak-folk names",
+      "story": "Noah's Ark (2005) featured guest collaborations with Anohni (then recording as Antony, of Antony and the Johnsons) on 'Beautiful Boyz,' Devendra Banhart on 'Brazilian Sun,' and French rapper Spleen on 'Bisounours' — placing CocoRosie at the center of the mid-2000s freak-folk scene alongside artists they'd keep collaborating with for years after, including Anohni's 2017 return on the protest song 'Smoke 'Em Out.'",
+      "media": [],
+      "sources": [
+        {
+          "title": "CocoRosie",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/CocoRosie"
+        },
+        {
+          "title": "Hear Anohni, CocoRosie's Anti-Trump Song 'Smoke 'Em Out'",
+          "publisher": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/news/hear-anohni-cocorosies-anti-trump-song-smoke-em-out-w461355"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:47:35.000Z"
+    },
+    {
       "id": "coldplay-5276baa4",
       "slug": "coldplay",
       "artistName": "Coldplay",
@@ -3465,6 +3513,49 @@
       "at": "2026-07-18T15:53:11.912Z"
     },
     {
+      "id": "immortal-technique-eee3a945",
+      "slug": "immortal-technique",
+      "artistName": "Immortal Technique",
+      "type": "era",
+      "hook": "Immortal Technique started writing with a pen given to him in solitary confinement",
+      "story": "Felipe Coronel spent 12 months in prison in his late teens. While in solitary confinement, an older inmate gave him a pen, and he began writing. Released on parole in 1999, he moved back to Harlem, took the name Immortal Technique, and started winning battles in the underground hip-hop scene — the beginning of the career that followed.",
+      "media": [
+        {
+          "label": "Dance with the Devil",
+          "url": "https://www.youtube.com/watch?v=Ef1fy2k_EYI"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Peruvian-born rapper helps Afghan orphans",
+          "publisher": "The World (PRX/PRI)",
+          "url": "https://theworld.org/stories/2013/08/15/peruvian-born-rapper-helps-afghan-orphans"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:35:35.000Z"
+    },
+    {
+      "id": "immortal-technique-cd70331",
+      "slug": "immortal-technique",
+      "artistName": "Immortal Technique",
+      "type": "era",
+      "hook": "Immortal Technique raised $50,000 for an Afghan orphanage through his own concerts and CD sales",
+      "story": "In 2006, Afghan-American nonprofit founder Shamsia Razaqi approached Immortal Technique about Omeid International's plan to build a school, orphanage and medical center in Kabul. He raised close to $50,000 for the project through benefit concerts and sales of his album The 3rd World, and traveled to Kabul himself as part of the effort.",
+      "media": [],
+      "sources": [
+        {
+          "title": "Peruvian-born rapper helps Afghan orphans",
+          "publisher": "The World (PRX/PRI)",
+          "url": "https://theworld.org/stories/2013/08/15/peruvian-born-rapper-helps-afghan-orphans"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:35:35.000Z"
+    },
+    {
       "id": "imogen-heap-91cac220",
       "slug": "imogen-heap",
       "artistName": "Imogen Heap",
@@ -4462,6 +4553,49 @@
       "at": "2026-07-19T08:32:27.000Z"
     },
     {
+      "id": "jurassic-5-af0ac1e4",
+      "slug": "jurassic-5",
+      "artistName": "Jurassic 5",
+      "type": "era",
+      "hook": "Jurassic 5's self-released debut EP sold 200,000 copies with no label help",
+      "story": "In 1997, Jurassic 5 self-released a 23-minute EP with no label or radio support behind it. It went on to sell more than 200,000 copies worldwide on the strength of mixtape staples like 'Concrete Schoolyard' and 'Jayou' alone, eventually earning the group a deal with Interscope Records.",
+      "media": [
+        {
+          "label": "What's Golden",
+          "url": "https://www.youtube.com/watch?v=XsZKrctSDaw"
+        }
+      ],
+      "sources": [
+        {
+          "title": "20 Years Ago, Jurassic 5's Debut EP Made Underground Rap the Place to Be",
+          "publisher": "LA Weekly",
+          "url": "https://www.laweekly.com/20-years-ago-jurassic-5s-debut-ep-made-underground-rap-the-place-to-be/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:42:14.000Z"
+    },
+    {
+      "id": "jurassic-5-b8f5f491",
+      "slug": "jurassic-5",
+      "artistName": "Jurassic 5",
+      "type": "era",
+      "hook": "Jurassic 5 formed by merging two rival LA crews into one group",
+      "story": "Jurassic 5 formed in 1993 when two Los Angeles crews from the Good Life Cafe open-mic scene merged into one group: Unity Committee, made up of Cut Chemist, Chali 2na and Marc 7, and Rebels of Rhythm, made up of Akil and Zaakir (Soup) from South Central's Manual Arts High School. DJ Nu-Mark joined afterward to round out the lineup.",
+      "media": [],
+      "sources": [
+        {
+          "title": "20 Years Ago, Jurassic 5's Debut EP Made Underground Rap the Place to Be",
+          "publisher": "LA Weekly",
+          "url": "https://www.laweekly.com/20-years-ago-jurassic-5s-debut-ep-made-underground-rap-the-place-to-be/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:42:14.000Z"
+    },
+    {
       "id": "khruangbin-816ed2e5",
       "slug": "khruangbin",
       "artistName": "Khruangbin",
@@ -4589,6 +4723,49 @@
       "status": "published",
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-20T07:14:38.000Z"
+    },
+    {
+      "id": "little-dragon-a9502dd5",
+      "slug": "little-dragon",
+      "artistName": "Little Dragon",
+      "type": "era",
+      "hook": "Little Dragon is named after Yukimi Nagano's studio tantrums",
+      "story": "The band's name comes from a nickname Yukimi Nagano earned for the 'fuming tantrums' she used to throw while recording in the studio as a teenager. In her own words: 'It's a little exaggerated, but there is some truth in it. But we've grown up a bit, and I realised you can't have a fit every day because otherwise you won't be able to stand each other.'",
+      "media": [
+        {
+          "label": "Ritual Union",
+          "url": "https://www.youtube.com/watch?v=0Yeb3q5nqWA"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Little Dragon",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Little_Dragon"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:29:55.000Z"
+    },
+    {
+      "id": "little-dragon-9edbdcb1",
+      "slug": "little-dragon",
+      "artistName": "Little Dragon",
+      "type": "song",
+      "hook": "Yukimi Nagano didn't know who Gorillaz were before recording with them",
+      "story": "Damon Albarn was introduced to Little Dragon's music by his partner, who was a fan of the band. When Yukimi Nagano was invited to collaborate, she didn't know who Gorillaz were — and was mildly surprised to learn Albarn was also in Blur. She ended up recording vocals for two songs, 'Empire Ants' and 'To Binge,' both released on Gorillaz's Plastic Beach (2010), making Little Dragon the only guest act to appear twice on that album.",
+      "media": [],
+      "sources": [
+        {
+          "title": "Empire Ants",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Empire_Ants"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:29:55.000Z"
     },
     {
       "id": "low-roar-7c6f596e",
@@ -6819,6 +6996,49 @@
       "at": "2026-07-18T17:25:49.056Z"
     },
     {
+      "id": "st-vincent-95618a19",
+      "slug": "st-vincent",
+      "artistName": "St. Vincent",
+      "type": "award",
+      "hook": "St. Vincent has won Best Alternative Music Album three separate times",
+      "story": "St. Vincent has won the Grammy for Best Alternative Music Album three times across a decade — for her self-titled 2014 album (2015 ceremony), Daddy's Home (2022), and All Born Screaming, which also won her Best Rock Song and Best Alternative Music Performance the same night in 2025. She's now won 6 Grammys from 8 nominations total.",
+      "media": [
+        {
+          "label": "Los Ageless",
+          "url": "https://www.youtube.com/watch?v=h9TlaYxoOO8"
+        }
+      ],
+      "sources": [
+        {
+          "title": "St. Vincent Grammy Awards and Nominations, Song & Bio",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/st-vincent/18723"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:25:31.000Z"
+    },
+    {
+      "id": "st-vincent-3bf226b6",
+      "slug": "st-vincent",
+      "artistName": "St. Vincent",
+      "type": "era",
+      "hook": "St. Vincent built her first guitar out of rubber bands and cardboard",
+      "story": "Annie Clark made her first guitar out of rubber bands and cardboard at age five, according to her own Recording Academy biography. Decades later, in 2016, she debuted a real signature guitar model with Ernie Ball Music Man — a production instrument built around the same precise, distortion-forward playing style that grew out of that childhood improvisation.",
+      "media": [],
+      "sources": [
+        {
+          "title": "St. Vincent Grammy Awards and Nominations, Song & Bio",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/st-vincent/18723"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:25:31.000Z"
+    },
+    {
       "id": "stevie-wonder-d10eefb4",
       "slug": "stevie-wonder",
       "artistName": "Stevie Wonder",
@@ -8256,6 +8476,44 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:55:45.635Z"
+    },
+    {
+      "id": "tori-amos-7797bbb2",
+      "slug": "tori-amos",
+      "artistName": "Tori Amos",
+      "type": "era",
+      "hook": "Tori Amos studied piano as a child at the same school that later gave her its highest honor",
+      "story": "Amos studied piano at Baltimore's Peabody Preparatory from 1968 to 1974 — roughly ages five to eleven. In 2019, the Peabody Conservatory awarded her its George Peabody Medal for Outstanding Contributions to Music in America and asked her to address that year's graduating class at commencement, closing a five-decade loop between a child prodigy and the institution that first trained her.",
+      "media": [],
+      "sources": [
+        {
+          "title": "Singer-songwriter Tori Amos to speak at Peabody Commencement ceremony",
+          "publisher": "Johns Hopkins University Hub",
+          "url": "https://hub.jhu.edu/2019/03/26/tori-amos-peabody-conservatory-commencement"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:20:54.000Z"
+    },
+    {
+      "id": "tori-amos-f6ceca6",
+      "slug": "tori-amos",
+      "artistName": "Tori Amos",
+      "type": "song",
+      "hook": "Tori Amos' record label wanted to cut her most personal song — she refused",
+      "story": "'Me and a Gun,' the a cappella song on Little Earthquakes (1992) in which Amos recounts her own rape at 21, was something her record label felt was too painful to include on her debut album. She insisted it stay, and went on to perform it at concerts for years afterward. She has been associated with RAINN (Rape, Abuse & Incest National Network) for decades since.",
+      "media": [],
+      "sources": [
+        {
+          "title": "Tori Amos On World Cafe",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/sections/world-cafe/2018/01/24/580116731/tori-amos-on-world-cafe"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-24T01:20:54.000Z"
     },
     {
       "id": "tortoise-20793a0d",

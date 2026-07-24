@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "tori-amos",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Tori Amos — Ear Clef",
+    "description": "A child prodigy expelled from Peabody for refusing sheet music, who turned confessional piano-rock into a decades-long, RAINN-founding career.",
+    "ogImage": "/images/og-tori-amos.jpg",
+    "canonicalUrl": "https://earclef.com/tori-amos"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "1KsASRNugxU85T0u6zSg32"
+    },
+    "youtube": {
+      "channelId": "UCd1WSgpR4RrgyYaBjA7eYHQ"
+    },
+    "setlistfm": {
+      "mbid": "c0b2500e-0cef-4130-869d-732b23ed9df5"
+    },
+    "itunes": {
+      "artistId": "163916"
+    }
+  },
+  "hero": {
+    "name": "Tori Amos",
+    "identity": "Classically trained, confessional and unflinching — piano-driven songwriting that's stayed sharp across three decades.",
+    "tagline": "Hear here!",
+    "location": "Newton, North Carolina, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.toriamos.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/toriamos/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/toriamos"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/toriamos"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCd1WSgpR4RrgyYaBjA7eYHQ"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/tori-amos/163916"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJICN2/tori-amos"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Little Earthquakes",
+        "year": "1992",
+        "mbReleaseGroupId": "cb10018e-e795-3b62-b9d6-f143d188e496"
+      },
+      {
+        "title": "Under the Pink",
+        "year": "1994",
+        "mbReleaseGroupId": "ef2b891f-ca73-3e14-b38b-a68699dab8c4"
+      },
+      {
+        "title": "Boys for Pele",
+        "year": "1996",
+        "mbReleaseGroupId": "120da7c5-dd0f-38cd-abcd-3c3b8f0dcde9"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "iAS7sXCkecI",
+        "title": "Flood (Visualiser)"
+      },
+      {
+        "youtubeId": "eKv6ReHqff0",
+        "title": "Pyrite (Visualiser)"
+      },
+      {
+        "youtubeId": "Weq72iYz10I",
+        "title": "St Teresa (Visualiser)"
+      },
+      {
+        "youtubeId": "dEHmYsP6Zm4",
+        "title": "Gasoline Girls"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Tori Amos was admitted to Baltimore's Peabody Institute at age five, the youngest student ever accepted, on a full scholarship. She was expelled at eleven for favoring pop and rock over the classical repertoire and refusing to read from sheet music — the same defiance that would define her songwriting career. A short-lived synth-pop band, Y Kant Tori Read, followed in the mid-1980s before she found her real voice.",
+      "Little Earthquakes (1992) reintroduced her as a solo, piano-driven confessional songwriter, and Under the Pink (1994) and Boys for Pele (1996) built out a catalog defined by unflinching, often uncomfortable subject matter delivered with total musical control. That catalog has continued through From the Choirgirl Hotel (1998) and well into the 2020s.",
+      "Little Earthquakes included 'Me and a Gun,' an a cappella song recounting her own rape at 21. Amos became the first national spokesperson for RAINN (Rape, Abuse & Incest National Network) after the organization's 1994 founding, using that song and her platform to bring the subject into a mainstream conversation years before it became common.",
+      "Amos has been nominated for 9 Grammy Awards across three decades, from Best Alternative Music Album nods for Under the Pink, Boys for Pele and From the Choirgirl Hotel in the 1990s through a 2026 Best Children's Music Album nomination for The Music of Tori and the Muses."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at toriamos.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2023-07-23",
+        "venue": "Humphreys",
+        "city": "San Diego, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/tori-amos/2023/humphreys-san-diego-ca-1ba49dc4.html",
+        "note": "Ocean to Ocean tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Ocean to Ocean Bundle",
+        "description": "From the official Tori Amos store.",
+        "image": {
+          "src": "https://enterprise-ecommerce-store-images.freetls.fastly.net/resize?u=aHR0cHM6Ly9lY29tbWVyY2UtcHVibGljLWFzc2V0cy5zdG9yYWdlLmdvb2dsZWFwaXMuY29tLzUxYmJkYzY3LTVlZTMtNDExOC05NmZlLTEzOGQ1NTNkZDRkMy8yMDI2LzUvMS84LzQ0LzFlZGM0ZDgzLTNhOGItNDA1My04NmQ5LWQ4YTllOWZkNDE2Mg%3D%3D&height=599&mode=cover&width=2066&v=1",
+          "alt": "Ocean to Ocean Bundle"
+        },
+        "url": "https://www.toriamosstore.com/products/tori-amos-in-times-of-dragons-clear-cd"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Tori Amos On World Cafe",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/sections/world-cafe/2018/01/24/580116731/tori-amos-on-world-cafe"
+      },
+      {
+        "title": "Tori Amos — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/tori-amos/746"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
