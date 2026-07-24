@@ -34,13 +34,30 @@ export interface FeedSnapshot {
   items: SnapshotItem[]
 }
 
+/** Resumable build state: which roster slice has been fetched so far. */
+export interface BuildProgress {
+  date: string
+  cursor: number
+  rosterLength: number
+  items: SnapshotItem[]
+}
+
 const SNAPSHOT_KEY = 'snapshot/v1'
+const PROGRESS_KEY = 'build-progress/v1'
 const USER_AGENT =
   'EarClefFeed/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 const VIDEOS_PER_ARTIST = 8
 const MAX_ITEMS = 600
+/**
+ * Artists fetched per invocation. Sized so a batch (with MusicBrainz/
+ * iTunes/YouTube retries) comfortably finishes well inside Netlify's
+ * 15-minute background-function budget, so the whole roster completes
+ * across several self-chained invocations instead of stalling partway.
+ */
+export const BATCH_SIZE = 15
 
 let devSnapshot: FeedSnapshot | null = null
+let devProgress: BuildProgress | null = null
 
 function store() {
   return getStore({ name: 'feed', consistency: 'strong' })
@@ -60,6 +77,31 @@ export async function writeSnapshot(snapshot: FeedSnapshot): Promise<void> {
     await store().setJSON(SNAPSHOT_KEY, snapshot)
   } catch {
     devSnapshot = snapshot
+  }
+}
+
+export async function readProgress(): Promise<BuildProgress | null> {
+  try {
+    return ((await store().get(PROGRESS_KEY, { type: 'json' })) ??
+      null) as BuildProgress | null
+  } catch {
+    return devProgress
+  }
+}
+
+export async function writeProgress(progress: BuildProgress): Promise<void> {
+  try {
+    await store().setJSON(PROGRESS_KEY, progress)
+  } catch {
+    devProgress = progress
+  }
+}
+
+export async function clearProgress(): Promise<void> {
+  try {
+    await store().delete(PROGRESS_KEY)
+  } catch {
+    devProgress = null
   }
 }
 
@@ -210,23 +252,49 @@ function mergeReleases(
   return [...seen.values()]
 }
 
+export function startProgress(): BuildProgress {
+  const list = roster as RosterEntry[]
+  return {
+    date: new Date().toISOString().slice(0, 10),
+    cursor: 0,
+    rosterLength: list.length,
+    items: [],
+  }
+}
+
 /**
- * Full roster pass. Sequential and politely throttled — built for the
- * 15-minute background-function budget, not a request cycle.
+ * Fetch one bounded slice of the roster (BATCH_SIZE artists starting at
+ * progress.cursor), append their items to progress, and advance the
+ * cursor. Sequential and politely throttled within the batch — sized so
+ * a single call finishes well inside Netlify's 15-minute background
+ * budget even with MusicBrainz/iTunes/YouTube retries, so the full
+ * roster completes across several chained batches instead of stalling
+ * partway through a single all-in-one pass.
  */
-export async function buildSnapshot(): Promise<FeedSnapshot> {
-  const items: SnapshotItem[] = []
-  for (const entry of roster as RosterEntry[]) {
+export async function buildBatch(
+  progress: BuildProgress,
+): Promise<{ progress: BuildProgress; done: boolean }> {
+  const list = roster as RosterEntry[]
+  const slice = list.slice(progress.cursor, progress.cursor + BATCH_SIZE)
+  const items = [...progress.items]
+  for (const entry of slice) {
     const [mb, overlay, videos] = [
       await mbReleases(entry),
       await itunesReleases(entry),
       await rssVideos(entry),
     ]
     items.push(...mergeReleases(overlay, mb), ...videos)
-    // MusicBrainz 1 req/s + iTunes ~20 req/min shared across the loop.
+    // MusicBrainz 1 req/s + iTunes ~20 req/min shared across the batch.
     await sleep(2600)
   }
-  items.sort((a, b) => b.date.localeCompare(a.date))
+  const cursor = progress.cursor + slice.length
+  const next: BuildProgress = { ...progress, cursor, items }
+  return { progress: next, done: cursor >= list.length }
+}
+
+/** Sort, cap, and stamp a completed progress pass as the live snapshot. */
+export function finalizeSnapshot(progress: BuildProgress): FeedSnapshot {
+  const items = [...progress.items].sort((a, b) => b.date.localeCompare(a.date))
   return { builtAt: new Date().toISOString(), items: items.slice(0, MAX_ITEMS) }
 }
 
