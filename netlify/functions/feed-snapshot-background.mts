@@ -12,20 +12,21 @@
  * once-per-day flag) prevents two invocations racing the same batch
  * while still letting a dead invocation be reclaimed after LOCK_STALE_MS.
  */
-import { getStore } from '@netlify/blobs'
 import {
   buildBatch,
+  clearLock,
   clearProgress,
   finalizeSnapshot,
   isFresh,
+  readLock,
   readProgress,
   readSnapshot,
   startProgress,
+  writeLock,
   writeProgress,
   writeSnapshot,
 } from '../../lib/feed/snapshot'
 
-const LOCK_KEY = 'build-lock/v1'
 /**
  * Longer than one batch's realistic worst case (BATCH_SIZE artists with
  * MusicBrainz/iTunes/YouTube retries), short enough that a genuinely-dead
@@ -33,39 +34,17 @@ const LOCK_KEY = 'build-lock/v1'
  */
 const LOCK_STALE_MS = 8 * 60 * 1000
 
-interface Lock {
-  date: string
-  updatedAt: number
-}
-
-function blobStore() {
-  return getStore({ name: 'feed', consistency: 'strong' })
-}
-
 async function claimLock(today: string): Promise<boolean> {
-  try {
-    const store = blobStore()
-    const current = (await store.get(LOCK_KEY, { type: 'json' })) as Lock | null
-    if (
-      current &&
-      current.date === today &&
-      Date.now() - current.updatedAt < LOCK_STALE_MS
-    ) {
-      return false
-    }
-    await store.setJSON(LOCK_KEY, { date: today, updatedAt: Date.now() })
-    return true
-  } catch {
-    return true
+  const current = await readLock()
+  if (
+    current &&
+    current.date === today &&
+    Date.now() - current.updatedAt < LOCK_STALE_MS
+  ) {
+    return false
   }
-}
-
-async function releaseLock(): Promise<void> {
-  try {
-    await blobStore().delete(LOCK_KEY)
-  } catch {
-    // best effort — a stale lock still self-heals via LOCK_STALE_MS
-  }
+  await writeLock({ date: today, updatedAt: Date.now() })
+  return true
 }
 
 function triggerNextBatch(): void {
@@ -89,12 +68,14 @@ export default async function handler(): Promise<Response> {
   try {
     let progress = await readProgress()
     if (!progress || progress.date !== today) progress = startProgress()
+    console.log(`feed snapshot: batch starting at ${progress.cursor}/${progress.rosterLength}`)
 
     const batch = await buildBatch(progress)
     await writeProgress(batch.progress)
     done = batch.done
     cursor = batch.progress.cursor
     rosterLength = batch.progress.rosterLength
+    console.log(`feed snapshot: batch finished, now at ${cursor}/${rosterLength}`)
 
     if (done) {
       const snapshot = finalizeSnapshot(batch.progress)
@@ -104,11 +85,11 @@ export default async function handler(): Promise<Response> {
     }
   } catch (error) {
     console.error('feed snapshot batch failed:', error)
-    await releaseLock()
+    await clearLock()
     return new Response('failed', { status: 500 })
   }
 
-  await releaseLock()
+  await clearLock()
   if (!done) {
     triggerNextBatch()
     return new Response(`batch progress: ${cursor}/${rosterLength}`)

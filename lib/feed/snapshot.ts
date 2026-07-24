@@ -107,6 +107,39 @@ export async function clearProgress(): Promise<void> {
   }
 }
 
+export interface BuildLock {
+  date: string
+  updatedAt: number
+}
+
+const LOCK_KEY = 'build-lock/v1'
+let devLock: BuildLock | null = null
+
+export async function readLock(): Promise<BuildLock | null> {
+  try {
+    return ((await store().get(LOCK_KEY, { type: 'json' })) ??
+      null) as BuildLock | null
+  } catch {
+    return devLock
+  }
+}
+
+export async function writeLock(lock: BuildLock): Promise<void> {
+  try {
+    await store().setJSON(LOCK_KEY, lock)
+  } catch {
+    devLock = lock
+  }
+}
+
+export async function clearLock(): Promise<void> {
+  try {
+    await store().delete(LOCK_KEY)
+  } catch {
+    devLock = null
+  }
+}
+
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 async function fetchWithRetry(url: string): Promise<Response | null> {
