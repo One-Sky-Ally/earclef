@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "slug": "chichi-peralta",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Chichi Peralta — Ear Clef",
+    "description": "The Dominican musician who fused merengue with jazz, Afro-Caribbean rhythm and hip-hop — set to receive the Latin Grammy's Musical Excellence Award.",
+    "ogImage": "/images/og-chichi-peralta.jpg",
+    "canonicalUrl": "https://earclef.com/chichi-peralta"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "5GNSVtCq2hiXDx7jUA5Iou"
+    },
+    "youtube": {
+      "channelId": "UCMzTWO4jSsPZvVs-0NVvCYQ"
+    },
+    "setlistfm": {
+      "mbid": "e2052f3c-3ecc-4bc5-8718-d97326852527"
+    },
+    "itunes": {
+      "artistId": "4513363"
+    }
+  },
+  "hero": {
+    "name": "Chichi Peralta",
+    "identity": "Dominican merengue reimagined — Afro-Caribbean rhythm fused with jazz and hip-hop into a sound Peralta calls his own genre.",
+    "tagline": "Hear here!",
+    "location": "Dominican Republic",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.chichiperalta.com.do/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/chichiperaltaoficial/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/CHICHI_PERALTA"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/chichiperaltaoficial"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCMzTWO4jSsPZvVs-0NVvCYQ"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/chichi-peralta/4513363"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QK9EDS/chichi-peralta"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Pa' otro la'o",
+        "year": "1997",
+        "mbReleaseGroupId": "c4497948-370e-340d-97eb-fe8e6404c756"
+      },
+      {
+        "title": "...De vuelta al barrio",
+        "year": "2000",
+        "mbReleaseGroupId": "66052e6e-8bd3-35ac-8fd9-d7304f1028f6"
+      },
+      {
+        "title": "Más que suficiente",
+        "year": "2005",
+        "mbReleaseGroupId": "d58ea7ef-155c-403c-91b4-71587dd0cfce"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "FYDRdZ4knFg",
+        "title": "Agradecimiento — Premio a la Excelencia Musical Latin Grammy 2026"
+      },
+      {
+        "youtubeId": "94KozbKLJfI",
+        "title": "Check It Out — Live from Las Ruinas, Santo Domingo (2005)"
+      },
+      {
+        "youtubeId": "mSzXGmerLN8",
+        "title": "CNN América Interview"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Pedro René Peralta Soto, known as Chichi Peralta, started his career as a percussionist in Juan Luis Guerra's band 4.40 in the Dominican Republic before stepping out on his own. His 1997 debut, Pa' otro la'o, introduced a sound he calls 'Fusón' — merengue and bachata blended with jazz, Afro-Cuban and African rhythms, hip-hop and Latin pop, rather than a traditional merengue record.",
+      "...De vuelta al barrio (2000) and Más que suficiente (2005) carried that fusion further, building a catalog defined by genre-crossing rather than staying inside merengue's traditional lane.",
+      "In June 2026, the Latin Recording Academy announced that Chichi Peralta will receive its Premio a la Excelencia Musical (Musical Excellence Award) at the 27th Annual Latin Grammy Week in Las Vegas on November 9, 2026, alongside honorees Alaska, Francisco Céspedes, Lila Downs and Daniela Mercury — recognition for career-spanning creative contributions to Latin music.",
+      "He has continued releasing new material into 2026, including the single 'El Cofrecito,' which found a wide audience on YouTube."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at chichiperalta.com.do.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2022-04-30",
+        "venue": "Centro de Eventos Pedregal",
+        "city": "San José, Costa Rica",
+        "setlistUrl": "https://www.setlist.fm/setlist/chichi-peralta/2022/centro-de-eventos-pedregal-costa-rica-3b46d1b.html",
+        "note": "Picnic Festival Costa Rica"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Chichí Peralta recibirá el Premio a la Excelencia Musical durante la Semana Anual Latin Grammy",
+        "outlet": "Listín Diario",
+        "url": "https://listindiario.com/entretenimiento/musica/20260630/chichi-peralta-recibiran-premio-excelencia-musical-latin-grammy-2026_911890.html"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

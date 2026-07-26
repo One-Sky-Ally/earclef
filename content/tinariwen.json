@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "tinariwen",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Tinariwen — Ear Clef",
+    "description": "Tuareg desert blues born in Sahara exile camps — electric guitar and traditional poetry, a Grammy-winning sound its own scene calls Tishoumaren.",
+    "ogImage": "/images/og-tinariwen.jpg",
+    "canonicalUrl": "https://earclef.com/tinariwen"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2sf2owtFSCvz2MLfxmNdkb"
+    },
+    "youtube": {
+      "channelId": "UCZ3wH-v5zOcq4ZZWI58TGKA"
+    },
+    "setlistfm": {
+      "mbid": "5c98fc12-be83-4246-ae5b-2184192913b9"
+    },
+    "itunes": {
+      "artistId": "7420812"
+    }
+  },
+  "hero": {
+    "name": "Tinariwen",
+    "identity": "Tuareg desert blues out of the Sahara — electric guitar wound around traditional sung poetry, a sound its own scene calls Tishoumaren.",
+    "tagline": "Hear here!",
+    "location": "Kidal, Mali",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://tinariwen.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/tinariwen/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/TINARIWEN"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/tinariwenmusic"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCZ3wH-v5zOcq4ZZWI58TGKA"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/tinariwen/7420812"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJS0V6/tinariwen"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Amassakoul",
+        "year": "2003",
+        "mbReleaseGroupId": "6cdb9d95-8b54-34d4-a68e-7af11f766d88"
+      },
+      {
+        "title": "Aman Iman: Water Is Life",
+        "year": "2006",
+        "mbReleaseGroupId": "46bddb86-91ba-39ed-a053-bafef73e1dee"
+      },
+      {
+        "title": "Tassili",
+        "year": "2011",
+        "mbReleaseGroupId": "c52a29bf-df84-4990-a686-aab2063b57db"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "uMUuuW13Fp8",
+        "title": "Tenere Taqqim Tossam"
+      },
+      {
+        "youtubeId": "z_eeIJj6LY8",
+        "title": "Chaghaybou"
+      },
+      {
+        "youtubeId": "9hdZ88JO-PQ",
+        "title": "Kel Tinawen (feat. Cass McCombs)"
+      },
+      {
+        "youtubeId": "2gSLEn99h8Q",
+        "title": "N'ak Tenere Iyat"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Tinariwen formed among Tuareg musicians displaced by conflict in northern Mali, coming together in Kidal in the early 1980s. Founding member Ibrahim Ag Alhabib and others spent time in exile and rebel camps across Libya and Algeria during those years, a backdrop that shaped both the band's formation and its lyrics.",
+      "The Radio Tisdas Sessions (2001) and Amassakoul (2003) introduced the band's sound outside the region — electric and acoustic guitar wound around traditional sung Tamashek poetry, a style sometimes called Tishoumaren. Aman Iman: Water Is Life (2006) and Tassili (2011) built the catalog further, with Tassili recorded acoustically in the Algerian desert and featuring guest musicians including Tunde Adebimpe and Kyp Malone of TV on the Radio and Nels Cline.",
+      "Tassili won the Grammy Award for Best Global Music Album in 2012, the first of three Grammy nominations in that category across the following decade, for Elwan (2018) and Amadjar (2021).",
+      "The band has continued recording and touring since, releasing Hoggar in March 2026 and playing dates including a 2024 BBC Proms performance at London's Royal Albert Hall."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at tinariwen.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-08-28",
+        "venue": "Royal Albert Hall",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/tinariwen/2024/royal-albert-hall-london-england-4352e3eb.html",
+        "note": "BBC Proms"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Tinariwen Logo T-Shirt",
+        "description": "From the official Tinariwen store.",
+        "image": {
+          "src": "https://d1rgjmn2wmqeif.cloudfront.net/r/g/338214-1.jpg",
+          "alt": "Tinariwen Logo T-Shirt"
+        },
+        "url": "https://store.tinariwen.com/release/338214-tinariwen-tinariwen-logo-t-shirt"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Review: Tinariwen, 'Elwan'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2017/02/02/512650724/first-listen-tinariwen-elwan"
+      },
+      {
+        "title": "Tinariwen — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/tinariwen"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

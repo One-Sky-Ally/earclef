@@ -70,6 +70,16 @@
     "membership": false
   },
   {
+    "slug": "bela-fleck",
+    "name": "Béla Fleck",
+    "identity": "A banjo virtuoso whose solo work spans bluegrass, jazz, classical and world music — nominated across more Grammy categories than any other musician.",
+    "tier": "in-the-mix",
+    "mbid": "e1a889b7-5e45-447f-baa0-b9c6cbc0d39f",
+    "channelId": "UCptlnsqjPBIf4-C9XuXek_Q",
+    "itunesId": "543347",
+    "membership": false
+  },
+  {
     "slug": "bela-fleck-and-the-flecktones",
     "name": "Béla Fleck and the Flecktones",
     "identity": "Banjo-led fusioneers folding bluegrass, jazz, funk, and the future into one band.",
@@ -167,6 +177,16 @@
     "mbid": "373a4c98-a46b-48e4-86ec-f6ca65b4f438",
     "channelId": "UCeXp3EC97_rUl_e2vgM3gLg",
     "itunesId": "563355119",
+    "membership": false
+  },
+  {
+    "slug": "chichi-peralta",
+    "name": "Chichi Peralta",
+    "identity": "Dominican merengue reimagined — Afro-Caribbean rhythm fused with jazz and hip-hop into a sound Peralta calls his own genre.",
+    "tier": "in-the-mix",
+    "mbid": "e2052f3c-3ecc-4bc5-8718-d97326852527",
+    "channelId": "UCMzTWO4jSsPZvVs-0NVvCYQ",
+    "itunesId": "4513363",
     "membership": false
   },
   {
@@ -287,6 +307,16 @@
     "mbid": "bca46a0c-25c9-42ca-98c2-e64c8a5e337e",
     "channelId": "UCXF6DMVLIVRr2OQAqyfEGeg",
     "itunesId": "1455262408",
+    "membership": false
+  },
+  {
+    "slug": "gipsy-kings",
+    "name": "Gipsy Kings",
+    "identity": "Rumba flamenca out of the south of France — the sound of Nicolas Reyes and Tonino Baliardo, who carried a gitano family tradition into global pop.",
+    "tier": "in-the-mix",
+    "mbid": "44a7f7d5-79df-4f44-8f5e-02dfc0626904",
+    "channelId": "UCMSvtHZgu0-n6ISejwL8rAw",
+    "itunesId": "553517",
     "membership": false
   },
   {
@@ -420,6 +450,16 @@
     "membership": false
   },
   {
+    "slug": "john-coltrane",
+    "name": "John Coltrane",
+    "identity": "A saxophonist whose dense, cascading 'sheets of sound' reshaped jazz, culminating in A Love Supreme's single-session spiritual statement.",
+    "tier": "in-the-mix",
+    "mbid": "b625448e-bf4a-41c3-a421-72ad46cdb831",
+    "channelId": "UCGiKlUaxFFNXkEYIW6mfbBQ",
+    "itunesId": "120199",
+    "membership": false
+  },
+  {
     "slug": "john-frusciante",
     "name": "John Frusciante",
     "identity": "A guitarist's guitarist chasing every other sound — folk, four-track, prog, and pure electronics — under his own name.",
@@ -520,6 +560,16 @@
     "membership": false
   },
   {
+    "slug": "miles-davis",
+    "name": "Miles Davis",
+    "identity": "A trumpeter who reinvented jazz repeatedly across four decades — bebop, cool, modal and fusion, never settling on one sound.",
+    "tier": "in-the-mix",
+    "mbid": "561d854a-6a28-4aa7-8c99-323e6ce46c2a",
+    "channelId": "UC1ZS17c0DlqUjsXZK3K_bgA",
+    "itunesId": "44984",
+    "membership": false
+  },
+  {
     "slug": "mimicking-birds",
     "name": "Mimicking Birds",
     "identity": "Slow-orbit songs about deep time and small lives — home-recorded intimacy that never got loud on purpose.",
@@ -577,6 +627,16 @@
     "mbid": "2013f3af-51a3-404d-9afc-91b3f277ea4e",
     "channelId": "UCdyPkcbix5sQsch8BBoeFBQ",
     "itunesId": "6760152",
+    "membership": false
+  },
+  {
+    "slug": "paco-de-lucia",
+    "name": "Paco de Lucía",
+    "identity": "The Algeciras guitarist who modernized flamenco, adding jazz harmony and a Peruvian cajón to a centuries-old tradition.",
+    "tier": "in-the-mix",
+    "mbid": "7bc8dd01-35ea-4b18-a64d-3a364dc76a52",
+    "channelId": "UCUkrKItyTd7Vp5BPapGkVlw",
+    "itunesId": "870157",
     "membership": false
   },
   {
@@ -797,6 +857,16 @@
     "mbid": "8ed2e0b3-aa4c-4e13-bec3-dc7393ed4d6b",
     "channelId": "UC9BJwi8Q2AiLtLHdGlWqsrQ",
     "itunesId": "39753073",
+    "membership": false
+  },
+  {
+    "slug": "tinariwen",
+    "name": "Tinariwen",
+    "identity": "Tuareg desert blues out of the Sahara — electric guitar wound around traditional sung poetry, a sound its own scene calls Tishoumaren.",
+    "tier": "in-the-mix",
+    "mbid": "5c98fc12-be83-4246-ae5b-2184192913b9",
+    "channelId": "UCZ3wH-v5zOcq4ZZWI58TGKA",
+    "itunesId": "7420812",
     "membership": false
   },
   {

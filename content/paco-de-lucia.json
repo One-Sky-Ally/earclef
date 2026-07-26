@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "slug": "paco-de-lucia",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Paco de Lucía — Ear Clef",
+    "description": "The Algeciras guitarist who took flamenco global, adding jazz harmony and a Peruvian cajón to a centuries-old tradition.",
+    "ogImage": "/images/og-paco-de-lucia.jpg",
+    "canonicalUrl": "https://earclef.com/paco-de-lucia"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "3h8OjAdgYXVRoMZ8jFd6Uw"
+    },
+    "youtube": {
+      "channelId": "UCUkrKItyTd7Vp5BPapGkVlw"
+    },
+    "setlistfm": {
+      "mbid": "7bc8dd01-35ea-4b18-a64d-3a364dc76a52"
+    },
+    "itunes": {
+      "artistId": "870157"
+    }
+  },
+  "hero": {
+    "name": "Paco de Lucía",
+    "identity": "The Algeciras guitarist who modernized flamenco, adding jazz harmony and a Peruvian cajón to a centuries-old tradition.",
+    "tagline": "Hear here!",
+    "location": "Algeciras, Spain",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/pacodelucia47"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCUkrKItyTd7Vp5BPapGkVlw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/paco-de-luc%C3%ADa/870157"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B001O486AM/paco-de-luc%C3%ADa"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Fuente y caudal",
+        "year": "1973",
+        "mbReleaseGroupId": "3e3eee7d-0fe9-37ce-98e9-0beb2af88bdf"
+      },
+      {
+        "title": "Friday Night in San Francisco",
+        "year": "1981",
+        "mbReleaseGroupId": "1b4b78a5-7466-3179-b2f2-fd24a34604f7"
+      },
+      {
+        "title": "Siroco",
+        "year": "1987",
+        "mbReleaseGroupId": "93cac24a-a257-31f9-9401-0a2ae990bfd3"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "Yq1jedo9jsU",
+        "title": "Cositas Buenas"
+      },
+      {
+        "youtubeId": "kADvcexr-xM",
+        "title": "Guajiras de Lucía (1974)"
+      },
+      {
+        "youtubeId": "1P5F0CZDDZc",
+        "title": "Paco de Lucía: La Búsqueda — Official Trailer"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Francisco Sánchez Gómez was born in Algeciras, Spain, and released his solo debut, La Fabulosa Guitarra de Paco de Lucía, in 1967 at age 19, after starting out recording as a teenager alongside his brother Pepe. Fuente y caudal (1973), built on the breakout instrumental 'Entre Dos Aguas,' established him as flamenco guitar's leading modernizer — bringing jazz harmony and structure into a tradition that had mostly stayed apart from it.",
+      "In 1977, at a reception in Lima, Paco de Lucía encountered Peruvian percussionist Caitro Soto playing the cajón, a box drum. He bought the instrument, brought it back to Spain, and gave it to his sextet's percussionist Rubem Dantas — the cajón has been a standard part of flamenco ensembles ever since.",
+      "Friday Night in San Francisco (1981), a live acoustic trio album with John McLaughlin and Al Di Meola recorded at San Francisco's Warfield Theatre, is regularly cited among the greatest acoustic guitar albums ever made. Siroco (1987) continued his solo catalog into the following decade.",
+      "In 2014, the Latin Recording Academy awarded Paco de Lucía its Latin Grammy Lifetime Achievement Award. He died February 25, 2014, in Mexico."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Paco de Lucía died in 2014; no future tour dates.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1989-06-03",
+        "venue": "Carnegie Hall",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/paco-de-lucia/1989/carnegie-hall-new-york-ny-1bb30150.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Paco de Lucía: The Montreux Years (Vinyl 2LP)",
+        "description": "From Bravado, Universal Music's official merchandise store.",
+        "image": {
+          "src": "https://www.bravado.de/cdn/shop/files/de-Lucia-Paco_Paco-de-Lucia-The-Montreux-Years_Vinyl-2LP_s512662_o6456002_a578667_v13472037.c13031a3.jpg?v=1753712608",
+          "alt": "Paco de Lucía: The Montreux Years (Vinyl 2LP)"
+        },
+        "url": "https://www.bravado.de/en/collections/paco-de-lucia/products/de-lucia-paco-paco-de-lucia-the-montreux-years"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Paco De Lucia, Modern Superstar Of Flamenco, Dies",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/sections/therecord/2014/02/26/283032550/paco-de-lucia-modern-superstar-of-flamenco-dies"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

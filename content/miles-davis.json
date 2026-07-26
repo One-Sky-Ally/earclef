@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "miles-davis",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Miles Davis — Ear Clef",
+    "description": "The trumpeter who reinvented jazz repeatedly — bebop to cool to modal to fusion — behind the best-selling jazz album ever made.",
+    "ogImage": "/images/og-miles-davis.jpg",
+    "canonicalUrl": "https://earclef.com/miles-davis"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "0kbYTNQb4Pb1rPbbaF0pT4"
+    },
+    "youtube": {
+      "channelId": "UC1ZS17c0DlqUjsXZK3K_bgA"
+    },
+    "setlistfm": {
+      "mbid": "561d854a-6a28-4aa7-8c99-323e6ce46c2a"
+    },
+    "itunes": {
+      "artistId": "44984"
+    }
+  },
+  "hero": {
+    "name": "Miles Davis",
+    "identity": "A trumpeter who reinvented jazz repeatedly across four decades — bebop, cool, modal and fusion, never settling on one sound.",
+    "tagline": "Hear here!",
+    "location": "Alton, Illinois, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.milesdavis.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/milesdavis/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/milesdavis"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/MilesDavis"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UC1ZS17c0DlqUjsXZK3K_bgA"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/miles-davis/44984"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJQ4GY/miles-davis"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Kind of Blue",
+        "year": "1959",
+        "mbReleaseGroupId": "8e8a594f-2175-38c7-a871-abb68ec363e7"
+      },
+      {
+        "title": "In a Silent Way",
+        "year": "1969",
+        "mbReleaseGroupId": "7d0a9612-7636-34fe-84d9-445c8df9c0f3"
+      },
+      {
+        "title": "Bitches Brew",
+        "year": "1970",
+        "mbReleaseGroupId": "a9e30282-5b37-3f92-b897-b9659a1a312b"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "lzJ4ZTi7yoY",
+        "title": "So What (Live at Antibes, 1963)"
+      },
+      {
+        "youtubeId": "k3jXSNp-Ddk",
+        "title": "My Funny Valentine (Live at Antibes, 1963)"
+      },
+      {
+        "youtubeId": "HdP0Xma4pSw",
+        "title": "Boplicity"
+      },
+      {
+        "youtubeId": "CE_crkd4fe4",
+        "title": "Bitches Brew"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Miles Davis moved through more distinct eras of jazz than almost any other musician: bebop alongside Charlie Parker in the late 1940s, cool jazz on Birth of the Cool (1949–50), hard bop, and then modal jazz on 1959's Kind of Blue — an album built on scales rather than chord changes, largely improvised from brief sketches Davis handed his band shortly before recording. Kind of Blue ranks as the best-selling jazz album of all time.",
+      "In 1969 and 1970, In a Silent Way and Bitches Brew pushed his sound into jazz fusion, blending electric instrumentation and rock rhythm into jazz's vocabulary and reshaping the genre's next two decades. Bitches Brew reached No. 35 on the Billboard 200 and was certified platinum.",
+      "Davis won 8 Grammy Awards from 32 nominations across his career, received the Recording Academy's Lifetime Achievement Award in 1990, and has 10 recordings inducted into the Grammy Hall of Fame, including Birth of the Cool, Kind of Blue and Bitches Brew.",
+      "Miles Davis died September 28, 1991, in Santa Monica, California."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Miles Davis died in 1991; no future tour dates.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1991-08-25",
+        "venue": "Hollywood Bowl",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/miles-davis/1991/hollywood-bowl-los-angeles-ca-53e8c375.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Miles Davis World Tour 1990 Denim Jacket",
+        "description": "From the official Miles Davis store.",
+        "image": {
+          "src": "https://milesdavisstore.com/cdn/shop/files/X3CMMD096.jpg?v=1771876180",
+          "alt": "Miles Davis World Tour 1990 Denim Jacket"
+        },
+        "url": "https://milesdavisstore.com/products/miles-davis-world-tour-1990-denim-jacket"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "The Miles Davis century: The birth, and rebirth, of cool",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2026/05/26/nx-s1-5829716/miles-davis-100-years-centennial"
+      },
+      {
+        "title": "Miles Davis — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/miles-davis/11305/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

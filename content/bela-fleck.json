@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "slug": "bela-fleck",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Béla Fleck — Ear Clef",
+    "description": "The banjo player Guinness credits with more Grammy category nominations than any musician alive — banjo concertos, Chick Corea duets, and a trip to trace the instrument's African roots.",
+    "ogImage": "/images/og-bela-fleck.jpg",
+    "canonicalUrl": "https://earclef.com/bela-fleck"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2ka8z2lwkcp13fG8Wyv3xU"
+    },
+    "youtube": {
+      "channelId": "UCptlnsqjPBIf4-C9XuXek_Q"
+    },
+    "setlistfm": {
+      "mbid": "e1a889b7-5e45-447f-baa0-b9c6cbc0d39f"
+    },
+    "itunes": {
+      "artistId": "543347"
+    }
+  },
+  "hero": {
+    "name": "Béla Fleck",
+    "identity": "A banjo virtuoso whose solo work spans bluegrass, jazz, classical and world music — nominated across more Grammy categories than any other musician.",
+    "tagline": "Hear here!",
+    "location": "New York City, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://belafleck.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/belafleckbanjo"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/belafleckbanjo"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCptlnsqjPBIf4-C9XuXek_Q"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/b%C3%A9la-fleck/543347"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QKA91Y/b%C3%A9la-fleck"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "The Enchantment",
+        "year": "2007",
+        "mbReleaseGroupId": "c79eed12-0ca7-3823-a884-ac34fbd65b8a"
+      },
+      {
+        "title": "Throw Down Your Heart: Tales from the Acoustic Planet, Vol. 3: Africa Sessions",
+        "year": "2009",
+        "mbReleaseGroupId": "5fe70602-c1ed-30f4-84f7-b41b3e4ae9aa"
+      },
+      {
+        "title": "My Bluegrass Heart",
+        "year": "2021",
+        "mbReleaseGroupId": "73299742-7fed-4ef3-8654-477498650af9"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "Vnn5MlK_yXI",
+        "title": "The Enchantment (with Chick Corea)"
+      },
+      {
+        "youtubeId": "xCgjhl5g9PM",
+        "title": "Charm School (feat. Billy Strings & Chris Thile)"
+      },
+      {
+        "youtubeId": "GZSUjYyf6gU",
+        "title": "Throw Down Your Heart (with Harouna Samake Trio & Bassekou)"
+      },
+      {
+        "youtubeId": "wX-Gn2oc64s",
+        "title": "Take Me To Harlan"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Béla Fleck was born in New York City in 1958 and built a solo career alongside his work fronting Béla Fleck and the Flecktones, moving between bluegrass, jazz, classical and world music on his own records — including banjo concertos performed with orchestras and duet albums with pianist Chick Corea, starting with The Enchantment (2007).",
+      "In 2009, Throw Down Your Heart took Fleck to Uganda, Tanzania, Mali and Gambia to record with local musicians and trace the banjo's roots back to African instruments the enslaved brought to the Americas — a documentary and album pairing directed by his brother, Sascha Paladino.",
+      "My Bluegrass Heart (2021) returned Fleck to the genre he grew up on, recorded with a rotating cast of bluegrass and acoustic musicians including Billy Strings, Chris Thile, Sam Bush and Jerry Douglas.",
+      "Fleck has won 18 Grammy Awards from 43 nominations, and Guinness World Records credits him with more Grammy nominations across different musical categories than any other musician — including country, pop, jazz, bluegrass, classical, folk, spoken word and composition/arranging."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at belafleck.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-07-12",
+        "venue": "Stern Grove Festival",
+        "city": "San Francisco, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/bela-fleck/2026/stern-grove-san-francisco-ca-5b76c348.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "My Bluegrass Heart — Transcriptions for 5-String Banjo",
+        "description": "From the official Béla Fleck store.",
+        "image": {
+          "src": "https://shop.belafleck.com/cdn/shop/files/transcriptions-for-banjo.jpg?v=1771339858",
+          "alt": "My Bluegrass Heart — Transcriptions for 5-String Banjo"
+        },
+        "url": "https://shop.belafleck.com/products/book-transcriptions-for-5-string-banjo-my-bluegrass-heart"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Banjo Player Béla Fleck Returns To His Bluegrass Roots On A New Album",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2021/09/13/1036599838/banjo-player-bela-fleck-returns-to-his-bluegrass-roots-on-a-new-album"
+      },
+      {
+        "title": "Béla Fleck — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/bela-fleck/11488/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

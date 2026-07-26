@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "gipsy-kings",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Gipsy Kings — Ear Clef",
+    "description": "The French rumba flamenca band that carried Catalan gitano guitar music into the global mainstream, from 'Bamboléo' to a Grammy for Savor Flamenco.",
+    "ogImage": "/images/og-gipsy-kings.jpg",
+    "canonicalUrl": "https://earclef.com/gipsy-kings"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "3jc496ljiyrS3ECrD7QiqL"
+    },
+    "youtube": {
+      "channelId": "UCMSvtHZgu0-n6ISejwL8rAw"
+    },
+    "setlistfm": {
+      "mbid": "44a7f7d5-79df-4f44-8f5e-02dfc0626904"
+    },
+    "itunes": {
+      "artistId": "553517"
+    }
+  },
+  "hero": {
+    "name": "Gipsy Kings",
+    "identity": "Rumba flamenca out of the south of France — the sound of Nicolas Reyes and Tonino Baliardo, who carried a gitano family tradition into global pop.",
+    "tagline": "Hear here!",
+    "location": "Arles, France",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.gipsykings.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/gipsykingsmusic/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/RealGipsyKings"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/thegipsykings"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCMSvtHZgu0-n6ISejwL8rAw"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/gipsy-kings/553517"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJNTU8/gipsy-kings"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Gipsy Kings",
+        "year": "1987",
+        "mbReleaseGroupId": "bc36f1b4-cd5f-3a42-b77c-bdbc18da5582"
+      },
+      {
+        "title": "Mosaïque",
+        "year": "1989",
+        "mbReleaseGroupId": "44d78001-9935-33b6-9e96-cfd631a39da0"
+      },
+      {
+        "title": "Este mundo",
+        "year": "1991",
+        "mbReleaseGroupId": "c14cd78a-0055-3683-932d-0456aa09f236"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "GGqcpDSUJlE",
+        "title": "Bamboléo"
+      },
+      {
+        "youtubeId": "znxb6KtOo_c",
+        "title": "Djobi, Djoba"
+      },
+      {
+        "youtubeId": "X8TOhb_4jU0",
+        "title": "Volare (Nel Blu di Pinto di Blu)"
+      },
+      {
+        "youtubeId": "vU2b4ubuWNM",
+        "title": "Baila Me"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Nicolas Reyes is the son of José Reyes, who performed alongside his cousin Manitas de Plata before forming a family group, Los Reyes, with his sons. After José Reyes died in 1979, Nicolas and guitarist Tonino Baliardo kept performing together in Arles, in the south of France, eventually taking the name Gipsy Kings — rooted in families of Spanish Romani gitanos who had fled Catalonia during the Spanish Civil War.",
+      "Their self-titled 1987 album, driven by 'Bamboléo' and 'Djobi, Djoba,' turned rumba flamenca into an international phenomenon — a rare Spanish-language record to spend roughly 40 weeks on the Billboard 200. Mosaïque (1989) and Este mundo (1991) carried that sound through the turn of the decade.",
+      "In 2014, the band's album Savor Flamenco won the Grammy Award for Best Global Music Album, part of a run of eight Grammy nominations across their catalog dating back to 1990's Este mundo.",
+      "Rights to the Gipsy Kings name were confirmed by French courts to Nicolas Reyes and Tonino Baliardo, the two members behind the band's classic run, following disputes among former members over use of the name; the group continues to record and tour under Reyes and Baliardo."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at gipsykings.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-05-09",
+        "venue": "YouTube Theater",
+        "city": "Inglewood, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/gipsy-kings/2024/youtube-theater-inglewood-ca-2ba9e85e.html",
+        "note": "Netflix Is a Joke Fest 2024"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "GITANA Black T-Shirt",
+        "description": "From the official Nicolas Reyes / Gipsy Kings store.",
+        "image": {
+          "src": "https://gknr.shop/cdn/shop/files/GKNR-tshirt-noir-gitane-BACK.jpg?v=1781797650",
+          "alt": "GITANA Black T-Shirt"
+        },
+        "url": "https://gknr.shop/products/t-shirt-black-gitana-gipsy-kings-nicolas-reyes"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Gipsy Kings are back, Julieta Venegas' norteña roots and more",
+        "outlet": "NPR (Alt.Latino)",
+        "url": "https://www.npr.org/transcripts/nx-s1-5826992"
+      },
+      {
+        "title": "Gipsy Kings — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/gipsy-kings"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

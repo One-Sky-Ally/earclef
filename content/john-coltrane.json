@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "slug": "john-coltrane",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "John Coltrane — Ear Clef",
+    "description": "The saxophonist whose 'sheets of sound' reshaped jazz, culminating in A Love Supreme — recorded in a single session as a personal spiritual statement.",
+    "ogImage": "/images/og-john-coltrane.jpg",
+    "canonicalUrl": "https://earclef.com/john-coltrane"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2hGh5VOeeqimQFxqXvfCUf"
+    },
+    "youtube": {
+      "channelId": "UCGiKlUaxFFNXkEYIW6mfbBQ"
+    },
+    "setlistfm": {
+      "mbid": "b625448e-bf4a-41c3-a421-72ad46cdb831"
+    },
+    "itunes": {
+      "artistId": "120199"
+    }
+  },
+  "hero": {
+    "name": "John Coltrane",
+    "identity": "A saxophonist whose dense, cascading 'sheets of sound' reshaped jazz, culminating in A Love Supreme's single-session spiritual statement.",
+    "tagline": "Hear here!",
+    "location": "Hamlet, North Carolina, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.johncoltrane.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/JohnColtrane"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/johncoltrane"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UCGiKlUaxFFNXkEYIW6mfbBQ"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/john-coltrane/120199"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJR4VI/john-coltrane"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Giant Steps",
+        "year": "1960",
+        "mbReleaseGroupId": "2cdca11d-3e45-3152-93e5-4d2a4ddb1bc6"
+      },
+      {
+        "title": "My Favorite Things",
+        "year": "1961",
+        "mbReleaseGroupId": "b60cdf20-74b7-3bed-b233-0f4818235895"
+      },
+      {
+        "title": "A Love Supreme",
+        "year": "1965",
+        "mbReleaseGroupId": "77cf47ba-58cd-3f3d-a5f9-79bf89860421"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "Dmx2WuUPVcs",
+        "title": "A Love Supreme, Pt. I – Acknowledgement"
+      },
+      {
+        "youtubeId": "KwIC6B_dvW4",
+        "title": "Giant Steps"
+      },
+      {
+        "youtubeId": "XVw3A6VjsOE",
+        "title": "My Favorite Things (Live at the Village Gate, 1961, feat. Eric Dolphy)"
+      },
+      {
+        "youtubeId": "yebbvIfJhSY",
+        "title": "Tenor Madness"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "John Coltrane's late-1950s playing was known for 'sheets of sound' — dense, rapid cascades of notes that critic Ira Gitler coined the term for, a style that carried him through hard bop before he moved toward modal jazz. He appeared as a sideman on Miles Davis's Kind of Blue (1959), the modal-jazz landmark that shaped his own subsequent work, including 1961's My Favorite Things.",
+      "From 1961 on, Coltrane recorded almost exclusively for Impulse! Records, where wide creative latitude let him move from hard bop into free jazz. A Love Supreme (1965), a four-part suite framed as a personal spiritual statement, was recorded in a single session on December 9, 1964, with McCoy Tyner, Jimmy Garrison and Elvin Jones.",
+      "The Recording Academy honored Coltrane with a posthumous Lifetime Achievement Award in 1992. A Love Supreme was inducted into the Grammy Hall of Fame in 1999 alongside his 1957 album Blue Train, and into the Library of Congress' National Recording Registry in 2015; its handwritten manuscript is held at the Smithsonian's National Museum of American History.",
+      "John Coltrane died July 17, 1967."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "John Coltrane died in 1967; no future tour dates.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1965-05-07",
+        "venue": "Half Note",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/john-coltrane/1965/half-note-new-york-ny-53f7b351.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "My Favorite Things (Reserve) LP",
+        "description": "From the official John Coltrane store.",
+        "image": {
+          "src": "https://store.johncoltrane.com/cdn/shop/files/0603497807901ProductShot.jpg?v=1778613433",
+          "alt": "My Favorite Things (Reserve) LP"
+        },
+        "url": "https://store.johncoltrane.com/products/my-favorite-things-reserve-lp"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Lost John Coltrane recording, from experimental phase with Eric Dolphy, emerges",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2023/05/31/1179098682/john-coltrane-eric-dolphy-village-gate-1961-lost-album"
+      },
+      {
+        "title": "John Coltrane, 'A Love Supreme': For The Record",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/news/john-coltrane-love-supreme-record"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

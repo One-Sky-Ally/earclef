@@ -841,6 +841,59 @@
       "at": "2026-07-18T17:04:49.348Z"
     },
     {
+      "id": "bela-fleck-6d42b5ed",
+      "slug": "bela-fleck",
+      "artistName": "Béla Fleck",
+      "type": "award",
+      "hook": "Béla Fleck holds the Guinness World Record for Grammy category diversity",
+      "story": "Guinness World Records credits Béla Fleck with more Grammy Award nominations across different musical categories than any other musician — country, pop, jazz, bluegrass, classical, folk, spoken word and composition/arranging among them. His total has kept climbing since: as of the most recent ceremony, he has 18 wins from 43 nominations.",
+      "media": [
+        {
+          "label": "The Enchantment (with Chick Corea)",
+          "url": "https://www.youtube.com/watch?v=Vnn5MlK_yXI"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Most Grammy Award nominations in different categories",
+          "publisher": "Guinness World Records",
+          "url": "https://www.guinnessworldrecords.com/world-records/83803-most-grammy-award-nominations-in-different-categories"
+        },
+        {
+          "title": "Béla Fleck Grammy Awards and Nominations, Song & Bio",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/bela-fleck/11488/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:42:26.000Z"
+    },
+    {
+      "id": "bela-fleck-eb1235b8",
+      "slug": "bela-fleck",
+      "artistName": "Béla Fleck",
+      "type": "era",
+      "hook": "Béla Fleck traveled to Africa to trace the banjo back to its roots",
+      "story": "For Throw Down Your Heart (2009), Fleck traveled to Uganda, Tanzania, Mali and Gambia to record with local musicians and trace the banjo's ancestry to instruments enslaved Africans brought to the Americas. The album and its accompanying documentary, directed by Fleck's brother Sascha Paladino, followed the instrument back to its origin rather than treating it as purely an American form.",
+      "media": [
+        {
+          "label": "Throw Down Your Heart (with Harouna Samake Trio & Bassekou)",
+          "url": "https://www.youtube.com/watch?v=GZSUjYyf6gU"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Bela Fleck Throws Down His Heart In Africa",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2010/01/18/104937848/bela-fleck-throws-down-his-heart-in-africa"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:42:26.000Z"
+    },
+    {
       "id": "bjork-e43859fc",
       "slug": "bjork",
       "artistName": "Björk",
@@ -1893,6 +1946,59 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T17:10:41.788Z"
+    },
+    {
+      "id": "chichi-peralta-fd132c8a",
+      "slug": "chichi-peralta",
+      "artistName": "Chichi Peralta",
+      "type": "award",
+      "hook": "Chichi Peralta will receive the Latin Grammy's Musical Excellence Award",
+      "story": "In June 2026, the Latin Recording Academy announced that Chichi Peralta will receive its Premio a la Excelencia Musical (Musical Excellence Award) at the 27th Annual Latin Grammy Week in Las Vegas on November 9, 2026 — honored alongside Alaska, Francisco Céspedes, Lila Downs and Daniela Mercury for a career of creative contributions to Latin music.",
+      "media": [
+        {
+          "label": "Agradecimiento — Premio a la Excelencia Musical Latin Grammy 2026",
+          "url": "https://www.youtube.com/watch?v=FYDRdZ4knFg"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Chichí Peralta recibirá el Premio a la Excelencia Musical durante la Semana Anual Latin Grammy",
+          "publisher": "Listín Diario",
+          "url": "https://listindiario.com/entretenimiento/musica/20260630/chichi-peralta-recibiran-premio-excelencia-musical-latin-grammy-2026_911890.html"
+        },
+        {
+          "title": "Chichí Peralta to receive Latin Grammy Lifetime Achievement Award",
+          "publisher": "DR1.com",
+          "url": "https://dr1.com/news/2026/07/23/chichi-peralta-to-receive-latin-grammy-lifetime-achievement-award/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:08:09.000Z"
+    },
+    {
+      "id": "chichi-peralta-361c732c",
+      "slug": "chichi-peralta",
+      "artistName": "Chichi Peralta",
+      "type": "award",
+      "hook": "Chichi Peralta won a Latin Grammy for reviving a Dominican neighborhood on record",
+      "story": "...De vuelta al barrio (2000) — 'Back to the neighborhood' — won the Latin Grammy Award for Best Merengue Album in 2001. The record leaned into Dominican cultural touchstones rather than away from them, on an album whose sound still moved fluidly between merengue and the jazz, Afro-Caribbean and hip-hop influences that define Peralta's catalog.",
+      "media": [
+        {
+          "label": "Check It Out — Live from Las Ruinas, Santo Domingo (2005)",
+          "url": "https://www.youtube.com/watch?v=94KozbKLJfI"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Chichí Peralta",
+          "publisher": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Chich%C3%AD_Peralta"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:08:09.000Z"
     },
     {
       "id": "cocorosie-7cc971dc",
@@ -3002,6 +3108,49 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T15:04:50.186Z"
+    },
+    {
+      "id": "gipsy-kings-17ef2e40",
+      "slug": "gipsy-kings",
+      "artistName": "Gipsy Kings",
+      "type": "era",
+      "hook": "French courts settled who gets to be called Gipsy Kings",
+      "story": "Multiple lineups have toured under variations of the Gipsy Kings name over the years, following splits among the founding families. French courts settled the dispute: a 2018 judgment and 2021 decree recognized the name exclusively for Nicolas Reyes and Tonino Baliardo — the singer and guitarist behind the band's classic run, from the 1987 self-titled album through Savor Flamenco.",
+      "media": [
+        {
+          "label": "Bamboléo",
+          "url": "https://www.youtube.com/watch?v=GGqcpDSUJlE"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Gipsy Kings founders seek legal action in Morocco against 'unauthorized' use of band's name",
+          "publisher": "Hespress English",
+          "url": "https://en.hespress.com/88418-gipsy-kings-founders-seek-legal-action-in-morocco-against-unauthorized-use-of-bands-name.html"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:13:25.000Z"
+    },
+    {
+      "id": "gipsy-kings-36434ec2",
+      "slug": "gipsy-kings",
+      "artistName": "Gipsy Kings",
+      "type": "award",
+      "hook": "Gipsy Kings won a Grammy more than two decades after their first nomination",
+      "story": "Gipsy Kings' first Grammy nomination came for 1990's Este mundo, at the 34th Annual Grammy Awards. They collected six more nominations across the following two decades before finally winning in 2014, when Savor Flamenco took Best Global Music Album — their first competitive Grammy win from eight total nominations.",
+      "media": [],
+      "sources": [
+        {
+          "title": "Gipsy Kings Grammy Awards and Nominations, Song & Bio",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/gipsy-kings"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:13:25.000Z"
     },
     {
       "id": "gorillaz-3af463f",
@@ -4382,6 +4531,54 @@
       "at": "2026-07-18T17:18:23.056Z"
     },
     {
+      "id": "john-coltrane-18eb62f6",
+      "slug": "john-coltrane",
+      "artistName": "John Coltrane",
+      "type": "era",
+      "hook": "A Love Supreme is preserved at the Smithsonian and the Library of Congress",
+      "story": "A Love Supreme was recorded in a single session in December 1964 with bassist Jimmy Garrison, drummer Elvin Jones and pianist McCoy Tyner, and released the following month. It was inducted into the Grammy Hall of Fame in 1999 alongside Coltrane's 1957 album Blue Train, and into the Library of Congress' National Recording Registry in 2015. Its handwritten manuscript is held at the Smithsonian's National Museum of American History.",
+      "media": [
+        {
+          "label": "A Love Supreme, Pt. I – Acknowledgement",
+          "url": "https://www.youtube.com/watch?v=Dmx2WuUPVcs"
+        }
+      ],
+      "sources": [
+        {
+          "title": "John Coltrane, 'A Love Supreme': For The Record",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/news/john-coltrane-love-supreme-record"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:36:46.000Z"
+    },
+    {
+      "id": "john-coltrane-94bf8008",
+      "slug": "john-coltrane",
+      "artistName": "John Coltrane",
+      "type": "award",
+      "hook": "John Coltrane's only competitive Grammy win came 15 years after his death",
+      "story": "Coltrane was nominated for Grammy Awards eight times across his career, starting with A Love Supreme's two 1966 nominations, but his only competitive win came posthumously in 1982, for 'Bye Bye Blackbird,' Best Jazz Performance. A decade later, in 1992, the Recording Academy gave him a Lifetime Achievement Award.",
+      "media": [],
+      "sources": [
+        {
+          "title": "John Coltrane Grammy Awards and Nominations, Song & Bio",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/john-coltrane/8796"
+        },
+        {
+          "title": "John Coltrane, 'A Love Supreme': For The Record",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/news/john-coltrane-love-supreme-record"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:36:46.000Z"
+    },
+    {
       "id": "john-frusciante-e359152b",
       "slug": "john-frusciante",
       "artistName": "John Frusciante",
@@ -5222,6 +5419,54 @@
       "at": "2026-07-18T16:12:42.865Z"
     },
     {
+      "id": "miles-davis-352e4657",
+      "slug": "miles-davis",
+      "artistName": "Miles Davis",
+      "type": "era",
+      "hook": "Kind of Blue is the best-selling jazz album ever made",
+      "story": "Kind of Blue (1959) stands as the best-selling jazz album of all time — a landmark of modal jazz built on scales rather than chord changes, recorded largely from brief sketches Davis handed his band shortly before taping. More than sixty years on, it remains the record most credited with reshaping jazz's next decade.",
+      "media": [
+        {
+          "label": "Boplicity",
+          "url": "https://www.youtube.com/watch?v=HdP0Xma4pSw"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Miles Davis Grammy Awards and Nominations, Song & Bio",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/miles-davis/11305/"
+        },
+        {
+          "title": "The Miles Davis century: The birth, and rebirth, of cool",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2026/05/26/nx-s1-5829716/miles-davis-100-years-centennial"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:30:22.000Z"
+    },
+    {
+      "id": "miles-davis-693ea62b",
+      "slug": "miles-davis",
+      "artistName": "Miles Davis",
+      "type": "award",
+      "hook": "Miles Davis has 10 recordings in the Grammy Hall of Fame",
+      "story": "Miles Davis won 8 competitive Grammy Awards from 32 nominations, received the Recording Academy's Lifetime Achievement Award in 1990, and has 10 of his recordings inducted into the Grammy Hall of Fame — including Birth of the Cool, Kind of Blue and Bitches Brew, three of the era-defining albums across his career.",
+      "media": [],
+      "sources": [
+        {
+          "title": "Miles Davis Grammy Awards and Nominations, Song & Bio",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/miles-davis/11305/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:30:22.000Z"
+    },
+    {
       "id": "mimicking-birds-50c9c418",
       "slug": "mimicking-birds",
       "artistName": "Mimicking Birds",
@@ -5872,6 +6117,49 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T17:23:54.616Z"
+    },
+    {
+      "id": "paco-de-lucia-a35b6a4a",
+      "slug": "paco-de-lucia",
+      "artistName": "Paco de Lucía",
+      "type": "era",
+      "hook": "Paco de Lucía bought flamenco's most essential new instrument for 12,000 pesetas",
+      "story": "In 1977, at a reception for the Spanish ambassador to Peru in Lima, Paco de Lucía watched singer Chabuca Granda perform 'La flor de la canela' alongside cajonero Caitro Soto, and was fascinated by the cajón — a box drum until then unknown in flamenco, which had relied on handclaps, bongos and congas for percussion. He bought Soto's cajón on the spot for 12,000 pesetas and gave it to his sextet's percussionist, Rubem Dantas. It has been a standard flamenco instrument ever since.",
+      "media": [
+        {
+          "label": "Cositas Buenas",
+          "url": "https://www.youtube.com/watch?v=Yq1jedo9jsU"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Paco de Lucía: la historia de cómo llevó el cajón a España",
+          "publisher": "El Comercio (Perú)",
+          "url": "https://elcomercio.pe/luces/musica/paco-lucia-historia-llevo-cajon-espana-230646-noticia/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:26:02.000Z"
+    },
+    {
+      "id": "paco-de-lucia-cf82f31b",
+      "slug": "paco-de-lucia",
+      "artistName": "Paco de Lucía",
+      "type": "era",
+      "hook": "Paco de Lucía's acoustic guitar trio recorded one night in San Francisco became a classic",
+      "story": "Friday Night in San Francisco (1981) captured a single live performance by an acoustic trio of Paco de Lucía, John McLaughlin and Al Di Meola, recorded December 5, 1980 at the Warfield Theatre. The record has stood as one of the defining documents of acoustic guitar interplay across flamenco, jazz and fusion traditions.",
+      "media": [],
+      "sources": [
+        {
+          "title": "MusicBrainz release-group: Friday Night in San Francisco",
+          "publisher": "MusicBrainz",
+          "url": "https://musicbrainz.org/release-group/1b4b78a5-7466-3179-b2f2-fd24a34604f7"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:26:02.000Z"
     },
     {
       "id": "perfume-genius-bfd80f84",
@@ -8287,6 +8575,49 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:54:22.519Z"
+    },
+    {
+      "id": "tinariwen-e4dec484",
+      "slug": "tinariwen",
+      "artistName": "Tinariwen",
+      "type": "era",
+      "hook": "Tinariwen is named after the desert itself",
+      "story": "The band's name is simply the plural of 'tenere,' the Tamashek word for desert — Tinariwen translates roughly to 'the deserts.' The Sahara isn't just a backdrop in their songs; they sing direct addresses to it, usually in Tamashek. It became a rite of passage for touring rock musicians to guest on their records — Kurt Vile, Mark Lanegan, Alain Johannes and Matt Sweeney all appear on 2017's Elwan alone.",
+      "media": [
+        {
+          "label": "Chaghaybou",
+          "url": "https://www.youtube.com/watch?v=z_eeIJj6LY8"
+        }
+      ],
+      "sources": [
+        {
+          "title": "Review: Tinariwen, 'Elwan'",
+          "publisher": "NPR",
+          "url": "https://www.npr.org/2017/02/02/512650724/first-listen-tinariwen-elwan"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:18:35.000Z"
+    },
+    {
+      "id": "tinariwen-981d937e",
+      "slug": "tinariwen",
+      "artistName": "Tinariwen",
+      "type": "award",
+      "hook": "Tinariwen won a Grammy for an album recorded in the open desert",
+      "story": "Tassili, recorded acoustically in the Algerian desert near Djanet, won the Grammy Award for Best Global Music Album in 2012 — the first of three Grammy nominations the band has received in that category, following up with Elwan (2018) and Amadjar (2021).",
+      "media": [],
+      "sources": [
+        {
+          "title": "Tinariwen Grammy Awards and Nominations, Song & Bio",
+          "publisher": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/tinariwen"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5 (in-session)",
+      "at": "2026-07-26T07:18:35.000Z"
     },
     {
       "id": "tipper-637046e0",
