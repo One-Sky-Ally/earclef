@@ -17,7 +17,16 @@ import {
   genreMaxForRange,
   type GenreCountryDecades,
 } from '@/lib/explore/genreData'
-import { isoOf, roughCentroid, type CountryFeature } from '@/lib/explore/geo'
+import {
+  featureCode,
+  isoOf,
+  roughCentroid,
+  type CountryFeature,
+} from '@/lib/explore/geo'
+import {
+  SUBDIVISION_CODE_PATTERN,
+  splitSubdivisionFeatures,
+} from '@/lib/explore/subdivisions'
 import type { SelectedCountry } from '@/components/explore/CountryPanel'
 import styles from './GlobeScene.module.css'
 
@@ -168,10 +177,15 @@ export function GlobeScene({
       ])
       if (disposed) return
 
-      const features = countries.features as CountryFeature[]
+      // Configured subdivisions (Hawaii) become their own clickable
+      // features, split out of the parent country's polygons.
+      const features = splitSubdivisionFeatures(
+        countries.features as CountryFeature[],
+      )
+      countries.features = features
       featureByCode.current = new Map(
         features.flatMap((feature) => {
-          const code = isoOf(feature)
+          const code = featureCode(feature)
           return code ? [[code, feature] as const] : []
         }),
       )
@@ -195,6 +209,10 @@ export function GlobeScene({
           const code = isoOf(feature as CountryFeature)
           const [start, end] = rangeRef.current
           const span = start === end ? `${start}` : `${start}–${end}`
+          if (SUBDIVISION_CODE_PATTERN.test(props.ISO_A2)) {
+            // No per-subdivision release counts — invite the click instead.
+            return `<div class="globe-tooltip"><span class="globe-tooltip-name">${props.ADMIN}</span><span class="globe-tooltip-count">its own scene — click for artists · ${span}</span></div>`
+          }
           const activeLens = lensRef.current
           if (activeLens) {
             const count = code
@@ -214,7 +232,7 @@ export function GlobeScene({
         })
         .onPolygonClick((clicked) => {
           const feature = clicked as CountryFeature
-          const code = isoOf(feature)
+          const code = featureCode(feature)
           if (!code || !globe) return
           const { lat, lng } = roughCentroid(feature)
           globe.pointOfView({ lat, lng, altitude: 1.7 }, 650)

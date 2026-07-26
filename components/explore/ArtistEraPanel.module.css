@@ -1,0 +1,25 @@
+.catalogNote {
+  color: var(--text-muted);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.04em;
+}
+
+.methodNote {
+  margin-top: 0.9rem;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.mbLink {
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  transition: color 0.2s ease;
+}
+
+.mbLink:hover {
+  color: var(--accent);
+}

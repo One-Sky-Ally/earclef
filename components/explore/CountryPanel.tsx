@@ -177,6 +177,9 @@ export function CountryPanel({
 
   const spanLabel =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}–${yearEnd}`
+  // Subdivision panels (e.g. Hawaii, US-HI) are artists-only — MB
+  // pressing data is country-level, so release copy would mislead.
+  const isSubdivision = /^[A-Z]{2}-[A-Z]{2}$/.test(country.code)
 
   // Parent keys this component by country+range, so every fetch cycle
   // starts from a fresh mount in the 'loading' state.
@@ -256,9 +259,13 @@ export function CountryPanel({
         <div className={styles.body}>
           <p className={styles.total}>
             {state.details.totalCount.toLocaleString()}{' '}
-            {genre ? `${genre} artists from here` : 'releases issued here'}
+            {genre
+              ? `${genre} artists from here`
+              : isSubdivision
+                ? 'artists from here on record'
+                : 'releases issued here'}
           </p>
-          {state.details.totalCount > 0 && (
+          {state.details.totalCount > 0 && !isSubdivision && (
             <p className={styles.methodNote}>
               Counted by where releases were issued or distributed — artists
               may hail from elsewhere.
@@ -277,15 +284,6 @@ export function CountryPanel({
               Nothing on record here for {spanLabel} — yet. MusicBrainz grows every
               day.
             </p>
-          )}
-
-          {!genre && (
-            <WhatWasPlaying
-              countryCode={country.code}
-              countryName={country.name}
-              yearStart={yearStart}
-              yearEnd={yearEnd}
-            />
           )}
 
           {state.details.originArtists.length > 0 && (
@@ -349,6 +347,16 @@ export function CountryPanel({
                 </button>
               )}
             </>
+          )}
+
+          {/* Cultural snapshot AFTER the artists — people first, era second. */}
+          {!genre && (
+            <WhatWasPlaying
+              countryCode={country.code}
+              countryName={country.name}
+              yearStart={yearStart}
+              yearEnd={yearEnd}
+            />
           )}
 
           {state.details.releases.length > 0 && (

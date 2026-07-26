@@ -3,6 +3,10 @@
   inset: 0;
   z-index: 200;
   display: grid;
+  /* A fixed 100% track: the default auto track sizes to the panel's
+     max-content (the category-pill row), which let the panel blow past
+     narrow viewports — 813px wide at 380px, clipped and unscrollable. */
+  grid-template-columns: 100%;
   place-items: center;
   padding: clamp(0.75rem, 3vw, 2.5rem);
   background: rgba(12, 9, 7, 0.72);

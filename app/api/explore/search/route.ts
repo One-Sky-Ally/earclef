@@ -1,21 +1,39 @@
 import { NextResponse } from 'next/server'
-import type { PlaceResult } from '@/lib/explore/panelData'
+import { subdivisionByName } from '@/lib/explore/subdivisions'
+import type { SearchResult } from '@/lib/explore/panelData'
 
 const USER_AGENT =
   'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 const MAX_PARENT_HOPS = 4
+/** Artist fallback only fires on confident matches — typo'd place
+ * names shouldn't resolve to whoever scores highest. */
+const ARTIST_MIN_SCORE = 85
 
-const memo = new Map<string, PlaceResult | null>()
+const memo = new Map<string, SearchResult | null>()
 
 interface MbArea {
   id: string
   name: string
+  score?: number
   'iso-3166-1-codes'?: string[]
   relations?: {
     type: string
     direction?: string
     area?: MbArea
   }[]
+}
+
+/** MusicBrainz normalizes top-hit scores, so "Aphex Twin" surfaces the
+ * area "Twin" at full confidence. A place search is always the place's
+ * own name — require normalized equality; everything else falls
+ * through to the artist lookup. */
+function normalizedName(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
@@ -64,6 +82,25 @@ async function resolveCountry(area: MbArea): Promise<string | undefined> {
   return undefined
 }
 
+interface MbArtistHit {
+  id: string
+  name: string
+  score?: number
+}
+
+/** Confident artist match for the fallback, or null. Throws on MB
+ * failure so a transient outage never memoizes as a permanent miss. */
+async function findArtist(query: string): Promise<SearchResult | null> {
+  const res = await mbFetch(
+    `https://musicbrainz.org/ws/2/artist?query=${encodeURIComponent(query)}&limit=3&fmt=json`,
+  )
+  if (!res.ok) throw new Error(`artist search HTTP ${res.status}`)
+  const body = (await res.json()) as { artists?: MbArtistHit[] }
+  const top = body.artists?.[0]
+  if (!top || (top.score ?? 0) < ARTIST_MIN_SCORE) return null
+  return { kind: 'artist', artist: { mbid: top.id, name: top.name } }
+}
+
 export async function GET(request: Request) {
   const query = new URL(request.url).searchParams.get('q')?.trim() ?? ''
   if (query.length < 2 || query.length > 80) {
@@ -80,6 +117,18 @@ export async function GET(request: Request) {
         )
   }
 
+  // Configured subdivisions win by name — "Hawaii" opens US-HI, not US.
+  const subdivision = subdivisionByName(query)
+  if (subdivision) {
+    const result: SearchResult = {
+      kind: 'place',
+      country: subdivision.code,
+      area: subdivision.name,
+    }
+    memo.set(key, result)
+    return withCacheHeaders(NextResponse.json(result))
+  }
+
   try {
     const res = await mbFetch(
       `https://musicbrainz.org/ws/2/area?query=${encodeURIComponent(query)}&limit=5&fmt=json`,
@@ -90,25 +139,27 @@ export async function GET(request: Request) {
     if (!res.ok) throw new Error(`MusicBrainz HTTP ${res.status}`)
 
     const body = (await res.json()) as { areas?: MbArea[] }
-    const top = body.areas?.[0]
-    if (!top) {
-      memo.set(key, null)
-      return withCacheHeaders(
-        NextResponse.json({ error: 'No match' }, { status: 404 }),
-      )
+    const top = body.areas?.find(
+      (area) => normalizedName(area.name) === normalizedName(query),
+    )
+    const country = top ? await resolveCountry(top) : undefined
+
+    if (top && country) {
+      const result: SearchResult = { kind: 'place', country, area: top.name }
+      memo.set(key, result)
+      return withCacheHeaders(NextResponse.json(result))
     }
 
-    const country = await resolveCountry(top)
-    if (!country) {
-      memo.set(key, null)
-      return withCacheHeaders(
-        NextResponse.json({ error: 'No match' }, { status: 404 }),
-      )
-    }
-
-    const result: PlaceResult = { country, area: top.name }
-    memo.set(key, result)
-    return withCacheHeaders(NextResponse.json(result))
+    // No place matched — maybe it's an artist ("what did they put out
+    // in this era?" is answered by the artist-era panel client-side).
+    await sleep(1050)
+    const artist = await findArtist(query)
+    memo.set(key, artist)
+    return artist
+      ? withCacheHeaders(NextResponse.json(artist))
+      : withCacheHeaders(
+          NextResponse.json({ error: 'No match' }, { status: 404 }),
+        )
   } catch (error) {
     console.error(`explore search "${query}" failed:`, error)
     return NextResponse.json({ error: 'Search unavailable' }, { status: 502 })

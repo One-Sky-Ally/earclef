@@ -34,3 +34,14 @@ export function isoOf(feature: CountryFeature): string | undefined {
   if (/^[A-Z]{2}$/.test(ISO_A2)) return ISO_A2
   return ISO_FIXES[ADMIN]
 }
+
+/**
+ * The clickable code of any feature: a country ISO code, or a
+ * subdivision code (e.g. US-HI) on features minted by
+ * splitSubdivisionFeatures.
+ */
+export function featureCode(feature: CountryFeature): string | undefined {
+  const { ISO_A2 } = feature.properties
+  if (/^[A-Z]{2}-[A-Z]{2}$/.test(ISO_A2)) return ISO_A2
+  return isoOf(feature)
+}

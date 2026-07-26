@@ -60,22 +60,74 @@ export interface PlaceResult {
   area: string
 }
 
-export async function searchPlace(
+export type SearchResult =
+  | { kind: 'place'; country: string; area: string }
+  | { kind: 'artist'; artist: { mbid: string; name: string } }
+
+export async function searchExplore(
   query: string,
   signal: AbortSignal,
-): Promise<PlaceResult> {
+): Promise<SearchResult> {
   const res = await fetch(
     `/api/explore/search?q=${encodeURIComponent(query)}`,
     { signal },
   )
   if (res.status === 404) {
-    throw new Error("Couldn't place that — try a city or country name.")
+    throw new Error(
+      "Couldn't find that — try a city, country, or artist name.",
+    )
   }
   if (res.status === 429) {
     throw new Error('MusicBrainz is busy — try again in a moment.')
   }
   if (!res.ok) {
     throw new Error('Search failed — please try again.')
+  }
+  const body = (await res.json()) as Partial<PlaceResult> & {
+    kind?: SearchResult['kind']
+    artist?: { mbid: string; name: string }
+  }
+  // CDN-cached responses from before the artist fallback carry no kind.
+  if (body.kind === 'artist' && body.artist) {
+    return { kind: 'artist', artist: body.artist }
+  }
+  if (body.country && body.area) {
+    return { kind: 'place', country: body.country, area: body.area }
+  }
+  throw new Error('Search failed — please try again.')
+}
+
+export interface ArtistEraRelease {
+  id: string
+  title: string
+  date: string
+  type?: string
+}
+
+export interface ArtistEraDetails {
+  eraReleases: ArtistEraRelease[]
+  eraCount: number
+  catalogCount: number
+  /** True when the catalog was too large to sweep completely. */
+  truncated: boolean
+}
+
+export async function fetchArtistEra(
+  mbid: string,
+  yearStart: number,
+  yearEnd: number,
+  signal: AbortSignal,
+): Promise<ArtistEraDetails> {
+  const span =
+    yearStart === yearEnd ? `${yearStart}` : `${yearStart}-${yearEnd}`
+  const res = await fetch(`/api/explore/artist-era/${mbid}/${span}`, {
+    signal,
+  })
+  if (res.status === 429) {
+    throw new Error('MusicBrainz is busy right now — try again in a moment.')
+  }
+  if (!res.ok) {
+    throw new Error("Could not load this artist's era catalog.")
   }
   return res.json()
 }

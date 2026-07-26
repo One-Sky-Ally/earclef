@@ -14,11 +14,15 @@ import {
   type GenreEmergenceData,
   type GenreLens,
 } from '@/lib/explore/genreData'
-import type { PlaceResult } from '@/lib/explore/panelData'
+import type { SearchResult } from '@/lib/explore/panelData'
 import type { FocusRequest } from '@/components/explore/GlobeScene'
 import { YearSlider } from '@/components/explore/YearSlider'
 import { SearchBox } from '@/components/explore/SearchBox'
 import { GenreStory } from '@/components/explore/GenreStory'
+import {
+  ArtistEraPanel,
+  type SelectedArtist,
+} from '@/components/explore/ArtistEraPanel'
 import {
   CountryPanel,
   type RosterByMbid,
@@ -42,6 +46,8 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
   const [yearStart, yearEnd] = range
   const [source, setSource] = useState<DataSource | null>(null)
   const [selected, setSelected] = useState<SelectedCountry | null>(null)
+  // Artist search result — takes over the panel slot from the country.
+  const [artist, setArtist] = useState<SelectedArtist | null>(null)
   const [focusRequest, setFocusRequest] = useState<FocusRequest | null>(null)
   const [genreData, setGenreData] = useState<GenreEmergenceData | null>(null)
   const [lens, setLens] = useState<GenreLens | null>(null)
@@ -82,7 +88,9 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
         setRange([from, to])
       }
       const code = params.get('c')
-      if (code && /^[A-Z]{2}$/.test(code)) pendingCountry.current = code
+      if (code && /^[A-Z]{2}(-[A-Z]{2})?$/.test(code)) {
+        pendingCountry.current = code
+      }
       const genre = params.get('g')
       if (isGenreLens(genre)) setLens(genre)
     }, 0)
@@ -102,10 +110,16 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
     window.history.replaceState(null, '', query ? `/?${query}` : '/')
   }, [yearStart, yearEnd, selected, lens])
 
-  function onPlaceResolved(place: PlaceResult) {
+  function onSearchResolved(result: SearchResult) {
+    if (result.kind === 'artist') {
+      setSelected(null)
+      setArtist(result.artist)
+      return
+    }
+    setArtist(null)
     setFocusRequest({
-      code: place.country,
-      name: place.area,
+      code: result.country,
+      name: result.area,
       nonce: (focusRequest?.nonce ?? 0) + 1,
     })
   }
@@ -133,14 +147,26 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
             ? { label: lens, countries: genreData.genres[lens] }
             : null
         }
-        paused={selected !== null}
+        paused={selected !== null || artist !== null}
         focusRequest={focusRequest}
         onDataSourceChange={onGlobeReady}
-        onCountryClick={setSelected}
+        onCountryClick={(country) => {
+          setArtist(null)
+          setSelected(country)
+        }}
       />
-      <SearchBox onResolved={onPlaceResolved} />
+      <SearchBox onResolved={onSearchResolved} />
       {lens && <GenreStory key={lens} genre={lens} />}
-      {selected && (
+      {artist && (
+        <ArtistEraPanel
+          key={`${artist.mbid}:${yearStart}-${yearEnd}`}
+          artist={artist}
+          yearStart={yearStart}
+          yearEnd={yearEnd}
+          onClose={() => setArtist(null)}
+        />
+      )}
+      {selected && !artist && (
         <CountryPanel
           key={`${selected.code}:${yearStart}-${yearEnd}:${lens ?? ''}`}
           country={selected}
@@ -154,7 +180,7 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
       )}
       <div
         className={`${styles.controls} ${
-          selected ? styles.controlsBehindPanel : ''
+          selected || artist ? styles.controlsBehindPanel : ''
         }`}
       >
         {genreData && (

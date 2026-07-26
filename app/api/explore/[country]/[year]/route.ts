@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server'
 import { isGenreLens } from '@/lib/explore/genreData'
+import {
+  SUBDIVISION_CODE_PATTERN,
+  subdivisionByCode,
+} from '@/lib/explore/subdivisions'
 import type {
   CountryYearDetails,
   PanelArtist,
@@ -97,7 +101,7 @@ class RateLimitError extends Error {}
  * cache a failure as an empty result.
  */
 async function fetchOriginArtists(
-  country: string,
+  originClause: string,
   start: number,
   end: number,
   genre: string | null,
@@ -106,7 +110,7 @@ async function fetchOriginArtists(
   // (For people MB's "begin" is the birth date — a coarse but honest proxy.)
   const genreClause = genre ? ` AND tag:"${genre}"` : ''
   const query = encodeURIComponent(
-    `country:${country} AND begin:[* TO ${end}] AND NOT end:[* TO ${start - 1}]${genreClause}`,
+    `${originClause} AND begin:[* TO ${end}] AND NOT end:[* TO ${start - 1}]${genreClause}`,
   )
 
   const weighted: { artist: PanelArtist; weight: number }[] = []
@@ -135,7 +139,7 @@ async function fetchOriginArtists(
     }
   } catch (error) {
     if (error instanceof RateLimitError) throw error
-    console.error(`origin artists ${country} failed:`, error)
+    console.error(`origin artists ${originClause} failed:`, error)
     return null
   }
 
@@ -196,7 +200,13 @@ export async function GET(
   }
 
   // "1969" (single year) or "1965-1975" (inclusive span).
-  if (!/^[A-Z]{2}$/.test(country) || !/^\d{4}(-\d{4})?$/.test(year)) {
+  const subdivision = SUBDIVISION_CODE_PATTERN.test(country)
+    ? subdivisionByCode(country)
+    : undefined
+  if (
+    (!/^[A-Z]{2}$/.test(country) && !subdivision) ||
+    !/^\d{4}(-\d{4})?$/.test(year)
+  ) {
     return NextResponse.json({ error: 'Invalid country or year' }, { status: 400 })
   }
   const [startRaw, endRaw = startRaw] = year.split('-')
@@ -214,11 +224,22 @@ export async function GET(
     `country:${country} AND date:[${start} TO ${end}-12-31]`,
   )
 
+  // Countries filter artists by ISO code; subdivisions by MB area name
+  // (quoted — "Hawaii" the area, not a name fragment).
+  const originClause = subdivision
+    ? `area:"${subdivision.mbArea}"`
+    : `country:${country}`
+
   try {
-    // Lens mode is artists-only: release tags are too sparse to filter
-    // honestly (the coverage diagnosis that shaped this feature).
-    if (genre) {
-      const origin = await fetchOriginArtists(country, start, end, genre)
+    // Lens mode and subdivisions are artists-only: release tags are too
+    // sparse to filter honestly, and MB pressing data is country-level.
+    if (genre || subdivision) {
+      const origin = await fetchOriginArtists(
+        originClause,
+        start,
+        end,
+        genre,
+      )
       if (!origin) {
         return NextResponse.json(
           { error: 'MusicBrainz unavailable' },
@@ -239,7 +260,7 @@ export async function GET(
       `https://musicbrainz.org/ws/2/release?query=${releaseQuery}&limit=${RELEASE_LIMIT}&fmt=json`,
     )) as { count?: number; releases?: MbRelease[] }
     await sleep(MB_DELAY_MS)
-    const origin = await fetchOriginArtists(country, start, end, null)
+    const origin = await fetchOriginArtists(originClause, start, end, null)
 
     if (!origin) {
       // Serve a degraded (origin-less) panel, but never cache it — a

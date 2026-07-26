@@ -1,11 +1,11 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { searchPlace, type PlaceResult } from '@/lib/explore/panelData'
+import { searchExplore, type SearchResult } from '@/lib/explore/panelData'
 import styles from './SearchBox.module.css'
 
 interface SearchBoxProps {
-  onResolved: (place: PlaceResult) => void
+  onResolved: (result: SearchResult) => void
 }
 
 type SearchState =
@@ -31,10 +31,10 @@ export function SearchBox({ onResolved }: SearchBoxProps) {
     setState({ status: 'searching' })
 
     try {
-      const place = await searchPlace(query, controller.signal)
+      const result = await searchExplore(query, controller.signal)
       if (controller.signal.aborted) return
       setState({ status: 'idle' })
-      onResolved(place)
+      onResolved(result)
     } catch (error) {
       if (controller.signal.aborted) return
       setState({ status: 'error', message: (error as Error).message })
@@ -48,8 +48,8 @@ export function SearchBox({ onResolved }: SearchBoxProps) {
           className={styles.input}
           type="search"
           name="place"
-          placeholder="Search a city or country…"
-          aria-label="Search a city or country"
+          placeholder="Search a place or artist…"
+          aria-label="Search a city, country, or artist"
           autoComplete="off"
           spellCheck={false}
         />
