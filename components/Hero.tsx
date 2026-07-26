@@ -1,6 +1,7 @@
 import type { HeroContent } from '@/lib/types'
 import { LinkPills } from '@/components/LinkPills'
 import { HeroArt } from '@/components/HeroArt'
+import { FirstFans } from '@/components/fans/FirstFans'
 import { FollowButton } from '@/components/fans/FollowButton'
 import styles from './Hero.module.css'
 
@@ -27,7 +28,10 @@ export function Hero({ hero, paletteVideoId, followSlug }: HeroProps) {
           {hero.tagline && <p className={styles.tagline}>{hero.tagline}</p>}
           <LinkPills links={hero.socials} ariaLabel="Social links" />
           {followSlug && (
-            <FollowButton slug={followSlug} artistName={hero.name} />
+            <>
+              <FollowButton slug={followSlug} artistName={hero.name} />
+              <FirstFans slug={followSlug} />
+            </>
           )}
         </div>
         <div className={styles.imageFrame}>

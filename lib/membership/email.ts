@@ -49,14 +49,19 @@ async function sendEmail(args: {
 
 export function sendMagicLink(args: {
   to: string
+  /** Empty = a plain profile sign-in, not tied to an artist page. */
   artistName: string
   link: string
 }): Promise<boolean> {
   return sendEmail({
     to: args.to,
-    subject: `Your sign-in link for ${args.artistName} on Ear Clef`,
+    subject: args.artistName
+      ? `Your sign-in link for ${args.artistName} on Ear Clef`
+      : 'Your sign-in link for Ear Clef',
     text: [
-      `Here's your sign-in link for ${args.artistName}'s Universe:`,
+      args.artistName
+        ? `Here's your sign-in link for ${args.artistName}'s Universe:`
+        : "Here's your sign-in link for Ear Clef:",
       '',
       args.link,
       '',

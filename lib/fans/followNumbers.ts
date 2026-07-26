@@ -23,7 +23,11 @@ interface Registry {
 
 const WRITE_ATTEMPTS = 4
 
-let devRegistries = new Map<string, Registry>()
+const devRegState = globalThis as unknown as {
+  __earclefDevRegistries?: Map<string, Registry>
+}
+// globalThis so route handlers and server components share dev state.
+const devRegistries = (devRegState.__earclefDevRegistries ??= new Map())
 
 function store() {
   return getStore({ name: 'fans', consistency: 'strong' })
@@ -80,7 +84,7 @@ export async function ensureFollowNumber(
     }
 
     if (dev) {
-      devRegistries = new Map(devRegistries).set(slug, next)
+      devRegistries.set(slug, next)
       return stamp
     }
     try {
@@ -96,6 +100,21 @@ export async function ensureFollowNumber(
     }
   }
   return null
+}
+
+/**
+ * The earliest stamps for an artist, ANONYMIZED — numbers and dates
+ * only, never the fan keys. Feeds the public first-fans strip.
+ */
+export async function getFirstFans(
+  slug: string,
+  limit = 5,
+): Promise<FollowStamp[]> {
+  const { registry } = await readRegistry(slug)
+  return Object.values(registry.fans)
+    .sort((a, b) => a.number - b.number)
+    .slice(0, limit)
+    .map(({ number, since }) => ({ number, since }))
 }
 
 /** The fan's stamps across the artists they follow (parallel reads). */

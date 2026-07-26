@@ -23,8 +23,11 @@ export async function GET(request: Request) {
     )
   }
 
+  // The signed allowlisted destination wins; artist page is the default.
   const destination = new URL(
-    `/${payload.slug ?? ''}?signin=ok#universe`,
+    payload.d === '/me'
+      ? '/me?signin=ok'
+      : `/${payload.slug ?? ''}?signin=ok#universe`,
     request.url,
   )
   const response = NextResponse.redirect(destination, { status: 302 })

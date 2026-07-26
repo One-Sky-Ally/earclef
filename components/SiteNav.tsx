@@ -15,6 +15,7 @@ const PAGES = [
   { href: '/', label: 'Explore' },
   { href: '/feed', label: 'Feed' },
   { href: '/artists', label: 'Artists' },
+  { href: '/me', label: 'Me' },
 ]
 
 interface SiteNavProps {

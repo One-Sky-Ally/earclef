@@ -1,0 +1,29 @@
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.label {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.66rem;
+  color: var(--text-muted);
+}
+
+.stamp {
+  white-space: nowrap;
+}
+
+.number {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.since {
+  color: var(--text-muted);
+}

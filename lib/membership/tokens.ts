@@ -10,6 +10,11 @@ export interface TokenPayload {
   email: string
   /** Artist page the token belongs to (magic/renew) — session is global. */
   slug?: string
+  /**
+   * Post-sign-in destination (magic only), from a fixed allowlist —
+   * signed into the token so it can't be tampered into an open redirect.
+   */
+  d?: string
   /** Unix ms expiry. */
   exp: number
 }

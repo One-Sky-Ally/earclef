@@ -43,12 +43,14 @@ export async function POST(request: Request) {
     return noStore({ error: 'Sign-in is not configured yet' }, 501)
   }
 
-  let body: { email?: string; slug?: string }
+  let body: { email?: string; slug?: string; dest?: string }
   try {
     body = await request.json()
   } catch {
     return noStore({ error: 'Invalid JSON body' }, 400)
   }
+  // Fixed allowlist — never a caller-supplied path.
+  const dest = body.dest === '/me' ? '/me' : undefined
 
   const email = normalizeEmail(body.email ?? '')
   const slug = body.slug ?? ''
@@ -58,7 +60,8 @@ export async function POST(request: Request) {
   }
   // Any roster page can request sign-in: the session is the site-wide fan
   // identity (follows), and doubles as membership access where one exists.
-  if (!content) {
+  // The profile page (dest /me) signs in without naming an artist at all.
+  if (!content && !dest) {
     return noStore({ error: 'Unknown artist' }, 404)
   }
 
@@ -78,13 +81,14 @@ export async function POST(request: Request) {
     t: 'magic',
     email,
     slug,
+    ...(dest && { d: dest }),
     exp: Date.now() + MAGIC_LINK_TTL_MS,
   })
   const link = `${siteOrigin(request)}/api/auth/verify?token=${encodeURIComponent(token)}`
 
   const sent = await sendMagicLink({
     to: email,
-    artistName: content.hero.name,
+    artistName: content?.hero.name ?? '',
     link,
   })
   if (!sent && process.env.NODE_ENV === 'development') {

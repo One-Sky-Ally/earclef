@@ -1,27 +1,50 @@
 /**
  * Fan profiles — the lightest viable identity: an email (the same
- * magic-link session the membership uses) plus the slugs they follow.
- * No password, no profile, nothing else. Blobs "fans" store, one record
- * per email; dev fallback mirrors the other stores.
+ * magic-link session the membership uses) plus the slugs they follow,
+ * their personal tiers (the fan's own taste map, same vocabulary as the
+ * site tiers), and an optional share token that makes the taste map a
+ * public read-only page. Blobs "fans" store, one record per email;
+ * share tokens get a reverse-index key so the public page can resolve
+ * them without listing fans. Dev fallback mirrors the other stores.
  */
+import { randomBytes } from 'node:crypto'
 import { getStore } from '@netlify/blobs'
+import { isArtistTier, type ArtistTier } from '../tiers'
 import { normalizeEmail } from '../membership/types'
 
 export interface FanRecord {
   email: string
   follows: string[]
+  /** slug → the fan's own tier for that artist (untiered = plain follow). */
+  tiers?: Record<string, ArtistTier>
   /** Preferred streaming service — follows the fan across devices. */
   listenService?: string
+  /** Present while sharing is on; the public page lives at /fan/<token>. */
+  shareToken?: string
+  /** Shown on the share page instead of anything email-derived. */
+  displayName?: string
   createdAt: string
 }
 
 const MAX_FOLLOWS = 200
+export const MAX_DISPLAY_NAME = 40
 
-let devFans = new Map<string, FanRecord>()
+// Dev fallback state lives on globalThis: Next dev compiles route
+// handlers and server components into separate module graphs, and a
+// per-module Map would leave the /fan/[token] page blind to writes
+// made through /api/fan. Production always goes through Blobs.
+const devState = globalThis as unknown as {
+  __earclefDevFans?: Map<string, FanRecord>
+  __earclefDevShareIndex?: Map<string, string>
+}
+const devFans = (devState.__earclefDevFans ??= new Map())
+const devShareIndex = (devState.__earclefDevShareIndex ??= new Map())
 
 function store() {
   return getStore({ name: 'fans', consistency: 'strong' })
 }
+
+const shareKey = (token: string) => `share/${token}`
 
 export async function getFan(email: string): Promise<FanRecord | null> {
   const key = normalizeEmail(email)
@@ -38,7 +61,19 @@ async function putFan(record: FanRecord): Promise<void> {
   try {
     await store().setJSON(key, record)
   } catch {
-    devFans = new Map(devFans).set(key, record)
+    devFans.set(key, record)
+  }
+}
+
+function baseRecord(email: string, existing: FanRecord | null): FanRecord {
+  return {
+    email,
+    follows: existing?.follows ?? [],
+    tiers: existing?.tiers,
+    listenService: existing?.listenService,
+    shareToken: existing?.shareToken,
+    displayName: existing?.displayName,
+    createdAt: existing?.createdAt ?? new Date().toISOString(),
   }
 }
 
@@ -55,12 +90,14 @@ export async function setFollow(
     ? [...new Set([...current, slug])].slice(0, MAX_FOLLOWS)
     : current.filter((followed) => followed !== slug)
 
-  await putFan({
-    email: normalized,
-    follows: next,
-    listenService: existing?.listenService,
-    createdAt: existing?.createdAt ?? new Date().toISOString(),
-  })
+  const record = baseRecord(normalized, existing)
+  record.follows = next
+  if (!following && record.tiers?.[slug]) {
+    // A tier only means something on a follow; unfollowing clears it.
+    const { [slug]: _dropped, ...rest } = record.tiers
+    record.tiers = rest
+  }
+  await putFan(record)
   return next
 }
 
@@ -71,10 +108,113 @@ export async function setListenService(
 ): Promise<void> {
   const normalized = normalizeEmail(email)
   const existing = await getFan(normalized)
-  await putFan({
-    email: normalized,
-    follows: existing?.follows ?? [],
-    listenService,
-    createdAt: existing?.createdAt ?? new Date().toISOString(),
-  })
+  const record = baseRecord(normalized, existing)
+  record.listenService = listenService
+  await putFan(record)
+}
+
+/**
+ * Sets or clears the fan's personal tier for a followed artist.
+ * Returns the updated tier map, or null when the slug isn't followed.
+ */
+export async function setPersonalTier(
+  email: string,
+  slug: string,
+  tier: ArtistTier | null,
+): Promise<Record<string, ArtistTier> | null> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  if (!existing?.follows.includes(slug)) return null
+
+  const record = baseRecord(normalized, existing)
+  const current = record.tiers ?? {}
+  if (tier === null) {
+    const { [slug]: _dropped, ...rest } = current
+    record.tiers = rest
+  } else if (isArtistTier(tier)) {
+    record.tiers = { ...current, [slug]: tier }
+  }
+  await putFan(record)
+  return record.tiers ?? {}
+}
+
+function sanitizeDisplayName(raw: string): string {
+  return raw
+    .replace(/[\u0000-\u001f\u007f]/g, '')
+    .trim()
+    .slice(0, MAX_DISPLAY_NAME)
+}
+
+export interface ShareState {
+  enabled: boolean
+  token?: string
+  displayName?: string
+}
+
+/**
+ * Turns sharing on (minting a fresh unguessable token — re-enabling
+ * retires any old link) or off (deleting the token and its reverse
+ * index, which kills the public page instantly).
+ */
+export async function setShare(
+  email: string,
+  enabled: boolean,
+  displayName?: string,
+): Promise<ShareState> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  const record = baseRecord(normalized, existing)
+  const oldToken = record.shareToken
+
+  if (displayName !== undefined) {
+    const clean = sanitizeDisplayName(displayName)
+    record.displayName = clean || undefined
+  }
+
+  if (enabled) {
+    record.shareToken = randomBytes(16).toString('hex')
+  } else {
+    record.shareToken = undefined
+  }
+  await putFan(record)
+
+  try {
+    if (oldToken) await store().delete(shareKey(oldToken))
+    if (record.shareToken) {
+      await store().setJSON(shareKey(record.shareToken), {
+        email: normalized,
+      })
+    }
+  } catch {
+    if (oldToken) devShareIndex.delete(oldToken)
+    if (record.shareToken) {
+      devShareIndex.set(record.shareToken, normalized)
+    }
+  }
+
+  return {
+    enabled: Boolean(record.shareToken),
+    token: record.shareToken,
+    displayName: record.displayName,
+  }
+}
+
+/** Resolves a share token to the fan record — null for retired links. */
+export async function getFanByShareToken(
+  token: string,
+): Promise<FanRecord | null> {
+  if (!/^[a-f0-9]{32}$/.test(token)) return null
+  let email: string | null = null
+  try {
+    const entry = (await store().get(shareKey(token), {
+      type: 'json',
+    })) as { email?: string } | null
+    email = entry?.email ?? null
+  } catch {
+    email = devShareIndex.get(token) ?? null
+  }
+  if (!email) return null
+  const fan = await getFan(email)
+  // The record's token must still match — a re-mint retires old links.
+  return fan?.shareToken === token ? fan : null
 }

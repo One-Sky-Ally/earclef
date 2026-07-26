@@ -1,0 +1,324 @@
+.map {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  max-width: 640px;
+}
+
+.accountRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.email {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.signOut {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.signOut:hover {
+  color: var(--accent);
+}
+
+/* Share card */
+.shareCard {
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-elevated);
+}
+
+.shareTitle {
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.shareNote {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+  text-wrap: pretty;
+}
+
+.shareControls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.shareOff,
+.shareOn {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.shareOff {
+  border: 1px solid var(--accent-deep);
+  color: var(--accent);
+}
+
+.shareOff:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.shareOn {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.shareOn:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.shareLinkRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+  min-width: 0;
+}
+
+.shareLink {
+  font-size: 0.78rem;
+  color: var(--accent);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shareLink:hover {
+  text-decoration: underline;
+}
+
+.copy {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.copy:hover {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}
+
+/* Tier groups */
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+.groupTitle {
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.groupCount {
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.rows {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding-block: 0.65rem;
+  border-top: 1px solid var(--border);
+}
+
+.rowText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.artist {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  transition: color 0.2s ease;
+}
+
+.artist:hover {
+  color: var(--accent);
+}
+
+.stamp {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.tierSelect {
+  flex-shrink: 0;
+  appearance: none;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  color: var(--text-soft);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.tierSelect:hover,
+.tierSelect:focus {
+  border-color: var(--accent-deep);
+  color: var(--accent);
+}
+
+.empty {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.emptyLink {
+  color: var(--accent);
+}
+
+/* Sign-in */
+.signIn {
+  max-width: 480px;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  line-height: 1.55;
+  margin-bottom: 0.85rem;
+  text-wrap: pretty;
+}
+
+.devLink {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formRow {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--accent-deep);
+  outline: none;
+}
+
+.submit {
+  flex-shrink: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-deep);
+  color: var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.submit:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* Loading shimmer — same language as the rest of the site */
+.shimmerBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 640px;
+}
+
+.shimmer {
+  height: 1.1rem;
+  border-radius: 6px;
+  background: linear-gradient(
+    100deg,
+    var(--bg-elevated) 35%,
+    var(--accent-soft) 50%,
+    var(--bg-elevated) 65%
+  );
+  background-size: 220% 100%;
+  animation: tasteShimmer 1.8s ease-in-out infinite;
+}
+
+.shimmerShort {
+  width: 55%;
+}
+
+@keyframes tasteShimmer {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+  }
+}
