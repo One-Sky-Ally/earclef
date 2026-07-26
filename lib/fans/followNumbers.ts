@@ -103,6 +103,53 @@ export async function ensureFollowNumber(
 }
 
 /**
+ * Removes a fan's entry from an artist's registry and compacts the
+ * numbers above it (owner-only retirement path — the one sanctioned
+ * exception to "entries are never removed"). Returns the removed
+ * number, or null when the fan wasn't in the registry.
+ */
+export async function purgeFanFromRegistry(
+  slug: string,
+  email: string,
+): Promise<number | null> {
+  const fanKey = normalizeEmail(email)
+
+  for (let attempt = 0; attempt < WRITE_ATTEMPTS; attempt++) {
+    const { registry, etag, dev } = await readRegistry(slug)
+    const removed = registry.fans[fanKey]
+    if (!removed) return null
+
+    const fans = Object.fromEntries(
+      Object.entries(registry.fans)
+        .filter(([key]) => key !== fanKey)
+        .map(([key, stamp]) => [
+          key,
+          stamp.number > removed.number
+            ? { ...stamp, number: stamp.number - 1 }
+            : stamp,
+        ]),
+    )
+    const next: Registry = { counter: registry.counter - 1, fans }
+
+    if (dev) {
+      devRegistries.set(slug, next)
+      return removed.number
+    }
+    try {
+      const result = await store().setJSON(
+        registryKey(slug),
+        next,
+        etag ? { onlyIfMatch: etag } : { onlyIfNew: true },
+      )
+      if (result.modified) return removed.number
+    } catch {
+      return null
+    }
+  }
+  return null
+}
+
+/**
  * The earliest stamps for an artist, ANONYMIZED — numbers and dates
  * only, never the fan keys. Feeds the public first-fans strip.
  */
