@@ -16,6 +16,7 @@ import {
   youtubeWatchUrl,
 } from '../links'
 import { normalizedTitle } from './blurbKey'
+import { isSubstantiveVideo } from './substance'
 import roster from '../discover/roster.json'
 
 export interface SnapshotItem {
@@ -27,6 +28,10 @@ export interface SnapshotItem {
   image: string
   imageLarge?: string
   href: string
+  /** Videos only — for playability rechecks on rebuilds. */
+  videoId?: string
+  /** Contextless videos get demoted client-side; absent = substantive. */
+  substance?: 'filler'
 }
 
 export interface FeedSnapshot {
@@ -239,6 +244,15 @@ async function itunesReleases(entry: RosterEntry): Promise<SnapshotItem[]> {
     }))
 }
 
+function unescapeXml(value: string): string {
+  return value
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+}
+
 async function rssVideos(entry: RosterEntry): Promise<SnapshotItem[]> {
   if (!entry.channelId) return []
   const res = await fetchWithRetry(
@@ -251,30 +265,120 @@ async function rssVideos(entry: RosterEntry): Promise<SnapshotItem[]> {
     .flatMap((match) => {
       const block = match[1]
       const videoId = block.match(/<yt:videoId>([\w-]{11})<\/yt:videoId>/)?.[1]
-      const title = block
-        .match(/<title>([\s\S]*?)<\/title>/)?.[1]
-        ?.replace(/&amp;/g, '&')
-        .replace(/&lt;/g, '<')
-        .replace(/&gt;/g, '>')
-        .replace(/&quot;/g, '"')
-        .replace(/&#39;/g, "'")
+      const title = block.match(/<title>([\s\S]*?)<\/title>/)?.[1]
       const published = block.match(/<published>([\d-]{10})/)?.[1]
       if (!videoId || !title || !published) return []
+      // The RSS ships the description too — the substance check is free.
+      const description =
+        block.match(
+          /<media:description>([\s\S]*?)<\/media:description>/,
+        )?.[1] ?? ''
+      const substantive = isSubstantiveVideo(
+        unescapeXml(title),
+        unescapeXml(description),
+      )
       return [
         {
           type: 'video' as const,
           slug: entry.slug,
           artistName: entry.name,
-          title,
+          title: unescapeXml(title),
           date: published,
           image: youtubeThumbnailUrl(videoId),
           imageLarge: youtubeThumbnailLargeUrl(videoId),
           href: youtubeWatchUrl(videoId),
+          videoId,
+          ...(substantive ? {} : { substance: 'filler' as const }),
         },
       ]
     })
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, VIDEOS_PER_ARTIST)
+}
+
+// --- Playability pruning: dead/blocked videos never enter the feed. ---
+
+interface VideoVerdicts {
+  [videoId: string]: { ok: boolean; at: string }
+}
+
+const VERDICTS_KEY = 'video-checks/v1'
+/** Re-verify a video's playability after this long. */
+const VERDICT_TTL_MS = 7 * 24 * 60 * 60 * 1000
+
+let devVerdicts: VideoVerdicts = {}
+
+export async function readVerdicts(): Promise<VideoVerdicts> {
+  try {
+    return ((await store().get(VERDICTS_KEY, { type: 'json' })) ??
+      {}) as VideoVerdicts
+  } catch {
+    return devVerdicts
+  }
+}
+
+export async function writeVerdicts(verdicts: VideoVerdicts): Promise<void> {
+  try {
+    await store().setJSON(VERDICTS_KEY, verdicts)
+  } catch {
+    devVerdicts = verdicts
+  }
+}
+
+/**
+ * oEmbed playability check: 200 = watchable, 4xx = deleted, private,
+ * or blocked (the SME-blocked Pink Floyd short fails here). Network
+ * flakes keep the video and skip the cache — pruning must never ride
+ * on a timeout.
+ */
+async function checkVideoPlayable(videoId: string): Promise<boolean | null> {
+  try {
+    const res = await fetch(
+      `https://www.youtube.com/oembed?url=${encodeURIComponent(
+        `https://www.youtube.com/watch?v=${videoId}`,
+      )}&format=json`,
+      { headers: { 'User-Agent': USER_AGENT } },
+    )
+    if (res.ok) return true
+    if (res.status >= 400 && res.status < 500) return false
+    return null
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Drops unplayable videos from a batch's items, consulting and
+ * refreshing the shared verdict cache (so rebuilds only re-check new
+ * or stale ids, not the whole roster every night).
+ */
+export async function pruneDeadVideos(
+  items: SnapshotItem[],
+  verdicts: VideoVerdicts,
+): Promise<SnapshotItem[]> {
+  const now = Date.now()
+  const kept: SnapshotItem[] = []
+  for (const item of items) {
+    if (item.type !== 'video' || !item.videoId) {
+      kept.push(item)
+      continue
+    }
+    const cached = verdicts[item.videoId]
+    if (cached && now - Date.parse(cached.at) < VERDICT_TTL_MS) {
+      if (cached.ok) kept.push(item)
+      continue
+    }
+    const playable = await checkVideoPlayable(item.videoId)
+    if (playable === null) {
+      // Unknown — keep the video, decide on a future pass.
+      kept.push(item)
+      continue
+    }
+    verdicts[item.videoId] = { ok: playable, at: new Date().toISOString() }
+    if (playable) kept.push(item)
+    await sleep(120)
+  }
+  return kept
 }
 
 /** iTunes overlay wins duplicate titles (release-day dates on new drops). */
@@ -315,16 +419,23 @@ export async function buildBatch(
   const list = roster as RosterEntry[]
   const slice = list.slice(progress.cursor, progress.cursor + BATCH_SIZE)
   const items = [...progress.items]
+  // One verdict-cache read per invocation; refreshed entries are written
+  // back after the batch so only new/stale ids hit oEmbed.
+  const verdicts = await readVerdicts()
   for (const entry of slice) {
     const [mb, overlay, videos] = [
       await mbReleases(entry),
       await itunesReleases(entry),
       await rssVideos(entry),
     ]
-    items.push(...mergeReleases(overlay, mb), ...videos)
+    items.push(
+      ...mergeReleases(overlay, mb),
+      ...(await pruneDeadVideos(videos, verdicts)),
+    )
     // MusicBrainz 1 req/s + iTunes ~20 req/min shared across the batch.
     await sleep(2600)
   }
+  await writeVerdicts(verdicts)
   const cursor = progress.cursor + slice.length
   const next: BuildProgress = { ...progress, cursor, items }
   return { progress: next, done: cursor >= list.length }

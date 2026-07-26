@@ -48,6 +48,8 @@ interface FeedItem {
   /** Bigger art for the featured cards; falls back to image, then placeholder. */
   imageLarge?: string
   href: string
+  /** Contextless videos (snapshot-classified) demote behind everything. */
+  substance?: 'filler'
   presence?: ArtistServicePresence
 }
 
@@ -61,8 +63,9 @@ type FeedRow = FeedItem | StoryRow
 const FEED_LIMIT = 50
 // Every entry gets the rich treatment, revealed a page at a time.
 const PAGE_SIZE = 10
-// One story card woven in after every N feed items.
-const STORY_INTERVAL = 5
+// One story card woven in after every N feed items — the feed leans
+// editorial: stories and substantive items over raw channel uploads.
+const STORY_INTERVAL = 3
 const UPCOMING_LIMIT = 6
 
 // --- Daily-seeded shuffle: same order all day, fresh order tomorrow. ---
@@ -384,15 +387,18 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
       .filter((item) => !followingOnly || followSet.has(item.slug))
     const isUpcoming = (item: FeedItem) =>
       item.type === 'release' && item.date.slice(0, 10) > todayIso
+    // Hard demotion: filler-classified videos only surface after every
+    // substantive item — with a full window they never make the cut,
+    // but a tight tier/following filter can still fall back to them.
+    const current = monthShuffled(filtered.filter((item) => !isUpcoming(item)))
+    const substantive = current.filter((item) => item.substance !== 'filler')
+    const filler = current.filter((item) => item.substance === 'filler')
     return {
       upcoming: filtered
         .filter(isUpcoming)
         .sort((a, b) => a.date.localeCompare(b.date))
         .slice(0, UPCOMING_LIMIT),
-      visible: monthShuffled(filtered.filter((item) => !isUpcoming(item))).slice(
-        0,
-        FEED_LIMIT,
-      ),
+      visible: [...substantive, ...filler].slice(0, FEED_LIMIT),
     }
   }, [state, tierChoice, roster, follows, followingOnly, todayIso])
 
