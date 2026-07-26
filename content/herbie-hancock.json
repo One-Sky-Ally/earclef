@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "slug": "herbie-hancock",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Herbie Hancock — Ear Clef",
+    "description": "From Miles Davis's Second Great Quintet to Rockit's electro-funk to a rare jazz Album of the Year win — a 14-time Grammy winner still moving forward.",
+    "ogImage": "/images/og-herbie-hancock.jpg",
+    "canonicalUrl": "https://earclef.com/herbie-hancock"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2ZvrvbQNrHKwjT7qfGFFUW"
+    },
+    "youtube": {
+      "channelId": "UC-w3aQyKGcYe9JnhnhExaNQ"
+    },
+    "setlistfm": {
+      "mbid": "27613b78-1b9d-4ec3-9db5-fa0743465fdd"
+    },
+    "itunes": {
+      "artistId": "51639"
+    }
+  },
+  "hero": {
+    "name": "Herbie Hancock",
+    "identity": "From Miles Davis's Second Great Quintet to Rockit's electro-funk breakthrough — a 14-time Grammy winner who keeps pushing jazz forward.",
+    "tagline": "Hear here!",
+    "location": "Chicago, IL, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.herbiehancock.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/herbiehancock"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/herbiehancock"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@herbiehancock"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/herbie-hancock/51639"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJHV1Q/herbie-hancock"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Maiden Voyage",
+        "year": "1965",
+        "mbReleaseGroupId": "c5e5e8ad-dc89-319e-8b2d-b3ff5e59fcea"
+      },
+      {
+        "title": "Head Hunters",
+        "year": "1973",
+        "mbReleaseGroupId": "322f18bb-5491-38e9-9044-c0a468651eec"
+      },
+      {
+        "title": "Future Shock",
+        "year": "1983",
+        "mbReleaseGroupId": "7f86ad0f-d1d0-3732-a395-4e2e648e1262"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "GHhD4PD75zY",
+        "title": "Rockit (Official Video)"
+      },
+      {
+        "youtubeId": "iqomTAiRnVM",
+        "title": "Chameleon (Official Audio)"
+      },
+      {
+        "youtubeId": "SyYLm2glCHg",
+        "title": "International Jazz Day All-Star Global Concert"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Herbie Hancock performed the first movement of a Mozart piano concerto with the Chicago Symphony Orchestra at age 11, a preview of a career that would move fluidly between classical training, jazz and pop. He joined Miles Davis's Second Great Quintet in 1963, alongside Wayne Shorter, Ron Carter and Tony Williams, a group whose harmonic and rhythmic innovations reshaped modern jazz.",
+      "His own catalog moved with the times: Maiden Voyage (1965) is a modal-jazz landmark from his Blue Note years; Head Hunters (1973) fused jazz with funk and became one of the best-selling jazz albums ever; Future Shock (1983) paired him with turntable scratching for 'Rockit,' an early hip-hop-adjacent crossover hit that won a Grammy and heavy MTV rotation behind its robotic-mannequin video.",
+      "In 2008, River: The Joni Letters — his tribute to Joni Mitchell featuring Norah Jones, Tina Turner and Corinne Bailey Rae — won the Grammy Award for Album of the Year, one of only a handful of jazz records ever to take the top overall prize.",
+      "Hancock has won 14 Grammy Awards and received the Recording Academy's Lifetime Achievement Award in 2016, and continues to record, tour and champion jazz education through the Herbie Hancock Institute of Jazz."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at herbiehancock.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-05-13",
+        "venue": "Ryman Auditorium",
+        "city": "Nashville, TN, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/herbie-hancock/2026/ryman-auditorium-nashville-tn-3348d4f9.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Herbie Hancock — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/herbie-hancock/9477/"
+      },
+      {
+        "title": "Herbie Hancock On Top, Where He Belongs",
+        "outlet": "DownBeat",
+        "url": "https://downbeat.com/news/detail/herbie-hancock-on-top-where-he-belongs1"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "tenacious-d",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Tenacious D — Ear Clef",
+    "description": "Jack Black and Kyle Gass's comedy-rock duo — a Grammy-winning ode to the 'best song in the world' that never quite gets played.",
+    "ogImage": "/images/og-tenacious-d.jpg",
+    "canonicalUrl": "https://earclef.com/tenacious-d"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "1XpDYCrUJnvCo9Ez6yeMWh"
+    },
+    "youtube": {
+      "channelId": "UCH-Uobgd_TrFNnxuphSnbeQ"
+    },
+    "setlistfm": {
+      "mbid": "148ddea2-6839-4354-8e2c-5dfadf136b7f"
+    },
+    "itunes": {
+      "artistId": "1166315"
+    }
+  },
+  "hero": {
+    "name": "Tenacious D",
+    "identity": "Jack Black and Kyle Gass's comedy-rock duo, chasing the 'best song in the world' since a 1994 gig at Al's Bar in LA.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, CA, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://tenaciousd.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/tenaciousd/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/TenaciousD"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/tenacious"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@tenaciousD"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/tenacious-d/1166315"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B00129LYAS/tenacious-d"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Tenacious D",
+        "year": "2001",
+        "mbReleaseGroupId": "a1369e69-ceb7-3d23-9e19-4c76157b3cad"
+      },
+      {
+        "title": "The Pick of Destiny",
+        "year": "2006",
+        "mbReleaseGroupId": "096f3aca-8515-3153-955f-95a7456f4962"
+      },
+      {
+        "title": "Rize of the Fenix",
+        "year": "2012",
+        "mbReleaseGroupId": "da66aede-c3d0-405c-b632-8175c386e6c3"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "_lK4cX5xGiQ",
+        "title": "Tribute (Official Video)"
+      },
+      {
+        "youtubeId": "FL4HSiGvk68",
+        "title": "Wonderboy (Official Video)"
+      },
+      {
+        "youtubeId": "h27xucvYtRs",
+        "title": "POD (Official Video - Clean)"
+      },
+      {
+        "youtubeId": "ls3rD8VfiSY",
+        "title": "Rize of the Fenix (Official Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Jack Black and Kyle Gass started performing together in Los Angeles in the early 1990s, playing their first real gig at Al's Bar in 1994 with a single song, 'Tribute,' in their repertoire. A three-episode HBO series (1997–2000), made with members of the Mr. Show team, introduced the duo to a wider audience before their self-titled debut album arrived in 2001.",
+      "'Tribute' tells the duo's own comic origin myth — Jack and Kyle, confronted by the devil on a lonely road, claim to have played 'the best song in the world' to win a musical duel, though the song itself, notably, is a stand-in for one they say they can no longer remember.",
+      "The Pick of Destiny (2006) paired an album with a feature film of the same name, directed by Liam Lynch, expanding the duo's origin story further. Rize of the Fenix followed in 2012.",
+      "In 2015, Tenacious D won the Grammy Award for Best Metal Performance for their cover of Dio's 'The Last in Line,' following a 2013 nomination for Best Comedy Album for Rize of the Fenix."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at tenaciousd.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-07-14",
+        "venue": "ICC Sydney Theatre",
+        "city": "Sydney, Australia",
+        "setlistUrl": "https://www.setlist.fm/setlist/tenacious-d/2024/international-convention-centre-sydney-icc-sydney-theatre-sydney-australia-43ab93eb.html",
+        "note": "Spicy Meatball Tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Self-Titled 12th Anniversary Ltd Edition Vinyl 2XLP",
+        "description": "From the official Tenacious D store.",
+        "image": {
+          "src": "https://tenaciousd.shop/cdn/shop/files/10D337.png?v=1753289069",
+          "alt": "Self-Titled 12th Anniversary Ltd Edition Vinyl 2XLP"
+        },
+        "url": "https://tenaciousd.shop/"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Tenacious D on 'Anyone Can Rock'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/tenacious-d-jack-black-kyle-gass-interview-anniversary-1231173/"
+      },
+      {
+        "title": "Tenacious D — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/tenacious-d/16381/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

@@ -2,6 +2,44 @@
   "version": 1,
   "cards": [
     {
+      "id": "alanis-morissette-840b54e5",
+      "slug": "alanis-morissette",
+      "artistName": "Alanis Morissette",
+      "type": "context",
+      "hook": "\"You Oughta Know\" features Flea on bass and Dave Navarro on lead guitar.",
+      "story": "The lead single from Jagged Little Pill pulled in two members of the Red Hot Chili Peppers' orbit — Flea on bass and Dave Navarro on lead guitar — for its raw, confrontational sound. The song won Morissette Best Female Rock Vocal Performance and Best Rock Song at the 1996 Grammy Awards, alongside Jagged Little Pill's wins for Album of the Year and Best Rock Album.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Alanis Morissette — Grammy Awards artist page",
+          "outlet": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/alanis-morissette/4915/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:20:00Z"
+    },
+    {
+      "id": "alanis-morissette-798f9e25",
+      "slug": "alanis-morissette",
+      "artistName": "Alanis Morissette",
+      "type": "context",
+      "hook": "The Jagged Little Pill musical won two Tony Awards from fifteen nominations.",
+      "story": "Jagged Little Pill's songs were built into a Broadway musical with a book by Diablo Cody, opening at the Broadhurst Theatre in December 2019. It earned fifteen Tony nominations and won two, including Best Book of a Musical for Cody, carrying the album's songs — \"Ironic,\" \"You Oughta Know,\" \"Hand in My Pocket\" and newly written material — into a new story about a suburban family unraveling.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Jagged Little Pill",
+          "outlet": "Tony Awards (tonyawards.com)",
+          "url": "https://www.tonyawards.com/shows/jagged-little-pill/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:20:00Z"
+    },
+    {
       "id": "aphex-twin-7ab09d9c",
       "slug": "aphex-twin",
       "artistName": "Aphex Twin",
@@ -2126,6 +2164,111 @@
       "at": "2026-07-22T03:47:54.000Z"
     },
     {
+      "id": "connan-mockasin-27ee48ed",
+      "slug": "connan-mockasin",
+      "artistName": "Connan Mockasin",
+      "type": "origin",
+      "hook": "His stage name came from moccasins he made out of sheepskin and motorbike tires.",
+      "story": "Born Connan Tant Hosford, he picked up a teenage hobby of hand-making moccasins from sheepskin and old motorbike tyres in Te Awanga — a habit distinctive enough that a friend started calling him \"Mockasin,\" the name he carried first into his early band Connan and the Mockasins and then into his solo career.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Soft Hair, stand-up and the surreal world of Connan Mockasin",
+          "outlet": "RNZ",
+          "url": "https://www.rnz.co.nz/news/all/374349/soft-hair-stand-up-and-the-surreal-world-of-connan-mockasin"
+        },
+        {
+          "title": "Connan Mockasin",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Connan_Mockasin"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:50:00Z"
+    },
+    {
+      "id": "connan-mockasin-a9f20d41",
+      "slug": "connan-mockasin",
+      "artistName": "Connan Mockasin",
+      "type": "context",
+      "hook": "Bostyn 'n Dobsyn revived characters he and a childhood friend invented 20 years earlier.",
+      "story": "As kids in Te Awanga, Mockasin and neighbor Blake Pryor made home movies about a fictional music teacher named Mr Bostyn and his student Dobsyn. Two decades later, Mockasin revived the characters — playing Mr Bostyn himself, with Pryor back as Dobsyn — for Bostyn 'n Dobsyn, a five-part surreal film released alongside his 2018 album Jassbusters.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Connan Mockasin filmed a melodrama in a Hollywood hair salon",
+          "outlet": "i-D",
+          "url": "https://i-d.co/article/connan-mockasin-filmed-a-melodrama-in-a-hollywood-hair-salon/"
+        },
+        {
+          "title": "Connan Mockasin's musical melodrama",
+          "outlet": "Dazed",
+          "url": "https://www.dazeddigital.com/music/article/41799/1/connan-mockasin-jassbusters-album-interview"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:50:00Z"
+    },
+    {
+      "id": "curtis-mayfield-fcdd17db",
+      "slug": "curtis-mayfield",
+      "artistName": "Curtis Mayfield",
+      "type": "context",
+      "hook": "Martin Luther King Jr. called \"People Get Ready\" the movement's unofficial anthem.",
+      "story": "Mayfield wrote \"People Get Ready\" for The Impressions in 1964, drawing on the gospel song \"This Train\" and the imagery of the Underground Railroad. Martin Luther King Jr. used it to move marchers and to calm crowds, and named it an unofficial anthem of the Civil Rights Movement — Chicago churches even reworked its lyrics into services, swapping in lines about freedom.",
+      "media": null,
+      "sources": [
+        {
+          "title": "The Impressions' \"People Get Ready\" At 55: How Curtis Mayfield Created A Musical Balm For Black America",
+          "outlet": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/news/impressions-people-get-ready-55-how-curtis-mayfield-created-musical-balm-black-america/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:05:00Z"
+    },
+    {
+      "id": "curtis-mayfield-7bada82",
+      "slug": "curtis-mayfield",
+      "artistName": "Curtis Mayfield",
+      "type": "context",
+      "hook": "Superfly's lyrics were written to undercut the film's own glamorized drug dealer.",
+      "story": "While the 1972 film Super Fly played its cocaine-dealer protagonist as a stylish antihero, Mayfield used the soundtrack to push back — \"Pusherman\" and \"Freddie's Dead\" trace the economic desperation and systemic neglect behind that lifestyle rather than glorifying it. Mayfield's own wife later said he saw the film as effectively an ad for cocaine and wrote the songs specifically to counter that message.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Curtis Mayfield's 'Super Fly' Soundtrack: 10 Things You Didn't Know",
+          "outlet": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-features/curtis-mayfield-super-fly-things-you-didnt-know-1364038/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:05:00Z"
+    },
+    {
+      "id": "curtis-mayfield-2ebcaff2",
+      "slug": "curtis-mayfield",
+      "artistName": "Curtis Mayfield",
+      "type": "context",
+      "hook": "New World Order (1996) was sung line by line while he lay on his back.",
+      "story": "After the 1990 accident that paralyzed him from the neck down, Mayfield kept working. His final album, New World Order, released in 1996, was recorded with him lying on his back, singing his vocal lines one at a time to be pieced together in the studio — the only album he wrote, recorded and released after his injury.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Curtis Mayfield Dies",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/1999/12/27/1068322/curtis-mayfield-dies"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:05:00Z"
+    },
+    {
       "id": "dave-matthews-band-b160c157",
       "slug": "dave-matthews-band",
       "artistName": "Dave Matthews Band",
@@ -3322,6 +3465,63 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T15:48:12.863Z"
+    },
+    {
+      "id": "herbie-hancock-919805ea",
+      "slug": "herbie-hancock",
+      "artistName": "Herbie Hancock",
+      "type": "context",
+      "hook": "He was pianist in Miles Davis's Second Great Quintet from 1963 to 1968.",
+      "story": "Alongside Wayne Shorter, Ron Carter and Tony Williams, Hancock spent five years as the pianist in Miles Davis's Second Great Quintet — a stretch that reshaped modern jazz harmony and rhythm-section interplay and set the foundation for the restless, genre-crossing career Hancock built afterward.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Herbie Hancock",
+          "outlet": "NPR Jazz Profiles",
+          "url": "https://seamus.npr.org/programs/jazzprofiles/archive/hancock.html"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:30:00Z"
+    },
+    {
+      "id": "herbie-hancock-dabb73bf",
+      "slug": "herbie-hancock",
+      "artistName": "Herbie Hancock",
+      "type": "context",
+      "hook": "\"Rockit\" won his first Grammy and went gold off scratching and a robot video.",
+      "story": "\"Rockit,\" from 1983's Future Shock, paired Hancock's electro-funk with turntable scratching and a Godley & Creme-directed video full of robotic mannequins. It was certified gold and won Hancock his first career Grammy, Best R&B Instrumental Performance, which he played live at his Grammy debut at the 26th Annual Grammy Awards.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Herbie Hancock — Grammy Awards artist page",
+          "outlet": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/herbie-hancock/9477/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:30:00Z"
+    },
+    {
+      "id": "herbie-hancock-b7c35038",
+      "slug": "herbie-hancock",
+      "artistName": "Herbie Hancock",
+      "type": "context",
+      "hook": "River: The Joni Letters won Album of the Year — a rare feat for a jazz record.",
+      "story": "Hancock's 2007 tribute to Joni Mitchell, featuring Norah Jones, Tina Turner and Corinne Bailey Rae, won the Grammy for Album of the Year at the 50th Annual Grammy Awards — one of only a handful of jazz albums to ever win the top overall category, alongside a second win that night for Best Contemporary Jazz Album.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Herbie Hancock — Grammy Awards artist page",
+          "outlet": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/herbie-hancock/9477/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:30:00Z"
     },
     {
       "id": "hiatus-kaiyote-e542ee4b",
@@ -5095,6 +5295,73 @@
       "at": "2026-07-20T01:48:06.000Z"
     },
     {
+      "id": "mdou-moctar-6c9092b7",
+      "slug": "mdou-moctar",
+      "artistName": "Mdou Moctar",
+      "type": "origin",
+      "hook": "He built his first guitar out of bicycle brake cables and a sardine-can key.",
+      "story": "Growing up in Agadez, Niger, a teenage Mdou Moctar wanted a guitar his strict Muslim family wouldn't buy him — so at 17 he built his own, out of salvaged wood, bicycle brake cables for strings, and a sardine-can key, with a fretboard too narrow to fit more than five strings. Watching YouTube clips of Eddie Van Halen and drawing on traditional Tuareg melodies, he taught himself to play on the instrument he'd made himself.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Mdou Moctar: the Hendrix of the Sahara",
+          "outlet": "Louder",
+          "url": "https://www.loudersound.com/features/mdou-moctar-the-hendrix-of-the-sahara"
+        },
+        {
+          "title": "Mdou Moctar: the shred star of the Sahara",
+          "outlet": "Dazed",
+          "url": "https://www.dazeddigital.com/music/article/52767/1/mdou-moctar-the-shred-star-of-the-sahara-afrique-victime-matador-interview"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T08:50:00Z"
+    },
+    {
+      "id": "mdou-moctar-eb2bf452",
+      "slug": "mdou-moctar",
+      "artistName": "Mdou Moctar",
+      "type": "context",
+      "hook": "\"Afrique Victime\" names France's uranium extraction from Niger as its target.",
+      "story": "The title track of Afrique victime (2021), sung mostly in Tamashek, is a direct protest against foreign powers extracting Niger's resources while its people see little benefit — French companies have long mined Niger's uranium even as most of the country lacks reliable electricity. Moctar has said the song is aimed at outside powers whose interference destabilizes African nations and leaves ordinary people to bear the cost.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Mdou Moctar Explains the Meaning of 'Afrique Victime'",
+          "outlet": "OkayAfrica",
+          "url": "https://www.okayafrica.com/mdou-moctar-explains-the-meaning-of-afrique-victime/296921"
+        },
+        {
+          "title": "The anti-extractivism of Mdou Moctar",
+          "outlet": "Africa Is a Country",
+          "url": "https://africasacountry.com/2024/07/the-anti-extractivism-of-mdou-moctar"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T08:50:00Z"
+    },
+    {
+      "id": "mdou-moctar-7f89cc87",
+      "slug": "mdou-moctar",
+      "artistName": "Mdou Moctar",
+      "type": "context",
+      "hook": "A 2023 coup back home stranded the band mid-tour in the United States.",
+      "story": "In the middle of a North American tour, a coup in Niger overthrew the government and threw the country into chaos, leaving Moctar and his band stranded in the US with no clear way home and touring income cut off. The band launched a GoFundMe to cover expenses while they waited it out — a real-world echo of the political urgency already running through the album they'd just finished, Funeral for Justice.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Mdou Moctar stuck in the US amid Nigerien instability, launches GoFundMe to cover expenses",
+          "outlet": "Consequence",
+          "url": "https://consequence.net/2023/08/mdou-moctar-gofundme/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T08:50:00Z"
+    },
+    {
       "id": "mf-doom-dde2f713",
       "slug": "mf-doom",
       "artistName": "MF DOOM",
@@ -5417,6 +5684,49 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:12:42.865Z"
+    },
+    {
+      "id": "michael-kiwanuka-caa82ee1",
+      "slug": "michael-kiwanuka",
+      "artistName": "Michael Kiwanuka",
+      "type": "context",
+      "hook": "\"Cold Little Heart\" became Big Little Lies' theme almost by accident.",
+      "story": "\"Cold Little Heart,\" the nearly ten-minute opener from Love & Hate (2016), wasn't written for television — Kiwanuka has said that when HBO first asked to use it for Big Little Lies, he assumed it would appear in a single scene. Instead its extended intro became the show's title sequence music, and he says he didn't fully register what had happened until the series had already premiered.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Michael Kiwanuka On Embracing His Name And How 'Big Little Lies' Changed His Life",
+          "outlet": "Bustle (via Goodreads)",
+          "url": "https://www.goodreads.com/author_blog_posts/19254402-michael-kiwanuka-on-embracing-his-name-and-how-big-little-lies-changed"
+        },
+        {
+          "title": "Cold Little Heart",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Cold_Little_Heart"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:40:00Z"
+    },
+    {
+      "id": "michael-kiwanuka-fa6dba70",
+      "slug": "michael-kiwanuka",
+      "artistName": "Michael Kiwanuka",
+      "type": "context",
+      "hook": "He won the Mercury Prize on his third try, beating Dua Lipa and Stormzy.",
+      "story": "Kiwanuka had already been nominated for the Mercury Prize twice — for Home Again (2012) and Love & Hate (2016) — before KIWANUKA (2019) won it in 2020, beating a shortlist that included Dua Lipa's Future Nostalgia and Stormzy's Heavy Is the Head. Judges called the album \"classic yet contemporary, drawing on the history of music while remaining an intensely personal work of self expression.\"",
+      "media": null,
+      "sources": [
+        {
+          "title": "Michael Kiwanuka wins the Hyundai Mercury Prize 2020",
+          "outlet": "NME",
+          "url": "https://www.nme.com/news/music/michael-kiwanuka-wins-the-hyundai-mercury-prize-2020-2760820"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T09:40:00Z"
     },
     {
       "id": "miles-davis-352e4657",
@@ -7091,6 +7401,49 @@
       "at": "2026-07-20T01:20:41.000Z"
     },
     {
+      "id": "richard-cheese-4a59bb69",
+      "slug": "richard-cheese",
+      "artistName": "Richard Cheese",
+      "type": "context",
+      "hook": "Album titles pun on the very songs they're covering, like Aperitif for Destruction.",
+      "story": "Richard Cheese's album titles are built as puns on the acts he's lounge-ifying: Aperitif for Destruction (2005) plays on Guns N' Roses' Appetite for Destruction, Tuxicity (2002) plays on the toxicity of nu-metal, and I'd Like a Virgin (2006) plays on Madonna's Like a Virgin — a running joke that has continued across more than two dozen albums since 2000.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Richard Cheese — MusicBrainz discography",
+          "outlet": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/858db18f-1e09-4f0d-96d3-c15d28762c15"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T10:10:00Z"
+    },
+    {
+      "id": "richard-cheese-85929bf3",
+      "slug": "richard-cheese",
+      "artistName": "Richard Cheese",
+      "type": "context",
+      "hook": "He sang \"Man in the Mirror\" as himself inside The LEGO Batman Movie.",
+      "story": "Richard Cheese appeared as himself in 2017's The LEGO Batman Movie, performing a lounge version of \"Man in the Mirror\" alongside an elevator-music take on \"Everything Is Awesome.\" It's one of several screen placements for his covers, including Disturbed's \"Down with the Sickness\" in the 2004 Dawn of the Dead remake and swing versions of jazz standards scoring party scenes in Batman v Superman: Dawn of Justice.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Swinging Through Gotham: Richard Cheese Lounges Up The LEGO Batman Movie",
+          "outlet": "DC.com",
+          "url": "https://www.dc.com/blog/2017/05/22/swinging-through-gotham-richard-cheese-lounges-up-the-lego-batman-movie"
+        },
+        {
+          "title": "Film & TV Appearances",
+          "outlet": "richardcheese.com",
+          "url": "https://richardcheese.com/film--tv-appearances.html"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T10:10:00Z"
+    },
+    {
       "id": "santigold-cc827728",
       "slug": "santigold",
       "artistName": "Santigold",
@@ -7864,6 +8217,49 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:41:54.463Z"
+    },
+    {
+      "id": "tenacious-d-e077c342",
+      "slug": "tenacious-d",
+      "artistName": "Tenacious D",
+      "type": "origin",
+      "hook": "The crowd almost named them \"Pets or Meat\" instead of Tenacious D.",
+      "story": "At their first real gig, opening for The Abe Lincoln Story at LA's Al's Bar in 1994, Jack Black and Kyle Gass let the audience pick their name from a shortlist: Tenacious D, Pets or Meat, Balboa's Biblical Theater, or Axe Lords Featuring Gorgazon's Mischief. Tenacious D never actually won the crowd vote — Black has said he simply pushed it through anyway, borrowing \"D\" from a sportscaster's line about a team playing \"tenacious defense.\"",
+      "media": null,
+      "sources": [
+        {
+          "title": "How Tenacious D Became the Clown Prince Saviors of Rock 'n' Roll",
+          "outlet": "The Ringer",
+          "url": "https://www.theringer.com/2021/09/23/music/tenacious-d-self-titled-debut-anniversary-jack-black-kyle-gass"
+        },
+        {
+          "title": "Jack Black reveals what 'Tenacious D' means and where he got the band name from",
+          "outlet": "UNILAD",
+          "url": "https://www.unilad.com/celebrity/news/tenacious-d-meaning-jack-black-kyle-gass-161554-20250226"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T10:00:00Z"
+    },
+    {
+      "id": "tenacious-d-5052a56d",
+      "slug": "tenacious-d",
+      "artistName": "Tenacious D",
+      "type": "context",
+      "hook": "\"The Last in Line\" won them a Grammy for Best Metal Performance.",
+      "story": "Following a 2013 nomination for Best Comedy Album for Rize of the Fenix, Tenacious D won their first competitive Grammy at the 57th Annual Grammy Awards for Best Metal Performance, for their cover of Dio's \"The Last in Line\" — a straight-faced metal tribute from a duo whose whole mission, as Gass has put it, is rebelling against the serious singer-songwriter mentality.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Tenacious D — Grammy Awards artist page",
+          "outlet": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/tenacious-d/16381/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-07-26T10:00:00Z"
     },
     {
       "id": "the-beatles-cd42ee34",

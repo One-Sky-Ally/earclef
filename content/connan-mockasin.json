@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "slug": "connan-mockasin",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Connan Mockasin — Ear Clef",
+    "description": "New Zealand's surrealist psych-pop dreamer — woozy guitar, absurdist film work, and a stage name that started as homemade sheepskin moccasins.",
+    "ogImage": "/images/og-connan-mockasin.jpg",
+    "canonicalUrl": "https://earclef.com/connan-mockasin"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "247AfC9pLuqwgpH8Mo96oA"
+    },
+    "youtube": {
+      "channelId": "UCemfPumiBw4l7FIfQWS1FIg"
+    },
+    "setlistfm": {
+      "mbid": "5e290025-aca1-4035-b26d-bd36e105eb52"
+    },
+    "itunes": {
+      "artistId": "299572800"
+    }
+  },
+  "hero": {
+    "name": "Connan Mockasin",
+    "identity": "New Zealand's surrealist psych-pop dreamer — woozy, pitch-bent guitar and an absurdist visual world all his own.",
+    "tagline": "Hear here!",
+    "location": "Te Awanga, New Zealand",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/connanmockasin"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@CONNANMOCKASIN"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/connan-mockasin/299572800"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B003IIYJDK/connan-mockasin"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Forever Dolphin Love",
+        "year": "2010",
+        "mbReleaseGroupId": "68b7c87f-df61-4291-86d6-b96ee0fed0fd"
+      },
+      {
+        "title": "Caramel",
+        "year": "2013",
+        "mbReleaseGroupId": "c8192cd0-3864-4a96-9d9e-2f7a0b0655e9"
+      },
+      {
+        "title": "Jassbusters",
+        "year": "2018",
+        "mbReleaseGroupId": "95c9cbe8-4545-4650-906c-14b79ea480a7"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "E7CaTJ2SvG8",
+        "title": "Forever Dolphin Love (Official Video)"
+      },
+      {
+        "youtubeId": "Teyy1A_AJso",
+        "title": "I'm The Man, That Will Find You (Official Video)"
+      },
+      {
+        "youtubeId": "NcSL-EWMkCo",
+        "title": "Faking Jazz Together (Official Video)"
+      },
+      {
+        "youtubeId": "rPSUi0AZrsc",
+        "title": "It's Your Body 5 (Official Audio)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Born Connan Tant Hosford in Napier and raised in Te Awanga, New Zealand, he took the stage name Mockasin from moccasins he made himself as a kid, out of sheepskin and old motorbike tires. He first fronted the band Connan and the Mockasins, active between Wellington and London, before going solo.",
+      "His solo debut, Forever Dolphin Love (2011), introduced a woozy, pitch-bent guitar style built around loose, dreamlike song structures, followed by Caramel (2013) and Jassbusters (2018).",
+      "Jassbusters arrived paired with Bostyn 'n Dobsyn, a five-part surreal film Mockasin made with childhood neighbor Blake Pryor, reviving characters — a fictional music teacher and his student — the two had invented in home movies twenty years earlier as kids in Te Awanga.",
+      "He has collaborated widely, including with James Blake, Charlotte Gainsbourg, Dev Hynes on the Myths 001 EP, and his own father, Ade Hosford, on the 2021 album It's Just Wind."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced via his official channels.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-11-29",
+        "venue": "155 Karangahape Road",
+        "city": "Auckland, New Zealand",
+        "setlistUrl": "https://www.setlist.fm/setlist/connan-mockasin/2025/155-karangahape-road-auckland-new-zealand-2b4cdc16.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Caramel – Metallic Gold Nugget Vinyl",
+        "description": "From the official Connan Mockasin Bandcamp store.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/0041191703_37.jpg",
+          "alt": "Caramel – Metallic Gold Nugget Vinyl"
+        },
+        "url": "https://connanmockasin.bandcamp.com/merch"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Connan Mockasin: Caramel",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/18748-connan-mockasin-caramel/"
+      },
+      {
+        "title": "Connan Mockasin: Caramel — review",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2013/oct/31/connan-mockasin-caramel-review"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

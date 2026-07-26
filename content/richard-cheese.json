@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "slug": "richard-cheese",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Richard Cheese — Ear Clef",
+    "description": "A Vegas-lounge alter ego turning rock, rap and pop hits into swing standards — 25 years of album titles punning on the songs he's covering.",
+    "ogImage": "/images/og-richard-cheese.jpg",
+    "canonicalUrl": "https://earclef.com/richard-cheese"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2cIYuBKSRk4PqHvDRQJOcK"
+    },
+    "youtube": {
+      "channelId": "UCAaRIJe8RIT3tXZiZM4rfWw"
+    },
+    "setlistfm": {
+      "mbid": "858db18f-1e09-4f0d-96d3-c15d28762c15"
+    },
+    "itunes": {
+      "artistId": "3572356"
+    }
+  },
+  "hero": {
+    "name": "Richard Cheese",
+    "identity": "A Vegas-lounge alter ego for actor and radio veteran Mark Jonathan Davis — rock, rap and pop hits turned into swing standards.",
+    "tagline": "Hear here!",
+    "location": "Las Vegas, NV, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.richardcheese.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/richardcheese"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@RichardCheese"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/richard-cheese/3572356"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJJMLI/richard-cheese"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Lounge Against the Machine",
+        "year": "2000",
+        "mbReleaseGroupId": "25396cdd-c5e4-30de-b3f9-0ad045eb889d"
+      },
+      {
+        "title": "Tuxicity",
+        "year": "2002",
+        "mbReleaseGroupId": "e1656349-655a-3f93-b855-e1911da822ab"
+      },
+      {
+        "title": "Aperitif for Destruction",
+        "year": "2005",
+        "mbReleaseGroupId": "9e1e2be6-b64f-3867-9fdb-27af01451df5"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "ukFhmf9Hg-U",
+        "title": "Baby Got Back (from Tuxicity)"
+      },
+      {
+        "youtubeId": "zysWtY-VPUs",
+        "title": "Gin And Juice (from I'd Like A Virgin)"
+      },
+      {
+        "youtubeId": "ZW1HRMHySQk",
+        "title": "Welcome To The Jungle (from Aperitif For Destruction)"
+      },
+      {
+        "youtubeId": "c0JgPFk7NSg",
+        "title": "Down With The Sickness (Live From Hollywood)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Richard Cheese is a lounge-singer persona created by actor, comedian and radio veteran Mark Jonathan Davis — a washed-up Vegas crooner, backed by his band Lounge Against the Machine, who covers contemporary rock, rap and pop songs as retro swing standards, imagining what Sinatra might have made of Radiohead or Disturbed.",
+      "The act's album titles run on puns against the songs they're covering: Aperitif for Destruction riffs on Guns N' Roses' Appetite for Destruction, Tuxicity riffs on nu-metal-era 'toxicity,' and I'd Like a Virgin riffs on Madonna's Like a Virgin.",
+      "Richard Cheese covers have turned up in films including Dawn of the Dead (2004), Batman v Superman: Dawn of Justice and The LEGO Batman Movie, and on television including HBO's The Leftovers, alongside talk-show appearances on Jimmy Kimmel Live.",
+      "Active continuously since October 2000, Davis has released more than two dozen albums as Richard Cheese and continues to tour and record."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at richardcheese.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2023-10-04",
+        "venue": "Triple Door",
+        "city": "Seattle, WA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/richard-cheese/2023/triple-door-seattle-wa-3a3199f.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Richard Cheese Set of 3 New Vinyl Records",
+        "description": "From the official Richard Cheese store.",
+        "image": {
+          "src": "https://richardcheese.com/uploads/3/5/9/2/35923269/rc2026vinyl3new4500d831_orig.jpg",
+          "alt": "Richard Cheese Set of 3 New Vinyl Records"
+        },
+        "url": "https://richardcheese.com/shop.html"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "The Cheese Man Rageth",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/the-cheese-man-rageth-235717/"
+      },
+      {
+        "title": "Lounge Singer Richard Cheese Finds the Beauty and Humor in Any Pop Ballad",
+        "outlet": "Dallas Observer",
+        "url": "https://www.dallasobserver.com/music/lounge-singer-richard-cheese-finds-the-beauty-and-humor-in-any-pop-ballad-8663995/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

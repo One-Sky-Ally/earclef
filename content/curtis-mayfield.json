@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "slug": "curtis-mayfield",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Curtis Mayfield — Ear Clef",
+    "description": "Chicago soul's own writer-producer-guitarist — falsetto, wah-wah and social conscience, from The Impressions through the Super Fly soundtrack.",
+    "ogImage": "/images/og-curtis-mayfield.jpg",
+    "canonicalUrl": "https://earclef.com/curtis-mayfield"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2AV6XDIs32ofIJhkkDevjm"
+    },
+    "youtube": {
+      "channelId": "UCmE8miF_yQSEysOtTJvbFyA"
+    },
+    "setlistfm": {
+      "mbid": "4dca4bb2-23ba-4103-97e6-5810311db33a"
+    },
+    "itunes": {
+      "artistId": "169711"
+    }
+  },
+  "hero": {
+    "name": "Curtis Mayfield",
+    "identity": "Chicago soul's writer-producer-guitarist — falsetto and wah-wah wrapped around lyrics of Black pride and social conscience.",
+    "tagline": "Hear here!",
+    "location": "Chicago, IL, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.curtismayfield.com/index.html"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/CurtisLMayfield/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/CurtisLMayfield"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/pages/Curtis-Mayfield/571399966293576"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@CurtismayfieldOfficial"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/curtis-mayfield/169711"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJLGE0/curtis-mayfield"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Curtis",
+        "year": "1970",
+        "mbReleaseGroupId": "0c24e81f-b710-3e24-a4fa-12950e153585"
+      },
+      {
+        "title": "Superfly",
+        "year": "1972",
+        "mbReleaseGroupId": "3f68cf91-b4f0-39ef-8318-93dc064a53ba"
+      },
+      {
+        "title": "There's No Place Like America Today",
+        "year": "1975",
+        "mbReleaseGroupId": "9b93bf1c-a61d-341e-8900-b305f3812c2c"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "xatZALKiI8A",
+        "title": "Pusherman (Official Audio)"
+      },
+      {
+        "youtubeId": "VDSYTU5e39Y",
+        "title": "New World Order (Official Music Video)"
+      },
+      {
+        "youtubeId": "B26n9F57cKs",
+        "title": "Cheaa Mayfield on the Curtis Mayfield Tribute Album"
+      },
+      {
+        "youtubeId": "k7sYx8SW3Jw",
+        "title": "Curtis Mayfield's Grammy Lifetime Achievement Award"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Curtis Mayfield started as a teenage member of The Impressions in Chicago, writing and singing lead on songs including 'People Get Ready' and 'Keep On Pushing' that became touchstones of the civil rights movement, before launching a solo career in 1970 with his self-titled debut, Curtis.",
+      "His songwriting, falsetto and wah-wah guitar work carried social commentary directly into the pop charts, culminating in 1972's Superfly — the soundtrack to the Gordon Parks Jr. film, which outsold the movie itself and stands as one of the defining blaxploitation-era soundtracks, pairing songs like 'Freddie's Dead' and 'Pusherman' with lyrics that critiqued the very drug-dealer lifestyle the film glamorized.",
+      "On August 13, 1990, a lighting rig fell on Mayfield during an outdoor concert at Brooklyn's Wingate Field, paralyzing him from the neck down. He continued to work, recording his final album, New World Order (1996), by singing his vocals line by line while lying on his back.",
+      "Mayfield received the Grammy Legend Award in 1994 and the Grammy Lifetime Achievement Award in 1995, and was inducted into the Rock and Roll Hall of Fame twice — with The Impressions in 1991 and as a solo artist in 1999. He died on December 26, 1999."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Curtis Mayfield passed away in 1999; this page marks his catalog and legacy.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Curtis Mayfield: He's Been Called 'The Thinking Man's Soul Man'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/1997/12/12/1109958/curtis-mayfield-hes-been-called-the-thinking-mans-soul-man"
+      },
+      {
+        "title": "Curtis Mayfield — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/curtis-mayfield/5308/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

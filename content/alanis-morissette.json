@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "alanis-morissette",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Alanis Morissette — Ear Clef",
+    "description": "Jagged Little Pill turned confessional rage into a 33-million-selling phenomenon — seven Grammys and three decades of restless, unguarded songwriting.",
+    "ogImage": "/images/og-alanis-morissette.jpg",
+    "canonicalUrl": "https://earclef.com/alanis-morissette"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6ogn9necmbUdCppmNnGOdi"
+    },
+    "youtube": {
+      "channelId": "UCrTC0tOY5aujQFYDRf65xiw"
+    },
+    "setlistfm": {
+      "mbid": "4bdcee62-4902-4773-8cd1-e252e2e31225"
+    },
+    "itunes": {
+      "artistId": "1092859"
+    }
+  },
+  "hero": {
+    "name": "Alanis Morissette",
+    "identity": "Confessional rage turned into a 33-million-selling phenomenon on Jagged Little Pill — restless, unguarded songwriting across three decades since.",
+    "tagline": "Hear here!",
+    "location": "Ottawa, Ontario, Canada",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://alanis.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/alanis/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/Alanis"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/alanismorissette"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@Alanis"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/alanis-morissette/1092859"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJLW6U/alanis-morissette"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Jagged Little Pill",
+        "year": "1995",
+        "mbReleaseGroupId": "ee3d18ed-d6a8-37c7-a964-41bbdb6d59f1"
+      },
+      {
+        "title": "Supposed Former Infatuation Junkie",
+        "year": "1998",
+        "mbReleaseGroupId": "d0d7a3a4-b419-3e50-b032-3255c830765e"
+      },
+      {
+        "title": "Such Pretty Forks in the Road",
+        "year": "2020",
+        "mbReleaseGroupId": "f68b2a8b-4010-48b7-977e-8d85e60d5f26"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "NPcyTyilmYY",
+        "title": "You Oughta Know (Official 4K Music Video)"
+      },
+      {
+        "youtubeId": "Jne9t8sHpUc",
+        "title": "Ironic (Official 4K Music Video)"
+      },
+      {
+        "youtubeId": "CUjIY_XxF1g",
+        "title": "Hand In My Pocket (Official 4K Music Video)"
+      },
+      {
+        "youtubeId": "OOgpT5rEKIU",
+        "title": "Thank U (Official Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Alanis Morissette had already released two dance-pop albums in Canada as a teenager before relocating to Los Angeles and co-writing Jagged Little Pill (1995) with producer Glen Ballard — a sharp turn toward confessional, unfiltered songwriting that became one of the best-selling albums of all time, moving over 33 million copies worldwide.",
+      "Led by 'You Oughta Know,' 'Hand In My Pocket' and 'Ironic,' Jagged Little Pill swept the 1996 Grammy Awards, winning Album of the Year and Best Rock Album. Supposed Former Infatuation Junkie (1998) followed, continuing her run of introspective songwriting into a second era.",
+      "Morissette has continued to release albums into her fourth decade, including Such Pretty Forks in the Road (2020), while Jagged Little Pill's legacy carried into a Tony-winning Broadway musical built around its songs and the 2021 HBO documentary Jagged.",
+      "She has won seven Grammy Awards from fourteen nominations across rock, pop and music-video categories."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at alanis.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-07-11",
+        "venue": "Scotiabank Saddledome",
+        "city": "Calgary, AB, Canada",
+        "setlistUrl": "https://www.setlist.fm/setlist/alanis-morissette/2026/scotiabank-saddledome-calgary-ab-canada-63496acb.html",
+        "note": "Calgary Stampede 2026"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Jagged Little Pill (Original Broadway Cast Recording, White Vinyl)",
+        "description": "From the official Alanis Morissette store.",
+        "image": {
+          "src": "https://store.alanis.com/cdn/shop/files/limited-edition-autographed-alanis-morissette-jagged-little-pill-860.png?v=1761676328",
+          "alt": "Jagged Little Pill vinyl"
+        },
+        "url": "https://store.alanis.com"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Alanis Morissette on Her Wrenching New Album, 25 Years of 'Jagged Little Pill,' and More",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-features/alanis-morissette-1021794/"
+      },
+      {
+        "title": "Alanis Morissette — Grammy Awards artist page",
+        "outlet": "Recording Academy",
+        "url": "https://www.grammy.com/artists/alanis-morissette/4915/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

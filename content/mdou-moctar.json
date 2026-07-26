@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "slug": "mdou-moctar",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Mdou Moctar — Ear Clef",
+    "description": "Tuareg guitar hero out of Agadez, Niger — desert blues turned into full-throttle rock, with lyrics of anti-colonial and anti-corruption defiance.",
+    "ogImage": "/images/og-mdou-moctar.jpg",
+    "canonicalUrl": "https://earclef.com/mdou-moctar"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "48dgx7iGqLQ3E5KO3pzd94"
+    },
+    "youtube": {
+      "channelId": "UCpGx1YQ4KbGGBcOca3lr0gw"
+    },
+    "setlistfm": {
+      "mbid": "d85defaf-b82e-48be-beb5-2672099e392e"
+    },
+    "itunes": {
+      "artistId": "552742374"
+    }
+  },
+  "hero": {
+    "name": "Mdou Moctar",
+    "identity": "Tuareg guitar hero out of Agadez, Niger — desert blues wired into full-throttle rock, sung in Tamashek with lyrics of anti-colonial defiance.",
+    "tagline": "Hear here!",
+    "location": "Agadez, Niger",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.mdoumoctar.com/"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/mdoumoctarofficial"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@MdouMoctarmusic"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/mdou-moctar/552742374"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B008Y4XKEC/mdou-moctar"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Ilana: The Creator",
+        "year": "2019",
+        "mbReleaseGroupId": "69c28e8d-1371-4914-80c9-7db7ec5ee535"
+      },
+      {
+        "title": "Afrique victime",
+        "year": "2021",
+        "mbReleaseGroupId": "6dad7139-7cd5-41bc-b7fc-6bf20fc1155a"
+      },
+      {
+        "title": "Funeral for Justice",
+        "year": "2024",
+        "mbReleaseGroupId": "591e3145-737f-4765-95b3-297ea7ceb0e2"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "Z6CUSa_laj4",
+        "title": "Afrique Victime (Edit)"
+      },
+      {
+        "youtubeId": "y23ewhFf_hs",
+        "title": "Chismiten"
+      },
+      {
+        "youtubeId": "u51HJcN1Dp8",
+        "title": "Tala Tannam"
+      },
+      {
+        "youtubeId": "gwRgJ66ylpU",
+        "title": "Funeral for Justice"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Mdou Moctar built his first guitar himself as a teenager in Agadez, Niger, before word-of-mouth cassette trading across the Sahel — long before streaming — carried his self-recorded songs from phone to phone throughout the region.",
+      "His music grew out of takamba and Tuareg guitar traditions, but pushed them toward searing, high-volume rock, with lyrics sung in Tamashek. Ilana: The Creator (2019) and Afrique victime (2021) established that sound internationally on Matador Records, with Afrique victime's title track built on a lyric protesting French colonial exploitation of Niger's uranium.",
+      "Funeral for Justice (2024) carried that political charge further, released as anti-corruption and anti-colonial rallying cries. Days into the album's North American tour, a coup in Niger briefly stranded Moctar and his band in the United States before they were able to return home.",
+      "Moctar continues to record and tour internationally, carrying Tuareg guitar music to festival stages while keeping his lyrics rooted in Agadez."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at mdoumoctar.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-06-07",
+        "venue": "Sony Hall",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/mdou-moctar/2026/sony-hall-new-york-ny-43757fa7.html",
+        "note": "Blue Note Jazz Festival 2026"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Funeral For Justice (Black) Vinyl LP",
+        "description": "From the official Mdou Moctar store.",
+        "image": {
+          "src": "https://kf-merch.com/cdn/shop/files/MDM44_540x.png?v=1773336218",
+          "alt": "Funeral For Justice (Black) Vinyl LP"
+        },
+        "url": "https://kf-merch.com/collections/mdou-moctar"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Mdou Moctar Brings the Righteous Thunder on 'Funeral For Justice'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/mdou-moctar-funeral-for-justice-review-1235012367/"
+      },
+      {
+        "title": "Mdou Moctar: Funeral for Justice Album Review",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/mdou-moctar-funeral-for-justice/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

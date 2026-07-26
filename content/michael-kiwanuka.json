@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "michael-kiwanuka",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Michael Kiwanuka — Ear Clef",
+    "description": "London soul-folk built on self-doubt turned into confidence — a Mercury Prize winner whose 'Cold Little Heart' became Big Little Lies' theme almost by accident.",
+    "ogImage": "/images/og-michael-kiwanuka.jpg",
+    "canonicalUrl": "https://earclef.com/michael-kiwanuka"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "0bzfPKdbXL5ezYW2z3UGQj"
+    },
+    "youtube": {
+      "channelId": "UCycTYb9eH0T1gx8xGOsHrcw"
+    },
+    "setlistfm": {
+      "mbid": "11f570ff-44d9-4e9c-8812-e6d56103c5c1"
+    },
+    "itunes": {
+      "artistId": "433457346"
+    }
+  },
+  "hero": {
+    "name": "Michael Kiwanuka",
+    "identity": "London soul-folk built on self-doubt turned into confidence — a Mercury Prize winner on his third attempt.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://michaelkiwanuka.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/michaelkiwanuka/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/michaelkiwanuka"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/MichaelKiwanuka"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@MichaelKiwanukaVEVO"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/michael-kiwanuka/433457346"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B004XOXXUS/michael-kiwanuka"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Home Again",
+        "year": "2012",
+        "mbReleaseGroupId": "cc5aa047-4a91-4fd4-aa9c-108b7c9ac416"
+      },
+      {
+        "title": "Love & Hate",
+        "year": "2016",
+        "mbReleaseGroupId": "c51bb243-59ac-4de0-9a51-4ead3d4e1bf8"
+      },
+      {
+        "title": "KIWANUKA",
+        "year": "2019",
+        "mbReleaseGroupId": "042fe94f-5846-469c-a739-38a9e0574d5c"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "nOubjLM9Cbc",
+        "title": "Cold Little Heart (Official Video)"
+      },
+      {
+        "youtubeId": "-TYlcVNI2AM",
+        "title": "Black Man In A White World"
+      },
+      {
+        "youtubeId": "ivvs_qL6t_c",
+        "title": "You Ain't The Problem (Official Video)"
+      },
+      {
+        "youtubeId": "fb_S4aWI6Og",
+        "title": "Hero (Official Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Born in London to Ugandan parents, Michael Kiwanuka started out unsure of himself as a singer — he thought of himself mainly as a guitar player until preparing for his 2012 Bonnaroo debut pushed him to trust his own voice.",
+      "His debut album, Home Again (2012), was nominated for the Mercury Prize, as was Love & Hate (2016) — the album whose nearly-ten-minute track 'Cold Little Heart' became the opening-credits theme for HBO's Big Little Lies almost by accident, after Kiwanuka initially thought it would appear in just one scene.",
+      "On his third nomination, KIWANUKA (2019) won the 2020 Hyundai Mercury Prize, beating albums including Dua Lipa's Future Nostalgia and Stormzy's Heavy Is the Head, with judges praising it as 'classic yet contemporary.'",
+      "He continues to record and tour, releasing Small Changes in 2024."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at michaelkiwanuka.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-06-29",
+        "venue": "Vidas Art Arena",
+        "city": "Sofia, Bulgaria",
+        "setlistUrl": "https://www.setlist.fm/setlist/michael-kiwanuka/2025/vidas-art-arena-sofia-bulgaria-2345e8af.html",
+        "note": "Sofia Live Fest 2025"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Small Changes Black Zip Hoodie",
+        "description": "From the official Michael Kiwanuka store.",
+        "image": {
+          "src": "https://shop.michaelkiwanuka.com/cdn/shop/files/B51C0032-AD52-4EE4-942A-C2961BD708B4.png?v=1726059143",
+          "alt": "Small Changes Black Zip Hoodie"
+        },
+        "url": "https://shop.michaelkiwanuka.com/"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Michael Kiwanuka strips back his sound on 'Small Changes'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2026/01/01/1198921022/michael-kiwanuka-album-small-changes"
+      },
+      {
+        "title": "Michael Kiwanuka wins the Hyundai Mercury Prize 2020",
+        "outlet": "NME",
+        "url": "https://www.nme.com/news/music/michael-kiwanuka-wins-the-hyundai-mercury-prize-2020-2760820"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
