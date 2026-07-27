@@ -183,6 +183,23 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Death Wish II (1982)",
+        "context": "Jimmy Page composed the full original score — his first post-Zeppelin project.",
+        "url": "https://www.imdb.com/name/nm0656211/"
+      },
+      {
+        "kind": "film-score",
+        "title": "Scream for Help (1984)",
+        "context": "John Paul Jones scored Michael Winner's horror film, with Page guesting on two tracks.",
+        "url": "https://www.imdb.com/name/nm0428429/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

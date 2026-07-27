@@ -169,6 +169,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "A Christmas Carol (2004)",
+        "context": "Tiny Tim, aged 10 (credited as Jacob Moriarty), in the TV-film musical — one of several child acting and opera roles.",
+        "url": "https://www.imdb.com/name/nm1775528/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

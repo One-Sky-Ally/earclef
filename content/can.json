@@ -144,6 +144,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Deep End (1970)",
+        "context": "Commissioned score music for Jerzy Skolimowski's cult drama — one of several early film scores collected on their Soundtracks album.",
+        "url": "https://www.imdb.com/title/tt0066122/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

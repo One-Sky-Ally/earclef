@@ -188,6 +188,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "other",
+        "title": "Iphigenia (2021)",
+        "context": "Wrote the libretto for Wayne Shorter's opera and starred in its premiere, with sets by Frank Gehry.",
+        "url": "https://en.wikipedia.org/wiki/Iphigenia_(opera)"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

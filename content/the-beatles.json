@@ -193,6 +193,35 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "A Hard Day's Night (1964)",
+        "context": "The band stars as themselves in Richard Lester's musical comedy — compared by critics to the Marx Brothers.",
+        "url": "https://www.imdb.com/title/tt0058182/"
+      },
+      {
+        "kind": "film-role",
+        "title": "Help! (1965)",
+        "context": "Their second feature with director Richard Lester.",
+        "url": "https://www.imdb.com/title/tt0059260/"
+      },
+      {
+        "kind": "other",
+        "title": "Yellow Submarine (1968)",
+        "context": "The animated feature built on their songs — the real band appears in the live-action finale.",
+        "url": "https://www.imdb.com/title/tt0063823/"
+      },
+      {
+        "kind": "book",
+        "title": "In His Own Write (1964)",
+        "context": "John Lennon's literary debut — stories, poems, and drawings, originally published by Jonathan Cape.",
+        "url": "https://canongate.co.uk/books/2260-in-his-own-write/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

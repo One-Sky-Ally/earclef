@@ -202,6 +202,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Flash Gordon (1980)",
+        "context": "The band composed and performed the score — one of the first big-budget features scored primarily by a rock band.",
+        "url": "https://www.imdb.com/title/tt0080745/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

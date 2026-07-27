@@ -222,6 +222,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Ex Machina (2014)",
+        "context": "Co-founder Geoff Barrow scores films with Ben Salisbury — Dredd, Ex Machina, and later Alex Garland projects including Civil War.",
+        "url": "https://www.imdb.com/name/nm0057856/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

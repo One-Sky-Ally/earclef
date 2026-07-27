@@ -172,6 +172,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "other",
+        "title": "Everywhere We Go (2014)",
+        "context": "Original orchestral score for Justin Peck's New York City Ballet production, part of an ongoing Peck collaboration.",
+        "url": "https://www.nycballet.com/discover/ballet-repertory/everywhere-we-go"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

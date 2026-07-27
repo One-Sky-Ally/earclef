@@ -158,6 +158,29 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "book",
+        "title": "Piece by Piece (2005)",
+        "context": "Memoir and creative-process book co-written with critic Ann Powers, published by Broadway Books.",
+        "url": "https://www.penguinrandomhouse.com/books/3287/tori-amos--piece-by-piece-by-tori-amos/"
+      },
+      {
+        "kind": "book",
+        "title": "Resistance (2020)",
+        "context": "A New York Times-bestselling songwriter's memoir, published by Atria / Simon & Schuster.",
+        "url": "https://www.barnesandnoble.com/w/resistance-tori-amos/1134710963"
+      },
+      {
+        "kind": "other",
+        "title": "The Light Princess (2013)",
+        "context": "Stage musical with music and lyrics by Amos, premiered at the National Theatre, London.",
+        "url": "https://en.wikipedia.org/wiki/The_Light_Princess_(musical)"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

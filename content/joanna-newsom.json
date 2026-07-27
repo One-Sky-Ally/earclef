@@ -187,6 +187,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Inherent Vice (2014)",
+        "context": "Sortilège — on-screen character and narrator of Paul Thomas Anderson's Pynchon adaptation.",
+        "url": "https://www.imdb.com/name/nm1827079/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

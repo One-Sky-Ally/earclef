@@ -165,6 +165,23 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "MaXXXine (2024)",
+        "context": "Leon Green, the video-store clerk, in Ti West's A24 horror film — his feature debut.",
+        "url": "https://www.imdb.com/name/nm6938015/"
+      },
+      {
+        "kind": "film-role",
+        "title": "The Idol (2023)",
+        "context": "Recurring role as Izaak in HBO's series.",
+        "url": "https://www.imdb.com/name/nm6938015/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

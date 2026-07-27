@@ -158,6 +158,23 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "other",
+        "title": "Peter Pan at the Berliner Ensemble (2013)",
+        "context": "Composed the original score for Robert Wilson's stage production — one of four Wilson collaborations.",
+        "url": "https://www.festival-automne.com/en/edition-2013/cocorosie-robert-wilson-peter-pan"
+      },
+      {
+        "kind": "art",
+        "title": "Daisy Chain (2012)",
+        "context": "Bianca Casady solo exhibition at Cheim & Read, New York — installation, drawings, collages, and video.",
+        "url": "https://cheimread.com/exhibitions/81-bianca-casady-daisy-chain/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

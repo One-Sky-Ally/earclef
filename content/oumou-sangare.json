@@ -185,6 +185,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Hawa (2022)",
+        "context": "Screen-acting debut as the title character's griot grandmother in Maïmouna Doucouré's film.",
+        "url": "https://www.imdb.com/name/nm0762650/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

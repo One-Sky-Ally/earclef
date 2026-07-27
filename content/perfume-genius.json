@@ -170,6 +170,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "other",
+        "title": "The Sun Still Burns Here (2019)",
+        "context": "Mike Hadreas composed and danced in this contemporary dance work with choreographer Kate Wallich, commissioned by Seattle Theatre Group and MASS MoCA.",
+        "url": "https://massmoca.org/event/kate-wallich-the-yc-x-perfume-genius/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

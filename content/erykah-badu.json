@@ -159,6 +159,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "The Cider House Rules (1999)",
+        "context": "Rose Rose in the Oscar-winning film — a SAG Award-nominated performance; later roles include What Men Want and The Piano Lesson.",
+        "url": "https://www.imdb.com/name/nm0004721/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

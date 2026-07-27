@@ -217,6 +217,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "other",
+        "title": "Jurassic Park (1993)",
+        "context": "Guitarist Adam Jones' pre-Tool Hollywood effects career — Stan Winston Studio work on Jurassic Park, plus credits on Terminator 2, Predator 2, and Batman Returns.",
+        "url": "https://www.imdb.com/name/nm0427417/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

@@ -137,6 +137,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Carmen (1983)",
+        "context": "Plays Paco on screen in Carlos Saura's flamenco Carmen — and composed its score; the film won the BAFTA for Best Foreign Language Film.",
+        "url": "https://www.imdb.com/title/tt0085297/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

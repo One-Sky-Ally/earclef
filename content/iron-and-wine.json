@@ -158,6 +158,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "art",
+        "title": "Recent Visual Works (2024)",
+        "context": "Sam Beam's first standalone exhibition — paintings, collages, and painted-cardboard quilts at Peel Gallery, North Carolina.",
+        "url": "https://indyweek.com/music/talking-with-iron-wines-sam-beam-about-his-first-visual-arts-exhibition/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

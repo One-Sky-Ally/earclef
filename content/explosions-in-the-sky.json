@@ -169,6 +169,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Friday Night Lights (2004)",
+        "context": "The band's score for Peter Berg's film became their signature crossover work.",
+        "url": "https://www.imdb.com/name/nm1146294/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

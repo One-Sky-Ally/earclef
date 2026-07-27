@@ -197,6 +197,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "other",
+        "title": "Harry Potter and the Cursed Child (2016)",
+        "context": "Composed the music for the two-part West End and Broadway play — a Drama Desk Award-winning score.",
+        "url": "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Cursed_Child"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

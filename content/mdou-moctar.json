@@ -150,6 +150,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Akounak Tedalat Taha Tazoughai (2015)",
+        "context": "Stars in the world's first Tuareg-language fiction film — a Saharan homage to Purple Rain.",
+        "url": "https://www.imdb.com/title/tt4675526/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

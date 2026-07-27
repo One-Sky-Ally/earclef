@@ -193,6 +193,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "book",
+        "title": "Useless Magic (2018)",
+        "context": "Florence Welch's book of lyrics, poetry, and sketchbook art, published by Fig Tree / Penguin.",
+        "url": "https://www.penguinrandomhouse.com/books/591593/useless-magic-by-florence-welch/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

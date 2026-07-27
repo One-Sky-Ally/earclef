@@ -202,6 +202,23 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "More (1969)",
+        "context": "The band's first film score, for Barbet Schroeder's debut feature — released as the album More.",
+        "url": "https://www.imdb.com/title/tt0064694/"
+      },
+      {
+        "kind": "film-score",
+        "title": "La Vallée (1972)",
+        "context": "Scored Schroeder's New Guinea odyssey while recording Dark Side of the Moon — released as Obscured by Clouds.",
+        "url": "https://www.imdb.com/title/tt0069451/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

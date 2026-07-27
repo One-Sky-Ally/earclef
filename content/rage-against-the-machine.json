@@ -160,6 +160,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "book",
+        "title": "Orchid (2011–12)",
+        "context": "Guitarist Tom Morello created and wrote this 12-issue class-war sci-fi comic for Dark Horse Comics.",
+        "url": "https://www.darkhorse.com/books/16-920/orchid-volume-1-tpb/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

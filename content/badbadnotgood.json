@@ -179,6 +179,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Disappearance at Clifton Hill (2019)",
+        "context": "Members Alex Sowinski and Leland Whitty composed the score for Albert Shin's thriller.",
+        "url": "https://www.imdb.com/title/tt5919756/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

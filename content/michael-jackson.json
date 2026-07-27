@@ -181,6 +181,29 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "The Wiz (1978)",
+        "context": "The Scarecrow in Sidney Lumet's musical — critics singled his performance out as the film's highlight.",
+        "url": "https://www.imdb.com/name/nm0001391/"
+      },
+      {
+        "kind": "book",
+        "title": "Moonwalk (1988)",
+        "context": "His only autobiography, published by Doubleday with a foreword by Jacqueline Kennedy Onassis — a #1 NYT bestseller.",
+        "url": "https://openlibrary.org/books/OL2525301M/Moonwalk"
+      },
+      {
+        "kind": "film-role",
+        "title": "Captain EO (1986)",
+        "context": "Title character in Francis Ford Coppola's 3D sci-fi short, screened at Disney parks for over a decade.",
+        "url": "https://www.imdb.com/name/nm0001391/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

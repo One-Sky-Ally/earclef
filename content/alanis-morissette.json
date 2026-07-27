@@ -158,6 +158,23 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Dogma (1999)",
+        "context": "God in Kevin Smith's comedy — a role she reprised in Jay and Silent Bob Strike Back (2001).",
+        "url": "https://www.imdb.com/title/tt0120655/"
+      },
+      {
+        "kind": "film-role",
+        "title": "Weeds (2009–2010)",
+        "context": "Recurring role as Dr. Audra Kitson across eight episodes of the Showtime series.",
+        "url": "https://www.imdb.com/title/tt0439100/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

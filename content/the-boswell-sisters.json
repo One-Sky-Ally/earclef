@@ -100,6 +100,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Kiss the Boys Goodbye (1941)",
+        "context": "Lead singer Connee Boswell played Polly in the Paramount musical comedy, performing 'Sand in My Shoes'.",
+        "url": "https://www.imdb.com/title/tt0033791/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

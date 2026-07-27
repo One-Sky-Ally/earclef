@@ -172,6 +172,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "screen-sync",
+        "title": "Death Stranding (2019)",
+        "context": "Hideo Kojima built the game's musical identity around the band — from the iconic 2016 reveal trailer onward.",
+        "url": "https://en.wikipedia.org/wiki/Low_Roar"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

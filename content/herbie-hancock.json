@@ -140,6 +140,29 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Round Midnight (1986)",
+        "context": "Won the Academy Award for Best Original Score for Tavernier's jazz drama — and played pianist Eddie Wayne on screen.",
+        "url": "https://www.imdb.com/name/nm0359372/"
+      },
+      {
+        "kind": "film-score",
+        "title": "Blow-Up (1966)",
+        "context": "Scored Antonioni's Palme d'Or-winning film.",
+        "url": "https://en.wikipedia.org/wiki/Blow-Up"
+      },
+      {
+        "kind": "book",
+        "title": "Possibilities (2014)",
+        "context": "His memoir with Lisa Dickey, published by Viking — from child symphony soloist to Miles Davis sideman and beyond.",
+        "url": "https://www.penguinrandomhouse.com/books/313520/herbie-hancock-possibilities-by-herbie-hancock-with-lisa-dickey/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

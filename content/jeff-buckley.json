@@ -169,6 +169,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "book",
+        "title": "Jeff Buckley: His Own Voice (2019)",
+        "context": "His handwritten journals and unpublished lyrics, published posthumously by Da Capo Press.",
+        "url": "https://www.hachettebookgroup.com/titles/mary-guibert/jeff-buckley/9780306921681/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

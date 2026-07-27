@@ -150,6 +150,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "We the Animals (2018)",
+        "context": "Co-founder Nick Zammuto composed the score for Jeremiah Zagar's Sundance award-winning film.",
+        "url": "https://www.imdb.com/name/nm3383114/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

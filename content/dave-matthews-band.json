@@ -161,6 +161,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Because of Winn-Dixie (2005)",
+        "context": "Frontman Dave Matthews as Otis, the shy pet-store manager — the first of several film roles.",
+        "url": "https://www.imdb.com/name/nm0559986/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

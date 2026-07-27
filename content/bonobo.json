@@ -201,6 +201,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Lazarus (2025)",
+        "context": "Co-composed the score for Shinichirō Watanabe's anime series with Kamasi Washington and Floating Points.",
+        "url": "https://www.imdb.com/title/tt28454008/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

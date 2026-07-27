@@ -177,6 +177,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Reach the Rock (1998)",
+        "context": "Drummer John McEntire scored John Hughes's final written-and-produced film.",
+        "url": "https://www.imdb.com/name/nm0568512/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

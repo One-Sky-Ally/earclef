@@ -158,6 +158,23 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "The Nowhere Inn (2020)",
+        "context": "Annie Clark co-wrote and stars in this mockumentary psychological comedy, premiered at Sundance.",
+        "url": "https://www.imdb.com/title/tt10441822/"
+      },
+      {
+        "kind": "other",
+        "title": "XX (2017)",
+        "context": "Directed and co-wrote 'The Birthday Party' segment of the horror anthology — her filmmaking debut.",
+        "url": "https://www.imdb.com/title/tt3322892/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

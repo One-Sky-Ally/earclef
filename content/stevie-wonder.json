@@ -158,6 +158,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "The Secret Life of Plants (1979)",
+        "context": "Composed the documentary's full soundtrack, released as Journey Through 'The Secret Life of Plants'.",
+        "url": "https://www.imdb.com/title/tt0078217/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

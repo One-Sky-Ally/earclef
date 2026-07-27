@@ -161,6 +161,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "The Legend of Ochi (2025)",
+        "context": "Frontman David Longstreth's full orchestral score for Isaiah Saxon's A24 fantasy — his feature-scoring debut.",
+        "url": "https://www.imdb.com/name/nm5486461/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

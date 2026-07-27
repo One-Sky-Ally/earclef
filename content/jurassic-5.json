@@ -145,6 +145,23 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "art",
+        "title": "Against the Current (2018)",
+        "context": "MC Chali 2na's parallel painting career — a multi-city US gallery tour launched at Mr. Musichead Gallery, LA.",
+        "url": "https://www.laweekly.com/jurassic-5s-chali-2na-la-hip-hop-favorite-paints-a-new-portrait/"
+      },
+      {
+        "kind": "film-role",
+        "title": "Juno (2007)",
+        "context": "DJ Cut Chemist plays the chemistry teacher in Jason Reitman's Oscar-winning film.",
+        "url": "https://www.imdb.com/name/nm0532188/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

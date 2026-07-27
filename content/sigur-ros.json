@@ -210,6 +210,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "We Bought a Zoo (2011)",
+        "context": "Frontman Jónsi composed the score for Cameron Crowe's film, winning a BMI Film Music Award.",
+        "url": "https://www.imdb.com/name/nm1743706/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

@@ -146,6 +146,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Bostyn 'n Dobsyn (2018)",
+        "context": "Co-wrote and stars as music teacher Mr Bostyn in the five-part melodrama screened theatrically alongside Jassbusters.",
+        "url": "https://www.dazeddigital.com/music/article/41799/1/connan-mockasin-jassbusters-album-interview"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

@@ -233,6 +233,29 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "art",
+        "title": "Tank Girl (1988)",
+        "context": "Co-creator Jamie Hewlett co-created the Tank Girl comic in Deadline magazine — predating Gorillaz entirely.",
+        "url": "https://en.wikipedia.org/wiki/Jamie_Hewlett"
+      },
+      {
+        "kind": "art",
+        "title": "The Suggestionists (2015)",
+        "context": "Hewlett's first solo fine-art exhibition, at London's Saatchi Gallery.",
+        "url": "https://artlyst.com/jamie-hewlett-seamlessly-creates-three-bodies-of-work-at-saatchi-gallery/"
+      },
+      {
+        "kind": "other",
+        "title": "Monkey: Journey to the West (2007)",
+        "context": "Stage opera — music by Damon Albarn, visual design by Hewlett — premiered at Manchester International Festival.",
+        "url": "https://en.wikipedia.org/wiki/Monkey:_Journey_to_the_West"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

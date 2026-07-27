@@ -148,6 +148,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "other",
+        "title": "Waitress (2017)",
+        "context": "Broadway debut as Dr. Pomatter in the musical at the Brooks Atkinson Theatre.",
+        "url": "https://www.newyorktheatreguide.com/theatre-news/news/jason-mraz-to-make-his-broadway-debut-in-waitress"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

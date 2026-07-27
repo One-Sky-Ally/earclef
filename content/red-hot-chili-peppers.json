@@ -179,6 +179,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "book",
+        "title": "Scar Tissue (2004)",
+        "context": "Frontman Anthony Kiedis' memoir, a #1 New York Times bestseller. (Flea's films and book live on his own page.)",
+        "url": "https://www.hachettebookgroup.com/titles/anthony-kiedis/scar-tissue/9781401307455/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

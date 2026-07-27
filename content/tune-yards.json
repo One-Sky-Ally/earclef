@@ -160,6 +160,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Sorry to Bother You (2018)",
+        "context": "Merrill Garbus composed and performed the score for Boots Riley's debut feature.",
+        "url": "https://www.imdb.com/name/nm7412246/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

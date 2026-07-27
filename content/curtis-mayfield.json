@@ -140,6 +140,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Super Fly (1972)",
+        "context": "Composed, performed, and produced the landmark soundtrack — a #1 Billboard 200 album that outsold the film.",
+        "url": "https://www.imdb.com/name/nm0562631/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

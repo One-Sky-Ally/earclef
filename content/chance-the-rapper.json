@@ -212,6 +212,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Slice (2018)",
+        "context": "Feature acting debut as Dax Lycander, a werewolf ex-delivery driver, in A24's horror-comedy.",
+        "url": "https://www.imdb.com/name/nm5692878/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

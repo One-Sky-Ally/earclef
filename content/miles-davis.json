@@ -158,6 +158,35 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Elevator to the Gallows (1958)",
+        "context": "Improvised the landmark score for Louis Malle's debut in a single Paris session.",
+        "url": "https://www.imdb.com/name/nm0002537/"
+      },
+      {
+        "kind": "book",
+        "title": "Miles: The Autobiography (1989)",
+        "context": "Written with Quincy Troupe, published by Simon & Schuster — winner of the 1990 American Book Award.",
+        "url": "https://www.simonandschuster.com/books/Miles/Miles-Davis/9781451643183"
+      },
+      {
+        "kind": "art",
+        "title": "Paintings and drawings (1980s–91)",
+        "context": "His final decade's serious visual-art practice — museum shows include the touring 'We Want Miles' retrospective.",
+        "url": "https://www.openculture.com/2014/10/the-paintings-of-miles-davis.html"
+      },
+      {
+        "kind": "film-role",
+        "title": "Dingo (1991)",
+        "context": "His only speaking role in a narrative feature — jazz trumpeter Billy Cross, in a film he also co-scored with Michel Legrand.",
+        "url": "https://www.imdb.com/name/nm0002537/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

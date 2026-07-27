@@ -158,6 +158,29 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Tenacious D in The Pick of Destiny (2006)",
+        "context": "The band stars as themselves in the New Line musical comedy, co-written by Jack Black and Kyle Gass.",
+        "url": "https://www.imdb.com/title/tt0365830/"
+      },
+      {
+        "kind": "film-role",
+        "title": "School of Rock (2003)",
+        "context": "Frontman Jack Black's Golden Globe-nominated starring role as the substitute-teacher rocker.",
+        "url": "https://www.imdb.com/name/nm0085312/"
+      },
+      {
+        "kind": "film-role",
+        "title": "Jumanji: Welcome to the Jungle (2017)",
+        "context": "Frontman Jack Black as Professor Shelly Oberon, alongside Dwayne Johnson and Kevin Hart.",
+        "url": "https://www.imdb.com/name/nm0085312/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"
