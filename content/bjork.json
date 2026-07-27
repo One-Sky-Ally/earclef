@@ -197,6 +197,29 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Dancer in the Dark (2000)",
+        "context": "Selma, the lead in Lars von Trier's musical tragedy — Best Actress at Cannes 2000; she also wrote the score, released as Selmasongs.",
+        "url": "https://www.imdb.com/title/tt0168629/"
+      },
+      {
+        "kind": "art",
+        "title": "Drawing Restraint 9 (2005)",
+        "context": "Stars opposite Matthew Barney in his Shinto-themed art film, and made its soundtrack.",
+        "url": "https://www.imdb.com/title/tt0446685/"
+      },
+      {
+        "kind": "film-role",
+        "title": "The Northman (2022)",
+        "context": "The Seeress in Robert Eggers' Viking epic.",
+        "url": "https://www.imdb.com/name/nm0001951/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

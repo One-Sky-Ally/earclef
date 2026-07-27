@@ -175,6 +175,41 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Back to the Future Part II & III (1989–90)",
+        "context": "Needles, the leader of Biff's gang, in both sequels.",
+        "url": "https://www.imdb.com/name/nm0281359/"
+      },
+      {
+        "kind": "film-role",
+        "title": "The Big Lebowski (1998)",
+        "context": "Nihilist #2 in the Coen brothers' comedy.",
+        "url": "https://www.imdb.com/name/nm0281359/"
+      },
+      {
+        "kind": "film-role",
+        "title": "Baby Driver (2017)",
+        "context": "Eddie of the heist crew — his top-billed screen credit.",
+        "url": "https://www.imdb.com/name/nm0281359/"
+      },
+      {
+        "kind": "film-role",
+        "title": "My Own Private Idaho (1991)",
+        "context": "Budd in Gus Van Sant's film.",
+        "url": "https://www.imdb.com/name/nm0281359/"
+      },
+      {
+        "kind": "book",
+        "title": "Acid for the Children (2019)",
+        "context": "His memoir of an Australia-to-L.A. childhood, foreword by Patti Smith — a #1 L.A. Times bestseller.",
+        "url": "https://www.hachettebookgroup.com/titles/flea/acid-for-the-children/9781455530533/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

@@ -7,6 +7,7 @@ import { Listen } from '@/components/Listen'
 import { Watch } from '@/components/Watch'
 import { Story } from '@/components/Story'
 import { Shows } from '@/components/Shows'
+import { Beyond } from '@/components/Beyond'
 import { Merch } from '@/components/Merch'
 import { Press } from '@/components/Press'
 import { UniverseSection } from '@/components/universe/UniverseSection'
@@ -30,6 +31,7 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
       <SiteNav
         anchorBase={anchorBase}
         includePlay={Boolean(content.play?.enabled)}
+        includeBeyond={Boolean(content.beyond?.enabled)}
         universeLabel={
           content.membership?.enabled
             ? content.membership.perkTitle
@@ -73,6 +75,7 @@ export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
         {content.press.enabled && (
           <Press press={content.press} artistName={content.hero.name} />
         )}
+        {content.beyond?.enabled && <Beyond beyond={content.beyond} />}
         {content.membership?.enabled && (
           <UniverseSection
             slug={content.slug}

@@ -160,6 +160,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Frank (2014)",
+        "context": "Drummer Carla Azar plays Nana, the deadpan drummer of Soronprfbs, alongside Michael Fassbender.",
+        "url": "https://www.imdb.com/name/nm2919861/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

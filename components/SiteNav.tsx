@@ -25,6 +25,8 @@ interface SiteNavProps {
   showSections?: boolean
   /** Artists with native audio get a Play anchor ahead of the rest. */
   includePlay?: boolean
+  /** Artists with verified non-music work get a Beyond anchor. */
+  includeBeyond?: boolean
   /** Artists with a membership get their perk anchor after the rest. */
   universeLabel?: string
 }
@@ -33,12 +35,14 @@ export function SiteNav({
   anchorBase = '/',
   showSections = true,
   includePlay = false,
+  includeBeyond = false,
   universeLabel,
 }: SiteNavProps) {
   const base = anchorBase === '/' ? '' : anchorBase
   const sections = [
     ...(includePlay ? [{ id: 'play', label: 'Play' }] : []),
     ...SECTIONS,
+    ...(includeBeyond ? [{ id: 'beyond', label: 'Beyond' }] : []),
     ...(universeLabel ? [{ id: 'universe', label: universeLabel }] : []),
   ]
 

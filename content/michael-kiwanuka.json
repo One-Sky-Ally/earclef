@@ -158,6 +158,17 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "screen-sync",
+        "title": "Cold Little Heart × Big Little Lies",
+        "context": "The 2016 track opens every episode of HBO's series (2017–2019) as its main-title theme.",
+        "url": "https://www.radiox.co.uk/news/tv-film/big-little-lies-season-soundtrack-theme-tune-music/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

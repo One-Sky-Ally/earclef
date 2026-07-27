@@ -178,6 +178,30 @@ export interface PressContent {
   items: PressItem[]
 }
 
+/** Kinds of verified non-music creative work. */
+export type BeyondKind =
+  | 'film-role'
+  | 'film-score'
+  | 'screen-sync'
+  | 'book'
+  | 'art'
+  | 'other'
+
+export interface BeyondItem {
+  kind: BeyondKind
+  title: string
+  /** One factual line of context — same gate as everything: verified only. */
+  context: string
+  /** Link out to preview/buy — IMDb, publisher, retailer, official page. */
+  url: string
+  linkLabel?: string
+}
+
+export interface BeyondContent {
+  enabled: boolean
+  items: BeyondItem[]
+}
+
 export interface FooterContent {
   tagline: string
   attribution: string
@@ -204,5 +228,7 @@ export interface ArtistContent {
   shows: ShowsContent
   merch: MerchContent
   press: PressContent
+  /** Notable creative work outside music — optional; verified only. */
+  beyond?: BeyondContent
   footer: FooterContent
 }

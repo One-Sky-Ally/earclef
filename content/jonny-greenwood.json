@@ -155,6 +155,29 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "There Will Be Blood (2007) & The Master (2012)",
+        "context": "The scores that opened his second career, both for Paul Thomas Anderson.",
+        "url": "https://www.imdb.com/name/nm0339351/"
+      },
+      {
+        "kind": "film-score",
+        "title": "Phantom Thread (2017) & The Power of the Dog (2021)",
+        "context": "Two Academy Award nominations for Best Original Score.",
+        "url": "https://www.imdb.com/name/nm0339351/awards/"
+      },
+      {
+        "kind": "film-score",
+        "title": "One Battle After Another (2025)",
+        "context": "His third Oscar nomination, at the 2026 Academy Awards.",
+        "url": "https://www.imdb.com/name/nm0339351/awards/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

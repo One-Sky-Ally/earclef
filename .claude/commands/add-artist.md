@@ -37,13 +37,21 @@ verify EVERYTHING yourself against live sources:
   or browser-extracted product image, verified 200 + image/*; https only;
   no fan/reseller shops; hide the section if nothing legit survives.
 - Press: reputable outlets, every URL fetched live.
+- Beyond the Music (optional `beyond` section): notable NON-MUSIC creative
+  work — film/TV roles (IMDb is the tier-1 authority), published books
+  (publisher/major-retailer pages), film scores, documented screen syncs,
+  exhibitions. Each item: kind (film-role|film-score|screen-sync|book|art|
+  other), title, ONE factual context line, https link out (IMDb/publisher/
+  retailer — links-out model like merch), every URL fetched live. No
+  padding: most artists have nothing notable here — OMIT the section
+  entirely rather than stretching.
 
 ## 2. Write the content JSON
 
 content/<slug>.json — exact schema of the existing 40 (copy a recent one as
 the template). Tier "in-the-mix" unless told otherwise; tagline
 "Hear here!"; honest empty sections; ogImage "/images/og-<slug>.jpg";
-canonical https://earclef.netlify.app/<slug>. Story paragraphs: verified
+canonical https://earclef.com/<slug>. Story paragraphs: verified
 facts only, no hedging.
 
 ## 3. Story cards — generated IN THIS SESSION (zero wallet)

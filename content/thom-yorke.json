@@ -152,6 +152,29 @@
       }
     ]
   },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Suspiria (2018)",
+        "context": "His first feature film score, for Luca Guadagnino's remake.",
+        "url": "https://www.imdb.com/name/nm0948810/"
+      },
+      {
+        "kind": "film-score",
+        "title": "Anima (2019)",
+        "context": "The Paul Thomas Anderson one-reeler built around his album of the same name.",
+        "url": "https://www.imdb.com/name/nm0948810/"
+      },
+      {
+        "kind": "film-score",
+        "title": "Confidenza (2024)",
+        "context": "His second feature score, for Daniele Luchetti's thriller.",
+        "url": "https://www.imdb.com/name/nm0948810/"
+      }
+    ]
+  },
   "footer": {
     "tagline": "Music in balance",
     "attribution": "A One Sky Ally project"

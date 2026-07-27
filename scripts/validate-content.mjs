@@ -45,6 +45,38 @@ function checkStructure(slug, c) {
     issues.push(`bad tier "${c.tier}" (expected one of ${TIERS.join(', ')})`)
   }
 
+  // Beyond the Music: verified non-music work — every item needs kind,
+  // title, one-line context, and an https link out.
+  if ('beyond' in c) {
+    const BEYOND_KINDS = [
+      'film-role',
+      'film-score',
+      'screen-sync',
+      'book',
+      'art',
+      'other',
+    ]
+    const b = c.beyond
+    if (typeof b.enabled !== 'boolean') issues.push('beyond.enabled must be boolean')
+    if (!Array.isArray(b.items)) {
+      issues.push('beyond.items must be an array')
+    } else {
+      if (b.enabled && b.items.length === 0) {
+        issues.push('beyond.enabled with no items — hide the section instead')
+      }
+      for (const item of b.items) {
+        if (!BEYOND_KINDS.includes(item.kind)) {
+          issues.push(`beyond item bad kind "${item.kind}"`)
+        }
+        if (!item.title) issues.push('beyond item missing title')
+        if (!item.context) issues.push('beyond item missing context')
+        if (!/^https:\/\//.test(item.url ?? '')) {
+          issues.push(`beyond item needs https url (${item.title})`)
+        }
+      }
+    }
+  }
+
   // Native audio: the one exception to "we never host audio" — a rights
   // statement is mandatory whenever it's enabled.
   if ('play' in c) {
