@@ -68,10 +68,15 @@ export async function searchExplore(
   query: string,
   signal: AbortSignal,
 ): Promise<SearchResult> {
-  const res = await fetch(
-    `/api/explore/search?q=${encodeURIComponent(query)}`,
-    { signal },
-  )
+  let res: Response
+  try {
+    res = await fetch(`/api/explore/search?q=${encodeURIComponent(query)}`, {
+      signal: deadline(signal),
+    })
+  } catch (error) {
+    if (signal.aborted) throw error
+    throw new Error(TIMEOUT_MESSAGE)
+  }
   if (res.status === 404) {
     throw new Error(
       "Couldn't find that — try a city, country, or artist name.",
@@ -120,9 +125,15 @@ export async function fetchArtistEra(
 ): Promise<ArtistEraDetails> {
   const span =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}-${yearEnd}`
-  const res = await fetch(`/api/explore/artist-era/${mbid}/${span}`, {
-    signal,
-  })
+  let res: Response
+  try {
+    res = await fetch(`/api/explore/artist-era/${mbid}/${span}`, {
+      signal: deadline(signal),
+    })
+  } catch (error) {
+    if (signal.aborted) throw error
+    throw new Error(TIMEOUT_MESSAGE)
+  }
   if (res.status === 429) {
     throw new Error('MusicBrainz is busy right now — try again in a moment.')
   }
@@ -131,6 +142,20 @@ export async function fetchArtistEra(
   }
   return res.json()
 }
+
+/**
+ * The caller's abort combined with a hard client deadline: a wedged
+ * request can never leave a panel spinning forever — it surfaces as a
+ * retryable error instead.
+ */
+const PANEL_TIMEOUT_MS = 30_000
+
+function deadline(signal: AbortSignal, ms = PANEL_TIMEOUT_MS): AbortSignal {
+  return AbortSignal.any([signal, AbortSignal.timeout(ms)])
+}
+
+const TIMEOUT_MESSAGE =
+  'That took too long — MusicBrainz may be busy. Try again, or narrow the era.'
 
 export async function fetchCountryYearDetails(
   country: string,
@@ -142,9 +167,15 @@ export async function fetchCountryYearDetails(
   const span =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}-${yearEnd}`
   const genreQuery = genre ? `?genre=${encodeURIComponent(genre)}` : ''
-  const res = await fetch(`/api/explore/${country}/${span}${genreQuery}`, {
-    signal,
-  })
+  let res: Response
+  try {
+    res = await fetch(`/api/explore/${country}/${span}${genreQuery}`, {
+      signal: deadline(signal),
+    })
+  } catch (error) {
+    if (signal.aborted) throw error
+    throw new Error(TIMEOUT_MESSAGE)
+  }
   if (res.status === 429) {
     throw new Error('MusicBrainz is busy right now — try again in a moment.')
   }

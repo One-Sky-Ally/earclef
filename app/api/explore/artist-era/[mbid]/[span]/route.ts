@@ -34,9 +34,14 @@ interface MbReleaseGroup {
   'primary-type'?: string
 }
 
+const MB_REQUEST_TIMEOUT_MS = 8000
+
 async function mbJson(url: string): Promise<unknown> {
   for (let attempt = 1; attempt <= 3; attempt++) {
-    const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } })
+    const res = await fetch(url, {
+      headers: { 'User-Agent': USER_AGENT },
+      signal: AbortSignal.timeout(MB_REQUEST_TIMEOUT_MS),
+    })
     if (res.status === 503 || res.status === 429) {
       if (attempt < 3) {
         await sleep(1500 * attempt)

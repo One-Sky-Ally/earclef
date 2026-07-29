@@ -207,6 +207,22 @@
   color: var(--text-muted);
 }
 
+.retry {
+  align-self: flex-start;
+  padding: 0.4rem 0.95rem;
+  border: 1px solid var(--accent-deep);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.retry:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 /* "Released in" demoted: a quiet fold at the bottom for the curious */
 .releasesFold {
   margin-top: 0.35rem;

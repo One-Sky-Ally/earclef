@@ -40,12 +40,14 @@ export function ArtistEraPanel({
   onClose,
 }: ArtistEraPanelProps) {
   const [state, setState] = useState<PanelState>({ status: 'loading' })
+  const [attempt, setAttempt] = useState(0)
 
   const spanLabel =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}–${yearEnd}`
 
   useEffect(() => {
     const controller = new AbortController()
+    setState({ status: 'loading' })
     fetchArtistEra(artist.mbid, yearStart, yearEnd, controller.signal)
       .then((details) => setState({ status: 'ready', details }))
       .catch((error: Error) => {
@@ -53,7 +55,7 @@ export function ArtistEraPanel({
         setState({ status: 'error', message: error.message })
       })
     return () => controller.abort()
-  }, [artist.mbid, yearStart, yearEnd])
+  }, [artist.mbid, yearStart, yearEnd, attempt])
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -100,7 +102,16 @@ export function ArtistEraPanel({
       )}
 
       {state.status === 'error' && (
-        <p className={styles.note}>{state.message}</p>
+        <>
+          <p className={styles.note}>{state.message}</p>
+          <button
+            type="button"
+            className={styles.retry}
+            onClick={() => setAttempt((value) => value + 1)}
+          >
+            Try again
+          </button>
+        </>
       )}
 
       {state.status === 'ready' && (

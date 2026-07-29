@@ -67,11 +67,21 @@ function activeByRangeEnd(artist: MbArtist, rangeEnd: number): boolean {
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-/** One MusicBrainz GET; backoff-retries rate limits AND network drops. */
+/**
+ * One MusicBrainz GET; backoff-retries rate limits AND network drops.
+ * Each request carries a hard deadline — a hanging upstream must fail
+ * fast enough for the route to answer inside the function budget,
+ * so the client always gets a real error instead of a dead connection.
+ */
+const MB_REQUEST_TIMEOUT_MS = 8000
+
 async function mbJson(url: string): Promise<unknown> {
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } })
+      const res = await fetch(url, {
+        headers: { 'User-Agent': USER_AGENT },
+        signal: AbortSignal.timeout(MB_REQUEST_TIMEOUT_MS),
+      })
       if (res.status === 503 || res.status === 429) {
         if (attempt < 3) {
           await sleep(1500 * attempt)
@@ -113,11 +123,16 @@ async function fetchOriginArtists(
     `${originClause} AND begin:[* TO ${end}] AND NOT end:[* TO ${start - 1}]${genreClause}`,
   )
 
+  // Genre sweeps hit the largest result sets (electronic: 12k+ US
+  // artists) — one page of 100 is plenty for a ranked top-12 and keeps
+  // the worst case well inside the function budget.
+  const pages = genre ? 1 : ORIGIN_PAGES
+
   const weighted: { artist: PanelArtist; weight: number }[] = []
   const ids = new Set<string>()
   let count = 0
   try {
-    for (let page = 0; page < ORIGIN_PAGES; page++) {
+    for (let page = 0; page < pages; page++) {
       const body = (await mbJson(
         `https://musicbrainz.org/ws/2/artist?query=${query}&limit=${ORIGIN_PAGE_SIZE}&offset=${page * ORIGIN_PAGE_SIZE}&fmt=json`,
       )) as { count?: number; artists?: MbArtist[] }

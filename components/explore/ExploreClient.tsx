@@ -55,6 +55,14 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
   const [lensOpen, setLensOpen] = useState(false)
   // Deep-linked country (?c=JM), held until the globe can fly to it.
   const pendingCountry = useRef<string | null>(null)
+  // ?noglobe=1 forces the non-globe fallback (testing + weak devices).
+  // Captured at FIRST RENDER — the URL-writer effect below rewrites the
+  // address bar before the globe's async init could ever read it.
+  const [noGlobe] = useState(
+    () =>
+      typeof window !== 'undefined' &&
+      new URLSearchParams(window.location.search).has('noglobe'),
+  )
 
   // The lens dataset is optional — absent file, hidden pills.
   useEffect(() => {
@@ -106,9 +114,10 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
     }
     if (selected) params.set('c', selected.code)
     if (lens) params.set('g', lens)
+    if (noGlobe) params.set('noglobe', '1')
     const query = params.toString()
     window.history.replaceState(null, '', query ? `/?${query}` : '/')
-  }, [yearStart, yearEnd, selected, lens])
+  }, [yearStart, yearEnd, selected, lens, noGlobe])
 
   function onSearchResolved(result: SearchResult) {
     if (result.kind === 'artist') {
@@ -140,6 +149,7 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
   return (
     <div className={styles.stage}>
       <GlobeScene
+        forceFallback={noGlobe}
         yearStart={yearStart}
         yearEnd={yearEnd}
         lens={

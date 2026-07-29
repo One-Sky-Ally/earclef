@@ -41,3 +41,48 @@
   letter-spacing: 0.04em;
   color: var(--accent);
 }
+
+/* Non-globe fallback: a functional explore, never a dead page */
+.fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.2rem;
+  /* Bottom clearance keeps the last rows clickable above the
+     floating era controls. */
+  padding: 2.5rem 1.25rem 12rem;
+  overflow-y: auto;
+}
+
+.fallbackNote {
+  max-width: 480px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.fallbackList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  max-width: 760px;
+}
+
+.fallbackCountry {
+  padding: 0.32rem 0.75rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: var(--text-soft);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.fallbackCountry:hover {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}

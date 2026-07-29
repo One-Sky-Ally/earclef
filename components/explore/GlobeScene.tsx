@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { GlobeInstance } from 'globe.gl'
+import { reportClientError } from '@/lib/clientLog'
 import {
   bandedHeat,
   countInRange,
@@ -45,12 +46,54 @@ export interface FocusRequest {
   nonce: number
 }
 
+/** The globe couldn't render — explore continues without it. */
+interface GlobeFallback {
+  reason: 'webgl-unsupported' | 'globe-init-failed' | 'dataset-fetch-failed'
+  countries: { code: string; name: string }[]
+}
+
+function webglSupported(): boolean {
+  try {
+    const canvas = document.createElement('canvas')
+    return Boolean(
+      canvas.getContext('webgl2') ?? canvas.getContext('webgl'),
+    )
+  } catch {
+    return false
+  }
+}
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
+/**
+ * The countries dataset, with backoff retries. Later attempts add a
+ * cache-busting query so a poisoned browser/proxy cache of the static
+ * asset can't make the failure permanent.
+ */
+async function fetchCountries(): Promise<{ features: CountryFeature[] }> {
+  let lastError: unknown
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const bust = attempt > 1 ? `?retry=${attempt}` : ''
+      const res = await fetch(`/data/countries-110m.geojson${bust}`)
+      if (!res.ok) throw new Error(`countries geojson: HTTP ${res.status}`)
+      return (await res.json()) as { features: CountryFeature[] }
+    } catch (error) {
+      lastError = error
+      if (attempt < 3) await sleep(800 * attempt)
+    }
+  }
+  throw lastError
+}
+
 interface LensState {
   label: string
   countries: GenreCountryDecades
 }
 
 interface GlobeSceneProps {
+  /** Skip WebGL entirely and render the country-list fallback. */
+  forceFallback?: boolean
   yearStart: number
   yearEnd: number
   /** Active genre lens — null shows the release heat map. */
@@ -62,6 +105,7 @@ interface GlobeSceneProps {
 }
 
 export function GlobeScene({
+  forceFallback = false,
   yearStart,
   yearEnd,
   lens,
@@ -71,6 +115,7 @@ export function GlobeScene({
   onCountryClick,
 }: GlobeSceneProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [fallback, setFallback] = useState<GlobeFallback | null>(null)
   const globeRef = useRef<GlobeInstance | null>(null)
   const countsRef = useRef<CountryYearCounts>({})
   const rangeRef = useRef<[number, number]>([yearStart, yearEnd])
@@ -167,14 +212,36 @@ export function GlobeScene({
     let observer: ResizeObserver | undefined
     let disposed = false
 
+    /** Sorted clickable list for the non-globe fallback. */
+    function countryList(
+      features: CountryFeature[],
+    ): { code: string; name: string }[] {
+      return features
+        .flatMap((feature) => {
+          const code = featureCode(feature)
+          return code
+            ? [{ code, name: feature.properties.ADMIN }]
+            : []
+        })
+        .sort((a, b) => a.name.localeCompare(b.name))
+    }
+
     async function init(mount: HTMLDivElement) {
-      const [{ default: Globe }, countries] = await Promise.all([
-        import('globe.gl'),
-        fetch('/data/countries-110m.geojson').then((res) => {
-          if (!res.ok) throw new Error(`countries geojson: HTTP ${res.status}`)
-          return res.json()
-        }),
-      ])
+      // The dataset first — even the non-globe fallback needs the
+      // country names, and its fetch retries with cache-busting.
+      let countries: { features: CountryFeature[] }
+      try {
+        countries = await fetchCountries()
+      } catch (error) {
+        if (disposed) return
+        reportClientError(
+          'globe-dataset',
+          'countries geojson failed after retries',
+          error,
+        )
+        setFallback({ reason: 'dataset-fetch-failed', countries: [] })
+        return
+      }
       if (disposed) return
 
       // Configured subdivisions (Hawaii) become their own clickable
@@ -183,6 +250,40 @@ export function GlobeScene({
         countries.features as CountryFeature[],
       )
       countries.features = features
+
+      // No WebGL (hardware acceleration off, GPU blocklisted, remote
+      // desktop) is PERSISTENT — reloading never helps. Skip straight
+      // to the functional fallback. ?noglobe=1 forces it for testing
+      // and for visitors on weak devices.
+      const forced = forceFallback
+      if (forced || !webglSupported()) {
+        if (!forced) {
+          reportClientError('globe-webgl', 'WebGL unavailable on this device')
+        }
+        setFallback({
+          reason: 'webgl-unsupported',
+          countries: countryList(features),
+        })
+        // Panel data is still live MusicBrainz — and announcing frees
+        // any deep-linked ?c= country to open in fallback mode too.
+        onDataSourceChange('live')
+        return
+      }
+
+      let Globe: typeof import('globe.gl').default
+      try {
+        Globe = (await import('globe.gl')).default
+      } catch (error) {
+        if (disposed) return
+        reportClientError('globe-chunk', 'globe.gl chunk failed to load', error)
+        setFallback({
+          reason: 'globe-init-failed',
+          countries: countryList(features),
+        })
+        onDataSourceChange('live')
+        return
+      }
+      if (disposed) return
       featureByCode.current = new Map(
         features.flatMap((feature) => {
           const code = featureCode(feature)
@@ -277,11 +378,22 @@ export function GlobeScene({
       observer.observe(mount)
     }
 
-    init(el).catch(() => {
-      if (!disposed) {
-        el.textContent = 'The globe failed to load — please refresh.'
-        el.className = `${styles.scene} ${styles.error}`
-      }
+    // Anything the staged handlers above didn't catch — most likely
+    // WebGL context creation throwing inside new Globe() even though
+    // the capability probe passed (context limits, driver failures).
+    init(el).catch((error: unknown) => {
+      if (disposed) return
+      reportClientError('globe-init', 'globe construction failed', error)
+      setFallback({
+        reason: 'globe-init-failed',
+        countries: [...featureByCode.current.entries()]
+          .map(([code, feature]) => ({
+            code,
+            name: feature.properties.ADMIN,
+          }))
+          .sort((a, b) => a.name.localeCompare(b.name)),
+      })
+      onDataSourceChange('live')
     })
 
     return () => {
@@ -292,6 +404,33 @@ export function GlobeScene({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps -- init once; year updates flow through refs
   }, [])
+
+  if (fallback) {
+    return (
+      <div className={`${styles.scene} ${styles.fallback}`}>
+        <p className={styles.fallbackNote}>
+          {fallback.reason === 'dataset-fetch-failed'
+            ? 'The map data would not load here — but the search above still finds any city, country, or artist.'
+            : "This device can't render the 3D globe — no matter: pick a country below or use the search above."}
+        </p>
+        {fallback.countries.length > 0 && (
+          <ul className={styles.fallbackList}>
+            {fallback.countries.map((country) => (
+              <li key={country.code}>
+                <button
+                  type="button"
+                  className={styles.fallbackCountry}
+                  onClick={() => onCountryClick(country)}
+                >
+                  {country.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    )
+  }
 
   return <div ref={containerRef} className={styles.scene} />
 }

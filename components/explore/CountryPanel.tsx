@@ -174,6 +174,8 @@ export function CountryPanel({
   const [showAllReleases, setShowAllReleases] = useState(false)
   // "Released in" is demoted: collapsed behind a small pill until asked.
   const [releasesOpen, setReleasesOpen] = useState(false)
+  // Bumped by the error state's Try-again button — re-runs the fetch.
+  const [attempt, setAttempt] = useState(0)
 
   const spanLabel =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}–${yearEnd}`
@@ -182,9 +184,11 @@ export function CountryPanel({
   const isSubdivision = /^[A-Z]{2}-[A-Z]{2}$/.test(country.code)
 
   // Parent keys this component by country+range, so every fetch cycle
-  // starts from a fresh mount in the 'loading' state.
+  // starts from a fresh mount in the 'loading' state; a retry bumps
+  // `attempt` and runs it again from here.
   useEffect(() => {
     const controller = new AbortController()
+    setState({ status: 'loading' })
 
     fetchCountryYearDetails(
       country.code,
@@ -200,7 +204,7 @@ export function CountryPanel({
       })
 
     return () => controller.abort()
-  }, [country.code, yearStart, yearEnd, genre])
+  }, [country.code, yearStart, yearEnd, genre, attempt])
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -252,7 +256,16 @@ export function CountryPanel({
       )}
 
       {state.status === 'error' && (
-        <p className={styles.note}>{state.message}</p>
+        <>
+          <p className={styles.note}>{state.message}</p>
+          <button
+            type="button"
+            className={styles.retry}
+            onClick={() => setAttempt((value) => value + 1)}
+          >
+            Try again
+          </button>
+        </>
       )}
 
       {state.status === 'ready' && (
