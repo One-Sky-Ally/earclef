@@ -1135,6 +1135,53 @@
       ],
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-20T06:55:36.000Z"
+    },
+    {
+      "country": "CU",
+      "from": 1950,
+      "to": 1959,
+      "era": "Mambo, cha-cha-chá, and the cabaret age",
+      "kind": "documented",
+      "basis": "No Cuban chart archive survives — this snapshot draws on documented radio-orchestra and cabaret history, anchored by Ned Sublette's scholarship on Cuban music.",
+      "story": "Havana in the 1950s ran on radio orchestras and cabaret floor shows. [[Benny Moré]] — El Bárbaro del Ritmo, the untrained genius — led his Banda Gigante across Radio Progreso and the dance halls; [[Orquesta Aragón]] carried the cha-cha-chá that violinist [[Enrique Jorrín]] had invented in 1953; and the Tropicana made the city a magnet for the world. The mambo itself exploded from Mexico City, where Cuban-born [[Pérez Prado]] took it global.",
+      "items": [
+        {
+          "artist": "Benny Moré",
+          "work": "Qué Bueno Baila Usted",
+          "note": "the Banda Gigante signature"
+        },
+        {
+          "artist": "Enrique Jorrín",
+          "work": "La engañadora",
+          "note": "the first cha-cha-chá, 1953"
+        },
+        {
+          "artist": "Orquesta Aragón",
+          "work": "El Bodeguero",
+          "note": "Richard Egües' cha-cha-chá standard"
+        },
+        {
+          "artist": "Pérez Prado",
+          "work": "Qué rico el mambo",
+          "note": "the mambo that conquered the world — launched from Mexico City"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — Benny Moré",
+          "url": "https://en.wikipedia.org/wiki/Benny_Mor%C3%A9"
+        },
+        {
+          "label": "Wikipedia — Cha-cha-chá",
+          "url": "https://en.wikipedia.org/wiki/Cha-cha-ch%C3%A1_(music)"
+        },
+        {
+          "label": "Ned Sublette — Cuba and Its Music (Internet Archive)",
+          "url": "https://archive.org/details/cubaitsmusicfrom0000subl"
+        }
+      ],
+      "model": "claude-fable-5 (in-session)",
+      "at": "2026-07-31T05:08:17.000Z"
     }
   ]
 }
