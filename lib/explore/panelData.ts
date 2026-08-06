@@ -145,7 +145,26 @@ const PANEL_TIMEOUT_MS = 30_000
 const AUTO_RETRY_DELAY_MS = 1200
 
 function deadline(signal: AbortSignal, ms = PANEL_TIMEOUT_MS): AbortSignal {
-  return AbortSignal.any([signal, AbortSignal.timeout(ms)])
+  // AbortSignal.any needs Safari 17.4+ / timeout needs 16+. On older
+  // iOS (the iPhone 12 field failure: EVERY tap threw a TypeError
+  // instantly, read as a network error) fall back to a manual combo.
+  if (
+    typeof AbortSignal.any === 'function' &&
+    typeof AbortSignal.timeout === 'function'
+  ) {
+    return AbortSignal.any([signal, AbortSignal.timeout(ms)])
+  }
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), ms)
+  signal.addEventListener(
+    'abort',
+    () => {
+      clearTimeout(timer)
+      controller.abort()
+    },
+    { once: true },
+  )
+  return controller.signal
 }
 
 const TIMEOUT_MESSAGE =
@@ -182,12 +201,17 @@ async function resilientFetch(
   }
   const elapsed = Date.now() - started
   const timedOut = elapsed >= PANEL_TIMEOUT_MS
-  const { reportClientError } = await import('@/lib/clientLog')
-  reportClientError(
-    'panel-fetch',
-    `${label} failed after 2 attempts (${elapsed}ms, ${timedOut ? 'timeout' : 'network'})`,
-    lastError,
-  )
+  // Fire-and-forget: the user's error must never wait on (or be broken
+  // by) the reporting path — a blocked beacon is nobody's problem.
+  import('@/lib/clientLog')
+    .then(({ reportClientError }) =>
+      reportClientError(
+        'panel-fetch',
+        `${label} failed after 2 attempts (${elapsed}ms, ${timedOut ? 'timeout' : 'network'})`,
+        lastError,
+      ),
+    )
+    .catch(() => {})
   throw new Error(timedOut ? TIMEOUT_MESSAGE : NETWORK_MESSAGE)
 }
 
