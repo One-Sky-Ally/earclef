@@ -36,8 +36,13 @@ interface CountryPanelProps {
   genre?: string | null
   source: DataSource | null
   roster?: RosterByMbid
+  /** "Surprise me" landing: spotlight one artist from the top tier. */
+  spotlight?: boolean
   onClose: () => void
 }
+
+/** Spotlight draws from this many top-tier artists, rank-weighted. */
+const SPOTLIGHT_TIER = 8
 
 /** ±reach of the one-tap "show nearby years" widen. */
 const NEARBY_REACH = 5
@@ -228,6 +233,7 @@ export function CountryPanel({
   genre = null,
   source,
   roster = {},
+  spotlight = false,
   onClose,
 }: CountryPanelProps) {
   const [state, setState] = useState<PanelState>({ status: 'loading' })
@@ -327,6 +333,20 @@ export function CountryPanel({
     setFilterOpen(false)
     setGenreQuery('')
   }
+
+  // Surprise landing: one rank-weighted draw from the top tier — the
+  // memo keeps the pick stable across re-renders of this mount.
+  const spotlightArtist = useMemo(() => {
+    if (!spotlight || pool.length === 0) return null
+    const tier = pool.slice(0, Math.min(SPOTLIGHT_TIER, pool.length))
+    const weights = tier.map((_, rank) => 1 / (rank + 1.5))
+    let roll = Math.random() * weights.reduce((sum, w) => sum + w, 0)
+    for (let i = 0; i < tier.length; i++) {
+      roll -= weights[i]
+      if (roll <= 0) return tier[i]
+    }
+    return tier[tier.length - 1]
+  }, [spotlight, pool])
 
   return (
     <aside
@@ -436,6 +456,24 @@ export function CountryPanel({
             >
               ← Back to {year} only
             </button>
+          )}
+
+          {spotlightArtist && (
+            <div className={styles.spotlight}>
+              <p className={styles.spotlightEyebrow}>Your surprise</p>
+              <ul className={styles.artists}>
+                <PanelArtistPill
+                  artist={spotlightArtist}
+                  releases={state.details.releases}
+                  rosterEntry={roster[spotlightArtist.id]}
+                />
+              </ul>
+              {spotlightArtist.tags.length > 0 && (
+                <p className={styles.spotlightTags}>
+                  {spotlightArtist.tags.slice(0, 3).join(' · ')}
+                </p>
+              )}
+            </div>
           )}
 
           {pool.length > 0 && (

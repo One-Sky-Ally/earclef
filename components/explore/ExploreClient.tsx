@@ -1,7 +1,13 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
+import { EarClefMark } from '@/components/EarClefMark'
+import {
+  loadSurpriseData,
+  pickSurprise,
+  type SurpriseEra,
+} from '@/lib/explore/surprise'
 import {
   DEFAULT_YEAR,
   YEAR_MAX,
@@ -38,7 +44,16 @@ const GlobeScene = dynamic(
   },
 )
 
-export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
+interface ExploreClientProps {
+  roster?: RosterByMbid
+  /** Documented "What was playing" eras — the surprise picker's 30%. */
+  surpriseEras?: SurpriseEra[]
+}
+
+export function ExploreClient({
+  roster = {},
+  surpriseEras = [],
+}: ExploreClientProps) {
   const [year, setYear] = useState(DEFAULT_YEAR)
   const [source, setSource] = useState<DataSource | null>(null)
   const [selected, setSelected] = useState<SelectedCountry | null>(null)
@@ -59,6 +74,70 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
       typeof window !== 'undefined' &&
       new URLSearchParams(window.location.search).has('noglobe'),
   )
+  // "Surprise me": combos already landed on this session, the pending
+  // year tween, and which panel gets the artist spotlight.
+  const [surpriseBusy, setSurpriseBusy] = useState(false)
+  const [spotlightKey, setSpotlightKey] = useState<string | null>(null)
+  const surpriseSeen = useRef(new Set<string>())
+  const yearTween = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  useEffect(
+    () => () => {
+      if (yearTween.current) clearInterval(yearTween.current)
+    },
+    [],
+  )
+
+  /** Slide the year readout to its destination, then fire the landing. */
+  const tweenYearTo = useCallback(
+    (from: number, target: number, onArrive: () => void) => {
+      if (yearTween.current) clearInterval(yearTween.current)
+      const distance = target - from
+      if (distance === 0) {
+        onArrive()
+        return
+      }
+      const steps = 12
+      let step = 0
+      yearTween.current = setInterval(() => {
+        step++
+        if (step >= steps) {
+          if (yearTween.current) clearInterval(yearTween.current)
+          yearTween.current = null
+          setYear(target)
+          onArrive()
+          return
+        }
+        setYear(Math.round(from + (distance * step) / steps))
+      }, 45)
+    },
+    [],
+  )
+
+  async function onSurprise() {
+    if (surpriseBusy) return
+    setSurpriseBusy(true)
+    try {
+      const data = await loadSurpriseData()
+      const target = pickSurprise(data, surpriseEras, surpriseSeen.current)
+      if (!target) return
+      surpriseSeen.current.add(`${target.code}:${target.year}`)
+      setArtist(null)
+      setSelected(null)
+      setSpotlightKey(`${target.code}:${target.year}`)
+      tweenYearTo(year, target.year, () =>
+        setFocusRequest((current) => ({
+          code: target.code,
+          name: target.name,
+          nonce: (current?.nonce ?? 0) + 1,
+        })),
+      )
+    } catch {
+      // Data didn't load — the next tap retries from scratch.
+    } finally {
+      setSurpriseBusy(false)
+    }
+  }
 
   // The lens dataset is optional — absent file, hidden pills.
   useEffect(() => {
@@ -166,6 +245,25 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
         }}
       />
       <SearchBox onResolved={onSearchResolved} />
+      {/* One tap, one place+year worth landing on. What it does stays
+          a surprise until clicked — the label only names the promise. */}
+      <button
+        type="button"
+        className={styles.surprise}
+        onClick={onSurprise}
+        disabled={surpriseBusy}
+        aria-label="Surprise me — fly somewhere unexpected"
+      >
+        <span
+          className={
+            surpriseBusy ? styles.surpriseMarkSpinning : styles.surpriseMark
+          }
+          aria-hidden="true"
+        >
+          <EarClefMark size={38} />
+        </span>
+        <span className={styles.surpriseLabel}>Surprise me</span>
+      </button>
       {lens && <GenreStory key={lens} genre={lens} />}
       {artist && (
         <ArtistEraPanel
@@ -183,6 +281,7 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
           genre={lens}
           source={source}
           roster={roster}
+          spotlight={spotlightKey === `${selected.code}:${year}`}
           onClose={() => setSelected(null)}
         />
       )}

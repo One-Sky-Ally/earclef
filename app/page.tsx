@@ -5,6 +5,8 @@ import { SiteNav } from '@/components/SiteNav'
 import { EarClefMark } from '@/components/EarClefMark'
 import { ExploreClient } from '@/components/explore/ExploreClient'
 import type { RosterByMbid } from '@/components/explore/CountryPanel'
+import playing from '@/lib/explore/playing.json'
+import type { PlayingEntry } from '@/lib/explore/playing'
 import styles from './explore.module.css'
 
 export const metadata: Metadata = {
@@ -34,7 +36,18 @@ export default function HomePage() {
             Spin the earth. Pick a year. Hear the world.
           </p>
         </div>
-        <ExploreClient roster={roster} />
+        <ExploreClient
+          roster={roster}
+          // Documented eras only, stripped server-side to three numbers
+          // each — the stories themselves never ship in the page.
+          surpriseEras={(playing as { entries: PlayingEntry[] }).entries.map(
+            (entry) => ({
+              country: entry.country,
+              from: entry.from,
+              to: entry.to,
+            }),
+          )}
+        />
         <p className={styles.hint}>
           Drag to spin · scroll to zoom · slide through time · click a country
           or search a place for its artists &amp; releases
