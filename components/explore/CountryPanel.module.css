@@ -370,6 +370,29 @@
   color: var(--bg);
 }
 
+/* Widen-mode pills ("Show nearby years", "← Back to N only"): same
+   look as retry, but block-level with real margins — .body is not a
+   flex container, so align-self never applied and the inline pill sat
+   low on the text baseline. */
+.widen {
+  display: block;
+  width: fit-content;
+  margin: 0.15rem 0 1rem;
+  padding: 0.4rem 0.95rem;
+  border: 1px solid var(--accent-deep);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  color: var(--accent);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.widen:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 /* "Released in" demoted: a quiet fold at the bottom for the curious */
 .releasesFold {
   margin-top: 0.35rem;

@@ -134,7 +134,7 @@ export function ArtistEraPanel({
               {!nearby && (
                 <button
                   type="button"
-                  className={styles.retry}
+                  className={styles.widen}
                   onClick={() => setNearby(true)}
                 >
                   Show nearby years ({Math.max(YEAR_MIN, year - NEARBY_REACH)}
@@ -192,7 +192,7 @@ export function ArtistEraPanel({
           {nearby && (
             <button
               type="button"
-              className={styles.retry}
+              className={styles.widen}
               onClick={() => setNearby(false)}
             >
               ← Back to {year} only

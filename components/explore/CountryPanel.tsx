@@ -244,7 +244,9 @@ export function CountryPanel({
   const [genreFilter, setGenreFilter] = useState<string | null>(null)
   const [filterOpen, setFilterOpen] = useState(false)
   const [genreQuery, setGenreQuery] = useState('')
-  const [showAllArtists, setShowAllArtists] = useState(false)
+  // "On these releases" (credits view) gets the same tiers — but no
+  // genre dropdown: release credits carry no tags on this surface.
+  const [creditsVisible, setCreditsVisible] = useState(TIER_BASE)
   const [showAllReleases, setShowAllReleases] = useState(false)
   // "Released in" is demoted: collapsed behind a small pill until asked.
   const [releasesOpen, setReleasesOpen] = useState(false)
@@ -441,7 +443,7 @@ export function CountryPanel({
             state.details.totalCount < NEARBY_OFFER_THRESHOLD && (
             <button
               type="button"
-              className={styles.retry}
+              className={styles.widen}
               onClick={() => setNearby(true)}
             >
               Show nearby years ({Math.max(YEAR_MIN, year - NEARBY_REACH)}–
@@ -451,7 +453,7 @@ export function CountryPanel({
           {nearby && (
             <button
               type="button"
-              className={styles.retry}
+              className={styles.widen}
               onClick={() => setNearby(false)}
             >
               ← Back to {year} only
@@ -622,28 +624,41 @@ export function CountryPanel({
             <>
               <h3 className={styles.subheading}>On these releases</h3>
               <ul className={styles.artists}>
-                {(showAllArtists
-                  ? state.details.artists
-                  : state.details.artists.slice(0, PREVIEW_COUNT)
-                ).map((artist) => (
-                  <PanelArtistPill
-                    key={artist.id}
-                    artist={artist}
-                    releases={state.details.releases}
-                    rosterEntry={roster[artist.id]}
-                  />
-                ))}
+                {state.details.artists
+                  .slice(0, Math.min(creditsVisible, RENDER_CAP))
+                  .map((artist) => (
+                    <PanelArtistPill
+                      key={artist.id}
+                      artist={artist}
+                      releases={state.details.releases}
+                      rosterEntry={roster[artist.id]}
+                    />
+                  ))}
               </ul>
-              {state.details.artists.length > PREVIEW_COUNT && (
+              {creditsVisible <
+                Math.min(state.details.artists.length, RENDER_CAP) && (
                 <button
                   type="button"
                   className={styles.showAll}
-                  onClick={() => setShowAllArtists((value) => !value)}
+                  onClick={() => setCreditsVisible(nextTier)}
                 >
-                  {showAllArtists
-                    ? 'Show fewer'
-                    : `Show all ${state.details.artists.length}`}
+                  {creditsVisible === TIER_BASE ? 'Show more' : 'Show next 20'}
                 </button>
+              )}
+              {creditsVisible > TIER_BASE && (
+                <button
+                  type="button"
+                  className={styles.showAll}
+                  onClick={() => setCreditsVisible(TIER_BASE)}
+                >
+                  Show fewer
+                </button>
+              )}
+              {creditsVisible >= RENDER_CAP &&
+                state.details.artists.length >= RENDER_CAP && (
+                <p className={styles.capNote}>
+                  Top {RENDER_CAP} credited artists shown.
+                </p>
               )}
             </>
           )}

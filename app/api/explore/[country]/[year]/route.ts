@@ -16,8 +16,12 @@ import type {
 
 const USER_AGENT =
   'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
-const RELEASE_LIMIT = 30
-const ARTIST_LIMIT = 12
+// One page of 100 costs the same single MB request as 30 did, and it
+// feeds the credits list enough distinct artists for tiered digging.
+const RELEASE_LIMIT = 100
+const ORIGIN_LIMIT = 12
+/** Credited-artist cap — matches the panel's 100-pill render cap. */
+const CREDIT_LIMIT = 100
 /**
  * Origin-artist sweep: two pages of 100. MusicBrainz row order for
  * filter queries roughly tracks registration age, and famous artists
@@ -26,7 +30,6 @@ const ARTIST_LIMIT = 12
  */
 const ORIGIN_PAGE_SIZE = 100
 const ORIGIN_PAGES = 2
-const ORIGIN_LIMIT = 12
 /** Discovery-pool cap shipped to the panel (tiers/chips/search). */
 const POOL_LIMIT = 300
 /** Tags kept per pool artist — enough for a genre fingerprint. */
@@ -55,10 +58,10 @@ function blobStore() {
   return getStore({ name: 'explore', consistency: 'eventual' })
 }
 
-// v2: responses carry the panelArtists discovery pool — key bumped so
-// popular combos recompute with it instead of serving pool-less v1
-// entries for up to 30 days. v1 entries just age out.
-const BLOB_KEY_PREFIX = 'panel/v2/'
+// v3: credits list grew 12 → 100 (ranked by credit count, from a full
+// 100-release page). Key bumps make hot combos recompute instead of
+// serving the old shape for 30 days; stale-version entries age out.
+const BLOB_KEY_PREFIX = 'panel/v3/'
 
 async function readCached(key: string): Promise<CountryYearDetails | null> {
   try {
@@ -239,13 +242,22 @@ function toDetails(
   origin: { top: PanelArtist[]; pool: PoolArtist[]; ids: Set<string> },
 ): CountryYearDetails {
   const releases: PanelRelease[] = []
-  const artistById = new Map<string, PanelArtist>()
+  // Release credits carry no tags, so the credits list ranks by the
+  // best signal this surface has: how many issued-here releases an
+  // artist is credited on (ties keep first-seen order).
+  const credited = new Map<string, { artist: PanelArtist; credits: number }>()
 
   for (const release of body.releases ?? []) {
     const artist = release['artist-credit']?.[0]?.artist
     if (!artist) continue
-    if (!artistById.has(artist.id) && artistById.size < ARTIST_LIMIT) {
-      artistById.set(artist.id, { id: artist.id, name: artist.name })
+    const entry = credited.get(artist.id)
+    if (entry) {
+      entry.credits++
+    } else {
+      credited.set(artist.id, {
+        artist: { id: artist.id, name: artist.name },
+        credits: 1,
+      })
     }
     releases.push({
       id: release.id,
@@ -254,6 +266,12 @@ function toDetails(
       artist: { id: artist.id, name: artist.name },
     })
   }
+  const artistById = new Map(
+    [...credited.entries()]
+      .sort((a, b) => b[1].credits - a[1].credits)
+      .slice(0, CREDIT_LIMIT)
+      .map(([id, entry]) => [id, entry.artist]),
+  )
 
   // Releases by artists FROM this country outrank foreign pressings;
   // chronological within each group.
