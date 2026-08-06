@@ -53,8 +53,8 @@ const TIER_BASE = 5
 const TIER_SECOND = 20
 const TIER_STEP = 20
 const RENDER_CAP = 100
-/** Chips shown per panel — the place's loudest genres, by prevalence. */
-const CHIP_LIMIT = 12
+/** Dropdown option cap — searchable, so a cap loses nothing. */
+const GENRE_OPTION_CAP = 250
 
 function nextTier(visible: number): number {
   return visible === TIER_BASE
@@ -62,19 +62,24 @@ function nextTier(visible: number): number {
     : Math.min(visible + TIER_STEP, RENDER_CAP)
 }
 
+interface GenreOption {
+  tag: string
+  count: number
+}
+
 /**
- * The place+era's own genre fingerprint: tags ordered by how many pool
- * artists carry them. A tag needs a few artists behind it to qualify —
- * junk and one-off tags never recur (small pools relax the bar so tiny
- * scenes still get chips). Excluded: the active global lens (the pool
- * is already filtered to it) and the place's own name ("finland" is a
- * popular MB tag, but it isn't a genre).
+ * The place+era's full genre fingerprint: EVERY pool tag with how many
+ * artists carry it, prevalence first (ties alphabetical) — tiny scenes
+ * included, since the genre window is exactly how artists outside the
+ * overall top 100 become reachable. Excluded: the active global lens
+ * (the pool is already filtered to it) and the place's own name
+ * ("finland" is a popular MB tag, but it isn't a genre).
  */
-function genreChips(
+function genreOptions(
   pool: PoolArtist[],
   lens: string | null,
   placeName: string,
-): string[] {
+): GenreOption[] {
   const prevalence = new Map<string, number>()
   for (const artist of pool) {
     for (const tag of artist.tags) {
@@ -82,15 +87,10 @@ function genreChips(
     }
   }
   const place = placeName.trim().toLowerCase()
-  const minArtists = pool.length >= 30 ? 3 : 2
   return [...prevalence.entries()]
-    .filter(
-      ([tag, count]) =>
-        count >= minArtists && tag !== lens && tag.toLowerCase() !== place,
-    )
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, CHIP_LIMIT)
-    .map(([tag]) => tag)
+    .filter(([tag]) => tag !== lens && tag.toLowerCase() !== place)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([tag, count]) => ({ tag, count }))
 }
 
 type PanelState =
@@ -231,11 +231,13 @@ export function CountryPanel({
   onClose,
 }: CountryPanelProps) {
   const [state, setState] = useState<PanelState>({ status: 'loading' })
-  // Discovery controls over the pool: tier depth, active genre chip,
-  // name query. All reset on remount (parent keys by country+year).
+  // Discovery controls over the pool: tier depth + the genre filter
+  // (dropdown open state, search-within-options text, selection). All
+  // reset on remount (parent keys by country+year).
   const [visible, setVisible] = useState(TIER_BASE)
-  const [chip, setChip] = useState<string | null>(null)
-  const [query, setQuery] = useState('')
+  const [genreFilter, setGenreFilter] = useState<string | null>(null)
+  const [filterOpen, setFilterOpen] = useState(false)
+  const [genreQuery, setGenreQuery] = useState('')
   const [showAllArtists, setShowAllArtists] = useState(false)
   const [showAllReleases, setShowAllReleases] = useState(false)
   // "Released in" is demoted: collapsed behind a small pill until asked.
@@ -300,22 +302,31 @@ export function CountryPanel({
               }))),
     [state],
   )
-  const chips = useMemo(
-    () => genreChips(pool, genre, country.name),
+  const options = useMemo(
+    () => genreOptions(pool, genre, country.name),
     [pool, genre, country.name],
   )
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase()
-    return pool.filter(
-      (artist) =>
-        (!chip || artist.tags.includes(chip)) &&
-        (!q || artist.name.toLowerCase().includes(q)),
-    )
-  }, [pool, chip, query])
-  // A name query shows every match (≤cap); otherwise the tier depth.
-  const shown = query.trim()
-    ? filtered.slice(0, RENDER_CAP)
-    : filtered.slice(0, Math.min(visible, RENDER_CAP))
+  const shownOptions = useMemo(() => {
+    const q = genreQuery.trim().toLowerCase()
+    return options
+      .filter((option) => !q || option.tag.toLowerCase().includes(q))
+      .slice(0, GENRE_OPTION_CAP)
+  }, [options, genreQuery])
+  const filtered = useMemo(
+    () =>
+      genreFilter
+        ? pool.filter((artist) => artist.tags.includes(genreFilter))
+        : pool,
+    [pool, genreFilter],
+  )
+  const shown = filtered.slice(0, Math.min(visible, RENDER_CAP))
+
+  function selectGenre(tag: string | null) {
+    setGenreFilter(tag)
+    setVisible(TIER_BASE)
+    setFilterOpen(false)
+    setGenreQuery('')
+  }
 
   return (
     <aside
@@ -429,50 +440,103 @@ export function CountryPanel({
 
           {pool.length > 0 && (
             <>
-              <h3 className={styles.subheading}>
-                Top {genre ? `${genre} ` : ''}artists from {country.name}
-              </h3>
-
-              {/* This place+era's own genres, loudest first. */}
-              {chips.length > 0 && (
-                <div
-                  className={styles.chipsRow}
-                  role="group"
-                  aria-label={`Genres in ${country.name}, ${spanLabel}`}
-                >
-                  {chips.map((tag) => (
+              {/* Filter by genre — the discovery lever, above the list:
+                  every tag in this place+era's pool, tiny scenes
+                  included, each a window past the overall top 100. */}
+              {options.length > 0 && (
+                <div className={styles.genreFilter}>
+                  <button
+                    type="button"
+                    className={
+                      genreFilter
+                        ? styles.genreFilterButtonActive
+                        : styles.genreFilterButton
+                    }
+                    aria-expanded={filterOpen}
+                    onClick={() => setFilterOpen((open) => !open)}
+                  >
+                    ♪ {genreFilter ?? 'Filter by genre'}
+                    <span aria-hidden="true"> {filterOpen ? '▾' : '▸'}</span>
+                  </button>
+                  {genreFilter && (
                     <button
-                      key={tag}
                       type="button"
-                      className={chip === tag ? styles.chipActive : styles.chip}
-                      aria-pressed={chip === tag}
-                      onClick={() => {
-                        setChip((current) => (current === tag ? null : tag))
-                        setVisible(TIER_BASE)
-                      }}
+                      className={styles.genreClear}
+                      onClick={() => selectGenre(null)}
+                      aria-label="Clear genre filter"
                     >
-                      {tag}
+                      ✕
                     </button>
-                  ))}
+                  )}
+                  {filterOpen && (
+                    <div className={styles.genreList}>
+                      {options.length > 12 && (
+                        <input
+                          className={styles.genreSearch}
+                          type="search"
+                          value={genreQuery}
+                          onChange={(event) =>
+                            setGenreQuery(event.target.value)
+                          }
+                          placeholder="Type to narrow…"
+                          aria-label="Search genres"
+                        />
+                      )}
+                      <ul className={styles.genreOptions}>
+                        {genreFilter && (
+                          <li>
+                            <button
+                              type="button"
+                              className={styles.genreOption}
+                              onClick={() => selectGenre(null)}
+                            >
+                              All genres
+                            </button>
+                          </li>
+                        )}
+                        {shownOptions.map(({ tag, count }) => (
+                          <li key={tag}>
+                            <button
+                              type="button"
+                              className={
+                                tag === genreFilter
+                                  ? styles.genreOptionActive
+                                  : styles.genreOption
+                              }
+                              onClick={() => selectGenre(tag)}
+                            >
+                              {tag}
+                              <span className={styles.genreCount}>
+                                {' '}
+                                · {count} artist{count === 1 ? '' : 's'}
+                              </span>
+                            </button>
+                          </li>
+                        ))}
+                        {shownOptions.length === 0 && (
+                          <li className={styles.genreEmpty}>
+                            No genre matches.
+                          </li>
+                        )}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               )}
 
-              {pool.length > TIER_SECOND && (
-                <input
-                  className={styles.nameFilter}
-                  type="search"
-                  value={query}
-                  onChange={(event) => setQuery(event.target.value)}
-                  placeholder="Find a name here…"
-                  aria-label={`Search artists in ${country.name}`}
-                />
-              )}
+              <h3 className={styles.subheading}>
+                Top{' '}
+                {genreFilter
+                  ? `${genreFilter} `
+                  : genre
+                    ? `${genre} `
+                    : ''}
+                artists from {country.name}
+              </h3>
 
               {shown.length === 0 ? (
                 <p className={styles.note}>
-                  {chip
-                    ? `No ${chip} artists match here in ${spanLabel}.`
-                    : `No names match here in ${spanLabel}.`}
+                  Nothing matches here in {spanLabel}.
                 </p>
               ) : (
                 <ul className={styles.artists}>
@@ -487,8 +551,7 @@ export function CountryPanel({
                 </ul>
               )}
 
-              {!query.trim() &&
-                shown.length < Math.min(filtered.length, RENDER_CAP) && (
+              {shown.length < Math.min(filtered.length, RENDER_CAP) && (
                 <button
                   type="button"
                   className={styles.showAll}
@@ -497,7 +560,7 @@ export function CountryPanel({
                   {visible === TIER_BASE ? 'Show more' : 'Show next 20'}
                 </button>
               )}
-              {!query.trim() && visible > TIER_BASE && (
+              {visible > TIER_BASE && (
                 <button
                   type="button"
                   className={styles.showAll}
@@ -506,13 +569,11 @@ export function CountryPanel({
                   Show fewer
                 </button>
               )}
-              {!query.trim() &&
-                shown.length >= RENDER_CAP &&
-                filtered.length > RENDER_CAP && (
+              {shown.length >= RENDER_CAP && filtered.length > RENDER_CAP && (
                 <p className={styles.capNote}>
-                  {chip
-                    ? `Top ${RENDER_CAP} ${chip} artists shown.`
-                    : `Top ${RENDER_CAP} shown — pick a genre to dig deeper.`}
+                  {genreFilter
+                    ? `Top ${RENDER_CAP} ${genreFilter} artists shown.`
+                    : `Top ${RENDER_CAP} shown — filter by genre to dig deeper.`}
                 </p>
               )}
             </>
