@@ -31,7 +31,16 @@ export default function PrivacyPage() {
             <p>
               One cookie, set only when you sign in, so the site recognizes
               you when you return. No analytics cookies, no advertising
-              cookies, no third-party trackers.
+              cookies, no tracking of you as an individual.
+            </p>
+
+            <h2>Analytics</h2>
+            <p>
+              We use Cloudflare Web Analytics to count page views in
+              aggregate — which pages get read, roughly how many people
+              visit. It sets no cookies, uses no fingerprinting, and
+              cannot follow you as an individual, here or anywhere else.
+              We see totals, never people.
             </p>
 
             <h2>Email</h2>
@@ -50,8 +59,9 @@ export default function PrivacyPage() {
 
             <h2>Who touches the data</h2>
             <p>
-              The site runs on Netlify, email goes through Resend, and
-              payments go through Stripe. Nobody&rsquo;s data is sold,
+              The site runs on Netlify, email goes through Resend,
+              payments go through Stripe, and aggregate page counts go
+              through Cloudflare. Nobody&rsquo;s data is sold,
               shared, or used for anything beyond running the features
               described above.
             </p>
