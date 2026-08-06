@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { getStore } from '@netlify/blobs'
 import { isGenreLens } from '@/lib/explore/genreData'
 import {
   SUBDIVISION_CODE_PATTERN,
@@ -27,6 +28,52 @@ const MB_DELAY_MS = 1100
 
 // Warm-process memoization; the CDN Cache-Control header does the real work.
 const memo = new Map<string, CountryYearDetails>()
+
+/**
+ * Blobs read-through cache: once ANY instance has computed a combo, no
+ * visitor ever waits on the MusicBrainz fan-out for it again — cold
+ * starts and CDN cache misses included. Slow-connection insurance: the
+ * repeat query that used to hold a connection for 5–20s answers in
+ * milliseconds. Historical data barely moves; entries refresh after 30
+ * days. Failures fall through to the live path silently.
+ */
+const BLOB_TTL_MS = 30 * 24 * 60 * 60 * 1000
+
+interface CachedDetails {
+  at: string
+  details: CountryYearDetails
+}
+
+function blobStore() {
+  return getStore({ name: 'explore', consistency: 'eventual' })
+}
+
+async function readCached(key: string): Promise<CountryYearDetails | null> {
+  try {
+    const entry = (await blobStore().get(`panel/${key}`, {
+      type: 'json',
+    })) as CachedDetails | null
+    if (!entry) return null
+    if (Date.now() - Date.parse(entry.at) > BLOB_TTL_MS) return null
+    return entry.details
+  } catch {
+    return null
+  }
+}
+
+async function writeCached(
+  key: string,
+  details: CountryYearDetails,
+): Promise<void> {
+  try {
+    await blobStore().setJSON(`panel/${key}`, {
+      at: new Date().toISOString(),
+      details,
+    } satisfies CachedDetails)
+  } catch {
+    // Cache writes are best-effort.
+  }
+}
 
 interface MbArtistCredit {
   artist?: { id: string; name: string }
@@ -235,6 +282,12 @@ export async function GET(
   const cached = memo.get(key)
   if (cached) return withCacheHeaders(NextResponse.json(cached))
 
+  const blobCached = await readCached(key)
+  if (blobCached) {
+    memo.set(key, blobCached)
+    return withCacheHeaders(NextResponse.json(blobCached))
+  }
+
   const releaseQuery = encodeURIComponent(
     `country:${country} AND date:[${start} TO ${end}-12-31]`,
   )
@@ -268,6 +321,7 @@ export async function GET(
         releases: [],
       }
       memo.set(key, details)
+      await writeCached(key, details)
       return withCacheHeaders(NextResponse.json(details))
     }
 
@@ -288,6 +342,7 @@ export async function GET(
 
     const details = toDetails(releasesBody, origin)
     memo.set(key, details)
+    await writeCached(key, details)
     return withCacheHeaders(NextResponse.json(details))
   } catch (error) {
     if (error instanceof RateLimitError) {

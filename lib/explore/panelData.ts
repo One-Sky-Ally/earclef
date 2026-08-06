@@ -68,15 +68,11 @@ export async function searchExplore(
   query: string,
   signal: AbortSignal,
 ): Promise<SearchResult> {
-  let res: Response
-  try {
-    res = await fetch(`/api/explore/search?q=${encodeURIComponent(query)}`, {
-      signal: deadline(signal),
-    })
-  } catch (error) {
-    if (signal.aborted) throw error
-    throw new Error(TIMEOUT_MESSAGE)
-  }
+  const res = await resilientFetch(
+    'search',
+    `/api/explore/search?q=${encodeURIComponent(query)}`,
+    signal,
+  )
   if (res.status === 404) {
     throw new Error(
       "Couldn't find that — try a city, country, or artist name.",
@@ -125,15 +121,11 @@ export async function fetchArtistEra(
 ): Promise<ArtistEraDetails> {
   const span =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}-${yearEnd}`
-  let res: Response
-  try {
-    res = await fetch(`/api/explore/artist-era/${mbid}/${span}`, {
-      signal: deadline(signal),
-    })
-  } catch (error) {
-    if (signal.aborted) throw error
-    throw new Error(TIMEOUT_MESSAGE)
-  }
+  const res = await resilientFetch(
+    `artist-era ${mbid.slice(0, 8)}/${span}`,
+    `/api/explore/artist-era/${mbid}/${span}`,
+    signal,
+  )
   if (res.status === 429) {
     throw new Error('MusicBrainz is busy right now — try again in a moment.')
   }
@@ -149,6 +141,8 @@ export async function fetchArtistEra(
  * retryable error instead.
  */
 const PANEL_TIMEOUT_MS = 30_000
+/** One silent retry before surfacing an error — flaky-LTE insurance. */
+const AUTO_RETRY_DELAY_MS = 1200
 
 function deadline(signal: AbortSignal, ms = PANEL_TIMEOUT_MS): AbortSignal {
   return AbortSignal.any([signal, AbortSignal.timeout(ms)])
@@ -156,6 +150,46 @@ function deadline(signal: AbortSignal, ms = PANEL_TIMEOUT_MS): AbortSignal {
 
 const TIMEOUT_MESSAGE =
   'That took too long — MusicBrainz may be busy. Try again, or narrow the era.'
+const NETWORK_MESSAGE =
+  'The connection dropped before an answer arrived — check your signal and try again.'
+
+/**
+ * Runs a panel fetch with one silent retry, distinguishes a genuine
+ * timeout from a connection drop, and beacons the failure (with real
+ * elapsed timing) so field failures on other people's devices stop
+ * being guesswork.
+ */
+async function resilientFetch(
+  label: string,
+  url: string,
+  signal: AbortSignal,
+): Promise<Response> {
+  const started = Date.now()
+  let lastError: unknown
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      return await fetch(url, { signal: deadline(signal) })
+    } catch (error) {
+      if (signal.aborted) throw error
+      lastError = error
+      if (attempt === 1) {
+        await new Promise((resolve) =>
+          setTimeout(resolve, AUTO_RETRY_DELAY_MS),
+        )
+        if (signal.aborted) throw error
+      }
+    }
+  }
+  const elapsed = Date.now() - started
+  const timedOut = elapsed >= PANEL_TIMEOUT_MS
+  const { reportClientError } = await import('@/lib/clientLog')
+  reportClientError(
+    'panel-fetch',
+    `${label} failed after 2 attempts (${elapsed}ms, ${timedOut ? 'timeout' : 'network'})`,
+    lastError,
+  )
+  throw new Error(timedOut ? TIMEOUT_MESSAGE : NETWORK_MESSAGE)
+}
 
 export async function fetchCountryYearDetails(
   country: string,
@@ -167,15 +201,11 @@ export async function fetchCountryYearDetails(
   const span =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}-${yearEnd}`
   const genreQuery = genre ? `?genre=${encodeURIComponent(genre)}` : ''
-  let res: Response
-  try {
-    res = await fetch(`/api/explore/${country}/${span}${genreQuery}`, {
-      signal: deadline(signal),
-    })
-  } catch (error) {
-    if (signal.aborted) throw error
-    throw new Error(TIMEOUT_MESSAGE)
-  }
+  const res = await resilientFetch(
+    `country ${country}/${span}${genre ? `?g=${genre}` : ''}`,
+    `/api/explore/${country}/${span}${genreQuery}`,
+    signal,
+  )
   if (res.status === 429) {
     throw new Error('MusicBrainz is busy right now — try again in a moment.')
   }

@@ -110,6 +110,11 @@ function PanelArtistPill({
     // MusicBrainz href for open-in-new-tab muscle memory.
     if (event.metaKey || event.ctrlKey || event.shiftKey) return
     event.preventDefault()
+    // iOS Safari blocks window.open outside the tap's call stack — so
+    // claim the tab SYNCHRONOUSLY inside the gesture and point it at
+    // the resolved link afterwards. If even that is blocked, fall back
+    // to navigating this tab rather than silently doing nothing.
+    const pending = window.open('', '_blank')
     let links = artistLinksCache.get(artist.id)
     if (!links) {
       setResolving(true)
@@ -122,7 +127,11 @@ function PanelArtistPill({
       setResolving(false)
     }
     const href = smartArtistHref(links, service) ?? musicBrainzArtistUrl(artist.id)
-    window.open(href, '_blank', 'noopener,noreferrer')
+    if (pending) {
+      pending.location.href = href
+    } else {
+      window.location.assign(href)
+    }
   }
 
   return (
