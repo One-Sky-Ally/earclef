@@ -11,6 +11,7 @@ import type {
   CountryYearDetails,
   PanelArtist,
   PanelRelease,
+  PoolArtist,
 } from '@/lib/explore/panelData'
 
 const USER_AGENT =
@@ -26,6 +27,10 @@ const ARTIST_LIMIT = 12
 const ORIGIN_PAGE_SIZE = 100
 const ORIGIN_PAGES = 2
 const ORIGIN_LIMIT = 12
+/** Discovery-pool cap shipped to the panel (tiers/chips/search). */
+const POOL_LIMIT = 300
+/** Tags kept per pool artist — enough for a genre fingerprint. */
+const POOL_TAG_LIMIT = 4
 const MB_DELAY_MS = 1100
 
 // Warm-process memoization; the CDN Cache-Control header does the real work.
@@ -50,9 +55,14 @@ function blobStore() {
   return getStore({ name: 'explore', consistency: 'eventual' })
 }
 
+// v2: responses carry the panelArtists discovery pool — key bumped so
+// popular combos recompute with it instead of serving pool-less v1
+// entries for up to 30 days. v1 entries just age out.
+const BLOB_KEY_PREFIX = 'panel/v2/'
+
 async function readCached(key: string): Promise<CountryYearDetails | null> {
   try {
-    const entry = (await blobStore().get(`panel/${key}`, {
+    const entry = (await blobStore().get(`${BLOB_KEY_PREFIX}${key}`, {
       type: 'json',
     })) as CachedDetails | null
     if (!entry) return null
@@ -68,7 +78,7 @@ async function writeCached(
   details: CountryYearDetails,
 ): Promise<void> {
   try {
-    await blobStore().setJSON(`panel/${key}`, {
+    await blobStore().setJSON(`${BLOB_KEY_PREFIX}${key}`, {
       at: new Date().toISOString(),
       details,
     } satisfies CachedDetails)
@@ -164,7 +174,12 @@ async function fetchOriginArtists(
   start: number,
   end: number,
   genre: string | null,
-): Promise<{ top: PanelArtist[]; ids: Set<string>; count: number } | null> {
+): Promise<{
+  top: PanelArtist[]
+  pool: PoolArtist[]
+  ids: Set<string>
+  count: number
+} | null> {
   // Active in range: began by the range's end, didn't end before its start.
   // (For people MB's "begin" is the birth date — a coarse but honest proxy.)
   const genreClause = genre ? ` AND tag:"${genre}"` : ''
@@ -177,7 +192,7 @@ async function fetchOriginArtists(
   // the worst case well inside the function budget.
   const pages = genre ? 1 : ORIGIN_PAGES
 
-  const weighted: { artist: PanelArtist; weight: number }[] = []
+  const weighted: { artist: PoolArtist; weight: number }[] = []
   const ids = new Set<string>()
   let count = 0
   try {
@@ -189,13 +204,17 @@ async function fetchOriginArtists(
       for (const artist of body.artists ?? []) {
         if (ids.has(artist.id) || !activeByRangeEnd(artist, end)) continue
         ids.add(artist.id)
-        const weight = (artist.tags ?? []).reduce(
-          (sum, tag) => sum + (tag.count ?? 0),
-          0,
-        )
+        const tags = (artist.tags ?? []).filter((tag) => (tag.count ?? 0) > 0)
         weighted.push({
-          artist: { id: artist.id, name: artist.name },
-          weight,
+          artist: {
+            id: artist.id,
+            name: artist.name,
+            tags: tags
+              .sort((a, b) => (b.count ?? 0) - (a.count ?? 0))
+              .slice(0, POOL_TAG_LIMIT)
+              .flatMap((tag) => (tag.name ? [tag.name] : [])),
+          },
+          weight: tags.reduce((sum, tag) => sum + (tag.count ?? 0), 0),
         })
       }
       if ((body.count ?? 0) <= (page + 1) * ORIGIN_PAGE_SIZE) break
@@ -207,16 +226,17 @@ async function fetchOriginArtists(
     return null
   }
 
-  const top = weighted
-    .sort((a, b) => b.weight - a.weight)
+  const sorted = weighted.sort((a, b) => b.weight - a.weight)
+  const top = sorted
     .slice(0, ORIGIN_LIMIT)
-    .map((entry) => entry.artist)
-  return { top, ids, count }
+    .map((entry) => ({ id: entry.artist.id, name: entry.artist.name }))
+  const pool = sorted.slice(0, POOL_LIMIT).map((entry) => entry.artist)
+  return { top, pool, ids, count }
 }
 
 function toDetails(
   body: { count?: number; releases?: MbRelease[] },
-  origin: { top: PanelArtist[]; ids: Set<string> },
+  origin: { top: PanelArtist[]; pool: PoolArtist[]; ids: Set<string> },
 ): CountryYearDetails {
   const releases: PanelRelease[] = []
   const artistById = new Map<string, PanelArtist>()
@@ -247,6 +267,7 @@ function toDetails(
   return {
     totalCount: body.count ?? 0,
     originArtists: origin.top,
+    panelArtists: origin.pool,
     artists: [...artistById.values()],
     releases: sorted,
   }
@@ -335,6 +356,7 @@ export async function GET(
       const details: CountryYearDetails = {
         totalCount: origin.count,
         originArtists: origin.top,
+        panelArtists: origin.pool,
         artists: [],
         releases: [],
       }
@@ -352,7 +374,11 @@ export async function GET(
     if (!origin) {
       // Serve a degraded (origin-less) panel, but never cache it — a
       // transient failure must not become the 30-day cached answer.
-      const degraded = toDetails(releasesBody, { top: [], ids: new Set() })
+      const degraded = toDetails(releasesBody, {
+        top: [],
+        pool: [],
+        ids: new Set(),
+      })
       const response = NextResponse.json(degraded)
       response.headers.set('Cache-Control', 'no-store')
       return response

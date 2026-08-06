@@ -10,6 +10,14 @@ export interface PanelRelease {
   artist: PanelArtist
 }
 
+/** A pool artist: panel discovery works client-side on these. */
+export interface PoolArtist {
+  id: string
+  name: string
+  /** Top MusicBrainz tag names — the place's genre fingerprint. */
+  tags: string[]
+}
+
 export interface CountryYearDetails {
   totalCount: number
   /**
@@ -18,6 +26,13 @@ export interface CountryYearDetails {
    * results. Empty when the origin lookup found nothing (or failed).
    */
   originArtists: PanelArtist[]
+  /**
+   * The discovery pool: era-active artists in popularity order with
+   * their tags (≤300) — powers tiers, in-panel genre chips, and name
+   * search with zero extra requests. Absent on cached pre-pool
+   * responses; the panel degrades to the top-12 list.
+   */
+  panelArtists?: PoolArtist[]
   /** Artists credited on the issued-here releases (the fallback list). */
   artists: PanelArtist[]
   releases: PanelRelease[]

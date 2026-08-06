@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import {
   fetchArtistLinks,
@@ -11,6 +11,7 @@ import {
   type CountryYearDetails,
   type PanelArtist,
   type PanelRelease,
+  type PoolArtist,
 } from '@/lib/explore/panelData'
 import { YEAR_MAX, YEAR_MIN, type DataSource } from '@/lib/explore/counts'
 import { archiveAudioSearchUrl, listenSearch } from '@/lib/links'
@@ -42,6 +43,55 @@ interface CountryPanelProps {
 const NEARBY_REACH = 5
 /** Below this many results, the panel offers to widen. */
 const NEARBY_OFFER_THRESHOLD = 5
+
+/**
+ * Discovery tiers: 5 → 20 → +20 steps → 100. Strict popularity order —
+ * each expansion is the next tier down. 100 is also the hard render
+ * cap everywhere (tiers, chip filters, name search).
+ */
+const TIER_BASE = 5
+const TIER_SECOND = 20
+const TIER_STEP = 20
+const RENDER_CAP = 100
+/** Chips shown per panel — the place's loudest genres, by prevalence. */
+const CHIP_LIMIT = 12
+
+function nextTier(visible: number): number {
+  return visible === TIER_BASE
+    ? TIER_SECOND
+    : Math.min(visible + TIER_STEP, RENDER_CAP)
+}
+
+/**
+ * The place+era's own genre fingerprint: tags ordered by how many pool
+ * artists carry them. A tag needs a few artists behind it to qualify —
+ * junk and one-off tags never recur (small pools relax the bar so tiny
+ * scenes still get chips). Excluded: the active global lens (the pool
+ * is already filtered to it) and the place's own name ("finland" is a
+ * popular MB tag, but it isn't a genre).
+ */
+function genreChips(
+  pool: PoolArtist[],
+  lens: string | null,
+  placeName: string,
+): string[] {
+  const prevalence = new Map<string, number>()
+  for (const artist of pool) {
+    for (const tag of artist.tags) {
+      prevalence.set(tag, (prevalence.get(tag) ?? 0) + 1)
+    }
+  }
+  const place = placeName.trim().toLowerCase()
+  const minArtists = pool.length >= 30 ? 3 : 2
+  return [...prevalence.entries()]
+    .filter(
+      ([tag, count]) =>
+        count >= minArtists && tag !== lens && tag.toLowerCase() !== place,
+    )
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, CHIP_LIMIT)
+    .map(([tag]) => tag)
+}
 
 type PanelState =
   | { status: 'loading' }
@@ -181,7 +231,11 @@ export function CountryPanel({
   onClose,
 }: CountryPanelProps) {
   const [state, setState] = useState<PanelState>({ status: 'loading' })
-  const [showAllOrigin, setShowAllOrigin] = useState(false)
+  // Discovery controls over the pool: tier depth, active genre chip,
+  // name query. All reset on remount (parent keys by country+year).
+  const [visible, setVisible] = useState(TIER_BASE)
+  const [chip, setChip] = useState<string | null>(null)
+  const [query, setQuery] = useState('')
   const [showAllArtists, setShowAllArtists] = useState(false)
   const [showAllReleases, setShowAllReleases] = useState(false)
   // "Released in" is demoted: collapsed behind a small pill until asked.
@@ -231,6 +285,37 @@ export function CountryPanel({
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [onClose])
+
+  // The discovery pool — cached pre-pool responses degrade to the
+  // top-12 list (no tags → no chips, search over what's there).
+  const pool: PoolArtist[] = useMemo(
+    () =>
+      state.status !== 'ready'
+        ? []
+        : (state.details.panelArtists?.length
+            ? state.details.panelArtists
+            : state.details.originArtists.map((artist) => ({
+                ...artist,
+                tags: [],
+              }))),
+    [state],
+  )
+  const chips = useMemo(
+    () => genreChips(pool, genre, country.name),
+    [pool, genre, country.name],
+  )
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    return pool.filter(
+      (artist) =>
+        (!chip || artist.tags.includes(chip)) &&
+        (!q || artist.name.toLowerCase().includes(q)),
+    )
+  }, [pool, chip, query])
+  // A name query shows every match (≤cap); otherwise the tier depth.
+  const shown = query.trim()
+    ? filtered.slice(0, RENDER_CAP)
+    : filtered.slice(0, Math.min(visible, RENDER_CAP))
 
   return (
     <aside
@@ -342,39 +427,98 @@ export function CountryPanel({
             </button>
           )}
 
-          {state.details.originArtists.length > 0 && (
+          {pool.length > 0 && (
             <>
               <h3 className={styles.subheading}>
                 Top {genre ? `${genre} ` : ''}artists from {country.name}
               </h3>
-              <ul className={styles.artists}>
-                {(showAllOrigin
-                  ? state.details.originArtists
-                  : state.details.originArtists.slice(0, PREVIEW_COUNT)
-                ).map((artist) => (
-                  <PanelArtistPill
-                    key={artist.id}
-                    artist={artist}
-                    releases={state.details.releases}
-                    rosterEntry={roster[artist.id]}
-                  />
-                ))}
-              </ul>
-              {state.details.originArtists.length > PREVIEW_COUNT && (
+
+              {/* This place+era's own genres, loudest first. */}
+              {chips.length > 0 && (
+                <div
+                  className={styles.chipsRow}
+                  role="group"
+                  aria-label={`Genres in ${country.name}, ${spanLabel}`}
+                >
+                  {chips.map((tag) => (
+                    <button
+                      key={tag}
+                      type="button"
+                      className={chip === tag ? styles.chipActive : styles.chip}
+                      aria-pressed={chip === tag}
+                      onClick={() => {
+                        setChip((current) => (current === tag ? null : tag))
+                        setVisible(TIER_BASE)
+                      }}
+                    >
+                      {tag}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {pool.length > TIER_SECOND && (
+                <input
+                  className={styles.nameFilter}
+                  type="search"
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder="Find a name here…"
+                  aria-label={`Search artists in ${country.name}`}
+                />
+              )}
+
+              {shown.length === 0 ? (
+                <p className={styles.note}>
+                  {chip
+                    ? `No ${chip} artists match here in ${spanLabel}.`
+                    : `No names match here in ${spanLabel}.`}
+                </p>
+              ) : (
+                <ul className={styles.artists}>
+                  {shown.map((artist) => (
+                    <PanelArtistPill
+                      key={artist.id}
+                      artist={artist}
+                      releases={state.details.releases}
+                      rosterEntry={roster[artist.id]}
+                    />
+                  ))}
+                </ul>
+              )}
+
+              {!query.trim() &&
+                shown.length < Math.min(filtered.length, RENDER_CAP) && (
                 <button
                   type="button"
                   className={styles.showAll}
-                  onClick={() => setShowAllOrigin((value) => !value)}
+                  onClick={() => setVisible(nextTier)}
                 >
-                  {showAllOrigin
-                    ? 'Show fewer'
-                    : `Show all ${state.details.originArtists.length}`}
+                  {visible === TIER_BASE ? 'Show more' : 'Show next 20'}
                 </button>
+              )}
+              {!query.trim() && visible > TIER_BASE && (
+                <button
+                  type="button"
+                  className={styles.showAll}
+                  onClick={() => setVisible(TIER_BASE)}
+                >
+                  Show fewer
+                </button>
+              )}
+              {!query.trim() &&
+                shown.length >= RENDER_CAP &&
+                filtered.length > RENDER_CAP && (
+                <p className={styles.capNote}>
+                  {chip
+                    ? `Top ${RENDER_CAP} ${chip} artists shown.`
+                    : `Top ${RENDER_CAP} shown — pick a genre to dig deeper.`}
+                </p>
               )}
             </>
           )}
 
-          {state.details.originArtists.length === 0 &&
+          {pool.length === 0 &&
             state.details.artists.length > 0 && (
             <>
               <h3 className={styles.subheading}>On these releases</h3>

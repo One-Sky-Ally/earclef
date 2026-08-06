@@ -1,5 +1,5 @@
 import stateArtists from './state-artists.json'
-import type { CountryYearDetails, PanelArtist } from './panelData'
+import type { CountryYearDetails, PanelArtist, PoolArtist } from './panelData'
 
 /**
  * State panels are served from the committed precomputed dataset —
@@ -39,6 +39,8 @@ const DATASET = stateArtists as unknown as {
 }
 
 const ARTIST_LIMIT = 12
+/** Discovery-pool cap — the panel's tiers/chips/search work on these. */
+const POOL_LIMIT = 300
 
 /**
  * Undated MusicBrainz artists are overwhelmingly modern self-registered
@@ -99,12 +101,16 @@ export function stateDetails(
       (!lens || artist.t.some((tag) => tag.toLowerCase() === lens)),
   )
   // Era-documented artists outrank the undated; weight order within each.
-  const top: PanelArtist[] = [
+  const ordered = [
     ...matching.filter((artist) => artist.cs !== null),
     ...matching.filter((artist) => artist.cs === null),
   ]
+  const top: PanelArtist[] = ordered
     .slice(0, ARTIST_LIMIT)
     .map((artist) => ({ id: artist.id, name: artist.name }))
+  const pool: PoolArtist[] = ordered
+    .slice(0, POOL_LIMIT)
+    .map((artist) => ({ id: artist.id, name: artist.name, tags: artist.t }))
 
   return {
     // Genre totals count the stored roster only — an honest floor; the
@@ -113,6 +119,7 @@ export function stateDetails(
       ? matching.length
       : activeCount(state, start, end, includeUndated),
     originArtists: top,
+    panelArtists: pool,
     artists: [],
     releases: [],
   }
