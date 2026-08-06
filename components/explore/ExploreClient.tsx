@@ -39,11 +39,7 @@ const GlobeScene = dynamic(
 )
 
 export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
-  const [range, setRange] = useState<[number, number]>([
-    DEFAULT_YEAR,
-    DEFAULT_YEAR,
-  ])
-  const [yearStart, yearEnd] = range
+  const [year, setYear] = useState(DEFAULT_YEAR)
   const [source, setSource] = useState<DataSource | null>(null)
   const [selected, setSelected] = useState<SelectedCountry | null>(null)
   // Artist search result — takes over the panel slot from the country.
@@ -76,7 +72,8 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
     }
   }, [])
 
-  // Read the shareable state once on mount: /?from=1969&to=1975&c=JM.
+  // Read the shareable state once on mount: /?y=1969&c=JM. Old range
+  // links (?from=1965&to=1975) migrate to their midpoint year.
   // Captured synchronously — the URL-writer effect below runs right
   // after this one and would otherwise wipe the params first. (setState
   // still runs from a timeout callback, not the effect body.)
@@ -84,16 +81,23 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
     const search = window.location.search
     const timer = setTimeout(() => {
       const params = new URLSearchParams(search)
+      const single = Number(params.get('y'))
       const from = Number(params.get('from'))
       const to = Number(params.get('to'))
       if (
+        Number.isInteger(single) &&
+        single >= YEAR_MIN &&
+        single <= YEAR_MAX
+      ) {
+        setYear(single)
+      } else if (
         Number.isInteger(from) &&
         Number.isInteger(to) &&
         from >= YEAR_MIN &&
         to <= YEAR_MAX &&
         from <= to
       ) {
-        setRange([from, to])
+        setYear(Math.round((from + to) / 2))
       }
       const code = params.get('c')
       if (code && /^[A-Z]{2}(-[A-Z]{2})?$/.test(code)) {
@@ -105,19 +109,16 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
     return () => clearTimeout(timer)
   }, [])
 
-  // Keep the URL shareable: era + open panel survive reload and paste.
+  // Keep the URL shareable: year + open panel survive reload and paste.
   useEffect(() => {
     const params = new URLSearchParams()
-    if (yearStart !== DEFAULT_YEAR || yearEnd !== DEFAULT_YEAR) {
-      params.set('from', String(yearStart))
-      params.set('to', String(yearEnd))
-    }
+    if (year !== DEFAULT_YEAR) params.set('y', String(year))
     if (selected) params.set('c', selected.code)
     if (lens) params.set('g', lens)
     if (noGlobe) params.set('noglobe', '1')
     const query = params.toString()
     window.history.replaceState(null, '', query ? `/?${query}` : '/')
-  }, [yearStart, yearEnd, selected, lens, noGlobe])
+  }, [year, selected, lens, noGlobe])
 
   function onSearchResolved(result: SearchResult) {
     if (result.kind === 'artist') {
@@ -150,8 +151,7 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
     <div className={styles.stage}>
       <GlobeScene
         forceFallback={noGlobe}
-        yearStart={yearStart}
-        yearEnd={yearEnd}
+        year={year}
         lens={
           lens && genreData?.genres[lens]
             ? { label: lens, countries: genreData.genres[lens] }
@@ -169,19 +169,17 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
       {lens && <GenreStory key={lens} genre={lens} />}
       {artist && (
         <ArtistEraPanel
-          key={`${artist.mbid}:${yearStart}-${yearEnd}`}
+          key={`${artist.mbid}:${year}`}
           artist={artist}
-          yearStart={yearStart}
-          yearEnd={yearEnd}
+          year={year}
           onClose={() => setArtist(null)}
         />
       )}
       {selected && !artist && (
         <CountryPanel
-          key={`${selected.code}:${yearStart}-${yearEnd}:${lens ?? ''}`}
+          key={`${selected.code}:${year}:${lens ?? ''}`}
           country={selected}
-          yearStart={yearStart}
-          yearEnd={yearEnd}
+          year={year}
           genre={lens}
           source={source}
           roster={roster}
@@ -236,11 +234,10 @@ export function ExploreClient({ roster = {} }: { roster?: RosterByMbid }) {
           </>
         )}
         <YearSlider
-          start={yearStart}
-          end={yearEnd}
+          year={year}
           min={YEAR_MIN}
           max={YEAR_MAX}
-          onChange={(start, end) => setRange([start, end])}
+          onChange={setYear}
         />
         {source && (
           <p className={styles.source}>

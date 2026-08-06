@@ -4,30 +4,28 @@ import type { CSSProperties } from 'react'
 import styles from './YearSlider.module.css'
 
 interface YearSliderProps {
-  start: number
-  end: number
+  year: number
   min: number
   max: number
-  onChange: (start: number, end: number) => void
+  onChange: (year: number) => void
 }
 
 /**
- * A two-thumb year slider: thumbs together = a single year (the classic
- * behavior), pull them apart to aggregate a span. A thumb dragged past
- * its partner pushes it along, so the range can never invert.
+ * One thumb, one year. The two-thumb range (July 2026) read as "a
+ * number that's secretly a range" to first-time visitors and wide
+ * spans made the heaviest queries — sparse year+place results now
+ * widen from inside the panel instead ("show nearby years").
  */
-export function YearSlider({ start, end, min, max, onChange }: YearSliderProps) {
-  const pct = (year: number) => ((year - min) / (max - min)) * 100
+export function YearSlider({ year, min, max, onChange }: YearSliderProps) {
+  const pct = ((year - min) / (max - min)) * 100
   const fillVars = {
-    '--fill-start': `${pct(start)}%`,
-    '--fill-end': `${pct(end)}%`,
+    '--fill-start': '0%',
+    '--fill-end': `${pct}%`,
   } as CSSProperties
 
   return (
     <div className={styles.wrapper}>
-      <output className={styles.readout}>
-        {start === end ? start : `${start}–${end}`}
-      </output>
+      <output className={styles.readout}>{year}</output>
       <div className={styles.track} style={fillVars}>
         <input
           className={styles.range}
@@ -35,25 +33,9 @@ export function YearSlider({ start, end, min, max, onChange }: YearSliderProps) 
           min={min}
           max={max}
           step={1}
-          value={start}
-          aria-label="From year"
-          onChange={(event) => {
-            const value = Number(event.target.value)
-            onChange(Math.min(value, end), Math.max(value, end))
-          }}
-        />
-        <input
-          className={styles.range}
-          type="range"
-          min={min}
-          max={max}
-          step={1}
-          value={end}
-          aria-label="To year"
-          onChange={(event) => {
-            const value = Number(event.target.value)
-            onChange(Math.min(value, start), Math.max(value, start))
-          }}
+          value={year}
+          aria-label="Year"
+          onChange={(event) => onChange(Number(event.target.value))}
         />
       </div>
       <div className={styles.bounds} aria-hidden="true">

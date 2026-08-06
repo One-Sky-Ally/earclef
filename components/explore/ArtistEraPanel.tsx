@@ -6,6 +6,7 @@ import {
   musicBrainzArtistUrl,
   type ArtistEraDetails,
 } from '@/lib/explore/panelData'
+import { YEAR_MAX, YEAR_MIN } from '@/lib/explore/counts'
 import { listenSearch } from '@/lib/links'
 import styles from './CountryPanel.module.css'
 import eraStyles from './ArtistEraPanel.module.css'
@@ -17,10 +18,12 @@ export interface SelectedArtist {
 
 interface ArtistEraPanelProps {
   artist: SelectedArtist
-  yearStart: number
-  yearEnd: number
+  year: number
   onClose: () => void
 }
+
+/** ±reach of the one-tap "show nearby years" widen. */
+const NEARBY_REACH = 5
 
 type PanelState =
   | { status: 'loading' }
@@ -35,13 +38,16 @@ type PanelState =
  */
 export function ArtistEraPanel({
   artist,
-  yearStart,
-  yearEnd,
+  year,
   onClose,
 }: ArtistEraPanelProps) {
   const [state, setState] = useState<PanelState>({ status: 'loading' })
   const [attempt, setAttempt] = useState(0)
+  // One-tap widen when the single year holds nothing of their catalog.
+  const [nearby, setNearby] = useState(false)
 
+  const yearStart = nearby ? Math.max(YEAR_MIN, year - NEARBY_REACH) : year
+  const yearEnd = nearby ? Math.min(YEAR_MAX, year + NEARBY_REACH) : year
   const spanLabel =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}–${yearEnd}`
 
@@ -74,7 +80,10 @@ export function ArtistEraPanel({
       <header className={styles.header}>
         <div>
           <h2 className={styles.country}>{artist.name}</h2>
-          <p className={styles.year}>{spanLabel}</p>
+          <p className={styles.year}>
+            {spanLabel}
+            {nearby && ' · around your year'}
+          </p>
         </div>
         <button
           type="button"
@@ -117,10 +126,22 @@ export function ArtistEraPanel({
       {state.status === 'ready' && (
         <div className={styles.body}>
           {state.details.eraCount === 0 ? (
-            <p className={styles.note}>
-              Nothing on record from {artist.name} in {spanLabel} — their
-              catalog lives in other years. Widen the era to find them.
-            </p>
+            <>
+              <p className={styles.note}>
+                Nothing on record from {artist.name} in {spanLabel} — their
+                catalog lives in other years.
+              </p>
+              {!nearby && (
+                <button
+                  type="button"
+                  className={styles.retry}
+                  onClick={() => setNearby(true)}
+                >
+                  Show nearby years ({Math.max(YEAR_MIN, year - NEARBY_REACH)}
+                  –{Math.min(YEAR_MAX, year + NEARBY_REACH)}) →
+                </button>
+              )}
+            </>
           ) : (
             <>
               <p className={styles.total}>
@@ -167,6 +188,15 @@ export function ArtistEraPanel({
                 </p>
               )}
             </>
+          )}
+          {nearby && (
+            <button
+              type="button"
+              className={styles.retry}
+              onClick={() => setNearby(false)}
+            >
+              ← Back to {year} only
+            </button>
           )}
           <p className={eraStyles.methodNote}>
             By original release year (MusicBrainz release groups) — later

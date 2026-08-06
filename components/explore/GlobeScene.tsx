@@ -111,8 +111,7 @@ interface LensState {
 interface GlobeSceneProps {
   /** Skip WebGL entirely and render the country-list fallback. */
   forceFallback?: boolean
-  yearStart: number
-  yearEnd: number
+  year: number
   /** Active genre lens — null shows the release heat map. */
   lens: LensState | null
   paused: boolean
@@ -123,8 +122,7 @@ interface GlobeSceneProps {
 
 export function GlobeScene({
   forceFallback = false,
-  yearStart,
-  yearEnd,
+  year,
   lens,
   paused,
   focusRequest,
@@ -135,7 +133,9 @@ export function GlobeScene({
   const [fallback, setFallback] = useState<GlobeFallback | null>(null)
   const globeRef = useRef<GlobeInstance | null>(null)
   const countsRef = useRef<CountryYearCounts>({})
-  const rangeRef = useRef<[number, number]>([yearStart, yearEnd])
+  // Single selected year, kept as a [year, year] span so the heat and
+  // count helpers (span-capable, still used by the panel widen) apply.
+  const rangeRef = useRef<[number, number]>([year, year])
   const lensRef = useRef<LensState | null>(lens)
   const rangeMaxCache = useRef<Record<string, number>>({})
   const hoverRef = useRef<object | null>(null)
@@ -160,12 +160,12 @@ export function GlobeScene({
   }
 
   useEffect(() => {
-    rangeRef.current = [yearStart, yearEnd]
+    rangeRef.current = [year, year]
     lensRef.current = lens
     rangeMaxCache.current = {}
     applyHeat(globeRef.current)
     // eslint-disable-next-line react-hooks/exhaustive-deps -- applyHeat reads only refs; re-run on inputs alone
-  }, [yearStart, yearEnd, lens])
+  }, [year, lens])
 
   useEffect(() => {
     pausedRef.current = paused

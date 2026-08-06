@@ -12,7 +12,7 @@ import {
   type PanelArtist,
   type PanelRelease,
 } from '@/lib/explore/panelData'
-import type { DataSource } from '@/lib/explore/counts'
+import { YEAR_MAX, YEAR_MIN, type DataSource } from '@/lib/explore/counts'
 import { archiveAudioSearchUrl, listenSearch } from '@/lib/links'
 import { useListenService } from '@/components/listen/ServiceProvider'
 import type { ListenService } from '@/lib/listen/services'
@@ -30,14 +30,18 @@ export type RosterByMbid = Record<string, { slug: string; name: string }>
 
 interface CountryPanelProps {
   country: SelectedCountry
-  yearStart: number
-  yearEnd: number
+  year: number
   /** Active genre lens — switches the panel to emerged-artist mode. */
   genre?: string | null
   source: DataSource | null
   roster?: RosterByMbid
   onClose: () => void
 }
+
+/** ±reach of the one-tap "show nearby years" widen. */
+const NEARBY_REACH = 5
+/** Below this many results, the panel offers to widen. */
+const NEARBY_OFFER_THRESHOLD = 5
 
 type PanelState =
   | { status: 'loading' }
@@ -170,8 +174,7 @@ function PanelArtistPill({
 
 export function CountryPanel({
   country,
-  yearStart,
-  yearEnd,
+  year,
   genre = null,
   source,
   roster = {},
@@ -185,14 +188,20 @@ export function CountryPanel({
   const [releasesOpen, setReleasesOpen] = useState(false)
   // Bumped by the error state's Try-again button — re-runs the fetch.
   const [attempt, setAttempt] = useState(0)
+  // One-tap widen for thin year+place combos: fetches ±NEARBY_REACH
+  // years through the still-span-capable API instead of dead-ending.
+  // Resets naturally — the parent keys this component by country+year.
+  const [nearby, setNearby] = useState(false)
 
+  const yearStart = nearby ? Math.max(YEAR_MIN, year - NEARBY_REACH) : year
+  const yearEnd = nearby ? Math.min(YEAR_MAX, year + NEARBY_REACH) : year
   const spanLabel =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}–${yearEnd}`
   // Subdivision panels (e.g. Hawaii, US-HI) are artists-only — MB
   // pressing data is country-level, so release copy would mislead.
   const isSubdivision = /^[A-Z]{2}-[A-Z]{2}$/.test(country.code)
 
-  // Parent keys this component by country+range, so every fetch cycle
+  // Parent keys this component by country+year, so every fetch cycle
   // starts from a fresh mount in the 'loading' state; a retry bumps
   // `attempt` and runs it again from here.
   useEffect(() => {
@@ -232,7 +241,10 @@ export function CountryPanel({
       <header className={styles.header}>
         <div>
           <h2 className={styles.country}>{country.name}</h2>
-          <p className={styles.year}>{spanLabel}</p>
+          <p className={styles.year}>
+            {spanLabel}
+            {nearby && ' · around your year'}
+          </p>
         </div>
         <button
           type="button"
@@ -282,10 +294,10 @@ export function CountryPanel({
           <p className={styles.total}>
             {state.details.totalCount.toLocaleString()}{' '}
             {genre
-              ? `${genre} artists from here`
+              ? `${genre} artist${state.details.totalCount === 1 ? '' : 's'} from here`
               : isSubdivision
-                ? 'artists from here on record'
-                : 'releases issued here'}
+                ? `artist${state.details.totalCount === 1 ? '' : 's'} from here on record`
+                : `release${state.details.totalCount === 1 ? '' : 's'} issued here`}
           </p>
           {state.details.totalCount > 0 && !isSubdivision && (
             <p className={styles.methodNote}>
@@ -306,6 +318,28 @@ export function CountryPanel({
               Nothing on record here for {spanLabel} — yet. MusicBrainz grows every
               day.
             </p>
+          )}
+
+          {/* Thin year? One tap widens to nearby years — never a dead end. */}
+          {!nearby &&
+            state.details.totalCount < NEARBY_OFFER_THRESHOLD && (
+            <button
+              type="button"
+              className={styles.retry}
+              onClick={() => setNearby(true)}
+            >
+              Show nearby years ({Math.max(YEAR_MIN, year - NEARBY_REACH)}–
+              {Math.min(YEAR_MAX, year + NEARBY_REACH)}) →
+            </button>
+          )}
+          {nearby && (
+            <button
+              type="button"
+              className={styles.retry}
+              onClick={() => setNearby(false)}
+            >
+              ← Back to {year} only
+            </button>
           )}
 
           {state.details.originArtists.length > 0 && (
