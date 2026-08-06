@@ -39,3 +39,5 @@ data/genre-precompute.log
 data/story-cards-work/
 data/story-farm.log
 data/story-farm-run.log
+data/state-precompute.log
+data/state-precompute-work.json

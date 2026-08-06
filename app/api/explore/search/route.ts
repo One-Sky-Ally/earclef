@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { subdivisionByName } from '@/lib/explore/subdivisions'
+import { usStateByCode, usStateByName } from '@/lib/explore/states'
 import type { SearchResult } from '@/lib/explore/panelData'
 
 const USER_AGENT =
@@ -16,6 +17,7 @@ interface MbArea {
   name: string
   score?: number
   'iso-3166-1-codes'?: string[]
+  'iso-3166-2-codes'?: string[]
   relations?: {
     type: string
     direction?: string
@@ -54,10 +56,21 @@ function countryCodeOf(area: MbArea): string | undefined {
   return area['iso-3166-1-codes']?.[0]
 }
 
-/** Walk "part of" relations upward until an area carries a country code. */
+/** A known US state code carried by this area, if any. */
+function usStateCodeOf(area: MbArea): string | undefined {
+  return (area['iso-3166-2-codes'] ?? []).find((code) => usStateByCode(code))
+}
+
+/**
+ * Walk "part of" relations upward until an area carries a country code
+ * — or a US state code, which wins: "Las Vegas" should open Nevada,
+ * not the whole United States.
+ */
 async function resolveCountry(area: MbArea): Promise<string | undefined> {
   let current = area
   for (let hop = 0; hop < MAX_PARENT_HOPS; hop++) {
+    const state = usStateCodeOf(current)
+    if (state) return state
     const direct = countryCodeOf(current)
     if (direct) return direct
 
@@ -67,12 +80,16 @@ async function resolveCountry(area: MbArea): Promise<string | undefined> {
     )
     if (!res.ok) return undefined
     const body = (await res.json()) as MbArea
+    const bodyState = usStateCodeOf(body)
+    if (bodyState) return bodyState
 
     const partOf = (body.relations ?? []).filter(
       (rel) => rel.type === 'part of' && rel.area,
     )
+    const withState = partOf.find((rel) => usStateCodeOf(rel.area!))
     const withCode = partOf.find((rel) => countryCodeOf(rel.area!))
     const parent =
+      withState?.area ??
       withCode?.area ??
       partOf.find((rel) => rel.direction === 'backward')?.area ??
       partOf[0]?.area
@@ -117,8 +134,9 @@ export async function GET(request: Request) {
         )
   }
 
-  // Configured subdivisions win by name — "Hawaii" opens US-HI, not US.
-  const subdivision = subdivisionByName(query)
+  // Configured subdivisions and US states win by name — "Hawaii" opens
+  // US-HI, "Texas" opens US-TX, never the whole country.
+  const subdivision = subdivisionByName(query) ?? usStateByName(query)
   if (subdivision) {
     const result: SearchResult = {
       kind: 'place',

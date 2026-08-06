@@ -5,6 +5,8 @@ import {
   SUBDIVISION_CODE_PATTERN,
   subdivisionByCode,
 } from '@/lib/explore/subdivisions'
+import { US_STATE_CODE_PATTERN, usStateByCode } from '@/lib/explore/states'
+import { hasStateData, stateDetails } from '@/lib/explore/stateData'
 import type {
   CountryYearDetails,
   PanelArtist,
@@ -262,11 +264,19 @@ export async function GET(
   }
 
   // "1969" (single year) or "1965-1975" (inclusive span).
-  const subdivision = SUBDIVISION_CODE_PATTERN.test(country)
-    ? subdivisionByCode(country)
+  const usState = US_STATE_CODE_PATTERN.test(country)
+    ? usStateByCode(country)
     : undefined
+  // States without committed data (and any future non-state subdivision)
+  // fall back to the live MusicBrainz area query, Hawaii-style.
+  const subdivision =
+    !usState && SUBDIVISION_CODE_PATTERN.test(country)
+      ? subdivisionByCode(country)
+      : usState && !hasStateData(usState.code)
+        ? { code: usState.code, mbArea: usState.name }
+        : undefined
   if (
-    (!/^[A-Z]{2}$/.test(country) && !subdivision) ||
+    (!/^[A-Z]{2}$/.test(country) && !subdivision && !usState) ||
     !/^\d{4}(-\d{4})?$/.test(year)
   ) {
     return NextResponse.json({ error: 'Invalid country or year' }, { status: 400 })
@@ -276,6 +286,14 @@ export async function GET(
   const end = Number(endRaw)
   if (start < 1900 || end > 2100 || start > end) {
     return NextResponse.json({ error: 'Year out of range' }, { status: 400 })
+  }
+
+  // State panels answer from the committed dataset — no MusicBrainz,
+  // no Blobs, milliseconds for any span. Deploys refresh the data and
+  // purge the CDN together.
+  if (usState && hasStateData(usState.code)) {
+    const details = stateDetails(usState.code, start, end, genre)
+    if (details) return withCacheHeaders(NextResponse.json(details))
   }
 
   const key = `${country}:${year}:${genre ?? ''}`

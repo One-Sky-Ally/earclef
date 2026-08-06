@@ -33,6 +33,21 @@ export async function loadCounts(
   }
 }
 
+/**
+ * Per-state artist-emergence counts (career-start years, precomputed by
+ * scripts/build-state-data.mjs) — the heat layer for the zoomed-in US
+ * state view. Absent file = states render flat, panels still work.
+ */
+export async function loadStateCounts(): Promise<CountryYearCounts> {
+  try {
+    const res = await fetch('/data/state-year-counts.json')
+    if (res.ok) return (await res.json()) as CountryYearCounts
+  } catch {
+    // States render without heat; the click panels are unaffected.
+  }
+  return {}
+}
+
 /** Log-scaled 0..1 heat for a count against the year's hottest country. */
 export function heatValue(count: number, yearMax: number): number {
   if (count <= 0 || yearMax <= 0) return 0

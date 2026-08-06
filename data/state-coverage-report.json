@@ -1,0 +1,614 @@
+{
+  "US-AL": {
+    "name": "Alabama",
+    "artistsOnRecord": 1131,
+    "stored": 531,
+    "top5": [
+      "ERRA",
+      "Nat King Cole",
+      "Sun Ra",
+      "Emmylou Harris",
+      "Daikaiju"
+    ]
+  },
+  "US-AK": {
+    "name": "Alaska",
+    "artistsOnRecord": 192,
+    "stored": 192,
+    "top5": [
+      "Emily Anderson",
+      "Captain KRB",
+      "Photonak",
+      "Gene Boggs",
+      "Sarah Martinson"
+    ]
+  },
+  "US-AZ": {
+    "name": "Arizona",
+    "artistsOnRecord": 1893,
+    "stored": 461,
+    "top5": [
+      "Alice Cooper",
+      "Jimmy Eat World",
+      "AJJ",
+      "Meat Puppets",
+      "Soulfly"
+    ]
+  },
+  "US-AR": {
+    "name": "Arkansas",
+    "artistsOnRecord": 737,
+    "stored": 480,
+    "top5": [
+      "Evanescence",
+      "Pharoah Sanders",
+      "Pallbearer",
+      "The Body",
+      "Living Sacrifice"
+    ]
+  },
+  "US-CA": {
+    "name": "California",
+    "artistsOnRecord": 11413,
+    "stored": 553,
+    "top5": [
+      "Metallica",
+      "Green Day",
+      "Tool",
+      "Red Hot Chili Peppers",
+      "Megadeth"
+    ]
+  },
+  "US-CO": {
+    "name": "Colorado",
+    "artistsOnRecord": 2125,
+    "stored": 471,
+    "top5": [
+      "Blood Incantation",
+      "Allegaeon",
+      "3OH!3",
+      "Velvet Acid Christ",
+      "Of the Trees"
+    ]
+  },
+  "US-CT": {
+    "name": "Connecticut",
+    "artistsOnRecord": 1319,
+    "stored": 527,
+    "top5": [
+      "Kenny Mehler",
+      "John Mayer",
+      "Fates Warning",
+      "Hatebreed",
+      "Legend"
+    ]
+  },
+  "US-DE": {
+    "name": "Delaware",
+    "artistsOnRecord": 281,
+    "stored": 281,
+    "top5": [
+      "The Voice",
+      "George Thorogood & the Destroyers",
+      "Aegelis",
+      "Murk Daddy",
+      "Cortisa Star"
+    ]
+  },
+  "US-FL": {
+    "name": "Florida",
+    "artistsOnRecord": 3928,
+    "stored": 530,
+    "top5": [
+      "Limp Bizkit",
+      "Ethel Cain",
+      "Marilyn Manson",
+      "Kamelot",
+      "Pitbull"
+    ]
+  },
+  "US-GA": {
+    "name": "Georgia",
+    "artistsOnRecord": 2670,
+    "stored": 566,
+    "top5": [
+      "Ye",
+      "R.E.M.",
+      "The Allman Brothers Band",
+      "Ciara",
+      "Mastodon"
+    ]
+  },
+  "US-HI": {
+    "name": "Hawaii",
+    "artistsOnRecord": 842,
+    "stored": 549,
+    "top5": [
+      "Bruno Mars",
+      "Jack Johnson",
+      "haircuts for men",
+      "Kenny Wesley",
+      "Nosmoh"
+    ]
+  },
+  "US-ID": {
+    "name": "Idaho",
+    "artistsOnRecord": 415,
+    "stored": 404,
+    "top5": [
+      "The Ongoing Concept",
+      "Built to Spill",
+      "Ealdor Bealu",
+      "The Temptation Of Saint Anthony",
+      "Eilen Jewell"
+    ]
+  },
+  "US-IL": {
+    "name": "Illinois",
+    "artistsOnRecord": 3296,
+    "stored": 526,
+    "top5": [
+      "Disturbed",
+      "The Smashing Pumpkins",
+      "Earth, Wind & Fire",
+      "Ministry",
+      "Herbie Hancock"
+    ]
+  },
+  "US-IN": {
+    "name": "Indiana",
+    "artistsOnRecord": 1898,
+    "stored": 502,
+    "top5": [
+      "Michael Jackson",
+      "Freddie Hubbard",
+      "Freddie Gibbs",
+      "The Jacksons",
+      "Wes Montgomery"
+    ]
+  },
+  "US-IA": {
+    "name": "Iowa",
+    "artistsOnRecord": 793,
+    "stored": 487,
+    "top5": [
+      "Slipknot",
+      "Stone Sour",
+      "Blues Pills",
+      "Perfume Genius",
+      "Corey Taylor"
+    ]
+  },
+  "US-KS": {
+    "name": "Kansas",
+    "artistsOnRecord": 712,
+    "stored": 457,
+    "top5": [
+      "Janelle Monáe",
+      "Kansas",
+      "Manilla Road",
+      "Joe Walsh",
+      "Origin"
+    ]
+  },
+  "US-KY": {
+    "name": "Kentucky",
+    "artistsOnRecord": 1409,
+    "stored": 538,
+    "top5": [
+      "Panopticon",
+      "Cage the Elephant",
+      "Space Laces",
+      "Slint",
+      "luxury elite"
+    ]
+  },
+  "US-LA": {
+    "name": "Louisiana",
+    "artistsOnRecord": 2428,
+    "stored": 489,
+    "top5": [
+      "Lil Wayne",
+      "Iniki",
+      "Louis Armstrong",
+      "Boosie Badazz",
+      "The Residents"
+    ]
+  },
+  "US-ME": {
+    "name": "Maine",
+    "artistsOnRecord": 414,
+    "stored": 411,
+    "top5": [
+      "4lung",
+      "tv room",
+      "Stephen King",
+      "Tye Newton",
+      "Deep Gnome"
+    ]
+  },
+  "US-MD": {
+    "name": "Maryland",
+    "artistsOnRecord": 1791,
+    "stored": 460,
+    "top5": [
+      "Frank Zappa",
+      "Animal Collective",
+      "Beach House",
+      "Philip Glass",
+      "BT"
+    ]
+  },
+  "US-MA": {
+    "name": "Massachusetts",
+    "artistsOnRecord": 3012,
+    "stored": 578,
+    "top5": [
+      "Aerosmith",
+      "Dream Theater",
+      "Boston",
+      "Poppy",
+      "Toby Fox"
+    ]
+  },
+  "US-MI": {
+    "name": "Michigan",
+    "artistsOnRecord": 3425,
+    "stored": 494,
+    "top5": [
+      "The White Stripes",
+      "Alice Cooper",
+      "Tally Hall",
+      "The Temptations",
+      "La Dispute"
+    ]
+  },
+  "US-MN": {
+    "name": "Minnesota",
+    "artistsOnRecord": 2550,
+    "stored": 506,
+    "top5": [
+      "Prince",
+      "Bob Dylan",
+      "The Replacements",
+      "After the Burial",
+      "Bound for Glory"
+    ]
+  },
+  "US-MS": {
+    "name": "Mississippi",
+    "artistsOnRecord": 643,
+    "stored": 476,
+    "top5": [
+      "Elvis Presley",
+      "Diplo",
+      "Sam Cooke",
+      "LeAnn Rimes",
+      "Faith Hill"
+    ]
+  },
+  "US-MO": {
+    "name": "Missouri",
+    "artistsOnRecord": 1646,
+    "stored": 499,
+    "top5": [
+      "Slayyyter",
+      "Chuck Berry",
+      "Akon",
+      "100 gecs",
+      "Burt Bacharach"
+    ]
+  },
+  "US-MT": {
+    "name": "Montana",
+    "artistsOnRecord": 304,
+    "stored": 304,
+    "top5": [
+      "The Gray Goo",
+      "Hey, ily!",
+      "Great Grey",
+      "Swamp Ritual",
+      "Modern Sons"
+    ]
+  },
+  "US-NE": {
+    "name": "Nebraska",
+    "artistsOnRecord": 629,
+    "stored": 482,
+    "top5": [
+      "Elliott Smith",
+      "Bright Eyes",
+      "NANORAY",
+      "311",
+      "JoJo Siwa"
+    ]
+  },
+  "US-NV": {
+    "name": "Nevada",
+    "artistsOnRecord": 1093,
+    "stored": 436,
+    "top5": [
+      "Imagine Dragons",
+      "The Killers",
+      "Panic! at the Disco",
+      "Five Finger Death Punch",
+      "Febuary"
+    ]
+  },
+  "US-NH": {
+    "name": "New Hampshire",
+    "artistsOnRecord": 515,
+    "stored": 433,
+    "top5": [
+      "Ray LaMontagne",
+      "Alvin Lucier",
+      "Skrogg",
+      "Cameron Boucher",
+      "Sepsiss"
+    ]
+  },
+  "US-NJ": {
+    "name": "New Jersey",
+    "artistsOnRecord": 1771,
+    "stored": 520,
+    "top5": [
+      "My Chemical Romance",
+      "Frank Sinatra",
+      "Symphony X",
+      "Whitney Houston",
+      "Halsey"
+    ]
+  },
+  "US-NM": {
+    "name": "New Mexico",
+    "artistsOnRecord": 829,
+    "stored": 459,
+    "top5": [
+      "Demi Lovato",
+      "Beirut",
+      "The Shins",
+      "Old Man Gloom",
+      "brokeNCYDE"
+    ]
+  },
+  "US-NY": {
+    "name": "New York",
+    "artistsOnRecord": 9281,
+    "stored": 589,
+    "top5": [
+      "Swans",
+      "2Pac",
+      "KISS",
+      "Sonic Youth",
+      "Beastie Boys"
+    ]
+  },
+  "US-NC": {
+    "name": "North Carolina",
+    "artistsOnRecord": 3549,
+    "stored": 534,
+    "top5": [
+      "B.o.B",
+      "Porter Robinson",
+      "He Is Legend",
+      "Jermaine Dupri",
+      "Rhiannon Giddens"
+    ]
+  },
+  "US-ND": {
+    "name": "North Dakota",
+    "artistsOnRecord": 254,
+    "stored": 254,
+    "top5": [
+      "Jonny Lang",
+      "Martyrs of Apathy",
+      "Egypt",
+      "Immune System",
+      "Gypsy Wizard Queen"
+    ]
+  },
+  "US-OH": {
+    "name": "Ohio",
+    "artistsOnRecord": 3714,
+    "stored": 555,
+    "top5": [
+      "Nine Inch Nails",
+      "DEVO",
+      "twenty one pilots",
+      "Pere Ubu",
+      "The Black Keys"
+    ]
+  },
+  "US-OK": {
+    "name": "Oklahoma",
+    "artistsOnRecord": 1151,
+    "stored": 503,
+    "top5": [
+      "Chat Pile",
+      "The Flaming Lips",
+      "Mothica",
+      "J.J. Cale",
+      "Skating Polly"
+    ]
+  },
+  "US-OR": {
+    "name": "Oregon",
+    "artistsOnRecord": 1962,
+    "stored": 491,
+    "top5": [
+      "Agalloch",
+      "Vylet Pony",
+      "Red Fang",
+      "Everclear",
+      "STRFKR"
+    ]
+  },
+  "US-PA": {
+    "name": "Pennsylvania",
+    "artistsOnRecord": 3436,
+    "stored": 536,
+    "top5": [
+      "Lil Peep",
+      "Keith Jarrett",
+      "Motionless in White",
+      "Billie Holiday",
+      "Jack Stauber"
+    ]
+  },
+  "US-RI": {
+    "name": "Rhode Island",
+    "artistsOnRecord": 834,
+    "stored": 487,
+    "top5": [
+      "The Dear Hunter",
+      "ARMPIT TERMITES",
+      "Dropdead",
+      "Alvin Curran",
+      "DARKSIDE"
+    ]
+  },
+  "US-SC": {
+    "name": "South Carolina",
+    "artistsOnRecord": 842,
+    "stored": 482,
+    "top5": [
+      "Nile",
+      "Jeezy",
+      "Toro y Moi",
+      "Peabo Bryson",
+      "Alphonse Mouzon"
+    ]
+  },
+  "US-SD": {
+    "name": "South Dakota",
+    "artistsOnRecord": 172,
+    "stored": 172,
+    "top5": [
+      "Woman Is the Earth",
+      "Immelmann",
+      "Crash Alley",
+      "Jeremy Abbott",
+      "Green Altar"
+    ]
+  },
+  "US-TN": {
+    "name": "Tennessee",
+    "artistsOnRecord": 4024,
+    "stored": 559,
+    "top5": [
+      "Kings of Leon",
+      "All Them Witches",
+      "10 Years",
+      "Booker T. & the MG’s",
+      "Aretha Franklin"
+    ]
+  },
+  "US-TX": {
+    "name": "Texas",
+    "artistsOnRecord": 6991,
+    "stored": 545,
+    "top5": [
+      "Beyoncé",
+      "Pantera",
+      "ZZ Top",
+      "Janis Joplin",
+      "The Mars Volta"
+    ]
+  },
+  "US-UT": {
+    "name": "Utah",
+    "artistsOnRecord": 1065,
+    "stored": 478,
+    "top5": [
+      "The Osmonds",
+      "Caladan Brood",
+      "I DONT KNOW HOW BUT THEY FOUND ME",
+      "Visigoth",
+      "Zach Knell"
+    ]
+  },
+  "US-VT": {
+    "name": "Vermont",
+    "artistsOnRecord": 496,
+    "stored": 418,
+    "top5": [
+      "Phish",
+      "Patrick Schneeweis",
+      "Es‐K",
+      "Witch",
+      "Barishi"
+    ]
+  },
+  "US-VA": {
+    "name": "Virginia",
+    "artistsOnRecord": 1944,
+    "stored": 506,
+    "top5": [
+      "Ella Fitzgerald",
+      "Missy Elliott",
+      "Pharrell Williams",
+      "Pentagram",
+      "GWAR"
+    ]
+  },
+  "US-WA": {
+    "name": "Washington",
+    "artistsOnRecord": 2898,
+    "stored": 518,
+    "top5": [
+      "Nirvana",
+      "Alice in Chains",
+      "Pearl Jam",
+      "Soundgarden",
+      "Foo Fighters"
+    ]
+  },
+  "US-WV": {
+    "name": "West Virginia",
+    "artistsOnRecord": 408,
+    "stored": 407,
+    "top5": [
+      "Karma to Burn",
+      "Horseburner",
+      "Robert Drasnin",
+      "Sierra Ferrell",
+      "upallnight"
+    ]
+  },
+  "US-WI": {
+    "name": "Wisconsin",
+    "artistsOnRecord": 2047,
+    "stored": 485,
+    "top5": [
+      "Ava Max",
+      "Crustbaby",
+      "Bon Iver",
+      "Garbage",
+      "Stiggy Pop"
+    ]
+  },
+  "US-WY": {
+    "name": "Wyoming",
+    "artistsOnRecord": 81,
+    "stored": 81,
+    "top5": [
+      "Blood & Iron",
+      "Spencer Bohren",
+      "Teenage Bottlerocket",
+      "The-Front",
+      "Michael DeGreve"
+    ]
+  },
+  "US-DC": {
+    "name": "Washington, D.C.",
+    "artistsOnRecord": 1258,
+    "stored": 419,
+    "top5": [
+      "Marvin Gaye",
+      "Periphery",
+      "Marty Friedman",
+      "Fugazi",
+      "Thievery Corporation"
+    ]
+  }
+}
