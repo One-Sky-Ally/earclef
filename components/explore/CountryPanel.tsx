@@ -6,7 +6,6 @@ import {
   fetchArtistLinks,
   fetchCountryYearDetails,
   musicBrainzArtistUrl,
-  musicBrainzReleaseUrl,
   youtubeSearchUrl,
   type CountryYearDetails,
   type PanelArtist,
@@ -14,7 +13,7 @@ import {
   type PoolArtist,
 } from '@/lib/explore/panelData'
 import { YEAR_MAX, YEAR_MIN, type DataSource } from '@/lib/explore/counts'
-import { archiveAudioSearchUrl, listenSearch } from '@/lib/links'
+import { listenSearch } from '@/lib/links'
 import { useListenService } from '@/components/listen/ServiceProvider'
 import type { ListenService } from '@/lib/listen/services'
 import type { ArtistLinks } from '@/lib/explore/panelData'
@@ -104,16 +103,10 @@ type PanelState =
   | { status: 'error'; message: string }
   | { status: 'ready'; details: CountryYearDetails }
 
-const PREVIEW_COUNT = 5
-
 // listenSearch quotes the title but leaves the artist bare, so name variants
 // can't zero out the results while the search stays on-target ("Black Widow"
 // the band, not the Marvel film). Artists get their top release as a
 // discriminator.
-function releaseSearchHref(release: PanelRelease): string {
-  return listenSearch(release.artist.name, release.title)
-}
-
 function artistSearchHref(
   artist: PanelArtist,
   releases: PanelRelease[],
@@ -245,12 +238,6 @@ export function CountryPanel({
   const [genreFilter, setGenreFilter] = useState<string | null>(null)
   const [filterOpen, setFilterOpen] = useState(false)
   const [genreQuery, setGenreQuery] = useState('')
-  // "On these releases" (credits view) gets the same tiers — but no
-  // genre dropdown: release credits carry no tags on this surface.
-  const [creditsVisible, setCreditsVisible] = useState(TIER_BASE)
-  const [showAllReleases, setShowAllReleases] = useState(false)
-  // "Released in" is demoted: collapsed behind a small pill until asked.
-  const [releasesOpen, setReleasesOpen] = useState(false)
   // Bumped by the error state's Try-again button — re-runs the fetch.
   const [attempt, setAttempt] = useState(0)
   // One-tap widen for thin year+place combos: fetches ±NEARBY_REACH
@@ -262,9 +249,6 @@ export function CountryPanel({
   const yearEnd = nearby ? Math.min(YEAR_MAX, year + NEARBY_REACH) : year
   const spanLabel =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}–${yearEnd}`
-  // Subdivision panels (e.g. Hawaii, US-HI) are artists-only — MB
-  // pressing data is country-level, so release copy would mislead.
-  const isSubdivision = /^[A-Z]{2}-[A-Z]{2}$/.test(country.code)
 
   // Parent keys this component by country+year, so every fetch cycle
   // starts from a fresh mount in the 'loading' state; a retry bumps
@@ -410,21 +394,10 @@ export function CountryPanel({
 
       {state.status === 'ready' && (
         <div className={styles.body}>
-          <p className={styles.total}>
-            {state.details.totalCount.toLocaleString()}{' '}
-            {genre
-              ? `${genre} artist${state.details.totalCount === 1 ? '' : 's'} from here`
-              : isSubdivision
-                ? `artist${state.details.totalCount === 1 ? '' : 's'} from here on record`
-                : `release${state.details.totalCount === 1 ? '' : 's'} issued here`}
-          </p>
-          {state.details.totalCount > 0 && !isSubdivision && (
-            <p className={styles.methodNote}>
-              Counted by where releases were issued or distributed — artists
-              may hail from elsewhere.
-            </p>
-          )}
-          {country.code === 'AQ' && (
+          {/* Editorial line (locked): only artists FROM a place appear —
+              distribution reach is not local culture. Release data still
+              feeds the heat map and listen links under the hood. */}
+          {country.code === 'AQ' && pool.length > 0 && (
             <p className={styles.penguinNote}>
               Yes, really — no one lives here, but some artists register
               Antarctica as home as a running joke. We report the database
@@ -432,16 +405,15 @@ export function CountryPanel({
             </p>
           )}
 
-          {state.details.totalCount === 0 && (
+          {pool.length === 0 && (
             <p className={styles.note}>
-              Nothing on record here for {spanLabel} — yet. MusicBrainz grows every
-              day.
+              No artists from here on record for {spanLabel} — yet.
+              MusicBrainz grows every day.
             </p>
           )}
 
           {/* Thin year? One tap widens to nearby years — never a dead end. */}
-          {!nearby &&
-            state.details.totalCount < NEARBY_OFFER_THRESHOLD && (
+          {!nearby && pool.length < NEARBY_OFFER_THRESHOLD && (
             <button
               type="button"
               className={styles.widen}
@@ -582,7 +554,8 @@ export function CountryPanel({
                   : genre
                     ? `${genre} `
                     : ''}
-                artists from {country.name}
+                artists from {country.name} ·{' '}
+                {(genreFilter ? filtered.length : pool.length).toLocaleString()}
               </h3>
 
               {shown.length === 0 ? (
@@ -630,50 +603,6 @@ export function CountryPanel({
             </>
           )}
 
-          {pool.length === 0 &&
-            state.details.artists.length > 0 && (
-            <>
-              <h3 className={styles.subheading}>On these releases</h3>
-              <ul className={styles.artists}>
-                {state.details.artists
-                  .slice(0, Math.min(creditsVisible, RENDER_CAP))
-                  .map((artist) => (
-                    <PanelArtistPill
-                      key={artist.id}
-                      artist={artist}
-                      releases={state.details.releases}
-                      rosterEntry={roster[artist.id]}
-                    />
-                  ))}
-              </ul>
-              {creditsVisible <
-                Math.min(state.details.artists.length, RENDER_CAP) && (
-                <button
-                  type="button"
-                  className={styles.showAll}
-                  onClick={() => setCreditsVisible(nextTier)}
-                >
-                  {creditsVisible === TIER_BASE ? 'Show more' : 'Show next 20'}
-                </button>
-              )}
-              {creditsVisible > TIER_BASE && (
-                <button
-                  type="button"
-                  className={styles.showAll}
-                  onClick={() => setCreditsVisible(TIER_BASE)}
-                >
-                  Show fewer
-                </button>
-              )}
-              {creditsVisible >= RENDER_CAP &&
-                state.details.artists.length >= RENDER_CAP && (
-                <p className={styles.capNote}>
-                  Top {RENDER_CAP} credited artists shown.
-                </p>
-              )}
-            </>
-          )}
-
           {/* Cultural snapshot AFTER the artists — people first, era second. */}
           {!genre && (
             <WhatWasPlaying
@@ -682,92 +611,6 @@ export function CountryPanel({
               yearStart={yearStart}
               yearEnd={yearEnd}
             />
-          )}
-
-          {state.details.releases.length > 0 && (
-            <div className={styles.releasesFold}>
-              <button
-                type="button"
-                className={styles.releasesPill}
-                onClick={() => setReleasesOpen((value) => !value)}
-                aria-expanded={releasesOpen}
-              >
-                {state.details.originArtists.length > 0
-                  ? `Released in ${country.name}`
-                  : 'Releases'}
-                {' · '}
-                {state.details.totalCount.toLocaleString()}
-                <span aria-hidden="true"> {releasesOpen ? '▾' : '▸'}</span>
-              </button>
-              {releasesOpen && (
-                <>
-              <ul className={styles.releases}>
-                {(showAllReleases
-                  ? state.details.releases
-                  : state.details.releases.slice(0, PREVIEW_COUNT)
-                ).map((release) => (
-                  <li key={release.id} className={styles.release}>
-                    <div className={styles.releaseText}>
-                      <a
-                        className={styles.releaseTitle}
-                        href={musicBrainzReleaseUrl(release.id)}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {release.title}
-                      </a>
-                      <span className={styles.releaseMeta}>
-                        {release.artist.name}
-                        {release.date ? ` · ${release.date}` : ''}
-                      </span>
-                    </div>
-                    <a
-                      className={styles.listenLink}
-                      href={releaseSearchHref(release)}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Listen: search YouTube for ${release.title} by ${release.artist.name}`}
-                    >
-                      ▶ Listen
-                    </a>
-                    {yearEnd < 1950 && (
-                      <a
-                        className={styles.listenLink}
-                        href={archiveAudioSearchUrl(
-                          release.artist.name,
-                          release.title,
-                        )}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={`Search the Internet Archive for ${release.title} by ${release.artist.name}`}
-                      >
-                        Archive ↗
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-              {state.details.releases.length > PREVIEW_COUNT && (
-                <button
-                  type="button"
-                  className={styles.showAll}
-                  onClick={() => setShowAllReleases((value) => !value)}
-                >
-                  {showAllReleases
-                    ? 'Show fewer'
-                    : `Show all ${state.details.releases.length}`}
-                </button>
-              )}
-              {showAllReleases &&
-                state.details.totalCount > state.details.releases.length && (
-                  <p className={styles.truncationNote}>
-                    Showing the first {state.details.releases.length} of{' '}
-                    {state.details.totalCount.toLocaleString()} on record.
-                  </p>
-                )}
-                </>
-              )}
-            </div>
           )}
 
           {source === 'simulated' && (
