@@ -1,0 +1,166 @@
+/* Place+era play queue — the panel's "discovery ends in sound" block */
+
+.playButton {
+  display: block;
+  width: fit-content;
+  margin: 0.2rem 0 0.9rem;
+  padding: 0.5rem 1.15rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 16px rgba(242, 169, 59, 0.25);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.playButton:hover {
+  box-shadow: 0 0 22px rgba(242, 169, 59, 0.45);
+  transform: translateY(-1px);
+}
+
+.queueBox {
+  margin: 0.2rem 0 1rem;
+  padding: 0.6rem;
+  border: 1px solid rgba(242, 169, 59, 0.3);
+  border-radius: 14px;
+  background: rgba(20, 14, 9, 0.55);
+}
+
+.playerFrame {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.playerFrame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.nowPlaying {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.nowIndex {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.nowTitle {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.78rem;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.controls {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.controlButton {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(242, 169, 59, 0.35);
+  border-radius: 8px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.controlButton:hover:not(:disabled) {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.controlButton:disabled {
+  opacity: 0.35;
+}
+
+.buildNote {
+  margin-top: 0.45rem;
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.sparseNote {
+  margin: 0.2rem 0 0.9rem;
+  font-size: 0.74rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.queueList {
+  list-style: none;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  max-height: 12rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-deep) transparent;
+}
+
+.row,
+.rowActive {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.22rem 0.3rem;
+  border-radius: 8px;
+  font-size: 0.76rem;
+}
+
+.rowActive {
+  background: rgba(242, 169, 59, 0.12);
+}
+
+.rowPlay {
+  flex-shrink: 0;
+  min-width: 1.5rem;
+  text-align: center;
+  color: var(--accent);
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.rowPlay:hover {
+  border-color: var(--accent);
+}
+
+.rowArtist,
+.rowArtistLink {
+  flex-shrink: 0;
+  color: var(--text);
+}
+
+.rowArtistLink {
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+.rowArtistLink:hover {
+  color: var(--text);
+}
+
+.rowTitle {
+  min-width: 0;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -19,6 +19,7 @@ import { useListenService } from '@/components/listen/ServiceProvider'
 import type { ListenService } from '@/lib/listen/services'
 import type { ArtistLinks } from '@/lib/explore/panelData'
 import { WhatWasPlaying } from '@/components/explore/WhatWasPlaying'
+import { QueuePlayer } from '@/components/explore/QueuePlayer'
 import styles from './CountryPanel.module.css'
 
 export interface SelectedCountry {
@@ -459,6 +460,16 @@ export function CountryPanel({
               ← Back to {year} only
             </button>
           )}
+
+          {/* Discovery ends in sound — the queue walks the same
+              popularity ranking the list below shows. */}
+          <QueuePlayer
+            key={`${country.code}:${year}:${genre ?? ''}`}
+            placeName={country.name}
+            year={year}
+            pool={pool}
+            roster={roster}
+          />
 
           {spotlightArtist && (
             <div className={styles.spotlight}>
