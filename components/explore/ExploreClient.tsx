@@ -55,6 +55,10 @@ export function ExploreClient({
   surpriseEras = [],
 }: ExploreClientProps) {
   const [year, setYear] = useState(DEFAULT_YEAR)
+  // The SETTLED year: panels key off this, so a drag never storms them
+  // with per-tick remounts and refetches. Follows `year` after 350ms of
+  // quiet; programmatic jumps (surprise, deep links) set both at once.
+  const [panelYear, setPanelYear] = useState(DEFAULT_YEAR)
   const [source, setSource] = useState<DataSource | null>(null)
   const [selected, setSelected] = useState<SelectedCountry | null>(null)
   // Artist search result — takes over the panel slot from the country.
@@ -87,6 +91,37 @@ export function ExploreClient({
     },
     [],
   )
+
+  // Panels follow the year only once it settles.
+  useEffect(() => {
+    const timer = setTimeout(() => setPanelYear(year), 350)
+    return () => clearTimeout(timer)
+  }, [year])
+
+  // Crash self-reporting (mobile slider deaths were invisible): uncaught
+  // errors and unhandled rejections beacon to /api/postcard, rate-limited
+  // so an error loop can't storm the endpoint.
+  useEffect(() => {
+    let lastBeacon = 0
+    const beacon = (reason: string, detail: unknown) => {
+      const now = Date.now()
+      if (now - lastBeacon < 5000) return
+      lastBeacon = now
+      void import('@/lib/clientLog').then(({ reportClientError }) =>
+        reportClientError('uncaught', reason, detail),
+      )
+    }
+    const onError = (event: ErrorEvent) =>
+      beacon(event.message || 'uncaught error', event.error)
+    const onRejection = (event: PromiseRejectionEvent) =>
+      beacon('unhandled rejection', event.reason)
+    window.addEventListener('error', onError)
+    window.addEventListener('unhandledrejection', onRejection)
+    return () => {
+      window.removeEventListener('error', onError)
+      window.removeEventListener('unhandledrejection', onRejection)
+    }
+  }, [])
 
   /** Slide the year readout to its destination, then fire the landing. */
   const tweenYearTo = useCallback(
@@ -125,13 +160,15 @@ export function ExploreClient({
       setArtist(null)
       setSelected(null)
       setSpotlightKey(`${target.code}:${target.year}`)
-      tweenYearTo(year, target.year, () =>
+      tweenYearTo(year, target.year, () => {
+        // The panel opens NOW — no settle wait after a programmatic jump.
+        setPanelYear(target.year)
         setFocusRequest((current) => ({
           code: target.code,
           name: target.name,
           nonce: (current?.nonce ?? 0) + 1,
-        })),
-      )
+        }))
+      })
     } catch {
       // Data didn't load — the next tap retries from scratch.
     } finally {
@@ -169,6 +206,7 @@ export function ExploreClient({
         single <= YEAR_MAX
       ) {
         setYear(single)
+        setPanelYear(single)
       } else if (
         Number.isInteger(from) &&
         Number.isInteger(to) &&
@@ -176,7 +214,9 @@ export function ExploreClient({
         to <= YEAR_MAX &&
         from <= to
       ) {
-        setYear(Math.round((from + to) / 2))
+        const migrated = Math.round((from + to) / 2)
+        setYear(migrated)
+        setPanelYear(migrated)
       }
       const code = params.get('c')
       if (code && /^[A-Z]{2}(-[A-Z]{2})?$/.test(code)) {
@@ -189,14 +229,30 @@ export function ExploreClient({
   }, [])
 
   // Keep the URL shareable: year + open panel survive reload and paste.
+  // DEBOUNCED and guarded: iOS Safari THROWS when replaceState exceeds
+  // ~100 calls/30s — the per-tick writes during fast slider drags were
+  // killing the page outright (mobile crash report, Aug 2026).
   useEffect(() => {
-    const params = new URLSearchParams()
-    if (year !== DEFAULT_YEAR) params.set('y', String(year))
-    if (selected) params.set('c', selected.code)
-    if (lens) params.set('g', lens)
-    if (noGlobe) params.set('noglobe', '1')
-    const query = params.toString()
-    window.history.replaceState(null, '', query ? `/?${query}` : '/')
+    const timer = setTimeout(() => {
+      const params = new URLSearchParams()
+      if (year !== DEFAULT_YEAR) params.set('y', String(year))
+      if (selected) params.set('c', selected.code)
+      if (lens) params.set('g', lens)
+      if (noGlobe) params.set('noglobe', '1')
+      const query = params.toString()
+      try {
+        window.history.replaceState(null, '', query ? `/?${query}` : '/')
+      } catch (error) {
+        void import('@/lib/clientLog').then(({ reportClientError }) =>
+          reportClientError(
+            'url-write',
+            'replaceState refused (rate limit?)',
+            error,
+          ),
+        )
+      }
+    }, 500)
+    return () => clearTimeout(timer)
   }, [year, selected, lens, noGlobe])
 
   function onSearchResolved(result: SearchResult) {
@@ -267,21 +323,21 @@ export function ExploreClient({
       {lens && <GenreStory key={lens} genre={lens} />}
       {artist && (
         <ArtistEraPanel
-          key={`${artist.mbid}:${year}`}
+          key={`${artist.mbid}:${panelYear}`}
           artist={artist}
-          year={year}
+          year={panelYear}
           onClose={() => setArtist(null)}
         />
       )}
       {selected && !artist && (
         <CountryPanel
-          key={`${selected.code}:${year}:${lens ?? ''}`}
+          key={`${selected.code}:${panelYear}:${lens ?? ''}`}
           country={selected}
-          year={year}
+          year={panelYear}
           genre={lens}
           source={source}
           roster={roster}
-          spotlight={spotlightKey === `${selected.code}:${year}`}
+          spotlight={spotlightKey === `${selected.code}:${panelYear}`}
           onClose={() => setSelected(null)}
         />
       )}
