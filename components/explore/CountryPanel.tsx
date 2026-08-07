@@ -19,6 +19,7 @@ import type { ListenService } from '@/lib/listen/services'
 import type { ArtistLinks } from '@/lib/explore/panelData'
 import { WhatWasPlaying } from '@/components/explore/WhatWasPlaying'
 import { QueuePlayer } from '@/components/explore/QueuePlayer'
+import { FromTheCrates } from '@/components/explore/FromTheCrates'
 import styles from './CountryPanel.module.css'
 
 export interface SelectedCountry {
@@ -612,6 +613,14 @@ export function CountryPanel({
               yearEnd={yearEnd}
             />
           )}
+
+          {/* Gap-fill, kept visually and numerically separate from the
+              MusicBrainz list above: MB stays canonical. */}
+          <FromTheCrates
+            countryCode={country.code}
+            countryName={country.name}
+            year={year}
+          />
 
           {source === 'simulated' && (
             <p className={styles.disclaimer}>

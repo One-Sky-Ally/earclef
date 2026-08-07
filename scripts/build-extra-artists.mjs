@@ -1,0 +1,427 @@
+/**
+ * GAP-FILL precompute: artists from sparse-coverage countries that
+ * MusicBrainz has no record of AT ALL.
+ *
+ * Policy (locked in the Aug 2026 scoping session):
+ *   · MusicBrainz stays CANONICAL. This never merges, reconciles, or
+ *     corrects MB — it only adds artists MB is missing entirely.
+ *   · On ANY possible duplicate, SKIP. Losing a real artist is the
+ *     accepted cost of never printing a false duplicate.
+ *   · Artists FROM a place (origin), never artists whose records were
+ *     merely distributed there — the same rule the panel follows.
+ *
+ * Sources: Wikidata (dated canon + the MB/Discogs ID crosswalk) and
+ * Discogs (regional pressings MB never catalogued). Both are link-out
+ * only; nothing is passed off as MusicBrainz data.
+ *
+ * Runs LOCALLY and commits JSON — the live site never calls Discogs,
+ * so DISCOGS_TOKEN belongs in .env.local and NOT in Netlify.
+ *
+ * Usage: node scripts/build-extra-artists.mjs [CC ...]     (default LA PY)
+ * Resumable: data/extra-artists-work.json checkpoints every phase.
+ */
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+
+const WORK_PATH = 'data/extra-artists-work.json'
+const OUT_PATH = 'lib/explore/extra-artists.json'
+const REPORT_PATH = 'data/extra-artists-report.json'
+
+const MB_UA = 'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
+const DG_UA = 'EarClef/0.1 +https://earclef.com'
+const MB_DELAY_MS = 1100
+/** Discogs authenticated ceiling is 60/min; stay under it. */
+const DG_DELAY_MS = 1100
+const DG_PAGE_SIZE = 50
+const DG_MAX_PAGES = 40
+
+/** Countries: ISO code → Wikidata QID + the Discogs country string. */
+const COUNTRIES = {
+  LA: { qid: 'Q819', discogs: 'Laos', name: 'Laos' },
+  PY: { qid: 'Q733', discogs: 'Paraguay', name: 'Paraguay' },
+}
+
+const targets = (process.argv.slice(2).length
+  ? process.argv.slice(2)
+  : ['LA', 'PY']
+).filter((code) => COUNTRIES[code])
+
+const token = process.env.DISCOGS_TOKEN
+if (!token) {
+  console.error('DISCOGS_TOKEN missing — add it to .env.local')
+  process.exit(1)
+}
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+
+/** Comparison key: case/accent/punctuation-insensitive. */
+function normalize(value) {
+  return value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9຀-໿]+/g, ' ')
+    .trim()
+}
+
+function loadJson(path, fallback) {
+  if (!existsSync(path)) return fallback
+  try {
+    return JSON.parse(readFileSync(path, 'utf8'))
+  } catch {
+    return fallback
+  }
+}
+
+async function getJson(url, headers, tries = 3) {
+  for (let attempt = 1; attempt <= tries; attempt++) {
+    try {
+      const res = await fetch(url, { headers })
+      if (res.status === 429 || res.status === 503) {
+        await sleep(3000 * attempt)
+        continue
+      }
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      return res.json()
+    } catch (error) {
+      if (attempt === tries) throw error
+      await sleep(2000 * attempt)
+    }
+  }
+  throw new Error('unreachable')
+}
+
+// ---------------------------------------------------------------- Wikidata
+
+/**
+ * Musicians and groups tied to a country, with dates and the ID
+ * crosswalk. A P434 (MusicBrainz ID) means MB already knows them —
+ * those become dedup fuel, never candidates.
+ */
+async function wikidataPass(qid) {
+  const query = `SELECT ?item ?itemLabel ?mbid ?discogs ?birth ?formed WHERE {
+  { ?item wdt:P27 wd:${qid} } UNION { ?item wdt:P495 wd:${qid} }
+  { ?item wdt:P106 wd:Q639669 } UNION { ?item wdt:P106 wd:Q177220 }
+  UNION { ?item wdt:P106 wd:Q36834 } UNION { ?item wdt:P106 wd:Q488205 }
+  UNION { ?item wdt:P31 wd:Q215380 }
+  OPTIONAL { ?item wdt:P434 ?mbid }
+  OPTIONAL { ?item wdt:P1953 ?discogs }
+  OPTIONAL { ?item wdt:P569 ?birth }
+  OPTIONAL { ?item wdt:P571 ?formed }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,es,lo,fr". }
+}`
+  const body = await getJson(
+    `https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(query)}`,
+    { 'User-Agent': MB_UA, Accept: 'application/sparql-results+json' },
+  )
+  const byItem = new Map()
+  for (const row of body.results.bindings) {
+    const id = row.item.value.split('/').pop()
+    if (byItem.has(id)) continue
+    const label = row.itemLabel?.value ?? ''
+    // Unlabelled items surface as their own QID — useless as a name.
+    if (!label || /^Q\d+$/.test(label)) continue
+    const birth = row.birth?.value ? Number(row.birth.value.slice(0, 4)) : null
+    const formed = row.formed?.value
+      ? Number(row.formed.value.slice(0, 4))
+      : null
+    byItem.set(id, {
+      wikidataId: id,
+      name: label,
+      mbid: row.mbid?.value ?? null,
+      discogsId: row.discogs?.value ?? null,
+      // Career-start proxy, matching the MB convention used site-wide.
+      year: formed ?? (birth ? birth + 15 : null),
+    })
+  }
+  return [...byItem.values()]
+}
+
+// ----------------------------------------------------------------- Discogs
+
+const GENERIC_NAMES = new Set([
+  'various',
+  'various artists',
+  'unknown artist',
+  'no artist',
+  'traditional',
+])
+
+/**
+ * Discogs search returns display titles, not structured credits:
+ * "Artist – Title" (en dash). Split on the FIRST dash, strip the
+ * disambiguation suffix Discogs appends to duplicate names ("Exile
+ * (21)"), and drop anything generic or multi-artist.
+ */
+function parseArtist(title) {
+  const parts = title.split(/\s+[–—-]\s+/)
+  if (parts.length < 2) return null
+  const raw = parts[0].trim()
+  if (!raw) return null
+  // Multi-artist credits are releases, not one artist — skip them.
+  if (/\s+(?:\/|,|&|feat\.?|with)\s+/i.test(raw) && raw.split(/\s+/).length > 4) {
+    return null
+  }
+  const cleaned = raw
+    .replace(/\s*\(\d+\)\s*$/, '')
+    .replace(/\*+$/, '')
+    .trim()
+  if (!cleaned || cleaned.length < 2 || cleaned.length > 80) return null
+  if (GENERIC_NAMES.has(cleaned.toLowerCase())) return null
+  return cleaned
+}
+
+/** Every release Discogs files under this country, paged. */
+async function discogsReleases(country) {
+  const found = []
+  for (let page = 1; page <= DG_MAX_PAGES; page++) {
+    const body = await getJson(
+      `https://api.discogs.com/database/search?country=${encodeURIComponent(country)}&type=release&per_page=${DG_PAGE_SIZE}&page=${page}&token=${token}`,
+      { 'User-Agent': DG_UA },
+    )
+    for (const result of body.results ?? []) {
+      found.push({
+        title: result.title ?? '',
+        year: Number(result.year) || null,
+        id: result.id,
+        label: (result.label ?? [])[0] ?? null,
+        style: (result.style ?? []).concat(result.genre ?? []).slice(0, 3),
+      })
+    }
+    const pages = body.pagination?.pages ?? 1
+    console.log(`    page ${page}/${pages} (${found.length} releases)`)
+    if (page >= pages) break
+    await sleep(DG_DELAY_MS)
+  }
+  return found
+}
+
+/** Resolve a surviving candidate to its Discogs artist page. */
+async function discogsArtistId(name) {
+  const body = await getJson(
+    `https://api.discogs.com/database/search?type=artist&q=${encodeURIComponent(name)}&per_page=5&token=${token}`,
+    { 'User-Agent': DG_UA },
+  )
+  const wanted = normalize(name)
+  for (const result of body.results ?? []) {
+    const title = (result.title ?? '').replace(/\s*\(\d+\)\s*$/, '')
+    if (normalize(title) === wanted) return result.id ?? null
+  }
+  return null
+}
+
+// ------------------------------------------------------------------ Dedup
+
+/**
+ * Is this name already in MusicBrainz? CONSERVATIVE BY DESIGN: an
+ * exact normalized match is a duplicate, and so is any high-scoring
+ * near match — when MB might already know them, we skip.
+ */
+async function inMusicBrainz(name) {
+  const body = await getJson(
+    `https://musicbrainz.org/ws/2/artist?query=${encodeURIComponent(`artist:"${name}"`)}&limit=5&fmt=json`,
+    { 'User-Agent': MB_UA },
+  )
+  const wanted = normalize(name)
+  for (const artist of body.artists ?? []) {
+    if (normalize(artist.name) === wanted) return 'exact'
+    for (const alias of artist.aliases ?? []) {
+      if (normalize(alias.name ?? '') === wanted) return 'alias'
+    }
+    if ((artist.score ?? 0) >= 90) {
+      const theirs = normalize(artist.name)
+      // Containment either way = plausibly the same act under a
+      // slightly different credit. Ambiguous → skip.
+      if (theirs.includes(wanted) || wanted.includes(theirs)) return 'fuzzy'
+    }
+  }
+  return null
+}
+
+// ------------------------------------------------------------------- main
+
+async function main() {
+  mkdirSync('data', { recursive: true })
+  const work = loadJson(WORK_PATH, { countries: {} })
+
+  for (const code of targets) {
+    const config = COUNTRIES[code]
+    const state = (work.countries[code] ??= {})
+    console.log(`\n=== ${config.name} (${code})`)
+
+    // 1. Wikidata: canon names + the crosswalk.
+    if (!state.wikidata) {
+      console.log('  Wikidata pass…')
+      state.wikidata = await wikidataPass(config.qid)
+      writeFileSync(WORK_PATH, JSON.stringify(work))
+    }
+    const wd = state.wikidata
+    const wdWithMb = wd.filter((entry) => entry.mbid).length
+    console.log(
+      `  Wikidata: ${wd.length} musicians (${wdWithMb} already carry MB ids)`,
+    )
+
+    // 2. Discogs: what the crates hold.
+    if (!state.releases) {
+      console.log('  Discogs pass…')
+      state.releases = await discogsReleases(config.discogs)
+      writeFileSync(WORK_PATH, JSON.stringify(work))
+    }
+    console.log(`  Discogs: ${state.releases.length} releases`)
+
+    // Candidates: Discogs artists (with the years/styles we saw them
+    // on) + Wikidata people MB has no id for.
+    const candidates = new Map()
+    let unparsed = 0
+    for (const release of state.releases) {
+      const name = parseArtist(release.title)
+      if (!name) {
+        unparsed++
+        continue
+      }
+      const key = normalize(name)
+      const entry = candidates.get(key) ?? {
+        name,
+        source: 'discogs',
+        years: [],
+        styles: new Set(),
+        releaseId: release.id,
+        releaseCount: 0,
+      }
+      entry.releaseCount++
+      if (release.year) entry.years.push(release.year)
+      for (const style of release.style ?? []) entry.styles.add(style)
+      candidates.set(key, entry)
+    }
+    for (const person of wd) {
+      if (person.mbid) continue
+      const key = normalize(person.name)
+      const existing = candidates.get(key)
+      if (existing) {
+        existing.wikidataId = person.wikidataId
+        if (person.year) existing.years.push(person.year)
+        if (person.discogsId) existing.discogsArtistId = person.discogsId
+        continue
+      }
+      candidates.set(key, {
+        name: person.name,
+        source: 'wikidata',
+        years: person.year ? [person.year] : [],
+        styles: new Set(),
+        wikidataId: person.wikidataId,
+        discogsArtistId: person.discogsId ?? null,
+        releaseCount: 0,
+      })
+    }
+    console.log(
+      `  ${candidates.size} candidate names (${unparsed} titles unparseable)`,
+    )
+
+    // 3. Dedup against MusicBrainz — the expensive, careful pass.
+    state.checked ??= {}
+    const pending = [...candidates.values()].filter(
+      (candidate) => state.checked[normalize(candidate.name)] === undefined,
+    )
+    console.log(`  Dedup: ${pending.length} to check against MusicBrainz…`)
+    let done = 0
+    for (const candidate of pending) {
+      const key = normalize(candidate.name)
+      // A Wikidata item carrying an MB id is definitionally known.
+      const wdMatch = wd.find(
+        (person) => normalize(person.name) === key && person.mbid,
+      )
+      state.checked[key] = wdMatch
+        ? 'crosswalk'
+        : ((await inMusicBrainz(candidate.name)) ?? 'new')
+      done++
+      if (done % 20 === 0) {
+        writeFileSync(WORK_PATH, JSON.stringify(work))
+        console.log(`    ${done}/${pending.length}`)
+      }
+      if (!wdMatch) await sleep(MB_DELAY_MS)
+    }
+    writeFileSync(WORK_PATH, JSON.stringify(work))
+
+    // 4. Survivors: genuinely new to MusicBrainz.
+    const survivors = [...candidates.values()].filter(
+      (candidate) => state.checked[normalize(candidate.name)] === 'new',
+    )
+    console.log(`  ${survivors.length} new to MusicBrainz`)
+
+    // 5. Resolve Discogs artist pages for the link-outs.
+    state.artistIds ??= {}
+    for (const survivor of survivors) {
+      const key = normalize(survivor.name)
+      if (survivor.discogsArtistId || state.artistIds[key] !== undefined) {
+        continue
+      }
+      try {
+        state.artistIds[key] = await discogsArtistId(survivor.name)
+      } catch {
+        state.artistIds[key] = null
+      }
+      await sleep(DG_DELAY_MS)
+    }
+    writeFileSync(WORK_PATH, JSON.stringify(work))
+
+    state.result = survivors
+      .map((survivor) => {
+        const key = normalize(survivor.name)
+        const years = [...new Set(survivor.years)].sort((a, b) => a - b)
+        return {
+          name: survivor.name,
+          source: survivor.source,
+          firstYear: years[0] ?? null,
+          lastYear: years[years.length - 1] ?? null,
+          styles: [...survivor.styles].slice(0, 3),
+          releaseCount: survivor.releaseCount,
+          discogsArtistId:
+            survivor.discogsArtistId ?? state.artistIds[key] ?? null,
+          wikidataId: survivor.wikidataId ?? null,
+        }
+      })
+      // Documented years first, then the most-pressed.
+      .sort(
+        (a, b) =>
+          (a.firstYear === null ? 1 : 0) - (b.firstYear === null ? 1 : 0) ||
+          b.releaseCount - a.releaseCount ||
+          a.name.localeCompare(b.name),
+      )
+    writeFileSync(WORK_PATH, JSON.stringify(work))
+  }
+
+  // 6. Commit the dataset + a coverage report.
+  const out = { generatedAt: new Date().toISOString().slice(0, 10), countries: {} }
+  const report = {}
+  for (const code of targets) {
+    const state = work.countries[code]
+    if (!state?.result) continue
+    out.countries[code] = state.result
+    const skips = Object.values(state.checked ?? {})
+    report[code] = {
+      name: COUNTRIES[code].name,
+      wikidataMusicians: state.wikidata.length,
+      discogsReleases: state.releases.length,
+      candidates: skips.length,
+      newArtists: state.result.length,
+      skipped: {
+        exactNameInMb: skips.filter((v) => v === 'exact').length,
+        aliasInMb: skips.filter((v) => v === 'alias').length,
+        fuzzyAmbiguous: skips.filter((v) => v === 'fuzzy').length,
+        wikidataCrosswalk: skips.filter((v) => v === 'crosswalk').length,
+      },
+      dated: state.result.filter((a) => a.firstYear !== null).length,
+      sample: state.result.slice(0, 8).map((a) => `${a.name}${a.firstYear ? ` (${a.firstYear})` : ''}`),
+    }
+  }
+  const existing = loadJson(OUT_PATH, { countries: {} })
+  out.countries = { ...existing.countries, ...out.countries }
+  writeFileSync(OUT_PATH, JSON.stringify(out, null, 2))
+  writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2))
+  console.log(`\nDone → ${OUT_PATH}`)
+  console.log(JSON.stringify(report, null, 2))
+}
+
+main().catch((error) => {
+  console.error('Fatal:', error)
+  process.exit(1)
+})

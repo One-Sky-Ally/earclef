@@ -1,0 +1,50 @@
+{
+  "LA": {
+    "name": "Laos",
+    "wikidataMusicians": 8,
+    "discogsReleases": 160,
+    "candidates": 108,
+    "newArtists": 99,
+    "skipped": {
+      "exactNameInMb": 4,
+      "aliasInMb": 1,
+      "fuzzyAmbiguous": 4,
+      "wikidataCrosswalk": 0
+    },
+    "dated": 17,
+    "sample": [
+      "Noi Sengsourigna (2004)",
+      "Y-Power (2003)",
+      "DVB (2004)",
+      "ຕິ່ງ ໄພລາວັນ (2004)",
+      "A'Pacts (2005)",
+      "Chour De Khenes Du Chau Muong De Vientane (1928)",
+      "Guttural Bleeding (2024)",
+      "Khampheng Thammavongsa (2010)"
+    ]
+  },
+  "PY": {
+    "name": "Paraguay",
+    "wikidataMusicians": 119,
+    "discogsReleases": 1370,
+    "candidates": 708,
+    "newArtists": 394,
+    "skipped": {
+      "exactNameInMb": 259,
+      "aliasInMb": 4,
+      "fuzzyAmbiguous": 38,
+      "wikidataCrosswalk": 13
+    },
+    "dated": 250,
+    "sample": [
+      "Aníbal Lovera (1941)",
+      "Betty Figueredo (1980)",
+      "Eduardo Rivas (1970)",
+      "Oscar Pérez Con La Alegre Fórmula Nueva (1978)",
+      "Quemil Yambay Y Su Conjunto Los Alfonsinos (1970)",
+      "Pro Rock Ensamble (1980)",
+      "Rage Mob (2016)",
+      "Terceto Ñamandu (1985)"
+    ]
+  }
+}
