@@ -944,7 +944,7 @@
       "era": "The chart at feed speed",
       "kind": "charted",
       "basis": "Anchored to the Billboard Hot 100 archive, documented week by week through the present.",
-      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen.",
+      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen. In 2026 the long run came from Nashville again: [[Ella Langley]]'s Choosin' Texas held the Hot 100 summit for sixteen weeks, more than every other 2026 #1 combined.",
       "items": [
         {
           "artist": "The Weeknd",
@@ -975,6 +975,11 @@
           "artist": "HUNTR/X",
           "work": "Golden",
           "note": "from KPop Demon Hunters — Hot 100 #1 for 8 weeks, 2025"
+        },
+        {
+          "artist": "Ella Langley",
+          "work": "Choosin' Texas",
+          "note": "Hot 100 #1 for 16 weeks — the longest-running #1 of 2026 so far"
         }
       ],
       "sources": [
@@ -997,7 +1002,7 @@
       "era": "Streaming Britain, homegrown edition",
       "kind": "charted",
       "basis": "Anchored to the Official Charts Company archive, documented week by week through the present.",
-      "story": "Britain's 2020s chart is a streaming ledger with a local accent. [[Dave]] and [[Central Cee]]'s Sprinter gave UK rap a ten-week #1 in 2023, [[Ed Sheeran]] kept his grip with Bad Habits, and [[Miley Cyrus]]'s Flowers matched Sprinter's ten weeks the same year. [[Sabrina Carpenter]] stacked twenty-one #1 weeks in a single calendar year — a record for a female artist — and in 2025 [[Alex Warren]]'s Ordinary ran twelve straight weeks, the longest uninterrupted UK #1 ever by a US male solo artist.",
+      "story": "Britain's 2020s chart is a streaming ledger with a local accent. [[Dave]] and [[Central Cee]]'s Sprinter gave UK rap a ten-week #1 in 2023, [[Ed Sheeran]] kept his grip with Bad Habits, and [[Miley Cyrus]]'s Flowers matched Sprinter's ten weeks the same year. [[Sabrina Carpenter]] stacked twenty-one #1 weeks in a single calendar year — a record for a female artist — and in 2025 [[Alex Warren]]'s Ordinary ran twelve straight weeks, the longest uninterrupted UK #1 ever by a US male solo artist. Then 2026 broke the oldest record on the board: [[Sam Fender]] and [[Olivia Dean]]'s Rein Me In kept returning to #1 — four separate runs from February to July, nineteen non-consecutive weeks in all, longer than any single in the chart's history.",
       "items": [
         {
           "artist": "The Weeknd",
@@ -1028,6 +1033,11 @@
           "artist": "Alex Warren",
           "work": "Ordinary",
           "note": "UK #1 for 12 straight weeks, 2025"
+        },
+        {
+          "artist": "Sam Fender and Olivia Dean",
+          "work": "Rein Me In",
+          "note": "UK #1 across four separate runs in 2026 — nineteen non-consecutive weeks, the longest run in UK chart history"
         }
       ],
       "sources": [
@@ -1182,6 +1192,95 @@
       ],
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-31T05:08:17.000Z"
+    },
+    {
+      "country": "JP",
+      "from": 1968,
+      "to": 1975,
+      "era": "The Oricon years — enka, novelty, and the folk turn",
+      "kind": "charted",
+      "basis": "Japan had no national pop chart until Oricon's began on 4 January 1968; every ranking here is counted week by week from Oricon's weekly number-one tables (reproduced from Oricon No.1 Hits 500, Clubhouse 1998), cross-checked against per-song sources.",
+      "story": "Japan's first real pop chart opened on 4 January 1968, and its very first number one was [[Los Primos]]' \"Love You Tokyo\" — a nightclub ballad, not the guitar bands then filling the Budokan. That gap is the era's whole story: Group Sounds had the youth and the headlines, but the chart belonged to kayōkyoku and enka. [[The Folk Crusaders]] took five weeks with a novelty about a drunk in heaven; [[Ayumi Ishida]] held nine with \"Blue Light Yokohama\"; and the country's biggest record of 1970 was a schoolboy, [[Osamu Minagawa]], singing a translated Italian children's song about a black cat for fourteen straight weeks. Then [[Keiko Fuji]] did something the chart has rarely seen since — eighteen consecutive weeks at number one across two different singles, one handing straight off to the next. The outright record went to [[Shiro Miya to Pinkara Trio]]: sixteen unbroken weeks with \"Onna no Michi\", and the annual number one two years running. Underneath, a quieter argument was reshaping everything. The folk boom put [[Takuro Yoshida]] and [[Kaguyahime]] on the chart singing plainly about cheap inns and small rooms by the Kanda river, while [[Nobuyasu Okabayashi]] — whose protest songs were widely banned from broadcast — was being called the Japanese Dylan. [[Happy End]] never charted at all, and still changed the most: their 1970–71 albums set off the nihongo rock ronsō, the public argument over whether rock could be sung in Japanese, and settled it by example.",
+      "items": [
+        {
+          "artist": "Los Primos",
+          "work": "Love You Tokyo",
+          "note": "Number one on the first Oricon weekly singles chart, 4 January 1968 — 3 weeks"
+        },
+        {
+          "artist": "The Folk Crusaders",
+          "work": "Kaette Kita Yopparai",
+          "note": "5 consecutive weeks at number one, January–February 1968"
+        },
+        {
+          "artist": "Masao Sen",
+          "work": "Hoshikage no Waltz",
+          "note": "6 weeks at number one and Oricon's annual number one for 1968"
+        },
+        {
+          "artist": "Ayumi Ishida",
+          "work": "Blue Light Yokohama",
+          "note": "9 consecutive weeks at number one, 1969"
+        },
+        {
+          "artist": "Osamu Minagawa",
+          "work": "Kuroneko no Tango",
+          "note": "14 consecutive weeks across 1969–70 and the annual number one for 1970 — a Japanese version of the Italian children's song \"Volevo un gatto nero\""
+        },
+        {
+          "artist": "Keiko Fuji",
+          "work": "Keiko no Yume wa Yoru Hiraku",
+          "note": "18 consecutive weekly number ones from 30 March to 27 July 1970, across this single and \"Onna no Blues\" before it"
+        },
+        {
+          "artist": "Tokiko Kato",
+          "work": "Shiretoko Ryojo",
+          "note": "7 consecutive weeks at number one, 1971 — a cover of Hisaya Morishige's 1960 song"
+        },
+        {
+          "artist": "Takuro Yoshida",
+          "work": "Tabi no Yado",
+          "note": "5 consecutive weeks at number one, 1972 — the folk boom's chart breakthrough"
+        },
+        {
+          "artist": "Shiro Miya to Pinkara Trio",
+          "work": "Onna no Michi",
+          "note": "16 consecutive weeks at number one across 1972–73, and Oricon's annual number one for both years"
+        },
+        {
+          "artist": "Kaguyahime",
+          "work": "Kandagawa",
+          "note": "7 weeks at number one in 1973, six of them consecutive"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Oricon weekly number-one singles, 1968",
+          "url": "https://en.wikipedia.org/wiki/List_of_Oricon_number-one_singles_of_1968"
+        },
+        {
+          "label": "Oricon — the chart's founding",
+          "url": "https://en.wikipedia.org/wiki/Oricon"
+        },
+        {
+          "label": "Onna no Michi — the 16-week record",
+          "url": "https://en.wikipedia.org/wiki/Onna_no_Michi"
+        },
+        {
+          "label": "Kandagawa",
+          "url": "https://en.wikipedia.org/wiki/Kandagawa_(song)"
+        },
+        {
+          "label": "Happy End and the nihongo rock ronso",
+          "url": "https://en.wikipedia.org/wiki/Happy_End_(band)"
+        },
+        {
+          "label": "Nobuyasu Okabayashi",
+          "url": "https://en.wikipedia.org/wiki/Nobuyasu_Okabayashi"
+        }
+      ],
+      "model": "claude-opus-5 (in-session)",
+      "at": "2026-08-06"
     }
   ]
 }
