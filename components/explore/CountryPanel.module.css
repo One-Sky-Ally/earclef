@@ -556,3 +556,11 @@
   margin-top: 0.5rem;
   text-wrap: pretty;
 }
+
+/* Gap-fill entries the source carries no date for: a quiet tag, never
+   a fabricated year range. */
+.undatedTag {
+  font-size: 0.68rem;
+  font-style: italic;
+  color: var(--text-muted);
+}

@@ -19,7 +19,11 @@ import type { ListenService } from '@/lib/listen/services'
 import type { ArtistLinks } from '@/lib/explore/panelData'
 import { WhatWasPlaying } from '@/components/explore/WhatWasPlaying'
 import { QueuePlayer } from '@/components/explore/QueuePlayer'
-import { FromTheCrates } from '@/components/explore/FromTheCrates'
+import {
+  extraArtistUrl,
+  extraArtistsFor,
+  type ExtraArtist,
+} from '@/lib/explore/extraArtists'
 import styles from './CountryPanel.module.css'
 
 export interface SelectedCountry {
@@ -139,8 +143,23 @@ function smartArtistHref(
   return serviceLink ?? links.website ?? links.wikipedia ?? null
 }
 
+/**
+ * The panel's render pool. MusicBrainz entries and the gap-fill
+ * entries (Discogs/Wikidata, for places MB has no record of) are ONE
+ * list to visitors — same pill, same tiers, same genre filter. The
+ * only difference is where a pill points, and it is invisible until
+ * clicked. "Never merge" is a data rule (separate storage, separate
+ * dedup, MB canonical); it is not a display rule.
+ */
+interface PanelPoolArtist extends PoolArtist {
+  /** Non-MB entry: the pill links out to the source documenting it. */
+  externalUrl?: string
+  /** Source carries no date at all — sorts last, tagged quietly. */
+  undated?: boolean
+}
+
 interface PanelArtistPillProps {
-  artist: PanelArtist
+  artist: PanelPoolArtist
   releases: PanelRelease[]
   rosterEntry?: { slug: string; name: string }
 }
@@ -190,7 +209,20 @@ function PanelArtistPill({
 
   return (
     <li className={styles.artistItem}>
-      {rosterEntry ? (
+      {artist.externalUrl ? (
+        // Same pill, different destination — the source that has them.
+        <a
+          className={styles.artistPill}
+          href={artist.externalUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {artist.name}
+          {artist.undated && (
+            <span className={styles.undatedTag}> · undated</span>
+          )}
+        </a>
+      ) : rosterEntry ? (
         <Link
           className={`${styles.artistPill} ${styles.onRoster}`}
           href={`/${rosterEntry.slug}`}
@@ -284,7 +316,7 @@ export function CountryPanel({
 
   // The discovery pool — cached pre-pool responses degrade to the
   // top-12 list (no tags → no chips, search over what's there).
-  const pool: PoolArtist[] = useMemo(
+  const mbPool: PoolArtist[] = useMemo(
     () =>
       state.status !== 'ready'
         ? []
@@ -296,6 +328,32 @@ export function CountryPanel({
               }))),
     [state],
   )
+
+  /**
+   * One list. MusicBrainz first (tag-weight ranked, the deepest
+   * signal), then era-dated gap-fill entries in press-count order,
+   * then undated ones — no cross-source ranking is invented, because
+   * MB tag votes and Discogs pressing counts share no scale. Styles
+   * lowercase so they pool with MB tags in the genre filter.
+   */
+  const pool: PanelPoolArtist[] = useMemo(() => {
+    const toEntry = (
+      artist: ExtraArtist,
+      undated: boolean,
+    ): PanelPoolArtist => ({
+      id: `x:${artist.discogsArtistId ?? artist.wikidataId ?? artist.name}`,
+      name: artist.name,
+      tags: artist.styles.map((style) => style.toLowerCase()),
+      externalUrl: extraArtistUrl(artist),
+      ...(undated ? { undated: true } : {}),
+    })
+    const { dated, undated } = extraArtistsFor(country.code, year)
+    return [
+      ...mbPool,
+      ...dated.map((artist) => toEntry(artist, false)),
+      ...undated.map((artist) => toEntry(artist, true)),
+    ]
+  }, [mbPool, country.code, year])
   const options = useMemo(
     () => genreOptions(pool, genre, country.name),
     [pool, genre, country.name],
@@ -408,8 +466,8 @@ export function CountryPanel({
 
           {pool.length === 0 && (
             <p className={styles.note}>
-              No artists from here on record for {spanLabel} — yet.
-              MusicBrainz grows every day.
+              No artists from here on record for {spanLabel} — yet. The
+              catalogs grow every day.
             </p>
           )}
 
@@ -436,11 +494,14 @@ export function CountryPanel({
 
           {/* Discovery ends in sound — the queue walks the same
               popularity ranking the list below shows. */}
+          {/* MusicBrainz entries only: the resolver era-picks tracks
+              from MB release-group dates and keys its cache by MBID,
+              which gap-fill entries have by definition. */}
           <QueuePlayer
             key={`${country.code}:${year}:${genre ?? ''}`}
             placeName={country.name}
             year={year}
-            pool={pool}
+            pool={mbPool}
             roster={roster}
           />
 
@@ -614,13 +675,6 @@ export function CountryPanel({
             />
           )}
 
-          {/* Gap-fill, kept visually and numerically separate from the
-              MusicBrainz list above: MB stays canonical. */}
-          <FromTheCrates
-            countryCode={country.code}
-            countryName={country.name}
-            year={year}
-          />
 
           {source === 'simulated' && (
             <p className={styles.disclaimer}>

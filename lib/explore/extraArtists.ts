@@ -29,8 +29,6 @@ const DATASET = extraArtists as unknown as {
 
 /** How far either side of a documented span still counts as the era. */
 const ERA_REACH = 5
-const DATED_LIMIT = 10
-const UNDATED_LIMIT = 6
 
 export function hasExtraArtists(code: string): boolean {
   return (DATASET.countries[code]?.length ?? 0) > 0
@@ -42,27 +40,36 @@ export interface ExtraArtistGroups {
   /**
    * Carry no date in the source at all — common for exactly the
    * vintage regional pressings this fills in (82 of 99 Laotian acts).
-   * They are NOT era matches and must never be presented as any given
-   * year's music: the UI shows them under their own honest heading.
+   * They are real artists from the place but cannot be tied to a year,
+   * so the panel sorts them last and tags them "undated" rather than
+   * implying they are the selected year's music.
    */
   undated: ExtraArtist[]
-  undatedTotal: number
 }
 
+/**
+ * Era split for a place+year. Uncapped — the panel's tiers and its
+ * 100-pill render cap do the limiting, exactly as they do for the
+ * MusicBrainz pool these merge into.
+ */
 export function extraArtistsFor(code: string, year: number): ExtraArtistGroups {
   const all = DATASET.countries[code] ?? []
-  const dated = all.filter(
-    (artist) =>
-      artist.firstYear !== null &&
-      year >= artist.firstYear - ERA_REACH &&
-      year <= (artist.lastYear ?? artist.firstYear) + ERA_REACH,
-  )
-  const undated = all.filter((artist) => artist.firstYear === null)
   return {
-    dated: dated.slice(0, DATED_LIMIT),
-    undated: undated.slice(0, UNDATED_LIMIT),
-    undatedTotal: undated.length,
+    dated: all.filter(
+      (artist) =>
+        artist.firstYear !== null &&
+        year >= artist.firstYear - ERA_REACH &&
+        year <= (artist.lastYear ?? artist.firstYear) + ERA_REACH,
+    ),
+    undated: all.filter((artist) => artist.firstYear === null),
   }
+}
+
+/** Where an entry's pill points: its own page on the source that has it. */
+export function extraArtistUrl(artist: ExtraArtist): string {
+  if (artist.discogsArtistId) return discogsArtistUrl(artist.discogsArtistId)
+  if (artist.wikidataId) return wikidataUrl(artist.wikidataId)
+  return discogsSearchUrl(artist.name)
 }
 
 export function discogsArtistUrl(id: number | string): string {
