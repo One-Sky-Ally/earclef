@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "slug": "amadou-mariam",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Amadou & Mariam — Ear Clef",
+    "description": "The blind couple from Mali — desert blues built for the world stage, from a school for the blind in Bamako to collaborations with Manu Chao and Damon Albarn.",
+    "ogImage": "/images/og-amadou-mariam.jpg",
+    "canonicalUrl": "https://earclef.com/amadou-mariam"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "3KH7WsR2JZQ94Ik8SyabU6"
+    },
+    "youtube": {
+      "channelId": "UCY14wC6ulRJSlQTfs1qdpRA"
+    },
+    "setlistfm": {
+      "mbid": "1fb60b6c-0f4d-42b4-8a5e-de705ec76660"
+    },
+    "itunes": {
+      "artistId": "56371449"
+    }
+  },
+  "hero": {
+    "name": "Amadou & Mariam",
+    "identity": "\"The blind couple from Mali\" — desert blues and Malian guitar built for the world stage, from Manu Chao to Damon Albarn.",
+    "tagline": "Hear here!",
+    "location": "Bamako, Mali",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.amadou-mariam.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/amadouetmariam"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/amadoumariam"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@amadouandmariam"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/amadou-mariam/56371449"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJPWQ2/amadou-mariam"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Dimanche à Bamako",
+        "year": "2004",
+        "mbReleaseGroupId": "9d539a6e-3426-3c87-94f0-347a9b657f7a"
+      },
+      {
+        "title": "Welcome to Mali",
+        "year": "2008",
+        "mbReleaseGroupId": "b85ccfb0-631e-3ad0-b86f-a2f9e41bc3bc"
+      },
+      {
+        "title": "Folila",
+        "year": "2012",
+        "mbReleaseGroupId": "0751dab9-d6ad-420c-9906-5d204e9d1431"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "NRtQmqqfdoc",
+        "title": "Sabali (Official Music Video)"
+      },
+      {
+        "youtubeId": "J43T8rEOg-I",
+        "title": "Sénégal Fast Food feat. Manu Chao (Official Music Video)"
+      },
+      {
+        "youtubeId": "O30-zyU-U3M",
+        "title": "Beaux Dimanches (Official Music Video)"
+      },
+      {
+        "youtubeId": "7O4lGQsf8Tw",
+        "title": "La réalité (Official Music Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Amadou Bagayoko and Mariam Doumbia met as teenagers at Mali's Institute for the Young Blind in Bamako, playing together in the school's Éclipse Orchestra under bandleader Idrissa Soumaoro. They married in 1980 and became known internationally as 'the blind couple from Mali.'",
+      "Dimanche à Bamako (2004), produced by Manu Chao, carried their sound to a global audience, going platinum in France and reaching the top of European charts — a rare commercial peak for an African act. Welcome to Mali (2008) followed, with Damon Albarn producing and co-writing its lead track, 'Sabali.'",
+      "Folila (2012) continued their run of internationally collaborative records, and the duo toured steadily worldwide for decades, carrying Malian guitar music to festival and theater stages on every continent.",
+      "Amadou Bagayoko died on April 4, 2025, in Bamako. Mariam has continued to perform and record under the Amadou & Mariam name, releasing new music including L'amour à la folie (2025)."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at amadou-mariam.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-11-03",
+        "venue": "La Riviera",
+        "city": "Madrid, Spain",
+        "setlistUrl": "https://www.setlist.fm/setlist/amadou-and-mariam/2024/la-riviera-madrid-spain-13525549.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Remembering Malian Guitarist and Singer Amadou Bagayoko",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2025/04/07/nx-s1-5354880/remembering-malian-guitarist-and-singer-amadou-bagayoko"
+      },
+      {
+        "title": "Amadou & Mariam: Well Beyond Mali",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2009/03/26/102383925/amadou-and-mariam-well-beyond-mali"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

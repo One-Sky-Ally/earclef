@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "slug": "easy-star-all-stars",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Easy Star All-Stars — Ear Clef",
+    "description": "The NYC reggae collective that reimagined Dark Side of the Moon, OK Computer and Sgt. Pepper's whole — full-album dub reinterpretations built around a rotating cast.",
+    "ogImage": "/images/og-easy-star-all-stars.jpg",
+    "canonicalUrl": "https://earclef.com/easy-star-all-stars"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "5FWTu1MZdB5fjKif2rZldJ"
+    },
+    "youtube": {
+      "channelId": "UCgfcVxUTpxMByamflWUc3IA"
+    },
+    "setlistfm": {
+      "mbid": "0cee95e3-a61d-4cd1-a39c-75464a05b606"
+    },
+    "itunes": {
+      "artistId": "21356860"
+    }
+  },
+  "hero": {
+    "name": "Easy Star All-Stars",
+    "identity": "The NYC reggae collective that reimagined Dark Side of the Moon, OK Computer and Sgt. Pepper's whole, album by album, in dub.",
+    "tagline": "Hear here!",
+    "location": "New York, NY, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.easystarallstars.net/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/easystarallstars/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/easystarallstar"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/EasyStarAllStars"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@EasyStarAllStars"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/easy-star-all-stars/21356860"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://www.amazon.com/music/player/artists/B000QJTH7W/easy-star-all-stars"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Dub Side of the Moon",
+        "year": "2003",
+        "mbReleaseGroupId": "b2c9532e-ec9c-3b91-b385-e666171a77a3"
+      },
+      {
+        "title": "Radiodread",
+        "year": "2006",
+        "mbReleaseGroupId": "a78c934c-81a7-3117-83fa-f9c379c1a68b"
+      },
+      {
+        "title": "Easy Star's Lonely Hearts Dub Band",
+        "year": "2009",
+        "mbReleaseGroupId": "3adcb2c5-2f70-35f1-9b4e-e8765acf3177"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "GE606BMUK0I",
+        "title": "Five Years ft. Steel Pulse (Official Music Video)"
+      },
+      {
+        "youtubeId": "SJEKLcHVj_c",
+        "title": "Moonage Daydream ft. Naomi Cowan & Alex Lifeson"
+      },
+      {
+        "youtubeId": "54Ebfk3CK0s",
+        "title": "Let Down ft. Toots & The Maytals"
+      },
+      {
+        "youtubeId": "iVqeHCl-H_g",
+        "title": "Rock 'n' Roll Suicide ft. Macy Gray"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Easy Star Records was founded in New York City in 1996 by Michael Goldwasser, Eric Smith, Lem Oppenheimer and Remy Gerstein; the All-Stars performing and recording collective grew out of the label a year later, built around a rotating cast of reggae vocalists and musicians.",
+      "The group's 2003 debut, Dub Side of the Moon, reimagines Pink Floyd's Dark Side of the Moon in full as reggae — the physical release even included printed instructions for syncing it to The Wizard of Oz, a nod to the 'Dark Side of the Rainbow' urban legend about the original album.",
+      "Radiodread (2006) gave the same treatment to Radiohead's OK Computer, and Easy Star's Lonely Hearts Dub Band (2009) reworked the Beatles' Sgt. Pepper's Lonely Hearts Club Band — reportedly the first reggae album in over two years to reach the Billboard 200.",
+      "The collective returned to David Bowie's Ziggy Stardust and the Spiders from Mars for 2023's Ziggy Stardub, continuing its run of full-album reggae reinterpretations alongside its own original material."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at easystarallstars.net.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-10-06",
+        "venue": "Foro Indie Rocks!",
+        "city": "Mexico City, Mexico",
+        "setlistUrl": "https://www.setlist.fm/setlist/easy-star-all-stars/2024/foro-indie-rocks-mexico-city-mexico-7350924d.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Easy Star All-Stars Dub Side of the Moon Tee Shirt",
+        "description": "From the official Easy Star Records store.",
+        "image": {
+          "src": "https://easystar.rosecityworks.com/cdn/shop/files/EasyStarAllStarsDubSideoftheMoonTee1200.png?v=1737755115",
+          "alt": "Easy Star All-Stars Dub Side of the Moon Tee Shirt"
+        },
+        "url": "https://easystar.rosecityworks.com/products/easy-star-all-stars-dub-side-of-the-moon-tee-shirt"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Easy Star All-Stars Are Turning David Bowie's 'Starman' Into 'Ziggy Stardub'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-features/easy-dub-all-stars-bowie-starman-1234662218/"
+      },
+      {
+        "title": "Easy Star All-Stars — NPR artist page",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/artists/15397855/easy-star-all-stars"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

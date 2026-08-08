@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "slug": "silk-sonic",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Silk Sonic — Ear Clef",
+    "description": "Bruno Mars and Anderson .Paak's retro-soul supergroup — one album, a Grammy sweep, and a full '70s vision built with Bootsy Collins.",
+    "ogImage": "/images/og-silk-sonic.jpg",
+    "canonicalUrl": "https://earclef.com/silk-sonic"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6PvvGcCY2XtUcSRld1Wilr"
+    },
+    "youtube": {
+      "channelId": "UCoUM-UJ7rirJYP8CQ0EIaHA"
+    },
+    "setlistfm": {
+      "mbid": "0fc78799-38c2-4ee1-8c0f-0b8f7009b7ba"
+    },
+    "itunes": {
+      "artistId": "1556097160"
+    }
+  },
+  "hero": {
+    "name": "Silk Sonic",
+    "identity": "Bruno Mars and Anderson .Paak's retro-soul supergroup — one album, four Grammys swept in a single night.",
+    "tagline": "Hear here!",
+    "location": "Los Angeles, CA, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.silksonic.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/silksonic/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/silksonic"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/SilkSonic"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@brunomars"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/silk-sonic/1556097160"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B08XQXXL36/silk-sonic"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "An Evening with Silk Sonic",
+        "year": "2021",
+        "mbReleaseGroupId": "97a8636b-af26-46b9-a3f4-4ed57c75a2da"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "adLGHcj_fmA",
+        "title": "Leave the Door Open (Official Video)"
+      },
+      {
+        "youtubeId": "GG7fLOmlhYg",
+        "title": "Smokin Out The Window (Official Music Video)"
+      },
+      {
+        "youtubeId": "CEw-7cMnBDY",
+        "title": "Skate (Official Music Video)"
+      },
+      {
+        "youtubeId": "-cy_tDQPXHk",
+        "title": "After Last Night w/ Thundercat & Bootsy (Official Audio)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Bruno Mars and Anderson .Paak met touring together in 2017 and began recording as a duo before the pandemic, releasing their debut single 'Leave the Door Open' in February 2021. Bootsy Collins suggested the name Silk Sonic after the pair rejected options including 'RoboCop Funk' and 'The Conquistadors' — both said 'Done deal' at the same time.",
+      "Their sole album, An Evening with Silk Sonic (2021), commits fully to a 1970s soul-and-funk sound: the duo studied vintage drum-head materials, recorded partly at Al Green's Royal Studios in Memphis, brought in MFSB arranger Larry Gold for strings, and cast Bootsy Collins as the album's spoken 'special guest host.'",
+      "'Leave the Door Open' swept all four categories it was nominated in at the 2022 Grammy Awards — Record of the Year, Song of the Year, Best R&B Solo Performance and Best R&B Song — and the duo opened that ceremony performing '777' in vintage playing-card-themed suits with Soul Train-style choreography.",
+      "Silk Sonic has not released a second album; both members continue extensive solo careers."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Silk Sonic performances have been tied to Bruno Mars and Anderson .Paak's own tours and one-off events.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2022-04-03",
+        "venue": "MGM Grand Garden Arena",
+        "city": "Las Vegas, NV, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/silk-sonic/2022/mgm-grand-garden-arena-las-vegas-nv-5bb6af54.html",
+        "note": "64th Annual Grammy Awards"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "An Evening With Silk Sonic Webstore Vinyl",
+        "description": "From the official Warner Music store.",
+        "image": {
+          "src": "https://store.warnermusic.com/cdn/shop/files/silksonic_d2c_mockup_r2_4_1_192e727b-d80c-4351-90ad-66b56719f98c.jpg?v=1735497357",
+          "alt": "An Evening With Silk Sonic Webstore Vinyl"
+        },
+        "url": "https://store.warnermusic.com/products/an-evening-with-silk-sonic-webstore-vinyl"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "An Evening With Silk Sonic — Album Review",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/silk-sonic-album-review-1256403/"
+      },
+      {
+        "title": "Silk Sonic and Jon Batiste lead the winners at the 2022 Grammys",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2022/04/04/1090348793/2022-grammys-winners-jon-batiste-silk-sonic"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

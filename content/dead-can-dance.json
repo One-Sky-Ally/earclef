@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "slug": "dead-can-dance",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Dead Can Dance — Ear Clef",
+    "description": "Brendan Perry and Lisa Gerrard's neoclassical darkwave project, born in Melbourne in 1981 and signed to 4AD — Gerrard's invented language, orchestral reunions, decades of influence.",
+    "ogImage": "/images/og-dead-can-dance.jpg",
+    "canonicalUrl": "https://earclef.com/dead-can-dance"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6sq7prp0tj9Abn89khmfja"
+    },
+    "youtube": {
+      "channelId": "UCZn4_LiKXOu-ArkS4sJTG5w"
+    },
+    "setlistfm": {
+      "mbid": "ccda046a-2674-4f7d-97e6-f23d6c156432"
+    },
+    "itunes": {
+      "artistId": "7576985"
+    }
+  },
+  "hero": {
+    "name": "Dead Can Dance",
+    "identity": "Brendan Perry and Lisa Gerrard's neoclassical darkwave project, born in Melbourne in 1981 and shaped by Gerrard's own invented singing language.",
+    "tagline": "Hear here!",
+    "location": "Melbourne, Australia",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.deadcandance.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/dcdofficial/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/DCDmusic"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/DeadCanDanceOfficial"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@DeadCanDanceOfficial"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/dead-can-dance/7576985"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://www.amazon.com/music/player/artists/B000S2B63K/dead-can-dance"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Spleen and Ideal",
+        "year": "1985",
+        "mbReleaseGroupId": "a9f6f32d-7f83-3067-8a85-642a9c2e0121"
+      },
+      {
+        "title": "Into the Labyrinth",
+        "year": "1993",
+        "mbReleaseGroupId": "095aba71-6b13-3f91-a4fc-82d7068fbd04"
+      },
+      {
+        "title": "Anastasis",
+        "year": "2012",
+        "mbReleaseGroupId": "4f1a21ba-82d8-49ce-b3a1-d5d727ae87ad"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "QuMqDF0PFZA",
+        "title": "Opium"
+      },
+      {
+        "youtubeId": "1Z4uITELiqw",
+        "title": "Children Of The Sun"
+      },
+      {
+        "youtubeId": "Gvu8JO4vm-A",
+        "title": "Anabasis"
+      },
+      {
+        "youtubeId": "5j51iBR5yX4",
+        "title": "Return of the She-King"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Brendan Perry and Lisa Gerrard formed Dead Can Dance in Melbourne in August 1981, joining Perry's background in the band Marching Girls with Gerrard's in the post-punk group Microfilm. After relocating to London in 1982, they signed to 4AD in 1983, touring alongside labelmates Cocteau Twins.",
+      "Gerrard developed her own invented, non-lexical vocal language beginning around age 12, using it extensively across the group's catalog from Spleen and Ideal (1985) onward — a defining feature of a sound widely credited with founding the neoclassical darkwave genre. Into the Labyrinth (1993) became 4AD's best-selling release to that point, selling roughly 500,000 copies.",
+      "The group disbanded in 1998, with Gerrard returning to Australia and Perry relocating to Ireland, before reuniting in 2005 for a 31-date world tour with a 40-piece orchestra, and again in 2011 for the album Anastasis (2012) and later Dionysus (2018).",
+      "In July 2026, Lisa Gerrard confirmed she is no longer part of Dead Can Dance; Brendan Perry has continued releasing new material under the name."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at deadcandance.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2022-05-06",
+        "venue": "Coliseu dos Recreios",
+        "city": "Lisbon, Portugal",
+        "setlistUrl": "https://www.setlist.fm/setlist/dead-can-dance/2022/coliseu-dos-recreios-lisbon-portugal-6bb4fa5a.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Within the Realm of a Dying Sun (Remastered) — Standard Black Vinyl LP",
+        "description": "From the official Dead Can Dance store.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/0043468044_37.jpg",
+          "alt": "Within the Realm of a Dying Sun (Remastered) — Standard Black Vinyl LP"
+        },
+        "url": "https://deadcandance.bandcamp.com/merch"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Dead Can Dance",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/1996/07/08/1044052/dead-can-dance"
+      },
+      {
+        "title": "As Wide As The Universe: Dead Can Dance Interviewed",
+        "outlet": "The Quietus",
+        "url": "https://thequietus.com/interviews/dead-can-dance-interview/"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Gladiator (2000)",
+        "context": "Lisa Gerrard co-composed the score with Hans Zimmer, including \"Now We Are Free\"; the pair won a Golden Globe for Best Original Score.",
+        "url": "https://www.imdb.com/title/tt0172495/"
+      },
+      {
+        "kind": "film-score",
+        "title": "Whale Rider (2002)",
+        "context": "Lisa Gerrard composed the solo score for Niki Caro's film.",
+        "url": "https://www.imdb.com/title/tt0298228/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

@@ -10,6 +10,16 @@
     "membership": false
   },
   {
+    "slug": "amadou-mariam",
+    "name": "Amadou & Mariam",
+    "identity": "\"The blind couple from Mali\" — desert blues and Malian guitar built for the world stage, from Manu Chao to Damon Albarn.",
+    "tier": "in-the-mix",
+    "mbid": "1fb60b6c-0f4d-42b4-8a5e-de705ec76660",
+    "channelId": "UCY14wC6ulRJSlQTfs1qdpRA",
+    "itunesId": "56371449",
+    "membership": false
+  },
+  {
     "slug": "aphex-twin",
     "name": "Aphex Twin",
     "identity": "Machines taught to giggle, ambient music with teeth — electronic music's great grinning trickster.",
@@ -200,6 +210,16 @@
     "membership": false
   },
   {
+    "slug": "citizen-cope",
+    "name": "Citizen Cope",
+    "identity": "Clarence Greenwood's blues, soul and folk songwriting — a gold single, covers by Santana and Sheryl Crow, and his own label built on his own terms.",
+    "tier": "in-the-mix",
+    "mbid": "9b21f670-8359-4e11-be1d-bf75b649a719",
+    "channelId": "UCnMe2Ys-i4gbzs4MEhB2SFg",
+    "itunesId": "3446106",
+    "membership": false
+  },
+  {
     "slug": "cocorosie",
     "name": "CocoRosie",
     "identity": "Sisters Bianca and Sierra Casady mixing opera, hip-hop, folk and found sounds into a genre of their own making.",
@@ -250,6 +270,16 @@
     "membership": false
   },
   {
+    "slug": "dead-can-dance",
+    "name": "Dead Can Dance",
+    "identity": "Brendan Perry and Lisa Gerrard's neoclassical darkwave project, born in Melbourne in 1981 and shaped by Gerrard's own invented singing language.",
+    "tier": "in-the-mix",
+    "mbid": "ccda046a-2674-4f7d-97e6-f23d6c156432",
+    "channelId": "UCZn4_LiKXOu-ArkS4sJTG5w",
+    "itunesId": "7576985",
+    "membership": false
+  },
+  {
     "slug": "dirty-projectors",
     "name": "Dirty Projectors",
     "identity": "Art-rock as a moving target — intricate guitar, gymnastic vocal harmony, and a new shape every album.",
@@ -257,6 +287,26 @@
     "mbid": "71a94ed8-03cc-459a-bd35-a081ca88a402",
     "channelId": "UCl7tq6_e6cnyzt8eXlsH4FA",
     "itunesId": "42056970",
+    "membership": false
+  },
+  {
+    "slug": "dungen",
+    "name": "Dungen",
+    "identity": "Gustav Ejstes's Swedish psych-rock project, sung entirely in Swedish and mostly self-played on record.",
+    "tier": "in-the-mix",
+    "mbid": "25c76eb2-a92d-4624-9e30-093fc16ed5eb",
+    "channelId": "UC2u9ro2QWTlZ4pGJwwaJyxA",
+    "itunesId": "65379653",
+    "membership": false
+  },
+  {
+    "slug": "easy-star-all-stars",
+    "name": "Easy Star All-Stars",
+    "identity": "The NYC reggae collective that reimagined Dark Side of the Moon, OK Computer and Sgt. Pepper's whole, album by album, in dub.",
+    "tier": "in-the-mix",
+    "mbid": "0cee95e3-a61d-4cd1-a39c-75464a05b606",
+    "channelId": "UCgfcVxUTpxMByamflWUc3IA",
+    "itunesId": "21356860",
     "membership": false
   },
   {
@@ -807,6 +857,16 @@
     "mbid": "f6f2326f-6b25-4170-b89d-e235b25508e8",
     "channelId": "UCAmt29QykFXnuIqQoEEnEFg",
     "itunesId": "73720797",
+    "membership": false
+  },
+  {
+    "slug": "silk-sonic",
+    "name": "Silk Sonic",
+    "identity": "Bruno Mars and Anderson .Paak's retro-soul supergroup — one album, four Grammys swept in a single night.",
+    "tier": "in-the-mix",
+    "mbid": "0fc78799-38c2-4ee1-8c0f-0b8f7009b7ba",
+    "channelId": "UCoUM-UJ7rirJYP8CQ0EIaHA",
+    "itunesId": "1556097160",
     "membership": false
   },
   {

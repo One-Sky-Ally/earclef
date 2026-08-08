@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "slug": "citizen-cope",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Citizen Cope — Ear Clef",
+    "description": "Clarence Greenwood's blues, soul and folk songwriting — a gold single, covers by Santana and Sheryl Crow, and a self-run label built on his own terms.",
+    "ogImage": "/images/og-citizen-cope.jpg",
+    "canonicalUrl": "https://earclef.com/citizen-cope"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "7enBrBojgBJuPPdqTq4Z5F"
+    },
+    "youtube": {
+      "channelId": "UCnMe2Ys-i4gbzs4MEhB2SFg"
+    },
+    "setlistfm": {
+      "mbid": "9b21f670-8359-4e11-be1d-bf75b649a719"
+    },
+    "itunes": {
+      "artistId": "3446106"
+    }
+  },
+  "hero": {
+    "name": "Citizen Cope",
+    "identity": "Clarence Greenwood's blues, soul and folk songwriting — a gold single, covers by Santana and Sheryl Crow, and his own label built on his own terms.",
+    "tagline": "Hear here!",
+    "location": "Memphis, TN, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://citizencope.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/citizencope"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/citizencope"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@citizencope"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/citizen-cope/3446106"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJP76M/citizen-cope"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Citizen Cope",
+        "year": "2002",
+        "mbReleaseGroupId": "b181c7aa-aeaf-37fd-9713-a2996f17cad6"
+      },
+      {
+        "title": "The Clarence Greenwood Recordings",
+        "year": "2004",
+        "mbReleaseGroupId": "baa86671-b1be-3db2-a31a-8694e05f1c72"
+      },
+      {
+        "title": "Every Waking Moment",
+        "year": "2006",
+        "mbReleaseGroupId": "89ae57d0-e45d-39ec-92bb-31a4718817b5"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "t73VxgPUVec",
+        "title": "Bullet And A Target (Official Video)"
+      },
+      {
+        "youtubeId": "9y4oeTFOQv0",
+        "title": "Justice (Official Lyric Video)"
+      },
+      {
+        "youtubeId": "JWroFdk6RH8",
+        "title": "Healing Hands (Official Audio)"
+      },
+      {
+        "youtubeId": "oPv2AIhZxWk",
+        "title": "One Lovely Day (Official Audio)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Clarence Greenwood, born in Memphis and raised largely in Washington, D.C., got his start as a DJ for the DC alt-rock band Basehead before launching his own project under the name Citizen Cope, blending blues, soul, folk and hip-hop influences.",
+      "'Let the Drummer Kick,' from his 2002 self-titled debut, went RIAA-certified gold. The Clarence Greenwood Recordings (2004) and Every Waking Moment (2006) followed, built on the same songwriting that would draw other artists to his catalog.",
+      "Carlos Santana recorded Greenwood's song 'Sideways' on his 2002 album Shaman, and Sheryl Crow covered it in 2010 on 100 Miles from Memphis; his songs have also been recorded by Richie Havens, Dido and Pharoahe Monch.",
+      "In 2010, frustrated with major-label constraints, Greenwood founded his own independent label, Rainwater Recordings, releasing The Rainwater LP (2010) and every album since on his own terms."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at citizencope.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-08-06",
+        "venue": "Marquee Theatre",
+        "city": "Tempe, AZ, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/citizen-cope/2024/marquee-theatre-tempe-az-4355cbab.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "The Clarence Greenwood Recordings [Numbered Edition]",
+        "description": "From the official Citizen Cope store.",
+        "image": {
+          "src": "https://citizencope.com/cdn/shop/products/CGRNoNumbers_40556c51-96ba-4e4a-b377-124e5e1fdc34.png?v=1665099261",
+          "alt": "The Clarence Greenwood Recordings [Numbered Edition]"
+        },
+        "url": "https://citizencope.com/"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Catching Up With Citizen Cope",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/sections/world-cafe/2019/05/03/719957716/catching-up-with-citizen-cope"
+      },
+      {
+        "title": "Song Premiere: Citizen Cope, 'One Lovely Day'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/song-premiere-citizen-cope-one-lovely-day-232914/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

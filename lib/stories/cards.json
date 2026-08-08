@@ -40,6 +40,49 @@
       "at": "2026-07-26T09:20:00Z"
     },
     {
+      "id": "amadou-mariam-41d38f6b",
+      "slug": "amadou-mariam",
+      "artistName": "Amadou & Mariam",
+      "type": "origin",
+      "hook": "They met and fell in love at a school for the blind in Bamako.",
+      "story": "Amadou Bagayoko and Mariam Doumbia met as students at Mali's Institute for the Young Blind, playing together in the school's Éclipse Orchestra under bandleader Idrissa Soumaoro. They married in 1980, building a five-decade musical partnership out of that first shared band.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Amadou & Mariam",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Amadou_%26_Mariam"
+        },
+        {
+          "title": "Amadou & Mariam: Well Beyond Mali",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/2009/03/26/102383925/amadou-and-mariam-well-beyond-mali"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T00:45:00Z"
+    },
+    {
+      "id": "amadou-mariam-6a85029c",
+      "slug": "amadou-mariam",
+      "artistName": "Amadou & Mariam",
+      "type": "context",
+      "hook": "Damon Albarn produced and co-wrote \"Sabali,\" the lead track of Welcome to Mali.",
+      "story": "For 2008's Welcome to Mali, Blur and Gorillaz frontman Damon Albarn produced and co-wrote the lead single \"Sabali,\" continuing the duo's pattern of high-profile outside collaborators after Manu Chao produced their breakthrough Dimanche à Bamako in 2004.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Amadou & Mariam: Collaborating with Damon Albarn on 'Sabali'",
+          "outlet": "Nonesuch Records",
+          "url": "https://www.nonesuch.com/media/videos/amadou-mariam-collaborating-damon-albarn-sabali"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T00:45:00Z"
+    },
+    {
       "id": "aphex-twin-7ab09d9c",
       "slug": "aphex-twin",
       "artistName": "Aphex Twin",
@@ -2039,6 +2082,54 @@
       "at": "2026-07-26T07:08:09.000Z"
     },
     {
+      "id": "citizen-cope-beb4814b",
+      "slug": "citizen-cope",
+      "artistName": "Citizen Cope",
+      "type": "context",
+      "hook": "Carlos Santana and Sheryl Crow both recorded his song \"Sideways.\"",
+      "story": "Greenwood wrote and produced \"Sideways\" for Santana's 2002 album Shaman before recording his own version on The Clarence Greenwood Recordings (2004). Sheryl Crow later cut it with him for her 2010 album 100 Miles from Memphis, and John Mayer and Tyler James have also covered it — the song went RIAA gold in 2019 despite never charting.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Sideways (Clarence Greenwood song)",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sideways_(Clarence_Greenwood_song)"
+        },
+        {
+          "title": "100 Miles from Memphis",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/100_Miles_from_Memphis"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T00:15:00Z"
+    },
+    {
+      "id": "citizen-cope-bac0eef9",
+      "slug": "citizen-cope",
+      "artistName": "Citizen Cope",
+      "type": "context",
+      "hook": "He founded his own label in 2010 after growing tired of major-label marketing demands.",
+      "story": "After three albums on major labels, Greenwood started his own imprint, Rainwater Recordings, in 2010 to work free of outside marketing and packaging demands. The Rainwater LP, released that year, was the first album to come out under his own label, and every Citizen Cope release since has followed the same independent route.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Citizen Cope",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Citizen_Cope"
+        },
+        {
+          "title": "The Rainwater LP",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Rainwater_LP"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T00:15:00Z"
+    },
+    {
       "id": "cocorosie-7cc971dc",
       "slug": "cocorosie",
       "artistName": "CocoRosie",
@@ -2350,6 +2441,54 @@
       "at": "2026-07-22T03:47:54.000Z"
     },
     {
+      "id": "dead-can-dance-b40078c",
+      "slug": "dead-can-dance",
+      "artistName": "Dead Can Dance",
+      "type": "context",
+      "hook": "Lisa Gerrard sings in a language she invented herself around age 12.",
+      "story": "Much of Dead Can Dance's most recognized vocal work is sung in no real language at all — Lisa Gerrard developed her own invented, non-lexical vocalizing, which she calls \"the language of the Heart,\" beginning around age 12 and has used across the group's catalog ever since, describing it as a way of singing that can't carry deception the way ordinary words can.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Lisa Gerrard",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Lisa_Gerrard"
+        },
+        {
+          "title": "Interview with Lisa Gerrard",
+          "outlet": "Synchrotones",
+          "url": "https://synchrotones.com/2013/05/01/interview-with-lisa-gerrard/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T00:30:00Z"
+    },
+    {
+      "id": "dead-can-dance-e3a80ad5",
+      "slug": "dead-can-dance",
+      "artistName": "Dead Can Dance",
+      "type": "context",
+      "hook": "Their 2005 reunion played the Hollywood Bowl and Radio City with 40-piece orchestras.",
+      "story": "After splitting in 1998, Brendan Perry and Lisa Gerrard reunited in 2005 for a 31-date world tour, their first US shows in nine years. It included sold-out stops at the Hollywood Bowl and Radio City Music Hall, both backed by 40-piece orchestras — dates from that tour were later compiled onto the live releases Selections From Europe 2005 and Selections From North America 2005.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Dead Can Dance Performs with Orchestra at the Hollywood Bowl for First U.S. Concert in Nine Years",
+          "outlet": "Hollywood Bowl",
+          "url": "https://www.hollywoodbowl.com/press/releases/471"
+        },
+        {
+          "title": "Dead Can Dance — MusicBrainz discography",
+          "outlet": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/ccda046a-2674-4f7d-97e6-f23d6c156432"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T00:30:00Z"
+    },
+    {
       "id": "dirty-projectors-d332d370",
       "slug": "dirty-projectors",
       "artistName": "Dirty Projectors",
@@ -2410,6 +2549,87 @@
       "status": "published",
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-20T00:38:33.000Z"
+    },
+    {
+      "id": "dungen-2d79e1ae",
+      "slug": "dungen",
+      "artistName": "Dungen",
+      "type": "context",
+      "hook": "Häxan scores a 1926 silent film, not the 1922 witch documentary its title nods to.",
+      "story": "Commissioned by the Swedish Film Institute, Dungen's first fully instrumental album, Häxan (Swedish for \"the witch\"), is a new live score for Lotte Reiniger's 1926 silhouette-animated film The Adventures of Prince Achmed — the oldest surviving feature-length animated film, made nearly a decade before Disney's Snow White. Dungen performed the score live across a run of US dates, closing at the Getty Museum in Los Angeles.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Dungen presents The Adventures of Prince Achmed",
+          "outlet": "Getty Museum",
+          "url": "https://www.getty.edu/visit/cal/events/ev_1602.html"
+        },
+        {
+          "title": "Dungen: Häxan",
+          "outlet": "Spectrum Culture",
+          "url": "https://spectrumculture.com/2016/11/20/dungen-haxan/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T01:15:00Z"
+    },
+    {
+      "id": "dungen-63bf2213",
+      "slug": "dungen",
+      "artistName": "Dungen",
+      "type": "context",
+      "hook": "\"Panda\" got a boost from a Conan O'Brien performance despite being sung in Swedish.",
+      "story": "Gustav Ejstes writes and performs nearly all of Dungen's music himself in the studio, singing entirely in Swedish. That didn't stop the band from breaking through internationally with Ta det lugnt (2004) — the single \"Panda\" got an extra push from a 2005 performance on Late Night with Conan O'Brien, reaching English-speaking audiences with no translation at all.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Dungen",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Dungen"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T01:15:00Z"
+    },
+    {
+      "id": "easy-star-all-stars-e175fcc6",
+      "slug": "easy-star-all-stars",
+      "artistName": "Easy Star All-Stars",
+      "type": "context",
+      "hook": "Dub Side of the Moon shipped with instructions for syncing it to The Wizard of Oz.",
+      "story": "The 2003 physical release of Dub Side of the Moon — the collective's reggae reworking of Pink Floyd's Dark Side of the Moon — included printed instructions for playing the album alongside The Wizard of Oz, a direct nod to \"Dark Side of the Rainbow,\" the long-running fan legend that the original Floyd album syncs with the film.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Easy Star All-Stars",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Easy_Star_All-Stars"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T01:00:00Z"
+    },
+    {
+      "id": "easy-star-all-stars-7f82571d",
+      "slug": "easy-star-all-stars",
+      "artistName": "Easy Star All-Stars",
+      "type": "context",
+      "hook": "Their 2009 Beatles reinterpretation reached the Billboard 200 twice.",
+      "story": "Easy Star's Lonely Hearts Dub Band, the collective's full reggae reworking of the Beatles' Sgt. Pepper's Lonely Hearts Club Band, reportedly became the first reggae album in more than two years to reach the Billboard 200 — doing so twice, following the same full-album-cover formula that carried Dub Side of the Moon (Pink Floyd) and Radiodread (Radiohead) before it.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Easy Star All-Stars",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Easy_Star_All-Stars"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T01:00:00Z"
     },
     {
       "id": "erykah-badu-87a131d7",
@@ -7635,6 +7855,44 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T17:25:49.056Z"
+    },
+    {
+      "id": "silk-sonic-9652318f",
+      "slug": "silk-sonic",
+      "artistName": "Silk Sonic",
+      "type": "origin",
+      "hook": "Bootsy Collins named the duo and narrates the album as its \"special guest host.\"",
+      "story": "After Bruno Mars and Anderson .Paak rejected names like \"RoboCop Funk\" and \"The Conquistadors,\" funk legend Bootsy Collins suggested \"Silk Sonic\" — both said \"Done deal\" at once. Collins went on to appear throughout An Evening with Silk Sonic as its spoken-word narrator, recorded at his own Rehab Studio in Cincinnati, framing the album as a live 1970s-style variety show.",
+      "media": null,
+      "sources": [
+        {
+          "title": "An Evening with Silk Sonic",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/An_Evening_with_Silk_Sonic"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T00:00:00Z"
+    },
+    {
+      "id": "silk-sonic-5f19d05a",
+      "slug": "silk-sonic",
+      "artistName": "Silk Sonic",
+      "type": "context",
+      "hook": "\"Leave the Door Open\" swept all four Grammy categories it was nominated in.",
+      "story": "At the 64th Annual Grammy Awards in 2022, Silk Sonic's debut single \"Leave the Door Open\" won every category it was up for: Record of the Year, Song of the Year, Best R&B Solo Performance and Best R&B Song. The duo opened that year's ceremony performing \"777\" in vintage playing-card-themed suits.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Silk Sonic — Grammy Awards artist page",
+          "outlet": "Recording Academy (Grammy.com)",
+          "url": "https://www.grammy.com/artists/silk-sonic/38634/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-07T00:00:00Z"
     },
     {
       "id": "st-vincent-95618a19",

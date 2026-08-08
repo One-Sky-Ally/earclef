@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "slug": "dungen",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Dungen — Ear Clef",
+    "description": "Gustav Ejstes's Swedish psych-rock project — sung entirely in Swedish, mostly self-played, and a live score for a 1926 silent animated film.",
+    "ogImage": "/images/og-dungen.jpg",
+    "canonicalUrl": "https://earclef.com/dungen"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "5d7hcYqz8bVY6Kt3bhjd3d"
+    },
+    "youtube": {
+      "channelId": "UC2u9ro2QWTlZ4pGJwwaJyxA"
+    },
+    "setlistfm": {
+      "mbid": "25c76eb2-a92d-4624-9e30-093fc16ed5eb"
+    },
+    "itunes": {
+      "artistId": "65379653"
+    }
+  },
+  "hero": {
+    "name": "Dungen",
+    "identity": "Gustav Ejstes's Swedish psych-rock project, sung entirely in Swedish and mostly self-played on record.",
+    "tagline": "Hear here!",
+    "location": "Stockholm, Sweden",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://dungen-music.com/"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/Dungen-24880073324"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/dungen_musik/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@dungen6654"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/dungen/65379653"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000Q3CX60/dungen"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Ta det lugnt",
+        "year": "2004",
+        "mbReleaseGroupId": "9a5d08d3-0265-3739-8c6d-d75382a7325b"
+      },
+      {
+        "title": "4",
+        "year": "2008",
+        "mbReleaseGroupId": "df0b638c-6f08-3515-8ba3-9bff3a775644"
+      },
+      {
+        "title": "Häxan",
+        "year": "2016",
+        "mbReleaseGroupId": "4694f096-874e-40e8-95ef-d01cf6d08758"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "Kj2fdV8brXo",
+        "title": "Panda (Official Video)"
+      },
+      {
+        "youtubeId": "VDi9K2TZHAc",
+        "title": "Skit i allt (Official Music Video)"
+      },
+      {
+        "youtubeId": "uCdzo6yJm1Y",
+        "title": "En Gång Om Året (Official Audio)"
+      },
+      {
+        "youtubeId": "MVmfAOFXlVc",
+        "title": "Marken Lag Stilla (Official Audio)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Gustav Ejstes writes and plays nearly every instrument on Dungen's studio records himself, singing throughout in Swedish despite the band's international acclaim in English-speaking psych and indie circles.",
+      "Ta det lugnt (2004) established the band internationally, with the single 'Panda' (2005) getting a further boost from a performance on Late Night with Conan O'Brien. 4 followed in 2008, continuing the same psych-folk-jazz fusion.",
+      "Häxan (2016), the band's first fully instrumental album, was commissioned by the Swedish Film Institute as a new live score for Lotte Reiniger's 1926 silent animated film The Adventures of Prince Achmed — the oldest surviving feature-length animated film, predating Disney's Snow White by nearly a decade. Dungen performed the score live at venues including the Getty Museum in Los Angeles.",
+      "Dungen's live lineup beyond Ejstes has included guitarist Reine Fiske, bassist Mattias Gustavsson and drummer Johan Holmegard, and the band continues to record and tour internationally."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced via Dungen's official channels.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-02-22",
+        "venue": "Slaktkyrkan",
+        "city": "Stockholm, Sweden",
+        "setlistUrl": "https://www.setlist.fm/setlist/dungen/2025/slaktkyrkan-stockholm-sweden-1b5af970.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "En Är För Mycket och Tusen Aldrig Nog",
+        "description": "From the official Dungen store.",
+        "image": {
+          "src": "https://d1rgjmn2wmqeif.cloudfront.net/r/s/317644.jpg",
+          "alt": "En Är För Mycket och Tusen Aldrig Nog"
+        },
+        "url": "https://dungen.ochre.store/shop"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "First Listen: Dungen, 'Allas Sak'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2015/09/16/436304229/first-listen-dungen-allas-sak"
+      },
+      {
+        "title": "Dungen: Häxan",
+        "outlet": "Spectrum Culture",
+        "url": "https://spectrumculture.com/2016/11/20/dungen-haxan/"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "screen-sync",
+        "title": "The Adventures of Prince Achmed (1926)",
+        "context": "Commissioned by the Swedish Film Institute, Dungen wrote and performed a new live score for Lotte Reiniger's silent animated classic, including a run of US dates that closed at the Getty Museum.",
+        "url": "https://www.getty.edu/visit/cal/events/ev_1602.html"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
