@@ -98,7 +98,9 @@ export async function GET(
 
   // Decade only sharpens mb: results (a cached era video) — cache the
   // sharpened result under its own key so eras don't overwrite each other.
-  const cacheKey = `${source}/${id}${decade ? `/${decade}` : ''}`
+  // v2: v1 blobs hold results from the containment-matching IA search
+  // (the "Alexandra" incident) and must never be served again.
+  const cacheKey = `v2/${source}/${id}${decade ? `/${decade}` : ''}`
   const memoized = memo.get(cacheKey)
   if (memoized) return withCacheHeaders(NextResponse.json(memoized))
   const cached = await readCache(cacheKey)

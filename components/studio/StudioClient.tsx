@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
+import { safeStoredHref, storedHrefKind } from '@/lib/play/storedHref'
 import {
   TIER_LABELS,
   TIER_ORDER,
@@ -212,11 +213,15 @@ export function StudioClient() {
                   {entry.listenHref && (
                     <a
                       className={styles.action}
-                      href={entry.listenHref}
+                      href={safeStoredHref(entry.listenHref, entry.mbid)}
                       target="_blank"
                       rel="noreferrer"
                     >
-                      ▶ Listen
+                      {storedHrefKind(
+                        safeStoredHref(entry.listenHref, entry.mbid),
+                      ) === 'play'
+                        ? '▶ Listen'
+                        : 'About'}
                     </a>
                   )}
                   <button

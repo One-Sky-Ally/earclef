@@ -35,11 +35,18 @@ function normalizeName(value: string): string {
     .replace(/[^\p{L}\p{N}]+/gu, '')
 }
 
+/**
+ * EXACT equality only. Containment was tried first and produced the
+ * "Alexandra" incident (Aug 8, 2026): an Internet Archive podcast
+ * co-hosted by an "Alexandra Tobor" matched the mononym artist
+ * "Alexandra" and earned a garbage play badge. Homonyms can still
+ * collide, but exact matching is the same bar the MB verifier uses.
+ */
 function namesMatch(a: string, b: string): boolean {
   const left = normalizeName(a)
   const right = normalizeName(b)
   if (!left || !right) return false
-  return left === right || left.includes(right) || right.includes(left)
+  return left === right
 }
 
 async function fetchJson(url: string): Promise<unknown | null> {

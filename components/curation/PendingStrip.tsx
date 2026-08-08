@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { safeStoredHref } from '@/lib/play/storedHref'
 import styles from './PendingStrip.module.css'
 
 interface PendingEntry {
@@ -29,18 +30,17 @@ export function PendingStrip() {
       <ul className={styles.list}>
         {entries.map((entry) => (
           <li key={entry.mbid}>
-            {entry.listenHref ? (
-              <a
-                className={styles.pill}
-                href={entry.listenHref}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {entry.name} ▶
-              </a>
-            ) : (
-              <span className={styles.pill}>{entry.name}</span>
-            )}
+            {/* Navigation pill, not a play button — stored hrefs from
+                before the verified-play policy may be search URLs, so
+                they pass through the guard and lose the ▶ glyph. */}
+            <a
+              className={styles.pill}
+              href={safeStoredHref(entry.listenHref, entry.mbid)}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {entry.name}
+            </a>
           </li>
         ))}
       </ul>
