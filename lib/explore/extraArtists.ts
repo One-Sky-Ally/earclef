@@ -72,6 +72,32 @@ export function extraArtistUrl(artist: ExtraArtist): string {
   return discogsSearchUrl(artist.name)
 }
 
+/**
+ * Stable key for the verified-play resolver (/api/play/[key]). Names in
+ * non-Latin scripts (most of the Lao pool) slug to nothing, so id-less
+ * entries key on a djb2 hash of the raw name instead.
+ */
+export function extraPlayKey(artist: ExtraArtist): string {
+  if (artist.discogsArtistId) return `dg:${artist.discogsArtistId}`
+  if (artist.wikidataId) return `wd:${artist.wikidataId}`
+  const slug = artist.name
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 60)
+  return `nm:${slug || `h${djb2(artist.name)}`}`
+}
+
+function djb2(value: string): string {
+  let hash = 5381
+  for (let index = 0; index < value.length; index++) {
+    hash = ((hash << 5) + hash + value.charCodeAt(index)) >>> 0
+  }
+  return hash.toString(16)
+}
+
 export function discogsArtistUrl(id: number | string): string {
   return `https://www.discogs.com/artist/${id}`
 }

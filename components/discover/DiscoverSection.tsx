@@ -2,13 +2,18 @@
 
 import { useEffect, useState } from 'react'
 import { getOwnerKey } from '@/lib/curation/ownerClient'
+import { PLAY_LABELS, type PlayLink, type ReadLink } from '@/lib/play/types'
 import styles from './DiscoverSection.module.css'
 
 interface DiscoverPick {
   name: string
   why: string
   knownFor: string
+  /** False on sanitized legacy pools — the title is hidden then. */
+  knownForVerified: boolean
   mbid: string
+  play: PlayLink | null
+  read: ReadLink
   listenHref: string
 }
 
@@ -19,6 +24,28 @@ type DiscoverState =
   | { status: 'ready'; picks: DiscoverPick[] }
 
 const PAGE_SIZE = 3
+
+/**
+ * The API sanitizes legacy pools, but a CDN edge can hand this bundle
+ * a pre-deploy cached payload for hours — normalize here too so a
+ * search-URL listenHref or a missing read link can never render.
+ */
+function normalizePick(pick: Partial<DiscoverPick>): DiscoverPick[] {
+  if (!pick.name || !pick.mbid) return []
+  const mbUrl = `https://musicbrainz.org/artist/${pick.mbid}`
+  return [
+    {
+      name: pick.name,
+      why: pick.why ?? '',
+      knownFor: pick.knownFor ?? '',
+      knownForVerified: pick.knownForVerified === true,
+      mbid: pick.mbid,
+      play: pick.play ?? null,
+      read: pick.read ?? { kind: 'musicbrainz', url: mbUrl },
+      listenHref: pick.play?.url ?? pick.read?.url ?? mbUrl,
+    },
+  ]
+}
 
 export function DiscoverSection() {
   const [state, setState] = useState<DiscoverState>({ status: 'loading' })
@@ -36,10 +63,13 @@ export function DiscoverSection() {
       .then(
         (body: {
           status: 'ready' | 'warming' | 'disabled'
-          pool?: { picks: DiscoverPick[] }
+          pool?: { picks: Partial<DiscoverPick>[] }
         }) => {
           if (body.status === 'ready' && body.pool) {
-            setState({ status: 'ready', picks: body.pool.picks })
+            setState({
+              status: 'ready',
+              picks: body.pool.picks.flatMap(normalizePick),
+            })
           } else if (body.status === 'warming') {
             setState({ status: 'warming' })
           } else {
@@ -129,15 +159,32 @@ export function DiscoverSection() {
                 <li key={pick.mbid} className={styles.card}>
                   <span className={styles.name}>{pick.name}</span>
                   <span className={styles.why}>{pick.why}</span>
-                  <a
-                    className={styles.listen}
-                    href={pick.listenHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Listen: search YouTube for ${pick.knownFor} by ${pick.name}`}
-                  >
-                    ▶ {pick.knownFor}
-                  </a>
+                  {pick.play ? (
+                    <a
+                      className={styles.listen}
+                      href={pick.play.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      title={PLAY_LABELS[pick.play.kind]}
+                      aria-label={`${PLAY_LABELS[pick.play.kind]}: ${pick.knownFor} by ${pick.name}`}
+                    >
+                      ▶ {pick.knownFor}
+                    </a>
+                  ) : (
+                    // No verified play destination — an honest read-about
+                    // link, never a search URL that lands on garbage.
+                    <a
+                      className={styles.listen}
+                      href={pick.read.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Read about ${pick.name}`}
+                    >
+                      {pick.knownForVerified
+                        ? `Read about → ${pick.knownFor}`
+                        : 'Read about →'}
+                    </a>
+                  )}
                   {ownerKey && (
                     <button
                       type="button"

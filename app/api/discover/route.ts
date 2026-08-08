@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import type { DiscoverPool } from '@/lib/discover/generate'
+import type { DiscoverPick, DiscoverPool } from '@/lib/discover/generate'
 import {
   readLatestPool,
   readPool,
@@ -12,7 +12,33 @@ import {
  * loads never trigger a model call. A cache miss serves the previous
  * day's pool until the schedule fires. Local dev has no Blobs or
  * background functions, so there — and only there — it generates inline.
+ *
+ * Pools written before the verified-play change carry search-URL
+ * listenHrefs and unverified knownFor titles; sanitizePool() strips
+ * both at the door (read-about links only) until the next scheduled
+ * generation replaces them with verified data.
  */
+
+/** Legacy picks lack `read`; their listenHref is a search URL. */
+function sanitizePool(pool: DiscoverPool): DiscoverPool {
+  return {
+    ...pool,
+    picks: pool.picks.map((pick): DiscoverPick => {
+      if (pick.read) return pick
+      const mbUrl = `https://musicbrainz.org/artist/${pick.mbid}`
+      return {
+        name: pick.name,
+        why: pick.why,
+        knownFor: pick.knownFor,
+        knownForVerified: false,
+        mbid: pick.mbid,
+        play: null,
+        read: { kind: 'musicbrainz', url: mbUrl },
+        listenHref: mbUrl,
+      }
+    }),
+  }
+}
 
 type DiscoverResponse =
   | { status: 'ready'; pool: DiscoverPool }
@@ -53,7 +79,25 @@ async function devGenerate(today: string): Promise<DiscoverPool> {
   return devGeneration
 }
 
+/** Dev-only pool fixture: verify rendering with zero model calls. */
+async function readFixture(): Promise<DiscoverPool | null> {
+  const path = process.env.DISCOVER_FIXTURE
+  if (!path || process.env.NETLIFY === 'true') return null
+  try {
+    const { readFile } = await import('node:fs/promises')
+    return JSON.parse(await readFile(path, 'utf8')) as DiscoverPool
+  } catch (error) {
+    console.error('Discover fixture unreadable:', error)
+    return null
+  }
+}
+
 export async function GET() {
+  const fixture = await readFixture()
+  if (fixture) {
+    return json({ status: 'ready', pool: sanitizePool(fixture) }, 60)
+  }
+
   if (!process.env.ANTHROPIC_API_KEY) {
     return json({ status: 'disabled' }, 300)
   }
@@ -62,15 +106,16 @@ export async function GET() {
 
   const cached = memo.get(today) ?? (await readPool(today))
   if (cached) {
-    memo.set(today, cached)
-    return json({ status: 'ready', pool: cached }, secondsUntilUtcMidnight())
+    const pool = sanitizePool(cached)
+    memo.set(today, pool)
+    return json({ status: 'ready', pool }, secondsUntilUtcMidnight())
   }
 
   if (process.env.NETLIFY === 'true') {
     // No page-load generation: yesterday's pool carries the section until
     // the 00:10 UTC schedule produces today's.
     const stale = await readLatestPool()
-    if (stale) return json({ status: 'ready', pool: stale }, 300)
+    if (stale) return json({ status: 'ready', pool: sanitizePool(stale) }, 300)
     return json({ status: 'warming' }, 60)
   }
 

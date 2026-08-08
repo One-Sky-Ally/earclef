@@ -6,14 +6,13 @@ import {
   fetchArtistLinks,
   fetchCountryYearDetails,
   musicBrainzArtistUrl,
-  youtubeSearchUrl,
   type CountryYearDetails,
   type PanelArtist,
-  type PanelRelease,
   type PoolArtist,
 } from '@/lib/explore/panelData'
 import { YEAR_MAX, YEAR_MIN, type DataSource } from '@/lib/explore/counts'
-import { listenSearch } from '@/lib/links'
+import { fetchArtistPlay } from '@/lib/play/client'
+import { PLAY_LABELS, type PlayLink } from '@/lib/play/types'
 import { useListenService } from '@/components/listen/ServiceProvider'
 import type { ListenService } from '@/lib/listen/services'
 import type { ArtistLinks } from '@/lib/explore/panelData'
@@ -22,6 +21,7 @@ import { QueuePlayer } from '@/components/explore/QueuePlayer'
 import {
   extraArtistUrl,
   extraArtistsFor,
+  extraPlayKey,
   type ExtraArtist,
 } from '@/lib/explore/extraArtists'
 import styles from './CountryPanel.module.css'
@@ -108,23 +108,6 @@ type PanelState =
   | { status: 'error'; message: string }
   | { status: 'ready'; details: CountryYearDetails }
 
-// listenSearch quotes the title but leaves the artist bare, so name variants
-// can't zero out the results while the search stays on-target ("Black Widow"
-// the band, not the Marvel film). Artists get their top release as a
-// discriminator.
-function artistSearchHref(
-  artist: PanelArtist,
-  releases: PanelRelease[],
-): string {
-  const topRelease = releases.find(
-    (release) => release.artist.id === artist.id,
-  )?.title
-  return topRelease
-    ? listenSearch(artist.name, topRelease)
-    : youtubeSearchUrl(`"${artist.name}" music`)
-}
-
-
 /** Session-lived client cache; the API layer caches for 30 days. */
 const artistLinksCache = new Map<string, ArtistLinks>()
 
@@ -156,11 +139,14 @@ interface PanelPoolArtist extends PoolArtist {
   externalUrl?: string
   /** Source carries no date at all — sorts last, tagged quietly. */
   undated?: boolean
+  /** Verified-play resolver key for non-MB entries (dg:/wd:/nm:). */
+  playKey?: string
 }
 
 interface PanelArtistPillProps {
   artist: PanelPoolArtist
-  releases: PanelRelease[]
+  /** The panel's decade — lets the resolver reuse queue-verified videos. */
+  decade: number
   rosterEntry?: { slug: string; name: string }
 }
 
@@ -169,14 +155,35 @@ interface PanelArtistPillProps {
  * gets a lazy smart chain on the name — the fan's streaming service if
  * MusicBrainz knows the link, else official site, else Wikipedia, else
  * MusicBrainz itself. Links resolve on first click (~1s) and cache.
+ *
+ * The ▶ badge renders ONLY once a verified play destination resolves
+ * (playability-checked video, MB-linked artist page, or a matching
+ * Internet Archive item). No verified destination → no badge; the pill
+ * itself remains the read-about link. Never a search URL.
  */
-function PanelArtistPill({
-  artist,
-  releases,
-  rosterEntry,
-}: PanelArtistPillProps) {
+function PanelArtistPill({ artist, decade, rosterEntry }: PanelArtistPillProps) {
   const { service } = useListenService()
   const [resolving, setResolving] = useState(false)
+  const [play, setPlay] = useState<PlayLink | null>(null)
+
+  useEffect(() => {
+    const controller = new AbortController()
+    fetchArtistPlay(
+      {
+        key: artist.playKey ?? `mb:${artist.id}`,
+        name: artist.name,
+        decade,
+      },
+      controller.signal,
+    )
+      .then((resolved) => {
+        if (!controller.signal.aborted) setPlay(resolved?.play ?? null)
+      })
+      .catch(() => {
+        // Unresolvable → no badge, which is the honest default.
+      })
+    return () => controller.abort()
+  }, [artist.playKey, artist.id, artist.name, decade])
 
   async function openSmartLink(event: React.MouseEvent) {
     // Plain left-clicks resolve the chain; modified clicks keep the
@@ -241,15 +248,18 @@ function PanelArtistPill({
           {resolving ? `${artist.name}…` : artist.name}
         </a>
       )}
-      <a
-        className={styles.listenBadge}
-        href={artistSearchHref(artist, releases)}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={`Listen: search YouTube for ${artist.name}`}
-      >
-        ▶
-      </a>
+      {play && (
+        <a
+          className={styles.listenBadge}
+          href={play.url}
+          target="_blank"
+          rel="noreferrer"
+          title={PLAY_LABELS[play.kind]}
+          aria-label={`${PLAY_LABELS[play.kind]}: ${artist.name}`}
+        >
+          ▶
+        </a>
+      )}
     </li>
   )
 }
@@ -345,6 +355,7 @@ export function CountryPanel({
       name: artist.name,
       tags: artist.styles.map((style) => style.toLowerCase()),
       externalUrl: extraArtistUrl(artist),
+      playKey: extraPlayKey(artist),
       ...(undated ? { undated: true } : {}),
     })
     const { dated, undated } = extraArtistsFor(country.code, year)
@@ -511,7 +522,7 @@ export function CountryPanel({
               <ul className={styles.artists}>
                 <PanelArtistPill
                   artist={spotlightArtist}
-                  releases={state.details.releases}
+                  decade={Math.floor(year / 10) * 10}
                   rosterEntry={roster[spotlightArtist.id]}
                 />
               </ul>
@@ -630,7 +641,7 @@ export function CountryPanel({
                     <PanelArtistPill
                       key={artist.id}
                       artist={artist}
-                      releases={state.details.releases}
+                      decade={Math.floor(year / 10) * 10}
                       rosterEntry={roster[artist.id]}
                     />
                   ))}

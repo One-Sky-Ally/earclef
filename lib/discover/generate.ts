@@ -6,17 +6,30 @@
  * in dev, so it can take its time; callers never block a visitor on it.
  */
 import Anthropic from '@anthropic-ai/sdk'
-// Relative import (not the @/ alias): this module is bundled into the
+// Relative imports (not the @/ alias): this module is bundled into the
 // Netlify background function, whose bundler doesn't read tsconfig paths.
-import { listenSearch } from '../links'
+import { resolveMbArtistPlay } from '../play/resolve'
+import type { PlayLink, ReadLink } from '../play/types'
 import roster from './roster.json'
 
 export interface DiscoverPick {
   name: string
   why: string
-  /** A representative album or song, used to build a precise listen search. */
+  /**
+   * A representative album or song. VERIFIED against the artist's
+   * MusicBrainz release groups / recordings — a model may propose a
+   * title, but an unverifiable one is replaced with the artist's real
+   * top release (fabrications never reach the page; see the Butcher
+   * Brown "Camp Culture" incident, Aug 2026).
+   */
   knownFor: string
+  /** True for freshly generated picks; false only for sanitized legacy pools. */
+  knownForVerified: boolean
   mbid: string
+  /** Verified play destination, or null — the card shows read-about. */
+  play: PlayLink | null
+  read: ReadLink
+  /** Back-compat mirror of play?.url ?? read.url. Never a search URL. */
   listenHref: string
 }
 
@@ -149,6 +162,78 @@ async function verifyOnMusicBrainz(name: string): Promise<MbArtistMatch | null> 
   }
 }
 
+interface MbReleaseGroup {
+  title?: string
+  'first-release-date'?: string
+  'primary-type'?: string
+}
+
+/**
+ * Verify the model's knownFor title against the artist's real catalog:
+ * a normalized match among their release groups, else one recording
+ * search. No match → the artist's own top release replaces it (latest
+ * dated album, else latest dated anything, else the first group). An
+ * artist with no catalog at all returns null and the pick is dropped.
+ */
+async function verifiedKnownFor(
+  mbid: string,
+  proposed: string,
+): Promise<string | null> {
+  const rgUrl = `https://musicbrainz.org/ws/2/release-group?artist=${mbid}&limit=100&fmt=json`
+  let groups: MbReleaseGroup[] = []
+  try {
+    const res = await fetch(rgUrl, { headers: { 'User-Agent': MB_USER_AGENT } })
+    if (res.ok) {
+      const body = (await res.json()) as { 'release-groups'?: MbReleaseGroup[] }
+      groups = body['release-groups'] ?? []
+    }
+  } catch {
+    // fall through — treated as an empty catalog below
+  }
+  await sleep(1100) // MusicBrainz rate limit: 1 req/s
+
+  const proposedKey = normalize(proposed)
+  if (
+    proposedKey &&
+    groups.some((group) => normalize(group.title ?? '') === proposedKey)
+  ) {
+    return proposed
+  }
+
+  try {
+    const query = encodeURIComponent(
+      `recording:"${proposed.replace(/"/g, '')}" AND arid:${mbid}`,
+    )
+    const res = await fetch(
+      `https://musicbrainz.org/ws/2/recording?query=${query}&limit=1&fmt=json`,
+      { headers: { 'User-Agent': MB_USER_AGENT } },
+    )
+    if (res.ok) {
+      const body = (await res.json()) as { count?: number }
+      if ((body.count ?? 0) > 0) {
+        await sleep(1100)
+        return proposed
+      }
+    }
+  } catch {
+    // fall through to the catalog-sourced replacement
+  }
+  await sleep(1100)
+
+  const dated = groups
+    .filter((group) => group.title && group['first-release-date'])
+    .sort((a, b) =>
+      (b['first-release-date'] ?? '').localeCompare(
+        a['first-release-date'] ?? '',
+      ),
+    )
+  const replacement =
+    dated.find((group) => group['primary-type'] === 'Album') ??
+    dated[0] ??
+    groups.find((group) => group.title)
+  return replacement?.title ?? null
+}
+
 /** Full pipeline: model -> roster/repeat filters -> MusicBrainz -> pool. */
 export async function generatePool(
   date: string,
@@ -169,12 +254,24 @@ export async function generatePool(
     const match = await verifyOnMusicBrainz(pick.name)
     await sleep(1100) // MusicBrainz rate limit: 1 req/s
     if (!match) continue
+
+    const knownFor = await verifiedKnownFor(match.mbid, pick.knownFor)
+    if (!knownFor) continue // no verifiable catalog — the pick is out
+
+    const { play, read } = await resolveMbArtistPlay(match.mbid, null)
+    await sleep(1100)
     picks.push({
       name: match.canonicalName,
       why: pick.why,
-      knownFor: pick.knownFor,
+      knownFor,
+      knownForVerified: true,
       mbid: match.mbid,
-      listenHref: listenSearch(match.canonicalName, pick.knownFor),
+      play,
+      read: read ?? {
+        kind: 'musicbrainz',
+        url: `https://musicbrainz.org/artist/${match.mbid}`,
+      },
+      listenHref: play?.url ?? read?.url ?? `https://musicbrainz.org/artist/${match.mbid}`,
     })
   }
 
