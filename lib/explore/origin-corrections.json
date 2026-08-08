@@ -1,0 +1,796 @@
+{
+  "generatedAt": "2026-08-08",
+  "arbitratedAt": "2026-08-08",
+  "moves": {
+    "9072df14-b61e-42e2-b4f4-6bbb7fdb5586": {
+      "from": "CH",
+      "to": "US",
+      "name": "Tina Turner",
+      "begin": "1939",
+      "end": "2023",
+      "weight": 28,
+      "tags": [
+        "soul",
+        "pop",
+        "rock",
+        "pop rock"
+      ],
+      "beginArea": "Nutbush",
+      "why": "described \"American-born\""
+    },
+    "255497f8-26fb-4044-b97e-d4787d5974f6": {
+      "from": "CH",
+      "to": "PA",
+      "name": "Billy Cobham",
+      "begin": "1944",
+      "end": null,
+      "weight": 14,
+      "tags": [
+        "jazz",
+        "funk",
+        "jazz rock",
+        "jazz fusion"
+      ],
+      "beginArea": "Colón",
+      "why": "citizen of PA, not CH"
+    },
+    "f389a455-4ff0-4b1f-95f8-64c53d3c0e56": {
+      "from": "CH",
+      "to": "IT",
+      "name": "Pippo Pollina",
+      "begin": "1963",
+      "end": null,
+      "weight": 7,
+      "tags": [
+        "italian",
+        "folk",
+        "cantautore",
+        "folk rock"
+      ],
+      "beginArea": "Palermo",
+      "why": "citizen of IT, not CH"
+    },
+    "e3ccda71-396a-49ff-a666-1905a7d36f67": {
+      "from": "CH",
+      "to": "US",
+      "name": "Lauren Newton",
+      "begin": "1952",
+      "end": null,
+      "weight": 5,
+      "tags": [
+        "jazz",
+        "vocal jazz",
+        "free jazz",
+        "free improvisation"
+      ],
+      "beginArea": "Coos Bay",
+      "why": "citizen of US, not CH"
+    },
+    "dfa6d053-2bd8-4119-9b17-7bb39af0a5a5": {
+      "from": "CH",
+      "to": "US",
+      "name": "Hopkinson Smith",
+      "begin": "1946",
+      "end": null,
+      "weight": 1,
+      "tags": [
+        "lutist"
+      ],
+      "beginArea": "New York",
+      "why": "citizen of US, not CH"
+    },
+    "0e067986-50a7-4c67-b577-b48a1d60f6b2": {
+      "from": "LU",
+      "to": "GB",
+      "name": "Josh Island",
+      "begin": null,
+      "end": null,
+      "weight": 0,
+      "tags": [],
+      "beginArea": "Milton Keynes",
+      "why": "citizen of NL, not LU"
+    },
+    "c610d388-4f1c-49ed-898b-a493a4aa3aa0": {
+      "from": "IE",
+      "to": "US",
+      "name": "Robert Mizzell",
+      "begin": "1970",
+      "end": null,
+      "weight": 1,
+      "tags": [
+        "country"
+      ],
+      "beginArea": "Shreveport",
+      "why": "citizen of US, not IE"
+    },
+    "6529bf81-8dae-43e3-b9af-f4ac3bbbda79": {
+      "from": "AT",
+      "to": "NL",
+      "name": "Hans Theessink",
+      "begin": "1948",
+      "end": null,
+      "weight": 2,
+      "tags": [
+        "dutch",
+        "blues"
+      ],
+      "beginArea": "Enschede",
+      "why": "citizen of NL, not AT"
+    },
+    "456173e7-b1de-451e-8dfd-78ab94fce7cc": {
+      "from": "AT",
+      "to": "DE",
+      "name": "Michael Heltau",
+      "begin": "1933",
+      "end": null,
+      "weight": 0,
+      "tags": [],
+      "beginArea": "Ingolstadt",
+      "why": "citizen of DE, not AT"
+    },
+    "4554ec28-0e97-45f1-ad3d-696a48326f1c": {
+      "from": "NL",
+      "to": "US",
+      "name": "Don Byas",
+      "begin": "1912",
+      "end": "1972",
+      "weight": 4,
+      "tags": [
+        "jazz",
+        "swing",
+        "bebop"
+      ],
+      "beginArea": "Oklahoma",
+      "why": "citizen of US, not NL"
+    },
+    "18288a13-0259-4a44-a9dc-558229fbfdd2": {
+      "from": "DK",
+      "to": "US",
+      "name": "Duke Jordan",
+      "begin": "1922",
+      "end": "2006",
+      "weight": 7,
+      "tags": [
+        "hard bop",
+        "jazz",
+        "bebop",
+        "cool jazz"
+      ],
+      "beginArea": "Brooklyn",
+      "why": "citizen of US, not DK"
+    },
+    "8766468c-9a0f-41e2-8466-601d94d5098e": {
+      "from": "FI",
+      "to": "US",
+      "name": "Eddie Boyd",
+      "begin": "1914",
+      "end": "1994",
+      "weight": 8,
+      "tags": [
+        "blues",
+        "chicago blues",
+        "piano blues",
+        "2008 universal fire victim"
+      ],
+      "beginArea": "Mississippi",
+      "why": "citizen of US, not FI"
+    },
+    "873a5f8b-f9f4-4458-84b3-476aab0ac922": {
+      "from": "IS",
+      "to": "US",
+      "name": "Alex Somers",
+      "begin": "1984",
+      "end": null,
+      "weight": 1,
+      "tags": [
+        "vegan"
+      ],
+      "beginArea": "Baltimore",
+      "why": "citizen of US, not IS"
+    },
+    "7ab4d1b8-ae96-49e2-89b5-b017249e087c": {
+      "from": "IS",
+      "to": "GB",
+      "name": "Chris Foster",
+      "begin": "1948",
+      "end": null,
+      "weight": 0,
+      "tags": [],
+      "beginArea": "Yeovil",
+      "why": "citizen of GB, not IS"
+    },
+    "f7625f34-1799-42a4-a1c6-22b5377c767b": {
+      "from": "ES",
+      "to": "VE",
+      "name": "Arca",
+      "begin": "1989",
+      "end": null,
+      "weight": 57,
+      "tags": [
+        "electronic",
+        "experimental",
+        "queer",
+        "industrial"
+      ],
+      "beginArea": "Caracas",
+      "why": "citizen of VE, not ES"
+    },
+    "b2fbd053-4380-412c-95d2-35c6da8f1011": {
+      "from": "FR",
+      "to": "CD",
+      "name": "GIMS",
+      "begin": "1986",
+      "end": null,
+      "weight": 11,
+      "tags": [
+        "pop rap",
+        "french hip hop",
+        "pop",
+        "hardcore hip hop"
+      ],
+      "beginArea": "Kinshasa",
+      "why": "citizen of CD, not FR"
+    },
+    "b254df07-01e9-45d0-ae9b-0cd717d2163d": {
+      "from": "FR",
+      "to": "US",
+      "name": "William Christie",
+      "begin": "1944",
+      "end": null,
+      "weight": 7,
+      "tags": [
+        "baroque",
+        "classical",
+        "conductor",
+        "french conductor"
+      ],
+      "beginArea": "Buffalo",
+      "why": "described \"American-born\""
+    },
+    "549dc0da-d165-4bff-839e-dca65cf51c0c": {
+      "from": "FR",
+      "to": "US",
+      "name": "Joséphine Baker",
+      "begin": "1906",
+      "end": "1975",
+      "weight": 4,
+      "tags": [
+        "cabaret",
+        "french",
+        "american"
+      ],
+      "beginArea": "St. Louis",
+      "why": "described \"American-born\""
+    },
+    "eea85c38-427d-438a-8c59-6036e1c05d0e": {
+      "from": "DE",
+      "to": "CA",
+      "name": "Aidan Baker",
+      "begin": "1974",
+      "end": null,
+      "weight": 13,
+      "tags": [
+        "ambient",
+        "drone",
+        "post-rock",
+        "dark ambient"
+      ],
+      "beginArea": "Toronto",
+      "why": "citizen of CA, not DE"
+    },
+    "5849fa32-0283-4204-9d1b-507cfaf9d4a2": {
+      "from": "DE",
+      "to": "US",
+      "name": "Champion Jack Dupree",
+      "begin": "1910",
+      "end": "1992",
+      "weight": 10,
+      "tags": [
+        "piano blues",
+        "blues",
+        "boogie-woogie",
+        "new orleans blues"
+      ],
+      "beginArea": "New Orleans",
+      "why": "citizen of US, not DE"
+    },
+    "9f23b139-e3b7-49c4-b17c-460c5d50ae52": {
+      "from": "DE",
+      "to": "AT",
+      "name": "Freddy Quinn",
+      "begin": "1931",
+      "end": null,
+      "weight": 2,
+      "tags": [
+        "schlager",
+        "pop"
+      ],
+      "beginArea": "Niederösterreich",
+      "why": "citizen of AT, not DE"
+    },
+    "07bc334a-a5dc-416b-ba0e-0cd6b8e44693": {
+      "from": "DE",
+      "to": "US",
+      "name": "Gus Backus",
+      "begin": "1937",
+      "end": "2019",
+      "weight": 1,
+      "tags": [
+        "schlager"
+      ],
+      "beginArea": "Southampton",
+      "why": "citizen of US, not DE"
+    },
+    "7b1a3022-6f4d-4c6b-acb3-bfa8919222b9": {
+      "from": "CA",
+      "to": "US",
+      "name": "Buffy Sainte‐Marie",
+      "begin": "1941",
+      "end": null,
+      "weight": 12,
+      "tags": [
+        "folk",
+        "native american",
+        "rock",
+        "singer-songwriter"
+      ],
+      "beginArea": "Stoneham",
+      "why": "citizen of US, not CA"
+    },
+    "88b8d585-02c6-4ac7-b1ee-f160f83afa78": {
+      "from": "CA",
+      "to": "IL",
+      "name": "Pinchas Zukerman",
+      "begin": "1948",
+      "end": null,
+      "weight": 3,
+      "tags": [
+        "violin",
+        "conductor",
+        "violinist"
+      ],
+      "beginArea": "Tel Aviv",
+      "why": "citizen of IL, not CA"
+    },
+    "8a701db6-1180-4bfb-bd69-417614406212": {
+      "from": "CA",
+      "to": "US",
+      "name": "Ronnie Hawkins",
+      "begin": "1935",
+      "end": "2022",
+      "weight": 1,
+      "tags": [
+        "rock"
+      ],
+      "beginArea": "Huntsville",
+      "why": "citizen of US, not CA"
+    },
+    "090e9c0a-6767-49e0-8f51-84a43226a174": {
+      "from": "AU",
+      "to": "GB",
+      "name": "Peter Andre",
+      "begin": "1973",
+      "end": null,
+      "weight": 2,
+      "tags": [
+        "australian",
+        "rock and indie"
+      ],
+      "beginArea": "Harrow",
+      "why": "citizen of GB, not AU"
+    },
+    "ac0d99e4-a534-48fb-a3ff-225dba39f350": {
+      "from": "NZ",
+      "to": "CA",
+      "name": "Tami Neilson",
+      "begin": "1977",
+      "end": null,
+      "weight": 11,
+      "tags": [
+        "americana",
+        "rockabilly",
+        "country",
+        "soul"
+      ],
+      "beginArea": "Toronto",
+      "why": "described \"Canadian-born\""
+    },
+    "515ab730-796b-49bd-b6ee-63556042d945": {
+      "from": "NZ",
+      "to": "US",
+      "name": "Russell Garcia",
+      "begin": "1916",
+      "end": "2011",
+      "weight": 5,
+      "tags": [
+        "conductor",
+        "composer",
+        "cool jazz",
+        "arranger"
+      ],
+      "beginArea": "Oakland",
+      "why": "citizen of US, not NZ"
+    },
+    "842e1b63-9a2f-4964-801c-8bb9326585f9": {
+      "from": "NZ",
+      "to": "AU",
+      "name": "Liam Finn",
+      "begin": "1983",
+      "end": null,
+      "weight": 2,
+      "tags": [
+        "dream pop",
+        "indie rock"
+      ],
+      "beginArea": "Melbourne",
+      "why": "described \"Australian-born\""
+    },
+    "ad3f14d8-a34c-4fcd-aeb0-f304465b3b30": {
+      "from": "NZ",
+      "to": "FJ",
+      "name": "FreQ Nasty",
+      "begin": "1969",
+      "end": null,
+      "weight": 1,
+      "tags": [
+        "breaks"
+      ],
+      "beginArea": "Fiji",
+      "why": "citizen of US, not NZ"
+    },
+    "82b37d51-51fa-4688-aee7-219e1a5556d3": {
+      "from": "NZ",
+      "to": "US",
+      "name": "Joanie Bartels",
+      "begin": "1953",
+      "end": null,
+      "weight": 0,
+      "tags": [],
+      "beginArea": "Boston",
+      "why": "citizen of US, not NZ"
+    },
+    "109394b5-5a82-4cff-aec5-2015e06d3e16": {
+      "from": "NZ",
+      "to": "HK",
+      "name": "Wing",
+      "begin": "1960",
+      "end": null,
+      "weight": 0,
+      "tags": [],
+      "beginArea": "Hong Kong",
+      "why": "citizen of CN, not NZ"
+    },
+    "751adfe4-6e40-4ab4-866c-ed14f5087d76": {
+      "from": "JP",
+      "to": "US",
+      "name": "Evan Call",
+      "begin": "1988",
+      "end": null,
+      "weight": 2,
+      "tags": [
+        "anime",
+        "composer"
+      ],
+      "beginArea": "Lincoln",
+      "why": "citizen of US, not JP"
+    },
+    "f7eb3be3-1065-4a53-94d4-e2d0c15c0b33": {
+      "from": "JM",
+      "to": "US",
+      "name": "Sean Kingston",
+      "begin": "1990",
+      "end": null,
+      "weight": 9,
+      "tags": [
+        "pop",
+        "pop rap",
+        "seen live",
+        "reggae-pop"
+      ],
+      "beginArea": "Miami",
+      "why": "citizen of US, not JM"
+    },
+    "da7e9824-acc4-468d-9209-4bf595b3a34b": {
+      "from": "ZA",
+      "to": "ZW",
+      "name": "Louis Mhlanga",
+      "begin": "1956",
+      "end": null,
+      "weight": 4,
+      "tags": [
+        "jazz",
+        "world fusion",
+        "contemporary jazz",
+        "smooth jazz"
+      ],
+      "beginArea": "Zimbabwe",
+      "why": "citizen of ZW, not ZA"
+    },
+    "fe47ce05-4fae-4a9c-8592-e4ac701503b1": {
+      "from": "ZA",
+      "to": "ZW",
+      "name": "Dorothy Masuka",
+      "begin": "1935",
+      "end": "2019",
+      "weight": 1,
+      "tags": [
+        "world"
+      ],
+      "beginArea": "Bulawayo",
+      "why": "citizen of ZW, not ZA"
+    },
+    "cc27368f-f916-43ce-b7a2-057056a7f16d": {
+      "from": "ZA",
+      "to": "MZ",
+      "name": "Jimmy Dludlu",
+      "begin": null,
+      "end": null,
+      "weight": 1,
+      "tags": [
+        "jazz"
+      ],
+      "beginArea": "Mozambique",
+      "why": "citizen of MZ, not ZA"
+    },
+    "01807344-be40-44c1-a7f2-f4e04f18d2b2": {
+      "from": "ZA",
+      "to": "NL",
+      "name": "Stef Bos",
+      "begin": "1961",
+      "end": null,
+      "weight": 0,
+      "tags": [],
+      "beginArea": "Veenendaal",
+      "why": "citizen of NL, not ZA"
+    },
+    "a277bf70-9b60-4a64-9ae0-e0b9b771a2f7": {
+      "from": "ZA",
+      "to": "NL",
+      "name": "Carike Keuzenkamp",
+      "begin": "1947",
+      "end": null,
+      "weight": 0,
+      "tags": [],
+      "beginArea": "Netherlands",
+      "why": "citizen of NL, not ZA"
+    },
+    "2516feb1-35d5-4c85-bb85-fca7d4a2b18f": {
+      "from": "NG",
+      "to": "GB",
+      "name": "P Tee Money",
+      "begin": "1968",
+      "end": null,
+      "weight": 12,
+      "tags": [
+        "indie",
+        "dance-pop",
+        "deep house",
+        "electropop"
+      ],
+      "beginArea": "Islington",
+      "why": "citizen of GB, not NG"
+    },
+    "fca58317-8a82-4749-ad4c-1e9adf9f78a1": {
+      "from": "SG",
+      "to": "PH",
+      "name": "Sofia",
+      "begin": null,
+      "end": null,
+      "weight": 1,
+      "tags": [
+        "bossa nova"
+      ],
+      "beginArea": "Philippines",
+      "why": "citizen of PH, not SG"
+    },
+    "5b763bd9-a805-4be5-8654-ad7275312696": {
+      "from": "SG",
+      "to": "ID",
+      "name": "Ervinna",
+      "begin": "1959",
+      "end": null,
+      "weight": 0,
+      "tags": [],
+      "beginArea": "Surabaya",
+      "why": "citizen of ID, not SG"
+    },
+    "bd3eddb4-faaf-4016-8e62-aa54d39550c4": {
+      "from": "AE",
+      "to": "UA",
+      "name": "Marina Tarraf",
+      "begin": "1985",
+      "end": null,
+      "weight": 8,
+      "tags": [
+        "electronic",
+        "downtempo",
+        "industrial rock",
+        "orchestral"
+      ],
+      "beginArea": "Ukraine",
+      "why": "citizen of UA, not AE"
+    },
+    "7eb1e174-d271-4390-bfda-490c6959c8f7": {
+      "from": "AE",
+      "to": "UA",
+      "name": "Alik Tarraf",
+      "begin": "1985",
+      "end": null,
+      "weight": 7,
+      "tags": [
+        "electronic",
+        "downtempo",
+        "industrial rock",
+        "orchestral"
+      ],
+      "beginArea": "Ukraine",
+      "why": "citizen of UA, not AE"
+    },
+    "a697ac23-9d82-45db-9c19-d72babbccfc9": {
+      "from": "IL",
+      "to": "US",
+      "name": "Ari Goldwag",
+      "begin": "1979",
+      "end": null,
+      "weight": 0,
+      "tags": [],
+      "beginArea": "West Hempstead",
+      "why": "citizen of US, not IL"
+    },
+    "3d748bf4-6fb8-47db-b9d2-6b5db0710096": {
+      "from": "GR",
+      "to": "US",
+      "name": "Blaine L. Reininger",
+      "begin": "1953",
+      "end": null,
+      "weight": 2,
+      "tags": [
+        "new wave",
+        "alternative rock"
+      ],
+      "beginArea": "Pueblo",
+      "why": "citizen of US, not GR"
+    },
+    "25218a2e-b892-4204-a737-2b5bc5835c15": {
+      "from": "CZ",
+      "to": "SK",
+      "name": "Dara Rolins",
+      "begin": "1972",
+      "end": null,
+      "weight": 0,
+      "tags": [],
+      "beginArea": "Bratislava",
+      "why": "citizen of SK, not CZ"
+    },
+    "1e52f345-e76e-4b3c-898e-f8b043781e0a": {
+      "from": "RU",
+      "to": "UA",
+      "name": "Thomas de Hartmann",
+      "begin": "1885",
+      "end": "1956",
+      "weight": 3,
+      "tags": [
+        "composer",
+        "classical",
+        "russian composer"
+      ],
+      "beginArea": "Khoruzhivka",
+      "why": "described \"Ukrainian-born\""
+    },
+    "29ec65e9-0dcf-4dfa-9155-7f13cef07335": {
+      "from": "RU",
+      "to": "UA",
+      "name": "Ани Лорак",
+      "begin": "1978",
+      "end": null,
+      "weight": 2,
+      "tags": [
+        "ukrainian",
+        "soul"
+      ],
+      "beginArea": "Chernivets'ka Oblast'",
+      "why": "described \"Ukrainian-born\""
+    },
+    "b8df5180-ff51-4a36-abcb-80d2ed027b99": {
+      "from": "RU",
+      "to": "UA",
+      "name": "Ёлка",
+      "begin": "1982",
+      "end": null,
+      "weight": 0,
+      "tags": [],
+      "beginArea": "Uzhhorod",
+      "why": "described \"Ukrainian-born\""
+    },
+    "da47a4e0-078e-4b0e-9ad1-bf25dd545075": {
+      "from": "TR",
+      "to": "GB",
+      "name": "Işın Karaca",
+      "begin": "1973",
+      "end": null,
+      "weight": 1,
+      "tags": [
+        "turkish"
+      ],
+      "beginArea": "London",
+      "why": "citizen of GB, not TR"
+    },
+    "a2e33d5d-e38a-4eac-9daa-2bbe54e0b462": {
+      "from": "MY",
+      "to": "ID",
+      "name": "Bunga Citra Lestari",
+      "begin": "1983",
+      "end": null,
+      "weight": 2,
+      "tags": [
+        "pop",
+        "soul"
+      ],
+      "beginArea": "Jakarta",
+      "why": "citizen of ID, not MY"
+    },
+    "30aeb57f-bb16-47fa-86ca-79fc57b4d12c": {
+      "from": "KR",
+      "to": "TH",
+      "name": "LISA",
+      "begin": "1997",
+      "end": null,
+      "weight": 17,
+      "tags": [
+        "t-pop",
+        "pop",
+        "hip hop",
+        "k-pop"
+      ],
+      "beginArea": "Buri Ram",
+      "why": "citizen of TH, not KR"
+    },
+    "472dc0a5-8212-4469-9194-95c52e5a32ff": {
+      "from": "BB",
+      "to": "GB",
+      "name": "Livvi Franc",
+      "begin": "1988",
+      "end": null,
+      "weight": 3,
+      "tags": [
+        "franc",
+        "livvi franc",
+        "livvi"
+      ],
+      "beginArea": "Harrogate",
+      "why": "citizen of GB, not BB"
+    },
+    "c0c0e16b-91f5-4e6a-bc34-3e80c23c0faf": {
+      "from": "MT",
+      "to": "PL",
+      "name": "Robert Babicz",
+      "begin": "1973",
+      "end": null,
+      "weight": 32,
+      "tags": [
+        "electronic",
+        "ambient",
+        "techno",
+        "electronica"
+      ],
+      "beginArea": "Niemodlin",
+      "why": "citizen of DE, not MT"
+    },
+    "79827e1f-2f41-46a4-ba2c-e366611562f3": {
+      "from": "PY",
+      "to": "IE",
+      "name": "Daniel O'Loughlin",
+      "begin": "1994",
+      "end": null,
+      "weight": 5,
+      "tags": [
+        "classical",
+        "solo piano",
+        "western classical",
+        "cinematic classical"
+      ],
+      "beginArea": "Ireland",
+      "why": "citizen of IE, not PY"
+    }
+  }
+}

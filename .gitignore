@@ -43,3 +43,5 @@ data/state-precompute.log
 data/state-precompute-work.json
 data/extra-artists-work.json
 data/extra-artists.log
+data/origin-corrections-work.json
+data/origin-corrections.log

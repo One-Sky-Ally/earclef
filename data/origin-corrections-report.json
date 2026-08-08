@@ -1,0 +1,901 @@
+{
+  "CH": {
+    "pool": 200,
+    "moved": 20,
+    "topTenAffected": 2,
+    "artists": [
+      "#1 Tina Turner → US (born Nutbush)",
+      "#7 Nora en Pure → ZA (born Johannesburg)",
+      "#12 Billy Cobham → PA (born Colón)",
+      "#13 Lacrimosa → DE (born Frankfurt am Main)",
+      "#14 Ace Ventura → IL (born Israel)",
+      "#20 Arthur Honegger → FR (born Le Havre)",
+      "#34 Pippo Pollina → IT (born Palermo)",
+      "#37 Stress → EE (born Tallinn)",
+      "#47 Lauren Newton → US (born Coos Bay)",
+      "#93 Sibylle Berg → DE (born Weimar)",
+      "#125 Sarclo → FR (born Paris)",
+      "#126 Hopkinson Smith → US (born New York)",
+      "#142 Alex Capus → FR (born Mortagne-au-Perche)",
+      "#148 Andrew Bond → GB (born United Kingdom)",
+      "#158 Jasna Fritzi Bauer → DE (born Wiesbaden)",
+      "#160 Stephan Sulke → CN (born Shanghai)",
+      "#167 Phil Carmen → CA (born Montréal)",
+      "#178 Émile Jaques-Dalcroze → AT (born Wien)",
+      "#184 Ralph Steinbrüchel → DE (born Bad Homburg vor der Höhe)",
+      "#187 Runzelstirn & Gurgelstøck → AT (born Austria)"
+    ]
+  },
+  "MC": {
+    "pool": 1,
+    "moved": 0,
+    "topTenAffected": 0,
+    "artists": []
+  },
+  "LU": {
+    "pool": 200,
+    "moved": 15,
+    "topTenAffected": 1,
+    "artists": [
+      "#8 Pietro Fornara → CH (born Lugano)",
+      "#12 Samy Sam Beats → PT (born Lisboa)",
+      "#16 Irregular Disco Workers → IT (born Italy)",
+      "#33 Tito Mina → PH (born Baguio City)",
+      "#35 Grupo Pilon → CV (born Cape Verde)",
+      "#41 TALI → IL (born Yerushalayim)",
+      "#81 Louis Botella → ES (born Spain)",
+      "#94 Tomás Tello → PE (born Lima)",
+      "#121 MIY → ES (born Barcelona)",
+      "#153 Greg Lamy → US (born New Orleans)",
+      "#169 Christoph Sietzen → AT (born Salzburg)",
+      "#181 Sandrine Cantoreggi → FR (born Bègles)",
+      "#183 Ravidson → CV (born São Vicente)",
+      "#195 Fernand Mertens → BE (born Leuven)",
+      "#197 Josh Island → GB (born Milton Keynes)"
+    ]
+  },
+  "LI": {
+    "pool": 1,
+    "moved": 0,
+    "topTenAffected": 0,
+    "artists": []
+  },
+  "IE": {
+    "pool": 200,
+    "moved": 14,
+    "topTenAffected": 0,
+    "artists": [
+      "#45 Aranos → XC (born Czechoslovakia)",
+      "#50 Johnny Logan → AU (born Frankston)",
+      "#58 Brendan Perry → GB (born Whitechapel)",
+      "#64 Spike Milligan → IN (born Ahmednagar)",
+      "#69 Dana → GB (born Islington)",
+      "#103 Phil Lynott → GB (born West Bromwich)",
+      "#128 Robert Mizzell → US (born Shreveport)",
+      "#132 Kevin Burke → GB (born London)",
+      "#144 Compulsion → GB (born London)",
+      "#147 Adrian Crowley → MT (born Sliema)",
+      "#152 Tana French → US (born Burlington)",
+      "#182 Angelo Kelly → ES (born Pamplona)",
+      "#186 Artificial Memory Trace → XC (born Czechoslovakia)",
+      "#200 John Faulkner → GB (born London)"
+    ]
+  },
+  "AT": {
+    "pool": 200,
+    "moved": 23,
+    "topTenAffected": 1,
+    "artists": [
+      "#4 Gustav Mahler → CZ (born Kaliště)",
+      "#31 Alfred Brendel → CZ (born Šumperk)",
+      "#35 Artur Schnabel → PL (born Bielsko-Biała)",
+      "#41 Nikolaus Harnoncourt → DE (born Berlin)",
+      "#51 RAF Camora → CH (born Vevey)",
+      "#52 Johann Nepomuk Hummel → SK (born Bratislava)",
+      "#60 Heinrich Ignaz Franz von Biber → CZ (born Česká Lípa)",
+      "#61 Erich Wolfgang Korngold → CZ (born Brno)",
+      "#66 Michael Gielen → DE (born Dresden)",
+      "#74 Hugo Wolf → SI (born Slovenj Gradec)",
+      "#77 Franz Lehár → HU (born Komárom)",
+      "#84 Franz von Suppé → HR (born Split)",
+      "#88 Franz Schreker → MC (born Monaco)",
+      "#90 Franz Schmidt → SK (born Bratislava)",
+      "#105 Hans Theessink → NL (born Enschede)",
+      "#109 Nazar → IR (born Tehran)",
+      "#131 Thomas Bernhard → NL (born Limburg)",
+      "#133 Karl Kraus → CZ (born Jičín)",
+      "#139 Rainer Maria Rilke → CZ (born Praha)",
+      "#140 Joseph Roth → UA (born L'vivs'ka Oblast')",
+      "#163 Rudolf Buchbinder → CZ (born Litoměřice)",
+      "#167 Michael Heltau → DE (born Ingolstadt)",
+      "#191 Joseph Schmidt → UA (born Ukraine)"
+    ]
+  },
+  "BE": {
+    "pool": 200,
+    "moved": 9,
+    "topTenAffected": 1,
+    "artists": [
+      "#9 Adamo → IT (born Comiso)",
+      "#17 Lio → PT (born Mangualde)",
+      "#26 Damso → CD (born Kinshasa)",
+      "#51 Philip Catherine → GB (born London)",
+      "#52 CJ Bolland → GB (born Stockton-on-Tees)",
+      "#69 Junior Jack → IT (born Rutigliano)",
+      "#116 Frank Michael → IT (born Parma)",
+      "#121 Rocco Granata → IT (born Figline Vegliaturo)",
+      "#163 Frédéric François → IT (born Lercara Friddi)"
+    ]
+  },
+  "NL": {
+    "pool": 200,
+    "moved": 9,
+    "topTenAffected": 0,
+    "artists": [
+      "#44 Boudewijn de Groot → ID (born Jakarta)",
+      "#48 Vince Watson → GB (born Glasgow)",
+      "#72 Laidback Luke → PH (born Manila)",
+      "#100 Don Byas → US (born Oklahoma)",
+      "#105 Liesbeth List → ID (born Bandung)",
+      "#106 Jan Rot → ID (born Makassar)",
+      "#116 Ramses Shaffy → FR (born Neuilly-sur-Seine)",
+      "#187 Jack Jersey → ID (born Cimahi)",
+      "#197 Drs. P → CH (born Thun)"
+    ]
+  },
+  "SE": {
+    "pool": 200,
+    "moved": 6,
+    "topTenAffected": 0,
+    "artists": [
+      "#44 Blues Pills → US (born Ames)",
+      "#60 Cornelis Vreeswijk → NL (born IJmuiden)",
+      "#85 Dr. Alban → NG (born Imo)",
+      "#106 Steve Angello → GR (born Athens)",
+      "#135 Frida → NO (born Bjørkåsen)",
+      "#153 Lill Lindfors → FI (born Helsinki)"
+    ]
+  },
+  "NO": {
+    "pool": 200,
+    "moved": 4,
+    "topTenAffected": 1,
+    "artists": [
+      "#5 Alan Walker → GB (born Northampton)",
+      "#21 Kygo → SG (born Singapore)",
+      "#130 Erik Bye → US (born Brooklyn)",
+      "#189 Anita Skorgan → SE (born Gothenburg)"
+    ]
+  },
+  "DK": {
+    "pool": 199,
+    "moved": 5,
+    "topTenAffected": 1,
+    "artists": [
+      "#7 DJ Aligator → IR (born Tehran)",
+      "#17 Marilyn Mazur → US (born New York)",
+      "#38 Duke Jordan → US (born Brooklyn)",
+      "#111 Peter Belli → DE (born Kiel)",
+      "#192 Studio Killers → GB (born United Kingdom)"
+    ]
+  },
+  "FI": {
+    "pool": 200,
+    "moved": 2,
+    "topTenAffected": 0,
+    "artists": [
+      "#43 Eddie Boyd → US (born Mississippi)",
+      "#169 Jari Sillanpää → SE (born Ludvika Municipality)"
+    ]
+  },
+  "IS": {
+    "pool": 200,
+    "moved": 10,
+    "topTenAffected": 1,
+    "artists": [
+      "#6 Vladimir Ashkenazy → RU (born Nizhny Novgorod)",
+      "#35 Slidhr → IE (born Dublin)",
+      "#53 Skáphe → US (born Philadelphia)",
+      "#77 Janus Rasmussen → FO (born Faroe Islands)",
+      "#79 Alex Somers → US (born Baltimore)",
+      "#102 Fields → GB (born London)",
+      "#115 KK → US (born Minnesota)",
+      "#135 Sacha Bernardson → FR (born France)",
+      "#141 Chris Foster → GB (born Yeovil)",
+      "#178 Kristján Martinsson → GB (born Barking and Dagenham)"
+    ]
+  },
+  "PT": {
+    "pool": 200,
+    "moved": 9,
+    "topTenAffected": 0,
+    "artists": [
+      "#29 Mariza → MZ (born Maputo)",
+      "#31 ātman → BR (born Brazil)",
+      "#45 Nelson Freitas → NL (born Netherlands)",
+      "#66 Amélia Muge → MZ (born Maputo)",
+      "#127 José Rodrigues dos Santos → MZ (born Beira)",
+      "#136 David Carreira → FR (born Dourdan)",
+      "#171 Boss AC → CV (born Cape Verde)",
+      "#193 MastikSoul → AO (born Angola)",
+      "#195 Mário Mata → AO (born Luanda)"
+    ]
+  },
+  "ES": {
+    "pool": 200,
+    "moved": 6,
+    "topTenAffected": 1,
+    "artists": [
+      "#1 Arca → VE (born Caracas)",
+      "#18 Miguel Bosé → PA (born Ciudad de Panamá)",
+      "#80 Jeanette → GB (born London)",
+      "#151 Mikel Erentxun → VE (born Caracas)",
+      "#157 Ken Martin → GB (born London)",
+      "#159 Luis Eduardo Aute → PH (born Manila)"
+    ]
+  },
+  "IT": {
+    "pool": 200,
+    "moved": 7,
+    "topTenAffected": 1,
+    "artists": [
+      "#3 Robert Miles → CH (born Fleurier)",
+      "#39 Gazebo → LB (born Beirut)",
+      "#71 Riccardo Cocciante → VN (born Ho Chi Minh)",
+      "#83 Giuseppe Tartini → SI (born Piran/Pirano)",
+      "#99 Vinicio Capossela → DE (born Hannover)",
+      "#153 Luis Bacalov → AR (born Buenos Aires)",
+      "#197 Claudio Simonetti → BR (born São Paulo)"
+    ]
+  },
+  "FR": {
+    "pool": 200,
+    "moved": 28,
+    "topTenAffected": 0,
+    "artists": [
+      "#20 Léo Ferré → MC (born Monaco)",
+      "#23 Alain Souchon → MA (born Casablanca)",
+      "#26 Django Reinhardt → BE (born Liberchies)",
+      "#38 Mylène Farmer → CA (born Pierrefonds)",
+      "#45 Amanda Lear → VN (born Ho Chi Minh)",
+      "#46 Jane Birkin → GB (born Marylebone)",
+      "#48 Dalida → EG (born Cairo)",
+      "#59 Joe Dassin → US (born Brooklyn)",
+      "#61 GIMS → CD (born Kinshasa)",
+      "#64 Vladimir Cosma → RO (born București)",
+      "#71 Nino Ferrer → IT (born Genova)",
+      "#76 Jacques Offenbach → DE (born Köln)",
+      "#77 César Franck → BE (born Liège)",
+      "#88 Henri Salvador → GF (born Cayenne)",
+      "#100 William Christie → US (born Buffalo)",
+      "#105 Claude François → EG (born Al Ismā‘īlīyah)",
+      "#111 Enrico Macias → DZ (born Constantine)",
+      "#112 Guy Béart → EG (born Al Qāhirah)",
+      "#123 Jean‐Baptiste Lully → IT (born Firenze)",
+      "#138 Yves Montand → IT (born Monsummano Terme)",
+      "#147 Joséphine Baker → US (born St. Louis)",
+      "#154 Sylvie Vartan → BG (born Sofia)",
+      "#158 Étienne Daho → DZ (born Oran)",
+      "#163 Patrick Bruel → DZ (born Tlemcen)",
+      "#170 Gabriel Yared → LB (born Beirut)",
+      "#171 Georges Moustaki → EG (born Al Iskandarīyah)",
+      "#187 Serge Reggiani → IT (born Reggio Emilia)",
+      "#190 Armand Amar → PS (born Jerusalem)"
+    ]
+  },
+  "DE": {
+    "pool": 200,
+    "moved": 15,
+    "topTenAffected": 0,
+    "artists": [
+      "#39 Aidan Baker → CA (born Toronto)",
+      "#52 Champion Jack Dupree → US (born New Orleans)",
+      "#59 Helene Fischer → RU (born Krasnoyarsk)",
+      "#63 Peter Maffay → RO (born Brașov)",
+      "#65 Howard Carpendale → ZA (born Durban)",
+      "#79 Otfried Preußler → CZ (born Liberec)",
+      "#115 Freddy Quinn → AT (born Niederösterreich)",
+      "#117 Wolfram Koch → FR (born Paris)",
+      "#121 Dieterich Buxtehude → SE (born Helsingborg)",
+      "#123 Jens Wawrczeck → DK (born Nykøbing Falster)",
+      "#134 Michael Holm → PL (born Szczecin)",
+      "#148 Richard Barenberg → ID (born Surabaya)",
+      "#158 Christian Brückner → PL (born Wałbrzych)",
+      "#172 Gus Backus → US (born Southampton)",
+      "#198 Vittorio Alfieri → IT (born Bologna)"
+    ]
+  },
+  "GB": {
+    "pool": 200,
+    "moved": 13,
+    "topTenAffected": 0,
+    "artists": [
+      "#73 Bee Gees → AU (born Redcliffe)",
+      "#80 Rainbow → US (born California)",
+      "#84 Gary Moore → IE (born Belfast)",
+      "#90 Cliff Richard → IN (born Lakhna'ū)",
+      "#96 George Frideric Handel → DE (born Halle (Saale))",
+      "#125 Billy Ocean → TT (born Siparia)",
+      "#155 Engelbert Humperdinck → IN (born Chennai)",
+      "#160 J.R.R. Tolkien → ZA (born Bloemfontein)",
+      "#167 Chris de Burgh → AR (born Venado Tuerto)",
+      "#171 Elvis Costello & The Attractions → US (born California)",
+      "#179 Roger Whittaker → KE (born Nairobi)",
+      "#190 C. S. Lewis → IE (born Belfast)",
+      "#200 Roy Dotrice → GG (born Guernsey)"
+    ]
+  },
+  "US": {
+    "pool": 200,
+    "moved": 1,
+    "topTenAffected": 0,
+    "artists": [
+      "#25 Hans Zimmer → DE (born Frankfurt am Main)"
+    ]
+  },
+  "CA": {
+    "pool": 200,
+    "moved": 12,
+    "topTenAffected": 0,
+    "artists": [
+      "#33 KAYTRANADA → HT (born Port-au-Prince)",
+      "#57 Jackie Mittoo → JM (born Brown's Town)",
+      "#69 Buffy Sainte‐Marie → US (born Stoneham)",
+      "#85 Plastikman → GB (born Banbury)",
+      "#95 Corneille → DE (born Freiburg im Breisgau)",
+      "#114 Max Graham → GB (born London)",
+      "#140 The Barracudas → GB (born London)",
+      "#155 Pinchas Zukerman → IL (born Tel Aviv)",
+      "#160 Raffi → EG (born Cairo)",
+      "#179 Ronnie Hawkins → US (born Huntsville)",
+      "#198 Malcolm Gladwell → GB (born Fareham)",
+      "#200 Cristobal Tapia de Veer → CL (born Santiago)"
+    ]
+  },
+  "AU": {
+    "pool": 200,
+    "moved": 24,
+    "topTenAffected": 0,
+    "artists": [
+      "#13 Gotye → BE (born Brugge)",
+      "#15 Troye Sivan → ZA (born Johannesburg)",
+      "#42 Olivia Newton‐John → GB (born Cambridge)",
+      "#46 Kevin Penkin → GB (born Poole)",
+      "#64 Keith Urban → NZ (born Whangārei)",
+      "#67 Colin Hay → GB (born Kilwinning)",
+      "#80 Jimmy Barnes → GB (born Glasgow)",
+      "#87 Diesel → US (born Fall River)",
+      "#89 Jon Rose → GB (born Kent)",
+      "#91 John Farnham → GB (born Dagenham)",
+      "#93 Charles Mackerras → US (born Schenectady)",
+      "#99 Tim Minchin → GB (born Northampton)",
+      "#108 Dirty South → RS (born Beograd)",
+      "#115 Ariel Kalma → FR (born Paris)",
+      "#118 Barry Gibb → IM (born Douglas)",
+      "#135 James Reyne → NG (born Lagos)",
+      "#145 Peter Andre → GB (born Harrow)",
+      "#148 Eric Bogle → GB (born Peebles)",
+      "#159 Colin Buchanan → IE (born Dublin)",
+      "#164 Guy Sebastian → MY (born Klang)",
+      "#168 Steve Kilbey → GB (born Welwyn Garden City)",
+      "#179 Marcia Hines → US (born Boston)",
+      "#189 John Paul Young → GB (born Glasgow)",
+      "#191 Jon English → GB (born Hampstead)"
+    ]
+  },
+  "NZ": {
+    "pool": 200,
+    "moved": 14,
+    "topTenAffected": 0,
+    "artists": [
+      "#14 Tami Neilson → CA (born Toronto)",
+      "#16 Shakhan → GB (born London)",
+      "#56 Russell Garcia → US (born Oakland)",
+      "#72 Stan Walker → AU (born Melbourne)",
+      "#84 Roy Montgomery → GB (born London)",
+      "#103 Reb Fountain → US (born San Francisco)",
+      "#112 Liam Finn → AU (born Melbourne)",
+      "#134 Eleanor Catton → CA (born London)",
+      "#136 FreQ Nasty → FJ (born Fiji)",
+      "#149 Carl Doy → GB (born Camberley)",
+      "#154 Joanie Bartels → US (born Boston)",
+      "#160 Kamil Orman-Janowski → PL (born Poland)",
+      "#170 Wing → HK (born Hong Kong)",
+      "#181 Opetaia Foa’i → WS (born Samoa)"
+    ]
+  },
+  "JP": {
+    "pool": 200,
+    "moved": 5,
+    "topTenAffected": 0,
+    "artists": [
+      "#25 宇多田ヒカル → US (born Manhattan)",
+      "#46 AI → US (born Los Angeles)",
+      "#132 浜渦正志 → DE (born München)",
+      "#140 Evan Call → US (born Lincoln)",
+      "#158 祖堅正慶 → MX (born La Paz)"
+    ]
+  },
+  "BR": {
+    "pool": 200,
+    "moved": 2,
+    "topTenAffected": 0,
+    "artists": [
+      "#18 Bebel Gilberto → US (born Manhattan)",
+      "#76 Carmen Miranda → PT (born Marco de Canaveses)"
+    ]
+  },
+  "AR": {
+    "pool": 200,
+    "moved": 6,
+    "topTenAffected": 0,
+    "artists": [
+      "#29 Carlos Gardel → FR (born Toulouse)",
+      "#46 Tequila → ES (born Madrid)",
+      "#95 Francisco Canaro → UY (born San José)",
+      "#162 Los Incas → FR (born Paris)",
+      "#185 Alika → UY (born Montevideo)",
+      "#194 Billy Bond → IT (born La Spezia)"
+    ]
+  },
+  "MX": {
+    "pool": 200,
+    "moved": 10,
+    "topTenAffected": 1,
+    "artists": [
+      "#8 Luis Miguel → PR (born San Juan)",
+      "#17 Julieta Venegas → US (born Long Beach)",
+      "#30 Mon Laferte → CL (born Viña del Mar)",
+      "#40 Chavela Vargas → CR (born Heredia)",
+      "#65 Tania Libertad → PE (born Lambayeque)",
+      "#66 Ha*Ash → US (born Louisiana)",
+      "#69 Belinda → ES (born Madrid)",
+      "#109 Enrique Guzmán → VE (born Caracas)",
+      "#120 Filippa Giordano → IT (born Palermo)",
+      "#122 Angélica María → US (born New Orleans)"
+    ]
+  },
+  "JM": {
+    "pool": 200,
+    "moved": 10,
+    "topTenAffected": 1,
+    "artists": [
+      "#8 Major Lazer → US (born Los Angeles)",
+      "#23 Roland Alphonso → CU (born La Habana)",
+      "#24 Sean Kingston → US (born Miami)",
+      "#33 Laurel Aitken → CU (born La Habana)",
+      "#86 Tommy McCook → CU (born La Habana)",
+      "#100 Tarrus Riley → US (born The Bronx)",
+      "#113 Morgan Heritage → US (born Brooklyn)",
+      "#148 Charlie Chaplin → GB (born London)",
+      "#179 Rico Rodriguez → CU (born La Habana)",
+      "#191 J.C. Lodge → GB (born London)"
+    ]
+  },
+  "CU": {
+    "pool": 200,
+    "moved": 1,
+    "topTenAffected": 0,
+    "artists": [
+      "#162 Al Quetz → FR (born France)"
+    ]
+  },
+  "ZA": {
+    "pool": 200,
+    "moved": 16,
+    "topTenAffected": 0,
+    "artists": [
+      "#12 Johnny Clegg → GB (born Lancashire)",
+      "#26 Louis Mhlanga → ZW (born Zimbabwe)",
+      "#57 Karen Zoid → BE (born Brussels)",
+      "#72 Yoav → IL (born Tel Aviv)",
+      "#81 Dorothy Masuka → ZW (born Bulawayo)",
+      "#84 Jimmy Dludlu → MZ (born Mozambique)",
+      "#85 Stef Bos → NL (born Veenendaal)",
+      "#86 Charles Segal → LT (born Lithuania)",
+      "#93 Robin Hogarth → GB (born England)",
+      "#94 Carike Keuzenkamp → NL (born Netherlands)",
+      "#96 Gé Korsten → NL (born Rotterdam)",
+      "#123 Manuel Escorcio → MZ (born Maputo)",
+      "#131 Wilbur Smith → ZM (born Central)",
+      "#156 Nianell → NA (born Namibia)",
+      "#172 Robin Auld → ZM (born Lusaka)",
+      "#197 Riana Nel → NA (born Namibia)"
+    ]
+  },
+  "NG": {
+    "pool": 200,
+    "moved": 13,
+    "topTenAffected": 2,
+    "artists": [
+      "#4 Davido → US (born Atlanta)",
+      "#5 P Tee Money → GB (born Islington)",
+      "#12 Femi Kuti → GB (born London)",
+      "#15 Aṣa → FR (born Paris)",
+      "#30 Ayra Starr → BJ (born Cotonou)",
+      "#46 BMV Young Face → GH (born Ghana)",
+      "#54 Wunmi → GB (born London)",
+      "#59 Remi Kabaka → GH (born Ghana)",
+      "#93 Naeto C → US (born Houston)",
+      "#148 David Oyelowo → GB (born Oxford)",
+      "#170 Geraldo Pino → SL (born Freetown)",
+      "#179 FAVE → GH (born Accra)",
+      "#194 Ikechukwu Onunaku → US (born Manassas)"
+    ]
+  },
+  "IN": {
+    "pool": 200,
+    "moved": 7,
+    "topTenAffected": 0,
+    "artists": [
+      "#22 Kowshik Saha → BD (born Bangladesh)",
+      "#59 Suman Kalyanpur → BD (born Dhaka)",
+      "#68 Anand Bakshi → PK (born Punjab)",
+      "#82 Sachin Dev Burman → BD (born Comilla)",
+      "#143 Geeta Dutt → BD (born Faridpur)",
+      "#170 Sandeep Chowta → GH (born Ghana)",
+      "#185 O. P. Nayyar → PK (born Lahore)"
+    ]
+  },
+  "SG": {
+    "pool": 199,
+    "moved": 5,
+    "topTenAffected": 0,
+    "artists": [
+      "#48 Tools of the Trade → MY (born Kuala Lumpur)",
+      "#56 朱晖 → ID (born Palembang)",
+      "#70 Sofia → PH (born Philippines)",
+      "#83 潘秀瓊 → MO (born Macao)",
+      "#189 Ervinna → ID (born Surabaya)"
+    ]
+  },
+  "AE": {
+    "pool": 101,
+    "moved": 18,
+    "topTenAffected": 5,
+    "artists": [
+      "#3 Marina Tarraf → UA (born Ukraine)",
+      "#5 Alik Tarraf → UA (born Ukraine)",
+      "#7 مهند اسماعيل → SY (born Syria)",
+      "#9 Rami Chami → LB (born Lebanon)",
+      "#10 Austin Shadz → LK (born Sri Lanka)",
+      "#12 Sanjana Nuwan Bandara → LK (born Sri Lanka)",
+      "#29 Zone+ → BH (born Bahrain)",
+      "#38 Benevolent → KW (born Kuwait)",
+      "#46 ماظوط → SY (born Damascus)",
+      "#54 Akitrash → FR (born France)",
+      "#55 Barry Kirsch → BE (born Belgium)",
+      "#59 The Machine Universe → PK (born Pakistan)",
+      "#61 عمر ياسين → YE (born ‘Adan)",
+      "#64 Marielle Castro → PH (born Philippines)",
+      "#65 Samil → IR (born Eşfahān)",
+      "#67 Ghaliaa → SY (born Damascus)",
+      "#68 Wessam Qutob → JO (born Jordan)",
+      "#80 Freezer Gonza → UG (born Mukono)"
+    ]
+  },
+  "IL": {
+    "pool": 200,
+    "moved": 42,
+    "topTenAffected": 0,
+    "artists": [
+      "#11 Asaf Avidan → PS (born Jerusalem)",
+      "#14 Astrix → SU (born Soviet Union)",
+      "#18 ברי סחרוף → TR (born İzmir)",
+      "#19 Yasmin Levy → PS (born Jerusalem)",
+      "#20 Psycho Silence → UA (born Ukraine)",
+      "#22 ריטה → IR (born Tehran)",
+      "#25 Виктор Березинский → RU (born Omsk)",
+      "#29 חוה אלברשטיין → PL (born Szczecin)",
+      "#30 Mike Brant → CY (born Lefka)",
+      "#39 Paul Ben-Haim → DE (born München)",
+      "#45 Eliahu Inbal → PS (born Jerusalem)",
+      "#47 קורין אלאל → TN (born Tunis)",
+      "#53 ארקדי דוכין → BY (born Babruysk)",
+      "#63 רמי קלינשטיין → US (born New York)",
+      "#71 Asaf Avidan & the Mojos → PS (born Jerusalem)",
+      "#75 יזהר אשדות → PS (born Jerusalem)",
+      "#84 ריקה זראי → PS (born Jerusalem)",
+      "#93 Eitan Katz → US (born Teaneck)",
+      "#96 אסתר שמיר → PS (born Jerusalem)",
+      "#102 Ohad → BE (born Belgium)",
+      "#103 Rebbe Alter → US (born United States)",
+      "#105 ישי ריבו → FR (born Marseille)",
+      "#107 אפרים שמיר → RU (born Omsk)",
+      "#109 Yoel Levi → RO (born Satu Mare)",
+      "#112 אפרים קישון → HU (born Budapest)",
+      "#122 אריק לביא → DE (born Erfurt)",
+      "#123 הדודאים → PS (born Jerusalem)",
+      "#125 יוסי בנאי → PS (born Jerusalem)",
+      "#136 Ari Goldwag → US (born West Hempstead)",
+      "#145 אהרן רזאל → US (born New York)",
+      "#146 עומר אדם → US (born North Carolina)",
+      "#151 שלום גד → FR (born France)",
+      "#159 Roger Kamien → FR (born Paris)",
+      "#166 Boris Giltburg → RU (born Moscow)",
+      "#168 עדן בן זקן → PS (born Jerusalem)",
+      "#169 אלון אולארצ׳יק → PL (born Warsaw)",
+      "#171 Mindwave → RU (born Kaliningrad)",
+      "#178 מני בגר → TR (born İstanbul)",
+      "#180 ריקי גל → PS (born Jerusalem)",
+      "#188 דויד פרץ → PS (born Jerusalem)",
+      "#190 Asher Fisch → PS (born Jerusalem)",
+      "#200 רבקה מיכאלי → PS (born Jerusalem)"
+    ]
+  },
+  "GR": {
+    "pool": 200,
+    "moved": 19,
+    "topTenAffected": 2,
+    "artists": [
+      "#6 Έλενα Παπαρίζου → SE (born Borås)",
+      "#9 Maria Callas → US (born Manhattan)",
+      "#13 Άννα Βίσση → CY (born Larnaka)",
+      "#21 Άλκηστις Πρωτοψάλτη → EG (born Alexandria)",
+      "#28 Aphrodite’s Child → FR (born Paris)",
+      "#33 Demis Roussos → EG (born Alexandria)",
+      "#41 Δέσποινα Βανδή → DE (born Tübingen)",
+      "#59 Ρίτα Αμπατζή → TR (born İzmir)",
+      "#91 Νίκος Ξυδάκης → EG (born Cairo)",
+      "#92 Μάνος Λοΐζος → EG (born Alexandria)",
+      "#93 Antique → SE (born Gothenburg)",
+      "#103 Σαμπρίνα → ZW (born Bulawayo)",
+      "#112 Blaine L. Reininger → US (born Pueblo)",
+      "#125 Mario Frangoulis → ZW (born Manicaland)",
+      "#131 Robin Skouteris → GB (born London)",
+      "#164 Ρόζα Εσκενάζυ → TR (born Istanbul)",
+      "#176 Νίκος Βέρτης → NL (born Gorinchem)",
+      "#187 Δημήτρης Μπάσης → DE (born Stuttgart)",
+      "#188 Δημήτρης Παπαδημητρίου → SA (born Jeddah)"
+    ]
+  },
+  "CZ": {
+    "pool": 200,
+    "moved": 12,
+    "topTenAffected": 1,
+    "artists": [
+      "#5 Master → US (born Chicago)",
+      "#13 Rudolf Serkin → HU (born Eger)",
+      "#57 Visací zámek → XC (born Czechoslovakia)",
+      "#101 Hana Hegerová → SK (born Bratislava)",
+      "#104 Banjo Band Ivana Mládka → XC (born Czechoslovakia)",
+      "#127 Anna K → XC (born Czechoslovakia)",
+      "#136 Spirituál kvintet → XC (born Czechoslovakia)",
+      "#149 Dara Rolins → SK (born Bratislava)",
+      "#150 Petr Wajsar → XC (born Czechoslovakia)",
+      "#154 Waldemar Matuška → SK (born Košice)",
+      "#185 Ilona Csáková → XC (born Czechoslovakia)",
+      "#187 ReOrder → SK (born Martin)"
+    ]
+  },
+  "PL": {
+    "pool": 200,
+    "moved": 9,
+    "topTenAffected": 0,
+    "artists": [
+      "#15 Karol Szymanowski → UA (born Cherkas'ka Oblast')",
+      "#19 Wojciech Kilar → UA (born Lviv)",
+      "#26 Czesław Niemen → BY (born Hrodzenskaya voblasts')",
+      "#38 Leopold Godowsky → LT (born Žasliai)",
+      "#98 Stanisław Skrowaczewski → UA (born Lviv)",
+      "#114 Anna German → UZ (born Xorazm)",
+      "#130 Violetta Villas → BE (born Heusy)",
+      "#167 Dead Raven Choir → US (born Texas)",
+      "#171 mhzesent → CA (born Canada)"
+    ]
+  },
+  "RU": {
+    "pool": 200,
+    "moved": 22,
+    "topTenAffected": 1,
+    "artists": [
+      "#4 Сергей Сергеевич Прокофьев → UA (born Sontsivka)",
+      "#16 Святослав Рихтер → UA (born Zhytomyr)",
+      "#21 Би-2 → BY (born Minsk)",
+      "#27 Мстислав Ростропович → AZ (born Bakı)",
+      "#40 Витас → LV (born Daugavpils)",
+      "#51 Лариса Долина → AZ (born Bakı)",
+      "#53 Рейнгольд Морицевич Глиэр → UA (born Kyïv)",
+      "#63 Антон Григорьевич Рубинштейн → MD (born Transnistria)",
+      "#64 Николай Яковлевич Мясковский → PL (born Nowy Dwór Mazowiecki)",
+      "#102 Шмели → UA (born Rivne)",
+      "#105 Валерий Меладзе → GE (born Batumi)",
+      "#106 Thomas de Hartmann → UA (born Khoruzhivka)",
+      "#116 Юрий Антонов → UZ (born Toshkent)",
+      "#123 Филипп Киркоров → BG (born Varna)",
+      "#134 Ани Лорак → UA (born Chernivets'ka Oblast')",
+      "#150 Михаил Булгаков → UA (born Kyïv)",
+      "#160 Анжелика Варум → UA (born Lviv)",
+      "#165 Леонид Сергеев → BY (born Brest)",
+      "#173 Иеродиакон Герман (Рябцев) → UA (born Dnipro)",
+      "#174 Замай → KG (born Bishkek)",
+      "#179 Линда → KZ (born Ongtüstik Qazaqstan oblysy)",
+      "#195 Ёлка → UA (born Uzhhorod)"
+    ]
+  },
+  "TR": {
+    "pool": 200,
+    "moved": 8,
+    "topTenAffected": 0,
+    "artists": [
+      "#24 Tarkan → DE (born Alzey)",
+      "#90 Deniz Koyu → DE (born Bochum)",
+      "#107 Özlem Tekin → US (born California)",
+      "#142 Işın Karaca → GB (born London)",
+      "#171 Hadise → BE (born Mol)",
+      "#178 Murat Aydemir → DE (born Hannover)",
+      "#181 Nâzım Hikmet → GR (born Thessaloniki)",
+      "#182 Fuat → DE (born Berlin)"
+    ]
+  },
+  "TH": {
+    "pool": 200,
+    "moved": 5,
+    "topTenAffected": 2,
+    "artists": [
+      "#1 Niky Nine → FR (born Marseille)",
+      "#2 Farang Zoo → FI (born Finland)",
+      "#11 Nicole Theriault → US (born California)",
+      "#34 Violette Wautier → JP (born Yokohama)",
+      "#47 Nat Myria → CH (born Neuchâtel)"
+    ]
+  },
+  "PH": {
+    "pool": 200,
+    "moved": 7,
+    "topTenAffected": 0,
+    "artists": [
+      "#27 Jay R → US (born United States)",
+      "#80 Sam Milby → US (born Ohio)",
+      "#115 Darren Espanto → CA (born Calgary)",
+      "#135 ((( O ))) → US (born Dallas)",
+      "#169 Chlara → GB (born United Kingdom)",
+      "#188 monker178 → AU (born Sydney)",
+      "#190 James Reid → AU (born Sydney)"
+    ]
+  },
+  "MY": {
+    "pool": 200,
+    "moved": 3,
+    "topTenAffected": 0,
+    "artists": [
+      "#11 M. Nasir → SG (born Singapore)",
+      "#68 Bunga Citra Lestari → ID (born Jakarta)",
+      "#173 Deanna Yusoff → GB (born London)"
+    ]
+  },
+  "ID": {
+    "pool": 200,
+    "moved": 0,
+    "topTenAffected": 0,
+    "artists": []
+  },
+  "KR": {
+    "pool": 199,
+    "moved": 6,
+    "topTenAffected": 0,
+    "artists": [
+      "#18 LISA → TH (born Buri Ram)",
+      "#22 Nogymx → IE (born Ireland)",
+      "#43 ROSÉ → NZ (born Auckland)",
+      "#58 Jay Park → US (born Edmonds)",
+      "#77 Ailee → US (born Denver)",
+      "#118 박정현 → US (born Los Angeles)"
+    ]
+  },
+  "CN": {
+    "pool": 200,
+    "moved": 4,
+    "topTenAffected": 1,
+    "artists": [
+      "#6 李玟 → HK (born Hong Kong)",
+      "#18 方力申 → HK (born Hong Kong)",
+      "#19 威神V → KR (born Seoul)",
+      "#98 李带菓 → US (born Oklahoma)"
+    ]
+  },
+  "BS": {
+    "pool": 101,
+    "moved": 2,
+    "topTenAffected": 0,
+    "artists": [
+      "#16 André Toussaint → HT (born Haiti)",
+      "#89 Frank Gibson → GB (born United Kingdom)"
+    ]
+  },
+  "BB": {
+    "pool": 101,
+    "moved": 6,
+    "topTenAffected": 3,
+    "artists": [
+      "#2 Livvi Franc → GB (born Harrogate)",
+      "#7 Rupee → DE (born Germany)",
+      "#8 Alison Hinds → GB (born London)",
+      "#36 Biggie Irie → GB (born United Kingdom)",
+      "#46 Glenworth Joseph → DM (born Dominica)",
+      "#70 Michael Paul Welch → GB (born United Kingdom)"
+    ]
+  },
+  "MT": {
+    "pool": 200,
+    "moved": 4,
+    "topTenAffected": 1,
+    "artists": [
+      "#1 Robert Babicz → PL (born Niemodlin)",
+      "#76 Joseph Armani → IT (born Venezia)",
+      "#143 Sammaliz → TZ (born Tanzania)",
+      "#166 Miriam Christine → BR (born Goiás)"
+    ]
+  },
+  "CY": {
+    "pool": 200,
+    "moved": 7,
+    "topTenAffected": 1,
+    "artists": [
+      "#4 Kidius Shredius Maximus → RU (born Moscow)",
+      "#74 DeadJxhn → RU (born Russia)",
+      "#116 Aliki → GB (born London)",
+      "#133 Andy Paul → GB (born United Kingdom)",
+      "#161 Wolfgang Schröder → DE (born Straubing)",
+      "#176 Igano → GR (born Greece)",
+      "#193 Nikki Lee → AU (born Sydney)"
+    ]
+  },
+  "PA": {
+    "pool": 199,
+    "moved": 6,
+    "topTenAffected": 1,
+    "artists": [
+      "#3 Abrinay → CO (born Colombia)",
+      "#37 Demphra → DO (born Santo Domingo)",
+      "#48 Joysi Love → HU (born Debrecen)",
+      "#53 Mr. Saik → DO (born Dominican Republic)",
+      "#106 Rehumanize → US (born United States)",
+      "#156 Renato → US (born Panama City)"
+    ]
+  },
+  "CR": {
+    "pool": 200,
+    "moved": 8,
+    "topTenAffected": 0,
+    "artists": [
+      "#27 Walter \"Gavitt\" Ferguson → PA (born Bocas del Toro)",
+      "#42 Adrián Goizueta → AR (born Buenos Aires)",
+      "#48 Rigoberto Amaya → SV (born El Salvador)",
+      "#65 The Client Brothers → US (born Minneapolis)",
+      "#74 Yaco → CU (born Cuba)",
+      "#138 Marcelo Berges → CO (born Bogotá)",
+      "#183 Gene Chambers → PA (born Colón)",
+      "#195 Julio Zúñiga & Marco Fernández → DE (born Germany)"
+    ]
+  },
+  "UY": {
+    "pool": 200,
+    "moved": 7,
+    "topTenAffected": 1,
+    "artists": [
+      "#3 Bajofondo → AR (born Buenos Aires)",
+      "#49 Donato Racciatti → IT (born Guilmi)",
+      "#54 Corubo → BR (born Rondônia)",
+      "#76 Luciano Supervielle → FR (born Paris)",
+      "#154 Julieta Rada → AR (born Buenos Aires)",
+      "#171 Vicente Ascone → IT (born Siderno)",
+      "#173 Tinitus → ES (born Barcelona)"
+    ]
+  },
+  "PY": {
+    "pool": 199,
+    "moved": 2,
+    "topTenAffected": 1,
+    "artists": [
+      "#3 Daniel O'Loughlin → IE (born Ireland)",
+      "#162 Gustavo Sosa Escalada → AR (born Buenos Aires)"
+    ]
+  },
+  "LA": {
+    "pool": 1,
+    "moved": 0,
+    "topTenAffected": 0,
+    "artists": []
+  }
+}

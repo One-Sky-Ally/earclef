@@ -6,6 +6,7 @@ import {
   subdivisionByCode,
 } from '@/lib/explore/subdivisions'
 import { US_STATE_CODE_PATTERN, usStateByCode } from '@/lib/explore/states'
+import { movedIn, movedOut } from '@/lib/explore/originCorrections'
 import { hasStateData, stateDetails } from '@/lib/explore/stateData'
 import type {
   CountryYearDetails,
@@ -177,6 +178,13 @@ async function fetchOriginArtists(
   start: number,
   end: number,
   genre: string | null,
+  /**
+   * Set for country pools so origin corrections apply: MusicBrainz's
+   * `country:` field follows residence/citizenship, not where the
+   * music began. Null for subdivision (area-name) pools, which are
+   * already begin-area based.
+   */
+  correctFor: string | null = null,
 ): Promise<{
   top: PanelArtist[]
   pool: PoolArtist[]
@@ -227,6 +235,33 @@ async function fetchOriginArtists(
     if (error instanceof RateLimitError) throw error
     console.error(`origin artists ${originClause} failed:`, error)
     return null
+  }
+
+  // Residence ≠ origin: drop artists this country only hosts, and
+  // claim the ones whose music actually began here.
+  if (correctFor) {
+    const leaving = movedOut(correctFor)
+    if (leaving.size > 0) {
+      for (let i = weighted.length - 1; i >= 0; i--) {
+        if (leaving.has(weighted[i].artist.id)) {
+          ids.delete(weighted[i].artist.id)
+          weighted.splice(i, 1)
+          count = Math.max(0, count - 1)
+        }
+      }
+    }
+    for (const arrival of movedIn(
+      correctFor,
+      start,
+      end,
+      PERSON_CAREER_OFFSET_YEARS,
+    )) {
+      if (ids.has(arrival.artist.id)) continue
+      if (genre && !arrival.artist.tags.includes(genre)) continue
+      ids.add(arrival.artist.id)
+      weighted.push(arrival)
+      count++
+    }
   }
 
   const sorted = weighted.sort((a, b) => b.weight - a.weight)
@@ -364,6 +399,7 @@ export async function GET(
         start,
         end,
         genre,
+        subdivision ? null : country,
       )
       if (!origin) {
         return NextResponse.json(
@@ -387,7 +423,13 @@ export async function GET(
       `https://musicbrainz.org/ws/2/release?query=${releaseQuery}&limit=${RELEASE_LIMIT}&fmt=json`,
     )) as { count?: number; releases?: MbRelease[] }
     await sleep(MB_DELAY_MS)
-    const origin = await fetchOriginArtists(originClause, start, end, null)
+    const origin = await fetchOriginArtists(
+      originClause,
+      start,
+      end,
+      null,
+      subdivision ? null : country,
+    )
 
     if (!origin) {
       // Serve a degraded (origin-less) panel, but never cache it — a

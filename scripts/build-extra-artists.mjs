@@ -98,7 +98,10 @@ async function getJson(url, headers, tries = 3) {
  * those become dedup fuel, never candidates.
  */
 async function wikidataPass(qid) {
-  const query = `SELECT ?item ?itemLabel ?mbid ?discogs ?birth ?formed WHERE {
+  // P27 is CITIZENSHIP, which is not musical origin (the Tina Turner
+  // problem). Birthplace and formation location are pulled alongside
+  // it so the filter below can tell a national from a resident.
+  const query = `SELECT ?item ?itemLabel ?mbid ?discogs ?birth ?formed ?bornIn ?formedIn ?citizen WHERE {
   { ?item wdt:P27 wd:${qid} } UNION { ?item wdt:P495 wd:${qid} }
   { ?item wdt:P106 wd:Q639669 } UNION { ?item wdt:P106 wd:Q177220 }
   UNION { ?item wdt:P106 wd:Q36834 } UNION { ?item wdt:P106 wd:Q488205 }
@@ -107,6 +110,9 @@ async function wikidataPass(qid) {
   OPTIONAL { ?item wdt:P1953 ?discogs }
   OPTIONAL { ?item wdt:P569 ?birth }
   OPTIONAL { ?item wdt:P571 ?formed }
+  OPTIONAL { ?item wdt:P19 ?bp . ?bp wdt:P17 ?bornIn }
+  OPTIONAL { ?item wdt:P740 ?fp . ?fp wdt:P17 ?formedIn }
+  OPTIONAL { ?item wdt:P27 ?citizen }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "en,es,lo,fr". }
 }`
   const body = await getJson(
@@ -114,16 +120,26 @@ async function wikidataPass(qid) {
     { 'User-Agent': MB_UA, Accept: 'application/sparql-results+json' },
   )
   const byItem = new Map()
+  const qidOf = (row, key) => row[key]?.value.split('/').pop() ?? null
   for (const row of body.results.bindings) {
     const id = row.item.value.split('/').pop()
-    if (byItem.has(id)) continue
     const label = row.itemLabel?.value ?? ''
     // Unlabelled items surface as their own QID — useless as a name.
     if (!label || /^Q\d+$/.test(label)) continue
+    const existing = byItem.get(id)
+    if (existing) {
+      // Multi-valued properties arrive as extra rows; union them.
+      const citizen = qidOf(row, 'citizen')
+      if (citizen) existing.citizenships.add(citizen)
+      existing.bornIn ??= qidOf(row, 'bornIn')
+      existing.formedIn ??= qidOf(row, 'formedIn')
+      continue
+    }
     const birth = row.birth?.value ? Number(row.birth.value.slice(0, 4)) : null
     const formed = row.formed?.value
       ? Number(row.formed.value.slice(0, 4))
       : null
+    const citizen = qidOf(row, 'citizen')
     byItem.set(id, {
       wikidataId: id,
       name: label,
@@ -131,9 +147,26 @@ async function wikidataPass(qid) {
       discogsId: row.discogs?.value ?? null,
       // Career-start proxy, matching the MB convention used site-wide.
       year: formed ?? (birth ? birth + 15 : null),
+      bornIn: qidOf(row, 'bornIn'),
+      formedIn: qidOf(row, 'formedIn'),
+      citizenships: new Set(citizen ? [citizen] : []),
     })
   }
   return [...byItem.values()]
+}
+
+/**
+ * Residence/citizenship is not musical origin. An artist is dropped
+ * only when their birth or formation country is KNOWN, differs from
+ * the country being swept, AND they hold no citizenship of it — that
+ * keeps naturalised and exile-born nationals (Maneco Galeano, born in
+ * Mexico, is a documented Paraguayan musician) while excluding people
+ * a passport alone ties to the place. No origin data = no opinion.
+ */
+function isForeignByOrigin(person, qid) {
+  const origin = person.formedIn ?? person.bornIn
+  if (!origin || origin === qid) return false
+  return !person.citizenships.has(qid)
 }
 
 // ----------------------------------------------------------------- Discogs
@@ -292,8 +325,13 @@ async function main() {
       for (const style of release.style ?? []) entry.styles.add(style)
       candidates.set(key, entry)
     }
+    let foreignByOrigin = 0
     for (const person of wd) {
       if (person.mbid) continue
+      if (isForeignByOrigin(person, config.qid)) {
+        foreignByOrigin++
+        continue
+      }
       const key = normalize(person.name)
       const existing = candidates.get(key)
       if (existing) {
@@ -313,8 +351,10 @@ async function main() {
       })
     }
     console.log(
-      `  ${candidates.size} candidate names (${unparsed} titles unparseable)`,
+      `  ${candidates.size} candidate names (${unparsed} titles unparseable,` +
+        ` ${foreignByOrigin} dropped as foreign by origin)`,
     )
+    state.foreignByOrigin = foreignByOrigin
 
     // 3. Dedup against MusicBrainz — the expensive, careful pass.
     state.checked ??= {}
