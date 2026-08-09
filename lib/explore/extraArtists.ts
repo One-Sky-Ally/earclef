@@ -1,4 +1,5 @@
 import extraArtists from './extra-artists.json'
+import { recoveredDiscogsId } from './extraPlay'
 
 /**
  * Gap-fill artists: acts from sparse-coverage countries that
@@ -69,6 +70,10 @@ export function extraArtistsFor(code: string, year: number): ExtraArtistGroups {
 export function extraArtistUrl(artist: ExtraArtist): string {
   if (artist.discogsArtistId) return discogsArtistUrl(artist.discogsArtistId)
   if (artist.wikidataId) return wikidataUrl(artist.wikidataId)
+  // Id-less credits: the enrichment sweep may have recovered their
+  // Discogs artist id by exact alias match — link the real page then.
+  const recovered = recoveredDiscogsId(extraPlayKey(artist))
+  if (recovered) return discogsArtistUrl(recovered)
   return discogsSearchUrl(artist.name)
 }
 
@@ -106,7 +111,12 @@ export function wikidataUrl(id: string): string {
   return `https://www.wikidata.org/wiki/${id}`
 }
 
-/** Search fallback when we could not resolve an artist page. */
+/**
+ * Search fallback when we could not resolve an artist page. ALL
+ * sections, not type=artist: credit-string names often have no artist
+ * page while their release still shows — the artist-only tab returned
+ * "No items match" for names the release tab documents (Aug 8 report).
+ */
 export function discogsSearchUrl(name: string): string {
-  return `https://www.discogs.com/search/?q=${encodeURIComponent(name)}&type=artist`
+  return `https://www.discogs.com/search/?q=${encodeURIComponent(name)}`
 }

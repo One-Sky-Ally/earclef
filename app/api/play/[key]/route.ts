@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server'
 import { getStore } from '@netlify/blobs'
 import {
+  committedExtraPlay,
+  recoveredDiscogsId,
+} from '@/lib/explore/extraPlay'
+import {
   resolveExtraArtistPlay,
   resolveMbArtistPlay,
 } from '@/lib/play/resolve'
@@ -111,18 +115,33 @@ export async function GET(
   }
 
   try {
+    // Id-less credits whose Discogs id the sweep recovered get a real
+    // artist page; the rest fall back to an all-sections search (the
+    // artist tab alone can be empty while their release still shows).
+    const recovered = source === 'nm' ? recoveredDiscogsId(`nm:${id}`) : null
+    const read =
+      source === 'nm'
+        ? recovered
+          ? ({
+              kind: 'discogs',
+              url: `https://www.discogs.com/artist/${recovered}`,
+            } as const)
+          : ({
+              kind: 'discogs',
+              url: `https://www.discogs.com/search/?q=${encodeURIComponent(name)}`,
+            } as const)
+        : extraRead(source, id)
+    // Swept gap-fill keys serve the committed verdict — the sweep ran
+    // with the full alias set (Wikidata labels included), so a live
+    // recheck with less data could only re-miss.
+    const committed =
+      source === 'mb' ? undefined : committedExtraPlay(`${source}:${id}`)
     const result =
       source === 'mb'
         ? await resolveMbArtistPlay(id, decade)
-        : await resolveExtraArtistPlay(
-            name,
-            source === 'nm'
-              ? {
-                  kind: 'discogs',
-                  url: `https://www.discogs.com/search/?q=${encodeURIComponent(name)}&type=artist`,
-                }
-              : extraRead(source, id),
-          )
+        : committed !== undefined
+          ? { play: committed, read }
+          : await resolveExtraArtistPlay(name, read)
     memo.set(cacheKey, result)
     await writeCache(cacheKey, result)
     return withCacheHeaders(NextResponse.json(result))
