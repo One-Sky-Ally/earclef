@@ -65,11 +65,6 @@ export function musicBrainzReleaseUrl(id: string): string {
   return `https://musicbrainz.org/release/${id}`
 }
 
-/** Plain YouTube search — no API, just a link out. */
-export function youtubeSearchUrl(query: string): string {
-  return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`
-}
-
 export interface PlaceResult {
   country: string
   area: string

@@ -34,12 +34,13 @@ interface FeedPostCardProps {
  */
 export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
   const { service } = useListenService()
-  // Videos ARE YouTube; only release links follow the chosen service.
-  const href =
+  // Videos carry verified watch URLs; release links are music-service
+  // searches on the fan's service, labeled as searches.
+  const resolved =
     item.type === 'release'
       ? resolveListenHref(service, item.presence, item.artistName, item.title)
-          .href
-      : item.href
+      : null
+  const href = resolved?.href ?? item.href
 
   return (
     <article className={styles.card}>
@@ -48,7 +49,12 @@ export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
         href={href}
         target="_blank"
         rel="noreferrer"
-        aria-label={`Open ${item.title} at the source`}
+        aria-label={
+          resolved
+            ? `${resolved.label}: ${item.title} by ${item.artistName}`
+            : `Watch ${item.title} on YouTube`
+        }
+        title={resolved ? resolved.label : undefined}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

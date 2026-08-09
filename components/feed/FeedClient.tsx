@@ -12,13 +12,16 @@ import {
 import {
   coverArtUrl,
   coverArtUrlLarge,
-  listenSearch,
   youtubeThumbnailUrl,
   youtubeThumbnailLargeUrl,
   youtubeWatchUrl,
 } from '@/lib/links'
 import { blurbKey, normalizedTitle } from '@/lib/feed/blurbKey'
-import type { ArtistServicePresence } from '@/lib/listen/services'
+import {
+  musicServiceSearchUrl,
+  type ArtistServicePresence,
+} from '@/lib/listen/services'
+import { isSearchUrl } from '@/lib/play/storedHref'
 import type { StoryCard } from '@/lib/stories/types'
 import type { ArtistTier } from '@/lib/tiers'
 import { TierFilter, type TierChoice } from '@/components/TierFilter'
@@ -142,7 +145,7 @@ function mbReleaseItems(
       date: item.date!,
       image: coverArtUrl(item.rgid),
       imageLarge: coverArtUrlLarge(item.rgid),
-      href: listenSearch(entry.name, item.title),
+      href: musicServiceSearchUrl('appleMusic', entry.name, item.title),
       presence: entry.presence,
     }))
 }
@@ -160,7 +163,7 @@ function itunesReleaseItems(
     image: item.image ?? '/images/hero-placeholder.svg',
     // iTunes artwork URLs encode their size — request a bigger render.
     imageLarge: item.image?.replace('100x100', '600x600'),
-    href: listenSearch(entry.name, item.title),
+    href: musicServiceSearchUrl('appleMusic', entry.name, item.title),
     presence: entry.presence,
   }))
 }
@@ -587,7 +590,17 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
             <a
               key={`${item.slug}-${item.title}`}
               className={styles.upcomingCard}
-              href={item.href}
+              // Stored snapshots can carry pre-ruling search hrefs —
+              // stored output outlives the generator that wrote it.
+              href={
+                isSearchUrl(item.href)
+                  ? musicServiceSearchUrl(
+                      'appleMusic',
+                      item.artistName,
+                      item.title,
+                    )
+                  : item.href
+              }
               target="_blank"
               rel="noreferrer"
             >

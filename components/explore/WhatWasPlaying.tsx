@@ -1,9 +1,12 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { youtubeSearchUrl } from '@/lib/explore/panelData'
 import type { PlayingEntry } from '@/lib/explore/playing'
-import { listenSearch } from '@/lib/links'
+import {
+  musicServiceSearchUrl,
+  resolveListenHref,
+} from '@/lib/listen/services'
+import { useListenService } from '@/components/listen/ServiceProvider'
 import styles from './WhatWasPlaying.module.css'
 
 interface WhatWasPlayingProps {
@@ -59,6 +62,7 @@ export function WhatWasPlaying({
   yearStart,
   yearEnd,
 }: WhatWasPlayingProps) {
+  const { service } = useListenService()
   const [state, setState] = useState<PlayingState>({ status: 'loading' })
 
   useEffect(() => {
@@ -108,10 +112,13 @@ export function WhatWasPlaying({
       <p className={styles.story}>
         {segments(entry.story).map((segment, index) =>
           segment.artist ? (
+            // Artist mentions carry no verified id, so they search a
+            // MUSIC service (empty miss), never YouTube (garbage miss).
             <a
               key={index}
               className={styles.artistLink}
-              href={youtubeSearchUrl(`"${segment.text}" music`)}
+              href={musicServiceSearchUrl('appleMusic', segment.text)}
+              title={`Search on Apple Music: ${segment.text}`}
               target="_blank"
               rel="noreferrer"
             >
@@ -124,33 +131,42 @@ export function WhatWasPlaying({
       </p>
 
       <ul className={styles.items}>
-        {entry.items.map((item) => (
-          <li key={`${item.artist}:${item.work}`} className={styles.item}>
-            <div className={styles.itemText}>
+        {entry.items.map((item) => {
+          const listen = resolveListenHref(
+            service,
+            undefined,
+            item.artist,
+            item.work,
+          )
+          return (
+            <li key={`${item.artist}:${item.work}`} className={styles.item}>
+              <div className={styles.itemText}>
+                <a
+                  className={styles.itemWork}
+                  href={listen.href}
+                  title={`${listen.label}: ${item.work}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {item.work}
+                </a>
+                <span className={styles.itemMeta}>
+                  {item.artist}
+                  {item.note ? ` · ${item.note}` : ''}
+                </span>
+              </div>
               <a
-                className={styles.itemWork}
-                href={listenSearch(item.artist, item.work)}
+                className={styles.listenLink}
+                href={listen.href}
                 target="_blank"
                 rel="noreferrer"
+                aria-label={`${listen.label}: ${item.work} by ${item.artist}`}
               >
-                {item.work}
+                {listen.label} ↗
               </a>
-              <span className={styles.itemMeta}>
-                {item.artist}
-                {item.note ? ` · ${item.note}` : ''}
-              </span>
-            </div>
-            <a
-              className={styles.listenLink}
-              href={listenSearch(item.artist, item.work)}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Listen: search YouTube for ${item.work} by ${item.artist}`}
-            >
-              ▶ Listen
-            </a>
-          </li>
-        ))}
+            </li>
+          )
+        })}
       </ul>
 
       <p className={styles.basis}>{entry.basis}</p>

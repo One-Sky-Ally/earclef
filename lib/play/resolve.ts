@@ -62,17 +62,37 @@ async function fetchJson(url: string): Promise<unknown | null> {
   }
 }
 
+/**
+ * Queue Blobs key, shared with the queue route. Names the old
+ * ASCII-only normalize reduced to '' could cache garbage search hits
+ * (empty-string equality — the Alexandra failure class), so that
+ * class lives in a fresh v2 keyspace; Latin-name entries stay cached.
+ */
+export function queueCacheKey(
+  mbid: string,
+  decade: string,
+  name: string,
+): string {
+  const legacyEmptyName =
+    name
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[^a-z0-9]+/g, '') === ''
+  return `${legacyEmptyName ? 'v2/' : ''}artist/${mbid}/${decade}`
+}
+
 /** Step 0: a queue-resolved, playability-checked video for this era. */
 async function queueCachedVideo(
   mbid: string,
   decade: string | null,
+  name: string,
 ): Promise<PlayLink | null> {
   if (!decade) return null
   try {
     const cached = (await getStore({
       name: 'queue',
       consistency: 'eventual',
-    }).get(`artist/${mbid}/${decade}`, { type: 'json' })) as {
+    }).get(queueCacheKey(mbid, decade, name), { type: 'json' })) as {
       track?: { videoId?: string } | null
     } | null
     const videoId = cached?.track?.videoId
@@ -137,27 +157,45 @@ function classifyRelations(relations: MbUrlRelation[]): ClassifiedRels {
   return { play: null, wikipedia }
 }
 
-/** Step 2: Internet Archive audio, only on a real creator match. */
-async function archiveAudioItem(name: string): Promise<PlayLink | null> {
-  const query = encodeURIComponent(
-    `creator:"${name.replace(/"/g, '')}" AND mediatype:audio`,
+/**
+ * Step 2: Internet Archive audio, only on a real creator match.
+ * Takes the artist's full alias set (canonical name first): IA
+ * catalogues non-Western artists under romanizations, so the search
+ * runs on up to two distinct spellings and a creator must EXACT-match
+ * one of the aliases. More spellings, never looser matching.
+ */
+async function archiveAudioItem(aliases: string[]): Promise<PlayLink | null> {
+  const primary = aliases[0]
+  const romanized = aliases.find(
+    (alias) => normalizeName(alias) !== normalizeName(primary),
   )
-  const body = (await fetchJson(
-    `https://archive.org/advancedsearch.php?q=${query}&fl[]=identifier&fl[]=creator&rows=5&page=1&output=json`,
-  )) as {
-    response?: { docs?: { identifier?: string; creator?: string | string[] }[] }
-  } | null
-  for (const doc of body?.response?.docs ?? []) {
-    if (!doc.identifier) continue
-    const creators = Array.isArray(doc.creator)
-      ? doc.creator
-      : doc.creator
-        ? [doc.creator]
-        : []
-    if (creators.some((creator) => namesMatch(creator, name))) {
-      return {
-        kind: 'archive',
-        url: `https://archive.org/details/${doc.identifier}`,
+  const queries = romanized ? [primary, romanized] : [primary]
+  for (const queryName of queries) {
+    const query = encodeURIComponent(
+      `creator:"${queryName.replace(/"/g, '')}" AND mediatype:audio`,
+    )
+    const body = (await fetchJson(
+      `https://archive.org/advancedsearch.php?q=${query}&fl[]=identifier&fl[]=creator&rows=5&page=1&output=json`,
+    )) as {
+      response?: {
+        docs?: { identifier?: string; creator?: string | string[] }[]
+      }
+    } | null
+    for (const doc of body?.response?.docs ?? []) {
+      if (!doc.identifier) continue
+      const creators = Array.isArray(doc.creator)
+        ? doc.creator
+        : doc.creator
+          ? [doc.creator]
+          : []
+      const matched = creators.some((creator) =>
+        aliases.some((alias) => namesMatch(creator, alias)),
+      )
+      if (matched) {
+        return {
+          kind: 'archive',
+          url: `https://archive.org/details/${doc.identifier}`,
+        }
       }
     }
   }
@@ -174,28 +212,56 @@ export async function resolveMbArtistPlay(
     url: `https://musicbrainz.org/artist/${mbid}`,
   }
 
-  const queued = await queueCachedVideo(mbid, decade)
-
+  // MB first: the canonical name (needed for the queue cache key and
+  // the IA search) and aliases ride the same url-rels call.
   const body = (await fetchJson(
-    `https://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels&fmt=json`,
-  )) as { name?: string; relations?: MbUrlRelation[] } | null
+    `https://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels+aliases&fmt=json`,
+  )) as {
+    name?: string
+    aliases?: { name?: string }[]
+    relations?: MbUrlRelation[]
+  } | null
   const rels = classifyRelations(body?.relations ?? [])
   const readLink: ReadLink = rels.wikipedia
     ? { kind: 'wikipedia', url: rels.wikipedia }
     : read
 
+  const queued = body?.name
+    ? await queueCachedVideo(mbid, decade, body.name)
+    : null
   if (queued) return { play: queued, read: readLink }
   if (rels.play) return { play: rels.play, read: readLink }
 
-  const archive = body?.name ? await archiveAudioItem(body.name) : null
+  // Alias set: exact-match against every documented spelling (MB
+  // aliases carry romanizations), never against similar strings —
+  // more spellings, not looser matching.
+  const aliases = [
+    ...(body?.name ? [body.name] : []),
+    ...(body?.aliases ?? []).flatMap((alias) =>
+      alias.name ? [alias.name] : [],
+    ),
+  ]
+  const archive = aliases.length > 0 ? await archiveAudioItem(aliases) : null
   return { play: archive, read: readLink }
 }
 
-/** Chain for gap-fill artists (no MB record): Internet Archive only. */
+/**
+ * Chain for gap-fill artists (no MB record): Internet Archive only at
+ * runtime. Discogs credits use "A = B" for the same artist in two
+ * scripts, so '='-separated segments join the alias set; '/' credits
+ * are JOINT credits (different artists) and never split.
+ */
 export async function resolveExtraArtistPlay(
   name: string,
   read: ReadLink,
 ): Promise<ArtistPlay> {
-  const archive = await archiveAudioItem(name)
+  const aliases = [
+    name,
+    ...name
+      .split('=')
+      .map((segment) => segment.replace(/\*\s*$/, '').trim())
+      .filter((segment) => segment.length > 1),
+  ].filter((alias, index, all) => all.indexOf(alias) === index)
+  const archive = await archiveAudioItem(aliases)
   return { play: archive, read }
 }

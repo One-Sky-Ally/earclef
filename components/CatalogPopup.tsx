@@ -105,6 +105,7 @@ export function CatalogPopup({
                       resolveListenHref(service, presence, artistName, item.title)
                         .href
                     }
+                    title={`${resolveListenHref(service, presence, artistName, item.title).label}: ${item.title}`}
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -143,7 +144,7 @@ export function CatalogPopup({
                           target="_blank"
                           rel="noreferrer"
                         >
-                          Bandcamp ↗
+                          Search Bandcamp ↗
                         </a>
                       )}
                       {isPre1950(item) && (
@@ -153,7 +154,7 @@ export function CatalogPopup({
                           target="_blank"
                           rel="noreferrer"
                         >
-                          Archive ↗
+                          Search Archive ↗
                         </a>
                       )}
                     </span>

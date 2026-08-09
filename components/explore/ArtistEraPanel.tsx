@@ -7,7 +7,8 @@ import {
   type ArtistEraDetails,
 } from '@/lib/explore/panelData'
 import { YEAR_MAX, YEAR_MIN } from '@/lib/explore/counts'
-import { listenSearch } from '@/lib/links'
+import { resolveListenHref } from '@/lib/listen/services'
+import { useListenService } from '@/components/listen/ServiceProvider'
 import styles from './CountryPanel.module.css'
 import eraStyles from './ArtistEraPanel.module.css'
 
@@ -41,6 +42,7 @@ export function ArtistEraPanel({
   year,
   onClose,
 }: ArtistEraPanelProps) {
+  const { service } = useListenService()
   const [state, setState] = useState<PanelState>({ status: 'loading' })
   const [attempt, setAttempt] = useState(0)
   // One-tap widen when the single year holds nothing of their catalog.
@@ -153,33 +155,41 @@ export function ArtistEraPanel({
                 </span>
               </p>
               <ul className={styles.releases}>
-                {state.details.eraReleases.map((release) => (
-                  <li key={release.id} className={styles.release}>
-                    <div className={styles.releaseText}>
+                {state.details.eraReleases.map((release) => {
+                  const listen = resolveListenHref(
+                    service,
+                    undefined,
+                    artist.name,
+                    release.title,
+                  )
+                  return (
+                    <li key={release.id} className={styles.release}>
+                      <div className={styles.releaseText}>
+                        <a
+                          className={styles.releaseTitle}
+                          href={`https://musicbrainz.org/release-group/${release.id}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {release.title}
+                        </a>
+                        <span className={styles.releaseMeta}>
+                          {release.date.slice(0, 4)}
+                          {release.type ? ` · ${release.type}` : ''}
+                        </span>
+                      </div>
                       <a
-                        className={styles.releaseTitle}
-                        href={`https://musicbrainz.org/release-group/${release.id}`}
+                        className={styles.listenLink}
+                        href={listen.href}
                         target="_blank"
                         rel="noreferrer"
+                        aria-label={`${listen.label}: ${release.title} by ${artist.name}`}
                       >
-                        {release.title}
+                        {listen.label} ↗
                       </a>
-                      <span className={styles.releaseMeta}>
-                        {release.date.slice(0, 4)}
-                        {release.type ? ` · ${release.type}` : ''}
-                      </span>
-                    </div>
-                    <a
-                      className={styles.listenLink}
-                      href={listenSearch(artist.name, release.title)}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Listen: search YouTube for ${release.title} by ${artist.name}`}
-                    >
-                      ▶ Listen
-                    </a>
-                  </li>
-                ))}
+                    </li>
+                  )
+                })}
               </ul>
               {state.details.eraCount > state.details.eraReleases.length && (
                 <p className={styles.truncationNote}>

@@ -2,14 +2,19 @@
  * Fan-chosen listening service (v1 — links only, no APIs). Every listen
  * click resolves to the fan's service using per-artist data from the
  * content JSONs; release-level links are search URLs on that service
- * (we hold no per-release IDs), YouTube remains the default and final
- * fallback.
+ * (we hold no per-release IDs), labeled as searches — "Search on X",
+ * never a ▶ that promises playback.
+ *
+ * YouTube search URLs are BANNED (Aug 8, 2026 ruling): a YouTube miss
+ * lands on unrelated video content, where a music-service miss lands
+ * on an empty result page. Fans who chose YouTube get rerouted to an
+ * Apple Music search at release level; artist-level YouTube stays
+ * covered by the verified-play chain (lib/play).
  *
  * HONESTY RULE: a missing platform ID never implies absence — most
  * dormant Spotify IDs simply were never captured. "Not on X" is claimed
  * ONLY when the owner asserts it in the artist's listen.notOn.
  */
-import { listenSearch } from '../links'
 import type { ArtistContent } from '../types'
 
 export type ListenService = 'youtube' | 'spotify' | 'appleMusic' | 'amazonMusic'
@@ -78,21 +83,31 @@ export function presenceFromContent(
   }
 }
 
-export function serviceSearchUrl(
-  service: ListenService,
+/** Music services that release-level searches may target — no YouTube. */
+export type MusicSearchService = Exclude<ListenService, 'youtube'>
+
+/** Honest action labels: these links search, they don't play. */
+export const SEARCH_LABELS: Record<MusicSearchService, string> = {
+  spotify: 'Search on Spotify',
+  appleMusic: 'Search on Apple Music',
+  amazonMusic: 'Search on Amazon Music',
+}
+
+export function musicServiceSearchUrl(
+  service: MusicSearchService,
   artistName: string,
-  title: string,
+  title?: string,
 ): string {
-  const query = encodeURIComponent(`${title} ${artistName}`)
+  const query = encodeURIComponent(
+    title ? `${title} ${artistName}` : artistName,
+  )
   switch (service) {
     case 'spotify':
       return `https://open.spotify.com/search/${query}`
-    case 'appleMusic':
-      return `https://music.apple.com/us/search?term=${query}`
     case 'amazonMusic':
       return `https://music.amazon.com/search/${query}`
     default:
-      return listenSearch(artistName, title)
+      return `https://music.apple.com/us/search?term=${query}`
   }
 }
 
@@ -106,14 +121,17 @@ export function absenceFor(
 export interface ResolvedListen {
   href: string
   /** The service actually linked (differs when rerouted around an absence). */
-  service: ListenService
+  service: MusicSearchService
+  /** Honest action label for the link: "Search on X". */
+  label: string
   rerouted: boolean
 }
 
 /**
- * A release-level listen link for the chosen service. Artists asserted
- * absent from that service reroute — to Apple Music when we hold their
- * artist link there, otherwise to YouTube.
+ * A release-level listen link for the chosen service. YouTube fans
+ * reroute to Apple Music (YouTube search is banned); artists asserted
+ * absent from the target reroute to the first service the owner has
+ * not marked them absent from.
  */
 export function resolveListenHref(
   service: ListenService,
@@ -121,22 +139,20 @@ export function resolveListenHref(
   artistName: string,
   title: string,
 ): ResolvedListen {
-  if (service !== 'youtube' && absenceFor(service, presence)) {
-    const fallback: ListenService =
-      service !== 'appleMusic' && presence?.appleMusicUrl
-        ? 'appleMusic'
-        : service !== 'amazonMusic' && presence?.amazonMusicUrl
-          ? 'amazonMusic'
-          : 'youtube'
-    return {
-      href: serviceSearchUrl(fallback, artistName, title),
-      service: fallback,
-      rerouted: true,
-    }
-  }
+  const requested: MusicSearchService =
+    service === 'youtube' ? 'appleMusic' : service
+  const order: MusicSearchService[] = [
+    requested,
+    'appleMusic',
+    'amazonMusic',
+    'spotify',
+  ]
+  const resolved =
+    order.find((candidate) => !absenceFor(candidate, presence)) ?? requested
   return {
-    href: serviceSearchUrl(service, artistName, title),
-    service,
-    rerouted: false,
+    href: musicServiceSearchUrl(resolved, artistName, title),
+    service: resolved,
+    label: SEARCH_LABELS[resolved],
+    rerouted: resolved !== service,
   }
 }

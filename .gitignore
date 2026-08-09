@@ -45,3 +45,6 @@ data/extra-artists-work.json
 data/extra-artists.log
 data/origin-corrections-work.json
 data/origin-corrections.log
+data/extra-play-work.json
+data/extra-play.log
+data/extra-play-run.log

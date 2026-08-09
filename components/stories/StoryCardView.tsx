@@ -1,8 +1,29 @@
 'use client'
 
 import { useState } from 'react'
+import { musicServiceSearchUrl } from '@/lib/listen/services'
+import { isSearchUrl } from '@/lib/play/storedHref'
 import type { StoryCard } from '@/lib/stories/types'
 import styles from './StoryCardView.module.css'
+
+/**
+ * cards.json predates the YouTube-search ban and its media lists mix
+ * verified watch URLs with search URLs. Stored output outlives its
+ * generator — convert search URLs to labeled music-service searches
+ * at render, and reserve ▶ for links that actually play.
+ */
+function mediaLink(link: {
+  label: string
+  url: string
+}): { href: string; text: string } {
+  if (isSearchUrl(link.url)) {
+    return {
+      href: musicServiceSearchUrl('appleMusic', link.label),
+      text: `${link.label} — search on Apple Music ↗`,
+    }
+  }
+  return { href: link.url, text: `▶ ${link.label}` }
+}
 
 interface StoryCardViewProps {
   card: StoryCard
@@ -28,18 +49,21 @@ export function StoryCardView({ card, showArtist = false }: StoryCardViewProps) 
       <p className={styles.story}>{card.story}</p>
       {card.media.length > 0 && (
         <ul className={styles.media}>
-          {card.media.map((link) => (
-            <li key={link.url}>
-              <a
-                className={styles.mediaLink}
-                href={link.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                ▶ {link.label}
-              </a>
-            </li>
-          ))}
+          {card.media.map((link) => {
+            const media = mediaLink(link)
+            return (
+              <li key={link.url}>
+                <a
+                  className={styles.mediaLink}
+                  href={media.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {media.text}
+                </a>
+              </li>
+            )
+          })}
         </ul>
       )}
       <div className={styles.footerRow}>

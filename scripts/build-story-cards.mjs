@@ -563,8 +563,11 @@ async function reviseCard(candidate, failingClaims) {
 
 // --- media resolution ------------------------------------------------------
 
-function youtubeSearchUrl(query) {
-  return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`
+// YouTube SEARCH URLs are banned (Aug 8, 2026 ruling): a YouTube miss
+// lands on unrelated video content. Unverifiable media degrades to a
+// labeled Apple Music search — an empty miss, never a garbage one.
+function appleMusicSearchUrl(query) {
+  return `https://music.apple.com/us/search?term=${encodeURIComponent(query)}`
 }
 
 async function resolveMedia(media, artist) {
@@ -577,9 +580,9 @@ async function resolveMedia(media, artist) {
       resolved.push({ label, url: `https://www.youtube.com/watch?v=${item.videoId}` })
     } else if (item.kind === 'verifiedVideo' && item.videoId) {
       // Not one of ours — degrade to a search, never trust a model-minted ID.
-      resolved.push({ label, url: youtubeSearchUrl(`${artist.hero.name} ${label}`) })
+      resolved.push({ label, url: appleMusicSearchUrl(`${artist.hero.name} ${label}`) })
     } else if (item.kind === 'youtubeSearch' && item.query) {
-      resolved.push({ label, url: youtubeSearchUrl(item.query) })
+      resolved.push({ label, url: appleMusicSearchUrl(item.query) })
     } else if (item.kind === 'externalLink' && item.url && /^https:\/\//.test(item.url)) {
       try {
         const res = await fetch(item.url, {

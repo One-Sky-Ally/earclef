@@ -1,8 +1,10 @@
-/** Shared outbound-link builders — YouTube-first listening, keyless artwork. */
-
-export function youtubeSearchUrl(query: string): string {
-  return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`
-}
+/**
+ * Shared outbound-link builders — keyless artwork, verified watch URLs.
+ * YouTube SEARCH builders were removed under the Aug 8, 2026 ruling: a
+ * YouTube miss lands on unrelated video content. Verified video IDs
+ * come from lib/play; release-level searches go to music services
+ * (lib/listen/services) with honest "Search on X" labels.
+ */
 
 export function youtubeWatchUrl(videoId: string): string {
   return `https://www.youtube.com/watch?v=${videoId}`
@@ -30,12 +32,7 @@ export function youtubeThumbnailLargeUrl(videoId: string): string {
   return `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
 }
 
-/** Quoted phrases keep YouTube on-target (the band, not the movie). */
-export function quotedSearch(artist: string, title: string): string {
-  return youtubeSearchUrl(`"${artist}" "${title}"`)
-}
-
-/** Edition tags vary by source and rarely appear in YouTube upload titles. */
+/** Edition tags vary by source and rarely appear in upload titles. */
 export function stripEditionTags(title: string): string {
   return title
     .replace(
@@ -44,22 +41,6 @@ export function stripEditionTags(title: string): string {
     )
     .replace(/\s{2,}/g, ' ')
     .trim()
-}
-
-/**
- * Listen search tuned for findability: the title stays quoted (precision),
- * the artist goes unquoted so name variants — "&" vs "and", missing
- * diacritics, dropped "The" — can't zero out the results. Very short or
- * one-word titles keep the artist quoted too, as the title alone would
- * drift off-target ("Blue", "IV").
- */
-export function listenSearch(artist: string, title: string): string {
-  const cleaned = stripEditionTags(title) || title
-  const generic =
-    cleaned.length <= 4 || (!cleaned.includes(' ') && cleaned.length <= 6)
-  return generic
-    ? quotedSearch(artist, cleaned)
-    : youtubeSearchUrl(`"${cleaned}" ${artist}`)
 }
 
 /** Bandcamp album search — keyless, for artists whose catalog lives there. */

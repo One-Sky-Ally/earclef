@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { getStore } from '@netlify/blobs'
+import { queueCacheKey } from '@/lib/play/resolve'
 
 /**
  * Play-queue resolver: ONE artist → their era-correct playable video.
@@ -58,12 +59,17 @@ function decodeEntities(value: string): string {
     .replace(/&gt;/g, '>')
 }
 
+/**
+ * Script-aware: the ASCII-only version reduced non-Latin names AND
+ * channel titles to '', and '' === '' passed the official-channel bar
+ * — the empty-string cousin of the Alexandra fuzzy-match failure.
+ */
 const normalize = (value: string) =>
   value
     .toLowerCase()
-    .normalize('NFD')
+    .normalize('NFKD')
     .replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
     .trim()
 
 async function mbJson(url: string): Promise<unknown> {
@@ -227,6 +233,9 @@ async function searchVerified(
     }[]
   }
   const artist = normalize(artistName)
+  // An empty normalized name can only match everything or nothing —
+  // it verifies nothing, so it matches nothing.
+  if (!artist) return []
   return (body.items ?? []).flatMap((item) => {
     const videoId = item.id?.videoId
     const title = item.snippet?.title
@@ -262,7 +271,7 @@ export async function GET(
     return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
   }
   const decadeYear = Number(decade)
-  const key = `artist/${mbid}/${decade}`
+  const key = queueCacheKey(mbid, decade, name)
 
   try {
     const cached = (await store().get(key, {
@@ -305,7 +314,10 @@ export async function GET(
       if (id) {
         const uploads = await channelUploads(id, apiKey)
         const wanted = normalize(pick.title)
-        for (const upload of uploads) {
+        // Title containment is safe HERE only because the channel is
+        // the artist's own MB-linked one — it picks WHICH video, never
+        // WHO. An empty wanted would match every upload, so it skips.
+        for (const upload of wanted ? uploads : []) {
           if (normalize(upload.title).includes(wanted)) {
             candidates.push({ ...upload, source: 'channel' })
             if (candidates.length >= 2) break

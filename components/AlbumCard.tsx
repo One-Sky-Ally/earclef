@@ -9,7 +9,6 @@ import {
   coverArtUrl,
 } from '@/lib/links'
 import {
-  SERVICE_LABELS,
   resolveListenHref,
   type ArtistServicePresence,
 } from '@/lib/listen/services'
@@ -64,7 +63,6 @@ export function AlbumCard({
   }
 
   const resolved = resolveListenHref(service, presence, artistName, album.title)
-  const serviceLabel = SERVICE_LABELS[resolved.service]
   const pre1950 = album.year !== undefined && Number(album.year) < 1950
 
   return (
@@ -74,7 +72,7 @@ export function AlbumCard({
         href={resolved.href}
         target="_blank"
         rel="noreferrer"
-        aria-label={`Listen: search ${serviceLabel} for ${album.title} by ${artistName}`}
+        aria-label={`${resolved.label}: ${album.title} by ${artistName}`}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -93,7 +91,8 @@ export function AlbumCard({
         <span className={styles.info}>
           <span className={styles.title}>{album.title}</span>
           {album.year && <span className={styles.year}>{album.year}</span>}
-          <span className={styles.listenHint}>▶ Listen on {serviceLabel}</span>
+          {/* A search, labeled as one — ▶ would promise playback. */}
+          <span className={styles.listenHint}>{resolved.label} ↗</span>
         </span>
       </a>
 
@@ -107,7 +106,7 @@ export function AlbumCard({
               target="_blank"
               rel="noreferrer"
             >
-              Bandcamp ↗
+              Search Bandcamp ↗
             </a>
           )}
           {pre1950 && (
@@ -117,7 +116,7 @@ export function AlbumCard({
               target="_blank"
               rel="noreferrer"
             >
-              Internet Archive ↗
+              Search Internet Archive ↗
             </a>
           )}
         </p>

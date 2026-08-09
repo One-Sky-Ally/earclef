@@ -10,11 +10,11 @@ import { getStore } from '@netlify/blobs'
 import {
   coverArtUrl,
   coverArtUrlLarge,
-  listenSearch,
   youtubeThumbnailUrl,
   youtubeThumbnailLargeUrl,
   youtubeWatchUrl,
 } from '../links'
+import { musicServiceSearchUrl } from '../listen/services'
 import { normalizedTitle } from './blurbKey'
 import { isSubstantiveVideo } from './substance'
 import roster from '../discover/roster.json'
@@ -203,7 +203,8 @@ async function mbReleases(entry: RosterEntry): Promise<SnapshotItem[]> {
         date,
         image: coverArtUrl(rg.id),
         imageLarge: coverArtUrlLarge(rg.id),
-        href: listenSearch(entry.name, rg.title),
+        // Stored default; FeedPostCard re-resolves per the fan's service.
+        href: musicServiceSearchUrl('appleMusic', entry.name, rg.title),
       })
     }
     if (offset + 100 >= body['release-group-count']) break
@@ -240,7 +241,11 @@ async function itunesReleases(entry: RosterEntry): Promise<SnapshotItem[]> {
       date: result.releaseDate!.slice(0, 10),
       image: result.artworkUrl100 ?? '/images/hero-placeholder.svg',
       imageLarge: result.artworkUrl100?.replace('100x100', '600x600'),
-      href: listenSearch(entry.name, result.collectionName!),
+      href: musicServiceSearchUrl(
+        'appleMusic',
+        entry.name,
+        result.collectionName!,
+      ),
     }))
 }
 

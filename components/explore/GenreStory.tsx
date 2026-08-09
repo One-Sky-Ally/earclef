@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { youtubeSearchUrl } from '@/lib/explore/panelData'
+import { musicServiceSearchUrl } from '@/lib/listen/services'
 import styles from './GenreStory.module.css'
 
 interface GenreStoryProps {
@@ -89,10 +89,13 @@ export function GenreStory({ genre }: GenreStoryProps) {
           <p className={styles.story}>
             {segments(state.story).map((segment, index) =>
               segment.artist ? (
+                // No verified id for prose mentions — a music-service
+                // search misses empty, a YouTube search misses garbage.
                 <a
                   key={index}
                   className={styles.artistLink}
-                  href={youtubeSearchUrl(`"${segment.text}" music`)}
+                  href={musicServiceSearchUrl('appleMusic', segment.text)}
+                  title={`Search on Apple Music: ${segment.text}`}
                   target="_blank"
                   rel="noreferrer"
                 >
