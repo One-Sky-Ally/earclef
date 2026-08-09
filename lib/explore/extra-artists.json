@@ -673,7 +673,7 @@
     "wikidataId": null
    },
    {
-    "name": "ຈ້ນທະຮາ / ນ.ສ. ສົມຟອງ",
+    "name": "ຈ້ນທະຮາ",
     "source": "discogs",
     "firstYear": null,
     "lastYear": null,
@@ -683,7 +683,7 @@
      "Folk, World, & Country"
     ],
     "releaseCount": 1,
-    "discogsArtistId": null,
+    "discogsArtistId": 4310300,
     "wikidataId": null
    },
    {
@@ -847,7 +847,12 @@
     ],
     "releaseCount": 1,
     "discogsArtistId": 9950524,
-    "wikidataId": null
+    "wikidataId": null,
+    "aliases": [
+     "ນ.ສ. ສົມຟອງ",
+     "ນ.ສ.ສົມຟອງ",
+     "Miss Somfong"
+    ]
    },
    {
     "name": "ໄຊຊນະ",
@@ -997,7 +1002,7 @@
     "wikidataId": null
    },
    {
-    "name": "ນ.ສ.ສົມຟອງ* / ຄຳຫລ້າ ໜໍ່ແກ້ວ",
+    "name": "ຄຳຫລ້າ ໜໍ່ແກ້ວ",
     "source": "discogs",
     "firstYear": null,
     "lastYear": null,
@@ -1007,7 +1012,7 @@
      "Folk, World, & Country"
     ],
     "releaseCount": 1,
-    "discogsArtistId": null,
+    "discogsArtistId": 5868763,
     "wikidataId": null
    },
    {

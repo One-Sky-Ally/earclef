@@ -21,6 +21,18 @@ const DATASET_PATH = join(process.cwd(), 'lib', 'explore', 'extra-artists.json')
 
 /** creditString -> [{name, discogsArtistId}] — the owner-approved set. */
 const APPROVED = {
+  // Round 3 (Aug 8, 2026): the ນ.ສ. ສົມຟອງ merge — Discogs's OWN
+  // artist page (dg:9950524) lists both spellings as name variations
+  // and credits both joint releases to that id. Members carry the
+  // CANONICAL name so the id-dedup folds them into the solo entry.
+  'ຈ້ນທະຮາ / ນ.ສ. ສົມຟອງ': [
+    { name: 'ຈ້ນທະຮາ', discogsArtistId: 4310300 },
+    { name: 'ສົມຟອງ', discogsArtistId: 9950524 },
+  ],
+  'ນ.ສ.ສົມຟອງ* / ຄຳຫລ້າ ໜໍ່ແກ້ວ': [
+    { name: 'ສົມຟອງ', discogsArtistId: 9950524 },
+    { name: 'ຄຳຫລ້າ ໜໍ່ແກ້ວ', discogsArtistId: 5868763 },
+  ],
   // Round 2 (Aug 8, 2026): the three exact-overlap strings — members
   // duplicated solo entries a visitor could see twice. ບຸນທົງ and
   // RDKPL enter name-only (id-less is an established dataset class);
@@ -68,9 +80,13 @@ const APPROVED = {
   ],
 }
 
-/** Owner-confirmed spellings for K. Viseth (see archival-links.json). */
-const VISETH_ALIASES = {
+/** Owner-confirmed alias sets, keyed by Discogs artist id. */
+const OWNER_ALIASES = {
+  // K. Viseth: three attested Lao spellings (see archival-links.json).
   4897853: ['ກ. ວິເສດ', 'ກ. ວິເສສ', 'K. Viseth', 'KOR VISETH'],
+  // ນ.ສ. ສົມຟອງ merge (Aug 8): Discogs artist 9950524's own name
+  // variations — the ANV spellings her joint credits used.
+  9950524: ['ນ.ສ. ສົມຟອງ', 'ນ.ສ.ສົມຟອງ', 'Miss Somfong'],
 }
 
 function normalizeName(value) {
@@ -125,8 +141,8 @@ for (const [country, artists] of Object.entries(dataset.countries)) {
 
 for (const [country, artists] of Object.entries(dataset.countries)) {
   dataset.countries[country] = artists.map((artist) =>
-    VISETH_ALIASES[artist.discogsArtistId]
-      ? { ...artist, aliases: VISETH_ALIASES[artist.discogsArtistId] }
+    OWNER_ALIASES[artist.discogsArtistId]
+      ? { ...artist, aliases: OWNER_ALIASES[artist.discogsArtistId] }
       : artist,
   )
   for (const artist of dataset.countries[country]) {
