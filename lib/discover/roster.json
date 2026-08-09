@@ -10,6 +10,16 @@
     "membership": false
   },
   {
+    "slug": "aldous-harding",
+    "name": "Aldous Harding",
+    "identity": "Hannah Harding's shape-shifting New Zealand folk — a voice that changes character from song to song, sometimes within one.",
+    "tier": "in-the-mix",
+    "mbid": "1d779dfd-d292-48b5-b232-a09687b9881a",
+    "channelId": "UCvYnfuCRhq6PRYK2MltekXA",
+    "itunesId": "896764341",
+    "membership": false
+  },
+  {
     "slug": "amadou-mariam",
     "name": "Amadou & Mariam",
     "identity": "\"The blind couple from Mali\" — desert blues and Malian guitar built for the world stage, from Manu Chao to Damon Albarn.",
@@ -17,6 +27,26 @@
     "mbid": "1fb60b6c-0f4d-42b4-8a5e-de705ec76660",
     "channelId": "UCY14wC6ulRJSlQTfs1qdpRA",
     "itunesId": "56371449",
+    "membership": false
+  },
+  {
+    "slug": "amen-dunes",
+    "name": "Amen Dunes",
+    "identity": "Damon McMahon's shifting solo project — folk and psych roots pushed, on 2024's Death Jokes, toward chopped loops and sampled voices.",
+    "tier": "in-the-mix",
+    "mbid": "c926bc4a-97c9-4412-b56e-7e5844f09579",
+    "channelId": "UCurYp7uH6wCzrc9ugUxz2Xw",
+    "itunesId": "316671793",
+    "membership": false
+  },
+  {
+    "slug": "andrew-bird",
+    "name": "Andrew Bird",
+    "identity": "Violin loops and precision whistling built on Suzuki-method training — a songwriter who also plays a funeral-home owner on Fargo.",
+    "tier": "in-the-mix",
+    "mbid": "081b133e-ce74-42ba-92c1-c18234acb532",
+    "channelId": "UC2NgiwU_-fa2TV95KG3jFLg",
+    "itunesId": "3883114",
     "membership": false
   },
   {
@@ -357,6 +387,16 @@
     "mbid": "2dc7a305-7a8c-4fcc-add4-5e9def0a9a0d",
     "channelId": "UCRdIhqH_RuIdhtEa9gjwYQg",
     "itunesId": "463953572",
+    "membership": false
+  },
+  {
+    "slug": "fleet-foxes",
+    "name": "Fleet Foxes",
+    "identity": "Robin Pecknold's Seattle indie folk band — stacked chorale harmonies built on a love of Brian Wilson and The Beach Boys.",
+    "tier": "in-the-mix",
+    "mbid": "fa97dd36-1b82-43d7-a6e4-2adeafd59cef",
+    "channelId": "UCna-InS-5L5qv82diztOT7A",
+    "itunesId": "275727569",
     "membership": false
   },
   {
@@ -867,6 +907,16 @@
     "mbid": "0fc78799-38c2-4ee1-8c0f-0b8f7009b7ba",
     "channelId": "UCoUM-UJ7rirJYP8CQ0EIaHA",
     "itunesId": "1556097160",
+    "membership": false
+  },
+  {
+    "slug": "simon-and-garfunkel",
+    "name": "Simon & Garfunkel",
+    "identity": "Paul Simon and Art Garfunkel — Queens childhood friends who became folk-rock's defining harmony duo.",
+    "tier": "in-the-mix",
+    "mbid": "5d02f264-e225-41ff-83f7-d9b1f0b1874a",
+    "channelId": "UCvj9Q8jeaaXlj2OprcRraaw",
+    "itunesId": "461503",
     "membership": false
   },
   {

@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "slug": "simon-and-garfunkel",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Simon & Garfunkel — Ear Clef",
+    "description": "Queens childhood friends turned folk-rock's defining harmony duo — an overdubbed flop that became a #1 hit, and a free reunion concert that drew half a million people.",
+    "ogImage": "/images/og-simon-and-garfunkel.jpg",
+    "canonicalUrl": "https://earclef.com/simon-and-garfunkel"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "70cRZdQywnSFp9pnc2WTCE"
+    },
+    "youtube": {
+      "channelId": "UCvj9Q8jeaaXlj2OprcRraaw"
+    },
+    "setlistfm": {
+      "mbid": "5d02f264-e225-41ff-83f7-d9b1f0b1874a"
+    },
+    "itunes": {
+      "artistId": "461503"
+    }
+  },
+  "hero": {
+    "name": "Simon & Garfunkel",
+    "identity": "Paul Simon and Art Garfunkel — Queens childhood friends who became folk-rock's defining harmony duo.",
+    "tagline": "Hear here!",
+    "location": "New York, NY, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.simonandgarfunkel.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/simongarfunkel"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/SimonandGarfunkel"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@SimonAndGarfunkel"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/simon-garfunkel/461503"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000ZSBZ38/simon-garfunkel"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Sounds of Silence",
+        "year": "1966",
+        "mbReleaseGroupId": "499a8142-b8a7-3ab1-a3db-641a41860afb"
+      },
+      {
+        "title": "Bookends",
+        "year": "1968",
+        "mbReleaseGroupId": "f4a26672-dcd8-342d-ad09-2b612d91c9fb"
+      },
+      {
+        "title": "Bridge Over Troubled Water",
+        "year": "1970",
+        "mbReleaseGroupId": "c39f7f80-d42f-3669-9653-230f8e922083"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "4fWyzwo1xg0",
+        "title": "The Sounds of Silence (Audio)"
+      },
+      {
+        "youtubeId": "9C1BCAgu2I8",
+        "title": "Mrs. Robinson (Audio)"
+      },
+      {
+        "youtubeId": "4G-YQA_bsOU",
+        "title": "Bridge Over Troubled Water (Audio)"
+      },
+      {
+        "youtubeId": "l3LFML_pxlY",
+        "title": "The Boxer (Audio)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Paul Simon and Art Garfunkel met as sixth-grade classmates in Queens, New York, first recording together as teenagers under the name Tom & Jerry — Simon as \"Jerry Landis,\" Garfunkel as \"Tom Graph\" — scoring a minor 1957 hit with \"Hey Schoolgirl.\"",
+      "\"The Sound of Silence\" was an acoustic track on their 1964 debut that went nowhere; producer Tom Wilson overdubbed electric instruments without the duo's knowledge in 1965, and the revised version became a surprise No. 1 hit, reuniting Simon and Garfunkel after they had already split up.",
+      "Bridge Over Troubled Water (1970) won Album of the Year and its title track won Record of the Year at the 13th Annual Grammy Awards, following Mrs. Robinson's Record of the Year and Best Contemporary Song wins in 1969 — part of seven total Grammy wins across their catalog. The duo were inducted into the Rock and Roll Hall of Fame in 1990.",
+      "They split in 1970 amid creative tensions, but reunited for a free concert in New York's Central Park on September 19, 1981, drawing a crowd estimated at roughly 500,000."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Simon & Garfunkel are no longer an active touring act.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "1981-09-19",
+        "venue": "Central Park",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/simon-and-garfunkel/1981/central-park-new-york-ny-bd585a6.html",
+        "note": "Free reunion concert"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Art Garfunkel on His Emotional Reunion With Paul Simon",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-features/simon-and-garfunkel-reunion-friendship-1235161302/"
+      },
+      {
+        "title": "Simon & Garfunkel — NPR artist page",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/artists/98847896/simon-garfunkel"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Catch-22 (1970)",
+        "context": "Art Garfunkel's film acting debut, playing Captain Nately.",
+        "url": "https://www.imdb.com/name/nm0307316/"
+      },
+      {
+        "kind": "film-role",
+        "title": "Carnal Knowledge (1971)",
+        "context": "Art Garfunkel starred opposite Jack Nicholson in Mike Nichols' film.",
+        "url": "https://www.imdb.com/name/nm0307316/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "slug": "amen-dunes",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Amen Dunes — Ear Clef",
+    "description": "Damon McMahon's shifting solo project — folk and psych roots, a surfer's dark-hero name-check, and a 2024 turn toward chopped loops and stand-up-comedy samples.",
+    "ogImage": "/images/og-amen-dunes.jpg",
+    "canonicalUrl": "https://earclef.com/amen-dunes"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "1jwOuEBcOKq0BeudSarbEM"
+    },
+    "youtube": {
+      "channelId": "UCurYp7uH6wCzrc9ugUxz2Xw"
+    },
+    "setlistfm": {
+      "mbid": "c926bc4a-97c9-4412-b56e-7e5844f09579"
+    },
+    "itunes": {
+      "artistId": "316671793"
+    }
+  },
+  "hero": {
+    "name": "Amen Dunes",
+    "identity": "Damon McMahon's shifting solo project — folk and psych roots pushed, on 2024's Death Jokes, toward chopped loops and sampled voices.",
+    "tagline": "Hear here!",
+    "location": "New York, NY, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "x",
+        "url": "https://twitter.com/amendunes"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/pages/Amen-Dunes/226703240696221"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@sacredbonesrecords"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/amen-dunes/316671793"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B002AB6LPU/amen-dunes"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Love",
+        "year": "2014",
+        "mbReleaseGroupId": "3c86d54a-6f91-40c7-8399-a26bf62492b9"
+      },
+      {
+        "title": "Freedom",
+        "year": "2018",
+        "mbReleaseGroupId": "5b8d6b45-e0a2-4846-8ce3-1f2d9fc9340d"
+      },
+      {
+        "title": "Death Jokes",
+        "year": "2024",
+        "mbReleaseGroupId": "ff421703-66d4-4194-ac25-66188ea80857"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "RONXqXaF8oI",
+        "title": "Miki Dora (Official Music Video)"
+      },
+      {
+        "youtubeId": "KgHA0sYvxsQ",
+        "title": "Believe (Official Music Video)"
+      },
+      {
+        "youtubeId": "A64wcAgpbrM",
+        "title": "Blue Rose (Official Music Video)"
+      },
+      {
+        "youtubeId": "iYKVhrV60dk",
+        "title": "Freedom"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Damon McMahon began recording as Amen Dunes in 2006, working out of a trailer in the Catskills on largely improvised material he didn't initially intend to release. Love (2014) and Freedom (2018), both on Sacred Bones Records, built the project's reputation on folk- and psych-rooted songwriting.",
+      "Freedom's title track and centerpiece single, \"Miki Dora,\" is named for the 1960s surfer Miklos \"Miki\" Dora — a gifted, self-destructive figure McMahon researched while writing about surf subculture and came to see as a stand-in for a morally complicated, self-sabotaging kind of masculinity.",
+      "Death Jokes (2024), released on Sub Pop, marked a sharp turn toward UK garage-influenced programmed drums, chopped loops and samples drawn from stand-up comedy, protests and raves — a departure from the folk-and-blues palette of McMahon's earlier records.",
+      "A remix companion, Death Jokes II, followed later the same year."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced via Amen Dunes' official channels.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-05-15",
+        "venue": "Brooklyn Steel",
+        "city": "Brooklyn, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/amen-dunes/2024/brooklyn-steel-brooklyn-ny-43a97bf7.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Freedom — Sacred Bones 15 Year Anniversary Miki Dora Blue Wave Edition",
+        "description": "From the official Amen Dunes Bandcamp store.",
+        "image": {
+          "src": "https://f4.bcbits.com/img/0011175142_37.jpg",
+          "alt": "Freedom — Sacred Bones 15 Year Anniversary Miki Dora Blue Wave Edition"
+        },
+        "url": "https://amendunes.bandcamp.com/merch"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Amen Dunes: Between Relief And Resignation",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2012/01/10/144924870/amen-dunes-between-relief-and-resignation"
+      },
+      {
+        "title": "Why an NYC Indie Artist's Newest Single Is Named After Surfing's Enigmatic Anti-Hero Miki Dora",
+        "outlet": "The Inertia",
+        "url": "https://www.theinertia.com/music-art/why-an-nyc-indie-artists-newest-single-is-named-after-surfings-enigmatic-anti-hero-miki-dora/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

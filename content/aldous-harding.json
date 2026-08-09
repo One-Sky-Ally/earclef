@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "slug": "aldous-harding",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Aldous Harding — Ear Clef",
+    "description": "Hannah Harding's shape-shifting New Zealand folk — a voice that changes character song to song, and videos built like unsettling one-take theater.",
+    "ogImage": "/images/og-aldous-harding.jpg",
+    "canonicalUrl": "https://earclef.com/aldous-harding"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "3lmR0qMiGuoIF9UC54egcG"
+    },
+    "youtube": {
+      "channelId": "UCvYnfuCRhq6PRYK2MltekXA"
+    },
+    "setlistfm": {
+      "mbid": "1d779dfd-d292-48b5-b232-a09687b9881a"
+    },
+    "itunes": {
+      "artistId": "896764341"
+    }
+  },
+  "hero": {
+    "name": "Aldous Harding",
+    "identity": "Hannah Harding's shape-shifting New Zealand folk — a voice that changes character from song to song, sometimes within one.",
+    "tagline": "Hear here!",
+    "location": "Lyttelton, New Zealand",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.aldousharding.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/aldousharding/"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/AldousHarding"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@AldousHardingOfficial"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/aldous-harding/896764341"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B00MEWX9LE/aldous-harding"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Party",
+        "year": "2017",
+        "mbReleaseGroupId": "3bf363af-0939-443f-8334-28cf96579134"
+      },
+      {
+        "title": "Designer",
+        "year": "2019",
+        "mbReleaseGroupId": "189a9252-59e5-4395-b745-f690915cf213"
+      },
+      {
+        "title": "Warm Chris",
+        "year": "2022",
+        "mbReleaseGroupId": "0e5fc317-a896-4463-b498-010d80ab6645"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "pTgyJ8jWD3M",
+        "title": "Zoo Eyes (Official Video)"
+      },
+      {
+        "youtubeId": "jHR3uEOkkSo",
+        "title": "Blend (Official Video)"
+      },
+      {
+        "youtubeId": "qPB6iPXhkdI",
+        "title": "Fixture Picture (Official Video)"
+      },
+      {
+        "youtubeId": "1V7rHcvqDyY",
+        "title": "Old Peel (Official Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Born Hannah Sian Topp, she performs as Aldous Harding — taking her stage surname from her mother, Lorina Harding, a Canadian-born folk and blues singer-songwriter who settled in New Zealand. Aldous made her recording debut at 13, co-writing a song on one of her mother's albums.",
+      "Party (2017) won the Taite Music Prize for Album of the Year, and 'The Barrel,' from 2019's Designer, won the APRA Silver Scroll Award for song of the year — two of New Zealand's most prestigious music honors within about a year of each other.",
+      "Her videos, often co-directed with Martin Sagadin, are built as unsettling, theatrical one-take performances — 'The Barrel' has Harding alone on camera in eccentric costume through an entire song-and-dance routine; 'Zoo Eyes' follows her across a fog-covered mountain range flanked by a ghost and a monster.",
+      "Widely described as having an elastic, shape-shifting voice, Harding continues to record and tour internationally, releasing Train on the Island in 2026."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at aldousharding.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-07-12",
+        "venue": "Tanzbrunnen",
+        "city": "Cologne, Germany",
+        "setlistUrl": "https://www.setlist.fm/setlist/aldous-harding/2026/tanzbrunnen-cologne-germany-6b73c296.html",
+        "note": "Even Flow Festival 2026"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Train on the Island",
+        "description": "From the official Aldous Harding store.",
+        "image": {
+          "src": "https://d1rgjmn2wmqeif.cloudfront.net/f/s/1921114.png",
+          "alt": "Train on the Island"
+        },
+        "url": "https://shop.aldousharding.com/"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Aldous Harding Lives In The Haunted Ether With 'Zoo Eyes'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2019/10/08/768249692/aldous-harding-lives-in-the-haunted-ether-with-zoo-eyes"
+      },
+      {
+        "title": "Aldous Harding's 'Warm Chris' Review: Voice, Authenticity",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2022/04/11/1090327490/aldous-harding-warm-chris-review-voice-authenticity"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

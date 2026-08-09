@@ -40,6 +40,49 @@
       "at": "2026-07-26T09:20:00Z"
     },
     {
+      "id": "aldous-harding-aaf70b38",
+      "slug": "aldous-harding",
+      "artistName": "Aldous Harding",
+      "type": "context",
+      "hook": "\"The Barrel\" won her New Zealand's top song-of-the-year prize.",
+      "story": "\"The Barrel,\" from 2019's Designer, won the APRA Silver Scroll Award, New Zealand's premier songwriting honor — following Party's 2018 win of the Taite Music Prize for Album of the Year, giving Harding two of the country's biggest music prizes within about a year of each other.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Aldous Harding wins the 2018 Taite Music Prize",
+          "outlet": "RNZ",
+          "url": "https://www.rnz.co.nz/national/programmes/nat-music/audio/2018641068/aldous-harding-wins-the-2018-taite-music-prize"
+        },
+        {
+          "title": "Aldous Harding wins Silver Scroll",
+          "outlet": "Stuff",
+          "url": "https://www.stuff.co.nz/entertainment/music/116273428"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-08T00:30:00Z"
+    },
+    {
+      "id": "aldous-harding-32c51e0e",
+      "slug": "aldous-harding",
+      "artistName": "Aldous Harding",
+      "type": "origin",
+      "hook": "Her stage name comes from her mother, folk singer Lorina Harding.",
+      "story": "Born Hannah Sian Topp, she took the surname Harding from her mother, Lorina Harding, a folk and blues singer-songwriter who had settled in New Zealand. Aldous made her own recording debut at 13, co-writing a song that appeared on one of her mother's albums.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Aldous Harding",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Aldous_Harding"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-08T00:30:00Z"
+    },
+    {
       "id": "amadou-mariam-41d38f6b",
       "slug": "amadou-mariam",
       "artistName": "Amadou & Mariam",
@@ -81,6 +124,102 @@
       "status": "published",
       "model": "claude-sonnet-5",
       "at": "2026-08-07T00:45:00Z"
+    },
+    {
+      "id": "amen-dunes-9920575",
+      "slug": "amen-dunes",
+      "artistName": "Amen Dunes",
+      "type": "context",
+      "hook": "\"Miki Dora\" is named for a surfer McMahon calls a stand-in for his own contradictions.",
+      "story": "Researching surf subculture while writing Freedom, Damon McMahon found 1960s surfer Miklos \"Miki\" Dora — a gifted, self-destructive figure McMahon has described as arguably the most innovative surfer of his generation and also \"a lifelong criminal and retrograde.\" McMahon named the album's centerpiece track after him, saying Dora served as a heroic-yet-flawed figure he could empathize with and see himself in.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Why an NYC Indie Artist's Newest Single Is Named After Surfing's Enigmatic Anti-Hero Miki Dora",
+          "outlet": "The Inertia",
+          "url": "https://www.theinertia.com/music-art/why-an-nyc-indie-artists-newest-single-is-named-after-surfings-enigmatic-anti-hero-miki-dora/"
+        },
+        {
+          "title": "Freedom (Amen Dunes album)",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Freedom_(Amen_Dunes_album)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-08T01:00:00Z"
+    },
+    {
+      "id": "amen-dunes-b36fb1fb",
+      "slug": "amen-dunes",
+      "artistName": "Amen Dunes",
+      "type": "context",
+      "hook": "Death Jokes samples stand-up comedy, protests and raves over UK garage-style drums.",
+      "story": "2024's Death Jokes broke sharply from Amen Dunes' folk- and blues-rooted earlier records, built instead around UK garage-influenced programmed drums, chopped loops, and samples pulled from stand-up comedy sets, protest footage and rave recordings — a deliberate departure reviewers framed as the project's most radical reinvention to date.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Premature Evaluation: Amen Dunes Death Jokes",
+          "outlet": "Stereogum",
+          "url": "https://stereogum.com/2261838/premature-evaluation-amen-dunes-death-jokes/reviews/premature-evaluation"
+        },
+        {
+          "title": "Amen Dunes: Death Jokes — a knotty triumph",
+          "outlet": "The Line of Best Fit",
+          "url": "https://www.thelineofbestfit.com/albums/amen-dunes-death-jokes-knotty-triumph"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-08T01:00:00Z"
+    },
+    {
+      "id": "andrew-bird-fd92d29c",
+      "slug": "andrew-bird",
+      "artistName": "Andrew Bird",
+      "type": "context",
+      "hook": "Noah Hawley wrote him into Fargo after a show, no audition required.",
+      "story": "Bird had never acted before FX's Fargo cast him in Season 4 as funeral-home owner Thurman Smutny. Showrunner Noah Hawley caught one of Bird's shows in Austin and offered him the role afterward with no audition — when Bird asked what made Hawley think he could act, Hawley reportedly just said, \"You're a dad right?\"",
+      "media": null,
+      "sources": [
+        {
+          "title": "Andrew Bird Can't Believe He's on 'Fargo' Either",
+          "outlet": "Billboard",
+          "url": "https://www.billboard.com/culture/tv-film/andrew-bird-interview-fargo-9457575/"
+        },
+        {
+          "title": "Andrew Bird Explains How He Got Cast In Fargo",
+          "outlet": "Stereogum",
+          "url": "https://stereogum.com/2100711/how-fargo-cast-andrew-bird/news"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-08T00:15:00Z"
+    },
+    {
+      "id": "andrew-bird-e98a89cd",
+      "slug": "andrew-bird",
+      "artistName": "Andrew Bird",
+      "type": "context",
+      "hook": "He builds songs live by looping his own violin through foot pedals.",
+      "story": "Bird started on classical violin via the Suzuki Method at age four, and on stage he turns that training into something else entirely — plucking and bowing short phrases, looping them live through foot pedals, and layering the results into full arrangements alongside his signature whistling, used as a lead melodic voice in its own right.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Andrew Bird's World Of Wit, Whimsy And Whistling",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/2012/03/11/148307708/andrew-birds-world-of-wit-whimsy-and-whistling"
+        },
+        {
+          "title": "Violinist, Singer-Songwriter Andrew Bird",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/2005/11/17/5016744/violinist-singer-songwriter-andrew-bird"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-08T00:15:00Z"
     },
     {
       "id": "aphex-twin-7ab09d9c",
@@ -3123,6 +3262,44 @@
       "status": "published",
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-19T08:32:27.000Z"
+    },
+    {
+      "id": "fleet-foxes-342a7685",
+      "slug": "fleet-foxes",
+      "artistName": "Fleet Foxes",
+      "type": "context",
+      "hook": "Shore dropped without warning at the exact minute of the 2020 autumnal equinox.",
+      "story": "After a pandemic spent recording largely alone in upstate New York, Robin Pecknold surprise-released Shore on September 22, 2020 — timed to arrive at 13:31 UTC, the precise minute of that year's autumnal equinox, with no advance singles or announcement.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Fleet Foxes' Shore is out now",
+          "outlet": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-news/fleet-foxes-shore-autumnal-equinox-1063858/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-08T00:00:00Z"
+    },
+    {
+      "id": "fleet-foxes-19451154",
+      "slug": "fleet-foxes",
+      "artistName": "Fleet Foxes",
+      "type": "context",
+      "hook": "Their drummer on Helplessness Blues later became Father John Misty.",
+      "story": "Josh Tillman played drums in Fleet Foxes starting in 2008, appearing on Helplessness Blues (2011), before leaving to record under his own name as Father John Misty — a project that would go on to eclipse his time behind the kit in the band that gave him his start.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Father John Misty",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Father_John_Misty"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-08T00:00:00Z"
     },
     {
       "id": "flogging-molly-ff6c5de8",
@@ -7893,6 +8070,49 @@
       "status": "published",
       "model": "claude-sonnet-5",
       "at": "2026-08-07T00:00:00Z"
+    },
+    {
+      "id": "simon-and-garfunkel-c59c789c",
+      "slug": "simon-and-garfunkel",
+      "artistName": "Simon & Garfunkel",
+      "type": "context",
+      "hook": "\"The Sound of Silence\" flopped acoustic, then hit #1 after a producer overdubbed it without their knowledge.",
+      "story": "The acoustic version of \"The Sound of Silence\" on their 1964 debut, Wednesday Morning, 3 A.M., sold poorly, and the duo split up soon after. In 1965, producer Tom Wilson overdubbed electric guitar, bass and drums onto the original recording without telling either of them — the reworked single became a surprise No. 1 hit and brought Simon and Garfunkel back together.",
+      "media": null,
+      "sources": [
+        {
+          "title": "The Sound of Silence",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Sound_of_Silence"
+        },
+        {
+          "title": "Simon & Garfunkel",
+          "outlet": "IMDb",
+          "url": "https://www.imdb.com/name/nm3061241/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-08T00:45:00Z"
+    },
+    {
+      "id": "simon-and-garfunkel-f98cee6d",
+      "slug": "simon-and-garfunkel",
+      "artistName": "Simon & Garfunkel",
+      "type": "context",
+      "hook": "Their 1981 free reunion concert in Central Park drew roughly half a million people.",
+      "story": "Eleven years after splitting up, Paul Simon and Art Garfunkel reunited for a free concert in New York's Central Park on September 19, 1981, staged as a benefit for park restoration. Estimates of the crowd run as high as 500,000, making it one of the largest concert audiences in history.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Simon & Garfunkel",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Simon_%26_Garfunkel"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-08T00:45:00Z"
     },
     {
       "id": "st-vincent-95618a19",

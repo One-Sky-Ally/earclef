@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "slug": "andrew-bird",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Andrew Bird — Ear Clef",
+    "description": "Violin loops, precision whistling and a Suzuki-trained ear — the songwriter Noah Hawley cast in Fargo with no audition.",
+    "ogImage": "/images/og-andrew-bird.jpg",
+    "canonicalUrl": "https://earclef.com/andrew-bird"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "4uSftVc3FPWe6RJuMZNEe9"
+    },
+    "youtube": {
+      "channelId": "UC2NgiwU_-fa2TV95KG3jFLg"
+    },
+    "setlistfm": {
+      "mbid": "081b133e-ce74-42ba-92c1-c18234acb532"
+    },
+    "itunes": {
+      "artistId": "3883114"
+    }
+  },
+  "hero": {
+    "name": "Andrew Bird",
+    "identity": "Violin loops and precision whistling built on Suzuki-method training — a songwriter who also plays a funeral-home owner on Fargo.",
+    "tagline": "Hear here!",
+    "location": "Chicago, IL, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.andrewbird.net/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/andrewbirdmusic/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/andrewbird"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/AndrewBirdMusic"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@andrewbirdmusic"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/andrew-bird/3883114"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJHQ0C/andrew-bird"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "The Mysterious Production of Eggs",
+        "year": "2005",
+        "mbReleaseGroupId": "d16539c7-5126-3e40-9e67-1a732d1cb18d"
+      },
+      {
+        "title": "Armchair Apocrypha",
+        "year": "2007",
+        "mbReleaseGroupId": "496c5117-b89d-31e2-87ce-00b8fc96d341"
+      },
+      {
+        "title": "Are You Serious",
+        "year": "2016",
+        "mbReleaseGroupId": "f8ff1a52-b8ae-4273-8e32-50661a9f52d3"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "zug1B8DSkWw",
+        "title": "Sisyphus"
+      },
+      {
+        "youtubeId": "b3dw3NHwbvI",
+        "title": "Capsized"
+      },
+      {
+        "youtubeId": "oecHq2neweA",
+        "title": "Pulaski at Night"
+      },
+      {
+        "youtubeId": "0iMwRlpbkBY",
+        "title": "Roma Fade (Official Lyric Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Andrew Bird began classical violin training via the Suzuki Method at age four, later playing on three Squirrel Nut Zippers albums and fronting his own swing-jazz outfit, Andrew Bird's Bowl of Fire, from 1997 to 2003 before launching his solo career.",
+      "His records are built on two signature techniques: a precise, melodic whistle used as a lead voice, and live violin looping, where plucked and bowed phrases are layered via foot pedals into full arrangements in real time.",
+      "In 2020, Bird made his scripted acting debut on FX's Fargo, playing funeral-home owner Thurman Smutny — a role showrunner Noah Hawley reportedly wrote for him and offered with no audition after catching one of his shows in Austin.",
+      "He received a Grammy nomination for Best Contemporary Folk Album for My Finest Work Yet (2020) and continues to compose for film and television, including scoring work for FX's Baskets and The Bubble."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at andrewbird.net.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-08-06",
+        "venue": "Central Park SummerStage",
+        "city": "New York, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/andrew-bird/2026/central-park-summerstage-new-york-ny-53705f0d.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Andrew Bird & The Mysterious Production of Eggs Deluxe Box Set",
+        "description": "From the official Andrew Bird store.",
+        "image": {
+          "src": "https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/119/744/full/AB_Boxsetupdated.png?1773262547",
+          "alt": "Andrew Bird & The Mysterious Production of Eggs Deluxe Box Set"
+        },
+        "url": "https://andrewbird.merchtable.com"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Andrew Bird's World Of Wit, Whimsy And Whistling",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2012/03/11/148307708/andrew-birds-world-of-wit-whimsy-and-whistling"
+      },
+      {
+        "title": "Andrew Bird Can't Believe He's on 'Fargo' Either",
+        "outlet": "Billboard",
+        "url": "https://www.billboard.com/culture/tv-film/andrew-bird-interview-fargo-9457575/"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Fargo, Season 4 (2020) — as Thurman Smutny",
+        "context": "Bird's acting debut, playing a funeral-home owner in a role Noah Hawley reportedly wrote for him and offered with no audition.",
+        "url": "https://www.imdb.com/title/tt2802850/characters/nm1913095"
+      },
+      {
+        "kind": "film-score",
+        "title": "Norman (2010)",
+        "context": "Bird's film-scoring debut, released as an accompanying album.",
+        "url": "https://www.imdb.com/name/nm1913095/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

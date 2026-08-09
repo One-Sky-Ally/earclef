@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "slug": "fleet-foxes",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Fleet Foxes — Ear Clef",
+    "description": "Robin Pecknold's Seattle indie folk band — chorale harmonies, a surprise equinox-timed album, and a former drummer who became Father John Misty.",
+    "ogImage": "/images/og-fleet-foxes.jpg",
+    "canonicalUrl": "https://earclef.com/fleet-foxes"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "4EVpmkEwrLYEg6jIsiPMIb"
+    },
+    "youtube": {
+      "channelId": "UCna-InS-5L5qv82diztOT7A"
+    },
+    "setlistfm": {
+      "mbid": "fa97dd36-1b82-43d7-a6e4-2adeafd59cef"
+    },
+    "itunes": {
+      "artistId": "275727569"
+    }
+  },
+  "hero": {
+    "name": "Fleet Foxes",
+    "identity": "Robin Pecknold's Seattle indie folk band — stacked chorale harmonies built on a love of Brian Wilson and The Beach Boys.",
+    "tagline": "Hear here!",
+    "location": "Seattle, WA, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.fleetfoxes.co/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/fleetfoxes/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/fleetfoxessing"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/pages/Fleet-Foxes/24709128407"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@FleetFoxes"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/fleet-foxes/275727569"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B0016NB072/fleet-foxes"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Fleet Foxes",
+        "year": "2008",
+        "mbReleaseGroupId": "af9a5099-04c5-3aaf-b0d1-fa160bd92e02"
+      },
+      {
+        "title": "Helplessness Blues",
+        "year": "2011",
+        "mbReleaseGroupId": "d569deba-8c6b-4d08-8c43-d0e5a1b8c7f3"
+      },
+      {
+        "title": "Shore",
+        "year": "2020",
+        "mbReleaseGroupId": "46de46b0-ecad-4b12-b26e-2b453b4c001f"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "DrQRS40OKNE",
+        "title": "White Winter Hymnal (Official Video)"
+      },
+      {
+        "youtubeId": "DT-dxG4WWf4",
+        "title": "Mykonos (Official Video)"
+      },
+      {
+        "youtubeId": "L2E2DpWO3-Y",
+        "title": "Can I Believe You (Official Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Fleet Foxes formed in Seattle around Robin Pecknold, building a sound out of stacked, chorale-style vocal harmonies often traced to Pecknold's love of Brian Wilson and The Beach Boys. Their self-titled 2008 debut introduced that sound fully formed, with drummer Josh Tillman — later known as Father John Misty — playing on 2011's Helplessness Blues before leaving to pursue his own project.",
+      "The band went quiet for roughly six years after Helplessness Blues before returning with Crack-Up (2017), a more restless, structurally complex record.",
+      "Shore arrived without warning on September 22, 2020, released at 13:31 UTC — the exact minute of the autumnal equinox — after Pecknold had spent the pandemic recording in upstate New York and the Hudson Valley.",
+      "Both Helplessness Blues (2012) and Shore (2022) earned Grammy nominations for Best Folk Album and Best Alternative Music Album respectively."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at fleetfoxes.co.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-09-28",
+        "venue": "Seaside Park",
+        "city": "Bridgeport, CT, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/fleet-foxes/2024/seaside-park-bridgeport-ct-63a90e7f.html",
+        "note": "Soundside Music Festival"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Shore Double Vinyl",
+        "description": "From the official Fleet Foxes store.",
+        "image": {
+          "src": "https://store.fleetfoxes.co/cdn/shop/files/FF050010_Fleet_Foxes_Shore_2x12_Inch_Black_Vinyl_1_600x.png?v=1774977760",
+          "alt": "Shore Double Vinyl"
+        },
+        "url": "https://store.fleetfoxes.co/products/shore-double-vinyl"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Fleet Foxes: Indie-Pop's Celestial Choir",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2008/08/07/93370888/fleet-foxes-indie-pops-celestial-choir"
+      },
+      {
+        "title": "First Listen: Fleet Foxes, 'Crack-Up'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2017/06/08/531099733/first-listen-fleet-foxes-crack-up"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
