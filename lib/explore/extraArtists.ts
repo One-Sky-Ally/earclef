@@ -21,6 +21,11 @@ export interface ExtraArtist {
   releaseCount: number
   discogsArtistId: number | string | null
   wikidataId: string | null
+  /**
+   * Owner-attested alternate spellings (e.g. K. Viseth's three Lao
+   * variants). Exact-match material for resolution — never display.
+   */
+  aliases?: string[]
 }
 
 const DATASET = extraArtists as unknown as {

@@ -108,7 +108,10 @@ async function getJson(url, headers = {}) {
   }
 }
 
-/** Alias set: credit name + "=" script variants + Wikidata labels. */
+/**
+ * Alias set: credit name + "=" script variants + owner-attested
+ * aliases from the dataset + Wikidata labels.
+ */
 async function buildAliases(artist) {
   const aliases = [
     artist.name,
@@ -116,6 +119,7 @@ async function buildAliases(artist) {
       .split('=')
       .map((segment) => segment.replace(/\*\s*$/, '').trim())
       .filter((segment) => segment.length > 1),
+    ...(artist.aliases ?? []),
   ]
   if (artist.wikidataId) {
     const body = await getJson(
