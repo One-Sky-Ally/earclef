@@ -21,6 +21,23 @@ const DATASET_PATH = join(process.cwd(), 'lib', 'explore', 'extra-artists.json')
 
 /** creditString -> [{name, discogsArtistId}] — the owner-approved set. */
 const APPROVED = {
+  // Round 2 (Aug 8, 2026): the three exact-overlap strings — members
+  // duplicated solo entries a visitor could see twice. ບຸນທົງ and
+  // RDKPL enter name-only (id-less is an established dataset class);
+  // RDKPL appears in BOTH duo orderings and must land as ONE entry
+  // (the in-run dedup guarantees it).
+  'ໄຊຊນະ / ບຸນທົງ': [
+    { name: 'ໄຊຊນະ', discogsArtistId: 9950425 },
+    { name: 'ບຸນທົງ', discogsArtistId: null },
+  ],
+  'RDKPL* / MOGOLICO NOISE': [
+    { name: 'RDKPL', discogsArtistId: null },
+    { name: 'Mogolico Noise', discogsArtistId: 12606842 },
+  ],
+  'MOGOLICO NOISE / RDKPL': [
+    { name: 'Mogolico Noise', discogsArtistId: 12606842 },
+    { name: 'RDKPL', discogsArtistId: null },
+  ],
   'ນິດ ວິຈິຕະວົງ / ພຣມເທບ': [
     { name: 'ນິດ ວິຈິຕະວົງ', discogsArtistId: 7781236 },
     { name: 'ພຣມເທບ', discogsArtistId: 7781235 },
@@ -76,10 +93,13 @@ for (const [country, artists] of Object.entries(dataset.countries)) {
       continue
     }
     for (const member of members) {
+      // Id match only when BOTH sides have one — null === null must
+      // never count as "already present" for name-only members.
       const exists = next.concat(artists).some(
         (candidate) =>
           candidate !== artist &&
-          (candidate.discogsArtistId === member.discogsArtistId ||
+          ((member.discogsArtistId != null &&
+            candidate.discogsArtistId === member.discogsArtistId) ||
             normalizeName(candidate.name) === normalizeName(member.name)),
       )
       if (exists) {

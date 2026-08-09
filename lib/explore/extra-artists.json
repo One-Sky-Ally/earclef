@@ -278,7 +278,7 @@
     "wikidataId": null
    },
    {
-    "name": "ໄຊຊນະ / ບຸນທົງ",
+    "name": "ບຸນທົງ",
     "source": "discogs",
     "firstYear": null,
     "lastYear": null,
@@ -1836,7 +1836,7 @@
     "wikidataId": null
    },
    {
-    "name": "RDKPL* / MOGOLICO NOISE",
+    "name": "RDKPL",
     "source": "discogs",
     "firstYear": 2023,
     "lastYear": 2025,
@@ -3675,20 +3675,6 @@
      "Chamamé",
      "Guarania",
      "Folk"
-    ],
-    "releaseCount": 1,
-    "discogsArtistId": null,
-    "wikidataId": null
-   },
-   {
-    "name": "MOGOLICO NOISE / RDKPL",
-    "source": "discogs",
-    "firstYear": 2024,
-    "lastYear": 2024,
-    "styles": [
-     "Experimental",
-     "Noise",
-     "Abstract"
     ],
     "releaseCount": 1,
     "discogsArtistId": null,
