@@ -1865,6 +1865,873 @@
   },
   "dg:5868763": {
    "play": null
+  },
+  "dg:8068439": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=oXVTJZzASqI"
+   }
+  },
+  "dg:4402253": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=84TUiG4pVOA"
+   }
+  },
+  "dg:5845057": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=XYxqqZmkvZg"
+   }
+  },
+  "dg:5731979": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=V0DK9MOYLKU"
+   }
+  },
+  "dg:10080832": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=M8rZfLLgZDQ"
+   }
+  },
+  "dg:5037917": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=aFgIIZhIqXM"
+   }
+  },
+  "dg:7807640": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=TzYIqqwNS0c"
+   }
+  },
+  "dg:4389603": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=xb_snqur2P8"
+   }
+  },
+  "dg:4381609": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=_CK2ZndTryk"
+   }
+  },
+  "dg:4195730": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=MtG0larJgs8"
+   }
+  },
+  "dg:5339496": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=USSFFKb1_r4"
+   }
+  },
+  "dg:4201030": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=xb_snqur2P8"
+   }
+  },
+  "dg:6139507": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=zGEiGDCLW5U"
+   }
+  },
+  "dg:3326553": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=IKeQwjKBCx8"
+   }
+  },
+  "dg:17537799": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=jVOh538MHKg"
+   }
+  },
+  "dg:4716286": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=sjZZ-kRukhI"
+   }
+  },
+  "dg:5802688": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=pjiaKQ6XB04"
+   }
+  },
+  "dg:5637477": {
+   "play": null
+  },
+  "dg:16011108": {
+   "play": null
+  },
+  "dg:6460148": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=MFahizhumsY"
+   }
+  },
+  "dg:4310337": {
+   "play": null
+  },
+  "dg:4878425": {
+   "play": null
+  },
+  "dg:6433651": {
+   "play": null
+  },
+  "dg:6562286": {
+   "play": null
+  },
+  "dg:6625821": {
+   "play": null
+  },
+  "dg:6433649": {
+   "play": null
+  },
+  "dg:6563849": {
+   "play": null
+  },
+  "dg:5868745": {
+   "play": null
+  },
+  "dg:7781248": {
+   "play": null
+  },
+  "dg:6563844": {
+   "play": null
+  },
+  "dg:9950980": {
+   "play": null
+  },
+  "dg:7781247": {
+   "play": null
+  },
+  "dg:6527613": {
+   "play": null
+  },
+  "dg:6560930": {
+   "play": null
+  },
+  "dg:4170470": {
+   "play": null
+  },
+  "dg:6562319": {
+   "play": null
+  },
+  "dg:9950968": {
+   "play": null
+  },
+  "dg:4310312": {
+   "play": null
+  },
+  "dg:7728595": {
+   "play": null
+  },
+  "dg:6433650": {
+   "play": null
+  },
+  "dg:7728596": {
+   "play": null
+  },
+  "dg:6433648": {
+   "play": null
+  },
+  "dg:6562317": {
+   "play": null
+  },
+  "dg:9950977": {
+   "play": null
+  },
+  "dg:6563883": {
+   "play": null
+  },
+  "dg:6599463": {
+   "play": null
+  },
+  "dg:6599363": {
+   "play": null
+  },
+  "dg:6523356": {
+   "play": null
+  },
+  "dg:9951046": {
+   "play": null
+  },
+  "dg:9951043": {
+   "play": null
+  },
+  "dg:6563812": {
+   "play": null
+  },
+  "dg:6523355": {
+   "play": null
+  },
+  "dg:9950971": {
+   "play": null
+  },
+  "dg:6527670": {
+   "play": null
+  },
+  "dg:4310313": {
+   "play": null
+  },
+  "dg:6563784": {
+   "play": null
+  },
+  "dg:6625766": {
+   "play": null
+  },
+  "dg:13766569": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=wp4rcyDLr3U"
+   }
+  },
+  "dg:13766566": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=wp4rcyDLr3U"
+   }
+  },
+  "dg:11475059": {
+   "play": null
+  },
+  "dg:5637769": {
+   "play": null
+  },
+  "dg:6563884": {
+   "play": null
+  },
+  "dg:5266043": {
+   "play": null
+  },
+  "dg:6599362": {
+   "play": null
+  },
+  "dg:6563813": {
+   "play": null
+  },
+  "dg:6563885": {
+   "play": null
+  },
+  "dg:6562318": {
+   "play": null
+  },
+  "dg:6523357": {
+   "play": null
+  },
+  "dg:4393675": {
+   "play": null
+  },
+  "dg:5037920": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=rIYiNcmEDJ4"
+   }
+  },
+  "dg:1210430": {
+   "play": null
+  },
+  "dg:4491913": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=3jcbZZVVybM"
+   }
+  },
+  "dg:4404332": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=lm-otBDlA5A"
+   }
+  },
+  "dg:4521677": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=BVi9fjmKBf8"
+   }
+  },
+  "dg:4161794": {
+   "play": null
+  },
+  "dg:5582862": {
+   "play": null
+  },
+  "dg:16937554": {
+   "play": null
+  },
+  "dg:13067292": {
+   "play": null
+  },
+  "dg:5531465": {
+   "play": null
+  },
+  "dg:5271740": {
+   "play": null
+  },
+  "dg:15340245": {
+   "play": null
+  },
+  "dg:14117635": {
+   "play": null
+  },
+  "dg:5578083": {
+   "play": null
+  },
+  "dg:5296690": {
+   "play": null
+  },
+  "dg:15653139": {
+   "play": null
+  },
+  "dg:15340242": {
+   "play": null
+  },
+  "dg:7715816": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=FgO8YSOf0Gw"
+   }
+  },
+  "dg:5344266": {
+   "play": null
+  },
+  "dg:11503670": {
+   "play": null
+  },
+  "dg:4395171": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=bc7ANjtMTjQ"
+   }
+  },
+  "dg:5609781": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=UP3KuJcbpI8"
+   }
+  },
+  "dg:15576738": {
+   "play": null
+  },
+  "dg:7950879": {
+   "play": null
+  },
+  "dg:2860198": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=Lje0FNbkU4I"
+   }
+  },
+  "dg:15576843": {
+   "play": null
+  },
+  "dg:15561456": {
+   "play": null
+  },
+  "dg:2895058": {
+   "play": null
+  },
+  "dg:2720523": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=Bx9dGIOf3qU"
+   }
+  },
+  "dg:14435684": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=qwoQ55R0L3Y"
+   }
+  },
+  "dg:14600351": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=wmHFW9YA6FE"
+   }
+  },
+  "dg:6485997": {
+   "play": null
+  },
+  "dg:4738871": {
+   "play": null
+  },
+  "dg:7371077": {
+   "play": null
+  },
+  "dg:14451914": {
+   "play": null
+  },
+  "dg:13074534": {
+   "play": null
+  },
+  "dg:5564309": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=xoSnAzRxF04"
+   }
+  },
+  "dg:4393805": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=Oc-KkmLYGyc"
+   }
+  },
+  "dg:5159876": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=KqsB7JtRbmk"
+   }
+  },
+  "dg:5090722": {
+   "play": null
+  },
+  "dg:5055780": {
+   "play": null
+  },
+  "dg:4402274": {
+   "play": null
+  },
+  "dg:8122716": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=zTknmGecRr0"
+   }
+  },
+  "dg:3624940": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=2TOZqHUcTRY"
+   }
+  },
+  "dg:3624941": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=2TOZqHUcTRY"
+   }
+  },
+  "dg:3365333": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=stAjn3b5Uc0"
+   }
+  },
+  "dg:9912010": {
+   "play": null
+  },
+  "dg:4756649": {
+   "play": null
+  },
+  "dg:4385310": {
+   "play": null
+  },
+  "dg:13074531": {
+   "play": null
+  },
+  "dg:5273709": {
+   "play": null
+  },
+  "dg:5090730": {
+   "play": null
+  },
+  "dg:5283703": {
+   "play": null
+  },
+  "dg:14685342": {
+   "play": null
+  },
+  "dg:4490073": {
+   "play": null
+  },
+  "dg:10900519": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=Vvbhzoo13Gc"
+   }
+  },
+  "dg:5572475": {
+   "play": null
+  },
+  "dg:11542913": {
+   "play": null
+  },
+  "dg:13074528": {
+   "play": null
+  },
+  "dg:11552531": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=SVevt7AXg9k"
+   }
+  },
+  "dg:5135453": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=1n9ZMkZu1ps"
+   }
+  },
+  "dg:4632132": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=QC2PpoPdR1Y"
+   }
+  },
+  "dg:15964830": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=jxXUepCtZEI"
+   }
+  },
+  "dg:5270226": {
+   "play": null
+  },
+  "dg:11542709": {
+   "play": null
+  },
+  "dg:14685345": {
+   "play": null
+  },
+  "dg:5531461": {
+   "play": null
+  },
+  "dg:5283429": {
+   "play": null
+  },
+  "wd:Q111030448": {
+   "play": null
+  },
+  "dg:4260682": {
+   "play": null
+  },
+  "dg:4136082": {
+   "play": null
+  },
+  "dg:4023282": {
+   "play": null
+  },
+  "dg:17216677": {
+   "play": null
+  },
+  "dg:5568820": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=PkM_PY-7cSU"
+   }
+  },
+  "dg:5588324": {
+   "play": null
+  },
+  "dg:3126602": {
+   "play": null
+  },
+  "dg:4606267": {
+   "play": null
+  },
+  "dg:7335858": {
+   "play": null
+  },
+  "dg:5159556": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=B22hmRpt484"
+   }
+  },
+  "dg:5604860": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=M6TQU3DqWSc"
+   }
+  },
+  "dg:4378664": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=qPMqmM3lgL0"
+   }
+  },
+  "dg:5588325": {
+   "play": null
+  },
+  "dg:6636076": {
+   "play": null
+  },
+  "dg:5257022": {
+   "play": null
+  },
+  "dg:5037912": {
+   "play": null
+  },
+  "dg:6636094": {
+   "play": null
+  },
+  "dg:5281256": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=OZRSnCD4OUg"
+   }
+  },
+  "dg:5588410": {
+   "play": null
+  },
+  "nm:fausto-gonzalez-y-su-conjunto-paraguayo": {
+   "play": null
+  },
+  "dg:5254626": {
+   "play": null
+  },
+  "dg:4349957": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=ubWb_EXxXz4"
+   }
+  },
+  "dg:4389514": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=7hSTB7KZ-Gw"
+   }
+  },
+  "dg:5272271": {
+   "play": null
+  },
+  "dg:5037915": {
+   "play": null
+  },
+  "dg:5498840": {
+   "play": null
+  },
+  "dg:2102030": {
+   "play": null
+  },
+  "dg:1771831": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=YrFJ7Vx2dnA"
+   }
+  },
+  "nm:oscar-torales-su-piano-y-orquesta-de-cuerdas": {
+   "play": null
+  },
+  "dg:5498841": {
+   "play": null
+  },
+  "dg:5362024": {
+   "play": null
+  },
+  "dg:16223551": {
+   "play": null
+  },
+  "dg:5341422": {
+   "play": null
+  },
+  "dg:5287581": {
+   "play": null
+  },
+  "dg:5254439": {
+   "play": null
+  },
+  "dg:13626706": {
+   "play": null
+  },
+  "dg:13039716": {
+   "play": null
+  },
+  "dg:3126601": {
+   "play": null
+  },
+  "dg:5281848": {
+   "play": null
+  },
+  "dg:17474875": {
+   "play": null
+  },
+  "dg:6367780": {
+   "play": null
+  },
+  "dg:5584120": {
+   "play": null
+  },
+  "dg:5368639": {
+   "play": null
+  },
+  "dg:4381751": {
+   "play": null
+  },
+  "dg:6366856": {
+   "play": null
+  },
+  "dg:5678500": {
+   "play": null
+  },
+  "dg:18072231": {
+   "play": null
+  },
+  "dg:15066914": {
+   "play": null
+  },
+  "dg:5289704": {
+   "play": null
+  },
+  "dg:5272532": {
+   "play": null
+  },
+  "dg:5598267": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=84y65Y95ynw"
+   }
+  },
+  "dg:6582293": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=GkAXqwKEaCc"
+   }
+  },
+  "dg:14220931": {
+   "play": null
+  },
+  "dg:5589716": {
+   "play": null
+  },
+  "dg:16213960": {
+   "play": null
+  },
+  "dg:4822155": {
+   "play": null
+  },
+  "dg:5092272": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=bc7ANjtMTjQ"
+   }
+  },
+  "dg:9980344": {
+   "play": null
+  },
+  "dg:4513324": {
+   "play": null
+  },
+  "dg:5297468": {
+   "play": null
+  },
+  "dg:5279641": {
+   "play": null
+  },
+  "dg:4521680": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=DZ8PfXOV1fU"
+   }
+  },
+  "dg:6359742": {
+   "play": null
+  },
+  "dg:7048195": {
+   "play": null
+  },
+  "dg:5268717": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=5rhOo_HZ6Cg"
+   }
+  },
+  "dg:5279642": {
+   "play": null
+  },
+  "dg:5262555": {
+   "play": null
+  },
+  "dg:5270651": {
+   "play": null
+  },
+  "dg:6582292": {
+   "play": null
+  },
+  "dg:6363492": {
+   "play": null
+  },
+  "dg:5257023": {
+   "play": null
+  },
+  "dg:4398896": {
+   "play": null
+  },
+  "dg:5341423": {
+   "play": null
+  },
+  "dg:4383325": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=3jcbZZVVybM"
+   }
+  },
+  "dg:6246216": {
+   "play": null
+  },
+  "dg:5605436": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=IQG_Jcp_yag"
+   }
+  },
+  "dg:4395250": {
+   "play": null
+  },
+  "dg:3310372": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=xahFaIRoLAY"
+   }
+  },
+  "dg:9695200": {
+   "play": null
+  },
+  "dg:2405730": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=P4mr2hBNwU4"
+   }
+  },
+  "dg:5161114": {
+   "play": null
+  },
+  "dg:5254921": {
+   "play": null
+  },
+  "dg:1537921": {
+   "play": null
+  },
+  "dg:6738356": {
+   "play": null
+  },
+  "dg:5324324": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=9tAK9mpMnR0"
+   }
+  },
+  "dg:5678501": {
+   "play": null
+  },
+  "dg:1435581": {
+   "play": null
+  },
+  "dg:5270649": {
+   "play": null
+  },
+  "dg:6813658": {
+   "play": null
+  },
+  "dg:5037504": {
+   "play": null
   }
  }
 }

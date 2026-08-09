@@ -22,10 +22,16 @@ export interface ExtraArtist {
   discogsArtistId: number | string | null
   wikidataId: string | null
   /**
-   * Owner-attested alternate spellings (e.g. K. Viseth's three Lao
-   * variants). Exact-match material for resolution — never display.
+   * Alternate spellings: owner-attested (K. Viseth's variants) and,
+   * since the v2 structured-credits rebuild, Discogs ANVs. Exact-match
+   * material for resolution — never display.
    */
   aliases?: string[]
+  /**
+   * Entry kept from an earlier sweep after Discogs's country index
+   * dropped its release (index drift) — see retain-drift-dropped.mjs.
+   */
+  retainedFrom?: string
 }
 
 const DATASET = extraArtists as unknown as {
