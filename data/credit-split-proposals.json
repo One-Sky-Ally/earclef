@@ -1,0 +1,324 @@
+{
+ "proposals": [
+  {
+   "country": "LA",
+   "creditString": "ແສງອະຣຸນ / ກອບແກ້ວ",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "ແສງອະຣຸນ",
+     "discogsArtistId": 9950488,
+     "discogsTitle": "ແສງອະຣຸນ"
+    },
+    {
+     "member": "ກອບແກ້ວ",
+     "discogsArtistId": null,
+     "discogsTitle": null
+    }
+   ]
+  },
+  {
+   "country": "LA",
+   "creditString": "ໄຊຊນະ / ບຸນທົງ",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "ໄຊຊນະ",
+     "discogsArtistId": 9950425,
+     "discogsTitle": "ໄຊຊນະ"
+    },
+    {
+     "member": "ບຸນທົງ",
+     "discogsArtistId": null,
+     "discogsTitle": null
+    }
+   ]
+  },
+  {
+   "country": "LA",
+   "creditString": "ນິດ ວິຈິຕະວົງ / ພຣມເທບ",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "ນິດ ວິຈິຕະວົງ",
+     "discogsArtistId": 7781236,
+     "discogsTitle": "ນິດ ວິຈິຕະວົງ"
+    },
+    {
+     "member": "ພຣມເທບ",
+     "discogsArtistId": 7781235,
+     "discogsTitle": "ພຣມເທບ"
+    }
+   ]
+  },
+  {
+   "country": "LA",
+   "creditString": "ກ. ວຶເສສ / ນາງສາວຮະບຽບ",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "ກ. ວຶເສສ",
+     "discogsArtistId": 4897853,
+     "discogsTitle": "ກ. ວຶເສສ"
+    },
+    {
+     "member": "ນາງສາວຮະບຽບ",
+     "discogsArtistId": 6434178,
+     "discogsTitle": "ນາງສາວຮະບຽບ"
+    }
+   ]
+  },
+  {
+   "country": "LA",
+   "creditString": "ຈ້ນທະຮາ / ນ.ສ. ສົມຟອງ",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "ຈ້ນທະຮາ",
+     "discogsArtistId": 4310300,
+     "discogsTitle": "ຈ້ນທະຮາ"
+    },
+    {
+     "member": "ນ.ສ. ສົມຟອງ",
+     "discogsArtistId": null,
+     "discogsTitle": null
+    }
+   ]
+  },
+  {
+   "country": "LA",
+   "creditString": "ສຸມຸນທາ* / ຄຳເຕິມ ຊານຸບານ",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "ສຸມຸນທາ",
+     "discogsArtistId": null,
+     "discogsTitle": null
+    },
+    {
+     "member": "ຄຳເຕິມ ຊານຸບານ",
+     "discogsArtistId": 6993540,
+     "discogsTitle": "ຄຳເຕິມ ຊານຸບານ"
+    }
+   ]
+  },
+  {
+   "country": "LA",
+   "creditString": "ສົມຟອງ / ໄຊຊນະ",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "ສົມຟອງ",
+     "discogsArtistId": 9950524,
+     "discogsTitle": "ສົມຟອງ"
+    },
+    {
+     "member": "ໄຊຊນະ",
+     "discogsArtistId": 9950425,
+     "discogsTitle": "ໄຊຊນະ"
+    }
+   ]
+  },
+  {
+   "country": "LA",
+   "creditString": "ນ.ສ.ສົມຟອງ* / ຄຳຫລ້າ ໜໍ່ແກ້ວ",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "ນ.ສ.ສົມຟອງ",
+     "discogsArtistId": null,
+     "discogsTitle": null
+    },
+    {
+     "member": "ຄຳຫລ້າ ໜໍ່ແກ້ວ",
+     "discogsArtistId": 5868763,
+     "discogsTitle": "ຄຳຫລ້າ ໜໍ່ແກ້ວ"
+    }
+   ]
+  },
+  {
+   "country": "LA",
+   "creditString": "ນິດ ວິຈິຕວົງ / ພອນເທບ",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "ນິດ ວິຈິຕວົງ",
+     "discogsArtistId": 9950635,
+     "discogsTitle": "ນິດ ວິຈິຕວົງ"
+    },
+    {
+     "member": "ພອນເທບ",
+     "discogsArtistId": 9950638,
+     "discogsTitle": "ພອນເທບ"
+    }
+   ]
+  },
+  {
+   "country": "PY",
+   "creditString": "RDKPL* / MOGOLICO NOISE",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "RDKPL",
+     "discogsArtistId": null,
+     "discogsTitle": null
+    },
+    {
+     "member": "MOGOLICO NOISE",
+     "discogsArtistId": 12606842,
+     "discogsTitle": "Mogolico Noise"
+    }
+   ]
+  },
+  {
+   "country": "PY",
+   "creditString": "Cerati* / Melero",
+   "currentIds": {
+    "discogsArtistId": 7127894,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "Cerati",
+     "discogsArtistId": null,
+     "discogsTitle": null
+    },
+    {
+     "member": "Melero",
+     "discogsArtistId": null,
+     "discogsTitle": null
+    }
+   ]
+  },
+  {
+   "country": "PY",
+   "creditString": "Changoz! / Mifur",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "Changoz!",
+     "discogsArtistId": 3530775,
+     "discogsTitle": "Changoz!"
+    },
+    {
+     "member": "Mifur",
+     "discogsArtistId": 6552092,
+     "discogsTitle": "Mifur"
+    }
+   ]
+  },
+  {
+   "country": "PY",
+   "creditString": "Hellish Massacre / D.L.50",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "Hellish Massacre",
+     "discogsArtistId": 4788574,
+     "discogsTitle": "HELLISH MASSACRE"
+    },
+    {
+     "member": "D.L.50",
+     "discogsArtistId": 2661322,
+     "discogsTitle": "D.L.50"
+    }
+   ]
+  },
+  {
+   "country": "PY",
+   "creditString": "MOGOLICO NOISE / RDKPL",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "MOGOLICO NOISE",
+     "discogsArtistId": 12606842,
+     "discogsTitle": "Mogolico Noise"
+    },
+    {
+     "member": "RDKPL",
+     "discogsArtistId": null,
+     "discogsTitle": null
+    }
+   ]
+  },
+  {
+   "country": "PY",
+   "creditString": "RDKPL* / VECTOR",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "RDKPL",
+     "discogsArtistId": null,
+     "discogsTitle": null
+    },
+    {
+     "member": "VECTOR",
+     "discogsArtistId": 12453,
+     "discogsTitle": "Vector"
+    }
+   ]
+  },
+  {
+   "country": "PY",
+   "creditString": "Shitload / Mogolico Noise",
+   "currentIds": {
+    "discogsArtistId": null,
+    "wikidataId": null
+   },
+   "proposedMembers": [
+    {
+     "member": "Shitload",
+     "discogsArtistId": 8137328,
+     "discogsTitle": "Shitload"
+    },
+    {
+     "member": "Mogolico Noise",
+     "discogsArtistId": 12606842,
+     "discogsTitle": "Mogolico Noise"
+    }
+   ]
+  }
+ ]
+}

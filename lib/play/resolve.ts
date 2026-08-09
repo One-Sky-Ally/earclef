@@ -218,7 +218,7 @@ export async function resolveMbArtistPlay(
     `https://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels+aliases&fmt=json`,
   )) as {
     name?: string
-    aliases?: { name?: string }[]
+    aliases?: { name?: string; type?: string | null }[]
     relations?: MbUrlRelation[]
   } | null
   const rels = classifyRelations(body?.relations ?? [])
@@ -234,11 +234,16 @@ export async function resolveMbArtistPlay(
 
   // Alias set: exact-match against every documented spelling (MB
   // aliases carry romanizations), never against similar strings —
-  // more spellings, not looser matching.
+  // more spellings, not looser matching. Only alias types "Artist
+  // name" and "Legal name" count: untyped or search-hint aliases
+  // include bot-added junk, and a false exact match from junk is the
+  // Alexandra failure with better paperwork (owner ruling, Aug 8).
   const aliases = [
     ...(body?.name ? [body.name] : []),
     ...(body?.aliases ?? []).flatMap((alias) =>
-      alias.name ? [alias.name] : [],
+      alias.name && (alias.type === 'Artist name' || alias.type === 'Legal name')
+        ? [alias.name]
+        : [],
     ),
   ]
   const archive = aliases.length > 0 ? await archiveAudioItem(aliases) : null

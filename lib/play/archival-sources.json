@@ -1,0 +1,13 @@
+{
+  "_doc": "Vetted archival sources — OWNER-EDITED ONLY. This allowlist authorizes SOURCES, never matches artists: no code path writes here, and automation may VALIDATE entries (playability, channel membership via scripts/validate-archival.mjs) but never DISCOVER them. Every entry needs evidence of institutional legitimacy.",
+  "sources": [
+    {
+      "channelId": "UC33HtxQ55YJDkDsi0Q5XPsA",
+      "name": "Lao-online Foundation",
+      "evidenceUrl": "https://www.youtube.com/@lao-onlinefoundation",
+      "note": "Lao music archive channel, 1,400+ uploads of vintage Lao recordings with bilingual Lao/English titling, active since 2012.",
+      "addedBy": "stefano",
+      "addedOn": "2026-08-08"
+    }
+  ]
+}

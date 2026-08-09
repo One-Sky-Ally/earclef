@@ -4,6 +4,7 @@ import {
   committedExtraPlay,
   recoveredDiscogsId,
 } from '@/lib/explore/extraPlay'
+import { archivalPlay } from '@/lib/play/archival'
 import {
   resolveExtraArtistPlay,
   resolveMbArtistPlay,
@@ -118,6 +119,20 @@ export async function GET(
       : source === 'mb'
         ? null
         : extraRead(source, id)
+
+  // Highest trust first: an OWNER-curated archival mapping outranks
+  // every automated result — each one is a human judgment reviewed in
+  // a commit (lib/play/archival.ts).
+  const archival = archivalPlay(`${source}:${id}`)
+  if (archival) {
+    const mbRead: ReadLink = {
+      kind: 'musicbrainz',
+      url: `https://musicbrainz.org/artist/${id}`,
+    }
+    return withCacheHeaders(
+      NextResponse.json({ play: archival, read: read ?? mbRead }),
+    )
+  }
 
   // Committed sweep verdicts serve BEFORE any cache: they are a static
   // import (zero upstream cost) and authoritative — the sweep ran with

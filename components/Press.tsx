@@ -7,10 +7,10 @@ interface PressProps {
   artistName: string
 }
 
-export function Press({ press, artistName }: PressProps) {
-  const moreUrl = `https://www.ecosia.org/search?q=${encodeURIComponent(
-    `"${artistName}" music press news`,
-  )}`
+// The section lists only owner-curated press links. There is no
+// "More →" search fallthrough: a search link styled as a destination
+// violates the honesty principle (Aug 8, 2026 ruling).
+export function Press({ press }: PressProps) {
   return (
     <section id="press" className="section" aria-labelledby="press-heading">
       <div className="container">
@@ -42,14 +42,6 @@ export function Press({ press, artistName }: PressProps) {
             </li>
           ))}
         </ul>
-        <a
-          className={styles.moreLink}
-          href={moreUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          More →
-        </a>
       </div>
     </section>
   )

@@ -15,6 +15,8 @@ export type PlayKind =
   | 'soundcloud'
   | 'archive'
   | 'official'
+  /** Owner-curated video from an allowlisted archive (lib/play/archival.ts). */
+  | 'archival-video'
 
 export interface PlayLink {
   kind: PlayKind
@@ -41,4 +43,5 @@ export const PLAY_LABELS: Record<PlayKind, string> = {
   soundcloud: 'Listen on SoundCloud',
   archive: 'Listen on Internet Archive',
   official: "Artist's official site",
+  'archival-video': 'Watch on YouTube — vetted archive',
 }

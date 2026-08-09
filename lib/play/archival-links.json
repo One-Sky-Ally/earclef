@@ -1,0 +1,10 @@
+{
+  "_doc": "Owner-curated artist→video mappings from vetted archival sources. OWNER-EDITED ONLY: each entry is a human judgment tying one play key (see extraPlayKey / mb:<mbid>) to one video on an allowlisted channel. Automation validates (scripts/validate-archival.mjs), never adds. No name matching of any kind decides these.",
+  "links": {
+    "dg:4897853": {
+      "videoId": "x7yFLbuHdeg",
+      "sourceChannelId": "UC33HtxQ55YJDkDsi0Q5XPsA",
+      "label": "ຈ່າຕຣີລຳພັນ (Third class petty officer's jeremiad)"
+    }
+  }
+}
