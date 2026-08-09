@@ -100,6 +100,36 @@ export async function GET(
     return NextResponse.json({ error: 'Missing name' }, { status: 400 })
   }
 
+  // Id-less credits whose Discogs id the sweep recovered get a real
+  // artist page; the rest fall back to an all-sections search (the
+  // artist tab alone can be empty while their release still shows).
+  const recovered = source === 'nm' ? recoveredDiscogsId(`nm:${id}`) : null
+  const read =
+    source === 'nm'
+      ? recovered
+        ? ({
+            kind: 'discogs',
+            url: `https://www.discogs.com/artist/${recovered}`,
+          } as const)
+        : ({
+            kind: 'discogs',
+            url: `https://www.discogs.com/search/?q=${encodeURIComponent(name)}`,
+          } as const)
+      : source === 'mb'
+        ? null
+        : extraRead(source, id)
+
+  // Committed sweep verdicts serve BEFORE any cache: they are a static
+  // import (zero upstream cost) and authoritative — the sweep ran with
+  // the full alias set, so a live recheck could only re-miss. Checking
+  // Blobs first once shadowed a committed video behind a stale null.
+  if (source !== 'mb' && read) {
+    const committed = committedExtraPlay(`${source}:${id}`)
+    if (committed !== undefined) {
+      return withCacheHeaders(NextResponse.json({ play: committed, read }))
+    }
+  }
+
   // Decade only sharpens mb: results (a cached era video) — cache the
   // sharpened result under its own key so eras don't overwrite each other.
   // v2 buried the containment-matched IA results (Alexandra incident);
@@ -115,33 +145,10 @@ export async function GET(
   }
 
   try {
-    // Id-less credits whose Discogs id the sweep recovered get a real
-    // artist page; the rest fall back to an all-sections search (the
-    // artist tab alone can be empty while their release still shows).
-    const recovered = source === 'nm' ? recoveredDiscogsId(`nm:${id}`) : null
-    const read =
-      source === 'nm'
-        ? recovered
-          ? ({
-              kind: 'discogs',
-              url: `https://www.discogs.com/artist/${recovered}`,
-            } as const)
-          : ({
-              kind: 'discogs',
-              url: `https://www.discogs.com/search/?q=${encodeURIComponent(name)}`,
-            } as const)
-        : extraRead(source, id)
-    // Swept gap-fill keys serve the committed verdict — the sweep ran
-    // with the full alias set (Wikidata labels included), so a live
-    // recheck with less data could only re-miss.
-    const committed =
-      source === 'mb' ? undefined : committedExtraPlay(`${source}:${id}`)
     const result =
       source === 'mb'
         ? await resolveMbArtistPlay(id, decade)
-        : committed !== undefined
-          ? { play: committed, read }
-          : await resolveExtraArtistPlay(name, read)
+        : await resolveExtraArtistPlay(name, read as ReadLink)
     memo.set(cacheKey, result)
     await writeCache(cacheKey, result)
     return withCacheHeaders(NextResponse.json(result))
