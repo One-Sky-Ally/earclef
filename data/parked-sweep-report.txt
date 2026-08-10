@@ -1,0 +1,10 @@
+98 roster official-site links to check
+  DEAD (HTTPError): coldplay -> https://www.coldplay.com/
+  DEAD (HTTPError): fred-again -> https://www.fredagain.com/
+  PARKED: jesca-hoop -> https://www.jescahoop.com
+  DEAD (HTTPError): led-zeppelin -> https://www.ledzeppelin.com/
+  DEAD (URLError): ratatat -> https://www.ratatatmusic.com/
+  DEAD (HTTPError): silk-sonic -> https://www.silksonic.com/
+  DEAD (HTTPError): sufjan-stevens -> https://sufjan.com/
+  PARKED: thom-yorke -> https://www.thomyorke.com
+result: 8 problematic of 98

@@ -8221,21 +8221,6 @@
         "reinstatedBy": "dedup-rule-v3"
       },
       {
-        "name": "Cuarteto Venus",
-        "source": "discogs",
-        "firstYear": 1968,
-        "lastYear": 1969,
-        "styles": [
-          "Polka",
-          "Guarania",
-          "Latin"
-        ],
-        "releaseCount": 3,
-        "discogsArtistId": 7140383,
-        "wikidataId": null,
-        "reinstatedBy": "dedup-rule-v3"
-      },
-      {
         "name": "Disparo Certero",
         "source": "discogs",
         "firstYear": 2022,
@@ -8454,21 +8439,6 @@
         "reinstatedBy": "dedup-rule-v3"
       },
       {
-        "name": "Los Jokers",
-        "source": "discogs",
-        "firstYear": 1974,
-        "lastYear": 1980,
-        "styles": [
-          "Soul",
-          "Funk",
-          "Polka"
-        ],
-        "releaseCount": 3,
-        "discogsArtistId": 5140993,
-        "wikidataId": null,
-        "reinstatedBy": "dedup-rule-v3"
-      },
-      {
         "name": "Idiot And Virgin",
         "source": "discogs",
         "firstYear": 2021,
@@ -8644,24 +8614,6 @@
         "releaseCount": 3,
         "discogsArtistId": 11249054,
         "wikidataId": null,
-        "reinstatedBy": "dedup-rule-v3"
-      },
-      {
-        "name": "Los Joker's",
-        "source": "discogs",
-        "firstYear": 1981,
-        "lastYear": 1985,
-        "styles": [
-          "Polka",
-          "Guarania",
-          "Latin"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 6651928,
-        "wikidataId": null,
-        "aliases": [
-          "Jokers"
-        ],
         "reinstatedBy": "dedup-rule-v3"
       },
       {
@@ -9157,20 +9109,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 4930403,
-        "wikidataId": null,
-        "reinstatedBy": "dedup-rule-v3"
-      },
-      {
-        "name": "Aftermad's",
-        "source": "discogs",
-        "firstYear": 1994,
-        "lastYear": 1994,
-        "styles": [
-          "Pop Rock",
-          "Rock"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 2717992,
         "wikidataId": null,
         "reinstatedBy": "dedup-rule-v3"
       },
@@ -10039,6 +9977,24 @@
         "releaseCount": 0,
         "discogsArtistId": null,
         "wikidataId": "Q5751814",
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Joker's",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1985,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Latin"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6651928,
+        "wikidataId": null,
+        "aliases": [
+          "Jokers"
+        ],
         "reinstatedBy": "dedup-rule-v3"
       }
     ]

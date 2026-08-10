@@ -158,6 +158,45 @@ function classifyRelations(relations: MbUrlRelation[]): ClassifiedRels {
 }
 
 /**
+ * Parked/dead-domain gate for official-site play links (Salim Dada
+ * incident, Aug 9 2026: an MB 'official homepage' rel pointed at a
+ * GoDaddy for-sale lander). High-precision markers only; any network
+ * failure also disqualifies — a ▶ must lead somewhere real.
+ */
+const PARKING_HOSTS =
+  /forsale\.godaddy|sedo(parking)?\.com|afternic\.com|dan\.com|hugedomains\.com|parkingcrew|bodis\.com|above\.com|undeveloped\.com/i
+const PARKING_BODY_MARKERS = [
+  'window.location.href="/lander"',
+  "window.location.href='/lander'",
+  'sedoparking.com',
+  'parkingcrew',
+  'This domain may be for sale',
+  'domain is for sale',
+]
+
+export async function isParkedOrDead(url: string): Promise<boolean> {
+  try {
+    const res = await fetch(url, {
+      redirect: 'follow',
+      headers: { 'User-Agent': USER_AGENT },
+      signal: AbortSignal.timeout(6000),
+    })
+    if (!res.ok) return true
+    if (PARKING_HOSTS.test(res.url)) return true
+    const reader = res.body?.getReader()
+    if (!reader) return false
+    const { value } = await reader.read()
+    await reader.cancel()
+    const head = new TextDecoder()
+      .decode(value ?? new Uint8Array())
+      .slice(0, 4096)
+    return PARKING_BODY_MARKERS.some((marker) => head.includes(marker))
+  } catch {
+    return true // unreachable = dead; no ▶
+  }
+}
+
+/**
  * Step 2: Internet Archive audio, only on a real creator match.
  * Takes the artist's full alias set (canonical name first): IA
  * catalogues non-Western artists under romanizations, so the search
@@ -230,7 +269,13 @@ export async function resolveMbArtistPlay(
     ? await queueCachedVideo(mbid, decade, body.name)
     : null
   if (queued) return { play: queued, read: readLink }
-  if (rels.play) return { play: rels.play, read: readLink }
+  if (rels.play) {
+    // Official-site links must prove they're alive and not a parked
+    // lander before earning a ▶; every other kind is platform-hosted.
+    const usable =
+      rels.play.kind !== 'official' || !(await isParkedOrDead(rels.play.url))
+    if (usable) return { play: rels.play, read: readLink }
+  }
 
   // Alias set: exact-match against every documented spelling (MB
   // aliases carry romanizations), never against similar strings —

@@ -186,6 +186,21 @@ export async function judgeNameHit(candidate, artist, hitBasis, countryName) {
     return { verdict: 'duplicate', basis: 'area', ...evidence }
   }
   if (areaStatus === 'other') {
+    // RATIFIED POLICY (Aug 9, 2026): a large-catalog MB artist whose
+    // FULL name (or typed alias) equals the candidate's canonical name
+    // is presumed the referent even without title overlap — famous
+    // compilations evade the shared-title check (D'Arienzo class).
+    // Partial-ANV hits keep collision status (Víctor Hugo class).
+    const fullNameEquality =
+      normalizeName(artist.name ?? '') === normalizeName(candidate.names[0]) ||
+      hitBasis === 'typed-alias'
+    if (fullNameEquality && rgTitles.size >= 12) {
+      return {
+        verdict: 'foreign-catalog',
+        basis: 'large-catalog-full-name',
+        ...evidence,
+      }
+    }
     // Contradiction beats era: collision, not duplicate.
     return { verdict: 'collision-kept', basis: 'area-contradiction', ...evidence }
   }
