@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-09",
+ "generatedAt": "2026-08-10",
  "entries": {
   "dg:16011273": {
    "play": null
@@ -2732,6 +2732,856 @@
   },
   "dg:5037504": {
    "play": null
+  },
+  "dg:4281822": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=lEIGpJ7YdUE"
+   }
+  },
+  "dg:16171039": {
+   "play": null
+  },
+  "dg:7065242": {
+   "play": null
+  },
+  "dg:4878278": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=7knuy0HvXII"
+   }
+  },
+  "dg:4947505": {
+   "play": null
+  },
+  "dg:16011243": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=iIDsantPsnA"
+   }
+  },
+  "dg:7350700": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=AKIFUAJvUtE"
+   }
+  },
+  "dg:16010994": {
+   "play": null
+  },
+  "dg:4119352": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=ECxJ82TAzN8"
+   }
+  },
+  "dg:3293040": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=ab3Bqw68Zl0"
+   }
+  },
+  "dg:4788436": {
+   "play": null
+  },
+  "dg:4392277": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=YwyEYGVWBIM"
+   }
+  },
+  "dg:4392275": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=YwyEYGVWBIM"
+   }
+  },
+  "dg:5279050": {
+   "play": null
+  },
+  "dg:9731512": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=egEc6ijV5-o"
+   }
+  },
+  "dg:4021324": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=mMZO9xe6kck"
+   }
+  },
+  "dg:5568821": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=PkM_PY-7cSU"
+   }
+  },
+  "dg:2248154": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=xblQaACOr6o"
+   }
+  },
+  "dg:1010574": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/vals-de-los-15-anos"
+   }
+  },
+  "dg:201878": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=k1ljpLQ1V6Y"
+   }
+  },
+  "dg:270225": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=Sc0__xmKDYk"
+   }
+  },
+  "dg:3015160": {
+   "play": null
+  },
+  "dg:4293731": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=z4h-bKo4VUA"
+   }
+  },
+  "dg:7585490": {
+   "play": null
+  },
+  "dg:5037911": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=x930Rohfubc"
+   }
+  },
+  "dg:3786564": {
+   "play": null
+  },
+  "dg:36052": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=-MPJR7Tj5F4"
+   }
+  },
+  "dg:11508338": {
+   "play": null
+  },
+  "dg:7064626": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=Vq5mhckRAGw"
+   }
+  },
+  "dg:7870": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=y28pnDfD8ak"
+   }
+  },
+  "dg:4395180": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=DZ8PfXOV1fU"
+   }
+  },
+  "dg:1621654": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=uQBdtgBSKW4"
+   }
+  },
+  "dg:4392346": {
+   "play": null
+  },
+  "dg:4392348": {
+   "play": null
+  },
+  "dg:455765": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=s6Vl_OFScbc"
+   }
+  },
+  "dg:5296689": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/antonioaguilarmexico"
+   }
+  },
+  "dg:7140383": {
+   "play": null
+  },
+  "dg:7531781": {
+   "play": null
+  },
+  "dg:5085858": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=e6o1ayjhSRc"
+   }
+  },
+  "dg:4233418": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=uv_x4DWiS_s"
+   }
+  },
+  "dg:281994": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=psdH9-OgXaI"
+   }
+  },
+  "dg:6813631": {
+   "play": null
+  },
+  "dg:5159342": {
+   "play": null
+  },
+  "dg:94066": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=3p4pyIPabyY"
+   }
+  },
+  "dg:11136": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=nDd-JAyh22A"
+   }
+  },
+  "dg:2194277": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=QWpIgraQHPU"
+   }
+  },
+  "dg:4790856": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=Gu_IvZN2o-E"
+   }
+  },
+  "dg:2316948": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/pestilencia-patria-perdida"
+   }
+  },
+  "dg:217655": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=ztz6yNKjWF4"
+   }
+  },
+  "dg:5254975": {
+   "play": null
+  },
+  "dg:5140993": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=qCdi1wVau7s"
+   }
+  },
+  "dg:7141179": {
+   "play": null
+  },
+  "dg:3916304": {
+   "play": null
+  },
+  "nm:margarita-pildayn": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=KqsB7JtRbmk"
+   },
+   "resolvedArtistId": 5277437
+  },
+  "dg:737899": {
+   "play": null
+  },
+  "dg:2102198": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=3GGNonZ0jlY"
+   }
+  },
+  "dg:1259101": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/wiener-blut_202503"
+   }
+  },
+  "dg:6472525": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=Bx9dGIOf3qU"
+   }
+  },
+  "dg:2672669": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=pPel-7hXEsY"
+   }
+  },
+  "dg:2561705": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=N_pQePYx5Zk"
+   }
+  },
+  "dg:10642912": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=6DvHMyGtJg0"
+   }
+  },
+  "dg:11249054": {
+   "play": null
+  },
+  "dg:12435196": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=gCWnCQ6BZuM"
+   }
+  },
+  "dg:5339498": {
+   "play": null
+  },
+  "dg:2327232": {
+   "play": null
+  },
+  "dg:7082540": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=AIykfRzIacA"
+   }
+  },
+  "dg:8259393": {
+   "play": null
+  },
+  "dg:4404331": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=M6TQU3DqWSc"
+   }
+  },
+  "dg:16050741": {
+   "play": null
+  },
+  "dg:3005848": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=cEgBO70MAEk"
+   }
+  },
+  "dg:4395238": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=fQ_hrvxbytA"
+   }
+  },
+  "dg:5321308": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=KRh4y2VrAV4"
+   }
+  },
+  "dg:67331": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=S2hOcdi1obA"
+   }
+  },
+  "dg:263139": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=6k1U7fsaGkk"
+   }
+  },
+  "dg:7705140": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=wqV6Yaaqcjw"
+   }
+  },
+  "dg:3146595": {
+   "play": null
+  },
+  "dg:124497": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=U9H0fRN2jko"
+   }
+  },
+  "dg:2392291": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=HYBZAdqIEIk"
+   }
+  },
+  "dg:5255355": {
+   "play": null
+  },
+  "dg:5996828": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=w_3HdNBNlyI"
+   }
+  },
+  "dg:1876880": {
+   "play": null
+  },
+  "dg:16407250": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/04-katuri-abente-juan-cancio-barreto"
+   }
+  },
+  "dg:4380278": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/hechos-del-metal"
+   }
+  },
+  "dg:8274170": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=fCLqlFaJl0M"
+   }
+  },
+  "dg:360329": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=qM0i7D8AOF8"
+   }
+  },
+  "dg:69722": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=FvjBx0om2H4"
+   }
+  },
+  "dg:2168509": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=4Kiku0Jsqqo"
+   }
+  },
+  "dg:4398946": {
+   "play": null
+  },
+  "dg:13343079": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=tlFbBZbiRPw"
+   }
+  },
+  "dg:6271479": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=f5PSrBFoXv8"
+   }
+  },
+  "dg:5609461": {
+   "play": null
+  },
+  "dg:3937669": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=SgpziONhDzs"
+   }
+  },
+  "dg:6212065": {
+   "play": null
+  },
+  "dg:2887012": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/Stilnox-Narcomaniac"
+   }
+  },
+  "dg:3907401": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=0Rp2uw3h3oQ"
+   }
+  },
+  "dg:4930403": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=52rjE7MXWvM"
+   }
+  },
+  "dg:2717992": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=cQDXf_VWS60"
+   }
+  },
+  "dg:4814431": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=1fXtU5bk08M"
+   }
+  },
+  "dg:10186774": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=cbMiGXY-SmI"
+   }
+  },
+  "dg:4201639": {
+   "play": null
+  },
+  "dg:4807207": {
+   "play": null
+  },
+  "dg:17789682": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=4bjjU-EP_Ao"
+   }
+  },
+  "dg:11249177": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=r9zQ2i9rRS4"
+   }
+  },
+  "dg:5966022": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=rd4WQyaofU4"
+   }
+  },
+  "dg:3862781": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=G-fpXzkgefc"
+   }
+  },
+  "dg:33196": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=qKwkgBi3afU"
+   }
+  },
+  "dg:13911": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=pLNRGHFDlzQ"
+   }
+  },
+  "dg:17974323": {
+   "play": null
+  },
+  "dg:6651711": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=iWM_rmeMAV0"
+   }
+  },
+  "dg:6013788": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=FWffzJ5xIiA"
+   }
+  },
+  "dg:3634285": {
+   "play": null
+  },
+  "dg:4837795": {
+   "play": null
+  },
+  "dg:6979685": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/20161118_Viernes-13"
+   }
+  },
+  "dg:4214905": {
+   "play": null
+  },
+  "dg:4384994": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=IGjYNngwS9A"
+   }
+  },
+  "dg:4695582": {
+   "play": null
+  },
+  "dg:180585": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=jtiBir6dy88"
+   }
+  },
+  "dg:180586": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/RP_Dreamland_WAV"
+   }
+  },
+  "dg:63552": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=yXiOyhYGl-o"
+   }
+  },
+  "dg:905430": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/con-la-london-metropolitan-orchestra"
+   }
+  },
+  "dg:2613760": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=QHrazECxWIs"
+   }
+  },
+  "dg:17604462": {
+   "play": null
+  },
+  "dg:1006172": {
+   "play": null
+  },
+  "dg:334507": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=PeqC02rixgs"
+   }
+  },
+  "dg:5342614": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=3YTu7WXXrmU"
+   }
+  },
+  "dg:763087": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/78_palmeras_raul-shaw-los-indios-g-rojas-d-r_gbia0501481a"
+   }
+  },
+  "dg:4396426": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/Dril-RunStopEp"
+   }
+  },
+  "dg:5344792": {
+   "play": {
+    "kind": "archive",
+    "url": "https://archive.org/details/LiliaDelgadoCacicaIndioColalao25-6-12"
+   }
+  },
+  "dg:3909": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=sMXwzhNOO9o"
+   }
+  },
+  "dg:2985429": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=vHzo7dcwhtI"
+   }
+  },
+  "dg:170355": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=E8UjnUVtByk"
+   }
+  },
+  "dg:5705768": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=jlkDdarIma4"
+   }
+  },
+  "dg:56978": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=rVyHQJvGtrk"
+   }
+  },
+  "dg:6776633": {
+   "play": null
+  },
+  "dg:4398866": {
+   "play": null
+  },
+  "dg:520695": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=B2sMIhiq7AY"
+   }
+  },
+  "dg:251595": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=-SxV75-JGrU"
+   }
+  },
+  "dg:5247548": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=3PWgnElQ4ZQ"
+   }
+  },
+  "dg:4407629": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=m_KkfWPXbuU"
+   }
+  },
+  "dg:4522792": {
+   "play": null
+  },
+  "dg:4522774": {
+   "play": null
+  },
+  "dg:3921209": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=JYscW_CcKVg"
+   }
+  },
+  "dg:11012": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=UdyX3F1BNOQ"
+   }
+  },
+  "dg:4050642": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=NhP_598ZAPk"
+   }
+  },
+  "dg:7378083": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=sfaZxVn32gU"
+   }
+  },
+  "dg:5357337": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=z4h-bKo4VUA"
+   }
+  },
+  "dg:6519308": {
+   "play": null
+  },
+  "dg:1157598": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=pLHjxJ4KXJs"
+   }
+  },
+  "dg:5888517": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=bo_jIDYww1Q"
+   }
+  },
+  "dg:8196103": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=-xphCIbZXH0"
+   }
+  },
+  "dg:14680662": {
+   "play": null
+  },
+  "dg:1147256": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=wqKylOxrQGw"
+   }
+  },
+  "dg:3326552": {
+   "play": null
+  },
+  "dg:87582": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=HIgmFxcXBbA"
+   }
+  },
+  "dg:2484218": {
+   "play": null
+  },
+  "dg:1059873": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=AZ6v9wypBIU"
+   }
+  },
+  "dg:314766": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=DEXeKu7wuIY"
+   }
+  },
+  "dg:5584118": {
+   "play": null
+  },
+  "dg:7048201": {
+   "play": null
+  },
+  "wd:Q10357563": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=OHFY79kaGYQ"
+   },
+   "resolvedArtistId": 5773905
+  },
+  "wd:Q47509550": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=xmC-xC8Zt28"
+   },
+   "resolvedArtistId": 1718661
+  },
+  "wd:Q64027395": {
+   "play": null
+  },
+  "wd:Q130300267": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=lwqNT5TcbkY"
+   },
+   "resolvedArtistId": 58101
+  },
+  "wd:Q54849733": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=QAXuABto7Qo"
+   },
+   "resolvedArtistId": 1620875
+  },
+  "wd:Q5479670": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=EFtcchn2jVk"
+   },
+   "resolvedArtistId": 295554
+  },
+  "wd:Q5751814": {
+   "play": {
+    "kind": "youtube-video",
+    "url": "https://www.youtube.com/watch?v=U9VJj-JxgtY"
+   },
+   "resolvedArtistId": 399617
   }
  }
 }

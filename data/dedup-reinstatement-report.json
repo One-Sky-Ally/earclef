@@ -1,0 +1,8287 @@
+{
+ "generatedAt": "2026-08-09",
+ "summary": {
+  "collision-kept": 89,
+  "fuzzy-kept": 43,
+  "duplicate": 70,
+  "uncorroborated-kept": 41,
+  "foreign-catalog": 94,
+  "new": 1
+ },
+ "reinstated": [
+  "LA: Vīru kori \"Olūts\" [fuzzy-kept: fuzzy-may-never-drop]",
+  "LA: Dictator [collision-kept: area-contradiction]",
+  "LA: Dreamer [fuzzy-kept: fuzzy-may-never-drop]",
+  "LA: Pumpkins [fuzzy-kept: fuzzy-may-never-drop]",
+  "LA: Suitu dūdenieki [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Rawhide [collision-kept: area-contradiction]",
+  "PY: Khyron [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Los Tammys [uncorroborated-kept: name-only]",
+  "PY: Víctor Hugo De La Sierra [collision-kept: area-contradiction]",
+  "PY: Los Troveros De América [uncorroborated-kept: name-only]",
+  "PY: Kóga [uncorroborated-kept: name-only]",
+  "PY: Grupo Vocal Dos [uncorroborated-kept: name-only]",
+  "PY: Oscar Pérez Con La Alegre Fórmula Nueva [collision-kept: area-contradiction]",
+  "PY: Lila [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Los Bocheros [collision-kept: area-contradiction]",
+  "PY: Alberto De Luque Y Los Amigos [uncorroborated-kept: name-only]",
+  "PY: Corrosion [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Coven [collision-kept: area-contradiction]",
+  "PY: Los Orrego [uncorroborated-kept: name-only]",
+  "PY: Grupo Raíces [uncorroborated-kept: name-only]",
+  "PY: Batallón [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Rushmore [collision-kept: area-contradiction]",
+  "PY: Javier Vargas [collision-kept: area-contradiction]",
+  "PY: Juan Carreras [collision-kept: area-contradiction]",
+  "PY: Los Ramblers [collision-kept: area-contradiction]",
+  "PY: José Luis Rodríguez [collision-kept: area-contradiction]",
+  "PY: Antonio Aguilar [collision-kept: area-contradiction]",
+  "PY: Cuarteto Venus [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Disparo Certero [uncorroborated-kept: name-only]",
+  "PY: Juan Cancio Barreto [uncorroborated-kept: name-only]",
+  "PY: Victor Band [uncorroborated-kept: name-only]",
+  "PY: Ray Conniff [collision-kept: area-contradiction]",
+  "PY: Dúo Quintana-Escalante [uncorroborated-kept: name-only]",
+  "PY: Alfredo Cáceres [collision-kept: area-contradiction]",
+  "PY: Orquesta Peru Rima [uncorroborated-kept: name-only]",
+  "PY: Van Halen [collision-kept: area-contradiction]",
+  "PY: Peter Gabriel [collision-kept: area-contradiction]",
+  "PY: Wisdom [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Motorized [collision-kept: area-contradiction]",
+  "PY: Pestilencia [collision-kept: area-contradiction]",
+  "PY: Alejandro Sanz [collision-kept: area-contradiction]",
+  "PY: Los Trovadores Paraguayos [uncorroborated-kept: name-only]",
+  "PY: Los Jokers [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Idiot And Virgin [uncorroborated-kept: name-only]",
+  "PY: Deadly Noise Crew [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: margarita pildayn [uncorroborated-kept: name-only]",
+  "PY: Shitload [uncorroborated-kept: name-only]",
+  "PY: Diabolical [collision-kept: area-contradiction]",
+  "PY: Paraguay [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Johann Strauss Jr. [collision-kept: area-contradiction]",
+  "PY: Javier Vázquez [collision-kept: area-contradiction]",
+  "PY: Gonzalo MD [uncorroborated-kept: name-only]",
+  "PY: Funeral [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Aya [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Sacro [collision-kept: area-contradiction]",
+  "PY: Los Joker's [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Oxigen Project [uncorroborated-kept: name-only]",
+  "PY: Andrés Pérez [uncorroborated-kept: name-only]",
+  "PY: Zeitgeist [collision-kept: area-contradiction]",
+  "PY: Keber [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Crispin [collision-kept: area-contradiction]",
+  "PY: Eligio Mujica [uncorroborated-kept: name-only]",
+  "PY: Amambay Cardozo Ocampo [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: SISTI [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: María Martha Serra Lima [collision-kept: area-contradiction]",
+  "PY: La Orquesta Los Hidalgos [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: The Rabbits [uncorroborated-kept: name-only]",
+  "PY: Stürmtiger [collision-kept: area-contradiction]",
+  "PY: Ful [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Joe Cocker [collision-kept: area-contradiction]",
+  "PY: Adonay [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Cuarteto \"Paraguay Poty Pyajhú\" [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Mastermind [collision-kept: area-contradiction]",
+  "PY: Enrique Samaniego [collision-kept: area-contradiction]",
+  "PY: Juan Carlos Barreto [uncorroborated-kept: name-only]",
+  "PY: Martín González [uncorroborated-kept: name-only]",
+  "PY: Los Caminantes [collision-kept: area-contradiction]",
+  "PY: Os Paralamas Do Sucesso [collision-kept: area-contradiction]",
+  "PY: Lionel Richie [collision-kept: area-contradiction]",
+  "PY: Reynaldo Jiménez [collision-kept: area-contradiction]",
+  "PY: Los Magníficos [uncorroborated-kept: name-only]",
+  "PY: Dismal [collision-kept: area-contradiction]",
+  "PY: Abomination [collision-kept: area-contradiction]",
+  "PY: Luis Fernando Correa [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Eyesight [collision-kept: area-contradiction]",
+  "PY: Vecindad Autopsia [uncorroborated-kept: name-only]",
+  "PY: Stilnox [uncorroborated-kept: name-only]",
+  "PY: Overlord [collision-kept: area-contradiction]",
+  "PY: Aqua Fina [uncorroborated-kept: name-only]",
+  "PY: Aftermad's [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Taú [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Persona RS [uncorroborated-kept: name-only]",
+  "PY: Nokto [uncorroborated-kept: name-only]",
+  "PY: Sal'm Raisov [collision-kept: area-contradiction]",
+  "PY: Across [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Night Hunter [uncorroborated-kept: name-only]",
+  "PY: Agonic [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: The Profane [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Village People [collision-kept: area-contradiction]",
+  "PY: Eurythmics [collision-kept: area-contradiction]",
+  "PY: VECTOR [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Rotten State [collision-kept: area-contradiction]",
+  "PY: Arcano [collision-kept: area-contradiction]",
+  "PY: Pesticvm [new: no-exact-hit-today]",
+  "PY: Yukaha [collision-kept: area-contradiction]",
+  "PY: Viernes 13 [uncorroborated-kept: name-only]",
+  "PY: Felipe Sosa [collision-kept: area-contradiction]",
+  "PY: Oscar Mendoza [uncorroborated-kept: name-only]",
+  "PY: Steinkrug [uncorroborated-kept: name-only]",
+  "PY: Jimmy Page [collision-kept: area-contradiction]",
+  "PY: Robert Plant [collision-kept: area-contradiction]",
+  "PY: Scorpions [collision-kept: area-contradiction]",
+  "PY: Inti Raymi [collision-kept: area-contradiction]",
+  "PY: Los Carlos [uncorroborated-kept: name-only]",
+  "PY: Sembrador [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Los Indios [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Contrapunto [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Chainsaw [collision-kept: area-contradiction]",
+  "PY: Gladiador [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Aríman [uncorroborated-kept: name-only]",
+  "PY: Hellish Massacre [uncorroborated-kept: name-only]",
+  "PY: Los Latinos [uncorroborated-kept: name-only]",
+  "PY: The Honeys [collision-kept: area-contradiction]",
+  "PY: Pope Francis [collision-kept: area-contradiction]",
+  "PY: Oscar Pérez Noguera [collision-kept: area-contradiction]",
+  "PY: The Classic's [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Latin Beat [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Carlos Bordón [uncorroborated-kept: name-only]",
+  "PY: Rod Stewart [collision-kept: area-contradiction]",
+  "PY: Sepulchral Voices [collision-kept: area-contradiction]",
+  "PY: Nothingness [collision-kept: area-contradiction]",
+  "PY: Sintesis [collision-kept: area-contradiction]",
+  "PY: Vinyl [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Toxic Avenger [collision-kept: area-contradiction]",
+  "PY: Los Hobbies [collision-kept: area-contradiction]",
+  "PY: Disterrör [collision-kept: area-contradiction]",
+  "PY: Necropsy [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Santos Lima [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Enrique Iglesias [collision-kept: area-contradiction]",
+  "PY: Los Hidalgos [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Somos [collision-kept: area-contradiction]",
+  "PY: José Luis Perales [collision-kept: area-contradiction]",
+  "PY: Roberto Tello [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Lucas Ortega [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Ratinho [collision-kept: area-contradiction]",
+  "PY: Victor Vera [collision-kept: area-contradiction]",
+  "PY: Audioiko [uncorroborated-kept: name-only]",
+  "PY: Rumberos [fuzzy-kept: fuzzy-may-never-drop]",
+  "PY: Salamandra [collision-kept: area-contradiction]",
+  "PY: Carlos Sosa [uncorroborated-kept: name-only]"
+ ],
+ "decisions": {
+  "LA:dg|4281822": {
+   "code": "LA",
+   "key": "dg|4281822",
+   "names": [
+    "Exile"
+   ],
+   "years": [
+    2018
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Hard Rock",
+    "Heavy Metal",
+    "Rock"
+   ],
+   "dgId": 4281822,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "d9403f69-2718-483e-a21a-210ae1714b82",
+   "mbName": "EXILE",
+   "area": "Japan",
+   "hitBasis": "name"
+  },
+  "LA:dg|16171039": {
+   "code": "LA",
+   "key": "dg|16171039",
+   "names": [
+    "Vīru kori \"Olūts\""
+   ],
+   "years": [
+    2008
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Classical"
+   ],
+   "dgId": 16171039,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": null,
+   "mbName": null
+  },
+  "LA:dg|7065242": {
+   "code": "LA",
+   "key": "dg|7065242",
+   "names": [
+    "Dictator"
+   ],
+   "years": [
+    2015
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 7065242,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "9656518a-6813-4252-b59a-c3aeffd193e8",
+   "mbName": "Dictator",
+   "area": "Russia",
+   "hitBasis": "name"
+  },
+  "LA:dg|4878278": {
+   "code": "LA",
+   "key": "dg|4878278",
+   "names": [
+    "Dreamer"
+   ],
+   "years": [
+    1990
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Hard Rock",
+    "Heavy Metal",
+    "Rock"
+   ],
+   "dgId": 4878278,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": null,
+   "mbName": null
+  },
+  "LA:dg|4947505": {
+   "code": "LA",
+   "key": "dg|4947505",
+   "names": [
+    "Pumpkins",
+    "ພຳກຶ້ນສ"
+   ],
+   "years": [
+    2005
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Alternative Rock",
+    "Rock"
+   ],
+   "dgId": 4947505,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "ba0d6274-db14-4ef5-b28d-657ebde1a396",
+   "mbName": "The Smashing Pumpkins"
+  },
+  "LA:dg|16011243": {
+   "code": "LA",
+   "key": "dg|16011243",
+   "names": [
+    "JL"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Dance-pop",
+    "Ballad",
+    "Electronic"
+   ],
+   "dgId": 16011243,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "df3cc800-be5b-413a-bdd5-42aba778c711",
+   "mbName": "JL",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "LA:dg|7350700": {
+   "code": "LA",
+   "key": "dg|7350700",
+   "names": [
+    "Suitu dūdenieki"
+   ],
+   "years": [
+    2024
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Folk, World, & Country"
+   ],
+   "dgId": 7350700,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "7aa1e6d5-7f38-45a2-8c69-6e430700474d",
+   "mbName": "Suitu sievas, suitu vīri, suitu dūdenieki, MM orķestris"
+  },
+  "LA:dg|14302002": {
+   "code": "LA",
+   "key": "dg|14302002",
+   "names": [
+    "Endless Outrage"
+   ],
+   "years": [
+    2023
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Death Metal",
+    "Rock"
+   ],
+   "dgId": 14302002,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "e4a7ab3c-47e1-4540-96dc-672bb0a636c2",
+   "mbName": "Endless Outrage",
+   "area": "Laos",
+   "hitBasis": "name"
+  },
+  "LA:dg|6566859": {
+   "code": "LA",
+   "key": "dg|6566859",
+   "names": [
+    "Alexandra Bounxouei"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Lao Music",
+    "Pop",
+    "Folk, World, & Country"
+   ],
+   "dgId": 6566859,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "b31a3ef3-0cb6-415f-99c6-da5ac36489b7",
+   "mbName": "Alexandra Bounxouei",
+   "area": "Laos",
+   "hitBasis": "name"
+  },
+  "LA:dg|3095451": {
+   "code": "LA",
+   "key": "dg|3095451",
+   "names": [
+    "Sapanakith"
+   ],
+   "years": [
+    2011
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Death Metal",
+    "Rock"
+   ],
+   "dgId": 3095451,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "c474b5df-8cba-4df7-b41d-9383b48a1dca",
+   "mbName": "Sapanakith",
+   "area": "Laos",
+   "hitBasis": "name"
+  },
+  "LA:dg|4522768": {
+   "code": "LA",
+   "key": "dg|4522768",
+   "names": [
+    "Ketsana Vilaylack",
+    "Ketsana"
+   ],
+   "years": [
+    2002
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Rock",
+    "Pop"
+   ],
+   "dgId": 4522768,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "f4dfb286-3171-4cbf-9414-761ef0f30c18",
+   "mbName": "Ketsana Vilaylack",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "LA:dg|16010994": {
+   "code": "LA",
+   "key": "dg|16010994",
+   "names": [
+    "Aluna"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Dance-pop",
+    "Ballad",
+    "Electronic"
+   ],
+   "dgId": 16010994,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "4d937f0c-1248-4b0d-93f5-427059092c33",
+   "mbName": "Aluna",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "LA:dg|4119352": {
+   "code": "LA",
+   "key": "dg|4119352",
+   "names": [
+    "Sapphire",
+    "The Sapphire"
+   ],
+   "years": [
+    1994
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Heavy Metal",
+    "Rock"
+   ],
+   "dgId": 4119352,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "adff2136-d6fa-4a58-ac8c-f69a2caba439",
+   "mbName": "Sapphire",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|2914109": {
+   "code": "PY",
+   "key": "dg|2914109",
+   "names": [
+    "Slow Agony"
+   ],
+   "years": [
+    2000,
+    2002,
+    1997
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Death Metal",
+    "Rock"
+   ],
+   "dgId": 2914109,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "3f77f367-1c1c-4b21-b894-df8286baaa5a",
+   "mbName": "Slow Agony",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|3293040": {
+   "code": "PY",
+   "key": "dg|3293040",
+   "names": [
+    "Rawhide"
+   ],
+   "years": [
+    2012
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Heavy Metal",
+    "Thrash",
+    "Speed Metal"
+   ],
+   "dgId": 3293040,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "9824967c-6619-440d-b439-7cc647685660",
+   "mbName": "Rawhide",
+   "area": "Sweden",
+   "hitBasis": "name"
+  },
+  "PY:dg|5848784": {
+   "code": "PY",
+   "key": "dg|5848784",
+   "names": [
+    "Verthebral"
+   ],
+   "years": [
+    2015
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Death Metal",
+    "Rock"
+   ],
+   "dgId": 5848784,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "f94c75b3-c89e-4f40-9b86-84d4bc3b66cc",
+   "mbName": "Verthebral",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|4788436": {
+   "code": "PY",
+   "key": "dg|4788436",
+   "names": [
+    "Khyron"
+   ],
+   "years": [
+    2009,
+    2017
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Heavy Metal",
+    "Thrash",
+    "Hardcore"
+   ],
+   "dgId": 4788436,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "49ae9b8b-e641-45c6-8261-4135397100c0",
+   "mbName": "Necros Khyron"
+  },
+  "PY:dg|3726817": {
+   "code": "PY",
+   "key": "dg|3726817",
+   "names": [
+    "Ripe Banana Skins"
+   ],
+   "years": [
+    2005
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Ska",
+    "Pop Punk",
+    "Punk"
+   ],
+   "dgId": 3726817,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "38c9228a-a2bd-443c-adf8-bb5545d4871b",
+   "mbName": "Ripe Banana Skins",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|4392277": {
+   "code": "PY",
+   "key": "dg|4392277",
+   "names": [
+    "Los Tammys",
+    "Los Tammy's De Pedro Juan Caballero",
+    "Los Tammy's de Pedro Juan Caballero"
+   ],
+   "years": [
+    1975,
+    1980,
+    1979
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Psychedelic",
+    "Polka",
+    "Beat"
+   ],
+   "dgId": 4392277,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "15c712b0-c2c6-4066-839b-44057bec3890",
+   "mbName": "Los Tammys",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4392275": {
+   "code": "PY",
+   "key": "dg|4392275",
+   "names": [
+    "Víctor Hugo De La Sierra",
+    "Víctor Hugo"
+   ],
+   "years": [
+    1975
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Psychedelic",
+    "Polka",
+    "Beat"
+   ],
+   "dgId": 4392275,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "c0c99c8f-4779-4c35-9497-67d60a73310a",
+   "mbName": "Victor Hugo",
+   "area": "France",
+   "hitBasis": "name"
+  },
+  "PY:dg|5279050": {
+   "code": "PY",
+   "key": "dg|5279050",
+   "names": [
+    "Los Troveros De América"
+   ],
+   "years": [
+    1977,
+    1978
+   ],
+   "releaseCount": 6,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Folk, World, & Country"
+   ],
+   "dgId": 5279050,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "214a4787-b668-4099-9ea0-71362c303846",
+   "mbName": "Los Troveros De América",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|9731512": {
+   "code": "PY",
+   "key": "dg|9731512",
+   "names": [
+    "Kóga"
+   ],
+   "years": [
+    2007
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Groove Metal",
+    "Rock"
+   ],
+   "dgId": 9731512,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "f4046e47-70c9-40b3-b939-ee2c57c21868",
+   "mbName": "KOGA",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4021324": {
+   "code": "PY",
+   "key": "dg|4021324",
+   "names": [
+    "Grupo Vocal Dos",
+    "Vocal 2",
+    "Vocal Dos"
+   ],
+   "years": [
+    1973,
+    1998,
+    1985,
+    1976
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Guarania",
+    "Polka",
+    "Latin"
+   ],
+   "dgId": 4021324,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "f26f1865-1ccf-4dca-b846-ff9ad6229aac",
+   "mbName": "Vocal 2",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|2661322": {
+   "code": "PY",
+   "key": "dg|2661322",
+   "names": [
+    "D.L.50"
+   ],
+   "years": [
+    2001,
+    2005,
+    2007,
+    2009,
+    2012,
+    2016,
+    2019
+   ],
+   "releaseCount": 10,
+   "styles": [
+    "Hardcore",
+    "Rock",
+    "Heavy Metal"
+   ],
+   "dgId": 2661322,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "bbaaa80c-5680-41aa-9c6a-f1d9be779dd5",
+   "mbName": "D.L.50",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|4116359": {
+   "code": "PY",
+   "key": "dg|4116359",
+   "names": [
+    "Caligula"
+   ],
+   "years": [
+    2010,
+    2020,
+    2026
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Black Metal",
+    "Thrash",
+    "Death Metal"
+   ],
+   "dgId": 4116359,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "6a198ad0-8b86-4fb4-88e2-80d37e5479af",
+   "mbName": "Caligula",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|4407633": {
+   "code": "PY",
+   "key": "dg|4407633",
+   "names": [
+    "Oscar Pérez Con La Alegre Fórmula Nueva",
+    "La Alegre Fórmula Nueva!! Oscar Pérez!!",
+    "Oscar Pérez",
+    "...La Alegre Fórmula Nueva! Oscar Pérez"
+   ],
+   "years": [
+    1978,
+    1974,
+    1982,
+    1973
+   ],
+   "releaseCount": 6,
+   "styles": [
+    "Schlager",
+    "Polka",
+    "Ranchera"
+   ],
+   "dgId": 4407633,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "ab99bf13-666f-40d5-a8d9-2e1158bd48b6",
+   "mbName": "Oscar Perez",
+   "area": "Spain",
+   "hitBasis": "name"
+  },
+  "PY:dg|5568821": {
+   "code": "PY",
+   "key": "dg|5568821",
+   "names": [
+    "Lila"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Latin"
+   ],
+   "dgId": 5568821,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "ad29ae1c-2eda-4071-9dc8-31910e7e546c",
+   "mbName": "Lila Downs"
+  },
+  "PY:dg|3530775": {
+   "code": "PY",
+   "key": "dg|3530775",
+   "names": [
+    "Changoz!"
+   ],
+   "years": [
+    2018,
+    2016,
+    2017,
+    2015
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Noisecore",
+    "Rock",
+    "Crust"
+   ],
+   "dgId": 3530775,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "474455f5-a422-4dfb-8363-66825907dd20",
+   "mbName": "Changoz!",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|4492200": {
+   "code": "PY",
+   "key": "dg|4492200",
+   "names": [
+    "220 Voltios"
+   ],
+   "years": [
+    2017,
+    2014,
+    2008,
+    2009
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Heavy Metal",
+    "Rock"
+   ],
+   "dgId": 4492200,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "92d0b938-b5a2-44e3-9d42-9772916ac647",
+   "mbName": "220 Voltios",
+   "area": "Asunción",
+   "hitBasis": "name"
+  },
+  "PY:dg|74500": {
+   "code": "PY",
+   "key": "dg|74500",
+   "names": [
+    "R.E.M."
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Alternative Rock",
+    "Rock"
+   ],
+   "dgId": 74500,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "ea4dfa26-f633-4da6-a52a-f49ea4897b58",
+   "mbName": "R.E.M.",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|6574962": {
+   "code": "PY",
+   "key": "dg|6574962",
+   "names": [
+    "Mythika"
+   ],
+   "years": [
+    2011,
+    2007,
+    2019,
+    2022
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Heavy Metal",
+    "Rock",
+    "Power Metal"
+   ],
+   "dgId": 6574962,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "7d3e9916-20f6-4d3d-a9ea-656f3cec11cb",
+   "mbName": "Mythika",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|2248154": {
+   "code": "PY",
+   "key": "dg|2248154",
+   "names": [
+    "Los Bocheros"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pasodoble",
+    "Fado",
+    "Folk, World, & Country"
+   ],
+   "dgId": 2248154,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "91b6f9c4-ef91-4cf7-8be8-ce13e1eac294",
+   "mbName": "Los Bocheros",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|1010574": {
+   "code": "PY",
+   "key": "dg|1010574",
+   "names": [
+    "Juan D'Arienzo"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Tango",
+    "Latin"
+   ],
+   "dgId": 1010574,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "d09ac963-025f-4eb6-853c-cc383838ee60",
+   "mbName": "Juan d’Arienzo",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|201878": {
+   "code": "PY",
+   "key": "dg|201878",
+   "names": [
+    "Eros Ramazzotti"
+   ],
+   "years": [
+    2000
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Modern Electric Blues",
+    "Vocal",
+    "Ballad"
+   ],
+   "dgId": 201878,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "3ab7295a-54ac-40e8-b1b2-3d110a143550",
+   "mbName": "Eros Ramazzotti",
+   "area": "Italy",
+   "hitBasis": "name"
+  },
+  "PY:dg|2522983": {
+   "code": "PY",
+   "key": "dg|2522983",
+   "names": [
+    "Luis Alberto del Parana y Los Paraguayos",
+    "Luis Alberto Del Parana Y Su Trio Los Paraguayos",
+    "Luis Alberto Del Parana Y Su Trío Los Paraguayos",
+    "Luis A. Del Paranà Y Los Paraguayos"
+   ],
+   "years": [
+    1985
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Bolero",
+    "Beguine",
+    "Ranchera"
+   ],
+   "dgId": 2522983,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "328e6421-233d-48c9-bc22-b9507c288fdd",
+   "mbName": "Luis Alberto del Paraná y Los Paraguayos",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|174890": {
+   "code": "PY",
+   "key": "dg|174890",
+   "names": [
+    "Foreigner"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Arena Rock",
+    "Rock"
+   ],
+   "dgId": 174890,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "160629ab-ec18-4931-8c95-02cb92d06186",
+   "mbName": "Foreigner",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|270225": {
+   "code": "PY",
+   "key": "dg|270225",
+   "names": [
+    "Placido Domingo"
+   ],
+   "years": [
+    1984
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Bolero",
+    "Flamenco",
+    "Latin"
+   ],
+   "dgId": 270225,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "521df2bd-01f6-456e-9d5f-f081068819c2",
+   "mbName": "Plácido Domingo",
+   "area": "Spain",
+   "hitBasis": "name"
+  },
+  "PY:dg|3015160": {
+   "code": "PY",
+   "key": "dg|3015160",
+   "names": [
+    "Alberto De Luque Y Los Amigos",
+    "Alberto De Luque Con Los Amigos",
+    "Alberto De Luque y Los Amigos"
+   ],
+   "years": [
+    1988
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Choral",
+    "Holiday",
+    "Folk, World, & Country"
+   ],
+   "dgId": 3015160,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "0bbb7fba-9cda-44b5-b8f2-b1396e656180",
+   "mbName": "Alberto De Luque Y Los Amigos",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4293731": {
+   "code": "PY",
+   "key": "dg|4293731",
+   "names": [
+    "Corrosion"
+   ],
+   "years": [
+    1993,
+    2021,
+    2020
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Heavy Metal",
+    "Speed Metal",
+    "Thrash"
+   ],
+   "dgId": 4293731,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "0f6e80ef-1972-4dee-8896-dc9955f1beeb",
+   "mbName": "Corrosion of Conformity"
+  },
+  "PY:dg|92793": {
+   "code": "PY",
+   "key": "dg|92793",
+   "names": [
+    "Luis Miguel"
+   ],
+   "years": [
+    2003,
+    1991
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Vocal",
+    "Ballad",
+    "Romantic"
+   ],
+   "dgId": 92793,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "90270118-8ed0-4446-bf97-8a09b3f9e8f3",
+   "mbName": "Luis Miguel",
+   "area": "Mexico",
+   "hitBasis": "name"
+  },
+  "PY:dg|4522698": {
+   "code": "PY",
+   "key": "dg|4522698",
+   "names": [
+    "Chapa C"
+   ],
+   "years": [
+    2014
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Reggaeton",
+    "Hip-House",
+    "Electronic"
+   ],
+   "dgId": 4522698,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "f30373ad-2317-4b92-a6be-1b202340004b",
+   "mbName": "Chapa C",
+   "area": "Cuba",
+   "hitBasis": "name"
+  },
+  "PY:dg|7585490": {
+   "code": "PY",
+   "key": "dg|7585490",
+   "names": [
+    "Coven"
+   ],
+   "years": [
+    2018
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Abstract",
+    "Synthwave",
+    "Electronic"
+   ],
+   "dgId": 7585490,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "47da0bf2-983a-4df9-ad7f-1afb7295a4de",
+   "mbName": "Coven",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|4513072": {
+   "code": "PY",
+   "key": "dg|4513072",
+   "names": [
+    "Familia Duarte"
+   ],
+   "years": [
+    1995
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Polka",
+    "Ranchera",
+    "Samba"
+   ],
+   "dgId": 4513072,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "c8a05583-54ff-43c0-88e9-df2e897583ed",
+   "mbName": "Familia Duarte",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|5037911": {
+   "code": "PY",
+   "key": "dg|5037911",
+   "names": [
+    "Los Orrego",
+    "Los Principes Del Compás - Gran Típica Orrego"
+   ],
+   "years": [
+    2015,
+    2011
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Tango"
+   ],
+   "dgId": 5037911,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "9dafbc59-500c-4248-bb19-716b7e28c9f9",
+   "mbName": "Los Orrego",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|3786564": {
+   "code": "PY",
+   "key": "dg|3786564",
+   "names": [
+    "Grupo Raíces"
+   ],
+   "years": [
+    1983,
+    1984,
+    1981
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Folk"
+   ],
+   "dgId": 3786564,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "fc390214-6b5a-4abd-bc4e-7246bc72ea54",
+   "mbName": "Grupo Raices",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|124541": {
+   "code": "PY",
+   "key": "dg|124541",
+   "names": [
+    "Bon Jovi"
+   ],
+   "years": [
+    1988
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Hard Rock",
+    "Rock",
+    "Pop Rock"
+   ],
+   "dgId": 124541,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "5dcdb5eb-cb72-4e6e-9e63-b7bace604965",
+   "mbName": "Bon Jovi",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|13961": {
+   "code": "PY",
+   "key": "dg|13961",
+   "names": [
+    "Sting"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Soft Rock",
+    "Pop Rock",
+    "Rock"
+   ],
+   "dgId": 13961,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "7944ed53-2a58-4035-9b93-140a71e41c34",
+   "mbName": "Sting",
+   "area": "England",
+   "hitBasis": "name"
+  },
+  "PY:dg|36052": {
+   "code": "PY",
+   "key": "dg|36052",
+   "names": [
+    "PJ Harvey",
+    "P.J. Harvey"
+   ],
+   "years": [
+    1995
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Alternative Rock",
+    "Rock"
+   ],
+   "dgId": 36052,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "e795e03d-b5d5-4a5f-834d-162cfb308a2c",
+   "mbName": "PJ Harvey",
+   "area": "England",
+   "hitBasis": "name"
+  },
+  "PY:dg|6510889": {
+   "code": "PY",
+   "key": "dg|6510889",
+   "names": [
+    "Sonido Chuli"
+   ],
+   "years": [
+    2017,
+    2018
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Cumbia",
+    "Latin",
+    "Guaracha"
+   ],
+   "dgId": 6510889,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "e8ae82c5-1850-4e9a-8300-a9c711dc9832",
+   "mbName": "Sonido Chuli",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|1490929": {
+   "code": "PY",
+   "key": "dg|1490929",
+   "names": [
+    "IODI",
+    "JODI"
+   ],
+   "years": [
+    1971
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Avantgarde",
+    "Folk Rock",
+    "Psychedelic"
+   ],
+   "dgId": 1490929,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "0ab6f9f9-28dc-466c-9c1f-a37fe5d42cb7",
+   "mbName": "IODI",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|11508338": {
+   "code": "PY",
+   "key": "dg|11508338",
+   "names": [
+    "Batallón"
+   ],
+   "years": [
+    2021
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 11508338,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "6f3e4e3f-55c2-46c4-a252-fa6f70cb66b5",
+   "mbName": "El Batallon"
+  },
+  "PY:dg|7064626": {
+   "code": "PY",
+   "key": "dg|7064626",
+   "names": [
+    "Rushmore"
+   ],
+   "years": [
+    2015,
+    2013
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Heavy Metal",
+    "Power Metal",
+    "Rock"
+   ],
+   "dgId": 7064626,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "2f098c4d-8d97-4011-b60c-ae533b376595",
+   "mbName": "RUSHMORE",
+   "area": "Japan",
+   "hitBasis": "name"
+  },
+  "PY:dg|7870": {
+   "code": "PY",
+   "key": "dg|7870",
+   "names": [
+    "Mad Professor"
+   ],
+   "years": [
+    2015
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Dub",
+    "Reggae",
+    "Latin"
+   ],
+   "dgId": 7870,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "ea3b97e8-8a76-4ea7-8e6f-3ebf40acaeb8",
+   "mbName": "Mad Professor",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|26345": {
+   "code": "PY",
+   "key": "dg|26345",
+   "names": [
+    "Megabass"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Breakbeat",
+    "Hardcore",
+    "House"
+   ],
+   "dgId": 26345,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "3e1558b6-7b4d-49c0-a2ed-a725916df5fb",
+   "mbName": "Megabass",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4061": {
+   "code": "PY",
+   "key": "dg|4061",
+   "names": [
+    "Two Little Boys"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Breakbeat",
+    "Hardcore",
+    "House"
+   ],
+   "dgId": 4061,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "e64f681d-32d6-4936-91f2-5b875196d3cb",
+   "mbName": "Two Little Boys",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|28209": {
+   "code": "PY",
+   "key": "dg|28209",
+   "names": [
+    "Public Enemy"
+   ],
+   "years": [
+    1995
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Conscious",
+    "Boom Bap",
+    "Hardcore Hip-Hop"
+   ],
+   "dgId": 28209,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "bf2e15d0-4b77-469e-bfb4-f8414415baca",
+   "mbName": "Public Enemy",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|4395180": {
+   "code": "PY",
+   "key": "dg|4395180",
+   "names": [
+    "Javier Vargas",
+    "Javier Vargas El Trovador Del Paraguay"
+   ],
+   "years": [
+    2012,
+    2004,
+    1970
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Bolero",
+    "Ranchera",
+    "Latin"
+   ],
+   "dgId": 4395180,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "cb73794e-b52a-4070-8fce-0cedf0acf901",
+   "mbName": "Javier Vargas",
+   "area": "Spain",
+   "hitBasis": "name"
+  },
+  "PY:dg|1621654": {
+   "code": "PY",
+   "key": "dg|1621654",
+   "names": [
+    "Trio San Antonio"
+   ],
+   "years": [
+    1970
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Latin"
+   ],
+   "dgId": 1621654,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "733dfe44-fd2a-4dbb-bac2-f5e015213c8f",
+   "mbName": "Trio San Antonio",
+   "area": "San Antonio",
+   "hitBasis": "name"
+  },
+  "PY:dg|4392346": {
+   "code": "PY",
+   "key": "dg|4392346",
+   "names": [
+    "Juan Carreras"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Latin"
+   ],
+   "dgId": 4392346,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "be43db58-3054-47ef-8ee8-7d62eb574c1b",
+   "mbName": "Juan Carreras",
+   "area": "Belgium",
+   "hitBasis": "name"
+  },
+  "PY:dg|84752": {
+   "code": "PY",
+   "key": "dg|84752",
+   "names": [
+    "AC/DC"
+   ],
+   "years": [
+    1992,
+    1980
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Hard Rock",
+    "Rock"
+   ],
+   "dgId": 84752,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "66c662b6-6e2f-4930-8610-912e24c63ed1",
+   "mbName": "AC/DC",
+   "area": "Australia",
+   "hitBasis": "name"
+  },
+  "PY:dg|4392348": {
+   "code": "PY",
+   "key": "dg|4392348",
+   "names": [
+    "Los Ramblers"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Electronic",
+    "Folk, World, & Country"
+   ],
+   "dgId": 4392348,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "3f7f7032-fb19-4ec3-a68a-d7877649bcab",
+   "mbName": "Los Ramblers",
+   "area": "Nicaragua",
+   "hitBasis": "name"
+  },
+  "PY:dg|455765": {
+   "code": "PY",
+   "key": "dg|455765",
+   "names": [
+    "José Luis Rodríguez"
+   ],
+   "years": [
+    1983,
+    1984
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Vocal",
+    "Ballad",
+    "Pop"
+   ],
+   "dgId": 455765,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "e291bd1a-b17b-418d-9695-6b651660c34d",
+   "mbName": "José Luis Rodríguez",
+   "area": "Venezuela",
+   "hitBasis": "name"
+  },
+  "PY:dg|2976109": {
+   "code": "PY",
+   "key": "dg|2976109",
+   "names": [
+    "Ratones Paranoicos"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Blues Rock",
+    "Rock",
+    "Pop"
+   ],
+   "dgId": 2976109,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "e0d8e0c6-137e-45af-b069-b69c42569652",
+   "mbName": "Ratones Paranoicos",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|5296689": {
+   "code": "PY",
+   "key": "dg|5296689",
+   "names": [
+    "Antonio Aguilar"
+   ],
+   "years": [
+    1969,
+    1968
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Latin"
+   ],
+   "dgId": 5296689,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "ba683849-490c-4afb-9c8d-7278b25cbdc1",
+   "mbName": "Antonio Aguilar",
+   "area": "Mexico",
+   "hitBasis": "name"
+  },
+  "PY:dg|7140383": {
+   "code": "PY",
+   "key": "dg|7140383",
+   "names": [
+    "Cuarteto Venus"
+   ],
+   "years": [
+    1969,
+    1968
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Latin"
+   ],
+   "dgId": 7140383,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "3c466abb-bb5c-477f-8360-28e4a1b00f87",
+   "mbName": "Antonio Aguilar y su Cuarteto Venus"
+  },
+  "PY:dg|81013": {
+   "code": "PY",
+   "key": "dg|81013",
+   "names": [
+    "Queen"
+   ],
+   "years": [
+    1991,
+    1984
+   ],
+   "releaseCount": 5,
+   "styles": [
+    "Synth-pop",
+    "Arena Rock",
+    "Classic Rock"
+   ],
+   "dgId": 81013,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "0383dadf-2a4e-4d10-a46a-e9e041da8eb3",
+   "mbName": "Queen",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|7531781": {
+   "code": "PY",
+   "key": "dg|7531781",
+   "names": [
+    "Disparo Certero"
+   ],
+   "years": [
+    2022
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Punk",
+    "Hardcore",
+    "Rock"
+   ],
+   "dgId": 7531781,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "6392202e-a1f5-43ab-904a-8697db2c1063",
+   "mbName": "Disparo Certero",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|5085858": {
+   "code": "PY",
+   "key": "dg|5085858",
+   "names": [
+    "Juan Cancio Barreto"
+   ],
+   "years": [
+    2005,
+    2006,
+    2008
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Guarania",
+    "Polka",
+    "Folk, World, & Country"
+   ],
+   "dgId": 5085858,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "7a1ace85-2f6a-4303-9bc5-c016841eec0e",
+   "mbName": "Juan Cancio Barreto",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4233418": {
+   "code": "PY",
+   "key": "dg|4233418",
+   "names": [
+    "Victor Band",
+    "Banda Victor"
+   ],
+   "years": [
+    1950
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Instrumental",
+    "Military",
+    "Marches"
+   ],
+   "dgId": 4233418,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "6bfe1c0e-c31b-477b-b3e0-70697ffce152",
+   "mbName": "Victor Band",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|281994": {
+   "code": "PY",
+   "key": "dg|281994",
+   "names": [
+    "Ray Conniff"
+   ],
+   "years": [
+    1983
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Light Music",
+    "Pop",
+    "Easy Listening"
+   ],
+   "dgId": 281994,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "b84dfb67-c437-4ccc-b512-1073fd4612eb",
+   "mbName": "Ray Conniff",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|1500111": {
+   "code": "PY",
+   "key": "dg|1500111",
+   "names": [
+    "El Templo"
+   ],
+   "years": [
+    2003
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Rock",
+    "Latin"
+   ],
+   "dgId": 1500111,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "155fb8e3-68f1-4832-a499-138b0ccdf29a",
+   "mbName": "El Templo",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|24221": {
+   "code": "PY",
+   "key": "dg|24221",
+   "names": [
+    "Tina Turner"
+   ],
+   "years": [
+    1991
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Classic Rock",
+    "Rock"
+   ],
+   "dgId": 24221,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "9072df14-b61e-42e2-b4f4-6bbb7fdb5586",
+   "mbName": "Tina Turner",
+   "area": "Switzerland",
+   "hitBasis": "name"
+  },
+  "PY:dg|1500124": {
+   "code": "PY",
+   "key": "dg|1500124",
+   "names": [
+    "Steel Rose"
+   ],
+   "years": [
+    1994,
+    2000
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Heavy Metal",
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 1500124,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "f70b85a2-77dd-47b6-9a10-73cf53c21692",
+   "mbName": "Steel Rose",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|2945626": {
+   "code": "PY",
+   "key": "dg|2945626",
+   "names": [
+    "Dúo Quintana-Escalante",
+    "Dúo De La Simpatia Quintana-Escalante",
+    "Quintana - Escalante"
+   ],
+   "years": [
+    1997
+   ],
+   "releaseCount": 6,
+   "styles": [
+    "Polka",
+    "Latin",
+    "Folk, World, & Country"
+   ],
+   "dgId": 2945626,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "c7bb3f4a-d29d-42b7-8153-041dd3b0320e",
+   "mbName": "Quintana - Escalante",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|6813631": {
+   "code": "PY",
+   "key": "dg|6813631",
+   "names": [
+    "Alfredo Cáceres"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Religious",
+    "Holiday",
+    "Pop"
+   ],
+   "dgId": 6813631,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "7999e141-cb64-4540-b84d-4621398f389a",
+   "mbName": "Alfredo Cáceres",
+   "area": "Guatemala",
+   "hitBasis": "name"
+  },
+  "PY:dg|5159342": {
+   "code": "PY",
+   "key": "dg|5159342",
+   "names": [
+    "Orquesta Peru Rima",
+    "Orquesta \"Peru Rimá\"",
+    "Conjunto Perú - Rimá"
+   ],
+   "years": [],
+   "releaseCount": 2,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Latin"
+   ],
+   "dgId": 5159342,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "30c80107-3146-45c4-bd3a-d3212f1064eb",
+   "mbName": "Orquesta Peru Rima",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4260661": {
+   "code": "PY",
+   "key": "dg|4260661",
+   "names": [
+    "Jorge \"Lobito\" Martínez"
+   ],
+   "years": [
+    1999,
+    1997
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Educational",
+    "Nursery Rhymes",
+    "Children's"
+   ],
+   "dgId": 4260661,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "f0fb2676-8658-4aa0-808b-ec95b83bc4a2",
+   "mbName": "Jorge \"Lobito\" Martínez",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|5530": {
+   "code": "PY",
+   "key": "dg|5530",
+   "names": [
+    "Shakira"
+   ],
+   "years": [
+    2010
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Latin",
+    "Pop Rock",
+    "Ballad"
+   ],
+   "dgId": 5530,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "bf24ca37-25f4-4e34-9aec-460b94364cfc",
+   "mbName": "Shakira",
+   "area": "Colombia",
+   "hitBasis": "name"
+  },
+  "PY:dg|100405": {
+   "code": "PY",
+   "key": "dg|100405",
+   "names": [
+    "Roxette"
+   ],
+   "years": [
+    1991
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Rock",
+    "Pop"
+   ],
+   "dgId": 100405,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "d3b2711f-2baa-441a-be95-14945ca7e6ea",
+   "mbName": "Roxette",
+   "area": "Sweden",
+   "hitBasis": "name"
+  },
+  "PY:dg|66025": {
+   "code": "PY",
+   "key": "dg|66025",
+   "names": [
+    "Anthrax"
+   ],
+   "years": [
+    1994
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 66025,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "b616d6f0-ec1f-4c69-8a79-12a97ece7372",
+   "mbName": "Anthrax",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|8760": {
+   "code": "PY",
+   "key": "dg|8760",
+   "names": [
+    "Madonna"
+   ],
+   "years": [
+    1994,
+    1992,
+    1998
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Downtempo",
+    "Synth-pop",
+    "Electronic"
+   ],
+   "dgId": 8760,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "79239441-bfd5-4981-a70c-55c3f15c1287",
+   "mbName": "Madonna",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|255292": {
+   "code": "PY",
+   "key": "dg|255292",
+   "names": [
+    "Poison"
+   ],
+   "years": [
+    1990,
+    1993
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Glam",
+    "Hard Rock",
+    "Rock"
+   ],
+   "dgId": 255292,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "c79c43d4-cbed-4373-89ce-6560f62eb7d8",
+   "mbName": "Poison",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|94066": {
+   "code": "PY",
+   "key": "dg|94066",
+   "names": [
+    "Van Halen"
+   ],
+   "years": [
+    1996
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Hard Rock",
+    "Heavy Metal",
+    "Classic Rock"
+   ],
+   "dgId": 94066,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "b665b768-0d83-4363-950c-31ed39317c15",
+   "mbName": "Van Halen",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|2714": {
+   "code": "PY",
+   "key": "dg|2714",
+   "names": [
+    "Erasure"
+   ],
+   "years": [
+    1991,
+    1992,
+    1994
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Synth-pop",
+    "Electronic",
+    "Pop"
+   ],
+   "dgId": 2714,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "43b58c98-3779-4b04-9a23-1c95cca3a145",
+   "mbName": "Erasure",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|11136": {
+   "code": "PY",
+   "key": "dg|11136",
+   "names": [
+    "Peter Gabriel"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Downtempo",
+    "Art Rock",
+    "Pop Rock"
+   ],
+   "dgId": 11136,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "8e66ea2b-b57b-47d9-8df0-df4630aeb8e5",
+   "mbName": "Peter Gabriel",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|94068": {
+   "code": "PY",
+   "key": "dg|94068",
+   "names": [
+    "Mötley Crüe"
+   ],
+   "years": [
+    1997,
+    1991
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Heavy Metal",
+    "Rock",
+    "Hard Rock"
+   ],
+   "dgId": 94068,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "26f07661-e115-471d-a930-206f5c89d17c",
+   "mbName": "Mötley Crüe",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|1648547": {
+   "code": "PY",
+   "key": "dg|1648547",
+   "names": [
+    "Violent Attack"
+   ],
+   "years": [
+    2003,
+    2006,
+    2022,
+    2002
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 1648547,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "550d28d5-5349-4dd5-a42d-638a4664d584",
+   "mbName": "Violent Attack",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|7237722": {
+   "code": "PY",
+   "key": "dg|7237722",
+   "names": [
+    "Eruptive"
+   ],
+   "years": [
+    2019,
+    2020
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Death Metal",
+    "Rock"
+   ],
+   "dgId": 7237722,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "99d5fdd2-3bb3-400c-a553-86ca6767125b",
+   "mbName": "Eruptive",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|2194277": {
+   "code": "PY",
+   "key": "dg|2194277",
+   "names": [
+    "Wisdom"
+   ],
+   "years": [
+    1995,
+    2000,
+    2008,
+    2006,
+    2022,
+    2024
+   ],
+   "releaseCount": 7,
+   "styles": [
+    "Black Metal",
+    "Rock",
+    "Avantgarde"
+   ],
+   "dgId": 2194277,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "6c871976-abb2-490e-9d19-aea3e9048599",
+   "mbName": "Lion Wisdom"
+  },
+  "PY:dg|3967237": {
+   "code": "PY",
+   "key": "dg|3967237",
+   "names": [
+    "FLOU",
+    "Flou"
+   ],
+   "years": [
+    2015,
+    2003,
+    2006,
+    2010,
+    2021
+   ],
+   "releaseCount": 5,
+   "styles": [
+    "Progressive Metal",
+    "Alternative Rock",
+    "Industrial Metal"
+   ],
+   "dgId": 3967237,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "340de703-5207-4f68-abea-cf5e9eed9064",
+   "mbName": "Flou",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|5146428": {
+   "code": "PY",
+   "key": "dg|5146428",
+   "names": [
+    "Amuleto De Calamidades"
+   ],
+   "years": [
+    2016
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Black Metal",
+    "Rock"
+   ],
+   "dgId": 5146428,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "eca8efa2-af4b-40db-80fd-9e84b7012cd9",
+   "mbName": "Amuleto de Calamidades",
+   "area": "Ecuador",
+   "hitBasis": "name"
+  },
+  "PY:dg|4790856": {
+   "code": "PY",
+   "key": "dg|4790856",
+   "names": [
+    "Motorized"
+   ],
+   "years": [
+    2016,
+    2005,
+    2006
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Death Metal",
+    "Rock",
+    "Technical Death Metal"
+   ],
+   "dgId": 4790856,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "5dd067e7-8eb3-481b-9af1-abfe5e2fc8b3",
+   "mbName": "Motörized",
+   "area": "Australia",
+   "hitBasis": "name"
+  },
+  "PY:dg|2316948": {
+   "code": "PY",
+   "key": "dg|2316948",
+   "names": [
+    "Pestilencia"
+   ],
+   "years": [
+    2015,
+    2020
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Hardcore",
+    "Rock"
+   ],
+   "dgId": 2316948,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "9971b321-b3fa-41f8-8385-52f7427b8109",
+   "mbName": "Pestilência",
+   "area": "Portugal",
+   "hitBasis": "name"
+  },
+  "PY:dg|1491720": {
+   "code": "PY",
+   "key": "dg|1491720",
+   "names": [
+    "Sergio Denis"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Ballad",
+    "Latin",
+    "Pop"
+   ],
+   "dgId": 1491720,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "600be5aa-acee-494c-8ebb-ca7c4cdabd4d",
+   "mbName": "Sergio Denis",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|2725": {
+   "code": "PY",
+   "key": "dg|2725",
+   "names": [
+    "Depeche Mode"
+   ],
+   "years": [
+    1990,
+    1993
+   ],
+   "releaseCount": 5,
+   "styles": [
+    "Synth-pop",
+    "Electronic",
+    "Alternative Rock"
+   ],
+   "dgId": 2725,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "8538e728-ca0b-4321-b7e5-cff6565dd4c0",
+   "mbName": "Depeche Mode",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|217655": {
+   "code": "PY",
+   "key": "dg|217655",
+   "names": [
+    "Alejandro Sanz"
+   ],
+   "years": [
+    2001
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Nueva Trova",
+    "Latin"
+   ],
+   "dgId": 217655,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "9bacf78f-9132-43da-8873-8a9eb49da0e9",
+   "mbName": "Alejandro Sanz",
+   "area": "Spain",
+   "hitBasis": "name"
+  },
+  "PY:dg|5254975": {
+   "code": "PY",
+   "key": "dg|5254975",
+   "names": [
+    "Los Trovadores Paraguayos"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Latin",
+    "Folk, World, & Country"
+   ],
+   "dgId": 5254975,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "e2c942bb-f7ad-44de-9f16-47b0720c5a9e",
+   "mbName": "Los Trovadores Paraguayos",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|9389272": {
+   "code": "PY",
+   "key": "dg|9389272",
+   "names": [
+    "Tierra Adentro"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Latin",
+    "Folk, World, & Country"
+   ],
+   "dgId": 9389272,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "91b8fecd-7cec-49d8-8292-84eccf38fa52",
+   "mbName": "Tierra Adentro",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|5140993": {
+   "code": "PY",
+   "key": "dg|5140993",
+   "names": [
+    "Los Jokers"
+   ],
+   "years": [
+    1974,
+    1980
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Soul",
+    "Funk",
+    "Polka"
+   ],
+   "dgId": 5140993,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "cd23433c-17b3-4471-848d-acb743f2ae76",
+   "mbName": "Los Jokers (Paraguayos)"
+  },
+  "PY:dg|7141179": {
+   "code": "PY",
+   "key": "dg|7141179",
+   "names": [
+    "Idiot And Virgin"
+   ],
+   "years": [
+    2021
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Noisecore",
+    "Noise",
+    "Experimental"
+   ],
+   "dgId": 7141179,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "ddbde511-fb7e-4cdf-84ae-2d8745c083aa",
+   "mbName": "Idiot and Virgin",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|6518": {
+   "code": "PY",
+   "key": "dg|6518",
+   "names": [
+    "Simply Red"
+   ],
+   "years": [
+    1996
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Soul",
+    "Contemporary R&B",
+    "Ballad"
+   ],
+   "dgId": 6518,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "a9100753-f539-43cf-bcc9-579566fb512e",
+   "mbName": "Simply Red",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|3916304": {
+   "code": "PY",
+   "key": "dg|3916304",
+   "names": [
+    "Deadly Noise Crew",
+    "Deadly"
+   ],
+   "years": [
+    2024,
+    2026
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Grindcore",
+    "Rock"
+   ],
+   "dgId": 3916304,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "c26486df-e776-4e0d-917f-d1b988d7e3b3",
+   "mbName": "Deadly Avenger"
+  },
+  "PY:dg|155484": {
+   "code": "PY",
+   "key": "dg|155484",
+   "names": [
+    "Julian Lennon"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Soft Rock",
+    "Pop Rock",
+    "Rock"
+   ],
+   "dgId": 155484,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "fbe1a6d6-12c9-459e-bf73-fdcc76b14b7e",
+   "mbName": "Julian Lennon",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|1514347": {
+   "code": "PY",
+   "key": "dg|1514347",
+   "names": [
+    "Trio Paraná",
+    "Trío Parana",
+    "Trío Paraná"
+   ],
+   "years": [
+    1967,
+    1965
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Latin"
+   ],
+   "dgId": 1514347,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "ffc9516e-e2ea-4967-8956-608136225f7f",
+   "mbName": "Trío Paraná",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:nm|a ha": {
+   "code": "PY",
+   "key": "nm|a ha",
+   "names": [
+    "a ha"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "New Wave",
+    "Pop Rock",
+    "Rock"
+   ],
+   "dgId": null,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "7364dea6-ca9a-48e3-be01-b44ad0d19897",
+   "mbName": "a‐ha",
+   "area": "Norway",
+   "hitBasis": "name"
+  },
+  "PY:nm|los guairenos": {
+   "code": "PY",
+   "key": "nm|los guairenos",
+   "names": [
+    "los guairenos"
+   ],
+   "years": [],
+   "releaseCount": 2,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Chamamé"
+   ],
+   "dgId": null,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "d3f4e6bd-1629-4f6f-9876-c23249761c30",
+   "mbName": "Los Guaireños",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:nm|alberto de luque y los amigos": {
+   "code": "PY",
+   "key": "nm|alberto de luque y los amigos",
+   "names": [
+    "alberto de luque y los amigos"
+   ],
+   "years": [
+    1974
+   ],
+   "releaseCount": 5,
+   "styles": [
+    "Bolero",
+    "Cha-Cha",
+    "Cubano"
+   ],
+   "dgId": null,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "0bbb7fba-9cda-44b5-b8f2-b1396e656180",
+   "mbName": "Alberto De Luque Y Los Amigos",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:nm|margarita pildayn": {
+   "code": "PY",
+   "key": "nm|margarita pildayn",
+   "names": [
+    "margarita pildayn"
+   ],
+   "years": [],
+   "releaseCount": 2,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Latin"
+   ],
+   "dgId": null,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "b418a865-9964-4759-b81a-ae90c8de0ebd",
+   "mbName": "Margarita Pildayn",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:nm|rigoberto arevalo y su trio de siempre": {
+   "code": "PY",
+   "key": "nm|rigoberto arevalo y su trio de siempre",
+   "names": [
+    "rigoberto arevalo y su trio de siempre"
+   ],
+   "years": [
+    2002
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Guarania",
+    "Polka",
+    "Chamamé"
+   ],
+   "dgId": null,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "f6c99d9f-a02a-411b-8a90-8804b8437bd5",
+   "mbName": "Rigoberto Arévalo y su trío de siempre",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:nm|guns n roses": {
+   "code": "PY",
+   "key": "nm|guns n roses",
+   "names": [
+    "guns n roses"
+   ],
+   "years": [],
+   "releaseCount": 3,
+   "styles": [
+    "Hard Rock",
+    "Classic Rock",
+    "Rock"
+   ],
+   "dgId": null,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "eeb1195b-f213-4ce1-b28c-8565211f8e43",
+   "mbName": "Guns N’ Roses",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|8137328": {
+   "code": "PY",
+   "key": "dg|8137328",
+   "names": [
+    "Shitload"
+   ],
+   "years": [
+    2025
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Experimental",
+    "Noise",
+    "Abstract"
+   ],
+   "dgId": 8137328,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "d91d3d06-304e-4ff2-83c8-fdfb244cbf7e",
+   "mbName": "Shitload",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|6210362": {
+   "code": "PY",
+   "key": "dg|6210362",
+   "names": [
+    "Qetsy"
+   ],
+   "years": [
+    2016,
+    2017,
+    2015,
+    2021,
+    2023,
+    2024
+   ],
+   "releaseCount": 8,
+   "styles": [
+    "Juke",
+    "Experimental",
+    "Instrumental"
+   ],
+   "dgId": 6210362,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "78acea69-9a96-4287-8f70-eef1b6040ff5",
+   "mbName": "Qetsy",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:nm|ray conniff": {
+   "code": "PY",
+   "key": "nm|ray conniff",
+   "names": [
+    "ray conniff"
+   ],
+   "years": [
+    1991,
+    1983
+   ],
+   "releaseCount": 6,
+   "styles": [
+    "Light Music",
+    "Pop",
+    "Theme"
+   ],
+   "dgId": null,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "b84dfb67-c437-4ccc-b512-1073fd4612eb",
+   "mbName": "Ray Conniff",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|82730": {
+   "code": "PY",
+   "key": "dg|82730",
+   "names": [
+    "The Beatles"
+   ],
+   "years": [
+    1979,
+    1973
+   ],
+   "releaseCount": 10,
+   "styles": [
+    "Pop Rock",
+    "Rock",
+    "Rock & Roll"
+   ],
+   "dgId": 82730,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
+   "mbName": "The Beatles",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|2978783": {
+   "code": "PY",
+   "key": "dg|2978783",
+   "names": [
+    "Juan Luis Guerra 4.40"
+   ],
+   "years": [
+    1990
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Bachata",
+    "Merengue",
+    "Salsa"
+   ],
+   "dgId": 2978783,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "1659a41f-27d3-4823-8a15-bf7cd295cf59",
+   "mbName": "Juan Luis Guerra 4.40",
+   "area": "Dominican Republic",
+   "hitBasis": "name"
+  },
+  "PY:dg|737899": {
+   "code": "PY",
+   "key": "dg|737899",
+   "names": [
+    "Diabolical"
+   ],
+   "years": [
+    2019
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Rock",
+    "Black Metal"
+   ],
+   "dgId": 737899,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "aaace176-1717-4140-b2bb-2b32b34a23f1",
+   "mbName": "Diabolical",
+   "area": "Sweden",
+   "hitBasis": "name"
+  },
+  "PY:dg|21764": {
+   "code": "PY",
+   "key": "dg|21764",
+   "names": [
+    "Bob Marley & The Wailers"
+   ],
+   "years": [
+    1984,
+    1983
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Reggae",
+    "Roots Reggae",
+    "Rhythm & Blues"
+   ],
+   "dgId": 21764,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "c296e10c-110a-4103-9e77-47bfebb7fb2e",
+   "mbName": "Bob Marley & The Wailers",
+   "area": "Jamaica",
+   "hitBasis": "name"
+  },
+  "PY:dg|90541": {
+   "code": "PY",
+   "key": "dg|90541",
+   "names": [
+    "Mick Jagger"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Rock",
+    "Pop"
+   ],
+   "dgId": 90541,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "b5ffc3aa-b868-4b88-905f-d73d51dbe51c",
+   "mbName": "Mick Jagger",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|4307128": {
+   "code": "PY",
+   "key": "dg|4307128",
+   "names": [
+    "Eternal Abyss"
+   ],
+   "years": [
+    2011,
+    2013
+   ],
+   "releaseCount": 5,
+   "styles": [
+    "Black Metal",
+    "Rock"
+   ],
+   "dgId": 4307128,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "c643c2c9-ba62-47dd-96af-0c8fb07ca1da",
+   "mbName": "Eternal Abyss",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|2102198": {
+   "code": "PY",
+   "key": "dg|2102198",
+   "names": [
+    "Paraguay"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Folk, World, & Country"
+   ],
+   "dgId": 2102198,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "638ce976-726b-4f01-ab6f-59461c1877ae",
+   "mbName": "Paraguay Zoo"
+  },
+  "PY:dg|1259101": {
+   "code": "PY",
+   "key": "dg|1259101",
+   "names": [
+    "Johann Strauss Jr.",
+    "Johann Strauss"
+   ],
+   "years": [],
+   "releaseCount": 2,
+   "styles": [
+    "Romantic",
+    "Classical"
+   ],
+   "dgId": 1259101,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "8255db36-4902-4cf6-8612-0f2b4288bc9a",
+   "mbName": "Johann Strauss",
+   "area": "Austria",
+   "hitBasis": "name"
+  },
+  "PY:dg|6472525": {
+   "code": "PY",
+   "key": "dg|6472525",
+   "names": [
+    "Javier Vázquez"
+   ],
+   "years": [
+    2016
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "House",
+    "Electronic"
+   ],
+   "dgId": 6472525,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "a14c35b3-1b9e-49ed-b044-dce5bd694e57",
+   "mbName": "Javier Vázquez",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|2672669": {
+   "code": "PY",
+   "key": "dg|2672669",
+   "names": [
+    "Gonzalo MD"
+   ],
+   "years": [
+    2016
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Techno",
+    "Electronic"
+   ],
+   "dgId": 2672669,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "92c81ffd-86e4-4d9f-8e55-b4129c52c4f6",
+   "mbName": "Gonzalo MD",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|2194780": {
+   "code": "PY",
+   "key": "dg|2194780",
+   "names": [
+    "Sabaoth"
+   ],
+   "years": [
+    1994,
+    2019,
+    2020
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Black Metal",
+    "Gothic Metal",
+    "Rock"
+   ],
+   "dgId": 2194780,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "a0f283c3-bdd0-4dd0-9daf-d9617213e498",
+   "mbName": "Sabaoth",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|2561705": {
+   "code": "PY",
+   "key": "dg|2561705",
+   "names": [
+    "Funeral"
+   ],
+   "years": [
+    2005
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Death Metal",
+    "Rock"
+   ],
+   "dgId": 2561705,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "7561ff6c-2ab7-4776-9a9a-662f23b2effc",
+   "mbName": "Dark Funeral"
+  },
+  "PY:dg|10642912": {
+   "code": "PY",
+   "key": "dg|10642912",
+   "names": [
+    "Aya"
+   ],
+   "years": [
+    2022,
+    2023,
+    2024
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Hardcore",
+    "Crust",
+    "Rock"
+   ],
+   "dgId": 10642912,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "cf580d82-3f3e-4b86-8874-7e0fbe794f01",
+   "mbName": "Aya Nakamura"
+  },
+  "PY:dg|4686645": {
+   "code": "PY",
+   "key": "dg|4686645",
+   "names": [
+    "Bohemia Urbana"
+   ],
+   "years": [
+    2013
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Rock",
+    "Reggae"
+   ],
+   "dgId": 4686645,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "fd440bc0-85e5-4c0f-9ad6-acfb6dc4a8aa",
+   "mbName": "Bohemia urbana",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|7552": {
+   "code": "PY",
+   "key": "dg|7552",
+   "names": [
+    "Pet Shop Boys"
+   ],
+   "years": [
+    1993,
+    1990,
+    1996,
+    1991
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Synth-pop",
+    "Electronic",
+    "Pop"
+   ],
+   "dgId": 7552,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "be540c02-7898-4b79-9acc-c8122c7d9e83",
+   "mbName": "Pet Shop Boys",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|1132167": {
+   "code": "PY",
+   "key": "dg|1132167",
+   "names": [
+    "Roupa Nova"
+   ],
+   "years": [
+    1987
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "MPB",
+    "AOR",
+    "Soft Rock"
+   ],
+   "dgId": 1132167,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "6e71462e-0e62-49a8-a2d0-ec7179f58f66",
+   "mbName": "Roupa Nova",
+   "area": "Brazil",
+   "hitBasis": "name"
+  },
+  "PY:dg|101028": {
+   "code": "PY",
+   "key": "dg|101028",
+   "names": [
+    "Phil Collins"
+   ],
+   "years": [
+    1993,
+    1996,
+    1990
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Pop Rock",
+    "Soft Rock",
+    "Rock"
+   ],
+   "dgId": 101028,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "401c3991-b76b-499d-8082-9f2df958ef78",
+   "mbName": "Phil Collins",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|69866": {
+   "code": "PY",
+   "key": "dg|69866",
+   "names": [
+    "ABBA"
+   ],
+   "years": [
+    1981
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop"
+   ],
+   "dgId": 69866,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "d87e52c5-bb8d-4da8-b941-9f4928627dc8",
+   "mbName": "ABBA",
+   "area": "Sweden",
+   "hitBasis": "name"
+  },
+  "PY:dg|11249054": {
+   "code": "PY",
+   "key": "dg|11249054",
+   "names": [
+    "Sacro"
+   ],
+   "years": [
+    2009,
+    2007,
+    2013
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Heavy Metal",
+    "Thrash",
+    "Hardcore"
+   ],
+   "dgId": 11249054,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "09054b5f-7881-49af-a98a-656227811868",
+   "mbName": "Sacro",
+   "area": "Poland",
+   "hitBasis": "name"
+  },
+  "PY:dg|908651": {
+   "code": "PY",
+   "key": "dg|908651",
+   "names": [
+    "Charly Garcia"
+   ],
+   "years": [
+    1994,
+    1993,
+    1987
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Pop Rock",
+    "Classic Rock",
+    "Rock"
+   ],
+   "dgId": 908651,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "dd999ced-1dd4-44b8-ab67-ee5ec23e52b7",
+   "mbName": "Charly García",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|8019010": {
+   "code": "PY",
+   "key": "dg|8019010",
+   "names": [
+    "Querubes"
+   ],
+   "years": [
+    1998,
+    2009,
+    2019
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Power Metal",
+    "Rock",
+    "Progressive Metal"
+   ],
+   "dgId": 8019010,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "dfe84428-a453-4249-b944-3ee09179858d",
+   "mbName": "Querubes",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|6651928": {
+   "code": "PY",
+   "key": "dg|6651928",
+   "names": [
+    "Los Joker's",
+    "Jokers"
+   ],
+   "years": [
+    1981,
+    1985
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Latin"
+   ],
+   "dgId": 6651928,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "3c816202-1d93-4d95-b753-4fcd73c043fa",
+   "mbName": "Satan Jokers"
+  },
+  "PY:dg|12435196": {
+   "code": "PY",
+   "key": "dg|12435196",
+   "names": [
+    "Oxigen Project"
+   ],
+   "years": [
+    2025
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Italodance",
+    "EBM",
+    "Electronic"
+   ],
+   "dgId": 12435196,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "266195c3-48a6-4ecc-8f71-3cf63627a7d9",
+   "mbName": "Oxigen Project",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|5339498": {
+   "code": "PY",
+   "key": "dg|5339498",
+   "names": [
+    "Andrés Pérez"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Guarania",
+    "Polka",
+    "Folk, World, & Country"
+   ],
+   "dgId": 5339498,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "8431ab71-7d92-4e29-b458-6cfa81985988",
+   "mbName": "Andres Perez",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|15602478": {
+   "code": "PY",
+   "key": "dg|15602478",
+   "names": [
+    "Altamirano"
+   ],
+   "years": [
+    2023
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Rock",
+    "Reggae",
+    "Folk, World, & Country"
+   ],
+   "dgId": 15602478,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "era-overlap",
+   "mbid": "0c4d0a20-07a7-4b05-a0ed-95197eed04ec",
+   "mbName": "Altamirano",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|2327232": {
+   "code": "PY",
+   "key": "dg|2327232",
+   "names": [
+    "Zeitgeist"
+   ],
+   "years": [
+    2010,
+    2017
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Gothic Metal",
+    "Rock",
+    "Industrial Metal"
+   ],
+   "dgId": 2327232,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "84fd9d3f-6a2d-4006-ad46-766333ffe1fc",
+   "mbName": "Zeitgeist",
+   "area": "Berlin",
+   "hitBasis": "name"
+  },
+  "PY:dg|7082540": {
+   "code": "PY",
+   "key": "dg|7082540",
+   "names": [
+    "Keber"
+   ],
+   "years": [
+    2003
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Black Metal",
+    "Gothic Metal",
+    "Unblack Metal"
+   ],
+   "dgId": 7082540,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "52c24016-168a-4844-a873-d11badd995e6",
+   "mbName": "Suzana Keber"
+  },
+  "PY:dg|8259393": {
+   "code": "PY",
+   "key": "dg|8259393",
+   "names": [
+    "Crispin"
+   ],
+   "years": [
+    2018
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Heavy Metal",
+    "Rock"
+   ],
+   "dgId": 8259393,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "5d3aa118-0742-4352-a328-01c67549f9fc",
+   "mbName": "Crispin",
+   "area": "Hungary",
+   "hitBasis": "name"
+  },
+  "PY:dg|54650": {
+   "code": "PY",
+   "key": "dg|54650",
+   "names": [
+    "INXS"
+   ],
+   "years": [
+    1991,
+    1987,
+    1993
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Pop Rock",
+    "Rock",
+    "New Wave"
+   ],
+   "dgId": 54650,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "481bf5f9-2e7c-4c44-b08a-05b32bc7c00d",
+   "mbName": "INXS",
+   "area": "Australia",
+   "hitBasis": "name"
+  },
+  "PY:dg|4404331": {
+   "code": "PY",
+   "key": "dg|4404331",
+   "names": [
+    "Eligio Mujica"
+   ],
+   "years": [],
+   "releaseCount": 3,
+   "styles": [
+    "Polka",
+    "Latin",
+    "Folk, World, & Country"
+   ],
+   "dgId": 4404331,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "374067eb-cd68-4857-9809-5c0b03653c90",
+   "mbName": "Eligio Mujica",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4400836": {
+   "code": "PY",
+   "key": "dg|4400836",
+   "names": [
+    "Amambay Cardozo Ocampo",
+    "Amambay"
+   ],
+   "years": [
+    1978
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Holiday"
+   ],
+   "dgId": 4400836,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": null,
+   "mbName": null
+  },
+  "PY:dg|16050741": {
+   "code": "PY",
+   "key": "dg|16050741",
+   "names": [
+    "SISTI"
+   ],
+   "years": [
+    2025
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Electro",
+    "Techno",
+    "Electronic"
+   ],
+   "dgId": 16050741,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "c8b67087-a29b-45e7-8933-6d25687bd348",
+   "mbName": "Andrea Sisti"
+  },
+  "PY:dg|3005848": {
+   "code": "PY",
+   "key": "dg|3005848",
+   "names": [
+    "María Martha Serra Lima"
+   ],
+   "years": [
+    1985
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Ballad",
+    "Vocal",
+    "Pop"
+   ],
+   "dgId": 3005848,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "622d7be2-3eba-4295-8071-a7f23772bfb8",
+   "mbName": "María Martha Serra Lima",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|4395238": {
+   "code": "PY",
+   "key": "dg|4395238",
+   "names": [
+    "La Orquesta Los Hidalgos",
+    "Los Hidalgos De Santos Lima",
+    "Los Hidalgos"
+   ],
+   "years": [],
+   "releaseCount": 2,
+   "styles": [
+    "Polka",
+    "Folk, World, & Country",
+    "Guarania"
+   ],
+   "dgId": 4395238,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "b6685cd0-518f-47c6-a92a-dc67a48366de",
+   "mbName": "Trio Los Hidalgos"
+  },
+  "PY:dg|7393859": {
+   "code": "PY",
+   "key": "dg|7393859",
+   "names": [
+    "Alienated Entity"
+   ],
+   "years": [
+    2019
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "IDM",
+    "Industrial",
+    "Experimental"
+   ],
+   "dgId": 7393859,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "df03b69e-84e8-4298-815f-67bb4867419b",
+   "mbName": "Alienated Entity",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|1106266": {
+   "code": "PY",
+   "key": "dg|1106266",
+   "names": [
+    "Agustín Barrios Mangoré",
+    "Agustín Barrios \"Mangoré\""
+   ],
+   "years": [
+    2011
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Impressionist",
+    "Polka",
+    "Folk"
+   ],
+   "dgId": 1106266,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "bc1ce4cf-374e-4b0f-93d2-53871e681e6f",
+   "mbName": "Agustín Barrios Mangoré",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|5321308": {
+   "code": "PY",
+   "key": "dg|5321308",
+   "names": [
+    "The Rabbits"
+   ],
+   "years": [
+    1969
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Psychedelic",
+    "Beat",
+    "Garage Rock"
+   ],
+   "dgId": 5321308,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "21e63f91-960b-4cf4-8fae-20bac839c579",
+   "mbName": "The Rabbits",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|155833": {
+   "code": "PY",
+   "key": "dg|155833",
+   "names": [
+    "The Cranberries"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Alternative Rock",
+    "Rock"
+   ],
+   "dgId": 155833,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "c98d40fd-f6cf-4b26-883e-eaa515ee2851",
+   "mbName": "The Cranberries",
+   "area": "Ireland",
+   "hitBasis": "name"
+  },
+  "PY:dg|67331": {
+   "code": "PY",
+   "key": "dg|67331",
+   "names": [
+    "Julio Iglesias"
+   ],
+   "years": [
+    1989
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Ballad",
+    "Chanson",
+    "Vocal"
+   ],
+   "dgId": 67331,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "3be4099e-f180-4038-af84-ae18a09eab02",
+   "mbName": "Julio Iglesias",
+   "area": "Spain",
+   "hitBasis": "name"
+  },
+  "PY:dg|9706": {
+   "code": "PY",
+   "key": "dg|9706",
+   "names": [
+    "Culture Club"
+   ],
+   "years": [
+    1986,
+    2002,
+    1993
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Synth-pop",
+    "Electronic",
+    "Pop"
+   ],
+   "dgId": 9706,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "81435053-e1a2-48a4-adfd-e89f310c7b38",
+   "mbName": "Culture Club",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|263139": {
+   "code": "PY",
+   "key": "dg|263139",
+   "names": [
+    "Abigail"
+   ],
+   "years": [
+    2021
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Black Metal",
+    "Rock"
+   ],
+   "dgId": 263139,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "6b641780-cd21-4e2e-8158-793e2e9f690e",
+   "mbName": "Abigail",
+   "area": "Tokyo",
+   "hitBasis": "name"
+  },
+  "PY:dg|7705140": {
+   "code": "PY",
+   "key": "dg|7705140",
+   "names": [
+    "Stürmtiger"
+   ],
+   "years": [
+    2020
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Oi",
+    "Punk",
+    "Heavy Metal"
+   ],
+   "dgId": 7705140,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "372ede2a-2b9f-49ff-96ac-a2288e58221d",
+   "mbName": "Sturmtiger",
+   "area": "Denmark",
+   "hitBasis": "name"
+  },
+  "PY:dg|518342": {
+   "code": "PY",
+   "key": "dg|518342",
+   "names": [
+    "Liberación",
+    "Grupo Liberacion"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Latin"
+   ],
+   "dgId": 518342,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "d87dd276-f8be-4526-b05d-1104f0a79bc1",
+   "mbName": "Liberación",
+   "area": "Mexico",
+   "hitBasis": "name"
+  },
+  "PY:dg|3146595": {
+   "code": "PY",
+   "key": "dg|3146595",
+   "names": [
+    "Ful"
+   ],
+   "years": [
+    2002
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Hardcore",
+    "Rock"
+   ],
+   "dgId": 3146595,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "4cb7875a-4ba6-4d78-812b-6df5df71e5da",
+   "mbName": "Dar ful ful"
+  },
+  "PY:dg|2940857": {
+   "code": "PY",
+   "key": "dg|2940857",
+   "names": [
+    "Cacería"
+   ],
+   "years": [
+    2012,
+    2009,
+    2013
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Thrash",
+    "Rock",
+    "Heavy Metal"
+   ],
+   "dgId": 2940857,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "3a6f8c06-8bd5-4d5a-bf6a-1e7ae5bef51b",
+   "mbName": "Cacería",
+   "area": "Asunción",
+   "hitBasis": "name"
+  },
+  "PY:dg|7438115": {
+   "code": "PY",
+   "key": "dg|7438115",
+   "names": [
+    "Disincarnated"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Death Metal",
+    "Rock",
+    "Grindcore"
+   ],
+   "dgId": 7438115,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "a903dbd5-d826-4a43-8d9e-82d09d76deb4",
+   "mbName": "Disincarnated",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|2450802": {
+   "code": "PY",
+   "key": "dg|2450802",
+   "names": [
+    "LPZ"
+   ],
+   "years": [
+    2022
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Techno",
+    "House",
+    "Electronic"
+   ],
+   "dgId": 2450802,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "720f3708-9902-4b98-bdb8-1f66f56300c8",
+   "mbName": "LPZ",
+   "area": "Asunción",
+   "hitBasis": "name"
+  },
+  "PY:dg|28795": {
+   "code": "PY",
+   "key": "dg|28795",
+   "names": [
+    "Prince"
+   ],
+   "years": [
+    1991
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Smooth Jazz",
+    "Pop Rap",
+    "Pop Rock"
+   ],
+   "dgId": 28795,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "070d193a-845c-479f-980e-bef15710653e",
+   "mbName": "Prince",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|84751": {
+   "code": "PY",
+   "key": "dg|84751",
+   "names": [
+    "The New Power Generation"
+   ],
+   "years": [
+    1991
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Smooth Jazz",
+    "Pop Rap",
+    "Pop Rock"
+   ],
+   "dgId": 84751,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "51d63176-56e8-45b9-88e3-81e6436473f3",
+   "mbName": "The New Power Generation",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|1582116": {
+   "code": "PY",
+   "key": "dg|1582116",
+   "names": [
+    "Attaque 77"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Punk",
+    "Rock"
+   ],
+   "dgId": 1582116,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "f74e2126-0bbf-4a3a-8e91-ec23d8d63921",
+   "mbName": "Attaque 77",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|124497": {
+   "code": "PY",
+   "key": "dg|124497",
+   "names": [
+    "Joe Cocker"
+   ],
+   "years": [
+    1990
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Blues Rock",
+    "Pop Rock",
+    "Rock"
+   ],
+   "dgId": 124497,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "32f2d6bd-c22b-42cf-a7bc-0c4b48cd2bcb",
+   "mbName": "Joe Cocker",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|45467": {
+   "code": "PY",
+   "key": "dg|45467",
+   "names": [
+    "Pink Floyd"
+   ],
+   "years": [],
+   "releaseCount": 3,
+   "styles": [
+    "Prog Rock",
+    "Classic Rock",
+    "Rock"
+   ],
+   "dgId": 45467,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
+   "mbName": "Pink Floyd",
+   "area": "England",
+   "hitBasis": "name"
+  },
+  "PY:dg|20991": {
+   "code": "PY",
+   "key": "dg|20991",
+   "names": [
+    "The Rolling Stones",
+    "Rolling Stones"
+   ],
+   "years": [
+    1968,
+    1986
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Psychedelic Rock",
+    "Classic Rock",
+    "Rock"
+   ],
+   "dgId": 20991,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598",
+   "mbName": "The Rolling Stones",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|2392291": {
+   "code": "PY",
+   "key": "dg|2392291",
+   "names": [
+    "Adonay"
+   ],
+   "years": [
+    2021
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Black Metal",
+    "Rock"
+   ],
+   "dgId": 2392291,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "cc59ca52-d98a-4792-ac56-c5a0ace47e1a",
+   "mbName": "Adonay Pereira"
+  },
+  "PY:dg|5255355": {
+   "code": "PY",
+   "key": "dg|5255355",
+   "names": [
+    "Cuarteto \"Paraguay Poty Pyajhú\""
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Latin"
+   ],
+   "dgId": 5255355,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "0aa1c429-ea6e-42a4-8585-b80085f6df30",
+   "mbName": "Poty"
+  },
+  "PY:dg|168684": {
+   "code": "PY",
+   "key": "dg|168684",
+   "names": [
+    "Richard Clayderman"
+   ],
+   "years": [
+    1984
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Light Music",
+    "Pop"
+   ],
+   "dgId": 168684,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "0baceb7b-6237-48c4-9550-3a02e9a71f44",
+   "mbName": "Richard Clayderman",
+   "area": "France",
+   "hitBasis": "name"
+  },
+  "PY:dg|5996828": {
+   "code": "PY",
+   "key": "dg|5996828",
+   "names": [
+    "Mastermind"
+   ],
+   "years": [
+    2015
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 5996828,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "5c71ffcc-a063-4a9e-ae5d-e83acc1ac66c",
+   "mbName": "Mastermind",
+   "area": "New Jersey",
+   "hitBasis": "name"
+  },
+  "PY:dg|866571": {
+   "code": "PY",
+   "key": "dg|866571",
+   "names": [
+    "Marta Sánchez"
+   ],
+   "years": [
+    1993,
+    1995
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Latin",
+    "Ballad",
+    "Synth-pop"
+   ],
+   "dgId": 866571,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "6781af9a-175c-4b27-917d-da89060aa15d",
+   "mbName": "Marta Sánchez",
+   "area": "Spain",
+   "hitBasis": "name"
+  },
+  "PY:dg|1876880": {
+   "code": "PY",
+   "key": "dg|1876880",
+   "names": [
+    "Enrique Samaniego"
+   ],
+   "years": [],
+   "releaseCount": 3,
+   "styles": [
+    "Guarania",
+    "Polka",
+    "Latin"
+   ],
+   "dgId": 1876880,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "de1db0a0-5c20-4fa5-941c-0af4c7bc3a1b",
+   "mbName": "Enríque Samaniego",
+   "area": "Mexico",
+   "hitBasis": "name"
+  },
+  "PY:dg|4126455": {
+   "code": "PY",
+   "key": "dg|4126455",
+   "names": [
+    "Rolando Percy"
+   ],
+   "years": [
+    2005
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Religious",
+    "Gospel",
+    "Pop"
+   ],
+   "dgId": 4126455,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "ff573212-6ffb-4a78-aef6-c78068303130",
+   "mbName": "Rolando Percy",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|16407250": {
+   "code": "PY",
+   "key": "dg|16407250",
+   "names": [
+    "Juan Carlos Barreto",
+    "Juan Cancio Barreto"
+   ],
+   "years": [
+    1979
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Guarania",
+    "Polka",
+    "Folk, World, & Country"
+   ],
+   "dgId": 16407250,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "7a1ace85-2f6a-4303-9bc5-c016841eec0e",
+   "mbName": "Juan Cancio Barreto",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|467153": {
+   "code": "PY",
+   "key": "dg|467153",
+   "names": [
+    "Soda Stereo"
+   ],
+   "years": [
+    1993,
+    1992
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Leftfield",
+    "Industrial",
+    "Pop Rock"
+   ],
+   "dgId": 467153,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "3f8a5e5b-c24b-4068-9f1c-afad8829e06b",
+   "mbName": "Soda Stereo",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|124506": {
+   "code": "PY",
+   "key": "dg|124506",
+   "names": [
+    "Genesis"
+   ],
+   "years": [
+    1992,
+    1991
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Prog Rock",
+    "Classic Rock",
+    "Rock"
+   ],
+   "dgId": 124506,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "8e3fcd7d-bda1-4ca0-b987-b8528d2ee74e",
+   "mbName": "Genesis",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|33534": {
+   "code": "PY",
+   "key": "dg|33534",
+   "names": [
+    "Mariah Carey"
+   ],
+   "years": [
+    1993,
+    1992
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Ballad",
+    "Vocal",
+    "Electronic"
+   ],
+   "dgId": 33534,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "494e8d09-f85b-4543-892f-a5096aed1cd4",
+   "mbName": "Mariah Carey",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|4380278": {
+   "code": "PY",
+   "key": "dg|4380278",
+   "names": [
+    "Martín González",
+    "Martín Gonzalez"
+   ],
+   "years": [],
+   "releaseCount": 2,
+   "styles": [
+    "Polka",
+    "Tango",
+    "Ballad"
+   ],
+   "dgId": 4380278,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "e76228ad-c75a-41e9-ae5f-fd18388ba222",
+   "mbName": "Martin Gonzalez",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|6574961": {
+   "code": "PY",
+   "key": "dg|6574961",
+   "names": [
+    "Muireadach"
+   ],
+   "years": [
+    2013
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Power Metal",
+    "Symphonic Metal",
+    "Rock"
+   ],
+   "dgId": 6574961,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "f89990f2-3ebb-4d4b-b5b6-87e9ed065899",
+   "mbName": "Muireadach",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|8274170": {
+   "code": "PY",
+   "key": "dg|8274170",
+   "names": [
+    "Los Caminantes"
+   ],
+   "years": [
+    2017
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Chamamé",
+    "Polka",
+    "Latin"
+   ],
+   "dgId": 8274170,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "e3db73f3-ea97-4a4e-a073-8e4262693659",
+   "mbName": "Los Caminantes",
+   "area": "Mexico",
+   "hitBasis": "name"
+  },
+  "PY:dg|12125374": {
+   "code": "PY",
+   "key": "dg|12125374",
+   "names": [
+    "Carcinosis"
+   ],
+   "years": [
+    2022
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Goregrind",
+    "Grindcore",
+    "Rock"
+   ],
+   "dgId": 12125374,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "928c2f27-89b7-4a6b-a2dd-5646286f4ce9",
+   "mbName": "Carcinosis",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|5339507": {
+   "code": "PY",
+   "key": "dg|5339507",
+   "names": [
+    "Lizza Bogado"
+   ],
+   "years": [
+    1982
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Guarania",
+    "Polka",
+    "Ballad"
+   ],
+   "dgId": 5339507,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "b410ccc7-f959-4ec9-95ab-2746ce202401",
+   "mbName": "Lizza Bogado",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|11770": {
+   "code": "PY",
+   "key": "dg|11770",
+   "names": [
+    "Megadeth"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Heavy Metal",
+    "Rock"
+   ],
+   "dgId": 11770,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "a9044915-8be3-4c7e-b11f-9e2d2ea0a91e",
+   "mbName": "Megadeth",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|170488": {
+   "code": "PY",
+   "key": "dg|170488",
+   "names": [
+    "Gustavo Cerati",
+    "Cerati"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Ambient",
+    "Pop Rock",
+    "Electronic"
+   ],
+   "dgId": 170488,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "979d01bc-a4da-4c80-8cc1-be40bd35cd5e",
+   "mbName": "Gustavo Cerati",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|182165": {
+   "code": "PY",
+   "key": "dg|182165",
+   "names": [
+    "Daniel Melero",
+    "Melero"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Ambient",
+    "Pop Rock",
+    "Electronic"
+   ],
+   "dgId": 182165,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "36692ed2-ee62-4dd1-8de5-35f6323149b2",
+   "mbName": "Daniel Melero",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|360329": {
+   "code": "PY",
+   "key": "dg|360329",
+   "names": [
+    "Os Paralamas Do Sucesso"
+   ],
+   "years": [
+    1992,
+    1995
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Rock",
+    "Reggae",
+    "Latin"
+   ],
+   "dgId": 360329,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "f197a8df-ac2b-4e78-9913-4abf13741f12",
+   "mbName": "Os Paralamas do Sucesso",
+   "area": "Brazil",
+   "hitBasis": "name"
+  },
+  "PY:dg|69722": {
+   "code": "PY",
+   "key": "dg|69722",
+   "names": [
+    "Lionel Richie"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Soul",
+    "Disco",
+    "Ballad"
+   ],
+   "dgId": 69722,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "3cb25fb2-5547-4b05-adec-1a5e37830d46",
+   "mbName": "Lionel Richie",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|2168509": {
+   "code": "PY",
+   "key": "dg|2168509",
+   "names": [
+    "Reynaldo Jiménez"
+   ],
+   "years": [
+    2016
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Non-Music"
+   ],
+   "dgId": 2168509,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "7cc21d62-2386-4732-a5db-bd59a4345f22",
+   "mbName": "Reynaldo Jiménez",
+   "area": "Peru",
+   "hitBasis": "name"
+  },
+  "PY:dg|4378793": {
+   "code": "PY",
+   "key": "dg|4378793",
+   "names": [
+    "Los Indianos"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Vocal",
+    "Guarania"
+   ],
+   "dgId": 4378793,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "10619fb4-ad47-41c8-b011-6bfec0d09ede",
+   "mbName": "Los Indianos",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|3487005": {
+   "code": "PY",
+   "key": "dg|3487005",
+   "names": [
+    "Evil Force"
+   ],
+   "years": [
+    2015
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 3487005,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "5a596284-2fb2-4a73-bf78-4ee48d311968",
+   "mbName": "Evil Force",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|4398946": {
+   "code": "PY",
+   "key": "dg|4398946",
+   "names": [
+    "Los Magníficos"
+   ],
+   "years": [
+    1979
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Folk, World, & Country"
+   ],
+   "dgId": 4398946,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "1ea7fda6-236e-4032-8d33-93f6a3b01fee",
+   "mbName": "Los Magnificos",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|21032": {
+   "code": "PY",
+   "key": "dg|21032",
+   "names": [
+    "Boy George"
+   ],
+   "years": [
+    2002,
+    1993
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "House",
+    "Pop Rock",
+    "Pop"
+   ],
+   "dgId": 21032,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "2787bddf-6439-4c73-8162-5f4a1e5fa030",
+   "mbName": "Boy George",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|13343079": {
+   "code": "PY",
+   "key": "dg|13343079",
+   "names": [
+    "Dismal"
+   ],
+   "years": [
+    2018
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Doom Metal",
+    "Rock"
+   ],
+   "dgId": 13343079,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "41f9f7cd-abe0-40b3-b548-1d3c15714a0a",
+   "mbName": "Dismal",
+   "area": "Italy",
+   "hitBasis": "name"
+  },
+  "PY:dg|7585510": {
+   "code": "PY",
+   "key": "dg|7585510",
+   "names": [
+    "Atom Womb"
+   ],
+   "years": [
+    2019
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Stoner Rock",
+    "Psychedelic Rock",
+    "Rock"
+   ],
+   "dgId": 7585510,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "a2edc57c-0169-49ef-99ca-f2c136dbbe9e",
+   "mbName": "Atom Womb",
+   "area": "Wien",
+   "hitBasis": "name"
+  },
+  "PY:dg|884977": {
+   "code": "PY",
+   "key": "dg|884977",
+   "names": [
+    "Los Prisioneros"
+   ],
+   "years": [
+    1991
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "New Wave",
+    "Rock"
+   ],
+   "dgId": 884977,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "a1d044b9-76c9-46d7-a5a6-0f52421e1ed7",
+   "mbName": "Los Prisioneros",
+   "area": "Chile",
+   "hitBasis": "name"
+  },
+  "PY:dg|6271479": {
+   "code": "PY",
+   "key": "dg|6271479",
+   "names": [
+    "Abomination"
+   ],
+   "years": [
+    2007,
+    2020
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Death Metal",
+    "Rock"
+   ],
+   "dgId": 6271479,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "a7755ace-8c63-45ac-a8ed-5025b39df02b",
+   "mbName": "Abomination",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|4220255": {
+   "code": "PY",
+   "key": "dg|4220255",
+   "names": [
+    "Lorenzo Leguizamón"
+   ],
+   "years": [
+    1968,
+    1989
+   ],
+   "releaseCount": 4,
+   "styles": [
+    "Cha-Cha",
+    "Guarania",
+    "Joropo"
+   ],
+   "dgId": 4220255,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "05ec3e9f-8f35-4549-bc6d-55af231e273a",
+   "mbName": "Lorenzo Leguizamón",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|5609461": {
+   "code": "PY",
+   "key": "dg|5609461",
+   "names": [
+    "Luis Fernando Correa",
+    "Luis Fernando Correa \"El Picaro Cordobés\""
+   ],
+   "years": [
+    1962
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Folk",
+    "Latin",
+    "Folk, World, & Country"
+   ],
+   "dgId": 5609461,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "8f627bf3-8741-43c6-90fd-45415a045104",
+   "mbName": "Picaro"
+  },
+  "PY:dg|3937669": {
+   "code": "PY",
+   "key": "dg|3937669",
+   "names": [
+    "Eyesight"
+   ],
+   "years": [
+    2019
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Avantgarde",
+    "Rock"
+   ],
+   "dgId": 3937669,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "e4057a0a-a4c4-4d23-9ce7-1ce21c1a390d",
+   "mbName": "Eyesight",
+   "area": "Germany",
+   "hitBasis": "name"
+  },
+  "PY:dg|6212065": {
+   "code": "PY",
+   "key": "dg|6212065",
+   "names": [
+    "Vecindad Autopsia"
+   ],
+   "years": [
+    2008
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Punk",
+    "Rock"
+   ],
+   "dgId": 6212065,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "cdafc19c-6230-4c96-8dec-50b15f8eab71",
+   "mbName": "Vecindad Autopsia",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|2887012": {
+   "code": "PY",
+   "key": "dg|2887012",
+   "names": [
+    "Stilnox"
+   ],
+   "years": [
+    2016
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Noisecore",
+    "Rock"
+   ],
+   "dgId": 2887012,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "cf2acd19-d28e-4723-976f-72e60a650ebb",
+   "mbName": "Stilnox",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4489651": {
+   "code": "PY",
+   "key": "dg|4489651",
+   "names": [
+    "Zeitgeist"
+   ],
+   "years": [
+    2010,
+    2016
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Gothic Metal",
+    "Rock"
+   ],
+   "dgId": 4489651,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "84fd9d3f-6a2d-4006-ad46-766333ffe1fc",
+   "mbName": "Zeitgeist",
+   "area": "Berlin",
+   "hitBasis": "name"
+  },
+  "PY:dg|6439201": {
+   "code": "PY",
+   "key": "dg|6439201",
+   "names": [
+    "TRAGUL"
+   ],
+   "years": [
+    2017
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Gothic Metal",
+    "Power Metal",
+    "Symphonic Metal"
+   ],
+   "dgId": 6439201,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "c1533582-9d1c-432f-bc73-99dd61cc8c2d",
+   "mbName": "TRAGUL",
+   "area": "[Worldwide]",
+   "hitBasis": "name"
+  },
+  "PY:dg|252443": {
+   "code": "PY",
+   "key": "dg|252443",
+   "names": [
+    "Def Leppard"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Hard Rock",
+    "Rock"
+   ],
+   "dgId": 252443,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "7249b899-8db8-43e7-9e6e-22f1e736024e",
+   "mbName": "Def Leppard",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|18547": {
+   "code": "PY",
+   "key": "dg|18547",
+   "names": [
+    "Simple Minds"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Synth-pop",
+    "Electronic"
+   ],
+   "dgId": 18547,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "f41490ce-fe39-435d-86c0-ab5ce098b423",
+   "mbName": "Simple Minds",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|3907401": {
+   "code": "PY",
+   "key": "dg|3907401",
+   "names": [
+    "Overlord"
+   ],
+   "years": [
+    2004,
+    2002
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 3907401,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "65858dae-c6f5-4e62-b158-cdcf276d9212",
+   "mbName": "overlord",
+   "area": "Brooklyn",
+   "hitBasis": "name"
+  },
+  "PY:dg|12620252": {
+   "code": "PY",
+   "key": "dg|12620252",
+   "names": [
+    "Cerebral Suppuration"
+   ],
+   "years": [
+    2023
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Death Metal",
+    "Goregrind",
+    "Rock"
+   ],
+   "dgId": 12620252,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "0fdc4490-9213-481c-bcf6-7bb8c9d8c485",
+   "mbName": "Cerebral Suppuration",
+   "area": "Asunción",
+   "hitBasis": "name"
+  },
+  "PY:dg|4930403": {
+   "code": "PY",
+   "key": "dg|4930403",
+   "names": [
+    "Aqua Fina"
+   ],
+   "years": [
+    2016
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "House",
+    "Disco",
+    "Funk"
+   ],
+   "dgId": 4930403,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "77bd01b5-ac6a-491a-b1d4-e23ddcadd9c6",
+   "mbName": "Aqua Fina",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|9462": {
+   "code": "PY",
+   "key": "dg|9462",
+   "names": [
+    "Orchestral Manoeuvres In The Dark",
+    "OMD"
+   ],
+   "years": [
+    1993,
+    1991
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Synth-pop",
+    "Electronic"
+   ],
+   "dgId": 9462,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "6d072aa8-c851-49c5-92f9-cbca05f4bed9",
+   "mbName": "Orchestral Manoeuvres in the Dark",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|2717992": {
+   "code": "PY",
+   "key": "dg|2717992",
+   "names": [
+    "Aftermad's"
+   ],
+   "years": [
+    1994
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Pop Rock",
+    "Rock"
+   ],
+   "dgId": 2717992,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "e6f362f1-3f41-44bc-aaab-54de0dc8f21b",
+   "mbName": "The Aftermad's"
+  },
+  "PY:dg|4814431": {
+   "code": "PY",
+   "key": "dg|4814431",
+   "names": [
+    "Taú"
+   ],
+   "years": [
+    2015,
+    2016
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Black Metal",
+    "Rock",
+    "Death Metal"
+   ],
+   "dgId": 4814431,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "6b374da2-051a-4c3c-a413-0c84546816fe",
+   "mbName": "Solanaceae Tau"
+  },
+  "PY:dg|885069": {
+   "code": "PY",
+   "key": "dg|885069",
+   "names": [
+    "Enanitos Verdes"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Rock",
+    "Pop"
+   ],
+   "dgId": 885069,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "598469a8-3bd6-4f8a-a5bc-a2e15e128eae",
+   "mbName": "Los Enanitos Verdes",
+   "area": "Argentina",
+   "hitBasis": "disallowed-name-path"
+  },
+  "PY:dg|4672475": {
+   "code": "PY",
+   "key": "dg|4672475",
+   "names": [
+    "Sarcoma De Kaposi"
+   ],
+   "years": [
+    2025
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Hardcore",
+    "Punk",
+    "Power Violence"
+   ],
+   "dgId": 4672475,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "e48d133d-c6a2-4bbb-a012-5a22694d8fd4",
+   "mbName": "Sarcoma de Kaposi",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|11809193": {
+   "code": "PY",
+   "key": "dg|11809193",
+   "names": [
+    "Loida Liuzzi"
+   ],
+   "years": [
+    2022
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Fusion",
+    "Rock & Roll",
+    "Jazz"
+   ],
+   "dgId": 11809193,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "2e20ec97-514a-4bc0-9c68-9eed7f58cf51",
+   "mbName": "Loida Liuzzi",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|10186774": {
+   "code": "PY",
+   "key": "dg|10186774",
+   "names": [
+    "Persona RS"
+   ],
+   "years": [
+    2020
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Techno",
+    "House",
+    "Ambient"
+   ],
+   "dgId": 10186774,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "9f8cbd86-57e5-4d39-8e7e-4fc52c20e06d",
+   "mbName": "Persona RS",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4201639": {
+   "code": "PY",
+   "key": "dg|4201639",
+   "names": [
+    "Nokto"
+   ],
+   "years": [
+    2021
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Progressive House",
+    "Electronic"
+   ],
+   "dgId": 4201639,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "c252bba5-28f7-4537-be43-2161cd69abc2",
+   "mbName": "Nokto",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4807207": {
+   "code": "PY",
+   "key": "dg|4807207",
+   "names": [
+    "Sal'm Raisov"
+   ],
+   "years": [
+    2015
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "House",
+    "Electronic"
+   ],
+   "dgId": 4807207,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "e9ae9bd3-9812-4f32-a004-addf45f59ba8",
+   "mbName": "Sal'm Raisov",
+   "area": "Orenburg",
+   "hitBasis": "name"
+  },
+  "PY:dg|283542": {
+   "code": "PY",
+   "key": "dg|283542",
+   "names": [
+    "Joan Jett"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Hard Rock",
+    "Rock"
+   ],
+   "dgId": 283542,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "f376828a-b438-4fda-bb2e-dcd5fbe81f83",
+   "mbName": "Joan Jett",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|985771": {
+   "code": "PY",
+   "key": "dg|985771",
+   "names": [
+    "Andrés Calamaro"
+   ],
+   "years": [
+    1997
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Rock",
+    "Latin",
+    "Pop"
+   ],
+   "dgId": 985771,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "5a092e7c-faa9-45d0-88c6-052205804e6c",
+   "mbName": "Andrés Calamaro",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|410911": {
+   "code": "PY",
+   "key": "dg|410911",
+   "names": [
+    "Xuxa"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Latin Pop",
+    "Educational",
+    "Children's"
+   ],
+   "dgId": 410911,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "cf07508b-4762-4650-990a-23376e023f55",
+   "mbName": "Xuxa",
+   "area": "Brazil",
+   "hitBasis": "name"
+  },
+  "PY:dg|17789682": {
+   "code": "PY",
+   "key": "dg|17789682",
+   "names": [
+    "Across"
+   ],
+   "years": [
+    2022
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Instrumental",
+    "Boom Bap",
+    "Hip Hop"
+   ],
+   "dgId": 17789682,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "680b27eb-187b-4357-b86e-841eebf8080f",
+   "mbName": "Across Tundras"
+  },
+  "PY:dg|11249177": {
+   "code": "PY",
+   "key": "dg|11249177",
+   "names": [
+    "Night Hunter"
+   ],
+   "years": [
+    2006
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 11249177,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "18e2cdb6-26ff-4afe-b094-d5e63938a60a",
+   "mbName": "Night Hunter",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|3766400": {
+   "code": "PY",
+   "key": "dg|3766400",
+   "names": [
+    "Bestial Devastator"
+   ],
+   "years": [
+    2016,
+    2020
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Black Metal",
+    "Death Metal",
+    "Thrash"
+   ],
+   "dgId": 3766400,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "8fcab055-c48f-4ead-b8cc-8fb89489d278",
+   "mbName": "Bestial Devastator",
+   "area": "Germany",
+   "hitBasis": "name"
+  },
+  "PY:dg|5966022": {
+   "code": "PY",
+   "key": "dg|5966022",
+   "names": [
+    "Agonic"
+   ],
+   "years": [
+    2006
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Metalcore",
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 5966022,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "1e2e8e21-494c-46d2-98df-66e3840d524b",
+   "mbName": "Agonic Death"
+  },
+  "PY:dg|3862781": {
+   "code": "PY",
+   "key": "dg|3862781",
+   "names": [
+    "The Profane"
+   ],
+   "years": [
+    2007
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Rock"
+   ],
+   "dgId": 3862781,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "183fb848-525f-4083-9aa9-1e3b39a99dcf",
+   "mbName": "The Profane Heaters"
+  },
+  "PY:dg|33196": {
+   "code": "PY",
+   "key": "dg|33196",
+   "names": [
+    "Village People"
+   ],
+   "years": [
+    2005
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Disco",
+    "Funk / Soul"
+   ],
+   "dgId": 33196,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "f19d3d49-be22-4ca6-9903-64d86984fbf2",
+   "mbName": "Village People",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|13911": {
+   "code": "PY",
+   "key": "dg|13911",
+   "names": [
+    "Eurythmics"
+   ],
+   "years": [
+    1991
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Synth-pop",
+    "Electronic"
+   ],
+   "dgId": 13911,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "b4d32cff-f19e-455f-86c4-f347d824ca61",
+   "mbName": "Eurythmics",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|18839": {
+   "code": "PY",
+   "key": "dg|18839",
+   "names": [
+    "Metallica"
+   ],
+   "years": [
+    1991,
+    1988
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Thrash",
+    "Rock",
+    "Speed Metal"
+   ],
+   "dgId": 18839,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab",
+   "mbName": "Metallica",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|175395": {
+   "code": "PY",
+   "key": "dg|175395",
+   "names": [
+    "Pearl Jam"
+   ],
+   "years": [
+    1992,
+    1993
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Grunge",
+    "Rock",
+    "Alternative Rock"
+   ],
+   "dgId": 175395,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "83b9cbe7-9857-49e2-ab8e-b57b01038103",
+   "mbName": "Pearl Jam",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|589134": {
+   "code": "PY",
+   "key": "dg|589134",
+   "names": [
+    "Radek Kopel",
+    "RDKPL"
+   ],
+   "years": [
+    2022,
+    2023,
+    2026
+   ],
+   "releaseCount": 3,
+   "styles": [
+    "Experimental",
+    "Abstract",
+    "Electro"
+   ],
+   "dgId": 589134,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "483d606a-c502-4bc0-85a3-376aad709322",
+   "mbName": "RDKPL",
+   "area": "Most",
+   "hitBasis": "disallowed-name-path"
+  },
+  "PY:dg|17974323": {
+   "code": "PY",
+   "key": "dg|17974323",
+   "names": [
+    "VECTOR"
+   ],
+   "years": [
+    2026
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Noise",
+    "Harsh Noise Wall",
+    "Electronic"
+   ],
+   "dgId": 17974323,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "28b9b5f5-808c-4d86-8f0d-41a15b0fbf73",
+   "mbName": "Vector Hold"
+  },
+  "PY:dg|125246": {
+   "code": "PY",
+   "key": "dg|125246",
+   "names": [
+    "Nirvana"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Grunge",
+    "Alternative Rock",
+    "Rock"
+   ],
+   "dgId": 125246,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "5b11f4ce-a62d-471e-81fc-a69a8278c7da",
+   "mbName": "Nirvana",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|3727878": {
+   "code": "PY",
+   "key": "dg|3727878",
+   "names": [
+    "Massive Power"
+   ],
+   "years": [
+    2015
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 3727878,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "ea40f00b-af75-4aca-8bce-d2a870b89ab3",
+   "mbName": "Massive Power",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|6651711": {
+   "code": "PY",
+   "key": "dg|6651711",
+   "names": [
+    "Rotten State"
+   ],
+   "years": [
+    2017
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Hardcore",
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 6651711,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "40d8f182-d543-4b51-9f29-4e3db060fa42",
+   "mbName": "Rotten State",
+   "area": "Uruguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|6013788": {
+   "code": "PY",
+   "key": "dg|6013788",
+   "names": [
+    "Arcano"
+   ],
+   "years": [
+    2012
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Heavy Metal",
+    "Rock"
+   ],
+   "dgId": 6013788,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "2766f526-edbc-4a6c-b8b7-3bedb33b767b",
+   "mbName": "Arcano",
+   "area": "Mexico",
+   "hitBasis": "name"
+  },
+  "PY:dg|3634285": {
+   "code": "PY",
+   "key": "dg|3634285",
+   "names": [
+    "Pesticvm",
+    "Pesticum"
+   ],
+   "years": [
+    2013
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Black Metal",
+    "Rock"
+   ],
+   "dgId": 3634285,
+   "wikidataId": null,
+   "verdict": "new",
+   "basis": "no-exact-hit-today"
+  },
+  "PY:dg|3331871": {
+   "code": "PY",
+   "key": "dg|3331871",
+   "names": [
+    "Nocturno"
+   ],
+   "years": [
+    2014
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Black Metal",
+    "Rock"
+   ],
+   "dgId": 3331871,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "c34902db-1c94-4365-9d0e-704a814b0830",
+   "mbName": "Nocturno",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|4837795": {
+   "code": "PY",
+   "key": "dg|4837795",
+   "names": [
+    "Yukaha"
+   ],
+   "years": [
+    2021
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Grindcore",
+    "Rock"
+   ],
+   "dgId": 4837795,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "51aff478-eca0-484c-aacc-6a50a0fe7ec1",
+   "mbName": "Yukaha",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|10262": {
+   "code": "PY",
+   "key": "dg|10262",
+   "names": [
+    "Duran Duran"
+   ],
+   "years": [
+    1990,
+    1989
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Europop",
+    "Pop",
+    "New Wave"
+   ],
+   "dgId": 10262,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "1a1cd7f3-e5df-4eca-bae2-2757c9e656b5",
+   "mbName": "Duran Duran",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|6979685": {
+   "code": "PY",
+   "key": "dg|6979685",
+   "names": [
+    "Viernes 13"
+   ],
+   "years": [
+    2013
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Heavy Metal",
+    "Rock"
+   ],
+   "dgId": 6979685,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "c5f0d59a-fa23-4151-a67a-57dc2a5779b5",
+   "mbName": "Viernes 13",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4214905": {
+   "code": "PY",
+   "key": "dg|4214905",
+   "names": [
+    "Felipe Sosa"
+   ],
+   "years": [
+    1980
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Andalusian Classical"
+   ],
+   "dgId": 4214905,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "0381de92-27cf-4065-b431-c6da280be6b8",
+   "mbName": "Felipe Sosa",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|3811102": {
+   "code": "PY",
+   "key": "dg|3811102",
+   "names": [
+    "To Arkham"
+   ],
+   "years": [
+    2017
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Black Metal",
+    "Rock"
+   ],
+   "dgId": 3811102,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "61008247-8067-4e30-b0d4-0c6976ba7357",
+   "mbName": "To Arkham",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|35301": {
+   "code": "PY",
+   "key": "dg|35301",
+   "names": [
+    "Paul McCartney"
+   ],
+   "years": [],
+   "releaseCount": 2,
+   "styles": [
+    "Pop Rock",
+    "Rock",
+    "Pop"
+   ],
+   "dgId": 35301,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "ba550d0e-adac-4864-b88b-407cab5e76af",
+   "mbName": "Paul McCartney",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|4384994": {
+   "code": "PY",
+   "key": "dg|4384994",
+   "names": [
+    "Oscar Mendoza"
+   ],
+   "years": [
+    1976
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Guarania",
+    "Polka",
+    "Latin"
+   ],
+   "dgId": 4384994,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "83697841-5ae3-449b-9864-a67b22183415",
+   "mbName": "Oscar Mendoza",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|4695582": {
+   "code": "PY",
+   "key": "dg|4695582",
+   "names": [
+    "Steinkrug"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Heavy Metal",
+    "Rock"
+   ],
+   "dgId": 4695582,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "143e7b9c-ce38-4c37-ac3c-ba996f4b0151",
+   "mbName": "Steinkrug",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|180585": {
+   "code": "PY",
+   "key": "dg|180585",
+   "names": [
+    "Jimmy Page"
+   ],
+   "years": [
+    1994
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Electric Blues",
+    "Acoustic",
+    "Classic Rock"
+   ],
+   "dgId": 180585,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "519774a4-3b18-4042-b8c0-927845a616c9",
+   "mbName": "Jimmy Page",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|180586": {
+   "code": "PY",
+   "key": "dg|180586",
+   "names": [
+    "Robert Plant"
+   ],
+   "years": [
+    1994
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Electric Blues",
+    "Acoustic",
+    "Classic Rock"
+   ],
+   "dgId": 180586,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "bd53f9a7-8be9-46b0-bf7d-1deea3cb57bc",
+   "mbName": "Robert Plant",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|63552": {
+   "code": "PY",
+   "key": "dg|63552",
+   "names": [
+    "Scorpions"
+   ],
+   "years": [
+    1995
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Hard Rock",
+    "Heavy Metal",
+    "Rock"
+   ],
+   "dgId": 63552,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "c3cceeed-3332-4cf0-8c4c-bbde425147b6",
+   "mbName": "Scorpions",
+   "area": "Germany",
+   "hitBasis": "name"
+  },
+  "PY:dg|63617": {
+   "code": "PY",
+   "key": "dg|63617",
+   "names": [
+    "Paul Young"
+   ],
+   "years": [
+    1991
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Soft Rock",
+    "Pop Rock",
+    "Rock"
+   ],
+   "dgId": 63617,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "967002b0-58ef-4b22-a58c-fbc631ff695c",
+   "mbName": "Paul Young",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|905430": {
+   "code": "PY",
+   "key": "dg|905430",
+   "names": [
+    "Ricardo Montaner"
+   ],
+   "years": [
+    2001
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pachanga",
+    "Bolero",
+    "Cha-Cha"
+   ],
+   "dgId": 905430,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "9ea7c031-a2d0-4a89-b469-72b51c47417c",
+   "mbName": "Ricardo Montaner",
+   "area": "Venezuela",
+   "hitBasis": "name"
+  },
+  "PY:dg|129237": {
+   "code": "PY",
+   "key": "dg|129237",
+   "names": [
+    "Selena"
+   ],
+   "years": [
+    1994
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Tejano",
+    "Cumbia",
+    "Latin"
+   ],
+   "dgId": 129237,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "03746227-c9f9-4b3b-b2c6-9b31f79564f7",
+   "mbName": "Selena",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|274209": {
+   "code": "PY",
+   "key": "dg|274209",
+   "names": [
+    "Michael Bolton"
+   ],
+   "years": [
+    1991
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Soft Rock",
+    "Synth-pop",
+    "Electronic"
+   ],
+   "dgId": 274209,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "e8bee5d1-a3a5-4c1a-ada4-f1ca22101e84",
+   "mbName": "Michael Bolton",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|2613760": {
+   "code": "PY",
+   "key": "dg|2613760",
+   "names": [
+    "Inti Raymi"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Andean Music",
+    "Folk, World, & Country"
+   ],
+   "dgId": 2613760,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "4625918e-a694-4a9c-8b7c-1dd54ffb6ce6",
+   "mbName": "Inti Raymi",
+   "area": "Bahía Blanca",
+   "hitBasis": "name"
+  },
+  "PY:dg|6520": {
+   "code": "PY",
+   "key": "dg|6520",
+   "names": [
+    "U2"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Experimental",
+    "Electronic"
+   ],
+   "dgId": 6520,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "a3cb23fc-acd3-4ce0-8f36-1e5aa6a18432",
+   "mbName": "U2",
+   "area": "Ireland",
+   "hitBasis": "name"
+  },
+  "PY:dg|37231": {
+   "code": "PY",
+   "key": "dg|37231",
+   "names": [
+    "Ace Of Base"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Synth-pop",
+    "Europop",
+    "Euro House"
+   ],
+   "dgId": 37231,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "d4a1404d-e00c-4bac-b3ba-e3557f6468d6",
+   "mbName": "Ace of Base",
+   "area": "Sweden",
+   "hitBasis": "name"
+  },
+  "PY:dg|102789": {
+   "code": "PY",
+   "key": "dg|102789",
+   "names": [
+    "Alanis Morissette"
+   ],
+   "years": [
+    1998,
+    1996
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Alternative Rock",
+    "Rock",
+    "Pop Rock"
+   ],
+   "dgId": 102789,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "4bdcee62-4902-4773-8cd1-e252e2e31225",
+   "mbName": "Alanis Morissette",
+   "area": "Canada",
+   "hitBasis": "name"
+  },
+  "PY:dg|17604462": {
+   "code": "PY",
+   "key": "dg|17604462",
+   "names": [
+    "Los Carlos"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Latin",
+    "Folk, World, & Country"
+   ],
+   "dgId": 17604462,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "4a7e97ed-465c-4300-b0e8-8e7e546df134",
+   "mbName": "Los Carlos",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|570007": {
+   "code": "PY",
+   "key": "dg|570007",
+   "names": [
+    "Maná"
+   ],
+   "years": [
+    1997
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Arena Rock",
+    "Rock"
+   ],
+   "dgId": 570007,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "55441123-89a2-49ab-ae3f-df7a3e86835a",
+   "mbName": "Maná",
+   "area": "Mexico",
+   "hitBasis": "name"
+  },
+  "PY:dg|1006172": {
+   "code": "PY",
+   "key": "dg|1006172",
+   "names": [
+    "Cristian Castro",
+    "Cristian"
+   ],
+   "years": [
+    2005
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Vocal",
+    "Ballad"
+   ],
+   "dgId": 1006172,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "8cc00e45-94c9-40e0-882b-0e76dd5b472b",
+   "mbName": "Cristian Castro",
+   "area": "Mexico",
+   "hitBasis": "name"
+  },
+  "PY:dg|6553035": {
+   "code": "PY",
+   "key": "dg|6553035",
+   "names": [
+    "Umbrarum Regni"
+   ],
+   "years": [
+    2016
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Doom Metal",
+    "Rock"
+   ],
+   "dgId": 6553035,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "5c870b75-b032-434e-b501-743adf5a7666",
+   "mbName": "Umbrarum Regni",
+   "area": "Asunción",
+   "hitBasis": "name"
+  },
+  "PY:dg|5487309": {
+   "code": "PY",
+   "key": "dg|5487309",
+   "names": [
+    "Mortiferis"
+   ],
+   "years": [
+    2016
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Black Metal",
+    "Death Metal",
+    "Thrash"
+   ],
+   "dgId": 5487309,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "577c927e-182d-4fdd-9a92-24968a1e4b16",
+   "mbName": "Mortiferis",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|334507": {
+   "code": "PY",
+   "key": "dg|334507",
+   "names": [
+    "Brenda Lee"
+   ],
+   "years": [
+    2000
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Easy Listening",
+    "Schlager",
+    "Vocal"
+   ],
+   "dgId": 334507,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "6ca4886a-8f77-4133-b404-46fb3908e24a",
+   "mbName": "Brenda Lee",
+   "area": "Nashville",
+   "hitBasis": "name"
+  },
+  "PY:dg|5342614": {
+   "code": "PY",
+   "key": "dg|5342614",
+   "names": [
+    "Sembrador",
+    "Grupo Sembrador"
+   ],
+   "years": [
+    1998
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Guarania",
+    "Polka",
+    "Nueva Cancion"
+   ],
+   "dgId": 5342614,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "c7e08d1a-3e4e-4311-9684-273e74c89100",
+   "mbName": "Mateo Sembrador"
+  },
+  "PY:dg|763087": {
+   "code": "PY",
+   "key": "dg|763087",
+   "names": [
+    "Los Indios"
+   ],
+   "years": [
+    2011
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Folk, World, & Country"
+   ],
+   "dgId": 763087,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "72969d2e-4bc6-412d-9e1b-27434ceaafae",
+   "mbName": "Los Índios Tabajaras"
+  },
+  "PY:dg|4396426": {
+   "code": "PY",
+   "key": "dg|4396426",
+   "names": [
+    "Tony Williams"
+   ],
+   "years": [
+    1975
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Folk, World, & Country"
+   ],
+   "dgId": 4396426,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "b6a30b58-6b00-47c4-a031-c62a6981461f",
+   "mbName": "Tony Williams",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|5344792": {
+   "code": "PY",
+   "key": "dg|5344792",
+   "names": [
+    "Contrapunto"
+   ],
+   "years": [
+    2012
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Guarania",
+    "Nueva Cancion",
+    "Nueva Trova"
+   ],
+   "dgId": 5344792,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "eb638a7b-00c0-470a-a6d3-e46630d08b06",
+   "mbName": "Quinteto Contrapunto"
+  },
+  "PY:dg|47333": {
+   "code": "PY",
+   "key": "dg|47333",
+   "names": [
+    "Fleetwood Mac"
+   ],
+   "years": [
+    1994
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Classic Rock",
+    "Rock"
+   ],
+   "dgId": 47333,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "bd13909f-1c29-4c27-a874-d4aaf27c5b1a",
+   "mbName": "Fleetwood Mac",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|3909": {
+   "code": "PY",
+   "key": "dg|3909",
+   "names": [
+    "New Order",
+    "NewOrder"
+   ],
+   "years": [
+    1994
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Synth-pop",
+    "Electronic"
+   ],
+   "dgId": 3909,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "f1106b17-dcbb-45f6-b938-199ccfab50cc",
+   "mbName": "New Order",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|2985429": {
+   "code": "PY",
+   "key": "dg|2985429",
+   "names": [
+    "Chainsaw"
+   ],
+   "years": [
+    2001
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Black Metal",
+    "Rock"
+   ],
+   "dgId": 2985429,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "6eae078b-90d1-430a-bb6e-3e628c17eb1e",
+   "mbName": "Chainsaw",
+   "area": "Poland",
+   "hitBasis": "name"
+  },
+  "PY:dg|15885": {
+   "code": "PY",
+   "key": "dg|15885",
+   "names": [
+    "Michael Jackson"
+   ],
+   "years": [
+    1991
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Disco",
+    "RnB/Swing"
+   ],
+   "dgId": 15885,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "f27ec8db-af05-4f36-916e-3d57f91ecf5e",
+   "mbName": "Michael Jackson",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|17827": {
+   "code": "PY",
+   "key": "dg|17827",
+   "names": [
+    "Eric Clapton"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Blues Rock",
+    "Country Blues",
+    "Delta Blues"
+   ],
+   "dgId": 17827,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "618b6900-0618-4f1e-b835-bccb17f84294",
+   "mbName": "Eric Clapton",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|5365495": {
+   "code": "PY",
+   "key": "dg|5365495",
+   "names": [
+    "Evil Force"
+   ],
+   "years": [
+    2014
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 5365495,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "5a596284-2fb2-4a73-bf78-4ee48d311968",
+   "mbName": "Evil Force",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|8018882": {
+   "code": "PY",
+   "key": "dg|8018882",
+   "names": [
+    "Dokma"
+   ],
+   "years": [
+    1999
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Psychedelic Rock",
+    "Rock"
+   ],
+   "dgId": 8018882,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "6344be78-afb0-40af-a8bb-8e0ca2429be7",
+   "mbName": "Dokma",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|170355": {
+   "code": "PY",
+   "key": "dg|170355",
+   "names": [
+    "Deep Purple"
+   ],
+   "years": [
+    1970
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Heavy Metal",
+    "Speed Metal",
+    "Rock"
+   ],
+   "dgId": 170355,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "79491354-3d83-40e3-9d8e-7592d58d790a",
+   "mbName": "Deep Purple",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|759035": {
+   "code": "PY",
+   "key": "dg|759035",
+   "names": [
+    "Vilma Palma E Vampiros"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop"
+   ],
+   "dgId": 759035,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "a03c336b-5295-4ad8-baa9-0309b47603c4",
+   "mbName": "Vilma Palma e Vampiros",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|5705768": {
+   "code": "PY",
+   "key": "dg|5705768",
+   "names": [
+    "Gladiador"
+   ],
+   "years": [
+    2010
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Speed Metal",
+    "Black Metal",
+    "Rock"
+   ],
+   "dgId": 5705768,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": null,
+   "mbName": null
+  },
+  "PY:dg|56978": {
+   "code": "PY",
+   "key": "dg|56978",
+   "names": [
+    "Ricky Martin"
+   ],
+   "years": [
+    2001
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Ballad",
+    "Latin",
+    "Pop"
+   ],
+   "dgId": 56978,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "70ea63ea-70dc-4b63-951a-2c249d2b3b0a",
+   "mbName": "Ricky Martin",
+   "area": "Puerto Rico",
+   "hitBasis": "name"
+  },
+  "PY:dg|6990639": {
+   "code": "PY",
+   "key": "dg|6990639",
+   "names": [
+    "Servus Tenebris"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Black Metal",
+    "Rock"
+   ],
+   "dgId": 6990639,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "31246050-6cc7-44ee-bad0-472026529746",
+   "mbName": "Servus Tenebris",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|5333917": {
+   "code": "PY",
+   "key": "dg|5333917",
+   "names": [
+    "Rigoberto Arévalo Y Su Trío De Siempre",
+    "Rigoberto Arévalos Y Su Trío De Siempre"
+   ],
+   "years": [],
+   "releaseCount": 2,
+   "styles": [
+    "Bolero",
+    "Guarania",
+    "Ranchera"
+   ],
+   "dgId": 5333917,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "f6c99d9f-a02a-411b-8a90-8804b8437bd5",
+   "mbName": "Rigoberto Arévalo y su trío de siempre",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|9387715": {
+   "code": "PY",
+   "key": "dg|9387715",
+   "names": [
+    "Black Winds"
+   ],
+   "years": [
+    2021
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Black Metal",
+    "Rock"
+   ],
+   "dgId": 9387715,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "56d80a99-5994-43c9-8047-e413fd148425",
+   "mbName": "Black Winds",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|7873983": {
+   "code": "PY",
+   "key": "dg|7873983",
+   "names": [
+    "Suburban Bastards"
+   ],
+   "years": [
+    2019
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Punk",
+    "Heavy Metal",
+    "Thrash"
+   ],
+   "dgId": 7873983,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "e4fd644b-c427-442e-8a95-78637794962c",
+   "mbName": "Suburban Bastards",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|6776633": {
+   "code": "PY",
+   "key": "dg|6776633",
+   "names": [
+    "Aríman"
+   ],
+   "years": [
+    2011
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Dream Pop",
+    "Rock"
+   ],
+   "dgId": 6776633,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "0f577512-9077-4cae-889b-1dd6a8c883b4",
+   "mbName": "Ariman",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|6948465": {
+   "code": "PY",
+   "key": "dg|6948465",
+   "names": [
+    "La de Roberto"
+   ],
+   "years": [
+    2018
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Alternative Rock",
+    "Rock"
+   ],
+   "dgId": 6948465,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "d9e4907c-5d84-4032-82ab-1beb6aa0a9de",
+   "mbName": "La De Roberto",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|4788574": {
+   "code": "PY",
+   "key": "dg|4788574",
+   "names": [
+    "Hellish Massacre"
+   ],
+   "years": [
+    2012
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Hardcore",
+    "Punk",
+    "Thrash"
+   ],
+   "dgId": 4788574,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "90183fb5-0b51-423b-9d2f-9cb9c8f15d37",
+   "mbName": "HELLISH MASSACRE",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|1500127": {
+   "code": "PY",
+   "key": "dg|1500127",
+   "names": [
+    "Paiko"
+   ],
+   "years": [
+    2015
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Fusion",
+    "Reggae-Pop"
+   ],
+   "dgId": 1500127,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "d82ff0b7-1af3-4c5c-87e0-6ac615a64a9d",
+   "mbName": "Paiko",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|2760519": {
+   "code": "PY",
+   "key": "dg|2760519",
+   "names": [
+    "Patriarca"
+   ],
+   "years": [
+    2002
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 2760519,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "07b29264-0b68-4ab8-9f61-4ce275c21512",
+   "mbName": "Patriarca",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|10188544": {
+   "code": "PY",
+   "key": "dg|10188544",
+   "names": [
+    "L’Estertor"
+   ],
+   "years": [
+    2010
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Death Metal",
+    "Rock"
+   ],
+   "dgId": 10188544,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "1d2671be-ca55-408f-9689-d7757ff673c1",
+   "mbName": "L'Estertor",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|124494": {
+   "code": "PY",
+   "key": "dg|124494",
+   "names": [
+    "Mr. Big"
+   ],
+   "years": [
+    1991
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Rock"
+   ],
+   "dgId": 124494,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "bd1180c4-4252-461f-94dc-543906c02522",
+   "mbName": "Mr. Big",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|4398866": {
+   "code": "PY",
+   "key": "dg|4398866",
+   "names": [
+    "Los Latinos"
+   ],
+   "years": [
+    1979
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Folk, World, & Country"
+   ],
+   "dgId": 4398866,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "85a355e2-6fd8-4a4e-a333-323e256ced77",
+   "mbName": "Los Latinos",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|2221204": {
+   "code": "PY",
+   "key": "dg|2221204",
+   "names": [
+    "Los Guaireños",
+    "Los Guaireños \"Cuatro Voces Del Paraguay\""
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Latin",
+    "Folk, World, & Country"
+   ],
+   "dgId": 2221204,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "d3f4e6bd-1629-4f6f-9876-c23249761c30",
+   "mbName": "Los Guaireños",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|520695": {
+   "code": "PY",
+   "key": "dg|520695",
+   "names": [
+    "The Honeys"
+   ],
+   "years": [
+    1977
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Surf",
+    "Vocal",
+    "Rock"
+   ],
+   "dgId": 520695,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "a17e6bfd-c924-4786-9fd8-a0be4f30459f",
+   "mbName": "The Honeys",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|37606": {
+   "code": "PY",
+   "key": "dg|37606",
+   "names": [
+    "Cat Stevens"
+   ],
+   "years": [
+    2004
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Folk Rock",
+    "Rock"
+   ],
+   "dgId": 37606,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "e2345fdf-2be7-47c5-a6dd-be64353ad134",
+   "mbName": "Cat Stevens",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|4387206": {
+   "code": "PY",
+   "key": "dg|4387206",
+   "names": [
+    "Samuel Aguayo"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Folk, World, & Country"
+   ],
+   "dgId": 4387206,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "b3e0095a-faeb-49d8-884f-f5801c6493e4",
+   "mbName": "Samuel Aguayo",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|87642": {
+   "code": "PY",
+   "key": "dg|87642",
+   "names": [
+    "Stone Temple Pilots"
+   ],
+   "years": [
+    1994
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Alternative Rock",
+    "Grunge",
+    "Rock"
+   ],
+   "dgId": 87642,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "8c32bb01-58a3-453b-8050-8c0620edb0e5",
+   "mbName": "Stone Temple Pilots",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|251595": {
+   "code": "PY",
+   "key": "dg|251595",
+   "names": [
+    "Iron Maiden"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Heavy Metal",
+    "Rock"
+   ],
+   "dgId": 251595,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "ca891d65-d9b0-4258-89f7-e6ba29d83767",
+   "mbName": "Iron Maiden",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|5247548": {
+   "code": "PY",
+   "key": "dg|5247548",
+   "names": [
+    "Pope Francis",
+    "Papa Francisco"
+   ],
+   "years": [
+    2015
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Religious",
+    "Sermon",
+    "Speech"
+   ],
+   "dgId": 5247548,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "5778d5f1-ae14-42bf-9fe9-d79d6feb6835",
+   "mbName": "Pope Francis",
+   "area": "Vatican City",
+   "hitBasis": "name"
+  },
+  "PY:dg|4407629": {
+   "code": "PY",
+   "key": "dg|4407629",
+   "names": [
+    "Oscar Pérez Noguera",
+    "Oscar Pérez"
+   ],
+   "years": [
+    1995
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Gospel",
+    "Religious",
+    "Polka"
+   ],
+   "dgId": 4407629,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "ab99bf13-666f-40d5-a8d9-2e1158bd48b6",
+   "mbName": "Oscar Perez",
+   "area": "Spain",
+   "hitBasis": "name"
+  },
+  "PY:dg|4522792": {
+   "code": "PY",
+   "key": "dg|4522792",
+   "names": [
+    "The Classic's"
+   ],
+   "years": [
+    2009
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Rock & Roll",
+    "Beat",
+    "Pop Rock"
+   ],
+   "dgId": 4522792,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "ee1cbd8b-81f0-4910-855b-370698cf28f8",
+   "mbName": "The Classic"
+  },
+  "PY:dg|4522774": {
+   "code": "PY",
+   "key": "dg|4522774",
+   "names": [
+    "Latin Beat"
+   ],
+   "years": [
+    2009
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Rock & Roll",
+    "Beat",
+    "Pop Rock"
+   ],
+   "dgId": 4522774,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": null,
+   "mbName": null
+  },
+  "PY:dg|3921209": {
+   "code": "PY",
+   "key": "dg|3921209",
+   "names": [
+    "Carlos Bordón"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Guarania",
+    "Latin"
+   ],
+   "dgId": 3921209,
+   "wikidataId": null,
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "c26c87ad-5513-4c7b-a20a-3fc8f9dfc361",
+   "mbName": "Carlos Bordon",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:dg|79949": {
+   "code": "PY",
+   "key": "dg|79949",
+   "names": [
+    "Freddie Mercury"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Classic Rock",
+    "Rock",
+    "Pop"
+   ],
+   "dgId": 79949,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "022589ac-7177-460d-a178-9976cf70e29f",
+   "mbName": "Freddie Mercury",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|11012": {
+   "code": "PY",
+   "key": "dg|11012",
+   "names": [
+    "Rod Stewart"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Acoustic",
+    "Rock"
+   ],
+   "dgId": 11012,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "a35237a0-4f47-40a6-b6f3-1e786db23402",
+   "mbName": "Rod Stewart",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|18666": {
+   "code": "PY",
+   "key": "dg|18666",
+   "names": [
+    "Mike Oldfield"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Soft Rock",
+    "Modern Classical",
+    "Synth-pop"
+   ],
+   "dgId": 18666,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "a1684a49-feaa-4150-b758-d9412fc59f12",
+   "mbName": "Mike Oldfield",
+   "area": "United Kingdom",
+   "hitBasis": "name"
+  },
+  "PY:dg|63332": {
+   "code": "PY",
+   "key": "dg|63332",
+   "names": [
+    "Lenny Kravitz"
+   ],
+   "years": [
+    1993
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Alternative Rock",
+    "Rock"
+   ],
+   "dgId": 63332,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "0ef3f425-9bd2-4216-9dd2-219d2fe90f1f",
+   "mbName": "Lenny Kravitz",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|4050642": {
+   "code": "PY",
+   "key": "dg|4050642",
+   "names": [
+    "Sepulchral Voices"
+   ],
+   "years": [
+    2025
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Black Metal",
+    "Thrash",
+    "Death Metal"
+   ],
+   "dgId": 4050642,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "3ee68c8a-32ff-4f68-8a31-b1bba4cccdd5",
+   "mbName": "Sepulchral Voices",
+   "area": "Belgium",
+   "hitBasis": "name"
+  },
+  "PY:dg|2354203": {
+   "code": "PY",
+   "key": "dg|2354203",
+   "names": [
+    "Sui Generis"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Folk Rock",
+    "Rock"
+   ],
+   "dgId": 2354203,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "b3a6ebdf-4ee6-4ec0-912c-be03ade6c833",
+   "mbName": "Sui Generis",
+   "area": "Argentina",
+   "hitBasis": "name"
+  },
+  "PY:dg|137126": {
+   "code": "PY",
+   "key": "dg|137126",
+   "names": [
+    "Testament"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Speed Metal",
+    "Rock"
+   ],
+   "dgId": 137126,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "05106775-5d45-4131-aecc-1177f813ba11",
+   "mbName": "Testament",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|114210": {
+   "code": "PY",
+   "key": "dg|114210",
+   "names": [
+    "Men At Work"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Rock"
+   ],
+   "dgId": 114210,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "395cc503-63b5-4a0b-a20a-604e3fcacea2",
+   "mbName": "Men at Work",
+   "area": "Australia",
+   "hitBasis": "name"
+  },
+  "PY:dg|7378083": {
+   "code": "PY",
+   "key": "dg|7378083",
+   "names": [
+    "Nothingness"
+   ],
+   "years": [
+    2019
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Ambient",
+    "Electronic"
+   ],
+   "dgId": 7378083,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "000ff0e4-1c73-443a-80fa-ab2e954952e4",
+   "mbName": "Nothingness",
+   "area": "France",
+   "hitBasis": "name"
+  },
+  "PY:dg|5357337": {
+   "code": "PY",
+   "key": "dg|5357337",
+   "names": [
+    "Sintesis"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Rock"
+   ],
+   "dgId": 5357337,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "701e298e-9227-493c-bebd-1aab8e56f87f",
+   "mbName": "Síntesis",
+   "area": "Cuba",
+   "hitBasis": "name"
+  },
+  "PY:dg|14492950": {
+   "code": "PY",
+   "key": "dg|14492950",
+   "names": [
+    "Danicide"
+   ],
+   "years": [
+    2022,
+    2023
+   ],
+   "releaseCount": 2,
+   "styles": [
+    "Black Metal",
+    "Melodic Death Metal",
+    "Gothic Metal"
+   ],
+   "dgId": 14492950,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "shared-title",
+   "mbid": "bd33bb9b-cda8-4b4e-80c4-6d24d7e3b1cb",
+   "mbName": "Danicide",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|885094": {
+   "code": "PY",
+   "key": "dg|885094",
+   "names": [
+    "La Ley"
+   ],
+   "years": [
+    1998
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Pop Rock",
+    "Electronic",
+    "Rock"
+   ],
+   "dgId": 885094,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "63c5d2a6-bc32-4991-bf3a-9efe3a1d741b",
+   "mbName": "La Ley",
+   "area": "Chile",
+   "hitBasis": "name"
+  },
+  "PY:dg|9945280": {
+   "code": "PY",
+   "key": "dg|9945280",
+   "names": [
+    "Malfunctioned Time Machines"
+   ],
+   "years": [
+    2021
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Dark Ambient",
+    "Drone",
+    "Industrial"
+   ],
+   "dgId": 9945280,
+   "wikidataId": null,
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "5dbe4ab8-d893-42a2-8d00-2e78803b2b69",
+   "mbName": "Malfunctioned Time Machines",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:dg|6519308": {
+   "code": "PY",
+   "key": "dg|6519308",
+   "names": [
+    "Vinyl"
+   ],
+   "years": [
+    2015
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Speed Metal",
+    "Rock"
+   ],
+   "dgId": 6519308,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": null,
+   "mbName": null
+  },
+  "PY:dg|1157598": {
+   "code": "PY",
+   "key": "dg|1157598",
+   "names": [
+    "Toxic Avenger"
+   ],
+   "years": [
+    2016
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Thrash",
+    "Rock"
+   ],
+   "dgId": 1157598,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "124212e2-801e-481c-ac31-6038a4389603",
+   "mbName": "The Toxic Avenger",
+   "area": "France",
+   "hitBasis": "typed-alias"
+  },
+  "PY:dg|5888517": {
+   "code": "PY",
+   "key": "dg|5888517",
+   "names": [
+    "Los Hobbies"
+   ],
+   "years": [
+    1981
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Rock",
+    "Pop"
+   ],
+   "dgId": 5888517,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "fec00d94-dd0b-4f60-8cc5-1824afa8c20d",
+   "mbName": "Los Hobbies",
+   "area": "Chile",
+   "hitBasis": "name"
+  },
+  "PY:dg|8196103": {
+   "code": "PY",
+   "key": "dg|8196103",
+   "names": [
+    "Disterrör"
+   ],
+   "years": [
+    2011
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Hardcore",
+    "Crust",
+    "Rock"
+   ],
+   "dgId": 8196103,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "e6c04a3b-0c16-467d-a04f-18e774d6e1d7",
+   "mbName": "Disterror",
+   "area": "Mexico",
+   "hitBasis": "name"
+  },
+  "PY:dg|14680662": {
+   "code": "PY",
+   "key": "dg|14680662",
+   "names": [
+    "Necropsy"
+   ],
+   "years": [
+    2019
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Death Metal",
+    "Rock"
+   ],
+   "dgId": 14680662,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": null,
+   "mbName": null
+  },
+  "PY:dg|1147256": {
+   "code": "PY",
+   "key": "dg|1147256",
+   "names": [
+    "Antonio Aguilar Barraza",
+    "Antonio Aguilar"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Ranchera",
+    "Mariachi",
+    "Bolero"
+   ],
+   "dgId": 1147256,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "ba683849-490c-4afb-9c8d-7278b25cbdc1",
+   "mbName": "Antonio Aguilar",
+   "area": "Mexico",
+   "hitBasis": "typed-alias"
+  },
+  "PY:dg|3326552": {
+   "code": "PY",
+   "key": "dg|3326552",
+   "names": [
+    "Santos Lima"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Latin",
+    "Folk, World, & Country"
+   ],
+   "dgId": 3326552,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "dfbe67cc-12a3-442e-91d9-7629d734421c",
+   "mbName": "Demétrio Santos Lima"
+  },
+  "PY:dg|87582": {
+   "code": "PY",
+   "key": "dg|87582",
+   "names": [
+    "Enrique Iglesias"
+   ],
+   "years": [
+    2000
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Ballad",
+    "Romantic",
+    "Latin"
+   ],
+   "dgId": 87582,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "35f866dc-c061-48ba-8157-cf2e0eac4857",
+   "mbName": "Enrique Iglesias",
+   "area": "Spain",
+   "hitBasis": "name"
+  },
+  "PY:dg|2484218": {
+   "code": "PY",
+   "key": "dg|2484218",
+   "names": [
+    "Los Hidalgos"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Folk, World, & Country"
+   ],
+   "dgId": 2484218,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": null,
+   "mbName": null
+  },
+  "PY:dg|1059873": {
+   "code": "PY",
+   "key": "dg|1059873",
+   "names": [
+    "Somos"
+   ],
+   "years": [
+    1989
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Folk, World, & Country"
+   ],
+   "dgId": 1059873,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "e74f6fe5-c44a-4f3d-8b82-9fb39e7f4668",
+   "mbName": "Somos",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:dg|314766": {
+   "code": "PY",
+   "key": "dg|314766",
+   "names": [
+    "José Luis Perales"
+   ],
+   "years": [
+    2001
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Trova",
+    "Ballad",
+    "Latin"
+   ],
+   "dgId": 314766,
+   "wikidataId": null,
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "86845ceb-170e-4bc2-9006-cb360867d04b",
+   "mbName": "José Luis Perales",
+   "area": "Spain",
+   "hitBasis": "name"
+  },
+  "PY:dg|5584118": {
+   "code": "PY",
+   "key": "dg|5584118",
+   "names": [
+    "Roberto Tello"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Polka",
+    "Latin",
+    "Folk, World, & Country"
+   ],
+   "dgId": 5584118,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "31c0b185-0888-4d22-ae91-3196db70da18",
+   "mbName": "Roberto Tello Thompson"
+  },
+  "PY:dg|4057": {
+   "code": "PY",
+   "key": "dg|4057",
+   "names": [
+    "2 Unlimited"
+   ],
+   "years": [
+    1994
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Euro House",
+    "Eurodance",
+    "Electronic"
+   ],
+   "dgId": 4057,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "515b236c-cce1-4dc2-aedd-50de7b1736e2",
+   "mbName": "2 Unlimited",
+   "area": "Netherlands",
+   "hitBasis": "name"
+  },
+  "PY:dg|7048201": {
+   "code": "PY",
+   "key": "dg|7048201",
+   "names": [
+    "Lucas Ortega",
+    "Luca Ortega"
+   ],
+   "years": [],
+   "releaseCount": 1,
+   "styles": [
+    "Chamamé",
+    "Polka",
+    "Merengue"
+   ],
+   "dgId": 7048201,
+   "wikidataId": null,
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": "676720a5-a44d-4c5e-ac07-90b24ca51d47",
+   "mbName": "Luis \"Luca\" Ortega"
+  },
+  "PY:dg|255680": {
+   "code": "PY",
+   "key": "dg|255680",
+   "names": [
+    "Eagles"
+   ],
+   "years": [
+    2002
+   ],
+   "releaseCount": 1,
+   "styles": [
+    "Country Rock",
+    "Rock"
+   ],
+   "dgId": 255680,
+   "wikidataId": null,
+   "verdict": "foreign-catalog",
+   "basis": "shared-title+foreign-area",
+   "mbid": "f46bd570-5768-462e-b84c-c7c993bbf47e",
+   "mbName": "Eagles",
+   "area": "United States",
+   "hitBasis": "name"
+  },
+  "PY:wd|Q10357563": {
+   "code": "PY",
+   "key": "wd|Q10357563",
+   "names": [
+    "Ratinho"
+   ],
+   "years": [
+    1971
+   ],
+   "releaseCount": 0,
+   "styles": [],
+   "dgId": null,
+   "wikidataId": "Q10357563",
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "e2559931-5030-462c-bae9-6904a4c9511d",
+   "mbName": "Ratinho",
+   "area": "Brazil",
+   "hitBasis": "name"
+  },
+  "PY:wd|Q47509550": {
+   "code": "PY",
+   "key": "wd|Q47509550",
+   "names": [
+    "Victor Vera"
+   ],
+   "years": [
+    2010
+   ],
+   "releaseCount": 0,
+   "styles": [],
+   "dgId": null,
+   "wikidataId": "Q47509550",
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "461c8aca-4d5a-42fe-a256-130616e3705a",
+   "mbName": "Victor Vera",
+   "area": "Spain",
+   "hitBasis": "name"
+  },
+  "PY:wd|Q64027395": {
+   "code": "PY",
+   "key": "wd|Q64027395",
+   "names": [
+    "Audioiko"
+   ],
+   "years": [
+    2010
+   ],
+   "releaseCount": 0,
+   "styles": [],
+   "dgId": null,
+   "wikidataId": "Q64027395",
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "5365bf4d-ee05-46d0-a338-b4882a1653f5",
+   "mbName": "Audioiko",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:wd|Q117774628": {
+   "code": "PY",
+   "key": "wd|Q117774628",
+   "names": [
+    "Lito Barrios"
+   ],
+   "years": [
+    1991
+   ],
+   "releaseCount": 0,
+   "styles": [],
+   "dgId": null,
+   "wikidataId": "Q117774628",
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "0fdc4a56-c354-42fd-8ec5-eb3b4194c979",
+   "mbName": "Lito Barrios",
+   "area": "Paraguay",
+   "hitBasis": "name"
+  },
+  "PY:wd|Q130300267": {
+   "code": "PY",
+   "key": "wd|Q130300267",
+   "names": [
+    "Gaudí"
+   ],
+   "years": [
+    1992
+   ],
+   "releaseCount": 0,
+   "styles": [],
+   "dgId": null,
+   "wikidataId": "Q130300267",
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "ecbe7008-86ad-4eb2-a75d-25e9c91c750d",
+   "mbName": "Gaudi",
+   "area": "London",
+   "hitBasis": "name"
+  },
+  "PY:wd|Q54849733": {
+   "code": "PY",
+   "key": "wd|Q54849733",
+   "names": [
+    "Rumberos"
+   ],
+   "years": [],
+   "releaseCount": 0,
+   "styles": [],
+   "dgId": null,
+   "wikidataId": "Q54849733",
+   "verdict": "fuzzy-kept",
+   "basis": "fuzzy-may-never-drop",
+   "nearMiss": null,
+   "mbName": null
+  },
+  "PY:wd|Q5479670": {
+   "code": "PY",
+   "key": "wd|Q5479670",
+   "names": [
+    "Salamandra"
+   ],
+   "years": [
+    2000
+   ],
+   "releaseCount": 0,
+   "styles": [],
+   "dgId": null,
+   "wikidataId": "Q5479670",
+   "verdict": "collision-kept",
+   "basis": "area-contradiction",
+   "mbid": "9839e5eb-4725-48c9-89f6-4d9c800efba8",
+   "mbName": "Salamandra",
+   "area": "Czechia",
+   "hitBasis": "name"
+  },
+  "PY:wd|Q5121910": {
+   "code": "PY",
+   "key": "wd|Q5121910",
+   "names": [
+    "Cirilo R. Zayas"
+   ],
+   "years": [
+    1944
+   ],
+   "releaseCount": 0,
+   "styles": [],
+   "dgId": null,
+   "wikidataId": "Q5121910",
+   "verdict": "duplicate",
+   "basis": "area",
+   "mbid": "f5c85338-d3a6-42ce-87a2-0a2b615d75fb",
+   "mbName": "Cirilo R. Zayas",
+   "area": "Asunción",
+   "hitBasis": "name"
+  },
+  "PY:wd|Q5552611": {
+   "code": "PY",
+   "key": "wd|Q5552611",
+   "names": [
+    "Gaúcho da Fronteira"
+   ],
+   "years": [
+    1962
+   ],
+   "releaseCount": 0,
+   "styles": [],
+   "dgId": null,
+   "wikidataId": "Q5552611",
+   "verdict": "duplicate",
+   "basis": "era-overlap",
+   "mbid": "22190291-a035-4c7c-9295-4cf1bf91c99a",
+   "mbName": "Gaúcho da Fronteira",
+   "area": null,
+   "hitBasis": "name"
+  },
+  "PY:wd|Q5751814": {
+   "code": "PY",
+   "key": "wd|Q5751814",
+   "names": [
+    "Carlos Sosa"
+   ],
+   "years": [
+    1941
+   ],
+   "releaseCount": 0,
+   "styles": [],
+   "dgId": null,
+   "wikidataId": "Q5751814",
+   "verdict": "uncorroborated-kept",
+   "basis": "name-only",
+   "mbid": "b160e104-db8c-45fe-8a8e-937ff2549207",
+   "mbName": "Carlos Sosa",
+   "area": null,
+   "hitBasis": "name"
+  }
+ },
+ "heldOutProbableForeignCatalog": {
+  "rule": "collision-kept + MB rg count >= 12 + (full-canonical-name equality OR typed-alias hit); awaiting owner ruling",
+  "entries": [
+   {
+    "country": "LA",
+    "name": "Exile",
+    "mbName": "EXILE",
+    "mbid": "d9403f69-2718-483e-a21a-210ae1714b82",
+    "mbReleaseGroups": 70
+   },
+   {
+    "country": "LA",
+    "name": "JL",
+    "mbName": "JL",
+    "mbid": "df3cc800-be5b-413a-bdd5-42aba778c711",
+    "mbReleaseGroups": 31
+   },
+   {
+    "country": "LA",
+    "name": "Aluna",
+    "mbName": "Aluna",
+    "mbid": "4d937f0c-1248-4b0d-93f5-427059092c33",
+    "mbReleaseGroups": 44
+   },
+   {
+    "country": "LA",
+    "name": "Sapphire",
+    "mbName": "Sapphire",
+    "mbid": "adff2136-d6fa-4a58-ac8c-f69a2caba439",
+    "mbReleaseGroups": 81
+   },
+   {
+    "country": "PY",
+    "name": "Juan D'Arienzo",
+    "mbName": "Juan d’Arienzo",
+    "mbid": "d09ac963-025f-4eb6-853c-cc383838ee60",
+    "mbReleaseGroups": 120
+   },
+   {
+    "country": "PY",
+    "name": "Eros Ramazzotti",
+    "mbName": "Eros Ramazzotti",
+    "mbid": "3ab7295a-54ac-40e8-b1b2-3d110a143550",
+    "mbReleaseGroups": 88
+   },
+   {
+    "country": "PY",
+    "name": "Placido Domingo",
+    "mbName": "Plácido Domingo",
+    "mbid": "521df2bd-01f6-456e-9d5f-f081068819c2",
+    "mbReleaseGroups": 348
+   },
+   {
+    "country": "PY",
+    "name": "PJ Harvey",
+    "mbName": "PJ Harvey",
+    "mbid": "e795e03d-b5d5-4a5f-834d-162cfb308a2c",
+    "mbReleaseGroups": 144
+   },
+   {
+    "country": "PY",
+    "name": "Mad Professor",
+    "mbName": "Mad Professor",
+    "mbid": "ea3b97e8-8a76-4ea7-8e6f-3ebf40acaeb8",
+    "mbReleaseGroups": 127
+   },
+   {
+    "country": "PY",
+    "name": "Trio San Antonio",
+    "mbName": "Trio San Antonio",
+    "mbid": "733dfe44-fd2a-4dbb-bac2-f5e015213c8f",
+    "mbReleaseGroups": 37
+   },
+   {
+    "country": "PY",
+    "name": "Julio Iglesias",
+    "mbName": "Julio Iglesias",
+    "mbid": "3be4099e-f180-4038-af84-ae18a09eab02",
+    "mbReleaseGroups": 163
+   },
+   {
+    "country": "PY",
+    "name": "Abigail",
+    "mbName": "Abigail",
+    "mbid": "6b641780-cd21-4e2e-8158-793e2e9f690e",
+    "mbReleaseGroups": 143
+   },
+   {
+    "country": "PY",
+    "name": "Ricardo Montaner",
+    "mbName": "Ricardo Montaner",
+    "mbid": "9ea7c031-a2d0-4a89-b469-72b51c47417c",
+    "mbReleaseGroups": 68
+   },
+   {
+    "country": "PY",
+    "name": "Cristian Castro",
+    "mbName": "Cristian Castro",
+    "mbid": "8cc00e45-94c9-40e0-882b-0e76dd5b472b",
+    "mbReleaseGroups": 47
+   },
+   {
+    "country": "PY",
+    "name": "Brenda Lee",
+    "mbName": "Brenda Lee",
+    "mbid": "6ca4886a-8f77-4133-b404-46fb3908e24a",
+    "mbReleaseGroups": 136
+   },
+   {
+    "country": "PY",
+    "name": "Tony Williams",
+    "mbName": "Tony Williams",
+    "mbid": "b6a30b58-6b00-47c4-a031-c62a6981461f",
+    "mbReleaseGroups": 29
+   },
+   {
+    "country": "PY",
+    "name": "New Order",
+    "mbName": "New Order",
+    "mbid": "f1106b17-dcbb-45f6-b938-199ccfab50cc",
+    "mbReleaseGroups": 220
+   },
+   {
+    "country": "PY",
+    "name": "Deep Purple",
+    "mbName": "Deep Purple",
+    "mbid": "79491354-3d83-40e3-9d8e-7592d58d790a",
+    "mbReleaseGroups": 615
+   },
+   {
+    "country": "PY",
+    "name": "Ricky Martin",
+    "mbName": "Ricky Martin",
+    "mbid": "70ea63ea-70dc-4b63-951a-2c249d2b3b0a",
+    "mbReleaseGroups": 128
+   },
+   {
+    "country": "PY",
+    "name": "Iron Maiden",
+    "mbName": "Iron Maiden",
+    "mbid": "ca891d65-d9b0-4258-89f7-e6ba29d83767",
+    "mbReleaseGroups": 333
+   },
+   {
+    "country": "PY",
+    "name": "Gaudí",
+    "mbName": "Gaudi",
+    "mbid": "ecbe7008-86ad-4eb2-a75d-25e9c91c750d",
+    "mbReleaseGroups": 41
+   },
+   {
+    "country": "PY",
+    "name": "Antonio Aguilar Barraza",
+    "mbName": "Antonio Aguilar",
+    "mbid": "ba683849-490c-4afb-9c8d-7278b25cbdc1",
+    "mbReleaseGroups": 56,
+    "via": "typed-alias (Legal/Artist name)"
+   }
+  ]
+ }
+}

@@ -32,9 +32,15 @@
  * (v1 MB-dedup verdicts are seeded in where the name key is unchanged).
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import {
+  dedupProbes,
+  exactNameHit,
+  judgeNameHit,
+  searchMbArtists,
+  titleKeys,
+} from './lib/dedup-rule.mjs'
 
 const WORK_PATH = 'data/extra-artists-work-v2.json'
-const LEGACY_WORK_PATH = 'data/extra-artists-work.json'
 const OUT_PATH = 'lib/explore/extra-artists.json'
 const REPORT_PATH = 'data/extra-artists-report.json'
 
@@ -76,16 +82,6 @@ function normalize(value) {
     .normalize('NFKD')
     .replace(/[̀-ͯ]/g, '')
     .replace(/[^\p{L}\p{N}]+/gu, ' ')
-    .trim()
-}
-
-/** v1's normalize, kept ONLY to read v1's checked-verdict cache. */
-function legacyNormalize(value) {
-  return value
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9຀-໿]+/g, ' ')
     .trim()
 }
 
@@ -308,34 +304,6 @@ async function discogsArtistId(name) {
   return null
 }
 
-// ------------------------------------------------------------------ Dedup
-
-/**
- * Is this name already in MusicBrainz? CONSERVATIVE BY DESIGN: an
- * exact normalized match is a duplicate, and so is any high-scoring
- * near match — when MB might already know them, we skip.
- */
-async function inMusicBrainz(name) {
-  const body = await getJson(
-    `https://musicbrainz.org/ws/2/artist?query=${encodeURIComponent(`artist:"${name}"`)}&limit=5&fmt=json`,
-    { 'User-Agent': MB_UA },
-  )
-  const wanted = normalize(name)
-  for (const artist of body.artists ?? []) {
-    if (normalize(artist.name) === wanted) return 'exact'
-    for (const alias of artist.aliases ?? []) {
-      if (normalize(alias.name ?? '') === wanted) return 'alias'
-    }
-    if ((artist.score ?? 0) >= 90) {
-      const theirs = normalize(artist.name)
-      // Containment either way = plausibly the same act under a
-      // slightly different credit. Ambiguous → skip.
-      if (theirs.includes(wanted) || wanted.includes(theirs)) return 'fuzzy'
-    }
-  }
-  return null
-}
-
 // ------------------------------------------------------------------- main
 
 async function main() {
@@ -421,11 +389,15 @@ async function main() {
           years: [],
           styles: new Set(),
           aliases: new Set(),
+          titles: new Set(),
           releaseCount: 0,
         }
         entry.releaseCount++
         if (release.year) entry.years.push(release.year)
         for (const style of release.style ?? []) entry.styles.add(style)
+        for (const titleKey of titleKeys(release.title)) {
+          entry.titles.add(titleKey)
+        }
         candidates.set(key, entry)
         continue
       }
@@ -437,6 +409,7 @@ async function main() {
           years: [],
           styles: new Set(),
           aliases: new Set(),
+          titles: new Set(),
           discogsArtistId: credit.id,
           releaseCount: 0,
         }
@@ -446,6 +419,9 @@ async function main() {
         }
         if (release.year) entry.years.push(release.year)
         for (const style of release.style ?? []) entry.styles.add(style)
+        for (const titleKey of titleKeys(release.title)) {
+          entry.titles.add(titleKey)
+        }
         candidates.set(key, entry)
       }
     }
@@ -484,6 +460,7 @@ async function main() {
         years: person.year ? [person.year] : [],
         styles: new Set(),
         aliases: new Set(),
+        titles: new Set(),
         wikidataId: person.wikidataId,
         discogsArtistId: person.discogsId ?? null,
         releaseCount: 0,
@@ -495,16 +472,16 @@ async function main() {
     )
     state.foreignByOrigin = foreignByOrigin
 
-    // 3. Dedup against MusicBrainz — the expensive, careful pass.
-    // Checked per candidate KEY; the canonical name AND up to two ANV
-    // aliases are each verified (an alias known to MB = skip). v1's
-    // verdicts seed the cache where the name is unchanged.
-    state.checked ??= {}
-    const legacy = loadJson(LEGACY_WORK_PATH, { countries: {} })
-    const legacyChecked = legacy.countries?.[code]?.checked ?? {}
+    // 3. Dedup against MusicBrainz under RULE v3 (owner-approved,
+    // Aug 9 2026 — see scripts/lib/dedup-rule.mjs): fuzzy never
+    // drops; a name match drops only with record-level corroboration
+    // (area hierarchy / era / shared release title / crosswalk); area
+    // contradiction + shared title = same artist but FOREIGN, an
+    // origin exclusion logged separately from dedup.
+    state.verdicts ??= {}
     const entries = [...candidates.entries()]
-    const pending = entries.filter(([key]) => state.checked[key] === undefined)
-    console.log(`  Dedup: ${pending.length} to check against MusicBrainz…`)
+    const pending = entries.filter(([key]) => state.verdicts[key] === undefined)
+    console.log(`  Dedup (rule v3): ${pending.length} to judge against MusicBrainz…`)
     let done = 0
     for (const [key, candidate] of pending) {
       const wanted = normalize(candidate.name)
@@ -513,30 +490,25 @@ async function main() {
         (person) => normalize(person.name) === wanted && person.mbid,
       )
       if (wdMatch) {
-        state.checked[key] = 'crosswalk'
+        state.verdicts[key] = { verdict: 'crosswalk', mbid: wdMatch.mbid }
       } else {
-        const namesToCheck = [candidate.name, ...candidate.aliases].slice(0, 3)
-        // v1 skip-verdicts stand; v1 'new' still needs the ANV alias
-        // spellings checked (v1 never saw them); v1 'crosswalk' was
-        // country-scoped, so everything is rechecked.
-        const legacyVerdict =
-          legacyChecked[legacyNormalize(candidate.name)] ?? null
-        let verdict = legacyVerdict === 'crosswalk' ? null : legacyVerdict
-        const toCheck =
-          verdict === null
-            ? namesToCheck
-            : verdict === 'new'
-              ? namesToCheck.slice(1)
-              : []
-        for (const name of toCheck) {
-          const hit = await inMusicBrainz(name)
-          await sleep(MB_DELAY_MS)
+        const cand = {
+          names: [candidate.name, ...candidate.aliases],
+          years: [...new Set(candidate.years)],
+          titles: candidate.titles ?? new Set(),
+        }
+        let judged = null
+        for (const probe of dedupProbes(cand.names)) {
+          const artists = await searchMbArtists(probe)
+          const hit = artists
+            .map((artist) => ({ artist, basis: exactNameHit(artist, probe) }))
+            .find((entry) => entry.basis)
           if (hit) {
-            verdict = hit
+            judged = await judgeNameHit(cand, hit.artist, hit.basis, config.name)
             break
           }
         }
-        state.checked[key] = verdict ?? 'new'
+        state.verdicts[key] = judged ?? { verdict: 'new', basis: 'no-exact-hit' }
       }
       done++
       if (done % 20 === 0) {
@@ -546,11 +518,17 @@ async function main() {
     }
     writeFileSync(WORK_PATH, JSON.stringify(work))
 
-    // 4. Survivors: genuinely new to MusicBrainz.
+    // 4. Survivors: everything rule v3 does not corroborate a drop for.
+    const KEEP_VERDICTS = new Set([
+      'new',
+      'fuzzy-kept',
+      'collision-kept',
+      'uncorroborated-kept',
+    ])
     const survivors = entries
-      .filter(([key]) => state.checked[key] === 'new')
+      .filter(([key]) => KEEP_VERDICTS.has(state.verdicts[key]?.verdict))
       .map(([, candidate]) => candidate)
-    console.log(`  ${survivors.length} new to MusicBrainz`)
+    console.log(`  ${survivors.length} kept under rule v3`)
 
     // 5. Resolve Discogs artist pages — only the fallback/Wikidata
     // candidates need this now; credited artists carry their id.
@@ -572,7 +550,30 @@ async function main() {
     }
     writeFileSync(WORK_PATH, JSON.stringify(work))
 
-    state.result = survivors
+    // A display-string fallback candidate and a structured-credit
+    // candidate can resolve to the SAME Discogs id (phase 5) — merge
+    // them; same id is unambiguous identity, no judgment involved.
+    // Compare as strings: Wikidata crosswalk ids arrive as strings.
+    const byResolvedId = new Map()
+    const mergedSurvivors = []
+    for (const survivor of survivors) {
+      const resolvedId =
+        survivor.discogsArtistId ?? state.artistIds[normalize(survivor.name)]
+      const idKey = resolvedId != null ? String(resolvedId) : null
+      const existing = idKey ? byResolvedId.get(idKey) : null
+      if (existing) {
+        existing.years.push(...survivor.years)
+        existing.releaseCount += survivor.releaseCount
+        for (const style of survivor.styles) existing.styles.add(style)
+        for (const alias of survivor.aliases) existing.aliases.add(alias)
+        if (survivor.name !== existing.name) existing.aliases.add(survivor.name)
+        continue
+      }
+      if (idKey) byResolvedId.set(idKey, survivor)
+      mergedSurvivors.push(survivor)
+    }
+
+    state.result = mergedSurvivors
       .map((survivor) => {
         const key = normalize(survivor.name)
         const years = [...new Set(survivor.years)].sort((a, b) => a - b)
@@ -628,18 +629,24 @@ async function main() {
       ]
       return { ...artist, aliases: merged }
     })
-    const skips = Object.values(state.checked ?? {})
+    const verdicts = Object.values(state.verdicts ?? {})
+    const count = (name) =>
+      verdicts.filter((entry) => entry.verdict === name).length
     report[code] = {
       name: COUNTRIES[code].name,
       wikidataMusicians: state.wikidata.length,
       discogsReleases: state.releases.length,
-      candidates: skips.length,
+      candidates: verdicts.length,
       newArtists: state.result.length,
-      skipped: {
-        exactNameInMb: skips.filter((v) => v === 'exact').length,
-        aliasInMb: skips.filter((v) => v === 'alias').length,
-        fuzzyAmbiguous: skips.filter((v) => v === 'fuzzy').length,
-        wikidataCrosswalk: skips.filter((v) => v === 'crosswalk').length,
+      dropped: {
+        duplicate: count('duplicate'),
+        foreignCatalog: count('foreign-catalog'),
+        wikidataCrosswalk: count('crosswalk'),
+      },
+      keptDespiteNameHit: {
+        fuzzyKept: count('fuzzy-kept'),
+        collisionKept: count('collision-kept'),
+        uncorroboratedKept: count('uncorroborated-kept'),
       },
       dated: state.result.filter((a) => a.firstYear !== null).length,
       sample: state.result.slice(0, 8).map((a) => `${a.name}${a.firstYear ? ` (${a.firstYear})` : ''}`),

@@ -1743,6 +1743,78 @@
         "discogsArtistId": null,
         "wikidataId": null,
         "retainedFrom": "2026-08-07"
+      },
+      {
+        "name": "Vīru kori \"Olūts\"",
+        "source": "discogs",
+        "firstYear": 2008,
+        "lastYear": 2008,
+        "styles": [
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 16171039,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Dictator",
+        "source": "discogs",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [
+          "Thrash",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7065242,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Dreamer",
+        "source": "discogs",
+        "firstYear": 1990,
+        "lastYear": 1990,
+        "styles": [
+          "Hard Rock",
+          "Heavy Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4878278,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Pumpkins",
+        "source": "discogs",
+        "firstYear": 2005,
+        "lastYear": 2005,
+        "styles": [
+          "Alternative Rock",
+          "Rock"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4947505,
+        "wikidataId": null,
+        "aliases": [
+          "ພຳກຶ້ນສ"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Suitu dūdenieki",
+        "source": "discogs",
+        "firstYear": 2024,
+        "lastYear": 2024,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7350700,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
       }
     ],
     "PY": [
@@ -2153,27 +2225,13 @@
         "name": "Giovanna Chantal",
         "source": "discogs",
         "firstYear": 2018,
-        "lastYear": 2025,
+        "lastYear": 2026,
         "styles": [
           "Indie Pop",
           "Alt-Pop",
           "Reggaeton"
         ],
-        "releaseCount": 3,
-        "discogsArtistId": 17617332,
-        "wikidataId": null
-      },
-      {
-        "name": "Giovanna Chantal",
-        "source": "discogs",
-        "firstYear": 2026,
-        "lastYear": 2026,
-        "styles": [
-          "Dance-pop",
-          "Alt-Pop",
-          "Indo-Pop"
-        ],
-        "releaseCount": 3,
+        "releaseCount": 6,
         "discogsArtistId": 17617332,
         "wikidataId": null
       },
@@ -2414,14 +2472,14 @@
       {
         "name": "Caribe Tres",
         "source": "discogs",
-        "firstYear": 1978,
+        "firstYear": 1976,
         "lastYear": 1978,
         "styles": [
           "Guaracha",
           "Mambo",
           "Cumbia"
         ],
-        "releaseCount": 2,
+        "releaseCount": 3,
         "discogsArtistId": 5514242,
         "wikidataId": null
       },
@@ -3179,20 +3237,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 14600351,
-        "wikidataId": null
-      },
-      {
-        "name": "Caribe Tres",
-        "source": "discogs",
-        "firstYear": 1976,
-        "lastYear": 1976,
-        "styles": [
-          "Cumbia",
-          "Guajira",
-          "Boogaloo"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 5514242,
         "wikidataId": null
       },
       {
@@ -7821,6 +7865,2181 @@
         "discogsArtistId": 4396462,
         "wikidataId": null,
         "retainedFrom": "2026-08-07"
+      },
+      {
+        "name": "Rawhide",
+        "source": "discogs",
+        "firstYear": 2012,
+        "lastYear": 2012,
+        "styles": [
+          "Heavy Metal",
+          "Thrash",
+          "Speed Metal"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3293040,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Khyron",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2017,
+        "styles": [
+          "Heavy Metal",
+          "Thrash",
+          "Hardcore"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 4788436,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Tammys",
+        "source": "discogs",
+        "firstYear": 1975,
+        "lastYear": 1980,
+        "styles": [
+          "Psychedelic",
+          "Polka",
+          "Beat"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 4392277,
+        "wikidataId": null,
+        "aliases": [
+          "Los Tammy's De Pedro Juan Caballero",
+          "Los Tammy's de Pedro Juan Caballero"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Víctor Hugo De La Sierra",
+        "source": "discogs",
+        "firstYear": 1975,
+        "lastYear": 1975,
+        "styles": [
+          "Psychedelic",
+          "Polka",
+          "Beat"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4392275,
+        "wikidataId": null,
+        "aliases": [
+          "Víctor Hugo"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Troveros De América",
+        "source": "discogs",
+        "firstYear": 1977,
+        "lastYear": 1978,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 5279050,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Kóga",
+        "source": "discogs",
+        "firstYear": 2007,
+        "lastYear": 2007,
+        "styles": [
+          "Thrash",
+          "Groove Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 9731512,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Grupo Vocal Dos",
+        "source": "discogs",
+        "firstYear": 1973,
+        "lastYear": 1998,
+        "styles": [
+          "Guarania",
+          "Polka",
+          "Latin"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 4021324,
+        "wikidataId": null,
+        "aliases": [
+          "Vocal 2",
+          "Vocal Dos"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Oscar Pérez Con La Alegre Fórmula Nueva",
+        "source": "discogs",
+        "firstYear": 1973,
+        "lastYear": 1982,
+        "styles": [
+          "Schlager",
+          "Polka",
+          "Ranchera"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 4407633,
+        "wikidataId": null,
+        "aliases": [
+          "La Alegre Fórmula Nueva!! Oscar Pérez!!",
+          "Oscar Pérez",
+          "...La Alegre Fórmula Nueva! Oscar Pérez"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Lila",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Latin"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5568821,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Bocheros",
+        "source": "discogs",
+        "firstYear": 1993,
+        "lastYear": 1993,
+        "styles": [
+          "Pasodoble",
+          "Fado",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2248154,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Alberto De Luque Y Los Amigos",
+        "source": "discogs",
+        "firstYear": 1988,
+        "lastYear": 1988,
+        "styles": [
+          "Choral",
+          "Holiday",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 3015160,
+        "wikidataId": null,
+        "aliases": [
+          "Alberto De Luque Con Los Amigos"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Corrosion",
+        "source": "discogs",
+        "firstYear": 1993,
+        "lastYear": 2021,
+        "styles": [
+          "Heavy Metal",
+          "Speed Metal",
+          "Thrash"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 4293731,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Coven",
+        "source": "discogs",
+        "firstYear": 2018,
+        "lastYear": 2018,
+        "styles": [
+          "Abstract",
+          "Synthwave",
+          "Electronic"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7585490,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Orrego",
+        "source": "discogs",
+        "firstYear": 2011,
+        "lastYear": 2015,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Tango"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 5037911,
+        "wikidataId": null,
+        "aliases": [
+          "Los Principes Del Compás - Gran Típica Orrego"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Grupo Raíces",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1984,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Folk"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 3786564,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Batallón",
+        "source": "discogs",
+        "firstYear": 2021,
+        "lastYear": 2021,
+        "styles": [
+          "Thrash",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 11508338,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Rushmore",
+        "source": "discogs",
+        "firstYear": 2013,
+        "lastYear": 2015,
+        "styles": [
+          "Heavy Metal",
+          "Power Metal",
+          "Rock"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7064626,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Javier Vargas",
+        "source": "discogs",
+        "firstYear": 1970,
+        "lastYear": 2012,
+        "styles": [
+          "Bolero",
+          "Ranchera",
+          "Latin"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 4395180,
+        "wikidataId": null,
+        "aliases": [
+          "Javier Vargas El Trovador Del Paraguay"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Juan Carreras",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Latin"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4392346,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Ramblers",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Electronic",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4392348,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "José Luis Rodríguez",
+        "source": "discogs",
+        "firstYear": 1983,
+        "lastYear": 1984,
+        "styles": [
+          "Vocal",
+          "Ballad",
+          "Pop"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 455765,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Antonio Aguilar",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1969,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Latin"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 5296689,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Cuarteto Venus",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1969,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Latin"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 7140383,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Disparo Certero",
+        "source": "discogs",
+        "firstYear": 2022,
+        "lastYear": 2022,
+        "styles": [
+          "Punk",
+          "Hardcore",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7531781,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Juan Cancio Barreto",
+        "source": "discogs",
+        "firstYear": 2005,
+        "lastYear": 2008,
+        "styles": [
+          "Guarania",
+          "Polka",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 5085858,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Victor Band",
+        "source": "discogs",
+        "firstYear": 1950,
+        "lastYear": 1950,
+        "styles": [
+          "Instrumental",
+          "Military",
+          "Marches"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4233418,
+        "wikidataId": null,
+        "aliases": [
+          "Banda Victor"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Ray Conniff",
+        "source": "discogs",
+        "firstYear": 1983,
+        "lastYear": 1983,
+        "styles": [
+          "Light Music",
+          "Pop",
+          "Easy Listening"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 281994,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Dúo Quintana-Escalante",
+        "source": "discogs",
+        "firstYear": 1997,
+        "lastYear": 1997,
+        "styles": [
+          "Polka",
+          "Latin",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 2945626,
+        "wikidataId": null,
+        "aliases": [
+          "Dúo De La Simpatia Quintana-Escalante",
+          "Quintana - Escalante"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Alfredo Cáceres",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Holiday",
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6813631,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Orquesta Peru Rima",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Latin"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5159342,
+        "wikidataId": null,
+        "aliases": [
+          "Conjunto Perú - Rimá"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Van Halen",
+        "source": "discogs",
+        "firstYear": 1996,
+        "lastYear": 1996,
+        "styles": [
+          "Hard Rock",
+          "Heavy Metal",
+          "Classic Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 94066,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Peter Gabriel",
+        "source": "discogs",
+        "firstYear": 1992,
+        "lastYear": 1992,
+        "styles": [
+          "Downtempo",
+          "Art Rock",
+          "Pop Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 11136,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Wisdom",
+        "source": "discogs",
+        "firstYear": 1995,
+        "lastYear": 2024,
+        "styles": [
+          "Black Metal",
+          "Rock",
+          "Avantgarde"
+        ],
+        "releaseCount": 7,
+        "discogsArtistId": 2194277,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Motorized",
+        "source": "discogs",
+        "firstYear": 2005,
+        "lastYear": 2016,
+        "styles": [
+          "Death Metal",
+          "Rock",
+          "Technical Death Metal"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 4790856,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Pestilencia",
+        "source": "discogs",
+        "firstYear": 2015,
+        "lastYear": 2020,
+        "styles": [
+          "Hardcore",
+          "Rock"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 2316948,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Alejandro Sanz",
+        "source": "discogs",
+        "firstYear": 2001,
+        "lastYear": 2001,
+        "styles": [
+          "Nueva Trova",
+          "Latin"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 217655,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Trovadores Paraguayos",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Latin",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5254975,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Jokers",
+        "source": "discogs",
+        "firstYear": 1974,
+        "lastYear": 1980,
+        "styles": [
+          "Soul",
+          "Funk",
+          "Polka"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 5140993,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Idiot And Virgin",
+        "source": "discogs",
+        "firstYear": 2021,
+        "lastYear": 2021,
+        "styles": [
+          "Noisecore",
+          "Noise",
+          "Experimental"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7141179,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Deadly Noise Crew",
+        "source": "discogs",
+        "firstYear": 2024,
+        "lastYear": 2026,
+        "styles": [
+          "Grindcore",
+          "Rock"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 3916304,
+        "wikidataId": null,
+        "aliases": [
+          "Deadly"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "margarita pildayn",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Latin"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": null,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Shitload",
+        "source": "discogs",
+        "firstYear": 2025,
+        "lastYear": 2025,
+        "styles": [
+          "Experimental",
+          "Noise",
+          "Abstract"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8137328,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Diabolical",
+        "source": "discogs",
+        "firstYear": 2019,
+        "lastYear": 2019,
+        "styles": [
+          "Rock",
+          "Black Metal"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 737899,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Paraguay",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2102198,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Johann Strauss Jr.",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Romantic",
+          "Classical"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 1259101,
+        "wikidataId": null,
+        "aliases": [
+          "Johann Strauss"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Javier Vázquez",
+        "source": "discogs",
+        "firstYear": 2016,
+        "lastYear": 2016,
+        "styles": [
+          "House",
+          "Electronic"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6472525,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Gonzalo MD",
+        "source": "discogs",
+        "firstYear": 2016,
+        "lastYear": 2016,
+        "styles": [
+          "Techno",
+          "Electronic"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2672669,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Funeral",
+        "source": "discogs",
+        "firstYear": 2005,
+        "lastYear": 2005,
+        "styles": [
+          "Death Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2561705,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Aya",
+        "source": "discogs",
+        "firstYear": 2022,
+        "lastYear": 2024,
+        "styles": [
+          "Hardcore",
+          "Crust",
+          "Rock"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 10642912,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Sacro",
+        "source": "discogs",
+        "firstYear": 2007,
+        "lastYear": 2013,
+        "styles": [
+          "Heavy Metal",
+          "Thrash",
+          "Hardcore"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 11249054,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Joker's",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1985,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Latin"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6651928,
+        "wikidataId": null,
+        "aliases": [
+          "Jokers"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Oxigen Project",
+        "source": "discogs",
+        "firstYear": 2025,
+        "lastYear": 2025,
+        "styles": [
+          "Italodance",
+          "EBM",
+          "Electronic"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 12435196,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Andrés Pérez",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Guarania",
+          "Polka",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5339498,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Zeitgeist",
+        "source": "discogs",
+        "firstYear": 2010,
+        "lastYear": 2017,
+        "styles": [
+          "Gothic Metal",
+          "Rock",
+          "Industrial Metal"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 2327232,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Keber",
+        "source": "discogs",
+        "firstYear": 2003,
+        "lastYear": 2003,
+        "styles": [
+          "Black Metal",
+          "Gothic Metal",
+          "Unblack Metal"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7082540,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Crispin",
+        "source": "discogs",
+        "firstYear": 2018,
+        "lastYear": 2018,
+        "styles": [
+          "Heavy Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8259393,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Eligio Mujica",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Latin",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 4404331,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Amambay Cardozo Ocampo",
+        "source": "discogs",
+        "firstYear": 1978,
+        "lastYear": 1978,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Holiday"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4400836,
+        "wikidataId": null,
+        "aliases": [
+          "Amambay"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "SISTI",
+        "source": "discogs",
+        "firstYear": 2025,
+        "lastYear": 2025,
+        "styles": [
+          "Electro",
+          "Techno",
+          "Electronic"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 16050741,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "María Martha Serra Lima",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1985,
+        "styles": [
+          "Ballad",
+          "Vocal",
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3005848,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "La Orquesta Los Hidalgos",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Folk, World, & Country",
+          "Guarania"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4395238,
+        "wikidataId": null,
+        "aliases": [
+          "Los Hidalgos De Santos Lima",
+          "Los Hidalgos"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "The Rabbits",
+        "source": "discogs",
+        "firstYear": 1969,
+        "lastYear": 1969,
+        "styles": [
+          "Psychedelic",
+          "Beat",
+          "Garage Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5321308,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Stürmtiger",
+        "source": "discogs",
+        "firstYear": 2020,
+        "lastYear": 2020,
+        "styles": [
+          "Oi",
+          "Punk",
+          "Heavy Metal"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7705140,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Ful",
+        "source": "discogs",
+        "firstYear": 2002,
+        "lastYear": 2002,
+        "styles": [
+          "Hardcore",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3146595,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Joe Cocker",
+        "source": "discogs",
+        "firstYear": 1990,
+        "lastYear": 1990,
+        "styles": [
+          "Blues Rock",
+          "Pop Rock",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 124497,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Adonay",
+        "source": "discogs",
+        "firstYear": 2021,
+        "lastYear": 2021,
+        "styles": [
+          "Black Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2392291,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Cuarteto \"Paraguay Poty Pyajhú\"",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Latin"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5255355,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Mastermind",
+        "source": "discogs",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [
+          "Thrash",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5996828,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Enrique Samaniego",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Guarania",
+          "Polka",
+          "Latin"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 1876880,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Juan Carlos Barreto",
+        "source": "discogs",
+        "firstYear": 1979,
+        "lastYear": 1979,
+        "styles": [
+          "Guarania",
+          "Polka",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 16407250,
+        "wikidataId": null,
+        "aliases": [
+          "Juan Cancio Barreto"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Martín González",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Tango",
+          "Ballad"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4380278,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Caminantes",
+        "source": "discogs",
+        "firstYear": 2017,
+        "lastYear": 2017,
+        "styles": [
+          "Chamamé",
+          "Polka",
+          "Latin"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8274170,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Os Paralamas Do Sucesso",
+        "source": "discogs",
+        "firstYear": 1992,
+        "lastYear": 1995,
+        "styles": [
+          "Rock",
+          "Reggae",
+          "Latin"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 360329,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Lionel Richie",
+        "source": "discogs",
+        "firstYear": 1992,
+        "lastYear": 1992,
+        "styles": [
+          "Soul",
+          "Disco",
+          "Ballad"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 69722,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Reynaldo Jiménez",
+        "source": "discogs",
+        "firstYear": 2016,
+        "lastYear": 2016,
+        "styles": [
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2168509,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Magníficos",
+        "source": "discogs",
+        "firstYear": 1979,
+        "lastYear": 1979,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4398946,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Dismal",
+        "source": "discogs",
+        "firstYear": 2018,
+        "lastYear": 2018,
+        "styles": [
+          "Doom Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 13343079,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Abomination",
+        "source": "discogs",
+        "firstYear": 2007,
+        "lastYear": 2020,
+        "styles": [
+          "Death Metal",
+          "Rock"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6271479,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Luis Fernando Correa",
+        "source": "discogs",
+        "firstYear": 1962,
+        "lastYear": 1962,
+        "styles": [
+          "Folk",
+          "Latin",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5609461,
+        "wikidataId": null,
+        "aliases": [
+          "Luis Fernando Correa \"El Picaro Cordobés\""
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Eyesight",
+        "source": "discogs",
+        "firstYear": 2019,
+        "lastYear": 2019,
+        "styles": [
+          "Avantgarde",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3937669,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Vecindad Autopsia",
+        "source": "discogs",
+        "firstYear": 2008,
+        "lastYear": 2008,
+        "styles": [
+          "Punk",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6212065,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Stilnox",
+        "source": "discogs",
+        "firstYear": 2016,
+        "lastYear": 2016,
+        "styles": [
+          "Noisecore",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2887012,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Overlord",
+        "source": "discogs",
+        "firstYear": 2002,
+        "lastYear": 2004,
+        "styles": [
+          "Thrash",
+          "Rock"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 3907401,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Aqua Fina",
+        "source": "discogs",
+        "firstYear": 2016,
+        "lastYear": 2016,
+        "styles": [
+          "House",
+          "Disco",
+          "Funk"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4930403,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Aftermad's",
+        "source": "discogs",
+        "firstYear": 1994,
+        "lastYear": 1994,
+        "styles": [
+          "Pop Rock",
+          "Rock"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 2717992,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Taú",
+        "source": "discogs",
+        "firstYear": 2015,
+        "lastYear": 2016,
+        "styles": [
+          "Black Metal",
+          "Rock",
+          "Death Metal"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4814431,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Persona RS",
+        "source": "discogs",
+        "firstYear": 2020,
+        "lastYear": 2020,
+        "styles": [
+          "Techno",
+          "House",
+          "Ambient"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 10186774,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Nokto",
+        "source": "discogs",
+        "firstYear": 2021,
+        "lastYear": 2021,
+        "styles": [
+          "Progressive House",
+          "Electronic"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4201639,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Sal'm Raisov",
+        "source": "discogs",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [
+          "House",
+          "Electronic"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4807207,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Across",
+        "source": "discogs",
+        "firstYear": 2022,
+        "lastYear": 2022,
+        "styles": [
+          "Instrumental",
+          "Boom Bap",
+          "Hip Hop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 17789682,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Night Hunter",
+        "source": "discogs",
+        "firstYear": 2006,
+        "lastYear": 2006,
+        "styles": [
+          "Thrash",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 11249177,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Agonic",
+        "source": "discogs",
+        "firstYear": 2006,
+        "lastYear": 2006,
+        "styles": [
+          "Metalcore",
+          "Thrash",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5966022,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "The Profane",
+        "source": "discogs",
+        "firstYear": 2007,
+        "lastYear": 2007,
+        "styles": [
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3862781,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Village People",
+        "source": "discogs",
+        "firstYear": 2005,
+        "lastYear": 2005,
+        "styles": [
+          "Disco",
+          "Funk / Soul"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 33196,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Eurythmics",
+        "source": "discogs",
+        "firstYear": 1991,
+        "lastYear": 1991,
+        "styles": [
+          "Pop Rock",
+          "Synth-pop",
+          "Electronic"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 13911,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "VECTOR",
+        "source": "discogs",
+        "firstYear": 2026,
+        "lastYear": 2026,
+        "styles": [
+          "Noise",
+          "Harsh Noise Wall",
+          "Electronic"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 17974323,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Rotten State",
+        "source": "discogs",
+        "firstYear": 2017,
+        "lastYear": 2017,
+        "styles": [
+          "Hardcore",
+          "Thrash",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6651711,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Arcano",
+        "source": "discogs",
+        "firstYear": 2012,
+        "lastYear": 2012,
+        "styles": [
+          "Heavy Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6013788,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Pesticvm",
+        "source": "discogs",
+        "firstYear": 2013,
+        "lastYear": 2013,
+        "styles": [
+          "Black Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3634285,
+        "wikidataId": null,
+        "aliases": [
+          "Pesticum"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Yukaha",
+        "source": "discogs",
+        "firstYear": 2021,
+        "lastYear": 2021,
+        "styles": [
+          "Grindcore",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4837795,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Viernes 13",
+        "source": "discogs",
+        "firstYear": 2013,
+        "lastYear": 2013,
+        "styles": [
+          "Heavy Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6979685,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Felipe Sosa",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1980,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Andalusian Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4214905,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Oscar Mendoza",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1976,
+        "styles": [
+          "Guarania",
+          "Polka",
+          "Latin"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4384994,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Steinkrug",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Heavy Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4695582,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Jimmy Page",
+        "source": "discogs",
+        "firstYear": 1994,
+        "lastYear": 1994,
+        "styles": [
+          "Electric Blues",
+          "Acoustic",
+          "Classic Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 180585,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Robert Plant",
+        "source": "discogs",
+        "firstYear": 1994,
+        "lastYear": 1994,
+        "styles": [
+          "Electric Blues",
+          "Acoustic",
+          "Classic Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 180586,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Scorpions",
+        "source": "discogs",
+        "firstYear": 1995,
+        "lastYear": 1995,
+        "styles": [
+          "Hard Rock",
+          "Heavy Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 63552,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Inti Raymi",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Andean Music",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2613760,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Carlos",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Latin",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 17604462,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Sembrador",
+        "source": "discogs",
+        "firstYear": 1998,
+        "lastYear": 1998,
+        "styles": [
+          "Guarania",
+          "Polka",
+          "Nueva Cancion"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5342614,
+        "wikidataId": null,
+        "aliases": [
+          "Grupo Sembrador"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Indios",
+        "source": "discogs",
+        "firstYear": 2011,
+        "lastYear": 2011,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 763087,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Contrapunto",
+        "source": "discogs",
+        "firstYear": 2012,
+        "lastYear": 2012,
+        "styles": [
+          "Guarania",
+          "Nueva Cancion",
+          "Nueva Trova"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5344792,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Chainsaw",
+        "source": "discogs",
+        "firstYear": 2001,
+        "lastYear": 2001,
+        "styles": [
+          "Black Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2985429,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Gladiador",
+        "source": "discogs",
+        "firstYear": 2010,
+        "lastYear": 2010,
+        "styles": [
+          "Speed Metal",
+          "Black Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5705768,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Aríman",
+        "source": "discogs",
+        "firstYear": 2011,
+        "lastYear": 2011,
+        "styles": [
+          "Dream Pop",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6776633,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Hellish Massacre",
+        "source": "discogs",
+        "firstYear": 2012,
+        "lastYear": 2012,
+        "styles": [
+          "Hardcore",
+          "Punk",
+          "Thrash"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4788574,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Latinos",
+        "source": "discogs",
+        "firstYear": 1979,
+        "lastYear": 1979,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4398866,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "The Honeys",
+        "source": "discogs",
+        "firstYear": 1977,
+        "lastYear": 1977,
+        "styles": [
+          "Surf",
+          "Vocal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 520695,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Pope Francis",
+        "source": "discogs",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [
+          "Religious",
+          "Sermon",
+          "Speech"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5247548,
+        "wikidataId": null,
+        "aliases": [
+          "Papa Francisco"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Oscar Pérez Noguera",
+        "source": "discogs",
+        "firstYear": 1995,
+        "lastYear": 1995,
+        "styles": [
+          "Gospel",
+          "Religious",
+          "Polka"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4407629,
+        "wikidataId": null,
+        "aliases": [
+          "Oscar Pérez"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "The Classic's",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Rock & Roll",
+          "Beat",
+          "Pop Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4522792,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Latin Beat",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Rock & Roll",
+          "Beat",
+          "Pop Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4522774,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Carlos Bordón",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Guarania",
+          "Latin"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3921209,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Rod Stewart",
+        "source": "discogs",
+        "firstYear": 1993,
+        "lastYear": 1993,
+        "styles": [
+          "Acoustic",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 11012,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Sepulchral Voices",
+        "source": "discogs",
+        "firstYear": 2025,
+        "lastYear": 2025,
+        "styles": [
+          "Black Metal",
+          "Thrash",
+          "Death Metal"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4050642,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Nothingness",
+        "source": "discogs",
+        "firstYear": 2019,
+        "lastYear": 2019,
+        "styles": [
+          "Ambient",
+          "Electronic"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7378083,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Sintesis",
+        "source": "discogs",
+        "firstYear": 1992,
+        "lastYear": 1992,
+        "styles": [
+          "Pop Rock",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5357337,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Vinyl",
+        "source": "discogs",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [
+          "Speed Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6519308,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Toxic Avenger",
+        "source": "discogs",
+        "firstYear": 2016,
+        "lastYear": 2016,
+        "styles": [
+          "Thrash",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 1157598,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Hobbies",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [
+          "Rock",
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5888517,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Disterrör",
+        "source": "discogs",
+        "firstYear": 2011,
+        "lastYear": 2011,
+        "styles": [
+          "Hardcore",
+          "Crust",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8196103,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Necropsy",
+        "source": "discogs",
+        "firstYear": 2019,
+        "lastYear": 2019,
+        "styles": [
+          "Death Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14680662,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Santos Lima",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Latin",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3326552,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Enrique Iglesias",
+        "source": "discogs",
+        "firstYear": 2000,
+        "lastYear": 2000,
+        "styles": [
+          "Ballad",
+          "Romantic",
+          "Latin"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 87582,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Los Hidalgos",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2484218,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Somos",
+        "source": "discogs",
+        "firstYear": 1989,
+        "lastYear": 1989,
+        "styles": [
+          "Polka",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 1059873,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "José Luis Perales",
+        "source": "discogs",
+        "firstYear": 2001,
+        "lastYear": 2001,
+        "styles": [
+          "Trova",
+          "Ballad",
+          "Latin"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 314766,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Roberto Tello",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Polka",
+          "Latin",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5584118,
+        "wikidataId": null,
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Lucas Ortega",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Chamamé",
+          "Polka",
+          "Merengue"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7048201,
+        "wikidataId": null,
+        "aliases": [
+          "Luca Ortega"
+        ],
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Ratinho",
+        "source": "wikidata",
+        "firstYear": 1971,
+        "lastYear": 1971,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q10357563",
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Victor Vera",
+        "source": "wikidata",
+        "firstYear": 2010,
+        "lastYear": 2010,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q47509550",
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Audioiko",
+        "source": "wikidata",
+        "firstYear": 2010,
+        "lastYear": 2010,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q64027395",
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Rumberos",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q54849733",
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Salamandra",
+        "source": "wikidata",
+        "firstYear": 2000,
+        "lastYear": 2000,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q5479670",
+        "reinstatedBy": "dedup-rule-v3"
+      },
+      {
+        "name": "Carlos Sosa",
+        "source": "wikidata",
+        "firstYear": 1941,
+        "lastYear": 1941,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q5751814",
+        "reinstatedBy": "dedup-rule-v3"
       }
     ]
   }

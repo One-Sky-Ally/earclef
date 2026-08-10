@@ -52,3 +52,8 @@ data/extra-artists-work-v2.json
 data/extra-artists-v2-run.log
 data/extra-play-run2.log
 data/drift-audit-work.json
+data/dedup-drop-audit.json
+data/dedup-drop-audit.log
+data/dedup-v3-work.json
+data/dedup-v3-run-fresh.log
+data/dedup-v3-run.log
