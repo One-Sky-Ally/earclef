@@ -93,9 +93,18 @@ async function queueCachedVideo(
       name: 'queue',
       consistency: 'eventual',
     }).get(queueCacheKey(mbid, decade, name), { type: 'json' })) as {
-      track?: { videoId?: string } | null
+      track?: {
+        videoId?: string
+        source?: string
+        corroborated?: boolean
+      } | null
     } | null
-    const videoId = cached?.track?.videoId
+    const track = cached?.track
+    // Same purge rule as the queue route (John Mayer, Aug 9 2026):
+    // pre-rule search-sourced tracks were identity-by-bare-name and
+    // must never feed a ▶; channel/corroborated entries stand.
+    if (track?.source === 'search' && !track.corroborated) return null
+    const videoId = track?.videoId
     return videoId
       ? { kind: 'youtube-video', url: `https://www.youtube.com/watch?v=${videoId}` }
       : null

@@ -36,6 +36,14 @@ export interface QueueTrack {
   source: 'channel' | 'search'
   /** How era-true the pick is: in-era | nearby (±10y) | catalog. */
   era: 'in-era' | 'nearby' | 'catalog'
+  /**
+   * Search-sourced tracks written under the John Mayer rule (Aug 9,
+   * 2026): the video title matched a release title from the MBID's
+   * OWN catalog. Pre-rule search entries lack this flag and are
+   * treated as cache misses — bare channel-name equality once served
+   * the American guitarist for India's Indo-jazz composer.
+   */
+  corroborated?: boolean
 }
 
 interface CachedResolve {
@@ -217,13 +225,22 @@ interface SearchHit {
   channelTitle: string
 }
 
-/** The expensive fallback: ONE search (100 units), channel-verified. */
+/**
+ * The expensive fallback: ONE search (100 units), DOUBLY verified.
+ * NO TITLE, NO SEARCH (owner ruling, Aug 9 2026): channel-name
+ * equality proves the uploader is *an* artist with this name, not
+ * *this* artist — for common names it verified the wrong human being
+ * (John Mayer, India 1950 → Gravity). A hit must both pass the
+ * channel bar AND carry a title from the MBID's own catalog — the
+ * record-level fact that anchors identity. Honest null beats the
+ * wrong person.
+ */
 async function searchVerified(
   artistName: string,
-  trackTitle: string | null,
+  trackTitle: string,
   key: string,
 ): Promise<SearchHit[]> {
-  const q = trackTitle ? `${artistName} ${trackTitle}` : artistName
+  const q = `${artistName} ${trackTitle}`
   const body = (await ytJson(
     `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&videoCategoryId=10&maxResults=10&q=${encodeURIComponent(q)}&key=${key}`,
   )) as {
@@ -233,18 +250,21 @@ async function searchVerified(
     }[]
   }
   const artist = normalize(artistName)
-  // An empty normalized name can only match everything or nothing —
+  const wantedTitle = normalize(trackTitle)
+  // An empty normalized value can only match everything or nothing —
   // it verifies nothing, so it matches nothing.
-  if (!artist) return []
+  if (!artist || !wantedTitle) return []
   return (body.items ?? []).flatMap((item) => {
     const videoId = item.id?.videoId
     const title = item.snippet?.title
     const channelTitle = item.snippet?.channelTitle ?? ''
     if (!videoId || !title) return []
     const channel = normalize(channelTitle.replace(/ - topic$/i, ''))
-    // Official-only bar: the uploader IS the artist (own channel or
-    // the label-backed "Artist - Topic" channel). Fan uploads fail it.
-    return channel === artist ? [{ videoId, title, channelTitle }] : []
+    // Official bar (uploader is the artist) AND identity bar (the
+    // video is the era-picked work from this MBID's own catalog).
+    return channel === artist && normalize(title).includes(wantedTitle)
+      ? [{ videoId, title, channelTitle }]
+      : []
   })
 }
 
@@ -277,8 +297,14 @@ export async function GET(
     const cached = (await store().get(key, {
       type: 'json',
     })) as CachedResolve | null
+    // Surgical purge (owner-approved): pre-rule search-sourced tracks
+    // were identity-by-bare-name — treat them as misses and re-resolve.
+    // Channel-sourced and rule-corroborated entries stand.
+    const poisoned =
+      cached?.track?.source === 'search' && !cached.track.corroborated
     if (
       cached &&
+      !poisoned &&
       (cached.track !== null ||
         Date.now() - Date.parse(cached.at) < NULL_TTL_MS)
     ) {
@@ -326,8 +352,11 @@ export async function GET(
       }
     }
 
-    if (candidates.length === 0) {
-      const hits = await searchVerified(name, pick?.title ?? null, apiKey)
+    // NO TITLE, NO SEARCH: without an era/catalog title from this
+    // MBID's own release groups there is nothing to anchor identity,
+    // and a bare-name search finds whoever is famous under the name.
+    if (candidates.length === 0 && pick?.title) {
+      const hits = await searchVerified(name, pick.title, apiKey)
       for (const hit of hits.slice(0, 3)) {
         candidates.push({
           videoId: hit.videoId,
@@ -345,6 +374,8 @@ export async function GET(
           title: decodeEntities(candidate.title),
           source: candidate.source,
           era: pick?.era ?? 'catalog',
+          // Search hits under the new rule are always title-anchored.
+          ...(candidate.source === 'search' ? { corroborated: true } : {}),
         }
         break
       }

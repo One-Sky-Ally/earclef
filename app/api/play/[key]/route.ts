@@ -148,9 +148,10 @@ export async function GET(
   // Decade only sharpens mb: results (a cached era video) — cache the
   // sharpened result under its own key so eras don't overwrite each other.
   // v2 buried the containment-matched IA results (Alexandra incident);
-  // v3 added alias-set matching; v4 buries official-site links cached
-  // before the parked-domain gate (Salim Dada incident).
-  const cacheKey = `v4/${source}/${id}${decade ? `/${decade}` : ''}`
+  // v3 added alias-set matching; v4 buried pre-parked-gate official
+  // links (Salim Dada); v5 buries play results that inherited
+  // bare-name search tracks from the queue cache (John Mayer).
+  const cacheKey = `v5/${source}/${id}${decade ? `/${decade}` : ''}`
   const memoized = memo.get(cacheKey)
   if (memoized) return withCacheHeaders(NextResponse.json(memoized))
   const cached = await readCache(cacheKey)
