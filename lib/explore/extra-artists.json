@@ -31,12 +31,14 @@
           "Pop",
           "Lao Music"
         ],
-        "releaseCount": 5,
+        "releaseCount": 6,
         "discogsArtistId": 5802688,
         "wikidataId": null,
         "aliases": [
           "ສຸມຸນທາ",
-          "Soumountha Sirimanotham"
+          "Soumountha Sirimanotham",
+          "ສຸມຸນທາ ສິຣິມະໂນທັມ",
+          "ສ. ສິຣິມະໂນທັມ"
         ]
       },
       {
@@ -771,20 +773,6 @@
         "wikidataId": null
       },
       {
-        "name": "ຄຳພູ ທະວິວັນ",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Lao Music",
-          "Pop",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 9950968,
-        "wikidataId": null
-      },
-      {
         "name": "ຄຳພູ ທະວຶວັນ",
         "source": "discogs",
         "firstYear": null,
@@ -792,9 +780,12 @@
         "styles": [
           "Folk, World, & Country"
         ],
-        "releaseCount": 1,
+        "releaseCount": 2,
         "discogsArtistId": 4310312,
-        "wikidataId": null
+        "wikidataId": null,
+        "aliases": [
+          "ຄຳພູ ທະວິວັນ"
+        ]
       },
       {
         "name": "ຄຳຫຼ້າ ໜົ່ແກ້ວ",
@@ -970,22 +961,6 @@
         "releaseCount": 1,
         "discogsArtistId": 6563871,
         "wikidataId": null
-      },
-      {
-        "name": "ສຸມຸນທາ ສິຣິມະໂນທັມ",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Lao Music",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 9950977,
-        "wikidataId": null,
-        "aliases": [
-          "ສ. ສິຣິມະໂນທັມ"
-        ]
       },
       {
         "name": "ສົມສັກ ໄຊຈະເລິນ",
@@ -9977,24 +9952,6 @@
         "releaseCount": 0,
         "discogsArtistId": null,
         "wikidataId": "Q5751814",
-        "reinstatedBy": "dedup-rule-v3"
-      },
-      {
-        "name": "Los Joker's",
-        "source": "discogs",
-        "firstYear": 1981,
-        "lastYear": 1985,
-        "styles": [
-          "Polka",
-          "Guarania",
-          "Latin"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 6651928,
-        "wikidataId": null,
-        "aliases": [
-          "Jokers"
-        ],
         "reinstatedBy": "dedup-rule-v3"
       }
     ]
