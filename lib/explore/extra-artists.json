@@ -12801,7 +12801,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 15811683,
-        "wikidataId": "Q56359872"
+        "wikidataId": "Q56359872",
+        "note": "Owner ruling Aug 10 2026: keep — Wikidata ties her to Afghanistan; MB 704ebe94 area=Iran not inherited (we never correct MB, nor inherit its area)."
       },
       {
         "name": "Ghulam Hossein",
@@ -13151,7 +13152,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 8823823,
-        "wikidataId": "Q27895655"
+        "wikidataId": "Q27895655",
+        "note": "Owner ruling Aug 10 2026: keep — Wikidata ties him to Afghanistan; MB 342d24f9 filed under Iran."
       },
       {
         "name": "Shakeeb Hamdard",
@@ -13318,7 +13320,8 @@
         "aliases": [
           "نغمَی",
           "Naghmah"
-        ]
+        ],
+        "note": "Owner ruling Aug 10 2026: keep — Afghan-origin, US-resident; MB stub c27e26b0 area=US is residence, not origin (Tina Turner pattern)."
       },
       {
         "name": "حیدر سلیم",
@@ -13653,21 +13656,6 @@
         "releaseCount": 1,
         "discogsArtistId": 6578376,
         "wikidataId": null
-      },
-      {
-        "name": "Zarsanga",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 2248305,
-        "wikidataId": null,
-        "aliases": [
-          "زرسانگه"
-        ]
       },
       {
         "name": "استاد الطاف حسین",
