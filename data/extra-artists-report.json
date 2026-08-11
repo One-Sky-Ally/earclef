@@ -1,50 +1,104 @@
 {
-  "LA": {
-    "name": "Laos",
-    "wikidataMusicians": 8,
-    "discogsReleases": 160,
-    "candidates": 108,
-    "newArtists": 99,
-    "skipped": {
-      "exactNameInMb": 4,
-      "aliasInMb": 1,
-      "fuzzyAmbiguous": 4,
+  "BT": {
+    "name": "Bhutan",
+    "wikidataMusicians": 7,
+    "discogsReleases": 43,
+    "candidates": 20,
+    "newArtists": 19,
+    "dropped": {
+      "duplicate": 1,
+      "foreignCatalog": 0,
       "wikidataCrosswalk": 0
     },
-    "dated": 17,
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 1,
+      "uncorroboratedKept": 1
+    },
+    "dated": 14,
     "sample": [
-      "Noi Sengsourigna (2004)",
-      "Y-Power (2003)",
-      "DVB (2004)",
-      "ຕິ່ງ ໄພລາວັນ (2004)",
-      "A'Pacts (2005)",
-      "Chour De Khenes Du Chau Muong De Vientane (1928)",
-      "Guttural Bleeding (2024)",
-      "Khampheng Thammavongsa (2010)"
+      "Tashi Nencha (2000)",
+      "Tsheten Dorji (1996)",
+      "Ugyen Dorji (1996)",
+      "Aa-Yang Ensemble (2013)",
+      "Aum Thinley Om (2007)",
+      "Karma Tshering (2003)",
+      "Namgay Jigs (2010)",
+      "Namkha Lhamo (2003)"
     ]
   },
-  "PY": {
-    "name": "Paraguay",
-    "wikidataMusicians": 119,
-    "discogsReleases": 1370,
-    "candidates": 708,
-    "newArtists": 394,
-    "skipped": {
-      "exactNameInMb": 259,
-      "aliasInMb": 4,
-      "fuzzyAmbiguous": 38,
-      "wikidataCrosswalk": 13
+  "TL": {
+    "name": "Timor-Leste",
+    "wikidataMusicians": 7,
+    "discogsReleases": 130,
+    "candidates": 144,
+    "newArtists": 132,
+    "dropped": {
+      "duplicate": 4,
+      "foreignCatalog": 8,
+      "wikidataCrosswalk": 0
     },
-    "dated": 250,
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 7,
+      "uncorroboratedKept": 12
+    },
+    "dated": 45,
     "sample": [
-      "Aníbal Lovera (1941)",
-      "Betty Figueredo (1980)",
-      "Eduardo Rivas (1970)",
-      "Oscar Pérez Con La Alegre Fórmula Nueva (1978)",
-      "Quemil Yambay Y Su Conjunto Los Alfonsinos (1970)",
-      "Pro Rock Ensamble (1980)",
-      "Rage Mob (2016)",
-      "Terceto Ñamandu (1985)"
+      "Abito Gama (2008)",
+      "Tonny Pereira (2009)",
+      "Ameu Livre D.C. (2009)",
+      "Lalatak (2005)",
+      "Juga Gama (2009)",
+      "El-Mar Voice (2009)",
+      "Lilly Ribeiro (2002)",
+      "Toinino (2009)"
+    ]
+  },
+  "AF": {
+    "name": "Afghanistan",
+    "wikidataMusicians": 141,
+    "discogsReleases": 175,
+    "candidates": 232,
+    "newArtists": 212,
+    "dropped": {
+      "duplicate": 14,
+      "foreignCatalog": 1,
+      "wikidataCrosswalk": 5
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 9,
+      "uncorroboratedKept": 11
+    },
+    "dated": 115,
+    "sample": [
+      "جليل زولاند (1957)",
+      "بیلتون (1928)",
+      "Hamida Rokhshana (1965)",
+      "پروین (1960)",
+      "حمیدالله چاریکاری (1980)",
+      "خیال (1960)",
+      "نسیم (1960)",
+      "Sarahang (1959)"
     ]
   }
 }

@@ -24,10 +24,22 @@
  * into rebuilt entries, never overwritten — they were established by
  * evidence, not scraped.
  *
+ * v3 (Aug 10, 2026, owner-approved rollout changes): country table
+ * moved to lib/gap-fill-countries.mjs (76 countries, probe-verified
+ * Discogs strings + live-verified MB area names); multi-string
+ * countries sweep each string and merge by release id; and the
+ * RECORD-LEVEL COUNTRY GUARD — a release is ingested only when its
+ * own detail country field exactly equals a configured string ("rule
+ * on the record, not the query": search-index token bleed like
+ * Guinea/Guinea-Bissau cannot reach the dataset). Display-string
+ * fallback is disabled where the country string is a token of another
+ * Discogs country (noFallback) — an unattributable release is skipped
+ * and counted, never guessed.
+ *
  * Runs LOCALLY and commits JSON — the live site never calls Discogs,
  * so DISCOGS_TOKEN belongs in .env.local and NOT in Netlify.
  *
- * Usage: node scripts/build-extra-artists.mjs [CC ...]     (default LA PY)
+ * Usage: node scripts/build-extra-artists.mjs CC [CC ...]
  * Resumable: data/extra-artists-work-v2.json checkpoints every phase
  * (v1 MB-dedup verdicts are seeded in where the name key is unchanged).
  */
@@ -39,6 +51,7 @@ import {
   searchMbArtists,
   titleKeys,
 } from './lib/dedup-rule.mjs'
+import { COUNTRIES } from './lib/gap-fill-countries.mjs'
 
 const WORK_PATH = 'data/extra-artists-work-v2.json'
 const OUT_PATH = 'lib/explore/extra-artists.json'
@@ -50,18 +63,23 @@ const MB_DELAY_MS = 1100
 /** Discogs authenticated ceiling is 60/min; stay under it. */
 const DG_DELAY_MS = 1100
 const DG_PAGE_SIZE = 50
-const DG_MAX_PAGES = 40
+/** 120 pages × 50 = 6,000 releases — above every approved catalog. */
+const DG_MAX_PAGES = 120
 
-/** Countries: ISO code → Wikidata QID + the Discogs country string. */
-const COUNTRIES = {
-  LA: { qid: 'Q819', discogs: 'Laos', name: 'Laos' },
-  PY: { qid: 'Q733', discogs: 'Paraguay', name: 'Paraguay' },
+/**
+ * Wikidata label preference: English first (site convention), then
+ * the swept countries' languages so an artist unlabelled in English
+ * arrives in native script instead of being skipped as a bare QID.
+ */
+const LABEL_LANGS =
+  'en,es,fr,pt,ar,fa,ru,uk,sq,hy,az,ro,vi,km,my,dz,ne,si,bn,mn,th,lo,uz,tg,ky,tk,kk,ms,sw,am,ti,so,ha,yo,da,kl'
+
+const targets = process.argv.slice(2).filter((code) => COUNTRIES[code])
+if (targets.length === 0) {
+  console.error('Usage: node scripts/build-extra-artists.mjs CC [CC ...]')
+  console.error(`Valid codes: ${Object.keys(COUNTRIES).join(' ')}`)
+  process.exit(1)
 }
-
-const targets = (process.argv.slice(2).length
-  ? process.argv.slice(2)
-  : ['LA', 'PY']
-).filter((code) => COUNTRIES[code])
 
 const token = process.env.DISCOGS_TOKEN
 if (!token) {
@@ -135,7 +153,7 @@ async function wikidataPass(qid) {
   OPTIONAL { ?item wdt:P19 ?bp . ?bp wdt:P17 ?bornIn }
   OPTIONAL { ?item wdt:P740 ?fp . ?fp wdt:P17 ?formedIn }
   OPTIONAL { ?item wdt:P27 ?citizen }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en,es,lo,fr". }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "${LABEL_LANGS}". }
 }`
   const body = await getJson(
     `https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(query)}`,
@@ -245,6 +263,14 @@ async function discogsReleases(country) {
     const pages = body.pagination?.pages ?? 1
     console.log(`    page ${page}/${pages} (${found.length} releases)`)
     if (page >= pages) break
+    if (page >= DG_MAX_PAGES) {
+      // Never truncate silently — a capped sweep must be visible.
+      console.warn(
+        `    ⚠ CAP: "${country}" has ${pages} pages, swept only ${DG_MAX_PAGES}` +
+          ` (${found.length} releases) — needs year-windowing or a higher cap`,
+      )
+      break
+    }
     await sleep(DG_DELAY_MS)
   }
   return found
@@ -260,8 +286,9 @@ const GENERIC_CREDIT_IDS = new Set([
 /**
  * v2 core: structured credits for one release. artists[] carries
  * {id, name, anv} per credited artist — real ids, and the display
- * spelling preserved as an alias. Null on fetch failure (the caller
- * falls back to display-string parsing for that release).
+ * spelling preserved as an alias. v3 also returns the record's own
+ * country field for the record-level guard. Null on fetch failure
+ * (the caller falls back to display-string parsing where allowed).
  */
 async function releaseCredits(releaseId) {
   try {
@@ -269,7 +296,7 @@ async function releaseCredits(releaseId) {
       `https://api.discogs.com/releases/${releaseId}?token=${token}`,
       { 'User-Agent': DG_UA },
     )
-    return (body.artists ?? []).flatMap((credit) => {
+    const credits = (body.artists ?? []).flatMap((credit) => {
       if (!credit?.id || GENERIC_CREDIT_IDS.has(credit.id)) return []
       const canonical = (credit.name ?? '')
         .replace(/\s*\(\d+\)\s*$/, '')
@@ -285,6 +312,7 @@ async function releaseCredits(releaseId) {
       const anv = (credit.anv ?? '').replace(/\*+\s*$/, '').trim()
       return [{ id: credit.id, name: canonical, anv: anv || null }]
     })
+    return { country: body.country ?? null, credits }
   } catch {
     return null
   }
@@ -338,18 +366,36 @@ async function main() {
       `  Wikidata: ${wd.length} musicians (${wdWithMb} already carry MB ids)`,
     )
 
-    // 2. Discogs: what the crates hold.
+    // 2. Discogs: what the crates hold. Multi-string countries (ZW's
+    // Rhodesia, CD's Zaire) sweep each string; merge by release id.
     if (!state.releases) {
       console.log('  Discogs pass…')
-      state.releases = await discogsReleases(config.discogs)
+      const merged = []
+      const seen = new Set()
+      for (const label of config.discogs) {
+        if (config.discogs.length > 1) console.log(`   string "${label}"`)
+        const releases = await discogsReleases(label)
+        for (const release of releases) {
+          if (seen.has(release.id)) continue
+          seen.add(release.id)
+          merged.push(release)
+        }
+        await sleep(DG_DELAY_MS)
+      }
+      state.releases = merged
       writeFileSync(WORK_PATH, JSON.stringify(work))
     }
     console.log(`  Discogs: ${state.releases.length} releases`)
 
     // 2b. STRUCTURED CREDITS per release (+1 call each, resumable).
+    // A null (failed fetch) retries once per invocation — a transient
+    // blip must not permanently skip a release, especially where
+    // noFallback means there is no display-string second chance.
     state.credits ??= {}
     const uncredited = state.releases.filter(
-      (release) => state.credits[release.id] === undefined,
+      (release) =>
+        state.credits[release.id] === undefined ||
+        state.credits[release.id] === null,
     )
     if (uncredited.length > 0) {
       console.log(`  Credits pass: ${uncredited.length} release details…`)
@@ -370,12 +416,27 @@ async function main() {
     // (canonical name + ANV spellings as aliases), by normalized name
     // for the display-string fallback + Wikidata-only people.
     const candidates = new Map()
+    const allowedCountries = new Set(config.discogs)
     let unparsed = 0
     let fallbackReleases = 0
+    let unfetchedSkipped = 0
+    let countryMismatch = 0
+    let noCountry = 0
     for (const release of state.releases) {
-      const credits = state.credits[release.id]
-      if (credits === null || credits === undefined) {
-        // Detail fetch failed — v1 display-string fallback.
+      const stored = state.credits[release.id]
+      // Pre-guard checkpoints (LA/PY) stored bare credit arrays; those
+      // ingests were vetted and shipped — they stand as-is.
+      const legacy = Array.isArray(stored)
+      const credits = legacy ? stored : stored?.credits
+      if (stored === null || stored === undefined) {
+        // Detail fetch failed — no record to rule on. Where the country
+        // string is a token of another Discogs country, guessing from
+        // the display string could attribute a foreign release: skip.
+        if (config.noFallback) {
+          unfetchedSkipped++
+          continue
+        }
+        // v1 display-string fallback.
         fallbackReleases++
         const name = parseArtist(release.title)
         if (!name) {
@@ -401,6 +462,20 @@ async function main() {
         candidates.set(key, entry)
         continue
       }
+      // RECORD-LEVEL COUNTRY GUARD (rule on the record, not the query):
+      // the release's own country field must exactly equal a configured
+      // string. Absent never matches (standing lesson 4).
+      if (!legacy) {
+        const recordCountry = stored.country ?? null
+        if (recordCountry === null) {
+          noCountry++
+          continue
+        }
+        if (!allowedCountries.has(recordCountry)) {
+          countryMismatch++
+          continue
+        }
+      }
       for (const credit of credits) {
         const key = `dg|${credit.id}`
         const entry = candidates.get(key) ?? {
@@ -425,9 +500,14 @@ async function main() {
         candidates.set(key, entry)
       }
     }
+    state.guard = { countryMismatch, noCountry, unfetchedSkipped }
     console.log(
       `  credits resolved for ${state.releases.length - fallbackReleases}/${state.releases.length} releases` +
         ` (${fallbackReleases} on display-string fallback)`,
+    )
+    console.log(
+      `  record guard: ${countryMismatch} country-mismatch, ${noCountry} no-country,` +
+        ` ${unfetchedSkipped} unfetched-skipped`,
     )
     let foreignByOrigin = 0
     for (const person of wd) {
@@ -504,7 +584,9 @@ async function main() {
             .map((artist) => ({ artist, basis: exactNameHit(artist, probe) }))
             .find((entry) => entry.basis)
           if (hit) {
-            judged = await judgeNameHit(cand, hit.artist, hit.basis, config.name)
+            // MB's own area name (verified per country) — a display-name
+            // mismatch here would turn real duplicates into collisions.
+            judged = await judgeNameHit(cand, hit.artist, hit.basis, config.mbArea)
             break
           }
         }
@@ -643,6 +725,8 @@ async function main() {
         foreignCatalog: count('foreign-catalog'),
         wikidataCrosswalk: count('crosswalk'),
       },
+      recordGuard: state.guard ?? null,
+      foreignByOrigin: state.foreignByOrigin ?? 0,
       keptDespiteNameHit: {
         fuzzyKept: count('fuzzy-kept'),
         collisionKept: count('collision-kept'),

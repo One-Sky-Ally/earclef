@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09",
+  "generatedAt": "2026-08-11",
   "countries": {
     "LA": [
       {
@@ -9953,6 +9953,4618 @@
         "discogsArtistId": null,
         "wikidataId": "Q5751814",
         "reinstatedBy": "dedup-rule-v3"
+      }
+    ],
+    "BT": [
+      {
+        "name": "Tashi Nencha",
+        "source": "discogs",
+        "firstYear": 2000,
+        "lastYear": 2004,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 2879016,
+        "wikidataId": null,
+        "aliases": [
+          "བཀྲ་ཤིས་སྙན་ཆ"
+        ]
+      },
+      {
+        "name": "Tsheten Dorji",
+        "source": "discogs",
+        "firstYear": 1996,
+        "lastYear": 1996,
+        "styles": [
+          "Ethno-pop",
+          "Folk",
+          "Pop"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 3986611,
+        "wikidataId": null,
+        "aliases": [
+          "Tsheten Dorjee"
+        ]
+      },
+      {
+        "name": "Ugyen Dorji",
+        "source": "discogs",
+        "firstYear": 1996,
+        "lastYear": 1996,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country",
+          "Stage & Screen"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 3986612,
+        "wikidataId": null,
+        "aliases": [
+          "Ugyen Dorjee"
+        ]
+      },
+      {
+        "name": "Aa-Yang Ensemble",
+        "source": "discogs",
+        "firstYear": 2013,
+        "lastYear": 2013,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 11636135,
+        "wikidataId": null
+      },
+      {
+        "name": "Aum Thinley Om",
+        "source": "discogs",
+        "firstYear": 2007,
+        "lastYear": 2007,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 13625278,
+        "wikidataId": null
+      },
+      {
+        "name": "Karma Tshering",
+        "source": "discogs",
+        "firstYear": 2003,
+        "lastYear": 2003,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4927269,
+        "wikidataId": null
+      },
+      {
+        "name": "Namgay Jigs",
+        "source": "discogs",
+        "firstYear": 2010,
+        "lastYear": 2010,
+        "styles": [
+          "Rock",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 11092478,
+        "wikidataId": null
+      },
+      {
+        "name": "Namkha Lhamo",
+        "source": "discogs",
+        "firstYear": 2003,
+        "lastYear": 2003,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4927273,
+        "wikidataId": null
+      },
+      {
+        "name": "Nuns of Karma Drubdey Nunnery",
+        "source": "discogs",
+        "firstYear": 2014,
+        "lastYear": 2014,
+        "styles": [
+          "Aboriginal",
+          "Ambient",
+          "Religious"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 16640192,
+        "wikidataId": null
+      },
+      {
+        "name": "Royal Academy Of Performing Arts",
+        "source": "discogs",
+        "firstYear": 2002,
+        "lastYear": 2002,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 13467190,
+        "wikidataId": null
+      },
+      {
+        "name": "Tandin Dorji",
+        "source": "discogs",
+        "firstYear": 2013,
+        "lastYear": 2013,
+        "styles": [
+          "Soundtrack",
+          "Pop",
+          "Stage & Screen"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3413856,
+        "wikidataId": null
+      },
+      {
+        "name": "Tashi Pelyang",
+        "source": "discogs",
+        "firstYear": 2003,
+        "lastYear": 2003,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4927271,
+        "wikidataId": null
+      },
+      {
+        "name": "Tshewang Peden",
+        "source": "discogs",
+        "firstYear": 2003,
+        "lastYear": 2003,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4927270,
+        "wikidataId": null
+      },
+      {
+        "name": "Tashi Norbu",
+        "source": "wikidata",
+        "firstYear": 1975,
+        "lastYear": 1975,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q3515936"
+      },
+      {
+        "name": "Karma Jamtsho",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Soundtrack",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3611813,
+        "wikidataId": null
+      },
+      {
+        "name": "Master Lama Tsering",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Folk",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14479469,
+        "wikidataId": null
+      },
+      {
+        "name": "The Love Generation",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3990348,
+        "wikidataId": null
+      },
+      {
+        "name": "Aum Tshewang Lham",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q87111236"
+      },
+      {
+        "name": "Sangay Lhaden",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q140935811"
+      }
+    ],
+    "TL": [
+      {
+        "name": "Abito Gama",
+        "source": "discogs",
+        "firstYear": 2008,
+        "lastYear": 2011,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country",
+          "Holiday"
+        ],
+        "releaseCount": 8,
+        "discogsArtistId": 5104907,
+        "wikidataId": null
+      },
+      {
+        "name": "Tonny Pereira",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2014,
+        "styles": [
+          "Karaoke",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 5103536,
+        "wikidataId": null,
+        "aliases": [
+          "Tonny Pareira"
+        ]
+      },
+      {
+        "name": "Ameu Livre D.C.",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 5098200,
+        "wikidataId": null,
+        "aliases": [
+          "Ameu Livre",
+          "Ameu"
+        ]
+      },
+      {
+        "name": "Lalatak",
+        "source": "discogs",
+        "firstYear": 2005,
+        "lastYear": 2008,
+        "styles": [
+          "Alternative Rock",
+          "Rock",
+          "Pop Rock"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 5098155,
+        "wikidataId": null
+      },
+      {
+        "name": "Juga Gama",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 5103529,
+        "wikidataId": null
+      },
+      {
+        "name": "El-Mar Voice",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2012,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country",
+          "Religious"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5384878,
+        "wikidataId": null,
+        "aliases": [
+          "Elmar Voice"
+        ]
+      },
+      {
+        "name": "Lilly Ribeiro",
+        "source": "discogs",
+        "firstYear": 2002,
+        "lastYear": 2002,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country",
+          "Soft Rock"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5106770,
+        "wikidataId": null,
+        "aliases": [
+          "Lili Ribeiro"
+        ]
+      },
+      {
+        "name": "Toinino",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5098263,
+        "wikidataId": null
+      },
+      {
+        "name": "Abia Martins",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385115,
+        "wikidataId": null
+      },
+      {
+        "name": "Abio Salsinha",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385112,
+        "wikidataId": null
+      },
+      {
+        "name": "Ade Da Costa",
+        "source": "discogs",
+        "firstYear": 2008,
+        "lastYear": 2008,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5106780,
+        "wikidataId": null
+      },
+      {
+        "name": "Angel Peace",
+        "source": "discogs",
+        "firstYear": 2008,
+        "lastYear": 2008,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6296850,
+        "wikidataId": null
+      },
+      {
+        "name": "Christian Tschanz",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Chanson",
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5455093,
+        "wikidataId": null
+      },
+      {
+        "name": "Dora",
+        "source": "discogs",
+        "firstYear": 2010,
+        "lastYear": 2010,
+        "styles": [
+          "Pop",
+          "Children's",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5103543,
+        "wikidataId": null
+      },
+      {
+        "name": "Dusk Melocoustic",
+        "source": "discogs",
+        "firstYear": 2000,
+        "lastYear": 2000,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5379078,
+        "wikidataId": null
+      },
+      {
+        "name": "Fromteira Group",
+        "source": "discogs",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5103513,
+        "wikidataId": null
+      },
+      {
+        "name": "Gerda Wiblimans",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385114,
+        "wikidataId": null
+      },
+      {
+        "name": "Inaçio Santos",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5106708,
+        "wikidataId": null
+      },
+      {
+        "name": "J. Mau Meang",
+        "source": "discogs",
+        "firstYear": 2011,
+        "lastYear": 2011,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5103565,
+        "wikidataId": null
+      },
+      {
+        "name": "Jon Seran",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5107770,
+        "wikidataId": null
+      },
+      {
+        "name": "Maharata",
+        "source": "discogs",
+        "firstYear": 2008,
+        "lastYear": 2008,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6296849,
+        "wikidataId": null
+      },
+      {
+        "name": "Manmai Group",
+        "source": "discogs",
+        "firstYear": 2011,
+        "lastYear": 2011,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5103576,
+        "wikidataId": null
+      },
+      {
+        "name": "Manu Mata Akustik",
+        "source": "discogs",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [
+          "Rock",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5384870,
+        "wikidataId": null
+      },
+      {
+        "name": "Manuel Smith",
+        "source": "discogs",
+        "firstYear": 2010,
+        "lastYear": 2010,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5103535,
+        "wikidataId": null
+      },
+      {
+        "name": "Marcel",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5107768,
+        "wikidataId": null
+      },
+      {
+        "name": "Mario Laurinda",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5103501,
+        "wikidataId": null
+      },
+      {
+        "name": "Maxi Mali",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5107769,
+        "wikidataId": null
+      },
+      {
+        "name": "Merita Dacosta",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5107767,
+        "wikidataId": null
+      },
+      {
+        "name": "Nany",
+        "source": "discogs",
+        "firstYear": 2008,
+        "lastYear": 2008,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5107777,
+        "wikidataId": null
+      },
+      {
+        "name": "Nany Reis",
+        "source": "discogs",
+        "firstYear": 2011,
+        "lastYear": 2011,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5103566,
+        "wikidataId": null
+      },
+      {
+        "name": "Ofy",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385113,
+        "wikidataId": null
+      },
+      {
+        "name": "Oni Loi",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5106494,
+        "wikidataId": null
+      },
+      {
+        "name": "Quito Martins DC",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5106421,
+        "wikidataId": null
+      },
+      {
+        "name": "Radio Mojo",
+        "source": "discogs",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [
+          "Rock",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5384871,
+        "wikidataId": null
+      },
+      {
+        "name": "Rai Husar",
+        "source": "discogs",
+        "firstYear": 2008,
+        "lastYear": 2008,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6296848,
+        "wikidataId": null
+      },
+      {
+        "name": "Rai Na'in Group",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5106726,
+        "wikidataId": null,
+        "aliases": [
+          "Rai 77 Na'in Group"
+        ]
+      },
+      {
+        "name": "Roslyn Dunlop",
+        "source": "discogs",
+        "firstYear": 2012,
+        "lastYear": 2012,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2844854,
+        "wikidataId": null,
+        "aliases": [
+          "Ros Dunlop"
+        ]
+      },
+      {
+        "name": "Seidauk Iha Naran",
+        "source": "discogs",
+        "firstYear": 2000,
+        "lastYear": 2000,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5379081,
+        "wikidataId": null,
+        "aliases": [
+          "SIN"
+        ]
+      },
+      {
+        "name": "Silvya Boavida",
+        "source": "discogs",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5106420,
+        "wikidataId": null
+      },
+      {
+        "name": "Triple-A",
+        "source": "discogs",
+        "firstYear": 2008,
+        "lastYear": 2008,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6296851,
+        "wikidataId": null
+      },
+      {
+        "name": "Abílio Araújo",
+        "source": "wikidata",
+        "firstYear": 1964,
+        "lastYear": 1964,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 1944590,
+        "wikidataId": "Q336882"
+      },
+      {
+        "name": "Afonso Redentor Araújo",
+        "source": "wikidata",
+        "firstYear": 1957,
+        "lastYear": 1957,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q383463"
+      },
+      {
+        "name": "Etson Caminha",
+        "source": "wikidata",
+        "firstYear": 1999,
+        "lastYear": 1999,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 5302363,
+        "wikidataId": "Q139784811"
+      },
+      {
+        "name": "Eugenio Lemos",
+        "source": "wikidata",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q5850522"
+      },
+      {
+        "name": "Maria Vitória",
+        "source": "wikidata",
+        "firstYear": 2016,
+        "lastYear": 2016,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 2117238,
+        "wikidataId": "Q28128893"
+      },
+      {
+        "name": "A Filly Goncalves",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 5379227,
+        "wikidataId": null,
+        "aliases": [
+          "Afilly Goncalves"
+        ]
+      },
+      {
+        "name": "Anzlech Berech",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 5098201,
+        "wikidataId": null,
+        "aliases": [
+          "Anzlech B.",
+          "Anzlech Berrech"
+        ]
+      },
+      {
+        "name": "Aida P. Belo",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5106740,
+        "wikidataId": null,
+        "aliases": [
+          "Aida Belo"
+        ]
+      },
+      {
+        "name": "Alex Da Costa",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5103528,
+        "wikidataId": null
+      },
+      {
+        "name": "Anito Matos",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Holiday",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5384851,
+        "wikidataId": null
+      },
+      {
+        "name": "Cidahlia",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5107779,
+        "wikidataId": null,
+        "aliases": [
+          "Chidallya"
+        ]
+      },
+      {
+        "name": "Gratia",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Holiday",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5264271,
+        "wikidataId": null
+      },
+      {
+        "name": "Janio Maumia",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5098219,
+        "wikidataId": null,
+        "aliases": [
+          "Janio Mau Mia"
+        ]
+      },
+      {
+        "name": "Nakroma",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5264432,
+        "wikidataId": null
+      },
+      {
+        "name": "Rico Floresta",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5098202,
+        "wikidataId": null,
+        "aliases": [
+          "Rico F."
+        ]
+      },
+      {
+        "name": "Sabar Subur",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Holiday",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5107804,
+        "wikidataId": null
+      },
+      {
+        "name": "Vidigal Pinto",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5104885,
+        "wikidataId": null
+      },
+      {
+        "name": "Abinu",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264423,
+        "wikidataId": null
+      },
+      {
+        "name": "Acau Malairoz",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264467,
+        "wikidataId": null,
+        "aliases": [
+          "Acau.M"
+        ]
+      },
+      {
+        "name": "Adani",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 567544,
+        "wikidataId": null
+      },
+      {
+        "name": "Ade Costa",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5265071,
+        "wikidataId": null
+      },
+      {
+        "name": "Adriano Da Silva M.",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6301313,
+        "wikidataId": null,
+        "aliases": [
+          "Adry"
+        ]
+      },
+      {
+        "name": "Akin",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6296835,
+        "wikidataId": null
+      },
+      {
+        "name": "Almar Band",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6296834,
+        "wikidataId": null
+      },
+      {
+        "name": "Amino",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5265308,
+        "wikidataId": null
+      },
+      {
+        "name": "Apeu",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5107805,
+        "wikidataId": null
+      },
+      {
+        "name": "Asau Berlaka",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Reggae",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5391933,
+        "wikidataId": null
+      },
+      {
+        "name": "Atino.M",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264468,
+        "wikidataId": null,
+        "aliases": [
+          "Tino.M"
+        ]
+      },
+      {
+        "name": "B4F",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5379288,
+        "wikidataId": null
+      },
+      {
+        "name": "Boy Clemens",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6050288,
+        "wikidataId": null
+      },
+      {
+        "name": "Car Reis",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5265102,
+        "wikidataId": null
+      },
+      {
+        "name": "Carlos Maia",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5381054,
+        "wikidataId": null
+      },
+      {
+        "name": "Chico Maulohi",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385178,
+        "wikidataId": null
+      },
+      {
+        "name": "Chico Ramelau",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4875340,
+        "wikidataId": null
+      },
+      {
+        "name": "Dalia",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264719,
+        "wikidataId": null
+      },
+      {
+        "name": "Damy Assan",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6296843,
+        "wikidataId": null
+      },
+      {
+        "name": "Dino Estrela",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Reggae",
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5098273,
+        "wikidataId": null
+      },
+      {
+        "name": "Dominggas L.",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385201,
+        "wikidataId": null
+      },
+      {
+        "name": "Eda R.",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Holiday",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5384858,
+        "wikidataId": null
+      },
+      {
+        "name": "Emilia DC",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5379182,
+        "wikidataId": null
+      },
+      {
+        "name": "Enia",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264410,
+        "wikidataId": null
+      },
+      {
+        "name": "Filipe Osvaldo",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6296878,
+        "wikidataId": null
+      },
+      {
+        "name": "Fortu",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264425,
+        "wikidataId": null
+      },
+      {
+        "name": "Fransisco Oqui",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5265314,
+        "wikidataId": null
+      },
+      {
+        "name": "Fuma",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 636923,
+        "wikidataId": null
+      },
+      {
+        "name": "Glowrasca",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Rock",
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5391884,
+        "wikidataId": null
+      },
+      {
+        "name": "Heppy Neno",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5265390,
+        "wikidataId": null
+      },
+      {
+        "name": "Humbelina Borromeu",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264774,
+        "wikidataId": null
+      },
+      {
+        "name": "Ikun Gama",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5265103,
+        "wikidataId": null
+      },
+      {
+        "name": "Ino Rose Mistica",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6301250,
+        "wikidataId": null
+      },
+      {
+        "name": "Ivo Lay",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264758,
+        "wikidataId": null
+      },
+      {
+        "name": "Jerry BTN",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264459,
+        "wikidataId": null
+      },
+      {
+        "name": "Jito P.",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264241,
+        "wikidataId": null
+      },
+      {
+        "name": "Joao Bosco Da Costa Ximenes",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6301312,
+        "wikidataId": null,
+        "aliases": [
+          "Tito"
+        ]
+      },
+      {
+        "name": "Jonas",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5106456,
+        "wikidataId": null
+      },
+      {
+        "name": "Laloran Timor",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 13291425,
+        "wikidataId": null
+      },
+      {
+        "name": "Leuidi Group",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264723,
+        "wikidataId": null
+      },
+      {
+        "name": "Lia Marsito",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385100,
+        "wikidataId": null
+      },
+      {
+        "name": "Lindo Casenube",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "House",
+          "Electronic",
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 18007629,
+        "wikidataId": null
+      },
+      {
+        "name": "Lino Dos Santos Belo",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5384848,
+        "wikidataId": null
+      },
+      {
+        "name": "Luis",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5106663,
+        "wikidataId": null
+      },
+      {
+        "name": "Luis",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5910693,
+        "wikidataId": null
+      },
+      {
+        "name": "Luis Tilman",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6050295,
+        "wikidataId": null
+      },
+      {
+        "name": "Manek Kasasar",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264461,
+        "wikidataId": null
+      },
+      {
+        "name": "Marcos Bar",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6301323,
+        "wikidataId": null
+      },
+      {
+        "name": "Milka Pinheiro",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6296842,
+        "wikidataId": null
+      },
+      {
+        "name": "N. Garcia",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Soft Rock",
+          "Pop Rock",
+          "Heavy Metal"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385090,
+        "wikidataId": null
+      },
+      {
+        "name": "Nando",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6301325,
+        "wikidataId": null
+      },
+      {
+        "name": "Naroman",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Soft Rock",
+          "Pop Rock",
+          "Heavy Metal"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385225,
+        "wikidataId": null
+      },
+      {
+        "name": "New Mausoko",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264327,
+        "wikidataId": null
+      },
+      {
+        "name": "Ninho Soares",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264857,
+        "wikidataId": null
+      },
+      {
+        "name": "Nino Pereira",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Soft Rock",
+          "Rock",
+          "Blues"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6050280,
+        "wikidataId": null
+      },
+      {
+        "name": "Ninu Santa",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5391828,
+        "wikidataId": null
+      },
+      {
+        "name": "Noy Macaro",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6301249,
+        "wikidataId": null
+      },
+      {
+        "name": "Nuku RMK",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5391913,
+        "wikidataId": null
+      },
+      {
+        "name": "Ogan",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264767,
+        "wikidataId": null
+      },
+      {
+        "name": "Ona QQ",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Soft Rock",
+          "Pop Rock",
+          "Heavy Metal"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385089,
+        "wikidataId": null
+      },
+      {
+        "name": "Paulo Agusto",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5384847,
+        "wikidataId": null
+      },
+      {
+        "name": "Quito Sousa",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264856,
+        "wikidataId": null
+      },
+      {
+        "name": "Riny",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264460,
+        "wikidataId": null
+      },
+      {
+        "name": "Sandra Itsi",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "House",
+          "Electronic",
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 18007632,
+        "wikidataId": null
+      },
+      {
+        "name": "Sergio De Deus",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264290,
+        "wikidataId": null,
+        "aliases": [
+          "Sergio \"Aseu\" De Deus"
+        ]
+      },
+      {
+        "name": "Sincustic",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264246,
+        "wikidataId": null
+      },
+      {
+        "name": "Sisca",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264291,
+        "wikidataId": null
+      },
+      {
+        "name": "Tabe'an Pah Group",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5264272,
+        "wikidataId": null
+      },
+      {
+        "name": "The Candle",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385683,
+        "wikidataId": null
+      },
+      {
+        "name": "Tri Friend Group Redication",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385085,
+        "wikidataId": null
+      },
+      {
+        "name": "Trio Gama",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Holiday",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5379244,
+        "wikidataId": null
+      },
+      {
+        "name": "Wacumura",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Rock",
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5391883,
+        "wikidataId": null
+      },
+      {
+        "name": "X-Cruz",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Heavy Metal",
+          "Rock"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5385222,
+        "wikidataId": null
+      },
+      {
+        "name": "Galaxy Band",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 1577808,
+        "wikidataId": "Q25702633"
+      },
+      {
+        "name": "Paulo Pereira dos Santos",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q114796487"
+      }
+    ],
+    "AF": [
+      {
+        "name": "جليل زولاند",
+        "source": "discogs",
+        "firstYear": 1957,
+        "lastYear": 1965,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 10,
+        "discogsArtistId": 4172854,
+        "wikidataId": null,
+        "aliases": [
+          "ځلاند",
+          "استاد ځلاند"
+        ]
+      },
+      {
+        "name": "بیلتون",
+        "source": "discogs",
+        "firstYear": 1928,
+        "lastYear": 1980,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 7,
+        "discogsArtistId": 6416349,
+        "wikidataId": "Q4884787",
+        "aliases": [
+          "Beltoon",
+          "Belton"
+        ]
+      },
+      {
+        "name": "Hamida Rokhshana",
+        "source": "discogs",
+        "firstYear": 1965,
+        "lastYear": 1965,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country",
+          "Klasik"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 2748264,
+        "wikidataId": null,
+        "aliases": [
+          "رخشانه"
+        ]
+      },
+      {
+        "name": "پروین",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1965,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 3667375,
+        "wikidataId": null
+      },
+      {
+        "name": "حمیدالله چاریکاری",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1980,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 6416350,
+        "wikidataId": null,
+        "aliases": [
+          "حمیدالله",
+          "Hamiddullah",
+          "Hamedullah"
+        ]
+      },
+      {
+        "name": "خیال",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1965,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 6075972,
+        "wikidataId": null
+      },
+      {
+        "name": "نسیم",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1965,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country",
+          "Pop"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 6074376,
+        "wikidataId": null,
+        "aliases": [
+          "نیّم"
+        ]
+      },
+      {
+        "name": "Sarahang",
+        "source": "discogs",
+        "firstYear": 1959,
+        "lastYear": 1997,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country",
+          "Hindustani"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 4108849,
+        "wikidataId": null,
+        "aliases": [
+          "استاد سرآهنگ",
+          "استاد محمد حسین سرآهنگ"
+        ]
+      },
+      {
+        "name": "ارمان",
+        "source": "discogs",
+        "firstYear": 1959,
+        "lastYear": 1965,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 6083021,
+        "wikidataId": null
+      },
+      {
+        "name": "اول میر",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 6257176,
+        "wikidataId": null,
+        "aliases": [
+          "استاد اولمیر"
+        ]
+      },
+      {
+        "name": "Doray Logari",
+        "source": "discogs",
+        "firstYear": 1959,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 6288379,
+        "wikidataId": null,
+        "aliases": [
+          "دری لوگری",
+          "دري لوگری",
+          "استاد دری لوگری"
+        ]
+      },
+      {
+        "name": "پیکان",
+        "source": "discogs",
+        "firstYear": 1959,
+        "lastYear": 1960,
+        "styles": [
+          "Folk",
+          "Schlager",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 6326714,
+        "wikidataId": null
+      },
+      {
+        "name": "شیر محمد غزنوی",
+        "source": "discogs",
+        "firstYear": 1965,
+        "lastYear": 1965,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 5780058,
+        "wikidataId": null
+      },
+      {
+        "name": "میر سلام خوستی",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 6257766,
+        "wikidataId": null
+      },
+      {
+        "name": "Habib Shareef",
+        "source": "discogs",
+        "firstYear": 1996,
+        "lastYear": 1996,
+        "styles": [
+          "Folk, World, & Country",
+          "Classical"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 8196941,
+        "wikidataId": null
+      },
+      {
+        "name": "Ustad Mohammad Omar",
+        "source": "discogs",
+        "firstYear": 1959,
+        "lastYear": 1959,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country",
+          "Classical"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 1000283,
+        "wikidataId": null,
+        "aliases": [
+          "استاد محمد عمر",
+          "Ustad M. Omer"
+        ]
+      },
+      {
+        "name": "ازاده",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1965,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 9593500,
+        "wikidataId": null
+      },
+      {
+        "name": "خان قره باغی",
+        "source": "discogs",
+        "firstYear": 1998,
+        "lastYear": 1998,
+        "styles": [
+          "Folk, World, & Country",
+          "Klasik"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7376419,
+        "wikidataId": null
+      },
+      {
+        "name": "ساربان",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1965,
+        "styles": [
+          "Folk",
+          "Schlager",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6326715,
+        "wikidataId": null
+      },
+      {
+        "name": "ساره زولاند",
+        "source": "discogs",
+        "firstYear": 1965,
+        "lastYear": 1965,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6160138,
+        "wikidataId": null,
+        "aliases": [
+          "سارا ځلاند"
+        ]
+      },
+      {
+        "name": "سلام لوگری",
+        "source": "discogs",
+        "firstYear": 1959,
+        "lastYear": 1959,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6257769,
+        "wikidataId": null
+      },
+      {
+        "name": "ضیاء قاری‌زاده",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1965,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6567342,
+        "wikidataId": null,
+        "aliases": [
+          "کبوتر"
+        ]
+      },
+      {
+        "name": "لیلا",
+        "source": "discogs",
+        "firstYear": 1957,
+        "lastYear": 1957,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6579903,
+        "wikidataId": null
+      },
+      {
+        "name": "نغمه",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7640977,
+        "wikidataId": null
+      },
+      {
+        "name": "یعقوب قاسمی",
+        "source": "discogs",
+        "firstYear": 1959,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5718469,
+        "wikidataId": null
+      },
+      {
+        "name": "Akram Khan",
+        "source": "discogs",
+        "firstYear": 1928,
+        "lastYear": 1928,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 12800537,
+        "wikidataId": null
+      },
+      {
+        "name": "Bamyan Music",
+        "source": "discogs",
+        "firstYear": 1974,
+        "lastYear": 1974,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 13247058,
+        "wikidataId": null
+      },
+      {
+        "name": "Jilani",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1980,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6288466,
+        "wikidataId": null,
+        "aliases": [
+          "استاد جیلانی"
+        ]
+      },
+      {
+        "name": "Khalid Omar",
+        "source": "discogs",
+        "firstYear": 2004,
+        "lastYear": 2004,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 1422597,
+        "wikidataId": null
+      },
+      {
+        "name": "Rohullah Roheen",
+        "source": "discogs",
+        "firstYear": 1996,
+        "lastYear": 1996,
+        "styles": [
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 15750723,
+        "wikidataId": null
+      },
+      {
+        "name": "ارکسترا",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6597929,
+        "wikidataId": null
+      },
+      {
+        "name": "امشب آن گلعذار می آید خلاند",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14502865,
+        "wikidataId": null
+      },
+      {
+        "name": "جلوه",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14502694,
+        "wikidataId": null
+      },
+      {
+        "name": "دارکستراله خوا د گلریز نغمه",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14502904,
+        "wikidataId": null
+      },
+      {
+        "name": "ستوری",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5685388,
+        "wikidataId": null
+      },
+      {
+        "name": "ﺳﻴﺪ ﻋﻠﻢ",
+        "source": "discogs",
+        "firstYear": 1965,
+        "lastYear": 1965,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5776948,
+        "wikidataId": null
+      },
+      {
+        "name": "ښاغلی ناله",
+        "source": "discogs",
+        "firstYear": 1959,
+        "lastYear": 1959,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6376613,
+        "wikidataId": null
+      },
+      {
+        "name": "فقيرمحمَّد دروشي",
+        "source": "discogs",
+        "firstYear": 1996,
+        "lastYear": 1996,
+        "styles": [
+          "Political",
+          "Religious",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4276588,
+        "wikidataId": null
+      },
+      {
+        "name": "کجاست می پران نات",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14502982,
+        "wikidataId": null
+      },
+      {
+        "name": "لالا اکبر",
+        "source": "discogs",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6518508,
+        "wikidataId": null
+      },
+      {
+        "name": "منور",
+        "source": "discogs",
+        "firstYear": 1965,
+        "lastYear": 1965,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6248030,
+        "wikidataId": null
+      },
+      {
+        "name": "میرزا نظر",
+        "source": "discogs",
+        "firstYear": 1928,
+        "lastYear": 1928,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 10825924,
+        "wikidataId": null,
+        "aliases": [
+          "Mr. Mirza Nazar Khan"
+        ]
+      },
+      {
+        "name": "نصرت پارسا",
+        "source": "discogs",
+        "firstYear": 2002,
+        "lastYear": 2002,
+        "styles": [
+          "Hindustani",
+          "Indian Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 13923214,
+        "wikidataId": null
+      },
+      {
+        "name": "وحيد صابرى",
+        "source": "discogs",
+        "firstYear": 2001,
+        "lastYear": 2001,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6509595,
+        "wikidataId": null
+      },
+      {
+        "name": "Abdolvahab Madani",
+        "source": "wikidata",
+        "firstYear": 1954,
+        "lastYear": 1954,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q109548624"
+      },
+      {
+        "name": "Abdul Ahmad Hamahang",
+        "source": "wikidata",
+        "firstYear": 1951,
+        "lastYear": 1951,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q308516"
+      },
+      {
+        "name": "Abdul Ghafoor Breshna",
+        "source": "wikidata",
+        "firstYear": 1922,
+        "lastYear": 1922,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q317116"
+      },
+      {
+        "name": "Abdul Mohamad Hamahang",
+        "source": "wikidata",
+        "firstYear": 1951,
+        "lastYear": 1951,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q5942675"
+      },
+      {
+        "name": "abdulrahman mohammadi",
+        "source": "wikidata",
+        "firstYear": 2016,
+        "lastYear": 2016,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q108396162"
+      },
+      {
+        "name": "Ahmad Morid",
+        "source": "wikidata",
+        "firstYear": 1971,
+        "lastYear": 1971,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q400698"
+      },
+      {
+        "name": "Akbar Nikzad Afghani",
+        "source": "wikidata",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q109551692"
+      },
+      {
+        "name": "Amir-Jan Sabori",
+        "source": "wikidata",
+        "firstYear": 1973,
+        "lastYear": 1973,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": "7717654",
+        "wikidataId": "Q472198"
+      },
+      {
+        "name": "Anisa Wahab",
+        "source": "wikidata",
+        "firstYear": 1971,
+        "lastYear": 1971,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q5958785"
+      },
+      {
+        "name": "Aryan Khan",
+        "source": "wikidata",
+        "firstYear": 2000,
+        "lastYear": 2000,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": "1280921",
+        "wikidataId": "Q4802647"
+      },
+      {
+        "name": "Awalmir",
+        "source": "wikidata",
+        "firstYear": 1946,
+        "lastYear": 1946,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q741113"
+      },
+      {
+        "name": "Baryalai Samadi",
+        "source": "wikidata",
+        "firstYear": 1993,
+        "lastYear": 1993,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q4865992"
+      },
+      {
+        "name": "Bazgul Badakhshi",
+        "source": "wikidata",
+        "firstYear": 1917,
+        "lastYear": 1917,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q5955091"
+      },
+      {
+        "name": "Dawood Sarkhosh",
+        "source": "wikidata",
+        "firstYear": 1986,
+        "lastYear": 1986,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": "6022034",
+        "wikidataId": "Q4347166"
+      },
+      {
+        "name": "DJ Besho",
+        "source": "wikidata",
+        "firstYear": 1992,
+        "lastYear": 1992,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q54861527"
+      },
+      {
+        "name": "Elaha Soroor",
+        "source": "wikidata",
+        "firstYear": 2003,
+        "lastYear": 2003,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": "7320399",
+        "wikidataId": "Q5947900"
+      },
+      {
+        "name": "Faiz Karizi",
+        "source": "wikidata",
+        "firstYear": 1968,
+        "lastYear": 1968,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q1393585"
+      },
+      {
+        "name": "Farid Rastagar",
+        "source": "wikidata",
+        "firstYear": 1978,
+        "lastYear": 1978,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q5435263"
+      },
+      {
+        "name": "Ghawgha Taban",
+        "source": "wikidata",
+        "firstYear": 1916,
+        "lastYear": 1916,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q109243187"
+      },
+      {
+        "name": "Ghazal Sadat",
+        "source": "wikidata",
+        "firstYear": 1996,
+        "lastYear": 1996,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q31067953"
+      },
+      {
+        "name": "Ghezaal Enayat",
+        "source": "wikidata",
+        "firstYear": 2004,
+        "lastYear": 2004,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 15811683,
+        "wikidataId": "Q56359872"
+      },
+      {
+        "name": "Ghulam Hossein",
+        "source": "wikidata",
+        "firstYear": 1891,
+        "lastYear": 1891,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q1521962"
+      },
+      {
+        "name": "Hafizullah Khyal",
+        "source": "wikidata",
+        "firstYear": 1946,
+        "lastYear": 1946,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q1568101"
+      },
+      {
+        "name": "Haroon Tanha",
+        "source": "wikidata",
+        "firstYear": 1996,
+        "lastYear": 1996,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q2800288"
+      },
+      {
+        "name": "Ibrahim Ibrahimi",
+        "source": "wikidata",
+        "firstYear": 1987,
+        "lastYear": 1987,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q109128787"
+      },
+      {
+        "name": "Jawad Ghaziyar",
+        "source": "wikidata",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q1683017"
+      },
+      {
+        "name": "Jaze",
+        "source": "wikidata",
+        "firstYear": 2014,
+        "lastYear": 2014,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 1242207,
+        "wikidataId": "Q110658862"
+      },
+      {
+        "name": "Kha.ali.w",
+        "source": "wikidata",
+        "firstYear": 2016,
+        "lastYear": 2016,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q115208420"
+      },
+      {
+        "name": "Latif Nangarhari",
+        "source": "wikidata",
+        "firstYear": 1995,
+        "lastYear": 1995,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q6496072"
+      },
+      {
+        "name": "Malik Akhlaqi",
+        "source": "wikidata",
+        "firstYear": 2009,
+        "lastYear": 2009,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q116370989"
+      },
+      {
+        "name": "Mas'hour Jamal",
+        "source": "wikidata",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q9634489"
+      },
+      {
+        "name": "Mermen Qamar Gul",
+        "source": "wikidata",
+        "firstYear": 1967,
+        "lastYear": 1967,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q7266402"
+      },
+      {
+        "name": "Mermon Parwin",
+        "source": "wikidata",
+        "firstYear": 1939,
+        "lastYear": 1939,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q1921943"
+      },
+      {
+        "name": "Mohammad Din Zakhil",
+        "source": "wikidata",
+        "firstYear": 1915,
+        "lastYear": 1915,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q2502647"
+      },
+      {
+        "name": "Mohammad Hossein Arman",
+        "source": "wikidata",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q1942659"
+      },
+      {
+        "name": "Mohammad Hussain Sarahang",
+        "source": "wikidata",
+        "firstYear": 1939,
+        "lastYear": 1939,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q741658"
+      },
+      {
+        "name": "Mojgan Azimi",
+        "source": "wikidata",
+        "firstYear": 2000,
+        "lastYear": 2000,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q61063667"
+      },
+      {
+        "name": "Naim Popal",
+        "source": "wikidata",
+        "firstYear": 1969,
+        "lastYear": 1969,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q16186426"
+      },
+      {
+        "name": "Nasrat Parsa",
+        "source": "wikidata",
+        "firstYear": 1983,
+        "lastYear": 1983,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q337491"
+      },
+      {
+        "name": "Nila Ibrahimi",
+        "source": "wikidata",
+        "firstYear": 2022,
+        "lastYear": 2022,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q131295677"
+      },
+      {
+        "name": "Obaidulah Jan Kandahari",
+        "source": "wikidata",
+        "firstYear": 1966,
+        "lastYear": 1966,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q3752155"
+      },
+      {
+        "name": "Omid Nezami",
+        "source": "wikidata",
+        "firstYear": 1999,
+        "lastYear": 1999,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q48089279"
+      },
+      {
+        "name": "Paradise Sorouri",
+        "source": "wikidata",
+        "firstYear": 1965,
+        "lastYear": 1965,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q25422922"
+      },
+      {
+        "name": "Qader Eshpari",
+        "source": "wikidata",
+        "firstYear": 1982,
+        "lastYear": 1982,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q2121343"
+      },
+      {
+        "name": "Rahim Jahani",
+        "source": "wikidata",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q1240671"
+      },
+      {
+        "name": "Rahim Mehryar",
+        "source": "wikidata",
+        "firstYear": 1971,
+        "lastYear": 1971,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q7283417"
+      },
+      {
+        "name": "Raien",
+        "source": "wikidata",
+        "firstYear": 2023,
+        "lastYear": 2023,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q135418765"
+      },
+      {
+        "name": "Ramin Mohammadi",
+        "source": "wikidata",
+        "firstYear": 2007,
+        "lastYear": 2007,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q114963067"
+      },
+      {
+        "name": "Rezwan Munawar",
+        "source": "wikidata",
+        "firstYear": 1979,
+        "lastYear": 1979,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q15622020"
+      },
+      {
+        "name": "Saifo",
+        "source": "wikidata",
+        "firstYear": 1957,
+        "lastYear": 1957,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q7400022"
+      },
+      {
+        "name": "Salamat Schiftah",
+        "source": "wikidata",
+        "firstYear": 1953,
+        "lastYear": 1953,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q2213855"
+      },
+      {
+        "name": "Salma Jahani",
+        "source": "wikidata",
+        "firstYear": 1967,
+        "lastYear": 1967,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q2214724"
+      },
+      {
+        "name": "Sarwar Sarkhosh",
+        "source": "wikidata",
+        "firstYear": 1957,
+        "lastYear": 1957,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q56367310"
+      },
+      {
+        "name": "Sayed Anwar Azad",
+        "source": "wikidata",
+        "firstYear": 1984,
+        "lastYear": 1984,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q65197036"
+      },
+      {
+        "name": "Shah Wali",
+        "source": "wikidata",
+        "firstYear": 1942,
+        "lastYear": 1942,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 3158759,
+        "wikidataId": "Q3918470"
+      },
+      {
+        "name": "Shahab Tiam",
+        "source": "wikidata",
+        "firstYear": 1996,
+        "lastYear": 1996,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 8823823,
+        "wikidataId": "Q27895655"
+      },
+      {
+        "name": "Shakeeb Hamdard",
+        "source": "wikidata",
+        "firstYear": 1999,
+        "lastYear": 1999,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q1515154"
+      },
+      {
+        "name": "Shama Ashna",
+        "source": "wikidata",
+        "firstYear": 2000,
+        "lastYear": 2000,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q17117121"
+      },
+      {
+        "name": "Shogoufeh Arefian",
+        "source": "wikidata",
+        "firstYear": 2011,
+        "lastYear": 2011,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q5874877"
+      },
+      {
+        "name": "Soheila Zaland",
+        "source": "wikidata",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q7554698"
+      },
+      {
+        "name": "Soosan Firooz",
+        "source": "wikidata",
+        "firstYear": 2004,
+        "lastYear": 2004,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q7562761"
+      },
+      {
+        "name": "Sultan Ahmad Hamahang",
+        "source": "wikidata",
+        "firstYear": 1982,
+        "lastYear": 1982,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q1523125"
+      },
+      {
+        "name": "Tahir Shubab",
+        "source": "wikidata",
+        "firstYear": 1984,
+        "lastYear": 1984,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q7675516"
+      },
+      {
+        "name": "Waheed Soroor",
+        "source": "wikidata",
+        "firstYear": 1986,
+        "lastYear": 1986,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q7959761"
+      },
+      {
+        "name": "Wahid Saberi",
+        "source": "wikidata",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q2539290"
+      },
+      {
+        "name": "Wahid Zaland",
+        "source": "wikidata",
+        "firstYear": 2015,
+        "lastYear": 2015,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 11447480,
+        "wikidataId": "Q7959790"
+      },
+      {
+        "name": "Wajiha Rastagar",
+        "source": "wikidata",
+        "firstYear": 1982,
+        "lastYear": 1982,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q2540832"
+      },
+      {
+        "name": "Zahir Howaida",
+        "source": "wikidata",
+        "firstYear": 1960,
+        "lastYear": 1960,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q140579"
+      },
+      {
+        "name": "Zia Qarizada",
+        "source": "wikidata",
+        "firstYear": 1937,
+        "lastYear": 1937,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q198276"
+      },
+      {
+        "name": "مختار مجید",
+        "source": "wikidata",
+        "firstYear": 1977,
+        "lastYear": 1977,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q138290382"
+      },
+      {
+        "name": "میرمن آزاده",
+        "source": "wikidata",
+        "firstYear": 1955,
+        "lastYear": 1955,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q136001648"
+      },
+      {
+        "name": "Naghma",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country",
+          "Pop"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 3547062,
+        "wikidataId": null,
+        "aliases": [
+          "نغمَی",
+          "Naghmah"
+        ]
+      },
+      {
+        "name": "حیدر سلیم",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 6522918,
+        "wikidataId": null,
+        "aliases": [
+          "Haidar Saleem"
+        ]
+      },
+      {
+        "name": "دولت قره باغی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 7359071,
+        "wikidataId": null,
+        "aliases": [
+          "Dolat Qurah Baaghi",
+          "Dolat Qara Baghi"
+        ]
+      },
+      {
+        "name": "احمد نعيم پوپل",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country",
+          "Pop"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 6416294,
+        "wikidataId": null,
+        "aliases": [
+          "احمَد نعيم پوپَل",
+          "نعیم پوپل"
+        ]
+      },
+      {
+        "name": "اسد بدیع",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6516484,
+        "wikidataId": "Q4803205",
+        "aliases": [
+          "Asad Badie"
+        ]
+      },
+      {
+        "name": "امیر محمد",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7144236,
+        "wikidataId": null,
+        "aliases": [
+          "ښاغلی امیر محمد"
+        ]
+      },
+      {
+        "name": "ثمینه خان",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7553170,
+        "wikidataId": null,
+        "aliases": [
+          "Samina Khan"
+        ]
+      },
+      {
+        "name": "خیری اسقلانی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 9212221,
+        "wikidataId": null,
+        "aliases": [
+          "خیری"
+        ]
+      },
+      {
+        "name": "درویش کاکڑ",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7719041,
+        "wikidataId": null,
+        "aliases": [
+          "Darwesh Kakard"
+        ]
+      },
+      {
+        "name": "رحیم بخش",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6380917,
+        "wikidataId": null,
+        "aliases": [
+          "استاد رحیم بخش"
+        ]
+      },
+      {
+        "name": "فواد رامز",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7408069,
+        "wikidataId": null,
+        "aliases": [
+          "Fawad Ramez"
+        ]
+      },
+      {
+        "name": "فیروز کندوزی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 9212218,
+        "wikidataId": null,
+        "aliases": [
+          "فیروز"
+        ]
+      },
+      {
+        "name": "مزاري نجرابي",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 9213022,
+        "wikidataId": null,
+        "aliases": [
+          "M. Negerabi"
+        ]
+      },
+      {
+        "name": "Abdullah Muqri",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 11238935,
+        "wikidataId": null
+      },
+      {
+        "name": "Bangicha",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3596907,
+        "wikidataId": null,
+        "aliases": [
+          "بنګيچه"
+        ]
+      },
+      {
+        "name": "Gul Alam",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2562705,
+        "wikidataId": null,
+        "aliases": [
+          "گل علم"
+        ]
+      },
+      {
+        "name": "Gul Zaman",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2748258,
+        "wikidataId": null,
+        "aliases": [
+          "گل زمان"
+        ]
+      },
+      {
+        "name": "Hakimnoor Akakhel",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8061756,
+        "wikidataId": null
+      },
+      {
+        "name": "Kamar Gul Zakhail",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 1543864,
+        "wikidataId": null,
+        "aliases": [
+          "قمر گل"
+        ]
+      },
+      {
+        "name": "Muhammad Naim Mazari",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2562706,
+        "wikidataId": null,
+        "aliases": [
+          "Baba Naim"
+        ]
+      },
+      {
+        "name": "Sarur Logari",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6288431,
+        "wikidataId": null,
+        "aliases": [
+          "سرور لوگری"
+        ]
+      },
+      {
+        "name": "Sultan Hamahang",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8196970,
+        "wikidataId": null,
+        "aliases": [
+          "سلطان هماهنگ"
+        ]
+      },
+      {
+        "name": "Ustad Qasim Khan",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6578376,
+        "wikidataId": null
+      },
+      {
+        "name": "Zarsanga",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2248305,
+        "wikidataId": null,
+        "aliases": [
+          "زرسانگه"
+        ]
+      },
+      {
+        "name": "استاد الطاف حسین",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8196640,
+        "wikidataId": null,
+        "aliases": [
+          "Ustad Altaf Hussain"
+        ]
+      },
+      {
+        "name": "استاد الفت آهنگ",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8196639,
+        "wikidataId": null,
+        "aliases": [
+          "Ustad Ulfat Ahang"
+        ]
+      },
+      {
+        "name": "استاد زرنوش خان",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7376404,
+        "wikidataId": null
+      },
+      {
+        "name": "اسماعیل چاریکاری",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 9212143,
+        "wikidataId": null,
+        "aliases": [
+          "اسماعیل"
+        ]
+      },
+      {
+        "name": "بصیر هماهنگ",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 9661219,
+        "wikidataId": null
+      },
+      {
+        "name": "پتونی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7149703,
+        "wikidataId": null
+      },
+      {
+        "name": "پران نات",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7209312,
+        "wikidataId": null
+      },
+      {
+        "name": "خاتم",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6376297,
+        "wikidataId": null
+      },
+      {
+        "name": "خاتم گل",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7359098,
+        "wikidataId": null
+      },
+      {
+        "name": "خالوی شوقی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6378705,
+        "wikidataId": null
+      },
+      {
+        "name": "دختر شیدا",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6368333,
+        "wikidataId": null
+      },
+      {
+        "name": "رحیم جهانی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 9254281,
+        "wikidataId": null
+      },
+      {
+        "name": "زرین",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8145283,
+        "wikidataId": null
+      },
+      {
+        "name": "زلمى پروانى",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 12142654,
+        "wikidataId": null
+      },
+      {
+        "name": "سلما جهانی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 9254278,
+        "wikidataId": null,
+        "aliases": [
+          "سلما"
+        ]
+      },
+      {
+        "name": "سید محمد",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6743969,
+        "wikidataId": null
+      },
+      {
+        "name": "سیما اوصهبا",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14787575,
+        "wikidataId": null
+      },
+      {
+        "name": "شادکام",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6509246,
+        "wikidataId": null
+      },
+      {
+        "name": "شَاه صاحب احمد شَاه آغا",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Political",
+          "Religious",
+          "Military"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4860083,
+        "wikidataId": null
+      },
+      {
+        "name": "طالب احمد بثِيراسدی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Political",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5475504,
+        "wikidataId": null
+      },
+      {
+        "name": "طالب احمد شاه آغا جواسی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Political",
+          "Religious",
+          "Military"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4860989,
+        "wikidataId": null
+      },
+      {
+        "name": "طالب احمد علی جان",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Political",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5473258,
+        "wikidataId": null
+      },
+      {
+        "name": "طالب بازمحمد سروری",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Military",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4859801,
+        "wikidataId": null
+      },
+      {
+        "name": "طالب عبد الرّحمان سنزری",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Military",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4859810,
+        "wikidataId": null
+      },
+      {
+        "name": "طالب عبدالبصير",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Political",
+          "Religious",
+          "Military"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4860035,
+        "wikidataId": null
+      },
+      {
+        "name": "طالب عبدالروَف مدنی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Political",
+          "Military"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4860041,
+        "wikidataId": null
+      },
+      {
+        "name": "طالب محمّد اِسماعيل حقياد",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Political",
+          "Military"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4859766,
+        "wikidataId": null
+      },
+      {
+        "name": "طالب محمد حسَن",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Military",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4859800,
+        "wikidataId": null
+      },
+      {
+        "name": "ظفر شامل",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4009804,
+        "wikidataId": null
+      },
+      {
+        "name": "عبدالحمید قندهاری",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7419314,
+        "wikidataId": null,
+        "aliases": [
+          "عبد الحمید قندهاري"
+        ]
+      },
+      {
+        "name": "عبیدالله جان",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8194826,
+        "wikidataId": null
+      },
+      {
+        "name": "عَطارالر صَابر",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Political",
+          "Military"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4860040,
+        "wikidataId": null
+      },
+      {
+        "name": "عين الدّين",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8531733,
+        "wikidataId": null
+      },
+      {
+        "name": "غلام دستگیر شیدا",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5778765,
+        "wikidataId": null,
+        "aliases": [
+          "ښاغلی شیدا"
+        ]
+      },
+      {
+        "name": "لیلما",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8145308,
+        "wikidataId": null
+      },
+      {
+        "name": "لیلیَ",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5637431,
+        "wikidataId": null
+      },
+      {
+        "name": "ماري مهتاب",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 12699425,
+        "wikidataId": null
+      },
+      {
+        "name": "محمد ظاهر",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5564478,
+        "wikidataId": null,
+        "aliases": [
+          "Zahir Hawayda"
+        ]
+      },
+      {
+        "name": "محمد قاسم نحاری",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Political",
+          "Religious",
+          "Military"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4859833,
+        "wikidataId": null
+      },
+      {
+        "name": "منگل شوقی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6509583,
+        "wikidataId": null
+      },
+      {
+        "name": "میرمن گتم شاه",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6376707,
+        "wikidataId": null
+      },
+      {
+        "name": "نصيب الّد جَان انقلابی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Religious",
+          "Political",
+          "Military"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4860012,
+        "wikidataId": null
+      },
+      {
+        "name": "نور مستانه",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 11523026,
+        "wikidataId": null,
+        "aliases": [
+          "نور مستانه = Noor Mastana"
+        ]
+      },
+      {
+        "name": "هماهنگ",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Ghazal",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8196066,
+        "wikidataId": null,
+        "aliases": [
+          "Hamahang"
+        ]
+      },
+      {
+        "name": "وحید جوزجانی",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 12151333,
+        "wikidataId": null
+      },
+      {
+        "name": "ولی محمد قندهاری",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Klasik",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8145387,
+        "wikidataId": null
+      },
+      {
+        "name": "Abhorrance",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 524713,
+        "wikidataId": "Q130540659"
+      },
+      {
+        "name": "Bakht Zamina",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 12008431,
+        "wikidataId": "Q4849397"
+      },
+      {
+        "name": "DeWe",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q137994409"
+      },
+      {
+        "name": "Dur Mohammad Kishmi",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q100502498"
+      },
+      {
+        "name": "Farzana Nawabi",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q126000084"
+      },
+      {
+        "name": "Fereshta Samah",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q5444071"
+      },
+      {
+        "name": "Javid Sharif",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q16048261"
+      },
+      {
+        "name": "Khoshi Mahtab",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q20084503"
+      },
+      {
+        "name": "Latifa Azizi",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q133594472"
+      },
+      {
+        "name": "Mangal",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 1144269,
+        "wikidataId": "Q16731912"
+      },
+      {
+        "name": "Mikael Karlsson",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 1192550,
+        "wikidataId": "Q52186829"
+      },
+      {
+        "name": "Nasrat Sharqi",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q6967303"
+      },
+      {
+        "name": "Parasto",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 1247559,
+        "wikidataId": "Q7136036"
+      },
+      {
+        "name": "Razma",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q110062945"
+      },
+      {
+        "name": "Rishad Zahir",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q7336019"
+      },
+      {
+        "name": "Safdar Ali Malestani",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q56365754"
+      },
+      {
+        "name": "Safdar Khair-Ali",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q56360028"
+      },
+      {
+        "name": "Seema Tarana",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q14950032"
+      },
+      {
+        "name": "Shahla Zaland",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 16551434,
+        "wikidataId": "Q14950033"
+      },
+      {
+        "name": "Timothy McDevitt",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 6368729,
+        "wikidataId": "Q52227305"
+      },
+      {
+        "name": "Y. Misdaq",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q8045758"
+      },
+      {
+        "name": "Younes",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": 2478104,
+        "wikidataId": "Q48644398"
+      },
+      {
+        "name": "Zahra Elham",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q116832740"
+      },
+      {
+        "name": "بابه قران",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q5950390"
+      },
+      {
+        "name": "جاوید راهی",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q138218327"
+      },
+      {
+        "name": "گلزمان",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q5671601"
+      },
+      {
+        "name": "وحید صابری",
+        "source": "wikidata",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q138219415"
       }
     ]
   }
