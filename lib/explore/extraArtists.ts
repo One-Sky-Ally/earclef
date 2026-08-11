@@ -32,6 +32,12 @@ export interface ExtraArtist {
    * dropped its release (index drift) — see retain-drift-dropped.mjs.
    */
   retainedFrom?: string
+  /**
+   * Owner-ruling evidence attached to identity-contested entries
+   * (Naghma/Ghezaal Enayat/Shahab Tiam class, Aug 10 2026). Context for
+   * future sessions — never display.
+   */
+  note?: string
 }
 
 const DATASET = extraArtists as unknown as {

@@ -1,14 +1,14 @@
 {
-  "BT": {
-    "name": "Bhutan",
-    "wikidataMusicians": 7,
-    "discogsReleases": 43,
-    "candidates": 20,
-    "newArtists": 19,
+  "GM": {
+    "name": "Gambia",
+    "wikidataMusicians": 34,
+    "discogsReleases": 41,
+    "candidates": 46,
+    "newArtists": 42,
     "dropped": {
-      "duplicate": 1,
+      "duplicate": 2,
       "foreignCatalog": 0,
-      "wikidataCrosswalk": 0
+      "wikidataCrosswalk": 1
     },
     "recordGuard": {
       "countryMismatch": 0,
@@ -18,87 +18,19 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 1,
-      "uncorroboratedKept": 1
+      "collisionKept": 5,
+      "uncorroboratedKept": 5
     },
-    "dated": 14,
+    "dated": 36,
     "sample": [
-      "Tashi Nencha (2000)",
-      "Tsheten Dorji (1996)",
-      "Ugyen Dorji (1996)",
-      "Aa-Yang Ensemble (2013)",
-      "Aum Thinley Om (2007)",
-      "Karma Tshering (2003)",
-      "Namgay Jigs (2010)",
-      "Namkha Lhamo (2003)"
-    ]
-  },
-  "TL": {
-    "name": "Timor-Leste",
-    "wikidataMusicians": 7,
-    "discogsReleases": 130,
-    "candidates": 144,
-    "newArtists": 132,
-    "dropped": {
-      "duplicate": 4,
-      "foreignCatalog": 8,
-      "wikidataCrosswalk": 0
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 7,
-      "uncorroboratedKept": 12
-    },
-    "dated": 45,
-    "sample": [
-      "Abito Gama (2008)",
-      "Tonny Pereira (2009)",
-      "Ameu Livre D.C. (2009)",
-      "Lalatak (2005)",
-      "Juga Gama (2009)",
-      "El-Mar Voice (2009)",
-      "Lilly Ribeiro (2002)",
-      "Toinino (2009)"
-    ]
-  },
-  "AF": {
-    "name": "Afghanistan",
-    "wikidataMusicians": 141,
-    "discogsReleases": 175,
-    "candidates": 232,
-    "newArtists": 212,
-    "dropped": {
-      "duplicate": 14,
-      "foreignCatalog": 1,
-      "wikidataCrosswalk": 5
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 9,
-      "uncorroboratedKept": 11
-    },
-    "dated": 115,
-    "sample": [
-      "جليل زولاند (1957)",
-      "بیلتون (1928)",
-      "Hamida Rokhshana (1965)",
-      "پروین (1960)",
-      "حمیدالله چاریکاری (1980)",
-      "خیال (1960)",
-      "نسیم (1960)",
-      "Sarahang (1959)"
+      "Jaliba Kuyateh (1972)",
+      "Salam Band (1995)",
+      "The Kumareh Band (1995)",
+      "Juffureh Band (2020)",
+      "U.C.A.S. Band De Sedhiou (1997)",
+      "AFROVOX (1989)",
+      "Amina Taylor Sonko (2016)",
+      "Bajaly Suso (1999)"
     ]
   }
 }

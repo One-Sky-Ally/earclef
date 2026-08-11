@@ -40,7 +40,9 @@ export const COUNTRIES = {
   OM: { qid: 'Q842', name: 'Oman', mbArea: 'Oman', discogs: ['Oman'] },
   MW: { qid: 'Q1020', name: 'Malawi', mbArea: 'Malawi', discogs: ['Malawi'] },
   NE: { qid: 'Q1032', name: 'Niger', mbArea: 'Niger', discogs: ['Niger'] },
-  GM: { qid: 'Q1005', name: 'Gambia', mbArea: 'Gambia', discogs: ['Gambia'] },
+  // Discogs records carry the formal "Gambia, The" (search tokenizes to
+  // "Gambia") — found by the record guard rejecting all 41, Aug 10 run.
+  GM: { qid: 'Q1005', name: 'Gambia', mbArea: 'Gambia', discogs: ['Gambia, The', 'Gambia'] },
   BT: { qid: 'Q917', name: 'Bhutan', mbArea: 'Bhutan', discogs: ['Bhutan'] },
   SO: { qid: 'Q1045', name: 'Somalia', mbArea: 'Somalia', discogs: ['Somalia'] },
   LR: { qid: 'Q1014', name: 'Liberia', mbArea: 'Liberia', discogs: ['Liberia'] },
@@ -87,7 +89,9 @@ export const COUNTRIES = {
   KW: { qid: 'Q817', name: 'Kuwait', mbArea: 'Kuwait', discogs: ['Kuwait'] },
   AM: { qid: 'Q399', name: 'Armenia', mbArea: 'Armenia', discogs: ['Armenia'] },
   CM: { qid: 'Q1009', name: 'Cameroon', mbArea: 'Cameroon', discogs: ['Cameroon'] },
-  BS: { qid: 'Q778', name: 'Bahamas', mbArea: 'Bahamas', discogs: ['Bahamas'] },
+  // Discogs records carry the formal "Bahamas, The" (Gambia-class trap,
+  // caught by record-level spot-check Aug 11 before the B3 sweep).
+  BS: { qid: 'Q778', name: 'Bahamas', mbArea: 'Bahamas', discogs: ['Bahamas, The', 'Bahamas'] },
   SR: { qid: 'Q730', name: 'Suriname', mbArea: 'Suriname', discogs: ['Suriname'] },
   HT: { qid: 'Q790', name: 'Haiti', mbArea: 'Haiti', discogs: ['Haiti'] },
   UZ: { qid: 'Q265', name: 'Uzbekistan', mbArea: 'Uzbekistan', discogs: ['Uzbekistan'] },
@@ -102,11 +106,15 @@ export const COUNTRIES = {
   VN: { qid: 'Q881', name: 'Vietnam', mbArea: 'Vietnam', discogs: ['Vietnam'] },
   GH: { qid: 'Q117', name: 'Ghana', mbArea: 'Ghana', discogs: ['Ghana'] },
   ZM: { qid: 'Q953', name: 'Zambia', mbArea: 'Zambia', discogs: ['Zambia'] },
+  // "Belgian Congo" (290 releases, found Aug 11 via the CG spot-check)
+  // is the colonial-era predecessor holding the vintage rumba pressings
+  // — same historical-entity treatment as Rhodesia→ZW. Flagged in the
+  // Batch A report; the C batch still needs its own go before this runs.
   CD: {
     qid: 'Q974',
     name: 'DR Congo',
     mbArea: 'Democratic Republic of the Congo',
-    discogs: ['Zaire', 'Congo, Democratic Republic of the'],
+    discogs: ['Zaire', 'Congo, Democratic Republic of the', 'Belgian Congo'],
     noFallback: true,
   },
   TT: { qid: 'Q754', name: 'Trinidad & Tobago', mbArea: 'Trinidad and Tobago', discogs: ['Trinidad & Tobago'] },
