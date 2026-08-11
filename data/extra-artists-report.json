@@ -1,14 +1,14 @@
 {
-  "GM": {
-    "name": "Gambia",
-    "wikidataMusicians": 34,
-    "discogsReleases": 41,
-    "candidates": 46,
-    "newArtists": 42,
+  "MM": {
+    "name": "Myanmar",
+    "wikidataMusicians": 181,
+    "discogsReleases": 462,
+    "candidates": 430,
+    "newArtists": 365,
     "dropped": {
-      "duplicate": 2,
-      "foreignCatalog": 0,
-      "wikidataCrosswalk": 1
+      "duplicate": 42,
+      "foreignCatalog": 12,
+      "wikidataCrosswalk": 11
     },
     "recordGuard": {
       "countryMismatch": 0,
@@ -18,19 +18,223 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 5,
-      "uncorroboratedKept": 5
+      "collisionKept": 8,
+      "uncorroboratedKept": 15
     },
-    "dated": 36,
+    "dated": 125,
     "sample": [
-      "Jaliba Kuyateh (1972)",
-      "Salam Band (1995)",
-      "The Kumareh Band (1995)",
-      "Juffureh Band (2020)",
-      "U.C.A.S. Band De Sedhiou (1997)",
-      "AFROVOX (1989)",
-      "Amina Taylor Sonko (2016)",
-      "Bajaly Suso (1999)"
+      "Hlaing Win Maung (2007)",
+      "Myo Khun Khur (1975)",
+      "Zaw Win Shein (1987)",
+      "The Wild Ones (1973)",
+      "No U Turn (2009)",
+      "ငဝ်းၽူၼ် (1982)",
+      "Gita Lulin Maung Ko Ko (2000)",
+      "Lin Mee Htet (1997)"
+    ]
+  },
+  "KH": {
+    "name": "Cambodia",
+    "wikidataMusicians": 65,
+    "discogsReleases": 449,
+    "candidates": 207,
+    "newArtists": 165,
+    "dropped": {
+      "duplicate": 26,
+      "foreignCatalog": 5,
+      "wikidataCrosswalk": 11
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 6,
+      "uncorroboratedKept": 8
+    },
+    "dated": 95,
+    "sample": [
+      "The Cambodian Space Project (2011)",
+      "Neou Narin (1966)",
+      "Pov Vannary (2013)",
+      "Thom Thom (2007)",
+      "ប៉ូវថៅដៃ (1966)",
+      "សុ ផានីតា (2004)",
+      "ស្មៀនយ៉ុន (1966)",
+      "Audio Mainline (2015)"
+    ]
+  },
+  "BD": {
+    "name": "Bangladesh",
+    "wikidataMusicians": 475,
+    "discogsReleases": 345,
+    "candidates": 363,
+    "newArtists": 258,
+    "dropped": {
+      "duplicate": 65,
+      "foreignCatalog": 6,
+      "wikidataCrosswalk": 34
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 15,
+      "uncorroboratedKept": 12
+    },
+    "dated": 128,
+    "sample": [
+      "ওয়ারফেইজ (1991)",
+      "Ashik (2011)",
+      "Left (2016)",
+      "সাবিনা ইয়াসমিন (1986)",
+      "Adity Mohsin (2003)",
+      "Tahmid Islam (2021)",
+      "Uday Biswas (2020)",
+      "Aryan Ashik (2017)"
+    ]
+  },
+  "NP": {
+    "name": "Nepal",
+    "wikidataMusicians": 160,
+    "discogsReleases": 410,
+    "candidates": 365,
+    "newArtists": 282,
+    "dropped": {
+      "duplicate": 61,
+      "foreignCatalog": 15,
+      "wikidataCrosswalk": 7
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 19,
+      "uncorroboratedKept": 27
+    },
+    "dated": 183,
+    "sample": [
+      "Kumar Basnet (1958)",
+      "Prem Rana (1999)",
+      "Santa Ratna Shakya (2000)",
+      "Tara Devi (1962)",
+      "Namaste Band (1995)",
+      "Shree Krishna Shahi (2001)",
+      "The Kathmandu Killers (2017)",
+      "Error (2014)"
+    ]
+  },
+  "MN": {
+    "name": "Mongolia",
+    "wikidataMusicians": 154,
+    "discogsReleases": 454,
+    "candidates": 388,
+    "newArtists": 342,
+    "dropped": {
+      "duplicate": 32,
+      "foreignCatalog": 9,
+      "wikidataCrosswalk": 5
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 25,
+      "uncorroboratedKept": 16
+    },
+    "dated": 267,
+    "sample": [
+      "Т.Ариунаа (1982)",
+      "The Lemons (2006)",
+      "Б. Сарантуяа (1993)",
+      "Зэвсэгт хүчний жанжин штабын үлгэр жишээ үлээвэр найрал хөгжим (1961)",
+      "Монголын Ардын Армийн Дуу Бужгийн Чуулга (1981)",
+      "Сэмбийн Гончигсумлаа (1934)",
+      "Dreamlogicc (2019)",
+      "Odonbat (2009)"
+    ]
+  },
+  "LK": {
+    "name": "Sri Lanka",
+    "wikidataMusicians": 134,
+    "discogsReleases": 797,
+    "candidates": 515,
+    "newArtists": 419,
+    "dropped": {
+      "duplicate": 67,
+      "foreignCatalog": 10,
+      "wikidataCrosswalk": 19
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 37,
+      "uncorroboratedKept": 34
+    },
+    "dated": 268,
+    "sample": [
+      "Milton Mallawarachchi (1960)",
+      "Hush (2025)",
+      "M. S. Fernando (1968)",
+      "Gypsies (1976)",
+      "Victor Ratnayake (1957)",
+      "Desmond De Silva (1977)",
+      "Super Golden Chimes (1973)",
+      "Chamupa Unlimited (2019)"
+    ]
+  },
+  "KP": {
+    "name": "North Korea",
+    "wikidataMusicians": 31,
+    "discogsReleases": 349,
+    "candidates": 84,
+    "newArtists": 77,
+    "dropped": {
+      "duplicate": 7,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 2,
+      "uncorroboratedKept": 3
+    },
+    "dated": 26,
+    "sample": [
+      "Pochonbo Electronic Ensemble (1991)",
+      "Mansudae Art Troupe (1973)",
+      "The Korean People's Army Merited State Chorus (2000)",
+      "Choe Sam Suk (2000)",
+      "State Symphony Orchestra (1976)",
+      "방송합창단 (1950)",
+      "조선인민군공훈합창단 (2002)",
+      "피바다가극단 (1973)"
     ]
   }
 }
