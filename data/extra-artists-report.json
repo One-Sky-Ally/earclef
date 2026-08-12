@@ -1,183 +1,13 @@
 {
-  "TZ": {
-    "name": "Tanzania",
-    "wikidataMusicians": 273,
-    "discogsReleases": 326,
-    "candidates": 462,
-    "newArtists": 410,
+  "BZ": {
+    "name": "Belize",
+    "wikidataMusicians": 17,
+    "discogsReleases": 247,
+    "candidates": 156,
+    "newArtists": 137,
     "dropped": {
-      "duplicate": 31,
-      "foreignCatalog": 10,
-      "wikidataCrosswalk": 11
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 17,
-      "uncorroboratedKept": 50
-    },
-    "dated": 171,
-    "sample": [
-      "Mr II (1995)",
-      "Tabora Jazz Band (1976)",
-      "Arusha Mjini (1976)",
-      "Issa Matona (1976)",
-      "Lucky Star Musical Club (1972)",
-      "Kwaya Ya Uinjilisti (1976)",
-      "Black Star Music Club (1976)",
-      "BoiSlee (2016)"
-    ]
-  },
-  "UG": {
-    "name": "Uganda",
-    "wikidataMusicians": 221,
-    "discogsReleases": 477,
-    "candidates": 457,
-    "newArtists": 326,
-    "dropped": {
-      "duplicate": 71,
-      "foreignCatalog": 51,
-      "wikidataCrosswalk": 9
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 17,
-      "uncorroboratedKept": 20
-    },
-    "dated": 176,
-    "sample": [
-      "Cristopher Sebadduka (1969)",
-      "The Tames (1973)",
-      "The Cranes (1972)",
-      "Bernard Nsubuga (1969)",
-      "David SonJC (2018)",
-      "Top Ten Band (1974)",
-      "The Ebonies (1981)",
-      "Dan Mugula (1973)"
-    ]
-  },
-  "ML": {
-    "name": "Mali",
-    "wikidataMusicians": 153,
-    "discogsReleases": 534,
-    "candidates": 321,
-    "newArtists": 211,
-    "dropped": {
-      "duplicate": 54,
-      "foreignCatalog": 25,
-      "wikidataCrosswalk": 31
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 14,
-      "uncorroboratedKept": 56
-    },
-    "dated": 85,
-    "sample": [
-      "Coumba Sidibe (1965)",
-      "Saramba Kouyaté (2012)",
-      "Adama Namakoro Fomba (1998)",
-      "Daouda Sangare (1983)",
-      "Kagbe Sidibe (1998)",
-      "Lamissa Bengali (1998)",
-      "Molobali Keita (1995)",
-      "Molobaly Traore (1993)"
-    ]
-  },
-  "GN": {
-    "name": "Guinea",
-    "wikidataMusicians": 110,
-    "discogsReleases": 616,
-    "candidates": 254,
-    "newArtists": 212,
-    "dropped": {
-      "duplicate": 26,
+      "duplicate": 12,
       "foreignCatalog": 4,
-      "wikidataCrosswalk": 12
-    },
-    "recordGuard": {
-      "countryMismatch": 199,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 16,
-      "uncorroboratedKept": 35
-    },
-    "dated": 97,
-    "sample": [
-      "Djely Fode Kouyate (1979)",
-      "Kaloum Star (1974)",
-      "Sékouba Kandia Kouyate (1990)",
-      "Ensemble Instrumental De La Radiodiffusion Nationale (1967)",
-      "Kadé Diawara (1976)",
-      "Orchestre De La Paillotte (1967)",
-      "Sextet Camayenne (1974)",
-      "Franklin Boukaka (1970)"
-    ]
-  },
-  "SD": {
-    "name": "Sudan",
-    "wikidataMusicians": 111,
-    "discogsReleases": 546,
-    "candidates": 257,
-    "newArtists": 230,
-    "dropped": {
-      "duplicate": 25,
-      "foreignCatalog": 1,
-      "wikidataCrosswalk": 1
-    },
-    "recordGuard": {
-      "countryMismatch": 4,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 1,
-      "uncorroboratedKept": 1
-    },
-    "dated": 111,
-    "sample": [
-      "إبراهيم عوض (1969)",
-      "ثنائي النغم (1969)",
-      "(2) أحمد الجابري (1971)",
-      "أبو عبيدة حسن (1971)",
-      "أبو عركي البخيت (1974)",
-      "عبد القادر سالم (1973)",
-      "أحمد المصطفى (1977)",
-      "عابدة الشيخ (1996)"
-    ]
-  },
-  "BJ": {
-    "name": "Benin",
-    "wikidataMusicians": 121,
-    "discogsReleases": 537,
-    "candidates": 393,
-    "newArtists": 343,
-    "dropped": {
-      "duplicate": 41,
-      "foreignCatalog": 6,
       "wikidataCrosswalk": 3
     },
     "recordGuard": {
@@ -188,31 +18,31 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 27,
-      "uncorroboratedKept": 21
+      "collisionKept": 20,
+      "uncorroboratedKept": 18
     },
-    "dated": 132,
+    "dated": 121,
     "sample": [
-      "Yedenou Adjahoui & Son Groupe Folklorique D'Avrankou (1975)",
-      "Assa-Cica (1980)",
-      "Gnonnas Pedro Et Ses Dadjes (1979)",
-      "L'Orchestre Les Perles Noires Du Benin (1976)",
-      "Les Sympathics (1978)",
-      "Eboa Lotin (1976)",
-      "Groupe Folklorique Goumbé De Kéré (Dassa Zoume) (1977)",
-      "Kohounfo Editchom Comlan Nathanael (1977)"
+      "Ewing R. Samuels III (2024)",
+      "Marcus Perigo (2015)",
+      "Titiman Flores (1996)",
+      "Alejandro Iglesias (2025)",
+      "Auric (2025)",
+      "Aziatic (1999)",
+      "Bro. David (1996)",
+      "Carter (2025)"
     ]
   },
-  "CM": {
-    "name": "Cameroon",
-    "wikidataMusicians": 288,
-    "discogsReleases": 728,
-    "candidates": 684,
-    "newArtists": 592,
+  "GY": {
+    "name": "Guyana",
+    "wikidataMusicians": 13,
+    "discogsReleases": 272,
+    "candidates": 212,
+    "newArtists": 178,
     "dropped": {
-      "duplicate": 58,
-      "foreignCatalog": 12,
-      "wikidataCrosswalk": 22
+      "duplicate": 10,
+      "foreignCatalog": 22,
+      "wikidataCrosswalk": 2
     },
     "recordGuard": {
       "countryMismatch": 0,
@@ -222,31 +52,31 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 24,
-      "uncorroboratedKept": 44
+      "collisionKept": 27,
+      "uncorroboratedKept": 30
     },
-    "dated": 288,
+    "dated": 82,
     "sample": [
-      "Les Black Styl (1972)",
-      "D.O. 7 Shirati Jazz (1975)",
-      "Les Negro Styl's (1972)",
-      "Les Titans International (1976)",
-      "Daniel Ndo (1972)",
-      "Nkotti François (1977)",
-      "Orchestre Richard Band De Zoetele (1963)",
-      "Etoundi Aloa Javis (1964)"
+      "The Mighty Enchanter (1975)",
+      "Terry Nelson (1972)",
+      "Lord Melody (1954)",
+      "Sugrim Gobin (1973)",
+      "Bobby Vourilvee (1975)",
+      "Dasy Panchu (1969)",
+      "Ivor Lynch (1976)",
+      "Johnny Braff (1965)"
     ]
   },
-  "SN": {
-    "name": "Senegal",
-    "wikidataMusicians": 126,
-    "discogsReleases": 962,
-    "candidates": 495,
-    "newArtists": 368,
+  "HN": {
+    "name": "Honduras",
+    "wikidataMusicians": 34,
+    "discogsReleases": 540,
+    "candidates": 362,
+    "newArtists": 245,
     "dropped": {
-      "duplicate": 84,
-      "foreignCatalog": 19,
-      "wikidataCrosswalk": 24
+      "duplicate": 14,
+      "foreignCatalog": 99,
+      "wikidataCrosswalk": 4
     },
     "recordGuard": {
       "countryMismatch": 0,
@@ -254,33 +84,135 @@
       "unfetchedSkipped": 0
     },
     "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 49,
+      "uncorroboratedKept": 28
+    },
+    "dated": 204,
+    "sample": [
+      "Voces Universitarias De Honduras (1970)",
+      "Los Silver Star (1972)",
+      "Los Gatos Bravos (1975)",
+      "Los Profesionales (1984)",
+      "Moises Canello (1981)",
+      "Engendro (2002)",
+      "Trío Honduras (1967)",
+      "Grupo Hitsong (1985)"
+    ]
+  },
+  "BS": {
+    "name": "Bahamas",
+    "wikidataMusicians": 18,
+    "discogsReleases": 942,
+    "candidates": 405,
+    "newArtists": 337,
+    "dropped": {
+      "duplicate": 38,
+      "foreignCatalog": 24,
+      "wikidataCrosswalk": 6
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 38,
+      "uncorroboratedKept": 65
+    },
+    "dated": 207,
+    "sample": [
+      "Richie Delamore (1960)",
+      "Eddie Minnis (1975)",
+      "Dudley Smith Steel Band (1960)",
+      "Dry Bread (1974)",
+      "Wendell Stuart (1969)",
+      "George Symonette (1955)",
+      "George Symonette And His Goombay Sextette (1955)",
+      "Little Sparrow (1960)"
+    ]
+  },
+  "SR": {
+    "name": "Suriname",
+    "wikidataMusicians": 235,
+    "discogsReleases": 742,
+    "candidates": 600,
+    "newArtists": 518,
+    "dropped": {
+      "duplicate": 15,
+      "foreignCatalog": 64,
+      "wikidataCrosswalk": 3
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 43,
+      "uncorroboratedKept": 58
+    },
+    "dated": 377,
+    "sample": [
+      "Silvy Singoredjo (1979)",
+      "Orchestra Tropical (1978)",
+      "The Kaseko Masters (1977)",
+      "YNR Rohan (2022)",
+      "Moksie Morion (1985)",
+      "Oema Lobi (1980)",
+      "Conjunto Latinos (1973)",
+      "Kaseko Stars (1972)"
+    ]
+  },
+  "HT": {
+    "name": "Haiti",
+    "wikidataMusicians": 219,
+    "discogsReleases": 777,
+    "candidates": 544,
+    "newArtists": 431,
+    "dropped": {
+      "duplicate": 76,
+      "foreignCatalog": 16,
+      "wikidataCrosswalk": 21
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 1,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
       "collisionKept": 29,
-      "uncorroboratedKept": 59
+      "uncorroboratedKept": 63
     },
-    "dated": 260,
+    "dated": 308,
     "sample": [
-      "Le Super Etoile De Dakar (1981)",
-      "Le Setsima Group (1996)",
-      "Jaliba Kuyateh (1995)",
-      "Le Nguewel-Gui (1999)",
-      "Ndongo Lo (2001)",
-      "Ouza Et Ses Ouzettes (1972)",
-      "Star Number One (1976)",
-      "D.L.C (1994)"
+      "Da One (2015)",
+      "Super Ensemble Webert Sicot (1960)",
+      "Raoul Guillaume Et Son Groupe (1962)",
+      "D.P. Express (1976)",
+      "Ansy Derose (1949)",
+      "BIC Tizon Dife (1990)",
+      "Jean Jean Roosevelt (2007)",
+      "Les Ambassadeurs (1970)"
     ]
   },
-  "ET": {
-    "name": "Ethiopia",
-    "wikidataMusicians": 181,
-    "discogsReleases": 1000,
-    "candidates": 562,
-    "newArtists": 468,
+  "NI": {
+    "name": "Nicaragua",
+    "wikidataMusicians": 47,
+    "discogsReleases": 1248,
+    "candidates": 643,
+    "newArtists": 430,
     "dropped": {
-      "duplicate": 70,
-      "foreignCatalog": 5,
-      "wikidataCrosswalk": 19
+      "duplicate": 35,
+      "foreignCatalog": 171,
+      "wikidataCrosswalk": 7
     },
     "recordGuard": {
       "countryMismatch": 0,
@@ -290,19 +222,19 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 6,
-      "uncorroboratedKept": 36
+      "collisionKept": 123,
+      "uncorroboratedKept": 58
     },
-    "dated": 216,
+    "dated": 275,
     "sample": [
-      "Ephrem Tamiru (1983)",
-      "Asefu Debalke (1988)",
-      "አረጋኸኝ ወራሽ (1991)",
-      "Kennedy Mengesha (1988)",
-      "Fikreaddis Nekatibeb (1997)",
-      "የሺመቤት ዱባለ (2002)",
-      "Wubishet Fisseha (1975)",
-      "Bereket Mengistaab (1972)"
+      "Los Rockets (1965)",
+      "Miltinho (1966)",
+      "Tulio Enrique Leon (1966)",
+      "Los Panzer's (1969)",
+      "El Greco (1969)",
+      "The Bad Boys (1966)",
+      "Hermanos Cortez (1969)",
+      "Los Music Masters (1969)"
     ]
   }
 }
