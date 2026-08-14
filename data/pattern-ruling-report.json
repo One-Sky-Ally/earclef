@@ -1,0 +1,5065 @@
+{
+  "generatedAt": "2026-08-11",
+  "cases": [
+    {
+      "caseKey": "TL|dg|5264459",
+      "cc": "TL",
+      "key": "dg|5264459",
+      "name": "Jerry BTN",
+      "mbid": "d6579538-13c0-4026-bd32-226388a11335",
+      "mbName": "Jerry Btn",
+      "mbArea": "Indonesia",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": "TL×Indonesia occupation era (Jerry Btn)",
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "TL×Indonesia occupation era (Jerry Btn)",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "TL|dg|5103536",
+      "cc": "TL",
+      "key": "dg|5103536",
+      "name": "Tonny Pereira",
+      "mbid": "50c694ce-506b-4489-ac21-fdb38d8c9214",
+      "mbName": "Tonny Pereira",
+      "mbArea": "Indonesia",
+      "entryYears": [
+        2009,
+        2014
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": "TL×Indonesia occupation era (Tonny Pereira)",
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "TL×Indonesia occupation era (Tonny Pereira)",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "AF|dg|12800537",
+      "cc": "AF",
+      "key": "dg|12800537",
+      "name": "Akram Khan",
+      "mbid": "691a8a84-c125-44c6-90dd-fb30276dc185",
+      "mbName": "Akram Khan",
+      "mbArea": "India",
+      "entryYears": [
+        1928,
+        1928
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NE|wd|Q106887215",
+      "cc": "NE",
+      "key": "wd|Q106887215",
+      "name": "Fati Niger",
+      "mbid": "de692a0e-d9d8-4ebc-a97f-44bc2d14926d",
+      "mbName": "Fati Niger",
+      "mbArea": "Nigeria",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q106887215",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q106887215",
+          "description": "Nigerien singer",
+          "born": "Q1032",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q1032"
+          ],
+          "professions": [
+            "Q33999",
+            "Q177220",
+            "Q3282637"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "GM|dg|4373909",
+      "cc": "GM",
+      "key": "dg|4373909",
+      "name": "U.C.A.S. Band De Sedhiou",
+      "mbid": "9079107b-c58e-4a16-b7a4-28eb6c2e6d7e",
+      "mbName": "U.C.A.S. Band De Sedhiou",
+      "mbArea": "Senegal",
+      "entryYears": [
+        1997,
+        1997
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "GM|dg|2044753",
+      "cc": "GM",
+      "key": "dg|2044753",
+      "name": "The Band Of The Royal Military School Of Music",
+      "mbid": "003d259c-c1bb-482c-826a-6ca0a7568835",
+      "mbName": "The Band of the Royal Military School of Music",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        1966,
+        1966
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "SO|wd|Q47067253",
+      "cc": "SO",
+      "key": "wd|Q47067253",
+      "name": "Chunkz",
+      "mbid": "18fcf83a-65af-4799-9069-ae1a9371aea7",
+      "mbName": "Chunkz",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        2011,
+        2011
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q47067253",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q47067253",
+          "description": "British YouTuber",
+          "born": "Q145",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q145",
+            "Q1045"
+          ],
+          "professions": [
+            "Q33999",
+            "Q639669",
+            "Q937857",
+            "Q2045208",
+            "Q2252262",
+            "Q10800557",
+            "Q13590141",
+            "Q17125263"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United Kingdom",
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BW|dg|7771635",
+      "cc": "BW",
+      "key": "dg|7771635",
+      "name": "EQ",
+      "mbid": "8d4b252c-f07b-402f-8a87-39484a593c17",
+      "mbName": "EQ",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        2019,
+        2019
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "QA|wd|Q115388832",
+      "cc": "QA",
+      "key": "wd|Q115388832",
+      "name": "Aisha",
+      "mbid": "b821736e-3bc7-48d4-aeab-792ba438f0ab",
+      "mbName": "Aisha",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q115388832",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q115388832",
+          "description": "Qatari singer",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q846"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United Kingdom",
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": "1962-10"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "KG|dg|2006192",
+      "cc": "KG",
+      "key": "dg|2006192",
+      "name": "Светлана Назаренко",
+      "mbid": "70bc3a1a-aa07-4214-a857-bb4fdbef49b7",
+      "mbName": "Svetlana Nazarenko",
+      "mbArea": "Russia",
+      "entryYears": [
+        1996,
+        2000
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q4312106",
+          "description": "Kyrgyz singer",
+          "born": "Q813",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q159",
+            "Q813",
+            "Q15180"
+          ],
+          "professions": [
+            "Q36180",
+            "Q49757",
+            "Q177220",
+            "Q822146"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Kyrgyzstan",
+        "life": {
+          "begin": "1970-10-17",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "SL|wd|Q123995507",
+      "cc": "SL",
+      "key": "wd|Q123995507",
+      "name": "Jeneba Kanneh-Mason",
+      "mbid": "7bb682ea-a77c-43b3-b0bc-b225b08d3561",
+      "mbName": "Jeneba Kanneh‐Mason",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q123995507",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q123995507",
+          "description": "British pianist and cellist",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q1044"
+          ],
+          "professions": [
+            "Q486748",
+            "Q639669",
+            "Q13219637"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BF|dg|10609462",
+      "cc": "BF",
+      "key": "dg|10609462",
+      "name": "Kizito",
+      "mbid": "5d6282ff-9d9c-496e-8f08-41729bcffdce",
+      "mbName": "Kizito",
+      "mbArea": "France",
+      "entryYears": [
+        1999,
+        1999
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "mononym",
+      "audited": "override"
+    },
+    {
+      "caseKey": "BF|wd|Q131553302",
+      "cc": "BF",
+      "key": "wd|Q131553302",
+      "name": "Adji",
+      "mbid": "ddaf70dd-91da-4dff-af37-52936d5a231d",
+      "mbName": "Adji",
+      "mbArea": "France",
+      "entryYears": [
+        1995,
+        1995
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q131553302",
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q131553302",
+          "description": "Burkinabe singer",
+          "born": "Q965",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q965"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BF|wd|Q115971168",
+      "cc": "BF",
+      "key": "wd|Q115971168",
+      "name": "Kandy Guira",
+      "mbid": "03e3cc47-213a-436b-83a9-8191d266482d",
+      "mbName": "Kandy Guira",
+      "mbArea": "France",
+      "entryYears": [
+        1999,
+        1999
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q115971168",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q115971168",
+          "description": "Burkinabe singer",
+          "born": "Q1008",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q142",
+            "Q965"
+          ],
+          "professions": [
+            "Q488205",
+            "Q4610556"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Côte d'Ivoire",
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NA|wd|Q61133116",
+      "cc": "NA",
+      "key": "wd|Q61133116",
+      "name": "Ruan Josh",
+      "mbid": "f9f7024a-474b-4968-b034-892d32149d57",
+      "mbName": "Ruan Josh",
+      "mbArea": "South Africa",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q61133116",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q61133116",
+          "description": "Namibian singer",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q258",
+            "Q1030"
+          ],
+          "professions": [
+            "Q177220",
+            "Q639669"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "PG|dg|5934195",
+      "cc": "PG",
+      "key": "dg|5934195",
+      "name": "Good Guys Vibration II",
+      "mbid": "76256d31-1631-4772-8834-f3982a2b76af",
+      "mbName": "Good Guys",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        2008,
+        2008
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "GA|dg|981506",
+      "cc": "GA",
+      "key": "dg|981506",
+      "name": "Gérard La Viny",
+      "mbid": "838ffb39-3b21-41b9-96df-5c4c48823e7a",
+      "mbName": "Gérard La Viny",
+      "mbArea": "France",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q2197899",
+          "description": "French composer and singer (1933–2009)",
+          "born": "Q142",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q142"
+          ],
+          "professions": [
+            "Q488205",
+            "Q639669"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Guadeloupe",
+        "life": {
+          "ended": true,
+          "end": "2009-10-06",
+          "begin": "1933-04-17"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match wd French composer/singer (Gérard La Viny)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "GA|dg|518054",
+      "cc": "GA",
+      "key": "dg|518054",
+      "name": "Daouda",
+      "mbid": "b84e28b6-bf0a-412c-8f93-6393dbd0728d",
+      "mbName": "Daouda",
+      "mbArea": "France",
+      "entryYears": [
+        1978,
+        1978
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "mononym — bare forenames decide nothing",
+      "audited": "override"
+    },
+    {
+      "caseKey": "GA|dg|978851",
+      "cc": "GA",
+      "key": "dg|978851",
+      "name": "Désiré Dondeyne",
+      "mbid": "611de6e4-9002-4fda-8975-32abcdacd8e7",
+      "mbName": "Désiré Dondeyne",
+      "mbArea": "France",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q1270727",
+          "description": "French conductor (1921–2015)",
+          "born": "Q142",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q142"
+          ],
+          "professions": [
+            "Q36834",
+            "Q118865",
+            "Q158852",
+            "Q14915627"
+          ],
+          "musician": true
+        },
+        "beginCountry": "France",
+        "life": {
+          "end": "2015-02-12",
+          "begin": "1921-07-20",
+          "ended": true
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match wd French conductor (Désiré Dondeyne)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "FJ|dg|7975446",
+      "cc": "FJ",
+      "key": "dg|7975446",
+      "name": "Black Rose",
+      "mbid": "d44c72bd-cbf9-4d3e-9db5-bd5d50a7cbee",
+      "mbName": "Black Rose",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        1997,
+        1997
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q4921752",
+          "description": "British heavy metal band",
+          "born": null,
+          "formed": "Q145",
+          "origin": "Q145",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic compound; a known Fijian band shares the name — true collision",
+      "audited": "override"
+    },
+    {
+      "caseKey": "KH|dg|4110153",
+      "cc": "KH",
+      "key": "dg|4110153",
+      "name": "Mahori Ensemble",
+      "mbid": "e62f5e6f-8ec4-4d42-9bb7-44e5415abaf0",
+      "mbName": "Mahori Ensemble",
+      "mbArea": "Thailand",
+      "entryYears": [
+        1956,
+        1956
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "genre descriptor name (Mahori Ensemble)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "BD|dg|6388775",
+      "cc": "BD",
+      "key": "dg|6388775",
+      "name": "H2SO4",
+      "mbid": "ccd57459-2d4c-4acc-8acf-db098d334b58",
+      "mbName": "H2SO4",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        2017,
+        2017
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": "2001",
+          "ended": true,
+          "begin": "1998"
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BD|wd|Q7640402",
+      "cc": "BD",
+      "key": "wd|Q7640402",
+      "name": "Sunjay",
+      "mbid": "e4e53470-e5fd-4cfb-99ac-4f6e40249700",
+      "mbName": "Sunjay",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q7640402",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q7640402",
+          "description": "Bangladeshi singer",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q902"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NP|dg|2588957",
+      "cc": "NP",
+      "key": "dg|2588957",
+      "name": "Tara Devi",
+      "mbid": "533a79d4-8324-40cc-9a85-af7b5818a513",
+      "mbName": "Tara Devi",
+      "mbArea": "India",
+      "entryYears": [
+        1962,
+        1977
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q422799",
+          "description": "Nepalese singer",
+          "born": "Q837",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q668",
+            "Q129286",
+            "Q1775277"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": true,
+          "end": "2006-01-23",
+          "begin": "1945-01-15"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NP|dg|4893434",
+      "cc": "NP",
+      "key": "dg|4893434",
+      "name": "རང་བཙན་གཞོན་ནུ་",
+      "mbid": "65b43689-0616-4f68-a3d7-29a2363929c0",
+      "mbName": "རང་བཙན་གཞོན་ནུ",
+      "mbArea": "India",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": "Tibetan exile community on Nepali pressings",
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q2017811",
+          "description": "Tibetan band",
+          "born": null,
+          "formed": null,
+          "origin": "Q668",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "Tibetan exile community on Nepali pressings",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "MN|dg|805380",
+      "cc": "MN",
+      "key": "dg|805380",
+      "name": "Russian State Symphony Orchestra",
+      "mbid": "6a20afb6-d731-49ca-a63a-111782e41d0c",
+      "mbName": "Russian State Symphony Orchestra",
+      "mbArea": "Russia",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "institutional name states origin (Russian State Symphony Orchestra)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "LK|dg|1223764",
+      "cc": "LK",
+      "key": "dg|1223764",
+      "name": "Forlorn Hope",
+      "mbid": "457b118f-d17c-42ea-9bb0-74c847330e2d",
+      "mbName": "Forlorn Hope",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        2004,
+        2004
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United Kingdom",
+        "life": {
+          "end": null,
+          "begin": "2017-08-01",
+          "ended": false
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "keep-policy-c",
+      "why": "generic idiom compound (Forlorn Hope); era=false",
+      "audited": "override"
+    },
+    {
+      "caseKey": "LK|dg|3750039",
+      "cc": "LK",
+      "key": "dg|3750039",
+      "name": "Aman Anand",
+      "mbid": "6fcd8000-b826-4ff8-94e4-dfb72fd22f44",
+      "mbName": "Aman Anand",
+      "mbArea": "India",
+      "entryYears": [
+        2023,
+        2023
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "KP|dg|5697431",
+      "cc": "KP",
+      "key": "dg|5697431",
+      "name": "김승연",
+      "mbid": "156761ee-02d6-46b8-847f-78514f95cf92",
+      "mbName": "김승연",
+      "mbArea": "South Korea",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": "Korea partition (김승연)",
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "Korea partition (김승연)",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "KP|dg|2573912",
+      "cc": "KP",
+      "key": "dg|2573912",
+      "name": "Александр Кузнецов",
+      "mbid": "2ceac80e-93ca-4573-b59d-54d9007bc5e7",
+      "mbName": "Александр Кузнецов",
+      "mbArea": "Russia",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": "1969",
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "TZ|dg|1964254",
+      "cc": "TZ",
+      "key": "dg|1964254",
+      "name": "Safari Sound Band",
+      "mbid": "2dae4568-0955-4d4b-ba54-16facb46e06f",
+      "mbName": "Safari Sound Band",
+      "mbArea": "Kenya",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q3944761",
+          "description": "Kenyan band",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match wd description \"Kenyan band\" — regional circuit class (Safari Sound Band)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "TZ|dg|11970650",
+      "cc": "TZ",
+      "key": "dg|11970650",
+      "name": "Kilimanjaro",
+      "mbid": "0f05dbe3-3fb4-4e66-8f31-ad8445885cdd",
+      "mbName": "KILIMANJARO",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        2007,
+        2007
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "TZ|dg|472429",
+      "cc": "TZ",
+      "key": "dg|472429",
+      "name": "P-Funk",
+      "mbid": "f93cd873-880a-49f5-99bb-3e5e57b6fb01",
+      "mbName": "P-Funk",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        1996,
+        1996
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "UG|dg|7898954",
+      "cc": "UG",
+      "key": "dg|7898954",
+      "name": "Pö",
+      "mbid": "e7ba0425-b238-475d-9754-838474cc1600",
+      "mbName": "Po!",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        2023,
+        2023
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q16967286",
+          "description": "UK musical group",
+          "born": null,
+          "formed": null,
+          "origin": "Q145",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "United Kingdom",
+        "life": {
+          "end": null,
+          "begin": "1987",
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-policy-c",
+      "why": "generic name (Pö) — owner (c) example class",
+      "audited": "override"
+    },
+    {
+      "caseKey": "UG|dg|323422",
+      "cc": "UG",
+      "key": "dg|323422",
+      "name": "Matata",
+      "mbid": "566ea6da-3a59-4fce-879c-eb97ca8d9d25",
+      "mbName": "Matata",
+      "mbArea": "Kenya",
+      "entryYears": [
+        1974,
+        1974
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": "1963",
+          "ended": true
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "held",
+      "why": "Matata: MB area Kenya + era overlap but name is a common Swahili word — generic/distinctive call is owner territory",
+      "audited": "override"
+    },
+    {
+      "caseKey": "UG|dg|2835864",
+      "cc": "UG",
+      "key": "dg|2835864",
+      "name": "G. Adolph Banyora",
+      "mbid": "3aa84d4f-3054-4d9c-8b8a-2f3dd50003f2",
+      "mbName": "G. Adolph Banyora",
+      "mbArea": "Kenya",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "UG|dg|993804",
+      "cc": "UG",
+      "key": "dg|993804",
+      "name": "Fundi Konde",
+      "mbid": "b4bd872b-d2e1-42ed-a4a8-b46d6bbb269f",
+      "mbName": "Fundi Konde",
+      "mbArea": "Kenya",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q5509012",
+          "description": "Kenyan musician (1924-2000)",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q114"
+          ],
+          "professions": [
+            "Q177220",
+            "Q855091"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": true,
+          "begin": "1924-08-24",
+          "end": "2000-06-29"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match wd citizenship Kenya — circuit class, cited in B2 report (Fundi Konde)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "ML|dg|3944652",
+      "cc": "ML",
+      "key": "dg|3944652",
+      "name": "Clément Janinet",
+      "mbid": "a3386a24-4e1f-4ecd-8daa-0eb32896d9b0",
+      "mbName": "Clément Janinet",
+      "mbArea": "France",
+      "entryYears": [
+        2023,
+        2023
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "ML|wd|Q124081315",
+      "cc": "ML",
+      "key": "wd|Q124081315",
+      "name": "Fresh laDouille",
+      "mbid": "28209158-9ec6-4395-801a-259447857ea8",
+      "mbName": "Fresh LaDouille",
+      "mbArea": "France",
+      "entryYears": [
+        2014,
+        2014
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q124081315",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q124081315",
+          "description": "French rapper",
+          "born": "Q142",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q142",
+            "Q912"
+          ],
+          "professions": [
+            "Q177220",
+            "Q2252262"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "GN|dg|342180",
+      "cc": "GN",
+      "key": "dg|342180",
+      "name": "Djanka Diabate",
+      "mbid": "2c8d80a6-9096-49d4-8c11-ad4547b4ee57",
+      "mbName": "Djanka Diabate",
+      "mbArea": "France",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Guinea",
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "MB begin-area resolves into pool country (area is residence)",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BJ|dg|10964558",
+      "cc": "BJ",
+      "key": "dg|10964558",
+      "name": "Djibs",
+      "mbid": "a9952acc-42ef-4173-8f72-7434712cecb4",
+      "mbName": "Djibs",
+      "mbArea": "France",
+      "entryYears": [
+        1980,
+        1980
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BJ|wd|Q97175681",
+      "cc": "BJ",
+      "key": "wd|Q97175681",
+      "name": "Faty",
+      "mbid": "793725f6-a553-4181-8150-881aaae190ee",
+      "mbName": "Faty",
+      "mbArea": "France",
+      "entryYears": [
+        2002,
+        2002
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q97175681",
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q97175681",
+          "description": "singer",
+          "born": "Q1008",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q962"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "CM|dg|1858007",
+      "cc": "CM",
+      "key": "dg|1858007",
+      "name": "Egide Sadey",
+      "mbid": "4a3be121-51b4-4138-a575-8980e1ae8f0c",
+      "mbName": "Egide Sadey",
+      "mbArea": "France",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "CM|wd|Q61653380",
+      "cc": "CM",
+      "key": "wd|Q61653380",
+      "name": "Ténor",
+      "mbid": "49a03cc9-43f8-40f4-bd9e-d8fabfbc91f3",
+      "mbName": "Tenor",
+      "mbArea": "France",
+      "entryYears": [
+        2013,
+        2013
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q61653380",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q61653380",
+          "description": "Cameroonian singer",
+          "born": "Q1009",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q1009"
+          ],
+          "professions": [
+            "Q177220",
+            "Q639669"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "CM|wd|Q41672675",
+      "cc": "CM",
+      "key": "wd|Q41672675",
+      "name": "David K",
+      "mbid": "51926bb9-4c94-464d-b3dc-bf0db156e03b",
+      "mbName": "David K",
+      "mbArea": "France",
+      "entryYears": [
+        1999,
+        1999
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q41672675",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q41672675",
+          "description": "Cameroonian singer",
+          "born": "Q1009",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q1009"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "CM|wd|Q16653052",
+      "cc": "CM",
+      "key": "wd|Q16653052",
+      "name": "Lady B",
+      "mbid": "4a8bcd05-74a7-44a7-8249-55d8605d00f3",
+      "mbName": "Lady B",
+      "mbArea": "France",
+      "entryYears": [
+        1999,
+        1999
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q16653052",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q16653052",
+          "description": "Cameroonian singer",
+          "born": "Q1009",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q1009"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "SN|dg|13488667",
+      "cc": "SN",
+      "key": "dg|13488667",
+      "name": "Les Ambassadeurs",
+      "mbid": "91ef0552-e5a4-44da-baef-4a2043cad302",
+      "mbName": "Les Ambassadeurs",
+      "mbArea": "France",
+      "entryYears": [
+        2006,
+        2006
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q18414541",
+          "description": "French orchestra",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "SN|dg|10268455",
+      "cc": "SN",
+      "key": "dg|10268455",
+      "name": "Saf",
+      "mbid": "d56050e0-3013-4a1a-bb15-96e34163e51a",
+      "mbName": "SAF",
+      "mbArea": "France",
+      "entryYears": [
+        1991,
+        1992
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "France",
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "SN|wd|Q2878323",
+      "cc": "SN",
+      "key": "wd|Q2878323",
+      "name": "Bachir Touré",
+      "mbid": "c1d01eb6-7bbb-4cba-9a8c-0f0a1bdbe1d9",
+      "mbName": "Bachir Touré",
+      "mbArea": "France",
+      "entryYears": [
+        1944,
+        1944
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q2878323",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q2878323",
+          "description": "Senegalese actor and dub actor (1929-2006)",
+          "born": "Q1041",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q1041"
+          ],
+          "professions": [
+            "Q33999",
+            "Q177220",
+            "Q10800557",
+            "Q11481802"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "ET|dg|6307064",
+      "cc": "ET",
+      "key": "dg|6307064",
+      "name": "Philip Martin",
+      "mbid": "502e06a3-690c-4839-804b-4f8ba1bc090f",
+      "mbName": "Philip Martin",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q3379043",
+          "description": "British television director and screenwriter",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q145"
+          ],
+          "professions": [
+            "Q28389",
+            "Q1053574",
+            "Q2059704",
+            "Q2526255",
+            "Q3455803",
+            "Q114919269"
+          ],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BZ|dg|666405",
+      "cc": "BZ",
+      "key": "dg|666405",
+      "name": "Nadia Cattouse",
+      "mbid": "b5b51e32-dec3-4ddd-9f78-ca09d0987cbc",
+      "mbName": "Nadia Cattouse",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q6957686",
+          "description": "British actress",
+          "born": "Q242",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q145"
+          ],
+          "professions": [
+            "Q33999",
+            "Q36834",
+            "Q37226",
+            "Q177220",
+            "Q7019111",
+            "Q10798782",
+            "Q12165901"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Belize",
+        "life": {
+          "begin": "1924-11-02",
+          "ended": true,
+          "end": "2024-10-29"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BZ|dg|574969",
+      "cc": "BZ",
+      "key": "dg|574969",
+      "name": "Scipio",
+      "mbid": "dafe0328-6d0c-40d3-ada8-a25f10855f43",
+      "mbName": "Scipio",
+      "mbArea": "United States",
+      "entryYears": [
+        2025,
+        2025
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BZ|dg|2008532",
+      "cc": "BZ",
+      "key": "dg|2008532",
+      "name": "Prescott",
+      "mbid": "c758a89f-d67f-444c-9822-3fa656980648",
+      "mbName": "Prescott",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        2025,
+        2025
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": "2001",
+          "end": null
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BZ|dg|6949058",
+      "cc": "BZ",
+      "key": "dg|6949058",
+      "name": "Faucon",
+      "mbid": "5598d246-e3b9-4132-abb3-bc9987ecbb05",
+      "mbName": "Faucon",
+      "mbArea": "United States",
+      "entryYears": [
+        2018,
+        2019
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BZ|dg|2040813",
+      "cc": "BZ",
+      "key": "dg|2040813",
+      "name": "Jonathan David",
+      "mbid": "13353f8a-e81f-44fc-903e-70544ac91365",
+      "mbName": "Jonathan David",
+      "mbArea": "United States",
+      "entryYears": [
+        2016,
+        2016
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United States",
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": "1965"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB begin-area United States ≠ pool; distinctive name + era",
+      "audited": "auto-upheld",
+      "caveat": "common personal name — excluded on begin-area+era per ruling; owner may veto"
+    },
+    {
+      "caseKey": "BZ|dg|17845032",
+      "cc": "BZ",
+      "key": "dg|17845032",
+      "name": "Eon",
+      "mbid": "bfc46b7d-b0de-42e5-aaa0-eb792f034245",
+      "mbName": "Eon",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        2025,
+        2025
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q5381812",
+          "description": "British musician (1954-2009)",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q145"
+          ],
+          "professions": [
+            "Q639669"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "end": "2009-06-17",
+          "ended": true,
+          "begin": "1954-09-22"
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "GY|dg|246028",
+      "cc": "GY",
+      "key": "dg|246028",
+      "name": "Jimmy James",
+      "mbid": "949ce7fe-a935-4ae3-a0e0-02a55aa8e6ac",
+      "mbName": "Jimmy James",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "GY|dg|185741",
+      "cc": "GY",
+      "key": "dg|185741",
+      "name": "Jimmy James & The Vagabonds",
+      "mbid": "b468d1c2-c3c2-4330-8697-170c287af984",
+      "mbName": "Jimmy James & the Vagabonds",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Jamaica",
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": "1964"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "GY|dg|3603206",
+      "cc": "GY",
+      "key": "dg|3603206",
+      "name": "The Rockets",
+      "mbid": "3f1f265f-4533-4141-98ab-58a9ed791a7b",
+      "mbName": "The Rockets",
+      "mbArea": "United States",
+      "entryYears": [
+        1965,
+        1965
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q7761293",
+          "description": "American rock band based in Michigan",
+          "born": null,
+          "formed": null,
+          "origin": "Q30",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "United States",
+        "life": {
+          "end": "1983",
+          "begin": "1972",
+          "ended": true
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "keep-policy-c",
+      "why": "generic \"The X\" name; era=false",
+      "audited": "override"
+    },
+    {
+      "caseKey": "GY|dg|386868",
+      "cc": "GY",
+      "key": "dg|386868",
+      "name": "Carlos Malcolm",
+      "mbid": "21ff5ce9-88ca-46b7-9b64-b87676a58b97",
+      "mbName": "Carlos Malcolm",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q5042316",
+          "description": "Jamaican musician",
+          "born": "Q804",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q766"
+          ],
+          "professions": [
+            "Q483501"
+          ],
+          "musician": false
+        },
+        "beginCountry": "Panama",
+        "life": {
+          "ended": true,
+          "begin": "1935-11-13",
+          "end": "2026-05-06"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match wd citizenship Jamaica + begin-area Panama (Carlos Malcolm)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "GY|dg|3497893",
+      "cc": "GY",
+      "key": "dg|3497893",
+      "name": "Jerry Jackson",
+      "mbid": "a5058be7-ce12-4b96-aa34-bedb4ec4378b",
+      "mbName": "Jerry Jackson",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "GY|dg|3753748",
+      "cc": "GY",
+      "key": "dg|3753748",
+      "name": "Lennox Greaves",
+      "mbid": "a87c7540-b44a-4098-93af-39de40185e84",
+      "mbName": "Lennox Greaves",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HN|dg|1981160",
+      "cc": "HN",
+      "key": "dg|1981160",
+      "name": "Veronica Castro",
+      "mbid": "9a167ba2-325f-4262-90ce-6cf5e9636ba4",
+      "mbName": "Verónica Castro",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1987,
+        1988
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q1256457",
+          "description": "Mexican actress and singer",
+          "born": "Q96",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q96"
+          ],
+          "professions": [
+            "Q33999",
+            "Q177220",
+            "Q578109",
+            "Q13590141",
+            "Q55960555"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Mexico",
+        "life": {
+          "end": null,
+          "begin": "1952-10-19",
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q96 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HN|dg|101088",
+      "cc": "HN",
+      "key": "dg|101088",
+      "name": "Jean Knight",
+      "mbid": "4a8d9623-4d6c-4b7c-8dc5-5d5319ab8a20",
+      "mbName": "Jean Knight",
+      "mbArea": "United States",
+      "entryYears": [
+        1985,
+        1985
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q6170954",
+          "description": "American singer (1943-2023)",
+          "born": "Q30",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "ended": true,
+          "begin": "1943-01-26",
+          "end": "2023-11-22"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HN|dg|4995406",
+      "cc": "HN",
+      "key": "dg|4995406",
+      "name": "Los Costeños",
+      "mbid": "20935412-5c89-4e47-af1a-705111a39e4b",
+      "mbName": "Los Costeños",
+      "mbArea": "Mexico",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HN|dg|3347756",
+      "cc": "HN",
+      "key": "dg|3347756",
+      "name": "Los Yonics",
+      "mbid": "aebe2b4a-c296-4878-9168-8490cef5d906",
+      "mbName": "Los Yonic’s",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1990,
+        1990
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q6683362",
+          "description": "Mexican musical group",
+          "born": null,
+          "formed": "Q96",
+          "origin": "Q96",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "Mexico",
+        "life": {
+          "begin": "1975",
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q96 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HN|dg|8080528",
+      "cc": "HN",
+      "key": "dg|8080528",
+      "name": "Julio Ramírez",
+      "mbid": "9dd60f96-f2a6-4df7-b8de-8776f481a506",
+      "mbName": "Julio Ramírez",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1985,
+        1985
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q69816252",
+          "description": "Mexican guitarist and songwriter",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q96"
+          ],
+          "professions": [
+            "Q753110",
+            "Q855091"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Mexico",
+        "life": {
+          "begin": "1987-12-21",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HN|dg|5714712",
+      "cc": "HN",
+      "key": "dg|5714712",
+      "name": "Volumen",
+      "mbid": "935d656d-6e43-4e70-bfce-2c8c4b3c83af",
+      "mbName": "Volumen",
+      "mbArea": "United States",
+      "entryYears": [
+        2004,
+        2012
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": "1996"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HN|dg|7699253",
+      "cc": "HN",
+      "key": "dg|7699253",
+      "name": "Urania",
+      "mbid": "1da694fc-a40c-414b-8425-188fa03a13fa",
+      "mbName": "Urania",
+      "mbArea": "United States",
+      "entryYears": [
+        2020,
+        2020
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United States",
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HN|dg|3482615",
+      "cc": "HN",
+      "key": "dg|3482615",
+      "name": "Los Caminantes",
+      "mbid": "e3db73f3-ea97-4a4e-a073-8e4262693659",
+      "mbName": "Los Caminantes",
+      "mbArea": "Mexico",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q933490",
+          "description": "Mexican musical group",
+          "born": null,
+          "formed": null,
+          "origin": "Q96",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "Mexico",
+        "life": {
+          "ended": false,
+          "begin": "1976",
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "foreign origin on MB match but identity uncorroborated",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HN|dg|940853",
+      "cc": "HN",
+      "key": "dg|940853",
+      "name": "Estela Nuñez",
+      "mbid": "73ab453d-f9e4-4f29-9d61-a12b19e2b97a",
+      "mbName": "Estela Núñez",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1988,
+        1988
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Mexico",
+        "life": {
+          "begin": "1948-03-29",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB begin-area Mexico ≠ pool; distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HN|dg|14728423",
+      "cc": "HN",
+      "key": "dg|14728423",
+      "name": "Sicarius",
+      "mbid": "4d4da3c1-e77e-43e0-b62b-009be3cafadb",
+      "mbName": "Sicarius",
+      "mbArea": "United States",
+      "entryYears": [
+        2011,
+        2011
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United States",
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": "2014"
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "keep-policy-c",
+      "why": "generic single word (Sicarius); era=false",
+      "audited": "override"
+    },
+    {
+      "caseKey": "HN|dg|253972",
+      "cc": "HN",
+      "key": "dg|253972",
+      "name": "Marilyn Martin",
+      "mbid": "29422aad-e8f2-48e7-b870-8b81331a42cd",
+      "mbName": "Marilyn Martin",
+      "mbArea": "United States",
+      "entryYears": [
+        1985,
+        1985
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q6763580",
+          "description": "American recording artist; singer",
+          "born": "Q30",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q177220",
+            "Q488205"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": "1954-05-04"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BS|dg|2342492",
+      "cc": "BS",
+      "key": "dg|2342492",
+      "name": "Little Sparrow",
+      "mbid": "8c909b07-dc33-4a73-8b2a-e3c0168eaba9",
+      "mbName": "Little Sparrow",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        1960,
+        1988
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic compound (Little Sparrow)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "BS|dg|4854847",
+      "cc": "BS",
+      "key": "dg|4854847",
+      "name": "The Magnificents",
+      "mbid": "92fc7e76-fc2f-46b9-9f96-2f7014a3bddf",
+      "mbName": "The Magnificents",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United States",
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BS|dg|1091839",
+      "cc": "BS",
+      "key": "dg|1091839",
+      "name": "Willpower",
+      "mbid": "9a5abbd8-afa6-4def-9682-0370a3bd21a2",
+      "mbName": "Willpower",
+      "mbArea": "United States",
+      "entryYears": [
+        1978,
+        1978
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BS|dg|1352855",
+      "cc": "BS",
+      "key": "dg|1352855",
+      "name": "Bradley Dean",
+      "mbid": "cfa0cbd0-acbb-4718-8554-b4a04ffff08a",
+      "mbName": "Bradley Dean",
+      "mbArea": "United States",
+      "entryYears": [
+        1982,
+        1982
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United States",
+        "life": {
+          "ended": false,
+          "begin": "1970-06-18",
+          "end": null
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB begin-area United States ≠ pool; distinctive name + era",
+      "audited": "auto-upheld",
+      "caveat": "common personal name — excluded on begin-area+era per ruling; owner may veto"
+    },
+    {
+      "caseKey": "BS|dg|4229056",
+      "cc": "BS",
+      "key": "dg|4229056",
+      "name": "Sweet Exorcist",
+      "mbid": "d86cffc6-f892-455b-9a40-2f11df3d7fd8",
+      "mbName": "Sweet Exorcist",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        1982,
+        1982
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q15808423",
+          "description": "British music duo",
+          "born": null,
+          "formed": null,
+          "origin": "Q145",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "United Kingdom",
+        "life": {
+          "ended": false,
+          "begin": "1989",
+          "end": null
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "held",
+      "why": "foreign origin on MB match but identity uncorroborated",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BS|dg|7741911",
+      "cc": "BS",
+      "key": "dg|7741911",
+      "name": "Willie Love",
+      "mbid": "0f2f2cca-f89f-47cf-a3cd-b7b7e216863c",
+      "mbName": "Willie Love",
+      "mbArea": "United States",
+      "entryYears": [
+        1983,
+        1984
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q1395973",
+          "description": "American Delta blues pianist (1906-1953)",
+          "born": "Q30",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q177220",
+            "Q486748",
+            "Q639669",
+            "Q753110"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "ended": true,
+          "begin": "1906-11-04",
+          "end": "1953-08-19"
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "exclude",
+      "why": "MB match wd \"American Delta blues pianist\"; era=false is posthumous-pressing artifact",
+      "audited": "override"
+    },
+    {
+      "caseKey": "BS|dg|12036844",
+      "cc": "BS",
+      "key": "dg|12036844",
+      "name": "The Sensations",
+      "mbid": "ad39d584-544a-477a-84e6-090df24c1826",
+      "mbName": "The Sensations",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q7763291",
+          "description": "American doo-wop group",
+          "born": null,
+          "formed": null,
+          "origin": "Q30",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": "1954",
+          "end": null,
+          "ended": true
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic \"The X\" name; MB wd does not tie the candidate",
+      "audited": "override"
+    },
+    {
+      "caseKey": "BS|dg|5815564",
+      "cc": "BS",
+      "key": "dg|5815564",
+      "name": "Joe Benjamin",
+      "mbid": "7ec27748-5886-464d-8e65-8f221f658ef3",
+      "mbName": "Joe Benjamin",
+      "mbArea": "United States",
+      "entryYears": [
+        1961,
+        1961
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q39016",
+          "description": "American musician (1919–1974)",
+          "born": "Q30",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q639669",
+            "Q15981151"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "ended": true,
+          "begin": "1919-11-04",
+          "end": "1974-01-26"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BS|dg|1352856",
+      "cc": "BS",
+      "key": "dg|1352856",
+      "name": "The Magnetics",
+      "mbid": "71e13db1-95f0-483a-8b19-6c157bcb4c3d",
+      "mbName": "The Magnetics",
+      "mbArea": "United States",
+      "entryYears": [
+        1979,
+        1984
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United States",
+        "life": {
+          "end": null,
+          "begin": "1967",
+          "ended": true
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BS|dg|16223437",
+      "cc": "BS",
+      "key": "dg|16223437",
+      "name": "Deanna",
+      "mbid": "84ef6a36-f161-48da-b22f-bffc3aad18de",
+      "mbName": "Deanna",
+      "mbArea": "United States",
+      "entryYears": [
+        1986,
+        1986
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "mononym",
+      "audited": "override"
+    },
+    {
+      "caseKey": "BS|dg|3174593",
+      "cc": "BS",
+      "key": "dg|3174593",
+      "name": "The Citations",
+      "mbid": "6899ab8b-e993-4089-9510-57d1a0b2e17b",
+      "mbName": "The Citations",
+      "mbArea": "United States",
+      "entryYears": [
+        1982,
+        1984
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": "2008",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BS|dg|4624885",
+      "cc": "BS",
+      "key": "dg|4624885",
+      "name": "The Starlighters",
+      "mbid": "71f79aa2-10f7-4180-b581-5ad8e741e9d5",
+      "mbName": "The Starlighters",
+      "mbArea": "United States",
+      "entryYears": [
+        1977,
+        1977
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q28408244",
+          "description": "American singing group of the mid 20th century",
+          "born": null,
+          "formed": null,
+          "origin": "Q30",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": true,
+          "begin": "1946"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-policy-c",
+      "why": "generic \"The X\" name; era coincidence is not identity",
+      "audited": "override"
+    },
+    {
+      "caseKey": "BS|dg|16499045",
+      "cc": "BS",
+      "key": "dg|16499045",
+      "name": "The Heralds",
+      "mbid": "2f9389ff-0be9-4b37-8b4b-247155f4af9e",
+      "mbName": "The Heralds",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": true,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BS|dg|2851510",
+      "cc": "BS",
+      "key": "dg|2851510",
+      "name": "Goldenchild",
+      "mbid": "1454e825-81a8-4ecb-ad8b-1f0843059f97",
+      "mbName": "GoldenChild",
+      "mbArea": "United States",
+      "entryYears": [
+        2008,
+        2011
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United States",
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BS|dg|748065",
+      "cc": "BS",
+      "key": "dg|748065",
+      "name": "Lord Burgess",
+      "mbid": "456987c7-2eb1-4bde-8c3f-6bd8e0b2dc27",
+      "mbName": "Lord Burgess",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q1869869",
+          "description": "American musician and songwriter (1924–2019)",
+          "born": "Q30",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q36834",
+            "Q639669",
+            "Q753110",
+            "Q822146",
+            "Q8178443"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "ended": true,
+          "end": "2019-11-29",
+          "begin": "1924-07-28"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match wd \"American musician\" (Lord Burgess/Irving Burgie; Barbadian heritage noted, origin US)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "BS|dg|2537094",
+      "cc": "BS",
+      "key": "dg|2537094",
+      "name": "Sonny Johnson",
+      "mbid": "caa6f37a-76ba-4db1-959c-99758046e9b1",
+      "mbName": "Sonny Johnson",
+      "mbArea": "United States",
+      "entryYears": [
+        1973,
+        1973
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BS|dg|15620388",
+      "cc": "BS",
+      "key": "dg|15620388",
+      "name": "The Vibrations",
+      "mbid": "1735e037-f976-4f65-ac5d-ceb3394ff6d8",
+      "mbName": "The Vibrations",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q7772498",
+          "description": "American soul group",
+          "born": null,
+          "formed": null,
+          "origin": "Q30",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": true,
+          "begin": "1960",
+          "end": "1976"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic \"The X\" name",
+      "audited": "override"
+    },
+    {
+      "caseKey": "BS|dg|1235573",
+      "cc": "BS",
+      "key": "dg|1235573",
+      "name": "Nehemiah Hield",
+      "mbid": "c85cacc8-66fb-4f45-a11b-6b3f46f929f5",
+      "mbName": "Nehemiah Hield",
+      "mbArea": "United States",
+      "entryYears": [
+        2002,
+        2002
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "BS|dg|16365373",
+      "cc": "BS",
+      "key": "dg|16365373",
+      "name": "Dream Quest",
+      "mbid": "9c088b4e-0597-4ed3-8b81-515614434901",
+      "mbName": "Dream Quest",
+      "mbArea": "United States",
+      "entryYears": [
+        1996,
+        1996
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic compound (Dream Quest)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "SR|dg|4329562",
+      "cc": "SR",
+      "key": "dg|4329562",
+      "name": "Rudy Seedorf",
+      "mbid": "da7a3a8b-8587-4c7f-989b-b81ee72248b1",
+      "mbName": "Rudy Seedorf",
+      "mbArea": "Netherlands",
+      "entryYears": [
+        1987,
+        1987
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "SR|dg|432514",
+      "cc": "SR",
+      "key": "dg|432514",
+      "name": "Gerda Havertong",
+      "mbid": "bc9d3ce0-c49a-4ce5-8b38-704a5c518e0f",
+      "mbName": "Gerda Havertong",
+      "mbArea": "Netherlands",
+      "entryYears": [
+        1978,
+        1978
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q2334560",
+          "description": "Surinamese-Dutch actress and singer (born 1946)",
+          "born": "Q730",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q29999"
+          ],
+          "professions": [
+            "Q33999",
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": "1946-10-23",
+          "end": null
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "SR|dg|6636561",
+      "cc": "SR",
+      "key": "dg|6636561",
+      "name": "The Black Magic",
+      "mbid": "4a96ec66-f597-407f-8126-4ad7acfb5705",
+      "mbName": "The Black Magic",
+      "mbArea": "Netherlands",
+      "entryYears": [
+        1980,
+        1980
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "SR|dg|3913633",
+      "cc": "SR",
+      "key": "dg|3913633",
+      "name": "Romeo",
+      "mbid": "7ad970a9-82ce-43e3-a999-b82d414c52de",
+      "mbName": "Roméo",
+      "mbArea": "Netherlands",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "mononym",
+      "audited": "override"
+    },
+    {
+      "caseKey": "SR|wd|Q96240699",
+      "cc": "SR",
+      "key": "wd|Q96240699",
+      "name": "Lex Vervuurt",
+      "mbid": "277ae0fc-711d-415d-a2c5-c5defff3a58c",
+      "mbName": "Lex Vervuurt",
+      "mbArea": "Netherlands",
+      "entryYears": [
+        1925,
+        1925
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q96240699",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q96240699",
+          "description": "Surinamese jazz musician",
+          "born": "Q730",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q730"
+          ],
+          "professions": [
+            "Q486748",
+            "Q639669",
+            "Q806349",
+            "Q855091"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "SR|wd|Q106764281",
+      "cc": "SR",
+      "key": "wd|Q106764281",
+      "name": "Suzie Poeder",
+      "mbid": "0c3a61dc-6fbf-47d9-a53b-8908f9bed099",
+      "mbName": "Suzie Poeder",
+      "mbArea": "Netherlands",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q106764281",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q106764281",
+          "description": "Surinamese pop singer, songwriter and producer",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q730"
+          ],
+          "professions": [
+            "Q177220",
+            "Q183945",
+            "Q753110"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "SR|wd|Q106764401",
+      "cc": "SR",
+      "key": "wd|Q106764401",
+      "name": "Carlo Dundas",
+      "mbid": "7bf14074-ef40-4fcc-ba3a-8899017abfd3",
+      "mbName": "Carlo Dundas",
+      "mbArea": "Netherlands",
+      "entryYears": [
+        1954,
+        1954
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q106764401",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q106764401",
+          "description": "Surinamese guitarist, singer and songwriter",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q730",
+            "Q29999"
+          ],
+          "professions": [
+            "Q177220",
+            "Q753110",
+            "Q855091"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "SR|wd|Q106906868",
+      "cc": "SR",
+      "key": "wd|Q106906868",
+      "name": "A Mili",
+      "mbid": "b4c6bd8e-e48e-4f42-a89a-55cc133f34fc",
+      "mbName": "A Mili",
+      "mbArea": "Netherlands",
+      "entryYears": [
+        2005,
+        2005
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q106906868",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q106906868",
+          "description": "Surinamese singer",
+          "born": "Q730",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q730"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HT|dg|2005085",
+      "cc": "HT",
+      "key": "dg|2005085",
+      "name": "Les Ambassadeurs",
+      "mbid": "91ef0552-e5a4-44da-baef-4a2043cad302",
+      "mbName": "Les Ambassadeurs",
+      "mbArea": "France",
+      "entryYears": [
+        1970,
+        1970
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q18414541",
+          "description": "French orchestra",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HT|dg|1767147",
+      "cc": "HT",
+      "key": "dg|1767147",
+      "name": "Mimi Barthélémy",
+      "mbid": "74a9d658-6528-4f98-94d3-2e53b5ae0b58",
+      "mbName": "Mimi Barthélémy",
+      "mbArea": "France",
+      "entryYears": [
+        1996,
+        1996
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q16266631",
+          "description": "Haitian author",
+          "born": "Q790",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q142",
+            "Q790"
+          ],
+          "professions": [
+            "Q33999",
+            "Q36180",
+            "Q3387717",
+            "Q6625963",
+            "Q12869138"
+          ],
+          "musician": false
+        },
+        "beginCountry": "Haiti",
+        "life": {
+          "ended": true,
+          "end": "2013-04-27",
+          "begin": "1939-05-03"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HT|dg|2136408",
+      "cc": "HT",
+      "key": "dg|2136408",
+      "name": "Show Off",
+      "mbid": "f7dc2171-6acb-41a4-8e54-ca8e33d7a2e5",
+      "mbName": "Show Off",
+      "mbArea": "United States",
+      "entryYears": [
+        2003,
+        2003
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic compound (Show Off)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "HT|wd|Q6259075",
+      "cc": "HT",
+      "key": "wd|Q6259075",
+      "name": "John Steve Brunache",
+      "mbid": "b72b8dca-ebf0-4c7e-978a-7e1209ff2dd9",
+      "mbName": "John Steve Brunache",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q6259075",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q6259075",
+          "description": "Haitian musician",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30",
+            "Q790"
+          ],
+          "professions": [
+            "Q639669"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "HT|wd|Q31721223",
+      "cc": "HT",
+      "key": "wd|Q31721223",
+      "name": "Joe Mosello",
+      "mbid": "bcad26c7-1c57-4df3-841a-ce163560a6b6",
+      "mbName": "Joe Mosello",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q31721223",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q31721223",
+          "description": "Haitian musician",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q790"
+          ],
+          "professions": [
+            "Q639669"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|538639",
+      "cc": "NI",
+      "key": "dg|538639",
+      "name": "The Brass Ring",
+      "mbid": "46c0186f-961e-463b-a36d-c2a0e6f9f84f",
+      "mbName": "The Brass Ring",
+      "mbArea": "United States",
+      "entryYears": [
+        1969,
+        1969
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q7719865",
+          "description": "American popular music group of the 1960s",
+          "born": null,
+          "formed": null,
+          "origin": "Q30",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": true
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match wd \"American popular music group\"; distinctive name",
+      "audited": "override"
+    },
+    {
+      "caseKey": "NI|dg|3513820",
+      "cc": "NI",
+      "key": "dg|3513820",
+      "name": "Los Saylors",
+      "mbid": "0e31993a-f2f5-4862-9050-7a075447057f",
+      "mbName": "Los Saylor’s",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1973,
+        1973
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q5980346",
+          "description": null,
+          "born": null,
+          "formed": null,
+          "origin": "Q96",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": "1970",
+          "end": null
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q96 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|191325",
+      "cc": "NI",
+      "key": "dg|191325",
+      "name": "The Fifth Dimension",
+      "mbid": "43f14898-3db4-4f29-85ae-b11c6b1aa4ae",
+      "mbName": "The Fifth Dimension",
+      "mbArea": "United States",
+      "entryYears": [
+        1970,
+        1971
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "owner-named famous tier (The Fifth Dimension); MB match is the US group",
+      "audited": "override"
+    },
+    {
+      "caseKey": "NI|dg|5439964",
+      "cc": "NI",
+      "key": "dg|5439964",
+      "name": "Los Hellions",
+      "mbid": "96a28167-c017-4d9c-b30b-2ccb9052d427",
+      "mbName": "The Hellions",
+      "mbArea": "United States",
+      "entryYears": [
+        1968,
+        1968
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United States",
+        "life": {
+          "begin": "1999",
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|1775796",
+      "cc": "NI",
+      "key": "dg|1775796",
+      "name": "Los Rockets",
+      "mbid": "ac8f53b8-58b2-4f5e-a741-4131e5cda616",
+      "mbName": "Los Rockets",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1965,
+        1968
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Mexico",
+        "life": {
+          "ended": true,
+          "begin": "1958",
+          "end": "1972"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|942477",
+      "cc": "NI",
+      "key": "dg|942477",
+      "name": "Mario Patrón",
+      "mbid": "2ab29039-f188-407a-b967-690bc880ab86",
+      "mbName": "Mario Patrón",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1966,
+        1966
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Mexico",
+        "life": {
+          "begin": "1935-10-22",
+          "ended": true,
+          "end": "1982-12-21"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB begin-area Mexico ≠ pool; distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|5780448",
+      "cc": "NI",
+      "key": "dg|5780448",
+      "name": "The Bad Boys",
+      "mbid": "d4047a43-c69c-444a-aaae-586430747ea7",
+      "mbName": "The Bad Boys",
+      "mbArea": "United States",
+      "entryYears": [
+        1966,
+        1966
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic compound (The Bad Boys)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "NI|dg|7776971",
+      "cc": "NI",
+      "key": "dg|7776971",
+      "name": "Los Shippy's",
+      "mbid": "b01a1d68-ce2e-4f45-bddd-0dc4da096dc4",
+      "mbName": "Los Shippy's",
+      "mbArea": "Mexico",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Mexico",
+        "life": {
+          "ended": true,
+          "end": "1969-09-01",
+          "begin": "1965"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|2680740",
+      "cc": "NI",
+      "key": "dg|2680740",
+      "name": "Mario Quintero",
+      "mbid": "9e0d3712-04b3-4b37-bbfb-6512a064e6cb",
+      "mbName": "Mario Quintero",
+      "mbArea": "United States",
+      "entryYears": [
+        1976,
+        1976
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|8090092",
+      "cc": "NI",
+      "key": "dg|8090092",
+      "name": "Los Seims",
+      "mbid": "565e90e9-358b-4e31-bb46-ab86bcbc6ab2",
+      "mbName": "Los Seims",
+      "mbArea": "Mexico",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|337048",
+      "cc": "NI",
+      "key": "dg|337048",
+      "name": "Sandler & Young",
+      "mbid": "93256960-1aef-42c5-9c85-6b5a2f58f258",
+      "mbName": "Sandler & Young",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q7416408",
+          "description": "musical artist",
+          "born": null,
+          "formed": null,
+          "origin": "Q30",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": "1965",
+          "end": "1983",
+          "ended": true
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match wd origin US; distinctive duo name (Sandler & Young)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "NI|dg|1490923",
+      "cc": "NI",
+      "key": "dg|1490923",
+      "name": "Beto Orlando",
+      "mbid": "6cbaf0b9-8fbe-484f-90b7-5eb73bbbcf2f",
+      "mbName": "Beto Orlando",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1972,
+        1973
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|353480",
+      "cc": "NI",
+      "key": "dg|353480",
+      "name": "Crazy Elephant",
+      "mbid": "ef2fdc23-2d3e-4b5e-bb12-3020919a05f6",
+      "mbName": "Crazy Elephant",
+      "mbArea": "United States",
+      "entryYears": [
+        1969,
+        1970
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q5183145",
+          "description": "musical artist",
+          "born": null,
+          "formed": null,
+          "origin": "Q30",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match wd origin US (Crazy Elephant, US bubblegum band); distinctive name",
+      "audited": "override"
+    },
+    {
+      "caseKey": "NI|dg|182229",
+      "cc": "NI",
+      "key": "dg|182229",
+      "name": "Cesar Costa",
+      "mbid": "b30e31b2-2603-4729-899d-df4db919b20f",
+      "mbName": "César Costa",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1971,
+        1971
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q5202537",
+          "description": "Mexican Singer and Actor",
+          "born": "Q96",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q96"
+          ],
+          "professions": [
+            "Q33999",
+            "Q36834",
+            "Q40348",
+            "Q177220",
+            "Q183945",
+            "Q10798782",
+            "Q10800557"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Mexico",
+        "life": {
+          "begin": "1941-08-13",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q96 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|312415",
+      "cc": "NI",
+      "key": "dg|312415",
+      "name": "ELF",
+      "mbid": "57e0e9f3-24b5-46a6-be00-be793ca26e21",
+      "mbName": "Elf",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q832250",
+          "description": "American rock band",
+          "born": null,
+          "formed": "Q30",
+          "origin": "Q30",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "United States",
+        "life": {
+          "begin": "1970",
+          "end": "1975-02",
+          "ended": true
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic single-word name (ELF)",
+      "audited": "override"
+    },
+    {
+      "caseKey": "NI|dg|1731561",
+      "cc": "NI",
+      "key": "dg|1731561",
+      "name": "The Pleasure Seekers",
+      "mbid": "995a3322-f9f3-4733-8eb5-73f1c485950c",
+      "mbName": "The Pleasure Seekers",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United States",
+        "life": {
+          "end": "1969",
+          "begin": "1964",
+          "ended": true
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|3023835",
+      "cc": "NI",
+      "key": "dg|3023835",
+      "name": "Guayo González",
+      "mbid": "c44d40ce-7d54-4eaf-8a63-5ca40cff3e5e",
+      "mbName": "Eduardo Gonzalez",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1977,
+        1977
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|1681249",
+      "cc": "NI",
+      "key": "dg|1681249",
+      "name": "Gustavo Pimentel",
+      "mbid": "99097da8-f784-4ed9-9a63-9765f9572bec",
+      "mbName": "Gustavo Pimentel",
+      "mbArea": "Mexico",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Mexico",
+        "life": {
+          "ended": true,
+          "begin": "1930-06-26",
+          "end": "2004-07-09"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|7801071",
+      "cc": "NI",
+      "key": "dg|7801071",
+      "name": "Los Nativos",
+      "mbid": "7cf2125c-04b3-4d78-9161-a77996e30992",
+      "mbName": "Los Nativos",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United States",
+        "life": {
+          "begin": "1996",
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|351719",
+      "cc": "NI",
+      "key": "dg|351719",
+      "name": "Shango",
+      "mbid": "ef40f557-9338-4cd1-a2bd-5994f0563537",
+      "mbName": "Shango",
+      "mbArea": "United States",
+      "entryYears": [
+        1970,
+        1970
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|311166",
+      "cc": "NI",
+      "key": "dg|311166",
+      "name": "David Rose",
+      "mbid": "a429333f-fb1e-4158-95f1-74617c870077",
+      "mbName": "David Rose",
+      "mbArea": "United States",
+      "entryYears": [
+        1968,
+        1968
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q937852",
+          "description": "English-born American conductor and composer (1910–1990)",
+          "born": "Q145",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q33999",
+            "Q36834",
+            "Q158852",
+            "Q486748",
+            "Q639669",
+            "Q753110",
+            "Q806349",
+            "Q1415090"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United Kingdom",
+        "life": {
+          "begin": "1910-06-15",
+          "ended": true,
+          "end": "1990-08-23"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|5673",
+      "cc": "NI",
+      "key": "dg|5673",
+      "name": "Andy Harlow",
+      "mbid": "3da260a8-3ad7-4d3b-a309-4e2b8943872b",
+      "mbName": "Andy Harlow",
+      "mbArea": "United States",
+      "entryYears": [
+        1977,
+        1977
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|3499970",
+      "cc": "NI",
+      "key": "dg|3499970",
+      "name": "Los Randal",
+      "mbid": "f41a828c-33dd-4f54-b2aa-48a16d640a33",
+      "mbName": "Los Randal",
+      "mbArea": "Mexico",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|2410738",
+      "cc": "NI",
+      "key": "dg|2410738",
+      "name": "La Rondalla De Saltillo",
+      "mbid": "ebb8b5fc-ad29-4e95-a2eb-80018fdfc36b",
+      "mbName": "La Rondalla de Saltillo",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1971,
+        1971
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": "1966"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "name states origin (La Rondalla De Saltillo — Saltillo, Mexico) + era overlap",
+      "audited": "override"
+    },
+    {
+      "caseKey": "NI|dg|439554",
+      "cc": "NI",
+      "key": "dg|439554",
+      "name": "Mary Ford",
+      "mbid": "c8e82599-5c11-4a73-ae88-6b4f2cc6e7e8",
+      "mbName": "Mary Ford",
+      "mbArea": "United States",
+      "entryYears": [
+        1966,
+        1966
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q448704",
+          "description": "American musician (1924-1977)",
+          "born": "Q30",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q33999",
+            "Q177220",
+            "Q639669",
+            "Q855091",
+            "Q6168364"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "end": "1977-09-30",
+          "ended": true,
+          "begin": "1924-07-07"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|1324652",
+      "cc": "NI",
+      "key": "dg|1324652",
+      "name": "Amalia Hernandez",
+      "mbid": "b79d297a-6d68-49c9-ace2-a47e4ac304b3",
+      "mbName": "Amalia Hernández",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1970,
+        1970
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q4739400",
+          "description": "Mexican ballet dancer and choreographer (1917-2000)",
+          "born": "Q96",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q96"
+          ],
+          "professions": [
+            "Q37226",
+            "Q805221",
+            "Q2490358",
+            "Q5716684"
+          ],
+          "musician": false
+        },
+        "beginCountry": "Mexico",
+        "life": {
+          "end": "2000-11-05",
+          "ended": true,
+          "begin": "1917-09-01"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q96 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|2176314",
+      "cc": "NI",
+      "key": "dg|2176314",
+      "name": "Chayito Valdez",
+      "mbid": "2e894163-0046-4d45-953a-124da39bc66d",
+      "mbName": "Chayito Valdez",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1974,
+        1974
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q3325435",
+          "description": "Mexican singer and actress (1945–2016)",
+          "born": "Q96",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30",
+            "Q96"
+          ],
+          "professions": [
+            "Q177220",
+            "Q10798782",
+            "Q10800557"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Mexico",
+        "life": {
+          "end": "2016-06-20",
+          "begin": "1945-05-28",
+          "ended": true
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q96 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|1308897",
+      "cc": "NI",
+      "key": "dg|1308897",
+      "name": "Leo Acosta",
+      "mbid": "cd129b67-9177-4d58-be88-4a9ded32e3b1",
+      "mbName": "Leo Acosta",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1969,
+        1969
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Mexico",
+        "life": {
+          "begin": "1925-07-07",
+          "ended": true,
+          "end": "2007-09-02"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB begin-area Mexico ≠ pool; distinctive name + era",
+      "audited": "auto-upheld",
+      "caveat": "common personal name — excluded on begin-area+era per ruling; owner may veto"
+    },
+    {
+      "caseKey": "NI|dg|1197992",
+      "cc": "NI",
+      "key": "dg|1197992",
+      "name": "Paco Michel",
+      "mbid": "51edc7cc-5238-4668-a383-85981b129102",
+      "mbName": "Paco Michel",
+      "mbArea": "Mexico",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Mexico",
+        "life": {
+          "begin": "1930-01-07",
+          "ended": true,
+          "end": "1977-12-25"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|269104",
+      "cc": "NI",
+      "key": "dg|269104",
+      "name": "Box Tops",
+      "mbid": "1c78ab62-db33-4433-8d0b-7c8dcf1849c2",
+      "mbName": "The Box Tops",
+      "mbArea": "United States",
+      "entryYears": [
+        1968,
+        1968
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q72839",
+          "description": "American rock band",
+          "born": null,
+          "formed": "Q30",
+          "origin": "Q30",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "United States",
+        "life": {
+          "ended": true,
+          "begin": "1967",
+          "end": "2010"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    },
+    {
+      "caseKey": "NI|dg|6946722",
+      "cc": "NI",
+      "key": "dg|6946722",
+      "name": "Marilú",
+      "mbid": "12b7429e-70c5-4fa0-ac1f-ece132de0fa6",
+      "mbName": "Marilú",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1967,
+        1967
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q52159906",
+          "description": "Mexican singer and actress",
+          "born": "Q96",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q96"
+          ],
+          "professions": [
+            "Q33999",
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Mexico",
+        "life": {
+          "end": "2023-02-16",
+          "begin": "1927-07-18",
+          "ended": true
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q96 ≠ pool; identity via distinctive name + era",
+      "audited": "auto-upheld"
+    }
+  ]
+}

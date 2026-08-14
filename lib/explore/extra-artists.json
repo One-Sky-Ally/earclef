@@ -19679,7 +19679,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 2875384,
-        "wikidataId": "Q106887215"
+        "wikidataId": "Q106887215",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB de692a0e-d9d8-4ebc-a97f-44bc2d14926d area=Nigeria recorded as residence-not-origin."
       },
       {
         "name": "Fati Ountcheti",
@@ -20598,7 +20599,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 3215808,
-        "wikidataId": "Q47067253"
+        "wikidataId": "Q47067253",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 18fcf83a-65af-4799-9069-ae1a9371aea7 area=United Kingdom recorded as residence-not-origin."
       },
       {
         "name": "Freek",
@@ -23966,7 +23968,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 128119,
-        "wikidataId": "Q115388832"
+        "wikidataId": "Q115388832",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB b821736e-3bc7-48d4-aeab-792ba438f0ab area=United Kingdom recorded as residence-not-origin."
       },
       {
         "name": "Hala Al-Emadi",
@@ -25367,7 +25370,8 @@
         "wikidataId": null,
         "aliases": [
           "Svetlana Nazarenko"
-        ]
+        ],
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 70bc3a1a-aa07-4214-a857-bb4fdbef49b7 area=Russia recorded as residence-not-origin."
       },
       {
         "name": "33 Марта",
@@ -27245,7 +27249,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 8011351,
-        "wikidataId": "Q123995507"
+        "wikidataId": "Q123995507",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 7bb682ea-a77c-43b3-b0bc-b225b08d3561 area=United Kingdom recorded as residence-not-origin."
       },
       {
         "name": "Maud Meyer",
@@ -27670,7 +27675,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 2655690,
-        "wikidataId": "Q131553302"
+        "wikidataId": "Q131553302",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB ddaf70dd-91da-4dff-af37-52936d5a231d area=France recorded as residence-not-origin."
       },
       {
         "name": "Ado Gorgo Léontine",
@@ -27930,7 +27936,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 4521486,
-        "wikidataId": "Q115971168"
+        "wikidataId": "Q115971168",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 03e3cc47-213a-436b-83a9-8191d266482d area=France recorded as residence-not-origin."
       },
       {
         "name": "Kassoum Diarra",
@@ -30158,7 +30165,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 8485077,
-        "wikidataId": "Q61133116"
+        "wikidataId": "Q61133116",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB f9f7024a-474b-4968-b034-892d32149d57 area=South Africa recorded as residence-not-origin."
       },
       {
         "name": "Stella Kavendjii",
@@ -36654,20 +36662,6 @@
         ]
       },
       {
-        "name": "Gérard La Viny",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "African",
-          "Funk / Soul",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 3,
-        "discogsArtistId": 981506,
-        "wikidataId": null
-      },
-      {
         "name": "Mi Kouagna de Mounana",
         "source": "discogs",
         "firstYear": null,
@@ -36894,18 +36888,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 16649648,
-        "wikidataId": null
-      },
-      {
-        "name": "Désiré Dondeyne",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Brass & Military"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 978851,
         "wikidataId": null
       },
       {
@@ -48630,7 +48612,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 4753639,
-        "wikidataId": "Q7640402"
+        "wikidataId": "Q7640402",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB e4e53470-e5fd-4cfb-99ac-4f6e40249700 area=United Kingdom recorded as residence-not-origin."
       },
       {
         "name": "Swarobanjo",
@@ -48856,7 +48839,8 @@
         ],
         "releaseCount": 6,
         "discogsArtistId": 2588957,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 533a79d4-8324-40cc-9a85-af7b5818a513 area=India recorded as residence-not-origin."
       },
       {
         "name": "Namaste Band",
@@ -55781,18 +55765,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 8189746,
-        "wikidataId": null
-      },
-      {
-        "name": "Russian State Symphony Orchestra",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Classical"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 805380,
         "wikidataId": null
       },
       {
@@ -66550,19 +66522,6 @@
         "wikidataId": null
       },
       {
-        "name": "Safari Sound Band",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "African",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 1964254,
-        "wikidataId": null
-      },
-      {
         "name": "Safari Trippers",
         "source": "discogs",
         "firstYear": null,
@@ -70860,19 +70819,6 @@
         "wikidataId": null
       },
       {
-        "name": "Fundi Konde",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "African",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 993804,
-        "wikidataId": null
-      },
-      {
         "name": "G. Adolph Banyora",
         "source": "discogs",
         "firstYear": null,
@@ -73110,7 +73056,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 11188211,
-        "wikidataId": "Q124081315"
+        "wikidataId": "Q124081315",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 28209158-9ec6-4395-801a-259447857ea8 area=France recorded as residence-not-origin."
       },
       {
         "name": "Ganda Fadiga",
@@ -76527,7 +76474,8 @@
         "wikidataId": null,
         "aliases": [
           "Djanka La Divine"
-        ]
+        ],
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — MB begin-area resolves into pool country (area is residence); MB 2c8d80a6-9096-49d4-8c11-ad4547b4ee57 area=France recorded as residence-not-origin."
       },
       {
         "name": "Doff",
@@ -81828,7 +81776,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 1743469,
-        "wikidataId": "Q97175681"
+        "wikidataId": "Q97175681",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 793725f6-a553-4181-8150-881aaae190ee area=France recorded as residence-not-origin."
       },
       {
         "name": "Giorgio Gbindoun",
@@ -88034,7 +87983,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 86343,
-        "wikidataId": "Q41672675"
+        "wikidataId": "Q41672675",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 51926bb9-4c94-464d-b3dc-bf0db156e03b area=France recorded as residence-not-origin."
       },
       {
         "name": "Dencia",
@@ -88384,7 +88334,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 67680,
-        "wikidataId": "Q16653052"
+        "wikidataId": "Q16653052",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 4a8bcd05-74a7-44a7-8249-55d8605d00f3 area=France recorded as residence-not-origin."
       },
       {
         "name": "LMN Z7",
@@ -88794,7 +88745,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 3004089,
-        "wikidataId": "Q61653380"
+        "wikidataId": "Q61653380",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 49a03cc9-43f8-40f4-bd9e-d8fabfbc91f3 area=France recorded as residence-not-origin."
       },
       {
         "name": "Tilla Tafari",
@@ -96357,7 +96309,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 2369215,
-        "wikidataId": "Q2878323"
+        "wikidataId": "Q2878323",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB c1d01eb6-7bbb-4cba-9a8c-0f0a1bdbe1d9 area=France recorded as residence-not-origin."
       },
       {
         "name": "Basse Abdou",
@@ -105745,20 +105698,6 @@
         "wikidataId": null
       },
       {
-        "name": "Jonathan David",
-        "source": "discogs",
-        "firstYear": 2016,
-        "lastYear": 2016,
-        "styles": [
-          "Techno",
-          "Tech House",
-          "Deep House"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 2040813,
-        "wikidataId": null
-      },
-      {
         "name": "Kairo Egypt",
         "source": "discogs",
         "firstYear": 2025,
@@ -106514,7 +106453,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 666405,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB b5b51e32-dec3-4ddd-9f78-ca09d0987cbc area=United Kingdom recorded as residence-not-origin."
       },
       {
         "name": "Punta Rebels",
@@ -108195,20 +108135,6 @@
         "wikidataId": null
       },
       {
-        "name": "Carlos Malcolm",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Roots Reggae",
-          "Holiday",
-          "Reggae"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 386868,
-        "wikidataId": null
-      },
-      {
         "name": "Chander Bali",
         "source": "discogs",
         "firstYear": null,
@@ -109722,20 +109648,6 @@
         "wikidataId": null
       },
       {
-        "name": "Veronica Castro",
-        "source": "discogs",
-        "firstYear": 1987,
-        "lastYear": 1988,
-        "styles": [
-          "Ballad",
-          "Dance-pop",
-          "Latin"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 1981160,
-        "wikidataId": null
-      },
-      {
         "name": "Willy Bran",
         "source": "discogs",
         "firstYear": 1971,
@@ -110317,18 +110229,6 @@
         "wikidataId": null
       },
       {
-        "name": "Estela Nuñez",
-        "source": "discogs",
-        "firstYear": 1988,
-        "lastYear": 1988,
-        "styles": [
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 940853,
-        "wikidataId": null
-      },
-      {
         "name": "Federico Ramírez",
         "source": "discogs",
         "firstYear": 1957,
@@ -110557,20 +110457,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 2398705,
-        "wikidataId": null
-      },
-      {
-        "name": "Jean Knight",
-        "source": "discogs",
-        "firstYear": 1985,
-        "lastYear": 1985,
-        "styles": [
-          "Disco",
-          "Electronic",
-          "Funk / Soul"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 101088,
         "wikidataId": null
       },
       {
@@ -110890,21 +110776,6 @@
         "wikidataId": null
       },
       {
-        "name": "Los Yonics",
-        "source": "discogs",
-        "firstYear": 1990,
-        "lastYear": 1990,
-        "styles": [
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 3347756,
-        "wikidataId": null,
-        "aliases": [
-          "Los Yonic's"
-        ]
-      },
-      {
         "name": "Los Zombies",
         "source": "discogs",
         "firstYear": 1972,
@@ -111037,20 +110908,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 1651922,
-        "wikidataId": null
-      },
-      {
-        "name": "Marilyn Martin",
-        "source": "discogs",
-        "firstYear": 1985,
-        "lastYear": 1985,
-        "styles": [
-          "Soft Rock",
-          "Ballad",
-          "Rock"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 253972,
         "wikidataId": null
       },
       {
@@ -113521,20 +113378,6 @@
         "wikidataId": null
       },
       {
-        "name": "Willie Love",
-        "source": "discogs",
-        "firstYear": 1983,
-        "lastYear": 1984,
-        "styles": [
-          "Funk / Soul",
-          "Reggae",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 3,
-        "discogsArtistId": 7741911,
-        "wikidataId": null
-      },
-      {
         "name": "Albert Ribeiro",
         "source": "discogs",
         "firstYear": 1973,
@@ -113788,20 +113631,6 @@
         "aliases": [
           "Jimmy Thurston And His Orchestra"
         ]
-      },
-      {
-        "name": "Joe Benjamin",
-        "source": "discogs",
-        "firstYear": 1961,
-        "lastYear": 1961,
-        "styles": [
-          "Reggae",
-          "Folk, World, & Country",
-          "Steel Band"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 5815564,
-        "wikidataId": null
       },
       {
         "name": "K.B.",
@@ -114145,20 +113974,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 3123994,
-        "wikidataId": null
-      },
-      {
-        "name": "Bradley Dean",
-        "source": "discogs",
-        "firstYear": 1982,
-        "lastYear": 1982,
-        "styles": [
-          "Disco",
-          "Funk",
-          "Funk / Soul"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 1352855,
         "wikidataId": null
       },
       {
@@ -116511,20 +116326,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 4751427,
-        "wikidataId": null
-      },
-      {
-        "name": "Lord Burgess",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Calypso",
-          "Junkanoo",
-          "Reggae"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 748065,
         "wikidataId": null
       },
       {
@@ -119364,7 +119165,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 432514,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB bc9d3ce0-c49a-4ce5-8b38-704a5c518e0f area=Netherlands recorded as residence-not-origin."
       },
       {
         "name": "Gerrit Barron",
@@ -120980,7 +120782,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": null,
-        "wikidataId": "Q106906868"
+        "wikidataId": "Q106906868",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB b4c6bd8e-e48e-4f42-a89a-55cc133f34fc area=Netherlands recorded as residence-not-origin."
       },
       {
         "name": "Âdïka",
@@ -121120,7 +120923,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 2067912,
-        "wikidataId": "Q106764401"
+        "wikidataId": "Q106764401",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 7bf14074-ef40-4fcc-ba3a-8899017abfd3 area=Netherlands recorded as residence-not-origin."
       },
       {
         "name": "Charles Pahlad",
@@ -121530,7 +121334,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 1209609,
-        "wikidataId": "Q96240699"
+        "wikidataId": "Q96240699",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 277ae0fc-711d-415d-a2c5-c5defff3a58c area=Netherlands recorded as residence-not-origin."
       },
       {
         "name": "Liesbeth Peroti",
@@ -123684,7 +123489,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": "2067913",
-        "wikidataId": "Q106764281"
+        "wikidataId": "Q106764281",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 0c3a61dc-6fbf-47d9-a53b-8908f9bed099 area=Netherlands recorded as residence-not-origin."
       },
       {
         "name": "Tarnaz Amarello",
@@ -126374,7 +126180,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 1767147,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 74a9d658-6528-4f98-94d3-2e53b5ae0b58 area=France recorded as residence-not-origin."
       },
       {
         "name": "Missile 727",
@@ -129098,7 +128905,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 584450,
-        "wikidataId": "Q31721223"
+        "wikidataId": "Q31721223",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB bcad26c7-1c57-4df3-841a-ce163560a6b6 area=United States recorded as residence-not-origin."
       },
       {
         "name": "John Steve Brunache",
@@ -129108,7 +128916,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 5522339,
-        "wikidataId": "Q6259075"
+        "wikidataId": "Q6259075",
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB b72b8dca-ebf0-4c7e-978a-7e1209ff2dd9 area=United States recorded as residence-not-origin."
       },
       {
         "name": "Junior Bonheur",
@@ -129796,23 +129605,6 @@
         "wikidataId": null
       },
       {
-        "name": "The Fifth Dimension",
-        "source": "discogs",
-        "firstYear": 1970,
-        "lastYear": 1971,
-        "styles": [
-          "Pop",
-          "Soul",
-          "Soul-Jazz"
-        ],
-        "releaseCount": 4,
-        "discogsArtistId": 191325,
-        "wikidataId": null,
-        "aliases": [
-          "The 5th Dimension"
-        ]
-      },
-      {
         "name": "Escuela De Marimba Flavio Galo",
         "source": "discogs",
         "firstYear": 2008,
@@ -130116,20 +129908,6 @@
         ],
         "releaseCount": 2,
         "discogsArtistId": 5072410,
-        "wikidataId": null
-      },
-      {
-        "name": "Crazy Elephant",
-        "source": "discogs",
-        "firstYear": 1969,
-        "lastYear": 1970,
-        "styles": [
-          "Acid Rock",
-          "Psychedelic Rock",
-          "Rock"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 353480,
         "wikidataId": null
       },
       {
@@ -130525,19 +130303,6 @@
         "wikidataId": null
       },
       {
-        "name": "Amalia Hernandez",
-        "source": "discogs",
-        "firstYear": 1970,
-        "lastYear": 1970,
-        "styles": [
-          "Latin",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 1324652,
-        "wikidataId": null
-      },
-      {
         "name": "Amon",
         "source": "discogs",
         "firstYear": 2024,
@@ -130697,22 +130462,6 @@
         "wikidataId": null
       },
       {
-        "name": "Box Tops",
-        "source": "discogs",
-        "firstYear": 1968,
-        "lastYear": 1968,
-        "styles": [
-          "Pop Rock",
-          "Rock"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 269104,
-        "wikidataId": null,
-        "aliases": [
-          "The Box Tops"
-        ]
-      },
-      {
         "name": "Carlos Argentino",
         "source": "discogs",
         "firstYear": 1977,
@@ -130751,19 +130500,6 @@
         "wikidataId": null
       },
       {
-        "name": "Cesar Costa",
-        "source": "discogs",
-        "firstYear": 1971,
-        "lastYear": 1971,
-        "styles": [
-          "Rock",
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 182229,
-        "wikidataId": null
-      },
-      {
         "name": "Champu Musical",
         "source": "discogs",
         "firstYear": 1961,
@@ -130789,20 +130525,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 6096420,
-        "wikidataId": null
-      },
-      {
-        "name": "Chayito Valdez",
-        "source": "discogs",
-        "firstYear": 1974,
-        "lastYear": 1974,
-        "styles": [
-          "Ranchera",
-          "Bolero",
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 2176314,
         "wikidataId": null
       },
       {
@@ -130983,20 +130705,6 @@
         "aliases": [
           "David Oistrakh"
         ]
-      },
-      {
-        "name": "David Rose",
-        "source": "discogs",
-        "firstYear": 1968,
-        "lastYear": 1968,
-        "styles": [
-          "Theme",
-          "Easy Listening",
-          "Jazz"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 311166,
-        "wikidataId": null
       },
       {
         "name": "Edison Lighthouse",
@@ -131484,35 +131192,6 @@
         "wikidataId": null
       },
       {
-        "name": "La Rondalla De Saltillo",
-        "source": "discogs",
-        "firstYear": 1971,
-        "lastYear": 1971,
-        "styles": [
-          "Bolero",
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 2410738,
-        "wikidataId": null,
-        "aliases": [
-          "Rondalla De La Escuela Superior De Agricultura De Saltillo A. Narro"
-        ]
-      },
-      {
-        "name": "Leo Acosta",
-        "source": "discogs",
-        "firstYear": 1969,
-        "lastYear": 1969,
-        "styles": [
-          "Boogaloo",
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 1308897,
-        "wikidataId": null
-      },
-      {
         "name": "Leonel Rugama",
         "source": "discogs",
         "firstYear": 1982,
@@ -131896,22 +131575,6 @@
         "wikidataId": null
       },
       {
-        "name": "Los Saylors",
-        "source": "discogs",
-        "firstYear": 1973,
-        "lastYear": 1973,
-        "styles": [
-          "Norteño",
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 3513820,
-        "wikidataId": null,
-        "aliases": [
-          "Los Saylor's"
-        ]
-      },
-      {
         "name": "Los Soñadores",
         "source": "discogs",
         "firstYear": 1978,
@@ -132044,20 +131707,6 @@
         "wikidataId": null
       },
       {
-        "name": "Marilú",
-        "source": "discogs",
-        "firstYear": 1967,
-        "lastYear": 1967,
-        "styles": [
-          "Ethno-pop",
-          "Ballad",
-          "Bolero"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 6946722,
-        "wikidataId": null
-      },
-      {
         "name": "Mario Montenegro",
         "source": "discogs",
         "firstYear": 1984,
@@ -132072,23 +131721,6 @@
         "wikidataId": null
       },
       {
-        "name": "Mario Patrón",
-        "source": "discogs",
-        "firstYear": 1966,
-        "lastYear": 1966,
-        "styles": [
-          "Bossa Nova",
-          "Latin Jazz",
-          "Bolero"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 942477,
-        "wikidataId": null,
-        "aliases": [
-          "Mario Patrón Y Su Organo '66"
-        ]
-      },
-      {
         "name": "Marvin Paguagua",
         "source": "discogs",
         "firstYear": 1999,
@@ -132100,19 +131732,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 6642785,
-        "wikidataId": null
-      },
-      {
-        "name": "Mary Ford",
-        "source": "discogs",
-        "firstYear": 1966,
-        "lastYear": 1966,
-        "styles": [
-          "Soul",
-          "Funk / Soul"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 439554,
         "wikidataId": null
       },
       {
@@ -132643,18 +132262,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 4747664,
-        "wikidataId": null
-      },
-      {
-        "name": "The Brass Ring",
-        "source": "discogs",
-        "firstYear": 1969,
-        "lastYear": 1969,
-        "styles": [
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 538639,
         "wikidataId": null
       },
       {
@@ -134954,18 +134561,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 1664270,
-        "wikidataId": null
-      },
-      {
-        "name": "Sandler & Young",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 337048,
         "wikidataId": null
       },
       {
