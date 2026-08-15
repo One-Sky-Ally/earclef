@@ -1970,6 +1970,49 @@
       "at": "2026-07-18T17:08:56.294Z"
     },
     {
+      "id": "cake-bada72d8",
+      "slug": "cake",
+      "artistName": "CAKE",
+      "type": "context",
+      "hook": "Their 2011 album debuted at number one on the Billboard 200 without a major label push.",
+      "story": "Showroom of Compassion (2011) was CAKE's first album released independently, without a major label, and it still debuted at number one on the Billboard 200 — a rare feat for a self-released record.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Showroom of Compassion",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Showroom_of_Compassion"
+        },
+        {
+          "title": "Billboard 200 Chart",
+          "outlet": "Billboard",
+          "url": "https://www.billboard.com/charts/billboard-200/2011-01-29/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:30:00Z"
+    },
+    {
+      "id": "cake-613fcf37",
+      "slug": "cake",
+      "artistName": "CAKE",
+      "type": "context",
+      "hook": "They released a handmade artist's book instead of a normal deluxe edition.",
+      "story": "In 2016, CAKE released Bound Away, a limited handmade artist's book combining vocalist John McCrea's lyrics with hand-carved linoleum illustrations by R. Stuhmiller and a CD, built from eco-conscious materials including recycled band clothing and coffee-sack endsheets. Copies were donated to special collections including the Rock & Roll Hall of Fame library.",
+      "media": null,
+      "sources": [
+        {
+          "title": "CAKE, BANDmade, and Bound Away",
+          "outlet": "PRINT Magazine",
+          "url": "https://www.printmag.com/design-books/cake-bandmade-and-bound-away/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:30:00Z"
+    },
+    {
       "id": "can-8ccba87f",
       "slug": "can",
       "artistName": "CAN",
@@ -3860,6 +3903,49 @@
       "at": "2026-07-26T07:13:25.000Z"
     },
     {
+      "id": "gogol-bordello-f50d75ca",
+      "slug": "gogol-bordello",
+      "artistName": "Gogol Bordello",
+      "type": "context",
+      "hook": "Frontman Eugene Hütz played the lead role in a Hollywood film.",
+      "story": "Eugene Hütz starred as Alex, the lead role, in Liev Schreiber's 2005 film Everything Is Illuminated, alongside Elijah Wood — one of several acting credits for the frontman, who also appeared in Wristcutters: A Love Story (2006) and Filth and Wisdom (2008).",
+      "media": null,
+      "sources": [
+        {
+          "title": "Eugene Hutz",
+          "outlet": "IMDb",
+          "url": "https://www.imdb.com/name/nm1778479/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:25:00Z"
+    },
+    {
+      "id": "gogol-bordello-88d37ae4",
+      "slug": "gogol-bordello",
+      "artistName": "Gogol Bordello",
+      "type": "context",
+      "hook": "Rick Rubin produced their major-label debut after a Rage Against the Machine tip-off.",
+      "story": "Rage Against the Machine guitarist Tom Morello saw Gogol Bordello perform in Los Angeles and recommended Rick Rubin check them out. Rubin went on to produce Trans-Continental Hustle (2010), the band's major-label debut, drawing on frontman Eugene Hütz's life in Brazil at the time.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Trans-Continental Hustle",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Trans-Continental_Hustle"
+        },
+        {
+          "title": "Gogol Bordello Graduate From School Of Rick Rubin For Next Album",
+          "outlet": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-news/gogol-bordello-graduate-from-school-of-rick-rubin-for-next-album-188711/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:25:00Z"
+    },
+    {
       "id": "gorillaz-3af463f",
       "slug": "gorillaz",
       "artistName": "Gorillaz",
@@ -5643,6 +5729,49 @@
       "at": "2026-07-23T23:39:10.000Z"
     },
     {
+      "id": "king-gizzard-and-the-lizard-wizard-850e61c",
+      "slug": "king-gizzard-and-the-lizard-wizard",
+      "artistName": "King Gizzard & the Lizard Wizard",
+      "type": "context",
+      "hook": "They released five full studio albums in a single calendar year.",
+      "story": "In 2017, King Gizzard & the Lizard Wizard fulfilled a promise to their fans by releasing five studio albums within the calendar year, including Flying Microtonal Banana, the first in a trilogy of microtonal-tuned records — an extraordinary pace even by their own prolific standards.",
+      "media": null,
+      "sources": [
+        {
+          "title": "King Gizzard & the Lizard Wizard",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/King_Gizzard_%26_the_Lizard_Wizard"
+        },
+        {
+          "title": "King Gizzard and the Lizard Wizard feature",
+          "outlet": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-features/king-gizzard-lizard-wizard-tour-album-jam-band-1235098990/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:15:00Z"
+    },
+    {
+      "id": "king-gizzard-and-the-lizard-wizard-f793409",
+      "slug": "king-gizzard-and-the-lizard-wizard",
+      "artistName": "King Gizzard & the Lizard Wizard",
+      "type": "context",
+      "hook": "They built a free video game just to promote one album.",
+      "story": "To promote 2019's Infest the Rats' Nest, the band released Mars for the Rich, a free, browser-playable first-person shooter game set on a dystopian Martian colony for the ultra-wealthy.",
+      "media": null,
+      "sources": [
+        {
+          "title": "King Gizzard & The Lizard Wizard release video game",
+          "outlet": "Far Out Magazine",
+          "url": "https://faroutmagazine.co.uk/king-gizzard-the-lizard-wizard-video-game/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:15:00Z"
+    },
+    {
       "id": "led-zeppelin-30686339",
       "slug": "led-zeppelin",
       "artistName": "Led Zeppelin",
@@ -6010,6 +6139,49 @@
       "status": "published",
       "model": "claude-sonnet-5",
       "at": "2026-07-26T08:50:00Z"
+    },
+    {
+      "id": "melody-gardot-c650668a",
+      "slug": "melody-gardot",
+      "artistName": "Melody Gardot",
+      "type": "origin",
+      "hook": "\"I was singing and writing songs before I remembered how to speak.\"",
+      "story": "Melody Gardot's music career began during recovery from a debilitating accident at 19, which left her overly sensitive to light and sound and forced her to relearn motor and communication skills. Music therapy became her most effective recovery tool. \"I was singing and writing songs before I remembered how to speak,\" she has said. \"The message is music is all-powerful force.\"",
+      "media": null,
+      "sources": [
+        {
+          "title": "The Essential Melody Gardot",
+          "outlet": "melodygardot.com",
+          "url": "https://melodygardot.com/about"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:10:00Z"
+    },
+    {
+      "id": "melody-gardot-328677c8",
+      "slug": "melody-gardot",
+      "artistName": "Melody Gardot",
+      "type": "context",
+      "hook": "She sings fluently in both English and French across her catalog.",
+      "story": "Gardot's catalog moves between languages, including her 2022 collaboration with Brazilian pianist Philippe Powell, Entre eux deux, sung largely in French.",
+      "media": null,
+      "sources": [
+        {
+          "title": "The Essential Melody Gardot",
+          "outlet": "melodygardot.com",
+          "url": "https://melodygardot.com/about"
+        },
+        {
+          "title": "Melody Gardot",
+          "outlet": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/c47267ed-7482-40bb-a4ea-e1399cc8ce04"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:10:00Z"
     },
     {
       "id": "mf-doom-dde2f713",
@@ -6757,6 +6929,49 @@
       "status": "published",
       "model": "claude-sonnet-5",
       "at": "2026-08-15T00:45:00Z"
+    },
+    {
+      "id": "mum-a2d578a",
+      "slug": "mum",
+      "artistName": "múm",
+      "type": "origin",
+      "hook": "Twin sisters anchored the band's early, hushed harmonies.",
+      "story": "múm's early lineup included twin sisters Gyða and Kristín Anna Valtýsdóttir, whose paired vocals became a defining feature of the band's sound on Yesterday Was Dramatic – Today Is OK and Finally We Are No One.",
+      "media": null,
+      "sources": [
+        {
+          "title": "múm",
+          "outlet": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/2b64e811-cbcd-45f7-b29d-296444cad4f1"
+        },
+        {
+          "title": "Múm",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/M%C3%BAm"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:00:00Z"
+    },
+    {
+      "id": "mum-77a846c",
+      "slug": "mum",
+      "artistName": "múm",
+      "type": "context",
+      "hook": "History of Silence (2025) broke a twelve-year gap between albums.",
+      "story": "múm's previous studio album, Smilewound, came out in 2013. History of Silence, released in September 2025, marked the band's first new album in over a decade.",
+      "media": null,
+      "sources": [
+        {
+          "title": "múm discography",
+          "outlet": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/2b64e811-cbcd-45f7-b29d-296444cad4f1"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:00:00Z"
     },
     {
       "id": "neutral-milk-hotel-38d3ee38",
@@ -8907,6 +9122,54 @@
       "at": "2026-07-20T07:14:38.000Z"
     },
     {
+      "id": "sylvan-esso-571c5d73",
+      "slug": "sylvan-esso",
+      "artistName": "Sylvan Esso",
+      "type": "origin",
+      "hook": "Amelia Meath sang folk harmonies in Mountain Man before going electronic.",
+      "story": "Before forming Sylvan Esso with producer Nick Sanborn in 2012, Amelia Meath was a member of Mountain Man, an a cappella folk trio — a background that shaped the vocal-forward approach she brought to the duo's electronic production.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Amelia Meath",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Amelia_Meath"
+        },
+        {
+          "title": "Sylvan Esso: Finding Humanity Between The Synths",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/2014/05/14/312493096/sylvan-esso-finding-humanity-between-the-synths"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:05:00Z"
+    },
+    {
+      "id": "sylvan-esso-7c2695bf",
+      "slug": "sylvan-esso",
+      "artistName": "Sylvan Esso",
+      "type": "context",
+      "hook": "The duo built their own label and studio rather than staying independent artists only.",
+      "story": "In 2021, Sylvan Esso founded their own record label, Psychic Hotline, and operate a recording studio, Betty's, in North Carolina — extending their operation beyond just making their own records.",
+      "media": null,
+      "sources": [
+        {
+          "title": "On No Rules Sandy, Sylvan Esso Finds Freedom Outside The Formula",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/2022/08/11/1116749133/on-no-rules-sandy-sylvan-esso-finds-freedom-outside-the-formula"
+        },
+        {
+          "title": "Sylvan Esso",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sylvan_Esso"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:05:00Z"
+    },
+    {
       "id": "tame-impala-52467987",
       "slug": "tame-impala",
       "artistName": "Tame Impala",
@@ -9478,6 +9741,49 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:47:31.674Z"
+    },
+    {
+      "id": "the-budos-band-a98753b7",
+      "slug": "the-budos-band",
+      "artistName": "The Budos Band",
+      "type": "context",
+      "hook": "The band signed to Daptone Records, home to Sharon Jones and the Dap-Kings.",
+      "story": "The Budos Band records for Daptone, the Brooklyn label built around Sharon Jones and the Dap-Kings' vintage soul revival — making the entirely instrumental Afrobeat and funk band a distinctive outlier on a roster otherwise built around singers.",
+      "media": null,
+      "sources": [
+        {
+          "title": "The Budos Band: High-Octane Vintage Soul",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/2010/10/08/130425043/the-budos-band-high-octane-vintage-soul"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:20:00Z"
+    },
+    {
+      "id": "the-budos-band-679e786e",
+      "slug": "the-budos-band",
+      "artistName": "The Budos Band",
+      "type": "origin",
+      "hook": "They formed at a jam session hosted by Brooklyn Afrobeat legends Antibalas.",
+      "story": "The Budos Band came together at a jam session at Fort Greene's Five Spot, hosted by Martín Perna of the Brooklyn Afrobeat band Antibalas. Several participants split off to form the new group, releasing their self-titled debut in 2005.",
+      "media": null,
+      "sources": [
+        {
+          "title": "The Budos Band",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Budos_Band"
+        },
+        {
+          "title": "The Budos Band Biography",
+          "outlet": "AllMusic",
+          "url": "https://www.allmusic.com/artist/mn0000843259"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T16:20:00Z"
     },
     {
       "id": "the-decemberists-4756d69b",

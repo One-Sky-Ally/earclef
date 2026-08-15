@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-budos-band",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "The Budos Band — Ear Clef",
+    "description": "Staten Island's instrumental Afrobeat and funk collective, built on Daptone Records' vintage soul foundations.",
+    "ogImage": "/images/og-the-budos-band.jpg",
+    "canonicalUrl": "https://earclef.com/the-budos-band"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "5q4eLKmqFVP0xII8087PHz"
+    },
+    "youtube": {
+      "channelId": "UCk-mGwj4feV8QftdUD31FDw"
+    },
+    "setlistfm": {
+      "mbid": "b6fa9b9b-41cf-45a6-adc0-0a4c9a8c0d3c"
+    },
+    "itunes": {
+      "artistId": "107334056"
+    }
+  },
+  "hero": {
+    "name": "The Budos Band",
+    "identity": "Staten Island's instrumental Afrobeat and funk collective, built on Daptone Records' vintage soul foundations.",
+    "tagline": "Hear here!",
+    "location": "Staten Island, NY, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.thebudos.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/budosband"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/TheBudosBand"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/the-budos-band/107334056"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://thebudosband.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "The Budos Band",
+        "year": "2005",
+        "mbReleaseGroupId": "012853cb-ce1d-3124-9cc9-1d925a19a408"
+      },
+      {
+        "title": "The Budos Band III",
+        "year": "2010",
+        "mbReleaseGroupId": "795dccd7-fe13-4a5f-ad45-2810b9b14943"
+      },
+      {
+        "title": "Burnt Offering",
+        "year": "2014",
+        "mbReleaseGroupId": "6991d1c1-e79e-4aef-9904-1d9404944b97"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "-gOK9LjTtl8",
+        "title": "Burnt Offering (Official Music Video)"
+      },
+      {
+        "youtubeId": "gQJ2clHmdiM",
+        "title": "The Enchanter (Official Audio)"
+      },
+      {
+        "youtubeId": "oHkRqEjMrcI",
+        "title": "Up From The South"
+      },
+      {
+        "youtubeId": "yv3QYWFYc18",
+        "title": "Valley of the Damned (Official Audio)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "The Budos Band formed on Staten Island, New York in 2005, building an entirely instrumental sound out of Afrobeat, funk and Ethio-jazz influences, released through Daptone Records — the same Brooklyn label behind Sharon Jones and the Dap-Kings.",
+      "Their self-titled debut (2005), The Budos Band III (2010) and Burnt Offering (2014) built the band's catalog, with the group continuing to record and tour, releasing VII in 2025.",
+      "The Budos Band has no dedicated video channel of their own; the videos here are hosted by their label, Daptone Records."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at thebudos.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2022-08-03",
+        "venue": "9:30 Club",
+        "city": "Washington, DC, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-budos-band/2022/930-club-washington-dc-3bb26414.html",
+        "note": "Too High to Fly Tour '22"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "The Budos Band: High-Octane Vintage Soul",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2010/10/08/130425043/the-budos-band-high-octane-vintage-soul"
+      },
+      {
+        "title": "Hear the Budos Band's Latest Instrumental Scorcher 'Arcane Rambler'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/budos-band-arcane-rambler-804634/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

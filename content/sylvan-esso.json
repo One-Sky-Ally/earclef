@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "slug": "sylvan-esso",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Sylvan Esso — Ear Clef",
+    "description": "Durham, North Carolina electronic pop duo Amelia Meath and Nick Sanborn — synths built to hold a folk singer's voice.",
+    "ogImage": "/images/og-sylvan-esso.jpg",
+    "canonicalUrl": "https://earclef.com/sylvan-esso"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "39vA9YljbnOApXKniLWBZv"
+    },
+    "youtube": {
+      "channelId": "UCb8sEm2FC4V0bM2p4Gg7oNA"
+    },
+    "setlistfm": {
+      "mbid": "c4593b34-2a94-4e44-ae10-4a0f4c0b4da8"
+    },
+    "itunes": {
+      "artistId": "661273932"
+    }
+  },
+  "hero": {
+    "name": "Sylvan Esso",
+    "identity": "Durham, North Carolina electronic pop duo Amelia Meath and Nick Sanborn — synths built to hold a folk singer's voice.",
+    "tagline": "Hear here!",
+    "location": "Durham, NC, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.sylvanesso.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/SylvanEsso"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/SylvanEsso"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/sylvanesso/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@sylvanesso"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/sylvan-esso/661273932"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://sylvanesso.bandcamp.com/"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/sylvanesso"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Sylvan Esso",
+        "year": "2014",
+        "mbReleaseGroupId": "3e5de694-4b69-4ad8-ad2d-81da48e0e812"
+      },
+      {
+        "title": "What Now",
+        "year": "2017",
+        "mbReleaseGroupId": "7f9e5db1-ea21-4195-887f-11da4ce7f83e"
+      },
+      {
+        "title": "No Rules Sandy",
+        "year": "2022",
+        "mbReleaseGroupId": "63e2635e-4b4a-46dc-ba4a-c3b0e8a95e5f"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "h-_NNIX8cDA",
+        "title": "Die Young"
+      },
+      {
+        "youtubeId": "6LEmDEZVa5g",
+        "title": "Radio"
+      },
+      {
+        "youtubeId": "4W9VYY5QpLg",
+        "title": "PARAD(w/m)E"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Sylvan Esso formed in Durham, North Carolina in 2012 when Amelia Meath, of the folk trio Mountain Man, began collaborating with electronic producer Nick Sanborn. Their self-titled 2014 debut paired her voice with his synth production, establishing a sound built on that contrast.",
+      "What Now (2017), Free Love (2020) and No Rules Sandy (2022) continued the catalog. The duo also runs their own record label, Psychic Hotline, founded in 2021, and operate a recording studio, Betty's, in North Carolina."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at sylvanesso.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-05-31",
+        "venue": "Civic Center Park",
+        "city": "Denver, CO, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/sylvan-esso/2025/civic-center-park-denver-co-6b5c9e4e.html",
+        "note": "Outside Festival 2025"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Cheers BB T-shirt",
+        "description": "From the official Sylvan Esso store.",
+        "image": {
+          "src": "https://sylvan-esso-tmc.myshopify.com/cdn/shop/files/SYLA49.png?v=1784638062",
+          "alt": "Cheers BB T-shirt"
+        },
+        "url": "https://sylvan-esso-tmc.myshopify.com/products/bb-t-shirt"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Sylvan Esso: Finding Humanity Between The Synths",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2014/05/14/312493096/sylvan-esso-finding-humanity-between-the-synths"
+      },
+      {
+        "title": "On No Rules Sandy, Sylvan Esso Finds Freedom Outside The Formula",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2022/08/11/1116749133/on-no-rules-sandy-sylvan-esso-finds-freedom-outside-the-formula"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

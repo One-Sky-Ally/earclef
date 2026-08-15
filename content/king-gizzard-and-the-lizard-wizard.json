@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "slug": "king-gizzard-and-the-lizard-wizard",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "King Gizzard & the Lizard Wizard — Ear Clef",
+    "description": "The relentlessly prolific Melbourne psych-rock band — genre-hopping across a discography that includes five albums released in a single year.",
+    "ogImage": "/images/og-king-gizzard-and-the-lizard-wizard.jpg",
+    "canonicalUrl": "https://earclef.com/king-gizzard-and-the-lizard-wizard"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6XYvaoDGE0VmRt83Jss9Sn"
+    },
+    "youtube": {
+      "channelId": "UCNiyS8zr2RIddszLwtoyUow"
+    },
+    "setlistfm": {
+      "mbid": "f58384a4-2ad2-4f24-89c5-c7b74ae1cce7"
+    },
+    "itunes": {
+      "artistId": "440629621"
+    }
+  },
+  "hero": {
+    "name": "King Gizzard & the Lizard Wizard",
+    "identity": "The relentlessly prolific Melbourne psych-rock band — genre-hopping across a discography that includes five albums released in a single year.",
+    "tagline": "Hear here!",
+    "location": "Melbourne, Australia",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://kinggizzardandthelizardwizard.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/kinggizzard"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/kinggizzardandthelizardwizard"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/kinggizzard/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@KingGizzardAndTheLizardWizard"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/king-gizzard-the-lizard-wizard/440629621"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://kinggizzard.bandcamp.com/"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/king-gizzard-the-lizard-wizard"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Nonagon Infinity",
+        "year": "2016",
+        "mbReleaseGroupId": "7c365e51-de7b-4c72-80dd-4e0536258c6e"
+      },
+      {
+        "title": "Flying Microtonal Banana",
+        "year": "2017",
+        "mbReleaseGroupId": "ad6e81ac-2298-4e1d-849f-226953c9a30a"
+      },
+      {
+        "title": "Infest the Rats' Nest",
+        "year": "2019",
+        "mbReleaseGroupId": "8ef7f453-bf44-4bcc-bdb8-ac86eadf90fe"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "mp-HWukUDSE",
+        "title": "Level 5 (Official Video)"
+      },
+      {
+        "youtubeId": "lkZd2lBQb2c",
+        "title": "O.N.E. (Official Video)"
+      },
+      {
+        "youtubeId": "Q-i1XZc8ZwA",
+        "title": "Rattlesnake (Official Video)"
+      },
+      {
+        "youtubeId": "_un9PYsE1_g",
+        "title": "Cyboogie (Official Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "King Gizzard & the Lizard Wizard formed in Melbourne in 2010, building a reputation for restless genre-hopping across psych, garage, thrash metal, jazz fusion and microtonal experiments — and for the sheer pace of their output, releasing five studio albums in 2017 alone.",
+      "Nonagon Infinity (2016), Flying Microtonal Banana (2017) and Infest the Rats' Nest (2019) each pushed the band into a different sonic direction. They run their own label, Flightless Records, and continue to tour and record prolifically.",
+      "In 2019 the band released Mars for the Rich, a free browser-playable video game built to promote Infest the Rats' Nest."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at kinggizzardandthelizardwizard.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-08-02",
+        "venue": "Forest Hills Stadium",
+        "city": "Queens, NY, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/king-gizzard-and-the-lizard-wizard/2025/forest-hills-stadium-queens-ny-6b51caf6.html",
+        "note": "Phantom Island Tour 2025"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Alien Metal Tee",
+        "description": "From the official King Gizzard & the Lizard Wizard store, p(doom) records.",
+        "image": {
+          "src": "https://pdoomrecords.com/cdn/shop/files/KGLW-AlienMetalTee-Black.jpg?v=1786394815&width=1000",
+          "alt": "Alien Metal Tee"
+        },
+        "url": "https://pdoomrecords.com/collections/king-gizzard-and-the-lizard-wizard/products/alien-metal-tee"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "First Listen: King Gizzard & The Lizard Wizard, 'Nonagon Infinity'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2016/04/21/474678543/first-listen-king-gizzard-the-lizard-wizard-nonagon-infinity"
+      },
+      {
+        "title": "King Gizzard and the Lizard Wizard: Flight b741 review",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/article/2024/aug/08/king-gizzard-and-the-lizard-wizard-flight-b741-pdoom-records"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "other",
+        "title": "Mars for the Rich (2019)",
+        "context": "A free, browser-playable first-person video game the band released to promote Infest the Rats' Nest.",
+        "url": "https://faroutmagazine.co.uk/king-gizzard-the-lizard-wizard-video-game/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

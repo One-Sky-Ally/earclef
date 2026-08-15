@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "slug": "melody-gardot",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Melody Gardot — Ear Clef",
+    "description": "American jazz and soul singer-songwriter whose career began during recovery from a near-fatal cycling accident.",
+    "ogImage": "/images/og-melody-gardot.jpg",
+    "canonicalUrl": "https://earclef.com/melody-gardot"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2P1puQXmG48EVLBrHbum1J"
+    },
+    "youtube": {
+      "channelId": "UC6FaEzX8vrnrir6XaIIdQSw"
+    },
+    "setlistfm": {
+      "mbid": "c47267ed-7482-40bb-a4ea-e1399cc8ce04"
+    },
+    "itunes": {
+      "artistId": "207226479"
+    }
+  },
+  "hero": {
+    "name": "Melody Gardot",
+    "identity": "American jazz and soul singer-songwriter whose career began during recovery from a near-fatal cycling accident.",
+    "tagline": "Hear here!",
+    "location": "Philadelphia, PA, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://melodygardot.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/melodygardotofficial"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/melodygardot"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@MelodyGardotOfficial"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/melody-gardot/207226479"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Worrisome Heart",
+        "year": "2007",
+        "mbReleaseGroupId": "5bc06892-f4ee-379b-8438-0e86c267866f"
+      },
+      {
+        "title": "My One and Only Thrill",
+        "year": "2009",
+        "mbReleaseGroupId": "ea039fc9-2c3b-38c2-81a0-3592c1033555"
+      },
+      {
+        "title": "Currency of Man",
+        "year": "2015",
+        "mbReleaseGroupId": "13a05189-029c-4300-bab3-7ff48253f72a"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "YHIMloy7QEs",
+        "title": "If You Love Me (Official Audio)"
+      },
+      {
+        "youtubeId": "3_cmLmK9Pz4",
+        "title": "Once I Was Loved (Official Audio)"
+      },
+      {
+        "youtubeId": "jckrRTXIk_U",
+        "title": "My One And Only Thrill (Official Audio)"
+      },
+      {
+        "youtubeId": "SZq0u447vP8",
+        "title": "Worrisome Heart (Official Audio)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "At 19, Melody Gardot was struck by a vehicle while cycling in Philadelphia, sustaining serious injuries that left her overly sensitive to light and sound. Music therapy became her most effective recovery tool, and songwriting became her path into a music career.",
+      "She self-released her debut, Worrisome Heart, in 2006; it was reissued by Verve in 2007. My One and Only Thrill followed in 2009, and Currency of Man in 2015. Her catalog moves between jazz, soul and orchestral pop, sung in both English and French.",
+      "Her 2010 documentary, Melody Gardot: The Accidental Musician, chronicles her path from the accident into music."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at melodygardot.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-07-06",
+        "venue": "L'Olympia Bruno Coquatrix",
+        "city": "Paris, France",
+        "setlistUrl": "https://www.setlist.fm/setlist/melody-gardot/2025/lolympia-bruno-coquatrix-paris-france-4358e31b.html",
+        "note": "The Essential Tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Melody Gardot And Her 'Worrisome Heart'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2008/04/28/89275903/melody-gardot-and-her-worrisome-heart"
+      },
+      {
+        "title": "Melody Gardot: Currency of Man review",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2015/may/28/melody-gardot-currency-of-man-review"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

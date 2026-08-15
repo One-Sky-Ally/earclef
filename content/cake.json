@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "slug": "cake",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "CAKE — Ear Clef",
+    "description": "The Sacramento rock band behind 'The Distance' and 'Short Skirt/Long Jacket' — deadpan vocals, trumpet, and vintage guitar tone since 1991.",
+    "ogImage": "/images/og-cake.jpg",
+    "canonicalUrl": "https://earclef.com/cake"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6A43Djmhbe9100UwnI7epV"
+    },
+    "youtube": {
+      "channelId": "UCrsQjTspfhJwe6GfNydRV5A"
+    },
+    "setlistfm": {
+      "mbid": "fa7b9055-3703-473a-8a09-adf2fe031a24"
+    },
+    "itunes": {
+      "artistId": "472322"
+    }
+  },
+  "hero": {
+    "name": "CAKE",
+    "identity": "The Sacramento rock band behind 'The Distance' and 'Short Skirt/Long Jacket' — deadpan vocals, trumpet, and vintage guitar tone since 1991.",
+    "tagline": "Hear here!",
+    "location": "Sacramento, CA, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://cakemusic.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/cakemusic"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/cakemusic"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/thebandcake/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@thebandcake"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/cake/472322"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Fashion Nugget",
+        "year": "1996",
+        "mbReleaseGroupId": "3bd5a388-774f-3b47-b3f8-5b3463cbcb13"
+      },
+      {
+        "title": "Comfort Eagle",
+        "year": "2001",
+        "mbReleaseGroupId": "cdb7197f-ed14-3238-a402-d0e554bcc0c8"
+      },
+      {
+        "title": "Showroom of Compassion",
+        "year": "2011",
+        "mbReleaseGroupId": "2dfae19e-d2d4-4cfb-901f-9c2f21b0cd1b"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "XiyoCZUwwYg",
+        "title": "Long Time (Official Video)"
+      },
+      {
+        "youtubeId": "phHe6aNcocQ",
+        "title": "Federal Funding (Official Video)"
+      },
+      {
+        "youtubeId": "mi9MLL8QOY0",
+        "title": "Sick of You (Official Video)"
+      },
+      {
+        "youtubeId": "-8ME5dYmoS0",
+        "title": "Sinking Ship"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "CAKE formed in Sacramento, California in 1991 around vocalist John McCrea, building a sound defined by deadpan spoken-sung vocals, muted trumpet and vintage guitar tone. Fashion Nugget (1996), featuring 'The Distance,' broke the band nationally.",
+      "Comfort Eagle (2001) included 'Short Skirt/Long Jacket,' and Showroom of Compassion (2011) debuted at number one on the Billboard 200. The band continues to record and tour independently, running its own label and store.",
+      "In 2016, CAKE released Bound Away, a limited handmade artist's book combining McCrea's lyrics, hand-carved linoleum illustrations by R. Stuhmiller, and a CD, built from eco-conscious materials; copies were donated to special collections including the Rock & Roll Hall of Fame library."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at cakemusic.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-03-21",
+        "venue": "Channel 24",
+        "city": "Sacramento, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/cake/2026/channel-24-sacramento-ca-3b4c648c.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "CAKE Logo T-Shirt",
+        "description": "From the official CAKE store.",
+        "image": {
+          "src": "https://enterprise-ecommerce-store-images.freetls.fastly.net/resize?u=aHR0cHM6Ly9lY29tbWVyY2UtcHVibGljLWFzc2V0cy5zdG9yYWdlLmdvb2dsZWFwaXMuY29tLzEwNDU3OWExLWU2NmQtNDMwYy05NTg0LWM1ZjMzZjY5NzE1OS8yMDI1LzEvMTQvMTEvMS9jY2YzZjNhMC0zYTllLTRiMTgtODg2My01M2I2NmY4ODdjZTM%3D&mode=contain&width=1200&v=1",
+          "alt": "CAKE Logo T-Shirt"
+        },
+        "url": "https://store.cakemusic.com/products/cake-logo"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Cake: Flying High After A Record Low",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2011/03/03/134233768/cake-tk"
+      },
+      {
+        "title": "Cake Interview: How the Band Made Moderation Fun",
+        "outlet": "Billboard",
+        "url": "https://www.billboard.com/music/rock/cake-interview-fashion-nugget-anniversary-9631006/"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "book",
+        "title": "Bound Away (2016)",
+        "context": "A limited handmade artist's book pairing John McCrea's lyrics with hand-carved illustrations and a CD.",
+        "url": "https://www.printmag.com/design-books/cake-bandmade-and-bound-away/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

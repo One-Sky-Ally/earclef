@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "slug": "gogol-bordello",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Gogol Bordello — Ear Clef",
+    "description": "The New York gypsy punk band fronted by Eugene Hütz — Romani, Eastern European and immigrant punk energy since 1999.",
+    "ogImage": "/images/og-gogol-bordello.jpg",
+    "canonicalUrl": "https://earclef.com/gogol-bordello"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2SVw939fwuqSobLjF8u78b"
+    },
+    "youtube": {
+      "channelId": "UCMIR3hEDm2gMtN8DfgvS-yQ"
+    },
+    "setlistfm": {
+      "mbid": "f47fc54d-b334-4321-8218-00c5b11d4dd1"
+    },
+    "itunes": {
+      "artistId": "6808996"
+    }
+  },
+  "hero": {
+    "name": "Gogol Bordello",
+    "identity": "The New York gypsy punk band fronted by Eugene Hütz — Romani, Eastern European and immigrant punk energy since 1999.",
+    "tagline": "Hear here!",
+    "location": "New York, NY, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.gogolbordello.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/gogolbordello"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/gogolbordello"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/gogolbordello/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@GogolBordello"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/gogol-bordello/6808996"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://gogolbordello.bandcamp.com/"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/gogolbordello"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Gypsy Punks: Underdog World Strike",
+        "year": "2005",
+        "mbReleaseGroupId": "32fa546f-16c4-3217-afce-e41a8776713c"
+      },
+      {
+        "title": "Super Taranta!",
+        "year": "2007",
+        "mbReleaseGroupId": "0942639b-b3e4-30eb-900f-37772d5aca9a"
+      },
+      {
+        "title": "Trans-Continental Hustle",
+        "year": "2010",
+        "mbReleaseGroupId": "74fc4055-28c4-415b-9d8f-bfccefc71f26"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "5Isw6DcgOQE",
+        "title": "Seekers & Finders ft. Regina Spektor (Official Video)"
+      },
+      {
+        "youtubeId": "cXnJwmZEU0c",
+        "title": "My Gypsy Auto Pilot (music video)"
+      },
+      {
+        "youtubeId": "aPfeOAhDfbM",
+        "title": "American Wedding"
+      },
+      {
+        "youtubeId": "E81R3eod8ok",
+        "title": "Saboteur Blues (Official Lyric Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Gogol Bordello formed in New York City in 1999 around Ukrainian-born frontman Eugene Hütz, building a sound that fuses punk with Romani, Eastern European and immigrant musical traditions across a rotating, multinational lineup.",
+      "Gypsy Punks: Underdog World Strike (2005), Super Taranta! (2007) and Trans-Continental Hustle (2010, produced by Rick Rubin) built the band's international following. They've continued touring and recording since, releasing We Mean It, Man! in 2026.",
+      "Eugene Hütz is also an actor, playing the lead role of Alex in Everything Is Illuminated (2005), alongside roles in Wristcutters: A Love Story (2006) and Filth and Wisdom (2008)."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at gogolbordello.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-02-24",
+        "venue": "Concord Music Hall",
+        "city": "Chicago, IL, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/gogol-bordello/2026/concord-music-hall-chicago-il-334f5c0d.html",
+        "note": "We Mean It, Man! Tour 2026"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "HCGB We Mean It, Man! T-Shirt",
+        "description": "From the official Gogol Bordello store.",
+        "image": {
+          "src": "https://shop.gogolbordello.com/cdn/shop/files/GQCT116.jpg?v=1779118598&width=1946",
+          "alt": "HCGB We Mean It, Man! T-Shirt"
+        },
+        "url": "https://shop.gogolbordello.com/products/hcgb-we-mean-it-man-t-shirt-black"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Gogol Bordello Goes Beyond Boundaries",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/transcripts/207386284"
+      },
+      {
+        "title": "Gogol Bordello Parties All Over The Globe On 'Pura Vida Conspiracy'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/pura-vida-conspiracy-119137/"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Everything Is Illuminated (2005)",
+        "context": "Frontman Eugene Hütz played the lead role of Alex in Liev Schreiber's film.",
+        "url": "https://www.imdb.com/name/nm1778479/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

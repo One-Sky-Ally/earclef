@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "slug": "mum",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "múm — Ear Clef",
+    "description": "The Icelandic experimental group behind Yesterday Was Dramatic – Today Is OK — glitch electronics, found sound, and hushed vocals since 1997.",
+    "ogImage": "/images/og-mum.jpg",
+    "canonicalUrl": "https://earclef.com/mum"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "4mw86zm4QZIL8SksdyE6OU"
+    },
+    "youtube": {
+      "channelId": "UCLUFu22ANri-wKqnT39EZuw"
+    },
+    "setlistfm": {
+      "mbid": "2b64e811-cbcd-45f7-b29d-296444cad4f1"
+    },
+    "itunes": {
+      "artistId": "4504094"
+    }
+  },
+  "hero": {
+    "name": "múm",
+    "identity": "The Icelandic experimental group behind Yesterday Was Dramatic – Today Is OK — glitch electronics, found sound, and hushed vocals since 1997.",
+    "tagline": "Hear here!",
+    "location": "Reykjavík, Iceland",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "bandcamp",
+        "url": "https://mumband.bandcamp.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/mumtheband"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/mumtheband"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/mumtheband/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@mumtv9502"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "bandcamp",
+        "url": "https://mumband.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Yesterday Was Dramatic – Today Is OK",
+        "year": "1999",
+        "mbReleaseGroupId": "d4346597-ab4c-3d5b-a704-7314bf19c462"
+      },
+      {
+        "title": "Finally We Are No One",
+        "year": "2002",
+        "mbReleaseGroupId": "18412e7c-2769-3d89-9603-36ba4dabb319"
+      },
+      {
+        "title": "History of Silence",
+        "year": "2025",
+        "mbReleaseGroupId": "455b547c-80f5-4a26-8fbf-086452d7f83f"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "5zPxhoo1JKk",
+        "title": "green grass of tunnel (16mm film mix)"
+      },
+      {
+        "youtubeId": "0np_pYy8__Q",
+        "title": "Now There's That Fear Again (Live HQ Multicam)"
+      },
+      {
+        "youtubeId": "6Va5uVbzsD4",
+        "title": "múm and kronos quartet: smell memory (official)"
+      },
+      {
+        "youtubeId": "0_DezqS8SK0",
+        "title": "múm in a cappadocian fairy chimney cave: 'nightly cares'"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "múm formed in Reykjavík, Iceland in 1997, building a sound out of glitch electronics, found sound and hushed, often twinned vocals — early lineups included twin sisters Gyða and Kristín Anna Valtýsdóttir. Their 1999 debut, Yesterday Was Dramatic – Today Is OK, and 2002's Finally We Are No One established the band internationally.",
+      "The band has continued releasing music since, including 2025's History of Silence, their first album in over a decade.",
+      "\"múm\" is a short, generic-looking name shared by numerous unrelated acts and entities — the Icelandic experimental group is distinct from an Austrian duo, a UK rapper, and dozens of other unrelated \"mum\"/\"múm\" namesakes."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced via múm's Bandcamp and social channels.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-03-30",
+        "venue": "Bijou Theatre",
+        "city": "Knoxville, TN, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/mum/2025/bijou-theatre-knoxville-tn-2358482b.html",
+        "note": "Big Ears Festival 2025"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Across Borders And Decades, múm Carries On",
+        "outlet": "The Reykjavík Grapevine",
+        "url": "https://grapevine.is/cover-feature/2025/08/29/across-borders-and-decades-mum-carries-on/"
+      },
+      {
+        "title": "múm — Go Go Smear The Poison Ivy (review)",
+        "outlet": "The Line of Best Fit",
+        "url": "https://www.thelineofbestfit.com/reviews/albums/mum-go-go-smear-the-poison-ivy-1754"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

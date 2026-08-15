@@ -230,6 +230,16 @@
     "membership": false
   },
   {
+    "slug": "cake",
+    "name": "CAKE",
+    "identity": "The Sacramento rock band behind 'The Distance' and 'Short Skirt/Long Jacket' — deadpan vocals, trumpet, and vintage guitar tone since 1991.",
+    "tier": "in-the-mix",
+    "mbid": "fa7b9055-3703-473a-8a09-adf2fe031a24",
+    "channelId": "UCrsQjTspfhJwe6GfNydRV5A",
+    "itunesId": "472322",
+    "membership": false
+  },
+  {
     "slug": "can",
     "name": "CAN",
     "identity": "The Cologne band that built its own studio and invented a rhythm — the most cited influence in experimental rock.",
@@ -480,6 +490,16 @@
     "membership": false
   },
   {
+    "slug": "gogol-bordello",
+    "name": "Gogol Bordello",
+    "identity": "The New York gypsy punk band fronted by Eugene Hütz — Romani, Eastern European and immigrant punk energy since 1999.",
+    "tier": "in-the-mix",
+    "mbid": "f47fc54d-b334-4321-8218-00c5b11d4dd1",
+    "channelId": "UCMIR3hEDm2gMtN8DfgvS-yQ",
+    "itunesId": "6808996",
+    "membership": false
+  },
+  {
     "slug": "gorillaz",
     "name": "Gorillaz",
     "identity": "Damon Albarn and Jamie Hewlett's animated band — pop's longest-running cartoon experiment.",
@@ -680,6 +700,16 @@
     "membership": false
   },
   {
+    "slug": "king-gizzard-and-the-lizard-wizard",
+    "name": "King Gizzard & the Lizard Wizard",
+    "identity": "The relentlessly prolific Melbourne psych-rock band — genre-hopping across a discography that includes five albums released in a single year.",
+    "tier": "in-the-mix",
+    "mbid": "f58384a4-2ad2-4f24-89c5-c7b74ae1cce7",
+    "channelId": "UCNiyS8zr2RIddszLwtoyUow",
+    "itunesId": "440629621",
+    "membership": false
+  },
+  {
     "slug": "led-zeppelin",
     "name": "Led Zeppelin",
     "identity": "Blues turned to thunder — the band that wrote the blueprint for hard rock and heavy metal in four albums flat.",
@@ -737,6 +767,16 @@
     "mbid": "d85defaf-b82e-48be-beb5-2672099e392e",
     "channelId": "UCpGx1YQ4KbGGBcOca3lr0gw",
     "itunesId": "552742374",
+    "membership": false
+  },
+  {
+    "slug": "melody-gardot",
+    "name": "Melody Gardot",
+    "identity": "American jazz and soul singer-songwriter whose career began during recovery from a near-fatal cycling accident.",
+    "tier": "in-the-mix",
+    "mbid": "c47267ed-7482-40bb-a4ea-e1399cc8ce04",
+    "channelId": "UC6FaEzX8vrnrir6XaIIdQSw",
+    "itunesId": "207226479",
     "membership": false
   },
   {
@@ -817,6 +857,16 @@
     "mbid": "277e21a9-2d64-452d-96c4-2d23a7af5891",
     "channelId": "UCc642qPt-Rgsek6xJlyaGrQ",
     "itunesId": "161620",
+    "membership": false
+  },
+  {
+    "slug": "mum",
+    "name": "múm",
+    "identity": "The Icelandic experimental group behind Yesterday Was Dramatic – Today Is OK — glitch electronics, found sound, and hushed vocals since 1997.",
+    "tier": "in-the-mix",
+    "mbid": "2b64e811-cbcd-45f7-b29d-296444cad4f1",
+    "channelId": "UCLUFu22ANri-wKqnT39EZuw",
+    "itunesId": "4504094",
     "membership": false
   },
   {
@@ -1060,6 +1110,16 @@
     "membership": false
   },
   {
+    "slug": "sylvan-esso",
+    "name": "Sylvan Esso",
+    "identity": "Durham, North Carolina electronic pop duo Amelia Meath and Nick Sanborn — synths built to hold a folk singer's voice.",
+    "tier": "in-the-mix",
+    "mbid": "c4593b34-2a94-4e44-ae10-4a0f4c0b4da8",
+    "channelId": "UCb8sEm2FC4V0bM2p4Gg7oNA",
+    "itunesId": "661273932",
+    "membership": false
+  },
+  {
     "slug": "tame-impala",
     "name": "Tame Impala",
     "identity": "Kevin Parker's one-man psychedelic universe from Perth, built alone in the studio and unleashed as a band onstage.",
@@ -1107,6 +1167,16 @@
     "mbid": "41e2d679-43a3-4b9b-8469-ce748ad7b1ca",
     "channelId": null,
     "itunesId": "858682",
+    "membership": false
+  },
+  {
+    "slug": "the-budos-band",
+    "name": "The Budos Band",
+    "identity": "Staten Island's instrumental Afrobeat and funk collective, built on Daptone Records' vintage soul foundations.",
+    "tier": "in-the-mix",
+    "mbid": "b6fa9b9b-41cf-45a6-adc0-0a4c9a8c0d3c",
+    "channelId": "UCk-mGwj4feV8QftdUD31FDw",
+    "itunesId": "107334056",
     "membership": false
   },
   {
