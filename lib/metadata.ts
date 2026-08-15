@@ -5,6 +5,8 @@ function isValidUrl(value: string): boolean {
   return value.startsWith('https://') || value.startsWith('http://')
 }
 
+const SITE_ORIGIN = 'https://earclef.com'
+
 export function buildMetadata(content: ArtistContent): Metadata {
   const { meta, hero } = content
   const canonical = isValidUrl(meta.canonicalUrl) ? meta.canonicalUrl : undefined
@@ -12,8 +14,8 @@ export function buildMetadata(content: ArtistContent): Metadata {
   return {
     title: meta.title,
     description: meta.description,
+    metadataBase: new URL(SITE_ORIGIN),
     ...(canonical && {
-      metadataBase: new URL(canonical),
       alternates: { canonical },
     }),
     openGraph: {
