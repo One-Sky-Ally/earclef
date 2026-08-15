@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "slug": "bob-dylan",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Bob Dylan — Ear Clef",
+    "description": "Went electric at Newport in 1965 and never really stopped changing — a Nobel laureate whose Never Ending Tour, started in 1988, is still running.",
+    "ogImage": "/images/og-bob-dylan.jpg",
+    "canonicalUrl": "https://earclef.com/bob-dylan"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "74ASZWbe4lXaubB36ztrGX"
+    },
+    "youtube": {
+      "channelId": "UCnRI0ay61tY-fKYzzB3fCnw"
+    },
+    "setlistfm": {
+      "mbid": "72c536dc-7137-4477-a521-567eeb840fa8"
+    },
+    "itunes": {
+      "artistId": "462006"
+    }
+  },
+  "hero": {
+    "name": "Bob Dylan",
+    "identity": "Went electric at Newport in 1965 and never really stopped changing — a Nobel laureate whose Never Ending Tour, started in 1988, is still running.",
+    "tagline": "Hear here!",
+    "location": "Duluth, MN, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.bobdylan.com/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@BobDylan"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/bob-dylan/462006"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJHUZ8/bob-dylan"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Highway 61 Revisited",
+        "year": "1965",
+        "mbReleaseGroupId": "fb48b1dc-412f-36aa-8820-1023c08c46c6"
+      },
+      {
+        "title": "Blood on the Tracks",
+        "year": "1975",
+        "mbReleaseGroupId": "9c1b8072-eb1d-33d2-af8c-984d46e40902"
+      },
+      {
+        "title": "Rough and Rowdy Ways",
+        "year": "2020",
+        "mbReleaseGroupId": "43b12592-d808-44de-a5df-ebd7c6b2b75c"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "v7USJs-CfVg",
+        "title": "Like A Rolling Stone (Interactive Video)"
+      },
+      {
+        "youtubeId": "MGxjIBEZvx0",
+        "title": "Subterranean Homesick Blues (Official Video)"
+      },
+      {
+        "youtubeId": "3NbQkyvbw18",
+        "title": "Murder Most Foul (Official Audio)"
+      },
+      {
+        "youtubeId": "rm9coqlk8fY",
+        "title": "Knockin' On Heaven's Door (Official Audio)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "On July 25, 1965, Dylan plugged in at the Newport Folk Festival, opening an electric set backed by Al Kooper and the Paul Butterfield Blues Band — a turn that drew boos from part of the folk-purist crowd and became one of the most argued-over moments in the music's history. Highway 61 Revisited, released weeks later, cemented the new direction.",
+      "Dylan has continued to reinvent his catalog for six decades, from Blood on the Tracks (1975) through Rough and Rowdy Ways (2020), and has toured almost continuously since June 7, 1988, on what's known as the Never Ending Tour — still running dates in 2026.",
+      "In 2016, Dylan won the Nobel Prize in Literature 'for having created new poetic expressions within the great American song tradition,' the first songwriter to receive it. He stayed publicly silent for weeks after the announcement, and accepted the physical medal in person only the following spring at a small private ceremony in Stockholm.",
+      "He has won 10 Grammy Awards, received the Recording Academy's Lifetime Achievement Award in 1991, and was awarded the Presidential Medal of Freedom by Barack Obama in 2012."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at bobdylan.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-08-01",
+        "venue": "Ascend Amphitheater",
+        "city": "Nashville, TN, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/bob-dylan/2026/ascend-amphitheater-nashville-tn-4b7783d6.html",
+        "note": "Long Hot Summer Tour '26"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "The Times They Are A-Changin' Navy T-Shirt",
+        "description": "From the official Bob Dylan store.",
+        "image": {
+          "src": "https://bobdylanstore.com/cdn/shop/files/PRODUCT_BDYL_ECOMM_26_RP_TIMES_NAVY_SS.png?v=1782324308",
+          "alt": "The Times They Are A-Changin' Navy T-Shirt"
+        },
+        "url": "https://bobdylanstore.com/"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "The Night That Bob Dylan Went Electric",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2015/07/24/425834232/the-night-that-bob-dylan-went-electric"
+      },
+      {
+        "title": "Bob Dylan Awarded Presidential Medal of Freedom",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-news/bob-dylan-awarded-presidential-medal-of-freedom-98634/"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-role",
+        "title": "Pat Garrett & Billy the Kid (1973)",
+        "context": "Played \"Alias\" and composed the score, including \"Knockin' on Heaven's Door,\" for Sam Peckinpah's film.",
+        "url": "https://www.imdb.com/name/nm0001168/"
+      },
+      {
+        "kind": "book",
+        "title": "Chronicles: Volume One (2004)",
+        "context": "Memoir published by Simon & Schuster; spent roughly a year on the New York Times bestseller list.",
+        "url": "https://www.simonandschuster.com/books/Chronicles/Bob-Dylan/9780743244589"
+      },
+      {
+        "kind": "art",
+        "title": "Mood Swings (2013)",
+        "context": "His first ironwork exhibition — gate sculptures welded from scrap metal — shown at Halcyon Gallery, London.",
+        "url": "https://www.halcyongallery.com/bob-dylan/biography/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

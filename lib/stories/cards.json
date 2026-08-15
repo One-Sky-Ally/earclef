@@ -1270,6 +1270,44 @@
       "at": "2026-07-18T15:25:14.239Z"
     },
     {
+      "id": "bob-dylan-e6ce75d9",
+      "slug": "bob-dylan",
+      "artistName": "Bob Dylan",
+      "type": "context",
+      "hook": "He went electric at Newport in 1965 and part of the crowd booed him for it.",
+      "story": "On July 25, 1965, Dylan opened his Newport Folk Festival set plugged in, backed by Al Kooper and members of the Paul Butterfield Blues Band, breaking from the acoustic folk style that had made him famous there. Part of the audience booed — a moment that became one of the most debated turns in his career and marked his full pivot into the electric sound of Highway 61 Revisited, released weeks later.",
+      "media": null,
+      "sources": [
+        {
+          "title": "The Night That Bob Dylan Went Electric",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/2015/07/24/425834232/the-night-that-bob-dylan-went-electric"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T00:15:00Z"
+    },
+    {
+      "id": "bob-dylan-7231cedb",
+      "slug": "bob-dylan",
+      "artistName": "Bob Dylan",
+      "type": "context",
+      "hook": "He stayed silent for weeks after winning the Nobel Prize, then accepted it in a private Stockholm ceremony months later.",
+      "story": "When Dylan won the 2016 Nobel Prize in Literature — the first songwriter to receive it, honored \"for having created new poetic expressions within the great American song tradition\" — he didn't publicly acknowledge it for weeks. His acceptance speech was read aloud for him at the December 2016 ceremony, and he didn't collect the physical medal in person until a small private gathering in Stockholm the following spring.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Bob Dylan — Facts",
+          "outlet": "The Nobel Prize",
+          "url": "https://www.nobelprize.org/prizes/literature/2016/dylan/facts/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T00:15:00Z"
+    },
+    {
       "id": "bob-marley-18eef2d9",
       "slug": "bob-marley",
       "artistName": "Bob Marley",
@@ -1416,6 +1454,49 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T15:27:07.465Z"
+    },
+    {
+      "id": "bombay-dub-orchestra-658e0628",
+      "slug": "bombay-dub-orchestra",
+      "artistName": "Bombay Dub Orchestra",
+      "type": "origin",
+      "hook": "The idea came together on a flight home from a session for someone else's project.",
+      "story": "Producer Garry Hughes and composer Andrew T. Mackay traveled to Mumbai to record top session players for a project by the London-based duo Spellbound. \"It was a fantastic experience recording these guys,\" Hughes has said, \"and on the plane coming home we thought how great it would be to make an orchestral chill-out record with these players.\" That idea became their 2006 self-titled debut, built around more than 50 musicians including a 30-piece Mumbai string orchestra.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Bombay Dub Orchestra — artist bio (courtesy Calabash Music)",
+          "outlet": "PayPlay.fm",
+          "url": "https://payplay.fm/a6e43-bombay-dub-orchestra"
+        },
+        {
+          "title": "Bombay Dub Orchestra",
+          "outlet": "Six Degrees Records",
+          "url": "https://www.sixdegreesrecords.com/bombay-dub-orchestra/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T00:00:00Z"
+    },
+    {
+      "id": "bombay-dub-orchestra-580ffe67",
+      "slug": "bombay-dub-orchestra",
+      "artistName": "Bombay Dub Orchestra",
+      "type": "context",
+      "hook": "Their reggae-and-orchestra Jingle Bells remix scores a workshop scene in Iron Man 3.",
+      "story": "Bombay Dub Orchestra's remix of \"Jingle Bells,\" featuring vocalist Joe Williams, plays during Tony Stark's workshop scene in Marvel's Iron Man 3 (2013) — a departure from the AC/DC that usually soundtracked his lab, and one of three different Jingle Bells versions used across the film.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Jingle Bells (Bombay Dub Orchestra Remix) Marvel's Iron Man 3",
+          "outlet": "Marvel.com",
+          "url": "https://www.marvel.com/articles/movies/iron-man-3-christmas-playlist"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T00:00:00Z"
     },
     {
       "id": "bon-iver-94a939f9",
@@ -2769,6 +2850,54 @@
       "status": "published",
       "model": "claude-sonnet-5",
       "at": "2026-08-07T01:00:00Z"
+    },
+    {
+      "id": "emancipator-195309a3",
+      "slug": "emancipator",
+      "artistName": "Emancipator",
+      "type": "origin",
+      "hook": "Nujabes personally remastered his self-burned debut CD and gave it a second life in Japan.",
+      "story": "Douglas Appling self-released his debut album, Soon It Will Be Cold Enough, in 2006 as a college student, burning CDs at home and hand-delivering them to the post office each week. In late 2007 it reached Nujabes' Japanese label, Hydeout Productions, which remastered, rearranged and re-released it in April 2008 — cutting the original 14-track sequence down to 12. Nujabes also picked the track \"With Rainy Eyes\" for his label's Hydeout 2nd Collection compilation.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Emancipator (musician)",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Emancipator_(musician)"
+        },
+        {
+          "title": "INTERVIEW: Emancipator",
+          "outlet": "Allston Pudding",
+          "url": "https://allstonpudding.com/interview-emancipator/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T09:45:00Z"
+    },
+    {
+      "id": "emancipator-fe4b0677",
+      "slug": "emancipator",
+      "artistName": "Emancipator",
+      "type": "context",
+      "hook": "What started as a laptop-and-violin duo grew into a four-piece live band.",
+      "story": "Appling began touring with violinist Ilya Goldberg as a duo, pairing his production with live strings. By 2013, the act had expanded into the four-piece Emancipator Ensemble, adding live bass and drums alongside Appling's own guitar work — giving his studio tracks an analog, reworked arrangement on stage.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Emancipator (musician)",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Emancipator_(musician)"
+        },
+        {
+          "title": "INTERVIEW: Emancipator",
+          "outlet": "Allston Pudding",
+          "url": "https://allstonpudding.com/interview-emancipator/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T09:45:00Z"
     },
     {
       "id": "erykah-badu-87a131d7",
@@ -5562,6 +5691,49 @@
       "at": "2026-07-24T01:29:55.000Z"
     },
     {
+      "id": "lmc-9ffc4034",
+      "slug": "lmc",
+      "artistName": "LMC",
+      "type": "context",
+      "hook": "All four members of U2 had to personally clear the sample.",
+      "story": "\"Take Me to the Clouds Above\" builds its beat around a sample of U2's \"With or Without You,\" which meant all four band members had to sign off before the track could be released. Bassist Adam Clayton, for his part, approved: \"It's a good beat and you can dance to it. I especially like the bassline.\"",
+      "media": null,
+      "sources": [
+        {
+          "title": "Take Me To the Clouds Above — Single (LMC vs U2)",
+          "outlet": "u2songs.com",
+          "url": "https://u2songs.com/oddities/take_me_to_the_clouds_above_lmc_vs_u2"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T01:00:00Z"
+    },
+    {
+      "id": "lmc-28a6572b",
+      "slug": "lmc",
+      "artistName": "LMC",
+      "type": "context",
+      "hook": "It gave U2 a UK #1 they'd never reached with the original song.",
+      "story": "U2's own \"With or Without You\" peaked at only number 4 in the UK. \"Take Me to the Clouds Above,\" built around a sample of it plus an interpolation of Whitney Houston's \"How Will I Know,\" went all the way to number one on the UK Official Singles Chart on February 7, 2004, holding the top spot for two weeks and staying on the chart for 15 weeks total.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Take Me to the Clouds Above — Chart History",
+          "outlet": "Official Charts Company",
+          "url": "https://www.officialcharts.com/songs/lmc-vs-u2-take-me-to-the-clouds-above/"
+        },
+        {
+          "title": "With Or Without You — Chart History",
+          "outlet": "Official Charts Company",
+          "url": "https://www.officialcharts.com/songs/u2-with-or-without-you/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T01:00:00Z"
+    },
+    {
       "id": "low-roar-7c6f596e",
       "slug": "low-roar",
       "artistName": "Low Roar",
@@ -6461,6 +6633,49 @@
       "status": "published",
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-20T00:38:33.000Z"
+    },
+    {
+      "id": "mr-bungle-66ba8ea8",
+      "slug": "mr-bungle",
+      "artistName": "Mr. Bungle",
+      "type": "context",
+      "hook": "The 2020 reunion brought in Anthrax's Scott Ian and ex-Slayer's Dave Lombardo.",
+      "story": "For their first shows in roughly two decades, Mike Patton, Trevor Dunn and Trey Spruance reunited in February 2020 to perform their original 1986 demo tape, The Raging Wrath of the Easter Bunny, in full — bringing in Anthrax guitarist Scott Ian and former Slayer drummer Dave Lombardo to round out the lineup. The band then professionally re-recorded the whole demo as The Raging Wrath of the Easter Bunny Demo, released that October on Patton's own label, Ipecac Recordings.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Mike Patton on Mr. Bungle's Surprise Return",
+          "outlet": "Consequence",
+          "url": "https://consequence.net/2020/10/mike-patton-mr-bungle-interview-2020/"
+        },
+        {
+          "title": "Mr. Bungle",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Mr._Bungle"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T00:45:00Z"
+    },
+    {
+      "id": "mr-bungle-a43d536d",
+      "slug": "mr-bungle",
+      "artistName": "Mr. Bungle",
+      "type": "context",
+      "hook": "\"Travolta\" got renamed \"Quote Unquote\" after legal pressure over the name.",
+      "story": "The opening track on Mr. Bungle's 1991 self-titled debut was originally titled \"Travolta\" — a reference to the actor — before legal pressure tied to the name forced a change. It appears on the released album as \"Quote Unquote.\"",
+      "media": null,
+      "sources": [
+        {
+          "title": "Travolta (song)",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Travolta_(song)"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T00:45:00Z"
     },
     {
       "id": "nick-drake-19a3b979",
@@ -9972,6 +10187,54 @@
       "status": "published",
       "model": "claude-fable-5 (in-session)",
       "at": "2026-07-20T01:20:41.000Z"
+    },
+    {
+      "id": "yo-la-tengo-7e18cd2d",
+      "slug": "yo-la-tengo",
+      "artistName": "Yo La Tengo",
+      "type": "origin",
+      "hook": "The name comes from a 1962 Mets outfield collision — and the warning cry didn't even work.",
+      "story": "Mets center fielder Richie Ashburn and Spanish-speaking shortstop Elio Chacón kept colliding on fly balls in 1962, so Ashburn learned to shout \"¡Yo la tengo!\" — \"I've got it!\" — to warn him off. It worked on Chacón, but Ashburn was promptly flattened anyway by left fielder Frank Thomas, who didn't know the phrase. Ira Kaplan and Georgia Hubley picked the story's name for their band in 1984, partly because it carried no baggage in English.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Yo La Tengo Fact Check",
+          "outlet": "SABR Baseball Cards",
+          "url": "https://sabrbaseballcards.blog/2022/08/02/yo-la-tengo-fact-check/"
+        },
+        {
+          "title": "Yo La Tengo",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Yo_La_Tengo"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T00:30:00Z"
+    },
+    {
+      "id": "yo-la-tengo-bb096436",
+      "slug": "yo-la-tengo",
+      "artistName": "Yo La Tengo",
+      "type": "context",
+      "hook": "Their annual Hanukkah shows bring a different opening act every single night.",
+      "story": "For decades, Yo La Tengo has staged multi-night charity concerts timed to Hanukkah — for years at Maxwell's, their hometown club in Hoboken, later moved to Bowery Ballroom in New York — with a different opening act booked for each night of the run, turning the tradition into a rotating showcase alongside the band's own sets.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Yo La Tengo Hanukkah 2025, Night 6 Setlist",
+          "outlet": "Jesse Jarnow",
+          "url": "https://jessejarnow.com/2025/12/yo-la-tengo-hanukkah-2025-night-6-setlist/"
+        },
+        {
+          "title": "Georgia and Ira and James",
+          "outlet": "The World (PRX)",
+          "url": "https://theworld.org/stories/2004/05/15/georgia-and-ira-and-james"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T00:30:00Z"
     }
   ]
 }

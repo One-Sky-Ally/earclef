@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "slug": "bombay-dub-orchestra",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Bombay Dub Orchestra — Ear Clef",
+    "description": "Andrew T. Mackay and Garry Hughes' Mumbai-recorded fusion project — Indian classical instrumentation and a 30-piece string orchestra wrapped in electronic production.",
+    "ogImage": "/images/og-bombay-dub-orchestra.jpg",
+    "canonicalUrl": "https://earclef.com/bombay-dub-orchestra"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "070RPr7Euzwf3yboA9Xp2U"
+    },
+    "youtube": {
+      "channelId": "UCFj0Hi17IGIzZOyyOLA4Djw"
+    },
+    "setlistfm": {
+      "mbid": "20db01e0-20a4-49fe-a82e-dfadf117f36f"
+    },
+    "itunes": {
+      "artistId": "81841288"
+    }
+  },
+  "hero": {
+    "name": "Bombay Dub Orchestra",
+    "identity": "Andrew T. Mackay and Garry Hughes' Mumbai-recorded fusion project — Indian classical instrumentation folded into electronic and dub production.",
+    "tagline": "Hear here!",
+    "location": "London, England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/bombayduborchestra"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/bombaydub"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/BombayDub"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@BombayDubTV"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/bombay-dub-orchestra/81841288"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://www.amazon.com/music/player/artists/B000QKAP6S/bombay-dub-orchestra"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Bombay Dub Orchestra",
+        "year": "2006",
+        "mbReleaseGroupId": "1bbbc13a-b111-305a-8bb1-79a0bb415b43"
+      },
+      {
+        "title": "3 Cities",
+        "year": "2008",
+        "mbReleaseGroupId": "91f7ef6e-f612-3494-92d8-512171455db4"
+      },
+      {
+        "title": "Tales From The Grand Bazaar",
+        "year": "2013",
+        "mbReleaseGroupId": "099a8f04-f02f-44bb-9b1a-8b3f4fc53b91"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "lBKfvM2gK0U",
+        "title": "Monsoon Malabar"
+      },
+      {
+        "youtubeId": "GvitjlLhYtc",
+        "title": "4000 New Colours (4000 Shades of Dub) — at Abbey Road"
+      },
+      {
+        "youtubeId": "_TzMZ58lEoA",
+        "title": "Recording the CS-80"
+      },
+      {
+        "youtubeId": "74GxZu__Di4",
+        "title": "Istanbul Session With Aytac Dogan"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "UK composer-arranger Andrew T. Mackay and producer Garry Hughes conceived Bombay Dub Orchestra after traveling to Mumbai in the late 1990s to record session players for another project. In 2005 they returned to record a roughly 30-piece Mumbai string orchestra by day and bansuri, sarangi, sitar and tabla players by night, building their self-titled 2006 debut around more than 50 musicians.",
+      "3 Cities (2008) and Tales From The Grand Bazaar (2013) expanded the project's geography — the latter recorded across Mumbai, Istanbul, Kingston (Jamaica, with Sly & Robbie), London, Los Angeles and New York.",
+      "Their remix of 'Jingle Bells,' featuring vocalist Joe Williams, plays during a workshop scene in Marvel's Iron Man 3 (2013).",
+      "Bombay Dub Orchestra remains a studio project without a regular touring schedule."
+    ]
+  },
+  "shows": {
+    "enabled": false,
+    "upcomingNote": "Bombay Dub Orchestra is a studio project — no live tour history is tracked.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Review of Bombay Dub Orchestra - 3 Cities",
+        "outlet": "BBC Music",
+        "url": "https://www.bbc.co.uk/music/reviews/n2xm/"
+      },
+      {
+        "title": "Bombay Dub Orchestra",
+        "outlet": "Ink 19",
+        "url": "https://ink19.com/2013/12/magazine/music-reviews/dbf7uw-bombay-dub-orchestra"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

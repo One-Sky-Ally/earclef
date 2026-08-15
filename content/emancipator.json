@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "slug": "emancipator",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Emancipator — Ear Clef",
+    "description": "Portland producer Douglas Appling's downtempo/trip-hop project — string-laced instrumentals built on Soon It Will Be Cold Enough, Safe in the Steep Cliffs, and Baralku.",
+    "ogImage": "/images/og-emancipator.jpg",
+    "canonicalUrl": "https://earclef.com/emancipator"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "6HCnsY0Rxi3cg53xreoAIm"
+    },
+    "youtube": {
+      "channelId": "UCWCuFrZ4kdOMWhdmmDamW-Q"
+    },
+    "setlistfm": {
+      "mbid": "aa1d4315-5246-42b2-b62b-f997d046d8b2"
+    },
+    "itunes": {
+      "artistId": "209711341"
+    }
+  },
+  "hero": {
+    "name": "Emancipator",
+    "identity": "Portland producer Douglas Appling's downtempo project — violin- and cello-laced instrumentals blending trip-hop, ambient and electronica.",
+    "tagline": "Hear here!",
+    "location": "Portland, OR, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.emancipatormusic.com/"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/emancipatormusic"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/emanc"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/emanc/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/user/locirecords"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/emancipator/209711341"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://emancipator.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Soon It Will Be Cold Enough",
+        "year": "2006",
+        "mbReleaseGroupId": "4a6deebf-adeb-3cca-a467-0ddd146c7c98"
+      },
+      {
+        "title": "Safe in the Steep Cliffs",
+        "year": "2010",
+        "mbReleaseGroupId": "f1c36c42-d9c3-4d86-a0b0-a20eedabcc8b"
+      },
+      {
+        "title": "Baralku",
+        "year": "2017",
+        "mbReleaseGroupId": "60967cb8-5572-42f7-b09b-fb838bc1f272"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "fULXi348-jI",
+        "title": "Minor Cause"
+      },
+      {
+        "youtubeId": "LXfJAs1sSpI",
+        "title": "Baralku"
+      },
+      {
+        "youtubeId": "_sFj-gHg-38",
+        "title": "Thirty Three"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Emancipator is the recording project of Portland, Oregon producer Douglas Appling, who builds downtempo, string-laced instrumentals that blend trip-hop, ambient textures and electronica. He self-released his debut album, Soon It Will Be Cold Enough, in 2006 on his own label, Loci Records.",
+      "The album found a second life after Japanese producer Nujabes' label, Hyde Out Recordings, picked it up for a Japanese re-release, introducing Emancipator to a wider international audience.",
+      "Appling later expanded the project into a full touring act, Emancipator Ensemble, adding live violinist Ilya Goldberg to the electronic production for concert performances. Subsequent albums, including Safe in the Steep Cliffs (2010) and Baralku (2017), continued the project's blend of live strings and electronic composition."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at emancipatormusic.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2023-03-09",
+        "venue": "Wiltern Theatre",
+        "city": "Los Angeles, CA",
+        "setlistUrl": "https://www.setlist.fm/setlist/emancipator/2023/wiltern-theatre-los-angeles-ca-3bba5494.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Baralku LP",
+        "description": "From the official Emancipator store.",
+        "image": {
+          "src": "https://static.musictoday.com/store/bands/3911/product_large/XZLPEM07.jpg",
+          "alt": "Baralku LP"
+        },
+        "url": "https://emancipator.shop.redstarmerch.com/product/XZLPEM07/baralku-lp?cp=69283_69314"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "INTERVIEW: Emancipator",
+        "outlet": "Allston Pudding",
+        "url": "https://allstonpudding.com/interview-emancipator/"
+      },
+      {
+        "title": "Emancipator Talks New Album 'Baralku,' Pushing His Sound Forward",
+        "outlet": "Billboard",
+        "url": "https://www.billboard.com/music/music-news/emancipator-baralku-interview-7676857/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

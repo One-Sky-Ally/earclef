@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "slug": "yo-la-tengo",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Yo La Tengo — Ear Clef",
+    "description": "Hoboken's Ira Kaplan and Georgia Hubley — a band named for a 1962 outfield collision, four decades of Hanukkah charity shows, and a substantial film-scoring career.",
+    "ogImage": "/images/og-yo-la-tengo.jpg",
+    "canonicalUrl": "https://earclef.com/yo-la-tengo"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "5hAhrnb0Ch4ODwWu4tsbpi"
+    },
+    "youtube": {
+      "channelId": "UC_489i4uwfiz5UJcTuUIXiw"
+    },
+    "setlistfm": {
+      "mbid": "3f542031-b054-454d-b57b-812fa2a81b11"
+    },
+    "itunes": {
+      "artistId": "2959228"
+    }
+  },
+  "hero": {
+    "name": "Yo La Tengo",
+    "identity": "Hoboken's Ira Kaplan and Georgia Hubley — a married couple whose band is named for a 1962 baseball outfield collision.",
+    "tagline": "Hear here!",
+    "location": "Hoboken, NJ, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://yolatengo.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/therealylt/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/TheRealYLT"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/TheRealYLT"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@TheRealYLT"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/yo-la-tengo/2959228"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://music.amazon.com/artists/B000QJP9T2/yo-la-tengo"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Painful",
+        "year": "1993",
+        "mbReleaseGroupId": "43f61ece-3bac-3e2e-8b37-72c9278d243e"
+      },
+      {
+        "title": "I Can Hear the Heart Beating as One",
+        "year": "1997",
+        "mbReleaseGroupId": "901ddfef-b428-3022-a7b9-429f56513831"
+      },
+      {
+        "title": "And Then Nothing Turned Itself Inside-Out",
+        "year": "2000",
+        "mbReleaseGroupId": "509d3727-ba34-3490-9921-21f4ab3b52cc"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "h7SdOtXI5R8",
+        "title": "Sugarcube (Director's Cut)"
+      },
+      {
+        "youtubeId": "38iyHpJtylg",
+        "title": "Autumn Sweater (Official Audio)"
+      },
+      {
+        "youtubeId": "Py2KOyrtq6o",
+        "title": "Ohm (Official Video)"
+      },
+      {
+        "youtubeId": "zG3VUXBcyt0",
+        "title": "Tom Courtenay (Official Music Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Ira Kaplan and Georgia Hubley, a married couple, founded Yo La Tengo in Hoboken, New Jersey in 1984; James McNew joined on bass in 1992 to complete the trio's lineup. The name comes from a 1962 New York Mets mishap — outfielders kept colliding on fly balls until center fielder Richie Ashburn learned to shout '¡Yo la tengo!' ('I've got it!') at his Spanish-speaking teammate, only to still get flattened by a third outfielder who didn't know the phrase.",
+      "Painful (1993), I Can Hear the Heart Beating as One (1997) and And Then Nothing Turned Itself Inside-Out (2000) built the band's catalog through the 1990s, and they've continued releasing records since, including 2023's This Stupid World.",
+      "For decades, Yo La Tengo has staged annual multi-night Hanukkah charity concerts — traditionally at Maxwell's in Hoboken, later moved to Bowery Ballroom in New York — with a different rotating opening act each night.",
+      "The band has also built a substantial film-scoring career, composing music for Junebug (2005), Game 6 (2005), Shortbus (2006) and Old Joy (2006), later compiled on their 2008 release They Shoot, We Score."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at yolatengo.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-08-08",
+        "venue": "The Broad",
+        "city": "Los Angeles, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/yo-la-tengo/2026/the-broad-los-angeles-ca-6b704222.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Cartoon Band T-Shirt",
+        "description": "From the official Yo La Tengo store.",
+        "image": {
+          "src": "https://shop.bingomerch.com/cdn/shop/products/YoLaTengoCartoonBandTshirt_grande.jpg?v=1620650166",
+          "alt": "Cartoon Band T-Shirt"
+        },
+        "url": "https://shop.bingomerch.com/collections/yo-la-tengo"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Yo La Tengo: This Stupid World",
+        "outlet": "Pitchfork",
+        "url": "https://pitchfork.com/reviews/albums/yo-la-tengo-this-stupid-world/"
+      },
+      {
+        "title": "Ira Kaplan on ~40 years of Yo La Tengo",
+        "outlet": "NPR (Bullseye)",
+        "url": "https://www.npr.org/2023/12/08/1197955857/ira-kaplan"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Old Joy (2006)",
+        "context": "Scored Kelly Reichardt's film; later compiled with three other scores on 2008's They Shoot, We Score.",
+        "url": "https://www.imdb.com/name/nm1306785/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

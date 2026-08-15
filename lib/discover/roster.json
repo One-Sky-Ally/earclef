@@ -150,6 +150,16 @@
     "membership": false
   },
   {
+    "slug": "bob-dylan",
+    "name": "Bob Dylan",
+    "identity": "Went electric at Newport in 1965 and never really stopped changing — a Nobel laureate whose Never Ending Tour, started in 1988, is still running.",
+    "tier": "in-the-mix",
+    "mbid": "72c536dc-7137-4477-a521-567eeb840fa8",
+    "channelId": "UCnRI0ay61tY-fKYzzB3fCnw",
+    "itunesId": "462006",
+    "membership": false
+  },
+  {
     "slug": "bob-marley",
     "name": "Bob Marley",
     "identity": "One small island's rhythm, carried to every corner of the earth on a voice that never stopped believing.",
@@ -157,6 +167,16 @@
     "mbid": "ed2ac1e9-d51d-4eff-a2c2-85e81abd6360",
     "channelId": "UCAlTDckOOQ2jREOvuCShGbw",
     "itunesId": "121982",
+    "membership": false
+  },
+  {
+    "slug": "bombay-dub-orchestra",
+    "name": "Bombay Dub Orchestra",
+    "identity": "Andrew T. Mackay and Garry Hughes' Mumbai-recorded fusion project — Indian classical instrumentation folded into electronic and dub production.",
+    "tier": "in-the-mix",
+    "mbid": "20db01e0-20a4-49fe-a82e-dfadf117f36f",
+    "channelId": "UCFj0Hi17IGIzZOyyOLA4Djw",
+    "itunesId": "81841288",
     "membership": false
   },
   {
@@ -337,6 +357,16 @@
     "mbid": "0cee95e3-a61d-4cd1-a39c-75464a05b606",
     "channelId": "UCgfcVxUTpxMByamflWUc3IA",
     "itunesId": "21356860",
+    "membership": false
+  },
+  {
+    "slug": "emancipator",
+    "name": "Emancipator",
+    "identity": "Portland producer Douglas Appling's downtempo project — violin- and cello-laced instrumentals blending trip-hop, ambient and electronica.",
+    "tier": "in-the-mix",
+    "mbid": "aa1d4315-5246-42b2-b62b-f997d046d8b2",
+    "channelId": "UCWCuFrZ4kdOMWhdmmDamW-Q",
+    "itunesId": "209711341",
     "membership": false
   },
   {
@@ -650,6 +680,16 @@
     "membership": false
   },
   {
+    "slug": "lmc",
+    "name": "LMC",
+    "identity": "The British dance production trio behind 2004's UK #1 'Take Me to the Clouds Above,' built on a Whitney Houston interpolation and a U2 sample.",
+    "tier": "in-the-mix",
+    "mbid": "43967d0a-1857-4cb9-a2f3-1a8f6fe5a2ad",
+    "channelId": "UCqZKc23a7IWL0cUp1nvoLFA",
+    "itunesId": "1313071523",
+    "membership": false
+  },
+  {
     "slug": "low-roar",
     "name": "Low Roar",
     "identity": "Glacial, aching electronic folk from Reykjavík — the sound of walking a long way home in the cold.",
@@ -747,6 +787,16 @@
     "mbid": "89c081d4-2ab2-4d3e-8589-ad77dfc40384",
     "channelId": "UCdmO-zG8p3fN_qZDwS9_n3A",
     "itunesId": "843536848",
+    "membership": false
+  },
+  {
+    "slug": "mr-bungle",
+    "name": "Mr. Bungle",
+    "identity": "Mike Patton's genre-scrambling band from Eureka, California — costumed, theatrical, and unclassifiable since 1985.",
+    "tier": "in-the-mix",
+    "mbid": "277e21a9-2d64-452d-96c4-2d23a7af5891",
+    "channelId": "UCc642qPt-Rgsek6xJlyaGrQ",
+    "itunesId": "161620",
     "membership": false
   },
   {
@@ -1127,6 +1177,16 @@
     "mbid": "3c8ff4c9-b5b9-4e78-ad9d-5157c323de24",
     "channelId": "UC7EnxwiT0NeM83IAlSXJRgw",
     "itunesId": "276566673",
+    "membership": false
+  },
+  {
+    "slug": "yo-la-tengo",
+    "name": "Yo La Tengo",
+    "identity": "Hoboken's Ira Kaplan and Georgia Hubley — a married couple whose band is named for a 1962 baseball outfield collision.",
+    "tier": "in-the-mix",
+    "mbid": "3f542031-b054-454d-b57b-812fa2a81b11",
+    "channelId": "UC_489i4uwfiz5UJcTuUIXiw",
+    "itunesId": "2959228",
     "membership": false
   }
 ]

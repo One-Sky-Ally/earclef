@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "slug": "mr-bungle",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Mr. Bungle — Ear Clef",
+    "description": "Mike Patton's genre-scrambling band from Eureka, California — a 2020 reunion that added Scott Ian and Dave Lombardo to re-record their own 1986 demo.",
+    "ogImage": "/images/og-mr-bungle.jpg",
+    "canonicalUrl": "https://earclef.com/mr-bungle"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2zq0uqN9Wq12tqrQQt1ozw"
+    },
+    "youtube": {
+      "channelId": "UCc642qPt-Rgsek6xJlyaGrQ"
+    },
+    "setlistfm": {
+      "mbid": "277e21a9-2d64-452d-96c4-2d23a7af5891"
+    },
+    "itunes": {
+      "artistId": "161620"
+    }
+  },
+  "hero": {
+    "name": "Mr. Bungle",
+    "identity": "Mike Patton's genre-scrambling band from Eureka, California — costumed, theatrical, and unclassifiable since 1985.",
+    "tagline": "Hear here!",
+    "location": "Eureka, CA, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.mrbungle.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/mrbungle"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/ou818"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@ipecacrecordings"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/mr-bungle/161620"
+      },
+      {
+        "platform": "amazonMusic",
+        "url": "https://www.amazon.com/music/player/artists/B0012293LW/mr-bungle"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Mr. Bungle",
+        "year": "1991",
+        "mbReleaseGroupId": "8033ef41-a96d-30e0-8e98-f2e17f59db5f"
+      },
+      {
+        "title": "Disco Volante",
+        "year": "1995",
+        "mbReleaseGroupId": "93958da7-e728-3761-b28a-d6e0e89580ec"
+      },
+      {
+        "title": "The Raging Wrath of the Easter Bunny Demo",
+        "year": "2020",
+        "mbReleaseGroupId": "a30d70f7-a42f-4370-a0f5-bdb566a033f8"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "LQJ6ZxOxFn0",
+        "title": "Sudden Death (Official Video)"
+      },
+      {
+        "youtubeId": "3U5ZKKxqUzY",
+        "title": "Raping Your Mind (Official Video)"
+      },
+      {
+        "youtubeId": "TUSUlCBE0BQ",
+        "title": "Eracist (Live, from The Night They Came Home)"
+      },
+      {
+        "youtubeId": "YUEAErUpLI8",
+        "title": "Bungle Grind (Live, from The Night They Came Home)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Mr. Bungle formed in Eureka, California in 1985 as a teenage death-metal-leaning project, years before frontman Mike Patton joined Faith No More. The band built a reputation for theatrical, costumed live shows and a genre-scrambling sound spanning metal, ska, jazz and film-score textures across three studio albums: Mr. Bungle (1991), Disco Volante (1995) and California (1999).",
+      "The band's opening track on their debut, originally titled 'Travolta,' was retitled 'Quote Unquote' after legal pressure tied to the name.",
+      "In February 2020, Mr. Bungle reunited for three shows performing their original 1986 demo tape, The Raging Wrath of the Easter Bunny, in full — adding Anthrax's Scott Ian and former Slayer drummer Dave Lombardo to the classic Patton/Trevor Dunn/Trey Spruance lineup. They then professionally re-recorded it as The Raging Wrath of the Easter Bunny Demo, released that October via Patton's own label, Ipecac Recordings.",
+      "The band continues to tour and record, releasing a live album, The Night They Came Home, in 2021."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at mrbungle.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2026-02-03",
+        "venue": "Movistar Arena",
+        "city": "Buenos Aires, Argentina",
+        "setlistUrl": "https://www.setlist.fm/setlist/mr-bungle/2026/movistar-arena-buenos-aires-argentina-34179bb.html",
+        "note": "South America 2026 Tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "The Night They Came Home 2LP (Indie Exclusive Orange Vinyl)",
+        "description": "From the official Mr. Bungle store.",
+        "image": {
+          "src": "https://www.blixtmerchandise.com/cdn/shop/files/Mr.-Bungle---TNTCH---IPC236LP2---Indie-Orange-Vinyl_de84dedd-9a3a-4634-9bcc-d2b31ce0c799.jpg?v=1756490963",
+          "alt": "The Night They Came Home 2LP (Indie Exclusive Orange Vinyl)"
+        },
+        "url": "https://www.blixtmerchandise.com/collections/mr-bungle"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Mr. Bungle — NPR artist page",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/artists/114237720/mr-bungle"
+      },
+      {
+        "title": "Album Review: Mr. Bungle — The Raging Wrath of the Easter Bunny Demo",
+        "outlet": "Consequence",
+        "url": "https://consequence.net/2020/10/album-review-mr-bungle-raging-wrath-of-the-easter-bunny-demo/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

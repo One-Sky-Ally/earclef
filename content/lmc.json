@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "slug": "lmc",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "LMC — Ear Clef",
+    "description": "The British dance production trio behind 2004's UK #1 'Take Me to the Clouds Above' — Whitney Houston interpolated, U2 sampled, Rachel McFarlane on vocals.",
+    "ogImage": "/images/og-lmc.jpg",
+    "canonicalUrl": "https://earclef.com/lmc"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": ""
+    },
+    "youtube": {
+      "channelId": "UCqZKc23a7IWL0cUp1nvoLFA"
+    },
+    "setlistfm": {
+      "mbid": "43967d0a-1857-4cb9-a2f3-1a8f6fe5a2ad"
+    },
+    "itunes": {
+      "artistId": "1313071523"
+    }
+  },
+  "hero": {
+    "name": "LMC",
+    "identity": "The British dance production trio behind 2004's UK #1 'Take Me to the Clouds Above,' built on a Whitney Houston interpolation and a U2 sample.",
+    "tagline": "Hear here!",
+    "location": "England",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@allaroundtheworld"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/lmc/1313071523"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Take Me to the Clouds Above",
+        "year": "2004",
+        "mbReleaseGroupId": "874100b4-ac48-377b-b583-0ff76457ace7"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "vezoR_qomFg",
+        "title": "Take Me To The Clouds Above (Official Video)"
+      },
+      {
+        "youtubeId": "Tec1Qh-Khb0",
+        "title": "Take Me To The Clouds Above (4K Remaster)"
+      },
+      {
+        "youtubeId": "V_QVYgR7jZ8",
+        "title": "Run To You ft. Bryan Adams (Lyric Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "LMC — producers Lee Monteverde, Matt Cadman and Cris Nuttall — built their breakthrough single around an interpolation of Whitney Houston's 'How Will I Know' (1986) and a sample of U2's 'With or Without You' (1987), which is why it's formally credited as 'LMC vs U2,' with Bono, The Edge, Adam Clayton and Larry Mullen Jr. listed as co-writers. Vocalist Rachel McFarlane performed on the track.",
+      "'Take Me to the Clouds Above' reached number one on the UK Official Singles Chart on February 7, 2004, holding the top spot for two weeks and spending 15 weeks on the chart in total, including a January 2005 re-entry. It was released on the label All Around the World.",
+      "The trio has continued releasing new singles in the years since, including 'Te Amo' (2019), 'Run to You' featuring Bryan Adams (2024) and 'I Believe In Miracles' with Majestic (2025). LMC has no dedicated video channel of their own; the videos here are hosted by their label All Around The World and distribution partner Vidisco."
+    ]
+  },
+  "shows": {
+    "enabled": false,
+    "upcomingNote": "LMC is a studio production act with no tracked live tour history.",
+    "upcoming": [],
+    "past": []
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Take Me to the Clouds Above — Chart History",
+        "outlet": "Official Charts Company",
+        "url": "https://www.officialcharts.com/songs/lmc-vs-u2-take-me-to-the-clouds-above/"
+      },
+      {
+        "title": "970. \"Take Me to the Clouds Above\", by LMC Vs U2",
+        "outlet": "The UK Number Ones Blog",
+        "url": "https://number1sblog.com/2026/03/31/970-take-me-to-the-clouds-above-by-lmc-vs-u2/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
