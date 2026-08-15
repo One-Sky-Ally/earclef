@@ -20,15 +20,22 @@ export const metadata: Metadata = {
 
 export default function ArtistsPage() {
   const cards: ArtistCardData[] = getAllArtists().map((artist) => {
+    const heroImage = artist.hero.image.src
+    const hasRealHeroImage = heroImage !== '/images/hero-placeholder.svg'
     const firstVideo = artist.watch.enabled
       ? artist.watch.videos[0]
       : undefined
+    const thumbUrl = hasRealHeroImage
+      ? heroImage
+      : firstVideo
+        ? youtubeThumbnailUrl(firstVideo.youtubeId)
+        : null
     return {
       slug: artist.slug,
       name: artist.hero.name,
       identity: artist.hero.identity,
       location: artist.hero.location,
-      thumbUrl: firstVideo ? youtubeThumbnailUrl(firstVideo.youtubeId) : null,
+      thumbUrl,
       tier: artist.tier,
     }
   })

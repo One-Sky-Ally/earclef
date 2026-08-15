@@ -11,7 +11,7 @@ export interface ArtistCardData {
   name: string
   identity: string
   location: string
-  /** First-video thumbnail (i.ytimg.com) — null falls back to placeholder. */
+  /** Real hero photo if set, else first-video thumbnail (i.ytimg.com) — null falls back to placeholder. */
   thumbUrl: string | null
   tier?: ArtistTier
 }
