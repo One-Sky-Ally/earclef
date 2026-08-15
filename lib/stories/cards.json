@@ -222,6 +222,44 @@
       "at": "2026-08-08T00:15:00Z"
     },
     {
+      "id": "ane-brun-ff9db9be",
+      "slug": "ane-brun",
+      "artistName": "Ane Brun",
+      "type": "origin",
+      "hook": "A lupus diagnosis canceled her Peter Gabriel tour — and led to her most personal album.",
+      "story": "In late 2012, health problems related to lupus put Ane Brun in the hospital, forcing her to cancel a North American tour opening for Peter Gabriel. The forced break from touring led to a burst of creativity: the songs that came out of it became her 2015 album When I'm Free, released just ahead of her 40th birthday.",
+      "media": null,
+      "sources": [
+        {
+          "title": "For Singer Ane Brun, 'Freedom Is Really An Absence Of Fear'",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/2016/02/07/465594809/for-singer-ane-brun-freedom-is-really-an-absence-of-fear"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T14:00:00Z"
+    },
+    {
+      "id": "ane-brun-750222d5",
+      "slug": "ane-brun",
+      "artistName": "Ane Brun",
+      "type": "context",
+      "hook": "She scored additional music for the Swedish biopic about Pippi Longstocking's creator.",
+      "story": "Beyond her own records, Ane Brun has composer credits in film and television: she contributed additional music to Becoming Astrid (2018), the biopic about Swedish author Astrid Lindgren, and composed the title music for the 2019 TV series Hidden: First Born.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Ane Brun",
+          "outlet": "IMDb",
+          "url": "https://www.imdb.com/name/nm2080795/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T14:00:00Z"
+    },
+    {
       "id": "aphex-twin-7ab09d9c",
       "slug": "aphex-twin",
       "artistName": "Aphex Twin",
@@ -5476,6 +5514,49 @@
       "at": "2026-07-19T08:32:27.000Z"
     },
     {
+      "id": "jordan-rakei-7dbcd21d",
+      "slug": "jordan-rakei",
+      "artistName": "Jordan Rakei",
+      "type": "context",
+      "hook": "He's the first-ever Artist in Residence at London's Abbey Road Studios.",
+      "story": "In 2024, Jordan Rakei was named the inaugural Artist in Residence at London's Abbey Road Studios — the first time the storied studio has appointed anyone to that role.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Jordan Rakei Announced as the Inaugural Artist in Residence at Abbey Road Studios",
+          "outlet": "Abbey Road Studios",
+          "url": "https://www.abbeyroad.com/news/jordan-rakei-announced-as-the-inaugural-artist-in-residence-at-abbey-road-studios-3428"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T14:15:00Z"
+    },
+    {
+      "id": "jordan-rakei-33de0700",
+      "slug": "jordan-rakei",
+      "artistName": "Jordan Rakei",
+      "type": "context",
+      "hook": "He makes house music under a separate alias, Dan Kye, on Bradley Zero's label.",
+      "story": "Alongside his own catalog, Rakei records house and dance music under the alias Dan Kye, releasing on Bradley Zero's Rhythm Section International label — starting with the 2016 EP Joy, Ease, Lightness and the 2020 album Small Moments.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Jordan Rakei Shares Dreamy Electronic Cut Under Dan Kye Alias",
+          "outlet": "Clash",
+          "url": "https://www.clashmusic.com/news/jordan-rakei-shares-dreamy-electronic-cut-under-dan-kye-alias/"
+        },
+        {
+          "title": "Jordan Rakei Is Dan Kye for New House Album",
+          "outlet": "XLR8R",
+          "url": "https://xlr8r.com/news/jordan-rakei-is-dan-kye-for-new-house-album/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T14:15:00Z"
+    },
+    {
       "id": "jurassic-5-af0ac1e4",
       "slug": "jurassic-5",
       "artistName": "Jurassic 5",
@@ -6676,6 +6757,49 @@
       "status": "published",
       "model": "claude-sonnet-5",
       "at": "2026-08-15T00:45:00Z"
+    },
+    {
+      "id": "neutral-milk-hotel-38d3ee38",
+      "slug": "neutral-milk-hotel",
+      "artistName": "Neutral Milk Hotel",
+      "type": "origin",
+      "hook": "Frontman Jeff Mangum spent over a decade out of the public eye before returning to the stage.",
+      "story": "After In the Aeroplane Over the Sea (1998), Neutral Milk Hotel went dormant and frontman Jeff Mangum largely withdrew from public performance and interviews for more than ten years, earning a reputation as one of indie rock's most reclusive figures. He returned to the stage in 2011, which led to a full band reunion tour running from 2013 to 2015.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Neutral Milk Hotel's Reclusive Frontman Jeff Mangum Returning to Stage",
+          "outlet": "Rolling Stone",
+          "url": "https://www.rollingstone.com/music/music-news/neutral-milk-hotels-reclusive-frontman-jeff-mangum-returning-to-stage-248908/"
+        },
+        {
+          "title": "After Years Away, Neutral Milk Hotel's Jeff Mangum Returns To The Stage",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/sections/allsongs/2011/09/28/140880297/after-years-away-neutral-milk-hotels-jeff-mangum-returns-to-the-stage"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T14:05:00Z"
+    },
+    {
+      "id": "neutral-milk-hotel-996cb8fa",
+      "slug": "neutral-milk-hotel",
+      "artistName": "Neutral Milk Hotel",
+      "type": "context",
+      "hook": "Their 2023 box set includes a demo and a live recording that had never been officially released.",
+      "story": "The Collected Works of Neutral Milk Hotel, a box set originally sold only through the band's own store before its 2023 wide reissue on Merge Records, gathers both studio albums alongside a picture disc of a live set at Jittery Joe's, a previously unreleased demo of \"Little Birds,\" and other rarities across seven pieces of vinyl.",
+      "media": null,
+      "sources": [
+        {
+          "title": "The Collected Works of Neutral Milk Hotel",
+          "outlet": "Merge Records",
+          "url": "https://www.mergerecords.com/product/the_collected_works_of_neutral_milk_hotel"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T14:05:00Z"
     },
     {
       "id": "nick-drake-19a3b979",
@@ -8330,6 +8454,54 @@
       "at": "2026-08-08T00:45:00Z"
     },
     {
+      "id": "son-lux-c2f52fb5",
+      "slug": "son-lux",
+      "artistName": "Son Lux",
+      "type": "context",
+      "hook": "Their score for a multiverse film earned them an Oscar nomination on their first try.",
+      "story": "Son Lux's first film score, for A24's Everything Everywhere All at Once (2022), earned the trio an Academy Award nomination for Best Original Score. The companion album expanded on the score with collaborations from Mitski, David Byrne, Randy Newman and Moses Sumney. They followed it by scoring Marvel's Thunderbolts* (2025).",
+      "media": null,
+      "sources": [
+        {
+          "title": "Son Lux",
+          "outlet": "IMDb",
+          "url": "https://www.imdb.com/name/nm4954433/"
+        },
+        {
+          "title": "Son Lux: Everything Everywhere All At Once Oscars interview",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/2023/02/17/1157964901/son-lux-everything-everywhere-all-at-once-oscars-interview"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T14:20:00Z"
+    },
+    {
+      "id": "son-lux-277e2d19",
+      "slug": "son-lux",
+      "artistName": "Son Lux",
+      "type": "origin",
+      "hook": "What began as one producer's solo project became a three-way creative partnership.",
+      "story": "Son Lux started in 2008 as the solo project of composer Ryan Lott. In 2014, guitarist Rafiq Bhatia and drummer Ian Chang joined, turning it into a trio built on close creative partnership rather than a frontman-and-backing-band arrangement — the lineup behind Brighter Wounds (2018) and the triple album Tomorrows (2020-2021).",
+      "media": null,
+      "sources": [
+        {
+          "title": "Son Lux",
+          "outlet": "IMDb",
+          "url": "https://www.imdb.com/name/nm4954433/"
+        },
+        {
+          "title": "Son Lux",
+          "outlet": "MusicBrainz",
+          "url": "https://musicbrainz.org/artist/afcd292c-3c1e-4708-af4a-991aadf957e4"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T14:20:00Z"
+    },
+    {
       "id": "st-vincent-95618a19",
       "slug": "st-vincent",
       "artistName": "St. Vincent",
@@ -9306,6 +9478,49 @@
       "status": "published",
       "model": "claude-opus-4-8",
       "at": "2026-07-18T16:47:31.674Z"
+    },
+    {
+      "id": "the-decemberists-4756d69b",
+      "slug": "the-decemberists",
+      "artistName": "The Decemberists",
+      "type": "context",
+      "hook": "Colin Meloy co-wrote a children's fantasy trilogy with his wife, illustrator Carson Ellis.",
+      "story": "Beyond the band, frontman Colin Meloy is a published author: with his wife, illustrator Carson Ellis, he wrote the Wildwood Chronicles, a children's fantasy trilogy set in a magical wilderness bordering Portland, published by Balzer + Bray, an imprint of HarperCollins, starting with Wildwood in 2011.",
+      "media": null,
+      "sources": [
+        {
+          "title": "Wildwood",
+          "outlet": "HarperCollins",
+          "url": "https://www.harpercollins.ca/9780062093530/wildwood/"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T14:10:00Z"
+    },
+    {
+      "id": "the-decemberists-a64205c1",
+      "slug": "the-decemberists",
+      "artistName": "The Decemberists",
+      "type": "context",
+      "hook": "The Hazards of Love is a full rock opera, built from a song that outgrew itself.",
+      "story": "The Hazards of Love (2009) began as an attempt by Colin Meloy to write a single song sharing its title with an Anne Briggs EP — the song grew into a full concept album and rock opera, with every track contributing to one continuous narrative, and guest vocals from Becky Stark, Shara Nova and Jim James.",
+      "media": null,
+      "sources": [
+        {
+          "title": "The Hazards of Love",
+          "outlet": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/The_Hazards_of_Love"
+        },
+        {
+          "title": "The Decemberists: New Album Fit For A King",
+          "outlet": "NPR",
+          "url": "https://www.npr.org/2011/01/18/133020118/the-decemberists-new-album-fit-for-a-king"
+        }
+      ],
+      "status": "published",
+      "model": "claude-sonnet-5",
+      "at": "2026-08-15T14:10:00Z"
     },
     {
       "id": "the-smile-b64531aa",

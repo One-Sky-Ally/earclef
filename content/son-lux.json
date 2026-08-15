@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "slug": "son-lux",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Son Lux — Ear Clef",
+    "description": "The New York experimental art-pop trio behind the Oscar-nominated score for Everything Everywhere All at Once.",
+    "ogImage": "/images/og-son-lux.jpg",
+    "canonicalUrl": "https://earclef.com/son-lux"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "3kZdsaTYgaaolNxpnJ4iDe"
+    },
+    "youtube": {
+      "channelId": "UCvaVEjRMc91tuAxO3b3JuQw"
+    },
+    "setlistfm": {
+      "mbid": "afcd292c-3c1e-4708-af4a-991aadf957e4"
+    },
+    "itunes": {
+      "artistId": "272690127"
+    }
+  },
+  "hero": {
+    "name": "Son Lux",
+    "identity": "The New York experimental art-pop trio behind the Oscar-nominated score for Everything Everywhere All at Once.",
+    "tagline": "Hear here!",
+    "location": "New York, NY, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://sonluxmusic.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/sonlux"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/sonlux"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/son_lux/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@sonlux"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/son-lux/272690127"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://sonlux.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Lanterns",
+        "year": "2013",
+        "mbReleaseGroupId": "491cb93c-5af2-4db7-90bd-e54ce3040052"
+      },
+      {
+        "title": "Bones",
+        "year": "2015",
+        "mbReleaseGroupId": "1274fde6-8366-46cb-8d95-8481795a196d"
+      },
+      {
+        "title": "Brighter Wounds",
+        "year": "2018",
+        "mbReleaseGroupId": "1a343a03-3ef7-4cb6-8290-e7b484bc06ee"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "8gpJ8bhTKWU",
+        "title": "Undertow (Official Video)"
+      },
+      {
+        "youtubeId": "ebjd76MfdbQ",
+        "title": "The Fool You Need (Official Video)"
+      },
+      {
+        "youtubeId": "5Lk8XuNDbtA",
+        "title": "Plans We Made (Official Video)"
+      },
+      {
+        "youtubeId": "q1u79rmMd8g",
+        "title": "Alternate World (Official Audio)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Son Lux began as the solo project of composer Ryan Lott in 2008, expanding in 2014 into a trio with guitarist Rafiq Bhatia and drummer Ian Chang. Their catalog — Lanterns (2013), Bones (2015), Brighter Wounds (2018) and the triple album Tomorrows (2020-2021) — balances raw emotional intimacy against meticulous electronic construction.",
+      "The trio scored Everything Everywhere All at Once (2022), earning an Academy Award nomination for Best Original Score, with a companion album featuring collaborations with Mitski, David Byrne, Randy Newman and Moses Sumney. They went on to score Marvel's Thunderbolts* (2025)."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at sonluxmusic.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2023-06-20",
+        "venue": "Festsaal Kreuzberg",
+        "city": "Berlin, Germany",
+        "setlistUrl": "https://www.setlist.fm/setlist/son-lux/2023/festsaal-kreuzberg-berlin-germany-6ba60ab2.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Son Lux Short Sleeve Black Tee",
+        "description": "From the official Son Lux store.",
+        "image": {
+          "src": "https://merch.ambientinks.com/cdn/shop/files/Son-Lux_Web_Black-Tee_Black_large.png?v=1732719303",
+          "alt": "Son Lux Short Sleeve Black Tee"
+        },
+        "url": "https://merch.ambientinks.com/collections/sonlux/products/son-lux-short-sleeve-black-tee"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Son Lux: Everything Everywhere All At Once Oscars interview",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2023/02/17/1157964901/son-lux-everything-everywhere-all-at-once-oscars-interview"
+      },
+      {
+        "title": "How Son Lux Crafted a Maximalist Soundtrack for 'Everything Everywhere All at Once'",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/tv-movies/tv-movie-features/everything-everywhere-all-once-soundtrack-son-lux-interview-1336539/"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Everything Everywhere All at Once (2022)",
+        "context": "Composed the score for the A24 film; nominated for the Academy Award for Best Original Score.",
+        "url": "https://www.imdb.com/name/nm4954433/"
+      },
+      {
+        "kind": "film-score",
+        "title": "Thunderbolts* (2025)",
+        "context": "Composed the score for the Marvel Studios film.",
+        "url": "https://www.imdb.com/name/nm4954433/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

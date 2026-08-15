@@ -50,6 +50,16 @@
     "membership": false
   },
   {
+    "slug": "ane-brun",
+    "name": "Ane Brun",
+    "identity": "Norwegian-born, Stockholm-based singer-songwriter — intimate, string-laced folk-pop built around her distinctive voice.",
+    "tier": "in-the-mix",
+    "mbid": "d735497b-25f9-4503-8fb5-f50150730c18",
+    "channelId": "UChihnFNbUit9rhVXCNeTsrQ",
+    "itunesId": "24134087",
+    "membership": false
+  },
+  {
     "slug": "aphex-twin",
     "name": "Aphex Twin",
     "identity": "Machines taught to giggle, ambient music with teeth — electronic music's great grinning trickster.",
@@ -640,6 +650,16 @@
     "membership": false
   },
   {
+    "slug": "jordan-rakei",
+    "name": "Jordan Rakei",
+    "identity": "New Zealand-born, Australia-raised, London-based singer-producer moving between neo-soul, jazz and electronic production.",
+    "tier": "in-the-mix",
+    "mbid": "812c46e5-3d65-4e80-ada8-269450c5621b",
+    "channelId": "UC4ZVH32PCUG_iL7UI2ulmLw",
+    "itunesId": "705284964",
+    "membership": false
+  },
+  {
     "slug": "jurassic-5",
     "name": "Jurassic 5",
     "identity": "Old-school four-MC trading bars over turntablist production — a deliberate throwback built as a reaction against 90s gangsta rap's dominance.",
@@ -797,6 +817,16 @@
     "mbid": "277e21a9-2d64-452d-96c4-2d23a7af5891",
     "channelId": "UCc642qPt-Rgsek6xJlyaGrQ",
     "itunesId": "161620",
+    "membership": false
+  },
+  {
+    "slug": "neutral-milk-hotel",
+    "name": "Neutral Milk Hotel",
+    "identity": "Jeff Mangum's Elephant 6-affiliated lo-fi folk project, built around the landmark 1998 album In the Aeroplane Over the Sea.",
+    "tier": "in-the-mix",
+    "mbid": "a506f761-2c22-4b2f-8a94-bd748c2c8f75",
+    "channelId": "UC61ntWQBhbZWj3g9Vua3rug",
+    "itunesId": "5611466",
     "membership": false
   },
   {
@@ -970,6 +1000,16 @@
     "membership": false
   },
   {
+    "slug": "son-lux",
+    "name": "Son Lux",
+    "identity": "The New York experimental art-pop trio behind the Oscar-nominated score for Everything Everywhere All at Once.",
+    "tier": "in-the-mix",
+    "mbid": "afcd292c-3c1e-4708-af4a-991aadf957e4",
+    "channelId": "UCvaVEjRMc91tuAxO3b3JuQw",
+    "itunesId": "272690127",
+    "membership": false
+  },
+  {
     "slug": "st-vincent",
     "name": "St. Vincent",
     "identity": "Annie Clark's art-rock guitar project, built from a touring sideman's apprenticeship into one of the era's defining catalogs.",
@@ -1067,6 +1107,16 @@
     "mbid": "41e2d679-43a3-4b9b-8469-ce748ad7b1ca",
     "channelId": null,
     "itunesId": "858682",
+    "membership": false
+  },
+  {
+    "slug": "the-decemberists",
+    "name": "The Decemberists",
+    "identity": "Portland's literary indie folk-rock band, fronted by Colin Meloy — nautical, historical, and full of narrative sweep since 2000.",
+    "tier": "in-the-mix",
+    "mbid": "97b1142f-c71e-4971-8736-4a8ceaf6b4c3",
+    "channelId": "UCf0uVkfr1g6PhD1QwtNE3kg",
+    "itunesId": "3205453",
     "membership": false
   },
   {

@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "slug": "ane-brun",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Ane Brun — Ear Clef",
+    "description": "Norwegian-born, Stockholm-based singer-songwriter — intimate, string-laced folk-pop across a decade-spanning catalog.",
+    "ogImage": "/images/og-ane-brun.jpg",
+    "canonicalUrl": "https://earclef.com/ane-brun"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2L3kwZFd16zjHz9a5kEPAm"
+    },
+    "youtube": {
+      "channelId": "UChihnFNbUit9rhVXCNeTsrQ"
+    },
+    "setlistfm": {
+      "mbid": "d735497b-25f9-4503-8fb5-f50150730c18"
+    },
+    "itunes": {
+      "artistId": "24134087"
+    }
+  },
+  "hero": {
+    "name": "Ane Brun",
+    "identity": "Norwegian-born, Stockholm-based singer-songwriter — intimate, string-laced folk-pop built around her distinctive voice.",
+    "tagline": "Hear here!",
+    "location": "Stockholm, Sweden",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://anebrun.com/"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/anebrun/"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/anebrunofficial"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/channel/UChihnFNbUit9rhVXCNeTsrQ"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/ane-brun/24134087"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "A Temporary Dive",
+        "year": "2005",
+        "mbReleaseGroupId": "f298bc41-7b44-368d-95de-0eac9040fe34"
+      },
+      {
+        "title": "Changing of the Seasons",
+        "year": "2008",
+        "mbReleaseGroupId": "455760e6-f8e3-3f42-84a1-9a872c4f0b47"
+      },
+      {
+        "title": "When I'm Free",
+        "year": "2015",
+        "mbReleaseGroupId": "cf7576b6-b4e3-493f-9746-e5f184c96375"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "RIbTYJtFabg",
+        "title": "Hand In The Fire (Official Video)"
+      },
+      {
+        "youtubeId": "1lI30Qw69AQ",
+        "title": "Do You Remember (Official Video HD)"
+      },
+      {
+        "youtubeId": "qMCQgb1YxI8",
+        "title": "\"One\" (Official Music Video HD)"
+      },
+      {
+        "youtubeId": "wrxIcTBtOHQ",
+        "title": "Honey (Official Video)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Ane Brun is a Norwegian singer-songwriter who has been based in Stockholm since 2001. Her breakthrough came with her second album, A Temporary Dive (2005), which topped the Norwegian charts and established the intimate, string-laced sound she's built on since.",
+      "Changing of the Seasons (2008) and When I'm Free (2015) continued a catalog now spanning eleven studio albums, built around her distinctive, breath-forward voice.",
+      "Beyond her own records, Brun has scored screen work: she contributed additional music to the 2018 Swedish biopic Becoming Astrid and composed the title music for the 2019 TV series Hidden: First Born."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at anebrun.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-08-03",
+        "venue": "Openluchttheater De Goffert",
+        "city": "Nijmegen, Netherlands",
+        "setlistUrl": "https://www.setlist.fm/setlist/ane-brun/2024/openluchttheater-de-goffert-nijmegen-netherlands-355f57b.html",
+        "note": ""
+      }
+    ]
+  },
+  "merch": {
+    "enabled": false,
+    "items": []
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Ane Brun: Tiny Desk Concert",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2016/03/30/472428476/ane-brun-tiny-desk-concert"
+      },
+      {
+        "title": "For Singer Ane Brun, 'Freedom Is Really An Absence Of Fear'",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2016/02/07/465594809/for-singer-ane-brun-freedom-is-really-an-absence-of-fear"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "film-score",
+        "title": "Becoming Astrid (2018)",
+        "context": "Credited as composer for additional music on the Swedish biopic about Astrid Lindgren.",
+        "url": "https://www.imdb.com/name/nm2080795/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

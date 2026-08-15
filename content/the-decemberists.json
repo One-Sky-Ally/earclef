@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "slug": "the-decemberists",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "The Decemberists — Ear Clef",
+    "description": "Portland's literary indie folk-rock band, fronted by Colin Meloy — nautical, historical, and full of narrative sweep since 2000.",
+    "ogImage": "/images/og-the-decemberists.jpg",
+    "canonicalUrl": "https://earclef.com/the-decemberists"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "7ITd48RbLVpUfheE7B86o2"
+    },
+    "youtube": {
+      "channelId": "UCf0uVkfr1g6PhD1QwtNE3kg"
+    },
+    "setlistfm": {
+      "mbid": "97b1142f-c71e-4971-8736-4a8ceaf6b4c3"
+    },
+    "itunes": {
+      "artistId": "3205453"
+    }
+  },
+  "hero": {
+    "name": "The Decemberists",
+    "identity": "Portland's literary indie folk-rock band, fronted by Colin Meloy — nautical, historical, and full of narrative sweep since 2000.",
+    "tagline": "Hear here!",
+    "location": "Portland, OR, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.decemberists.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/TheDecemberists"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/thedecemberists"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/thedecemberists/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@TheDecemberists"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/the-decemberists/3205453"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://thedecemberists.bandcamp.com/"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/thedecemberists"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Picaresque",
+        "year": "2005",
+        "mbReleaseGroupId": "83809016-521d-3b0b-8685-7d0e554fdcb7"
+      },
+      {
+        "title": "The Crane Wife",
+        "year": "2006",
+        "mbReleaseGroupId": "3958580d-8271-3cd2-90d4-c027515941dc"
+      },
+      {
+        "title": "The Hazards of Love",
+        "year": "2009",
+        "mbReleaseGroupId": "3e5d711e-bc4c-357d-b142-d3f2b016d86e"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "dBlJ35D7tss",
+        "title": "Burial Ground (Official Audio)"
+      },
+      {
+        "youtubeId": "ni7T18UUBUI",
+        "title": "Calamity Song (Official Video)"
+      },
+      {
+        "youtubeId": "qXIZp_MlyJA",
+        "title": "Oh No! (Official Audio)"
+      },
+      {
+        "youtubeId": "YwdVlUUa7xU",
+        "title": "All I Want Is You (Official Audio)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "The Decemberists formed in Portland, Oregon in 2000 around singer-songwriter Colin Meloy, building a catalog of literary, often historical narrative songs steeped in nautical and folk-tale imagery. Picaresque (2005), The Crane Wife (2006) and The Hazards of Love (2009) — the latter a full song-cycle concept album — established the band as one of the era's defining indie folk-rock acts.",
+      "The band continues to write, record and tour, releasing As It Ever Was, So It Will Be Again in 2024.",
+      "Colin Meloy is also a published author: with his wife, illustrator Carson Ellis, he wrote the Wildwood Chronicles, a children's fantasy trilogy — Wildwood (2011), Under Wildwood (2013) and Wildwood Imperium (2015) — published by Balzer + Bray, an imprint of HarperCollins."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at decemberists.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2025-11-06",
+        "venue": "Arlene Schnitzer Concert Hall",
+        "city": "Portland, OR, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/the-decemberists/2025/arlene-schnitzer-concert-hall-portland-or-35bfd3b.html",
+        "note": "Live with Orchestra"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Logo Tee",
+        "description": "From the official Decemberists store.",
+        "image": {
+          "src": "https://static.musictoday.com/store/bands/5178/product_large/XZCTDC50.png",
+          "alt": "Logo Tee"
+        },
+        "url": "https://decemberistsshop.com/product/XZCTDC50/logo-tee?cp=104489_104490"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "The Decemberists: New Album Fit For A King",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2011/01/18/133020118/the-decemberists-new-album-fit-for-a-king"
+      },
+      {
+        "title": "The Decemberists: What a Terrible World, What a Beautiful World review",
+        "outlet": "The Guardian",
+        "url": "https://www.theguardian.com/music/2015/jan/15/the-decemberists-what-a-terrible-world-review"
+      }
+    ]
+  },
+  "beyond": {
+    "enabled": true,
+    "items": [
+      {
+        "kind": "book",
+        "title": "Wildwood (2011)",
+        "context": "First novel in the Wildwood Chronicles fantasy trilogy, written by Colin Meloy and illustrated by Carson Ellis.",
+        "url": "https://www.harpercollins.ca/9780062093530/wildwood/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

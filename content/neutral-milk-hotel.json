@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "slug": "neutral-milk-hotel",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Neutral Milk Hotel — Ear Clef",
+    "description": "Jeff Mangum's Elephant 6-affiliated lo-fi folk project, built around the landmark 1998 album In the Aeroplane Over the Sea.",
+    "ogImage": "/images/og-neutral-milk-hotel.jpg",
+    "canonicalUrl": "https://earclef.com/neutral-milk-hotel"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "2ooIqOf4X2uz4mMptXCtie"
+    },
+    "youtube": {
+      "channelId": "UC61ntWQBhbZWj3g9Vua3rug"
+    },
+    "setlistfm": {
+      "mbid": "a506f761-2c22-4b2f-8a94-bd748c2c8f75"
+    },
+    "itunes": {
+      "artistId": "5611466"
+    }
+  },
+  "hero": {
+    "name": "Neutral Milk Hotel",
+    "identity": "Jeff Mangum's Elephant 6-affiliated lo-fi folk project, built around the landmark 1998 album In the Aeroplane Over the Sea.",
+    "tagline": "Hear here!",
+    "location": "Ruston, LA, USA",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.walkingwallofwords.com/"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://neutralmilkhotel.bandcamp.com/"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/neutral-milk-hotel/5611466"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://neutralmilkhotel.bandcamp.com/"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "On Avery Island",
+        "year": "1996",
+        "mbReleaseGroupId": "32fc6059-148d-3bd6-991f-70c47653fb8c"
+      },
+      {
+        "title": "In the Aeroplane Over the Sea",
+        "year": "1998",
+        "mbReleaseGroupId": "8f310800-045b-3e12-8268-50b3d33a2267"
+      },
+      {
+        "title": "The Collected Works of Neutral Milk Hotel",
+        "year": "2023",
+        "mbReleaseGroupId": "4fc99988-6264-40f4-a6ca-e834e2687104"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "D4Dx77oueZ0",
+        "title": "Naomi (Video by Naomi Yang, made with the band's blessing)"
+      },
+      {
+        "youtubeId": "6nGr0cinaOw",
+        "title": "Little Birds (Live) [2014] (Official Audio)"
+      },
+      {
+        "youtubeId": "AdzAz3OqeqQ",
+        "title": "Where You'll Find Me Now (Alternate Version) (Official Audio)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Neutral Milk Hotel formed around singer-songwriter Jeff Mangum as part of the Elephant 6 Recording Company collective, releasing two studio albums: On Avery Island (1996) and In the Aeroplane Over the Sea (1998), the latter now widely regarded as one of the defining records of 1990s indie rock.",
+      "The band went dormant after 1998, with Mangum largely retreating from public performance for over a decade. A reunion followed in 2013, with the full band touring through 2015 before going quiet again.",
+      "In 2023, Merge Records released The Collected Works of Neutral Milk Hotel, a box set that earned a Grammy nomination for its art direction.",
+      "Neutral Milk Hotel has no dedicated video channel of their own; the videos here are hosted by their label, Merge Records."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "The band is not currently touring.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2015-06-11",
+        "venue": "Phoenix Theatre",
+        "city": "Petaluma, CA, USA",
+        "setlistUrl": "https://www.setlist.fm/setlist/neutral-milk-hotel/2015/phoenix-theatre-petaluma-ca-7bc93af4.html",
+        "note": "Final show of the 2013-2015 reunion tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Aeroplane Album Cover T-shirt",
+        "description": "From the official Merge Records store.",
+        "image": {
+          "src": "https://dispatch-public.s3.amazonaws.com/b52309b5f1a48f5d399549c719ae1b135a7d84cc_cd94419cfe934bc9bba04f11ba89f40818030b36_medium_jpg",
+          "alt": "Aeroplane Album Cover T-shirt"
+        },
+        "url": "https://www.mergerecords.com/product/aeroplane_album_cover_t_shirt"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "In the Aeroplane Over the Sea",
+        "outlet": "Rolling Stone",
+        "url": "https://www.rollingstone.com/music/music-album-reviews/in-the-aeroplane-over-the-sea-112548/"
+      },
+      {
+        "title": "Neutral Milk Hotel — NPR artist archive",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/artists/19059662/neutral-milk-hotel/archive"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}

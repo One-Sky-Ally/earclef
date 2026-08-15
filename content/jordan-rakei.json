@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "slug": "jordan-rakei",
+  "tier": "in-the-mix",
+  "meta": {
+    "title": "Jordan Rakei — Ear Clef",
+    "description": "New Zealand-born, Australia-raised, London-based singer-producer moving between neo-soul, jazz and electronic production.",
+    "ogImage": "/images/og-jordan-rakei.jpg",
+    "canonicalUrl": "https://earclef.com/jordan-rakei"
+  },
+  "integrations": {
+    "spotify": {
+      "artistId": "24icoQNJSEWNu3XvqKBR68"
+    },
+    "youtube": {
+      "channelId": "UC4ZVH32PCUG_iL7UI2ulmLw"
+    },
+    "setlistfm": {
+      "mbid": "812c46e5-3d65-4e80-ada8-269450c5621b"
+    },
+    "itunes": {
+      "artistId": "705284964"
+    }
+  },
+  "hero": {
+    "name": "Jordan Rakei",
+    "identity": "New Zealand-born, Australia-raised, London-based singer-producer moving between neo-soul, jazz and electronic production.",
+    "tagline": "Hear here!",
+    "location": "London, UK",
+    "image": {
+      "src": "/images/hero-placeholder.svg",
+      "alt": "Placeholder artwork"
+    },
+    "socials": [
+      {
+        "platform": "website",
+        "url": "https://www.jordanrakei.com/"
+      },
+      {
+        "platform": "x",
+        "url": "https://twitter.com/jordanrakei"
+      },
+      {
+        "platform": "facebook",
+        "url": "https://www.facebook.com/JordanRakei"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/jrakz/"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/@jrakz"
+      }
+    ]
+  },
+  "listen": {
+    "enabled": true,
+    "platforms": [
+      {
+        "platform": "appleMusic",
+        "url": "https://music.apple.com/us/artist/jordan-rakei/705284964"
+      },
+      {
+        "platform": "bandcamp",
+        "url": "https://jordanrakei.bandcamp.com/"
+      },
+      {
+        "platform": "soundcloud",
+        "url": "https://soundcloud.com/jordan-rakei"
+      }
+    ],
+    "featuredAlbums": [
+      {
+        "title": "Wallflower",
+        "year": "2017",
+        "mbReleaseGroupId": "57638fab-395d-414c-980e-74c81091fe3b"
+      },
+      {
+        "title": "What We Call Life",
+        "year": "2021",
+        "mbReleaseGroupId": "975c116b-ce74-4ec6-8842-40403149c2bd"
+      },
+      {
+        "title": "The Loop",
+        "year": "2024",
+        "mbReleaseGroupId": "1f632705-ae2f-4262-ac4b-c8268de7e8d7"
+      }
+    ]
+  },
+  "watch": {
+    "enabled": true,
+    "videos": [
+      {
+        "youtubeId": "gUpEIQZ_lhY",
+        "title": "Promise (Visualiser)"
+      },
+      {
+        "youtubeId": "ZYauyRqjxJo",
+        "title": "Problems ft. FKJ (Official Visualiser)"
+      },
+      {
+        "youtubeId": "_Yx1pbuKxhw",
+        "title": "It Never Ends ft. Femi Koleoso (Official Visualiser)"
+      }
+    ]
+  },
+  "story": {
+    "enabled": true,
+    "heading": "The Story",
+    "paragraphs": [
+      "Jordan Rakei was born in New Zealand, raised in Brisbane, Australia, and is now based in London. His music moves between neo-soul, jazz and electronic production, built around his falsetto-leaning voice.",
+      "Wallflower (2017) was shortlisted for the Australian Music Prize; What We Call Life (2021) and The Loop (2024, his first release on Decca) continued a catalog defined by close collaboration with jazz and soul musicians.",
+      "In 2024, Rakei was named the first-ever Artist in Residence at London's Abbey Road Studios."
+    ]
+  },
+  "shows": {
+    "enabled": true,
+    "upcomingNote": "Tour dates are announced at jordanrakei.com.",
+    "upcoming": [],
+    "past": [
+      {
+        "date": "2024-10-01",
+        "venue": "Royal Albert Hall",
+        "city": "London, England",
+        "setlistUrl": "https://www.setlist.fm/setlist/jordan-rakei/2024/royal-albert-hall-london-england-4ba80bde.html",
+        "note": "The Loop tour"
+      }
+    ]
+  },
+  "merch": {
+    "enabled": true,
+    "items": [
+      {
+        "name": "Black The Loop T-Shirt",
+        "description": "From the official Jordan Rakei store.",
+        "image": {
+          "src": "https://shopuk.jordanrakei.com/cdn/shop/files/JK_004_JPEG.jpg?v=1783958641&width=900",
+          "alt": "Black The Loop T-Shirt"
+        },
+        "url": "https://shopuk.jordanrakei.com/collections/merch/products/black-the-loop-t-shirt"
+      }
+    ]
+  },
+  "press": {
+    "enabled": true,
+    "items": [
+      {
+        "title": "Jordan Rakei: Tiny Desk Concert",
+        "outlet": "NPR",
+        "url": "https://www.npr.org/2020/01/13/795083915/jordan-rakei-tiny-desk-concert"
+      },
+      {
+        "title": "Jordan Rakei tells us about new album 'A Safe Place To Be Wild'",
+        "outlet": "Rolling Stone UK",
+        "url": "https://www.rollingstone.co.uk/music/news/jordan-rakei-new-album-a-safe-place-to-be-wild-abbey-road-interview-62795/"
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Music in balance",
+    "attribution": "A One Sky Ally project"
+  }
+}
