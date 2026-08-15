@@ -1,14 +1,14 @@
 {
-  "BZ": {
-    "name": "Belize",
-    "wikidataMusicians": 17,
-    "discogsReleases": 247,
-    "candidates": 156,
-    "newArtists": 137,
+  "MD": {
+    "name": "Moldova",
+    "wikidataMusicians": 180,
+    "discogsReleases": 895,
+    "candidates": 700,
+    "newArtists": 467,
     "dropped": {
-      "duplicate": 12,
-      "foreignCatalog": 4,
-      "wikidataCrosswalk": 3
+      "duplicate": 65,
+      "foreignCatalog": 132,
+      "wikidataCrosswalk": 28
     },
     "recordGuard": {
       "countryMismatch": 0,
@@ -18,223 +18,19 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 20,
-      "uncorroboratedKept": 18
+      "collisionKept": 115,
+      "uncorroboratedKept": 140
     },
-    "dated": 121,
+    "dated": 456,
     "sample": [
-      "Ewing R. Samuels III (2024)",
-      "Marcus Perigo (2015)",
-      "Titiman Flores (1996)",
-      "Alejandro Iglesias (2025)",
-      "Auric (2025)",
-      "Aziatic (1999)",
-      "Bro. David (1996)",
-      "Carter (2025)"
-    ]
-  },
-  "GY": {
-    "name": "Guyana",
-    "wikidataMusicians": 13,
-    "discogsReleases": 272,
-    "candidates": 212,
-    "newArtists": 178,
-    "dropped": {
-      "duplicate": 10,
-      "foreignCatalog": 22,
-      "wikidataCrosswalk": 2
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 27,
-      "uncorroboratedKept": 30
-    },
-    "dated": 82,
-    "sample": [
-      "The Mighty Enchanter (1975)",
-      "Terry Nelson (1972)",
-      "Lord Melody (1954)",
-      "Sugrim Gobin (1973)",
-      "Bobby Vourilvee (1975)",
-      "Dasy Panchu (1969)",
-      "Ivor Lynch (1976)",
-      "Johnny Braff (1965)"
-    ]
-  },
-  "HN": {
-    "name": "Honduras",
-    "wikidataMusicians": 34,
-    "discogsReleases": 540,
-    "candidates": 362,
-    "newArtists": 245,
-    "dropped": {
-      "duplicate": 14,
-      "foreignCatalog": 99,
-      "wikidataCrosswalk": 4
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 49,
-      "uncorroboratedKept": 28
-    },
-    "dated": 204,
-    "sample": [
-      "Voces Universitarias De Honduras (1970)",
-      "Los Silver Star (1972)",
-      "Los Gatos Bravos (1975)",
-      "Los Profesionales (1984)",
-      "Moises Canello (1981)",
-      "Engendro (2002)",
-      "Trío Honduras (1967)",
-      "Grupo Hitsong (1985)"
-    ]
-  },
-  "BS": {
-    "name": "Bahamas",
-    "wikidataMusicians": 18,
-    "discogsReleases": 942,
-    "candidates": 405,
-    "newArtists": 337,
-    "dropped": {
-      "duplicate": 38,
-      "foreignCatalog": 24,
-      "wikidataCrosswalk": 6
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 38,
-      "uncorroboratedKept": 65
-    },
-    "dated": 207,
-    "sample": [
-      "Richie Delamore (1960)",
-      "Eddie Minnis (1975)",
-      "Dudley Smith Steel Band (1960)",
-      "Dry Bread (1974)",
-      "Wendell Stuart (1969)",
-      "George Symonette (1955)",
-      "George Symonette And His Goombay Sextette (1955)",
-      "Little Sparrow (1960)"
-    ]
-  },
-  "SR": {
-    "name": "Suriname",
-    "wikidataMusicians": 235,
-    "discogsReleases": 742,
-    "candidates": 600,
-    "newArtists": 518,
-    "dropped": {
-      "duplicate": 15,
-      "foreignCatalog": 64,
-      "wikidataCrosswalk": 3
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 43,
-      "uncorroboratedKept": 58
-    },
-    "dated": 377,
-    "sample": [
-      "Silvy Singoredjo (1979)",
-      "Orchestra Tropical (1978)",
-      "The Kaseko Masters (1977)",
-      "YNR Rohan (2022)",
-      "Moksie Morion (1985)",
-      "Oema Lobi (1980)",
-      "Conjunto Latinos (1973)",
-      "Kaseko Stars (1972)"
-    ]
-  },
-  "HT": {
-    "name": "Haiti",
-    "wikidataMusicians": 219,
-    "discogsReleases": 777,
-    "candidates": 544,
-    "newArtists": 431,
-    "dropped": {
-      "duplicate": 76,
-      "foreignCatalog": 16,
-      "wikidataCrosswalk": 21
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 1,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 29,
-      "uncorroboratedKept": 63
-    },
-    "dated": 308,
-    "sample": [
-      "Da One (2015)",
-      "Super Ensemble Webert Sicot (1960)",
-      "Raoul Guillaume Et Son Groupe (1962)",
-      "D.P. Express (1976)",
-      "Ansy Derose (1949)",
-      "BIC Tizon Dife (1990)",
-      "Jean Jean Roosevelt (2007)",
-      "Les Ambassadeurs (1970)"
-    ]
-  },
-  "NI": {
-    "name": "Nicaragua",
-    "wikidataMusicians": 47,
-    "discogsReleases": 1248,
-    "candidates": 643,
-    "newArtists": 430,
-    "dropped": {
-      "duplicate": 35,
-      "foreignCatalog": 171,
-      "wikidataCrosswalk": 7
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 123,
-      "uncorroboratedKept": 58
-    },
-    "dated": 275,
-    "sample": [
-      "Los Rockets (1965)",
-      "Miltinho (1966)",
-      "Tulio Enrique Leon (1966)",
-      "Los Panzer's (1969)",
-      "El Greco (1969)",
-      "The Bad Boys (1966)",
-      "Hermanos Cortez (1969)",
-      "Los Music Masters (1969)"
+      "Ионел Истрати (2005)",
+      "Dying Raven (2022)",
+      "Alikast (2015)",
+      "Ghostbeat (2022)",
+      "Amind Two Guys (2013)",
+      "Brynx (2024)",
+      "MacroS (2010)",
+      "The HIDD3NS (2023)"
     ]
   }
 }

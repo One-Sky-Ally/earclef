@@ -32,6 +32,7 @@ import { COUNTRIES } from './lib/gap-fill-countries.mjs'
 const WORK_PATH = 'data/extra-artists-work-v2.json'
 const RULE_WORK_PATH = 'data/pattern-ruling-work.json'
 const REPORT_PATH = 'data/pattern-ruling-report.json'
+const OVERRIDES_PATH = 'data/pattern-ruling-overrides.json'
 const DATASET_PATH = 'lib/explore/extra-artists.json'
 const UA = 'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
@@ -62,7 +63,22 @@ const PARENT = {
   BZ: ['United Kingdom', 'United States'], GY: ['United Kingdom', 'United States'],
   HN: ['United States', 'Mexico'], BS: ['United States', 'United Kingdom'],
   SR: ['Netherlands'], HT: ['France', 'United States'], NI: ['United States', 'Mexico'],
+  PS: ['Israel', 'Jordan', 'Egypt', 'Lebanon'],
+  JO: ['Egypt', 'Lebanon', 'Syria', 'United Kingdom'],
+  LY: ['Egypt', 'Italy'], IQ: ['Egypt', 'Lebanon', 'United Kingdom', 'Iran'],
+  KW: ['Egypt', 'Lebanon', 'Iraq', 'Saudi Arabia', 'India'],
+  AM: ['Russia', 'Georgia', 'Iran', 'United States', 'France'],
+  UZ: ['Russia'], AL: ['Italy', 'Greece', 'North Macedonia', 'Kosovo'],
+  MD: ['Russia', 'Romania', 'Ukraine'],
+  XK: ['Serbia', 'Albania', 'North Macedonia'], GL: ['Denmark'],
 }
+
+/**
+ * Partition-class AREA pins (Korea precedent): candidates in these
+ * pools hitting MB artists filed under these areas are ALWAYS held —
+ * the history is the owner's to rule, never a script's.
+ */
+const PINNED_HELD_AREAS = { PS: ['Israel'], XK: ['Serbia'] }
 
 /** Ruled individually Aug 10 (Naghma/Zarsanga/Tiam/Enayat) — skip. */
 const ALREADY_RULED = new Set([
@@ -225,10 +241,13 @@ function propose(kase) {
     if (kase.wdIsCandidate) {
       return { proposal: 'exclude', why: `candidate's own Wikidata origin ${originQid} ≠ pool` }
     }
-    if (kase.nameClass === 'distinctive' && kase.eraOverlap) {
-      return { proposal: 'exclude', why: `MB match's Wikidata origin ${originQid} ≠ pool; identity via distinctive name + era` }
+    // Ratified Aug 11 audit rule: Wikidata origin is sufficient
+    // corroboration for a DISTINCTIVE name — no era gate (era=false is
+    // routinely a posthumous-pressing artifact: Willie Love, Eminescu).
+    if (kase.nameClass === 'distinctive') {
+      return { proposal: 'exclude', why: `MB match's Wikidata origin ${originQid} ≠ pool; identity via distinctive name` }
     }
-    return { proposal: 'held', why: 'foreign origin on MB match but identity uncorroborated' }
+    return { proposal: 'held', why: 'foreign origin on MB match but generic name — identity uncorroborated' }
   }
   if (ev.beginCountry) {
     if (ev.beginCountry === pool.mbArea) {
@@ -267,7 +286,11 @@ async function gather() {
         wdIsCandidate: key.startsWith('wd|'),
         candidateWdId: key.startsWith('wd|') ? key.slice(3) : null,
         nameClass: nameClass(entry?.name ?? verdict.mbName),
-        pinned: PINNED_HELD.get(caseKey) ?? null,
+        pinned:
+          PINNED_HELD.get(caseKey) ??
+          ((PINNED_HELD_AREAS[cc] ?? []).includes(verdict.area)
+            ? `partition-class area (${cc}×${verdict.area}) — owner rules, never code`
+            : null),
         missingInResult: !entry,
       })
     }
@@ -329,6 +352,18 @@ async function gather() {
       : null
     kase.eraOverlap = eraOverlap(entry, kase.evidence.life)
     Object.assign(kase, propose(kase))
+  }
+  // Persistent audit/owner overrides outrank the auto tree — the report
+  // is regenerated every gather, so decisions must live in a file, not
+  // in the report (lesson 2: regenerated output forgets hand edits).
+  const overrides = existsSync(OVERRIDES_PATH)
+    ? JSON.parse(readFileSync(OVERRIDES_PATH, 'utf8'))
+    : {}
+  for (const kase of cases) {
+    const override = overrides[kase.caseKey]
+    if (override) {
+      Object.assign(kase, override, { audited: 'override' })
+    }
   }
   writeFileSync(RULE_WORK_PATH, JSON.stringify(ruleWork))
   writeFileSync(REPORT_PATH, JSON.stringify({ generatedAt: '2026-08-11', cases }, null, 2))

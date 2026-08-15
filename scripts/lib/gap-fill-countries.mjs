@@ -97,7 +97,9 @@ export const COUNTRIES = {
   UZ: { qid: 'Q265', name: 'Uzbekistan', mbArea: 'Uzbekistan', discogs: ['Uzbekistan'] },
   LK: { qid: 'Q854', name: 'Sri Lanka', mbArea: 'Sri Lanka', discogs: ['Sri Lanka'] },
   AL: { qid: 'Q222', name: 'Albania', mbArea: 'Albania', discogs: ['Albania'] },
-  MD: { qid: 'Q217', name: 'Moldova', mbArea: 'Moldova', discogs: ['Moldova'] },
+  // Discogs records carry the formal "Moldova, Republic of" (Gambia-class
+  // trap — found by the record guard rejecting all 895, Aug 14 B4 run).
+  MD: { qid: 'Q217', name: 'Moldova', mbArea: 'Moldova', discogs: ['Moldova, Republic of', 'Moldova'] },
   SN: { qid: 'Q1041', name: 'Senegal', mbArea: 'Senegal', discogs: ['Senegal'] },
   ET: { qid: 'Q115', name: 'Ethiopia', mbArea: 'Ethiopia', discogs: ['Ethiopia'] },
   NI: { qid: 'Q811', name: 'Nicaragua', mbArea: 'Nicaragua', discogs: ['Nicaragua'] },

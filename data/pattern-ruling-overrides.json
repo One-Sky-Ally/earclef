@@ -1,0 +1,58 @@
+{
+  "BS|dg|12036844": {
+    "proposal": "keep-policy-c",
+    "why": "generic \"The X\" name; MB wd does not tie the candidate"
+  },
+  "BS|dg|15620388": {
+    "proposal": "keep-policy-c",
+    "why": "generic \"The X\" name"
+  },
+  "BS|dg|4624885": {
+    "proposal": "keep-policy-c",
+    "why": "generic \"The X\" name; era coincidence is not identity"
+  },
+  "NI|dg|312415": {
+    "proposal": "keep-policy-c",
+    "why": "generic single-word name (ELF)"
+  },
+  "GY|dg|3603206": {
+    "proposal": "keep-policy-c",
+    "why": "generic \"The X\" name; era=false"
+  },
+  "UG|dg|7898954": {
+    "proposal": "keep-policy-c",
+    "why": "generic name (Pö) — owner (c) example class"
+  },
+  "FJ|dg|7975446": {
+    "proposal": "keep-policy-c",
+    "why": "generic compound; a known Fijian band shares the name"
+  },
+  "UG|dg|323422": {
+    "proposal": "held",
+    "why": "Matata: MB area Kenya + era overlap but common Swahili word — owner call"
+  },
+  "GL|dg|1917072": {
+    "proposal": "keep-note",
+    "why": "wd \"Greenland singer-songwriter\" — Greenlanders hold Kingdom-of-Denmark citizenship (breaks citizenship test); Danish birth is residence-not-origin"
+  },
+  "AM|dg|8172769": {
+    "proposal": "held",
+    "why": "Iron Cross: generic compound shared by multiple famous bands (US punk, Burmese rock)"
+  },
+  "AL|dg|4881352": {
+    "proposal": "exclude",
+    "why": "Elita 5: mirror of XK exclude (wd Albanian band, org North Macedonia) — era-null is data noise"
+  },
+  "MD|dg|871925": {
+    "proposal": "exclude",
+    "why": "Mihai Eminescu: Romanian national poet (non-musician; posthumous recitation records); origin Romania"
+  },
+  "BS|dg|4229056": {
+    "proposal": "held",
+    "why": "Sweet Exorcist: BS pressing years pre-date the UK duo formation (1989) — era=false is impossible-identity here, not posthumous; likely a distinct local act"
+  },
+  "HN|dg|3482615": {
+    "proposal": "held",
+    "why": "Los Caminantes: semi-generic Spanish band name (multiple bands share it), no era data — identity uncorroborated"
+  }
+}
