@@ -54,5 +54,49 @@
   "HN|dg|3482615": {
     "proposal": "held",
     "why": "Los Caminantes: semi-generic Spanish band name (multiple bands share it), no era data — identity uncorroborated"
+  },
+  "GY|dg|185741": {
+    "proposal": "exclude",
+    "why": "same Discogs artist as the TT case: begin-area Jamaica + era (TT evidence) — origin Jamaica, cross-pool consistency"
+  },
+  "GH|dg|297751": {
+    "proposal": "held",
+    "why": "Greyhound: single common word + wd description just \"band\" — identity too thin to exclude"
+  },
+  "TT|dg|892022": {
+    "proposal": "held",
+    "why": "Swallow: the famous Antiguan calypsonian shares this name — MB-match identity (British band) unverified for this candidate"
+  },
+  "TT|dg|986325": {
+    "proposal": "keep-policy-c",
+    "why": "Blue Boy: famous TT soca artist (Austin Lyons, later SuperBlue) shares the name — candidate likely the local act; true collision"
+  },
+  "TT|dg|458673": {
+    "proposal": "keep-policy-c",
+    "why": "Gypsy: famous TT calypsonian (Winston Peters) shares the name — true collision"
+  },
+  "TT|dg|247954": {
+    "proposal": "keep-policy-c",
+    "why": "The Royals: generic \"The X\"; Jamaican Royals also exist"
+  },
+  "TT|dg|1242854": {
+    "proposal": "keep-policy-c",
+    "why": "The Trade Winds: the Caribbean Tradewinds (Dave Martins) were famous in TT — true collision"
+  },
+  "TT|dg|1281553": {
+    "proposal": "keep-policy-c",
+    "why": "The Escorts: generic \"The X\" name"
+  },
+  "TT|dg|8638752": {
+    "proposal": "keep-policy-c",
+    "why": "The Reflections: generic \"The X\" name"
+  },
+  "TT|dg|8285510": {
+    "proposal": "held",
+    "why": "Tracker: era=false with direction unverified (possible pre-dates-formation) + common word"
+  },
+  "TT|dg|3490119": {
+    "proposal": "held",
+    "why": "The Esquires Combo: a Trinidadian Esquires Combo is documented in the TT 60s scene — likely the local act"
   }
 }

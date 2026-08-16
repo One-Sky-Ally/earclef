@@ -71,6 +71,10 @@ const PARENT = {
   UZ: ['Russia'], AL: ['Italy', 'Greece', 'North Macedonia', 'Kosovo'],
   MD: ['Russia', 'Romania', 'Ukraine'],
   XK: ['Serbia', 'Albania', 'North Macedonia'], GL: ['Denmark'],
+  VN: ['France', 'United States'],
+  GH: ['United Kingdom'], ZM: ['United Kingdom', 'Zimbabwe'],
+  CD: ['France', 'Belgium', 'Republic of the Congo', 'Kenya'],
+  TT: ['United Kingdom', 'United States'],
 }
 
 /**
