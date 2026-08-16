@@ -2,47 +2,13 @@
   "VN": {
     "name": "Vietnam",
     "wikidataMusicians": 666,
-    "discogsReleases": 2024,
-    "candidates": 911,
-    "newArtists": 583,
+    "discogsReleases": 2240,
+    "candidates": 1495,
+    "newArtists": 948,
     "dropped": {
-      "duplicate": 181,
-      "foreignCatalog": 38,
-      "wikidataCrosswalk": 109
-    },
-    "recordGuard": {
-      "countryMismatch": 955,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 63,
-      "uncorroboratedKept": 136
-    },
-    "dated": 509,
-    "sample": [
-      "Nhật Hào (1994)",
-      "Guido Hermans (2015)",
-      "Thanh Tâm (1997)",
-      "Anh Thuỵ (2020)",
-      "chikhai (2020)",
-      "Hòa Tấu Tranh Bầu Sáo Nhị (2006)",
-      "Disgusted (2007)",
-      "NIKITA FUJI (2019)"
-    ]
-  },
-  "GH": {
-    "name": "Ghana",
-    "wikidataMusicians": 368,
-    "discogsReleases": 2669,
-    "candidates": 1266,
-    "newArtists": 1026,
-    "dropped": {
-      "duplicate": 139,
-      "foreignCatalog": 63,
-      "wikidataCrosswalk": 38
+      "duplicate": 240,
+      "foreignCatalog": 72,
+      "wikidataCrosswalk": 138
     },
     "recordGuard": {
       "countryMismatch": 0,
@@ -52,121 +18,19 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 77,
-      "uncorroboratedKept": 114
+      "collisionKept": 111,
+      "uncorroboratedKept": 190
     },
-    "dated": 546,
+    "dated": 700,
     "sample": [
-      "African Brothers (1968)",
-      "E. T. Mensah & His Tempos Band (1956)",
-      "Akwaboah's Band (1968)",
-      "The Wonderful Alex Konadu's Band (1976)",
-      "C.K. Mann & His Carousel 7 (1967)",
-      "Onyina's Guitar Band (1958)",
-      "K. Frimpong & His Cubano Fiestas (1975)",
-      "Supreme Starlite Band (1972)"
-    ]
-  },
-  "ZM": {
-    "name": "Zambia",
-    "wikidataMusicians": 55,
-    "discogsReleases": 1781,
-    "candidates": 1045,
-    "newArtists": 620,
-    "dropped": {
-      "duplicate": 60,
-      "foreignCatalog": 206,
-      "wikidataCrosswalk": 14
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 89,
-      "uncorroboratedKept": 63
-    },
-    "dated": 440,
-    "sample": [
-      "Nashil Pichen Kazembe (1975)",
-      "Orchestra Super Mazembe (1975)",
-      "Teddy Chilambe (1980)",
-      "Peter Tsotsi (1982)",
-      "Emmanuel Mulemena (1974)",
-      "Greg Miyanda (1978)",
-      "Fire Family (1982)",
-      "Orchestre T.P.O.K. Jazz (1977)"
-    ]
-  },
-  "CD": {
-    "name": "DR Congo",
-    "wikidataMusicians": 286,
-    "discogsReleases": 4308,
-    "candidates": 1451,
-    "newArtists": 1180,
-    "dropped": {
-      "duplicate": 186,
-      "foreignCatalog": 44,
-      "wikidataCrosswalk": 41
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 72,
-      "uncorroboratedKept": 109
-    },
-    "dated": 586,
-    "sample": [
-      "Orchestre T.P.O.K. Jazz (1956)",
-      "Orchestre Afrisa L'International (1966)",
-      "Orchestre Nègro Succès (1965)",
-      "Orchestre Cobantou (1966)",
-      "Orchestre Stukas (1972)",
-      "Orchestre African Jazz (1960)",
-      "L'Orchestre African Fiesta Sukisa (1968)",
-      "Grand Kalle And African Jazz (1960)"
-    ]
-  },
-  "TT": {
-    "name": "Trinidad & Tobago",
-    "wikidataMusicians": 93,
-    "discogsReleases": 3591,
-    "candidates": 1454,
-    "newArtists": 1158,
-    "dropped": {
-      "duplicate": 128,
-      "foreignCatalog": 149,
-      "wikidataCrosswalk": 19
-    },
-    "recordGuard": {
-      "countryMismatch": 0,
-      "noCountry": 0,
-      "unfetchedSkipped": 0
-    },
-    "foreignByOrigin": 0,
-    "keptDespiteNameHit": {
-      "fuzzyKept": 0,
-      "collisionKept": 158,
-      "uncorroboratedKept": 229
-    },
-    "dated": 772,
-    "sample": [
-      "Joey Lewis And His Orchestra (1960)",
-      "Fitz Vaughan Bryan Orchestra (1958)",
-      "Cyril Diaz & Orchestra (1956)",
-      "JONBANNER (2014)",
-      "Johnny Gomez And His Orchestra (1958)",
-      "Lord Blakie (1958)",
-      "King Fighter (1958)",
-      "She She Calypso Band (1954)"
+      "Hà Thanh (1965)",
+      "Hữu Phước (1959)",
+      "Mỹ Châu (1964)",
+      "Thành Được (1959)",
+      "Bạch Tuyết (1960)",
+      "Nhật Trường (1965)",
+      "Thanh Thúy (1958)",
+      "Út Bạch-Lan (1959)"
     ]
   }
 }

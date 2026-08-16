@@ -105,7 +105,11 @@ export const COUNTRIES = {
   NI: { qid: 'Q811', name: 'Nicaragua', mbArea: 'Nicaragua', discogs: ['Nicaragua'] },
 
   // ------------------------------------- Tier C (owner opt-in, Aug 10)
-  VN: { qid: 'Q881', name: 'Vietnam', mbArea: 'Vietnam', discogs: ['Vietnam'] },
+  // "South Vietnam" owner-approved Aug 16 as a historical entity
+  // (Belgian Congo/Rhodesia principle) — the pre-1975 Saigon pressing
+  // industry IS the Vietnamese vintage archive; found by the record
+  // guard rejecting 955 records inside the country=Vietnam search.
+  VN: { qid: 'Q881', name: 'Vietnam', mbArea: 'Vietnam', discogs: ['Vietnam', 'South Vietnam'] },
   GH: { qid: 'Q117', name: 'Ghana', mbArea: 'Ghana', discogs: ['Ghana'] },
   ZM: { qid: 'Q953', name: 'Zambia', mbArea: 'Zambia', discogs: ['Zambia'] },
   // "Belgian Congo" (290 releases, found Aug 11 via the CG spot-check)

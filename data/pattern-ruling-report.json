@@ -1858,37 +1858,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "GY|dg|185741",
-      "cc": "GY",
-      "key": "dg|185741",
-      "name": "Jimmy James & The Vagabonds",
-      "mbid": "b468d1c2-c3c2-4330-8697-170c287af984",
-      "mbName": "Jimmy James & the Vagabonds",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": "Jamaica",
-        "life": {
-          "ended": false,
-          "end": null,
-          "begin": "1964"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "same Discogs artist as the TT case: begin-area Jamaica + era (TT evidence) — origin Jamaica, cross-pool consistency",
-      "audited": "override"
-    },
-    {
       "caseKey": "GY|dg|3603206",
       "cc": "GY",
       "key": "dg|3603206",
@@ -6222,7 +6191,7 @@
       "mbArea": "United States",
       "entryYears": [
         1963,
-        1997
+        1991
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -6251,7 +6220,7 @@
       "mbName": "Thanh Tâm",
       "mbArea": "United States",
       "entryYears": [
-        1997,
+        1971,
         2001
       ],
       "wdIsCandidate": false,
@@ -6312,7 +6281,7 @@
       "mbArea": "France",
       "entryYears": [
         1957,
-        1965
+        1970
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -6342,7 +6311,7 @@
       "mbArea": "United States",
       "entryYears": [
         1965,
-        1965
+        1967
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -6439,15 +6408,12 @@
       "mbid": "2d3bc78b-96a4-40f8-84e9-0a1611f65b2c",
       "mbName": "Xuân Quỳnh",
       "mbArea": "United States",
-      "entryYears": [
-        1990,
-        1990
-      ],
+      "entryYears": null,
       "wdIsCandidate": false,
       "candidateWdId": null,
       "nameClass": "distinctive",
       "pinned": null,
-      "missingInResult": false,
+      "missingInResult": true,
       "evidence": {
         "wd": null,
         "beginCountry": null,
@@ -6469,15 +6435,12 @@
       "mbid": "d36b6a36-b60d-422c-bc37-f1f7112584c6",
       "mbName": "Hoàng Cầm",
       "mbArea": "United States",
-      "entryYears": [
-        1990,
-        1990
-      ],
+      "entryYears": null,
       "wdIsCandidate": false,
       "candidateWdId": null,
       "nameClass": "distinctive",
       "pinned": null,
-      "missingInResult": false,
+      "missingInResult": true,
       "evidence": {
         "wd": null,
         "beginCountry": null,
@@ -6520,52 +6483,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "VN|dg|8986489",
-      "cc": "VN",
-      "key": "dg|8986489",
-      "name": "Chris Jennings",
-      "mbid": "be7f6b19-4fa6-4e46-bdbf-ae119908d335",
-      "mbName": "Chris Jennings",
-      "mbArea": "France",
-      "entryYears": [
-        2023,
-        2023
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q17486537",
-          "description": "Canadian musician in Paris France",
-          "born": "Q16",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q16"
-          ],
-          "professions": [
-            "Q36834",
-            "Q584301",
-            "Q639669",
-            "Q15981151"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Canada",
-        "life": {
-          "begin": "1978-08-12",
-          "end": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q16 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "VN|dg|4738209",
@@ -6678,15 +6595,12 @@
       "mbid": "cba160d2-5c8e-431a-82e3-0442da2e963a",
       "mbName": "Đức Minh",
       "mbArea": "United States",
-      "entryYears": [
-        1956,
-        1956
-      ],
+      "entryYears": null,
       "wdIsCandidate": false,
       "candidateWdId": null,
       "nameClass": "distinctive",
       "pinned": null,
-      "missingInResult": false,
+      "missingInResult": true,
       "evidence": {
         "wd": null,
         "beginCountry": null,
@@ -6704,19 +6618,16 @@
       "caseKey": "VN|dg|9413911",
       "cc": "VN",
       "key": "dg|9413911",
-      "name": "Khánh Dung",
+      "name": "Khánh Dũng",
       "mbid": "9abd5ba0-8e88-4f74-928b-f2a14b972f0b",
       "mbName": "Khánh Dũng",
       "mbArea": "United States",
-      "entryYears": [
-        null,
-        null
-      ],
+      "entryYears": null,
       "wdIsCandidate": false,
       "candidateWdId": null,
       "nameClass": "distinctive",
       "pinned": null,
-      "missingInResult": false,
+      "missingInResult": true,
       "evidence": {
         "wd": null,
         "beginCountry": null,
@@ -6874,7 +6785,7 @@
       "mbArea": "United States",
       "entryYears": [
         1957,
-        1957
+        1966
       ],
       "wdIsCandidate": true,
       "candidateWdId": "Q30921130",
@@ -7134,7 +7045,7 @@
       "mbArea": "United States",
       "entryYears": [
         1957,
-        1957
+        1964
       ],
       "wdIsCandidate": true,
       "candidateWdId": "Q25417835",
@@ -7160,6 +7071,835 @@
         "life": {
           "end": null,
           "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country"
+    },
+    {
+      "caseKey": "VN|dg|1146653",
+      "cc": "VN",
+      "key": "dg|1146653",
+      "name": "Thao Nguyen",
+      "mbid": "f6ec447a-c240-4c43-bc9f-d71d958432bb",
+      "mbName": "Thao Nguyen",
+      "mbArea": "United States",
+      "entryYears": [
+        2006,
+        2006
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q16209913",
+          "description": "American singer-songwriter",
+          "born": "Q30",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q36834",
+            "Q488205",
+            "Q713200"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": "1984-03-19"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "VN|dg|4701806",
+      "cc": "VN",
+      "key": "dg|4701806",
+      "name": "Thái Châu",
+      "mbid": "c1bdef92-5a38-41be-a93d-e55780f39491",
+      "mbName": "Thái Châu",
+      "mbArea": "United States",
+      "entryYears": [
+        2016,
+        2016
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|4538030",
+      "cc": "VN",
+      "key": "dg|4538030",
+      "name": "Nhật Trường",
+      "mbid": "8d376796-3579-4412-85d6-593fbe80b213",
+      "mbName": "Nhật Trường",
+      "mbArea": "United States",
+      "entryYears": [
+        1965,
+        1971
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Vietnam",
+        "life": {
+          "end": "2005-05-13",
+          "ended": true,
+          "begin": "1942-06-12"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "MB begin-area resolves into pool country (area is residence)"
+    },
+    {
+      "caseKey": "VN|dg|4635342",
+      "cc": "VN",
+      "key": "dg|4635342",
+      "name": "Phượng Liên",
+      "mbid": "7417cd78-d375-42d8-8545-b36ddf34c375",
+      "mbName": "Phượng Liên",
+      "mbArea": "United States",
+      "entryYears": [
+        1964,
+        1973
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q10806878",
+          "description": "Vietnamese musician",
+          "born": "Q881",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q881"
+          ],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "Vietnam",
+        "life": {
+          "begin": "1947-07-14",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country"
+    },
+    {
+      "caseKey": "VN|dg|3346990",
+      "cc": "VN",
+      "key": "dg|3346990",
+      "name": "Julie Quang",
+      "mbid": "ad6a2d04-82f2-4e36-a241-1e646e0b95b4",
+      "mbName": "Julie Quang",
+      "mbArea": "United States",
+      "entryYears": [
+        1970,
+        1971
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q16481004",
+          "description": null,
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "Vietnam",
+        "life": {
+          "begin": "1951-01-18",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "MB begin-area resolves into pool country (area is residence)"
+    },
+    {
+      "caseKey": "VN|dg|4538031",
+      "cc": "VN",
+      "key": "dg|4538031",
+      "name": "Hà Thanh",
+      "mbid": "cbe120f7-4ba8-4495-8ec7-722a3dcf46d4",
+      "mbName": "Hà Thanh",
+      "mbArea": "United States",
+      "entryYears": [
+        1965,
+        1971
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q10770582",
+          "description": null,
+          "born": "Q881",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q881"
+          ],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "Vietnam",
+        "life": {
+          "end": "2014-01-01",
+          "ended": true,
+          "begin": "1937-07-29"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country"
+    },
+    {
+      "caseKey": "VN|dg|11115755",
+      "cc": "VN",
+      "key": "dg|11115755",
+      "name": "Minh Hiếu",
+      "mbid": "209f8193-0410-42ff-b539-b77b6151cf46",
+      "mbName": "Minh Hiếu",
+      "mbArea": "United States",
+      "entryYears": [
+        1957,
+        1966
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Vietnam",
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "MB begin-area resolves into pool country (area is residence)"
+    },
+    {
+      "caseKey": "VN|dg|5769204",
+      "cc": "VN",
+      "key": "dg|5769204",
+      "name": "Phương Đại",
+      "mbid": "8601a4a5-faba-4667-b468-b679094c98a4",
+      "mbName": "Phương Đại",
+      "mbArea": "United States",
+      "entryYears": [
+        1969,
+        1971
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|12399016",
+      "cc": "VN",
+      "key": "dg|12399016",
+      "name": "Thúy Nga",
+      "mbid": "98e57be3-9993-4526-9edb-383ca8f306c5",
+      "mbName": "Thuý Nga",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|7002691",
+      "cc": "VN",
+      "key": "dg|7002691",
+      "name": "Trường Kỳ",
+      "mbid": "b5b0cf42-702d-488a-b2e3-9dbeac82633f",
+      "mbName": "Trường Kỳ",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|4520225",
+      "cc": "VN",
+      "key": "dg|4520225",
+      "name": "Chí Tâm",
+      "mbid": "a6984060-0a22-4d6a-91d2-ec1f20b07521",
+      "mbName": "Chí Tâm",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q97167806",
+          "description": null,
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "Vietnam",
+        "life": {
+          "end": null,
+          "begin": "1952-02-08",
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "MB begin-area resolves into pool country (area is residence)"
+    },
+    {
+      "caseKey": "VN|dg|7011820",
+      "cc": "VN",
+      "key": "dg|7011820",
+      "name": "Hùng Lân",
+      "mbid": "705a95a7-b6c0-48b1-9b76-67e8e35388a3",
+      "mbName": "Hùng Lân",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q10771217",
+          "description": null,
+          "born": "Q881",
+          "formed": null,
+          "origin": null,
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "Vietnam",
+        "life": {
+          "begin": "1922-06-23",
+          "end": "1986-09-17",
+          "ended": true
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country"
+    },
+    {
+      "caseKey": "VN|dg|6029118",
+      "cc": "VN",
+      "key": "dg|6029118",
+      "name": "Thanh An",
+      "mbid": "35843533-0d1b-4913-88e0-2aea09345d32",
+      "mbName": "Thành An",
+      "mbArea": "United States",
+      "entryYears": [
+        1965,
+        1970
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|7780160",
+      "cc": "VN",
+      "key": "dg|7780160",
+      "name": "Đức Minh",
+      "mbid": "cba160d2-5c8e-431a-82e3-0442da2e963a",
+      "mbName": "Đức Minh",
+      "mbArea": "United States",
+      "entryYears": [
+        1956,
+        1968
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|5807509",
+      "cc": "VN",
+      "key": "dg|5807509",
+      "name": "Trường Hải",
+      "mbid": "e4280f8b-074d-4496-adea-4ac6e8a66e46",
+      "mbName": "Trường Hải",
+      "mbArea": "United States",
+      "entryYears": [
+        1967,
+        1968
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q10828848",
+          "description": null,
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "Vietnam",
+        "life": {
+          "begin": "1938-10-03",
+          "ended": true,
+          "end": "2021-06-11"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "MB begin-area resolves into pool country (area is residence)"
+    },
+    {
+      "caseKey": "VN|dg|5769322",
+      "cc": "VN",
+      "key": "dg|5769322",
+      "name": "Phương Hoài Tâm",
+      "mbid": "1285f3a2-34c5-4893-aaf3-b3e0f237a4ee",
+      "mbName": "Phương Hoài Tâm",
+      "mbArea": "United States",
+      "entryYears": [
+        1965,
+        1968
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Vietnam",
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "MB begin-area resolves into pool country (area is residence)"
+    },
+    {
+      "caseKey": "VN|dg|5209361",
+      "cc": "VN",
+      "key": "dg|5209361",
+      "name": "Mai-Lan",
+      "mbid": "65b1de19-50cb-49fe-b802-d1d8616f9ebe",
+      "mbName": "Mai Lan",
+      "mbArea": "France",
+      "entryYears": [
+        1967,
+        1969
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q15211605",
+          "description": "French-Vietnamese singer and fashion designer",
+          "born": "Q142",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q142"
+          ],
+          "professions": [
+            "Q36834",
+            "Q177220",
+            "Q488205",
+            "Q639669",
+            "Q3501317"
+          ],
+          "musician": true
+        },
+        "beginCountry": "France",
+        "life": {
+          "begin": "1982",
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q142 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "VN|dg|6080145",
+      "cc": "VN",
+      "key": "dg|6080145",
+      "name": "Kim-Cúc",
+      "mbid": "56f6d841-c365-4d80-844d-b9db13719746",
+      "mbName": "Kim Cúc",
+      "mbArea": "United States",
+      "entryYears": [
+        1959,
+        1966
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|7101584",
+      "cc": "VN",
+      "key": "dg|7101584",
+      "name": "Tuyết Nhung",
+      "mbid": "b1539ea3-73ff-4f95-9d4d-5db19fa38ee1",
+      "mbName": "Tuyết Nhung",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|6257923",
+      "cc": "VN",
+      "key": "dg|6257923",
+      "name": "Diệu Nga",
+      "mbid": "66a85a2f-988e-4519-8fe0-69f5f9674841",
+      "mbName": "Vasa Diệu Nga",
+      "mbArea": "United States",
+      "entryYears": [
+        1969,
+        1969
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Vietnam",
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "MB begin-area resolves into pool country (area is residence)"
+    },
+    {
+      "caseKey": "VN|dg|1082804",
+      "cc": "VN",
+      "key": "dg|1082804",
+      "name": "Bach Yen",
+      "mbid": "683d675b-035e-47a4-9e26-17b378278d5f",
+      "mbName": "Bạch Yến",
+      "mbArea": "United States",
+      "entryYears": [
+        1957,
+        1964
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|2091213",
+      "cc": "VN",
+      "key": "dg|2091213",
+      "name": "Les Fantômes",
+      "mbid": "2910018e-9df4-4d04-b516-97b3585c88da",
+      "mbName": "Les Fantômes",
+      "mbArea": "France",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q3232519",
+          "description": "French musical group; instrumental rock band",
+          "born": null,
+          "formed": null,
+          "origin": "Q142",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q142 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "VN|dg|7012345",
+      "cc": "VN",
+      "key": "dg|7012345",
+      "name": "Thúy Nga",
+      "mbid": "98e57be3-9993-4526-9edb-383ca8f306c5",
+      "mbName": "Thuý Nga",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|wd|Q8199738",
+      "cc": "VN",
+      "key": "wd|Q8199738",
+      "name": "Anh Tú",
+      "mbid": "dc93457e-75bc-4b45-a86d-8c7a2c80ccda",
+      "mbName": "Anh Tú",
+      "mbArea": "United States",
+      "entryYears": null,
+      "wdIsCandidate": true,
+      "candidateWdId": "Q8199738",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": true,
+      "evidence": {
+        "wd": {
+          "qid": "Q8199738",
+          "description": "Vietnamese-American singer",
+          "born": "Q881",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q881"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
           "ended": false
         }
       },
@@ -7483,36 +8223,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "ZM|dg|827805",
-      "cc": "ZM",
-      "key": "dg|827805",
-      "name": "The Green Arrows",
-      "mbid": "66a418a4-1be5-4246-b483-51c50a68ed2e",
-      "mbName": "The Green Arrows",
-      "mbArea": "Zimbabwe",
-      "entryYears": [
-        1979,
-        1983
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": "Zimbabwe",
-        "life": {
-          "ended": false,
-          "begin": "1968",
-          "end": null
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB begin-area Zimbabwe ≠ pool; distinctive name + era"
-    },
-    {
       "caseKey": "ZM|dg|15522192",
       "cc": "ZM",
       "key": "dg|15522192",
@@ -7543,45 +8253,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "ZM|dg|3242038",
-      "cc": "ZM",
-      "key": "dg|3242038",
-      "name": "The Avons",
-      "mbid": "bd42ebed-496c-4821-aba4-c59a0738f58e",
-      "mbName": "The Avons",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        1975,
-        1975
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q7715050",
-          "description": "UK musical group",
-          "born": null,
-          "formed": null,
-          "origin": "Q145",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": null,
-        "life": {
-          "end": null,
-          "begin": "1959",
-          "ended": false
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "CD|dg|1502752",
       "cc": "CD",
       "key": "dg|1502752",
@@ -7610,49 +8281,6 @@
       "eraOverlap": true,
       "proposal": "keep-note",
       "why": "MB begin-area resolves into pool country (area is residence)"
-    },
-    {
-      "caseKey": "CD|dg|1008092",
-      "cc": "CD",
-      "key": "dg|1008092",
-      "name": "Lily Vincent",
-      "mbid": "97cf149a-d31c-4db6-a3ec-d4b9f2051ce5",
-      "mbName": "Lily Vincent",
-      "mbArea": "Belgium",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q3240958",
-          "description": "Belgian singer",
-          "born": "Q31",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q31"
-          ],
-          "professions": [
-            "Q177220"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Belgium",
-        "life": {
-          "ended": true,
-          "begin": "1926-05-01",
-          "end": "2009-07-10"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q31 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "CD|dg|13813225",
@@ -7715,50 +8343,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "CD|dg|312854",
-      "cc": "CD",
-      "key": "dg|312854",
-      "name": "Marc Aryan",
-      "mbid": "0d5d0966-871b-4973-b842-08e1e4a4ace3",
-      "mbName": "Marc Aryan",
-      "mbArea": "France",
-      "entryYears": [
-        1964,
-        1964
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q941528",
-          "description": "French / Belgian / Armenian singer, songwriter, musician, music producer (1926–1985)",
-          "born": "Q142",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q31",
-            "Q142"
-          ],
-          "professions": [
-            "Q177220"
-          ],
-          "musician": true
-        },
-        "beginCountry": "France",
-        "life": {
-          "begin": "1926-11-14",
-          "ended": true,
-          "end": "1985-11-30"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q142 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "CD|dg|3440835",
       "cc": "CD",
       "key": "dg|3440835",
@@ -7787,51 +8371,6 @@
       "eraOverlap": null,
       "proposal": "keep-policy-c",
       "why": "generic name, no origin evidence — era coincidence is not identity"
-    },
-    {
-      "caseKey": "CD|dg|584028",
-      "cc": "CD",
-      "key": "dg|584028",
-      "name": "John Ouwerx",
-      "mbid": "f1a73099-c3b3-486b-ac1e-f7f231d02590",
-      "mbName": "John Ouwerx",
-      "mbArea": "Belgium",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q20011609",
-          "description": "Belgian pianist, conductor and composer",
-          "born": "Q31",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q31"
-          ],
-          "professions": [
-            "Q36834",
-            "Q158852",
-            "Q486748"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Belgium",
-        "life": {
-          "ended": true,
-          "begin": "1903-03-08",
-          "end": "1983-01-13"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q31 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "CD|wd|Q85855697",
@@ -8314,53 +8853,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "TT|dg|1499183",
-      "cc": "TT",
-      "key": "dg|1499183",
-      "name": "Fran Allison",
-      "mbid": "c77f1fff-3605-4de5-b7c5-3f9089bee8ff",
-      "mbName": "Fran Allison",
-      "mbArea": "United States",
-      "entryYears": [
-        1966,
-        1966
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q3080446",
-          "description": "American television and radio comedian, personality and singer (1907-1989)",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q33999",
-            "Q177220",
-            "Q2722764",
-            "Q10798782",
-            "Q10800557"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "begin": "1907-11-20",
-          "ended": true,
-          "end": "1989-06-13"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "TT|dg|191325",
       "cc": "TT",
       "key": "dg|191325",
@@ -8389,54 +8881,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "TT|dg|630848",
-      "cc": "TT",
-      "key": "dg|630848",
-      "name": "Barry Sadler",
-      "mbid": "426eb30d-6e96-4f20-99da-f1bedfea8aa1",
-      "mbName": "Barry Sadler",
-      "mbArea": "United States",
-      "entryYears": [
-        1966,
-        1966
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q809093",
-          "description": "American author and musician (1940–1989)",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q36180",
-            "Q177220",
-            "Q488205",
-            "Q956365",
-            "Q4991371",
-            "Q6625963"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "ended": true,
-          "end": "1989-11-05",
-          "begin": "1940-12-01"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "TT|dg|3287807",
@@ -8679,45 +9123,6 @@
       "audited": "override"
     },
     {
-      "caseKey": "TT|dg|308619",
-      "cc": "TT",
-      "key": "dg|308619",
-      "name": "The Flying Machine",
-      "mbid": "1322dbe2-c326-4033-a39a-80ba3571c8d2",
-      "mbName": "The Flying Machine",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        1970,
-        1970
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q7734605",
-          "description": "British band",
-          "born": null,
-          "formed": "Q145",
-          "origin": "Q145",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": "United Kingdom",
-        "life": {
-          "end": "1971",
-          "ended": true,
-          "begin": "1968"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "TT|dg|1132269",
       "cc": "TT",
       "key": "dg|1132269",
@@ -8746,36 +9151,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "TT|dg|185741",
-      "cc": "TT",
-      "key": "dg|185741",
-      "name": "Jimmy James & The Vagabonds",
-      "mbid": "b468d1c2-c3c2-4330-8697-170c287af984",
-      "mbName": "Jimmy James & the Vagabonds",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        1968,
-        1968
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": "Jamaica",
-        "life": {
-          "begin": "1964",
-          "ended": false,
-          "end": null
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB begin-area Jamaica ≠ pool; distinctive name + era"
     },
     {
       "caseKey": "TT|dg|893312",
@@ -8866,58 +9241,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "TT|dg|1731693",
-      "cc": "TT",
-      "key": "dg|1731693",
-      "name": "Sally Field",
-      "mbid": "dab64926-fbf3-4a87-9ac2-a0c8029a4074",
-      "mbName": "Sally Field",
-      "mbArea": "United States",
-      "entryYears": [
-        1967,
-        1967
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q187033",
-          "description": "American actress",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q28389",
-            "Q177220",
-            "Q2259451",
-            "Q2405480",
-            "Q2526255",
-            "Q3282637",
-            "Q3455803",
-            "Q10798782",
-            "Q10800557",
-            "Q13235160"
-          ],
-          "musician": true
-        },
-        "beginCountry": null,
-        "life": {
-          "ended": false,
-          "begin": "1946-11-06",
-          "end": null
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "TT|dg|1365021",
@@ -9244,57 +9567,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "TT|dg|735741",
-      "cc": "TT",
-      "key": "dg|735741",
-      "name": "Shirley Temple",
-      "mbid": "ca6e3c7f-2224-4927-96be-dd5e62f54b8e",
-      "mbName": "Shirley Temple",
-      "mbArea": "United States",
-      "entryYears": [
-        1972,
-        1972
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q182580",
-          "description": "American actress and diplomat (1928–2014)",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q33999",
-            "Q82955",
-            "Q121998",
-            "Q177220",
-            "Q193391",
-            "Q970153",
-            "Q5716684",
-            "Q10798782",
-            "Q10800557"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "end": "2014-02-10",
-          "begin": "1928-04-23",
-          "ended": true
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "TT|dg|3522076",
       "cc": "TT",
       "key": "dg|3522076",
@@ -9592,49 +9864,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "TT|dg|1512170",
-      "cc": "TT",
-      "key": "dg|1512170",
-      "name": "Lovelace Watkins",
-      "mbid": "9083a7b8-2528-47c4-a8ad-f0e00e3a89f9",
-      "mbName": "Lovelace Watkins",
-      "mbArea": "United States",
-      "entryYears": [
-        1963,
-        1963
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q6692134",
-          "description": "American singer",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q177220"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "end": "1995-06-11",
-          "begin": "1938-03-06",
-          "ended": true
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "TT|dg|1407624",
       "cc": "TT",
       "key": "dg|1407624",
@@ -9663,97 +9892,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "TT|dg|462973",
-      "cc": "TT",
-      "key": "dg|462973",
-      "name": "Irwin Kostal",
-      "mbid": "00d6a165-45de-4b27-a114-4075f724b7b2",
-      "mbName": "Irwin Kostal",
-      "mbArea": "United States",
-      "entryYears": [
-        1965,
-        1965
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q329998",
-          "description": "American musical arranger of films (1911–1994)",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q36834",
-            "Q158852",
-            "Q639669",
-            "Q806349",
-            "Q1415090",
-            "Q1643514"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "ended": true,
-          "end": "1994-11-23",
-          "begin": "1911-10-01"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
-      "caseKey": "TT|dg|7221704",
-      "cc": "TT",
-      "key": "dg|7221704",
-      "name": "Christine Jackson",
-      "mbid": "19597fe7-b8c4-490b-a9e2-ae4297af9af2",
-      "mbName": "Christine Jackson",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        1978,
-        1978
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q22669965",
-          "description": "British-born Australian cellist",
-          "born": "Q145",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q145"
-          ],
-          "professions": [
-            "Q13219637"
-          ],
-          "musician": false
-        },
-        "beginCountry": "United Kingdom",
-        "life": {
-          "end": "2016-01-24",
-          "begin": "1962",
-          "ended": true
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "TT|dg|8638749",
@@ -9824,90 +9962,6 @@
       "proposal": "keep-policy-c",
       "why": "The Reflections: generic \"The X\" name",
       "audited": "override"
-    },
-    {
-      "caseKey": "TT|dg|3722824",
-      "cc": "TT",
-      "key": "dg|3722824",
-      "name": "Johnny Douglas",
-      "mbid": "fadd8625-41f2-4fa9-ac02-26300928cb82",
-      "mbName": "Johnny Douglas",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        1986,
-        1986
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q1702312",
-          "description": "British composer (1920-2003)",
-          "born": null,
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q145"
-          ],
-          "professions": [
-            "Q36834",
-            "Q639669",
-            "Q1415090"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United Kingdom",
-        "life": {
-          "ended": true,
-          "begin": "1920-06-19",
-          "end": "2003-04-20"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB begin-area United Kingdom ≠ pool; distinctive name + era"
-    },
-    {
-      "caseKey": "TT|dg|11229362",
-      "cc": "TT",
-      "key": "dg|11229362",
-      "name": "Sounds Incorporated",
-      "mbid": "5a81e26e-c144-4c32-957e-6c930b6f677f",
-      "mbName": "Sounds Incorporated",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q7564894",
-          "description": "British instrumental pop group",
-          "born": null,
-          "formed": null,
-          "origin": "Q145",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": null,
-        "life": {
-          "ended": true,
-          "begin": "1961",
-          "end": "1971"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "TT|dg|6287332",
@@ -9989,49 +10043,6 @@
       "audited": "override"
     },
     {
-      "caseKey": "TT|dg|530081",
-      "cc": "TT",
-      "key": "dg|530081",
-      "name": "Odia Coates",
-      "mbid": "b0e5edbd-40e0-4d3a-b1a4-d7c7bde21b0f",
-      "mbName": "Odia Coates",
-      "mbArea": "United States",
-      "entryYears": [
-        1975,
-        1975
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q3247099",
-          "description": "American musician (1941–1991)",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q177220"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "ended": true,
-          "begin": "1941-11-13",
-          "end": "1991-05-19"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "TT|dg|240455",
       "cc": "TT",
       "key": "dg|240455",
@@ -10092,137 +10103,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "TT|dg|1163343",
-      "cc": "TT",
-      "key": "dg|1163343",
-      "name": "Marilyn Maye",
-      "mbid": "49510c3c-3162-4713-95d6-93f0dd2ccfb5",
-      "mbName": "Marilyn Maye",
-      "mbArea": "United States",
-      "entryYears": [
-        1969,
-        1969
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q6763582",
-          "description": "American singer",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q177220",
-            "Q1954956",
-            "Q10800557",
-            "Q15981151",
-            "Q66314404"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "begin": "1928-04-10",
-          "end": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
-      "caseKey": "TT|dg|274745",
-      "cc": "TT",
-      "key": "dg|274745",
-      "name": "Anita Carter",
-      "mbid": "565f1809-c662-40ef-a8e2-c102a3aadd66",
-      "mbName": "Anita Carter",
-      "mbArea": "United States",
-      "entryYears": [
-        1967,
-        1967
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q542956",
-          "description": "American singer (1933–1999)",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q177220",
-            "Q753110",
-            "Q66763670"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "end": "1999-07-29",
-          "ended": true,
-          "begin": "1933-03-31"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
-      "caseKey": "TT|dg|287108",
-      "cc": "TT",
-      "key": "dg|287108",
-      "name": "Mickey & Sylvia",
-      "mbid": "f919671d-c6b7-4d42-9004-3a93eceb5be9",
-      "mbName": "Mickey & Sylvia",
-      "mbArea": "United States",
-      "entryYears": [
-        1960,
-        1960
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q3311850",
-          "description": "American musical group; R&B duo",
-          "born": null,
-          "formed": null,
-          "origin": "Q30",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": null,
-        "life": {
-          "end": "1965",
-          "begin": "1956",
-          "ended": true
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "TT|dg|247954",
       "cc": "TT",
       "key": "dg|247954",
@@ -10263,84 +10143,6 @@
       "audited": "override"
     },
     {
-      "caseKey": "TT|dg|4117734",
-      "cc": "TT",
-      "key": "dg|4117734",
-      "name": "Hijack",
-      "mbid": "dc495a52-00b7-4778-a7d8-e6d3a2018b49",
-      "mbName": "Hijack",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        1990,
-        1990
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q1372798",
-          "description": "hip hop group from Brixton, London",
-          "born": null,
-          "formed": null,
-          "origin": "Q145",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": "United Kingdom",
-        "life": {
-          "end": null,
-          "ended": false,
-          "begin": "1988"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name"
-    },
-    {
-      "caseKey": "TT|dg|59252",
-      "cc": "TT",
-      "key": "dg|59252",
-      "name": "El Chicano",
-      "mbid": "256344f2-078e-44ec-8c41-23f7a3c1cd25",
-      "mbName": "El Chicano",
-      "mbArea": "United States",
-      "entryYears": [
-        1971,
-        1971
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q5351010",
-          "description": "American brown-eyed soul group",
-          "born": null,
-          "formed": "Q30",
-          "origin": "Q30",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": "United States",
-        "life": {
-          "ended": false,
-          "end": null,
-          "begin": null
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "TT|dg|6244911",
       "cc": "TT",
       "key": "dg|6244911",
@@ -10369,181 +10171,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "TT|dg|8182267",
-      "cc": "TT",
-      "key": "dg|8182267",
-      "name": "Joseph Williams",
-      "mbid": "e9eb5a12-95c8-4bc6-985c-e3b540a81dda",
-      "mbName": "Joseph Williams",
-      "mbArea": "United States",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q957024",
-          "description": "American singer, songwriter, and film score composer, best known for his work in the rock band Toto (born 1960)",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q36834",
-            "Q177220",
-            "Q639669",
-            "Q753110",
-            "Q1415090",
-            "Q55960555"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "ended": false,
-          "begin": "1960-09-01",
-          "end": null
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
-      "caseKey": "TT|dg|4862908",
-      "cc": "TT",
-      "key": "dg|4862908",
-      "name": "Terry MacAlmon",
-      "mbid": "32f3b0e8-b225-4331-abec-369161438f5c",
-      "mbName": "Terry MacAlmon",
-      "mbArea": "United States",
-      "entryYears": [
-        2018,
-        2018
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q7704717",
-          "description": "American musician",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q639669",
-            "Q753110"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "begin": "1955-05-12",
-          "end": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
-      "caseKey": "TT|dg|538639",
-      "cc": "TT",
-      "key": "dg|538639",
-      "name": "The Brass Ring",
-      "mbid": "46c0186f-961e-463b-a36d-c2a0e6f9f84f",
-      "mbName": "The Brass Ring",
-      "mbArea": "United States",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q7719865",
-          "description": "American popular music group of the 1960s",
-          "born": null,
-          "formed": null,
-          "origin": "Q30",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": null,
-        "life": {
-          "begin": null,
-          "end": null,
-          "ended": true
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
-      "caseKey": "TT|dg|260720",
-      "cc": "TT",
-      "key": "dg|260720",
-      "name": "Phil Bodner",
-      "mbid": "42fcb38c-6bea-4707-8516-6d0130a09ae1",
-      "mbName": "Phil Bodner",
-      "mbArea": "United States",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q15444329",
-          "description": "American multi-instrumentalist and studio musician (1917-2008)",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q639669",
-            "Q12800682"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "end": "2008-02-24",
-          "begin": "1917-06-13",
-          "ended": true
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "TT|dg|696350",
@@ -10666,51 +10293,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "TT|dg|338472",
-      "cc": "TT",
-      "key": "dg|338472",
-      "name": "Carolyn Franklin",
-      "mbid": "f7e8bede-c700-4091-8bf2-5d72d5b7a9d1",
-      "mbName": "Carolyn Franklin",
-      "mbArea": "United States",
-      "entryYears": [
-        1969,
-        1969
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q5045362",
-          "description": "American singer-songwriter (1944-1988)",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q177220",
-            "Q219477",
-            "Q753110"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "end": "1988-04-25",
-          "begin": "1944-05-13",
-          "ended": true
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "TT|dg|14203897",
       "cc": "TT",
       "key": "dg|14203897",
@@ -10739,54 +10321,6 @@
       "eraOverlap": false,
       "proposal": "keep-policy-c",
       "why": "generic name, no origin evidence — era coincidence is not identity"
-    },
-    {
-      "caseKey": "TT|dg|2260045",
-      "cc": "TT",
-      "key": "dg|2260045",
-      "name": "Twiggy",
-      "mbid": "653d4b7d-2f4d-4627-8e35-da20df1886ca",
-      "mbName": "Twiggy",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q229442",
-          "description": "British model, actress and singer",
-          "born": "Q145",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q145"
-          ],
-          "professions": [
-            "Q33999",
-            "Q177220",
-            "Q639669",
-            "Q2259451",
-            "Q4610556",
-            "Q10800557"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United Kingdom",
-        "life": {
-          "begin": "1949-09-19",
-          "ended": false,
-          "end": null
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "TT|dg|2258124",
