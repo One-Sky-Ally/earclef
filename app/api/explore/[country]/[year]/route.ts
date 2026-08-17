@@ -8,6 +8,7 @@ import {
 import { US_STATE_CODE_PATTERN, usStateByCode } from '@/lib/explore/states'
 import { movedIn, movedOut } from '@/lib/explore/originCorrections'
 import { hasStateData, stateDetails } from '@/lib/explore/stateData'
+import { extraArtistGroupsFor } from '@/lib/explore/extraArtistsServer'
 import type {
   CountryYearDetails,
   PanelArtist,
@@ -362,6 +363,19 @@ export async function GET(
     return NextResponse.json({ error: 'Year out of range' }, { status: 400 })
   }
 
+  // Gap-fill entries attach at RESPONSE time, never into memo/Blobs —
+  // stored payloads stay MB-only, so dataset updates reach cached
+  // panels on the next deploy (which purges the CDN) without a cache
+  // version bump. The client receives shaped entries; the dataset
+  // itself never enters a browser bundle (Aug 2026 bandwidth lesson).
+  const respond = (details: CountryYearDetails) =>
+    withCacheHeaders(
+      NextResponse.json({
+        ...details,
+        extraArtists: extraArtistGroupsFor(country, start, end),
+      }),
+    )
+
   // State panels answer from the committed dataset — no MusicBrainz,
   // no Blobs, milliseconds for any span. Deploys refresh the data and
   // purge the CDN together.
@@ -372,12 +386,12 @@ export async function GET(
 
   const key = `${country}:${year}:${genre ?? ''}`
   const cached = memo.get(key)
-  if (cached) return withCacheHeaders(NextResponse.json(cached))
+  if (cached) return respond(cached)
 
   const blobCached = await readCached(key)
   if (blobCached) {
     memo.set(key, blobCached)
-    return withCacheHeaders(NextResponse.json(blobCached))
+    return respond(blobCached)
   }
 
   const releaseQuery = encodeURIComponent(
@@ -416,7 +430,7 @@ export async function GET(
       }
       memo.set(key, details)
       await writeCached(key, details)
-      return withCacheHeaders(NextResponse.json(details))
+      return respond(details)
     }
 
     const releasesBody = (await mbJson(
@@ -447,7 +461,7 @@ export async function GET(
     const details = toDetails(releasesBody, origin)
     memo.set(key, details)
     await writeCached(key, details)
-    return withCacheHeaders(NextResponse.json(details))
+    return respond(details)
   } catch (error) {
     if (error instanceof RateLimitError) {
       return NextResponse.json(

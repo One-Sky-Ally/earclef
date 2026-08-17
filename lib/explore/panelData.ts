@@ -36,6 +36,23 @@ export interface CountryYearDetails {
   /** Artists credited on the issued-here releases (the fallback list). */
   artists: PanelArtist[]
   releases: PanelRelease[]
+  /**
+   * Gap-fill entries for this place + era, SHAPED server-side (pill
+   * URL and play key precomputed) — the 18k-artist dataset itself
+   * never ships to the client (Aug 2026 bandwidth lesson). Absent on
+   * stored pre-change payloads; the panel degrades to MB-only.
+   */
+  extraArtists?: { dated: ExtraPoolArtist[]; undated: ExtraPoolArtist[] }
+}
+
+/** A gap-fill entry as the panel pool consumes it — data-free client. */
+export interface ExtraPoolArtist extends PoolArtist {
+  /** The pill links out to the source documenting the artist. */
+  externalUrl: string
+  /** Verified-play resolver key (dg:/wd:/nm:). */
+  playKey: string
+  /** Source carries no date at all — sorts last, tagged quietly. */
+  undated?: boolean
 }
 
 export function musicBrainzArtistUrl(id: string): string {

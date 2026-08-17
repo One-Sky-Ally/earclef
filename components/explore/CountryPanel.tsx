@@ -18,12 +18,6 @@ import type { ListenService } from '@/lib/listen/services'
 import type { ArtistLinks } from '@/lib/explore/panelData'
 import { WhatWasPlaying } from '@/components/explore/WhatWasPlaying'
 import { QueuePlayer } from '@/components/explore/QueuePlayer'
-import {
-  extraArtistUrl,
-  extraArtistsFor,
-  extraPlayKey,
-  type ExtraArtist,
-} from '@/lib/explore/extraArtists'
 import styles from './CountryPanel.module.css'
 
 export interface SelectedCountry {
@@ -347,24 +341,17 @@ export function CountryPanel({
    * lowercase so they pool with MB tags in the genre filter.
    */
   const pool: PanelPoolArtist[] = useMemo(() => {
-    const toEntry = (
-      artist: ExtraArtist,
-      undated: boolean,
-    ): PanelPoolArtist => ({
-      id: `x:${artist.discogsArtistId ?? artist.wikidataId ?? artist.name}`,
-      name: artist.name,
-      tags: artist.styles.map((style) => style.toLowerCase()),
-      externalUrl: extraArtistUrl(artist),
-      playKey: extraPlayKey(artist),
-      ...(undated ? { undated: true } : {}),
-    })
-    const { dated, undated } = extraArtistsFor(country.code, year)
+    // Gap-fill entries arrive SHAPED from the API (pill URL + play key
+    // computed server-side) — the dataset never ships to the client.
+    // Stored pre-change payloads lack the field; degrade to MB-only.
+    const extra =
+      state.status === 'ready' ? state.details.extraArtists : undefined
     return [
       ...mbPool,
-      ...dated.map((artist) => toEntry(artist, false)),
-      ...undated.map((artist) => toEntry(artist, true)),
+      ...(extra?.dated ?? []),
+      ...(extra?.undated ?? []),
     ]
-  }, [mbPool, country.code, year])
+  }, [mbPool, state])
   const options = useMemo(
     () => genreOptions(pool, genre, country.name),
     [pool, genre, country.name],
