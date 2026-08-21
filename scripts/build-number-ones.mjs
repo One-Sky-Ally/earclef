@@ -163,6 +163,37 @@ function isoDate(year, monthName, day) {
   return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`
 }
 
+/**
+ * Chart cells quote each side of a double A-side separately —
+ * `"Come Together" / "Something"` — so stripping only the outer quotes
+ * leaves a mangled `Come Together" / "Something`. Normalize the whole
+ * shape to one honest title: `Come Together / Something`.
+ */
+function cleanTitle(raw) {
+  let text = String(raw ?? '')
+    .replace(/"\s*\/\s*"/g, ' / ')
+    .replace(/\s+/g, ' ')
+    .trim()
+  // The chart's own delimiters are the FIRST and LAST quote, so a title
+  // that legitimately contains quotes survives intact:
+  //   "Come Together" / "Something"     → Come Together / Something
+  //   "Teletubbies say "Eh-oh!""        → Teletubbies say "Eh-oh!"
+  //   "Macarena" (Bayside Boys Mix)     → Macarena (Bayside Boys Mix)
+  if (text.startsWith('"')) {
+    if (text.endsWith('"')) {
+      text = text.slice(1, -1)
+    } else {
+      const closing = text.lastIndexOf('"')
+      if (closing > 0) {
+        const inner = text.slice(1, closing).trim()
+        const annotation = text.slice(closing + 1).trim()
+        text = annotation ? `${inner} ${annotation}` : inner
+      }
+    }
+  }
+  return text.replace(/\s+/g, ' ').trim()
+}
+
 /** US year page → entries for that year (weekly rows, grouped by reign). */
 function parseUsYear(html, year) {
   const grid = tableGrid(mainTable(html, [['Issue date'], ['Artist']]))
@@ -221,7 +252,7 @@ function parseUkDecade(html) {
     const date = row[dateCol]?.text ?? ''
     const dateMatch = /^(\d{1,2}) ([A-Za-z]+) (\d{4})$/.exec(date)
     if (!dateMatch) continue
-    const title = (row[titleCol]?.text ?? '').replace(/^"|"$/g, '')
+    const title = cleanTitle(row[titleCol]?.text)
     const artist = row[artistCol]?.text
     const weeks = Number(row[weeksCol]?.text)
     if (!title || !artist || !Number.isFinite(weeks)) continue
@@ -243,7 +274,7 @@ async function buildUs() {
     const page = await fetchPage(title)
     const entries = parseUsYear(page.html, year).map((entry) => ({
       ...entry,
-      title: entry.title.replace(/^"|"$/g, ''),
+      title: cleanTitle(entry.title),
     }))
     if (entries.length === 0) throw new Error(`${title}: parsed 0 entries`)
     const weekSum = entries.reduce((sum, entry) => sum + entry.weeks, 0)

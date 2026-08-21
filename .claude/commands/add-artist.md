@@ -19,8 +19,15 @@ verify EVERYTHING yourself against live sources:
   the Burial/Queen problem). 1.1s pacing, UA
   "EarClefResearch/0.1 (fiohmemorial@gmail.com)".
 - Official YouTube channel (UC…): feeds/videos.xml title check + handle
-  canonical. NO "- Topic" channels, no fan channels; label/estate channels
-  only when the artist has no own channel (say so in the content).
+  canonical. No fan channels, ever. Tier order: the artist's own channel →
+  label/estate channel → "- Topic" channel (say in the content when it is
+  not their own). "- Topic" channels ARE legitimate (owner ruling, Aug 21
+  2026, settling the Neutral Milk Hotel case): they are auto-generated
+  from official distribution, so the content is official by construction.
+  THE BOUNDARY: a channel must be identified by EVIDENCE, never by name —
+  MB url-rels, Wikidata P2397 ("YouTube channel ID"), or the channelId of
+  an already-verified video for that artist. Searching "<Artist> - Topic"
+  is name matching in a costume and stays banned; no evidence, no channel.
 - 3–4 official video IDs: EACH verified via oEmbed author match.
 - iTunes artistId: lookup API catalog match.
 - 2–3 featured albums with MB release-group IDs (title + type + year).

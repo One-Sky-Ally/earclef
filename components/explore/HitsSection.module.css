@@ -57,6 +57,18 @@
   color: var(--text-muted);
 }
 
+.artistLink {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+.artistLink:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
 .side {
   display: flex;
   align-items: center;

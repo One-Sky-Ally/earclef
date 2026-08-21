@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { QueuePlayer } from '@/components/explore/QueuePlayer'
 import styles from './HitsSection.module.css'
 
@@ -19,6 +20,8 @@ interface HitEntry {
   first: string
   weeks: number
   videoId: string | null
+  /** Set only when the sweep confirmed this credit's identity. */
+  artistSlug: string | null
 }
 
 interface HitsPayload {
@@ -121,7 +124,19 @@ export function HitsSection({
             <span className={styles.rank}>{index + 1}</span>
             <span className={styles.what}>
               <span className={styles.title}>“{entry.title}”</span>
-              <span className={styles.artist}>{entry.artist}</span>
+              {/* Linked only on confirmed identity — joint credits
+                  ("LMC vs U2") resolve to no single artist and stay
+                  plain text rather than guess at one of them. */}
+              {entry.artistSlug ? (
+                <Link
+                  className={styles.artistLink}
+                  href={`/${entry.artistSlug}`}
+                >
+                  {entry.artist}
+                </Link>
+              ) : (
+                <span className={styles.artist}>{entry.artist}</span>
+              )}
             </span>
             <span className={styles.side}>
               <span className={styles.weeks}>

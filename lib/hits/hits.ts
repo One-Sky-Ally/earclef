@@ -1,6 +1,7 @@
 import usFile from './number-ones-us.json'
 import ukFile from './number-ones-uk.json'
 import playFile from './hits-play.json'
+import artistFile from './hits-artists.json'
 
 /**
  * #1 hits serving — SERVER-ONLY (imported by /api/hits, never by a
@@ -35,18 +36,40 @@ interface PlayEntry {
   videoId: string
 }
 
+interface ArtistLink {
+  slug: string
+  name: string
+}
+
 const CHARTS: Record<string, ChartFile> = {
   US: usFile as unknown as ChartFile,
   GB: ukFile as unknown as ChartFile,
 }
 
 const PLAY = playFile as unknown as Record<string, PlayEntry>
+/**
+ * Credited-name → roster page, written by the sweep on CONFIRMED MBID
+ * equality only (never name similarity). Joint credits resolve to no
+ * single artist, so they carry no link — by construction, not by rule.
+ */
+const ARTIST_LINKS = artistFile as unknown as Record<string, ArtistLink>
+
+/** Same script-aware normalize the sweep keys its link map with. */
+const normalizeName = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim()
 
 /** Top 5 + five "show 20 more" reveals — spans never ship unbounded. */
 const ENTRY_CAP = 105
 
 export interface HitEntry extends StoredHit {
   videoId: string | null
+  /** Roster page for the credited artist, when identity is confirmed. */
+  artistSlug: string | null
 }
 
 export interface HitsPayload {
@@ -99,6 +122,7 @@ export function hitsFor(
         merged.set(key, {
           ...entry,
           videoId: PLAY[key]?.videoId ?? null,
+          artistSlug: ARTIST_LINKS[normalizeName(entry.artist)]?.slug ?? null,
         })
       }
     }
