@@ -32,6 +32,14 @@ interface QueuePlayerProps {
   year: number
   pool: PoolArtist[]
   roster: RosterByMbid
+  /**
+   * Pre-verified tracks (#1 hits): the queue is already resolved, so
+   * play starts instantly and the resolver walk never runs. Every
+   * entry carries a playability-checked video ID by construction.
+   */
+  preresolved?: ResolvedTrack[]
+  /** Button label override — the default names the place + year. */
+  buttonLabel?: string
 }
 
 /** Minimal typing for the pieces of the IFrame API we drive. */
@@ -90,6 +98,8 @@ export function QueuePlayer({
   year,
   pool,
   roster,
+  preresolved,
+  buttonLabel,
 }: QueuePlayerProps) {
   const [active, setActive] = useState(false)
   const [tracks, setTracks] = useState<ResolvedTrack[]>([])
@@ -153,6 +163,15 @@ export function QueuePlayer({
   async function start() {
     if (active) return
     setActive(true)
+    if (preresolved) {
+      setTracks(preresolved)
+      if (preresolved[0]) {
+        firstPlayedRef.current = true
+        void playFirst(preresolved[0])
+      }
+      setDone(true)
+      return
+    }
     setBuilding(true)
     const controller = new AbortController()
     abortRef.current = controller
@@ -200,20 +219,26 @@ export function QueuePlayer({
     setDone(true)
   }
 
-  if (pool.length === 0) return null
-  if (pool.length < HONEST_MIN) {
-    return (
-      <p className={styles.sparseNote}>
-        Too few artists on record here for a real queue — no padding, no
-        fillers.
-      </p>
-    )
+  if (preresolved) {
+    // Pre-verified queues are exactly as long as their verified list —
+    // the pool guards below are resolver-walk economics, not honesty.
+    if (preresolved.length === 0) return null
+  } else {
+    if (pool.length === 0) return null
+    if (pool.length < HONEST_MIN) {
+      return (
+        <p className={styles.sparseNote}>
+          Too few artists on record here for a real queue — no padding, no
+          fillers.
+        </p>
+      )
+    }
   }
 
   if (!active) {
     return (
       <button type="button" className={styles.playButton} onClick={start}>
-        ▶ Play {placeName} {year}
+        {buttonLabel ?? `▶ Play ${placeName} ${year}`}
       </button>
     )
   }

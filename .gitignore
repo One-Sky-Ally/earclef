@@ -57,3 +57,8 @@ data/dedup-drop-audit.log
 data/dedup-v3-work.json
 data/dedup-v3-run-fresh.log
 data/dedup-v3-run.log
+data/uk-nation-precompute-work.json
+data/uk-smoke.log
+data/uk-nation-precompute.log
+data/wiki-cache/
+data/number-ones-ingest.log

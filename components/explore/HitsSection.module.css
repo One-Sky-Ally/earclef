@@ -1,0 +1,119 @@
+.section {
+  margin-bottom: 1.4rem;
+}
+
+.heading {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding-block: 0.45rem;
+  border-top: 1px solid var(--border);
+}
+
+.rank {
+  flex: 0 0 1.4rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.what {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+.artist {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.side {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex: 0 0 auto;
+}
+
+.weeks {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.playBadge {
+  color: var(--accent);
+  font-size: 0.8rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.playBadge:hover {
+  color: var(--text);
+}
+
+.more {
+  margin-top: 0.55rem;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: none;
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.more:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.capNote {
+  margin-top: 0.55rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.attribution {
+  margin-top: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}

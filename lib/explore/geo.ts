@@ -37,11 +37,11 @@ export function isoOf(feature: CountryFeature): string | undefined {
 
 /**
  * The clickable code of any feature: a country ISO code, or a
- * subdivision code (e.g. US-HI) on features minted by
- * splitSubdivisionFeatures.
+ * subdivision/region code (e.g. US-HI, US-NV, GB-SCT) on features
+ * minted by splitSubdivisionFeatures or the region layers.
  */
 export function featureCode(feature: CountryFeature): string | undefined {
   const { ISO_A2 } = feature.properties
-  if (/^[A-Z]{2}-[A-Z]{2}$/.test(ISO_A2)) return ISO_A2
+  if (/^[A-Z]{2}-[A-Z]{2,3}$/.test(ISO_A2)) return ISO_A2
   return isoOf(feature)
 }

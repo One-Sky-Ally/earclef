@@ -1,0 +1,50 @@
+{
+  "GB-ENG": {
+    "name": "England",
+    "artistsOnRecord": 28009,
+    "stored": 1142,
+    "top5": [
+      "Pink Floyd",
+      "The Beatles",
+      "Queen",
+      "The Cure",
+      "Aphex Twin"
+    ]
+  },
+  "GB-SCT": {
+    "name": "Scotland",
+    "artistsOnRecord": 5388,
+    "stored": 673,
+    "top5": [
+      "Boards of Canada",
+      "SOPHIE",
+      "Mogwai",
+      "Cocteau Twins",
+      "Franz Ferdinand"
+    ]
+  },
+  "GB-WLS": {
+    "name": "Wales",
+    "artistsOnRecord": 2556,
+    "stored": 551,
+    "top5": [
+      "Manic Street Preachers",
+      "MARINA",
+      "Budgie",
+      "Super Furry Animals",
+      "Los Campesinos!"
+    ]
+  },
+  "GB-NIR": {
+    "name": "Northern Ireland",
+    "artistsOnRecord": 1580,
+    "stored": 516,
+    "top5": [
+      "Van Morrison",
+      "Gary Moore",
+      "Therapy?",
+      "The Divine Comedy",
+      "Calibre"
+    ]
+  }
+}

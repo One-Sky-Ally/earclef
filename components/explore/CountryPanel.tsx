@@ -17,6 +17,7 @@ import { useListenService } from '@/components/listen/ServiceProvider'
 import type { ListenService } from '@/lib/listen/services'
 import type { ArtistLinks } from '@/lib/explore/panelData'
 import { WhatWasPlaying } from '@/components/explore/WhatWasPlaying'
+import { HitsSection } from '@/components/explore/HitsSection'
 import { QueuePlayer } from '@/components/explore/QueuePlayer'
 import styles from './CountryPanel.module.css'
 
@@ -663,7 +664,17 @@ export function CountryPanel({
             </>
           )}
 
-          {/* Cultural snapshot AFTER the artists — people first, era second. */}
+          {/* Chart facts + cultural snapshot AFTER the artists —
+              people first, era second. The hits section self-gates:
+              it renders ONLY where an authoritative chart exists. */}
+          {!genre && (
+            <HitsSection
+              countryCode={country.code}
+              countryName={country.name}
+              yearStart={yearStart}
+              yearEnd={yearEnd}
+            />
+          )}
           {!genre && (
             <WhatWasPlaying
               countryCode={country.code}

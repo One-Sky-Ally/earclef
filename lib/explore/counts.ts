@@ -34,18 +34,27 @@ export async function loadCounts(
 }
 
 /**
- * Per-state artist-emergence counts (career-start years, precomputed by
- * scripts/build-state-data.mjs) — the heat layer for the zoomed-in US
- * state view. Absent file = states render flat, panels still work.
+ * Per-region artist-emergence counts (career-start years, precomputed
+ * by scripts/build-state-data.mjs) — the heat layers for the zoomed-in
+ * US state and UK nation views. Absent file = that layer renders flat,
+ * panels still work.
  */
-export async function loadStateCounts(): Promise<CountryYearCounts> {
+async function loadEmergenceCounts(path: string): Promise<CountryYearCounts> {
   try {
-    const res = await fetch('/data/state-year-counts.json')
+    const res = await fetch(path)
     if (res.ok) return (await res.json()) as CountryYearCounts
   } catch {
-    // States render without heat; the click panels are unaffected.
+    // Regions render without heat; the click panels are unaffected.
   }
   return {}
+}
+
+export function loadStateCounts(): Promise<CountryYearCounts> {
+  return loadEmergenceCounts('/data/state-year-counts.json')
+}
+
+export function loadNationCounts(): Promise<CountryYearCounts> {
+  return loadEmergenceCounts('/data/uk-nation-year-counts.json')
 }
 
 /** Log-scaled 0..1 heat for a count against the year's hottest country. */

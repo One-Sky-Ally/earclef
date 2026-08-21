@@ -1,10 +1,11 @@
 import {
   loadCounts,
+  loadNationCounts,
   loadStateCounts,
   type CountryYearCounts,
 } from './counts'
 import { isoOf, type CountryFeature } from './geo'
-import { US_STATES } from './states'
+import { SUBDIVIDED_REGIONS } from './states'
 
 /**
  * "Surprise me" — one tap, one place+year worth landing on. Selection
@@ -54,22 +55,29 @@ let dataPromise: Promise<SurpriseData> | null = null
 export function loadSurpriseData(): Promise<SurpriseData> {
   if (dataPromise) return dataPromise
   dataPromise = (async () => {
-    const [countryCounts, stateCounts, countryNames] = await Promise.all([
-      loadCounts([]).then((result) => result.counts),
-      loadStateCounts(),
-      fetch('/data/countries-110m.geojson')
-        .then((res) => (res.ok ? res.json() : { features: [] }))
-        .then((geo: { features: CountryFeature[] }) => {
-          const names = new Map<string, string>()
-          for (const feature of geo.features) {
-            const code = isoOf(feature)
-            if (code) names.set(code, feature.properties.ADMIN)
-          }
-          return names
-        })
-        .catch(() => new Map<string, string>()),
-    ])
-    return { countryCounts, stateCounts, countryNames }
+    const [countryCounts, stateCounts, nationCounts, countryNames] =
+      await Promise.all([
+        loadCounts([]).then((result) => result.counts),
+        loadStateCounts(),
+        loadNationCounts(),
+        fetch('/data/countries-110m.geojson')
+          .then((res) => (res.ok ? res.json() : { features: [] }))
+          .then((geo: { features: CountryFeature[] }) => {
+            const names = new Map<string, string>()
+            for (const feature of geo.features) {
+              const code = isoOf(feature)
+              if (code) names.set(code, feature.properties.ADMIN)
+            }
+            return names
+          })
+          .catch(() => new Map<string, string>()),
+      ])
+    // One region map — US state and UK nation codes never collide.
+    return {
+      countryCounts,
+      stateCounts: { ...stateCounts, ...nationCounts },
+      countryNames,
+    }
   })()
   dataPromise.catch(() => {
     // Let a transient failure retry on the next tap.
@@ -130,10 +138,13 @@ function countryPick(
 
 function statePick(stateCounts: CountryYearCounts): SurpriseTarget | null {
   if (Object.keys(stateCounts).length === 0) return null
-  const state = US_STATES[randomInt(0, US_STATES.length - 1)]
-  const year = weightedYear(stateCounts[state.code], 1)
+  // A surprise landing can be any subdivided region — a US state or a
+  // UK nation. A region absent from the loaded counts (dataset not yet
+  // landed) simply yields null and the caller re-rolls.
+  const region = SUBDIVIDED_REGIONS[randomInt(0, SUBDIVIDED_REGIONS.length - 1)]
+  const year = weightedYear(stateCounts[region.code], 1)
   if (year === null) return null
-  return { code: state.code, name: state.name, year }
+  return { code: region.code, name: region.name, year }
 }
 
 /** Obscure-but-real: a uniform draw over the world's quiet corners. */

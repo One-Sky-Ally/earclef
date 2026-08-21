@@ -9,15 +9,17 @@ import {
   heatColor,
   heatValue,
   loadCounts,
+  loadNationCounts,
   loadStateCounts,
   maxForRange,
   type CountryYearCounts,
   type DataSource,
 } from '@/lib/explore/counts'
 import {
+  REGION_CODE_PATTERN,
+  regionByCode,
+  UK_NATIONS,
   US_STATES,
-  US_STATE_CODE_PATTERN,
-  usStateByCode,
 } from '@/lib/explore/states'
 import {
   genreCountInRange,
@@ -38,10 +40,11 @@ import type { SelectedCountry } from '@/components/explore/CountryPanel'
 import styles from './GlobeScene.module.css'
 
 /**
- * Zoom decides what the United States is: a country from afar, fifty
- * states up close. Crossing STATE_ZOOM_ENTER swaps the US polygon for
- * the state layer; zooming back past STATE_ZOOM_EXIT restores the
- * country. The gap is hysteresis so the border never flaps.
+ * Zoom decides what a subdivided country is: the United States and the
+ * United Kingdom are countries from afar, fifty states and four nations
+ * up close. Crossing STATE_ZOOM_ENTER swaps both parent polygons for
+ * their region layers; zooming back past STATE_ZOOM_EXIT restores the
+ * countries. The gap is hysteresis so the border never flaps.
  */
 const STATE_ZOOM_ENTER = 1.15
 const STATE_ZOOM_EXIT = 1.3
@@ -142,11 +145,13 @@ export function GlobeScene({
   const featureByCode = useRef<Map<string, CountryFeature>>(new Map())
   const pausedRef = useRef(paused)
   const cursorOverGlobeRef = useRef(false)
-  // The zoomed-in US state layer: features + heat load lazily on the
-  // first threshold crossing; the view swap rides globe.gl's onZoom.
+  // The zoomed-in region layer (US states + UK nations): features +
+  // heat load lazily on the first threshold crossing; the view swap
+  // rides globe.gl's onZoom.
   const countryViewRef = useRef<CountryFeature[]>([])
   const stateViewRef = useRef<CountryFeature[] | null>(null)
   const stateCountsRef = useRef<CountryYearCounts>({})
+  const nationCountsRef = useRef<CountryYearCounts>({})
   const statesPromiseRef = useRef<Promise<boolean> | null>(null)
   const viewModeRef = useRef<'countries' | 'states'>('countries')
   const altitudeRef = useRef(2.1)
@@ -177,14 +182,14 @@ export function GlobeScene({
   useEffect(() => {
     if (!focusRequest) return
     const { code } = focusRequest
-    // A state resolves like a country, but the fly-to dips below the
-    // state-layer threshold so the state itself lights up. The panel
-    // opens immediately; the camera follows when the layer is ready.
-    // (Carved offshore subdivisions — Hawaii — already have features.)
-    if (US_STATE_CODE_PATTERN.test(code) && !featureByCode.current.has(code)) {
+    // A region resolves like a country, but the fly-to dips below the
+    // region-layer threshold so the state/nation itself lights up. The
+    // panel opens immediately; the camera follows when the layer is
+    // ready. (Carved offshore subdivisions — Hawaii — have features.)
+    if (REGION_CODE_PATTERN.test(code) && !featureByCode.current.has(code)) {
       onCountryClick({
         code,
-        name: usStateByCode(code)?.name ?? focusRequest.name,
+        name: regionByCode(code)?.name ?? focusRequest.name,
       })
       void ensureStates().then((ready) => {
         const globe = globeRef.current
@@ -199,9 +204,9 @@ export function GlobeScene({
     const feature = featureByCode.current.get(code)
     if (globe && feature) {
       const { lat, lng } = roughCentroid(feature)
-      const isState = US_STATE_CODE_PATTERN.test(code)
+      const isRegion = REGION_CODE_PATTERN.test(code)
       globe.pointOfView(
-        { lat, lng, altitude: isState ? STATE_FLY_ALTITUDE : 1.7 },
+        { lat, lng, altitude: isRegion ? STATE_FLY_ALTITUDE : 1.7 },
         650,
       )
       onCountryClick({
@@ -225,23 +230,35 @@ export function GlobeScene({
     if (statesPromiseRef.current) return statesPromiseRef.current
     const promise = (async () => {
       try {
-        const [geoRes, counts] = await Promise.all([
-          fetch('/data/us-states-110m.geojson'),
-          loadStateCounts(),
-        ])
-        if (!geoRes.ok) throw new Error(`states geojson: HTTP ${geoRes.status}`)
-        const geo = (await geoRes.json()) as { features: CountryFeature[] }
-        stateCountsRef.current = counts
-        // The state view: every non-US feature (the carved Hawaii
-        // included — the states file has its own) plus the 51 states.
+        const [statesRes, nationsRes, stateCounts, nationCounts] =
+          await Promise.all([
+            fetch('/data/us-states-110m.geojson'),
+            fetch('/data/uk-nations-110m.geojson'),
+            loadStateCounts(),
+            loadNationCounts(),
+          ])
+        if (!statesRes.ok) throw new Error(`states geojson: HTTP ${statesRes.status}`)
+        if (!nationsRes.ok) throw new Error(`nations geojson: HTTP ${nationsRes.status}`)
+        const states = (await statesRes.json()) as { features: CountryFeature[] }
+        const nations = (await nationsRes.json()) as { features: CountryFeature[] }
+        stateCountsRef.current = stateCounts
+        nationCountsRef.current = nationCounts
+        // The region view: every feature except the subdivided parents
+        // (the carved Hawaii included — the states file has its own)
+        // plus the 51 states and 4 nations.
+        const regionFeatures = [...states.features, ...nations.features]
         stateViewRef.current = [
           ...countryViewRef.current.filter((feature) => {
             const { ISO_A2 } = feature.properties
-            return ISO_A2 !== 'US' && !US_STATE_CODE_PATTERN.test(ISO_A2)
+            return (
+              ISO_A2 !== 'US' &&
+              ISO_A2 !== 'GB' &&
+              !REGION_CODE_PATTERN.test(ISO_A2)
+            )
           }),
-          ...geo.features,
+          ...regionFeatures,
         ]
-        for (const feature of geo.features) {
+        for (const feature of regionFeatures) {
           featureByCode.current.set(feature.properties.ISO_A2, feature)
         }
         rangeMaxCache.current = {}
@@ -284,22 +301,31 @@ export function GlobeScene({
     }
   }
 
+  /**
+   * Emergence-count map for a region code — US states and UK nations
+   * each normalize against their own group (MB coverage depth differs
+   * per country; the pools share no scale).
+   */
+  function regionCounts(
+    code: string,
+  ): { counts: CountryYearCounts; cacheKey: string } | null {
+    if (!REGION_CODE_PATTERN.test(code)) return null
+    return code.startsWith('US-')
+      ? { counts: stateCountsRef.current, cacheKey: 's' }
+      : { counts: nationCountsRef.current, cacheKey: 'n' }
+  }
+
   function heatFor(feature: object): number {
     const props = (feature as CountryFeature).properties
-    if (US_STATE_CODE_PATTERN.test(props.ISO_A2)) {
-      // States glow by artist emergence, normalized across states only.
+    const region = regionCounts(props.ISO_A2)
+    if (region) {
+      // Regions glow by artist emergence, normalized within their group.
       if (lensRef.current) return 0
       const [start, end] = rangeRef.current
-      const count = countInRange(
-        stateCountsRef.current[props.ISO_A2],
-        start,
-        end,
-      )
-      const max = (rangeMaxCache.current[`s:${start}:${end}`] ??= maxForRange(
-        stateCountsRef.current,
-        start,
-        end,
-      ))
+      const count = countInRange(region.counts[props.ISO_A2], start, end)
+      const max = (rangeMaxCache.current[
+        `${region.cacheKey}:${start}:${end}`
+      ] ??= maxForRange(region.counts, start, end))
       return heatValue(count, max)
     }
     const code = isoOf(feature as CountryFeature)
@@ -358,17 +384,31 @@ export function GlobeScene({
       const countries = features
         .flatMap((feature) => {
           const code = featureCode(feature)
-          return code && !US_STATE_CODE_PATTERN.test(code)
+          return code && !REGION_CODE_PATTERN.test(code)
             ? [{ code, name: feature.properties.ADMIN }]
             : []
         })
         .sort((a, b) => a.name.localeCompare(b.name))
-      const usIndex = countries.findIndex((entry) => entry.code === 'US')
-      if (usIndex === -1) return countries
-      const states = [...US_STATES]
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .map((state) => ({ code: state.code, name: `US · ${state.name}` }))
-      countries.splice(usIndex + 1, 0, ...states)
+      // Each subdivided country lists its regions right below itself.
+      const insertRegions = (
+        parentCode: string,
+        prefix: string,
+        regions: typeof US_STATES,
+      ) => {
+        const parentIndex = countries.findIndex(
+          (entry) => entry.code === parentCode,
+        )
+        if (parentIndex === -1) return
+        const entries = [...regions]
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((region) => ({
+            code: region.code,
+            name: `${prefix} · ${region.name}`,
+          }))
+        countries.splice(parentIndex + 1, 0, ...entries)
+      }
+      insertRegions('GB', 'UK', UK_NATIONS)
+      insertRegions('US', 'US', US_STATES)
       return countries
     }
 
@@ -457,13 +497,16 @@ export function GlobeScene({
           const code = isoOf(feature as CountryFeature)
           const [start, end] = rangeRef.current
           const span = start === end ? `${start}` : `${start}–${end}`
-          if (SUBDIVISION_CODE_PATTERN.test(props.ISO_A2)) {
-            // States: artist-emergence counts from the precomputed
+          if (
+            SUBDIVISION_CODE_PATTERN.test(props.ISO_A2) ||
+            REGION_CODE_PATTERN.test(props.ISO_A2)
+          ) {
+            // Regions: artist-emergence counts from the precomputed
             // dataset; lens mode and count-less regions invite the click.
             const emerged = lensRef.current
               ? 0
               : countInRange(
-                  stateCountsRef.current[props.ISO_A2],
+                  regionCounts(props.ISO_A2)?.counts[props.ISO_A2],
                   rangeRef.current[0],
                   rangeRef.current[1],
                 )
@@ -500,9 +543,9 @@ export function GlobeScene({
           const code = featureCode(feature)
           if (!code || !globe) return
           const { lat, lng } = roughCentroid(feature)
-          // State clicks stay below the layer threshold — flying out
-          // to country altitude would swap the states away mid-open.
-          const altitude = US_STATE_CODE_PATTERN.test(code)
+          // Region clicks stay below the layer threshold — flying out
+          // to country altitude would swap the regions away mid-open.
+          const altitude = REGION_CODE_PATTERN.test(code)
             ? Math.min(altitudeRef.current, STATE_FLY_ALTITUDE)
             : 1.7
           globe.pointOfView({ lat, lng, altitude }, 650)

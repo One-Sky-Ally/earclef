@@ -1,4 +1,5 @@
 import stateArtists from './state-artists.json'
+import nationArtists from './uk-nation-artists.json'
 import type { CountryYearDetails, PanelArtist, PoolArtist } from './panelData'
 
 /**
@@ -33,9 +34,20 @@ interface StoredState {
   artists: StoredArtist[]
 }
 
-const DATASET = stateArtists as unknown as {
+interface StoredDataset {
   generatedAt: string | null
   states: Record<string, StoredState>
+}
+
+// One serving map for every subdivided region — US states and UK
+// nations share the storage shape and the panel pipeline; their
+// datasets are precomputed by scripts/build-state-data.mjs per region.
+const DATASET: StoredDataset = {
+  generatedAt: (stateArtists as unknown as StoredDataset).generatedAt,
+  states: {
+    ...(stateArtists as unknown as StoredDataset).states,
+    ...(nationArtists as unknown as StoredDataset).states,
+  },
 }
 
 const ARTIST_LIMIT = 12

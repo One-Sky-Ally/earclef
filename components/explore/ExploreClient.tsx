@@ -219,7 +219,7 @@ export function ExploreClient({
         setPanelYear(migrated)
       }
       const code = params.get('c')
-      if (code && /^[A-Z]{2}(-[A-Z]{2})?$/.test(code)) {
+      if (code && /^[A-Z]{2}(-[A-Z]{2,3})?$/.test(code)) {
         pendingCountry.current = code
       }
       const genre = params.get('g')

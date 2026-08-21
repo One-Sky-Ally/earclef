@@ -1,35 +1,62 @@
 /**
- * State-level precompute: MusicBrainz artists per US state.
+ * Region-level precompute: MusicBrainz artists per subdivision of a
+ * configured country (US states, UK nations).
  *
- * Discovery casts a wide net — for every configured area name (state +
+ * Discovery casts a wide net — for every configured area name (region +
  * curated music cities) it sweeps `(area:"X" OR beginarea:"X")`, because
- * MB files many artists under a city, or under plain "United States"
+ * MB files many artists under a city, or under the plain country
  * with only a birthplace city (The Killers carry area=United States,
  * begin-area=Las Vegas). Assignment is then PRECISE: every hit's area
- * is resolved to its true state by walking MB "part of" parents until
- * an ISO 3166-2 US-XX code appears (Las Vegas → Clark County → Nevada),
- * so cross-state and cross-country name collisions (Portland, Manchester,
- * Birmingham…) cost only sweep pages, never accuracy.
+ * is resolved to its true region by walking MB "part of" parents until
+ * a target ISO 3166-2 code appears (Las Vegas → Clark County → Nevada;
+ * Manchester → Greater Manchester → England), so cross-region and
+ * cross-country name collisions (Portland, Manchester, Bangor…) cost
+ * only sweep pages, never accuracy. UK cities carry their OWN ISO
+ * 3166-2 codes (Manchester GB-MAN, Glasgow GB-GLG) — the walk continues
+ * through non-target subdivision codes and stops only at country codes.
  *
- * Resumable: data/state-precompute-work.json checkpoints finished name
- * sweeps and the area→state cache. Re-run to continue; ~1 req/1.1s.
+ * Resumable: the region's work file checkpoints finished name sweeps
+ * and the area→region cache. Re-run to continue; ~1 req/1.1s.
  *
  * Usage:
- *   node scripts/build-state-data.mjs            # full run (~1–2h)
- *   node scripts/build-state-data.mjs --smoke US-NV,US-HI
+ *   node scripts/build-state-data.mjs                        # US, full
+ *   node scripts/build-state-data.mjs --region uk            # UK, full
+ *   node scripts/build-state-data.mjs --region uk --smoke GB-WLS,GB-NIR
  *
- * Outputs (full run):
- *   public/data/state-year-counts.json  — emergence counts for globe heat
- *   lib/explore/state-artists.json      — per-state panel dataset
- *   data/state-coverage-report.json     — per-state coverage summary
+ * Outputs (full run, per region): globe heat counts (public/data),
+ * panel dataset (lib/explore), coverage report (data/).
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 
-const CONFIG_PATH = 'lib/explore/us-states.json'
-const WORK_PATH = 'data/state-precompute-work.json'
-const COUNTS_OUT = 'public/data/state-year-counts.json'
-const ARTISTS_OUT = 'lib/explore/state-artists.json'
-const REPORT_OUT = 'data/state-coverage-report.json'
+const REGIONS = {
+  us: {
+    config: 'lib/explore/us-states.json',
+    work: 'data/state-precompute-work.json',
+    counts: 'public/data/state-year-counts.json',
+    artists: 'lib/explore/state-artists.json',
+    report: 'data/state-coverage-report.json',
+  },
+  uk: {
+    config: 'lib/explore/uk-nations.json',
+    work: 'data/uk-nation-precompute-work.json',
+    counts: 'public/data/uk-nation-year-counts.json',
+    artists: 'lib/explore/uk-nation-artists.json',
+    report: 'data/uk-nation-coverage-report.json',
+  },
+}
+
+const regionArg = process.argv.indexOf('--region')
+const regionKey = regionArg !== -1 ? process.argv[regionArg + 1] : 'us'
+const REGION = REGIONS[regionKey]
+if (!REGION) {
+  throw new Error(`unknown --region "${regionKey}" (${Object.keys(REGIONS).join(', ')})`)
+}
+
+const CONFIG_PATH = REGION.config
+const WORK_PATH = REGION.work
+const COUNTS_OUT = REGION.counts
+const ARTISTS_OUT = REGION.artists
+const REPORT_OUT = REGION.report
 
 const DELAY_MS = 1100
 const MAX_RETRIES = 5
@@ -153,11 +180,13 @@ async function resolveArea(areaId, cache, stateCodes) {
       for (const id of chain) cache[id] = iso2
       return iso2
     }
-    // Any other subdivision code, or a country code: not a US state.
-    if (
-      (body['iso-3166-2-codes'] ?? []).length > 0 ||
-      (body['iso-3166-1-codes'] ?? []).length > 0
-    ) {
+    // A country code ends the walk: we climbed past every target
+    // subdivision, so this area is outside the region. Non-target
+    // ISO 3166-2 codes do NOT stop it — UK cities and counties carry
+    // their own codes (Manchester GB-MAN, Essex GB-ESS) below the
+    // nation level, and a foreign subdivision simply climbs to its
+    // country and resolves null there.
+    if ((body['iso-3166-1-codes'] ?? []).length > 0) {
       for (const id of chain) cache[id] = null
       return null
     }

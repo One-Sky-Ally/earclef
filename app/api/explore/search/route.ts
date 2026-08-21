@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { subdivisionByName } from '@/lib/explore/subdivisions'
-import { usStateByCode, usStateByName } from '@/lib/explore/states'
+import { regionByCode, regionByName } from '@/lib/explore/states'
 import type { SearchResult } from '@/lib/explore/panelData'
 
 const USER_AGENT =
@@ -56,21 +56,21 @@ function countryCodeOf(area: MbArea): string | undefined {
   return area['iso-3166-1-codes']?.[0]
 }
 
-/** A known US state code carried by this area, if any. */
-function usStateCodeOf(area: MbArea): string | undefined {
-  return (area['iso-3166-2-codes'] ?? []).find((code) => usStateByCode(code))
+/** A known region code (US state / UK nation) carried by this area. */
+function regionCodeOf(area: MbArea): string | undefined {
+  return (area['iso-3166-2-codes'] ?? []).find((code) => regionByCode(code))
 }
 
 /**
  * Walk "part of" relations upward until an area carries a country code
- * — or a US state code, which wins: "Las Vegas" should open Nevada,
- * not the whole United States.
+ * — or a region code, which wins: "Las Vegas" should open Nevada and
+ * "Manchester" should open England, not the whole country.
  */
 async function resolveCountry(area: MbArea): Promise<string | undefined> {
   let current = area
   for (let hop = 0; hop < MAX_PARENT_HOPS; hop++) {
-    const state = usStateCodeOf(current)
-    if (state) return state
+    const region = regionCodeOf(current)
+    if (region) return region
     const direct = countryCodeOf(current)
     if (direct) return direct
 
@@ -80,13 +80,13 @@ async function resolveCountry(area: MbArea): Promise<string | undefined> {
     )
     if (!res.ok) return undefined
     const body = (await res.json()) as MbArea
-    const bodyState = usStateCodeOf(body)
-    if (bodyState) return bodyState
+    const bodyRegion = regionCodeOf(body)
+    if (bodyRegion) return bodyRegion
 
     const partOf = (body.relations ?? []).filter(
       (rel) => rel.type === 'part of' && rel.area,
     )
-    const withState = partOf.find((rel) => usStateCodeOf(rel.area!))
+    const withState = partOf.find((rel) => regionCodeOf(rel.area!))
     const withCode = partOf.find((rel) => countryCodeOf(rel.area!))
     const parent =
       withState?.area ??
@@ -134,9 +134,9 @@ export async function GET(request: Request) {
         )
   }
 
-  // Configured subdivisions and US states win by name — "Hawaii" opens
-  // US-HI, "Texas" opens US-TX, never the whole country.
-  const subdivision = subdivisionByName(query) ?? usStateByName(query)
+  // Configured subdivisions and regions win by name — "Hawaii" opens
+  // US-HI, "Scotland" opens GB-SCT, never the whole country.
+  const subdivision = subdivisionByName(query) ?? regionByName(query)
   if (subdivision) {
     const result: SearchResult = {
       kind: 'place',

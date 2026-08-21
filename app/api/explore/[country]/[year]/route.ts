@@ -5,7 +5,7 @@ import {
   SUBDIVISION_CODE_PATTERN,
   subdivisionByCode,
 } from '@/lib/explore/subdivisions'
-import { US_STATE_CODE_PATTERN, usStateByCode } from '@/lib/explore/states'
+import { REGION_CODE_PATTERN, regionByCode } from '@/lib/explore/states'
 import { movedIn, movedOut } from '@/lib/explore/originCorrections'
 import { hasStateData, stateDetails } from '@/lib/explore/stateData'
 import { extraArtistGroupsFor } from '@/lib/explore/extraArtistsServer'
@@ -339,19 +339,20 @@ export async function GET(
   }
 
   // "1969" (single year) or "1965-1975" (inclusive span).
-  const usState = US_STATE_CODE_PATTERN.test(country)
-    ? usStateByCode(country)
+  const region = REGION_CODE_PATTERN.test(country)
+    ? regionByCode(country)
     : undefined
-  // States without committed data (and any future non-state subdivision)
+  // Regions without committed data (a US state or UK nation whose
+  // precompute hasn't landed, and any future non-region subdivision)
   // fall back to the live MusicBrainz area query, Hawaii-style.
   const subdivision =
-    !usState && SUBDIVISION_CODE_PATTERN.test(country)
+    !region && SUBDIVISION_CODE_PATTERN.test(country)
       ? subdivisionByCode(country)
-      : usState && !hasStateData(usState.code)
-        ? { code: usState.code, mbArea: usState.name }
+      : region && !hasStateData(region.code)
+        ? { code: region.code, mbArea: region.name }
         : undefined
   if (
-    (!/^[A-Z]{2}$/.test(country) && !subdivision && !usState) ||
+    (!/^[A-Z]{2}$/.test(country) && !subdivision && !region) ||
     !/^\d{4}(-\d{4})?$/.test(year)
   ) {
     return NextResponse.json({ error: 'Invalid country or year' }, { status: 400 })
@@ -376,11 +377,11 @@ export async function GET(
       }),
     )
 
-  // State panels answer from the committed dataset — no MusicBrainz,
+  // Region panels answer from the committed dataset — no MusicBrainz,
   // no Blobs, milliseconds for any span. Deploys refresh the data and
   // purge the CDN together.
-  if (usState && hasStateData(usState.code)) {
-    const details = stateDetails(usState.code, start, end, genre)
+  if (region && hasStateData(region.code)) {
+    const details = stateDetails(region.code, start, end, genre)
     if (details) return withCacheHeaders(NextResponse.json(details))
   }
 
