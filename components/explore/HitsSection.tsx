@@ -22,6 +22,8 @@ interface HitEntry {
   videoId: string | null
   /** Set only when the sweep confirmed this credit's identity. */
   artistSlug: string | null
+  /** The verified video is a live version, not the charting record. */
+  live: boolean
 }
 
 interface HitsPayload {
@@ -98,7 +100,7 @@ export function HitsSection({
     .map((entry) => ({
       videoId: entry.videoId as string,
       title: entry.title,
-      artistName: entry.artist,
+      artistName: entry.live ? `${entry.artist} (live)` : entry.artist,
       mbid: '',
     }))
 
@@ -123,7 +125,12 @@ export function HitsSection({
           <li key={`${entry.artist}:${entry.title}:${entry.first}`} className={styles.row}>
             <span className={styles.rank}>{index + 1}</span>
             <span className={styles.what}>
-              <span className={styles.title}>“{entry.title}”</span>
+              <span className={styles.title}>
+                “{entry.title}”
+                {/* Honest labelling: a live take is the song, not the
+                    record that charted — never let it pass as the record. */}
+                {entry.live && <span className={styles.liveTag}>live</span>}
+              </span>
               {/* Linked only on confirmed identity — joint credits
                   ("LMC vs U2") resolve to no single artist and stay
                   plain text rather than guess at one of them. */}

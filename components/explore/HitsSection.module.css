@@ -129,3 +129,16 @@
   letter-spacing: 0.04em;
   color: var(--text-muted);
 }
+
+.liveTag {
+  margin-left: 0.4rem;
+  padding: 0.05rem 0.32rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  vertical-align: middle;
+}

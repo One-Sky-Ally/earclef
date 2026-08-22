@@ -34,6 +34,12 @@ interface ChartFile {
 
 interface PlayEntry {
   videoId: string
+  /**
+   * The verified video is a live version. Owner ruling Aug 21, 2026:
+   * prefer studio, accept live rather than an empty row — but say so,
+   * so nobody thinks they are hearing the record that charted.
+   */
+  live?: boolean
 }
 
 interface ArtistLink {
@@ -68,6 +74,8 @@ const ENTRY_CAP = 105
 
 export interface HitEntry extends StoredHit {
   videoId: string | null
+  /** True when the verified video is a live version, not the record. */
+  live: boolean
   /** Roster page for the credited artist, when identity is confirmed. */
   artistSlug: string | null
 }
@@ -122,6 +130,7 @@ export function hitsFor(
         merged.set(key, {
           ...entry,
           videoId: PLAY[key]?.videoId ?? null,
+          live: PLAY[key]?.live === true,
           artistSlug: ARTIST_LINKS[normalizeName(entry.artist)]?.slug ?? null,
         })
       }

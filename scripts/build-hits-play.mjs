@@ -431,6 +431,42 @@ async function videoFacts(videoId, key) {
 }
 
 /**
+ * Live-version detection, scoped to the ANNOTATION only (owner ruling
+ * Aug 21, 2026: prefer studio, accept live, label it honestly).
+ *
+ * The marker is tested against what is left of the upload title after
+ * the charting title is removed — never the whole string. That is what
+ * makes it safe: "Live and Let Die (Official Video)" keeps "Live" in
+ * the MATCHED portion, so its annotation reads "(Official Video)" and
+ * it is correctly studio. Without this scoping a bare /live/ test would
+ * mislabel every song whose own title contains the word.
+ *
+ * KNOWN RESIDUAL ERROR (reported to owner before building): a live
+ * recording uploaded with NO annotation is indistinguishable from the
+ * studio record and will be treated as studio. False positives are
+ * near zero; false negatives are this case.
+ */
+const LIVE_MARKERS =
+  /\b(live|unplugged|in concert|en vivo|en directo|live lounge|bbc session|session at|acoustic session)\b/i
+
+function annotationOf(uploadTitle, chartTitle, artistName) {
+  const upload = normalize(uploadTitle)
+  const title = normalize(chartTitle)
+  const artist = normalize(artistName)
+  if (!upload || !title) return ''
+  let rest = upload
+  if (artist && rest.startsWith(`${artist} `)) rest = rest.slice(artist.length).trim()
+  const at = rest.indexOf(title)
+  if (at === -1) return rest
+  return `${rest.slice(0, at)} ${rest.slice(at + title.length)}`.trim()
+}
+
+function isLiveUpload(uploadTitle, chartTitle, artistName) {
+  const annotation = annotationOf(uploadTitle, chartTitle, artistName)
+  return annotation ? LIVE_MARKERS.test(annotation) : false
+}
+
+/**
  * EXACT title equality, after stripping an "Artist - " prefix and
  * trailing production tags ("(Official Video)", "[Remastered]").
  * Stripping decoration is not fuzzy matching — what remains must match
@@ -440,6 +476,7 @@ function matchUpload(uploads, artistName, wantedTitle) {
   const wanted = normalize(wantedTitle)
   const artist = normalize(artistName)
   if (!wanted) return null
+  const matches = []
   for (const upload of uploads) {
     const bare = upload.title
       .replace(/\([^()]*\)\s*$/g, '')
@@ -455,9 +492,17 @@ function matchUpload(uploads, artistName, wantedTitle) {
       }
     }
     candidates.delete('')
-    if (candidates.has(wanted)) return upload
+    if (candidates.has(wanted)) {
+      matches.push({
+        ...upload,
+        live: isLiveUpload(upload.title, wantedTitle, artistName),
+      })
+    }
   }
-  return null
+  if (matches.length === 0) return null
+  // Prefer the studio recording; fall back to a live one rather than
+  // leaving the row silent — hearing the song beats an empty row.
+  return matches.find((match) => !match.live) ?? matches[0]
 }
 
 const saveWork = (work) => writeFileSync(WORK_PATH, JSON.stringify(work))
@@ -465,7 +510,16 @@ const saveWork = (work) => writeFileSync(WORK_PATH, JSON.stringify(work))
 function assemble(work, rows) {
   const play = {}
   for (const [key, value] of Object.entries(work.verified)) {
-    if (value?.videoId) play[key] = { videoId: value.videoId }
+    if (!value?.videoId) continue
+    // Derived from the STORED upload title, so rows verified under an
+    // earlier pass are labelled correctly without re-sweeping them.
+    const chartTitle = key.split('|').slice(2).join('|')
+    const credit = key.split('|')[1] ?? ''
+    const live =
+      value.live ?? isLiveUpload(value.title ?? '', chartTitle, credit)
+    play[key] = live
+      ? { videoId: value.videoId, live: true }
+      : { videoId: value.videoId }
   }
   const links = {}
   for (const [name, artist] of Object.entries(work.artists)) {
@@ -692,6 +746,7 @@ async function sweepArtist(name, group, context) {
           videoId: upload.videoId,
           title: upload.title,
           via: 'uploads',
+          live: Boolean(upload.live),
         }
         continue
       }
@@ -804,7 +859,18 @@ async function main() {
     }
   }
 
-  const work = loadJson(WORK_PATH, null) ?? {
+  // Guard against clobbering committed outputs: a work file that is
+  // mid-write (the sweep saves after every artist) parses as null, and
+  // assembling from an empty object would overwrite hits-play.json with
+  // {}. Durable data outlives code — refuse rather than truncate.
+  const existingWork = existsSync(WORK_PATH) ? loadJson(WORK_PATH, null) : null
+  if (existsSync(WORK_PATH) && existingWork === null) {
+    throw new Error(
+      `${WORK_PATH} exists but is unreadable (sweep mid-write?) — refusing ` +
+        'to assemble, which would truncate the committed outputs.',
+    )
+  }
+  const work = existingWork ?? {
     version: 2,
     artists: {},
     verified: {},
