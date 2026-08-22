@@ -447,7 +447,7 @@ async function videoFacts(videoId, key) {
  * near zero; false negatives are this case.
  */
 const LIVE_MARKERS =
-  /\b(live|unplugged|in concert|en vivo|en directo|live lounge|bbc session|session at|acoustic session)\b/i
+  /\b(live|unplugged|concert|en vivo|en directo|live lounge|bbc session|session at|acoustic session|tour)\b/i
 
 function annotationOf(uploadTitle, chartTitle, artistName) {
   const upload = normalize(uploadTitle)
