@@ -57,8 +57,14 @@ const REPORT_OUT = join(ROOT, 'data', 'hits-play-report.json')
 const UA = 'EarClefHitsPlay/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 const MB_DELAY_MS = 1100
 const WD_DELAY_MS = 400
-/** Uploads pages (of 50) scanned per channel. */
-const UPLOAD_PAGES = 10
+/**
+ * Uploads pages (of 50) per channel. Paging stops naturally at
+ * nextPageToken, so ordinary channels cost what they cost; this cap
+ * only bounds the giants. Measured Aug 21: full scans of every
+ * over-500 channel cost ~350 units total, and the uploads playlist is
+ * newest-first, so a 1960s single sits at the very END.
+ */
+const UPLOAD_PAGES = 60
 /** MB name-search candidates considered before declaring ambiguity. */
 const CANDIDATE_CAP = 4
 /** Recording candidates inspected per missed title (free, MB-side). */
@@ -67,7 +73,7 @@ const SEARCH_COST = 100
 const DEFAULT_BUDGET = 8000
 const DEFAULT_MINUTES = 420
 /** Bump to force a re-pass over artists finished under older rules. */
-const PASS = 2
+const PASS = 3
 
 const argOf = (flag, fallback) => {
   const index = process.argv.indexOf(flag)
@@ -80,6 +86,8 @@ const flagOf = (flag) => {
 const BUDGET = argOf('--budget', DEFAULT_BUDGET)
 const MINUTES = argOf('--minutes', DEFAULT_MINUTES)
 const PHASE = flagOf('--phase') ?? 'cheap'
+/** Sweep a single credited artist (normalized) — targeted verification. */
+const ONLY = flagOf('--only')
 const ASSEMBLE_ONLY = process.argv.includes('--assemble')
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
@@ -278,24 +286,38 @@ async function wikidataChannel(qid) {
 }
 
 /**
- * A YouTube url-rel on a RECORDING in this artist's own catalog. The
- * video is direct evidence for the title; its channel is the artist's
- * by association (owner ruling Aug 21, path b).
+ * Recordings in this artist's OWN catalog whose title exactly matches.
+ * Serves two purposes at once (owner-approved Aug 21): their EXISTENCE
+ * corroborates that this MBID really recorded this title — completing
+ * the John Mayer protection rather than weakening it, since the query
+ * is anchored to `arid:` — and their url-rels may carry a video.
+ *
+ * Probed Aug 21: 23 of 24 unmatched Beatles titles were absent from
+ * release-GROUP titles and were therefore written off without ever
+ * being compared against the channel, yet 6 of 8 sampled exist as
+ * recordings. Singles are frequently not release groups.
  */
-async function recordingVideo(mbid, title) {
+async function recordingIdsFor(mbid, title) {
   const wanted = normalize(title)
-  if (!wanted) return null
-  const query = encodeURIComponent(`arid:${mbid} AND recording:"${title.replace(/"/g, '')}"`)
+  if (!wanted) return []
+  const query = encodeURIComponent(
+    `arid:${mbid} AND recording:"${title.replace(/"/g, '')}"`,
+  )
   const body = await mbJson(
     `https://musicbrainz.org/ws/2/recording?query=${query}&limit=10&fmt=json`,
   )
   await sleep(MB_DELAY_MS)
-  const matches = (body.recordings ?? [])
+  return (body.recordings ?? [])
     .filter((recording) => normalize(recording.title) === wanted)
     .slice(0, RECORDING_CAP)
-  for (const recording of matches) {
+    .map((recording) => recording.id)
+}
+
+/** A YouTube video linked from one of those recordings, if any. */
+async function recordingVideo(recordingIds) {
+  for (const id of recordingIds) {
     const detail = await mbJson(
-      `https://musicbrainz.org/ws/2/recording/${recording.id}?inc=url-rels&fmt=json`,
+      `https://musicbrainz.org/ws/2/recording/${id}?inc=url-rels&fmt=json`,
     )
     await sleep(MB_DELAY_MS)
     for (const relation of detail.relations ?? []) {
@@ -313,6 +335,18 @@ async function recordingVideo(mbid, title) {
     }
   }
   return null
+}
+
+/**
+ * A double A-side is TWO songs sharing one chart row ("Come Together /
+ * Something"), so it corroborates and matches per side as well as whole.
+ */
+function titleSides(title) {
+  const sides = String(title)
+    .split(' / ')
+    .map((side) => side.trim())
+    .filter(Boolean)
+  return sides.length > 1 ? [title, ...sides] : [title]
 }
 
 async function channelIdFromUrl(url, key) {
@@ -518,17 +552,46 @@ async function sweepArtist(name, group, context) {
     : rosterEntry?.mbid
       ? [{ mbid: rosterEntry.mbid, name: rosterEntry.name }]
       : await mbCandidates(group.display)
+  if (candidates.length === 0) return record
 
-  // 2. Corroborate each candidate against its OWN release groups.
+  // 2. Corroborate against each candidate's OWN catalogue. Release
+  //    groups first (one cheap call), then recordings for whatever they
+  //    miss — singles are frequently not release groups (Beatles probe,
+  //    Aug 21: 23 of 24 blocked titles were absent from release groups,
+  //    6 of 8 sampled existed as recordings).
   const corroborated = []
   for (const candidate of candidates) {
     const titles = await releaseGroupTitles(candidate.mbid)
-    const matched = group.rows.filter((row) => titles.includes(normalize(row.title)))
-    if (matched.length > 0) {
-      corroborated.push({ ...candidate, keys: new Set(matched.map((r) => r.key)) })
+    const keys = new Set()
+    for (const row of group.rows) {
+      if (titleSides(row.title).some((side) => titles.includes(normalize(side)))) {
+        keys.add(row.key)
+      }
+    }
+    if (keys.size > 0) corroborated.push({ ...candidate, keys })
+  }
+
+  // No release group matched ANY candidate: fall back to recordings on a
+  // bounded sample so identity still has a chance to be established.
+  if (corroborated.length === 0) {
+    for (const candidate of candidates) {
+      const keys = new Set()
+      for (const row of group.rows.slice(0, RECORDING_CAP)) {
+        for (const side of titleSides(row.title)) {
+          const ids = await recordingIdsFor(candidate.mbid, side)
+          if (ids.length > 0) {
+            keys.add(row.key)
+            break
+          }
+        }
+      }
+      if (keys.size > 0) corroborated.push({ ...candidate, keys })
     }
   }
+
   if (corroborated.length > 1) {
+    // Two artists of the same name both recorded this title: the John
+    // Mayer shape. Ambiguity resolves to null, never to a guess.
     work.ambiguous.push({
       credit: group.display,
       mbids: corroborated.map((candidate) => candidate.mbid),
@@ -538,7 +601,7 @@ async function sweepArtist(name, group, context) {
   if (corroborated.length === 0) return record
 
   record.mbid = corroborated[0].mbid
-  const corroboratedKeys = corroborated[0].keys
+  const confirmedKeys = corroborated[0].keys
   const rosterMatch = rosterByMbid.get(record.mbid)
   if (rosterMatch) {
     record.rosterSlug = rosterMatch.slug
@@ -585,39 +648,78 @@ async function sweepArtist(name, group, context) {
     }
   }
 
-  // 4. Uploads scan → exact title match → playability.
-  const targets = group.rows.filter((row) => corroboratedKeys.has(row.key))
-  const misses = []
+  let uploads = []
   if (record.channelId) {
-    const { uploads, channelTitle } = await channelUploads(record.channelId, key)
-    record.channelKind = /- topic$/i.test(channelTitle.trim()) ? 'topic' : 'own'
-    for (const row of targets) {
-      const upload = matchUpload(uploads, group.display, row.title)
-      if (!upload) {
-        misses.push(row)
-        continue
-      }
-      const facts = await videoFacts(upload.videoId, key)
-      work.verified[row.key] = facts?.playable
-        ? { videoId: upload.videoId, title: upload.title, via: 'uploads' }
-        : null
-      if (!facts?.playable) misses.push(row)
-    }
-  } else {
-    misses.push(...targets)
+    const scan = await channelUploads(record.channelId, key)
+    uploads = scan.uploads
+    record.channelKind = /- topic$/i.test(scan.channelTitle.trim())
+      ? 'topic'
+      : 'own'
   }
 
-  // 5. Recording url-rels: free evidence for the exact title, and the
-  //    channel it reveals is this artist's by association.
-  for (const row of misses) {
-    const videoId = await recordingVideo(record.mbid, row.title)
+  // 4. Every row gets its chance: release-group-confirmed rows first,
+  //    then the rest via recording-level corroboration.
+  const recordingIds = new Map()
+  for (const row of group.rows) {
+    if (work.verified[row.key]) continue
+    let confirmed = confirmedKeys.has(row.key)
+    if (!confirmed) {
+      for (const side of titleSides(row.title)) {
+        const ids = await recordingIdsFor(record.mbid, side)
+        if (ids.length > 0) {
+          recordingIds.set(row.key, ids)
+          confirmed = true
+          break
+        }
+      }
+    }
+    if (!confirmed) {
+      work.verified[row.key] = null
+      continue
+    }
+
+    // Channel first (cheap, already in memory), then the recording's
+    // own url-rel as direct evidence for this exact title.
+    let upload = null
+    for (const side of titleSides(row.title)) {
+      upload = matchUpload(uploads, group.display, side)
+      if (upload) break
+    }
+    if (upload) {
+      const facts = await videoFacts(upload.videoId, key)
+      if (facts?.playable) {
+        work.verified[row.key] = {
+          videoId: upload.videoId,
+          title: upload.title,
+          via: 'uploads',
+        }
+        continue
+      }
+    }
+
+    let ids = recordingIds.get(row.key)
+    if (!ids) {
+      ids = []
+      for (const side of titleSides(row.title)) {
+        const found = await recordingIdsFor(record.mbid, side)
+        if (found.length > 0) {
+          ids = found
+          break
+        }
+      }
+    }
+    const videoId = ids.length > 0 ? await recordingVideo(ids) : null
     if (!videoId) {
-      work.verified[row.key] ??= null
+      work.verified[row.key] = null
       continue
     }
     const facts = await videoFacts(videoId, key)
     if (facts?.playable) {
-      work.verified[row.key] = { videoId, title: row.title, via: 'mb-recording' }
+      work.verified[row.key] = {
+        videoId,
+        title: row.title,
+        via: 'mb-recording',
+      }
       if (!record.channelId && facts.channelId) {
         record.channelId = facts.channelId
         record.channelSource = 'mb-recording'
@@ -626,24 +728,10 @@ async function sweepArtist(name, group, context) {
           : 'own'
       }
     } else {
-      work.verified[row.key] ??= null
+      work.verified[row.key] = null
     }
   }
 
-  // 6. Anything still unresolved but on a known channel queues for the
-  //    expensive channel-scoped search phase.
-  if (record.channelId) {
-    for (const row of targets) {
-      if (!work.verified[row.key]) {
-        work.searchQueue.push({
-          key: row.key,
-          channelId: record.channelId,
-          title: row.title,
-          artist: group.display,
-        })
-      }
-    }
-  }
   for (const row of group.rows) {
     if (!(row.key in work.verified)) work.verified[row.key] = null
   }
@@ -738,6 +826,20 @@ async function main() {
   const deadline = Date.now() + MINUTES * 60 * 1000
 
   if (PHASE === 'search') {
+    // ECONOMICS RULING (owner, Aug 21, 2026): the technique is approved
+    // and stays here, but the phase is RETIRED — it cost ~700-800 units
+    // per recovered video (5 found across ~40 searches) because MB
+    // url-rels often name a legacy promo channel rather than where the
+    // catalog lives. Searching harder cannot fix a wrong-address problem
+    // when the cheap pass returns 43.8% for almost nothing. The 5 it
+    // already found are kept. --force-search runs it anyway.
+    if (!process.argv.includes('--force-search')) {
+      console.log(
+        'Search phase RETIRED by owner ruling (Aug 21, 2026) — ~700-800 ' +
+          'units per video. Re-run with --force-search to override.',
+      )
+      return
+    }
     await runSearchPhase(work, key, deadline)
     saveWork(work)
     console.log(JSON.stringify(assemble(work, rows), null, 2))
@@ -764,7 +866,8 @@ async function main() {
     return hash >>> 0
   }
   const pending = [...byArtist.entries()]
-    .filter(([name]) => (work.artists[name]?.pass ?? 0) < PASS)
+    .filter(([name]) => !ONLY || name === normalize(ONLY))
+    .filter(([name]) => ONLY || (work.artists[name]?.pass ?? 0) < PASS)
     .sort(([a], [b]) => orderHash(a) - orderHash(b))
 
   console.log(
