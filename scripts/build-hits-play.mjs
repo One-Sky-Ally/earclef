@@ -97,6 +97,8 @@ const MINUTES = argOf('--minutes', DEFAULT_MINUTES)
 const PHASE = flagOf('--phase') ?? 'cheap'
 /** Sweep a single credited artist (normalized) — targeted verification. */
 const ONLY = flagOf('--only')
+/** Re-sweep only identity-unconfirmed artists (the alias-relaxation measure). */
+const RETRY_UNCONFIRMED = process.argv.includes('--retry-unconfirmed')
 const ASSEMBLE_ONLY = process.argv.includes('--assemble')
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
@@ -220,20 +222,30 @@ function loadRows() {
 }
 
 /**
- * Alias types that may stand in for a credited name (the site's Aug 8
- * 2026 rule: typed Artist/Legal names only — bot-added transliterations
- * and search hints are the Alexandra failure with better paperwork).
+ * Alias handling (owner rulings Aug 8 + Aug 23, 2026):
+ *   - TYPED Artist/Legal-name aliases always qualify.
+ *   - UNTYPED aliases (type null) may GENERATE a candidate — relaxed
+ *     Aug 23 because the real Sweet carries "The Sweet" only untyped —
+ *     but catalogue corroboration stays the gate. The Aug 8 rule was
+ *     written for an alias used as VERIFICATION (the Alexandra failure);
+ *     generation cannot loosen identity because nothing is confirmed
+ *     without a strong corroboration from the candidate's own catalogue.
+ *   - Other explicit types (Search hint, transliterations…) never qualify.
+ * Every alias-generated candidate records WHICH alias and its type, so
+ * the report can list exactly what the relaxation let in.
  */
 const ALIAS_TYPES = new Set(['Artist name', 'Legal name'])
+const aliasQualifies = (alias) =>
+  alias.type == null || ALIAS_TYPES.has(alias.type)
 
 /**
- * MB artists whose NAME or TYPED ALIAS is exactly the credited name.
+ * MB artists whose NAME or QUALIFYING ALIAS is exactly the credited name.
  * Fix 1 (owner-approved Aug 23, 2026): The Jackson 5 is filed as
  * "The Jacksons" with "The Jackson 5" as an alias, and the phrase query
  * artist:"The Jackson 5" returned ZERO results — the same wall that let
  * the band into Vietnam's gap-fill pool. Search is only candidate
- * GENERATION; exact normalized equality on name-or-typed-alias is the
- * gate, so a looser query cannot loosen identity.
+ * GENERATION; exact normalized equality on name-or-alias is the gate,
+ * so a looser query cannot loosen identity.
  */
 async function mbCandidates(artistName) {
   const wanted = normalize(artistName)
@@ -252,18 +264,30 @@ async function mbCandidates(artistName) {
     artists = body.artists ?? []
     if (artists.length > 0) break
   }
-  const matches = artists.filter((artist) => {
-    if (normalize(artist.name) === wanted) return true
-    return (artist.aliases ?? []).some(
-      (alias) => ALIAS_TYPES.has(alias.type) && normalize(alias.name) === wanted,
+  const matches = []
+  for (const artist of artists) {
+    const candidate = {
+      mbid: artist.id,
+      name: artist.name,
+      begin: Number(artist['life-span']?.begin?.slice(0, 4)) || null,
+      end: Number(artist['life-span']?.end?.slice(0, 4)) || null,
+      aliasMatch: null,
+    }
+    if (normalize(artist.name) === wanted) {
+      matches.push(candidate)
+      continue
+    }
+    const alias = (artist.aliases ?? []).find(
+      (entry) => aliasQualifies(entry) && normalize(entry.name) === wanted,
     )
-  })
-  return matches.slice(0, CANDIDATE_CAP).map((artist) => ({
-    mbid: artist.id,
-    name: artist.name,
-    begin: Number(artist['life-span']?.begin?.slice(0, 4)) || null,
-    end: Number(artist['life-span']?.end?.slice(0, 4)) || null,
-  }))
+    if (alias) {
+      matches.push({
+        ...candidate,
+        aliasMatch: { alias: alias.name, type: alias.type ?? null },
+      })
+    }
+  }
+  return matches.slice(0, CANDIDATE_CAP)
 }
 
 async function releaseGroupTitles(mbid) {
@@ -680,6 +704,21 @@ function assemble(work, rows) {
     pendingChannelSearches: (work.searchQueue ?? []).length,
     // Fix 5: these lists accumulate across passes — dedupe by content
     // so a re-swept artist is not reported twice.
+    // Every identity reached through an alias, with the alias and its
+    // type — untyped ones are the Aug 23 relaxation's admissions, listed
+    // so the owner can flag anything that looks wrong.
+    resolvedViaAlias: Object.entries(work.artists)
+      .filter(([, artist]) => artist.mbid && artist.aliasMatch)
+      .map(([credit, artist]) => ({
+        credit,
+        mbName: artist.aliasMatch.mbName,
+        alias: artist.aliasMatch.alias,
+        aliasType: artist.aliasMatch.type,
+        mbid: artist.mbid,
+        rowsVerified: Object.entries(work.verified).filter(
+          ([key, value]) => value && normalize(key.split('|')[1]) === credit,
+        ).length,
+      })),
     gapFillCandidatesForOwnerReview: dedupe(work.gapFillCandidates ?? []),
     ambiguousIdentities: dedupe(work.ambiguous ?? []),
   }
@@ -845,6 +884,13 @@ async function sweepArtist(name, group, context) {
     (a, b) => b[1].length - a[1].length,
   )[0][0]
   record.mbid = primary
+  const primaryCandidate = candidates.find((entry) => entry.mbid === primary)
+  if (primaryCandidate?.aliasMatch) {
+    record.aliasMatch = {
+      ...primaryCandidate.aliasMatch,
+      mbName: primaryCandidate.name,
+    }
+  }
   const primaryRoster = rosterByMbid.get(primary)
   if (primaryRoster && rowsByMbid.size === 1) {
     record.rosterSlug = primaryRoster.slug
@@ -1155,7 +1201,12 @@ async function main() {
   }
   const pending = [...byArtist.entries()]
     .filter(([name]) => !ONLY || name === normalize(ONLY))
-    .filter(([name]) => ONLY || (work.artists[name]?.pass ?? 0) < PASS)
+    .filter(([name]) =>
+      ONLY ||
+      (RETRY_UNCONFIRMED
+        ? !work.artists[name]?.mbid
+        : (work.artists[name]?.pass ?? 0) < PASS),
+    )
     .sort(([a], [b]) => orderHash(a) - orderHash(b))
 
   console.log(
