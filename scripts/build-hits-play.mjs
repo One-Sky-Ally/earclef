@@ -53,6 +53,7 @@ const WORK_PATH = join(ROOT, 'data', 'hits-play-work.json')
 const PLAY_OUT = join(ROOT, 'lib', 'hits', 'hits-play.json')
 const LINKS_OUT = join(ROOT, 'lib', 'hits', 'hits-artists.json')
 const REPORT_OUT = join(ROOT, 'data', 'hits-play-report.json')
+const RULINGS_PATH = join(ROOT, 'lib', 'hits', 'identity-rulings.json')
 
 const UA = 'EarClefHitsPlay/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 const MB_DELAY_MS = 1100
@@ -81,7 +82,7 @@ const MIN_DURATION_SECONDS = 90
 const DEFAULT_BUDGET = 8000
 const DEFAULT_MINUTES = 420
 /** Bump to force a re-pass over artists finished under older rules. */
-const PASS = 3
+const PASS = 4
 
 const argOf = (flag, fallback) => {
   const index = process.argv.indexOf(flag)
@@ -218,18 +219,51 @@ function loadRows() {
   return rows
 }
 
+/**
+ * Alias types that may stand in for a credited name (the site's Aug 8
+ * 2026 rule: typed Artist/Legal names only — bot-added transliterations
+ * and search hints are the Alexandra failure with better paperwork).
+ */
+const ALIAS_TYPES = new Set(['Artist name', 'Legal name'])
+
+/**
+ * MB artists whose NAME or TYPED ALIAS is exactly the credited name.
+ * Fix 1 (owner-approved Aug 23, 2026): The Jackson 5 is filed as
+ * "The Jacksons" with "The Jackson 5" as an alias, and the phrase query
+ * artist:"The Jackson 5" returned ZERO results — the same wall that let
+ * the band into Vietnam's gap-fill pool. Search is only candidate
+ * GENERATION; exact normalized equality on name-or-typed-alias is the
+ * gate, so a looser query cannot loosen identity.
+ */
 async function mbCandidates(artistName) {
   const wanted = normalize(artistName)
   if (!wanted) return []
-  const query = encodeURIComponent(`artist:"${artistName.replace(/"/g, '')}"`)
-  const body = await mbJson(
-    `https://musicbrainz.org/ws/2/artist?query=${query}&limit=10&fmt=json`,
-  )
-  await sleep(MB_DELAY_MS)
-  return (body.artists ?? [])
-    .filter((artist) => normalize(artist.name) === wanted)
-    .slice(0, CANDIDATE_CAP)
-    .map((artist) => ({ mbid: artist.id, name: artist.name }))
+  const quoted = artistName.replace(/"/g, '')
+  const attempts = [
+    `artist:"${quoted}" OR alias:"${quoted}"`,
+    quoted, // unquoted fallback: Lucene tokenises some names oddly
+  ]
+  let artists = []
+  for (const query of attempts) {
+    const body = await mbJson(
+      `https://musicbrainz.org/ws/2/artist?query=${encodeURIComponent(query)}&limit=12&fmt=json`,
+    )
+    await sleep(MB_DELAY_MS)
+    artists = body.artists ?? []
+    if (artists.length > 0) break
+  }
+  const matches = artists.filter((artist) => {
+    if (normalize(artist.name) === wanted) return true
+    return (artist.aliases ?? []).some(
+      (alias) => ALIAS_TYPES.has(alias.type) && normalize(alias.name) === wanted,
+    )
+  })
+  return matches.slice(0, CANDIDATE_CAP).map((artist) => ({
+    mbid: artist.id,
+    name: artist.name,
+    begin: Number(artist['life-span']?.begin?.slice(0, 4)) || null,
+    end: Number(artist['life-span']?.end?.slice(0, 4)) || null,
+  }))
 }
 
 async function releaseGroupTitles(mbid) {
@@ -306,6 +340,20 @@ async function wikidataChannel(qid) {
  * recordings. Singles are frequently not release groups.
  */
 async function recordingIdsFor(mbid, title) {
+  return (await recordingsFor(mbid, title)).map((recording) => recording.id)
+}
+
+/**
+ * Exact-title recordings in this artist's OWN catalog, each marked
+ * STRONG or WEAK. Fix 2 (owner-approved Aug 23, 2026): "The Sweet" was
+ * confirmed as a 2-track MB stub on the strength of ONE mis-credited
+ * compilation recording. A recording that exists only on Various-
+ * Artists compilations is somebody's filing decision, not the artist's
+ * own release; confirmation requires at least one STRONG corroboration
+ * — a release group of their own, or a recording on a non-compilation
+ * release.
+ */
+async function recordingsFor(mbid, title) {
   const wanted = normalize(title)
   if (!wanted) return []
   const query = encodeURIComponent(
@@ -318,7 +366,13 @@ async function recordingIdsFor(mbid, title) {
   return (body.recordings ?? [])
     .filter((recording) => normalize(recording.title) === wanted)
     .slice(0, RECORDING_CAP)
-    .map((recording) => recording.id)
+    .map((recording) => ({
+      id: recording.id,
+      strong: (recording.releases ?? []).some((release) => {
+        const types = release['release-group']?.['secondary-types'] ?? []
+        return !types.includes('Compilation')
+      }),
+    }))
 }
 
 /** A YouTube video linked from one of those recordings, if any. */
@@ -541,6 +595,16 @@ function matchUpload(uploads, artistName, wantedTitle) {
 
 const saveWork = (work) => writeFileSync(WORK_PATH, JSON.stringify(work))
 
+const dedupe = (items) => {
+  const seen = new Set()
+  return items.filter((item) => {
+    const signature = JSON.stringify(item)
+    if (seen.has(signature)) return false
+    seen.add(signature)
+    return true
+  })
+}
+
 function assemble(work, rows) {
   const play = {}
   for (const [key, value] of Object.entries(work.verified)) {
@@ -614,15 +678,75 @@ function assemble(work, rows) {
     rowsLinkedToRoster: linked,
     rosterArtistsLinked: Object.keys(links).length,
     pendingChannelSearches: (work.searchQueue ?? []).length,
-    gapFillCandidatesForOwnerReview: work.gapFillCandidates ?? [],
-    ambiguousIdentities: work.ambiguous ?? [],
+    // Fix 5: these lists accumulate across passes — dedupe by content
+    // so a re-swept artist is not reported twice.
+    gapFillCandidatesForOwnerReview: dedupe(work.gapFillCandidates ?? []),
+    ambiguousIdentities: dedupe(work.ambiguous ?? []),
   }
   writeFileSync(REPORT_OUT, JSON.stringify(report, null, 2))
   return report
 }
 
+/**
+ * Per-row identity (fix 3, owner-approved Aug 23, 2026). A credited name
+ * is not an artist: "Sweet Sensation" is a British soul group in 1974
+ * and a Puerto Rican freestyle trio in 1990, one #1 each. So identity
+ * resolves per (credit, chart row):
+ *   1. an owner ruling for this credit (+ year) decides outright;
+ *   2. candidates need STRONG corroboration for the row (fix 2);
+ *   3. a candidate whose KNOWN lifespan excludes the chart year is out —
+ *      an unknown lifespan never eliminates (lesson 5: absent decides
+ *      nothing);
+ *   4. if one survivor has a catalogue and the others none, it wins;
+ *   5. anything still tied is ambiguous → null + report, never a guess.
+ */
+function resolveRowIdentity(row, candidates, rulings) {
+  const ruled = rulings.find(
+    (ruling) =>
+      normalize(ruling.credit) === normalize(row.artist) &&
+      (!ruling.years || ruling.years.includes(row.year)),
+  )
+  if (ruled) return { mbid: ruled.mbid, via: 'ruling' }
+
+  const strong = candidates.filter((candidate) =>
+    candidate.strongKeys.has(row.key),
+  )
+  if (strong.length === 0) return null
+  if (strong.length === 1) return { mbid: strong[0].mbid, via: 'sole' }
+
+  const alive = strong.filter(
+    (candidate) =>
+      !(candidate.begin && candidate.begin > row.year) &&
+      !(candidate.end && candidate.end < row.year),
+  )
+  if (alive.length === 1) return { mbid: alive[0].mbid, via: 'lifespan' }
+
+  const pool = alive.length > 0 ? alive : strong
+  const withCatalogue = pool.filter((candidate) => candidate.rgCount > 0)
+  if (withCatalogue.length === 1) {
+    return { mbid: withCatalogue[0].mbid, via: 'catalogue' }
+  }
+  return { ambiguous: pool.map((candidate) => candidate.mbid) }
+}
+
+async function discoverChannel(mbid, rosterMatch, key) {
+  if (rosterMatch?.channelId) {
+    return { channelId: rosterMatch.channelId, channelSource: 'roster' }
+  }
+  const relations = await artistRelations(mbid)
+  if (relations.youtube) {
+    const channelId = await channelIdFromUrl(relations.youtube, key)
+    if (channelId) return { channelId, channelSource: 'mb-rel' }
+  }
+  if (relations.wikidata) {
+    const channelId = await wikidataChannel(relations.wikidata)
+    if (channelId) return { channelId, channelSource: 'wikidata' }
+  }
+  return { channelId: null, channelSource: null }
+}
+
 async function sweepArtist(name, group, context) {
-  const { key, rosterByName, rosterByMbid, gapByName, work } = context
+  const { key, rosterByName, rosterByMbid, gapByName, work, rulings } = context
   const record = {
     done: true,
     pass: PASS,
@@ -630,70 +754,101 @@ async function sweepArtist(name, group, context) {
     channelId: null,
     channelSource: null,
     channelKind: null,
+    identities: {},
   }
-  const previous = work.artists[name] ?? {}
 
-  // 1. Identity: roster's committed MBID, else exact-name MB candidates.
+  // 1. Candidate generation: roster's committed MBID, owner rulings, and
+  //    exact name-or-typed-alias MB matches. Generation is loose on
+  //    purpose — the gates below are what decide.
   const rosterEntry = rosterByName.get(name)
-  const candidates = previous.mbid
-    ? [{ mbid: previous.mbid, name: group.display }]
-    : rosterEntry?.mbid
-      ? [{ mbid: rosterEntry.mbid, name: rosterEntry.name }]
-      : await mbCandidates(group.display)
+  const ruledMbids = rulings
+    .filter((ruling) => normalize(ruling.credit) === name)
+    .map((ruling) => ruling.mbid)
+  const seeds = new Map()
+  if (rosterEntry?.mbid) {
+    seeds.set(rosterEntry.mbid, { mbid: rosterEntry.mbid, name: rosterEntry.name })
+  }
+  for (const mbid of ruledMbids) seeds.set(mbid, { mbid, name: group.display })
+  if (seeds.size === 0) {
+    for (const candidate of await mbCandidates(group.display)) {
+      seeds.set(candidate.mbid, candidate)
+    }
+  }
+  if (seeds.size === 0) return record
+
+  // 2. Corroborate every candidate against its OWN catalogue, recording
+  //    strength per row. Release groups are strong by definition; a
+  //    recording is strong only off a non-compilation release.
+  const candidates = []
+  for (const seed of seeds.values()) {
+    const titles = await releaseGroupTitles(seed.mbid)
+    const strongKeys = new Set()
+    const weakKeys = new Set()
+    const recordingIds = new Map()
+    for (const row of group.rows) {
+      const sides = titleSides(row.title)
+      if (sides.some((side) => titles.includes(normalize(side)))) {
+        strongKeys.add(row.key)
+        continue
+      }
+      for (const side of sides) {
+        const recordings = await recordingsFor(seed.mbid, side)
+        if (recordings.length === 0) continue
+        recordingIds.set(row.key, recordings.map((recording) => recording.id))
+        if (recordings.some((recording) => recording.strong)) {
+          strongKeys.add(row.key)
+        } else {
+          weakKeys.add(row.key)
+        }
+        break
+      }
+    }
+    if (strongKeys.size + weakKeys.size === 0 && !ruledMbids.includes(seed.mbid)) {
+      continue
+    }
+    candidates.push({
+      ...seed,
+      rgCount: titles.length,
+      strongKeys,
+      weakKeys,
+      recordingIds,
+    })
+  }
   if (candidates.length === 0) return record
 
-  // 2. Corroborate against each candidate's OWN catalogue. Release
-  //    groups first (one cheap call), then recordings for whatever they
-  //    miss — singles are frequently not release groups (Beatles probe,
-  //    Aug 21: 23 of 24 blocked titles were absent from release groups,
-  //    6 of 8 sampled existed as recordings).
-  const corroborated = []
-  for (const candidate of candidates) {
-    const titles = await releaseGroupTitles(candidate.mbid)
-    const keys = new Set()
-    for (const row of group.rows) {
-      if (titleSides(row.title).some((side) => titles.includes(normalize(side)))) {
-        keys.add(row.key)
-      }
+  // 3. Identity per row.
+  const rowsByMbid = new Map()
+  for (const row of group.rows) {
+    const resolved = resolveRowIdentity(row, candidates, rulings)
+    if (!resolved) {
+      work.verified[row.key] ??= null
+      continue
     }
-    if (keys.size > 0) corroborated.push({ ...candidate, keys })
-  }
-
-  // No release group matched ANY candidate: fall back to recordings on a
-  // bounded sample so identity still has a chance to be established.
-  if (corroborated.length === 0) {
-    for (const candidate of candidates) {
-      const keys = new Set()
-      for (const row of group.rows.slice(0, RECORDING_CAP)) {
-        for (const side of titleSides(row.title)) {
-          const ids = await recordingIdsFor(candidate.mbid, side)
-          if (ids.length > 0) {
-            keys.add(row.key)
-            break
-          }
-        }
-      }
-      if (keys.size > 0) corroborated.push({ ...candidate, keys })
+    if (resolved.ambiguous) {
+      work.ambiguous.push({
+        credit: group.display,
+        title: row.title,
+        year: row.year,
+        mbids: resolved.ambiguous,
+      })
+      work.verified[row.key] ??= null
+      continue
     }
+    if (!rowsByMbid.has(resolved.mbid)) rowsByMbid.set(resolved.mbid, [])
+    rowsByMbid.get(resolved.mbid).push(row)
   }
+  if (rowsByMbid.size === 0) return record
 
-  if (corroborated.length > 1) {
-    // Two artists of the same name both recorded this title: the John
-    // Mayer shape. Ambiguity resolves to null, never to a guess.
-    work.ambiguous.push({
-      credit: group.display,
-      mbids: corroborated.map((candidate) => candidate.mbid),
-    })
-    return record
-  }
-  if (corroborated.length === 0) return record
-
-  record.mbid = corroborated[0].mbid
-  const confirmedKeys = corroborated[0].keys
-  const rosterMatch = rosterByMbid.get(record.mbid)
-  if (rosterMatch) {
-    record.rosterSlug = rosterMatch.slug
-    record.rosterName = rosterMatch.name
+  // The credit's primary identity = the MBID covering the most rows
+  // (roster links and gap-fill reporting key off the credit).
+  const primary = [...rowsByMbid.entries()].sort(
+    (a, b) => b[1].length - a[1].length,
+  )[0][0]
+  record.mbid = primary
+  const primaryRoster = rosterByMbid.get(primary)
+  if (primaryRoster && rowsByMbid.size === 1) {
+    record.rosterSlug = primaryRoster.slug
+    record.rosterName = primaryRoster.name
   }
 
   // Gap-fill: reported for owner review only — joining a gap-fill entry
@@ -714,110 +869,83 @@ async function sweepArtist(name, group, context) {
     }
   }
 
-  // 3. Channel discovery — evidence only, best tier first.
-  if (rosterMatch?.channelId) {
-    record.channelId = rosterMatch.channelId
-    record.channelSource = 'roster'
-  } else {
-    const relations = await artistRelations(record.mbid)
-    if (relations.youtube) {
-      const channelId = await channelIdFromUrl(relations.youtube, key)
-      if (channelId) {
-        record.channelId = channelId
-        record.channelSource = 'mb-rel'
-      }
+  // 4. Per identity: channel discovery, uploads scan, exact match with
+  //    studio preference, playability — then recording url-rels for the
+  //    misses.
+  for (const [mbid, rows] of rowsByMbid) {
+    const candidate = candidates.find((entry) => entry.mbid === mbid)
+    const identity = await discoverChannel(mbid, rosterByMbid.get(mbid), key)
+    identity.channelKind = null
+    identity.rows = rows.map((row) => row.key)
+    let uploads = []
+    if (identity.channelId) {
+      const scan = await channelUploads(identity.channelId, key)
+      uploads = scan.uploads
+      identity.channelKind = /- topic$/i.test(scan.channelTitle.trim())
+        ? 'topic'
+        : 'own'
     }
-    if (!record.channelId && relations.wikidata) {
-      const channelId = await wikidataChannel(relations.wikidata)
-      if (channelId) {
-        record.channelId = channelId
-        record.channelSource = 'wikidata'
-      }
-    }
-  }
 
-  let uploads = []
-  if (record.channelId) {
-    const scan = await channelUploads(record.channelId, key)
-    uploads = scan.uploads
-    record.channelKind = /- topic$/i.test(scan.channelTitle.trim())
-      ? 'topic'
-      : 'own'
-  }
+    for (const row of rows) {
+      if (work.verified[row.key]) continue
 
-  // 4. Every row gets its chance: release-group-confirmed rows first,
-  //    then the rest via recording-level corroboration.
-  const recordingIds = new Map()
-  for (const row of group.rows) {
-    if (work.verified[row.key]) continue
-    let confirmed = confirmedKeys.has(row.key)
-    if (!confirmed) {
+      let upload = null
       for (const side of titleSides(row.title)) {
-        const ids = await recordingIdsFor(record.mbid, side)
-        if (ids.length > 0) {
-          recordingIds.set(row.key, ids)
-          confirmed = true
-          break
+        upload = matchUpload(uploads, group.display, side)
+        if (upload && !upload.live) break
+      }
+      if (upload) {
+        const facts = await videoFacts(upload.videoId, key)
+        if (facts?.playable) {
+          work.verified[row.key] = {
+            videoId: upload.videoId,
+            title: upload.title,
+            via: 'uploads',
+            live: Boolean(upload.live),
+          }
+          continue
         }
       }
-    }
-    if (!confirmed) {
-      work.verified[row.key] = null
-      continue
-    }
 
-    // Channel first (cheap, already in memory), then the recording's
-    // own url-rel as direct evidence for this exact title.
-    let upload = null
-    for (const side of titleSides(row.title)) {
-      upload = matchUpload(uploads, group.display, side)
-      if (upload) break
-    }
-    if (upload) {
-      const facts = await videoFacts(upload.videoId, key)
-      if (facts?.playable) {
-        work.verified[row.key] = {
-          videoId: upload.videoId,
-          title: upload.title,
-          via: 'uploads',
-          live: Boolean(upload.live),
+      let ids = candidate?.recordingIds.get(row.key) ?? []
+      if (ids.length === 0) {
+        for (const side of titleSides(row.title)) {
+          const found = await recordingIdsFor(mbid, side)
+          if (found.length > 0) {
+            ids = found
+            break
+          }
         }
+      }
+      const videoId = ids.length > 0 ? await recordingVideo(ids) : null
+      if (!videoId) {
+        work.verified[row.key] = null
         continue
       }
-    }
-
-    let ids = recordingIds.get(row.key)
-    if (!ids) {
-      ids = []
-      for (const side of titleSides(row.title)) {
-        const found = await recordingIdsFor(record.mbid, side)
-        if (found.length > 0) {
-          ids = found
-          break
+      const facts = await videoFacts(videoId, key)
+      if (facts?.playable) {
+        work.verified[row.key] = {
+          videoId,
+          title: row.title,
+          via: 'mb-recording',
+          live: isLiveUpload(facts.title, row.title, group.display),
         }
+        if (!identity.channelId && facts.channelId) {
+          identity.channelId = facts.channelId
+          identity.channelSource = 'mb-recording'
+          identity.channelKind = /- topic$/i.test(facts.channelTitle.trim())
+            ? 'topic'
+            : 'own'
+        }
+      } else {
+        work.verified[row.key] = null
       }
     }
-    const videoId = ids.length > 0 ? await recordingVideo(ids) : null
-    if (!videoId) {
-      work.verified[row.key] = null
-      continue
-    }
-    const facts = await videoFacts(videoId, key)
-    if (facts?.playable) {
-      work.verified[row.key] = {
-        videoId,
-        title: row.title,
-        via: 'mb-recording',
-      }
-      if (!record.channelId && facts.channelId) {
-        record.channelId = facts.channelId
-        record.channelSource = 'mb-recording'
-        record.channelKind = /- topic$/i.test(facts.channelTitle.trim())
-          ? 'topic'
-          : 'own'
-      }
-    } else {
-      work.verified[row.key] = null
+    record.identities[mbid] = identity
+    if (mbid === primary) {
+      record.channelId = identity.channelId
+      record.channelSource = identity.channelSource
+      record.channelKind = identity.channelKind
     }
   }
 
@@ -826,53 +954,6 @@ async function sweepArtist(name, group, context) {
   }
   return record
 }
-
-async function runSearchPhase(work, key, deadline) {
-  const queue = work.searchQueue ?? []
-  console.log(
-    `Channel-scoped search phase: ${queue.length} queued · ` +
-      `${Math.floor((BUDGET - unitsSpent) / SEARCH_COST)} affordable this window`,
-  )
-  let done = 0
-  let found = 0
-  while (queue.length > 0) {
-    if (Date.now() > deadline || unitsSpent + SEARCH_COST > BUDGET) break
-    const item = queue[0]
-    try {
-      const upload = await searchInChannel(
-        item.channelId,
-        item.title,
-        item.artist,
-        key,
-      )
-      if (upload) {
-        const facts = await videoFacts(upload.videoId, key)
-        if (facts?.playable) {
-          work.verified[item.key] = {
-            videoId: upload.videoId,
-            title: upload.title,
-            via: 'channel-search',
-          }
-          found++
-        }
-      }
-    } catch (error) {
-      if (error instanceof QuotaError) {
-        console.log(`— ${error.message}; checkpointing`)
-        break
-      }
-      console.warn(`  ${item.artist} — ${item.title}: ${error.message}`)
-    }
-    queue.shift()
-    done++
-    saveWork(work)
-    if (done % 10 === 0) {
-      console.log(`  ${done} searched · ${found} found · ${unitsSpent} units`)
-    }
-  }
-  console.log(`Search phase: ${done} searched, ${found} newly verified`)
-}
-
 
 /**
  * Re-match pass over rows that ALREADY carry a video (owner-approved
@@ -1082,7 +1163,8 @@ async function main() {
       `${pending.length} to sweep (pass ${PASS}) · ${BUDGET} units / ${MINUTES} min`,
   )
 
-  const context = { key, rosterByName, rosterByMbid, gapByName, work }
+  const rulings = loadJson(RULINGS_PATH, { rulings: [] }).rulings
+  const context = { key, rosterByName, rosterByMbid, gapByName, work, rulings }
   let swept = 0
   for (const [name, group] of pending) {
     if (Date.now() > deadline) {

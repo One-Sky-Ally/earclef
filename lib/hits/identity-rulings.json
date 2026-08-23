@@ -1,0 +1,13 @@
+{
+  "comment": "Owner rulings on same-name identity conflicts the hits sweep could not resolve (Aug 23, 2026). Applied BEFORE any search: a ruling names the MBID a credited name resolves to, optionally restricted to chart years (a credit can legitimately be two different artists — Sweet Sensation is one #1 each). Decisions live in this file, not in the report (lesson 2: regenerated output loses hand edits).",
+  "rulings": [
+    { "credit": "The Firm", "mbid": "adecfd42-3f2c-4502-9773-ba7567e8ca07", "why": "UK novelty group (1981–88) — the Page/Rodgers supergroup ended before the 1987 chart year" },
+    { "credit": "The Elegants", "mbid": "91919ad2-80cb-4077-bbb3-2803fa129fab", "why": "formed 1958, 6 RGs; the Philadelphia namesake is a 1980s 0-RG stub" },
+    { "credit": "The Manhattans", "mbid": "8dce8a2d-8ed5-4672-b25e-bfe198b02b82", "why": "NJ vocal group, 31 RGs; MB's own disambiguation names Kiss and Say Goodbye" },
+    { "credit": "Omi", "mbid": "33e6ded6-22cc-447e-aefa-9a7a6ba81b6b", "why": "Jamaican OMI, 16 RGs; the Israeli DJ stub is credited only on a compilation" },
+    { "credit": "Baccara", "mbid": "d17a5888-7775-4541-85d6-f6344f9e93b7", "why": "original lineup 1977–81; Mayte Mateos' Baccara formed 1983, after the chart year" },
+    { "credit": "The Rolling Stones", "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598", "why": "the namesake's MB disambiguation is literally 'Fake'" },
+    { "credit": "Sweet Sensation", "mbid": "e8916411-8015-4f2f-8f40-d186611b6e95", "years": [1974], "why": "British soul group (1971–78) — Sad Sweet Dreamer, UK 1974" },
+    { "credit": "Sweet Sensation", "mbid": "0d2ae2cd-0683-4b6c-a296-eb83ecce6519", "years": [1990], "why": "Puerto Rican freestyle trio (1986–) — If Wishes Came True, US 1990" }
+  ]
+}

@@ -65,3 +65,5 @@ data/number-ones-ingest.log
 data/hits-play-work.json
 data/hits-play.log
 data/hits-play-report.json
+data/gapfill-crosswalk-work.json
+data/gapfill-crosswalk.log
