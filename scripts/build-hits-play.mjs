@@ -70,6 +70,14 @@ const CANDIDATE_CAP = 4
 /** Recording candidates inspected per missed title (free, MB-side). */
 const RECORDING_CAP = 3
 const SEARCH_COST = 100
+/**
+ * A song is not nine seconds long. Exact-title matching verifies the
+ * NAME of a thing, never WHAT it is — a Short, a trailer and the record
+ * all carry the same title (standing lesson, Aug 22 2026). Floor kills
+ * Shorts and clips; no ceiling, because official videos legitimately run
+ * long (Michael Jackson's "Black or White" is 11 minutes).
+ */
+const MIN_DURATION_SECONDS = 90
 const DEFAULT_BUDGET = 8000
 const DEFAULT_MINUTES = 420
 /** Bump to force a re-pass over artists finished under older rules. */
@@ -416,17 +424,26 @@ async function searchInChannel(channelId, title, artistName, key) {
 /** part=status,snippet: playability AND the owning channel, 1 unit. */
 async function videoFacts(videoId, key) {
   const body = await ytJson(
-    `https://www.googleapis.com/youtube/v3/videos?part=status,snippet&id=${videoId}&key=${key}`,
+    `https://www.googleapis.com/youtube/v3/videos?part=status,snippet,contentDetails&id=${videoId}&key=${key}`,
     1,
   )
   const item = body.items?.[0]
   if (!item) return null
+  const match = /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/.exec(
+    item.contentDetails?.duration ?? '',
+  )
+  const [hours, minutes, seconds] = match
+    ? match.slice(1).map((part) => Number(part ?? 0))
+    : [0, 0, 0]
+  const duration = hours * 3600 + minutes * 60 + seconds
   return {
-    playable: Boolean(
-      item.status?.embeddable && item.status.privacyStatus === 'public',
-    ),
+    playable:
+      Boolean(item.status?.embeddable && item.status.privacyStatus === 'public') &&
+      duration >= MIN_DURATION_SECONDS,
+    duration,
     channelId: item.snippet?.channelId ?? null,
     channelTitle: item.snippet?.channelTitle ?? '',
+    title: item.snippet?.title ?? '',
   }
 }
 
@@ -449,6 +466,16 @@ async function videoFacts(videoId, key) {
 const LIVE_MARKERS =
   /\b(live|unplugged|concert|en vivo|en directo|live lounge|bbc session|session at|acoustic session|tour)\b/i
 
+/**
+ * Annotations that change WHAT the upload is, not merely how it is
+ * labelled. Stripping "(Official Video)" to compare titles is right;
+ * stripping "(Behind The Scenes)" is how a making-of became a #1 hit's
+ * play button. Tested against the annotation only, so a song whose own
+ * title contains one of these words is unaffected.
+ */
+const NON_SONG_MARKERS =
+  /\b(trailer|teaser|behind the scenes|making of|documentary|interview|preview|snippet|clip|reaction|announcement|album sampler)\b/i
+
 function annotationOf(uploadTitle, chartTitle, artistName) {
   const upload = normalize(uploadTitle)
   const title = normalize(chartTitle)
@@ -464,6 +491,11 @@ function annotationOf(uploadTitle, chartTitle, artistName) {
 function isLiveUpload(uploadTitle, chartTitle, artistName) {
   const annotation = annotationOf(uploadTitle, chartTitle, artistName)
   return annotation ? LIVE_MARKERS.test(annotation) : false
+}
+
+function isNonSongUpload(uploadTitle, chartTitle, artistName) {
+  const annotation = annotationOf(uploadTitle, chartTitle, artistName)
+  return annotation ? NON_SONG_MARKERS.test(annotation) : false
 }
 
 /**
@@ -493,6 +525,8 @@ function matchUpload(uploads, artistName, wantedTitle) {
     }
     candidates.delete('')
     if (candidates.has(wanted)) {
+      // The title matches, but a making-of is not the record.
+      if (isNonSongUpload(upload.title, wantedTitle, artistName)) continue
       matches.push({
         ...upload,
         live: isLiveUpload(upload.title, wantedTitle, artistName),
@@ -839,6 +873,106 @@ async function runSearchPhase(work, key, deadline) {
   console.log(`Search phase: ${done} searched, ${found} newly verified`)
 }
 
+
+/**
+ * Re-match pass over rows that ALREADY carry a video (owner-approved
+ * Aug 22, 2026), applying three things the original pass never had:
+ * the duration floor, the non-song annotation blocklist, and the studio
+ * preference (which landed after pass 3 had already picked first-match
+ * -wins, so Bon Jovi's "Livin' on a Prayer" kept a Letterman take while
+ * the studio upload sat on the same channel).
+ *
+ * YouTube only — no MusicBrainz — so it never competes with a sweep.
+ * A row that can no longer be satisfied honestly goes back to null.
+ */
+async function runRematchPhase(work, rows, key, deadline) {
+  const byArtist = new Map()
+  for (const row of rows) {
+    const name = normalize(row.artist)
+    if (!name || !work.verified[row.key]?.videoId) continue
+    if (!byArtist.has(name)) byArtist.set(name, { display: row.artist, rows: [] })
+    byArtist.get(name).rows.push(row)
+  }
+  const pending = [...byArtist.entries()].filter(
+    ([name]) => !work.rematched?.includes(name),
+  )
+  work.rematched ??= []
+  console.log(`Re-match: ${pending.length} artists hold verified rows`)
+
+  let dropped = 0
+  let improved = 0
+  let kept = 0
+  for (const [name, group] of pending) {
+    if (Date.now() > deadline || unitsSpent >= BUDGET) {
+      console.log('— window/budget reached')
+      break
+    }
+    const record = work.artists[name]
+    try {
+      let uploads = []
+      if (record?.channelId) {
+        const scan = await channelUploads(record.channelId, key)
+        uploads = scan.uploads
+      }
+      for (const row of group.rows) {
+        const current = work.verified[row.key]
+        if (!current?.videoId) continue
+
+        // Best available on the channel under the NEW rules.
+        let best = null
+        for (const side of titleSides(row.title)) {
+          best = matchUpload(uploads, group.display, side)
+          if (best && !best.live) break
+        }
+        if (best) {
+          const facts = await videoFacts(best.videoId, key)
+          if (facts?.playable) {
+            const changed = best.videoId !== current.videoId
+            work.verified[row.key] = {
+              videoId: best.videoId,
+              title: best.title,
+              via: 'uploads',
+              live: Boolean(best.live),
+            }
+            if (changed) improved++
+            else kept++
+            continue
+          }
+        }
+
+        // No acceptable channel match — does the CURRENT pick still
+        // pass the new filters on its own merits?
+        const facts = await videoFacts(current.videoId, key)
+        const nonSong =
+          facts && isNonSongUpload(facts.title, row.title, group.display)
+        if (facts?.playable && !nonSong) {
+          work.verified[row.key] = {
+            ...current,
+            live: current.live ?? isLiveUpload(facts.title, row.title, group.display),
+          }
+          kept++
+        } else {
+          work.verified[row.key] = null
+          dropped++
+        }
+      }
+      work.rematched.push(name)
+      saveWork(work)
+    } catch (error) {
+      if (error instanceof QuotaError) {
+        console.log(`— ${error.message}; checkpointing`)
+        saveWork(work)
+        break
+      }
+      console.warn(`  ${group.display}: ${error.message} (will retry)`)
+    }
+  }
+  console.log(
+    `Re-match done: ${kept} kept, ${improved} swapped to a better pick, ` +
+      `${dropped} dropped to honest nulls`,
+  )
+}
+
 async function main() {
   const rows = loadRows()
   const roster = loadJson(ROSTER_PATH, [])
@@ -890,6 +1024,13 @@ async function main() {
   const key = env('YOUTUBE_API_KEY')
   if (!key) throw new Error('YOUTUBE_API_KEY missing (.env.local)')
   const deadline = Date.now() + MINUTES * 60 * 1000
+
+  if (PHASE === 'rematch') {
+    await runRematchPhase(work, rows, key, deadline)
+    saveWork(work)
+    console.log(JSON.stringify(assemble(work, rows), null, 2))
+    return
+  }
 
   if (PHASE === 'search') {
     // ECONOMICS RULING (owner, Aug 21, 2026): the technique is approved
