@@ -629,6 +629,8 @@ const dedupe = (items) => {
   })
 }
 
+const rulingsForReport = loadJson(RULINGS_PATH, { rulings: [] }).rulings
+
 function assemble(work, rows) {
   const play = {}
   for (const [key, value] of Object.entries(work.verified)) {
@@ -707,6 +709,8 @@ function assemble(work, rows) {
     // Every identity reached through an alias, with the alias and its
     // type — untyped ones are the Aug 23 relaxation's admissions, listed
     // so the owner can flag anything that looks wrong.
+    // Only OPEN questions: an ambiguity a ruling has since resolved is
+    // settled, not pending — the ruling round should never see it again.
     resolvedViaAlias: Object.entries(work.artists)
       .filter(([, artist]) => artist.mbid && artist.aliasMatch)
       .map(([credit, artist]) => ({
@@ -720,7 +724,14 @@ function assemble(work, rows) {
         ).length,
       })),
     gapFillCandidatesForOwnerReview: dedupe(work.gapFillCandidates ?? []),
-    ambiguousIdentities: dedupe(work.ambiguous ?? []),
+    ambiguousIdentities: dedupe(work.ambiguous ?? []).filter(
+      (entry) =>
+        !rulingsForReport.some(
+          (ruling) =>
+            normalize(ruling.credit) === normalize(entry.credit) &&
+            (!ruling.years || !entry.year || ruling.years.includes(entry.year)),
+        ),
+    ),
   }
   writeFileSync(REPORT_OUT, JSON.stringify(report, null, 2))
   return report
