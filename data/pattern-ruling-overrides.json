@@ -52,16 +52,16 @@
     "why": "Sweet Exorcist: BS pressing years pre-date the UK duo formation (1989) — era=false is impossible-identity here, not posthumous; likely a distinct local act"
   },
   "HN|dg|3482615": {
-    "proposal": "held",
-    "why": "Los Caminantes: semi-generic Spanish band name (multiple bands share it), no era data — identity uncorroborated"
+    "proposal": "exclude",
+    "why": "owner ruling Aug 25 2026 (held re-run, id-proven identity): identity confirmed by Discogs-page id; wd origin Q96 ≠ pool (\"Mexican musical group\")"
   },
   "GY|dg|185741": {
     "proposal": "exclude",
     "why": "same Discogs artist as the TT case: begin-area Jamaica + era (TT evidence) — origin Jamaica, cross-pool consistency"
   },
   "GH|dg|297751": {
-    "proposal": "held",
-    "why": "Greyhound: single common word + wd description just \"band\" — identity too thin to exclude"
+    "proposal": "exclude",
+    "why": "owner ruling Aug 25 2026 (held re-run, id-proven identity): identity confirmed by Discogs-page id; wd origin Q145 ≠ pool (\"band\")"
   },
   "TT|dg|892022": {
     "proposal": "held",
@@ -98,5 +98,37 @@
   "TT|dg|3490119": {
     "proposal": "held",
     "why": "The Esquires Combo: a Trinidadian Esquires Combo is documented in the TT 60s scene — likely the local act"
+  },
+  "JO|dg|3089830": {
+    "proposal": "exclude",
+    "why": "owner ruling Aug 25 2026 (held re-run, id-proven identity): identity confirmed by Discogs-page id; wd origin Q822 ≠ pool (\"Lebanese pop singer\")"
+  },
+  "IQ|dg|4068887": {
+    "proposal": "exclude",
+    "why": "owner ruling Aug 25 2026 (held re-run, id-proven identity): identity confirmed by Discogs-page id; wd origin Q794 ≠ pool (\"Iranian singer\")"
+  },
+  "KW|dg|3487601": {
+    "proposal": "exclude",
+    "why": "owner ruling Aug 25 2026 (held re-run, id-proven identity): identity confirmed by Discogs-page id; MB begin-area resolves to Lebanon"
+  },
+  "KW|dg|5502913": {
+    "proposal": "exclude",
+    "why": "owner ruling Aug 25 2026 (held re-run, id-proven identity): identity confirmed by Discogs-page id; wd origin Q796 ≠ pool (\"Iraqi Singer\")"
+  },
+  "KW|dg|3111597": {
+    "proposal": "exclude",
+    "why": "owner ruling Aug 25 2026 (held re-run, id-proven identity): id-linked to Mohamed Mohie; MB begin-area resolves to Egypt"
+  },
+  "KW|dg|3124657": {
+    "proposal": "exclude",
+    "why": "owner ruling Aug 25 2026 (held re-run, id-proven identity): identity confirmed by Discogs-page id; MB begin-area resolves to Yemen"
+  },
+  "GH|dg|286116": {
+    "proposal": "exclude",
+    "why": "owner ruling Aug 25 2026 (held re-run, id-proven identity): identity confirmed by Discogs-page id; MB begin-area resolves to Nigeria"
+  },
+  "AL|dg|59661": {
+    "proposal": "exclude",
+    "why": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026) — BASIS CORRECTED Aug 25 2026: exclusion from AL stands, but MB id-links discogs/59661 to Capital T the UK garage producer (Trevor Davy, MB b2bb72cd-21ad-43a6-a236-13725cf3eba5), NOT the Kosovar rapper; the recorded \"Kosovo-origin Q1246\" rested on a name match. NEVER use this Discogs id to seed XK. (Confirmed on both legs: MB URL rel AND Discogs realname field 'Trevor Davy', fetched Aug 25.)"
   }
 }

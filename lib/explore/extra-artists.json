@@ -112220,20 +112220,6 @@
         "releaseCount": 0,
         "discogsArtistId": null,
         "wikidataId": "Q106614742"
-      },
-      {
-        "name": "Los Caminantes",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Bossa Nova",
-          "Guajira",
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 3482615,
-        "wikidataId": null
       }
     ],
     "BS": [
@@ -136871,19 +136857,6 @@
         ]
       },
       {
-        "name": "يارا",
-        "source": "discogs",
-        "firstYear": 2005,
-        "lastYear": 2008,
-        "styles": [
-          "Folk, World, & Country",
-          "Pop"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 3089830,
-        "wikidataId": null
-      },
-      {
         "name": "962Street",
         "source": "discogs",
         "firstYear": 2011,
@@ -141780,18 +141753,6 @@
         "wikidataId": null
       },
       {
-        "name": "ایرج",
-        "source": "discogs",
-        "firstYear": 1966,
-        "lastYear": 1966,
-        "styles": [
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 4068887,
-        "wikidataId": null
-      },
-      {
         "name": "رائد عادل",
         "source": "discogs",
         "firstYear": 2000,
@@ -143809,24 +143770,6 @@
         ]
       },
       {
-        "name": "رباب",
-        "source": "discogs",
-        "firstYear": 1982,
-        "lastYear": 1983,
-        "styles": [
-          "Folk, World, & Country",
-          "Classical"
-        ],
-        "releaseCount": 6,
-        "discogsArtistId": 5502913,
-        "wikidataId": null,
-        "aliases": [
-          "المطربة رباب",
-          "Rabab",
-          "رَباب"
-        ]
-      },
-      {
         "name": "غريد الشاطئ",
         "source": "discogs",
         "firstYear": 1956,
@@ -145716,23 +145659,6 @@
         "wikidataId": null
       },
       {
-        "name": "عبد الرب إدريس",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Folk",
-          "Classical",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 3,
-        "discogsArtistId": 3124657,
-        "wikidataId": null,
-        "aliases": [
-          "عبد الرب ادريس"
-        ]
-      },
-      {
         "name": "عبد محمد",
         "source": "discogs",
         "firstYear": null,
@@ -146120,22 +146046,6 @@
         "wikidataId": null,
         "aliases": [
           "Nora"
-        ]
-      },
-      {
-        "name": "هيام يونس",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Folk",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 3487601,
-        "wikidataId": null,
-        "aliases": [
-          "نجمة الشرق هيام يونس"
         ]
       },
       {
@@ -147056,19 +146966,6 @@
         "aliases": [
           "محمد الأسمر"
         ]
-      },
-      {
-        "name": "محمد محي",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Classical",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 3111597,
-        "wikidataId": null
       },
       {
         "name": "محمد مرشد ناجي",
@@ -193305,18 +193202,6 @@
         "wikidataId": null
       },
       {
-        "name": "Greyhound",
-        "source": "discogs",
-        "firstYear": 1972,
-        "lastYear": 1972,
-        "styles": [
-          "Reggae"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 297751,
-        "wikidataId": null
-      },
-      {
         "name": "Hewale Sounds",
         "source": "discogs",
         "firstYear": 2016,
@@ -195308,20 +195193,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 11647742,
-        "wikidataId": null
-      },
-      {
-        "name": "The Funkees",
-        "source": "discogs",
-        "firstYear": 1973,
-        "lastYear": 1973,
-        "styles": [
-          "Afrobeat",
-          "Psychedelic",
-          "Rock"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 286116,
         "wikidataId": null
       },
       {
