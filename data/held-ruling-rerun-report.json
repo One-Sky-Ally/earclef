@@ -1,0 +1,5569 @@
+{
+  "generatedAt": "2026-08-25",
+  "method": "Held cases re-derived against current state, then tested for identity in BOTH id directions (MB→our Discogs page via the crosswalk; case MBID→its own Discogs page). Origin rule unchanged; MB area is never read as origin. Keeps applied, exclusions and restorations proposed only.",
+  "queue": {
+    "heldAtHandover": 176,
+    "droppedFromDataset": [
+      "VN Xuân Quỳnh (dg|15889094)",
+      "VN Hoàng Cầm (dg|7037776)",
+      "VN Đức Minh (dg|9413908)",
+      "VN Khánh Dũng (dg|9413911)"
+    ],
+    "live": 172
+  },
+  "outcomes": {
+    "keep": 59,
+    "keepNote": 0,
+    "proposeExclude": 18,
+    "owner": 95
+  },
+  "resolved": [
+    {
+      "pool": "AF",
+      "name": "Akram Khan",
+      "discogsId": "12800537",
+      "caseMbid": "691a8a84-c125-44c6-90dd-fb30276dc185",
+      "caseMbName": "Akram Khan",
+      "caseMbArea": "India",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Akram Khan links to discogs/1492345 — not our page 12800537; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "1492345"
+        ],
+        "caseMbidRelCount": 4,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "BF",
+      "name": "Kizito",
+      "discogsId": "10609462",
+      "caseMbid": "5d6282ff-9d9c-496e-8f08-41729bcffdce",
+      "caseMbName": "Kizito",
+      "caseMbArea": "France",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Kizito links to discogs/1983483 — not our page 10609462; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "1983483"
+        ],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "PG",
+      "name": "Good Guys Vibration II",
+      "discogsId": "5934195",
+      "caseMbid": "76256d31-1631-4772-8834-f3982a2b76af",
+      "caseMbName": "Good Guys",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Good Guys links to discogs/9934 — not our page 5934195; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "9934"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "GA",
+      "name": "Daouda",
+      "discogsId": "518054",
+      "caseMbid": "b84e28b6-bf0a-412c-8f93-6393dbd0728d",
+      "caseMbName": "Daouda",
+      "caseMbArea": "France",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Daouda links to discogs/4499108 — not our page 518054; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "4499108"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "BD",
+      "name": "H2SO4",
+      "discogsId": "6388775",
+      "caseMbid": "ccd57459-2d4c-4acc-8acf-db098d334b58",
+      "caseMbName": "H2SO4",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-proven-local",
+      "why": "MB links this Discogs page to H2SO4 (Bangladesh) — a pool-country artist; the Aug-11 name match to H2SO4 (United Kingdom) was a homonym",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "67e13aa4-8381-435c-a4dc-3c8160392465",
+            "mbName": "H2SO4",
+            "area": "Bangladesh",
+            "areaCountry": "BD",
+            "class": "local-dedup-miss",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "177104"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "LK",
+      "name": "Forlorn Hope",
+      "discogsId": "1223764",
+      "caseMbid": "457b118f-d17c-42ea-9bb0-74c847330e2d",
+      "caseMbName": "Forlorn Hope",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-proven-local",
+      "why": "MB links this Discogs page to Forlorn Hope (Sri Lanka) — a pool-country artist; the Aug-11 name match to Forlorn Hope (United Kingdom) was a homonym",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "31aa262a-3a01-4196-83bb-2579735e64de",
+            "mbName": "Forlorn Hope",
+            "area": "Sri Lanka",
+            "areaCountry": "LK",
+            "class": "local-dedup-miss",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "5419239"
+        ],
+        "caseMbidRelCount": 4,
+        "caseMbidOrigin": "MB begin-area resolves to United Kingdom"
+      }
+    },
+    {
+      "pool": "KP",
+      "name": "Александр Кузнецов",
+      "discogsId": "2573912",
+      "caseMbid": "2ceac80e-93ca-4573-b59d-54d9007bc5e7",
+      "caseMbName": "Александр Кузнецов",
+      "caseMbArea": "Russia",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Александр Кузнецов links to discogs/2196401 — not our page 2573912; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "2196401"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TZ",
+      "name": "P-Funk",
+      "discogsId": "472429",
+      "caseMbid": "f93cd873-880a-49f5-99bb-3e5e57b6fb01",
+      "caseMbName": "P-Funk",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's P-Funk links to discogs/70193 — not our page 472429; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "70193"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "SN",
+      "name": "Les Ambassadeurs",
+      "discogsId": "13488667",
+      "caseMbid": "91ef0552-e5a4-44da-baef-4a2043cad302",
+      "caseMbName": "Les Ambassadeurs",
+      "caseMbArea": "France",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Les Ambassadeurs links to discogs/5581628 — not our page 13488667; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "5581628"
+        ],
+        "caseMbidRelCount": 9,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "GY",
+      "name": "Jimmy James",
+      "discogsId": "246028",
+      "caseMbid": "949ce7fe-a935-4ae3-a0e0-02a55aa8e6ac",
+      "caseMbName": "Jimmy James",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Jimmy James links to discogs/159361 — not our page 246028; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "594f07c4-9af2-4a4d-af39-7f0250ad3703",
+            "mbName": "Jimmy James",
+            "area": "United Kingdom",
+            "areaCountry": "GB",
+            "class": "foreign-catalog",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "159361"
+        ],
+        "caseMbidRelCount": 16,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "GY",
+      "name": "Jerry Jackson",
+      "discogsId": "3497893",
+      "caseMbid": "a5058be7-ce12-4b96-aa34-bedb4ec4378b",
+      "caseMbName": "Jerry Jackson",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Jerry Jackson links to discogs/367901 — not our page 3497893; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "367901"
+        ],
+        "caseMbidRelCount": 4,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "HN",
+      "name": "Julio Ramírez",
+      "discogsId": "8080528",
+      "caseMbid": "9dd60f96-f2a6-4df7-b8de-8776f481a506",
+      "caseMbName": "Julio Ramírez",
+      "caseMbArea": "Mexico",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Julio Ramírez links to discogs/2775692 — not our page 8080528; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "2775692"
+        ],
+        "caseMbidRelCount": 11,
+        "caseMbidOrigin": "MB begin-area resolves to Mexico"
+      }
+    },
+    {
+      "pool": "BS",
+      "name": "Sweet Exorcist",
+      "discogsId": "4229056",
+      "caseMbid": "d86cffc6-f892-455b-9a40-2f11df3d7fd8",
+      "caseMbName": "Sweet Exorcist",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Sweet Exorcist links to discogs/819 — not our page 4229056; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "819"
+        ],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "wd origin Q145 ≠ pool (\"British music duo\")"
+      }
+    },
+    {
+      "pool": "BS",
+      "name": "Deanna",
+      "discogsId": "16223437",
+      "caseMbid": "84ef6a36-f161-48da-b22f-bffc3aad18de",
+      "caseMbName": "Deanna",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Deanna links to discogs/35650 — not our page 16223437; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "35650"
+        ],
+        "caseMbidRelCount": 9,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "BS",
+      "name": "Goldenchild",
+      "discogsId": "2851510",
+      "caseMbid": "1454e825-81a8-4ecb-ad8b-1f0843059f97",
+      "caseMbName": "GoldenChild",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's GoldenChild links to discogs/886733 — not our page 2851510; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "886733"
+        ],
+        "caseMbidRelCount": 9,
+        "caseMbidOrigin": "MB begin-area resolves to United States"
+      }
+    },
+    {
+      "pool": "BS",
+      "name": "Dream Quest",
+      "discogsId": "16365373",
+      "caseMbid": "9c088b4e-0597-4ed3-8b81-515614434901",
+      "caseMbName": "Dream Quest",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Dream Quest links to discogs/6535434 — not our page 16365373; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "6535434"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "SR",
+      "name": "The Black Magic",
+      "discogsId": "6636561",
+      "caseMbid": "4a96ec66-f597-407f-8126-4ad7acfb5705",
+      "caseMbName": "The Black Magic",
+      "caseMbArea": "Netherlands",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's The Black Magic links to discogs/2120167 — not our page 6636561; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "2120167"
+        ],
+        "caseMbidRelCount": 4,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "SR",
+      "name": "Romeo",
+      "discogsId": "3913633",
+      "caseMbid": "7ad970a9-82ce-43e3-a999-b82d414c52de",
+      "caseMbName": "Roméo",
+      "caseMbArea": "Netherlands",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Roméo links to discogs/508430 — not our page 3913633; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "508430"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "HT",
+      "name": "Les Ambassadeurs",
+      "discogsId": "2005085",
+      "caseMbid": "91ef0552-e5a4-44da-baef-4a2043cad302",
+      "caseMbName": "Les Ambassadeurs",
+      "caseMbArea": "France",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Les Ambassadeurs links to discogs/5581628 — not our page 2005085; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "5581628"
+        ],
+        "caseMbidRelCount": 9,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "The Bad Boys",
+      "discogsId": "5780448",
+      "caseMbid": "d4047a43-c69c-444a-aaae-586430747ea7",
+      "caseMbName": "The Bad Boys",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-proven-local",
+      "why": "MB links this Discogs page to The Bad Boys (Nicaragua) — a pool-country artist; the Aug-11 name match to The Bad Boys (United States) was a homonym",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "b91c8da6-f9ef-4fe7-997a-cfefae1902ce",
+            "mbName": "The Bad Boys",
+            "area": "Nicaragua",
+            "areaCountry": "NI",
+            "class": "local-dedup-miss",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "33188"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "Mario Quintero",
+      "discogsId": "2680740",
+      "caseMbid": "9e0d3712-04b3-4b37-bbfb-6512a064e6cb",
+      "caseMbName": "Mario Quintero",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Mario Quintero links to discogs/5192545, discogs/666857 — not our page 2680740; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "cb42898a-0641-445c-bc74-770fd912f016",
+            "mbName": "Mario Quintero Manzano",
+            "area": "Ciudad de México",
+            "areaCountry": null,
+            "class": "unplaced",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "5192545",
+          "666857"
+        ],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "The Pleasure Seekers",
+      "discogsId": "1731561",
+      "caseMbid": "995a3322-f9f3-4733-8eb5-73f1c485950c",
+      "caseMbName": "The Pleasure Seekers",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's The Pleasure Seekers links to discogs/656200 — not our page 1731561; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "656200"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "MB begin-area resolves to United States"
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "Guayo González",
+      "discogsId": "3023835",
+      "caseMbid": "c44d40ce-7d54-4eaf-8a63-5ca40cff3e5e",
+      "caseMbName": "Eduardo Gonzalez",
+      "caseMbArea": "Mexico",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Eduardo Gonzalez links to discogs/3177563 — not our page 3023835; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "3177563"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "Los Nativos",
+      "discogsId": "7801071",
+      "caseMbid": "7cf2125c-04b3-4d78-9161-a77996e30992",
+      "caseMbName": "Los Nativos",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Los Nativos links to discogs/195593 — not our page 7801071; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "195593"
+        ],
+        "caseMbidRelCount": 4,
+        "caseMbidOrigin": "MB begin-area resolves to United States"
+      }
+    },
+    {
+      "pool": "LY",
+      "name": "أبو بكر عبد العزيز",
+      "discogsId": "3627977",
+      "caseMbid": "7fc8bbb4-a954-4a02-9ae7-181e2379a585",
+      "caseMbName": "أبو بكر عبد العزيز",
+      "caseMbArea": "Egypt",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's أبو بكر عبد العزيز links to discogs/3627697 — not our page 3627977; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "3627697"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "IQ",
+      "name": "Blade",
+      "discogsId": "4930138",
+      "caseMbid": "f5b171c9-f6f0-4ee6-bc3f-57d349f92d73",
+      "caseMbName": "Blade",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Blade links to discogs/115722 — not our page 4930138; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "115722"
+        ],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "MB begin-area resolves to Armenia"
+      }
+    },
+    {
+      "pool": "AM",
+      "name": "Iron Cross",
+      "discogsId": "8172769",
+      "caseMbid": "13afe528-54f1-4955-bbec-a4bafb590edb",
+      "caseMbName": "Iron Cross",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Iron Cross links to discogs/287296 — not our page 8172769; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "287296"
+        ],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "wd origin Q30 ≠ pool (\"American punk band\")"
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Thanh Tâm",
+      "discogsId": "1423052",
+      "caseMbid": "75da8238-6731-4379-bfe5-817769dcc670",
+      "caseMbName": "Thanh Tâm",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-proven-local",
+      "why": "MB links this Discogs page to Nguyễn Thị Thanh Tâm (Vietnam) — a pool-country artist; the Aug-11 name match to Thanh Tâm (United States) was a homonym",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "a4f6dd2a-abee-41f5-be3c-d7604e859599",
+            "mbName": "Nguyễn Thị Thanh Tâm",
+            "area": "Vietnam",
+            "areaCountry": "VN",
+            "class": "local-dedup-miss",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Ascend",
+      "discogsId": "14138",
+      "caseMbid": "0613c1ea-5a17-4d67-bb92-2bc20e186602",
+      "caseMbName": "Ascend",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Ascend links to discogs/1137833 — not our page 14138; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "dcec91fb-c181-4f71-849c-f059ab07ca43",
+            "mbName": "Ascend",
+            "area": "Costa Mesa",
+            "areaCountry": null,
+            "class": "unplaced",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1137833"
+        ],
+        "caseMbidRelCount": 8,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "GH",
+      "name": "Bola",
+      "discogsId": "2718209",
+      "caseMbid": "037bb92d-efd5-48d9-b197-3ce699067e3c",
+      "caseMbName": "Bola",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-proven-local",
+      "why": "MB links this Discogs page to Bola (Ghana) — a pool-country artist; the Aug-11 name match to Bola (United Kingdom) was a homonym",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "9c685f9a-0806-4b6f-81bc-eccb24b309d7",
+            "mbName": "Bola",
+            "area": "Ghana",
+            "areaCountry": "GH",
+            "class": "local-dedup-miss",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "390"
+        ],
+        "caseMbidRelCount": 11,
+        "caseMbidOrigin": "wd origin Q145 ≠ pool (\"British musician\")"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "King Solomon",
+      "discogsId": "3470671",
+      "caseMbid": "99f698b8-3773-448b-b69a-ac1d642b25a6",
+      "caseMbName": "King Solomon",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's King Solomon links to discogs/583822 — not our page 3470671; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "583822"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "The Fifth Dimension",
+      "discogsId": "191325",
+      "caseMbid": "43f14898-3db4-4f29-85ae-b11c6b1aa4ae",
+      "caseMbName": "The Fifth Dimension",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's The Fifth Dimension links to discogs/1284990 — not our page 191325; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "4f1949ab-fefd-4bf3-9317-814084c29cc0",
+            "mbName": "The 5th Dimension",
+            "area": "United States",
+            "areaCountry": "US",
+            "class": "foreign-catalog",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1284990"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Frankie Francis",
+      "discogsId": "2365832",
+      "caseMbid": "bc72e39e-6816-4fd9-9178-7e6546b2889c",
+      "caseMbName": "Frankie Francis",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Frankie Francis links to discogs/696350 — not our page 2365832; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "696350"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "The Savoys",
+      "discogsId": "3467982",
+      "caseMbid": "79b4d482-3294-4488-b2b4-a020a447621a",
+      "caseMbName": "The Savoys",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's The Savoys links to discogs/816981 — not our page 3467982; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "b38e2299-13ec-4412-9432-75b77dd5182e",
+            "mbName": "The Savoys",
+            "area": "Ireland",
+            "areaCountry": "IE",
+            "class": "foreign-catalog",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "816981"
+        ],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "MB begin-area resolves to United States"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Swallow",
+      "discogsId": "892022",
+      "caseMbid": "3ca28161-a0df-4af8-8e8d-e3712d2340a8",
+      "caseMbName": "Swallow",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Swallow links to discogs/92566 — not our page 892022; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "3ebf3a74-e6a5-405f-a5c7-fb638f3ddbcd",
+            "mbName": "Swallow",
+            "area": null,
+            "areaCountry": null,
+            "class": "unplaced",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "92566"
+        ],
+        "caseMbidRelCount": 11,
+        "caseMbidOrigin": "MB begin-area resolves to United Kingdom"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "King Radio",
+      "discogsId": "893312",
+      "caseMbid": "6463b8cc-7337-4864-b60c-ead08d41ae63",
+      "caseMbName": "King Radio",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-proven-local",
+      "why": "MB links this Discogs page to King Radio (Trinidad and Tobago) — a pool-country artist; the Aug-11 name match to King Radio (United States) was a homonym",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "2e432d96-f70b-4de7-9b5e-94b8852fc038",
+            "mbName": "King Radio",
+            "area": "Trinidad and Tobago",
+            "areaCountry": "TT",
+            "class": "local-dedup-miss",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Jimmy James",
+      "discogsId": "246028",
+      "caseMbid": "949ce7fe-a935-4ae3-a0e0-02a55aa8e6ac",
+      "caseMbName": "Jimmy James",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Jimmy James links to discogs/159361 — not our page 246028; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "594f07c4-9af2-4a4d-af39-7f0250ad3703",
+            "mbName": "Jimmy James",
+            "area": "United Kingdom",
+            "areaCountry": "GB",
+            "class": "foreign-catalog",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "159361"
+        ],
+        "caseMbidRelCount": 16,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Nigel Lewis",
+      "discogsId": "1365021",
+      "caseMbid": "b8e39368-529d-4c73-bed7-54acde882d5a",
+      "caseMbName": "Nigel Lewis",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Nigel Lewis links to discogs/199236 — not our page 1365021; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "199236"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Frank Francis",
+      "discogsId": "3379245",
+      "caseMbid": "bc72e39e-6816-4fd9-9178-7e6546b2889c",
+      "caseMbName": "Frankie Francis",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Frankie Francis links to discogs/696350 — not our page 3379245; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "696350"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "The Dwellers",
+      "discogsId": "6896856",
+      "caseMbid": "36b800fb-edc7-4a52-93ce-87ae1c2fb23a",
+      "caseMbName": "The Dwellers",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's The Dwellers links to discogs/4607380 — not our page 6896856; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "4607380"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Joy Of Life",
+      "discogsId": "3520624",
+      "caseMbid": "1f1f9437-cbe7-4c0e-b27a-d072d28d1481",
+      "caseMbName": "Joy of Life",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Joy of Life links to discogs/258938 — not our page 3520624; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "258938"
+        ],
+        "caseMbidRelCount": 5,
+        "caseMbidOrigin": "MB begin-area resolves to United Kingdom"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "The Esquires Combo",
+      "discogsId": "3490119",
+      "caseMbid": "5ab1b730-4bd4-4e7d-ab0e-fe75b2816c0b",
+      "caseMbName": "The Esquires",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's The Esquires links to discogs/379725 — not our page 3490119; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "379725"
+        ],
+        "caseMbidRelCount": 8,
+        "caseMbidOrigin": "wd origin Q30 ≠ pool (\"former American R&B group (1957-1976)\")"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Contender",
+      "discogsId": "3158024",
+      "caseMbid": "a01c7cb1-a835-4da4-81df-b74ac25b8fc9",
+      "caseMbName": "Contender",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Contender links to discogs/2528312 — not our page 3158024; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "2528312"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "King Solo",
+      "discogsId": "5258550",
+      "caseMbid": "8a48c6e9-d028-44a1-abb7-1976ef230d5a",
+      "caseMbName": "King Solo",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's King Solo links to discogs/1782119 — not our page 5258550; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "1782119"
+        ],
+        "caseMbidRelCount": 4,
+        "caseMbidOrigin": "MB begin-area resolves to United States"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Chris Bernard",
+      "discogsId": "4075935",
+      "caseMbid": "1947be02-579c-42ce-bc3d-23f38dd2d756",
+      "caseMbName": "Chris Bernard",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Chris Bernard links to discogs/2416038 — not our page 4075935; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "2416038"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Reality",
+      "discogsId": "3522076",
+      "caseMbid": "585d8ecf-17e4-40cf-8b1c-0d7ad5737c98",
+      "caseMbName": "Reality",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Reality links to discogs/11943 — not our page 3522076; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "11943"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Robert Bailey",
+      "discogsId": "255401",
+      "caseMbid": "65667475-ea94-460d-b24a-f674e318bf0f",
+      "caseMbName": "Robert Bailey",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Robert Bailey links to discogs/646009 — not our page 255401; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "f02ec680-8626-4c03-8c15-92eaa90c4e9c",
+            "mbName": "Robert Bailey",
+            "area": "United Kingdom",
+            "areaCountry": "GB",
+            "class": "foreign-catalog",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "646009"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Quasar",
+      "discogsId": "7192928",
+      "caseMbid": "83b25d77-5b24-4f29-ab59-9336306062a3",
+      "caseMbName": "Quasar",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Quasar links to discogs/2240592 — not our page 7192928; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "2240592"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Tommy Thomas",
+      "discogsId": "13581217",
+      "caseMbid": "9d3d642e-4900-49bf-99aa-d4bd956a62c9",
+      "caseMbName": "Tommy Thomas",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Tommy Thomas links to discogs/1080461 — not our page 13581217; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "1080461"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Mark Bryan",
+      "discogsId": "3023351",
+      "caseMbid": "bb988c2a-6c99-448d-9c0f-5ad7b9a7cbf1",
+      "caseMbName": "Mark Bryan",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Mark Bryan links to discogs/489618 — not our page 3023351; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "489618"
+        ],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "MB begin-area resolves to United States"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Fortunia Ruiz",
+      "discogsId": "1156720",
+      "caseMbid": "67897562-847f-4db0-ae3f-f00bd3900394",
+      "caseMbName": "Louis Ruiz",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Louis Ruiz links to discogs/767850 — not our page 1156720; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "767850"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "The Variations",
+      "discogsId": "180076",
+      "caseMbid": "70bc9426-2f0a-4ff1-8e6e-e0b2752ec179",
+      "caseMbName": "The Variations",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's The Variations links to discogs/2337884 — not our page 180076; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "a1e2c4fe-a42f-4e80-ad91-f2d7d55f60bd",
+            "mbName": "The Variations",
+            "area": null,
+            "areaCountry": null,
+            "class": "unplaced",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "2337884"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Manchild",
+      "discogsId": "3723375",
+      "caseMbid": "e959cb5e-3bc0-465a-8c78-a554511f0fb7",
+      "caseMbName": "manCHILD",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's manCHILD links to discogs/348963 — not our page 3723375; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "348963"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "The Troubadours",
+      "discogsId": "1407624",
+      "caseMbid": "d8588703-8910-4379-909c-bc15a4ad8152",
+      "caseMbName": "The Troubadours",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's The Troubadours links to discogs/1790689 — not our page 1407624; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "17068d17-be05-4742-b1f0-2e7da770efcf",
+            "mbName": "The Troubadours",
+            "area": null,
+            "areaCountry": null,
+            "class": "unplaced",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1790689"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "The Starlighters",
+      "discogsId": "6287332",
+      "caseMbid": "71f79aa2-10f7-4180-b581-5ad8e741e9d5",
+      "caseMbName": "The Starlighters",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's The Starlighters links to discogs/302637 — not our page 6287332; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "302637"
+        ],
+        "caseMbidRelCount": 5,
+        "caseMbidOrigin": "wd origin Q30 ≠ pool (\"American singing group of the mid 20th century\")"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Tracker",
+      "discogsId": "8285510",
+      "caseMbid": "6bf6ae1e-6479-4a79-b8de-08fbb89ffd2b",
+      "caseMbName": "Tracker",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Tracker links to discogs/952052 — not our page 8285510; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "952052"
+        ],
+        "caseMbidRelCount": 8,
+        "caseMbidOrigin": "wd origin Q30 ≠ pool (\"American indie rock group\")"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "The Avalons",
+      "discogsId": "6244911",
+      "caseMbid": "28e56170-dd5b-42c3-a2c6-20e3bc2296f2",
+      "caseMbName": "The Avalons",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's The Avalons links to discogs/1421291 — not our page 6244911; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "1421291"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "MB begin-area resolves to Canada"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Tony G",
+      "discogsId": "3500270",
+      "caseMbid": "9a537071-b40f-4eee-bef5-e5f0592259f9",
+      "caseMbName": "Tony G",
+      "caseMbArea": "United States",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Tony G links to discogs/39240 — not our page 3500270; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "39240"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "no origin signal"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Paul Arnold",
+      "discogsId": "2258124",
+      "caseMbid": "c9bf8db2-6e2c-4a62-a6b2-4543887ba92d",
+      "caseMbName": "Paul Arnold",
+      "caseMbArea": "United Kingdom",
+      "outcome": "keep",
+      "identity": "id-disproven",
+      "why": "MB's Paul Arnold links to discogs/1630930 — not our page 2258124; the collision is disproven at id level",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [
+          "1630930"
+        ],
+        "caseMbidRelCount": 7,
+        "caseMbidOrigin": "MB begin-area resolves to United Kingdom"
+      }
+    }
+  ],
+  "proposedExclusions": [
+    {
+      "pool": "HN",
+      "name": "Los Caminantes",
+      "discogsId": "3482615",
+      "identity": "id-confirmed",
+      "why": "identity confirmed by Discogs-page id; wd origin Q96 ≠ pool (\"Mexican musical group\")",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "e3db73f3-ea97-4a4e-a073-8e4262693659",
+            "mbName": "Los Caminantes",
+            "area": "Mexico",
+            "areaCountry": "MX",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "3482615"
+        ],
+        "caseMbidRelCount": 9,
+        "caseMbidOrigin": "wd origin Q96 ≠ pool (\"Mexican musical group\")"
+      }
+    },
+    {
+      "pool": "HN",
+      "name": "Sicarius",
+      "discogsId": "14728423",
+      "identity": "name-only",
+      "why": "MB begin-area resolves to United States; identity is NAME-ONLY (the leg this pass measured ~27% wrong) — owner confirmation required",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "MB begin-area resolves to United States"
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "Los Shippy's",
+      "discogsId": "7776971",
+      "identity": "name-only",
+      "why": "MB begin-area resolves to Mexico; identity is NAME-ONLY (the leg this pass measured ~27% wrong) — owner confirmation required",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "MB begin-area resolves to Mexico"
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "Gustavo Pimentel",
+      "discogsId": "1681249",
+      "identity": "name-only",
+      "why": "MB begin-area resolves to Mexico; identity is NAME-ONLY (the leg this pass measured ~27% wrong) — owner confirmation required",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "MB begin-area resolves to Mexico"
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "Paco Michel",
+      "discogsId": "1197992",
+      "identity": "name-only",
+      "why": "MB begin-area resolves to Mexico; identity is NAME-ONLY (the leg this pass measured ~27% wrong) — owner confirmation required",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "MB begin-area resolves to Mexico"
+      }
+    },
+    {
+      "pool": "PS",
+      "name": "باسكال مشعلاني",
+      "discogsId": "3434655",
+      "identity": "name-only",
+      "why": "wd origin Q822 ≠ pool (\"Lebanese singer and actress\"); identity is NAME-ONLY (the leg this pass measured ~27% wrong) — owner confirmation required",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "wd origin Q822 ≠ pool (\"Lebanese singer and actress\")"
+      }
+    },
+    {
+      "pool": "JO",
+      "name": "يارا",
+      "discogsId": "3089830",
+      "identity": "id-confirmed",
+      "why": "identity confirmed by Discogs-page id; wd origin Q822 ≠ pool (\"Lebanese pop singer\")",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "96613432-4837-469f-8b70-482458c5888d",
+            "mbName": "يارا",
+            "area": "Lebanon",
+            "areaCountry": "LB",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "3089830"
+        ],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "wd origin Q822 ≠ pool (\"Lebanese pop singer\")"
+      }
+    },
+    {
+      "pool": "IQ",
+      "name": "ایرج",
+      "discogsId": "4068887",
+      "identity": "id-confirmed",
+      "why": "identity confirmed by Discogs-page id; wd origin Q794 ≠ pool (\"Iranian singer\")",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "a80f4149-ca61-465e-8555-121db986826e",
+            "mbName": "ایرج",
+            "area": "Iran",
+            "areaCountry": "IR",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "4068887"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "wd origin Q794 ≠ pool (\"Iranian singer\")"
+      }
+    },
+    {
+      "pool": "KW",
+      "name": "هيام يونس",
+      "discogsId": "3487601",
+      "identity": "id-confirmed",
+      "why": "identity confirmed by Discogs-page id; MB begin-area resolves to Lebanon",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "6e1524a9-836c-4802-85e4-0e4402df9c50",
+            "mbName": "هيام يونس",
+            "area": "Lebanon",
+            "areaCountry": "LB",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "3487601"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "MB begin-area resolves to Lebanon"
+      }
+    },
+    {
+      "pool": "KW",
+      "name": "رباب",
+      "discogsId": "5502913",
+      "identity": "id-confirmed",
+      "why": "identity confirmed by Discogs-page id; wd origin Q796 ≠ pool (\"Iraqi Singer\")",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "51c708ce-cf13-498f-bf2a-78c46c14a41f",
+            "mbName": "رباب",
+            "area": "Iraq",
+            "areaCountry": "IQ",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "5502913"
+        ],
+        "caseMbidRelCount": 7,
+        "caseMbidOrigin": "wd origin Q796 ≠ pool (\"Iraqi Singer\")"
+      }
+    },
+    {
+      "pool": "KW",
+      "name": "محمد محي",
+      "discogsId": "3111597",
+      "identity": "id-proven-other",
+      "why": "id-linked to Mohamed Mohie; MB begin-area resolves to Egypt",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "170d4aab-c098-4b1a-96f0-a5173c4c8d9b",
+            "mbName": "Mohamed Mohie",
+            "area": "Egypt",
+            "areaCountry": "EG",
+            "class": "foreign-catalog",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "wd origin Q79 ≠ pool (\"Egyptian singer\")"
+      }
+    },
+    {
+      "pool": "KW",
+      "name": "عبد الرب إدريس",
+      "discogsId": "3124657",
+      "identity": "id-confirmed",
+      "why": "identity confirmed by Discogs-page id; MB begin-area resolves to Yemen",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "35101cbd-09dd-4abb-b283-49f1bc5afd26",
+            "mbName": "عبد الرب إدريس",
+            "area": "Saudi Arabia",
+            "areaCountry": "SA",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "3124657"
+        ],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "MB begin-area resolves to Yemen"
+      }
+    },
+    {
+      "pool": "KW",
+      "name": "أصيل أبو بكر",
+      "discogsId": "3475118",
+      "identity": "name-only",
+      "why": "wd origin Q851 ≠ pool (\"Yemeni singer\"); identity is NAME-ONLY (the leg this pass measured ~27% wrong) — owner confirmation required",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "wd origin Q851 ≠ pool (\"Yemeni singer\")"
+      }
+    },
+    {
+      "pool": "XK",
+      "name": "Adem Ramadani",
+      "discogsId": "10650493",
+      "identity": "name-only",
+      "why": "MB begin-area resolves to North Macedonia; identity is NAME-ONLY (the leg this pass measured ~27% wrong) — owner confirmation required",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "MB begin-area resolves to North Macedonia"
+      }
+    },
+    {
+      "pool": "GH",
+      "name": "The Funkees",
+      "discogsId": "286116",
+      "identity": "id-confirmed",
+      "why": "identity confirmed by Discogs-page id; MB begin-area resolves to Nigeria",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "5bdc8759-a592-4202-a48c-691d4bec5c6d",
+            "mbName": "The Funkees",
+            "area": "United Kingdom",
+            "areaCountry": "GB",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "286116"
+        ],
+        "caseMbidRelCount": 4,
+        "caseMbidOrigin": "MB begin-area resolves to Nigeria"
+      }
+    },
+    {
+      "pool": "GH",
+      "name": "Greyhound",
+      "discogsId": "297751",
+      "identity": "id-confirmed",
+      "why": "identity confirmed by Discogs-page id; wd origin Q145 ≠ pool (\"band\")",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "1f1b39d1-ef8e-4580-8dfc-f0634e95f152",
+            "mbName": "Greyhound",
+            "area": "United Kingdom",
+            "areaCountry": "GB",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "297751"
+        ],
+        "caseMbidRelCount": 5,
+        "caseMbidOrigin": "wd origin Q145 ≠ pool (\"band\")"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Sippy",
+      "discogsId": "3287807",
+      "identity": "name-only",
+      "why": "MB begin-area resolves to Australia; identity is NAME-ONLY (the leg this pass measured ~27% wrong) — owner confirmation required",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 13,
+        "caseMbidOrigin": "MB begin-area resolves to Australia"
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "The Teentones",
+      "discogsId": "4436923",
+      "identity": "name-only",
+      "why": "MB begin-area resolves to United States; identity is NAME-ONLY (the leg this pass measured ~27% wrong) — owner confirmation required",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "MB begin-area resolves to United States"
+      }
+    }
+  ],
+  "mirrorCheck": {
+    "appliedExclusions": 104,
+    "checked": 104,
+    "byVerdict": {
+      "confirmed": 78,
+      "different-identity": 3,
+      "no-mb-link": 23
+    },
+    "wrongExclusionCandidates": [],
+    "differentIdentity": [
+      {
+        "cc": "MN",
+        "key": "dg|805380",
+        "discogsId": "805380",
+        "name": "Russian State Symphony Orchestra",
+        "recordedMbid": "6a20afb6-d731-49ca-a63a-111782e41d0c",
+        "recordedArea": "Russia",
+        "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): institutional name states origin (Russian State Symphony Orchestra)",
+        "verdict": "different-identity",
+        "why": "MB links this page to Государственный академический симфонический оркестр России (Russia), NOT the recorded Russian State Symphony Orchestra; no origin signal",
+        "match": {
+          "mbid": "67e5938c-3953-4dfe-9d63-860bef0d8475",
+          "name": "Государственный академический симфонический оркестр России",
+          "areaName": "Russia",
+          "areaCountry": "RU",
+          "beginCountry": null,
+          "beginCountryCode": null,
+          "disambiguation": "“Evgeny Svetlanov” / GASO",
+          "wd": {
+            "qid": "Q635237",
+            "description": "orchestra",
+            "born": null,
+            "formed": null,
+            "origin": null,
+            "citizenships": [],
+            "professions": [],
+            "musician": false
+          },
+          "discogsIds": [
+            "805380"
+          ]
+        }
+      },
+      {
+        "cc": "NI",
+        "key": "dg|191325",
+        "discogsId": "191325",
+        "name": "The Fifth Dimension",
+        "recordedMbid": "43f14898-3db4-4f29-85ae-b11c6b1aa4ae",
+        "recordedArea": "United States",
+        "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): owner-named famous tier (The Fifth Dimension); MB match is the US group",
+        "verdict": "different-identity",
+        "why": "MB links this page to The 5th Dimension (United States), NOT the recorded The Fifth Dimension; wd origin Q30 ≠ pool (\"American popular music vocal group\")",
+        "match": {
+          "mbid": "4f1949ab-fefd-4bf3-9317-814084c29cc0",
+          "name": "The 5th Dimension",
+          "areaName": "United States",
+          "areaCountry": "US",
+          "beginCountry": "United States",
+          "beginCountryCode": "US",
+          "disambiguation": "1960’s group",
+          "wd": {
+            "qid": "Q1753111",
+            "description": "American popular music vocal group",
+            "born": null,
+            "formed": "Q30",
+            "origin": "Q30",
+            "citizenships": [],
+            "professions": [],
+            "musician": false
+          },
+          "discogsIds": [
+            "191325"
+          ]
+        }
+      },
+      {
+        "cc": "AL",
+        "key": "dg|59661",
+        "discogsId": "59661",
+        "name": "Capital T",
+        "recordedMbid": "4cff255f-4207-43b3-b978-0ea936e518f2",
+        "recordedArea": "Kosovo",
+        "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): MB match's Wikidata origin Q1246 ≠ pool; identity via distinctive name",
+        "verdict": "different-identity",
+        "why": "MB links this page to Capital T (no area), NOT the recorded Capital T; no origin signal",
+        "match": {
+          "mbid": "b2bb72cd-21ad-43a6-a236-13725cf3eba5",
+          "name": "Capital T",
+          "areaName": null,
+          "areaCountry": null,
+          "beginCountry": null,
+          "beginCountryCode": null,
+          "disambiguation": "UK garage producer Trevor Davy",
+          "wd": null,
+          "discogsIds": [
+            "59661"
+          ]
+        }
+      }
+    ],
+    "confirmed": [
+      "AF Zarsanga",
+      "GA Gérard La Viny",
+      "GA Désiré Dondeyne",
+      "TZ Safari Sound Band",
+      "UG Fundi Konde",
+      "GY Jimmy James & the Vagabonds",
+      "GY Carlos Malcolm",
+      "HN Verónica Castro",
+      "HN Jean Knight",
+      "HN Los Yonic’s",
+      "HN Estela Núñez",
+      "HN Marilyn Martin",
+      "BS Lord Burgess",
+      "NI The Brass Ring",
+      "NI Los Saylor’s",
+      "NI Sandler & Young",
+      "NI Crazy Elephant",
+      "NI César Costa",
+      "NI David Rose",
+      "NI La Rondalla de Saltillo",
+      "NI Mary Ford",
+      "NI Amalia Hernández",
+      "NI Chayito Valdez",
+      "NI Leo Acosta",
+      "NI The Box Tops",
+      "PS عمرو دياب",
+      "PS محمد فوزي",
+      "PS حميد الشاعري",
+      "PS مرسيل خليفة",
+      "PS هاني شاكر",
+      "PS Setrak Sarkissian",
+      "PS فارس كرم",
+      "PS عامر منيب",
+      "JO Setrak Sarkissian",
+      "JO Richie Culver",
+      "JO أم كلثوم",
+      "JO كارول سماحة",
+      "KW ناظم الغزالي",
+      "KW أم كلثوم",
+      "KW دينا حايك",
+      "KW حميد الشاعري",
+      "KW حسين نعمة",
+      "KW فارس كرم",
+      "KW فاروق هلال",
+      "KW مهند محسن",
+      "KW سعدون جابر",
+      "AL Arta Bajrami",
+      "AL Capital T",
+      "AL Elita 5",
+      "AL Etno Engjujt",
+      "MD Mihai Eminescu",
+      "MD Надежда Кадышева",
+      "XK Elita 5",
+      "GL Mogens Ellegaard",
+      "GL Pierre Dørge",
+      "VN Thao Nguyen",
+      "VN Les Fantômes",
+      "ZM The Green Arrows",
+      "CD Lily Vincent",
+      "CD Marc Aryan",
+      "CD John Ouwerx",
+      "TT Fran Allison",
+      "TT Barry Sadler",
+      "TT The Flying Machine",
+      "TT Jimmy James & the Vagabonds",
+      "TT Sally Field",
+      "TT Shirley Temple",
+      "TT Lovelace Watkins",
+      "TT Irwin Kostal",
+      "TT Odia Coates",
+      "TT Marilyn Maye",
+      "TT Anita Carter",
+      "TT Mickey & Sylvia",
+      "TT El Chicano",
+      "TT Terry MacAlmon",
+      "TT The Brass Ring",
+      "TT Phil Bodner",
+      "TT Carolyn Franklin"
+    ],
+    "noMbLink": [
+      "BZ Jonathan David",
+      "BS Bradley Dean",
+      "BS Willie Love",
+      "BS Joe Benjamin",
+      "NI Mario Patrón",
+      "NI Marilú",
+      "PS حمادة هلال",
+      "KW أمل حجازي",
+      "KW علي جاسم",
+      "AL Ermal Fejzullahu",
+      "AL Mentor Kurtishi",
+      "MD Halter",
+      "GL Among Relatives",
+      "GL Niels Olsen",
+      "VN Chris Jennings",
+      "VN Mai Lan",
+      "ZM The Avons",
+      "TT Christine Jackson",
+      "TT Johnny Douglas",
+      "TT Sounds Incorporated",
+      "TT Hijack",
+      "TT Joseph Williams",
+      "TT Twiggy"
+    ]
+  },
+  "crossPoolHoles": [
+    {
+      "discogsId": "191325",
+      "ruledOriginQid": null,
+      "ruledOutOf": [
+        {
+          "cc": "NI",
+          "key": "dg|191325",
+          "discogsId": "191325",
+          "name": "The Fifth Dimension",
+          "recordedMbid": "43f14898-3db4-4f29-85ae-b11c6b1aa4ae",
+          "recordedArea": "United States",
+          "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): owner-named famous tier (The Fifth Dimension); MB match is the US group"
+        }
+      ],
+      "stillLiveIn": [
+        {
+          "cc": "TT",
+          "name": "The Fifth Dimension",
+          "years": [
+            1976,
+            1976
+          ],
+          "verdict": "collision-kept",
+          "basis": "area-contradiction",
+          "consistentByOrigin": false
+        }
+      ],
+      "inconsistent": true
+    },
+    {
+      "discogsId": "311166",
+      "ruledOriginQid": "Q145",
+      "ruledOutOf": [
+        {
+          "cc": "NI",
+          "key": "dg|311166",
+          "discogsId": "311166",
+          "name": "David Rose",
+          "recordedMbid": "a429333f-fb1e-4158-95f1-74617c870077",
+          "recordedArea": "United States",
+          "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name + era"
+        }
+      ],
+      "stillLiveIn": [
+        {
+          "cc": "SR",
+          "name": "David Rose",
+          "years": [
+            1985,
+            1985
+          ],
+          "verdict": "collision-kept",
+          "basis": "area-contradiction",
+          "consistentByOrigin": false
+        }
+      ],
+      "inconsistent": true
+    },
+    {
+      "discogsId": "99728",
+      "ruledOriginQid": "Q79",
+      "ruledOutOf": [
+        {
+          "cc": "PS",
+          "key": "dg|99728",
+          "discogsId": "99728",
+          "name": "عمرو دياب",
+          "recordedMbid": "ba26c1ff-e5e2-42c2-b1d7-b6f82ebc37ac",
+          "recordedArea": "Egypt",
+          "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): MB match's Wikidata origin Q79 ≠ pool; identity via distinctive name"
+        }
+      ],
+      "stillLiveIn": [
+        {
+          "cc": "JO",
+          "name": "Amr Diab",
+          "years": [
+            2005,
+            2005
+          ],
+          "verdict": "new",
+          "basis": "no-exact-hit",
+          "consistentByOrigin": false
+        },
+        {
+          "cc": "KW",
+          "name": "Amr Diab",
+          "years": [
+            2007,
+            2007
+          ],
+          "verdict": "new",
+          "basis": "no-exact-hit",
+          "consistentByOrigin": false
+        }
+      ],
+      "inconsistent": true
+    },
+    {
+      "discogsId": "3016481",
+      "ruledOriginQid": "Q1016",
+      "ruledOutOf": [
+        {
+          "cc": "PS",
+          "key": "dg|3016481",
+          "discogsId": "3016481",
+          "name": "حميد الشاعري",
+          "recordedMbid": "8325f818-ff9b-4d02-ac92-0b03b9c8c82e",
+          "recordedArea": "Egypt",
+          "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): MB match's Wikidata origin Q1016 ≠ pool; identity via distinctive name"
+        },
+        {
+          "cc": "KW",
+          "key": "dg|3016481",
+          "discogsId": "3016481",
+          "name": "حميد الشاعري",
+          "recordedMbid": "8325f818-ff9b-4d02-ac92-0b03b9c8c82e",
+          "recordedArea": "Egypt",
+          "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): MB match's Wikidata origin Q1016 ≠ pool; identity via distinctive name"
+        }
+      ],
+      "stillLiveIn": [
+        {
+          "cc": "LY",
+          "name": "حميد الشاعري",
+          "years": [
+            null,
+            null
+          ],
+          "verdict": "collision-kept",
+          "basis": "area-contradiction",
+          "consistentByOrigin": true
+        }
+      ],
+      "inconsistent": false
+    },
+    {
+      "discogsId": "3139999",
+      "ruledOriginQid": "Q796",
+      "ruledOutOf": [
+        {
+          "cc": "KW",
+          "key": "dg|3139999",
+          "discogsId": "3139999",
+          "name": "سعدون جابر",
+          "recordedMbid": "11791a88-29a1-4f7f-9d93-430e17b52c9b",
+          "recordedArea": "Iraq",
+          "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): MB match's Wikidata origin Q796 ≠ pool; identity via distinctive name"
+        }
+      ],
+      "stillLiveIn": [
+        {
+          "cc": "PS",
+          "name": "سعدون جابر",
+          "years": [
+            null,
+            null
+          ],
+          "verdict": "collision-kept",
+          "basis": "area-contradiction",
+          "consistentByOrigin": false
+        }
+      ],
+      "inconsistent": true
+    }
+  ],
+  "ownerResidue": [
+    {
+      "pool": "TL",
+      "name": "Jerry BTN",
+      "discogsId": "5264459",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "d6579538-13c0-4026-bd32-226388a11335",
+      "caseMbName": "Jerry Btn",
+      "caseMbArea": "Indonesia",
+      "identity": "reserved",
+      "why": "owner-reserved history class — partition/occupation/exile or pinned area",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Jerry BTN",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TL",
+      "name": "Tonny Pereira",
+      "discogsId": "5103536",
+      "years": [
+        2009,
+        2014
+      ],
+      "caseMbid": "50c694ce-506b-4489-ac21-fdb38d8c9214",
+      "caseMbName": "Tonny Pereira",
+      "caseMbArea": "Indonesia",
+      "identity": "reserved",
+      "why": "owner-reserved history class — partition/occupation/exile or pinned area",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "50c694ce-506b-4489-ac21-fdb38d8c9214",
+            "mbName": "Tonny Pereira",
+            "area": "Indonesia",
+            "areaCountry": "ID",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "5103536"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Tonny Pereira",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "GM",
+      "name": "U.C.A.S. Band De Sedhiou",
+      "discogsId": "4373909",
+      "years": [
+        1997,
+        1997
+      ],
+      "caseMbid": "9079107b-c58e-4a16-b7a4-28eb6c2e6d7e",
+      "caseMbName": "U.C.A.S. Band De Sedhiou",
+      "caseMbArea": "Senegal",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Senegal is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "9079107b-c58e-4a16-b7a4-28eb6c2e6d7e",
+            "mbName": "U.C.A.S. Band De Sedhiou",
+            "area": "Senegal",
+            "areaCountry": "SN",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "4373909"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "U.C.A.S. Band De Sedhiou",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [
+          "Ibrahima \"Sylla\" Dia"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "GM",
+      "name": "The Band Of The Royal Military School Of Music",
+      "discogsId": "2044753",
+      "years": [
+        1966,
+        1966
+      ],
+      "caseMbid": "003d259c-c1bb-482c-826a-6ca0a7568835",
+      "caseMbName": "The Band of the Royal Military School of Music",
+      "caseMbArea": "United Kingdom",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area United Kingdom is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "003d259c-c1bb-482c-826a-6ca0a7568835",
+            "mbName": "The Band of the Royal Military School of Music",
+            "area": "United Kingdom",
+            "areaCountry": "GB",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "2044753"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "The Band Of The Royal Military School Of Music",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [
+          "Trumpeters Of The Royal Military School Of Music",
+          "Roger Tomlinson",
+          "Clifford James Ross"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "KH",
+      "name": "Mahori Ensemble",
+      "discogsId": "4110153",
+      "years": [
+        1956,
+        1956
+      ],
+      "caseMbid": "e62f5e6f-8ec4-4d42-9bb7-44e5415abaf0",
+      "caseMbName": "Mahori Ensemble",
+      "caseMbArea": "Thailand",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Thailand is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "e62f5e6f-8ec4-4d42-9bb7-44e5415abaf0",
+            "mbName": "Mahori Ensemble",
+            "area": "Thailand",
+            "areaCountry": "TH",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "4110153"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Mahori Ensemble",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "NP",
+      "name": "རང་བཙན་གཞོན་ནུ་",
+      "discogsId": "4893434",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "65b43689-0616-4f68-a3d7-29a2363929c0",
+      "caseMbName": "རང་བཙན་གཞོན་ནུ",
+      "caseMbArea": "India",
+      "identity": "reserved",
+      "why": "owner-reserved history class — partition/occupation/exile or pinned area",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "65b43689-0616-4f68-a3d7-29a2363929c0",
+            "mbName": "རང་བཙན་གཞོན་ནུ",
+            "area": "India",
+            "areaCountry": "IN",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "4893434"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "wd origin Q668 ≠ pool (\"Tibetan band\")"
+      },
+      "discogsProfile": {
+        "name": "རང་བཙན་གཞོན་ནུ་",
+        "realname": null,
+        "profile": "Rangzen Shonu, or Rangzen, was Tibetan rock band in exile in India",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://en.wikipedia.org/wiki/Rangzen_Shonu"
+        ]
+      }
+    },
+    {
+      "pool": "LK",
+      "name": "Aman Anand",
+      "discogsId": "3750039",
+      "years": [
+        2023,
+        2023
+      ],
+      "caseMbid": "6fcd8000-b826-4ff8-94e4-dfb72fd22f44",
+      "caseMbName": "Aman Anand",
+      "caseMbArea": "India",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area India is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "6fcd8000-b826-4ff8-94e4-dfb72fd22f44",
+            "mbName": "Aman Anand",
+            "area": "India",
+            "areaCountry": "IN",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "3750039"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Aman Anand",
+        "realname": "Aman Anand",
+        "profile": "Indian electronic music DJ & producer residing in Singapore.\r\nContact e-mail: aman.anandmusic@gmail.com",
+        "aliases": [
+          "Aman (7)"
+        ],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://soundcloud.com/amananandmusic",
+          "https://www.facebook.com/amananandmusic",
+          "https://www.residentadvisor.net/dj/amananand"
+        ]
+      }
+    },
+    {
+      "pool": "KP",
+      "name": "김승연",
+      "discogsId": "5697431",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "156761ee-02d6-46b8-847f-78514f95cf92",
+      "caseMbName": "김승연",
+      "caseMbArea": "South Korea",
+      "identity": "reserved",
+      "why": "owner-reserved history class — partition/occupation/exile or pinned area",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 5,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "김승연",
+        "realname": "Kim Sung Yon",
+        "profile": "North Korean baritone singer, mostly active in film soundtrack",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "UG",
+      "name": "Matata",
+      "discogsId": "323422",
+      "years": [
+        1974,
+        1974
+      ],
+      "caseMbid": "566ea6da-3a59-4fce-879c-eb97ca8d9d25",
+      "caseMbName": "Matata",
+      "caseMbArea": "Kenya",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Kenya is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "566ea6da-3a59-4fce-879c-eb97ca8d9d25",
+            "mbName": "Matata",
+            "area": "Kenya",
+            "areaCountry": "KE",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "323422"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Matata",
+        "realname": "Air Fiesta Matata",
+        "profile": "Kenyan band founded by Jeik Kalunga Loksa in Nairobi's \"Brilliant Club\" in 1963. They recorded two albums in London UK in the early 70s. The Air Fiesta Matata's split came as the result of the band getting homesick and returning to Kenya.",
+        "aliases": [],
+        "members": [
+          "Patrice Oluma",
+          "Gabby Wamala",
+          "Tobby Kombo",
+          "Steeleson Beauttah",
+          "John Otieno",
+          "Isaac Kisombe",
+          "Sammy Kagenda",
+          "Jacques Kalunga",
+          "Nashon Gandani",
+          "Anwar Richard",
+          "John Nzenze"
+        ],
+        "groups": [],
+        "urls": [
+          "http://www.myspace.com/jeikkalungaloksa"
+        ]
+      }
+    },
+    {
+      "pool": "UG",
+      "name": "G. Adolph Banyora",
+      "discogsId": "2835864",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "3aa84d4f-3054-4d9c-8b8a-2f3dd50003f2",
+      "caseMbName": "G. Adolph Banyora",
+      "caseMbArea": "Kenya",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Kenya is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "3aa84d4f-3054-4d9c-8b8a-2f3dd50003f2",
+            "mbName": "G. Adolph Banyora",
+            "area": "Kenya",
+            "areaCountry": "KE",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "2835864"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "G. Adolph Banyora",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "ML",
+      "name": "Clément Janinet",
+      "discogsId": "3944652",
+      "years": [
+        2023,
+        2023
+      ],
+      "caseMbid": "a3386a24-4e1f-4ecd-8daa-0eb32896d9b0",
+      "caseMbName": "Clément Janinet",
+      "caseMbArea": "France",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area France is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "a3386a24-4e1f-4ecd-8daa-0eb32896d9b0",
+            "mbName": "Clément Janinet",
+            "area": "France",
+            "areaCountry": "FR",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "3944652"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Clément Janinet",
+        "realname": null,
+        "profile": "French jazz violinist.",
+        "aliases": [],
+        "members": [],
+        "groups": [
+          "Radiation 10",
+          "Le Banquet (2)",
+          "Space Galvachers"
+        ],
+        "urls": [
+          "http://www.clementjaninet.com/"
+        ]
+      }
+    },
+    {
+      "pool": "CM",
+      "name": "Egide Sadey",
+      "discogsId": "1858007",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "4a3be121-51b4-4138-a575-8980e1ae8f0c",
+      "caseMbName": "Egide Sadey",
+      "caseMbArea": "France",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area France is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "4a3be121-51b4-4138-a575-8980e1ae8f0c",
+            "mbName": "Egide Sadey",
+            "area": "France",
+            "areaCountry": "FR",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1858007"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Egide Sadey",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "ET",
+      "name": "Philip Martin",
+      "discogsId": "6307064",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "502e06a3-690c-4839-804b-4f8ba1bc090f",
+      "caseMbName": "Philip Martin",
+      "caseMbArea": "United Kingdom",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Philip Martin (12)",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "GY",
+      "name": "Lennox Greaves",
+      "discogsId": "3753748",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "a87c7540-b44a-4098-93af-39de40185e84",
+      "caseMbName": "Lennox Greaves",
+      "caseMbArea": "United Kingdom",
+      "identity": "id-proven-other",
+      "why": "identity settled at id level (Lennox Greaves, MB area none) but NO origin signal — area is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "f2e85204-68c5-4caf-990c-acbaae6eed34",
+            "mbName": "Lennox Greaves",
+            "area": null,
+            "areaCountry": null,
+            "class": "unplaced",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Lennox Greaves",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "HN",
+      "name": "Los Costeños",
+      "discogsId": "4995406",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "20935412-5c89-4e47-af1a-705111a39e4b",
+      "caseMbName": "Los Costeños",
+      "caseMbArea": "Mexico",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Los Costeños (3)",
+        "realname": null,
+        "profile": "Grupazo originario de San Pedro Sula, Honduras, su periodo de actividad fue de 1970 - 1973, este grupo estaba formado en su mayoría por músicos de Los Catrachos Boy’s, la sede estaba ubicada 600 metros arriba de la Pepsi, Col. Prado Alto, en la casa de su propietaria, la Sra. Zoila A. Pacheco.\r\nMiembros\r\nJulio Cesar Agurcia, Mario Miguel Rodríguez, Antonio Espinal, Jorge Alberto Paz, Nilo Fidel Ordoñez, Mario E. Motiño, Ricardo Pereira Maldonado y José Héctor Velásquez.",
+        "aliases": [],
+        "members": [
+          "Julio Cesar Agurcia"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "BS",
+      "name": "Little Sparrow",
+      "discogsId": "2342492",
+      "years": [
+        1960,
+        1988
+      ],
+      "caseMbid": "8c909b07-dc33-4a73-8b2a-e3c0168eaba9",
+      "caseMbName": "Little Sparrow",
+      "caseMbArea": "United Kingdom",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 8,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Little Sparrow",
+        "realname": "Leslie Hoyte",
+        "profile": "Trinidad born pannist. Emigrated to Hawksbill Creek, Grand Bahama Island in 1957. Father of Bahamian multi-instrumentalist \"King\" [a=David Hoyte] and musician-artist Mike Hoyte.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://www.mackeymedia.com/mackeymedia_audio_archives_museum.htm"
+        ]
+      }
+    },
+    {
+      "pool": "BS",
+      "name": "Sonny Johnson",
+      "discogsId": "2537094",
+      "years": [
+        1973,
+        1973
+      ],
+      "caseMbid": "caa6f37a-76ba-4db1-959c-99758046e9b1",
+      "caseMbName": "Sonny Johnson",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Sonny Johnson (3)",
+        "realname": "Felix Johnson",
+        "profile": "Freeport, Grand Bahama based entertainer. Founder:\r\n[l=Baby J Records]\r\n[l=Sonny Records (3)]\r\n[l=Sunglows Records]\r\n[l=Sunglow Record Company (2)]",
+        "aliases": [],
+        "members": [],
+        "groups": [
+          "Sonny & The Sunglows",
+          "Sonny Johnson And The Dolphins"
+        ],
+        "urls": []
+      }
+    },
+    {
+      "pool": "BS",
+      "name": "Nehemiah Hield",
+      "discogsId": "1235573",
+      "years": [
+        2002,
+        2002
+      ],
+      "caseMbid": "c85cacc8-66fb-4f45-a11b-6b3f46f929f5",
+      "caseMbName": "Nehemiah Hield",
+      "caseMbArea": "United States",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area United States is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "c85cacc8-66fb-4f45-a11b-6b3f46f929f5",
+            "mbName": "Nehemiah Hield",
+            "area": "United States",
+            "areaCountry": "US",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1235573"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Nehemiah Hield",
+        "realname": null,
+        "profile": "Jamaican reggae, pop & gospelvocalist, producer & songwriter.\r\nUncle of [a=Omerit Hield].\r\nOriginal lead singer of “Baha-Men.",
+        "aliases": [],
+        "members": [],
+        "groups": [
+          "Baha Men"
+        ],
+        "urls": [
+          "https://x.com/NehemiahHield",
+          "https://www.youtube.com/@nehemiahhield2327",
+          "https://www.imdb.com/name/nm0383158/"
+        ]
+      }
+    },
+    {
+      "pool": "SR",
+      "name": "Rudy Seedorf",
+      "discogsId": "4329562",
+      "years": [
+        1987,
+        1987
+      ],
+      "caseMbid": "da7a3a8b-8587-4c7f-989b-b81ee72248b1",
+      "caseMbName": "Rudy Seedorf",
+      "caseMbArea": "Netherlands",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Netherlands is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "da7a3a8b-8587-4c7f-989b-b81ee72248b1",
+            "mbName": "Rudy Seedorf",
+            "area": "Netherlands",
+            "areaCountry": "NL",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "4329562"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Rudy Seedorf",
+        "realname": null,
+        "profile": "Surinam singer.\r\nReggae.\r\nWorked with a.o. [a=Oscar Harris] and in Twinkle Stars",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://www.surinamstars.com/Meer%20Zangers.html",
+          "http://select45rpm.com/PP/4287.html"
+        ]
+      }
+    },
+    {
+      "pool": "HT",
+      "name": "Show Off",
+      "discogsId": "2136408",
+      "years": [
+        2003,
+        2003
+      ],
+      "caseMbid": "f7dc2171-6acb-41a4-8e54-ca8e33d7a2e5",
+      "caseMbName": "Show Off",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Show Off",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "Los Seims",
+      "discogsId": "8090092",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "565e90e9-358b-4e31-bb46-ab86bcbc6ab2",
+      "caseMbName": "Los Seims",
+      "caseMbArea": "Mexico",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Los Seims",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "Beto Orlando",
+      "discogsId": "1490923",
+      "years": [
+        1972,
+        1973
+      ],
+      "caseMbid": "6cbaf0b9-8fbe-484f-90b7-5eb73bbbcf2f",
+      "caseMbName": "Beto Orlando",
+      "caseMbArea": "Mexico",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Beto Orlando",
+        "realname": "Alberto Orlando Otero",
+        "profile": "Argentinian pop singer (born Alberto Orlando, known as Beto, in Las Flores, 4 Sept. 1946, moved to La Plata as a child), he released his first single with [a1197038] in 1971 (\"No me des tu Adiós mi Amor\"), their second \"Dios del Olvido\" was sold to more than 100 000 ex., and in 1973 Beto recorded his first solo album \"Solamente Beto Orlando\"\r\n\r\nDiscografía\r\n    1971: Los Cuatro Soles. Canta Beto Orlando - EMI ODEON\r\n    1972: Beto Orlando con Los Cuatro Soles - EMI ODEON\r\n    1973: Solamente... - EMI ODEON\r\n    1974: El Triunfador - EMI ODEON\r\n    1975: Todo mi Cariño - EMI ODEON\r\n    1975: \"Nunca más podré olvidarte\" - EMI ODEON\r\n    1977: Romántico... - EMI ODEON\r\n    1977: Con Amor - EMI ODEON\r\n    1977: Encuentro - EMI ODEON\r\n    1978: Todo Corazón - EMI ODEON\r\n    1979: Para ti, mi Querida Amiga - EMI ODEON\r\n    1980: Nuestro Juramento - EMI ODEON\r\n    1980: Grandes Éxitos de Beto Orlando - EMI ODEON\r\n    1981: Boleros. Vol.2 - EMI ODEON\r\n    1981: Simplemente yo Soy - EMI ODEON\r\n    1982: Yo te Invito Amor - EMI ODEON\r\n    1983: A la Hora de Brindar - EMI ODEON\r\n    1984: Voy a Embriagarme de Amor - EMI ODEON\r\n    1985: Como Siempre - EMI ODEON\r\n    1986: Como te va mi Amor - MICROFON ARGENTINA S.A.\r\n    1987: El Príncipe - MICROFON ARGENTINA S.A.\r\n    1099: El Super Bailable\r\n    1989: Cuando el Amor se Va - MUSICA & MARKETING S.A.\r\n    1990: Beto Orlando y sus 4 Soles - SONY MUSIC\r\n    1994: Beto Orlando \"En el Romance\"`\r\n    1995: Himno al Amor\r\n    1996: Abrázame Fu",
+        "aliases": [],
+        "members": [],
+        "groups": [
+          "Los Cuatro Soles"
+        ],
+        "urls": [
+          "https://es.wikipedia.org/wiki/Beto_Orlando"
+        ]
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "Andy Harlow",
+      "discogsId": "5673",
+      "years": [
+        1977,
+        1977
+      ],
+      "caseMbid": "3da260a8-3ad7-4d3b-a309-4e2b8943872b",
+      "caseMbName": "Andy Harlow",
+      "caseMbArea": "United States",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area United States is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "3da260a8-3ad7-4d3b-a309-4e2b8943872b",
+            "mbName": "Andy Harlow",
+            "area": "United States",
+            "areaCountry": "US",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "5673"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Andy Harlow",
+        "realname": "Andrew Kahn",
+        "profile": "Andy Harlow (born 1945) is an American Latin music flute player.  He currently hosts a Latin jazz Radio program in Miami. Brother of [a=Larry Harlow].",
+        "aliases": [],
+        "members": [
+          "Johnny Vázquez"
+        ],
+        "groups": [],
+        "urls": [
+          "http://www.andyharlow.com/"
+        ]
+      }
+    },
+    {
+      "pool": "NI",
+      "name": "Los Randal",
+      "discogsId": "3499970",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "f41a828c-33dd-4f54-b2aa-48a16d640a33",
+      "caseMbName": "Los Randal",
+      "caseMbArea": "Mexico",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Los Randal",
+        "realname": null,
+        "profile": "Mexican pop ensemble, formed initially by Víctor, Raúl, Edgar, Silvia",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://www.facebook.com/LosRandal/"
+        ]
+      }
+    },
+    {
+      "pool": "PS",
+      "name": "شيماء الشايب",
+      "discogsId": "4481121",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "99f5b052-a545-47a7-89d3-3edae0cc495e",
+      "caseMbName": "شيماء الشايب",
+      "caseMbArea": "Egypt",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Egypt is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "99f5b052-a545-47a7-89d3-3edae0cc495e",
+            "mbName": "شيماء الشايب",
+            "area": "Egypt",
+            "areaCountry": "EG",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "4481121"
+        ],
+        "caseMbidRelCount": 5,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "شيماء الشايب",
+        "realname": "شيماء شفيق الشايب (Šaymāʾ Šafīq al-Šāyib)",
+        "profile": "Shayma' al-Shayeb is an Egyptian singer.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://www.youtube.com/user/ShaimaaElshayeb2014/featured"
+        ]
+      }
+    },
+    {
+      "pool": "LY",
+      "name": "محمود الصنديدي",
+      "discogsId": "4827308",
+      "years": [
+        1972,
+        1972
+      ],
+      "caseMbid": "ee8578a4-16d7-4672-b949-0cd15084adaa",
+      "caseMbName": "محمود الصنديدي",
+      "caseMbArea": "Egypt",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Egypt is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "ee8578a4-16d7-4672-b949-0cd15084adaa",
+            "mbName": "محمود الصنديدي",
+            "area": "Egypt",
+            "areaCountry": "EG",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "4827308"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "محمود الصنديدي",
+        "realname": null,
+        "profile": "Mahmoud al-Sandidi",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "LY",
+      "name": "Orchestra Sinfonica Di Milano",
+      "discogsId": "856678",
+      "years": [
+        1969,
+        1969
+      ],
+      "caseMbid": "9de8b848-487e-438c-a8d0-d339689224ef",
+      "caseMbName": "Orchestra Sinfonica di Milano",
+      "caseMbArea": "Italy",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Italy is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "9de8b848-487e-438c-a8d0-d339689224ef",
+            "mbName": "Orchestra Sinfonica di Milano",
+            "area": "Italy",
+            "areaCountry": "IT",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "856678"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Orchestra Sinfonica Di Milano",
+        "realname": null,
+        "profile": "Old orchestra, founded before Orchestra Sinfonica Di Milano Giuseppe Verdi (which was founded in 1993 by Vladimir Delman).\n\n[b]Do Not Confuse With[/b] \nThe [a=Orchestra Sinfonica Di Milano Giuseppe Verdi]\nor\n[a1229932]",
+        "aliases": [],
+        "members": [
+          "Ernesto Cantelli",
+          "Antonio Fernando"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "IQ",
+      "name": "فرقة الفجر",
+      "discogsId": "4302097",
+      "years": [
+        1970,
+        1970
+      ],
+      "caseMbid": "b2e4b364-27fc-4b39-85c3-8970029afc3a",
+      "caseMbName": "فرقة الفجر",
+      "caseMbArea": "Lebanon",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "فرقة الفجر",
+        "realname": null,
+        "profile": "Firqat al-Fajr was an Iraqi group.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "KW",
+      "name": "عمرو إسماعيل",
+      "discogsId": "4457019",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "d23091ed-df80-4e94-9d6a-97c5ab8a2b9a",
+      "caseMbName": "عمرو إسماعيل",
+      "caseMbArea": "Egypt",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Egypt is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "d23091ed-df80-4e94-9d6a-97c5ab8a2b9a",
+            "mbName": "عمرو إسماعيل",
+            "area": "Egypt",
+            "areaCountry": "EG",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "4457019"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "عمرو إسماعيل",
+        "realname": null,
+        "profile": "Amr Ismail (born 1971) is an Egyptian film composer and new age musician.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://www.facebook.com/AmrIsmailOfficial/"
+        ]
+      }
+    },
+    {
+      "pool": "AM",
+      "name": "Elastic Sound",
+      "discogsId": "700184",
+      "years": [
+        2009,
+        2009
+      ],
+      "caseMbid": "ee8273c6-9158-473c-bdc6-2811bbd8f64e",
+      "caseMbName": "Elastic Sound",
+      "caseMbArea": "Russia",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Russia is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "ee8273c6-9158-473c-bdc6-2811bbd8f64e",
+            "mbName": "Elastic Sound",
+            "area": "Russia",
+            "areaCountry": "RU",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "700184"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Elastic Sound",
+        "realname": "Алексей Смольянинов (Aleksey Smolyaninov)",
+        "profile": "House producer based in Moscow, Russia.",
+        "aliases": [
+          "Aleksey Smolyaninov"
+        ],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://www.myspace.com/elasticsound",
+          "http://elasticsound.promodj.ru"
+        ]
+      }
+    },
+    {
+      "pool": "UZ",
+      "name": "Avvani",
+      "discogsId": "7181939",
+      "years": [
+        2017,
+        2017
+      ],
+      "caseMbid": "98223d4f-213f-4acb-949e-1cecc81af2e8",
+      "caseMbName": "Avvani",
+      "caseMbArea": "Russia",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 4,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Avvani",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "UZ",
+      "name": "Sculptor",
+      "discogsId": "922797",
+      "years": [
+        2016,
+        2016
+      ],
+      "caseMbid": "806b1321-32fc-4773-ae63-98a0f0470cb0",
+      "caseMbName": "Sculptor",
+      "caseMbArea": "Russia",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Sculptor",
+        "realname": null,
+        "profile": "Death / doom metal band from Rasskazovo, Tambov Oblast, RUSSIA, formed in 2007",
+        "aliases": [
+          "A. Leonov"
+        ],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://sculptor.bandcamp.com/",
+          "https://myspace.com/sculptordoom"
+        ]
+      }
+    },
+    {
+      "pool": "UZ",
+      "name": "DreamSystem",
+      "discogsId": "4735276",
+      "years": [
+        2017,
+        2017
+      ],
+      "caseMbid": "c2384a60-df62-4f18-9808-de8b0fbf05e6",
+      "caseMbName": "DreamSystem",
+      "caseMbArea": "Russia",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Russia is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "c2384a60-df62-4f18-9808-de8b0fbf05e6",
+            "mbName": "DreamSystem",
+            "area": "Russia",
+            "areaCountry": "RU",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "4735276"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "DreamSystem",
+        "realname": null,
+        "profile": "DreamSystem - команда, появившаяся в 2007-ом году в Ташкенте, в состав которой входят DS и V-Tyran.\r\nРебята объединились для того, чтобы создавать звук, который будет корректировать и укреплять психику слушателя.\r\n \r\nDS: Я всегда мечтал ковыряться в потёмках личности: как своей, так и тех, с кем мне доводилось общаться и цифровой звук мне всегда казался неплохим помощником в моих проницательных делах.\r\nЯ вынашивал идею DreamSystem пару месяцев, а затем принёс её другу в поисках поддержки. Витя меня поддержал и началось...\r\n \r\nV-Tyran: Мы развлекались, делая звук. Просто лепили одну фигню на другую. А потом слушали, слушали и слушали... Обычно каким-то чудом всё само собою срасталось и звучало как минимум необычно.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://promodj.com/Dreamseeker",
+          "http://mnmn-rec.ru/residents/details/160"
+        ]
+      }
+    },
+    {
+      "pool": "UZ",
+      "name": "Nevod",
+      "discogsId": "3033206",
+      "years": [
+        2023,
+        2023
+      ],
+      "caseMbid": "190a2482-19e7-49c2-865d-086cf29298c3",
+      "caseMbName": "Nevod",
+      "caseMbArea": "Russia",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Russia is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "190a2482-19e7-49c2-865d-086cf29298c3",
+            "mbName": "Nevod",
+            "area": "Russia",
+            "areaCountry": "RU",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "3033206"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Nevod",
+        "realname": null,
+        "profile": "Martial / Dark Ambient / Trauer Folk project was started in 2005.",
+        "aliases": [],
+        "members": [
+          "Иван Маслов",
+          "Елена Даниленко"
+        ],
+        "groups": [],
+        "urls": [
+          "http://www.facebook.com/NEVOD.martial",
+          "http://www.reverbnation.com/nevod",
+          "https://soundcloud.com/nevod",
+          "https://nevod.bandcamp.com/"
+        ]
+      }
+    },
+    {
+      "pool": "AL",
+      "name": "DJ Blunt",
+      "discogsId": "760666",
+      "years": [
+        2011,
+        2011
+      ],
+      "caseMbid": "5bebc302-cded-44c5-9331-3a4f6911e984",
+      "caseMbName": "Dj Blunt",
+      "caseMbArea": "Kosovo",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Kosovo is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "5bebc302-cded-44c5-9331-3a4f6911e984",
+            "mbName": "Dj Blunt",
+            "area": "Kosovo",
+            "areaCountry": "XK",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "760666"
+        ],
+        "caseMbidRelCount": 7,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "DJ Blunt",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://www.myspace.com/djblunti",
+          "http://www.facebook.com/pages/DJ-BLUNT/50276186189 ",
+          "http://www.djpages.com/djasp/index.htm?index.asp?djid=11746~right"
+        ]
+      }
+    },
+    {
+      "pool": "AL",
+      "name": "Nani Killa",
+      "discogsId": "688709",
+      "years": [
+        2006,
+        2006
+      ],
+      "caseMbid": "12aa66b6-d3e1-4da3-9049-b8e0e9bc01fd",
+      "caseMbName": "Nani Killa",
+      "caseMbArea": "Kosovo",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Kosovo is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "12aa66b6-d3e1-4da3-9049-b8e0e9bc01fd",
+            "mbName": "Nani Killa",
+            "area": "Kosovo",
+            "areaCountry": "XK",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "688709"
+        ],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Nani Killa",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://www.myspace.com/nanikilla"
+        ]
+      }
+    },
+    {
+      "pool": "AL",
+      "name": "Lypocodium",
+      "discogsId": "1347993",
+      "years": [
+        2011,
+        2011
+      ],
+      "caseMbid": "b49d5329-9515-4de4-bff9-b09bd552f709",
+      "caseMbName": "Lypocodium",
+      "caseMbArea": "Italy",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Italy is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "b49d5329-9515-4de4-bff9-b09bd552f709",
+            "mbName": "Lypocodium",
+            "area": "Italy",
+            "areaCountry": "IT",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1347993"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Lypocodium",
+        "realname": null,
+        "profile": "Italian DJ and producer.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://www.myspace.com/lypocodium",
+          "http://www.facebook.com/pages/Lypocodium-deejay-set/220127183584"
+        ]
+      }
+    },
+    {
+      "pool": "AL",
+      "name": "The Deepshakerz",
+      "discogsId": "2254255",
+      "years": [
+        2012,
+        2012
+      ],
+      "caseMbid": "ffb5bfa9-79e8-4cbc-ab9c-3d487b9a4443",
+      "caseMbName": "The Deepshakerz",
+      "caseMbArea": "Italy",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Italy is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "ffb5bfa9-79e8-4cbc-ab9c-3d487b9a4443",
+            "mbName": "The Deepshakerz",
+            "area": "Italy",
+            "areaCountry": "IT",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "2254255"
+        ],
+        "caseMbidRelCount": 10,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "The Deepshakerz",
+        "realname": null,
+        "profile": "DJ and producer duo from Trani, Italy. \r\nFounded their own label [l=Safe Music (5)] in 2014.",
+        "aliases": [
+          "Ds2 (2)",
+          "Black Savana"
+        ],
+        "members": [
+          "Domenico Berardino",
+          "Mirco Sonatore"
+        ],
+        "groups": [],
+        "urls": [
+          "https://www.facebook.com/thedeepshakerzofficial/",
+          "https://www.instagram.com/thedeepshakerz/",
+          "https://soundcloud.com/the-deepshakerz"
+        ]
+      }
+    },
+    {
+      "pool": "AL",
+      "name": "Flekitza",
+      "discogsId": "766984",
+      "years": [
+        2007,
+        2009
+      ],
+      "caseMbid": "230905ea-2a58-4d95-a8e1-db28894f47e4",
+      "caseMbName": "Flekitza",
+      "caseMbArea": "Kosovo",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Kosovo is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "230905ea-2a58-4d95-a8e1-db28894f47e4",
+            "mbName": "Flekitza",
+            "area": "Kosovo",
+            "areaCountry": "XK",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "766984"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Flekitza",
+        "realname": null,
+        "profile": "[a=Girl Bite] aka [a=Flekitza] is a techno dj and producer producer from Kosovo. She also runs label - Take More Music Records - with her partner [a=Vegim].\r\n\r\nHaving emerged from the early scene, [a=Flekitza] is one of the Kosovo's finest techno exports. With broadcasting, journalism, promoting under her belt, she is a curator for her label and continues to improve and build her name, becoming one of the most recognizable female djs in techno realm. \r\nAlready known for skills behind the decks, armed with massive tracks, dark beats, deep atmosphere, she is fast becoming one of techno’s most notable artists.\r\nWith a desire to spot and promote techno, she works on Naked Lunch Booking Agency, which provides worldwide known techno mavericks. \r\n\r\nNow she is running the prestigious label \"TMM Records\" together with her partner [a=Vegim]. \r\n",
+        "aliases": [
+          "Girl Bite"
+        ],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "flekitza.com"
+        ]
+      }
+    },
+    {
+      "pool": "AL",
+      "name": "Luca Albano",
+      "discogsId": "1092795",
+      "years": [
+        2009,
+        2009
+      ],
+      "caseMbid": "44370887-1a4e-4ce8-9aca-f816612d30ba",
+      "caseMbName": "Luca Albano",
+      "caseMbArea": "Italy",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Italy is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "44370887-1a4e-4ce8-9aca-f816612d30ba",
+            "mbName": "Luca Albano",
+            "area": "Italy",
+            "areaCountry": "IT",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1092795"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Luca Albano",
+        "realname": "Luca Albano",
+        "profile": "Berlin based italian dj & producer",
+        "aliases": [
+          "weg"
+        ],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://www.facebook.com/lucaalbano.music",
+          "https://soundcloud.com/luca-albano"
+        ]
+      }
+    },
+    {
+      "pool": "MD",
+      "name": "Satanath",
+      "discogsId": "3374902",
+      "years": [
+        2023,
+        2023
+      ],
+      "caseMbid": "f13ea2cb-b812-417f-a73d-4fab70b9b534",
+      "caseMbName": "Satanath",
+      "caseMbArea": "Russia",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Russia is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "f13ea2cb-b812-417f-a73d-4fab70b9b534",
+            "mbName": "Satanath",
+            "area": "Russia",
+            "areaCountry": "RU",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "3374902"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Satanath",
+        "realname": null,
+        "profile": "Ambient project from Georgia, Batumi.\r\nFormed in: January 2011.\r\nLine-up: Aleksey \"Satanath\" Korolyov (boss of label [l=Satanath Records]).\r\nUntil March 17th, 2022 the band was based in Russia, Saint Petersburg.",
+        "aliases": [],
+        "members": [
+          "Aleksey Korolyov"
+        ],
+        "groups": [],
+        "urls": [
+          "http://www.last.fm/music/satanath",
+          "http://vk.com/abigorum",
+          "http://satanath.com/releases/item/sat036",
+          "http://www.instagram.com/satanath666",
+          "https://satanath666.bandcamp.com/"
+        ]
+      }
+    },
+    {
+      "pool": "MD",
+      "name": "Vasile Gorbani",
+      "discogsId": "2318733",
+      "years": [
+        2016,
+        2016
+      ],
+      "caseMbid": "277a267b-f023-404a-b32a-bfdcc7bc41ce",
+      "caseMbName": "Vasile Gorbani",
+      "caseMbArea": "Romania",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Vasile Gorbani",
+        "realname": null,
+        "profile": "DJ and electronic music producer from Romania.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://www.residentadvisor.net/dj/vasilegorbani"
+        ]
+      }
+    },
+    {
+      "pool": "MD",
+      "name": "romaNecredinciosu",
+      "discogsId": "4919807",
+      "years": [
+        2010,
+        2010
+      ],
+      "caseMbid": "eb6cdec9-5bc9-4f48-a25a-d4e08173882a",
+      "caseMbName": "romaNecredinciosu",
+      "caseMbArea": "Romania",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Romania is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "eb6cdec9-5bc9-4f48-a25a-d4e08173882a",
+            "mbName": "romaNecredinciosu",
+            "area": "Romania",
+            "areaCountry": "RO",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "4919807"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "romaNecredinciosu",
+        "realname": "Roman Mereuță",
+        "profile": "Hip-Hop artist from Bessarabia, Moldova",
+        "aliases": [],
+        "members": [],
+        "groups": [
+          "Unda Comună",
+          "Ginta (2)",
+          "Cuartalu' Raze"
+        ],
+        "urls": [
+          "https://www.youtube.com/user/romaNecredinciosu",
+          "https://www.facebook.com/RomaNecredinciosu-1677422605847526/?fref=ts",
+          "https://www.instagram.com/romanecredinciosu/"
+        ]
+      }
+    },
+    {
+      "pool": "MD",
+      "name": "Somnoroase Păsărele",
+      "discogsId": "2095296",
+      "years": [
+        2018,
+        2018
+      ],
+      "caseMbid": "668c8052-f787-4167-b04d-b407655a610a",
+      "caseMbName": "Somnoroase Păsărele",
+      "caseMbArea": "Romania",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Romania is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "668c8052-f787-4167-b04d-b407655a610a",
+            "mbName": "Somnoroase Păsărele",
+            "area": "Romania",
+            "areaCountry": "RO",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "2095296"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Somnoroase Păsărele",
+        "realname": "Gili Mocanu",
+        "profile": "Born (1971) in the historic city of Constanța beside the Black Sea, Gili Mocanu is widely known as an accomplished and unique Romanian painter whose work has been shown in numerous major galleries and museums across the world. Inspired by a generation of avant-garde Romanian composers like Iancu Dumitrescu, Octavian Nemescu and Ștefan Niculescu, Gili has also been consistently involved in sound recording since the early ‘90s, and under his long-running Somnoroase Păsărele and Centrul Isteric guises, sometimes in collaboration with others, his music has evolved its own distinctive character. Employing atypical synth sounds, spectralist techniques, and asymmetrical or non-rhythmic elements, the results have included excursions into abstract electronic, minimalist, ambient, spectralist and drone territories.",
+        "aliases": [
+          "Gili Mocanu",
+          "Centrul Isteric",
+          "Tanti Aglaia"
+        ],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://somnoroase-pasarele.bandcamp.com",
+          "https://soundcloud.com/somnoroase-pasarele",
+          "https://www.seeblueaudio.com/tanti-aglaia"
+        ]
+      }
+    },
+    {
+      "pool": "MD",
+      "name": "Sopik",
+      "discogsId": "3174892",
+      "years": [
+        2014,
+        2014
+      ],
+      "caseMbid": "ee808a34-37f0-48d6-99cd-d95978912eac",
+      "caseMbName": "Sopik",
+      "caseMbArea": "Ukraine",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Ukraine is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "ee808a34-37f0-48d6-99cd-d95978912eac",
+            "mbName": "Sopik",
+            "area": "Ukraine",
+            "areaCountry": "UA",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "3174892"
+        ],
+        "caseMbidRelCount": 11,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Sopik (2)",
+        "realname": null,
+        "profile": "Runs [l1315340].",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://soundcloud.com/sopikk",
+          "https://twitter.com/djSopik",
+          "https://www.facebook.com/sopikUkraine"
+        ]
+      }
+    },
+    {
+      "pool": "MD",
+      "name": "Maxim Zavidia",
+      "discogsId": "7637075",
+      "years": [
+        2020,
+        2020
+      ],
+      "caseMbid": "26d0f286-3d6b-4c11-8fc6-6ac4a9b98df7",
+      "caseMbName": "Maxim Zavidia",
+      "caseMbArea": "Russia",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 11,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Maxim Zavidia",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "MD",
+      "name": "Key Lean",
+      "discogsId": "7174174",
+      "years": [
+        2021,
+        2021
+      ],
+      "caseMbid": "55ed9fb5-c420-4afa-9dfb-192b0f3a9742",
+      "caseMbName": "Key Lean",
+      "caseMbArea": "Russia",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Russia is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "55ed9fb5-c420-4afa-9dfb-192b0f3a9742",
+            "mbName": "Key Lean",
+            "area": "Russia",
+            "areaCountry": "RU",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "7174174"
+        ],
+        "caseMbidRelCount": 5,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Key Lean",
+        "realname": null,
+        "profile": "Progressive Trance DJ from Saint Petersburg, Russia.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://www.facebook.com/keyleanmusic/",
+          "https://www.instagram.com/keyleanmusic",
+          "https://soundcloud.com/keyleanmusic",
+          "https://www.youtube.com/KeyLeanmusic",
+          "https://vk.com/keyleanmusic"
+        ]
+      }
+    },
+    {
+      "pool": "MD",
+      "name": "Nick R 61",
+      "discogsId": "1376978",
+      "years": [
+        2009,
+        2009
+      ],
+      "caseMbid": "62670d89-cd30-427e-8040-d4bf13f2caf3",
+      "caseMbName": "Nick R 61",
+      "caseMbArea": "Russia",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Russia is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "62670d89-cd30-427e-8040-d4bf13f2caf3",
+            "mbName": "Nick R 61",
+            "area": "Russia",
+            "areaCountry": "RU",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1376978"
+        ],
+        "caseMbidRelCount": 8,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Nick R 61",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://soundcloud.com/nickr61",
+          "https://nickr61.wordpress.com"
+        ]
+      }
+    },
+    {
+      "pool": "MD",
+      "name": "Grenouer Inc.",
+      "discogsId": "16189432",
+      "years": [
+        2025,
+        2025
+      ],
+      "caseMbid": "e27227f0-8137-4462-931b-05543b8cf229",
+      "caseMbName": "Grenouer Inc.",
+      "caseMbArea": "Russia",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Grenouer Inc.",
+        "realname": null,
+        "profile": "Death metal band from Russia.\r\n\r\nGRENOUER INC. is a death metal project from Russia, comprised of current and ex-members of Grenouer band. Grenouer was formed in 1992, released four full-length albums and then started to change musical style from death metal to far more melodic forms of metal. Grenouer exists to date productively, however has stepped aside from extreme music eventually. In late 2021, a new derivative was born aiming to reintroduce Grenouer's death metal legacy, under the title of Grenouer Inc. After the series of concerts warmly appreciated by old school fans, Grenouer Inc. moved ahead with composing new songs. It makes a lot of sense that the debut release from Grenouer Inc. is a live album, recorded in Perm, their hometown, at Death Panorama Fest.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://grenouerinc.ru/",
+          "https://vk.com/grenouerinc",
+          "http://grenouerinc.bandcamp.com/"
+        ]
+      }
+    },
+    {
+      "pool": "MD",
+      "name": "Dan Bruma",
+      "discogsId": "6741890",
+      "years": [
+        2017,
+        2017
+      ],
+      "caseMbid": "65531cdb-b309-496b-82a3-27561f4d9d67",
+      "caseMbName": "Dan Bruma",
+      "caseMbArea": "Romania",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Romania is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "65531cdb-b309-496b-82a3-27561f4d9d67",
+            "mbName": "Dan Bruma",
+            "area": "Romania",
+            "areaCountry": "RO",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "6741890"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Dan Bruma",
+        "realname": null,
+        "profile": "Romanian guitar player",
+        "aliases": [],
+        "members": [],
+        "groups": [
+          "Groove Club (4)"
+        ],
+        "urls": []
+      }
+    },
+    {
+      "pool": "MD",
+      "name": "Антон Силаев",
+      "discogsId": "1717656",
+      "years": [
+        2019,
+        2019
+      ],
+      "caseMbid": "955ce195-e792-4af6-bc60-12ec379939fa",
+      "caseMbName": "Антон Силаев",
+      "caseMbArea": "Russia",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Russia is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "955ce195-e792-4af6-bc60-12ec379939fa",
+            "mbName": "Антон Силаев",
+            "area": "Russia",
+            "areaCountry": "RU",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1717656"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Антон Силаев",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [
+          "Mixing Point => Mockba Project",
+          "Block[bass]ter",
+          "Bigateque"
+        ],
+        "urls": [
+          "http://www.myspace.com/AntonSilaev"
+        ]
+      }
+    },
+    {
+      "pool": "XK",
+      "name": "Silent Existence",
+      "discogsId": "1526670",
+      "years": [
+        2010,
+        2016
+      ],
+      "caseMbid": "6493f86e-4869-4d1f-9a81-f74197dd43a0",
+      "caseMbName": "Silent Existence",
+      "caseMbArea": "Serbia",
+      "identity": "reserved",
+      "why": "owner-reserved history class — partition/occupation/exile or pinned area",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "6493f86e-4869-4d1f-9a81-f74197dd43a0",
+            "mbName": "Silent Existence",
+            "area": "Serbia",
+            "areaCountry": "RS",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1526670"
+        ],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Silent Existence",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://www.myspace.com/silentexs"
+        ]
+      }
+    },
+    {
+      "pool": "XK",
+      "name": "Asgjë Sikur Dielli",
+      "discogsId": "3656173",
+      "years": [
+        1996,
+        2021
+      ],
+      "caseMbid": "9fb25ba2-ee6c-4a4e-9fd2-5024836368bc",
+      "caseMbName": "Asgjë Sikur Dielli",
+      "caseMbArea": "Albania",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Albania is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "9fb25ba2-ee6c-4a4e-9fd2-5024836368bc",
+            "mbName": "Asgjë Sikur Dielli",
+            "area": "Albania",
+            "areaCountry": "AL",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "3656173"
+        ],
+        "caseMbidRelCount": 5,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Asgjë Sikur Dielli",
+        "realname": null,
+        "profile": "Asgjë Sikur Dielli is a rock band from Kosovo",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "www.asgjesikurdielli.com",
+          "https://soundcloud.com/asgjesikurdielli",
+          "https://asgjesikurdielli.bandcamp.com/releases",
+          "https://itunes.apple.com/us/artist/asgje-sikur-dielli/id1080561920",
+          "https://www.youtube.com/user/asgjesikurdielli"
+        ]
+      }
+    },
+    {
+      "pool": "XK",
+      "name": "Alavux",
+      "discogsId": "1100696",
+      "years": [
+        2014,
+        2015
+      ],
+      "caseMbid": "637c61e3-df5d-4823-b376-7d350ea5833a",
+      "caseMbName": "Alavux",
+      "caseMbArea": "Serbia",
+      "identity": "reserved",
+      "why": "owner-reserved history class — partition/occupation/exile or pinned area",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "637c61e3-df5d-4823-b376-7d350ea5833a",
+            "mbName": "Alavux",
+            "area": "Serbia",
+            "areaCountry": "RS",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1100696"
+        ],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Alavux",
+        "realname": "Goran Alavuk",
+        "profile": "Producer from Serbia.",
+        "aliases": [
+          "Solaris Path",
+          "Goran Alavuk"
+        ],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "http://www.alavux.blogspot.com",
+          "http://www.facebook.com/pages/Alavux/130705446964630",
+          "http://www.soundcloud.com/alavux2nd",
+          "http://www.twitter.com/alavux",
+          "http://www.myspace.com/alavux"
+        ]
+      }
+    },
+    {
+      "pool": "GL",
+      "name": "Søren Vestergaard",
+      "discogsId": "10442401",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "a63d0076-94b4-4889-9428-29929899431d",
+      "caseMbName": "Søren Vestergaard",
+      "caseMbArea": "Denmark",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Søren Vestergaard (2)",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Thanh Tâm",
+      "discogsId": "7965825",
+      "years": [
+        1970,
+        1970
+      ],
+      "caseMbid": "75da8238-6731-4379-bfe5-817769dcc670",
+      "caseMbName": "Thanh Tâm",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Thanh Tâm (2)",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Lâm Thúy Vân",
+      "discogsId": "4700855",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "84a4287b-6a38-4f79-8804-fd03ee23f908",
+      "caseMbName": "Lâm Thúy Vân",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Lâm Thúy Vân",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Nguyễn Tiến",
+      "discogsId": "7037772",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "f92b67b4-3d78-4da3-9ec7-81b8635f881d",
+      "caseMbName": "Nguyễn Tiến",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Nguyễn Tiến",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Thanh Phong",
+      "discogsId": "4635182",
+      "years": [
+        1957,
+        1970
+      ],
+      "caseMbid": "929a7b62-aeec-4f7c-bc47-8b72910c7b2f",
+      "caseMbName": "Thanh Phong",
+      "caseMbArea": "France",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area France is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "929a7b62-aeec-4f7c-bc47-8b72910c7b2f",
+            "mbName": "Thanh Phong",
+            "area": "France",
+            "areaCountry": "FR",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "4635182"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Thanh Phong",
+        "realname": "Đào Công Thanh",
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [
+          "Ban Sao Băng"
+        ],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Hoà Mi",
+      "discogsId": "16895161",
+      "years": [
+        2010,
+        2013
+      ],
+      "caseMbid": "b291fb6c-a075-4469-832b-34df96e3cb3c",
+      "caseMbName": "Họa Mi",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Hoà Mi",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Anh Tú",
+      "discogsId": "6281510",
+      "years": [
+        1965,
+        2007
+      ],
+      "caseMbid": "dc93457e-75bc-4b45-a86d-8c7a2c80ccda",
+      "caseMbName": "Anh Tú",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 6,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Anh Tú",
+        "realname": "Lữ Anh Tú",
+        "profile": "Anh Tú (1950–2003) was an Vietnamese singer.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://vi.m.wikipedia.org/wiki/Anh_Tú"
+        ]
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Thanh Huyền",
+      "discogsId": "3467430",
+      "years": [
+        1957,
+        1957
+      ],
+      "caseMbid": "463840ac-1a78-4575-a9dd-33c19ed86131",
+      "caseMbName": "Thanh Huyền",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Thanh Huyền",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Trung Hành",
+      "discogsId": "5879285",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "caa107d6-12ae-4539-a266-22667456ccee",
+      "caseMbName": "Trung Hành",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Trung Hành",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [
+          "The Refugees (6)"
+        ],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "DJ Ultimate Bass",
+      "discogsId": "3594813",
+      "years": [
+        2013,
+        2014
+      ],
+      "caseMbid": "8eb6ca01-395e-4492-a0c9-c3de509dcfa7",
+      "caseMbName": "DJ Ultimate Bass",
+      "caseMbArea": "France",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "DJ Ultimate Bass",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "The Grand Island",
+      "discogsId": "1691398",
+      "years": [
+        2000,
+        2000
+      ],
+      "caseMbid": "ac76111e-ac8a-43b6-b3ed-99b0aa87a0c5",
+      "caseMbName": "The Grand Island",
+      "caseMbArea": "United States",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area United States is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "ac76111e-ac8a-43b6-b3ed-99b0aa87a0c5",
+            "mbName": "The Grand Island",
+            "area": "United States",
+            "areaCountry": "US",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1691398"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "The Grand Island",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [
+          "John Manson",
+          "Tony Manhart",
+          "Justin Stratman",
+          "Roy Nilson"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Đỗ Nhuận",
+      "discogsId": "9062194",
+      "years": [
+        1937,
+        1957
+      ],
+      "caseMbid": "f71a2a46-ccde-4a70-b281-5ef8af821e5d",
+      "caseMbName": "Đỗ Nhuận",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Đỗ Nhuận",
+        "realname": null,
+        "profile": "Vietnamese classical composer(1922-1991)",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://en.wikipedia.org/wiki/%C4%90%E1%BB%97_Nhu%E1%BA%ADn",
+          "https://vi.wikipedia.org/wiki/%C4%90%E1%BB%97_Nhu%E1%BA%ADn"
+        ]
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Thái Châu",
+      "discogsId": "4701806",
+      "years": [
+        2016,
+        2016
+      ],
+      "caseMbid": "c1bdef92-5a38-41be-a93d-e55780f39491",
+      "caseMbName": "Thái Châu",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Thái Châu",
+        "realname": "Trương Chiêu Thông",
+        "profile": "Vietnamese singer",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Phương Đại",
+      "discogsId": "5769204",
+      "years": [
+        1969,
+        1971
+      ],
+      "caseMbid": "8601a4a5-faba-4667-b468-b679094c98a4",
+      "caseMbName": "Phương Đại",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Phương Đại",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [
+          "Ban Sao Băng"
+        ],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Thúy Nga",
+      "discogsId": "12399016",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "98e57be3-9993-4526-9edb-383ca8f306c5",
+      "caseMbName": "Thuý Nga",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Thúy Nga (2)",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Trường Kỳ",
+      "discogsId": "7002691",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "b5b0cf42-702d-488a-b2e3-9dbeac82633f",
+      "caseMbName": "Trường Kỳ",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Trường Kỳ",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Thanh An",
+      "discogsId": "6029118",
+      "years": [
+        1965,
+        1970
+      ],
+      "caseMbid": "35843533-0d1b-4913-88e0-2aea09345d32",
+      "caseMbName": "Thành An",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Thanh An",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Đức Minh",
+      "discogsId": "7780160",
+      "years": [
+        1956,
+        1968
+      ],
+      "caseMbid": "cba160d2-5c8e-431a-82e3-0442da2e963a",
+      "caseMbName": "Đức Minh",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Đức Minh",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Kim-Cúc",
+      "discogsId": "6080145",
+      "years": [
+        1959,
+        1966
+      ],
+      "caseMbid": "56f6d841-c365-4d80-844d-b9db13719746",
+      "caseMbName": "Kim Cúc",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Kim-Cúc",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Tuyết Nhung",
+      "discogsId": "7101584",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "b1539ea3-73ff-4f95-9d4d-5db19fa38ee1",
+      "caseMbName": "Tuyết Nhung",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Tuyết Nhung",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Bach Yen",
+      "discogsId": "1082804",
+      "years": [
+        1957,
+        1964
+      ],
+      "caseMbid": "683d675b-035e-47a4-9e26-17b378278d5f",
+      "caseMbName": "Bạch Yến",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Bach Yen",
+        "realname": "Quách Thị Bạch Yến",
+        "profile": "Famous Vietnamese singer, born 1942.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": [
+          "https://vi.m.wikipedia.org/wiki/Bạch_Yến_(ca_sĩ)"
+        ]
+      }
+    },
+    {
+      "pool": "VN",
+      "name": "Thúy Nga",
+      "discogsId": "7012345",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "98e57be3-9993-4526-9edb-383ca8f306c5",
+      "caseMbName": "Thuý Nga",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Thúy Nga",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "GH",
+      "name": "The Blue Monks",
+      "discogsId": "1733455",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "f8be02af-e09a-4cc7-95a5-276bbf331eac",
+      "caseMbName": "The Blue Monks",
+      "caseMbArea": "United Kingdom",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "The Blue Monks (3)",
+        "realname": null,
+        "profile": "60's Highlife bigband from Ghana. \r\nFeaturing the master guitarist Ebo Taylor and velvet-voiced Pat Thomas who performed in the 70's every wednesday at Tip Toe Gardens, the \"Mecca\" of good highlife music.",
+        "aliases": [],
+        "members": [
+          "Ebo Taylor",
+          "Pat Thomas (3)",
+          "George Danquah",
+          "Ray Otu Allen",
+          "Pee Pee Dynamite",
+          "Andy Vans"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "ZM",
+      "name": "Kassongo Band",
+      "discogsId": "3542709",
+      "years": [
+        1982,
+        1982
+      ],
+      "caseMbid": "add56afc-2b7e-4094-812e-088210efbdc3",
+      "caseMbName": "Kassongo Band",
+      "caseMbArea": "Zimbabwe",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Zimbabwe is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "add56afc-2b7e-4094-812e-088210efbdc3",
+            "mbName": "Kassongo Band",
+            "area": "Zimbabwe",
+            "areaCountry": "ZW",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "3542709"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Kassongo Band",
+        "realname": null,
+        "profile": "Zimbabwean group formed in 1977 made up of seven elements former liberation fighters who had sought exile in Tanzania before independence. Upon returning to Zimbabwe in 1980 the band joined the army and performed various military functions as well as for the public.\r\nMembers: [a7342300] [b]Matthias Muchawaya[/b], [a3978235], [b]Marko Sibanda[/b], [a10822003]",
+        "aliases": [],
+        "members": [
+          "Ketai"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "ZM",
+      "name": "Hallelujah Chicken Run Band",
+      "discogsId": "1474849",
+      "years": [
+        1980,
+        1980
+      ],
+      "caseMbid": "ba5c4a87-7470-4674-a8b1-ee3863e579a3",
+      "caseMbName": "Hallelujah Chicken Run Band",
+      "caseMbArea": "Zimbabwe",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area Zimbabwe is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "ba5c4a87-7470-4674-a8b1-ee3863e579a3",
+            "mbName": "Hallelujah Chicken Run Band",
+            "area": "Zimbabwe",
+            "areaCountry": "ZW",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1474849"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Hallelujah Chicken Run Band",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [
+          "Thomas Mapfumo",
+          "Joshua Dube",
+          "Daram Kalanga",
+          "Robert Nekati",
+          "Wilson Jubane",
+          "Elijah Josam"
+        ],
+        "groups": [],
+        "urls": [
+          "https://en.wikipedia.org/wiki/Hallelujah_Chicken_Run_Band"
+        ]
+      }
+    },
+    {
+      "pool": "ZM",
+      "name": "Nyami Nyami Sounds",
+      "discogsId": "1668349",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "28f2af6c-1742-43eb-8df6-f2bc391cb50d",
+      "caseMbName": "Nyami Nyami Sounds",
+      "caseMbArea": "Zimbabwe",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Nyami Nyami Sounds",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [
+          "Richard Mapfuwamhandu",
+          "Mussa Makasu",
+          "Sam Mukwesha",
+          "Moses Zhakata"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "ZM",
+      "name": "The Covenant",
+      "discogsId": "15522192",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "2346ecd4-1bf5-4aaa-b467-0b6ef2121f6f",
+      "caseMbName": "The Covenant",
+      "caseMbArea": "United Kingdom",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "The Covenant (7)",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "CD",
+      "name": "Les Combattants du Christ",
+      "discogsId": "13813225",
+      "years": [
+        1999,
+        1999
+      ],
+      "caseMbid": "1e79f72f-26d7-489c-a357-829bcb2cc1fb",
+      "caseMbName": "Les Combattants du Christ",
+      "caseMbArea": "France",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Les Combattants du Christ",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "CD",
+      "name": "Los Nickelos",
+      "discogsId": "3524201",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "bb0e1629-9989-4f4d-a5d6-510f8548d339",
+      "caseMbName": "Los Nickelos",
+      "caseMbArea": "Belgium",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Los Nickelos",
+        "realname": null,
+        "profile": "Belgian-based Zairean band created in Liège in 1965 on the initiative of the president of UGEC-Liège, [b]M.Miltony[/b]. \r\nLos Nickelos he was part of the various orchestras of the Belgian student community which is full of great talent.\r\nFounded by the Nzeza brothers Félicien Nzeza (guitar bass), Justin Masta Nzeza (guitar solo) and Jules Ngole Nzeza with:\r\n- François Kalala Fafa (tumba and conductor)\r\n- René Kasanda Karé (vocals)\r\n- Venant Kinzonzi Zatho (vocals)\r\n- Jean Maurice Bitumba (vocals)\r\n- José Mubuala Kelly (vocals)\r\n- Antoine Bokito Tony Dee (vocals)\r\n- Isidore Nzanga Zizi (vocals)\r\n- Marc Banguli Marco (vocals)\r\n- Paul Lieke (bass guitar)\r\n- Justin Mangubu (trumpet)\r\n- Bernard Kandolo Ben Akhan (saxophone)\r\n- Camille Azimba Azin (maracas)\r\n- Camille Ntoya Tocam (bass guitar)\r\n- Bernard Bokombe Bébert (bass guitar)\r\n- Freddos M'firi (Salsa singer)\r\n- Jean Ndomatezo Macchy (guitar)",
+        "aliases": [],
+        "members": [
+          "Zatho",
+          "Tony Dee Bokito Bokoma",
+          "Justin Masta",
+          "Zanga Izidore Zizi",
+          "Jo Rino",
+          "José Mubuala Kelly",
+          "Jean Ndomatezo Macchy",
+          "Marc Banguli Marco"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Wild Fire",
+      "discogsId": "706456",
+      "years": [
+        1975,
+        1984
+      ],
+      "caseMbid": "ed1badf3-c7ef-4351-b2ff-476c6d2dd0ce",
+      "caseMbName": "Wild Fire",
+      "caseMbArea": "United States",
+      "identity": "id-proven-other",
+      "why": "identity settled at id level (Wild Fire, MB area none) but NO origin signal — area is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "6a6d94f1-1818-47e8-b99f-2132831ca05d",
+            "mbName": "Wild Fire",
+            "area": null,
+            "areaCountry": null,
+            "class": "unplaced",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 14,
+        "caseMbidOrigin": "MB begin-area resolves to United States"
+      },
+      "discogsProfile": {
+        "name": "Wild Fire",
+        "realname": null,
+        "profile": "Calypso group from Trinidad & Tobago active from 1962 as [a=The Sparks].  Renamed to Wild Fire sometime in the 1970s.",
+        "aliases": [],
+        "members": [
+          "Lennox James",
+          "Peter Britto",
+          "Oliver Chapman",
+          "Clifford Wilson",
+          "Cyllan Charles",
+          "Anstey Hamilton",
+          "Terry Collymore"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Ray Ellis And His Orchestra",
+      "discogsId": "357656",
+      "years": [
+        1963,
+        1963
+      ],
+      "caseMbid": "d1e47f6d-4058-44f7-bf85-17c27d9dfcb0",
+      "caseMbName": "Ray Ellis and His Orchestra",
+      "caseMbArea": "United States",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area United States is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "d1e47f6d-4058-44f7-bf85-17c27d9dfcb0",
+            "mbName": "Ray Ellis and His Orchestra",
+            "area": "United States",
+            "areaCountry": "US",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "357656"
+        ],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Ray Ellis And His Orchestra",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [
+          "Dick Hyman",
+          "J.J. Johnson",
+          "Jimmy Cleveland",
+          "Joe Benjamin",
+          "Romeo Penque",
+          "Milt Hinton",
+          "Harry Edison",
+          "Danny Bank",
+          "Phil Bodner",
+          "Barry Galbraith",
+          "Urbie Green",
+          "Osie Johnson",
+          "Mal Waldron",
+          "Janet Putnam",
+          "Ray Ellis",
+          "Al Cohn",
+          "Don Lamond",
+          "Hank Jones",
+          "Joe Wilder",
+          "Billy Byers",
+          "Gene Quill",
+          "Thomas Mitchell",
+          "Bradley Spinney",
+          "Thomas Parshley",
+          "Ed Powell"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Heritage",
+      "discogsId": "380429",
+      "years": [
+        1977,
+        1977
+      ],
+      "caseMbid": "491c5aad-f5ea-45be-8829-7090314f2bd2",
+      "caseMbName": "Heritage",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 4,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Heritage",
+        "realname": null,
+        "profile": "\tTrinidad & Tobago soul artist on [l2192] from 1977.",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Lennox James",
+      "discogsId": "1132269",
+      "years": [
+        1978,
+        1978
+      ],
+      "caseMbid": "62a4a157-97b5-4c74-8ed8-b07e5cf13403",
+      "caseMbName": "Lennox James",
+      "caseMbArea": "United Kingdom",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area United Kingdom is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "62a4a157-97b5-4c74-8ed8-b07e5cf13403",
+            "mbName": "Lennox James",
+            "area": "United Kingdom",
+            "areaCountry": "GB",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "1132269"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Lennox James",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [
+          "Wild Fire"
+        ],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Nisha",
+      "discogsId": "969674",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "1984b97a-cf22-4fb8-adbf-bb2879323711",
+      "caseMbName": "Nisha",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Nisha",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Emile Ford & The Checkmates",
+      "discogsId": "347098",
+      "years": [
+        1959,
+        1959
+      ],
+      "caseMbid": "3bc16b49-843e-4018-93a5-f78bb13d9876",
+      "caseMbName": "Emile Ford & the Checkmates",
+      "caseMbArea": "United Kingdom",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area United Kingdom is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "3bc16b49-843e-4018-93a5-f78bb13d9876",
+            "mbName": "Emile Ford & the Checkmates",
+            "area": "United Kingdom",
+            "areaCountry": "GB",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "347098"
+        ],
+        "caseMbidRelCount": 5,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Emile Ford & The Checkmates",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [
+          "Alan Hawkshaw",
+          "Emile Ford",
+          "John Cuffley",
+          "Ken Street"
+        ],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Steve Mattis",
+      "discogsId": "8638749",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "96f609e6-8c2e-47c9-8635-f7055882cd4b",
+      "caseMbName": "Steve Mattis",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 0,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Steve Mattis (2)",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Joe Loss & His Orchestra",
+      "discogsId": "240455",
+      "years": [
+        1962,
+        1962
+      ],
+      "caseMbid": "87c9a851-4ee0-4d33-a499-81da3a1ac91c",
+      "caseMbName": "Joe Loss & His Orchestra",
+      "caseMbArea": "United Kingdom",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area United Kingdom is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "87c9a851-4ee0-4d33-a499-81da3a1ac91c",
+            "mbName": "Joe Loss & His Orchestra",
+            "area": "United Kingdom",
+            "areaCountry": "GB",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "240455"
+        ],
+        "caseMbidRelCount": 7,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Joe Loss & His Orchestra",
+        "realname": null,
+        "profile": "The Joe Loss Orchestra was one of the most successful acts of the Big Band era in the 1940s.\r\n\r\nThe Joe Loss Orchestra carries on to this day under the musical direction of Todd Miller, who was a vocalist with the band for 19 years prior to Loss's death. In 1990, Joe entrusted the leadership solely to Todd. The Orchestra has been in constant operation since 1930.  It is Britain's longest running live entertainment unit of all time.\r\n",
+        "aliases": [
+          "The Rhythmic Troubadours"
+        ],
+        "members": [
+          "Joe Loss",
+          "Ross McManus",
+          "Monte Rey",
+          "Sid Lucas",
+          "Howard Jones (7)",
+          "Todd Miller (8)"
+        ],
+        "groups": [],
+        "urls": [
+          "https://adp.library.ucsb.edu/names/102798"
+        ]
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "John Henderson",
+      "discogsId": "6010173",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "9697c707-0f4f-4dca-a3fa-49f6f80f313a",
+      "caseMbName": "John Henderson",
+      "caseMbArea": "United Kingdom",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 3,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "John Henderson (21)",
+        "realname": null,
+        "profile": "Calypso performer",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Frankie Francis",
+      "discogsId": "696350",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "bc72e39e-6816-4fd9-9178-7e6546b2889c",
+      "caseMbName": "Frankie Francis",
+      "caseMbArea": "United Kingdom",
+      "identity": "id-confirmed",
+      "why": "identity certain (two independent legs) but no origin signal — MB area United Kingdom is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "bc72e39e-6816-4fd9-9178-7e6546b2889c",
+            "mbName": "Frankie Francis",
+            "area": "United Kingdom",
+            "areaCountry": "GB",
+            "class": "foreign-catalog",
+            "sameAsCase": true
+          }
+        ],
+        "caseMbidLinksTo": [
+          "696350"
+        ],
+        "caseMbidRelCount": 1,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Frankie Francis",
+        "realname": "Frank Merritt",
+        "profile": "",
+        "aliases": [
+          "Frank Merritt"
+        ],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "The Quavers",
+      "discogsId": "3258384",
+      "years": [
+        1960,
+        1960
+      ],
+      "caseMbid": "01c41e69-e51b-42fd-90a5-924e54ac4d7c",
+      "caseMbName": "The Quavers",
+      "caseMbArea": "United States",
+      "identity": "id-proven-other",
+      "why": "identity settled at id level (The Quavers, MB area none) but NO origin signal — area is residence, not origin",
+      "evidence": {
+        "crosswalk": [
+          {
+            "mbid": "c6f4666b-aa4f-425c-879f-76e73925b73e",
+            "mbName": "The Quavers",
+            "area": null,
+            "areaCountry": null,
+            "class": "unplaced",
+            "sameAsCase": false
+          }
+        ],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "The Quavers",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    },
+    {
+      "pool": "TT",
+      "name": "Skipper",
+      "discogsId": "13568818",
+      "years": [
+        null,
+        null
+      ],
+      "caseMbid": "03db9a4c-df4e-428f-ae95-98cc1211a72d",
+      "caseMbName": "Skipper",
+      "caseMbArea": "United States",
+      "identity": "name-only",
+      "why": "no id evidence in either direction and no origin signal — nothing the data can settle",
+      "evidence": {
+        "crosswalk": [],
+        "caseMbidLinksTo": [],
+        "caseMbidRelCount": 2,
+        "caseMbidOrigin": "no origin signal"
+      },
+      "discogsProfile": {
+        "name": "Skipper (31)",
+        "realname": null,
+        "profile": "",
+        "aliases": [],
+        "members": [],
+        "groups": [],
+        "urls": []
+      }
+    }
+  ]
+}

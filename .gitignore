@@ -67,3 +67,5 @@ data/hits-play.log
 data/hits-play-report.json
 data/gapfill-crosswalk-work.json
 data/gapfill-crosswalk.log
+data/held-rerun-work.json
+data/held-ruling-rerun.log
