@@ -476,6 +476,14 @@ async function main() {
           continue
         }
       }
+      // Provenance fix-forward (owner, Aug 26 2026): when the record's
+      // own country string is an approved HISTORICAL entity (config
+      // .historical registry), keep it — the sweep knew this at ingest
+      // and must never throw it away again.
+      const pressedAs =
+        !legacy && (config.historical ?? []).includes(stored?.country ?? '')
+          ? stored.country
+          : null
       for (const credit of credits) {
         const key = `dg|${credit.id}`
         const entry = candidates.get(key) ?? {
@@ -489,6 +497,7 @@ async function main() {
           releaseCount: 0,
         }
         entry.releaseCount++
+        if (pressedAs) (entry.pressedAs ??= new Set()).add(pressedAs)
         if (credit.anv && normalize(credit.anv) !== normalize(credit.name)) {
           entry.aliases.add(credit.anv)
         }
@@ -648,6 +657,8 @@ async function main() {
         existing.releaseCount += survivor.releaseCount
         for (const style of survivor.styles) existing.styles.add(style)
         for (const alias of survivor.aliases) existing.aliases.add(alias)
+        for (const pressed of survivor.pressedAs ?? [])
+          (existing.pressedAs ??= new Set()).add(pressed)
         if (survivor.name !== existing.name) existing.aliases.add(survivor.name)
         continue
       }
@@ -671,6 +682,9 @@ async function main() {
             survivor.discogsArtistId ?? state.artistIds[key] ?? null,
           wikidataId: survivor.wikidataId ?? null,
           ...(aliases.length > 0 ? { aliases } : {}),
+          ...(survivor.pressedAs?.size
+            ? { pressedAs: [...survivor.pressedAs].sort() }
+            : {}),
         }
       })
       // Documented years first, then the most-pressed.

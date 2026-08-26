@@ -29,6 +29,14 @@ interface ExtraArtist {
   retainedFrom?: string
   note?: string
   /**
+   * Historical-entity provenance (fix-forward, Aug 2026): the record's
+   * own country string when it was an owner-approved historical entity
+   * ("South Vietnam", "Zaire", "Belgian Congo") — kept at ingest so the
+   * sweep never again forgets what the record said. Data only for now;
+   * the era-aware panel copy (historical-map Phase A) will consume it.
+   */
+  pressedAs?: string[]
+  /**
    * Presence-model edge kind (Aug 2026). Absent = presumed-local (the
    * approved gap-fill default). 'archive' = identity established but
    * origin affirmatively unestablished: the records were verified

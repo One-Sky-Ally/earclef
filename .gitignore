@@ -69,3 +69,5 @@ data/gapfill-crosswalk-work.json
 data/gapfill-crosswalk.log
 data/held-rerun-work.json
 data/held-ruling-rerun.log
+data/historical-area-work.json
+data/historical-area-audit.log

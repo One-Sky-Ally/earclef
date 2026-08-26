@@ -109,7 +109,17 @@ export const COUNTRIES = {
   // (Belgian Congo/Rhodesia principle) — the pre-1975 Saigon pressing
   // industry IS the Vietnamese vintage archive; found by the record
   // guard rejecting 955 records inside the country=Vietnam search.
-  VN: { qid: 'Q881', name: 'Vietnam', mbArea: 'Vietnam', discogs: ['Vietnam', 'South Vietnam'] },
+  VN: {
+    qid: 'Q881', name: 'Vietnam', mbArea: 'Vietnam',
+    discogs: ['Vietnam', 'South Vietnam'],
+    // historical: the REGISTRY of owner-approved historical-entity
+    // strings (each approved explicitly, per standing convention).
+    // Ingest records them as `pressedAs` on the artist entry so the
+    // provenance the sweep knew is never thrown away again (owner
+    // fix-forward, Aug 26 2026 — the 948 Saigon entries went in
+    // unmarked; recoverable from cached credits on request).
+    historical: ['South Vietnam'],
+  },
   GH: { qid: 'Q117', name: 'Ghana', mbArea: 'Ghana', discogs: ['Ghana'] },
   ZM: { qid: 'Q953', name: 'Zambia', mbArea: 'Zambia', discogs: ['Zambia'] },
   // "Belgian Congo" (290 releases, found Aug 11 via the CG spot-check)
@@ -121,6 +131,7 @@ export const COUNTRIES = {
     name: 'DR Congo',
     mbArea: 'Democratic Republic of the Congo',
     discogs: ['Zaire', 'Congo, Democratic Republic of the', 'Belgian Congo'],
+    historical: ['Zaire', 'Belgian Congo'],
     noFallback: true,
   },
   TT: { qid: 'Q754', name: 'Trinidad & Tobago', mbArea: 'Trinidad and Tobago', discogs: ['Trinidad & Tobago'] },
