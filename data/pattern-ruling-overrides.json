@@ -28,8 +28,8 @@
     "why": "generic compound; a known Fijian band shares the name"
   },
   "UG|dg|323422": {
-    "proposal": "held",
-    "why": "Matata: MB area Kenya + era overlap but common Swahili word — owner call"
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
   },
   "GL|dg|1917072": {
     "proposal": "keep-note",
@@ -130,5 +130,181 @@
   "AL|dg|59661": {
     "proposal": "exclude",
     "why": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026) — BASIS CORRECTED Aug 25 2026: exclusion from AL stands, but MB id-links discogs/59661 to Capital T the UK garage producer (Trevor Davy, MB b2bb72cd-21ad-43a6-a236-13725cf3eba5), NOT the Kosovar rapper; the recorded \"Kosovo-origin Q1246\" rested on a name match. NEVER use this Discogs id to seed XK. (Confirmed on both legs: MB URL rel AND Discogs realname field 'Trevor Davy', fetched Aug 25.)"
+  },
+  "GM|dg|4373909": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "GM|dg|2044753": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "KH|dg|4110153": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "LK|dg|3750039": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "UG|dg|2835864": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "ML|dg|3944652": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "CM|dg|1858007": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "GY|dg|3753748": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-proven-other, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "BS|dg|1235573": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "SR|dg|4329562": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "NI|dg|5673": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "PS|dg|4481121": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "LY|dg|4827308": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "LY|dg|856678": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "KW|dg|4457019": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "AM|dg|700184": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "UZ|dg|4735276": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "UZ|dg|3033206": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "AL|dg|760666": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "AL|dg|688709": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "AL|dg|1347993": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "AL|dg|2254255": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "AL|dg|766984": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "AL|dg|1092795": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "MD|dg|3374902": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "MD|dg|4919807": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "MD|dg|2095296": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "MD|dg|3174892": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "MD|dg|7174174": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "MD|dg|1376978": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "MD|dg|6741890": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "MD|dg|1717656": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "XK|dg|3656173": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "VN|dg|4635182": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "VN|dg|1691398": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "ZM|dg|3542709": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "ZM|dg|1474849": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "TT|dg|706456": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-proven-other, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "TT|dg|357656": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "TT|dg|1132269": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "TT|dg|347098": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "TT|dg|240455": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "TT|dg|696350": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "TT|dg|3258384": {
+    "proposal": "archive-keep",
+    "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-proven-other, no origin signal — records verified pressed in pool country, origin unestablished"
   }
 }

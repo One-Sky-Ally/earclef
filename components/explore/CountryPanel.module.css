@@ -564,3 +564,31 @@
   font-style: italic;
   color: var(--text-muted);
 }
+
+/* Archive presence (presence model, Aug 2026): the honest divider.
+   Visually quieter than the pool — a hairline above, muted heading —
+   because the claim is smaller: records verified pressed here, origin
+   unestablished. Same pills, same verified-play badges. */
+.archiveSection {
+  margin-top: 1.4rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.archiveHeading {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 0.35rem;
+}
+
+.archiveNote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0 0 0.7rem;
+  text-wrap: pretty;
+}

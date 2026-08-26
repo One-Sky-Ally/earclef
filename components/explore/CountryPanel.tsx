@@ -345,6 +345,8 @@ export function CountryPanel({
     // Gap-fill entries arrive SHAPED from the API (pill URL + play key
     // computed server-side) — the dataset never ships to the client.
     // Stored pre-change payloads lack the field; degrade to MB-only.
+    // Archive-presence entries are NOT in this pool: they render in
+    // their own section and never join the count or the genre filter.
     const extra =
       state.status === 'ready' ? state.details.extraArtists : undefined
     return [
@@ -353,6 +355,13 @@ export function CountryPanel({
       ...(extra?.undated ?? []),
     ]
   }, [mbPool, state])
+  const archivePool: PanelPoolArtist[] = useMemo(
+    () =>
+      state.status === 'ready'
+        ? (state.details.extraArtists?.archive ?? [])
+        : [],
+    [state],
+  )
   const options = useMemo(
     () => genreOptions(pool, genre, country.name),
     [pool, genre, country.name],
@@ -662,6 +671,34 @@ export function CountryPanel({
                 </p>
               )}
             </>
+          )}
+
+          {/* Archive presence (presence model, Aug 2026): identity
+              established, origin affirmatively unestablished. The
+              records were verified pressed here — that is the entire
+              claim, and the copy says so. Never in the pool, the
+              count, the genre filter, rankings, or the heat map. */}
+          {!genre && archivePool.length > 0 && (
+            <section className={styles.archiveSection}>
+              <h3 className={styles.archiveHeading}>
+                From the {country.name} record archive
+              </h3>
+              <p className={styles.archiveNote}>
+                These artists appear on records pressed here — that much
+                is verified. Where they were from, no database says.
+                We&rsquo;d rather play the music than pretend to know.
+              </p>
+              <ul className={styles.artists}>
+                {archivePool.map((artist) => (
+                  <PanelArtistPill
+                    key={artist.id}
+                    artist={artist}
+                    decade={Math.floor(year / 10) * 10}
+                    rosterEntry={roster[artist.id]}
+                  />
+                ))}
+              </ul>
+            </section>
           )}
 
           {/* Chart facts + cultural snapshot AFTER the artists —

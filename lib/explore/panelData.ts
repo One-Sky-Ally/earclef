@@ -42,7 +42,19 @@ export interface CountryYearDetails {
    * never ships to the client (Aug 2026 bandwidth lesson). Absent on
    * stored pre-change payloads; the panel degrades to MB-only.
    */
-  extraArtists?: { dated: ExtraPoolArtist[]; undated: ExtraPoolArtist[] }
+  extraArtists?: {
+    dated: ExtraPoolArtist[]
+    undated: ExtraPoolArtist[]
+    /**
+     * Archive presence (presence model, Aug 2026): identity
+     * established, origin affirmatively unestablished — the records
+     * were verified pressed here and that is the entire claim.
+     * Rendered under the honest divider; never in the pool, its
+     * count, the genre filter, rankings, or the heat map. Absent on
+     * stored pre-change payloads; the panel degrades to no section.
+     */
+    archive?: ExtraPoolArtist[]
+  }
 }
 
 /** A gap-fill entry as the panel pool consumes it — data-free client. */

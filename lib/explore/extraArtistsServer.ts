@@ -28,6 +28,15 @@ interface ExtraArtist {
   aliases?: string[]
   retainedFrom?: string
   note?: string
+  /**
+   * Presence-model edge kind (Aug 2026). Absent = presumed-local (the
+   * approved gap-fill default). 'archive' = identity established but
+   * origin affirmatively unestablished: the records were verified
+   * pressed here, and that is the whole claim — rendered under the
+   * honest divider, excluded from the pool, its count, the genre
+   * filter and rankings. Never deleted for being unknown.
+   */
+  presence?: 'archive'
 }
 
 const DATASET = extraArtists as unknown as {
@@ -48,8 +57,21 @@ export function extraArtistGroupsFor(
   code: string,
   yearStart: number,
   yearEnd: number,
-): { dated: ExtraPoolArtist[]; undated: ExtraPoolArtist[] } {
-  const all = DATASET.countries[code] ?? []
+): {
+  dated: ExtraPoolArtist[]
+  undated: ExtraPoolArtist[]
+  archive: ExtraPoolArtist[]
+} {
+  const pool = (DATASET.countries[code] ?? []).filter(
+    (artist) => artist.presence !== 'archive',
+  )
+  // Archive edges: same era gate as the pool (pressing years are real
+  // dates of real objects), dated-in-span first, undated after. They
+  // ship as their own group so the client can render the divider and
+  // keep them out of every count.
+  const archiveAll = (DATASET.countries[code] ?? []).filter(
+    (artist) => artist.presence === 'archive',
+  )
   const shape = (artist: ExtraArtist, undated: boolean): ExtraPoolArtist => {
     const playKey = extraPlayKey(artist)
     return {
@@ -61,18 +83,21 @@ export function extraArtistGroupsFor(
       ...(undated ? { undated: true as const } : {}),
     }
   }
+  const inSpan = (artist: ExtraArtist) =>
+    artist.firstYear !== null &&
+    yearEnd >= artist.firstYear - ERA_REACH &&
+    yearStart <= (artist.lastYear ?? artist.firstYear) + ERA_REACH
   return {
-    dated: all
-      .filter(
-        (artist) =>
-          artist.firstYear !== null &&
-          yearEnd >= artist.firstYear - ERA_REACH &&
-          yearStart <= (artist.lastYear ?? artist.firstYear) + ERA_REACH,
-      )
-      .map((artist) => shape(artist, false)),
-    undated: all
+    dated: pool.filter(inSpan).map((artist) => shape(artist, false)),
+    undated: pool
       .filter((artist) => artist.firstYear === null)
       .map((artist) => shape(artist, true)),
+    archive: [
+      ...archiveAll.filter(inSpan).map((artist) => shape(artist, false)),
+      ...archiveAll
+        .filter((artist) => artist.firstYear === null)
+        .map((artist) => shape(artist, true)),
+    ],
   }
 }
 
