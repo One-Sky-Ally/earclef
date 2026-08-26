@@ -132729,20 +132729,6 @@
         "wikidataId": null
       },
       {
-        "name": "Gustavo Pimentel",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Psychedelic",
-          "Latin",
-          "Funk / Soul"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 1681249,
-        "wikidataId": null
-      },
-      {
         "name": "Leo Acosta Y Su Orquesta",
         "source": "discogs",
         "firstYear": null,
@@ -133906,20 +133892,6 @@
         "wikidataId": null
       },
       {
-        "name": "Los Shippy's",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Garage Rock",
-          "Beat",
-          "Rock"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 7776971,
-        "wikidataId": null
-      },
-      {
         "name": "Los Solistas Del Terraza",
         "source": "discogs",
         "firstYear": null,
@@ -134358,20 +134330,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 7288732,
-        "wikidataId": null
-      },
-      {
-        "name": "Paco Michel",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Bolero",
-          "Ballad",
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 1197992,
         "wikidataId": null
       },
       {
@@ -134858,22 +134816,6 @@
         "releaseCount": 4,
         "discogsArtistId": 3319851,
         "wikidataId": null
-      },
-      {
-        "name": "باسكال مشعلاني",
-        "source": "discogs",
-        "firstYear": 2004,
-        "lastYear": 2004,
-        "styles": [
-          "Pop",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 4,
-        "discogsArtistId": 3434655,
-        "wikidataId": null,
-        "aliases": [
-          "Pascale Machaalani"
-        ]
       },
       {
         "name": "بالعكس",
@@ -144319,18 +144261,6 @@
         "aliases": [
           "Ahmed Raggab"
         ]
-      },
-      {
-        "name": "أصيل أبو بكر",
-        "source": "discogs",
-        "firstYear": 1996,
-        "lastYear": 1996,
-        "styles": [
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 3475118,
-        "wikidataId": null
       },
       {
         "name": "أماني",
@@ -174973,19 +174903,6 @@
         ],
         "releaseCount": 3,
         "discogsArtistId": 2483659,
-        "wikidataId": null
-      },
-      {
-        "name": "Adem Ramadani",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Religious",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 10650493,
         "wikidataId": null
       },
       {

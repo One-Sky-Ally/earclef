@@ -326,5 +326,29 @@
   "PS|dg|3139999": {
     "proposal": "exclude",
     "why": "owner-ruling-cross-pool-consistency (Aug 25 2026, worksheet A4): سعدون جابر: crosswalk id-confirms the Iraqi artist (origin Q796) — KW ruling applied consistently"
+  },
+  "KW|dg|3475118": {
+    "proposal": "exclude",
+    "why": "owner-ruling-name-only-confirmed (Aug 26 2026, worksheet B2): owner confirmed identity + origin — wd origin Q851 ≠ pool (\"Yemeni singer\")"
+  },
+  "NI|dg|1681249": {
+    "proposal": "exclude",
+    "why": "owner-ruling-name-only-confirmed (Aug 26 2026, worksheet B3): owner confirmed identity + origin — MB begin-area resolves to Mexico"
+  },
+  "NI|dg|7776971": {
+    "proposal": "exclude",
+    "why": "owner-ruling-name-only-confirmed (Aug 26 2026, worksheet B4): owner confirmed identity + origin — MB begin-area resolves to Mexico"
+  },
+  "NI|dg|1197992": {
+    "proposal": "exclude",
+    "why": "owner-ruling-name-only-confirmed (Aug 26 2026, worksheet B5): owner confirmed identity + origin — MB begin-area resolves to Mexico"
+  },
+  "PS|dg|3434655": {
+    "proposal": "exclude",
+    "why": "owner-ruling-name-only-confirmed (Aug 26 2026, worksheet B6): owner confirmed identity + origin — wd origin Q822 ≠ pool (\"Lebanese singer and actress\")"
+  },
+  "XK|dg|10650493": {
+    "proposal": "exclude",
+    "why": "owner-ruling-name-only-confirmed (Aug 26 2026, worksheet B9): owner confirmed identity + origin — MB begin-area resolves to North Macedonia"
   }
 }
