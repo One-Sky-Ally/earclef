@@ -118875,19 +118875,6 @@
         "wikidataId": null
       },
       {
-        "name": "David Rose",
-        "source": "discogs",
-        "firstYear": 1985,
-        "lastYear": 1985,
-        "styles": [
-          "Calypso",
-          "Reggae"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 311166,
-        "wikidataId": null
-      },
-      {
         "name": "Debidien Ghoerai",
         "source": "discogs",
         "firstYear": 1977,
@@ -136191,18 +136178,6 @@
         "wikidataId": null
       },
       {
-        "name": "سعدون جابر",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 3139999,
-        "wikidataId": null
-      },
-      {
         "name": "سميح شقير",
         "source": "discogs",
         "firstYear": null,
@@ -136999,19 +136974,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 4225444,
-        "wikidataId": null
-      },
-      {
-        "name": "Amr Diab",
-        "source": "discogs",
-        "firstYear": 2005,
-        "lastYear": 2005,
-        "styles": [
-          "Pop",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 99728,
         "wikidataId": null
       },
       {
@@ -144038,19 +144000,6 @@
         ],
         "releaseCount": 2,
         "discogsArtistId": 5595192,
-        "wikidataId": null
-      },
-      {
-        "name": "Amr Diab",
-        "source": "discogs",
-        "firstYear": 2007,
-        "lastYear": 2007,
-        "styles": [
-          "Folk",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 99728,
         "wikidataId": null
       },
       {
@@ -239663,24 +239612,6 @@
         "discogsArtistId": 6896856,
         "wikidataId": null,
         "note": "Held-ruling re-run Aug 25 2026 (id-disproven): MB's The Dwellers links to discogs/4607380 — not our page 6896856; the collision is disproven at id level"
-      },
-      {
-        "name": "The Fifth Dimension",
-        "source": "discogs",
-        "firstYear": 1976,
-        "lastYear": 1976,
-        "styles": [
-          "Disco",
-          "Soul",
-          "Funk / Soul"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 191325,
-        "wikidataId": null,
-        "aliases": [
-          "The 5th Dimention"
-        ],
-        "note": "Held-ruling re-run Aug 25 2026 (id-disproven): MB's The Fifth Dimension links to discogs/1284990 — not our page 191325; the collision is disproven at id level"
       },
       {
         "name": "The Four Bees",

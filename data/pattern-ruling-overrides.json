@@ -306,5 +306,25 @@
   "TT|dg|3258384": {
     "proposal": "archive-keep",
     "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-proven-other, no origin signal — records verified pressed in pool country, origin unestablished"
+  },
+  "TT|dg|191325": {
+    "proposal": "exclude",
+    "why": "owner-ruling-cross-pool-consistency (Aug 25 2026, worksheet A1): The Fifth Dimension: crosswalk id-proves dg191325 = The 5th Dimension (US, wd Q30) — same id already excluded from NI"
+  },
+  "SR|dg|311166": {
+    "proposal": "exclude",
+    "why": "owner-ruling-cross-pool-consistency (Aug 25 2026, worksheet A2): David Rose: crosswalk id-confirms the US-filed composer — same id already excluded from NI (origin Q145)"
+  },
+  "JO|dg|99728": {
+    "proposal": "exclude",
+    "why": "owner-ruling-cross-pool-consistency (Aug 25 2026, worksheet A3): Amr Diab: crosswalk id-confirms MB عمرو دياب (EG) — origin Q79 ruling from PS applied consistently"
+  },
+  "KW|dg|99728": {
+    "proposal": "exclude",
+    "why": "owner-ruling-cross-pool-consistency (Aug 25 2026, worksheet A3): Amr Diab: crosswalk id-confirms MB عمرو دياب (EG) — origin Q79 ruling from PS applied consistently"
+  },
+  "PS|dg|3139999": {
+    "proposal": "exclude",
+    "why": "owner-ruling-cross-pool-consistency (Aug 25 2026, worksheet A4): سعدون جابر: crosswalk id-confirms the Iraqi artist (origin Q796) — KW ruling applied consistently"
   }
 }
