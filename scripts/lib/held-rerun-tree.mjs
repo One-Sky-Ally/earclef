@@ -114,6 +114,25 @@ export function decide(kase, reverse, originOf, pool) {
   }
 
   // 5. No id evidence in either direction — the Aug-11 leg stands alone.
+  // PRE-DATES-FORMATION GUARD (Aug-11 rule, dropped in v2, restored
+  // Aug 26 after the owner caught B1/B8 leaking through): a pressing
+  // that pre-dates the matched artist's formation is IMPOSSIBLE
+  // identity — era disproves a name-only collision outright. Direction
+  // matters: entry AFTER the life end is a posthumous reissue and
+  // stays compatible with identity. The guard lives on this branch
+  // ONLY — an id-proven link outranks era (a conflicting year there
+  // means noisy data, not a different artist).
+  const firstYear = kase.entryYears?.[0] ?? null
+  const lifeBegin = reverse?.life?.begin
+    ? Number(String(reverse.life.begin).slice(0, 4)) || null
+    : null
+  if (firstYear !== null && lifeBegin !== null && firstYear < lifeBegin) {
+    return {
+      outcome: 'keep', identity: 'era-disproven',
+      why: `entry ${firstYear} pre-dates the matched artist's ${lifeBegin} formation — impossible identity (Sweet Exorcist class)`,
+      evidenceTrail,
+    }
+  }
   const verdict = originVerdict(reverse, pool)
   if (verdict === 'in-pool') {
     return { outcome: 'keep-note', identity: 'name-only', why: `${originNote(reverse, pool)} — origin points into the pool`, evidenceTrail }

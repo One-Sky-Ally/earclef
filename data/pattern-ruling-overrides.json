@@ -350,5 +350,17 @@
   "XK|dg|10650493": {
     "proposal": "exclude",
     "why": "owner-ruling-name-only-confirmed (Aug 26 2026, worksheet B9): owner confirmed identity + origin — MB begin-area resolves to North Macedonia"
+  },
+  "HN|dg|14728423": {
+    "proposal": "keep-policy-c",
+    "why": "owner ruling Aug 26 2026 (worksheet B1): keep, presumed-local restored — collision disproven: entry 2011 pre-dates MB Sicarius 2014 formation (impossible identity, Sweet Exorcist class); MB artist links no Discogs page"
+  },
+  "TT|dg|3287807": {
+    "proposal": "keep-policy-c",
+    "why": "owner ruling Aug 26 2026 (worksheet B7): keep, presumed-local restored — collision disproven on the record: dg realname Seecharan Chotilal, chutney discography (Creation 1979) — different person from MB SIPPY (AU-born US-based producer)"
+  },
+  "TT|dg|4436923": {
+    "proposal": "keep-policy-c",
+    "why": "owner ruling Aug 26 2026 (worksheet B8): keep, presumed-local restored — collision disproven: entry 1959 pre-dates MB Teentones 1962 formation (impossible identity); MB artist links no Discogs page"
   }
 }
