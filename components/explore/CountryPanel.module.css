@@ -592,3 +592,14 @@
   margin: 0 0 0.7rem;
   text-wrap: pretty;
 }
+
+/* Era-aware polity line (historical-map Phase A): a quiet fact under
+   the year — informational, never a claim about any artist. */
+.eraNote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0.25rem 0 0;
+  text-wrap: pretty;
+}

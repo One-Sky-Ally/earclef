@@ -19,6 +19,7 @@ import type { ArtistLinks } from '@/lib/explore/panelData'
 import { WhatWasPlaying } from '@/components/explore/WhatWasPlaying'
 import { HitsSection } from '@/components/explore/HitsSection'
 import { QueuePlayer } from '@/components/explore/QueuePlayer'
+import { polityLinesFor } from '@/lib/explore/historicalPolities'
 import styles from './CountryPanel.module.css'
 
 export interface SelectedCountry {
@@ -415,6 +416,15 @@ export function CountryPanel({
             {spanLabel}
             {nearby && ' · around your year'}
           </p>
+          {/* Era-aware polity line (historical-map Phase A): a quiet
+              fact about what this place was in the selected era. V1
+              covers only uncontested dissolutions/divisions — the
+              table is the owner-reviewed registry. */}
+          {polityLinesFor(country.code, yearStart, yearEnd).map((line) => (
+            <p key={line} className={styles.eraNote}>
+              {line}
+            </p>
+          ))}
         </div>
         <button
           type="button"
