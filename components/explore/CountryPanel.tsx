@@ -19,7 +19,11 @@ import type { ArtistLinks } from '@/lib/explore/panelData'
 import { WhatWasPlaying } from '@/components/explore/WhatWasPlaying'
 import { HitsSection } from '@/components/explore/HitsSection'
 import { QueuePlayer } from '@/components/explore/QueuePlayer'
-import { polityLinesFor } from '@/lib/explore/historicalPolities'
+import {
+  CONTESTED_NOTE,
+  isContestedEra,
+  polityLinesFor,
+} from '@/lib/explore/historicalPolities'
 import styles from './CountryPanel.module.css'
 
 export interface SelectedCountry {
@@ -284,8 +288,11 @@ export function CountryPanel({
   // Resets naturally — the parent keys this component by country+year.
   const [nearby, setNearby] = useState(false)
 
+  const [contestedOpen, setContestedOpen] = useState(false)
+  useEffect(() => setContestedOpen(false), [country.code, year])
   const yearStart = nearby ? Math.max(YEAR_MIN, year - NEARBY_REACH) : year
   const yearEnd = nearby ? Math.min(YEAR_MAX, year + NEARBY_REACH) : year
+  const contested = isContestedEra(country.code, yearStart, yearEnd)
   const spanLabel =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}–${yearEnd}`
 
@@ -415,7 +422,22 @@ export function CountryPanel({
           <p className={styles.year}>
             {spanLabel}
             {nearby && ' · around your year'}
+            {contested && (
+              <button
+                type="button"
+                className={styles.contestedMark}
+                aria-label="Contested history — see note"
+                aria-expanded={contestedOpen}
+                title={CONTESTED_NOTE}
+                onClick={() => setContestedOpen((open) => !open)}
+              >
+                *
+              </button>
+            )}
           </p>
+          {contested && contestedOpen && (
+            <p className={styles.eraNote}>* {CONTESTED_NOTE}</p>
+          )}
           {/* Era-aware polity line (historical-map Phase A): a quiet
               fact about what this place was in the selected era. V1
               covers only uncontested dissolutions/divisions — the

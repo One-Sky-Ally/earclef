@@ -54,6 +54,40 @@ const POLITY_ERAS: Record<string, PolityEra[]> = {
   ZW: [{ from: 1965, to: 1979, line: 'Records from this era carry Rhodesia — today’s Zimbabwe.' }],
 }
 
+/**
+ * Contested-history marks (owner design, Aug 27 2026): a light
+ * asterisk on places whose political status in the selected era is
+ * disputed, pointing at ONE shared policy note — never a per-place
+ * history paragraph. The artist's claim decides where music appears;
+ * the mark says only that the site is not ruling on the history.
+ * Open-ended eras (to 9999) are live disputes — the mark shows on
+ * modern panels too, deliberately.
+ */
+export const CONTESTED_NOTE =
+  'A contested history. Ear Clef makes no claims about borders or sovereignty, only about where music happened.'
+
+const CONTESTED_ERAS: Record<string, { from: number; to: number }[]> = {
+  EE: [{ from: 1940, to: 1991 }],
+  LV: [{ from: 1940, to: 1991 }],
+  LT: [{ from: 1940, to: 1991 }],
+  TL: [{ from: 1975, to: 2002 }],
+  XK: [{ from: 1945, to: 9999 }],
+  KP: [{ from: 1945, to: 9999 }],
+  KR: [{ from: 1945, to: 9999 }],
+  PS: [{ from: 1948, to: 9999 }],
+}
+
+/** Whether the selected span touches a contested era for this place. */
+export function isContestedEra(
+  code: string,
+  yearStart: number,
+  yearEnd: number,
+): boolean {
+  return (CONTESTED_ERAS[code] ?? []).some(
+    (era) => yearStart <= era.to && yearEnd >= era.from,
+  )
+}
+
 /** Lines whose era intersects the selected span, in table order. */
 export function polityLinesFor(
   code: string,

@@ -603,3 +603,22 @@
   margin: 0.25rem 0 0;
   text-wrap: pretty;
 }
+
+/* Contested-history mark: a footnote asterisk, because it is one.
+   The ONE shared policy note expands in the eraNote slot on tap. */
+.contestedMark {
+  background: none;
+  border: none;
+  padding: 0 0.15rem;
+  margin-left: 0.2rem;
+  font: inherit;
+  font-size: 0.9em;
+  vertical-align: super;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.contestedMark:hover,
+.contestedMark:focus-visible {
+  color: var(--accent, inherit);
+}
