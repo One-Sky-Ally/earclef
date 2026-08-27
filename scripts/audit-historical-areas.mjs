@@ -8,6 +8,12 @@
  * Soviet Union SU, Yugoslavia YU, Czechoslovakia CS (XC), East
  * Germany DD — so no modern panel's query can ever match them.
  *
+ * COLLECTION IS BY AREA NAME, NOT COUNTRY CODE (learned the hard way,
+ * Aug 26: `country:CS` returns Serbia and Montenegro — ISO reassigned
+ * CS in 2003 — and `country:DD` returns nothing, the code was
+ * withdrawn). Every stored artist passes a record-level guard:
+ * their area name must EQUAL the polity's area name (lesson 4).
+ *
  * This audit measures the gap and attributes it: every artist under
  * the four areas, with their begin-area walked up "part of" to a
  * MODERN country (MB's area hierarchy is current-world, so the walk
@@ -40,17 +46,21 @@ const saveWork = () => writeFileSync(WORK_PATH, JSON.stringify(work))
 const areaCache = new Map(Object.entries(work.areaWalks))
 
 async function collect(area) {
-  let offset = work.pagesDone[area.code] ?? 0
+  // v2 keys (area-name query) — v1 country-code pages don't count.
+  const pageKey = `v2:${area.code}`
+  let offset = work.pagesDone[pageKey] ?? 0
   let total = Infinity
   while (offset < total) {
     const body = await mbJson(
       `https://musicbrainz.org/ws/2/artist?query=${encodeURIComponent(
-        `country:${area.code}`,
+        `area:"${area.name}"`,
       )}&limit=${PAGE}&offset=${offset}&fmt=json`,
       'artists',
     )
     total = body.count ?? 0
     for (const artist of body.artists ?? []) {
+      // Record-level guard: the artist's own area must BE the polity.
+      if ((artist.area?.name ?? null) !== area.name) continue
       work.artists[artist.id] = {
         polity: area.code,
         name: artist.name,
@@ -63,7 +73,7 @@ async function collect(area) {
       }
     }
     offset += PAGE
-    work.pagesDone[area.code] = offset
+    work.pagesDone[pageKey] = offset
     saveWork()
     console.log(`  ${area.name}: ${Math.min(offset, total)}/${total}`)
   }
