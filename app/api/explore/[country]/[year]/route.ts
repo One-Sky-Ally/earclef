@@ -9,6 +9,7 @@ import { REGION_CODE_PATTERN, regionByCode } from '@/lib/explore/states'
 import { movedIn, movedOut } from '@/lib/explore/originCorrections'
 import { hasStateData, stateDetails } from '@/lib/explore/stateData'
 import { extraArtistGroupsFor } from '@/lib/explore/extraArtistsServer'
+import { withHistoricalArtists } from '@/lib/explore/historicalArtistsServer'
 import type {
   CountryYearDetails,
   PanelArtist,
@@ -372,7 +373,11 @@ export async function GET(
   const respond = (details: CountryYearDetails) =>
     withCacheHeaders(
       NextResponse.json({
-        ...details,
+        // Historical-area roster merges at respond time like the
+        // gap-fill attach: cached payloads stay as stored, roster
+        // updates ride each deploy. Subdivision codes miss the
+        // country-keyed roster and no-op.
+        ...withHistoricalArtists(details, country, start, end, genre),
         extraArtists: extraArtistGroupsFor(country, start, end),
       }),
     )
