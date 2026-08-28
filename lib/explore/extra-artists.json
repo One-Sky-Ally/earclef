@@ -103349,7 +103349,8 @@
         "wikidataId": null,
         "aliases": [
           "ፍሊፕ ማርቲን"
-        ]
+        ],
+        "note": "owner-delegated-f44-keep (Aug 28 2026): release in Amharic script (ፍሊፕ ማርቲን እና ሄለን ጳውሎስ, Solar Music Shop) — an Ethiopian Philip Martin, not the UK match"
       },
       {
         "name": "Seyum Telahun",
@@ -111716,7 +111717,8 @@
         ],
         "releaseCount": 4,
         "discogsArtistId": 4995406,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026): profile: originario de San Pedro Sula, Honduras"
       },
       {
         "name": "Paco Medina",
@@ -112362,7 +112364,8 @@
         ],
         "releaseCount": 12,
         "discogsArtistId": 2342492,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-note (Aug 28 2026): profile: Trinidad-born pannist, based Grand Bahama since 1957 (real name Leslie Hoyte) — based-edge in BS; birth noted"
       },
       {
         "name": "Roy Shurland",
@@ -114799,7 +114802,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 2537094,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026): profile: Freeport, Grand Bahama based entertainer (Felix Johnson)"
       },
       {
         "name": "Soul-Jah",
@@ -126602,7 +126606,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 2136408,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026): release Dwet Sou Bouch (Haitian Creole) on Antilles Mizik"
       },
       {
         "name": "Skandal",
@@ -129875,20 +129880,6 @@
         "aliases": [
           "Armando Patrono"
         ]
-      },
-      {
-        "name": "Beto Orlando",
-        "source": "discogs",
-        "firstYear": 1972,
-        "lastYear": 1973,
-        "styles": [
-          "Rock",
-          "Latin",
-          "Ballad"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 1490923,
-        "wikidataId": null
       },
       {
         "name": "Coro Aldea S. O. S. de Ninos",
@@ -133854,19 +133845,6 @@
         "wikidataId": null
       },
       {
-        "name": "Los Randal",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Vocal",
-          "Pop"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 3499970,
-        "wikidataId": null
-      },
-      {
         "name": "Los Rockeros",
         "source": "discogs",
         "firstYear": null,
@@ -133877,19 +133855,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 2870461,
-        "wikidataId": null
-      },
-      {
-        "name": "Los Seims",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Rock",
-          "Latin"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 8090092,
         "wikidataId": null
       },
       {
@@ -141737,7 +141702,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 4302097,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026): profile: Firqat al-Fajr was an Iraqi group"
       },
       {
         "name": "قيسية",
@@ -154768,7 +154734,8 @@
         ],
         "releaseCount": 2,
         "discogsArtistId": 7181939,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-HELD (Aug 28 2026, genuinely unsure): See The Sea / Smart Phenomena labels lean Russian-scene but I cannot verify the labels' origin to exclusion standard"
       },
       {
         "name": "Bezimyanniy Papuas",
@@ -157024,20 +156991,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 7164708,
-        "wikidataId": null
-      },
-      {
-        "name": "Sculptor",
-        "source": "discogs",
-        "firstYear": 2016,
-        "lastYear": 2016,
-        "styles": [
-          "Tribal House",
-          "House",
-          "Tech House"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 922797,
         "wikidataId": null
       },
       {
@@ -168519,19 +168472,6 @@
         "wikidataId": null
       },
       {
-        "name": "Grenouer Inc.",
-        "source": "discogs",
-        "firstYear": 2025,
-        "lastYear": 2025,
-        "styles": [
-          "Death Metal",
-          "Rock"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 16189432,
-        "wikidataId": null
-      },
-      {
         "name": "Haikal Ahmad",
         "source": "discogs",
         "firstYear": 2021,
@@ -169371,7 +169311,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 7637075,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-HELD (Aug 28 2026, genuinely unsure): possibly Moldovan-born and Russia-active (the Naghma shape if so) — one release on Trend Music proves neither"
       },
       {
         "name": "Melodicr",
@@ -170657,23 +170598,6 @@
         "releaseCount": 1,
         "discogsArtistId": 8091248,
         "wikidataId": "Q117303853"
-      },
-      {
-        "name": "Vasile Gorbani",
-        "source": "discogs",
-        "firstYear": 2016,
-        "lastYear": 2016,
-        "styles": [
-          "Minimal",
-          "Tech House",
-          "Electronic"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 2318733,
-        "wikidataId": null,
-        "aliases": [
-          "Gorbani"
-        ]
       },
       {
         "name": "VEKY",
@@ -177173,7 +177097,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 10442401,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026, no evidence either way): Danish-language children's record on Arctic Enterprise (Greenland label) — weak signals both ways, status quo"
       },
       {
         "name": "Tupaarnaq Illit",
@@ -177856,7 +177781,8 @@
         ],
         "releaseCount": 11,
         "discogsArtistId": 6029118,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Giáng Thu",
@@ -177932,7 +177858,8 @@
         ],
         "releaseCount": 9,
         "discogsArtistId": 6080145,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Mai Hương",
@@ -177974,7 +177901,8 @@
         ],
         "releaseCount": 9,
         "discogsArtistId": 5769204,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Thành Công",
@@ -178794,7 +178722,8 @@
         ],
         "releaseCount": 3,
         "discogsArtistId": 7780160,
-        "wikidataId": "Q135417836"
+        "wikidataId": "Q135417836",
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Đức Phú",
@@ -179294,20 +179223,6 @@
         "wikidataId": null
       },
       {
-        "name": "DJ Ultimate Bass",
-        "source": "discogs",
-        "firstYear": 2013,
-        "lastYear": 2014,
-        "styles": [
-          "Trance",
-          "Progressive Trance",
-          "Electronic"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 3594813,
-        "wikidataId": null
-      },
-      {
         "name": "Ethnomite Pux",
         "source": "discogs",
         "firstYear": 2010,
@@ -179361,7 +179276,8 @@
         ],
         "releaseCount": 2,
         "discogsArtistId": 16895161,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Hoài Bắc",
@@ -179837,7 +179753,8 @@
         ],
         "releaseCount": 2,
         "discogsArtistId": 7965825,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Thảo Ly",
@@ -180731,7 +180648,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 9062194,
-        "wikidataId": "Q8079982"
+        "wikidataId": "Q8079982",
+        "note": "owner-delegated-f44-keep (Aug 28 2026): profile: Vietnamese classical composer (1922–1991)"
       },
       {
         "name": "Đoàn Ca Múa Tổng Cục Chính Trị",
@@ -182845,7 +182763,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 4701806,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026): profile: Vietnamese singer (Trương Chiêu Thông)"
       },
       {
         "name": "Thanh Hòa",
@@ -182884,7 +182803,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 3467430,
-        "wikidataId": "Q10824744"
+        "wikidataId": "Q10824744",
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Thành Lộc",
@@ -183827,7 +183747,8 @@
         "styles": [],
         "releaseCount": 0,
         "discogsArtistId": 6281510,
-        "wikidataId": "Q111086636"
+        "wikidataId": "Q111086636",
+        "note": "owner-delegated-f44-keep (Aug 28 2026): profile: Vietnamese singer (1950–2003), Lữ Anh Tú"
       },
       {
         "name": "Anh Tú Atus",
@@ -185997,7 +185918,8 @@
         ],
         "releaseCount": 7,
         "discogsArtistId": 12399016,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Tám Thưa",
@@ -186624,7 +186546,8 @@
         ],
         "releaseCount": 2,
         "discogsArtistId": 7002691,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Tư Bé",
@@ -186654,7 +186577,8 @@
         ],
         "releaseCount": 2,
         "discogsArtistId": 7101584,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Văn An",
@@ -187493,7 +187417,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 4700855,
-        "wikidataId": "Q109435435"
+        "wikidataId": "Q109435435",
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Le Phi",
@@ -187799,7 +187724,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 7037772,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Nhật Bằng",
@@ -188234,7 +188160,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 7012345,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Tiến Vượng",
@@ -188329,7 +188256,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 5879285,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
       },
       {
         "name": "Tư Đản",
@@ -198208,7 +198136,8 @@
         ],
         "releaseCount": 2,
         "discogsArtistId": 1733455,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026): profile: 60s highlife bigband from Ghana, feat. Ebo Taylor"
       },
       {
         "name": "The Comets",
@@ -210088,19 +210017,6 @@
         "wikidataId": null
       },
       {
-        "name": "Nyami Nyami Sounds",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "African",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 1668349,
-        "wikidataId": null
-      },
-      {
         "name": "Orch: Kinshasa Melodia Stars",
         "source": "discogs",
         "firstYear": null,
@@ -211560,7 +211476,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 15522192,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026, no evidence either way): one no-label gospel release, generic name — no evidence either way, status quo"
       },
       {
         "name": "The Crusaders Choir",
@@ -217897,7 +217814,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 13813225,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026): Congolese gospel scene (B. Mas Production, Mont Sinaï) — likely local/diaspora, moderate confidence"
       },
       {
         "name": "Les Diablotins",
@@ -221743,7 +221661,8 @@
         "wikidataId": null,
         "aliases": [
           "L'Orch. Los Nickelos"
-        ]
+        ],
+        "note": "owner-delegated-f44-keep-note (Aug 28 2026): profile: Belgian-based Zairean band (Liège 1965) — metropole-residence, pattern a; origin Zaire"
       },
       {
         "name": "Michel Boyibanda",
@@ -236831,7 +236750,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 380429,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026): profile: Trinidad & Tobago soul artist from 1977 + era guard (MB match formed 2007, entry 1977 — impossible identity)"
       },
       {
         "name": "Hidden Strength",
@@ -243013,7 +242933,8 @@
         "wikidataId": null,
         "aliases": [
           "John H."
-        ]
+        ],
+        "note": "owner-delegated-f44-keep (Aug 28 2026): profile: Calypso performer — the TT scene, not the UK name-match"
       },
       {
         "name": "John Mendes",
@@ -244003,7 +243924,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 969674,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-HELD (Aug 28 2026, genuinely unsure): page shows Bombay/Times Music (Indian scene) but TT's Indo-Trinidadian chutney scene shares names and repertoire — which person the TT credit is remains open"
       },
       {
         "name": "Nite Life",
@@ -244821,7 +244743,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 13568818,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026): Ah Cultural Jam on Humming Bird — Trini-creole title, TT label"
       },
       {
         "name": "Skunky",
@@ -244975,7 +244898,8 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 8638749,
-        "wikidataId": null
+        "wikidataId": null,
+        "note": "owner-delegated-f44-keep (Aug 28 2026): Christmas record on Tropico, the TT parang tradition"
       },
       {
         "name": "Steve Nite",
