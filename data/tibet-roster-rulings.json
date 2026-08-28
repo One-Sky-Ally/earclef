@@ -1,0 +1,69 @@
+{
+ "generatedAt": "2026-08-28",
+ "classRulings": {
+  "recorded-teachings": "EXCLUDED as a class (owner, Aug 28): a recorded lecture is not music, whoever the speaker. Sorted by CATALOG, never by the title lama — chant and sung ritual ARE music (lesson-7 discipline).",
+  "monastery-ensembles": "Owner test (Aug 28): a TIBETAN institution (exile re-establishments included) is in; a non-Tibetan institution practicing Tibetan Buddhism is not — religion is not ethnic identity."
+ },
+ "cases": {
+  "4f3dea40-1b06-4ace-9e19-8844392fa1b0": {
+   "name": "Dalai Lama",
+   "ruling": "exclude-teachings-class",
+   "basis": "25 RGs, predominantly lectures/audiobooks (owner class ruling). Nuance on record: Inner World (2020) and Songs of Tara are genuine music releases — class applied on predominance."
+  },
+  "36c37e19-b4b1-4602-ba42-a954f8ac4d4a": {
+   "name": "Chögyam Trungpa",
+   "ruling": "held-owner",
+   "basis": "2 RGs: Dragon's Thunder (SONGS of Chögyam Trungpa) + Shambhala (audiobook) — half sung tradition, the Milarepa-test shape; owner to rule."
+  },
+  "43a65a18-17c0-41c0-9779-c3ebee9b8489": {
+   "name": "Chime Rigdzin Rinpoche",
+   "ruling": "include-stands",
+   "basis": "sole RG is Tantric rNying.ma Chant of Tibet — chant is ritual MUSIC, not a lecture; not in the teachings class."
+  },
+  "90987242-9f48-4cb0-b640-f03aa37ad2ce": {
+   "name": "Namkhai Norbu",
+   "ruling": "include-stands",
+   "basis": "sole RG is Chöd: Cutting Through Dualism — Chöd is sung ritual; not in the teachings class."
+  },
+  "9f3ab350-2d62-4199-8801-47d9cf6df490": {
+   "name": "Kunga Thartse Rinpoche",
+   "ruling": "propose-exclude-empty",
+   "basis": "zero RGs, zero recordings — nothing servable; exclusion proposed on empty catalog, NOT class (owner to confirm)."
+  },
+  "4d773653-6237-42ff-a56c-ff257f9c3bd9": {
+   "name": "Nyoshul Khenpo",
+   "ruling": "propose-exclude-empty",
+   "basis": "zero RGs, zero recordings — same as Kunga Thartse (owner to confirm)."
+  },
+  "ada84453-f8e3-4ecb-b6da-1c56e6c860eb": {
+   "name": "Jetsun Milarepa",
+   "ruling": "held-owner",
+   "basis": "EXCEPTION TEST MET IN KIND: all 10 MB works are Songs of Milarepa (the sung tradition, writer credits) — but zero recordings/releases under his name; a roster pill would have nothing to play. Recommend hold-out until a linked recording exists; owner decides."
+  },
+  "tengboche": {
+   "name": "Monks of the Tengboche Monastery",
+   "ruling": "exclude-owner",
+   "basis": "owner ruling Aug 28: Sherpa/Nepali monastery — religion is not ethnic identity."
+  },
+  "drepung": {
+   "name": "Drepung Loseling Monks",
+   "ruling": "include-owner",
+   "basis": "owner ruling Aug 28: Tibetan monastery re-established in exile."
+  },
+  "diptsechokling": {
+   "name": "Monks of the Dip Tse Chok Ling Monastery, Dharamsala",
+   "ruling": "include-test",
+   "basis": "Lhasa monastery re-established in Dharamsala; catalog = Ritual Music of Tibetan Buddhism ×3 — Drepung class, owner test applied."
+  },
+  "fourgreatorders": {
+   "name": "Lamas and Monks of the Four Great Orders",
+   "ruling": "include-test",
+   "basis": "India-based ensemble of Tibetan lamas of the four Tibetan-Buddhist schools, catalog Tibetian Ritual Music — Tibetan practitioners themselves, owner test applied."
+  },
+  "maitrivihar": {
+   "name": "Buddhist Monks of Maitri Vihar Monastery",
+   "ruling": "held-owner-unclear",
+   "basis": "Nepal monastery, album Tibetan Mantras and Chants — whether the community is Tibetan-exile or Nepali practicing Tibetan Buddhism is NOT determinable from any record I trust: genuinely unclear, exactly the class the owner asked to see."
+  }
+ }
+}
