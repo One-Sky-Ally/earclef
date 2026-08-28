@@ -1,0 +1,1860 @@
+{
+ "generatedAt": "2026-08-28",
+ "bar": "self-identification only — ascription, genre tags and language never sufficient alone; verdicts are PROPOSALS pending owner review; thin cases held",
+ "byVerdict": {
+  "include-proposed": 18,
+  "held-thin": 37
+ },
+ "includeSkew": {
+  "tibet-area-filed": 8,
+  "unplaced": 4,
+  "diaspora-filed": 6
+ },
+ "rows": [
+  {
+   "mbid": "99376f73-700c-4156-a839-f06b2fef0e31",
+   "name": "Ani Chöying Drolma",
+   "type": "Person",
+   "areaName": "Nepal",
+   "disambiguation": "",
+   "life": {
+    "begin": "1971-06-04",
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "seed"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "Nepal",
+    "areaCountry": "NP",
+    "areaCountryName": "Nepal",
+    "wdDescription": "Buddhist nun and musician from Nepal",
+    "wdCitizenships": [
+     "Q837"
+    ],
+    "officialSites": [
+     "http://choying.com/",
+     "http://www.theanifoundation.org/"
+    ],
+    "discogsIds": [
+     "301036"
+    ],
+    "discogsProfile": "\r\nBuddhist nun, born in Nepal, 1971. Has sung Buddhist melodies on solo and collaborative releases with guitarist [a=Steve Tibbetts]."
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "7b5555da-65f3-4dd5-a979-223802e2d8c9",
+   "name": "Bau In Da Li Ga",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [
+     "2154058"
+    ],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "4e41a4f0-c2f5-4cb8-bb51-f11fa5af6489",
+   "name": "Blood of Kingu",
+   "type": "Group",
+   "areaName": "Ukraine",
+   "disambiguation": "Ukraine / black metal",
+   "life": {
+    "begin": "2005",
+    "end": "2016",
+    "ended": true
+   },
+   "tags": [
+    "black metal",
+    "sumerian mythology",
+    "egyptian mythology",
+    "tibetan mythology",
+    "indo-aryan mythology"
+   ],
+   "sources": [
+    "mb-tag"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "Ukraine",
+    "areaCountry": "UA",
+    "areaCountryName": "Ukraine",
+    "wdDescription": "Ukrainian extreme metal band",
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [
+     "1405960"
+    ],
+    "discogsProfile": "Black metal band from Ukraine. Split up in 2016."
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-tag"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "184c9984-4744-4ebf-8b91-4eea29577943",
+   "name": "Brian Cutillo",
+   "type": "Person",
+   "areaName": "United States",
+   "disambiguation": "American scholar of Tibetan Buddhism",
+   "life": {
+    "begin": "1945",
+    "end": "2006-01-04",
+    "ended": true
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "US",
+    "areaCountryName": "United States",
+    "wdDescription": "American scholar",
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [
+     "4194450"
+    ],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "307420dc-c980-4186-9302-ee381445b31d",
+   "name": "Buddhist Monks of Maitri Vihar Monastery",
+   "type": "Group",
+   "areaName": "Nepal",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [
+    "mantra",
+    "tibetan music",
+    "central asian throat singing"
+   ],
+   "sources": [
+    "mb-tag"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "NP",
+    "areaCountryName": "Nepal",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-tag"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "f5779036-aec6-4f50-8adf-9329dc65e17b",
+   "name": "Domingos Rosendo",
+   "type": "Person",
+   "areaName": null,
+   "disambiguation": "tibetan monastery",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "2b651a78-6e2a-4281-b781-76327d3a3d86",
+   "name": "Drepung Loseling Monks",
+   "type": "Group",
+   "areaName": "India",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [
+    "tibetan traditional music"
+   ],
+   "sources": [
+    "mb-tag"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "IN",
+    "areaCountryName": "India",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [
+     "365782"
+    ],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-tag"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "187eb1d7-0284-42c9-9ac8-fa80d826c37b",
+   "name": "Drugpa-ka-gyu",
+   "type": "Group",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "8023daa9-1134-4191-94d3-1611cdb9ceb9",
+   "name": "Jamyang Choeden",
+   "type": "Person",
+   "areaName": null,
+   "disambiguation": "Tibetan monk",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "42681d8e-7c40-4501-8883-b0d132c7a994",
+   "name": "JJI Exile Brothers",
+   "type": null,
+   "areaName": null,
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "seed"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "17e0e964-b397-4391-9f83-b5c4df4c213c",
+   "name": "Lamas and Monks of the Four Great Orders",
+   "type": "Group",
+   "areaName": "India",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [
+    "tibetan buddhist chant"
+   ],
+   "sources": [
+    "mb-tag"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "IN",
+    "areaCountryName": "India",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-tag"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "12f30a9f-516f-4d2a-a1d5-e4bacccfb82e",
+   "name": "Lhanzom Lhasam",
+   "type": "Person",
+   "areaName": "Switzerland",
+   "disambiguation": "Tibetan Swiss Singer-Songwriter",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CH",
+    "areaCountryName": "Switzerland",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "be47bbc6-1915-4e72-acde-92803dca2bd6",
+   "name": "Lobsang Yeshe Tenzin Gyatso",
+   "type": "Person",
+   "areaName": null,
+   "disambiguation": "",
+   "life": {
+    "begin": "1901-03-10",
+    "end": "1981-11-09",
+    "ended": true
+   },
+   "tags": [
+    "tibetan"
+   ],
+   "sources": [
+    "mb-tag"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": "Buddhist lama (1901-1981)",
+    "wdCitizenships": [
+     "Q17252"
+    ],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-tag"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "ce2c57da-28ec-436e-88ef-5e0b0463d72d",
+   "name": "Loten Namling",
+   "type": "Person",
+   "areaName": "Switzerland",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "seed"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CH",
+    "areaCountryName": "Switzerland",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "09c6f804-7a25-4e34-919c-8d5fb86faaef",
+   "name": "Monks of the Dip Tse Chok Ling Monastery, Dharamsala",
+   "type": "Group",
+   "areaName": "India",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [
+    "tibetan music",
+    "central asian throat singing"
+   ],
+   "sources": [
+    "mb-tag"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "IN",
+    "areaCountryName": "India",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [
+     "1910475"
+    ],
+    "discogsProfile": "Dip Tse Chok Ling was originally established near Lhasa in the 18th century by the Most Venerable Yongzin Yeshi Gyaltsen, tutor of the 8th Dalai Lama. Destroyed in 1959 during the Chinese invasion; rebuilt in Dharamsala, 1992."
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-tag"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "d23e040b-5c61-4b19-8f69-98c948f8deb9",
+   "name": "Monks of the Tengboche Monastery",
+   "type": "Group",
+   "areaName": null,
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [
+    "central asian throat singing",
+    "tibetan music"
+   ],
+   "sources": [
+    "mb-tag"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-tag"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "8ea1144d-4152-4ac5-a60d-544b7819fd48",
+   "name": "Ngor Khangsar Shabdrung Rinpochemu",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "48af0ad5-6a33-4c24-bbd4-1306de76e55a",
+   "name": "Padmasambhava",
+   "type": "Person",
+   "areaName": null,
+   "disambiguation": "Tibetan lama",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": "8th-century Vajrayana Master",
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "21d91f9d-3f7c-4dab-bc35-9fb7033c8bab",
+   "name": "Peaks",
+   "type": null,
+   "areaName": null,
+   "disambiguation": "Tibetan Song",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "7deac8a5-bd9e-4f83-86fa-8ab3d11d30f3",
+   "name": "Petso",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "b96145ef-87a7-45e4-8c5d-95ca54aecad6",
+   "name": "Rob Thomas",
+   "type": "Person",
+   "areaName": "United States",
+   "disambiguation": "Didgeridoo / Tibetan Horn / Gamelan Gongs",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "United States",
+    "areaCountry": "US",
+    "areaCountryName": "United States",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [
+     "1043941"
+    ],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "8b9d5f49-c8c8-4cbe-b12a-63648fc5964d",
+   "name": "Sa Zen Ga Zhiu Luh",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "4fa9e509-e824-47e8-acc9-3c4dfe8a5d8d",
+   "name": "Sharab Wangmo",
+   "type": "Person",
+   "areaName": null,
+   "disambiguation": "Tibetan monk",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "834f3515-ebaf-4045-ae2a-2101422bc86a",
+   "name": "Tashi Gyaltsen",
+   "type": "Person",
+   "areaName": null,
+   "disambiguation": "Musician, Singer, Lyricist",
+   "life": {
+    "begin": "2005-02-24",
+    "ended": null
+   },
+   "tags": [
+    "tibetan",
+    "singer",
+    "musician",
+    "lyricist",
+    "tibetan music",
+    "tibetan pop",
+    "tashi gyaltsen",
+    "tashigyaltsenn",
+    "tashi gyaltsen lama"
+   ],
+   "sources": [
+    "mb-tag"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-tag"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "94121cca-7ea8-4dc1-a2f5-5af04bd8c0f8",
+   "name": "The Miracle Seeds",
+   "type": "Group",
+   "areaName": "Scotland",
+   "disambiguation": "formerly Tibetan Miracle Seeds",
+   "life": {
+    "ended": null
+   },
+   "tags": [
+    "rock",
+    "psychedelic rock",
+    "psychedelic",
+    "acid rock"
+   ],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "United Kingdom",
+    "areaCountry": "GB",
+    "areaCountryName": "United Kingdom",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [
+     "7838491"
+    ],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "e29b01b0-909c-4f5b-957a-1f5ae99630b3",
+   "name": "Tibetan Institute of Performing Arts",
+   "type": null,
+   "areaName": null,
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "seed"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "self-naming"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "94149410-6d4b-49d7-b244-2a7a020784c3",
+   "name": "Tim Perry",
+   "type": "Person",
+   "areaName": null,
+   "disambiguation": "Tibetan bowl player",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "549e4c5e-5db4-4e7e-856f-54c4098ee6ac",
+   "name": "Toenpa Kyap",
+   "type": "Person",
+   "areaName": null,
+   "disambiguation": "Tibetan monk",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "980a41b1-536e-4651-803a-e8cf3b8355c2",
+   "name": "TsenkHang",
+   "type": "Group",
+   "areaName": "United Arab Emirates",
+   "disambiguation": "Tibetan Black metal",
+   "life": {
+    "begin": "2025-03-15",
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "AE",
+    "areaCountryName": "United Arab Emirates",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "cf617d15-e05e-4713-8279-06a69e298172",
+   "name": "Ven. Lobsang Dorjee",
+   "type": "Person",
+   "areaName": null,
+   "disambiguation": "member of The Tibetan Monks Of Gyudmed Monastery",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [
+     "1118043"
+    ],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "d29877c4-260e-4553-9c82-683957c09e24",
+   "name": "丹增欧珠",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "a735592f-1801-4e8e-aa8b-fdcd269333d9",
+   "name": "亚东",
+   "type": "Person",
+   "areaName": "China",
+   "disambiguation": "",
+   "life": {
+    "begin": "1968-07-07",
+    "ended": null
+   },
+   "tags": [
+    "chinese",
+    "tibetan"
+   ],
+   "sources": [
+    "mb-tag"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-tag"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "871d9ac6-de4a-4cd9-a98d-d0a95433e51a",
+   "name": "嘎玛德庆",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "b9895df3-7a61-41c6-bdea-d133f9b83555",
+   "name": "德勤卓玛",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "15613788-4cbf-41d3-aa14-cb38bcddf622",
+   "name": "德庆玉珍",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "20c6c81a-60b8-4cea-95de-3961cd453cbc",
+   "name": "西藏歌舞团民乐队",
+   "type": "Orchestra",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "53d1d8e0-4e77-4078-87ce-b865953cf559",
+   "name": "麦拉措母",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "held-thin",
+   "evidenceKeys": [
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "dded0177-e235-474e-8529-a812b89f806c",
+   "name": "alan",
+   "type": "Person",
+   "areaName": "China",
+   "disambiguation": "Tibetan; performs in Japanese and Chinese",
+   "life": {
+    "begin": "1987-07-25",
+    "ended": null
+   },
+   "tags": [
+    "j-pop",
+    "pop",
+    "tibetan",
+    "mandopop"
+   ],
+   "sources": [
+    "mb-comment",
+    "mb-tag"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": "Tibetan singer",
+    "wdCitizenships": [
+     "Q148"
+    ],
+    "officialSites": [
+     "http://alan-web.jp/"
+    ],
+    "discogsIds": [
+     "1214633"
+    ],
+    "discogsProfile": "Born on July 25, 1987 in Szechuan."
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "wd-description",
+    "mb-disambiguation",
+    "mb-tag"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "43a65a18-17c0-41c0-9779-c3ebee9b8489",
+   "name": "Chime Rigdzin Rinpoche",
+   "type": "Person",
+   "areaName": null,
+   "disambiguation": "Tibetan lama",
+   "life": {
+    "begin": "1922",
+    "end": "2002",
+    "ended": true
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": "Indian lama of Tibetan Buddhism (1922–2002)",
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [
+     "499404"
+    ],
+    "discogsProfile": null
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "wd-description",
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "36c37e19-b4b1-4602-ba42-a954f8ac4d4a",
+   "name": "Chögyam Trungpa",
+   "type": "Person",
+   "areaName": "[Worldwide]",
+   "disambiguation": "Tibetan abbot who taught Tibetan Buddhism in Western countries",
+   "life": {
+    "begin": "1939-02-28",
+    "end": "1987-04-04",
+    "ended": true
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": "Tibetan Buddhist lama and writer (1939-1987)",
+    "wdCitizenships": [
+     "Q30",
+     "Q145",
+     "Q2444884"
+    ],
+    "officialSites": [],
+    "discogsIds": [
+     "643606"
+    ],
+    "discogsProfile": "Buddhist meditation master, scholar, teacher, poet and artist, born 28 February 1939 in Qinghai, Kham region, Tibet and died 4 April 1987 in Halifax, Nova Scotia, Canada."
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "discogs-profile",
+    "wd-description",
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "4f3dea40-1b06-4ace-9e19-8844392fa1b0",
+   "name": "Dalai Lama",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "14th Dalai Lama",
+   "life": {
+    "begin": "1935-07-06",
+    "ended": null
+   },
+   "tags": [
+    "has german audiobooks"
+   ],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": "14th Dalai Lama, the spiritual and temporal leader of Tibetans",
+    "wdCitizenships": [
+     "Q2444884"
+    ],
+    "officialSites": [
+     "http://www.dalailama.com/"
+    ],
+    "discogsIds": [
+     "5217802"
+    ],
+    "discogsProfile": "14th Dalai Lama (17 November 1950 – present).\r\n\r\nHe was born 6 July 1935 in Taktser, Qinghai, Tibet."
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "discogs-profile",
+    "wd-description",
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "711592c8-4814-453b-b723-788531c86f02",
+   "name": "Dechen Shak-Dagsay",
+   "type": "Person",
+   "areaName": "Switzerland",
+   "disambiguation": "",
+   "life": {
+    "begin": "1959",
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "seed"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "Nepal",
+    "areaCountry": "CH",
+    "areaCountryName": "Switzerland",
+    "wdDescription": "Swiss singer of traditional Tibetan mantras",
+    "wdCitizenships": [
+     "Q39"
+    ],
+    "officialSites": [
+     "https://www.dechen-shak.com/"
+    ],
+    "discogsIds": [
+     "773262"
+    ],
+    "discogsProfile": "Singer of traditional Tibetan Buddhist mantras, born in 1959 in Kathmandu, Nepal, based in Switzerland."
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "discogs-profile",
+    "wd-description"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "ada84453-f8e3-4ecb-b6da-1c56e6c860eb",
+   "name": "Jetsun Milarepa",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "Tibetan siddha",
+   "life": {
+    "begin": "1040",
+    "end": "1123",
+    "ended": true
+   },
+   "tags": [],
+   "sources": [
+    "mb-area",
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": "Tibetan yogi",
+    "wdCitizenships": [
+     "af748ec857bc9b294c2231cd8f6186fa"
+    ],
+    "officialSites": [],
+    "discogsIds": [
+     "1270338"
+    ],
+    "discogsProfile": "Famous Tibetan saint, yogi, and poet (c. 1052-c. 1135 CE).\r\nMain student of [a=Lotsawa Marpa].\r\n"
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "discogs-profile",
+    "wd-description",
+    "mb-disambiguation",
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "9f3ab350-2d62-4199-8801-47d9cf6df490",
+   "name": "Kunga Thartse Rinpoche",
+   "type": "Person",
+   "areaName": "United States",
+   "disambiguation": "Tibetan lama",
+   "life": {
+    "begin": "1935",
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "US",
+    "areaCountryName": "United States",
+    "wdDescription": "Buddhist Lama of the Sakya school",
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [
+     "377409"
+    ],
+    "discogsProfile": "Born in Lhasa, Tibet in 1935.  He came to America in 1972, and later founded the Ewam Choden Tibetan Buddhist Center in Kensington California."
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "discogs-profile",
+    "mb-disambiguation"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "c0c1dc56-8c7e-4b79-8df8-a5b1d6000396",
+   "name": "Nawang Khechog",
+   "type": "Person",
+   "areaName": "United States",
+   "disambiguation": "",
+   "life": {
+    "begin": "1949",
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "seed"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "US",
+    "areaCountryName": "United States",
+    "wdDescription": "Tibetan musician",
+    "wdCitizenships": [
+     "Q148"
+    ],
+    "officialSites": [
+     "http://www.nawangkhechog.com/"
+    ],
+    "discogsIds": [
+     "196231"
+    ],
+    "discogsProfile": "Tibetan flute player and composer, born 1949 or 1950 in Tibet."
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "discogs-profile",
+    "wd-description"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "b50338ea-6640-481b-a4b5-1b7fb41a202b",
+   "name": "Ngawang Choephel",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "begin": "1966",
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": "Tibetan film director",
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "wd-description",
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "8765b128-b8bb-4aab-9346-a18b97d251aa",
+   "name": "Techung",
+   "type": null,
+   "areaName": null,
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "seed"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": null,
+    "areaCountryName": null,
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [
+     "http://www.techung.com/"
+    ],
+    "discogsIds": [
+     "365775"
+    ],
+    "discogsProfile": "Tibetan folk and freedom singer/songwriter living in exile in Dharamsala and USA, best known for his performances of traditional Tibetan music, dance and opera."
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "discogs-profile"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "bd5d5ad6-6eec-486b-9390-5687d4186cb0",
+   "name": "Tenzin Choegyal",
+   "type": "Person",
+   "areaName": "Australia",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "seed"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "AU",
+    "areaCountryName": "Australia",
+    "wdDescription": "Tibetan musician",
+    "wdCitizenships": [],
+    "officialSites": [
+     "http://www.tenzinchoegyal.com/"
+    ],
+    "discogsIds": [
+     "1519598"
+    ],
+    "discogsProfile": "Tenzin was born to a nomadic family in Tibet, escaped the Chinese occupation with his family in the early 1970s and was raised in a Tibetan refugee community in Dharamsala, India. There, where His Holiness the Dalai Lama actively encourages his people to preserve their culture, Tenzin first began to explore his musical talents.\r\n\r\nIn 1997, Tenzin Choegyal came to Australia with little more than a bag, his Dranyen and a voice full of passion for Tibet. His raw talent soon caught the attention of the directors of that country's largest folk festival, Woodford Folk Festival where he still plays t"
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "discogs-profile",
+    "wd-description"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "58cfe705-a9c3-4a90-942b-e66bab4dbf5b",
+   "name": "The Tibetan Monks of Gyuto",
+   "type": "Group",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "begin": "2010",
+    "ended": null
+   },
+   "tags": [
+    "world",
+    "tibetan music",
+    "central asian throat singing"
+   ],
+   "sources": [
+    "mb-area",
+    "mb-tag"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": "monastic institution in Tibet",
+    "wdCitizenships": [],
+    "officialSites": [
+     "http://thegyutomonks.com/",
+     "http://www.gyuto.co/"
+    ],
+    "discogsIds": [
+     "65718"
+    ],
+    "discogsProfile": null
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "wd-description",
+    "self-naming",
+    "mb-tag",
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "9c1a8030-3393-4394-b504-fc8b4a1bfcd0",
+   "name": "Tibetan Lamas of the Red Hat Sect",
+   "type": "Group",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": null,
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "self-naming",
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "4d9d3718-2261-448d-9239-68ac50ba16a2",
+   "name": "Yungchen Lhamo",
+   "type": "Person",
+   "areaName": "United States",
+   "disambiguation": "",
+   "life": {
+    "begin": "1963",
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "seed"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "US",
+    "areaCountryName": "United States",
+    "wdDescription": "Tibetan musician",
+    "wdCitizenships": [
+     "Q148"
+    ],
+    "officialSites": [
+     "http://www.yungchenlhamo.com/"
+    ],
+    "discogsIds": [
+     "318471"
+    ],
+    "discogsProfile": "Tibetan singer-songwriter. Her name means \"Goddess of Song\"."
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "discogs-profile",
+    "wd-description"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "90987242-9f48-4cb0-b640-f03aa37ad2ce",
+   "name": "ཆོས་རྒྱལ་ནམ་མཁའི་ནོར་བུ",
+   "type": "Person",
+   "areaName": "Italy",
+   "disambiguation": "Tibetan Dzogchen master",
+   "life": {
+    "begin": "1938-12-08",
+    "end": "2018-09-27",
+    "ended": true
+   },
+   "tags": [],
+   "sources": [
+    "mb-comment"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "IT",
+    "areaCountryName": "Italy",
+    "wdDescription": "Tibetan Dzogchen master (1938–2018)",
+    "wdCitizenships": [
+     "Q38",
+     "Q172579"
+    ],
+    "officialSites": [],
+    "discogsIds": [
+     "4152627"
+    ],
+    "discogsProfile": null
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "wd-description",
+    "mb-disambiguation"
+   ],
+   "wing": "unplaced"
+  },
+  {
+   "mbid": "65b43689-0616-4f68-a3d7-29a2363929c0",
+   "name": "རང་བཙན་གཞོན་ནུ",
+   "type": "Group",
+   "areaName": "India",
+   "disambiguation": "",
+   "life": {
+    "begin": null,
+    "ended": false,
+    "end": null
+   },
+   "tags": [],
+   "sources": [
+    "seed"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "IN",
+    "areaCountryName": "India",
+    "wdDescription": "Tibetan band",
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [
+     "4893434"
+    ],
+    "discogsProfile": "Rangzen Shonu, or Rangzen, was Tibetan rock band in exile in India"
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "discogs-profile",
+    "wd-description"
+   ],
+   "wing": "diaspora-filed"
+  },
+  {
+   "mbid": "4d773653-6237-42ff-a56c-ff257f9c3bd9",
+   "name": "སྨྱོ་ཤུལ་མཁན་པོ་འཇམ་དབྱངས་རྡོ་རྗེ་",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "begin": "1932",
+    "end": "1999",
+    "ended": true
+   },
+   "tags": [],
+   "sources": [
+    "mb-area"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": null,
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": "Tibetan lama",
+    "wdCitizenships": [],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "wd-description",
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  },
+  {
+   "mbid": "f75590f4-6b65-4c97-a309-42b3b9db0e2f",
+   "name": "才旦卓玛",
+   "type": "Person",
+   "areaName": "Xizang",
+   "disambiguation": "",
+   "life": {
+    "begin": "1937-08-01",
+    "ended": null
+   },
+   "tags": [],
+   "sources": [
+    "mb-area",
+    "seed"
+   ],
+   "evidence": {
+    "missing": false,
+    "beginCountry": "China",
+    "areaCountry": "CN",
+    "areaCountryName": "China",
+    "wdDescription": "Tibetan singer",
+    "wdCitizenships": [
+     "Q148"
+    ],
+    "officialSites": [],
+    "discogsIds": [],
+    "discogsProfile": null
+   },
+   "verdict": "include-proposed",
+   "evidenceKeys": [
+    "wd-description",
+    "mb-area"
+   ],
+   "wing": "tibet-area-filed"
+  }
+ ]
+}
