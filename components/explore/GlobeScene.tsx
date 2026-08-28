@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { GlobeInstance } from 'globe.gl'
 import { reportClientError } from '@/lib/clientLog'
+import { claimedPlaceById } from '@/lib/explore/claimedPlaces'
 import {
   bandedHeat,
   countInRange,
@@ -182,6 +183,24 @@ export function GlobeScene({
   useEffect(() => {
     if (!focusRequest) return
     const { code } = focusRequest
+    // Claimed place: fly to the named anchor — never a polygon — and
+    // show the label for exactly as long as the place is selected.
+    const claimed = claimedPlaceById(code)
+    if (claimed) {
+      const globe = globeRef.current
+      if (globe) {
+        globe.labelsData([
+          { lat: claimed.anchor.lat, lng: claimed.anchor.lng, text: `${claimed.name} *` },
+        ])
+        globe.pointOfView(
+          { lat: claimed.anchor.lat, lng: claimed.anchor.lng, altitude: 1.3 },
+          650,
+        )
+      }
+      onCountryClick({ code: claimed.id, name: claimed.name })
+      return
+    }
+    globeRef.current?.labelsData([])
     // A region resolves like a country, but the fly-to dips below the
     // region-layer threshold so the state/nation itself lights up. The
     // panel opens immediately; the camera follows when the layer is
@@ -485,6 +504,17 @@ export function GlobeScene({
 
       globe = new Globe(mount)
         .backgroundColor('rgba(0,0,0,0)')
+        // Claimed-place labels: empty on the idle globe by design —
+        // search-and-select only (owner ruling). The asterisk is the
+        // contested mark; the panel carries the note.
+        .labelsData([])
+        .labelLat((d) => (d as { lat: number }).lat)
+        .labelLng((d) => (d as { lng: number }).lng)
+        .labelText((d) => (d as { text: string }).text)
+        .labelSize(1.1)
+        .labelDotRadius(0.22)
+        .labelColor(() => '#f2a93b')
+        .labelResolution(2)
         .showGraticules(false)
         .atmosphereColor(ATMOSPHERE_COLOR)
         .atmosphereAltitude(0.14)
@@ -548,6 +578,7 @@ export function GlobeScene({
           const altitude = REGION_CODE_PATTERN.test(code)
             ? Math.min(altitudeRef.current, STATE_FLY_ALTITUDE)
             : 1.7
+          globe.labelsData([])
           globe.pointOfView({ lat, lng, altitude }, 650)
           onCountryClick({ code, name: feature.properties.ADMIN })
         })

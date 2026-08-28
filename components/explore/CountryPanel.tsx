@@ -24,6 +24,10 @@ import {
   isContestedEra,
   polityLinesFor,
 } from '@/lib/explore/historicalPolities'
+import {
+  CLAIMED_PLACE_LINE,
+  claimedPlaceById,
+} from '@/lib/explore/claimedPlaces'
 import styles from './CountryPanel.module.css'
 
 export interface SelectedCountry {
@@ -292,7 +296,11 @@ export function CountryPanel({
   useEffect(() => setContestedOpen(false), [country.code, year])
   const yearStart = nearby ? Math.max(YEAR_MIN, year - NEARBY_REACH) : year
   const yearEnd = nearby ? Math.min(YEAR_MAX, year + NEARBY_REACH) : year
-  const contested = isContestedEra(country.code, yearStart, yearEnd)
+  const claimedPlace = claimedPlaceById(country.code)
+  // A claimed place is contested by definition — that is why it is
+  // not a plain country; the asterisk and the one note always apply.
+  const contested =
+    isContestedEra(country.code, yearStart, yearEnd) || Boolean(claimedPlace)
   const spanLabel =
     yearStart === yearEnd ? `${yearStart}` : `${yearStart}–${yearEnd}`
 
@@ -435,6 +443,9 @@ export function CountryPanel({
               </button>
             )}
           </p>
+          {claimedPlace && (
+            <p className={styles.eraNote}>{CLAIMED_PLACE_LINE}</p>
+          )}
           {contested && contestedOpen && (
             <p className={styles.eraNote}>* {CONTESTED_NOTE}</p>
           )}

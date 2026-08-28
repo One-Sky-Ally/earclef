@@ -10,6 +10,7 @@ import { movedIn, movedOut } from '@/lib/explore/originCorrections'
 import { hasStateData, stateDetails } from '@/lib/explore/stateData'
 import { extraArtistGroupsFor } from '@/lib/explore/extraArtistsServer'
 import { withHistoricalArtists } from '@/lib/explore/historicalArtistsServer'
+import { claimedPlaceDetails } from '@/lib/explore/claimedPlacesServer'
 import type {
   CountryYearDetails,
   PanelArtist,
@@ -343,6 +344,17 @@ export async function GET(
   const region = REGION_CODE_PATTERN.test(country)
     ? regionByCode(country)
     : undefined
+  // Claimed places answer from committed rosters — no MB query exists
+  // for a place the state system doesn't hold. Parsed span first.
+  const claimedSpan = year.split('-').map(Number)
+  if (claimedSpan.every((n) => Number.isFinite(n))) {
+    const claimed = claimedPlaceDetails(
+      country,
+      claimedSpan[0],
+      claimedSpan[1] ?? claimedSpan[0],
+    )
+    if (claimed) return withCacheHeaders(NextResponse.json(claimed))
+  }
   // Regions without committed data (a US state or UK nation whose
   // precompute hasn't landed, and any future non-region subdivision)
   // fall back to the live MusicBrainz area query, Hawaii-style.

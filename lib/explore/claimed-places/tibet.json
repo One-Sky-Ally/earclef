@@ -1,0 +1,192 @@
+{
+ "generatedAt": "2026-08-28",
+ "placeId": "tibet",
+ "artists": [
+  {
+   "mbid": "dded0177-e235-474e-8529-a812b89f806c",
+   "name": "alan",
+   "type": "Person",
+   "lifeBegin": 1987,
+   "lifeEnd": null,
+   "tags": [
+    "j-pop",
+    "pop",
+    "tibetan",
+    "mandopop"
+   ],
+   "filing": "tibet-area-filed",
+   "evidence": "wd-description+mb-disambiguation+mb-tag"
+  },
+  {
+   "mbid": "43a65a18-17c0-41c0-9779-c3ebee9b8489",
+   "name": "Chime Rigdzin Rinpoche",
+   "type": "Person",
+   "lifeBegin": 1922,
+   "lifeEnd": 2002,
+   "tags": [],
+   "filing": "unplaced",
+   "evidence": "wd-description+mb-disambiguation · include-stands"
+  },
+  {
+   "mbid": "36c37e19-b4b1-4602-ba42-a954f8ac4d4a",
+   "name": "Chögyam Trungpa",
+   "type": "Person",
+   "lifeBegin": 1939,
+   "lifeEnd": 1987,
+   "tags": [],
+   "filing": "unplaced",
+   "evidence": "discogs-profile+wd-description+mb-disambiguation · include-owner"
+  },
+  {
+   "mbid": "711592c8-4814-453b-b723-788531c86f02",
+   "name": "Dechen Shak-Dagsay",
+   "type": "Person",
+   "lifeBegin": 1959,
+   "lifeEnd": null,
+   "tags": [],
+   "filing": "diaspora-filed",
+   "evidence": "discogs-profile+wd-description"
+  },
+  {
+   "mbid": "2b651a78-6e2a-4281-b781-76327d3a3d86",
+   "name": "Drepung Loseling Monks",
+   "type": "Group",
+   "lifeBegin": null,
+   "lifeEnd": null,
+   "tags": [
+    "tibetan traditional music"
+   ],
+   "filing": "diaspora-filed",
+   "evidence": "mb-tag · include-owner"
+  },
+  {
+   "mbid": "17e0e964-b397-4391-9f83-b5c4df4c213c",
+   "name": "Lamas and Monks of the Four Great Orders",
+   "type": "Group",
+   "lifeBegin": null,
+   "lifeEnd": null,
+   "tags": [
+    "tibetan buddhist chant"
+   ],
+   "filing": "diaspora-filed",
+   "evidence": "mb-tag · include-test"
+  },
+  {
+   "mbid": "09c6f804-7a25-4e34-919c-8d5fb86faaef",
+   "name": "Monks of the Dip Tse Chok Ling Monastery, Dharamsala",
+   "type": "Group",
+   "lifeBegin": null,
+   "lifeEnd": null,
+   "tags": [
+    "tibetan music",
+    "central asian throat singing"
+   ],
+   "filing": "diaspora-filed",
+   "evidence": "mb-tag · include-test"
+  },
+  {
+   "mbid": "c0c1dc56-8c7e-4b79-8df8-a5b1d6000396",
+   "name": "Nawang Khechog",
+   "type": "Person",
+   "lifeBegin": 1949,
+   "lifeEnd": null,
+   "tags": [],
+   "filing": "diaspora-filed",
+   "evidence": "discogs-profile+wd-description"
+  },
+  {
+   "mbid": "b50338ea-6640-481b-a4b5-1b7fb41a202b",
+   "name": "Ngawang Choephel",
+   "type": "Person",
+   "lifeBegin": 1966,
+   "lifeEnd": null,
+   "tags": [],
+   "filing": "tibet-area-filed",
+   "evidence": "wd-description+mb-area"
+  },
+  {
+   "mbid": "8765b128-b8bb-4aab-9346-a18b97d251aa",
+   "name": "Techung",
+   "type": null,
+   "lifeBegin": null,
+   "lifeEnd": null,
+   "tags": [],
+   "filing": "unplaced",
+   "evidence": "discogs-profile"
+  },
+  {
+   "mbid": "bd5d5ad6-6eec-486b-9390-5687d4186cb0",
+   "name": "Tenzin Choegyal",
+   "type": "Person",
+   "lifeBegin": null,
+   "lifeEnd": null,
+   "tags": [],
+   "filing": "diaspora-filed",
+   "evidence": "discogs-profile+wd-description"
+  },
+  {
+   "mbid": "58cfe705-a9c3-4a90-942b-e66bab4dbf5b",
+   "name": "The Tibetan Monks of Gyuto",
+   "type": "Group",
+   "lifeBegin": 2010,
+   "lifeEnd": null,
+   "tags": [
+    "world",
+    "tibetan music",
+    "central asian throat singing"
+   ],
+   "filing": "tibet-area-filed",
+   "evidence": "wd-description+self-naming+mb-tag+mb-area"
+  },
+  {
+   "mbid": "9c1a8030-3393-4394-b504-fc8b4a1bfcd0",
+   "name": "Tibetan Lamas of the Red Hat Sect",
+   "type": "Group",
+   "lifeBegin": null,
+   "lifeEnd": null,
+   "tags": [],
+   "filing": "tibet-area-filed",
+   "evidence": "self-naming+mb-area"
+  },
+  {
+   "mbid": "4d9d3718-2261-448d-9239-68ac50ba16a2",
+   "name": "Yungchen Lhamo",
+   "type": "Person",
+   "lifeBegin": 1963,
+   "lifeEnd": null,
+   "tags": [],
+   "filing": "diaspora-filed",
+   "evidence": "discogs-profile+wd-description"
+  },
+  {
+   "mbid": "90987242-9f48-4cb0-b640-f03aa37ad2ce",
+   "name": "ཆོས་རྒྱལ་ནམ་མཁའི་ནོར་བུ",
+   "type": "Person",
+   "lifeBegin": 1938,
+   "lifeEnd": 2018,
+   "tags": [],
+   "filing": "unplaced",
+   "evidence": "wd-description+mb-disambiguation · include-stands"
+  },
+  {
+   "mbid": "65b43689-0616-4f68-a3d7-29a2363929c0",
+   "name": "རང་བཙན་གཞོན་ནུ",
+   "type": "Group",
+   "lifeBegin": null,
+   "lifeEnd": null,
+   "tags": [],
+   "filing": "diaspora-filed",
+   "evidence": "discogs-profile+wd-description"
+  },
+  {
+   "mbid": "f75590f4-6b65-4c97-a309-42b3b9db0e2f",
+   "name": "才旦卓玛",
+   "type": "Person",
+   "lifeBegin": 1937,
+   "lifeEnd": null,
+   "tags": [],
+   "filing": "tibet-area-filed",
+   "evidence": "wd-description+mb-area"
+  }
+ ]
+}

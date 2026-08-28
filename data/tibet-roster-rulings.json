@@ -12,8 +12,8 @@
   },
   "36c37e19-b4b1-4602-ba42-a954f8ac4d4a": {
    "name": "Chögyam Trungpa",
-   "ruling": "held-owner",
-   "basis": "2 RGs: Dragon's Thunder (SONGS of Chögyam Trungpa) + Shambhala (audiobook) — half sung tradition, the Milarepa-test shape; owner to rule."
+   "ruling": "include-owner",
+   "basis": "2 RGs: Dragon's Thunder (SONGS of Chögyam Trungpa) + Shambhala (audiobook) — half sung tradition, the Milarepa-test shape; owner to rule. OWNER RULING Aug 28: include — half the catalog is the sung tradition, meets the exception."
   },
   "43a65a18-17c0-41c0-9779-c3ebee9b8489": {
    "name": "Chime Rigdzin Rinpoche",
@@ -27,18 +27,18 @@
   },
   "9f3ab350-2d62-4199-8801-47d9cf6df490": {
    "name": "Kunga Thartse Rinpoche",
-   "ruling": "propose-exclude-empty",
-   "basis": "zero RGs, zero recordings — nothing servable; exclusion proposed on empty catalog, NOT class (owner to confirm)."
+   "ruling": "hold-empty-catalog",
+   "basis": "zero RGs, zero recordings — nothing servable; exclusion proposed on empty catalog, NOT class (owner to confirm). OWNER RULING Aug 28: hold on empty catalog, not class."
   },
   "4d773653-6237-42ff-a56c-ff257f9c3bd9": {
    "name": "Nyoshul Khenpo",
-   "ruling": "propose-exclude-empty",
-   "basis": "zero RGs, zero recordings — same as Kunga Thartse (owner to confirm)."
+   "ruling": "hold-empty-catalog",
+   "basis": "zero RGs, zero recordings — same as Kunga Thartse (owner to confirm). OWNER RULING Aug 28: hold on empty catalog, not class."
   },
   "ada84453-f8e3-4ecb-b6da-1c56e6c860eb": {
    "name": "Jetsun Milarepa",
-   "ruling": "held-owner",
-   "basis": "EXCEPTION TEST MET IN KIND: all 10 MB works are Songs of Milarepa (the sung tradition, writer credits) — but zero recordings/releases under his name; a roster pill would have nothing to play. Recommend hold-out until a linked recording exists; owner decides."
+   "ruling": "hold-empty-catalog",
+   "basis": "EXCEPTION TEST MET IN KIND: all 10 MB works are Songs of Milarepa (the sung tradition, writer credits) — but zero recordings/releases under his name; a roster pill would have nothing to play. Recommend hold-out until a linked recording exists; owner decides. OWNER RULING Aug 28: hold on empty catalog, not class — exception stands ready the day a linked recording exists."
   },
   "tengboche": {
    "name": "Monks of the Tengboche Monastery",
@@ -62,8 +62,8 @@
   },
   "maitrivihar": {
    "name": "Buddhist Monks of Maitri Vihar Monastery",
-   "ruling": "held-owner-unclear",
-   "basis": "Nepal monastery, album Tibetan Mantras and Chants — whether the community is Tibetan-exile or Nepali practicing Tibetan Buddhism is NOT determinable from any record I trust: genuinely unclear, exactly the class the owner asked to see."
+   "ruling": "hold-owner",
+   "basis": "Nepal monastery, album Tibetan Mantras and Chants — whether the community is Tibetan-exile or Nepali practicing Tibetan Buddhism is NOT determinable from any record I trust: genuinely unclear, exactly the class the owner asked to see. OWNER RULING Aug 28: hold — undeterminable is exactly what the bar was written for."
   }
  }
 }

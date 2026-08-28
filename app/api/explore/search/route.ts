@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { subdivisionByName } from '@/lib/explore/subdivisions'
 import { regionByCode, regionByName } from '@/lib/explore/states'
 import type { SearchResult } from '@/lib/explore/panelData'
+import { claimedPlaceByQuery } from '@/lib/explore/claimedPlaces'
 
 const USER_AGENT =
   'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
@@ -132,6 +133,19 @@ export async function GET(request: Request) {
       : withCacheHeaders(
           NextResponse.json({ error: 'No match' }, { status: 404 }),
         )
+  }
+
+  // Claimed places win first — "Tibet" (or an alias, Xizang included)
+  // opens the claimed-place panel, never a walk up to a parent state.
+  const claimed = claimedPlaceByQuery(query)
+  if (claimed) {
+    const result: SearchResult = {
+      kind: 'place',
+      country: claimed.id,
+      area: claimed.name,
+    }
+    memo.set(key, result)
+    return withCacheHeaders(NextResponse.json(result))
   }
 
   // Configured subdivisions and regions win by name — "Hawaii" opens
