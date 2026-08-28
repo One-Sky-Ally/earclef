@@ -55,13 +55,23 @@ const POLITY_ERAS: Record<string, PolityEra[]> = {
 }
 
 /**
- * Contested-history marks (owner design, Aug 27 2026): a light
- * asterisk on places whose political status in the selected era is
- * disputed, pointing at ONE shared policy note — never a per-place
- * history paragraph. The artist's claim decides where music appears;
- * the mark says only that the site is not ruling on the history.
- * Open-ended eras (to 9999) are live disputes — the mark shows on
- * modern panels too, deliberately.
+ * Contested-history marks (owner design Aug 27; RULE owner-ratified
+ * Aug 28 2026 — entries DERIVE from it, they never accumulate):
+ *
+ * THE RULE: the mark sits on CONTESTED GROUND — a place whose own
+ * status or definition AS A WHOLE is subject to a live dispute in the
+ * selected era. Parties as such don't mark (Serbia is unmarked; the
+ * disputed ground is Kosovo). Segment disputes don't mark (Ukraine,
+ * India, Pakistan are unmarked — statehood undisputed). Mutual
+ * whole-claims mark BOTH grounds (the Koreas; China and Taiwan —
+ * marking one side of a mutual dispute is itself a claim, the thing
+ * this table exists to avoid). Threshold cases (Guyana's Essequibo,
+ * ~70% of territory, statehood undisputed) stay unmarked until the
+ * owner rules otherwise.
+ *
+ * One asterisk, ONE shared policy note, never a per-place history
+ * paragraph. Open-ended eras (to 9999) are live disputes — the mark
+ * shows on modern panels too, deliberately.
  */
 export const CONTESTED_NOTE =
   'A contested history. Ear Clef makes no claims about borders or sovereignty, only about where music happened.'
@@ -75,6 +85,12 @@ const CONTESTED_ERAS: Record<string, { from: number; to: number }[]> = {
   KP: [{ from: 1945, to: 9999 }],
   KR: [{ from: 1945, to: 9999 }],
   PS: [{ from: 1948, to: 9999 }],
+  // Aug 28 symmetry rulings: same dispute, same era, same mark.
+  IL: [{ from: 1948, to: 9999 }],
+  TW: [{ from: 1949, to: 9999 }],
+  CN: [{ from: 1949, to: 9999 }],
+  CY: [{ from: 1974, to: 9999 }],
+  EH: [{ from: 1975, to: 9999 }],
 }
 
 /** Whether the selected span touches a contested era for this place. */
