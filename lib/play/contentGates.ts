@@ -34,9 +34,21 @@ export const MIN_DURATION_SECONDS = 90
  * stripping "(Behind The Scenes)" is how a making-of became a #1 hit's
  * play button. Tested against the annotation only, so a song whose own
  * title contains one of these words is unaffected.
+ *
+ * NON-ENGLISH COGNATES were added Aug 31, 2026 when multi-track
+ * queues began matching whole catalogues instead of one best title:
+ * depth surfaced "Dimanche à Bamako (Documentaire)" on Amadou &
+ * Mariam's own channel, which every English-only marker passed. The
+ * site is global; its junk annotations are too. Karaoke joins them
+ * for a different reason — it IS music, but it is not the artist's
+ * record, and a queue claiming the sound of a place must not play a
+ * backing track with the vocals stripped out.
+ *
+ * Language coverage is honestly partial — these are the classes seen
+ * in real yields, not a solved problem.
  */
 export const NON_SONG_MARKERS =
-  /\b(trailer|teaser|behind the scenes|making of|documentary|interview|preview|snippet|clip|reaction|announcement|album sampler)\b/i
+  /\b(trailer|teaser|behind the scenes|making of|documentary|interview|preview|snippet|clip|reaction|announcement|album sampler|karaoke|karaoke version|documentaire|documental|reportage|entrevista|entretien|bande annonce)\b/i
 
 /**
  * Script-aware normalize: the ASCII-only version reduced non-Latin

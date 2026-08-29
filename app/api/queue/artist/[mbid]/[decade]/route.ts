@@ -1,7 +1,11 @@
 import { NextResponse } from 'next/server'
 import { getStore } from '@netlify/blobs'
 import { queueCacheKey } from '@/lib/play/resolve'
-import { isNonSongUpload, isSongLength } from '@/lib/play/contentGates'
+import {
+  annotationOf,
+  isNonSongUpload,
+  isSongLength,
+} from '@/lib/play/contentGates'
 
 /**
  * Play-queue resolver: ONE artist → their era-correct playable video.
@@ -26,16 +30,44 @@ const USER_AGENT =
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 const DECADE = /^(19|20)\d0$/
 const MB_DELAY_MS = 1100
-/** How many upload pages (of 50) to scan on the artist's own channel. */
-const UPLOAD_PAGES = 2
+/**
+ * Upload pages (of 50) scanned on the artist's own channel. Raised
+ * 2 → 4 with multi-track (Aug 31, 2026): the window, not the matching,
+ * was the yield limit — a deep catalogue can't be found in 100 uploads.
+ * Costs 1 unit per page and is SELF-TARGETING: the scan stops at the
+ * last page, so small channels still cost 1-2 units and only prolific
+ * ones pay 4 — exactly the artists with more songs to give.
+ */
+const UPLOAD_PAGES = 4
+/**
+ * Songs returned per artist, so a queue can keep playing without
+ * re-resolving (owner-approved Aug 31, 2026: a listener on a sparse
+ * place or a narrow genre filter must not hit a dead end).
+ *
+ * Depth is FREE on the channel path and the reason is worth stating:
+ * the release-group call (100 groups) and the uploads scan (100
+ * videos) already happened for track 1, and videos.list batch-checks
+ * up to 50 ids for ONE unit — so twelve tracks cost less than today's
+ * up-to-three sequential playability checks. What depth actually
+ * spends is ERA-TRUTH: candidates are ranked in-era first, then
+ * nearby, then plain catalog, and each track carries the `era` it
+ * earned. The search path is NOT deepened — one search is 100 units
+ * and its identity anchor is a single title (John Mayer rule).
+ */
+const MAX_TRACKS_PER_ARTIST = 12
+/** Candidates playability-checked in one batched call (≤50 = 1 unit). */
+const MAX_CANDIDATES = 24
+/** Release-group titles matched against uploads, era-ranked. */
+const MAX_TITLES = 40
 const NULL_TTL_MS = 30 * 24 * 60 * 60 * 1000
 /**
  * Rules version of the resolver that WROTE a cache entry. Bumping it
  * invalidates everything written under older rules — standing lesson
  * 2: fixing a generator does not fix what the generator already wrote.
  * 1 = content-gated (duration floor + non-song annotation markers).
+ * 2 = multi-track (up to MAX_TRACKS_PER_ARTIST per artist).
  */
-const GATE_PASS = 1
+const GATE_PASS = 2
 
 export interface QueueTrack {
   videoId: string
@@ -62,7 +94,10 @@ export interface QueueTrack {
 
 interface CachedResolve {
   at: string
+  /** The era-truest pick — kept for readers that want just one. */
   track: QueueTrack | null
+  /** Every playable song found, era-ranked; tracks[0] === track. */
+  tracks?: QueueTrack[]
   /** Resolver rules version; absent = pre-gate (see GATE_PASS). */
   pass?: number
 }
@@ -118,38 +153,71 @@ interface MbReleaseGroup {
   'primary-type'?: string
 }
 
+interface EraTitle {
+  title: string
+  era: QueueTrack['era']
+}
+
 /**
- * The era pick: a release-group title the artist actually put out in
- * the decade (singles beat EPs beat albums; closest to mid-decade),
- * else the nearest dated work within ±10 years, else nothing (the
- * search falls back to their catalog).
+ * The era ranking: every release-group title this artist put out,
+ * ordered by how era-true it is — in-era first (singles beat EPs beat
+ * albums, closest to mid-decade), then work within ±15 years by
+ * proximity, then undated catalog. Track 1 takes the head of this
+ * list, which is exactly the old single-pick behaviour; the deeper
+ * entries are what let one artist contribute more than one song, each
+ * carrying the era it actually earned rather than inheriting track 1's.
  */
-function pickEraTitle(
+function rankEraTitles(
   groups: MbReleaseGroup[],
   decade: number,
-): { title: string; era: 'in-era' | 'nearby' } | null {
-  const dated = groups.flatMap((group) => {
-    const year = Number(group['first-release-date']?.slice(0, 4))
-    return group.title && Number.isFinite(year)
-      ? [{ title: group.title, year, type: group['primary-type'] ?? '' }]
-      : []
-  })
+): EraTitle[] {
   const mid = decade + 5
-  const inEra = dated.filter((g) => g.year >= decade && g.year <= decade + 9)
-  if (inEra.length > 0) {
-    const typeRank = (type: string) =>
-      type === 'Single' ? 0 : type === 'EP' ? 1 : type === 'Album' ? 2 : 3
-    inEra.sort(
+  const typeRank = (type: string) =>
+    type === 'Single' ? 0 : type === 'EP' ? 1 : type === 'Album' ? 2 : 3
+  const dated: { title: string; year: number; type: string }[] = []
+  const undated: string[] = []
+  for (const group of groups) {
+    if (!group.title) continue
+    const year = Number(group['first-release-date']?.slice(0, 4))
+    if (Number.isFinite(year)) {
+      dated.push({ title: group.title, year, type: group['primary-type'] ?? '' })
+    } else {
+      undated.push(group.title)
+    }
+  }
+  const inEra = dated
+    .filter((g) => g.year >= decade && g.year <= decade + 9)
+    .sort(
       (a, b) =>
         typeRank(a.type) - typeRank(b.type) ||
         Math.abs(a.year - mid) - Math.abs(b.year - mid),
     )
-    return { title: inEra[0].title, era: 'in-era' }
-  }
   const nearby = dated
-    .filter((g) => Math.abs(g.year - mid) <= 15)
+    .filter(
+      (g) =>
+        !(g.year >= decade && g.year <= decade + 9) &&
+        Math.abs(g.year - mid) <= 15,
+    )
     .sort((a, b) => Math.abs(a.year - mid) - Math.abs(b.year - mid))
-  return nearby.length > 0 ? { title: nearby[0].title, era: 'nearby' } : null
+  const catalog = dated
+    .filter((g) => Math.abs(g.year - mid) > 15)
+    .sort((a, b) => Math.abs(a.year - mid) - Math.abs(b.year - mid))
+  const ranked: EraTitle[] = [
+    ...inEra.map((g) => ({ title: g.title, era: 'in-era' as const })),
+    ...nearby.map((g) => ({ title: g.title, era: 'nearby' as const })),
+    ...catalog.map((g) => ({ title: g.title, era: 'catalog' as const })),
+    ...undated.map((title) => ({ title, era: 'catalog' as const })),
+  ]
+  // Same title can appear as single AND album — keep the era-truest.
+  const seen = new Set<string>()
+  return ranked
+    .filter((entry) => {
+      const key = normalize(entry.title)
+      if (!key || seen.has(key)) return false
+      seen.add(key)
+      return true
+    })
+    .slice(0, MAX_TITLES)
 }
 
 /** The artist's MB-linked YouTube channel URL, if curated. */
@@ -285,28 +353,41 @@ async function searchVerified(
 }
 
 /**
- * Playability gate: public + embeddable + long enough to be a record,
- * per videos.list (1 unit — contentDetails rides the same call).
+ * Playability gate: public + embeddable + long enough to be a record.
+ * BATCHED — videos.list takes up to 50 ids for ONE unit, so checking a
+ * dozen candidates costs less than the old one-at-a-time walk over
+ * three. Returns the subset of ids that pass, order not guaranteed.
  *
  * The duration floor is half of standing lesson 7: a title match
  * cannot tell a Short or a clip from the song it names.
  */
-async function playable(videoId: string, key: string): Promise<boolean> {
+async function playableSet(
+  videoIds: string[],
+  key: string,
+): Promise<Set<string>> {
+  const passed = new Set<string>()
+  if (videoIds.length === 0) return passed
   const body = (await ytJson(
-    `https://www.googleapis.com/youtube/v3/videos?part=status,contentDetails&id=${videoId}&key=${key}`,
+    `https://www.googleapis.com/youtube/v3/videos?part=status,contentDetails&id=${videoIds.slice(0, 50).join(',')}&key=${key}`,
   )) as {
     items?: {
+      id?: string
       status?: { embeddable?: boolean; privacyStatus?: string }
       contentDetails?: { duration?: string }
     }[]
   }
-  const item = body.items?.[0]
-  const status = item?.status
-  return Boolean(
-    status?.embeddable &&
-      status.privacyStatus === 'public' &&
-      isSongLength(item?.contentDetails?.duration),
-  )
+  for (const item of body.items ?? []) {
+    // Missing id can't identify anything — missing is not a match.
+    if (!item.id) continue
+    if (
+      item.status?.embeddable &&
+      item.status.privacyStatus === 'public' &&
+      isSongLength(item.contentDetails?.duration)
+    ) {
+      passed.add(item.id)
+    }
+  }
+  return passed
 }
 
 export async function GET(
@@ -344,7 +425,15 @@ export async function GET(
       (cached.track !== null ||
         Date.now() - Date.parse(cached.at) < NULL_TTL_MS)
     ) {
-      return withCacheHeaders(NextResponse.json({ track: cached.track }))
+      return withCacheHeaders(
+        NextResponse.json({
+          track: cached.track,
+          // Pre-multi-track entries can't be cached (GATE_PASS 2), so a
+          // served entry always has its list; the fallback is belt-and-
+          // braces for a hand-written or partially-written blob.
+          tracks: cached.tracks ?? (cached.track ? [cached.track] : []),
+        }),
+      )
     }
   } catch {
     // Cache read failure — resolve live.
@@ -356,11 +445,12 @@ export async function GET(
   }
 
   try {
-    // 1. Era pick from MusicBrainz release-group dates.
+    // 1. Era ranking from MusicBrainz release-group dates.
     const groupsBody = (await mbJson(
       `https://musicbrainz.org/ws/2/release-group?artist=${mbid}&limit=100&fmt=json`,
     )) as { 'release-groups'?: MbReleaseGroup[] }
-    const pick = pickEraTitle(groupsBody['release-groups'] ?? [], decadeYear)
+    const titles = rankEraTitles(groupsBody['release-groups'] ?? [], decadeYear)
+    const pick = titles[0] ?? null
     await sleep(MB_DELAY_MS)
 
     // 2. The artist's own channel, when MusicBrainz curates one.
@@ -369,24 +459,54 @@ export async function GET(
     )) as { relations?: { url?: { resource?: string } }[] }
     const channelUrl = youtubeRel(relsBody.relations)
 
-    const candidates: { videoId: string; title: string; source: QueueTrack['source'] }[] = []
+    const candidates: {
+      videoId: string
+      title: string
+      source: QueueTrack['source']
+      era: QueueTrack['era']
+      eraTitle: string
+    }[] = []
+    const takenVideos = new Set<string>()
 
-    if (channelUrl && pick) {
+    if (channelUrl && titles.length > 0) {
       const id = await channelId(channelUrl, apiKey)
       if (id) {
         const uploads = await channelUploads(id, apiKey)
-        const wanted = normalize(pick.title)
-        // Title containment is safe HERE only because the channel is
-        // the artist's own MB-linked one — it picks WHICH video, never
-        // WHO. An empty wanted would match every upload, so it skips.
-        for (const upload of wanted ? uploads : []) {
-          if (!normalize(upload.title).includes(wanted)) continue
-          // The other half of standing lesson 7: the artist's own
-          // channel carries interviews, trailers and making-ofs under
-          // the record's exact title. Free — no API spend to reject.
-          if (isNonSongUpload(upload.title, pick.title, name)) continue
-          candidates.push({ ...upload, source: 'channel' })
-          if (candidates.length >= 2) break
+        // Walk the catalog era-first: every title this artist released,
+        // matched against their own uploads. Title containment is safe
+        // HERE only because the channel is the artist's own MB-linked
+        // one — it picks WHICH video, never WHO. An empty normalized
+        // title would match every upload, so it is skipped.
+        for (const entry of titles) {
+          if (candidates.length >= MAX_CANDIDATES) break
+          const wanted = normalize(entry.title)
+          if (!wanted) continue
+          // ONE video per work. Depth should mean more of the artist's
+          // CATALOGUE, not four uploads of one song: matching a whole
+          // catalogue returned "Sabali" twice and "Se Te Djon Ye"
+          // twice, plus remixes and TV segments of the same record.
+          // The pick is the upload whose annotation adds least to the
+          // bare title — "(Official Audio)" over "(Eclipse Version)" —
+          // because the record is what the title alone names.
+          let best: { upload: Upload; noise: number } | null = null
+          for (const upload of uploads) {
+            if (takenVideos.has(upload.videoId)) continue
+            if (!normalize(upload.title).includes(wanted)) continue
+            // The other half of standing lesson 7: the artist's own
+            // channel carries interviews, trailers and making-ofs under
+            // the record's exact title. Free — no API spend to reject.
+            if (isNonSongUpload(upload.title, entry.title, name)) continue
+            const noise = annotationOf(upload.title, entry.title, name).length
+            if (!best || noise < best.noise) best = { upload, noise }
+          }
+          if (!best) continue
+          takenVideos.add(best.upload.videoId)
+          candidates.push({
+            ...best.upload,
+            source: 'channel',
+            era: entry.era,
+            eraTitle: entry.title,
+          })
         }
       }
     }
@@ -394,6 +514,8 @@ export async function GET(
     // NO TITLE, NO SEARCH: without an era/catalog title from this
     // MBID's own release groups there is nothing to anchor identity,
     // and a bare-name search finds whoever is famous under the name.
+    // NOT deepened: one search is 100 units and its identity anchor is
+    // a single title, so search-sourced artists stay honestly one-song.
     if (candidates.length === 0 && pick?.title) {
       const hits = await searchVerified(name, pick.title, apiKey)
       for (const hit of hits.slice(0, 3)) {
@@ -402,36 +524,45 @@ export async function GET(
           videoId: hit.videoId,
           title: hit.title,
           source: 'search',
+          era: pick.era,
+          eraTitle: pick.title,
         })
       }
     }
 
-    let track: QueueTrack | null = null
-    for (const candidate of candidates.slice(0, 3)) {
-      if (await playable(candidate.videoId, apiKey)) {
-        track = {
-          videoId: candidate.videoId,
-          title: decodeEntities(candidate.title),
-          source: candidate.source,
-          era: pick?.era ?? 'catalog',
-          // Search hits under the new rule are always title-anchored.
-          ...(candidate.source === 'search' ? { corroborated: true } : {}),
-          ...(pick?.title ? { eraTitle: pick.title } : {}),
-        }
-        break
-      }
-    }
+    // ONE batched playability call for every candidate (≤50 ids = 1
+    // unit) — cheaper than the old sequential walk over three.
+    const playableIds = await playableSet(
+      candidates.map((candidate) => candidate.videoId),
+      apiKey,
+    )
+    const tracks: QueueTrack[] = candidates
+      .filter((candidate) => playableIds.has(candidate.videoId))
+      .slice(0, MAX_TRACKS_PER_ARTIST)
+      .map((candidate) => ({
+        videoId: candidate.videoId,
+        title: decodeEntities(candidate.title),
+        source: candidate.source,
+        era: candidate.era,
+        // Search hits under the new rule are always title-anchored.
+        ...(candidate.source === 'search' ? { corroborated: true } : {}),
+        eraTitle: candidate.eraTitle,
+      }))
+    // `track` remains the era-truest pick — the shape older clients and
+    // lib/play/resolve.ts's queue-cache reader still consume.
+    const track: QueueTrack | null = tracks[0] ?? null
 
     try {
       await store().setJSON(key, {
         at: new Date().toISOString(),
         track,
+        tracks,
         pass: GATE_PASS,
       } satisfies CachedResolve)
     } catch {
       // Cache writes are best-effort.
     }
-    return withCacheHeaders(NextResponse.json({ track }))
+    return withCacheHeaders(NextResponse.json({ track, tracks }))
   } catch (error) {
     if (error instanceof QuotaError) {
       // Never cached — the queue finishes brewing another day.
