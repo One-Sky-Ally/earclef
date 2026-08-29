@@ -7,6 +7,14 @@
  *   draft     — anything shakier, held for owner review in /studio
  */
 
+/**
+ * Card kinds actually present in cards.json. The union listed seven
+ * while the file carried eleven: `context`, `origin`, `award` and
+ * `milestone` all shipped from the /add-artist pipeline without ever
+ * failing a check, because nothing reads `type` — it is carried, never
+ * branched on. Widened to stop the declaration lying; if it ever does
+ * drive rendering, that is the moment to narrow it deliberately.
+ */
 export type StoryCardType =
   | 'era'
   | 'song'
@@ -15,6 +23,10 @@ export type StoryCardType =
   | 'anniversary'
   | 'performance'
   | 'news'
+  | 'context'
+  | 'origin'
+  | 'award'
+  | 'milestone'
 
 export interface StoryMediaLink {
   label: string

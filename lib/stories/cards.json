@@ -8,11 +8,11 @@
       "type": "context",
       "hook": "\"You Oughta Know\" features Flea on bass and Dave Navarro on lead guitar.",
       "story": "The lead single from Jagged Little Pill pulled in two members of the Red Hot Chili Peppers' orbit — Flea on bass and Dave Navarro on lead guitar — for its raw, confrontational sound. The song won Morissette Best Female Rock Vocal Performance and Best Rock Song at the 1996 Grammy Awards, alongside Jagged Little Pill's wins for Album of the Year and Best Rock Album.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Alanis Morissette — Grammy Awards artist page",
-          "outlet": "Recording Academy (Grammy.com)",
+          "publisher": "Recording Academy (Grammy.com)",
           "url": "https://www.grammy.com/artists/alanis-morissette/4915/"
         }
       ],
@@ -27,11 +27,11 @@
       "type": "context",
       "hook": "The Jagged Little Pill musical won two Tony Awards from fifteen nominations.",
       "story": "Jagged Little Pill's songs were built into a Broadway musical with a book by Diablo Cody, opening at the Broadhurst Theatre in December 2019. It earned fifteen Tony nominations and won two, including Best Book of a Musical for Cody, carrying the album's songs — \"Ironic,\" \"You Oughta Know,\" \"Hand in My Pocket\" and newly written material — into a new story about a suburban family unraveling.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Jagged Little Pill",
-          "outlet": "Tony Awards (tonyawards.com)",
+          "publisher": "Tony Awards (tonyawards.com)",
           "url": "https://www.tonyawards.com/shows/jagged-little-pill/"
         }
       ],
@@ -46,16 +46,16 @@
       "type": "context",
       "hook": "\"The Barrel\" won her New Zealand's top song-of-the-year prize.",
       "story": "\"The Barrel,\" from 2019's Designer, won the APRA Silver Scroll Award, New Zealand's premier songwriting honor — following Party's 2018 win of the Taite Music Prize for Album of the Year, giving Harding two of the country's biggest music prizes within about a year of each other.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Aldous Harding wins the 2018 Taite Music Prize",
-          "outlet": "RNZ",
+          "publisher": "RNZ",
           "url": "https://www.rnz.co.nz/national/programmes/nat-music/audio/2018641068/aldous-harding-wins-the-2018-taite-music-prize"
         },
         {
           "title": "Aldous Harding wins Silver Scroll",
-          "outlet": "Stuff",
+          "publisher": "Stuff",
           "url": "https://www.stuff.co.nz/entertainment/music/116273428"
         }
       ],
@@ -70,11 +70,11 @@
       "type": "origin",
       "hook": "Her stage name comes from her mother, folk singer Lorina Harding.",
       "story": "Born Hannah Sian Topp, she took the surname Harding from her mother, Lorina Harding, a folk and blues singer-songwriter who had settled in New Zealand. Aldous made her own recording debut at 13, co-writing a song that appeared on one of her mother's albums.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Aldous Harding",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Aldous_Harding"
         }
       ],
@@ -89,16 +89,16 @@
       "type": "origin",
       "hook": "They met and fell in love at a school for the blind in Bamako.",
       "story": "Amadou Bagayoko and Mariam Doumbia met as students at Mali's Institute for the Young Blind, playing together in the school's Éclipse Orchestra under bandleader Idrissa Soumaoro. They married in 1980, building a five-decade musical partnership out of that first shared band.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Amadou & Mariam",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Amadou_%26_Mariam"
         },
         {
           "title": "Amadou & Mariam: Well Beyond Mali",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/2009/03/26/102383925/amadou-and-mariam-well-beyond-mali"
         }
       ],
@@ -113,11 +113,11 @@
       "type": "context",
       "hook": "Damon Albarn produced and co-wrote \"Sabali,\" the lead track of Welcome to Mali.",
       "story": "For 2008's Welcome to Mali, Blur and Gorillaz frontman Damon Albarn produced and co-wrote the lead single \"Sabali,\" continuing the duo's pattern of high-profile outside collaborators after Manu Chao produced their breakthrough Dimanche à Bamako in 2004.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Amadou & Mariam: Collaborating with Damon Albarn on 'Sabali'",
-          "outlet": "Nonesuch Records",
+          "publisher": "Nonesuch Records",
           "url": "https://www.nonesuch.com/media/videos/amadou-mariam-collaborating-damon-albarn-sabali"
         }
       ],
@@ -132,16 +132,16 @@
       "type": "context",
       "hook": "\"Miki Dora\" is named for a surfer McMahon calls a stand-in for his own contradictions.",
       "story": "Researching surf subculture while writing Freedom, Damon McMahon found 1960s surfer Miklos \"Miki\" Dora — a gifted, self-destructive figure McMahon has described as arguably the most innovative surfer of his generation and also \"a lifelong criminal and retrograde.\" McMahon named the album's centerpiece track after him, saying Dora served as a heroic-yet-flawed figure he could empathize with and see himself in.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Why an NYC Indie Artist's Newest Single Is Named After Surfing's Enigmatic Anti-Hero Miki Dora",
-          "outlet": "The Inertia",
+          "publisher": "The Inertia",
           "url": "https://www.theinertia.com/music-art/why-an-nyc-indie-artists-newest-single-is-named-after-surfings-enigmatic-anti-hero-miki-dora/"
         },
         {
           "title": "Freedom (Amen Dunes album)",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Freedom_(Amen_Dunes_album)"
         }
       ],
@@ -156,16 +156,16 @@
       "type": "context",
       "hook": "Death Jokes samples stand-up comedy, protests and raves over UK garage-style drums.",
       "story": "2024's Death Jokes broke sharply from Amen Dunes' folk- and blues-rooted earlier records, built instead around UK garage-influenced programmed drums, chopped loops, and samples pulled from stand-up comedy sets, protest footage and rave recordings — a deliberate departure reviewers framed as the project's most radical reinvention to date.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Premature Evaluation: Amen Dunes Death Jokes",
-          "outlet": "Stereogum",
+          "publisher": "Stereogum",
           "url": "https://stereogum.com/2261838/premature-evaluation-amen-dunes-death-jokes/reviews/premature-evaluation"
         },
         {
           "title": "Amen Dunes: Death Jokes — a knotty triumph",
-          "outlet": "The Line of Best Fit",
+          "publisher": "The Line of Best Fit",
           "url": "https://www.thelineofbestfit.com/albums/amen-dunes-death-jokes-knotty-triumph"
         }
       ],
@@ -180,16 +180,16 @@
       "type": "context",
       "hook": "Noah Hawley wrote him into Fargo after a show, no audition required.",
       "story": "Bird had never acted before FX's Fargo cast him in Season 4 as funeral-home owner Thurman Smutny. Showrunner Noah Hawley caught one of Bird's shows in Austin and offered him the role afterward with no audition — when Bird asked what made Hawley think he could act, Hawley reportedly just said, \"You're a dad right?\"",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Andrew Bird Can't Believe He's on 'Fargo' Either",
-          "outlet": "Billboard",
+          "publisher": "Billboard",
           "url": "https://www.billboard.com/culture/tv-film/andrew-bird-interview-fargo-9457575/"
         },
         {
           "title": "Andrew Bird Explains How He Got Cast In Fargo",
-          "outlet": "Stereogum",
+          "publisher": "Stereogum",
           "url": "https://stereogum.com/2100711/how-fargo-cast-andrew-bird/news"
         }
       ],
@@ -204,16 +204,16 @@
       "type": "context",
       "hook": "He builds songs live by looping his own violin through foot pedals.",
       "story": "Bird started on classical violin via the Suzuki Method at age four, and on stage he turns that training into something else entirely — plucking and bowing short phrases, looping them live through foot pedals, and layering the results into full arrangements alongside his signature whistling, used as a lead melodic voice in its own right.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Andrew Bird's World Of Wit, Whimsy And Whistling",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/2012/03/11/148307708/andrew-birds-world-of-wit-whimsy-and-whistling"
         },
         {
           "title": "Violinist, Singer-Songwriter Andrew Bird",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/2005/11/17/5016744/violinist-singer-songwriter-andrew-bird"
         }
       ],
@@ -228,11 +228,11 @@
       "type": "origin",
       "hook": "A lupus diagnosis canceled her Peter Gabriel tour — and led to her most personal album.",
       "story": "In late 2012, health problems related to lupus put Ane Brun in the hospital, forcing her to cancel a North American tour opening for Peter Gabriel. The forced break from touring led to a burst of creativity: the songs that came out of it became her 2015 album When I'm Free, released just ahead of her 40th birthday.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "For Singer Ane Brun, 'Freedom Is Really An Absence Of Fear'",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/2016/02/07/465594809/for-singer-ane-brun-freedom-is-really-an-absence-of-fear"
         }
       ],
@@ -247,11 +247,11 @@
       "type": "context",
       "hook": "She scored additional music for the Swedish biopic about Pippi Longstocking's creator.",
       "story": "Beyond her own records, Ane Brun has composer credits in film and television: she contributed additional music to Becoming Astrid (2018), the biopic about Swedish author Astrid Lindgren, and composed the title music for the 2019 TV series Hidden: First Born.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Ane Brun",
-          "outlet": "IMDb",
+          "publisher": "IMDb",
           "url": "https://www.imdb.com/name/nm2080795/"
         }
       ],
@@ -1314,11 +1314,11 @@
       "type": "context",
       "hook": "He went electric at Newport in 1965 and part of the crowd booed him for it.",
       "story": "On July 25, 1965, Dylan opened his Newport Folk Festival set plugged in, backed by Al Kooper and members of the Paul Butterfield Blues Band, breaking from the acoustic folk style that had made him famous there. Part of the audience booed — a moment that became one of the most debated turns in his career and marked his full pivot into the electric sound of Highway 61 Revisited, released weeks later.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "The Night That Bob Dylan Went Electric",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/2015/07/24/425834232/the-night-that-bob-dylan-went-electric"
         }
       ],
@@ -1333,11 +1333,11 @@
       "type": "context",
       "hook": "He stayed silent for weeks after winning the Nobel Prize, then accepted it in a private Stockholm ceremony months later.",
       "story": "When Dylan won the 2016 Nobel Prize in Literature — the first songwriter to receive it, honored \"for having created new poetic expressions within the great American song tradition\" — he didn't publicly acknowledge it for weeks. His acceptance speech was read aloud for him at the December 2016 ceremony, and he didn't collect the physical medal in person until a small private gathering in Stockholm the following spring.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Bob Dylan — Facts",
-          "outlet": "The Nobel Prize",
+          "publisher": "The Nobel Prize",
           "url": "https://www.nobelprize.org/prizes/literature/2016/dylan/facts/"
         }
       ],
@@ -1500,16 +1500,16 @@
       "type": "origin",
       "hook": "The idea came together on a flight home from a session for someone else's project.",
       "story": "Producer Garry Hughes and composer Andrew T. Mackay traveled to Mumbai to record top session players for a project by the London-based duo Spellbound. \"It was a fantastic experience recording these guys,\" Hughes has said, \"and on the plane coming home we thought how great it would be to make an orchestral chill-out record with these players.\" That idea became their 2006 self-titled debut, built around more than 50 musicians including a 30-piece Mumbai string orchestra.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Bombay Dub Orchestra — artist bio (courtesy Calabash Music)",
-          "outlet": "PayPlay.fm",
+          "publisher": "PayPlay.fm",
           "url": "https://payplay.fm/a6e43-bombay-dub-orchestra"
         },
         {
           "title": "Bombay Dub Orchestra",
-          "outlet": "Six Degrees Records",
+          "publisher": "Six Degrees Records",
           "url": "https://www.sixdegreesrecords.com/bombay-dub-orchestra/"
         }
       ],
@@ -1524,11 +1524,11 @@
       "type": "context",
       "hook": "Their reggae-and-orchestra Jingle Bells remix scores a workshop scene in Iron Man 3.",
       "story": "Bombay Dub Orchestra's remix of \"Jingle Bells,\" featuring vocalist Joe Williams, plays during Tony Stark's workshop scene in Marvel's Iron Man 3 (2013) — a departure from the AC/DC that usually soundtracked his lab, and one of three different Jingle Bells versions used across the film.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Jingle Bells (Bombay Dub Orchestra Remix) Marvel's Iron Man 3",
-          "outlet": "Marvel.com",
+          "publisher": "Marvel.com",
           "url": "https://www.marvel.com/articles/movies/iron-man-3-christmas-playlist"
         }
       ],
@@ -1976,16 +1976,16 @@
       "type": "context",
       "hook": "Their 2011 album debuted at number one on the Billboard 200 without a major label push.",
       "story": "Showroom of Compassion (2011) was CAKE's first album released independently, without a major label, and it still debuted at number one on the Billboard 200 — a rare feat for a self-released record.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Showroom of Compassion",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Showroom_of_Compassion"
         },
         {
           "title": "Billboard 200 Chart",
-          "outlet": "Billboard",
+          "publisher": "Billboard",
           "url": "https://www.billboard.com/charts/billboard-200/2011-01-29/"
         }
       ],
@@ -2000,11 +2000,11 @@
       "type": "context",
       "hook": "They released a handmade artist's book instead of a normal deluxe edition.",
       "story": "In 2016, CAKE released Bound Away, a limited handmade artist's book combining vocalist John McCrea's lyrics with hand-carved linoleum illustrations by R. Stuhmiller and a CD, built from eco-conscious materials including recycled band clothing and coffee-sack endsheets. Copies were donated to special collections including the Rock & Roll Hall of Fame library.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "CAKE, BANDmade, and Bound Away",
-          "outlet": "PRINT Magazine",
+          "publisher": "PRINT Magazine",
           "url": "https://www.printmag.com/design-books/cake-bandmade-and-bound-away/"
         }
       ],
@@ -2389,16 +2389,16 @@
       "type": "context",
       "hook": "Carlos Santana and Sheryl Crow both recorded his song \"Sideways.\"",
       "story": "Greenwood wrote and produced \"Sideways\" for Santana's 2002 album Shaman before recording his own version on The Clarence Greenwood Recordings (2004). Sheryl Crow later cut it with him for her 2010 album 100 Miles from Memphis, and John Mayer and Tyler James have also covered it — the song went RIAA gold in 2019 despite never charting.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Sideways (Clarence Greenwood song)",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Sideways_(Clarence_Greenwood_song)"
         },
         {
           "title": "100 Miles from Memphis",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/100_Miles_from_Memphis"
         }
       ],
@@ -2413,16 +2413,16 @@
       "type": "context",
       "hook": "He founded his own label in 2010 after growing tired of major-label marketing demands.",
       "story": "After three albums on major labels, Greenwood started his own imprint, Rainwater Recordings, in 2010 to work free of outside marketing and packaging demands. The Rainwater LP, released that year, was the first album to come out under his own label, and every Citizen Cope release since has followed the same independent route.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Citizen Cope",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Citizen_Cope"
         },
         {
           "title": "The Rainwater LP",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/The_Rainwater_LP"
         }
       ],
@@ -2562,16 +2562,16 @@
       "type": "origin",
       "hook": "His stage name came from moccasins he made out of sheepskin and motorbike tires.",
       "story": "Born Connan Tant Hosford, he picked up a teenage hobby of hand-making moccasins from sheepskin and old motorbike tyres in Te Awanga — a habit distinctive enough that a friend started calling him \"Mockasin,\" the name he carried first into his early band Connan and the Mockasins and then into his solo career.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Soft Hair, stand-up and the surreal world of Connan Mockasin",
-          "outlet": "RNZ",
+          "publisher": "RNZ",
           "url": "https://www.rnz.co.nz/news/all/374349/soft-hair-stand-up-and-the-surreal-world-of-connan-mockasin"
         },
         {
           "title": "Connan Mockasin",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Connan_Mockasin"
         }
       ],
@@ -2586,16 +2586,16 @@
       "type": "context",
       "hook": "Bostyn 'n Dobsyn revived characters he and a childhood friend invented 20 years earlier.",
       "story": "As kids in Te Awanga, Mockasin and neighbor Blake Pryor made home movies about a fictional music teacher named Mr Bostyn and his student Dobsyn. Two decades later, Mockasin revived the characters — playing Mr Bostyn himself, with Pryor back as Dobsyn — for Bostyn 'n Dobsyn, a five-part surreal film released alongside his 2018 album Jassbusters.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Connan Mockasin filmed a melodrama in a Hollywood hair salon",
-          "outlet": "i-D",
+          "publisher": "i-D",
           "url": "https://i-d.co/article/connan-mockasin-filmed-a-melodrama-in-a-hollywood-hair-salon/"
         },
         {
           "title": "Connan Mockasin's musical melodrama",
-          "outlet": "Dazed",
+          "publisher": "Dazed",
           "url": "https://www.dazeddigital.com/music/article/41799/1/connan-mockasin-jassbusters-album-interview"
         }
       ],
@@ -2610,11 +2610,11 @@
       "type": "context",
       "hook": "Martin Luther King Jr. called \"People Get Ready\" the movement's unofficial anthem.",
       "story": "Mayfield wrote \"People Get Ready\" for The Impressions in 1964, drawing on the gospel song \"This Train\" and the imagery of the Underground Railroad. Martin Luther King Jr. used it to move marchers and to calm crowds, and named it an unofficial anthem of the Civil Rights Movement — Chicago churches even reworked its lyrics into services, swapping in lines about freedom.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "The Impressions' \"People Get Ready\" At 55: How Curtis Mayfield Created A Musical Balm For Black America",
-          "outlet": "Recording Academy (Grammy.com)",
+          "publisher": "Recording Academy (Grammy.com)",
           "url": "https://www.grammy.com/news/impressions-people-get-ready-55-how-curtis-mayfield-created-musical-balm-black-america/"
         }
       ],
@@ -2629,11 +2629,11 @@
       "type": "context",
       "hook": "Superfly's lyrics were written to undercut the film's own glamorized drug dealer.",
       "story": "While the 1972 film Super Fly played its cocaine-dealer protagonist as a stylish antihero, Mayfield used the soundtrack to push back — \"Pusherman\" and \"Freddie's Dead\" trace the economic desperation and systemic neglect behind that lifestyle rather than glorifying it. Mayfield's own wife later said he saw the film as effectively an ad for cocaine and wrote the songs specifically to counter that message.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Curtis Mayfield's 'Super Fly' Soundtrack: 10 Things You Didn't Know",
-          "outlet": "Rolling Stone",
+          "publisher": "Rolling Stone",
           "url": "https://www.rollingstone.com/music/music-features/curtis-mayfield-super-fly-things-you-didnt-know-1364038/"
         }
       ],
@@ -2648,11 +2648,11 @@
       "type": "context",
       "hook": "New World Order (1996) was sung line by line while he lay on his back.",
       "story": "After the 1990 accident that paralyzed him from the neck down, Mayfield kept working. His final album, New World Order, released in 1996, was recorded with him lying on his back, singing his vocal lines one at a time to be pieced together in the studio — the only album he wrote, recorded and released after his injury.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Curtis Mayfield Dies",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/1999/12/27/1068322/curtis-mayfield-dies"
         }
       ],
@@ -2748,16 +2748,16 @@
       "type": "context",
       "hook": "Lisa Gerrard sings in a language she invented herself around age 12.",
       "story": "Much of Dead Can Dance's most recognized vocal work is sung in no real language at all — Lisa Gerrard developed her own invented, non-lexical vocalizing, which she calls \"the language of the Heart,\" beginning around age 12 and has used across the group's catalog ever since, describing it as a way of singing that can't carry deception the way ordinary words can.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Lisa Gerrard",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Lisa_Gerrard"
         },
         {
           "title": "Interview with Lisa Gerrard",
-          "outlet": "Synchrotones",
+          "publisher": "Synchrotones",
           "url": "https://synchrotones.com/2013/05/01/interview-with-lisa-gerrard/"
         }
       ],
@@ -2772,16 +2772,16 @@
       "type": "context",
       "hook": "Their 2005 reunion played the Hollywood Bowl and Radio City with 40-piece orchestras.",
       "story": "After splitting in 1998, Brendan Perry and Lisa Gerrard reunited in 2005 for a 31-date world tour, their first US shows in nine years. It included sold-out stops at the Hollywood Bowl and Radio City Music Hall, both backed by 40-piece orchestras — dates from that tour were later compiled onto the live releases Selections From Europe 2005 and Selections From North America 2005.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Dead Can Dance Performs with Orchestra at the Hollywood Bowl for First U.S. Concert in Nine Years",
-          "outlet": "Hollywood Bowl",
+          "publisher": "Hollywood Bowl",
           "url": "https://www.hollywoodbowl.com/press/releases/471"
         },
         {
           "title": "Dead Can Dance — MusicBrainz discography",
-          "outlet": "MusicBrainz",
+          "publisher": "MusicBrainz",
           "url": "https://musicbrainz.org/artist/ccda046a-2674-4f7d-97e6-f23d6c156432"
         }
       ],
@@ -2858,16 +2858,16 @@
       "type": "context",
       "hook": "Häxan scores a 1926 silent film, not the 1922 witch documentary its title nods to.",
       "story": "Commissioned by the Swedish Film Institute, Dungen's first fully instrumental album, Häxan (Swedish for \"the witch\"), is a new live score for Lotte Reiniger's 1926 silhouette-animated film The Adventures of Prince Achmed — the oldest surviving feature-length animated film, made nearly a decade before Disney's Snow White. Dungen performed the score live across a run of US dates, closing at the Getty Museum in Los Angeles.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Dungen presents The Adventures of Prince Achmed",
-          "outlet": "Getty Museum",
+          "publisher": "Getty Museum",
           "url": "https://www.getty.edu/visit/cal/events/ev_1602.html"
         },
         {
           "title": "Dungen: Häxan",
-          "outlet": "Spectrum Culture",
+          "publisher": "Spectrum Culture",
           "url": "https://spectrumculture.com/2016/11/20/dungen-haxan/"
         }
       ],
@@ -2882,11 +2882,11 @@
       "type": "context",
       "hook": "\"Panda\" got a boost from a Conan O'Brien performance despite being sung in Swedish.",
       "story": "Gustav Ejstes writes and performs nearly all of Dungen's music himself in the studio, singing entirely in Swedish. That didn't stop the band from breaking through internationally with Ta det lugnt (2004) — the single \"Panda\" got an extra push from a 2005 performance on Late Night with Conan O'Brien, reaching English-speaking audiences with no translation at all.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Dungen",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Dungen"
         }
       ],
@@ -2901,11 +2901,11 @@
       "type": "context",
       "hook": "Dub Side of the Moon shipped with instructions for syncing it to The Wizard of Oz.",
       "story": "The 2003 physical release of Dub Side of the Moon — the collective's reggae reworking of Pink Floyd's Dark Side of the Moon — included printed instructions for playing the album alongside The Wizard of Oz, a direct nod to \"Dark Side of the Rainbow,\" the long-running fan legend that the original Floyd album syncs with the film.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Easy Star All-Stars",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Easy_Star_All-Stars"
         }
       ],
@@ -2920,11 +2920,11 @@
       "type": "context",
       "hook": "Their 2009 Beatles reinterpretation reached the Billboard 200 twice.",
       "story": "Easy Star's Lonely Hearts Dub Band, the collective's full reggae reworking of the Beatles' Sgt. Pepper's Lonely Hearts Club Band, reportedly became the first reggae album in more than two years to reach the Billboard 200 — doing so twice, following the same full-album-cover formula that carried Dub Side of the Moon (Pink Floyd) and Radiodread (Radiohead) before it.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Easy Star All-Stars",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Easy_Star_All-Stars"
         }
       ],
@@ -2939,16 +2939,16 @@
       "type": "origin",
       "hook": "Nujabes personally remastered his self-burned debut CD and gave it a second life in Japan.",
       "story": "Douglas Appling self-released his debut album, Soon It Will Be Cold Enough, in 2006 as a college student, burning CDs at home and hand-delivering them to the post office each week. In late 2007 it reached Nujabes' Japanese label, Hydeout Productions, which remastered, rearranged and re-released it in April 2008 — cutting the original 14-track sequence down to 12. Nujabes also picked the track \"With Rainy Eyes\" for his label's Hydeout 2nd Collection compilation.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Emancipator (musician)",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Emancipator_(musician)"
         },
         {
           "title": "INTERVIEW: Emancipator",
-          "outlet": "Allston Pudding",
+          "publisher": "Allston Pudding",
           "url": "https://allstonpudding.com/interview-emancipator/"
         }
       ],
@@ -2963,16 +2963,16 @@
       "type": "context",
       "hook": "What started as a laptop-and-violin duo grew into a four-piece live band.",
       "story": "Appling began touring with violinist Ilya Goldberg as a duo, pairing his production with live strings. By 2013, the act had expanded into the four-piece Emancipator Ensemble, adding live bass and drums alongside Appling's own guitar work — giving his studio tracks an analog, reworked arrangement on stage.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Emancipator (musician)",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Emancipator_(musician)"
         },
         {
           "title": "INTERVIEW: Emancipator",
-          "outlet": "Allston Pudding",
+          "publisher": "Allston Pudding",
           "url": "https://allstonpudding.com/interview-emancipator/"
         }
       ],
@@ -3480,11 +3480,11 @@
       "type": "context",
       "hook": "Shore dropped without warning at the exact minute of the 2020 autumnal equinox.",
       "story": "After a pandemic spent recording largely alone in upstate New York, Robin Pecknold surprise-released Shore on September 22, 2020 — timed to arrive at 13:31 UTC, the precise minute of that year's autumnal equinox, with no advance singles or announcement.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Fleet Foxes' Shore is out now",
-          "outlet": "Rolling Stone",
+          "publisher": "Rolling Stone",
           "url": "https://www.rollingstone.com/music/music-news/fleet-foxes-shore-autumnal-equinox-1063858/"
         }
       ],
@@ -3499,11 +3499,11 @@
       "type": "context",
       "hook": "Their drummer on Helplessness Blues later became Father John Misty.",
       "story": "Josh Tillman played drums in Fleet Foxes starting in 2008, appearing on Helplessness Blues (2011), before leaving to record under his own name as Father John Misty — a project that would go on to eclipse his time behind the kit in the band that gave him his start.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Father John Misty",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Father_John_Misty"
         }
       ],
@@ -3909,11 +3909,11 @@
       "type": "context",
       "hook": "Frontman Eugene Hütz played the lead role in a Hollywood film.",
       "story": "Eugene Hütz starred as Alex, the lead role, in Liev Schreiber's 2005 film Everything Is Illuminated, alongside Elijah Wood — one of several acting credits for the frontman, who also appeared in Wristcutters: A Love Story (2006) and Filth and Wisdom (2008).",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Eugene Hutz",
-          "outlet": "IMDb",
+          "publisher": "IMDb",
           "url": "https://www.imdb.com/name/nm1778479/"
         }
       ],
@@ -3928,16 +3928,16 @@
       "type": "context",
       "hook": "Rick Rubin produced their major-label debut after a Rage Against the Machine tip-off.",
       "story": "Rage Against the Machine guitarist Tom Morello saw Gogol Bordello perform in Los Angeles and recommended Rick Rubin check them out. Rubin went on to produce Trans-Continental Hustle (2010), the band's major-label debut, drawing on frontman Eugene Hütz's life in Brazil at the time.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Trans-Continental Hustle",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Trans-Continental_Hustle"
         },
         {
           "title": "Gogol Bordello Graduate From School Of Rick Rubin For Next Album",
-          "outlet": "Rolling Stone",
+          "publisher": "Rolling Stone",
           "url": "https://www.rollingstone.com/music/music-news/gogol-bordello-graduate-from-school-of-rick-rubin-for-next-album-188711/"
         }
       ],
@@ -4123,11 +4123,11 @@
       "type": "context",
       "hook": "He was pianist in Miles Davis's Second Great Quintet from 1963 to 1968.",
       "story": "Alongside Wayne Shorter, Ron Carter and Tony Williams, Hancock spent five years as the pianist in Miles Davis's Second Great Quintet — a stretch that reshaped modern jazz harmony and rhythm-section interplay and set the foundation for the restless, genre-crossing career Hancock built afterward.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Herbie Hancock",
-          "outlet": "NPR Jazz Profiles",
+          "publisher": "NPR Jazz Profiles",
           "url": "https://seamus.npr.org/programs/jazzprofiles/archive/hancock.html"
         }
       ],
@@ -4142,11 +4142,11 @@
       "type": "context",
       "hook": "\"Rockit\" won his first Grammy and went gold off scratching and a robot video.",
       "story": "\"Rockit,\" from 1983's Future Shock, paired Hancock's electro-funk with turntable scratching and a Godley & Creme-directed video full of robotic mannequins. It was certified gold and won Hancock his first career Grammy, Best R&B Instrumental Performance, which he played live at his Grammy debut at the 26th Annual Grammy Awards.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Herbie Hancock — Grammy Awards artist page",
-          "outlet": "Recording Academy (Grammy.com)",
+          "publisher": "Recording Academy (Grammy.com)",
           "url": "https://www.grammy.com/artists/herbie-hancock/9477/"
         }
       ],
@@ -4161,11 +4161,11 @@
       "type": "context",
       "hook": "River: The Joni Letters won Album of the Year — a rare feat for a jazz record.",
       "story": "Hancock's 2007 tribute to Joni Mitchell, featuring Norah Jones, Tina Turner and Corinne Bailey Rae, won the Grammy for Album of the Year at the 50th Annual Grammy Awards — one of only a handful of jazz albums to ever win the top overall category, alongside a second win that night for Best Contemporary Jazz Album.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Herbie Hancock — Grammy Awards artist page",
-          "outlet": "Recording Academy (Grammy.com)",
+          "publisher": "Recording Academy (Grammy.com)",
           "url": "https://www.grammy.com/artists/herbie-hancock/9477/"
         }
       ],
@@ -5606,11 +5606,11 @@
       "type": "context",
       "hook": "He's the first-ever Artist in Residence at London's Abbey Road Studios.",
       "story": "In 2024, Jordan Rakei was named the inaugural Artist in Residence at London's Abbey Road Studios — the first time the storied studio has appointed anyone to that role.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Jordan Rakei Announced as the Inaugural Artist in Residence at Abbey Road Studios",
-          "outlet": "Abbey Road Studios",
+          "publisher": "Abbey Road Studios",
           "url": "https://www.abbeyroad.com/news/jordan-rakei-announced-as-the-inaugural-artist-in-residence-at-abbey-road-studios-3428"
         }
       ],
@@ -5625,16 +5625,16 @@
       "type": "context",
       "hook": "He makes house music under a separate alias, Dan Kye, on Bradley Zero's label.",
       "story": "Alongside his own catalog, Rakei records house and dance music under the alias Dan Kye, releasing on Bradley Zero's Rhythm Section International label — starting with the 2016 EP Joy, Ease, Lightness and the 2020 album Small Moments.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Jordan Rakei Shares Dreamy Electronic Cut Under Dan Kye Alias",
-          "outlet": "Clash",
+          "publisher": "Clash",
           "url": "https://www.clashmusic.com/news/jordan-rakei-shares-dreamy-electronic-cut-under-dan-kye-alias/"
         },
         {
           "title": "Jordan Rakei Is Dan Kye for New House Album",
-          "outlet": "XLR8R",
+          "publisher": "XLR8R",
           "url": "https://xlr8r.com/news/jordan-rakei-is-dan-kye-for-new-house-album/"
         }
       ],
@@ -5735,16 +5735,16 @@
       "type": "context",
       "hook": "They released five full studio albums in a single calendar year.",
       "story": "In 2017, King Gizzard & the Lizard Wizard fulfilled a promise to their fans by releasing five studio albums within the calendar year, including Flying Microtonal Banana, the first in a trilogy of microtonal-tuned records — an extraordinary pace even by their own prolific standards.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "King Gizzard & the Lizard Wizard",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/King_Gizzard_%26_the_Lizard_Wizard"
         },
         {
           "title": "King Gizzard and the Lizard Wizard feature",
-          "outlet": "Rolling Stone",
+          "publisher": "Rolling Stone",
           "url": "https://www.rollingstone.com/music/music-features/king-gizzard-lizard-wizard-tour-album-jam-band-1235098990/"
         }
       ],
@@ -5759,11 +5759,11 @@
       "type": "context",
       "hook": "They built a free video game just to promote one album.",
       "story": "To promote 2019's Infest the Rats' Nest, the band released Mars for the Rich, a free, browser-playable first-person shooter game set on a dystopian Martian colony for the ultra-wealthy.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "King Gizzard & The Lizard Wizard release video game",
-          "outlet": "Far Out Magazine",
+          "publisher": "Far Out Magazine",
           "url": "https://faroutmagazine.co.uk/king-gizzard-the-lizard-wizard-video-game/"
         }
       ],
@@ -5907,11 +5907,11 @@
       "type": "context",
       "hook": "All four members of U2 had to personally clear the sample.",
       "story": "\"Take Me to the Clouds Above\" builds its beat around a sample of U2's \"With or Without You,\" which meant all four band members had to sign off before the track could be released. Bassist Adam Clayton, for his part, approved: \"It's a good beat and you can dance to it. I especially like the bassline.\"",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Take Me To the Clouds Above — Single (LMC vs U2)",
-          "outlet": "u2songs.com",
+          "publisher": "u2songs.com",
           "url": "https://u2songs.com/oddities/take_me_to_the_clouds_above_lmc_vs_u2"
         }
       ],
@@ -5926,16 +5926,16 @@
       "type": "context",
       "hook": "It gave U2 a UK #1 they'd never reached with the original song.",
       "story": "U2's own \"With or Without You\" peaked at only number 4 in the UK. \"Take Me to the Clouds Above,\" built around a sample of it plus an interpolation of Whitney Houston's \"How Will I Know,\" went all the way to number one on the UK Official Singles Chart on February 7, 2004, holding the top spot for two weeks and staying on the chart for 15 weeks total.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Take Me to the Clouds Above — Chart History",
-          "outlet": "Official Charts Company",
+          "publisher": "Official Charts Company",
           "url": "https://www.officialcharts.com/songs/lmc-vs-u2-take-me-to-the-clouds-above/"
         },
         {
           "title": "With Or Without You — Chart History",
-          "outlet": "Official Charts Company",
+          "publisher": "Official Charts Company",
           "url": "https://www.officialcharts.com/songs/u2-with-or-without-you/"
         }
       ],
@@ -6080,16 +6080,16 @@
       "type": "origin",
       "hook": "He built his first guitar out of bicycle brake cables and a sardine-can key.",
       "story": "Growing up in Agadez, Niger, a teenage Mdou Moctar wanted a guitar his strict Muslim family wouldn't buy him — so at 17 he built his own, out of salvaged wood, bicycle brake cables for strings, and a sardine-can key, with a fretboard too narrow to fit more than five strings. Watching YouTube clips of Eddie Van Halen and drawing on traditional Tuareg melodies, he taught himself to play on the instrument he'd made himself.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Mdou Moctar: the Hendrix of the Sahara",
-          "outlet": "Louder",
+          "publisher": "Louder",
           "url": "https://www.loudersound.com/features/mdou-moctar-the-hendrix-of-the-sahara"
         },
         {
           "title": "Mdou Moctar: the shred star of the Sahara",
-          "outlet": "Dazed",
+          "publisher": "Dazed",
           "url": "https://www.dazeddigital.com/music/article/52767/1/mdou-moctar-the-shred-star-of-the-sahara-afrique-victime-matador-interview"
         }
       ],
@@ -6104,16 +6104,16 @@
       "type": "context",
       "hook": "\"Afrique Victime\" names France's uranium extraction from Niger as its target.",
       "story": "The title track of Afrique victime (2021), sung mostly in Tamashek, is a direct protest against foreign powers extracting Niger's resources while its people see little benefit — French companies have long mined Niger's uranium even as most of the country lacks reliable electricity. Moctar has said the song is aimed at outside powers whose interference destabilizes African nations and leaves ordinary people to bear the cost.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Mdou Moctar Explains the Meaning of 'Afrique Victime'",
-          "outlet": "OkayAfrica",
+          "publisher": "OkayAfrica",
           "url": "https://www.okayafrica.com/mdou-moctar-explains-the-meaning-of-afrique-victime/296921"
         },
         {
           "title": "The anti-extractivism of Mdou Moctar",
-          "outlet": "Africa Is a Country",
+          "publisher": "Africa Is a Country",
           "url": "https://africasacountry.com/2024/07/the-anti-extractivism-of-mdou-moctar"
         }
       ],
@@ -6128,11 +6128,11 @@
       "type": "context",
       "hook": "A 2023 coup back home stranded the band mid-tour in the United States.",
       "story": "In the middle of a North American tour, a coup in Niger overthrew the government and threw the country into chaos, leaving Moctar and his band stranded in the US with no clear way home and touring income cut off. The band launched a GoFundMe to cover expenses while they waited it out — a real-world echo of the political urgency already running through the album they'd just finished, Funeral for Justice.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Mdou Moctar stuck in the US amid Nigerien instability, launches GoFundMe to cover expenses",
-          "outlet": "Consequence",
+          "publisher": "Consequence",
           "url": "https://consequence.net/2023/08/mdou-moctar-gofundme/"
         }
       ],
@@ -6147,11 +6147,11 @@
       "type": "origin",
       "hook": "\"I was singing and writing songs before I remembered how to speak.\"",
       "story": "Melody Gardot's music career began during recovery from a debilitating accident at 19, which left her overly sensitive to light and sound and forced her to relearn motor and communication skills. Music therapy became her most effective recovery tool. \"I was singing and writing songs before I remembered how to speak,\" she has said. \"The message is music is all-powerful force.\"",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "The Essential Melody Gardot",
-          "outlet": "melodygardot.com",
+          "publisher": "melodygardot.com",
           "url": "https://melodygardot.com/about"
         }
       ],
@@ -6166,16 +6166,16 @@
       "type": "context",
       "hook": "She sings fluently in both English and French across her catalog.",
       "story": "Gardot's catalog moves between languages, including her 2022 collaboration with Brazilian pianist Philippe Powell, Entre eux deux, sung largely in French.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "The Essential Melody Gardot",
-          "outlet": "melodygardot.com",
+          "publisher": "melodygardot.com",
           "url": "https://melodygardot.com/about"
         },
         {
           "title": "Melody Gardot",
-          "outlet": "MusicBrainz",
+          "publisher": "MusicBrainz",
           "url": "https://musicbrainz.org/artist/c47267ed-7482-40bb-a4ea-e1399cc8ce04"
         }
       ],
@@ -6514,16 +6514,16 @@
       "type": "context",
       "hook": "\"Cold Little Heart\" became Big Little Lies' theme almost by accident.",
       "story": "\"Cold Little Heart,\" the nearly ten-minute opener from Love & Hate (2016), wasn't written for television — Kiwanuka has said that when HBO first asked to use it for Big Little Lies, he assumed it would appear in a single scene. Instead its extended intro became the show's title sequence music, and he says he didn't fully register what had happened until the series had already premiered.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Michael Kiwanuka On Embracing His Name And How 'Big Little Lies' Changed His Life",
-          "outlet": "Bustle (via Goodreads)",
+          "publisher": "Bustle (via Goodreads)",
           "url": "https://www.goodreads.com/author_blog_posts/19254402-michael-kiwanuka-on-embracing-his-name-and-how-big-little-lies-changed"
         },
         {
           "title": "Cold Little Heart",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Cold_Little_Heart"
         }
       ],
@@ -6538,11 +6538,11 @@
       "type": "context",
       "hook": "He won the Mercury Prize on his third try, beating Dua Lipa and Stormzy.",
       "story": "Kiwanuka had already been nominated for the Mercury Prize twice — for Home Again (2012) and Love & Hate (2016) — before KIWANUKA (2019) won it in 2020, beating a shortlist that included Dua Lipa's Future Nostalgia and Stormzy's Heavy Is the Head. Judges called the album \"classic yet contemporary, drawing on the history of music while remaining an intensely personal work of self expression.\"",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Michael Kiwanuka wins the Hyundai Mercury Prize 2020",
-          "outlet": "NME",
+          "publisher": "NME",
           "url": "https://www.nme.com/news/music/michael-kiwanuka-wins-the-hyundai-mercury-prize-2020-2760820"
         }
       ],
@@ -6894,16 +6894,16 @@
       "type": "context",
       "hook": "The 2020 reunion brought in Anthrax's Scott Ian and ex-Slayer's Dave Lombardo.",
       "story": "For their first shows in roughly two decades, Mike Patton, Trevor Dunn and Trey Spruance reunited in February 2020 to perform their original 1986 demo tape, The Raging Wrath of the Easter Bunny, in full — bringing in Anthrax guitarist Scott Ian and former Slayer drummer Dave Lombardo to round out the lineup. The band then professionally re-recorded the whole demo as The Raging Wrath of the Easter Bunny Demo, released that October on Patton's own label, Ipecac Recordings.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Mike Patton on Mr. Bungle's Surprise Return",
-          "outlet": "Consequence",
+          "publisher": "Consequence",
           "url": "https://consequence.net/2020/10/mike-patton-mr-bungle-interview-2020/"
         },
         {
           "title": "Mr. Bungle",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Mr._Bungle"
         }
       ],
@@ -6918,11 +6918,11 @@
       "type": "context",
       "hook": "\"Travolta\" got renamed \"Quote Unquote\" after legal pressure over the name.",
       "story": "The opening track on Mr. Bungle's 1991 self-titled debut was originally titled \"Travolta\" — a reference to the actor — before legal pressure tied to the name forced a change. It appears on the released album as \"Quote Unquote.\"",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Travolta (song)",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Travolta_(song)"
         }
       ],
@@ -6937,16 +6937,16 @@
       "type": "origin",
       "hook": "Twin sisters anchored the band's early, hushed harmonies.",
       "story": "múm's early lineup included twin sisters Gyða and Kristín Anna Valtýsdóttir, whose paired vocals became a defining feature of the band's sound on Yesterday Was Dramatic – Today Is OK and Finally We Are No One.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "múm",
-          "outlet": "MusicBrainz",
+          "publisher": "MusicBrainz",
           "url": "https://musicbrainz.org/artist/2b64e811-cbcd-45f7-b29d-296444cad4f1"
         },
         {
           "title": "Múm",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/M%C3%BAm"
         }
       ],
@@ -6961,11 +6961,11 @@
       "type": "context",
       "hook": "History of Silence (2025) broke a twelve-year gap between albums.",
       "story": "múm's previous studio album, Smilewound, came out in 2013. History of Silence, released in September 2025, marked the band's first new album in over a decade.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "múm discography",
-          "outlet": "MusicBrainz",
+          "publisher": "MusicBrainz",
           "url": "https://musicbrainz.org/artist/2b64e811-cbcd-45f7-b29d-296444cad4f1"
         }
       ],
@@ -6980,16 +6980,16 @@
       "type": "origin",
       "hook": "Frontman Jeff Mangum spent over a decade out of the public eye before returning to the stage.",
       "story": "After In the Aeroplane Over the Sea (1998), Neutral Milk Hotel went dormant and frontman Jeff Mangum largely withdrew from public performance and interviews for more than ten years, earning a reputation as one of indie rock's most reclusive figures. He returned to the stage in 2011, which led to a full band reunion tour running from 2013 to 2015.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Neutral Milk Hotel's Reclusive Frontman Jeff Mangum Returning to Stage",
-          "outlet": "Rolling Stone",
+          "publisher": "Rolling Stone",
           "url": "https://www.rollingstone.com/music/music-news/neutral-milk-hotels-reclusive-frontman-jeff-mangum-returning-to-stage-248908/"
         },
         {
           "title": "After Years Away, Neutral Milk Hotel's Jeff Mangum Returns To The Stage",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/sections/allsongs/2011/09/28/140880297/after-years-away-neutral-milk-hotels-jeff-mangum-returns-to-the-stage"
         }
       ],
@@ -7004,11 +7004,11 @@
       "type": "context",
       "hook": "Their 2023 box set includes a demo and a live recording that had never been officially released.",
       "story": "The Collected Works of Neutral Milk Hotel, a box set originally sold only through the band's own store before its 2023 wide reissue on Merge Records, gathers both studio albums alongside a picture disc of a live set at Jittery Joe's, a previously unreleased demo of \"Little Birds,\" and other rarities across seven pieces of vinyl.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "The Collected Works of Neutral Milk Hotel",
-          "outlet": "Merge Records",
+          "publisher": "Merge Records",
           "url": "https://www.mergerecords.com/product/the_collected_works_of_neutral_milk_hotel"
         }
       ],
@@ -8358,11 +8358,11 @@
       "type": "context",
       "hook": "Album titles pun on the very songs they're covering, like Aperitif for Destruction.",
       "story": "Richard Cheese's album titles are built as puns on the acts he's lounge-ifying: Aperitif for Destruction (2005) plays on Guns N' Roses' Appetite for Destruction, Tuxicity (2002) plays on the toxicity of nu-metal, and I'd Like a Virgin (2006) plays on Madonna's Like a Virgin — a running joke that has continued across more than two dozen albums since 2000.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Richard Cheese — MusicBrainz discography",
-          "outlet": "MusicBrainz",
+          "publisher": "MusicBrainz",
           "url": "https://musicbrainz.org/artist/858db18f-1e09-4f0d-96d3-c15d28762c15"
         }
       ],
@@ -8377,16 +8377,16 @@
       "type": "context",
       "hook": "He sang \"Man in the Mirror\" as himself inside The LEGO Batman Movie.",
       "story": "Richard Cheese appeared as himself in 2017's The LEGO Batman Movie, performing a lounge version of \"Man in the Mirror\" alongside an elevator-music take on \"Everything Is Awesome.\" It's one of several screen placements for his covers, including Disturbed's \"Down with the Sickness\" in the 2004 Dawn of the Dead remake and swing versions of jazz standards scoring party scenes in Batman v Superman: Dawn of Justice.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Swinging Through Gotham: Richard Cheese Lounges Up The LEGO Batman Movie",
-          "outlet": "DC.com",
+          "publisher": "DC.com",
           "url": "https://www.dc.com/blog/2017/05/22/swinging-through-gotham-richard-cheese-lounges-up-the-lego-batman-movie"
         },
         {
           "title": "Film & TV Appearances",
-          "outlet": "richardcheese.com",
+          "publisher": "richardcheese.com",
           "url": "https://richardcheese.com/film--tv-appearances.html"
         }
       ],
@@ -8594,11 +8594,11 @@
       "type": "origin",
       "hook": "Bootsy Collins named the duo and narrates the album as its \"special guest host.\"",
       "story": "After Bruno Mars and Anderson .Paak rejected names like \"RoboCop Funk\" and \"The Conquistadors,\" funk legend Bootsy Collins suggested \"Silk Sonic\" — both said \"Done deal\" at once. Collins went on to appear throughout An Evening with Silk Sonic as its spoken-word narrator, recorded at his own Rehab Studio in Cincinnati, framing the album as a live 1970s-style variety show.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "An Evening with Silk Sonic",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/An_Evening_with_Silk_Sonic"
         }
       ],
@@ -8613,11 +8613,11 @@
       "type": "context",
       "hook": "\"Leave the Door Open\" swept all four Grammy categories it was nominated in.",
       "story": "At the 64th Annual Grammy Awards in 2022, Silk Sonic's debut single \"Leave the Door Open\" won every category it was up for: Record of the Year, Song of the Year, Best R&B Solo Performance and Best R&B Song. The duo opened that year's ceremony performing \"777\" in vintage playing-card-themed suits.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Silk Sonic — Grammy Awards artist page",
-          "outlet": "Recording Academy (Grammy.com)",
+          "publisher": "Recording Academy (Grammy.com)",
           "url": "https://www.grammy.com/artists/silk-sonic/38634/"
         }
       ],
@@ -8632,16 +8632,16 @@
       "type": "context",
       "hook": "\"The Sound of Silence\" flopped acoustic, then hit #1 after a producer overdubbed it without their knowledge.",
       "story": "The acoustic version of \"The Sound of Silence\" on their 1964 debut, Wednesday Morning, 3 A.M., sold poorly, and the duo split up soon after. In 1965, producer Tom Wilson overdubbed electric guitar, bass and drums onto the original recording without telling either of them — the reworked single became a surprise No. 1 hit and brought Simon and Garfunkel back together.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "The Sound of Silence",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/The_Sound_of_Silence"
         },
         {
           "title": "Simon & Garfunkel",
-          "outlet": "IMDb",
+          "publisher": "IMDb",
           "url": "https://www.imdb.com/name/nm3061241/"
         }
       ],
@@ -8656,11 +8656,11 @@
       "type": "context",
       "hook": "Their 1981 free reunion concert in Central Park drew roughly half a million people.",
       "story": "Eleven years after splitting up, Paul Simon and Art Garfunkel reunited for a free concert in New York's Central Park on September 19, 1981, staged as a benefit for park restoration. Estimates of the crowd run as high as 500,000, making it one of the largest concert audiences in history.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Simon & Garfunkel",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Simon_%26_Garfunkel"
         }
       ],
@@ -8675,16 +8675,16 @@
       "type": "context",
       "hook": "Their score for a multiverse film earned them an Oscar nomination on their first try.",
       "story": "Son Lux's first film score, for A24's Everything Everywhere All at Once (2022), earned the trio an Academy Award nomination for Best Original Score. The companion album expanded on the score with collaborations from Mitski, David Byrne, Randy Newman and Moses Sumney. They followed it by scoring Marvel's Thunderbolts* (2025).",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Son Lux",
-          "outlet": "IMDb",
+          "publisher": "IMDb",
           "url": "https://www.imdb.com/name/nm4954433/"
         },
         {
           "title": "Son Lux: Everything Everywhere All At Once Oscars interview",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/2023/02/17/1157964901/son-lux-everything-everywhere-all-at-once-oscars-interview"
         }
       ],
@@ -8699,16 +8699,16 @@
       "type": "origin",
       "hook": "What began as one producer's solo project became a three-way creative partnership.",
       "story": "Son Lux started in 2008 as the solo project of composer Ryan Lott. In 2014, guitarist Rafiq Bhatia and drummer Ian Chang joined, turning it into a trio built on close creative partnership rather than a frontman-and-backing-band arrangement — the lineup behind Brighter Wounds (2018) and the triple album Tomorrows (2020-2021).",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Son Lux",
-          "outlet": "IMDb",
+          "publisher": "IMDb",
           "url": "https://www.imdb.com/name/nm4954433/"
         },
         {
           "title": "Son Lux",
-          "outlet": "MusicBrainz",
+          "publisher": "MusicBrainz",
           "url": "https://musicbrainz.org/artist/afcd292c-3c1e-4708-af4a-991aadf957e4"
         }
       ],
@@ -9128,16 +9128,16 @@
       "type": "origin",
       "hook": "Amelia Meath sang folk harmonies in Mountain Man before going electronic.",
       "story": "Before forming Sylvan Esso with producer Nick Sanborn in 2012, Amelia Meath was a member of Mountain Man, an a cappella folk trio — a background that shaped the vocal-forward approach she brought to the duo's electronic production.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Amelia Meath",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Amelia_Meath"
         },
         {
           "title": "Sylvan Esso: Finding Humanity Between The Synths",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/2014/05/14/312493096/sylvan-esso-finding-humanity-between-the-synths"
         }
       ],
@@ -9152,16 +9152,16 @@
       "type": "context",
       "hook": "The duo built their own label and studio rather than staying independent artists only.",
       "story": "In 2021, Sylvan Esso founded their own record label, Psychic Hotline, and operate a recording studio, Betty's, in North Carolina — extending their operation beyond just making their own records.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "On No Rules Sandy, Sylvan Esso Finds Freedom Outside The Formula",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/2022/08/11/1116749133/on-no-rules-sandy-sylvan-esso-finds-freedom-outside-the-formula"
         },
         {
           "title": "Sylvan Esso",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Sylvan_Esso"
         }
       ],
@@ -9353,16 +9353,16 @@
       "type": "origin",
       "hook": "The crowd almost named them \"Pets or Meat\" instead of Tenacious D.",
       "story": "At their first real gig, opening for The Abe Lincoln Story at LA's Al's Bar in 1994, Jack Black and Kyle Gass let the audience pick their name from a shortlist: Tenacious D, Pets or Meat, Balboa's Biblical Theater, or Axe Lords Featuring Gorgazon's Mischief. Tenacious D never actually won the crowd vote — Black has said he simply pushed it through anyway, borrowing \"D\" from a sportscaster's line about a team playing \"tenacious defense.\"",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "How Tenacious D Became the Clown Prince Saviors of Rock 'n' Roll",
-          "outlet": "The Ringer",
+          "publisher": "The Ringer",
           "url": "https://www.theringer.com/2021/09/23/music/tenacious-d-self-titled-debut-anniversary-jack-black-kyle-gass"
         },
         {
           "title": "Jack Black reveals what 'Tenacious D' means and where he got the band name from",
-          "outlet": "UNILAD",
+          "publisher": "UNILAD",
           "url": "https://www.unilad.com/celebrity/news/tenacious-d-meaning-jack-black-kyle-gass-161554-20250226"
         }
       ],
@@ -9377,11 +9377,11 @@
       "type": "context",
       "hook": "\"The Last in Line\" won them a Grammy for Best Metal Performance.",
       "story": "Following a 2013 nomination for Best Comedy Album for Rize of the Fenix, Tenacious D won their first competitive Grammy at the 57th Annual Grammy Awards for Best Metal Performance, for their cover of Dio's \"The Last in Line\" — a straight-faced metal tribute from a duo whose whole mission, as Gass has put it, is rebelling against the serious singer-songwriter mentality.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Tenacious D — Grammy Awards artist page",
-          "outlet": "Recording Academy (Grammy.com)",
+          "publisher": "Recording Academy (Grammy.com)",
           "url": "https://www.grammy.com/artists/tenacious-d/16381/"
         }
       ],
@@ -9749,11 +9749,11 @@
       "type": "context",
       "hook": "The band signed to Daptone Records, home to Sharon Jones and the Dap-Kings.",
       "story": "The Budos Band records for Daptone, the Brooklyn label built around Sharon Jones and the Dap-Kings' vintage soul revival — making the entirely instrumental Afrobeat and funk band a distinctive outlier on a roster otherwise built around singers.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "The Budos Band: High-Octane Vintage Soul",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/2010/10/08/130425043/the-budos-band-high-octane-vintage-soul"
         }
       ],
@@ -9768,16 +9768,16 @@
       "type": "origin",
       "hook": "They formed at a jam session hosted by Brooklyn Afrobeat legends Antibalas.",
       "story": "The Budos Band came together at a jam session at Fort Greene's Five Spot, hosted by Martín Perna of the Brooklyn Afrobeat band Antibalas. Several participants split off to form the new group, releasing their self-titled debut in 2005.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "The Budos Band",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/The_Budos_Band"
         },
         {
           "title": "The Budos Band Biography",
-          "outlet": "AllMusic",
+          "publisher": "AllMusic",
           "url": "https://www.allmusic.com/artist/mn0000843259"
         }
       ],
@@ -9792,11 +9792,11 @@
       "type": "context",
       "hook": "Colin Meloy co-wrote a children's fantasy trilogy with his wife, illustrator Carson Ellis.",
       "story": "Beyond the band, frontman Colin Meloy is a published author: with his wife, illustrator Carson Ellis, he wrote the Wildwood Chronicles, a children's fantasy trilogy set in a magical wilderness bordering Portland, published by Balzer + Bray, an imprint of HarperCollins, starting with Wildwood in 2011.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Wildwood",
-          "outlet": "HarperCollins",
+          "publisher": "HarperCollins",
           "url": "https://www.harpercollins.ca/9780062093530/wildwood/"
         }
       ],
@@ -9811,16 +9811,16 @@
       "type": "context",
       "hook": "The Hazards of Love is a full rock opera, built from a song that outgrew itself.",
       "story": "The Hazards of Love (2009) began as an attempt by Colin Meloy to write a single song sharing its title with an Anne Briggs EP — the song grew into a full concept album and rock opera, with every track contributing to one continuous narrative, and guest vocals from Becky Stark, Shara Nova and Jim James.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "The Hazards of Love",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/The_Hazards_of_Love"
         },
         {
           "title": "The Decemberists: New Album Fit For A King",
-          "outlet": "NPR",
+          "publisher": "NPR",
           "url": "https://www.npr.org/2011/01/18/133020118/the-decemberists-new-album-fit-for-a-king"
         }
       ],
@@ -10716,16 +10716,16 @@
       "type": "origin",
       "hook": "The name comes from a 1962 Mets outfield collision — and the warning cry didn't even work.",
       "story": "Mets center fielder Richie Ashburn and Spanish-speaking shortstop Elio Chacón kept colliding on fly balls in 1962, so Ashburn learned to shout \"¡Yo la tengo!\" — \"I've got it!\" — to warn him off. It worked on Chacón, but Ashburn was promptly flattened anyway by left fielder Frank Thomas, who didn't know the phrase. Ira Kaplan and Georgia Hubley picked the story's name for their band in 1984, partly because it carried no baggage in English.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Yo La Tengo Fact Check",
-          "outlet": "SABR Baseball Cards",
+          "publisher": "SABR Baseball Cards",
           "url": "https://sabrbaseballcards.blog/2022/08/02/yo-la-tengo-fact-check/"
         },
         {
           "title": "Yo La Tengo",
-          "outlet": "Wikipedia",
+          "publisher": "Wikipedia",
           "url": "https://en.wikipedia.org/wiki/Yo_La_Tengo"
         }
       ],
@@ -10740,16 +10740,16 @@
       "type": "context",
       "hook": "Their annual Hanukkah shows bring a different opening act every single night.",
       "story": "For decades, Yo La Tengo has staged multi-night charity concerts timed to Hanukkah — for years at Maxwell's, their hometown club in Hoboken, later moved to Bowery Ballroom in New York — with a different opening act booked for each night of the run, turning the tradition into a rotating showcase alongside the band's own sets.",
-      "media": null,
+      "media": [],
       "sources": [
         {
           "title": "Yo La Tengo Hanukkah 2025, Night 6 Setlist",
-          "outlet": "Jesse Jarnow",
+          "publisher": "Jesse Jarnow",
           "url": "https://jessejarnow.com/2025/12/yo-la-tengo-hanukkah-2025-night-6-setlist/"
         },
         {
           "title": "Georgia and Ira and James",
-          "outlet": "The World (PRX)",
+          "publisher": "The World (PRX)",
           "url": "https://theworld.org/stories/2004/05/15/georgia-and-ira-and-james"
         }
       ],

@@ -801,19 +801,122 @@ async function farmArtist(slug) {
 
 // --- assemble --------------------------------------------------------------
 
+/**
+ * Work files come from two producers: this script's own farm, and the
+ * /add-artist session pipeline, where the cards are hand-authored to
+ * "the same shape as" the farm's output. They were not the same shape.
+ * 77 cards reached lib/stories/cards.json carrying `media: null` and
+ * `sources[].outlet` instead of `.publisher`, and `card.media.length`
+ * took /feed and 37 artist pages down with an uncaught TypeError
+ * (Aug 2026). assemble() had no shape check at all — it passed
+ * whatever a session wrote straight into the shipped file.
+ *
+ * So: normalize what is recoverable, reject what is not, and say so.
+ * A silent pass-through is what shipped the outage.
+ */
+function normalizeMedia(media) {
+  if (!Array.isArray(media)) return []
+  return media.flatMap((link) =>
+    link && typeof link.label === 'string' && typeof link.url === 'string'
+      ? [{ label: link.label, url: link.url }]
+      : [],
+  )
+}
+
+function normalizeSources(sources) {
+  if (!Array.isArray(sources)) return []
+  return sources.flatMap((source) => {
+    if (!source || typeof source.url !== 'string') return []
+    // `outlet` is the /add-artist spelling of `publisher`; same field,
+    // and the panel renders publisher, so an unmapped one reads blank.
+    const publisher = source.publisher ?? source.outlet
+    return [
+      {
+        title: String(source.title ?? ''),
+        publisher: String(publisher ?? ''),
+        url: source.url,
+      },
+    ]
+  })
+}
+
+/** Fields without which a card cannot render or be addressed at all. */
+const REQUIRED_CARD_FIELDS = [
+  'id',
+  'slug',
+  'artistName',
+  'type',
+  'hook',
+  'story',
+  'status',
+]
+
+function cardProblems(card) {
+  return REQUIRED_CARD_FIELDS.flatMap((field) =>
+    typeof card?.[field] === 'string' && card[field].trim()
+      ? []
+      : [`missing ${field}`],
+  )
+  // NOT required: sources. First-party cards (aplete, trust-in-the-sun)
+  // legitimately cite nothing external, and a rule that dropped them
+  // would quietly delete the owner's own entries.
+}
+
+/** Rebuild in the declared StoryCard field order — stable diffs. */
+function normalizeCard(card) {
+  const { claimReport, reviewCut, reviewedAt, rescoredAt, ...rest } = card
+  return {
+    id: rest.id,
+    slug: rest.slug,
+    artistName: rest.artistName,
+    type: rest.type,
+    hook: rest.hook,
+    story: rest.story,
+    media: normalizeMedia(rest.media),
+    sources: normalizeSources(rest.sources),
+    status: rest.status,
+    ...(rest.holdReason ? { holdReason: rest.holdReason } : {}),
+    model: rest.model,
+    at: rest.at,
+  }
+}
+
 function assemble() {
   const files = existsSync(WORK_DIR)
     ? readdirSync(WORK_DIR).filter((f) => f.endsWith('.json')).sort()
     : []
-  const cards = files
+  const raw = files
     .flatMap((file) => JSON.parse(readFileSync(join(WORK_DIR, file), 'utf8')).cards)
     // Review-rejected cards stay in the work files only.
     .filter((card) => card.status !== 'rejected')
+
+  const repaired = []
+  const rejected = []
+  const cards = []
+  for (const card of raw) {
+    const problems = cardProblems(card)
+    if (problems.length > 0) {
+      rejected.push(`${card?.slug ?? '?'}/${card?.id ?? '?'}: ${problems.join(', ')}`)
+      continue
+    }
     // Gate detail stays in the work files; the shipped file is lean.
-    .map(({ claimReport, reviewCut, reviewedAt, rescoredAt, ...card }) => card)
+    const normalized = normalizeCard(card)
+    if (!Array.isArray(card.media) || card.sources?.some((s) => s?.outlet)) {
+      repaired.push(`${card.slug}/${card.id}`)
+    }
+    cards.push(normalized)
+  }
+
   writeFileSync(OUT_PATH, JSON.stringify({ version: 1, cards }, null, 2) + '\n')
   const published = cards.filter((c) => c.status === 'published').length
   console.log(`assembled ${cards.length} cards (${published} published, ${cards.length - published} legacy-draft) -> lib/stories/cards.json`)
+  if (repaired.length > 0) {
+    console.log(`  shape-repaired ${repaired.length}: ${repaired.slice(0, 5).join(', ')}${repaired.length > 5 ? ' …' : ''}`)
+  }
+  if (rejected.length > 0) {
+    console.log(`  REJECTED ${rejected.length} unrenderable:`)
+    for (const line of rejected) console.log(`    ${line}`)
+  }
 }
 
 // --- rescore: re-gate existing drafts under the two-tier rules -------------

@@ -37,6 +37,17 @@ interface StoryCardViewProps {
  */
 export function StoryCardView({ card, showArtist = false }: StoryCardViewProps) {
   const [sourcesOpen, setSourcesOpen] = useState(false)
+  /**
+   * Never trust the stored shape. cards.json declared `media` as an
+   * array and 77 cards carried `media: null`, so `card.media.length`
+   * threw and Next's error boundary replaced /feed and 37 artist pages
+   * with "This page couldn't load" (Aug 2026). The data is repaired and
+   * assemble() now validates, but stored output outlives its generator
+   * — a card that cannot render its links must cost its links, never
+   * the page.
+   */
+  const media = Array.isArray(card.media) ? card.media : []
+  const sources = Array.isArray(card.sources) ? card.sources : []
 
   return (
     <article className={styles.card}>
@@ -47,19 +58,19 @@ export function StoryCardView({ card, showArtist = false }: StoryCardViewProps) 
       )}
       <h3 className={styles.hook}>{card.hook}</h3>
       <p className={styles.story}>{card.story}</p>
-      {card.media.length > 0 && (
+      {media.length > 0 && (
         <ul className={styles.media}>
-          {card.media.map((link) => {
-            const media = mediaLink(link)
+          {media.map((link) => {
+            const resolved = mediaLink(link)
             return (
               <li key={link.url}>
                 <a
                   className={styles.mediaLink}
-                  href={media.href}
+                  href={resolved.href}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {media.text}
+                  {resolved.text}
                 </a>
               </li>
             )
@@ -68,7 +79,7 @@ export function StoryCardView({ card, showArtist = false }: StoryCardViewProps) 
       )}
       <div className={styles.footerRow}>
         <span className={styles.label}>An Ear Clef story — AI-assisted, source-checked.</span>
-        {card.sources.length > 0 && (
+        {sources.length > 0 && (
           <button
             type="button"
             className={styles.sourcesToggle}
@@ -81,7 +92,7 @@ export function StoryCardView({ card, showArtist = false }: StoryCardViewProps) 
       </div>
       {sourcesOpen && (
         <ul className={styles.sources}>
-          {card.sources.map((source) => (
+          {sources.map((source) => (
             <li key={source.url}>
               <a
                 className={styles.sourceLink}
