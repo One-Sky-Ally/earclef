@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getStore } from '@netlify/blobs'
 import { queueCacheKey } from '@/lib/play/resolve'
+import { isNonSongUpload, isSongLength } from '@/lib/play/contentGates'
 
 /**
  * Play-queue resolver: ONE artist → their era-correct playable video.
@@ -28,6 +29,13 @@ const MB_DELAY_MS = 1100
 /** How many upload pages (of 50) to scan on the artist's own channel. */
 const UPLOAD_PAGES = 2
 const NULL_TTL_MS = 30 * 24 * 60 * 60 * 1000
+/**
+ * Rules version of the resolver that WROTE a cache entry. Bumping it
+ * invalidates everything written under older rules — standing lesson
+ * 2: fixing a generator does not fix what the generator already wrote.
+ * 1 = content-gated (duration floor + non-song annotation markers).
+ */
+const GATE_PASS = 1
 
 export interface QueueTrack {
   videoId: string
@@ -44,11 +52,19 @@ export interface QueueTrack {
    * the American guitarist for India's Indo-jazz composer.
    */
   corroborated?: boolean
+  /**
+   * The release-group title this pick was matched against. Stored so a
+   * future rules change can re-run the annotation gate over cached
+   * entries instead of re-deriving the era pick from MusicBrainz.
+   */
+  eraTitle?: string
 }
 
 interface CachedResolve {
   at: string
   track: QueueTrack | null
+  /** Resolver rules version; absent = pre-gate (see GATE_PASS). */
+  pass?: number
 }
 
 function store() {
@@ -268,17 +284,29 @@ async function searchVerified(
   })
 }
 
-/** Playability gate: public + embeddable, per videos.list (1 unit). */
+/**
+ * Playability gate: public + embeddable + long enough to be a record,
+ * per videos.list (1 unit — contentDetails rides the same call).
+ *
+ * The duration floor is half of standing lesson 7: a title match
+ * cannot tell a Short or a clip from the song it names.
+ */
 async function playable(videoId: string, key: string): Promise<boolean> {
   const body = (await ytJson(
-    `https://www.googleapis.com/youtube/v3/videos?part=status&id=${videoId}&key=${key}`,
+    `https://www.googleapis.com/youtube/v3/videos?part=status,contentDetails&id=${videoId}&key=${key}`,
   )) as {
     items?: {
       status?: { embeddable?: boolean; privacyStatus?: string }
+      contentDetails?: { duration?: string }
     }[]
   }
-  const status = body.items?.[0]?.status
-  return Boolean(status?.embeddable && status.privacyStatus === 'public')
+  const item = body.items?.[0]
+  const status = item?.status
+  return Boolean(
+    status?.embeddable &&
+      status.privacyStatus === 'public' &&
+      isSongLength(item?.contentDetails?.duration),
+  )
 }
 
 export async function GET(
@@ -302,9 +330,17 @@ export async function GET(
     // Channel-sourced and rule-corroborated entries stand.
     const poisoned =
       cached?.track?.source === 'search' && !cached.track.corroborated
+    // Ungated era (owner-approved, Aug 30 2026): entries written before
+    // the content gates passed title-matching alone — the Egypt-2020
+    // class (AI kids' video, TV interview) is cached under them. A
+    // duration-only recheck cannot see that class, so they re-resolve
+    // in full. Stored nulls are re-resolved by the same rule; the gates
+    // only ever REMOVE candidates, but the pick may differ.
+    const ungated = (cached?.pass ?? 0) < GATE_PASS
     if (
       cached &&
       !poisoned &&
+      !ungated &&
       (cached.track !== null ||
         Date.now() - Date.parse(cached.at) < NULL_TTL_MS)
     ) {
@@ -344,10 +380,13 @@ export async function GET(
         // the artist's own MB-linked one — it picks WHICH video, never
         // WHO. An empty wanted would match every upload, so it skips.
         for (const upload of wanted ? uploads : []) {
-          if (normalize(upload.title).includes(wanted)) {
-            candidates.push({ ...upload, source: 'channel' })
-            if (candidates.length >= 2) break
-          }
+          if (!normalize(upload.title).includes(wanted)) continue
+          // The other half of standing lesson 7: the artist's own
+          // channel carries interviews, trailers and making-ofs under
+          // the record's exact title. Free — no API spend to reject.
+          if (isNonSongUpload(upload.title, pick.title, name)) continue
+          candidates.push({ ...upload, source: 'channel' })
+          if (candidates.length >= 2) break
         }
       }
     }
@@ -358,6 +397,7 @@ export async function GET(
     if (candidates.length === 0 && pick?.title) {
       const hits = await searchVerified(name, pick.title, apiKey)
       for (const hit of hits.slice(0, 3)) {
+        if (isNonSongUpload(hit.title, pick.title, name)) continue
         candidates.push({
           videoId: hit.videoId,
           title: hit.title,
@@ -376,6 +416,7 @@ export async function GET(
           era: pick?.era ?? 'catalog',
           // Search hits under the new rule are always title-anchored.
           ...(candidate.source === 'search' ? { corroborated: true } : {}),
+          ...(pick?.title ? { eraTitle: pick.title } : {}),
         }
         break
       }
@@ -385,6 +426,7 @@ export async function GET(
       await store().setJSON(key, {
         at: new Date().toISOString(),
         track,
+        pass: GATE_PASS,
       } satisfies CachedResolve)
     } catch {
       // Cache writes are best-effort.
