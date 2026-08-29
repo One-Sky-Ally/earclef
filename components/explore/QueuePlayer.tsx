@@ -34,10 +34,20 @@ interface ResolvedTrack {
   mbid: string
 }
 
+/**
+ * A queue candidate. MusicBrainz entries resolve through /api/queue;
+ * gap-fill entries arrive carrying their own pre-verified video (the
+ * resolver era-picks by MBID, which they do not have) and cost no
+ * request at all.
+ */
+export interface QueuePoolArtist extends PoolArtist {
+  queueTrack?: { videoId: string; title: string }
+}
+
 interface QueuePlayerProps {
   placeName: string
   year: number
-  pool: PoolArtist[]
+  pool: QueuePoolArtist[]
   roster: RosterByMbid
   /**
    * Pre-verified tracks (#1 hits): the queue is already resolved, so
@@ -206,6 +216,23 @@ export function QueuePlayer({
         const index = nextIndex++
         if (index >= slice.length) return
         const artist = slice[index]
+        // Gap-fill entries carry their video already — no request, no
+        // quota, no waiting. They land in resolution order like every
+        // other track, so a queue with them starts sounding sooner.
+        if (artist.queueTrack) {
+          const resolved: ResolvedTrack = {
+            videoId: artist.queueTrack.videoId,
+            title: artist.queueTrack.title,
+            artistName: artist.name,
+            mbid: artist.id,
+          }
+          setTracks((previous) => [...previous, resolved])
+          if (!firstPlayedRef.current) {
+            firstPlayedRef.current = true
+            void playFirst(resolved)
+          }
+          continue
+        }
         try {
           const res = await fetch(
             `/api/queue/artist/${artist.id}/${decade}?name=${encodeURIComponent(artist.name)}`,

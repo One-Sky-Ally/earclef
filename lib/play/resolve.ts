@@ -4,16 +4,23 @@
  *   0. Already-resolved queue track (Netlify Blobs, playability-checked
  *      video ID) when a decade hint is available — free and strongest.
  *   1. MusicBrainz URL relationships: a direct video link, else
- *      Bandcamp → SoundCloud → the artist's YouTube channel → official
- *      homepage. Every one is an artist-attached MB fact, not a guess.
+ *      Bandcamp → SoundCloud → the artist's YouTube channel. Every one
+ *      is an artist-attached MB fact, not a guess. (The official-site
+ *      kind is PULLED — Aug 29 phishing incident; see below.)
  *   2. Internet Archive audio whose creator actually matches the name.
- *   3. Nothing — the caller renders no play button ("read about" only).
+ *   3. Streaming pages from the same MB relations (owner-approved Aug
+ *      30, 2026): free services (Spotify/Deezer) before paid (Apple
+ *      Music/Tidal/Amazon Music) — paid earns a ▶ only when no free
+ *      option exists. Last because they open an app-gated page where
+ *      everything above plays free and direct. Platform hosts cannot
+ *      be domain-squatted, so the phishing class cannot recur here.
+ *   4. Nothing — the caller renders no play button ("read about" only).
  *
  * Relative imports only: this module is bundled into the Netlify
  * background function, whose bundler doesn't read tsconfig paths.
  */
 import { getStore } from '@netlify/blobs'
-import type { ArtistPlay, PlayLink, ReadLink } from './types'
+import type { ArtistPlay, PlayKind, PlayLink, ReadLink } from './types'
 
 const USER_AGENT =
   'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
@@ -116,6 +123,26 @@ async function queueCachedVideo(
 interface ClassifiedRels {
   play: PlayLink | null
   wikipedia: string | null
+  /** Streaming pages found on the artist, free services first. */
+  streaming: PlayLink[]
+}
+
+/**
+ * Streaming hosts, classified by DOMAIN like everything else here
+ * (MB's 'free streaming'/'streaming' typing varies by editor; the
+ * host names the service, and free-vs-paid is a fact about the
+ * service — FREE_STREAMING_KINDS). itunes.apple.com is deliberately
+ * absent: 'purchase for download' is a shop, not a play.
+ */
+function streamingKindOf(host: string): PlayKind | null {
+  if (host === 'open.spotify.com') return 'spotify'
+  if (host === 'deezer.com' || host.endsWith('.deezer.com')) return 'deezer'
+  if (host === 'music.apple.com') return 'apple-music'
+  if (host === 'tidal.com' || host === 'listen.tidal.com') return 'tidal'
+  if (host === 'music.amazon.com' || /^music\.amazon\.[a-z.]+$/.test(host)) {
+    return 'amazon-music'
+  }
+  return null
 }
 
 /**
@@ -150,6 +177,9 @@ function classifyRelations(relations: MbUrlRelation[]): ClassifiedRels {
       wikipedia ??= resource
     } else if (relation.type === 'official homepage') {
       found.official ??= resource
+    } else {
+      const streamingKind = streamingKindOf(host)
+      if (streamingKind) found[streamingKind] ??= resource
     }
   }
   // 'official' PULLED from the chain (Aug 29 2026, user-safety
@@ -159,6 +189,21 @@ function classifyRelations(relations: MbUrlRelation[]): ClassifiedRels {
   // alive?", not "is it safe?"; flagged Aug 10, Mohamed Fouad). An
   // expired domain class with no safety oracle earns no ▶. Officials
   // may return only behind an owner-ruled allowlist.
+  // Free services first (owner ruling, Aug 30 2026; the free set is
+  // FREE_STREAMING_KINDS in ./types): paid streaming earns a ▶ only
+  // when no free option exists for the artist, so the fallback pick —
+  // streaming[0] — must always be the freest thing found.
+  const streamingOrder: PlayKind[] = [
+    'spotify',
+    'deezer',
+    'apple-music',
+    'tidal',
+    'amazon-music',
+  ]
+  const streaming = streamingOrder.flatMap((kind) => {
+    const url = found[kind]
+    return url ? [{ kind, url }] : []
+  })
   const order: PlayLink['kind'][] = [
     'youtube-video',
     'bandcamp',
@@ -167,9 +212,9 @@ function classifyRelations(relations: MbUrlRelation[]): ClassifiedRels {
   ]
   for (const kind of order) {
     const url = found[kind]
-    if (url) return { play: { kind, url }, wikipedia }
+    if (url) return { play: { kind, url }, wikipedia, streaming }
   }
-  return { play: null, wikipedia }
+  return { play: null, wikipedia, streaming }
 }
 
 /**
@@ -303,7 +348,22 @@ export async function resolveMbArtistPlay(
     ),
   ]
   const archive = aliases.length > 0 ? await archiveAudioItem(aliases) : null
-  return { play: archive, read: readLink }
+  if (archive) return { play: archive, read: readLink }
+
+  // Step 3: streaming pages, already free-first from classifyRelations.
+  // The full list ships so the client can swap in the fan's chosen
+  // service at render time — the preference must never key the shared
+  // 30-day cache (it would fragment it per service and multiply MB
+  // load). Only the streaming FALLBACK carries the list: a verified
+  // video/Bandcamp/archive play is never downgraded to an app page.
+  if (rels.streaming.length > 0) {
+    return {
+      play: rels.streaming[0],
+      read: readLink,
+      streaming: rels.streaming,
+    }
+  }
+  return { play: null, read: readLink }
 }
 
 /**

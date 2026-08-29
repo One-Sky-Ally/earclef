@@ -13,7 +13,7 @@
  * (same pill, same tiers); the difference is only where a pill points.
  */
 import extraArtists from './extra-artists.json'
-import { recoveredDiscogsId } from './extraPlay'
+import { extraQueueTrack, recoveredDiscogsId } from './extraPlay'
 import type { ExtraPoolArtist } from './panelData'
 
 interface ExtraArtist {
@@ -82,6 +82,8 @@ export function extraArtistGroupsFor(
   )
   const shape = (artist: ExtraArtist, undated: boolean): ExtraPoolArtist => {
     const playKey = extraPlayKey(artist)
+    // One video ID and title per entry — never the dataset itself.
+    const queueTrack = extraQueueTrack(playKey)
     return {
       id: `x:${playKey}`,
       name: artist.name,
@@ -89,6 +91,7 @@ export function extraArtistGroupsFor(
       externalUrl: extraArtistUrl(artist, playKey),
       playKey,
       ...(undated ? { undated: true as const } : {}),
+      ...(queueTrack ? { queueTrack } : {}),
     }
   }
   const inSpan = (artist: ExtraArtist) =>

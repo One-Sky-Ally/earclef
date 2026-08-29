@@ -65,6 +65,15 @@ export interface ExtraPoolArtist extends PoolArtist {
   playKey: string
   /** Source carries no date at all — sorts last, tagged quietly. */
   undated?: boolean
+  /**
+   * A pre-verified video this entry can contribute to the place+era
+   * queue, shaped server-side from the committed sweep. Gap-fill
+   * entries have no MBID, so the queue resolver — which era-picks from
+   * MusicBrainz release groups — can never reach them; this is how
+   * they play. Absent when the sweep verified nothing, when the video
+   * is under the song-length floor, or on stored pre-change payloads.
+   */
+  queueTrack?: { videoId: string; title: string }
 }
 
 export function musicBrainzArtistUrl(id: string): string {

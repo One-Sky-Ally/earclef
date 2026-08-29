@@ -31,20 +31,33 @@ import type { ArtistPlay, ReadLink } from '@/lib/play/types'
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 const DECADE = /^(19|20)\d0$/
 const CACHE_TTL_MS = 30 * 24 * 60 * 60 * 1000
+/**
+ * Resolver rules version of the entry's WRITER (standing lesson 2 —
+ * fixing a resolver does not fix what the old one wrote).
+ * 1 = streaming class in the chain (Aug 30, 2026): an mb: null written
+ * under older rules may now resolve to a streaming page and re-runs;
+ * a null written AT this pass is a real null and stands its 30 days.
+ */
+const RESOLVER_PASS = 1
 const memo = new Map<string, ArtistPlay>()
 
 interface CachedPlay {
   at: string
   result: ArtistPlay
+  /** Writer's rules version; absent = pre-streaming (see RESOLVER_PASS). */
+  pass?: number
 }
 
-async function readCache(key: string): Promise<ArtistPlay | null> {
+async function readCache(
+  key: string,
+  isStale: (cached: CachedPlay) => boolean,
+): Promise<ArtistPlay | null> {
   try {
     const cached = (await getStore({
       name: 'play',
       consistency: 'eventual',
     }).get(`v2:${key}`, { type: 'json' })) as CachedPlay | null
-    if (!cached) return null
+    if (!cached || isStale(cached)) return null
     const fresh = Date.now() - new Date(cached.at).getTime() < CACHE_TTL_MS
     return fresh ? cached.result : null
   } catch {
@@ -59,6 +72,7 @@ async function writeCache(key: string, result: ArtistPlay): Promise<void> {
     await getStore({ name: 'play', consistency: 'eventual' }).setJSON(`v2:${key}`, {
       at: new Date().toISOString(),
       result,
+      pass: RESOLVER_PASS,
     })
   } catch {
     // no Blobs context (dev) — the warm-process memo covers it
@@ -154,9 +168,20 @@ export async function GET(
   // links (Salim Dada); v5 buries play results that inherited
   // bare-name search tracks from the queue cache (John Mayer).
   const cacheKey = `v5/${source}/${id}${decade ? `/${decade}` : ''}`
+  // Streaming class added Aug 30 2026: a PRE-STREAMING cached mb: null
+  // may now resolve (Nawang Khechog's Spotify rel) — treat exactly
+  // those as misses instead of bumping the whole keyspace. Every
+  // non-null result outranks streaming in the chain and stands; nulls
+  // written at the current pass are real and stand their 30 days;
+  // non-mb keys gain nothing from streaming, so their nulls stand too.
+  // (The warm-process memo only ever holds this deploy's results.)
+  const preStreamingNull = (cached: CachedPlay) =>
+    source === 'mb' &&
+    cached.result.play === null &&
+    (cached.pass ?? 0) < RESOLVER_PASS
   const memoized = memo.get(cacheKey)
   if (memoized) return withCacheHeaders(NextResponse.json(memoized))
-  const cached = await readCache(cacheKey)
+  const cached = await readCache(cacheKey, preStreamingNull)
   if (cached) {
     memo.set(cacheKey, cached)
     return withCacheHeaders(NextResponse.json(cached))

@@ -12,7 +12,8 @@ import {
 } from '@/lib/explore/panelData'
 import { YEAR_MAX, YEAR_MIN, type DataSource } from '@/lib/explore/counts'
 import { fetchArtistPlay } from '@/lib/play/client'
-import { PLAY_LABELS, type PlayLink } from '@/lib/play/types'
+import { pickPlayForService } from '@/lib/play/pick'
+import { PLAY_LABELS, type ArtistPlay } from '@/lib/play/types'
 import { useListenService } from '@/components/listen/ServiceProvider'
 import type { ListenService } from '@/lib/listen/services'
 import type { ArtistLinks } from '@/lib/explore/panelData'
@@ -69,6 +70,24 @@ const TIER_STEP = 20
 const RENDER_CAP = 100
 /** Dropdown option cap — searchable, so a cap loses nothing. */
 const GENRE_OPTION_CAP = 250
+/**
+ * BLOCKED PENDING OWNER RULING (Aug 30, 2026 — gap-fill play identity).
+ * Gap-fill entries carry a pre-verified `queueTrack` and the queue can
+ * play them with no resolver walk at all, which is exactly what sparse
+ * places need. But the enrichment pass that gave those videos titles
+ * revealed that the committed links frequently name the WRONG ARTIST:
+ * "T.O. Jazz" (Ghana) plays a Leipzig boys' choir carol, "C.K. Mann"
+ * plays Keith Jarrett's Köln Concert, Louis Armstrong plays a techno
+ * remix. Root cause in scripts/build-extra-play.mjs: it takes any
+ * community video attached to a Discogs release the artist appears on
+ * — somebody else's track, on a compilation — and verifies only that
+ * the video is playable, never whose it is.
+ *
+ * A wrong pill is one bad click the visitor can judge; a wrong queue
+ * entry AUTO-PLAYS. So the queue stays MusicBrainz-only until the
+ * dataset is repaired (see data/gap-fill-play-identity-audit.json).
+ */
+const GAP_FILL_QUEUES_ENABLED = false
 
 function nextTier(visible: number): number {
   return visible === TIER_BASE
@@ -146,6 +165,8 @@ interface PanelPoolArtist extends PoolArtist {
   undated?: boolean
   /** Verified-play resolver key for non-MB entries (dg:/wd:/nm:). */
   playKey?: string
+  /** Non-MB entry's pre-verified video for the queue (see QueuePlayer). */
+  queueTrack?: { videoId: string; title: string }
 }
 
 interface PanelArtistPillProps {
@@ -169,7 +190,11 @@ interface PanelArtistPillProps {
 function PanelArtistPill({ artist, decade, rosterEntry }: PanelArtistPillProps) {
   const { service } = useListenService()
   const [resolving, setResolving] = useState(false)
-  const [play, setPlay] = useState<PlayLink | null>(null)
+  const [playResult, setPlayResult] = useState<ArtistPlay | null>(null)
+  // The badge link derives at render: within the streaming fallback the
+  // fan's chosen service wins (lib/play/pick.ts), and a later service
+  // change re-picks from the already-fetched list — never a refetch.
+  const play = playResult ? pickPlayForService(playResult, service) : null
 
   useEffect(() => {
     const controller = new AbortController()
@@ -182,7 +207,7 @@ function PanelArtistPill({ artist, decade, rosterEntry }: PanelArtistPillProps) 
       controller.signal,
     )
       .then((resolved) => {
-        if (!controller.signal.aborted) setPlay(resolved?.play ?? null)
+        if (!controller.signal.aborted) setPlayResult(resolved)
       })
       .catch(() => {
         // Unresolvable → no badge, which is the honest default.
@@ -396,6 +421,13 @@ export function CountryPanel({
         : pool,
     [pool, genreFilter],
   )
+  const queuePool = useMemo(
+    () =>
+      GAP_FILL_QUEUES_ENABLED
+        ? filtered.filter((artist) => !artist.playKey || artist.queueTrack)
+        : filtered.filter((artist) => !artist.playKey),
+    [filtered],
+  )
   const shown = filtered.slice(0, Math.min(visible, RENDER_CAP))
 
   function selectGenre(tag: string | null) {
@@ -545,16 +577,27 @@ export function CountryPanel({
           )}
 
           {/* Discovery ends in sound — the queue walks the same
-              popularity ranking the list below shows. */}
-          {/* MusicBrainz entries only: the resolver era-picks tracks
-              from MB release-group dates and keys its cache by MBID,
-              which gap-fill entries have by definition. */}
+              popularity ranking, and now the same genre filter, as the
+              list below. MusicBrainz entries only for the moment: see
+              GAP_FILL_QUEUES_ENABLED above for why the gap-fill half
+              is held back.
+
+              Deliberately NOT re-keyed on genreFilter: the pool is
+              read at click time, so changing the filter mid-song
+              leaves the playing queue standing rather than tearing
+              down the player. Place and year DO re-key — they are a
+              different place and era, not a different view of one. */}
           <QueuePlayer
             key={`${country.code}:${year}:${genre ?? ''}`}
             placeName={country.name}
             year={year}
-            pool={mbPool}
+            pool={queuePool}
             roster={roster}
+            buttonLabel={
+              genreFilter
+                ? `▶ Play ${genreFilter} — ${country.name} ${year}`
+                : undefined
+            }
           />
 
           {spotlightArtist && (
