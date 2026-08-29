@@ -1,8 +1,14 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import type { PoolArtist } from '@/lib/explore/panelData'
+import { isDemotedArtist } from '@/lib/explore/genreFamilies'
+import {
+  planAppend,
+  releasePlan,
+  type AppendPlan,
+} from '@/lib/explore/queueOrder'
 import type { RosterByMbid } from './CountryPanel'
 import styles from './QueuePlayer.module.css'
 
@@ -39,12 +45,25 @@ const FIRST_TRACK_DEADLINE_MS = 60_000
 const QUEUE_CONCURRENCY = 4
 /** Below this many playable tracks, say so — never pad the queue. */
 const HONEST_MIN = 5
+/**
+ * Tracks from outside a demoted genre family that must play before a
+ * held one is released (owner ruling, Aug 2026). Children's and
+ * educational music stay in the queue; they just never open a place.
+ *
+ * Counted in TRACKS HEARD, not pool position: roughly half a pool
+ * resolves to nothing, so "sixth artist in the pool" and "sixth thing
+ * a visitor hears" are different numbers, and only the second one is
+ * what the ruling is about.
+ */
+const LEAD_IN_TRACKS = 5
 
 interface ResolvedTrack {
   videoId: string
   title: string
   artistName: string
   mbid: string
+  /** In a genre family the queue holds out of its opening run. */
+  demoted?: boolean
 }
 
 /**
@@ -57,6 +76,7 @@ interface ResolvedTrack {
 interface ArtistReserve {
   artistName: string
   mbid: string
+  demoted: boolean
   tracks: { videoId: string; title: string }[]
 }
 
@@ -178,6 +198,25 @@ export function QueuePlayer({
   const reservesRef = useRef<ArtistReserve[]>([])
   /** Video ids already queued — the last word on duplicates. */
   const queuedVideosRef = useRef(new Set<string>())
+  /** Demoted-family tracks waiting for their lead-in to fill. */
+  const heldRef = useRef<ResolvedTrack[]>([])
+  /** Tracks queued from outside the demoted families. */
+  const leadInRef = useRef(0)
+  /**
+   * Hold anything back only when there is something else to lead with.
+   * One condition covers the two cases that must not stall: a visitor
+   * who filtered the panel TO "kids music" (they asked for it), and a
+   * place whose whole pool is one — both arrive here as a pool with no
+   * non-demoted artist in it, and both should just play.
+   *
+   * Derived from `pool`, and read by the fill workers out of the same
+   * render's closure the workers already take `pool` from — so the two
+   * can never disagree about which pool is being walked.
+   */
+  const deferActive = useMemo(
+    () => pool.some((artist) => !isDemotedArtist(artist.tags)),
+    [pool],
+  )
   /** True while a batch is in flight — top-ups are idempotent. */
   const fillingRef = useRef(false)
   /** Pool exhausted AND reserves drained: nothing left to add. */
@@ -234,8 +273,37 @@ export function QueuePlayer({
 
   const [gaveUp, setGaveUp] = useState(false)
 
-  /** Append tracks, skipping any video already queued, and start the
-   * player on the very first one to land. */
+  /** Put tracks in the queue, starting the player on the first to land. */
+  function commitTracks(fresh: ResolvedTrack[]) {
+    if (fresh.length === 0) return
+    setTracks((previous) => [...previous, ...fresh])
+    if (!firstPlayedRef.current) {
+      firstPlayedRef.current = true
+      void playFirst(fresh[0])
+    }
+  }
+
+  /** Apply a plan from lib/explore/queueOrder — the rule lives there. */
+  function applyPlan(plan: AppendPlan<ResolvedTrack>) {
+    heldRef.current = plan.held
+    leadInRef.current = plan.leadIn
+    commitTracks(plan.commit)
+  }
+
+  /** Let the held class in — the lead-in is served, or nothing else came. */
+  function releaseHeld() {
+    if (heldRef.current.length === 0) return
+    applyPlan(releasePlan({ leadIn: leadInRef.current, held: heldRef.current }))
+  }
+
+  /**
+   * Append tracks, skipping any video already queued, holding back the
+   * demoted families until LEAD_IN_TRACKS others are in front of them.
+   *
+   * Held tracks are marked queued the moment they arrive, so the
+   * dedupe still sees them and a later batch can't queue the same
+   * video twice while one copy waits.
+   */
   function appendTracks(incoming: ResolvedTrack[]) {
     const fresh = incoming.filter((track) => {
       if (queuedVideosRef.current.has(track.videoId)) return false
@@ -243,11 +311,14 @@ export function QueuePlayer({
       return true
     })
     if (fresh.length === 0) return
-    setTracks((previous) => [...previous, ...fresh])
-    if (!firstPlayedRef.current) {
-      firstPlayedRef.current = true
-      void playFirst(fresh[0])
-    }
+    applyPlan(
+      planAppend(
+        fresh,
+        { leadIn: leadInRef.current, held: heldRef.current },
+        deferActive,
+        LEAD_IN_TRACKS,
+      ),
+    )
   }
 
   /**
@@ -283,6 +354,8 @@ export function QueuePlayer({
         const index = nextIndex++
         if (index >= slice.length) return
         const artist = slice[index]
+        // Classification travels with the artist, from their own tags.
+        const demoted = isDemotedArtist(artist.tags)
         // Gap-fill entries carry their video already — no request, no
         // quota, no waiting. They land in resolution order like every
         // other track, so a queue with them starts sounding sooner.
@@ -293,6 +366,7 @@ export function QueuePlayer({
               title: artist.queueTrack.title,
               artistName: artist.name,
               mbid: artist.id,
+              demoted,
             },
           ])
           continue
@@ -337,6 +411,7 @@ export function QueuePlayer({
               title: found[0].title,
               artistName: artist.name,
               mbid: artist.id,
+              demoted,
             },
           ])
           if (found.length > 1) {
@@ -345,6 +420,7 @@ export function QueuePlayer({
               {
                 artistName: artist.name,
                 mbid: artist.id,
+                demoted,
                 tracks: found.slice(1),
               },
             ]
@@ -380,6 +456,7 @@ export function QueuePlayer({
           title: next.title,
           artistName: reserve.artistName,
           mbid: reserve.mbid,
+          demoted: reserve.demoted,
         })
         return { ...reserve, tracks: rest }
       })
@@ -406,7 +483,14 @@ export function QueuePlayer({
         // Pool spent — fall back to second songs from played artists.
         const drawn = drawFromReserves(size)
         appendTracks(drawn)
-        if (drawn.length === 0) setExhausted(true)
+        if (drawn.length === 0) {
+          // Release valve: with nothing left to lead with, the held
+          // class plays. Kids music stays in the queue — the ruling
+          // was about position, and a queue that ends in silence
+          // while holding playable tracks honours neither.
+          if (heldRef.current.length > 0) releaseHeld()
+          else setExhausted(true)
+        }
       }
     } finally {
       fillingRef.current = false
@@ -434,10 +518,15 @@ export function QueuePlayer({
     const controller = new AbortController()
     abortRef.current = controller
     const deadline = setTimeout(() => {
-      if (!firstPlayedRef.current && !controller.signal.aborted) {
-        setGaveUp(true)
-        controller.abort()
+      if (firstPlayedRef.current || controller.signal.aborted) return
+      // Never report "nothing found" while holding something back: a
+      // slow cold cache must not turn a demotion into a dead queue.
+      if (heldRef.current.length > 0) {
+        releaseHeld()
+        return
       }
+      setGaveUp(true)
+      controller.abort()
     }, FIRST_TRACK_DEADLINE_MS)
     await fill(INITIAL_BATCH)
     clearTimeout(deadline)

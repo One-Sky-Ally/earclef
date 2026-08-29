@@ -11,6 +11,7 @@ import {
   type PoolArtist,
 } from '@/lib/explore/panelData'
 import { YEAR_MAX, YEAR_MIN, type DataSource } from '@/lib/explore/counts'
+import { canonicalizeTags } from '@/lib/explore/genreFamilies'
 import { fetchArtistPlay } from '@/lib/play/client'
 import { pickPlayForService } from '@/lib/play/pick'
 import { PLAY_LABELS, type ArtistPlay } from '@/lib/play/types'
@@ -405,11 +406,15 @@ export function CountryPanel({
     // their own section and never join the count or the genre filter.
     const extra =
       state.status === 'ready' ? state.details.extraArtists : undefined
-    return [
-      ...mbPool,
-      ...(extra?.dated ?? []),
-      ...(extra?.undated ?? []),
-    ]
+    // One canonicalization for every source that reaches this list.
+    // MB entries arrive already collapsed (the server had to, before
+    // its top-4 cut destroyed the evidence); gap-fill styles, state,
+    // historical and claimed-place entries carry their full lists and
+    // are collapsed here. canonicalizeTags is idempotent, so the one
+    // call covers all of them without caring which is which.
+    return [...mbPool, ...(extra?.dated ?? []), ...(extra?.undated ?? [])].map(
+      (artist) => ({ ...artist, tags: canonicalizeTags(artist.tags) }),
+    )
   }, [mbPool, state])
   const archivePool: PanelPoolArtist[] = useMemo(
     () =>

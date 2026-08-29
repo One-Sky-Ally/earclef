@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { getStore } from '@netlify/blobs'
 import { isGenreLens } from '@/lib/explore/genreData'
+import { canonicalizeWeightedTags } from '@/lib/explore/genreFamilies'
 import {
   SUBDIVISION_CODE_PATTERN,
   subdivisionByCode,
@@ -65,7 +66,12 @@ function blobStore() {
 // v3: credits list grew 12 → 100 (ranked by credit count, from a full
 // 100-release page). Key bumps make hot combos recompute instead of
 // serving the old shape for 30 days; stale-version entries age out.
-const BLOB_KEY_PREFIX = 'panel/v3/'
+// v4: pool tags are canonicalized into genre families BEFORE the
+// top-4 cut. The cut is destructive — a v3 payload has already lost
+// the tags the queue's demotion rule reads, so canonicalizing on the
+// way out of the cache would half-apply the rule for 30 days on
+// combos nobody can enumerate. Owner ruling: take the recompute.
+const BLOB_KEY_PREFIX = 'panel/v4/'
 
 async function readCached(key: string): Promise<CountryYearDetails | null> {
   try {
@@ -223,11 +229,14 @@ async function fetchOriginArtists(
           artist: {
             id: artist.id,
             name: artist.name,
-            tags: tags
-              .sort((a, b) => (b.count ?? 0) - (a.count ?? 0))
-              .slice(0, POOL_TAG_LIMIT)
-              .flatMap((tag) => (tag.name ? [tag.name] : [])),
+            // Families collapse before the cut, not after: the cut
+            // destroys what the queue's demotion rule needs to read.
+            tags: canonicalizeWeightedTags(tags, POOL_TAG_LIMIT),
           },
+          // Ranking weight stays on the RAW votes. Canonicalization is
+          // a display and classification concern; letting it move
+          // artists up or down the pool would be a second, unasked-for
+          // change riding along with this one.
           weight: tags.reduce((sum, tag) => sum + (tag.count ?? 0), 0),
         })
       }

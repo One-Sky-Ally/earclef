@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "families": [
+    {
+      "label": "kids music",
+      "demote": true,
+      "note": "MusicBrainz spells this class ~10 ways; Aly Bouchnak (EG) carries eight of them and only one survived the pool's top-4 tag cut.",
+      "tags": [
+        "kids",
+        "kids music",
+        "kid's music",
+        "kids pop",
+        "kids' pop",
+        "kindie",
+        "children",
+        "children's music",
+        "childrens music",
+        "children's pop",
+        "children's song",
+        "children's songs",
+        "childrens songs",
+        "nursery rhyme",
+        "nursery rhymes",
+        "lullaby",
+        "lullabies",
+        "family music",
+        "toddler",
+        "toddlers"
+      ]
+    },
+    {
+      "label": "educational",
+      "demote": true,
+      "note": "Language courses and instructional records — a different class from nursery rhymes, so a separate family and its own chip.",
+      "tags": [
+        "educational",
+        "education",
+        "instructional",
+        "language course",
+        "language courses",
+        "language learning",
+        "language instruction"
+      ]
+    }
+  ]
+}
