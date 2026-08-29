@@ -313,6 +313,8 @@ export function CountryPanel({
   const [genreQuery, setGenreQuery] = useState('')
   // Bumped by the error state's Try-again button — re-runs the fetch.
   const [attempt, setAttempt] = useState(0)
+  /** A refetch over already-shown data (a widen), not a cold load. */
+  const [refreshing, setRefreshing] = useState(false)
   // One-tap widen for thin year+place combos: fetches ±NEARBY_REACH
   // years through the still-span-capable API instead of dead-ending.
   // Resets naturally — the parent keys this component by country+year.
@@ -335,7 +337,15 @@ export function CountryPanel({
   // `attempt` and runs it again from here.
   useEffect(() => {
     const controller = new AbortController()
-    setState({ status: 'loading' })
+    // Widening REFRESHES, it does not reload: dropping back to
+    // 'loading' unmounts the whole ready subtree, and the play queue
+    // lives in there — a widen mid-song killed the player and the
+    // track list with it. Keep showing what we have (the header note
+    // says a refresh is running) and swap the data in when it lands.
+    setState((previous) =>
+      previous.status === 'ready' ? previous : { status: 'loading' },
+    )
+    setRefreshing(true)
 
     fetchCountryYearDetails(
       country.code,
@@ -344,10 +354,14 @@ export function CountryPanel({
       genre,
       controller.signal,
     )
-      .then((details) => setState({ status: 'ready', details }))
+      .then((details) => {
+        setState({ status: 'ready', details })
+        setRefreshing(false)
+      })
       .catch((error: Error) => {
         if (controller.signal.aborted) return
         setState({ status: 'error', message: error.message })
+        setRefreshing(false)
       })
 
     return () => controller.abort()
@@ -537,6 +551,11 @@ export function CountryPanel({
 
       {state.status === 'ready' && (
         <div className={styles.body}>
+          {/* A widen keeps the current list on screen while the wider
+              span loads — say so, rather than letting it look stuck. */}
+          {refreshing && (
+            <p className={styles.note}>Widening to {spanLabel}…</p>
+          )}
           {/* Editorial line (locked): only artists FROM a place appear —
               distribution reach is not local culture. Release data still
               feeds the heat map and listen links under the hood. */}
@@ -598,6 +617,11 @@ export function CountryPanel({
                 ? `▶ Play ${genreFilter} — ${country.name} ${year}`
                 : undefined
             }
+            // Offered only while there is somewhere to widen TO: the
+            // queue asks when it runs dry, and widening the panel is
+            // what answers it — one truth for the list and the queue.
+            onWiden={nearby ? undefined : () => setNearby(true)}
+            widenLabel={`${Math.max(YEAR_MIN, year - NEARBY_REACH)}–${Math.min(YEAR_MAX, year + NEARBY_REACH)}`}
           />
 
           {spotlightArtist && (
