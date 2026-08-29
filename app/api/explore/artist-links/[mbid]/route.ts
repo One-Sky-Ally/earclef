@@ -45,9 +45,11 @@ function toLinks(relations: MbUrlRelation[]): ArtistLinks {
       links.youtube = resource
     } else if (host.endsWith('.wikipedia.org') && !links.wikipedia) {
       links.wikipedia = resource
-    } else if (relation.type === 'official homepage' && !links.website) {
-      links.website = resource
     }
+    // 'official homepage' is no longer served (Aug 29 2026 incident):
+    // expired artist domains get repurchased maliciously, and there is
+    // no oracle that distinguishes a live official site from a live
+    // phishing site. The smart chain falls through to Wikipedia/MB.
   }
   return links
 }

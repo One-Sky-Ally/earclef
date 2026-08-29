@@ -152,12 +152,18 @@ function classifyRelations(relations: MbUrlRelation[]): ClassifiedRels {
       found.official ??= resource
     }
   }
+  // 'official' PULLED from the chain (Aug 29 2026, user-safety
+  // incident): Nawang Khechog's expired official-homepage domain was
+  // repurchased and served phishing through a live 200 — the one case
+  // isParkedOrDead() structurally cannot catch (it answers "is it
+  // alive?", not "is it safe?"; flagged Aug 10, Mohamed Fouad). An
+  // expired domain class with no safety oracle earns no ▶. Officials
+  // may return only behind an owner-ruled allowlist.
   const order: PlayLink['kind'][] = [
     'youtube-video',
     'bandcamp',
     'soundcloud',
     'youtube-channel',
-    'official',
   ]
   for (const kind of order) {
     const url = found[kind]
@@ -278,13 +284,9 @@ export async function resolveMbArtistPlay(
     ? await queueCachedVideo(mbid, decade, body.name)
     : null
   if (queued) return { play: queued, read: readLink }
-  if (rels.play) {
-    // Official-site links must prove they're alive and not a parked
-    // lander before earning a ▶; every other kind is platform-hosted.
-    const usable =
-      rels.play.kind !== 'official' || !(await isParkedOrDead(rels.play.url))
-    if (usable) return { play: rels.play, read: readLink }
-  }
+  // Every remaining kind is platform-hosted (YouTube/Bandcamp/
+  // SoundCloud) — the official-site kind is gone (Aug 29 incident).
+  if (rels.play) return { play: rels.play, read: readLink }
 
   // Alias set: exact-match against every documented spelling (MB
   // aliases carry romanizations), never against similar strings —

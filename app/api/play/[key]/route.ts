@@ -43,7 +43,7 @@ async function readCache(key: string): Promise<ArtistPlay | null> {
     const cached = (await getStore({
       name: 'play',
       consistency: 'eventual',
-    }).get(key, { type: 'json' })) as CachedPlay | null
+    }).get(`v2:${key}`, { type: 'json' })) as CachedPlay | null
     if (!cached) return null
     const fresh = Date.now() - new Date(cached.at).getTime() < CACHE_TTL_MS
     return fresh ? cached.result : null
@@ -54,7 +54,9 @@ async function readCache(key: string): Promise<ArtistPlay | null> {
 
 async function writeCache(key: string, result: ArtistPlay): Promise<void> {
   try {
-    await getStore({ name: 'play', consistency: 'eventual' }).setJSON(key, {
+    // v2: key bump Aug 29 2026 — flushes every pre-incident cached
+    // result (a fixed resolver does not fix what the old one wrote).
+    await getStore({ name: 'play', consistency: 'eventual' }).setJSON(`v2:${key}`, {
       at: new Date().toISOString(),
       result,
     })

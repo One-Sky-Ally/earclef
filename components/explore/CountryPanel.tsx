@@ -127,7 +127,8 @@ function smartArtistHref(
         : service === 'amazonMusic'
           ? links.amazonMusic
           : links.youtube
-  return serviceLink ?? links.website ?? links.wikipedia ?? null
+  // links.website removed from the chain (Aug 29 2026 incident).
+  return serviceLink ?? links.wikipedia ?? null
 }
 
 /**
