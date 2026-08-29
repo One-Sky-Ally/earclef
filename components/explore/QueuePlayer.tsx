@@ -17,6 +17,13 @@ import styles from './QueuePlayer.module.css'
  */
 
 const QUEUE_MAX = 40
+/** Per-artist resolve cap — one hung request must not stall the fill. */
+const QUEUE_FETCH_TIMEOUT_MS = 20_000
+/** No first track by this deadline → give up LOUDLY, never an eternal
+ * spinner (Aug 29 fix: 40 sequential cache-miss resolves ran 10+ min). */
+const FIRST_TRACK_DEADLINE_MS = 60_000
+/** Concurrent resolves: first hit plays sooner; same total API calls. */
+const QUEUE_CONCURRENCY = 4
 /** Below this many playable tracks, say so — never pad the queue. */
 const HONEST_MIN = 5
 
@@ -160,6 +167,8 @@ export function QueuePlayer({
     }
   }
 
+  const [gaveUp, setGaveUp] = useState(false)
+
   async function start() {
     if (active) return
     setActive(true)
@@ -177,44 +186,78 @@ export function QueuePlayer({
     abortRef.current = controller
     const decade = Math.floor(year / 10) * 10
 
-    for (const artist of pool.slice(0, QUEUE_MAX)) {
-      if (controller.signal.aborted) return
-      try {
-        const res = await fetch(
-          `/api/queue/artist/${artist.id}/${decade}?name=${encodeURIComponent(artist.name)}`,
-          { signal: controller.signal },
-        )
-        if (res.status === 503) {
-          const body = (await res.json().catch(() => ({}))) as {
-            quota?: boolean
+    // Bounded worker pool (Aug 29 fix): the old loop was strictly
+    // sequential with untimed fetches — 40 cache-miss resolves of
+    // 15-20s each read as a 10-minute "Finding the sound of…".
+    // Workers pull pool-ranked indices in order; the first resolved
+    // track plays immediately, whichever worker lands it.
+    const slice = pool.slice(0, QUEUE_MAX)
+    let nextIndex = 0
+    let stopReason: 'quota' | 'deadline' | null = null
+    const deadline = setTimeout(() => {
+      if (!firstPlayedRef.current && !controller.signal.aborted) {
+        stopReason = 'deadline'
+        setGaveUp(true)
+        controller.abort()
+      }
+    }, FIRST_TRACK_DEADLINE_MS)
+    const worker = async () => {
+      while (!controller.signal.aborted) {
+        const index = nextIndex++
+        if (index >= slice.length) return
+        const artist = slice[index]
+        try {
+          const res = await fetch(
+            `/api/queue/artist/${artist.id}/${decade}?name=${encodeURIComponent(artist.name)}`,
+            {
+              signal: AbortSignal.any([
+                controller.signal,
+                AbortSignal.timeout(QUEUE_FETCH_TIMEOUT_MS),
+              ]),
+            },
+          )
+          if (res.status === 503) {
+            const body = (await res.json().catch(() => ({}))) as {
+              quota?: boolean
+            }
+            if (body.quota) {
+              setQuotaHit(true)
+              stopReason = 'quota'
+              controller.abort()
+              return
+            }
+            continue
           }
-          if (body.quota) {
-            setQuotaHit(true)
-            break
+          if (!res.ok) continue
+          const body = (await res.json()) as {
+            track: { videoId: string; title: string } | null
           }
-          continue
+          if (body.track) {
+            const resolved: ResolvedTrack = {
+              videoId: body.track.videoId,
+              title: body.track.title,
+              artistName: artist.name,
+              mbid: artist.id,
+            }
+            setTracks((previous) => [...previous, resolved])
+            if (!firstPlayedRef.current) {
+              firstPlayedRef.current = true
+              void playFirst(resolved)
+            }
+          }
+        } catch {
+          // A per-request timeout skips ONE artist; a controller abort
+          // ends the worker. Unmount aborts fall out of the while.
+          if (controller.signal.aborted) return
         }
-        if (!res.ok) continue
-        const body = (await res.json()) as {
-          track: { videoId: string; title: string } | null
-        }
-        if (body.track) {
-          const resolved: ResolvedTrack = {
-            videoId: body.track.videoId,
-            title: body.track.title,
-            artistName: artist.name,
-            mbid: artist.id,
-          }
-          setTracks((previous) => [...previous, resolved])
-          if (!firstPlayedRef.current) {
-            firstPlayedRef.current = true
-            void playFirst(resolved)
-          }
-        }
-      } catch {
-        if (controller.signal.aborted) return
       }
     }
+    await Promise.all(
+      Array.from({ length: QUEUE_CONCURRENCY }, () => worker()),
+    )
+    clearTimeout(deadline)
+    // Unmount/re-key abort: leave state alone (component is going away).
+    if (controller.signal.aborted && stopReason === null) return
     setBuilding(false)
     setDone(true)
   }
@@ -285,9 +328,15 @@ export function QueuePlayer({
           The player would not load here — the queue below still links out.
         </p>
       )}
-      {!nowPlaying && !quotaHit && (
+      {!nowPlaying && !quotaHit && !gaveUp && (
         <p className={styles.buildNote}>
           Finding the sound of {placeName} {year}…
+        </p>
+      )}
+      {gaveUp && tracks.length === 0 && (
+        <p className={styles.sparseNote}>
+          Couldn&rsquo;t find the sound of {placeName} {year} tonight —
+          the pills below still play one by one.
         </p>
       )}
       {building && nowPlaying && (
