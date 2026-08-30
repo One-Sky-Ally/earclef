@@ -1,0 +1,2277 @@
+{
+  "generatedAt": "2026-08-30T01:12:54.681Z",
+  "method": "musicbrainz artist country field, per-record confirmed",
+  "countries": {
+    "AE": {
+      "name": "United Arab Emirates",
+      "countClaimed": 124,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "حسين الجسمي",
+        "Ahmed Romel",
+        "Emily Linge",
+        "Alik Tarraf",
+        "بلقيس"
+      ]
+    },
+    "AF": {
+      "name": "Afghanistan",
+      "countClaimed": 178,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Ahmad Zahir",
+        "Hakim Ludin",
+        "Almach",
+        "anna RF",
+        "Ustad Mahwash"
+      ]
+    },
+    "AL": {
+      "name": "Albania",
+      "countClaimed": 319,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Redi Hasa",
+        "Tedi Papavrami",
+        "Elvana Gjata",
+        "Tingulli 3nt",
+        "Cryptorsatan"
+      ]
+    },
+    "AM": {
+      "name": "Armenia",
+      "countClaimed": 544,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Georges Ivanovitch Gurdjieff",
+        "Ջիվան Գասպարյան",
+        "Armen Hambar",
+        "Tigran Hamasyan",
+        "Կոմիտաս"
+      ]
+    },
+    "AO": {
+      "name": "Angola",
+      "countClaimed": 338,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Bonga",
+        "Anselmo Ralph",
+        "Paulo Flores",
+        "Sam Mangwana",
+        "Duo Ouro Negro"
+      ]
+    },
+    "AQ": {
+      "name": "Antarctica",
+      "countClaimed": 18,
+      "inspected": 18,
+      "verified": 18,
+      "sample": [
+        "NǽnøĉÿbbŒrğ VbëřřĦōlökäävsŦ",
+        "GLOBAL CHILL",
+        "Der Grauer Winter",
+        "Edwin J. Mickleburg",
+        "The Alpha Apples"
+      ]
+    },
+    "AR": {
+      "name": "Argentina",
+      "countClaimed": 9325,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Astor Piazzolla",
+        "Lalo Schifrin",
+        "The Cherry Blues Project",
+        "Carlos Gardel",
+        "Daniel Barenboim"
+      ]
+    },
+    "AT": {
+      "name": "Austria",
+      "countClaimed": 12446,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Wolfgang Amadeus Mozart",
+        "Joseph Haydn",
+        "Franz Schubert",
+        "Gustav Mahler",
+        "Johann Strauss"
+      ]
+    },
+    "AU": {
+      "name": "Australia",
+      "countClaimed": 20937,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "8-Bit Arcade",
+        "AC/DC",
+        "Kylie Minogue",
+        "7 Minutes of Nausea",
+        "King Gizzard & the Lizard Wizard"
+      ]
+    },
+    "AZ": {
+      "name": "Azerbaijan",
+      "countClaimed": 338,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Aygün Kazımova",
+        "Amina Figarova",
+        "Vaqif Mustafazadə",
+        "Alihan Samedov",
+        "De Corbul Destinul"
+      ]
+    },
+    "BA": {
+      "name": "Bosnia and Herzegovina",
+      "countClaimed": 470,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Hari Mata Hari",
+        "Crvena jabuka",
+        "Goran Bregović",
+        "Lepa Brena",
+        "Damir Price"
+      ]
+    },
+    "BD": {
+      "name": "Bangladesh",
+      "countClaimed": 1176,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Bappa Mazumder",
+        "Miles",
+        "LRB",
+        "Kumar Bishwajit",
+        "Arnob"
+      ]
+    },
+    "BE": {
+      "name": "Belgium",
+      "countClaimed": 44774,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Agathocles",
+        "Jacques Brel",
+        "Les Schtroumpfs",
+        "Adamo",
+        "Will Tura"
+      ]
+    },
+    "BF": {
+      "name": "Burkina Faso",
+      "countClaimed": 129,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Amadou Balaké",
+        "Farafina",
+        "Victor Démé",
+        "Adama Dramé",
+        "Floby"
+      ]
+    },
+    "BG": {
+      "name": "Bulgaria",
+      "countClaimed": 2765,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Bulgarian State Radio & Television Female Vocal Choir",
+        "Лили Иванова",
+        "Borislav Slavov",
+        "Борис Христов",
+        "Alexis Weissenberg"
+      ]
+    },
+    "BI": {
+      "name": "Burundi",
+      "countClaimed": 20,
+      "inspected": 20,
+      "verified": 20,
+      "sample": [
+        "Khadja Nin",
+        "The Drummers of Burundi",
+        "Amabano",
+        "Kidum",
+        "Ntiruhwama"
+      ]
+    },
+    "BN": {
+      "name": "Brunei",
+      "countClaimed": 40,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Bluemoongirl",
+        "Zed Peace",
+        "Tombcrusher",
+        "Surfvampires",
+        "Hebiimetaru"
+      ]
+    },
+    "BO": {
+      "name": "Bolivia",
+      "countClaimed": 285,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Los Kjarkas",
+        "Savia Andina",
+        "Zulma Yugar",
+        "Bolivia Manta",
+        "Jaime Laredo"
+      ]
+    },
+    "BR": {
+      "name": "Brazil",
+      "countClaimed": 17172,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Gilberto Gil",
+        "Antônio Carlos Jobim",
+        "Caetano Veloso",
+        "Heitor Villa‐Lobos",
+        "Sepultura"
+      ]
+    },
+    "BS": {
+      "name": "The Bahamas",
+      "countClaimed": 104,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Baha Men",
+        "T‐Connection",
+        "Exuma",
+        "Joseph Spence",
+        "The Beginning of the End"
+      ]
+    },
+    "BT": {
+      "name": "Bhutan",
+      "countClaimed": 14,
+      "inspected": 14,
+      "verified": 14,
+      "sample": [
+        "Dzongsar Khyentse Rinpoche",
+        "Jigme Drukpa",
+        "Lhamo Dukpa",
+        "Bhutan Balladeers",
+        "Pema Deki"
+      ]
+    },
+    "BW": {
+      "name": "Botswana",
+      "countClaimed": 74,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Skinflint",
+        "Metal Orizon",
+        "Culture Spears",
+        "Overthrust",
+        "Wrust"
+      ]
+    },
+    "BY": {
+      "name": "Belarus",
+      "countClaimed": 892,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Boris S.G",
+        "Ляпис Трубецкой",
+        "Ambassador21",
+        "RxMxAx",
+        "Стары Ольса"
+      ]
+    },
+    "BZ": {
+      "name": "Belize",
+      "countClaimed": 61,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "SUI UZI",
+        "The Garifuna Collective",
+        "Andy Palacio",
+        "Bredda “David” Obi",
+        "The Professionals"
+      ]
+    },
+    "CA": {
+      "name": "Canada",
+      "countClaimed": 26813,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Neil Young",
+        "Rush",
+        "Oscar Peterson",
+        "Bryan Adams",
+        "The Band"
+      ]
+    },
+    "CD": {
+      "name": "Democratic Republic of the Congo",
+      "countClaimed": 593,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Papa Wemba",
+        "Viva La Musica",
+        "Franco",
+        "Zaïko Langa Langa",
+        "Koffi Olomidé"
+      ]
+    },
+    "CF": {
+      "name": "Central African Republic",
+      "countClaimed": 28,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Pygmées Aka",
+        "Gbáyá",
+        "Laetitia Zonzambé",
+        "Kangala",
+        "Good Family"
+      ]
+    },
+    "CG": {
+      "name": "Republic of the Congo",
+      "countClaimed": 132,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "René Lokua",
+        "Les Bantous de la Capitale",
+        "Le Ry‐Co Jazz",
+        "Aurlus Mabélé",
+        "Orchestre Super Boboto"
+      ]
+    },
+    "CH": {
+      "name": "Switzerland",
+      "countClaimed": 11536,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Tina Turner",
+        "Yello",
+        "DJ BoBo",
+        "Calimeros",
+        "Lys Assia"
+      ]
+    },
+    "CI": {
+      "name": "Ivory Coast",
+      "countClaimed": 178,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Alpha Blondy",
+        "Tiken Jah Fakoly",
+        "Magic System",
+        "Dobet Gnahoré",
+        "Ismaël Isaac"
+      ]
+    },
+    "CL": {
+      "name": "Chile",
+      "countClaimed": 3198,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Claudio Arrau",
+        "Inti‐Illimani",
+        "Víctor Jara",
+        "Violeta Parra",
+        "Quilapayún"
+      ]
+    },
+    "CM": {
+      "name": "Cameroon",
+      "countClaimed": 243,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Manu Dibango",
+        "Francis Bebey",
+        "Richard Bona",
+        "Wes",
+        "André-Marie Tala"
+      ]
+    },
+    "CN": {
+      "name": "China",
+      "countClaimed": 6345,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "HOYO-MiX",
+        "孙露",
+        "陈致逸",
+        "刘慈欣",
+        "Areal Kollen"
+      ]
+    },
+    "CO": {
+      "name": "Colombia",
+      "countClaimed": 3534,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Shakira",
+        "Grupo Niche",
+        "La Sonora Dinamita",
+        "J Balvin",
+        "Juanes"
+      ]
+    },
+    "CR": {
+      "name": "Costa Rica",
+      "countClaimed": 463,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Picha",
+        "Shinnobu",
+        "cactusbear",
+        "Danilo Montero",
+        "Adrián Goizueta"
+      ]
+    },
+    "CU": {
+      "name": "Cuba",
+      "countClaimed": 1780,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Celia Cruz",
+        "La Sonora Matancera",
+        "Pérez Prado",
+        "Mongo Santamaría",
+        "Compay Segundo"
+      ]
+    },
+    "CY": {
+      "name": "Cyprus",
+      "countClaimed": 429,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Μιχάλης Χατζηγιάννης",
+        "Αλκίνοος Ιωαννίδης",
+        "Ευρυδίκη",
+        "Yannis Kyriakides",
+        "Arrayan Path"
+      ]
+    },
+    "DE": {
+      "name": "Germany",
+      "countClaimed": 88520,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Johann Sebastian Bach",
+        "Ludwig van Beethoven",
+        "Johannes Brahms",
+        "Robert Schumann",
+        "Richard Wagner"
+      ]
+    },
+    "DJ": {
+      "name": "Djibouti",
+      "countClaimed": 21,
+      "inspected": 21,
+      "verified": 21,
+      "sample": [
+        "4 Mars",
+        "Groupe RTD",
+        "Yanna Momina",
+        "Nimco Jamaac",
+        "Abdallah Lee"
+      ]
+    },
+    "DK": {
+      "name": "Denmark",
+      "countClaimed": 11039,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Jussi Adler‐Olsen",
+        "Leæther Strip",
+        "Martin Greis‐Rosenthal",
+        "Jesper Kyd",
+        "Carl Nielsen"
+      ]
+    },
+    "DO": {
+      "name": "Dominican Republic",
+      "countClaimed": 619,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Antony Santos",
+        "Alex Bueno",
+        "Juan Luis Guerra 4.40",
+        "Luis Vargas",
+        "Frank Reyes"
+      ]
+    },
+    "DZ": {
+      "name": "Algeria",
+      "countClaimed": 522,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Khaled",
+        "Guem",
+        "Cheb Mami",
+        "Cheb Hasni",
+        "Idir"
+      ]
+    },
+    "EC": {
+      "name": "Ecuador",
+      "countClaimed": 541,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Julio Jaramillo",
+        "Don Medardo y sus Players",
+        "Nicola Cruz",
+        "Gastrorrexis",
+        "Amuleto de Calamidades"
+      ]
+    },
+    "EE": {
+      "name": "Estonia",
+      "countClaimed": 9023,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Neeme Järvi",
+        "Arvo Pärt",
+        "Vanilla Ninja",
+        "Toomas Anni",
+        "Paavo Järvi"
+      ]
+    },
+    "EG": {
+      "name": "Egypt",
+      "countClaimed": 633,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "عمرو دياب",
+        "Aly & Fila",
+        "أم كلثوم",
+        "Hossam Ramzy",
+        "محمد منير"
+      ]
+    },
+    "EH": {
+      "name": "Western Sahara",
+      "countClaimed": 15,
+      "inspected": 15,
+      "verified": 15,
+      "sample": [
+        "Aziza Brahim",
+        "Mariem Hassan",
+        "Group Doueh",
+        "El Wali",
+        "Tiris"
+      ]
+    },
+    "ER": {
+      "name": "Eritrea",
+      "countClaimed": 44,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "ጽሃይቱ፡በራኺ",
+        "Faytinga",
+        "Asmara All Stars",
+        "Negash Ali",
+        "Fitsum Zemichael"
+      ]
+    },
+    "ES": {
+      "name": "Spain",
+      "countClaimed": 22260,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Julio Iglesias",
+        "Manuel de Falla",
+        "Plácido Domingo",
+        "Jordi Savall",
+        "Paco de Lucía"
+      ]
+    },
+    "ET": {
+      "name": "Ethiopia",
+      "countClaimed": 343,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "ሙላቱ አስታጥቄ",
+        "ማሕሙድ አሕመድ",
+        "Hailu Mergia",
+        "አለማየሁ እሸቴ",
+        "Emahoy Tsegué-Maryam Guèbrou"
+      ]
+    },
+    "FI": {
+      "name": "Finland",
+      "countClaimed": 22936,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Jean Sibelius",
+        "Nightwish",
+        "HIM",
+        "Olavi Virta",
+        "Mikko Alatalo"
+      ]
+    },
+    "FJ": {
+      "name": "Fiji",
+      "countClaimed": 37,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "mSdoS",
+        "Black Rose",
+        "Rosiloa",
+        "Mantis",
+        "Laisa Vulakoro"
+      ]
+    },
+    "FK": {
+      "name": "Falkland Islands",
+      "countClaimed": 5,
+      "inspected": 5,
+      "verified": 5,
+      "sample": [
+        "Ian J. Strange",
+        "Elaline Terriss",
+        "Neil Watson",
+        "Glenda Watson",
+        "Richard Keenahan"
+      ]
+    },
+    "FR": {
+      "name": "France",
+      "countClaimed": 55474,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Claude Debussy",
+        "Maurice Ravel",
+        "Django Reinhardt",
+        "Erik Satie",
+        "Johnny Hallyday"
+      ]
+    },
+    "GA": {
+      "name": "Gabon",
+      "countClaimed": 50,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Pierre Akendengué",
+        "Oliver N’Goma",
+        "Annie-Flore Batchiellilys",
+        "Patience Dabany",
+        "François N’Gwa"
+      ]
+    },
+    "GB": {
+      "name": "United Kingdom",
+      "countClaimed": 87407,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "The Beatles",
+        "The Rolling Stones",
+        "George Frideric Handel",
+        "J. K. Rowling",
+        "Led Zeppelin"
+      ]
+    },
+    "GE": {
+      "name": "Georgia",
+      "countClaimed": 475,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "გია ყანჩელი",
+        "ბასიანი",
+        "ცოდნის მფლობელები",
+        "Saphileaum",
+        "მგზავრები"
+      ]
+    },
+    "GH": {
+      "name": "Ghana",
+      "countClaimed": 647,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Ebo Taylor",
+        "Blitz the Ambassador",
+        "Pat Thomas",
+        "Gyedu-Blay Ambolley",
+        "The African Brothers International Band"
+      ]
+    },
+    "GL": {
+      "name": "Greenland",
+      "countClaimed": 158,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Telan Devik",
+        "Julie",
+        "Sume",
+        "Liima Inui",
+        "Nive Nielsen & Deer Children"
+      ]
+    },
+    "GQ": {
+      "name": "Equatorial Guinea",
+      "countClaimed": 11,
+      "inspected": 11,
+      "verified": 11,
+      "sample": [
+        "Las Hijas del Sol",
+        "Afrika",
+        "Mirey",
+        "6lacq Lavoe",
+        "Anguesomo"
+      ]
+    },
+    "GR": {
+      "name": "Greece",
+      "countClaimed": 10447,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Vicky Leandros",
+        "Vangelis",
+        "Nana Mouskouri",
+        "Demis Roussos",
+        "Μίκης Θεοδωράκης"
+      ]
+    },
+    "GT": {
+      "name": "Guatemala",
+      "countClaimed": 270,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Ricardo Arjona",
+        "Francisco Orantes",
+        "Alux Nahual",
+        "Fidel Funes",
+        "Grupo Fiesta"
+      ]
+    },
+    "GW": {
+      "name": "Guinea-Bissau",
+      "countClaimed": 28,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Super Mama Djombo",
+        "Eneida Marta",
+        "Manecas Costa",
+        "Zé Manel",
+        "José Carlos Schwarz"
+      ]
+    },
+    "GY": {
+      "name": "Guyana",
+      "countClaimed": 35,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Natural Black",
+        "SAINt JHN",
+        "Arkaingelle",
+        "Eddie Hooper",
+        "Yoruba Singers"
+      ]
+    },
+    "HN": {
+      "name": "Honduras",
+      "countClaimed": 75,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Aurelio",
+        "Banda Blanca",
+        "Eva Cortés",
+        "Almanacs",
+        "Delirium"
+      ]
+    },
+    "HR": {
+      "name": "Croatia",
+      "countClaimed": 1925,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Arsen Dedić",
+        "Parni valjak",
+        "Oliver Dragojević",
+        "Prljavo kazalište",
+        "Azra"
+      ]
+    },
+    "HT": {
+      "name": "Haiti",
+      "countClaimed": 278,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Arcangel Legrand - Brotherswagg",
+        "Tabou Combo",
+        "The Monkeys 3",
+        "Lakou Mizik",
+        "Orchestre Tropicana d’Haïti"
+      ]
+    },
+    "HU": {
+      "name": "Hungary",
+      "countClaimed": 6635,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Franz Liszt",
+        "Bartók Béla",
+        "Miklós Rózsa",
+        "Sir Georg Solti",
+        "Omega"
+      ]
+    },
+    "ID": {
+      "name": "Indonesia",
+      "countClaimed": 5810,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Daniel Alexander",
+        "Hetty Koes Endang",
+        "JKT48",
+        "Dian Piesesha",
+        "Betharia Sonatha"
+      ]
+    },
+    "IE": {
+      "name": "Ireland",
+      "countClaimed": 5066,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "U2",
+        "The Dubliners",
+        "Thin Lizzy",
+        "The Cranberries",
+        "Rory Gallagher"
+      ]
+    },
+    "IL": {
+      "name": "Israel",
+      "countClaimed": 12560,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Wings of an Angel",
+        "אריק איינשטיין",
+        "יובל נח הררי",
+        "חוה אלברשטיין",
+        "יוסף משה כהנא"
+      ]
+    },
+    "IN": {
+      "name": "India",
+      "countClaimed": 7007,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Lata Mangeshkar",
+        "Kishore Kumar",
+        "Mohammed Rafi",
+        "Zubeen Garg",
+        "A. R. Rahman"
+      ]
+    },
+    "IQ": {
+      "name": "Iraq",
+      "countClaimed": 179,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "كاظم الساهر",
+        "ماجد المهندس",
+        "منير بشير",
+        "نصرت البدر",
+        "Ilham Al Madfai"
+      ]
+    },
+    "IR": {
+      "name": "Iran",
+      "countClaimed": 1485,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Armik",
+        "Googoosh",
+        "Hossein Alizâdeh",
+        "محمدرضا شجريان",
+        "حەسەن زیرەک"
+      ]
+    },
+    "IS": {
+      "name": "Iceland",
+      "countClaimed": 2138,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Björk",
+        "Sigur Rós",
+        "Vladimir Ashkenazy",
+        "Arnaldur Indriðason",
+        "Jóhann Jóhannsson"
+      ]
+    },
+    "IT": {
+      "name": "Italy",
+      "countClaimed": 37116,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Antonio Vivaldi",
+        "Giuseppe Verdi",
+        "Ennio Morricone",
+        "Giacomo Puccini",
+        "Gioachino Rossini"
+      ]
+    },
+    "JM": {
+      "name": "Jamaica",
+      "countClaimed": 2271,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Bob Marley & The Wailers",
+        "Gregory Isaacs",
+        "Dennis Brown",
+        "Lee “Scratch” Perry",
+        "Jimmy Cliff"
+      ]
+    },
+    "JO": {
+      "name": "Jordan",
+      "countClaimed": 146,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Shaun Baker",
+        "Arsee",
+        "الفرعي",
+        "Autostrad",
+        "عمر العبداللات"
+      ]
+    },
+    "JP": {
+      "name": "Japan",
+      "countClaimed": 113259,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "植松伸夫",
+        "コナミ矩形波倶楽部",
+        "Falcom Sound Team jdk",
+        "桜庭統",
+        "川井憲次"
+      ]
+    },
+    "KE": {
+      "name": "Kenya",
+      "countClaimed": 535,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "KMRU",
+        "Nitin Ganatra",
+        "King Kaka",
+        "Jeff Kaale",
+        "Ayub Ogada"
+      ]
+    },
+    "KG": {
+      "name": "Kyrgyzstan",
+      "countClaimed": 50,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Город 312",
+        "Muhmood",
+        "Второй Ка",
+        "Kambarkan Folk Ensemble",
+        "Саламат Садыкова"
+      ]
+    },
+    "KP": {
+      "name": "North Korea",
+      "countClaimed": 152,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "보천보전자악단",
+        "모란봉악단",
+        "만수대예술단",
+        "왕재산 경음악단",
+        "조선인민군군악단"
+      ]
+    },
+    "KR": {
+      "name": "South Korea",
+      "countClaimed": 16025,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "TWICE",
+        "BoA",
+        "東方神起",
+        "BTS",
+        "SHINee"
+      ]
+    },
+    "KW": {
+      "name": "Kuwait",
+      "countClaimed": 102,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "مشاري العفاسي",
+        "حمود الخضر",
+        "Bader Nana",
+        "عبدالله الرويشد",
+        "عبدالعزيز لويس"
+      ]
+    },
+    "KZ": {
+      "name": "Kazakhstan",
+      "countClaimed": 512,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "dj ritualist",
+        "Izzamuzzic",
+        "Адаптация",
+        "Command Strange",
+        "A’Studio"
+      ]
+    },
+    "LA": {
+      "name": "Laos",
+      "countClaimed": 68,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Dissevered",
+        "Rotkin",
+        "Molam Lao",
+        "Alexandra",
+        "ຄຣີມ ທິດາສະຫວັນ"
+      ]
+    },
+    "LB": {
+      "name": "Lebanon",
+      "countClaimed": 447,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "فيروز",
+        "Abdel Rahman El Bacha",
+        "نانسي عجرم",
+        "زياد الرحباني",
+        "مرسيل خليفة"
+      ]
+    },
+    "LK": {
+      "name": "Sri Lanka",
+      "countClaimed": 355,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Bathiya & Santhush",
+        "Tariq Hisny",
+        "Rohan de Saram",
+        "Manickam Yogeswaran",
+        "Nanda Malini"
+      ]
+    },
+    "LR": {
+      "name": "Liberia",
+      "countClaimed": 20,
+      "inspected": 20,
+      "verified": 20,
+      "sample": [
+        "Soulful Dynamics",
+        "Liberian Acapella Choir",
+        "Congresswoman Malinda Jackson Parker",
+        "Kapingbdi",
+        "The Greenwood Singers"
+      ]
+    },
+    "LS": {
+      "name": "Lesotho",
+      "countClaimed": 20,
+      "inspected": 20,
+      "verified": 20,
+      "sample": [
+        "Sankomota",
+        "Sotho Sounds",
+        "Core Wreckah",
+        "Tau Ea Lesotho",
+        "Morena Leraba"
+      ]
+    },
+    "LT": {
+      "name": "Lithuania",
+      "countClaimed": 2456,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Lena Valaitis",
+        "Yabujin",
+        "Girių Dvasios",
+        "Andrius Mamontovas",
+        "Foje"
+      ]
+    },
+    "LU": {
+      "name": "Luxembourg",
+      "countClaimed": 459,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Rome",
+        "Lëtzebuerger philharmoneschen Orchester",
+        "Sun Glitters",
+        "Francesco Tristano",
+        "Camillo Felgen"
+      ]
+    },
+    "LV": {
+      "name": "Latvia",
+      "countClaimed": 6920,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Raimonds Pauls",
+        "Mariss Jansons",
+        "Prāta Vētra",
+        "Gidon Kremer",
+        "Mischa Maisky"
+      ]
+    },
+    "LY": {
+      "name": "Libya",
+      "countClaimed": 60,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Ahmed Fakroun",
+        "Oydis",
+        "إبراهيم الحسناوي",
+        "ibk",
+        "The Free Music"
+      ]
+    },
+    "MA": {
+      "name": "Morocco",
+      "countClaimed": 803,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "جوق المعهد التطواني",
+        "جوق البريهي",
+        "ab97",
+        "Nass el Ghiwane",
+        "Majid Bekkas"
+      ]
+    },
+    "MD": {
+      "name": "Moldova",
+      "countClaimed": 204,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Andrew Rayel",
+        "O‐Zone",
+        "Zdob și Zdub",
+        "Infected Rain",
+        "Евгений Дога"
+      ]
+    },
+    "ME": {
+      "name": "Montenegro",
+      "countClaimed": 75,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Rambo Amadeus",
+        "Titan Slayer",
+        "Shogan",
+        "Miladin Šobić",
+        "Who See"
+      ]
+    },
+    "MG": {
+      "name": "Madagascar",
+      "countClaimed": 295,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Tarika",
+        "Jaojoby",
+        "Rajery",
+        "Mahaleo",
+        "D’Gary"
+      ]
+    },
+    "MK": {
+      "name": "Macedonia",
+      "countClaimed": 431,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Marga Sol",
+        "Leb i sol",
+        "Калиопи",
+        "Тоше Проески",
+        "Каролина Гочева"
+      ]
+    },
+    "ML": {
+      "name": "Mali",
+      "countClaimed": 451,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Tinariwen",
+        "Amadou & Mariam",
+        "Salif Keita",
+        "Toumani Diabaté",
+        "Ali Farka Touré"
+      ]
+    },
+    "MM": {
+      "name": "Myanmar",
+      "countClaimed": 624,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "စိုင်းထီးဆိုင်",
+        "စိုးလွင်လွင်",
+        "လွှမ်းမိုး",
+        "စိုင်းဆိုင်မောဝ်",
+        "ခင်မောင်တိုး"
+      ]
+    },
+    "MN": {
+      "name": "Mongolia",
+      "countClaimed": 203,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "The HU",
+        "Хурд",
+        "Altan Urag",
+        "Egschiglen",
+        "Sedaa"
+      ]
+    },
+    "MR": {
+      "name": "Mauritania",
+      "countClaimed": 29,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Noura Mint Seymali",
+        "Malouma",
+        "Dimi Mint Abba",
+        "Siré Camara",
+        "Khalifa Ould Eide"
+      ]
+    },
+    "MW": {
+      "name": "Malawi",
+      "countClaimed": 93,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Malawi Mouse Boys",
+        "Zomba Prison Project",
+        "Black Missionaries",
+        "Street Rat",
+        "Xi"
+      ]
+    },
+    "MX": {
+      "name": "Mexico",
+      "countClaimed": 7644,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Vicente Fernández",
+        "Pedro Infante",
+        "Óscar Chávez",
+        "Juan Gabriel",
+        "José José"
+      ]
+    },
+    "MY": {
+      "name": "Malaysia",
+      "countClaimed": 1397,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "黄明志",
+        "梁靜茹",
+        "品冠",
+        "Ella",
+        "Sheila Majid"
+      ]
+    },
+    "MZ": {
+      "name": "Mozambique",
+      "countClaimed": 113,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Afric Simone",
+        "2lane",
+        "Gito Baloi",
+        "Mabulu",
+        "Eyuphuro"
+      ]
+    },
+    "NA": {
+      "name": "Namibia",
+      "countClaimed": 48,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Pierre Pienaar",
+        "P.H.A.T.T.",
+        "Arcana XXII",
+        "EES",
+        "Andra"
+      ]
+    },
+    "NC": {
+      "name": "New Caledonia",
+      "countClaimed": 60,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Flamengo",
+        "Redsphere",
+        "Kuby",
+        "I&I",
+        "Ybal Khan"
+      ]
+    },
+    "NE": {
+      "name": "Niger",
+      "countClaimed": 65,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Mdou Moctar",
+        "Bombino",
+        "Etran Finatawa",
+        "Alhousseini Anivolla",
+        "Koudede"
+      ]
+    },
+    "NG": {
+      "name": "Nigeria",
+      "countClaimed": 1615,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Fela Kuti",
+        "Tony Allen",
+        "Femi Kuti",
+        "Beautiful Nubia and the Roots Renaissance Band",
+        "Burna Boy"
+      ]
+    },
+    "NI": {
+      "name": "Nicaragua",
+      "countClaimed": 115,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Luis Enrique",
+        "Carlos Mejía Godoy",
+        "Hernaldo Zúñiga",
+        "Luis Enrique Mejía Godoy",
+        "Katia Cardenal"
+      ]
+    },
+    "NL": {
+      "name": "Netherlands",
+      "countClaimed": 27796,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Armin van Buuren",
+        "Tiësto",
+        "Golden Earring",
+        "André Rieu",
+        "Herman van Veen"
+      ]
+    },
+    "NO": {
+      "name": "Norway",
+      "countClaimed": 12409,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Edvard Grieg",
+        "Thomas Bergersen",
+        "Jo Nesbø",
+        "a‐ha",
+        "Röyksopp"
+      ]
+    },
+    "NP": {
+      "name": "Nepal",
+      "countClaimed": 271,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Manose",
+        "Ani Chöying Drolma",
+        "Rai Ko Ris",
+        "Kelsang Chukie Tethong",
+        "Sur Sudha"
+      ]
+    },
+    "NZ": {
+      "name": "New Zealand",
+      "countClaimed": 7427,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Mark Petrie",
+        "Graeme Revell",
+        "Lorde",
+        "Split Enz",
+        "Dragon"
+      ]
+    },
+    "OM": {
+      "name": "Oman",
+      "countClaimed": 17,
+      "inspected": 17,
+      "verified": 17,
+      "sample": [
+        "Shadowotd",
+        "Belos",
+        "Arabia",
+        "Rashid Mohammad Omani",
+        "`Azi"
+      ]
+    },
+    "PA": {
+      "name": "Panama",
+      "countClaimed": 347,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Rubén Blades",
+        "Danilo Pérez",
+        "El General",
+        "Latin Fresh",
+        "Flex"
+      ]
+    },
+    "PE": {
+      "name": "Peru",
+      "countClaimed": 1616,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Yma Sumac",
+        "S O A R E R",
+        "Maykretch",
+        "Agua Marina",
+        "Los Destellos"
+      ]
+    },
+    "PG": {
+      "name": "Papua New Guinea",
+      "countClaimed": 168,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Telek",
+        "Anslom",
+        "Massive Sound System",
+        "Dadiigii",
+        "Barike Band"
+      ]
+    },
+    "PH": {
+      "name": "Philippines",
+      "countClaimed": 4003,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Sharon Cuneta",
+        "Regine Velasquez",
+        "Nora Aunor",
+        "Martin Nievera",
+        "Gary Valenciano"
+      ]
+    },
+    "PK": {
+      "name": "Pakistan",
+      "countClaimed": 649,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Nusrat Fateh Ali Khan",
+        "Rahat Fateh Ali Khan",
+        "Atif Aslam",
+        "Adnan Sami",
+        "Ghulam Ali"
+      ]
+    },
+    "PL": {
+      "name": "Poland",
+      "countClaimed": 13169,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Fryderyk Chopin",
+        "Vader",
+        "Behemoth",
+        "Jacek Kaczmarski",
+        "Arthur Rubinstein"
+      ]
+    },
+    "PR": {
+      "name": "Puerto Rico",
+      "countClaimed": 1620,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Ricky Martin",
+        "El Gran Combo de Puerto Rico",
+        "Daddy Yankee",
+        "Don Omar",
+        "Chayanne"
+      ]
+    },
+    "PS": {
+      "name": "Palestine",
+      "countClaimed": 133,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "ريم بنا",
+        "Faraj Suleiman",
+        "Le Trio Joubran",
+        "DAM",
+        "سهيل خوري"
+      ]
+    },
+    "PT": {
+      "name": "Portugal",
+      "countClaimed": 5472,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Amália Rodrigues",
+        "Moonspell",
+        "Shiryu",
+        "Xutos & Pontapés",
+        "José Rodrigues dos Santos"
+      ]
+    },
+    "PY": {
+      "name": "Paraguay",
+      "countClaimed": 268,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Agustín Barrios Mangoré",
+        "Luis Alberto del Paraná y Los Paraguayos",
+        "Nocturno",
+        "Berta Rojas",
+        "Prophylaxis"
+      ]
+    },
+    "RO": {
+      "name": "Romania",
+      "countClaimed": 3833,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Gheorghe Zamfir",
+        "INNA",
+        "Alexandru Andrieș",
+        "Edward Maya",
+        "George Enescu"
+      ]
+    },
+    "RS": {
+      "name": "Republic of Serbia",
+      "countClaimed": 2027,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Riblja Čorba",
+        "Bata Illic",
+        "Električni orgazam",
+        "Đorđe Balašević",
+        "Zdravko Čolić"
+      ]
+    },
+    "RU": {
+      "name": "Russia",
+      "countClaimed": 18089,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Пётр Ильич Чайковский",
+        "Игорь Фёдорович Стравинский",
+        "Сергей Сергеевич Прокофьев",
+        "Сергей Васильевич Рахманинов",
+        "Дмитрий Дмитриевич Шостакович"
+      ]
+    },
+    "RW": {
+      "name": "Rwanda",
+      "countClaimed": 102,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "The Good Ones",
+        "Cloud Tissa",
+        "Dorothee Munyaneza",
+        "Ambassadors of Christ Choir",
+        "Meddy"
+      ]
+    },
+    "SA": {
+      "name": "Saudi Arabia",
+      "countClaimed": 182,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Noboot",
+        "عبدالمجيد عبدالله",
+        "RAWCATS",
+        "راشد الماجد",
+        "Sound of Ruby"
+      ]
+    },
+    "SB": {
+      "name": "Solomon Islands",
+      "countClaimed": 21,
+      "inspected": 21,
+      "verified": 21,
+      "sample": [
+        "Onetox",
+        "Narasirato",
+        "The Melanesian Brotherhood",
+        "Small Jam",
+        "The Choir of All Saints"
+      ]
+    },
+    "SD": {
+      "name": "Sudan",
+      "countClaimed": 97,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "فيفيان السودانية",
+        "Mohamed Mood",
+        "حسين الصادق",
+        "Setona",
+        "Alsarah & the Nubatones"
+      ]
+    },
+    "SE": {
+      "name": "Sweden",
+      "countClaimed": 25131,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "ABBA",
+        "Roxette",
+        "Henning Mankell",
+        "Astrid Lindgren",
+        "Zarah Leander"
+      ]
+    },
+    "SI": {
+      "name": "Slovenia",
+      "countClaimed": 2749,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Laibach",
+        "Umek",
+        "Slavko Avsenik und seine Original Oberkrainer",
+        "Vlado Kreslin",
+        "Andrej Šifrer"
+      ]
+    },
+    "SK": {
+      "name": "Slovakia",
+      "countClaimed": 2656,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Peter Breiner",
+        "Elán",
+        "Miroslav Žbirka",
+        "Capella Istropolitana",
+        "Richard Müller"
+      ]
+    },
+    "SL": {
+      "name": "Sierra Leone",
+      "countClaimed": 53,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Sierra Leone’s Refugee All Stars",
+        "S. E. Rogie",
+        "Sia Tolno",
+        "Emmerson",
+        "Geraldo Pino & The Heartbeats"
+      ]
+    },
+    "SN": {
+      "name": "Senegal",
+      "countClaimed": 397,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Akon",
+        "Youssou N’Dour",
+        "Touré Kunda",
+        "Baaba Maal",
+        "Orchestra Baobab"
+      ]
+    },
+    "SO": {
+      "name": "Somalia",
+      "countClaimed": 46,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Dur‐Dur Band",
+        "Saba Anglana",
+        "Waaberi",
+        "Iftin",
+        "Iman Mohamed Abdulmajid"
+      ]
+    },
+    "SR": {
+      "name": "Suriname",
+      "countClaimed": 70,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Damaru",
+        "La Rouge",
+        "Max Woiski",
+        "Jairzinho",
+        "Cross My Blessed Hands"
+      ]
+    },
+    "SS": {
+      "name": "South Sudan",
+      "countClaimed": 22,
+      "inspected": 22,
+      "verified": 22,
+      "sample": [
+        "Emmanuel Jal",
+        "Gordon Koang",
+        "Barnabas Samuel",
+        "Wayo",
+        "Jaiksana"
+      ]
+    },
+    "SV": {
+      "name": "El Salvador",
+      "countClaimed": 174,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Álvaro Torres",
+        "Adhesivo",
+        "Apes of God",
+        "Conceived by Hate",
+        "Social S.S."
+      ]
+    },
+    "SY": {
+      "name": "Syria",
+      "countClaimed": 141,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "أصالة",
+        "عمر سليمان",
+        "جورج وسوف",
+        "Ensemble Al‐Kindî",
+        "صباح فخري"
+      ]
+    },
+    "SZ": {
+      "name": "Swaziland",
+      "countClaimed": 22,
+      "inspected": 22,
+      "verified": 22,
+      "sample": [
+        "Bholoja",
+        "Franck Camu",
+        "Franc O'Shea",
+        "Tk Khumalo 69",
+        "Andzig De Rular"
+      ]
+    },
+    "TD": {
+      "name": "Chad",
+      "countClaimed": 17,
+      "inspected": 17,
+      "verified": 17,
+      "sample": [
+        "Mounira Mitchala",
+        "Talino Manu",
+        "Abdoulaye Nderguet & le BEX'Tet",
+        "Masdongar",
+        "Maître Gazonga"
+      ]
+    },
+    "TF": {
+      "name": "French Southern and Antarctic Lands",
+      "countClaimed": 1,
+      "inspected": 1,
+      "verified": 1,
+      "sample": [
+        "jamuation"
+      ]
+    },
+    "TG": {
+      "name": "Togo",
+      "countClaimed": 60,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Roger Damawuzan",
+        "King Mensah",
+        "Amen Viana",
+        "Jad Fozis",
+        "Arka’n Asrafokor"
+      ]
+    },
+    "TH": {
+      "name": "Thailand",
+      "countClaimed": 1661,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "BNK48",
+        "Kirbio",
+        "Sek Loso",
+        "Silly Fools",
+        "จำรัส เศวตาภรณ์"
+      ]
+    },
+    "TJ": {
+      "name": "Tajikistan",
+      "countClaimed": 119,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Farahnoz Sharafova",
+        "Абдувалӣ Абдурашидов",
+        "Shams",
+        "Oleg Fesov",
+        "The Alaev Family"
+      ]
+    },
+    "TL": {
+      "name": "East Timor",
+      "countClaimed": 17,
+      "inspected": 17,
+      "verified": 17,
+      "sample": [
+        "Ego Lemos",
+        "Anina",
+        "Lindo De Almaeda",
+        "Klak",
+        "Juven Pablo"
+      ]
+    },
+    "TM": {
+      "name": "Turkmenistan",
+      "countClaimed": 48,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Şatlyk Gurbannazarow",
+        "Serdar Haýdarow",
+        "Döwran Tokgaýew",
+        "Ashkhabad",
+        "Гунеш"
+      ]
+    },
+    "TN": {
+      "name": "Tunisia",
+      "countClaimed": 238,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Anouar Brahem",
+        "Amine Bouhafa",
+        "LANDOLSI",
+        "Myrath",
+        "Dhafer Youssef"
+      ]
+    },
+    "TR": {
+      "name": "Turkey",
+      "countClaimed": 7055,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Barış Manço",
+        "Sezen Aksu",
+        "Müzeyyen Senar",
+        "Cem Karaca",
+        "Zeki Müren"
+      ]
+    },
+    "TT": {
+      "name": "Trinidad and Tobago",
+      "countClaimed": 473,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Bunji Garlin",
+        "Machel Montano",
+        "Lord Kitchener",
+        "The Mad Stuntman",
+        "Winifred Atwell"
+      ]
+    },
+    "TW": {
+      "name": "Taiwan",
+      "countClaimed": 3176,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "鄧麗君",
+        "周杰倫",
+        "蔡琴",
+        "王傑",
+        "黃鶯鶯"
+      ]
+    },
+    "TZ": {
+      "name": "United Republic of Tanzania",
+      "countClaimed": 216,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Hukwe Zawose",
+        "Remmy Ongala",
+        "Diamond Platnumz",
+        "Dizasta Vina",
+        "Devzboi1"
+      ]
+    },
+    "UA": {
+      "name": "Ukraine",
+      "countClaimed": 4151,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Dimitri Tiomkin",
+        "Nokturnal Mortum",
+        "Tina Karol",
+        "Воплі Відоплясова",
+        "Океан Ельзи"
+      ]
+    },
+    "UG": {
+      "name": "Uganda",
+      "countClaimed": 422,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Azawi",
+        "Jay-P",
+        "Radio & Weasel",
+        "Winnie Nwagi",
+        "A Pass"
+      ]
+    },
+    "US": {
+      "name": "United States of America",
+      "countClaimed": 226213,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Bruce Springsteen",
+        "The E Street Band",
+        "Elvis Presley",
+        "Bob Dylan",
+        "Pearl Jam"
+      ]
+    },
+    "UY": {
+      "name": "Uruguay",
+      "countClaimed": 1028,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Leo Maslíah",
+        "Jorge Drexler",
+        "Jaime Roos",
+        "No Te Va Gustar",
+        "La Vela Puerca"
+      ]
+    },
+    "UZ": {
+      "name": "Uzbekistan",
+      "countClaimed": 253,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Ozodbek Nazarbekov",
+        "Gulsanam Mamazoitova",
+        "Jaloliddin Ahmadaliyev",
+        "Yulduz Usmonova",
+        "Alisher Fayz"
+      ]
+    },
+    "VE": {
+      "name": "Venezuela",
+      "countClaimed": 1514,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Oscar D’León",
+        "Billo's Caracas Boys",
+        "Franco de Vita",
+        "Dimensión Latina",
+        "Soledad Bravo"
+      ]
+    },
+    "VN": {
+      "name": "Vietnam",
+      "countClaimed": 1388,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Tuấn Vũ",
+        "Đàm Vĩnh Hưng",
+        "Thích Nhất Hạnh",
+        "Lệ Quyên",
+        "Phương Thanh"
+      ]
+    },
+    "VU": {
+      "name": "Vanuatu",
+      "countClaimed": 7,
+      "inspected": 7,
+      "verified": 7,
+      "sample": [
+        "Sunshiners",
+        "Ross Khmil",
+        "Vanessa Quai",
+        "Lukunaeva",
+        "Groovy Banana"
+      ]
+    },
+    "YE": {
+      "name": "Yemen",
+      "countClaimed": 67,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "ابو بكر سالم بلفقيه",
+        "Musab Al-Adani",
+        "علي بن محمد",
+        "❖",
+        "Ahmed Al-Hemyari"
+      ]
+    },
+    "ZA": {
+      "name": "South Africa",
+      "countClaimed": 4444,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Miriam Makeba",
+        "Trevor Jones",
+        "Abdullah Ibrahim",
+        "Hugh Masekela",
+        "Trevor Rabin"
+      ]
+    },
+    "ZM": {
+      "name": "Zambia",
+      "countClaimed": 246,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "WITCH",
+        "Ngozi Family",
+        "Amanaz",
+        "Rikki Ililonga",
+        "Paul Ngozi"
+      ]
+    },
+    "ZW": {
+      "name": "Zimbabwe",
+      "countClaimed": 320,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Oliver Mtukudzi",
+        "Thomas Mapfumo & The Blacks Unlimited",
+        "Michael Gibbs",
+        "Bhundu Boys",
+        "Black Umfolosi"
+      ]
+    },
+    "BJ": {
+      "name": "Benin",
+      "countClaimed": 159,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Angélique Kidjo",
+        "T.P. Orchestre Poly‐Rythmo",
+        "Lionel Loueke",
+        "Gangbé Brass Band",
+        "Gnonnas Pedro"
+      ]
+    },
+    "CZ": {
+      "name": "Czechia",
+      "countClaimed": 7136,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Antonín Dvořák",
+        "Karel Gott",
+        "The City of Prague Philharmonic Orchestra",
+        "Leoš Janáček",
+        "Bedřich Smetana"
+      ]
+    },
+    "GM": {
+      "name": "Gambia",
+      "countClaimed": 52,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Laba Sosseh",
+        "Ifang Bondi",
+        "Super Eagles",
+        "papa mbye",
+        "Alhaji Bai Konte"
+      ]
+    },
+    "GN": {
+      "name": "Guinea",
+      "countClaimed": 133,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Mory Kanté",
+        "Bembeya Jazz National",
+        "Kanté Manfila",
+        "Lyricson",
+        "Mamady Keïta"
+      ]
+    },
+    "KH": {
+      "name": "Cambodia",
+      "countClaimed": 125,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "រស់ សេរីសុទ្ធា",
+        "ស៊ីន ស៊ីសាមុត",
+        "Cambodian Space Project",
+        "Pan Ron",
+        "Dub Addiction"
+      ]
+    },
+    "QA": {
+      "name": "Qatar",
+      "countClaimed": 26,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "A.M.R",
+        "فهد الكبيسي",
+        "Dana al-Fardan",
+        "Abanoch",
+        "Hassan Moataz El Molla"
+      ]
+    },
+    "XK": {
+      "name": "Kosovo",
+      "countClaimed": 133,
+      "inspected": 25,
+      "verified": 25,
+      "sample": [
+        "Sabri Fejzullahu",
+        "Era Istrefi",
+        "Etno Engjujt",
+        "Mozzik",
+        "Genta Ismajli"
+      ]
+    }
+  }
+}
