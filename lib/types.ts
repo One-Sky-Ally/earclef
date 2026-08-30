@@ -23,6 +23,16 @@ export interface PlatformLink {
 export interface PageMeta {
   title: string
   description: string
+  /**
+   * OPT-IN override for the share card. Empty on almost every artist,
+   * and that is the correct value: app/[slug]/opengraph-image.tsx
+   * generates a real 1200×630 card per artist, and buildMetadata only
+   * honours this field when it names something that actually exists
+   * (an absolute URL, or a file really present in public/). It used to
+   * hold `/images/og-<slug>.jpg` on all 131 artists — files that were
+   * never created, which is how every shared link previewed broken.
+   * Fill it only with artwork you have genuinely put somewhere.
+   */
   ogImage: string
   canonicalUrl: string
 }
