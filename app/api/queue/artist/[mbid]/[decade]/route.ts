@@ -5,6 +5,7 @@ import {
   annotationOf,
   isNonSongUpload,
   isSongLength,
+  nonMusicVerdict,
 } from '@/lib/play/contentGates'
 
 /**
@@ -66,8 +67,19 @@ const NULL_TTL_MS = 30 * 24 * 60 * 60 * 1000
  * 2: fixing a generator does not fix what the generator already wrote.
  * 1 = content-gated (duration floor + non-song annotation markers).
  * 2 = multi-track (up to MAX_TRACKS_PER_ARTIST per artist).
+ * 3 = non-music verdicts (television topic + description first line
+ *     + widened title markers). Entries written under 1 or 2 were
+ *     resolved BEFORE those checks existed, so the documentary that
+ *     opened Jamaica 1961 sits in the cache under pass 2 and would be
+ *     served forever without this bump.
  */
-const GATE_PASS = 2
+const GATE_PASS = 3
+
+/** What videos.list tells us about a candidate beyond playability. */
+interface VideoFacts {
+  description?: string
+  topicUrls?: string[]
+}
 
 export interface QueueTrack {
   videoId: string
@@ -364,30 +376,40 @@ async function searchVerified(
 async function playableSet(
   videoIds: string[],
   key: string,
-): Promise<Set<string>> {
-  const passed = new Set<string>()
-  if (videoIds.length === 0) return passed
+): Promise<{ playable: Set<string>; meta: Map<string, VideoFacts> }> {
+  const playable = new Set<string>()
+  const meta = new Map<string, VideoFacts>()
+  if (videoIds.length === 0) return { playable, meta }
+  // `snippet` and `topicDetails` ride along FREE: videos.list costs one
+  // unit per call whatever parts are asked for, and this call already
+  // happens for every candidate.
   const body = (await ytJson(
-    `https://www.googleapis.com/youtube/v3/videos?part=status,contentDetails&id=${videoIds.slice(0, 50).join(',')}&key=${key}`,
+    `https://www.googleapis.com/youtube/v3/videos?part=snippet,status,contentDetails,topicDetails&id=${videoIds.slice(0, 50).join(',')}&key=${key}`,
   )) as {
     items?: {
       id?: string
+      snippet?: { title?: string; description?: string }
       status?: { embeddable?: boolean; privacyStatus?: string }
       contentDetails?: { duration?: string }
+      topicDetails?: { topicCategories?: string[] }
     }[]
   }
   for (const item of body.items ?? []) {
     // Missing id can't identify anything — missing is not a match.
     if (!item.id) continue
+    meta.set(item.id, {
+      description: item.snippet?.description,
+      topicUrls: item.topicDetails?.topicCategories,
+    })
     if (
       item.status?.embeddable &&
       item.status.privacyStatus === 'public' &&
       isSongLength(item.contentDetails?.duration)
     ) {
-      passed.add(item.id)
+      playable.add(item.id)
     }
   }
-  return passed
+  return { playable, meta }
 }
 
 export async function GET(
@@ -532,12 +554,53 @@ export async function GET(
 
     // ONE batched playability call for every candidate (≤50 ids = 1
     // unit) — cheaper than the old sequential walk over three.
-    const playableIds = await playableSet(
+    const { playable, meta } = await playableSet(
       candidates.map((candidate) => candidate.videoId),
       apiKey,
     )
+
+    /**
+     * A playlist should always play music (owner ruling, Aug 2026).
+     * The duration floor and title markers alone let three non-songs
+     * open real queues; these verdicts add YouTube's own topic
+     * classification and the description's first line.
+     *
+     * NO RELEASE VALVE, and the reason is worth keeping. The design
+     * proposed one: reinstate a television-topic verdict when it would
+     * leave the artist with nothing, since that signal is the inferred
+     * one and its measured false-positive mode is broadcast
+     * performances. Building it showed the valve defeats its own
+     * purpose — Fatma Said resolves to EXACTLY ONE candidate, her NDR
+     * talk-show appearance, so "reinstate when nothing else survives"
+     * puts the reported bug straight back into Egypt 2020.
+     *
+     * So an artist with no music-classified upload contributes nothing.
+     * That is the honest outcome: they have no music here to play. The
+     * cost of a false positive is one artist sitting out a queue of
+     * hundreds — never wrong content playing — which is the direction
+     * to err in when the rule is "always play music".
+     */
+    const verdicts = new Map(
+      candidates.map((candidate) => {
+        const facts = meta.get(candidate.videoId)
+        return [
+          candidate.videoId,
+          nonMusicVerdict({
+            title: candidate.title,
+            workTitle: candidate.eraTitle,
+            artistName: name,
+            topicUrls: facts?.topicUrls,
+            description: facts?.description,
+          }),
+        ] as const
+      }),
+    )
     const tracks: QueueTrack[] = candidates
-      .filter((candidate) => playableIds.has(candidate.videoId))
+      .filter(
+        (candidate) =>
+          playable.has(candidate.videoId) &&
+          verdicts.get(candidate.videoId)?.reasons.length === 0,
+      )
       .slice(0, MAX_TRACKS_PER_ARTIST)
       .map((candidate) => ({
         videoId: candidate.videoId,
