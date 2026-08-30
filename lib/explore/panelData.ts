@@ -33,6 +33,12 @@ export interface CountryYearDetails {
    * responses; the panel degrades to the top-12 list.
    */
   panelArtists?: PoolArtist[]
+  /**
+   * Served from storage because MusicBrainz could not be reached. The
+   * panel says so rather than passing stored data off as live — the
+   * content is real, it is just not a fresh answer.
+   */
+  stored?: boolean
   /** Artists credited on the issued-here releases (the fallback list). */
   artists: PanelArtist[]
   releases: PanelRelease[]

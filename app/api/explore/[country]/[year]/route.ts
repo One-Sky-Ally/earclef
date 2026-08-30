@@ -73,14 +73,29 @@ function blobStore() {
 // combos nobody can enumerate. Owner ruling: take the recompute.
 const BLOB_KEY_PREFIX = 'panel/v4/'
 
-async function readCached(key: string): Promise<CountryYearDetails | null> {
+/**
+ * The stored panel and whether it is still fresh.
+ *
+ * The TTL is a REFRESH PREFERENCE, not an expiry. The original read
+ * discarded anything past 30 days before trying MusicBrainz, and the
+ * failure path below then returned 429/502 without ever looking at
+ * what it had just thrown away — so a place someone visited 31 days
+ * ago served an error precisely when MusicBrainz was the thing that
+ * was broken. Throwing away good data at the moment you cannot replace
+ * it is the wrong failure (owner ruling, Aug 2026).
+ */
+async function readCached(
+  key: string,
+): Promise<{ details: CountryYearDetails; fresh: boolean } | null> {
   try {
     const entry = (await blobStore().get(`${BLOB_KEY_PREFIX}${key}`, {
       type: 'json',
     })) as CachedDetails | null
     if (!entry) return null
-    if (Date.now() - Date.parse(entry.at) > BLOB_TTL_MS) return null
-    return entry.details
+    return {
+      details: entry.details,
+      fresh: Date.now() - Date.parse(entry.at) <= BLOB_TTL_MS,
+    }
   } catch {
     return null
   }
@@ -403,6 +418,27 @@ export async function GET(
       }),
     )
 
+  /**
+   * The same panel, served because MusicBrainz could not be reached.
+   *
+   * The cache header is the whole point of a separate helper: a stale
+   * body under the normal `s-maxage=2592000` would PIN a transient
+   * outage at the CDN for thirty days, long after MusicBrainz came
+   * back. One minute, no stale-while-revalidate — the next request
+   * after recovery goes live and self-heals.
+   */
+  const respondStale = (details: CountryYearDetails) => {
+    const response = NextResponse.json({
+      ...withHistoricalArtists(details, country, start, end, genre),
+      extraArtists: extraArtistGroupsFor(country, start, end),
+      /** The panel says so rather than passing stored data off as live. */
+      stored: true,
+    })
+    response.headers.set('Cache-Control', 'public, s-maxage=60')
+    response.headers.set('Netlify-Vary', 'query=genre')
+    return response
+  }
+
   // Region panels answer from the committed dataset — no MusicBrainz,
   // no Blobs, milliseconds for any span. Deploys refresh the data and
   // purge the CDN together.
@@ -416,10 +452,13 @@ export async function GET(
   if (cached) return respond(cached)
 
   const blobCached = await readCached(key)
-  if (blobCached) {
-    memo.set(key, blobCached)
-    return respond(blobCached)
+  if (blobCached?.fresh) {
+    memo.set(key, blobCached.details)
+    return respond(blobCached.details)
   }
+  // A stale entry is not served yet — a live refresh is tried first, and
+  // this is what the failure paths fall back to.
+  const stale = blobCached?.details ?? null
 
   const releaseQuery = encodeURIComponent(
     `country:${country} AND date:[${start} TO ${end}-12-31]`,
@@ -443,6 +482,7 @@ export async function GET(
         subdivision ? null : country,
       )
       if (!origin) {
+        if (stale) return respondStale(stale)
         return NextResponse.json(
           { error: 'MusicBrainz unavailable' },
           { status: 502 },
@@ -473,6 +513,10 @@ export async function GET(
     )
 
     if (!origin) {
+      // A stored panel with its origin artists beats a live one without
+      // them: the origin list IS the panel's answer to "who is from
+      // here", and a degraded response drops it entirely.
+      if (stale) return respondStale(stale)
       // Serve a degraded (origin-less) panel, but never cache it — a
       // transient failure must not become the 30-day cached answer.
       const degraded = toDetails(releasesBody, {
@@ -490,6 +534,10 @@ export async function GET(
     await writeCached(key, details)
     return respond(details)
   } catch (error) {
+    // Stored data beats an error screen. The panel is history — who
+    // recorded in a place in 1961 does not change — so a month-old
+    // answer is worth far more than "MusicBrainz is busy".
+    if (stale) return respondStale(stale)
     if (error instanceof RateLimitError) {
       return NextResponse.json(
         { error: 'MusicBrainz rate limit' },

@@ -561,6 +561,15 @@ export function CountryPanel({
           {refreshing && (
             <p className={styles.note}>Widening to {spanLabel}…</p>
           )}
+          {/* Stored data is served when MusicBrainz cannot be reached —
+              far better than an error screen, but the panel says which
+              it is rather than passing one off as the other. */}
+          {state.details.stored && (
+            <p className={styles.note}>
+              MusicBrainz is unreachable — showing what was stored for this
+              place and era.
+            </p>
+          )}
           {/* Editorial line (locked): only artists FROM a place appear —
               distribution reach is not local culture. Release data still
               feeds the heat map and listen links under the hood. */}
