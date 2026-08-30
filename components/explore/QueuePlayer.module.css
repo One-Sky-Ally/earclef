@@ -184,3 +184,70 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* ── In-player genre control ──────────────────────────────────────
+   The panel's genre chip narrows the pool BEFORE a queue is built and
+   cannot be changed once it is playing. This one switches genres off
+   and on live, so it sits inside the queue box at the queue's scale. */
+.genreControl {
+  margin: 0.55rem 0 0;
+}
+
+.genreToggle {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--text-soft);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.genreToggle:hover {
+  border-color: var(--accent-deep);
+  color: var(--accent);
+}
+
+.genreList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  list-style: none;
+  margin: 0.45rem 0 0;
+  padding: 0;
+  /* A place with a deep pool can carry dozens of genres — scroll them
+     rather than pushing the track list off the panel. */
+  max-height: 7rem;
+  overflow-y: auto;
+}
+
+.genreOn,
+.genreOff {
+  padding: 0.16rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  border: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.genreOn {
+  border-color: var(--accent-deep);
+  color: var(--accent);
+}
+
+.genreOff {
+  border-color: var(--border);
+  color: var(--text-muted);
+  /* Switched-off genres stay legible and clickable — this is a toggle
+     the listener has to be able to find again, not a dismissal. */
+  opacity: 0.75;
+  text-decoration: line-through;
+}
+
+.genreOn:hover,
+.genreOff:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  opacity: 1;
+}
