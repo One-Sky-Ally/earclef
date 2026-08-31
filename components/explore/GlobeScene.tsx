@@ -3,7 +3,12 @@
 import { useEffect, useRef, useState } from 'react'
 import type { GlobeInstance } from 'globe.gl'
 import { reportClientError } from '@/lib/clientLog'
-import { claimedPlaceById } from '@/lib/explore/claimedPlaces'
+import {
+  CLAIMED_PLACES,
+  CLAIMED_PLACE_LINE,
+  claimedPlaceById,
+  type ClaimedPlace,
+} from '@/lib/explore/claimedPlaces'
 import {
   bandedHeat,
   countInRange,
@@ -70,6 +75,10 @@ const PIN_LABEL_COLOR = '#ffefd6'
 const PIN_LABEL_DARK_COLOR = '#241a10'
 // Above the tallest polygon extrusion (0.008 + heat * 0.05).
 const PIN_LABEL_ALTITUDE = 0.08
+/** Claimed-place markers ride just above the polygon shells. */
+const CLAIMED_MARKER_ALTITUDE = 0.06
+/** Fly-to altitude when a claimed place is opened. */
+const CLAIMED_FLY_ALTITUDE = 1.3
 
 interface PinLabel {
   lat: number
@@ -165,6 +174,9 @@ export function GlobeScene({
   const rangeMaxCache = useRef<Record<string, number>>({})
   const hoverRef = useRef<object | null>(null)
   const selectedRef = useRef<SelectedCountry | null>(null)
+  // Claimed-place marker elements, by place id — kept so the selected
+  // marker can be lit without rebuilding the layer.
+  const claimedMarkers = useRef<Map<string, HTMLElement>>(new Map())
   const featureByCode = useRef<Map<string, CountryFeature>>(new Map())
   const pausedRef = useRef(paused)
   const cursorOverGlobeRef = useRef(false)
@@ -203,18 +215,91 @@ export function GlobeScene({
 
   }, [paused])
 
+  /** Fly to a claimed place's anchor and open its panel. */
+  function openClaimedPlace(place: ClaimedPlace) {
+    globeRef.current?.pointOfView(
+      {
+        lat: place.anchor.lat,
+        lng: place.anchor.lng,
+        altitude: CLAIMED_FLY_ALTITUDE,
+      },
+      650,
+    )
+    onCountryClick({ code: place.id, name: place.name })
+  }
+
+  /**
+   * One claimed-place marker: a dashed ring at the anchor with the
+   * place's name and the contested asterisk, permanently on the globe.
+   *
+   * The globe raycasts from the CONTAINER in the capture phase, so a
+   * click here would ALSO select the country underneath, and no amount
+   * of stopPropagation on this element can prevent it. Two mechanisms,
+   * each used only where it is reliable:
+   *
+   * 1. CORRECTNESS (all pointer types) — onPolygonClick checks the
+   *    event's target and ignores clicks that landed on a marker. It is
+   *    STATELESS by design: a flag would have to be released by some
+   *    later event, and a missed release leaves the globe permanently
+   *    unclickable. (First attempt did exactly that: on touch,
+   *    pointerenter fired and pointerleave never did.)
+   * 2. COSMETICS (mouse only) — while the cursor rests on a marker the
+   *    globe's raycasting is switched off so the country tooltip does
+   *    not surface beneath the marker's own. Mouse pointerleave is
+   *    reliable, and the mount's pointerleave re-arms it regardless.
+   */
+  function buildClaimedMarker(place: ClaimedPlace): HTMLElement {
+    const marker = document.createElement('div')
+    marker.className = styles.claimedMarker
+
+    const target = document.createElement('button')
+    target.type = 'button'
+    target.className = styles.claimedTarget
+    target.setAttribute(
+      'aria-label',
+      `${place.name} — a claimed place with contested status. Show its artists.`,
+    )
+
+    const ring = document.createElement('span')
+    ring.className = styles.claimedRing
+    const name = document.createElement('span')
+    name.className = styles.claimedName
+    name.textContent = `${place.name} *`
+    target.append(ring, name)
+
+    const tooltip = document.createElement('div')
+    tooltip.className = styles.claimedTooltip
+    const tipName = document.createElement('span')
+    tipName.className = styles.claimedTooltipName
+    tipName.textContent = `${place.name} *`
+    const tipLine = document.createElement('span')
+    tipLine.className = styles.claimedTooltipLine
+    tipLine.textContent = CLAIMED_PLACE_LINE
+    const tipHint = document.createElement('span')
+    tipHint.className = styles.claimedTooltipHint
+    tipHint.textContent = 'click for artists'
+    tooltip.append(tipName, tipLine, tipHint)
+
+    target.addEventListener('click', () => openClaimedPlace(place))
+    target.addEventListener('pointerenter', (event) => {
+      if (event.pointerType === 'mouse') {
+        globeRef.current?.enablePointerInteraction(false)
+      }
+    })
+    target.addEventListener('pointerleave', (event) => {
+      if (event.pointerType === 'mouse') {
+        globeRef.current?.enablePointerInteraction(true)
+      }
+    })
+
+    // Sibling order matters: the tooltip reveals on `target:hover + …`.
+    marker.append(target, tooltip)
+    claimedMarkers.current.set(place.id, marker)
+    return marker
+  }
+
   /** The selection pin's label datum, or null when the shape isn't loaded yet. */
   function pinLabelFor(code: string, name: string): PinLabel | null {
-    const claimed = claimedPlaceById(code)
-    if (claimed) {
-      return {
-        lat: claimed.anchor.lat,
-        lng: claimed.anchor.lng,
-        text: `${claimed.name} *`,
-        size: 1.1,
-        color: PIN_LABEL_COLOR,
-      }
-    }
     const feature = featureByCode.current.get(code)
     if (!feature) return null
     const { lat, lng } = roughCentroid(feature)
@@ -238,7 +323,15 @@ export function GlobeScene({
     if (!globe) return
     applyHeat(globe)
     const selectedNow = selectedRef.current
-    if (!selectedNow) {
+    // Claimed places carry their own permanent marker — light it as the
+    // selection and never add a label pin, which would name them twice.
+    for (const [id, marker] of claimedMarkers.current) {
+      marker.classList.toggle(
+        styles.claimedMarkerSelected,
+        selectedNow?.code === id,
+      )
+    }
+    if (!selectedNow || claimedPlaceById(selectedNow.code)) {
       globe.labelsData([])
       return
     }
@@ -276,11 +369,7 @@ export function GlobeScene({
     // selection pin shows the label while the place stays selected.
     const claimed = claimedPlaceById(code)
     if (claimed) {
-      globeRef.current?.pointOfView(
-        { lat: claimed.anchor.lat, lng: claimed.anchor.lng, altitude: 1.3 },
-        650,
-      )
-      onCountryClick({ code: claimed.id, name: claimed.name })
+      openClaimedPlace(claimed)
       return
     }
     // A region resolves like a country, but the fly-to dips below the
@@ -482,6 +571,9 @@ export function GlobeScene({
     let globe: GlobeInstance | undefined
     let observer: ResizeObserver | undefined
     let disposed = false
+    // The map identity never changes; captured so cleanup can't read a
+    // ref that has moved on.
+    const markers = claimedMarkers.current
 
     /**
      * Sorted clickable list for the non-globe fallback — with the 50
@@ -519,6 +611,18 @@ export function GlobeScene({
       }
       insertRegions('GB', 'UK', UK_NATIONS)
       insertRegions('US', 'US', US_STATES)
+      // Claimed places have no polygon to come from the dataset, but
+      // "findable like anywhere else" holds here too — a fallback
+      // visitor has no globe to spin.
+      // Plain name: the panel adds the contested mark itself, and a
+      // decorated name would reach it as the place's actual title.
+      for (const place of CLAIMED_PLACES) {
+        const entry = { code: place.id, name: place.name }
+        const at = countries.findIndex(
+          (country) => country.name.localeCompare(place.name) > 0,
+        )
+        countries.splice(at === -1 ? countries.length : at, 0, entry)
+      }
       return countries
     }
 
@@ -607,6 +711,15 @@ export function GlobeScene({
         .labelAltitude(PIN_LABEL_ALTITUDE)
         .labelColor((d) => (d as PinLabel).color)
         .labelResolution(2)
+        // Claimed places: permanently on the idle globe (owner ruling,
+        // Aug 30 2026 — superseding search-and-select-only), so they
+        // are findable by spinning like anywhere else. A dashed ring at
+        // the anchor, never a polygon: no neutral border exists to draw.
+        .htmlElementsData([...CLAIMED_PLACES])
+        .htmlLat((d) => (d as ClaimedPlace).anchor.lat)
+        .htmlLng((d) => (d as ClaimedPlace).anchor.lng)
+        .htmlAltitude(CLAIMED_MARKER_ALTITUDE)
+        .htmlElement((d) => buildClaimedMarker(d as ClaimedPlace))
         .showGraticules(false)
         .atmosphereColor(ATMOSPHERE_COLOR)
         .atmosphereAltitude(0.14)
@@ -660,7 +773,16 @@ export function GlobeScene({
           if (globe) applyHeat(globe)
           mount.style.cursor = hovered ? 'pointer' : 'grab'
         })
-        .onPolygonClick((clicked) => {
+        .onPolygonClick((clicked, event) => {
+          // A click that landed on a claimed marker belongs to it, not
+          // to the country underneath (see buildClaimedMarker).
+          const origin = event?.target
+          if (
+            origin instanceof Element &&
+            origin.closest(`.${styles.claimedMarker}`)
+          ) {
+            return
+          }
           const feature = clicked as CountryFeature
           const code = featureCode(feature)
           if (!code || !globe) return
@@ -704,6 +826,9 @@ export function GlobeScene({
       })
       mount.addEventListener('pointerleave', () => {
         cursorOverGlobeRef.current = false
+        // Re-arm raycasting unconditionally: whatever a marker switched
+        // off, leaving the globe restores.
+        globe?.enablePointerInteraction(true)
         syncRotation()
       })
 
@@ -734,6 +859,7 @@ export function GlobeScene({
     return () => {
       disposed = true
       observer?.disconnect()
+      markers.clear()
       globeRef.current = null
       globe?._destructor()
     }

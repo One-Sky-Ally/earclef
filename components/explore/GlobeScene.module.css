@@ -42,6 +42,149 @@
   color: var(--accent);
 }
 
+/* Claimed places (Tibet and its class): a dashed ring at the anchor,
+   permanently on the idle globe so they are findable by spinning like
+   anywhere else. The BROKEN stroke is the contested cue — a marked
+   place, never a drawn border (NAME-NEVER-DRAW: no neutral polygon
+   exists, and every candidate is a party's map). The marker box itself
+   is inert; only the ring and name take the pointer, so the globe
+   underneath stays draggable. */
+.claimedMarker {
+  position: relative;
+  width: 0;
+  height: 0;
+  /* Inert box; the button inside takes the pointer. */
+  pointer-events: none;
+  font-family: var(--font-body);
+}
+
+/* Ring + name in one target: the ring's 44px row is centred on the
+   anchor, so the dashed circle sits exactly on the claimed point. */
+.claimedTarget {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -22px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.claimedRing {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+}
+
+/* Dark lens inside the dashed stroke, and a dark plate behind the
+   name: the marker sits over whatever heat the year gives the ground
+   beneath it, and gold-on-gold disappears at hot years. Both read on
+   the dark sea and on a white-gold fill. */
+.claimedRing::before {
+  content: '';
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255, 214, 138, 0.9);
+  background: rgba(18, 13, 9, 0.5);
+  transition: border-color 0.2s ease, background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.claimedName {
+  margin-top: -6px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 239, 214, 0.92);
+  background: rgba(18, 13, 9, 0.78);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.claimedTarget:focus-visible .claimedRing::before,
+.claimedMarkerSelected .claimedRing::before {
+  border-color: #fff0d2;
+  background: rgba(30, 21, 13, 0.62);
+  transform: scale(1.12);
+}
+
+.claimedTarget:focus-visible .claimedName,
+.claimedMarkerSelected .claimedName {
+  color: #fff8ec;
+  background: rgba(30, 21, 13, 0.92);
+}
+
+/* Hover affordances are for pointers only: on touch, Chrome keeps
+   :hover applied after a tap, which would strand the tooltip open. */
+@media (hover: hover) {
+  .claimedTarget:hover .claimedRing::before {
+    border-color: #fff0d2;
+    background: rgba(30, 21, 13, 0.62);
+    transform: scale(1.12);
+  }
+
+  .claimedTarget:hover .claimedName {
+    color: #fff8ec;
+    background: rgba(30, 21, 13, 0.92);
+  }
+
+  .claimedTarget:hover + .claimedTooltip {
+    display: flex;
+  }
+}
+
+/* Hover card — the panel still carries the full contested note. */
+.claimedTooltip {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  gap: 0.15rem;
+  width: max-content;
+  max-width: 230px;
+  background: rgba(22, 18, 16, 0.92);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  pointer-events: none;
+}
+
+.claimedTarget:focus-visible + .claimedTooltip {
+  display: flex;
+}
+
+.claimedTooltipName {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.claimedTooltipLine {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+.claimedTooltipHint {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
 /* Non-globe fallback: a functional explore, never a dead page */
 .fallback {
   display: flex;

@@ -6,14 +6,16 @@
  * SELF-IDENTIFICATION ONLY; every claimed place carries the contested
  * asterisk and the shared policy note; no heat, no counts.
  *
- * RULING CHANGE (owner, Aug 30 2026): claimed places become
- * ALWAYS-VISIBLE on the idle globe — the original SEARCH-AND-SELECT-
- * ONLY rule is superseded. Owner's reasoning: go by what historically
- * happened, where and when, and by what the artists themselves
- * claimed — the music, not the politics. The idle-globe marker build
- * is PENDING the owner's boundary-form decision (see the handoff build
- * log); until it ships, the label still renders on selection only via
- * the selection pin.
+ * RULING CHANGE (owner, Aug 30 2026): claimed places are ALWAYS
+ * VISIBLE on the idle globe — the original SEARCH-AND-SELECT-ONLY rule
+ * is superseded. Owner's reasoning: go by what historically happened,
+ * where and when, and by what the artists themselves claimed — the
+ * music, not the politics. Shipped as a dashed ring at the anchor
+ * (GlobeScene buildClaimedMarker): the broken stroke is the contested
+ * cue, and NAME-NEVER-DRAW still holds — an evidence-derived boundary
+ * was assessed and rejected (the artists' own places resolve to
+ * administrative shapes, so "our own evidence" lands on a party's map
+ * anyway; see the handoff build log).
  *
  * Display names are the artists' names for the place — Tibet, not
  * Xizang — while search aliases accept both directions in good faith.
