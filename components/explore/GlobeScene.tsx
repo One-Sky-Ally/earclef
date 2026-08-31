@@ -294,6 +294,14 @@ export function GlobeScene({
 
     // Sibling order matters: the tooltip reveals on `target:hover + …`.
     marker.append(target, tooltip)
+    // globe.gl builds this element lazily, on the layer's first render —
+    // which can land AFTER a selection is already applied (a ?c=tibet
+    // deep link resolves before the first frame). Adopt the current
+    // selection here, or the marker misses it and never shows its name.
+    marker.classList.toggle(
+      styles.claimedMarkerSelected,
+      selectedRef.current?.code === place.id,
+    )
     claimedMarkers.current.set(place.id, marker)
     return marker
   }
