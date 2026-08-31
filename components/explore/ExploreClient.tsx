@@ -295,6 +295,7 @@ export function ExploreClient({
         }
         paused={selected !== null || artist !== null}
         focusRequest={focusRequest}
+        selected={selected}
         onDataSourceChange={onGlobeReady}
         onCountryClick={(country) => {
           setArtist(null)

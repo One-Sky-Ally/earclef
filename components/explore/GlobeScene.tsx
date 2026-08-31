@@ -60,6 +60,24 @@ const HOT_STROKE_COLOR = 'rgba(20, 14, 9, 0.95)'
 const HOT_STROKE_THRESHOLD = 3 / 7
 const SPHERE_COLOR = '#1b1613'
 const ATMOSPHERE_COLOR = '#f2a93b'
+// The selection pin: while a place is selected its polygon holds this
+// stroke and a name label sits at its centroid — the globe answers
+// "where did I land" for search, click, and Surprise Me alike.
+const SELECTED_STROKE_COLOR = 'rgba(255, 227, 166, 0.95)'
+// Warm white on dark ground; near-black on hot fills — the selection
+// highlight lerps hot polygons toward white, where light text vanishes.
+const PIN_LABEL_COLOR = '#ffefd6'
+const PIN_LABEL_DARK_COLOR = '#241a10'
+// Above the tallest polygon extrusion (0.008 + heat * 0.05).
+const PIN_LABEL_ALTITUDE = 0.08
+
+interface PinLabel {
+  lat: number
+  lng: number
+  text: string
+  size: number
+  color: string
+}
 
 export interface FocusRequest {
   code: string
@@ -120,6 +138,8 @@ interface GlobeSceneProps {
   lens: LensState | null
   paused: boolean
   focusRequest: FocusRequest | null
+  /** The open panel's place — the globe pins it while it stays selected. */
+  selected: SelectedCountry | null
   onDataSourceChange: (source: DataSource) => void
   onCountryClick: (country: SelectedCountry) => void
 }
@@ -130,6 +150,7 @@ export function GlobeScene({
   lens,
   paused,
   focusRequest,
+  selected,
   onDataSourceChange,
   onCountryClick,
 }: GlobeSceneProps) {
@@ -143,6 +164,7 @@ export function GlobeScene({
   const lensRef = useRef<LensState | null>(lens)
   const rangeMaxCache = useRef<Record<string, number>>({})
   const hoverRef = useRef<object | null>(null)
+  const selectedRef = useRef<SelectedCountry | null>(null)
   const featureByCode = useRef<Map<string, CountryFeature>>(new Map())
   const pausedRef = useRef(paused)
   const cursorOverGlobeRef = useRef(false)
@@ -170,37 +192,97 @@ export function GlobeScene({
     lensRef.current = lens
     rangeMaxCache.current = {}
     applyHeat(globeRef.current)
+    // The heat under the pin moved — its text color tracks the band.
+    applySelectionPin()
     // eslint-disable-next-line react-hooks/exhaustive-deps -- applyHeat reads only refs; re-run on inputs alone
   }, [year, lens])
 
   useEffect(() => {
     pausedRef.current = paused
     syncRotation()
-     
+
   }, [paused])
+
+  /** The selection pin's label datum, or null when the shape isn't loaded yet. */
+  function pinLabelFor(code: string, name: string): PinLabel | null {
+    const claimed = claimedPlaceById(code)
+    if (claimed) {
+      return {
+        lat: claimed.anchor.lat,
+        lng: claimed.anchor.lng,
+        text: `${claimed.name} *`,
+        size: 1.1,
+        color: PIN_LABEL_COLOR,
+      }
+    }
+    const feature = featureByCode.current.get(code)
+    if (!feature) return null
+    const { lat, lng } = roughCentroid(feature)
+    const small =
+      REGION_CODE_PATTERN.test(code) || SUBDIVISION_CODE_PATTERN.test(code)
+    return {
+      lat,
+      lng,
+      text: name,
+      size: small ? 0.7 : 1.1,
+      color:
+        bandedHeat(heatFor(feature)) >= HOT_STROKE_THRESHOLD
+          ? PIN_LABEL_DARK_COLOR
+          : PIN_LABEL_COLOR,
+    }
+  }
+
+  /** Label + polygon highlight for the current selection (or clears both). */
+  function applySelectionPin() {
+    const globe = globeRef.current
+    if (!globe) return
+    applyHeat(globe)
+    const selectedNow = selectedRef.current
+    if (!selectedNow) {
+      globe.labelsData([])
+      return
+    }
+    const label = pinLabelFor(selectedNow.code, selectedNow.name)
+    if (label) {
+      globe.labelsData([label])
+      return
+    }
+    globe.labelsData([])
+    // A region selected before its layer loaded (surprise from afar):
+    // pin once the features arrive, if it's still the selection.
+    if (REGION_CODE_PATTERN.test(selectedNow.code)) {
+      void ensureStates().then(() => {
+        if (selectedRef.current?.code !== selectedNow.code) return
+        const late = pinLabelFor(selectedNow.code, selectedNow.name)
+        if (late) globeRef.current?.labelsData([late])
+      })
+    }
+  }
+
+  // The selection pin: pinned for exactly as long as a place is
+  // selected — every path (click, search, surprise, deep link) sets
+  // `selected`, so the pin needs no per-path wiring.
+  useEffect(() => {
+    selectedRef.current = selected
+    applySelectionPin()
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- pin follows selection alone
+  }, [selected])
 
   // Search resolution: fly to the country (when we have its shape) and open it.
   useEffect(() => {
     if (!focusRequest) return
     const { code } = focusRequest
-    // Claimed place: fly to the named anchor — never a polygon — and
-    // show the label for exactly as long as the place is selected.
+    // Claimed place: fly to the named anchor — never a polygon. The
+    // selection pin shows the label while the place stays selected.
     const claimed = claimedPlaceById(code)
     if (claimed) {
-      const globe = globeRef.current
-      if (globe) {
-        globe.labelsData([
-          { lat: claimed.anchor.lat, lng: claimed.anchor.lng, text: `${claimed.name} *` },
-        ])
-        globe.pointOfView(
-          { lat: claimed.anchor.lat, lng: claimed.anchor.lng, altitude: 1.3 },
-          650,
-        )
-      }
+      globeRef.current?.pointOfView(
+        { lat: claimed.anchor.lat, lng: claimed.anchor.lng, altitude: 1.3 },
+        650,
+      )
       onCountryClick({ code: claimed.id, name: claimed.name })
       return
     }
-    globeRef.current?.labelsData([])
     // A region resolves like a country, but the fly-to dips below the
     // region-layer threshold so the state/nation itself lights up. The
     // panel opens immediately; the camera follows when the layer is
@@ -366,11 +448,20 @@ export function GlobeScene({
     return heatValue(count, max)
   }
 
+  function isSelectedFeature(feature: object): boolean {
+    const code = selectedRef.current?.code
+    return code !== undefined && featureCode(feature as CountryFeature) === code
+  }
+
   function capColorFor(feature: object): string {
-    return heatColor(bandedHeat(heatFor(feature)), feature === hoverRef.current)
+    return heatColor(
+      bandedHeat(heatFor(feature)),
+      feature === hoverRef.current || isSelectedFeature(feature),
+    )
   }
 
   function strokeColorFor(feature: object): string {
+    if (isSelectedFeature(feature)) return SELECTED_STROKE_COLOR
     return bandedHeat(heatFor(feature)) >= HOT_STROKE_THRESHOLD
       ? HOT_STROKE_COLOR
       : STROKE_COLOR
@@ -504,16 +595,17 @@ export function GlobeScene({
 
       globe = new Globe(mount)
         .backgroundColor('rgba(0,0,0,0)')
-        // Claimed-place labels: empty on the idle globe by design —
-        // search-and-select only (owner ruling). The asterisk is the
-        // contested mark; the panel carries the note.
+        // The label layer is the selection pin: one label naming the
+        // selected place, driven by the `selected` prop. Claimed places
+        // carry the contested asterisk; the panel carries the note.
         .labelsData([])
-        .labelLat((d) => (d as { lat: number }).lat)
-        .labelLng((d) => (d as { lng: number }).lng)
-        .labelText((d) => (d as { text: string }).text)
-        .labelSize(1.1)
-        .labelDotRadius(0.22)
-        .labelColor(() => '#f2a93b')
+        .labelLat((d) => (d as PinLabel).lat)
+        .labelLng((d) => (d as PinLabel).lng)
+        .labelText((d) => (d as PinLabel).text)
+        .labelSize((d) => (d as PinLabel).size)
+        .labelDotRadius((d) => (d as PinLabel).size * 0.2)
+        .labelAltitude(PIN_LABEL_ALTITUDE)
+        .labelColor((d) => (d as PinLabel).color)
         .labelResolution(2)
         .showGraticules(false)
         .atmosphereColor(ATMOSPHERE_COLOR)
@@ -578,7 +670,6 @@ export function GlobeScene({
           const altitude = REGION_CODE_PATTERN.test(code)
             ? Math.min(altitudeRef.current, STATE_FLY_ALTITUDE)
             : 1.7
-          globe.labelsData([])
           globe.pointOfView({ lat, lng, altitude }, 650)
           onCountryClick({ code, name: feature.properties.ADMIN })
         })
