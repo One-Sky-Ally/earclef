@@ -1,5 +1,8 @@
 .panel {
   position: absolute;
+  /* Above the globe stage and its markers — stated, not left to DOM
+     order. */
+  z-index: 10;
   top: 1rem;
   right: 1rem;
   bottom: 1rem;

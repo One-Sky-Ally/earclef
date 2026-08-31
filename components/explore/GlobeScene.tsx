@@ -65,27 +65,45 @@ const HOT_STROKE_COLOR = 'rgba(20, 14, 9, 0.95)'
 const HOT_STROKE_THRESHOLD = 3 / 7
 const SPHERE_COLOR = '#1b1613'
 const ATMOSPHERE_COLOR = '#f2a93b'
-// The selection pin: while a place is selected its polygon holds this
-// stroke and a name label sits at its centroid — the globe answers
-// "where did I land" for search, click, and Surprise Me alike.
-const SELECTED_STROKE_COLOR = 'rgba(255, 227, 166, 0.95)'
-// Warm white on dark ground; near-black on hot fills — the selection
-// highlight lerps hot polygons toward white, where light text vanishes.
-const PIN_LABEL_COLOR = '#ffefd6'
-const PIN_LABEL_DARK_COLOR = '#241a10'
-// Above the tallest polygon extrusion (0.008 + heat * 0.05).
-const PIN_LABEL_ALTITUDE = 0.08
+// The selection accent: coral red (owner-chosen, #e4726a) — a hue the
+// ember→gold heat ramp cannot produce at any year, so the selected
+// place can never be confused with a hot neighbour. Gold is the DATA's
+// colour; coral is the CURSOR's.
+//
+// FULL FILL (owner ruling, overruling the border-only trade-off): a
+// coral outline washed out against a country's own bright gold —
+// Sudan at 2019 barely read. The cap now takes coral outright. Losing
+// that country's heat colour for the moment it is selected costs
+// nothing: the panel is open showing the real data, and the heat is
+// there before the click and again after closing.
+const SELECTED_CAP_COLOR = 'rgba(228, 114, 106, 0.88)'
+const SELECTED_STROKE_COLOR = 'rgba(255, 176, 166, 0.98)'
+const SELECTED_SIDE_COLOR = 'rgba(228, 114, 106, 0.72)'
+const SELECTED_LIFT = 0.04
+// The name rides in a self-backgrounded pill (see .pinPill) — never a
+// colour computed from the ground beneath it. Three variants of that
+// bug shipped in two days (light text on hot fills, gold ring on gold
+// ground, dark text on dark sea); the class fix is that the name
+// carries its own background, so the ground cannot matter.
+const PIN_ALTITUDE = 0.08
 /** Claimed-place markers ride just above the polygon shells. */
 const CLAIMED_MARKER_ALTITUDE = 0.06
 /** Fly-to altitude when a claimed place is opened. */
 const CLAIMED_FLY_ALTITUDE = 1.3
 
-interface PinLabel {
+/** The selection pill's datum on the html-marker layer. */
+interface PinDatum {
+  pin: true
   lat: number
   lng: number
-  text: string
-  size: number
-  color: string
+  name: string
+  small: boolean
+}
+
+type HtmlMarkerDatum = ClaimedPlace | PinDatum
+
+function isPinDatum(d: object): d is PinDatum {
+  return 'pin' in d
 }
 
 export interface FocusRequest {
@@ -306,56 +324,54 @@ export function GlobeScene({
     return marker
   }
 
-  /** The selection pin's label datum, or null when the shape isn't loaded yet. */
-  function pinLabelFor(code: string, name: string): PinLabel | null {
+  /** The selection pill's datum, or null when the shape isn't loaded yet. */
+  function pinDatumFor(code: string, name: string): PinDatum | null {
     const feature = featureByCode.current.get(code)
     if (!feature) return null
     const { lat, lng } = roughCentroid(feature)
     const small =
       REGION_CODE_PATTERN.test(code) || SUBDIVISION_CODE_PATTERN.test(code)
-    return {
-      lat,
-      lng,
-      text: name,
-      size: small ? 0.7 : 1.1,
-      color:
-        bandedHeat(heatFor(feature)) >= HOT_STROKE_THRESHOLD
-          ? PIN_LABEL_DARK_COLOR
-          : PIN_LABEL_COLOR,
-    }
+    return { pin: true, lat, lng, name, small }
   }
 
-  /** Label + polygon highlight for the current selection (or clears both). */
+  /** The pill naming the selection — inert, so the globe stays live under it. */
+  function buildPinPill(datum: PinDatum): HTMLElement {
+    const pill = document.createElement('div')
+    pill.className = datum.small
+      ? `${styles.pinPill} ${styles.pinPillSmall}`
+      : styles.pinPill
+    pill.textContent = datum.name
+    return pill
+  }
+
+  /** Pill + polygon highlight for the current selection (or clears both). */
   function applySelectionPin() {
     const globe = globeRef.current
     if (!globe) return
     applyHeat(globe)
     const selectedNow = selectedRef.current
     // Claimed places carry their own permanent marker — light it as the
-    // selection and never add a label pin, which would name them twice.
+    // selection and never add a pill, which would name them twice.
     for (const [id, marker] of claimedMarkers.current) {
       marker.classList.toggle(
         styles.claimedMarkerSelected,
         selectedNow?.code === id,
       )
     }
+    const base: HtmlMarkerDatum[] = [...CLAIMED_PLACES]
     if (!selectedNow || claimedPlaceById(selectedNow.code)) {
-      globe.labelsData([])
+      globe.htmlElementsData(base)
       return
     }
-    const label = pinLabelFor(selectedNow.code, selectedNow.name)
-    if (label) {
-      globe.labelsData([label])
-      return
-    }
-    globe.labelsData([])
+    const pin = pinDatumFor(selectedNow.code, selectedNow.name)
+    globe.htmlElementsData(pin ? [...base, pin] : base)
     // A region selected before its layer loaded (surprise from afar):
     // pin once the features arrive, if it's still the selection.
-    if (REGION_CODE_PATTERN.test(selectedNow.code)) {
+    if (!pin && REGION_CODE_PATTERN.test(selectedNow.code)) {
       void ensureStates().then(() => {
         if (selectedRef.current?.code !== selectedNow.code) return
-        const late = pinLabelFor(selectedNow.code, selectedNow.name)
-        if (late) globeRef.current?.labelsData([late])
+        const late = pinDatumFor(selectedNow.code, selectedNow.name)
+        if (late) globeRef.current?.htmlElementsData([...base, late])
       })
     }
   }
@@ -551,10 +567,8 @@ export function GlobeScene({
   }
 
   function capColorFor(feature: object): string {
-    return heatColor(
-      bandedHeat(heatFor(feature)),
-      feature === hoverRef.current || isSelectedFeature(feature),
-    )
+    if (isSelectedFeature(feature)) return SELECTED_CAP_COLOR
+    return heatColor(bandedHeat(heatFor(feature)), feature === hoverRef.current)
   }
 
   function strokeColorFor(feature: object): string {
@@ -564,12 +578,22 @@ export function GlobeScene({
       : STROKE_COLOR
   }
 
+  function sideColorFor(feature: object): string {
+    return isSelectedFeature(feature) ? SELECTED_SIDE_COLOR : SIDE_COLOR
+  }
+
   function applyHeat(globe: GlobeInstance | null) {
     if (!globe) return
     globe
       .polygonCapColor(capColorFor)
       .polygonStrokeColor(strokeColorFor)
-      .polygonAltitude((feature) => 0.008 + heatFor(feature) * 0.05)
+      .polygonSideColor(sideColorFor)
+      .polygonAltitude(
+        (feature) =>
+          0.008 +
+          heatFor(feature) * 0.05 +
+          (isSelectedFeature(feature) ? SELECTED_LIFT : 0),
+      )
   }
 
   useEffect(() => {
@@ -707,27 +731,31 @@ export function GlobeScene({
 
       globe = new Globe(mount)
         .backgroundColor('rgba(0,0,0,0)')
-        // The label layer is the selection pin: one label naming the
-        // selected place, driven by the `selected` prop. Claimed places
-        // carry the contested asterisk; the panel carries the note.
-        .labelsData([])
-        .labelLat((d) => (d as PinLabel).lat)
-        .labelLng((d) => (d as PinLabel).lng)
-        .labelText((d) => (d as PinLabel).text)
-        .labelSize((d) => (d as PinLabel).size)
-        .labelDotRadius((d) => (d as PinLabel).size * 0.2)
-        .labelAltitude(PIN_LABEL_ALTITUDE)
-        .labelColor((d) => (d as PinLabel).color)
-        .labelResolution(2)
-        // Claimed places: permanently on the idle globe (owner ruling,
-        // Aug 30 2026 — superseding search-and-select-only), so they
-        // are findable by spinning like anywhere else. A dashed ring at
-        // the anchor, never a polygon: no neutral border exists to draw.
+        // One html-marker layer carries both kinds of name on the
+        // globe: the claimed-place rings — permanently on the idle
+        // globe (owner ruling, Aug 30 2026), a dashed ring at the
+        // anchor, never a polygon, since no neutral border exists to
+        // draw — and the selection pill, present only while a place is
+        // selected. Both are DOM, so both bring their own background
+        // and no colour is ever computed from the ground beneath.
         .htmlElementsData([...CLAIMED_PLACES])
-        .htmlLat((d) => (d as ClaimedPlace).anchor.lat)
-        .htmlLng((d) => (d as ClaimedPlace).anchor.lng)
-        .htmlAltitude(CLAIMED_MARKER_ALTITUDE)
-        .htmlElement((d) => buildClaimedMarker(d as ClaimedPlace))
+        .htmlLat((d) =>
+          isPinDatum(d) ? d.lat : (d as ClaimedPlace).anchor.lat,
+        )
+        .htmlLng((d) =>
+          isPinDatum(d) ? d.lng : (d as ClaimedPlace).anchor.lng,
+        )
+        .htmlAltitude((d) =>
+          isPinDatum(d) ? PIN_ALTITUDE : CLAIMED_MARKER_ALTITUDE,
+        )
+        // No glide: a pill must not slide across the globe from the
+        // previous selection to the next.
+        .htmlTransitionDuration(0)
+        .htmlElement((d) =>
+          isPinDatum(d)
+            ? buildPinPill(d)
+            : buildClaimedMarker(d as ClaimedPlace),
+        )
         .showGraticules(false)
         .atmosphereColor(ATMOSPHERE_COLOR)
         .atmosphereAltitude(0.14)
