@@ -17,6 +17,13 @@
  * administrative shapes, so "our own evidence" lands on a party's map
  * anyway; see the handoff build log).
  *
+ * REFINED (owner, Aug 31 2026) — THE MARK IS PERMANENT, THE NAME IS
+ * NOT. A standing label made Tibet the only named place on the globe,
+ * which reads as emphasis: the opposite of the intent. The ring is the
+ * place's SHAPE, standing in for the polygon it cannot have, and it
+ * earns its name on the same terms every other place does — nothing at
+ * rest, named on hover, named while selected.
+ *
  * Display names are the artists' names for the place — Tibet, not
  * Xizang — while search aliases accept both directions in good faith.
  *

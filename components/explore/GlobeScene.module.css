@@ -46,9 +46,16 @@
    permanently on the idle globe so they are findable by spinning like
    anywhere else. The BROKEN stroke is the contested cue — a marked
    place, never a drawn border (NAME-NEVER-DRAW: no neutral polygon
-   exists, and every candidate is a party's map). The marker box itself
-   is inert; only the ring and name take the pointer, so the globe
-   underneath stays draggable. */
+   exists, and every candidate is a party's map).
+
+   The ring is Tibet's SHAPE, standing in for the polygon it cannot
+   have, and it earns a name on exactly the terms every other place
+   does (owner ruling, Aug 31 2026): nothing at rest, the name on
+   hover, the name held while selected. A standing label made it the
+   only named place on the globe, which read as emphasis.
+
+   The marker box itself is inert; only the ring and name take the
+   pointer, so the globe underneath stays draggable. */
 .claimedMarker {
   position: relative;
   width: 0;
@@ -89,16 +96,24 @@
    the dark sea and on a white-gold fill. */
 .claimedRing::before {
   content: '';
-  width: 21px;
-  height: 21px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  border: 1.5px dashed rgba(255, 214, 138, 0.9);
-  background: rgba(18, 13, 9, 0.5);
+  border: 1.5px dashed rgba(255, 226, 170, 0.95);
+  background: rgba(18, 13, 9, 0.55);
+  /* Dark on BOTH sides of the stroke: with no label to carry it, the
+     ring alone must separate from whatever heat is under it — gold
+     ground at a hot year swallowed the earlier flat version. */
+  box-shadow: 0 0 0 1px rgba(18, 13, 9, 0.5),
+    0 0 7px rgba(0, 0, 0, 0.55);
   transition: border-color 0.2s ease, background-color 0.2s ease,
     transform 0.2s ease;
 }
 
+/* Held only while selected — the same moment a country gets its pin.
+   At rest the ring carries the place alone. */
 .claimedName {
+  display: none;
   margin-top: -6px;
   padding: 1px 7px;
   border-radius: 999px;
@@ -109,6 +124,10 @@
   color: rgba(255, 239, 214, 0.92);
   background: rgba(18, 13, 9, 0.78);
   transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.claimedMarkerSelected .claimedName {
+  display: block;
 }
 
 .claimedTarget:focus-visible .claimedRing::before,
