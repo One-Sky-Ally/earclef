@@ -9,6 +9,7 @@ import {
 import { REGION_CODE_PATTERN, regionByCode } from '@/lib/explore/states'
 import { movedIn, movedOut } from '@/lib/explore/originCorrections'
 import { hasStateData, stateDetails } from '@/lib/explore/stateData'
+import { countryDetails, hasCountryData } from '@/lib/explore/countryData'
 import { extraArtistGroupsFor } from '@/lib/explore/extraArtistsServer'
 import { withHistoricalArtists } from '@/lib/explore/historicalArtistsServer'
 import { claimedPlaceDetails } from '@/lib/explore/claimedPlacesServer'
@@ -445,6 +446,22 @@ export async function GET(
   if (region && hasStateData(region.code)) {
     const details = stateDetails(region.code, start, end, genre)
     if (details) return withCacheHeaders(NextResponse.json(details))
+  }
+
+  /**
+   * Countries answer the same way (owner-approved Aug 2026): committed
+   * precompute, derived per span and lens, no MusicBrainz and no Blobs.
+   * Placed after `respond` so the gap-fill and historical-area merges
+   * still attach — those are country-keyed and ride every response.
+   *
+   * Subdivisions are excluded: they resolve by MB area name, not by
+   * country code, and the block above already serves the ones we hold.
+   * A country missing from the precompute falls through to the live
+   * path below, which is why this is a fast path rather than a rewrite.
+   */
+  if (!subdivision && hasCountryData(country)) {
+    const details = await countryDetails(country, start, end, genre)
+    if (details) return respond(details)
   }
 
   const key = `${country}:${year}:${genre ?? ''}`
