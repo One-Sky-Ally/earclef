@@ -1,0 +1,296 @@
+/* The archive card — deliberately NOT a roster page. No hero art, no
+   story, no merch: a dossier of checkable facts, with the one thing
+   only this site can offer (their scene, on the globe) at the top.
+   Squared corners and monospace labels mark it as assembled. */
+
+.main {
+  padding: 3.5rem 0 5rem;
+  min-height: 60vh;
+}
+
+.overline {
+  font-family: var(--font-body);
+  font-size: 0.64rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin: 0 0 0.5rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--text);
+}
+
+.disambiguation {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0.4rem 0 0;
+  max-width: 46ch;
+}
+
+/* ── The reason this page exists ──────────────────────────────── */
+
+.sceneCard {
+  display: block;
+  margin: 2rem 0 2.5rem;
+  padding: 1.25rem 1.4rem;
+  max-width: 560px;
+  border: 1px solid var(--accent-deep);
+  border-radius: 4px;
+  background: var(--accent-soft);
+  transition:
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.sceneCard:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.sceneOverline {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.sceneTitle {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.sceneNote {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* ── Facts ────────────────────────────────────────────────────── */
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin: 0 0 1.25rem;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.factLabel {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.factValue {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.genres {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.genre {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--text-soft);
+}
+
+/* ── Sections ─────────────────────────────────────────────────── */
+
+.section {
+  margin-top: 2.5rem;
+  max-width: 720px;
+}
+
+.sectionTitle {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.sectionCount {
+  color: var(--text-soft);
+  font-weight: 400;
+}
+
+.pending {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0.4rem 0 0;
+}
+
+.releases {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.release {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  padding-block: 0.45rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.86rem;
+}
+
+.release:last-child {
+  border-bottom: 0;
+}
+
+.releaseYear {
+  flex-shrink: 0;
+  min-width: 5.5rem;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.78rem;
+}
+
+.releaseTitle {
+  flex: 1;
+  min-width: 0;
+  color: var(--text);
+}
+
+.releaseType {
+  color: var(--text-soft);
+  font-size: 0.72rem;
+  text-transform: lowercase;
+}
+
+.releaseEdition {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+/* ── Links + provenance ───────────────────────────────────────── */
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.links .link {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.links .link:hover {
+  border-color: var(--accent-deep);
+}
+
+.provenance {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  max-width: 720px;
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.error {
+  font-size: 0.95rem;
+  color: var(--text);
+  margin: 2rem 0 0.5rem;
+}
+
+.errorLink a {
+  color: var(--accent);
+}
+
+/* ── Loading ──────────────────────────────────────────────────── */
+
+.shimmerBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 520px;
+  margin-top: 2rem;
+}
+
+.shimmer {
+  height: 1.6rem;
+  border-radius: 4px;
+  background: linear-gradient(
+    100deg,
+    var(--bg-elevated) 35%,
+    var(--accent-soft) 50%,
+    var(--bg-elevated) 65%
+  );
+  background-size: 220% 100%;
+  animation: archiveShimmer 1.8s ease-in-out infinite;
+}
+
+.shimmerShort {
+  width: 55%;
+}
+
+@keyframes archiveShimmer {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .releaseEdition {
+    width: 100%;
+    padding-left: 6.35rem;
+  }
+}

@@ -59,20 +59,20 @@ export function RadarFromLikes({
             {artists.map((artist) => (
               <li key={artist.mbid} className={styles.row}>
                 <div className={styles.rowText}>
-                  {artist.slug ? (
-                    <Link
-                      className={styles.artist}
-                      href={`/${artist.slug}`}
-                    >
-                      {artist.name}
-                    </Link>
-                  ) : (
-                    <span className={styles.artistPlain}>{artist.name}</span>
-                  )}
+                  {/* Their roster page when they have one, their archive
+                      card when they don't — never both. */}
+                  <Link
+                    className={styles.artist}
+                    href={
+                      artist.slug ? `/${artist.slug}` : `/a/${artist.mbid}`
+                    }
+                  >
+                    {artist.name}
+                  </Link>
                   <span className={styles.meta}>
                     {artist.songs} saved song
                     {artist.songs === 1 ? '' : 's'}
-                    {!artist.slug && ' · no Ear Clef page yet'}
+                    {!artist.slug && ' · archive card'}
                   </span>
                 </div>
                 <div className={styles.actions}>

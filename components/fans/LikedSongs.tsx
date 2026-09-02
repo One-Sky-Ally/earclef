@@ -232,6 +232,13 @@ export function LikedSongs({ roster }: { roster: RosterByMbid }) {
                         >
                           {track.artistName}
                         </Link>
+                      ) : track.mbid ? (
+                        <Link
+                          className={styles.rowArtistLink}
+                          href={`/a/${track.mbid}`}
+                        >
+                          {track.artistName}
+                        </Link>
                       ) : (
                         <span className={styles.rowArtist}>
                           {track.artistName}
