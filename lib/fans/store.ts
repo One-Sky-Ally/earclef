@@ -11,12 +11,24 @@ import { randomBytes } from 'node:crypto'
 import { getStore } from '@netlify/blobs'
 import { isArtistTier, type ArtistTier } from '../tiers'
 import { normalizeEmail } from '../membership/types'
+import {
+  MAX_LIKES,
+  byNewestFirst,
+  sameTrack,
+  type LikedTrack,
+} from './likes'
 
 export interface FanRecord {
   email: string
   follows: string[]
   /** slug → the fan's own tier for that artist (untiered = plain follow). */
   tiers?: Record<string, ArtistTier>
+  /**
+   * Songs the fan liked while a queue was playing, newest first. The
+   * artists behind them are what the taste map's radar tier derives
+   * from — the tier is never stored, only computed from these.
+   */
+  likes?: LikedTrack[]
   /** Preferred streaming service — follows the fan across devices. */
   listenService?: string
   /** Present while sharing is on; the public page lives at /fan/<token>. */
@@ -70,6 +82,7 @@ function baseRecord(email: string, existing: FanRecord | null): FanRecord {
     email,
     follows: existing?.follows ?? [],
     tiers: existing?.tiers,
+    likes: existing?.likes,
     listenService: existing?.listenService,
     shareToken: existing?.shareToken,
     displayName: existing?.displayName,
@@ -136,6 +149,94 @@ export async function setPersonalTier(
   }
   await putFan(record)
   return record.tiers ?? {}
+}
+
+export interface LikesResult {
+  likes: LikedTrack[]
+  /** The save was refused because the shelf is full — nothing was dropped. */
+  atCapacity?: boolean
+}
+
+/**
+ * Saves a song. Liking one that is already saved changes nothing (the
+ * original like keeps its timestamp and the context it was made in),
+ * and a full shelf refuses the new like rather than quietly evicting an
+ * old one — the listener is told, never silently overruled.
+ */
+export async function addLike(
+  email: string,
+  track: LikedTrack,
+): Promise<LikesResult> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  const current = existing?.likes ?? []
+
+  if (current.some((saved) => sameTrack(saved, track))) {
+    return { likes: current }
+  }
+  if (current.length >= MAX_LIKES) {
+    return { likes: current, atCapacity: true }
+  }
+
+  const record = baseRecord(normalized, existing)
+  record.likes = [track, ...current].sort(byNewestFirst)
+  await putFan(record)
+  return { likes: record.likes }
+}
+
+/** Removes a saved song by video id. Unknown ids are a no-op, not an error. */
+export async function removeLike(
+  email: string,
+  videoId: string,
+): Promise<LikesResult> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  const current = existing?.likes ?? []
+  const next = current.filter((saved) => saved.videoId !== videoId)
+  if (next.length === current.length) return { likes: current }
+
+  const record = baseRecord(normalized, existing)
+  record.likes = next
+  await putFan(record)
+  return { likes: next }
+}
+
+export interface MergeLikesResult extends LikesResult {
+  added: number
+  /** Local likes that did not fit — the client keeps them and says so. */
+  skipped: number
+}
+
+/**
+ * Folds in likes made before signing in. Everything already saved is
+ * kept: only the free space below the cap is offered to the newcomers,
+ * newest first, so a merge can never evict a like the fan already has
+ * on the server. Whatever does not fit is REPORTED, never dropped
+ * silently.
+ */
+export async function mergeLikes(
+  email: string,
+  incoming: LikedTrack[],
+): Promise<MergeLikesResult> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  const current = existing?.likes ?? []
+
+  const fresh = incoming
+    .filter((track) => !current.some((saved) => sameTrack(saved, track)))
+    .sort(byNewestFirst)
+  const room = Math.max(0, MAX_LIKES - current.length)
+  const accepted = fresh.slice(0, room)
+  const skipped = fresh.length - accepted.length
+
+  if (accepted.length === 0) {
+    return { likes: current, added: 0, skipped }
+  }
+
+  const record = baseRecord(normalized, existing)
+  record.likes = [...current, ...accepted].sort(byNewestFirst)
+  await putFan(record)
+  return { likes: record.likes, added: accepted.length, skipped }
 }
 
 function sanitizeDisplayName(raw: string): string {

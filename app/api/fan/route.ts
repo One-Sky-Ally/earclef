@@ -5,7 +5,16 @@ import {
   getFollowStamps,
 } from '@/lib/fans/followNumbers'
 import {
+  MAX_LIKES,
+  isVideoId,
+  sanitizeLikedTrack,
+  type LikedTrack,
+} from '@/lib/fans/likes'
+import {
+  addLike,
   getFan,
+  mergeLikes,
+  removeLike,
   setFollow,
   setListenService,
   setPersonalTier,
@@ -17,10 +26,11 @@ import { isArtistTier } from '@/lib/tiers'
 
 /**
  * The fan profile: who the session cookie belongs to, which artists
- * they follow, their personal tiers, and the share state. GET reads;
- * POST changes exactly one thing per call (follow, tier, service, or
- * share). Signed-out visitors get an honest {signedIn: false} — the UI
- * offers magic-link sign-in.
+ * they follow, their personal tiers, the songs they liked, and the
+ * share state. GET reads; POST changes exactly one thing per call
+ * (follow, tier, service, share, or a like). Signed-out visitors get an
+ * honest {signedIn: false} — the UI offers magic-link sign-in, and
+ * likes made while signed out live in the browser until it happens.
  */
 
 function noStore(body: unknown, status = 200): NextResponse {
@@ -31,7 +41,7 @@ function noStore(body: unknown, status = 200): NextResponse {
 
 export async function GET(request: Request) {
   const email = sessionEmail(request)
-  if (!email) return noStore({ signedIn: false, follows: [] })
+  if (!email) return noStore({ signedIn: false, follows: [], likes: [] })
   const fan = await getFan(email)
   const follows = fan?.follows ?? []
   return noStore({
@@ -39,6 +49,7 @@ export async function GET(request: Request) {
     email,
     follows,
     tiers: fan?.tiers ?? {},
+    likes: fan?.likes ?? [],
     stamps: await getFollowStamps(email, follows),
     listenService: fan?.listenService,
     share: {
@@ -55,6 +66,12 @@ interface FanPostBody {
   tier?: string | null
   listenService?: string
   share?: { enabled?: boolean; displayName?: string }
+  /** A song to save, in the LikedTrack shape — validated, never trusted. */
+  like?: unknown
+  /** Video id of a saved song to drop. */
+  unlike?: string
+  /** Likes made before signing in, handed over on the merge. */
+  mergeLikes?: unknown
 }
 
 export async function POST(request: Request) {
@@ -85,6 +102,51 @@ export async function POST(request: Request) {
       body.share.displayName,
     )
     return noStore({ signedIn: true, share })
+  }
+
+  // Likes come BEFORE the roster check on purpose: most of what a
+  // listener saves out of a place-and-era queue is an artist the site
+  // has no page for, and that is the point of the feature.
+  if (body.like !== undefined) {
+    const track = sanitizeLikedTrack(body.like)
+    if (!track) {
+      return noStore(
+        { error: 'A like needs a playable video, a title and an artist' },
+        400,
+      )
+    }
+    const result = await addLike(email, track)
+    return noStore({ signedIn: true, ...result })
+  }
+
+  if (body.unlike !== undefined) {
+    if (!isVideoId(body.unlike)) {
+      return noStore({ error: 'Unknown video' }, 400)
+    }
+    return noStore({ signedIn: true, ...(await removeLike(email, body.unlike)) })
+  }
+
+  if (body.mergeLikes !== undefined) {
+    if (!Array.isArray(body.mergeLikes)) {
+      return noStore({ error: 'Likes must be a list' }, 400)
+    }
+    const now = Date.now()
+    // Bounded before any work: an oversized payload is capped, not
+    // trusted. Anything past the cap is a like that did not fit, which
+    // is what `skipped` already means to the caller.
+    const considered = body.mergeLikes.slice(0, MAX_LIKES)
+    const overflow = body.mergeLikes.length - considered.length
+    const tracks = considered
+      .map((entry) => sanitizeLikedTrack(entry, now))
+      .filter((track): track is LikedTrack => track !== null)
+    const rejected = considered.length - tracks.length
+    const result = await mergeLikes(email, tracks)
+    return noStore({
+      signedIn: true,
+      ...result,
+      skipped: result.skipped + overflow,
+      rejected,
+    })
   }
 
   const slug = body.slug ?? ''
