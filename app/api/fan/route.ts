@@ -17,6 +17,7 @@ import {
   removeLike,
   setFollow,
   setListenService,
+  setRadarDismissed,
   setPersonalTier,
   setShare,
 } from '@/lib/fans/store'
@@ -32,6 +33,9 @@ import { isArtistTier } from '@/lib/tiers'
  * honest {signedIn: false} — the UI offers magic-link sign-in, and
  * likes made while signed out live in the browser until it happens.
  */
+
+const MBID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 
 function noStore(body: unknown, status = 200): NextResponse {
   const response = NextResponse.json(body, { status })
@@ -50,6 +54,7 @@ export async function GET(request: Request) {
     follows,
     tiers: fan?.tiers ?? {},
     likes: fan?.likes ?? [],
+    radarDismissed: fan?.radarDismissed ?? [],
     stamps: await getFollowStamps(email, follows),
     listenService: fan?.listenService,
     share: {
@@ -72,6 +77,8 @@ interface FanPostBody {
   unlike?: string
   /** Likes made before signing in, handed over on the merge. */
   mergeLikes?: unknown
+  /** Take an artist off the derived radar tier, or put them back. */
+  radar?: { mbid?: string; dismissed?: boolean }
 }
 
 export async function POST(request: Request) {
@@ -147,6 +154,19 @@ export async function POST(request: Request) {
       skipped: result.skipped + overflow,
       rejected,
     })
+  }
+
+  if (body.radar !== undefined) {
+    const mbid = String(body.radar.mbid ?? '').toLowerCase()
+    if (!MBID_PATTERN.test(mbid)) {
+      return noStore({ error: 'Unknown artist id' }, 400)
+    }
+    const radarDismissed = await setRadarDismissed(
+      email,
+      mbid,
+      body.radar.dismissed !== false,
+    )
+    return noStore({ signedIn: true, radarDismissed })
   }
 
   const slug = body.slug ?? ''

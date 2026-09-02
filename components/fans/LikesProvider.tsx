@@ -10,8 +10,10 @@ import {
 } from 'react'
 import { unionLikes, type LikedTrack } from '@/lib/fans/likes'
 import {
+  readDismissedRadar,
   readPendingLikes,
   readStoredLikes,
+  writeDismissedRadar,
   writePendingLikes,
   writeStoredLikes,
 } from '@/lib/fans/likesStorage'
@@ -30,6 +32,9 @@ interface LikesContextValue {
   /** The shelf is full: the last like was refused, nothing was dropped. */
   atCapacity: boolean
   dismissCapacity: () => void
+  /** MBIDs taken off the derived radar tier. */
+  radarDismissed: string[]
+  setRadarDismissed: (mbid: string, dismissed: boolean) => void
 }
 
 const LikesContext = createContext<LikesContextValue>({
@@ -40,6 +45,8 @@ const LikesContext = createContext<LikesContextValue>({
   toggleLike: () => {},
   atCapacity: false,
   dismissCapacity: () => {},
+  radarDismissed: [],
+  setRadarDismissed: () => {},
 })
 
 interface FanPostResult {
@@ -85,6 +92,8 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false)
   const [signedIn, setSignedIn] = useState(false)
   const [atCapacity, setAtCapacity] = useState(false)
+  const [radarDismissed, setRadarDismissedState] = useState<string[]>([])
+  const radarRef = useRef<string[]>([])
   // The lists the writers read, without making every callback depend on
   // them (and so re-subscribe every ♥).
   const likesRef = useRef<LikedTrack[]>([])
@@ -107,6 +116,7 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
       const local = readStoredLikes()
       let pending = readPendingLikes()
       let next = local
+      let dismissed = readDismissedRadar()
       try {
         // Bounded: a hung profile request must not leave every ♥
         // disabled — the browser's own likes are answer enough.
@@ -117,8 +127,14 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
           const body = (await res.json()) as {
             signedIn: boolean
             likes?: LikedTrack[]
+            radarDismissed?: string[]
           }
           if (body.signedIn) setSignedIn(true)
+          if (body.signedIn && Array.isArray(body.radarDismissed)) {
+            // The record wins: a dismissal is a small preference, and
+            // the account is where it belongs.
+            dismissed = body.radarDismissed
+          }
           if (body.signedIn && Array.isArray(body.likes)) {
             let saved = body.likes
             if (pending.length > 0) {
@@ -148,9 +164,12 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
       if (cancelled) return
       likesRef.current = next
       pendingRef.current = pending
+      radarRef.current = dismissed
       setLikes(next)
+      setRadarDismissedState(dismissed)
       writeStoredLikes(next)
       writePendingLikes(pending)
+      writeDismissedRadar(dismissed)
       setReady(true)
     })()
     return () => {
@@ -211,6 +230,19 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
 
   const dismissCapacity = useCallback(() => setAtCapacity(false), [])
 
+  const setRadarDismissed = useCallback(
+    (mbid: string, dismissed: boolean) => {
+      const next = dismissed
+        ? [...new Set([...radarRef.current, mbid])]
+        : radarRef.current.filter((entry) => entry !== mbid)
+      radarRef.current = next
+      setRadarDismissedState(next)
+      writeDismissedRadar(next)
+      void postFan({ radar: { mbid, dismissed } })
+    },
+    [],
+  )
+
   return (
     <LikesContext.Provider
       value={{
@@ -221,6 +253,8 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
         toggleLike,
         atCapacity,
         dismissCapacity,
+        radarDismissed,
+        setRadarDismissed,
       }}
     >
       {children}

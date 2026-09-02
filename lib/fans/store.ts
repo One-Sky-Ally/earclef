@@ -29,6 +29,11 @@ export interface FanRecord {
    * from — the tier is never stored, only computed from these.
    */
   likes?: LikedTrack[]
+  /**
+   * MusicBrainz ids the fan has taken off the derived radar tier. The
+   * radar itself is never stored — only these removals are.
+   */
+  radarDismissed?: string[]
   /** Preferred streaming service — follows the fan across devices. */
   listenService?: string
   /** Present while sharing is on; the public page lives at /fan/<token>. */
@@ -83,6 +88,7 @@ function baseRecord(email: string, existing: FanRecord | null): FanRecord {
     follows: existing?.follows ?? [],
     tiers: existing?.tiers,
     likes: existing?.likes,
+    radarDismissed: existing?.radarDismissed,
     listenService: existing?.listenService,
     shareToken: existing?.shareToken,
     displayName: existing?.displayName,
@@ -237,6 +243,30 @@ export async function mergeLikes(
   record.likes = [...current, ...accepted].sort(byNewestFirst)
   await putFan(record)
   return { likes: record.likes, added: accepted.length, skipped }
+}
+
+/**
+ * Takes an artist off the derived radar, or puts them back. Dismissals
+ * are the ONLY radar state — the tier itself is recomputed from the
+ * likes on every render.
+ */
+export async function setRadarDismissed(
+  email: string,
+  mbid: string,
+  dismissed: boolean,
+): Promise<string[]> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  const current = existing?.radarDismissed ?? []
+  const next = dismissed
+    ? [...new Set([...current, mbid])]
+    : current.filter((entry) => entry !== mbid)
+  if (next.length === current.length && dismissed) return current
+
+  const record = baseRecord(normalized, existing)
+  record.radarDismissed = next
+  await putFan(record)
+  return next
 }
 
 function sanitizeDisplayName(raw: string): string {

@@ -8,12 +8,18 @@ import {
   isArtistTier,
   type ArtistTier,
 } from '@/lib/tiers'
+import { deriveRadar } from '@/lib/fans/radar'
+import { useLikes } from '@/components/fans/LikesProvider'
+import { RadarFromLikes } from '@/components/fans/RadarFromLikes'
 import styles from './TasteMap.module.css'
 
 interface RosterName {
   slug: string
   name: string
 }
+
+/** MusicBrainz id → roster page, for artists the likes surface. */
+export type RosterByMbid = Record<string, { slug: string; name: string }>
 
 interface FanProfile {
   signedIn: boolean
@@ -42,13 +48,20 @@ function sinceLabel(iso: string): string {
  * numbers, and an opt-in share link. Everything here is the fan's —
  * separate from the owner Tier Board.
  */
-export function TasteMap({ roster }: { roster: RosterName[] }) {
+export function TasteMap({
+  roster,
+  rosterByMbid,
+}: {
+  roster: RosterName[]
+  rosterByMbid: RosterByMbid
+}) {
   const [profile, setProfile] = useState<FanProfile | null>(null)
   const [email, setEmail] = useState('')
   const [signIn, setSignIn] = useState<SignInState>({ status: 'idle' })
   const [nameDraft, setNameDraft] = useState('')
   const [shareBusy, setShareBusy] = useState(false)
   const [copied, setCopied] = useState(false)
+  const { likes, radarDismissed } = useLikes()
 
   const names = new Map(roster.map((entry) => [entry.slug, entry.name]))
 
@@ -108,6 +121,37 @@ export function TasteMap({ roster }: { roster: RosterName[] }) {
       )
     } catch (error) {
       console.error('Tier update failed:', error)
+    }
+  }
+
+  /**
+   * Follow an artist the radar surfaced. The response carries the new
+   * follow list and its fan stamps, so the row moves out of the derived
+   * radar and into the map proper on the next render.
+   */
+  async function followFromRadar(slug: string) {
+    try {
+      const res = await fetch('/api/fan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ slug, following: true }),
+      })
+      if (!res.ok) return
+      const body = (await res.json()) as {
+        follows?: string[]
+        stamps?: Record<string, { number: number; since: string }>
+      }
+      setProfile((current) =>
+        current
+          ? {
+              ...current,
+              follows: body.follows ?? current.follows,
+              stamps: body.stamps ?? current.stamps,
+            }
+          : current,
+      )
+    } catch (error) {
+      console.error('Follow from radar failed:', error)
     }
   }
 
@@ -222,6 +266,13 @@ export function TasteMap({ roster }: { roster: RosterName[] }) {
       },
     ]
 
+  const radar = deriveRadar({
+    likes,
+    dismissed: radarDismissed,
+    rosterByMbid,
+    followedSlugs: profile.follows,
+  })
+
   const shareUrl = profile.share?.token
     ? `${window.location.origin}/fan/${profile.share.token}`
     : null
@@ -283,7 +334,7 @@ export function TasteMap({ roster }: { roster: RosterName[] }) {
         )}
       </section>
 
-      {profile.follows.length === 0 ? (
+      {profile.follows.length === 0 && !(radar.artists.length > 0 || radar.withoutIdentity > 0) ? (
         <p className={styles.empty}>
           You&rsquo;re not following anyone yet. Find an artist and tap
           ♡&nbsp;Follow — your map starts there.{' '}
@@ -292,16 +343,22 @@ export function TasteMap({ roster }: { roster: RosterName[] }) {
           </Link>
         </p>
       ) : (
-        groups.map(
-          (group) =>
-            group.slugs.length > 0 && (
+        groups.map((group) => {
+          const isRadar = group.tier === 'on-the-radar'
+          const derived = isRadar ? radar.artists.length : 0
+          if (group.slugs.length === 0 && !(isRadar && (radar.artists.length > 0 || radar.withoutIdentity > 0))) {
+            return null
+          }
+          return (
               <section key={group.label} className={styles.group}>
                 <h2 className={styles.groupTitle}>
                   {group.label}
-                  <span className={styles.groupCount}>
-                    {' '}
-                    · {group.slugs.length}
-                  </span>
+                  {group.slugs.length + derived > 0 && (
+                    <span className={styles.groupCount}>
+                      {' '}
+                      · {group.slugs.length + derived}
+                    </span>
+                  )}
                 </h2>
                 <ul className={styles.rows}>
                   {group.slugs.map((slug) => {
@@ -338,9 +395,17 @@ export function TasteMap({ roster }: { roster: RosterName[] }) {
                     )
                   })}
                 </ul>
+                {isRadar && (
+                  <RadarFromLikes
+                    artists={radar.artists}
+                    withoutIdentity={radar.withoutIdentity}
+                    dismissedMbids={radar.dismissedMbids}
+                    onFollow={followFromRadar}
+                  />
+                )}
               </section>
-            ),
-        )
+          )
+        })
       )}
     </div>
   )

@@ -26,6 +26,7 @@ import {
 
 const STORAGE_KEY = 'earclef_likes'
 const PENDING_KEY = 'earclef_likes_pending'
+const RADAR_KEY = 'earclef_radar_dismissed'
 
 function readList(key: string): LikedTrack[] {
   try {
@@ -72,4 +73,30 @@ export function readPendingLikes(): LikedTrack[] {
 
 export function writePendingLikes(likes: LikedTrack[]): void {
   writeList(PENDING_KEY, likes)
+}
+
+/**
+ * Artists taken off the derived radar, in this browser. Ids only — the
+ * radar tier itself is recomputed from the likes and never stored.
+ */
+export function readDismissedRadar(): string[] {
+  try {
+    const raw = localStorage.getItem(RADAR_KEY)
+    if (!raw) return []
+    const parsed: unknown = JSON.parse(raw)
+    if (!Array.isArray(parsed)) return []
+    return parsed.filter(
+      (entry): entry is string => typeof entry === 'string',
+    )
+  } catch {
+    return []
+  }
+}
+
+export function writeDismissedRadar(mbids: string[]): void {
+  try {
+    localStorage.setItem(RADAR_KEY, JSON.stringify(mbids))
+  } catch {
+    // Private mode; the in-memory list still carries the session.
+  }
 }

@@ -1,0 +1,125 @@
+/* The derived half of "On the radar" — same rows as the taste map,
+   with a quiet lead-in so it never passes as a tier the fan assigned. */
+
+.block {
+  display: flex;
+  flex-direction: column;
+}
+
+.lead {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0.15rem 0 0;
+}
+
+.rows {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding-block: 0.65rem;
+  border-top: 1px solid var(--border);
+}
+
+.rowText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.artist,
+.artistPlain {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.artist {
+  transition: color 0.2s ease;
+}
+
+.artist:hover {
+  color: var(--accent);
+}
+
+.artistPlain {
+  color: var(--text);
+}
+
+.meta {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.follow {
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.follow:hover:not(:disabled) {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.follow:disabled {
+  opacity: 0.5;
+}
+
+.dismiss {
+  padding: 0.2rem 0.45rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.dismiss:hover {
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.note {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 0.6rem 0 0;
+  line-height: 1.5;
+}
+
+.restore {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: inherit;
+  font-style: normal;
+}

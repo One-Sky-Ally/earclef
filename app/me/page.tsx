@@ -43,7 +43,7 @@ export default function MePage() {
             The artists you follow, in your own rotation — and the fan
             numbers that prove you were early.
           </p>
-          <TasteMap roster={roster} />
+          <TasteMap roster={roster} rosterByMbid={rosterByMbid} />
           <LikedSongs roster={rosterByMbid} />
         </div>
       </main>
