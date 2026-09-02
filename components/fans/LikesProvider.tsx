@@ -9,7 +9,12 @@ import {
   useState,
 } from 'react'
 import { unionLikes, type LikedTrack } from '@/lib/fans/likes'
-import { readStoredLikes, writeStoredLikes } from '@/lib/fans/likesStorage'
+import {
+  readPendingLikes,
+  readStoredLikes,
+  writePendingLikes,
+  writeStoredLikes,
+} from '@/lib/fans/likesStorage'
 
 /** A like as the player knows it — the timestamp is ours to stamp. */
 export type LikeDraft = Omit<LikedTrack, 'likedAt'>
@@ -34,7 +39,15 @@ const LikesContext = createContext<LikesContextValue>({
   dismissCapacity: () => {},
 })
 
-async function postLike(body: unknown): Promise<{ atCapacity?: boolean }> {
+interface FanPostResult {
+  /** The fan record accepted the change — the like is durable now. */
+  ok: boolean
+  atCapacity?: boolean
+  likes?: LikedTrack[]
+  skipped?: number
+}
+
+async function postFan(body: unknown): Promise<FanPostResult> {
   try {
     const res = await fetch('/api/fan', {
       method: 'POST',
@@ -42,11 +55,17 @@ async function postLike(body: unknown): Promise<{ atCapacity?: boolean }> {
       body: JSON.stringify(body),
     })
     // 401 is not a failure here — it just means nobody is signed in, and
-    // the browser copy is the whole story until they are.
-    if (!res.ok) return {}
-    return (await res.json()) as { atCapacity?: boolean }
+    // the browser copy is the whole story until they are. It IS, though,
+    // a reason to keep the like pending.
+    if (!res.ok) return { ok: false }
+    const payload = (await res.json()) as {
+      atCapacity?: boolean
+      likes?: LikedTrack[]
+      skipped?: number
+    }
+    return { ok: true, ...payload }
   } catch {
-    return {}
+    return { ok: false }
   }
 }
 
@@ -62,9 +81,10 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
   const [likes, setLikes] = useState<LikedTrack[]>([])
   const [ready, setReady] = useState(false)
   const [atCapacity, setAtCapacity] = useState(false)
-  // The list the writers read, without making every callback depend on
-  // it (and so re-subscribe every ♥).
+  // The lists the writers read, without making every callback depend on
+  // them (and so re-subscribe every ♥).
   const likesRef = useRef<LikedTrack[]>([])
+  const pendingRef = useRef<LikedTrack[]>([])
 
   const commit = useCallback((next: LikedTrack[]) => {
     likesRef.current = next
@@ -72,10 +92,16 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
     writeStoredLikes(next)
   }, [])
 
+  const commitPending = useCallback((next: LikedTrack[]) => {
+    pendingRef.current = next
+    writePendingLikes(next)
+  }, [])
+
   useEffect(() => {
     let cancelled = false
     ;(async () => {
       const local = readStoredLikes()
+      let pending = readPendingLikes()
       let next = local
       try {
         // Bounded: a hung profile request must not leave every ♥
@@ -89,9 +115,26 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
             likes?: LikedTrack[]
           }
           if (body.signedIn && Array.isArray(body.likes)) {
+            let saved = body.likes
+            if (pending.length > 0) {
+              // A session exists and this browser is holding likes the
+              // record has never seen — hand them over.
+              const merged = await postFan({ mergeLikes: pending })
+              if (merged.ok && Array.isArray(merged.likes)) {
+                saved = merged.likes
+                if ((merged.skipped ?? 0) > 0) setAtCapacity(true)
+              }
+            }
+            // Whatever the record now holds is no longer pending.
+            // Anything still here genuinely did not make it, so it
+            // stays queued for the next attempt and stays VISIBLE.
+            pending = pending.filter(
+              (track) =>
+                !saved.some((entry) => entry.videoId === track.videoId),
+            )
             // The server's copy wins a collision: it holds the context
             // the song was FIRST liked in.
-            next = unionLikes(body.likes, local)
+            next = unionLikes(saved, pending)
           }
         }
       } catch {
@@ -99,8 +142,10 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
       }
       if (cancelled) return
       likesRef.current = next
+      pendingRef.current = pending
       setLikes(next)
       writeStoredLikes(next)
+      writePendingLikes(pending)
       setReady(true)
     })()
     return () => {
@@ -119,26 +164,44 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
       const current = likesRef.current
       const saved = current.find((track) => track.videoId === draft.videoId)
 
+      const dropPending = (videoId: string) =>
+        commitPending(
+          pendingRef.current.filter((track) => track.videoId !== videoId),
+        )
+
       if (saved) {
         commit(current.filter((track) => track.videoId !== draft.videoId))
-        void postLike({ unlike: draft.videoId })
+        // Un-liking clears any queued copy too: a song the listener just
+        // removed must never be handed over by a later merge.
+        dropPending(draft.videoId)
+        void postFan({ unlike: draft.videoId })
         return
       }
 
       const track: LikedTrack = { ...draft, likedAt: new Date().toISOString() }
       commit([track, ...current])
-      void postLike({ like: track }).then((result) => {
+      // Queued FIRST, cleared only once the record confirms it. A like
+      // made signed out — or one whose POST never landed — is exactly
+      // what the next signed-in load hands over.
+      commitPending([track, ...pendingRef.current])
+      void postFan({ like: track }).then((result) => {
         // A full shelf on the server refuses the save. Take the ♥ back
-        // rather than showing a like that is not really there.
-        if (!result.atCapacity) return
-        setAtCapacity(true)
-        const reverted = likesRef.current.filter(
-          (entry) => entry.videoId !== draft.videoId,
-        )
-        commit(reverted)
+        // rather than showing a like that is not really there — and do
+        // not queue it, because retrying would only be refused again.
+        if (result.atCapacity) {
+          setAtCapacity(true)
+          dropPending(track.videoId)
+          commit(
+            likesRef.current.filter(
+              (entry) => entry.videoId !== draft.videoId,
+            ),
+          )
+          return
+        }
+        if (result.ok) dropPending(track.videoId)
       })
     },
-    [commit],
+    [commit, commitPending],
   )
 
   const dismissCapacity = useCallback(() => setAtCapacity(false), [])
