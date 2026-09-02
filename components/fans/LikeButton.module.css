@@ -1,0 +1,42 @@
+/* The ♥ on a playing track — coral against the queue's amber, so a
+   saved song reads at a glance without competing with the accent. */
+
+.like {
+  flex-shrink: 0;
+  line-height: 1;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: color 0.18s ease, border-color 0.18s ease, transform 0.15s ease;
+}
+
+.like:disabled {
+  opacity: 0.4;
+}
+
+.like:hover:not(:disabled) {
+  color: #ff7a6b;
+  border-color: rgba(255, 122, 107, 0.5);
+}
+
+.like:active:not(:disabled) {
+  transform: scale(0.9);
+}
+
+.on {
+  color: #ff7a6b;
+}
+
+.on:hover:not(:disabled) {
+  border-color: rgba(255, 122, 107, 0.5);
+}
+
+.now {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.row {
+  padding: 0.1rem 0.35rem;
+  font-size: 0.78rem;
+}

@@ -10,6 +10,8 @@ import {
   type AppendPlan,
 } from '@/lib/explore/queueOrder'
 import type { RosterByMbid } from './CountryPanel'
+import { LikeButton } from '@/components/fans/LikeButton'
+import { useLikes, type LikeDraft } from '@/components/fans/LikesProvider'
 import styles from './QueuePlayer.module.css'
 
 /**
@@ -100,6 +102,12 @@ export interface QueuePoolArtist extends PoolArtist {
 
 interface QueuePlayerProps {
   placeName: string
+  /**
+   * ISO code of the place this queue is walking. Saved onto a liked
+   * song so the playlist can be filtered by where it was heard —
+   * frozen at like time, because the pool churns.
+   */
+  placeCode?: string
   year: number
   pool: QueuePoolArtist[]
   roster: RosterByMbid
@@ -175,6 +183,7 @@ function loadYouTubeApi(): Promise<YtNamespace> {
 
 export function QueuePlayer({
   placeName,
+  placeCode,
   year,
   pool,
   roster,
@@ -189,6 +198,7 @@ export function QueuePlayer({
   const [building, setBuilding] = useState(false)
   const [quotaHit, setQuotaHit] = useState(false)
   const [playerBroken, setPlayerBroken] = useState(false)
+  const { atCapacity: likesAtCapacity, dismissCapacity } = useLikes()
   /**
    * Genres the listener has switched OFF, live, while the music plays.
    * Distinct from the panel's genre chip, which narrows the pool before
@@ -702,6 +712,25 @@ export function QueuePlayer({
     [tracks, excludedGenres],
   )
 
+  /**
+   * What a ♥ saves: the track as this queue verified it, plus the place
+   * and era it was heard in. The MBID is carried only when it is real —
+   * pre-resolved #1-hits tracks have none, and a bare artist name is
+   * not an identity, so those likes save the song and nothing more.
+   */
+  function likeDraft(track: ResolvedTrack): LikeDraft {
+    return {
+      videoId: track.videoId,
+      title: track.title,
+      artistName: track.artistName,
+      ...(track.mbid && { mbid: track.mbid }),
+      ...(track.genres?.length && { genres: track.genres }),
+      ...(placeCode && { placeCode }),
+      placeName,
+      year,
+    }
+  }
+
   function toggleGenre(genre: string) {
     setExcludedGenres((current) => {
       const next = new Set(current)
@@ -757,6 +786,7 @@ export function QueuePlayer({
             {nowPlaying.artistName} — {nowPlaying.title}
           </span>
           <span className={styles.controls}>
+            <LikeButton track={likeDraft(nowPlaying)} />
             <button
               type="button"
               className={styles.controlButton}
@@ -777,6 +807,26 @@ export function QueuePlayer({
             </button>
           </span>
         </div>
+      )}
+
+      {/* A full shelf refuses the save rather than dropping an older
+          like to make room — so say so, and say where to make room. */}
+      {likesAtCapacity && (
+        <p className={styles.sparseNote}>
+          Your saved songs are full — nothing was removed to make room.
+          Clear a few on{' '}
+          <Link className={styles.savedLink} href="/me">
+            your taste map
+          </Link>{' '}
+          to save more.{' '}
+          <button
+            type="button"
+            className={styles.widenQueueButton}
+            onClick={dismissCapacity}
+          >
+            Dismiss
+          </button>
+        </p>
       )}
 
       {playerBroken && (
@@ -919,6 +969,7 @@ export function QueuePlayer({
                 <span className={styles.rowArtist}>{track.artistName}</span>
               )}
               <span className={styles.rowTitle}>{track.title}</span>
+              <LikeButton track={likeDraft(track)} variant="row" />
             </li>
             )
           })}

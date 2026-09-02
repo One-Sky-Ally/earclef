@@ -112,6 +112,7 @@ export function HitsSection({
         <QueuePlayer
           key={`hits:${countryCode}:${spanLabel}`}
           placeName={countryName}
+          placeCode={countryCode}
           year={yearStart}
           pool={[]}
           roster={{}}

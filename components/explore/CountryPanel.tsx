@@ -623,6 +623,7 @@ export function CountryPanel({
           <QueuePlayer
             key={`${country.code}:${year}:${genre ?? ''}`}
             placeName={country.name}
+            placeCode={country.code}
             year={year}
             pool={queuePool}
             roster={roster}

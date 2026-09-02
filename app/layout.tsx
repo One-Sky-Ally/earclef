@@ -1,5 +1,6 @@
 import { Fraunces, Inter } from 'next/font/google'
 import Script from 'next/script'
+import { LikesProvider } from '@/components/fans/LikesProvider'
 import { ServiceProvider } from '@/components/listen/ServiceProvider'
 import './globals.css'
 
@@ -23,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
       <body>
-        <ServiceProvider>{children}</ServiceProvider>
+        <ServiceProvider>
+          <LikesProvider>{children}</LikesProvider>
+        </ServiceProvider>
         {/* Cloudflare Web Analytics — cookieless aggregate page stats,
             disclosed on /privacy. afterInteractive: never blocks
             rendering or hydration. */}

@@ -142,3 +142,23 @@ export function sanitizeLikedTrack(
 export function byNewestFirst(a: LikedTrack, b: LikedTrack): number {
   return b.likedAt.localeCompare(a.likedAt)
 }
+
+/**
+ * Union by video id, newest first. The FIRST list wins a collision, so
+ * showing a signed-in fan `unionLikes(server, local)` keeps the server's
+ * record of a song — with the context it was first liked in — while
+ * still showing likes this browser made before signing in.
+ */
+export function unionLikes(
+  primary: LikedTrack[],
+  incoming: LikedTrack[],
+): LikedTrack[] {
+  const seen = new Set(primary.map((track) => track.videoId))
+  const merged = [...primary]
+  for (const track of incoming) {
+    if (seen.has(track.videoId)) continue
+    seen.add(track.videoId)
+    merged.push(track)
+  }
+  return merged.sort(byNewestFirst)
+}

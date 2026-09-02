@@ -178,11 +178,19 @@
 }
 
 .rowTitle {
+  /* Takes the slack so the row's ♥ sits at the right edge. */
+  flex: 1;
   min-width: 0;
   color: var(--text-muted);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.savedLink {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* ── In-player genre control ──────────────────────────────────────
