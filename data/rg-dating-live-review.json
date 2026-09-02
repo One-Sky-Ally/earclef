@@ -1,0 +1,992 @@
+{
+ "generatedAt": "2026-09-02T02:56:06.609Z",
+ "note": "Owner review list (Sep 1 ruling): bare-word live-lexicon cases with >=8 song corrections at stake. Ruling options per case: comp (per-song date it) | live (stays put). Everything not on this list is already settled by rule.",
+ "cases": [
+  {
+   "stake": 45,
+   "country": "US",
+   "artist": "The Andrews Sisters",
+   "title": "Wake Up and Live!",
+   "mbYear": 2014,
+   "rg": "6f584b8f-8078-44bb-88d9-372682827f69",
+   "discogsSpan": "1937–1954",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 40,
+   "country": "FR",
+   "artist": "Julien Clerc",
+   "title": "Live 74, 77, 81 & 09",
+   "mbYear": 2009,
+   "rg": "6d6527d7-194b-480c-9262-3be310555986",
+   "discogsSpan": "1968–2025",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 29,
+   "country": "US",
+   "artist": "Louis Armstrong & His All-Stars",
+   "title": "Columbia and RCA Victor Live Recordings of Louis Armstrong and the All Stars",
+   "mbYear": 2014,
+   "rg": "b5542aa6-ad6e-40ca-a806-67493e8b95bb",
+   "discogsSpan": "1946–2024",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 21,
+   "country": "US",
+   "artist": "Joan Baez",
+   "title": "Rare, Live & Classic",
+   "mbYear": 1993,
+   "rg": "e78eda35-3bd4-3c48-a653-8f1d1789092b",
+   "discogsSpan": "1960–1981",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 20,
+   "country": "DE",
+   "artist": "Scorpions",
+   "title": "World Wide Live / Savage Amusement / Best of Rockers ’n’ Ballads",
+   "mbYear": 1991,
+   "rg": "1adc32ae-bc22-4749-ad6c-6b4c62e49cbd",
+   "discogsSpan": "1972–2015",
+   "tier": "wikidata-hop"
+  },
+  {
+   "stake": 18,
+   "country": "GB",
+   "artist": "Sweet",
+   "title": "The Best & Live",
+   "mbYear": 2004,
+   "rg": "79f681bd-2424-4952-b874-9eef889b2137",
+   "discogsSpan": "1968–2017",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 18,
+   "country": "GB",
+   "artist": "Sandie Shaw",
+   "title": "Long Live Love",
+   "mbYear": 2013,
+   "rg": "3fdc8d95-8efd-4af2-8419-95577b214f01",
+   "discogsSpan": "1964–2023",
+   "tier": "id-crosswalk",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1965
+  },
+  {
+   "stake": 16,
+   "country": "DE",
+   "artist": "Howard Carpendale",
+   "title": "20 Uhr 10 Live / Der richtige Moment",
+   "mbYear": 2012,
+   "rg": "3d3f59cd-f4eb-4871-8721-0c4211e03536",
+   "discogsSpan": "1963–2026",
+   "tier": "name-unique"
+  },
+  {
+   "stake": 16,
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "title": "Stone Age / Got Live If You Want It!",
+   "mbYear": 1971,
+   "rg": "d706548b-405c-4a46-b6f3-bb886773a86a",
+   "discogsSpan": "1963–1973",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 15,
+   "country": "GB",
+   "artist": "Donovan",
+   "title": "Live Troubadour",
+   "mbYear": 2009,
+   "rg": "30135e8e-f8d8-4d14-a98e-062ff04cc835",
+   "discogsSpan": "1965–1998",
+   "tier": "name-unique"
+  },
+  {
+   "stake": 15,
+   "country": "US",
+   "artist": "Elvis Presley",
+   "title": "Long Live the King",
+   "mbYear": 2016,
+   "rg": "5caca98f-707a-4f7b-b795-93fa7137f1bc",
+   "discogsSpan": "1954–1962",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 15,
+   "country": "US",
+   "artist": "Eagles",
+   "title": "Greatest Hits Live",
+   "mbYear": 1993,
+   "rg": "ab667425-dcd9-4fc9-827e-4657cb336e73",
+   "discogsSpan": "1972–2026",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 15,
+   "country": "US",
+   "artist": "Fats Domino",
+   "title": "Fats Domino Live",
+   "mbYear": 1993,
+   "rg": "98bd6f57-0330-414c-9975-4e6967a235b9",
+   "discogsSpan": "1950–1966",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 14,
+   "country": "BE",
+   "artist": "Adamo",
+   "title": "Live",
+   "mbYear": 1995,
+   "rg": "634f5e56-67a2-4c2a-9440-3798b4b4baa1",
+   "discogsSpan": "1960–1971",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 14,
+   "country": "DE",
+   "artist": "Scorpions",
+   "title": "World Wide Live / Gold Ballads",
+   "mbYear": 1991,
+   "rg": "4c6fc0fb-4d4b-47fa-8895-df5872d8fa9a",
+   "discogsSpan": "1972–2015",
+   "tier": "wikidata-hop"
+  },
+  {
+   "stake": 14,
+   "country": "JP",
+   "artist": "吉田拓郎",
+   "title": "Golden☆best: 吉田拓郎 the Live Best",
+   "mbYear": 2002,
+   "rg": "43a5f9a6-0cad-3c31-bdfc-3a59fbf6dfd7",
+   "discogsSpan": "1970–2024",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 14,
+   "country": "US",
+   "artist": "Madonna",
+   "title": "Live & Sexy",
+   "mbYear": 2022,
+   "rg": "1f6c6fca-63de-4cca-9405-281effd48ff5",
+   "discogsSpan": "1979–2001",
+   "tier": "wikidata-hop"
+  },
+  {
+   "stake": 14,
+   "country": "US",
+   "artist": "Neil Diamond",
+   "title": "Greatest Hits Live",
+   "mbYear": 1994,
+   "rg": "e81fa501-7327-439d-b46d-53607ccf67d2",
+   "discogsSpan": "1963–1982",
+   "tier": "id-crosswalk",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1988
+  },
+  {
+   "stake": 13,
+   "country": "AU",
+   "artist": "The Easybeats",
+   "title": "Live - Studio And Stage",
+   "mbYear": 2006,
+   "rg": "46907b59-bf72-478c-896b-3dc33033d024",
+   "discogsSpan": "1964–2020",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 13,
+   "country": "DE",
+   "artist": "Bläck Fööss",
+   "title": "Wie die Zick verjeiht - Bläck Fööss live",
+   "mbYear": 2009,
+   "rg": "cdaa874a-0f41-4f1b-ae62-2e0286f99b0e",
+   "discogsSpan": "1970–2023",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 13,
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "title": "Golden Age - Original Recordings Live",
+   "mbYear": 1992,
+   "rg": "0a8627e6-cfd5-4e4d-9c18-d076caaf9114",
+   "discogsSpan": "1963–1973",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 13,
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "title": "En Vivo",
+   "mbYear": 1993,
+   "rg": "5312f8e7-566e-435f-8a96-730e28aad69a",
+   "discogsSpan": "1963–1973",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 13,
+   "country": "GB",
+   "artist": "Deep Purple",
+   "title": "Around the World Live",
+   "mbYear": 2008,
+   "rg": "b8662696-2207-40a3-8b90-b693017b1425",
+   "discogsSpan": "1968–2000",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 13,
+   "country": "GB",
+   "artist": "Eric Clapton",
+   "title": "2 for 1: Time Pieces, Volume 1: The Best of Eric Clapton / Timepieces, Volume 2: 'Live' In the Seventies",
+   "mbYear": 2011,
+   "rg": "f7539cb9-9010-4b6f-bf12-f0e7954b2ac8",
+   "discogsSpan": "1966–1992",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 13,
+   "country": "GB",
+   "artist": "Sweet",
+   "title": "Are You Ready? Sweet Live",
+   "mbYear": 2011,
+   "rg": "26fdaea8-8b3b-4596-b82d-9ec7fba4cb67",
+   "discogsSpan": "1968–2017",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 13,
+   "country": "GB",
+   "artist": "Roger Whittaker",
+   "title": "Greatest Hits Live",
+   "mbYear": 1996,
+   "rg": "44a0e179-49aa-4774-82d4-fbaa407ed4f4",
+   "discogsSpan": "1962–1983",
+   "tier": "wikidata-hop",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1993
+  },
+  {
+   "stake": 13,
+   "country": "MX",
+   "artist": "Kabah",
+   "title": "En Vivo 2CD+DVD",
+   "mbYear": 2015,
+   "rg": "621bb752-c7c1-4f17-8a7c-0d9f42f47563",
+   "discogsSpan": "1994–2024",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 13,
+   "country": "US",
+   "artist": "James Brown",
+   "title": "Live",
+   "mbYear": 2000,
+   "rg": "c1adcb75-2ce9-4932-a4d9-4380a4ccda51",
+   "discogsSpan": "1956–1974",
+   "tier": "id-crosswalk",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1989
+  },
+  {
+   "stake": 13,
+   "country": "US",
+   "artist": "Fats Domino",
+   "title": "Greatest Hits Live",
+   "mbYear": 1993,
+   "rg": "e9cde63a-70d5-41af-8608-f7ae5053b533",
+   "discogsSpan": "1950–1966",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 13,
+   "country": "US",
+   "artist": "Fats Domino",
+   "title": "Live",
+   "mbYear": 2007,
+   "rg": "11849c48-2208-42bc-a354-8090f1e3b3a2",
+   "discogsSpan": "1950–1966",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 13,
+   "country": "US",
+   "artist": "Marty Robbins",
+   "title": "Marty Robbins The Lost Recordings (Unreleased Live)",
+   "mbYear": 2016,
+   "rg": "c40ac633-80f8-48aa-a595-d11047a2eade",
+   "discogsSpan": "1952–1981",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 13,
+   "country": "US",
+   "artist": "The Ventures",
+   "title": "Alive Five‐O Greatest Hits Live",
+   "mbYear": 2005,
+   "rg": "bfb57eaa-b3cf-4a1d-be91-21f838e7ae42",
+   "discogsSpan": "1960–1968",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 12,
+   "country": "GB",
+   "artist": "Gary Numan",
+   "title": "Reconnected: Live ‘n’ More",
+   "mbYear": 2003,
+   "rg": "a31db4b9-5435-3eef-b34a-db75019f5445",
+   "discogsSpan": "1978–2026",
+   "tier": "name-unique"
+  },
+  {
+   "stake": 12,
+   "country": "GB",
+   "artist": "Eurythmics",
+   "title": "Live",
+   "mbYear": 2011,
+   "rg": "2754af90-645d-4bf9-ba8b-c99c3a64a701",
+   "discogsSpan": "1981–2025",
+   "tier": "id-crosswalk",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1987
+  },
+  {
+   "stake": 12,
+   "country": "JM",
+   "artist": "Bob Marley & The Wailers",
+   "title": "Wake Up and Live",
+   "mbYear": 1994,
+   "rg": "9eea31ca-21e4-3319-ac0a-394d5fc921f0",
+   "discogsSpan": "1964–1991",
+   "tier": "id-crosswalk",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1979
+  },
+  {
+   "stake": 12,
+   "country": "US",
+   "artist": "B.B. King",
+   "title": "Completely Live & Well",
+   "mbYear": 1986,
+   "rg": "bc0b43c1-edfa-4fea-b573-506a263a52ce",
+   "discogsSpan": "1949–1987",
+   "tier": "name-unique"
+  },
+  {
+   "stake": 12,
+   "country": "US",
+   "artist": "Louis Armstrong",
+   "title": "Great Original Live Performances",
+   "mbYear": 1987,
+   "rg": "e37707b2-d837-3bf3-ac10-dac35cc3a0e7",
+   "discogsSpan": "1930–1959",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 12,
+   "country": "US",
+   "artist": "Lou Rawls",
+   "title": "When You Hear Lou, You’ve Heard It All / Lou Rawls Live",
+   "mbYear": 2005,
+   "rg": "b45f9fd1-9ece-42d1-84ae-c84470a190a3",
+   "discogsSpan": "1959–2009",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 12,
+   "country": "US",
+   "artist": "Jerry Reed",
+   "title": "Live! / Sings Jim Croce / Texas Bound and Flyin' / Dixie Dreams",
+   "mbYear": 2025,
+   "rg": "4fc7de00-5f32-42e8-91db-7f3410ccf10a",
+   "discogsSpan": "1955–2025",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 11,
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "title": "The Rolling Stones Live: The Rolling Stones 50th Anniversary Limited Edition Commemorative Pack",
+   "mbYear": 2013,
+   "rg": "18f82dd8-151d-4920-99ac-ae2c69083fe0",
+   "discogsSpan": "1963–1973",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 11,
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "title": "The Best Live History '65-66-69",
+   "mbYear": 1983,
+   "rg": "6bf03c75-79ea-445c-952e-9b7c5e7d6198",
+   "discogsSpan": "1963–1973",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 11,
+   "country": "GB",
+   "artist": "Dave Mason",
+   "title": "Certified Live / Let It Flow",
+   "mbYear": 2011,
+   "rg": "285eacdb-30a2-496b-9349-6609cc2e7478",
+   "discogsSpan": "1963–2023",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 11,
+   "country": "SE",
+   "artist": "Jussi Björling",
+   "title": "Best Recordings Live",
+   "mbYear": 2008,
+   "rg": "7f927563-bfb7-47d5-b4e2-5531fd1186ae",
+   "discogsSpan": "1930–1999",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 11,
+   "country": "US",
+   "artist": "Marvin Gaye",
+   "title": "Marvin Gaye Live",
+   "mbYear": 1996,
+   "rg": "abc93b5c-2672-3d1e-95cd-6c22a26e6276",
+   "discogsSpan": "1961–1989",
+   "tier": "id-crosswalk",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1974
+  },
+  {
+   "stake": 11,
+   "country": "US",
+   "artist": "Iggy Pop",
+   "title": "Live",
+   "mbYear": 1993,
+   "rg": "aae1b813-19c3-487c-99f0-5228c1fa78b2",
+   "discogsSpan": "1972–2026",
+   "tier": "name-unique",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1991
+  },
+  {
+   "stake": 11,
+   "country": "US",
+   "artist": "Willie Nelson",
+   "title": "Music Legends: The Best of Willie Live",
+   "mbYear": 2004,
+   "rg": "32e30532-4222-4ef9-b8c8-aa5c5b7ecedf",
+   "discogsSpan": "1957–1984",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 11,
+   "country": "US",
+   "artist": "Kool & the Gang",
+   "title": "Dejavu Retro Gold Collection: Greatest Hits Live / Unite",
+   "mbYear": 2000,
+   "rg": "a87a4d73-4d0f-427a-8c50-216568ed43f9",
+   "discogsSpan": "1969–2000",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 11,
+   "country": "US",
+   "artist": "The Drifters",
+   "title": "Greatest Hits Live",
+   "mbYear": 1986,
+   "rg": "8993215f-4aef-4f50-8c6e-7b446af59cac",
+   "discogsSpan": "1954–1996",
+   "tier": "id-crosswalk",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1984
+  },
+  {
+   "stake": 10,
+   "country": "DK",
+   "artist": "Gasolin'",
+   "title": "Masser Af Succes - Greatest Hits & Greatest Live",
+   "mbYear": 2009,
+   "rg": "517319c5-5079-40be-b7fc-34accf878214",
+   "discogsSpan": "1970–2026",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "GB",
+   "artist": "Led Zeppelin",
+   "title": "Greatest Hits Live Broadcast Collection",
+   "mbYear": 2025,
+   "rg": "f03b8f80-85aa-4077-a4c3-d52fd1d168fa",
+   "discogsSpan": "1968–2025",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "GB",
+   "artist": "Deep Purple",
+   "title": "The Best & Live: 2 CDs of Deep Purple",
+   "mbYear": 2004,
+   "rg": "2ddddd56-e9b3-4719-8e7d-df6795cd7394",
+   "discogsSpan": "1968–2000",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "GB",
+   "artist": "Cliff Richard",
+   "title": "Live!",
+   "mbYear": 1972,
+   "rg": "a6045aa1-563b-4498-a185-ea5ea840a8c3",
+   "discogsSpan": "1959–1969",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "GB",
+   "artist": "Dave Edmunds",
+   "title": "Riff Raff / I Hear You Rockin’ - Greatest Hits Live",
+   "mbYear": 2002,
+   "rg": "663f4cd9-6891-429f-9668-9c04301f70ab",
+   "discogsSpan": "1969–2026",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "GB",
+   "artist": "Robert Palmer",
+   "title": "Secrets + Clues + Maybe It’s Live",
+   "mbYear": 2013,
+   "rg": "d13b0c88-a5b0-4c75-bcab-f444aff5f86b",
+   "discogsSpan": "1969–2017",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "GB",
+   "artist": "Smokie",
+   "title": "Greatest Hits Live",
+   "mbYear": 1989,
+   "rg": "a4c7142c-440c-3e84-8226-1f2457cac8b3",
+   "discogsSpan": "1974–2023",
+   "tier": "id-crosswalk",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1988
+  },
+  {
+   "stake": 10,
+   "country": "GB",
+   "artist": "George Shearing",
+   "title": "The Complete Capitol Live Recordings Of George Shearing",
+   "mbYear": 1994,
+   "rg": "6b96b1ab-c3b5-4134-a8a4-88c8640c0dff",
+   "discogsSpan": "1941–2019",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "GB",
+   "artist": "Petula Clark",
+   "title": "I Couldn't Live Without Your Love: Hits, Classics & More",
+   "mbYear": 2017,
+   "rg": "db208258-b5e1-4559-a45c-9faf0f0393b5",
+   "discogsSpan": "1949–1965",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "GR",
+   "artist": "Γιώργος Νταλάρας",
+   "title": "Live+ (Τα Μεγάλα Τραγούδια Επί Σκηνής)",
+   "mbYear": 2011,
+   "rg": "c5e5a359-64ab-4e1b-9d9b-091fa76a2441",
+   "discogsSpan": "1967–2025",
+   "tier": "id-crosswalk",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 2009
+  },
+  {
+   "stake": 10,
+   "country": "NL",
+   "artist": "Rob de Nijs",
+   "title": "Nestor: Het beste van / Live recordings",
+   "mbYear": 2011,
+   "rg": "60d27583-7502-4eda-9293-45e95e3d473f",
+   "discogsSpan": "1962–2025",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "US",
+   "artist": "Marvin Gaye",
+   "title": "Live",
+   "mbYear": 1994,
+   "rg": "8b3d721f-8d1e-4251-9602-7bbd42368725",
+   "discogsSpan": "1961–1989",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "US",
+   "artist": "Ella Fitzgerald",
+   "title": "Something to Live For",
+   "mbYear": 1999,
+   "rg": "a3df0c19-9ba9-3e10-83a7-425a1ae26965",
+   "discogsSpan": "1937–1959",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "US",
+   "artist": "Nat King Cole",
+   "title": "His Greatest Success: 32 Live Original Songs",
+   "mbYear": 1976,
+   "rg": "33b6e2d8-9090-34e2-94e4-eeb50db08175",
+   "discogsSpan": "1946–1960",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "US",
+   "artist": "John Denver",
+   "title": "The Very Best of John Denver Live",
+   "mbYear": 2012,
+   "rg": "eaadb886-0cc6-45a5-93e6-87ce89d62f4d",
+   "discogsSpan": "1966–2006",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "US",
+   "artist": "The Mamas & the Papas",
+   "title": "Monday, Monday live!",
+   "mbYear": 1999,
+   "rg": "d3aa23d0-0dff-4f18-8d04-884b0f457f1a",
+   "discogsSpan": "1965–2023",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "US",
+   "artist": "Buddy Holly",
+   "title": "That'll Be The Day / Buddy Holly \"Live\", Volume 5",
+   "mbYear": 1992,
+   "rg": "ae698463-b897-4f0e-8776-c0304145e868",
+   "discogsSpan": "1956–1988",
+   "tier": "wikidata-hop"
+  },
+  {
+   "stake": 10,
+   "country": "US",
+   "artist": "Lou Rawls",
+   "title": "Let Me Be Good to You / Lou Rawls Live",
+   "mbYear": 1999,
+   "rg": "0a3522b7-130e-4fe1-b537-d78243843f6e",
+   "discogsSpan": "1959–2009",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "US",
+   "artist": "Glen Campbell",
+   "title": "The World of Glen Campbell Live",
+   "mbYear": 1992,
+   "rg": "a2bfc120-b6e5-3885-b8ea-30bbb07cd083",
+   "discogsSpan": "1958–1982",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "US",
+   "artist": "The Four Seasons",
+   "title": "Ain’t That a Shame / Live on Stage",
+   "mbYear": 1996,
+   "rg": "c63a9c9e-0e07-4683-b428-f59f89fdf42b",
+   "discogsSpan": "1961–2006",
+   "tier": "id-crosswalk",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1995
+  },
+  {
+   "stake": 10,
+   "country": "US",
+   "artist": "Commander Cody & His Lost Planet Airmen",
+   "title": "Commander Cody & His Lost Planet Airmen / Tales From The Ozone / We've Got A Live One Here!",
+   "mbYear": 2016,
+   "rg": "dd3d3f70-2ff9-4870-9034-c045994d8003",
+   "discogsSpan": "1971–2022",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 10,
+   "country": "US",
+   "artist": "Marty Robbins",
+   "title": "Legends of the Grand Ole Opry: Marty Robbins Singing His Hits Live!",
+   "mbYear": 2007,
+   "rg": "de8f7a82-cb6f-465c-aa73-f3e3d04a6afc",
+   "discogsSpan": "1952–1981",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 9,
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "title": "Rolling Tickets - Live Back",
+   "mbYear": 1982,
+   "rg": "6f4631dc-d634-4cca-9381-bccb0b82f3d6",
+   "discogsSpan": "1963–1973",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 9,
+   "country": "GB",
+   "artist": "Smokie",
+   "title": "Live",
+   "mbYear": 1998,
+   "rg": "1aebfb68-8f84-4557-93ea-374c49f1fe98",
+   "discogsSpan": "1974–2023",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 9,
+   "country": "NL",
+   "artist": "Q65",
+   "title": "The Life I Live",
+   "mbYear": 1998,
+   "rg": "0c1ab0b1-f3a0-397c-a0ac-64172ba4674b",
+   "discogsSpan": "1966–2026",
+   "tier": "id-crosswalk",
+   "suggest": "SONG-TITLE MATCH",
+   "songYear": 1966
+  },
+  {
+   "stake": 9,
+   "country": "NL",
+   "artist": "The Cats",
+   "title": "The Cats \"Live\"",
+   "mbYear": 1991,
+   "rg": "5e4f3234-94f9-40fe-840b-a35f451eb126",
+   "discogsSpan": "1965–2025",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 9,
+   "country": "US",
+   "artist": "The Beach Boys",
+   "title": "Live (Signature Series)",
+   "mbYear": 1995,
+   "rg": "a57cadfe-8f1e-4f12-9c61-dc7fb199fe07",
+   "discogsSpan": "1961–1973",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 9,
+   "country": "US",
+   "artist": "James Brown",
+   "title": "Live - I Feel Good",
+   "mbYear": 1999,
+   "rg": "70655776-8415-4930-8d1d-1a6dfb0829a9",
+   "discogsSpan": "1956–1974",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 9,
+   "country": "US",
+   "artist": "James Brown",
+   "title": "Sex Machine Live",
+   "mbYear": 2006,
+   "rg": "19d57875-7519-40bf-8988-a918eb66ceaf",
+   "discogsSpan": "1956–1974",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 9,
+   "country": "US",
+   "artist": "Blue Öyster Cult",
+   "title": "Triple Feature: Blue Öyster Cult / Fire of Unknown Origin / Extraterrestrial Live",
+   "mbYear": 2009,
+   "rg": "ea00fd25-deb8-4b44-8b8d-ccd9551836ab",
+   "discogsSpan": "1971–2026",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 9,
+   "country": "US",
+   "artist": "Van Halen",
+   "title": "The Live Broadcast Collection",
+   "mbYear": 2015,
+   "rg": "56524c86-c962-4ef4-98e3-fd37e2cb269f",
+   "discogsSpan": "1978–2026",
+   "tier": "wikidata-hop"
+  },
+  {
+   "stake": 9,
+   "country": "US",
+   "artist": "The Isley Brothers",
+   "title": "3+3 / Live It Up / Go for Your Guns",
+   "mbYear": 2024,
+   "rg": "8790b9a6-fd01-41e4-8b91-06aa219f21ce",
+   "discogsSpan": "1957–1995",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 9,
+   "country": "US",
+   "artist": "Glen Campbell",
+   "title": "Live Anthology",
+   "mbYear": 2020,
+   "rg": "fa3f66d0-c988-4a93-bb90-d1602ce01823",
+   "discogsSpan": "1958–1982",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 9,
+   "country": "US",
+   "artist": "Joe Tex",
+   "title": "Live and Lively / Soul Country",
+   "mbYear": 2002,
+   "rg": "e5fb9ab3-6ae6-43df-b924-6bc205c19cf4",
+   "discogsSpan": "1955–2019",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "AR",
+   "artist": "Tequila",
+   "title": "Adiós, Tequila! En Vivo",
+   "mbYear": 2019,
+   "rg": "ceb05688-00fe-461c-8e2c-64b23891ea8d",
+   "discogsSpan": "1978–2023",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "DE",
+   "artist": "Bläck Fööss",
+   "title": "Ihre schönsten Lieder live",
+   "mbYear": 2007,
+   "rg": "ae2ee0ed-139d-42e2-ab2c-5296251ba704",
+   "discogsSpan": "1970–2023",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "title": "Live Vol. 1º",
+   "mbYear": 1994,
+   "rg": "b15cefba-cc19-4fcf-871e-6ddf531c9a5a",
+   "discogsSpan": "1963–1973",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "GB",
+   "artist": "Yes",
+   "title": "Live and Solo",
+   "mbYear": 2006,
+   "rg": "65074c3c-7df0-4f11-b479-d3ac3a0820f5",
+   "discogsSpan": "1969–2026",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "GB",
+   "artist": "Sandie Shaw",
+   "title": "Long Live Love (Her Greatest Hits)",
+   "mbYear": 1991,
+   "rg": "b0fdd243-8067-45b5-b122-b58bbbd04c67",
+   "discogsSpan": "1964–2023",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "HU",
+   "artist": "Kovács Kati",
+   "title": "Rock and Roller (Kiadatlan koncert- és stúdiófelvételek)",
+   "mbYear": 2019,
+   "rg": "6c541b9e-bb18-4f9e-907b-ef326f5c3934",
+   "discogsSpan": "1965–2025",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "US",
+   "artist": "Nirvana",
+   "title": "Dynamic Live",
+   "mbYear": 1994,
+   "rg": "48575a80-cf2b-303b-8c79-8c4d311fc03b",
+   "discogsSpan": "1988–2023",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "US",
+   "artist": "James Brown",
+   "title": "His Greatest Performance! Live!",
+   "mbYear": 2000,
+   "rg": "bea5a867-445b-39ed-ad4f-f81ffb7cb08c",
+   "discogsSpan": "1956–1974",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "US",
+   "artist": "Marvin Gaye",
+   "title": "The Greatest Hits (Live)",
+   "mbYear": 2020,
+   "rg": "660dbdd2-68e2-4b50-a6e0-fb0d20122050",
+   "discogsSpan": "1961–1989",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "US",
+   "artist": "Styx",
+   "title": "BMG 8-Track Clasics Live",
+   "mbYear": 2018,
+   "rg": "e94ca575-bac8-41f8-8941-58235ad81302",
+   "discogsSpan": "1972–2025",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "US",
+   "artist": "Johnny Mathis",
+   "title": "I’ll Buy You a Star / Live It Up!",
+   "mbYear": 2009,
+   "rg": "d63f7df7-7041-474f-8825-e26e88bde0d8",
+   "discogsSpan": "1956–1971",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "US",
+   "artist": "Glen Campbell",
+   "title": "Glen Campbell Live! His Greatest Hits",
+   "mbYear": 1994,
+   "rg": "e907bcd3-e1b1-4199-abe4-de58ae350be3",
+   "discogsSpan": "1958–1982",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "US",
+   "artist": "The Everly Brothers",
+   "title": "Live Volume 1",
+   "mbYear": 2000,
+   "rg": "592dcd2b-8882-4b0f-bdb6-ed03d8c5e22d",
+   "discogsSpan": "1956–1979",
+   "tier": "id-crosswalk"
+  },
+  {
+   "stake": 8,
+   "country": "US",
+   "artist": "Bobby Womack",
+   "title": "The Collection Live",
+   "mbYear": 1994,
+   "rg": "f88ea154-f2cc-4b29-a266-4a428ec7ea2b",
+   "discogsSpan": "1960–2025",
+   "tier": "id-crosswalk"
+  }
+ ]
+}

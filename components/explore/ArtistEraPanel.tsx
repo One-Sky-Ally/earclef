@@ -174,8 +174,13 @@ export function ArtistEraPanel({
                           {release.title}
                         </a>
                         <span className={styles.releaseMeta}>
-                          {release.date.slice(0, 4)}
+                          {release.originalSpan
+                            ? `${release.originalSpan[0]}–${release.originalSpan[1]}`
+                            : release.date.slice(0, 4)}
                           {release.type ? ` · ${release.type}` : ''}
+                          {release.editionYear
+                            ? ` · this edition ${release.editionYear}`
+                            : ''}
                         </span>
                       </div>
                       <a
@@ -209,8 +214,9 @@ export function ArtistEraPanel({
             </button>
           )}
           <p className={eraStyles.methodNote}>
-            By original release year (MusicBrainz release groups) — later
-            reissues and re-recordings don&rsquo;t count backwards.
+            By the year the recordings were made — reissues don&rsquo;t
+            count backwards, and compilations count for the era of their
+            original recordings.
             {state.details.truncated &&
               ' Very large catalog: the sweep covers its first 200 groups.'}{' '}
             <a

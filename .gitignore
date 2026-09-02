@@ -73,5 +73,11 @@ data/historical-area-work.json
 data/historical-area-audit.log
 data/historical-roster-work.json
 data/historical-roster.log
+data/rg-dating-sweep/
+data/rg-dating-census.json
+data/rg-dating-*.log
+data/mb-dump/
+data/rg-dating-evidence/
 data/tibet-evidence-work.json
 data/tibet-evidence.log
+data/rg-dating-corrections.json

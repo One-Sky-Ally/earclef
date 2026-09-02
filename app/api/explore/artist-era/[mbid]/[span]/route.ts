@@ -3,12 +3,20 @@ import type {
   ArtistEraDetails,
   ArtistEraRelease,
 } from '@/lib/explore/panelData'
+import { rgDatingFor, rgDatingTitleKey } from '@/lib/explore/rgDating'
 
 /**
  * What an artist put out WITHIN an era: their MusicBrainz release
- * groups filtered by first-release date. Release groups carry the
- * ORIGINAL release year, so later remasters of a 1970 album still
- * count as 1970 — and a 2020 re-recording (its own group) does not.
+ * groups filtered by first-release date — CORRECTED by the era-dating
+ * dataset (Stage 4, Sep 1 2026). MusicBrainz's first-release-date is
+ * only the earliest release MB knows, which for pre-digital catalogs
+ * is routinely a CD-era reissue; and a compilation is honestly dated
+ * at assembly. The corrections move both to the era of the RECORDINGS:
+ * a title with per-song evidence counts for its true year, and a
+ * retrospective album counts for its span ("1964–1975"), leaving the
+ * reissue year entirely (move-don't-copy, owner ruling). A 2020
+ * re-recording is its own group, absent from the corrections, and
+ * still does not leak back.
  */
 
 const USER_AGENT =
@@ -76,6 +84,8 @@ export async function GET(
   const cached = memo.get(key)
   if (cached) return withCacheHeaders(NextResponse.json(cached))
 
+  const dating = await rgDatingFor(mbid)
+
   try {
     const groups: MbReleaseGroup[] = []
     let catalogCount = 0
@@ -95,14 +105,30 @@ export async function GET(
     const eraReleases: ArtistEraRelease[] = groups
       .flatMap((group) => {
         const date = group['first-release-date'] ?? ''
-        const year = Number(date.slice(0, 4))
-        if (!Number.isFinite(year) || year < start || year > end) return []
+        const mbYear = Number(date.slice(0, 4))
+        const songYear = dating?.s[rgDatingTitleKey(group.title)]
+        const albumSpan = dating?.a[group.id]
+        // Corrected range, else MusicBrainz's own year.
+        const lo =
+          songYear ?? albumSpan?.[0] ?? (Number.isFinite(mbYear) ? mbYear : NaN)
+        const hi = songYear ?? albumSpan?.[1] ?? lo
+        if (!Number.isFinite(lo)) return []
+        // A corrected group counts ONLY where its true era lies — it has
+        // LEFT its reissue year (move-don't-copy). Uncorrected groups
+        // behave exactly as before.
+        if (hi < start || lo > end) return []
         return [
           {
             id: group.id,
             title: group.title,
-            date,
+            date: String(lo),
             type: group['primary-type'] ?? undefined,
+            ...(albumSpan && songYear === undefined
+              ? { originalSpan: albumSpan, editionYear: mbYear }
+              : {}),
+            ...(songYear !== undefined && Number.isFinite(mbYear)
+              ? { editionYear: mbYear }
+              : {}),
           },
         ]
       })

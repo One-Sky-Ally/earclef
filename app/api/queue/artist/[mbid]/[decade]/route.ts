@@ -7,6 +7,11 @@ import {
   isSongLength,
   nonMusicVerdict,
 } from '@/lib/play/contentGates'
+import {
+  RG_DATING_VERSION,
+  rgDatingFor,
+  type ArtistDating,
+} from '@/lib/explore/rgDating'
 
 /**
  * Play-queue resolver: ONE artist → their era-correct playable video.
@@ -112,6 +117,13 @@ interface CachedResolve {
   tracks?: QueueTrack[]
   /** Resolver rules version; absent = pre-gate (see GATE_PASS). */
   pass?: number
+  /**
+   * Era-dating corrections version this entry was resolved under.
+   * Only checked for artists that HAVE corrections — everyone else's
+   * entries stay valid forever, which is what keeps a corrections
+   * refresh from re-resolving thousands of untouched artists.
+   */
+  cv?: string
 }
 
 function store() {
@@ -160,6 +172,7 @@ async function mbJson(url: string): Promise<unknown> {
 }
 
 interface MbReleaseGroup {
+  id?: string
   title?: string
   'first-release-date'?: string
   'primary-type'?: string
@@ -175,45 +188,99 @@ interface EraTitle {
  * ordered by how era-true it is — in-era first (singles beat EPs beat
  * albums, closest to mid-decade), then work within ±15 years by
  * proximity, then undated catalog. Track 1 takes the head of this
- * list, which is exactly the old single-pick behaviour; the deeper
- * entries are what let one artist contribute more than one song, each
- * carrying the era it actually earned rather than inheriting track 1's.
+ * list; the deeper entries are what let one artist contribute more
+ * than one song, each carrying the era it actually earned.
+ *
+ * ERA-DATING CORRECTIONS (owner-approved Stage 4, Sep 1 2026 — "music
+ * belongs to when it was created"):
+ *
+ * A title with a per-song correction ranks by its TRUE year — the
+ * original recording — instead of MusicBrainz's first-release-date,
+ * which for pre-digital catalogs is routinely a CD-era reissue (the
+ * Uruguay-1996 bug: a 1964 tango ranked "nearby" for the 1990s off a
+ * 2001 compilation date). A retrospective album with no per-song date
+ * for a title ranks by the album's SPAN — a range, because a
+ * compilation of 1950s-60s sides has no single true year.
+ *
+ * MOVE, DON'T COPY (owner ruling): a CORRECTED title outside the
+ * in-era/nearby bands is DROPPED, not demoted to catalog — once a
+ * record is known to be from 1964 it must no longer be reachable from
+ * 1996. UNCORRECTED titles keep catalog-tier service untouched, so no
+ * artist loses their last playable record to a correction; only the
+ * false padding leaves.
+ *
+ * Live albums and re-recordings never appear in the corrections
+ * dataset (excluded upstream by the arbitration rules), so their
+ * MusicBrainz dates stand here without this function needing to know
+ * why — absence is the verdict.
  */
 function rankEraTitles(
   groups: MbReleaseGroup[],
   decade: number,
+  dating: ArtistDating | null,
+  titleKey: (value: string) => string,
 ): EraTitle[] {
   const mid = decade + 5
   const typeRank = (type: string) =>
     type === 'Single' ? 0 : type === 'EP' ? 1 : type === 'Album' ? 2 : 3
-  const dated: { title: string; year: number; type: string }[] = []
+  interface Ranged {
+    title: string
+    lo: number
+    hi: number
+    type: string
+    corrected: boolean
+  }
+  const dated: Ranged[] = []
   const undated: string[] = []
   for (const group of groups) {
     if (!group.title) continue
-    const year = Number(group['first-release-date']?.slice(0, 4))
-    if (Number.isFinite(year)) {
-      dated.push({ title: group.title, year, type: group['primary-type'] ?? '' })
+    const songYear = dating?.s[titleKey(group.title)]
+    const albumSpan = group.id ? dating?.a[group.id] : undefined
+    const mbYear = Number(group['first-release-date']?.slice(0, 4))
+    if (songYear !== undefined) {
+      dated.push({
+        title: group.title,
+        lo: songYear,
+        hi: songYear,
+        type: group['primary-type'] ?? '',
+        corrected: true,
+      })
+    } else if (albumSpan !== undefined) {
+      dated.push({
+        title: group.title,
+        lo: albumSpan[0],
+        hi: albumSpan[1],
+        type: group['primary-type'] ?? '',
+        corrected: true,
+      })
+    } else if (Number.isFinite(mbYear)) {
+      dated.push({
+        title: group.title,
+        lo: mbYear,
+        hi: mbYear,
+        type: group['primary-type'] ?? '',
+        corrected: false,
+      })
     } else {
       undated.push(group.title)
     }
   }
+  /** Distance from mid-decade to the nearest edge of the range. */
+  const distance = (g: Ranged) =>
+    g.lo > mid ? g.lo - mid : g.hi < mid ? mid - g.hi : 0
   const inEra = dated
-    .filter((g) => g.year >= decade && g.year <= decade + 9)
+    .filter((g) => g.lo <= decade + 9 && g.hi >= decade)
     .sort(
-      (a, b) =>
-        typeRank(a.type) - typeRank(b.type) ||
-        Math.abs(a.year - mid) - Math.abs(b.year - mid),
+      (a, b) => typeRank(a.type) - typeRank(b.type) || distance(a) - distance(b),
     )
   const nearby = dated
     .filter(
-      (g) =>
-        !(g.year >= decade && g.year <= decade + 9) &&
-        Math.abs(g.year - mid) <= 15,
+      (g) => !(g.lo <= decade + 9 && g.hi >= decade) && distance(g) <= 15,
     )
-    .sort((a, b) => Math.abs(a.year - mid) - Math.abs(b.year - mid))
+    .sort((a, b) => distance(a) - distance(b))
   const catalog = dated
-    .filter((g) => Math.abs(g.year - mid) > 15)
-    .sort((a, b) => Math.abs(a.year - mid) - Math.abs(b.year - mid))
+    .filter((g) => distance(g) > 15 && !g.corrected)
+    .sort((a, b) => distance(a) - distance(b))
   const ranked: EraTitle[] = [
     ...inEra.map((g) => ({ title: g.title, era: 'in-era' as const })),
     ...nearby.map((g) => ({ title: g.title, era: 'nearby' as const })),
@@ -224,7 +291,7 @@ function rankEraTitles(
   const seen = new Set<string>()
   return ranked
     .filter((entry) => {
-      const key = normalize(entry.title)
+      const key = titleKey(entry.title)
       if (!key || seen.has(key)) return false
       seen.add(key)
       return true
@@ -424,6 +491,10 @@ export async function GET(
   const decadeYear = Number(decade)
   const key = queueCacheKey(mbid, decade, name)
 
+  // ~35 KB shard, cached per warm process — cheap enough to load before
+  // the cache read, and it must be: validity depends on it.
+  const dating = await rgDatingFor(mbid)
+
   try {
     const cached = (await store().get(key, {
       type: 'json',
@@ -440,10 +511,16 @@ export async function GET(
     // in full. Stored nulls are re-resolved by the same rule; the gates
     // only ever REMOVE candidates, but the pick may differ.
     const ungated = (cached?.pass ?? 0) < GATE_PASS
+    // Era-dating corrections (Stage 4): ONLY artists with corrections
+    // revalidate, and only when the dataset version moved — everyone
+    // else's entries stay good, so a corrections refresh cannot cause
+    // a fleet-wide re-resolve.
+    const redated = dating !== null && cached?.cv !== RG_DATING_VERSION
     if (
       cached &&
       !poisoned &&
       !ungated &&
+      !redated &&
       (cached.track !== null ||
         Date.now() - Date.parse(cached.at) < NULL_TTL_MS)
     ) {
@@ -471,7 +548,12 @@ export async function GET(
     const groupsBody = (await mbJson(
       `https://musicbrainz.org/ws/2/release-group?artist=${mbid}&limit=100&fmt=json`,
     )) as { 'release-groups'?: MbReleaseGroup[] }
-    const titles = rankEraTitles(groupsBody['release-groups'] ?? [], decadeYear)
+    const titles = rankEraTitles(
+      groupsBody['release-groups'] ?? [],
+      decadeYear,
+      dating,
+      normalize,
+    )
     const pick = titles[0] ?? null
     await sleep(MB_DELAY_MS)
 
@@ -621,6 +703,7 @@ export async function GET(
         track,
         tracks,
         pass: GATE_PASS,
+        cv: RG_DATING_VERSION,
       } satisfies CachedResolve)
     } catch {
       // Cache writes are best-effort.

@@ -1,0 +1,1077 @@
+{
+ "generatedAt": "2026-09-02T02:55:45.295Z",
+ "held": [
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "AR",
+   "artist": "Tequila",
+   "mbid": "77e232fa-288b-43c6-8c2f-6af543b275f5",
+   "rg": "ceb05688-00fe-461c-8e2c-64b23891ea8d",
+   "title": "Adiós, Tequila! En Vivo",
+   "mbYear": 2019
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "AT",
+   "artist": "Wiener Symphoniker",
+   "mbid": "fdec141a-f2a7-4b07-9257-8909c294546b",
+   "affectedRecords": 38,
+   "detail": "MB ~1918–… vs profile 1900–1925 (WD Q686887 inconclusive)"
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "AU",
+   "artist": "The Easybeats",
+   "mbid": "dff0eebd-dbc3-4a60-aeee-842bde2c1372",
+   "rg": "46907b59-bf72-478c-896b-3dc33033d024",
+   "title": "Live - Studio And Stage",
+   "mbYear": 2006
+  },
+  {
+   "stake": 14,
+   "kind": "live-lexicon-untagged",
+   "country": "BE",
+   "artist": "Adamo",
+   "mbid": "d3132eab-36d1-476e-a736-cb6dbb08a4a2",
+   "rg": "634f5e56-67a2-4c2a-9440-3798b4b4baa1",
+   "title": "Live",
+   "mbYear": 1995
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "BG",
+   "artist": "Sofia Soloists Chamber Orchestra",
+   "mbid": "30470b55-b83f-4f76-b465-7ebcf305013e",
+   "affectedRecords": 4,
+   "detail": "MB ~1947–… vs profile 1964–1978 (no QID)"
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "CO",
+   "artist": "Alejandro Posada",
+   "mbid": "47435365-eed6-4237-aac5-14d2c24a64e0",
+   "affectedRecords": 1,
+   "detail": "MB ~1960–… vs profile 1965–? (no QID)"
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "CU",
+   "artist": "Raúl Planas",
+   "mbid": "b8dc36a2-0e28-4c88-9280-b163ec065b44",
+   "affectedRecords": 2,
+   "detail": "MB ~1933–2001 vs profile 1925–? (no QID)"
+  },
+  {
+   "stake": 14,
+   "kind": "live-lexicon-untagged",
+   "country": "DE",
+   "artist": "Scorpions",
+   "mbid": "c3cceeed-3332-4cf0-8c4c-bbde425147b6",
+   "rg": "4c6fc0fb-4d4b-47fa-8895-df5872d8fa9a",
+   "title": "World Wide Live / Gold Ballads",
+   "mbYear": 1991
+  },
+  {
+   "stake": 20,
+   "kind": "live-lexicon-untagged",
+   "country": "DE",
+   "artist": "Scorpions",
+   "mbid": "c3cceeed-3332-4cf0-8c4c-bbde425147b6",
+   "rg": "1adc32ae-bc22-4749-ad6c-6b4c62e49cbd",
+   "title": "World Wide Live / Savage Amusement / Best of Rockers ’n’ Ballads",
+   "mbYear": 1991
+  },
+  {
+   "stake": 16,
+   "kind": "live-lexicon-untagged",
+   "country": "DE",
+   "artist": "Howard Carpendale",
+   "mbid": "506aa5b0-c6fb-4a69-8dd3-f06a369d5abc",
+   "rg": "3d3f59cd-f4eb-4871-8721-0c4211e03536",
+   "title": "20 Uhr 10 Live / Der richtige Moment",
+   "mbYear": 2012
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "DE",
+   "artist": "Bläck Fööss",
+   "mbid": "87f8339a-625e-4912-939e-8b62836c159d",
+   "rg": "ae2ee0ed-139d-42e2-ab2c-5296251ba704",
+   "title": "Ihre schönsten Lieder live",
+   "mbYear": 2007
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "DE",
+   "artist": "Bläck Fööss",
+   "mbid": "87f8339a-625e-4912-939e-8b62836c159d",
+   "rg": "cdaa874a-0f41-4f1b-ae62-2e0286f99b0e",
+   "title": "Wie die Zick verjeiht - Bläck Fööss live",
+   "mbYear": 2009
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "DK",
+   "artist": "DR SymfoniOrkestret",
+   "mbid": "0957da35-a754-4e00-9222-436dc0e4a388",
+   "affectedRecords": 17,
+   "detail": "MB ~1944–… vs profile 2016–2029 (WD Q1329763 inconclusive)"
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "DK",
+   "artist": "Gasolin'",
+   "mbid": "7d81cd10-5586-48ad-99cd-d4ff92124b48",
+   "rg": "517319c5-5079-40be-b7fc-34accf878214",
+   "title": "Masser Af Succes - Greatest Hits & Greatest Live",
+   "mbYear": 2009
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "FI",
+   "artist": "Harmony Sisters",
+   "mbid": "a046d90d-1172-472f-b1d7-f041e1482114",
+   "affectedRecords": 3,
+   "detail": "MB ~1919–1956 vs profile 1914–1997 (WD Q10518153 inconclusive)"
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "FR",
+   "artist": "Orchestre national de France",
+   "mbid": "5dba6ba9-b79c-4a1e-927e-3862589c112b",
+   "affectedRecords": 39,
+   "detail": "MB ~1919–… vs profile 1944–1964 (WD Q686537 inconclusive)"
+  },
+  {
+   "stake": 40,
+   "kind": "live-lexicon-untagged",
+   "country": "FR",
+   "artist": "Julien Clerc",
+   "mbid": "8b74c6be-1f8d-4893-8526-1be4a3686f7a",
+   "rg": "6d6527d7-194b-480c-9262-3be310555986",
+   "title": "Live 74, 77, 81 & 09",
+   "mbYear": 2009
+  },
+  {
+   "stake": 11,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598",
+   "rg": "18f82dd8-151d-4920-99ac-ae2c69083fe0",
+   "title": "The Rolling Stones Live: The Rolling Stones 50th Anniversary Limited Edition Commemorative Pack",
+   "mbYear": 2013
+  },
+  {
+   "stake": 16,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598",
+   "rg": "d706548b-405c-4a46-b6f3-bb886773a86a",
+   "title": "Stone Age / Got Live If You Want It!",
+   "mbYear": 1971
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598",
+   "rg": "6f4631dc-d634-4cca-9381-bccb0b82f3d6",
+   "title": "Rolling Tickets - Live Back",
+   "mbYear": 1982
+  },
+  {
+   "stake": 11,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598",
+   "rg": "6bf03c75-79ea-445c-952e-9b7c5e7d6198",
+   "title": "The Best Live History '65-66-69",
+   "mbYear": 1983
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598",
+   "rg": "0a8627e6-cfd5-4e4d-9c18-d076caaf9114",
+   "title": "Golden Age - Original Recordings Live",
+   "mbYear": 1992
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598",
+   "rg": "5312f8e7-566e-435f-8a96-730e28aad69a",
+   "title": "En Vivo",
+   "mbYear": 1993
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "The Rolling Stones",
+   "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598",
+   "rg": "b15cefba-cc19-4fcf-871e-6ddf531c9a5a",
+   "title": "Live Vol. 1º",
+   "mbYear": 1994
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Led Zeppelin",
+   "mbid": "678d88b2-87b0-403b-b63d-5da7465aecc3",
+   "rg": "f03b8f80-85aa-4077-a4c3-d52fd1d168fa",
+   "title": "Greatest Hits Live Broadcast Collection",
+   "mbYear": 2025
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Deep Purple",
+   "mbid": "79491354-3d83-40e3-9d8e-7592d58d790a",
+   "rg": "2ddddd56-e9b3-4719-8e7d-df6795cd7394",
+   "title": "The Best & Live: 2 CDs of Deep Purple",
+   "mbYear": 2004
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Deep Purple",
+   "mbid": "79491354-3d83-40e3-9d8e-7592d58d790a",
+   "rg": "b8662696-2207-40a3-8b90-b693017b1425",
+   "title": "Around the World Live",
+   "mbYear": 2008
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Yes",
+   "mbid": "c1d4f2ba-cf39-460c-9528-6b827d3417a1",
+   "rg": "65074c3c-7df0-4f11-b479-d3ac3a0820f5",
+   "title": "Live and Solo",
+   "mbYear": 2006
+  },
+  {
+   "stake": 12,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Gary Numan",
+   "mbid": "6cb79cb2-9087-44d4-828b-5c6fdff2c957",
+   "rg": "a31db4b9-5435-3eef-b34a-db75019f5445",
+   "title": "Reconnected: Live ‘n’ More",
+   "mbYear": 2003
+  },
+  {
+   "stake": 12,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Eurythmics",
+   "mbid": "b4d32cff-f19e-455f-86c4-f347d824ca61",
+   "rg": "2754af90-645d-4bf9-ba8b-c99c3a64a701",
+   "title": "Live",
+   "mbYear": 2011
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Eric Clapton",
+   "mbid": "618b6900-0618-4f1e-b835-bccb17f84294",
+   "rg": "f7539cb9-9010-4b6f-bf12-f0e7954b2ac8",
+   "title": "2 for 1: Time Pieces, Volume 1: The Best of Eric Clapton / Timepieces, Volume 2: 'Live' In the Seventies",
+   "mbYear": 2011
+  },
+  {
+   "stake": 18,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Sweet",
+   "mbid": "dc73bb40-b697-4df9-a2ec-0555bebdba75",
+   "rg": "79f681bd-2424-4952-b874-9eef889b2137",
+   "title": "The Best & Live",
+   "mbYear": 2004
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Sweet",
+   "mbid": "dc73bb40-b697-4df9-a2ec-0555bebdba75",
+   "rg": "26fdaea8-8b3b-4596-b82d-9ec7fba4cb67",
+   "title": "Are You Ready? Sweet Live",
+   "mbYear": 2011
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Cliff Richard",
+   "mbid": "b5c2fdfc-d037-45b8-84f9-09ebb7ff8aa1",
+   "rg": "a6045aa1-563b-4498-a185-ea5ea840a8c3",
+   "title": "Live!",
+   "mbYear": 1972
+  },
+  {
+   "stake": 15,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Donovan",
+   "mbid": "72d7d717-0837-4f2a-9641-d0f9fdd3acf7",
+   "rg": "30135e8e-f8d8-4d14-a98e-062ff04cc835",
+   "title": "Live Troubadour",
+   "mbYear": 2009
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Dave Edmunds",
+   "mbid": "ec4b6d29-527c-4cc0-89bb-8a4775f350d0",
+   "rg": "663f4cd9-6891-429f-9668-9c04301f70ab",
+   "title": "Riff Raff / I Hear You Rockin’ - Greatest Hits Live",
+   "mbYear": 2002
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Robert Palmer",
+   "mbid": "96b1d906-0fda-406d-beb6-19c6758998df",
+   "rg": "d13b0c88-a5b0-4c75-bcab-f444aff5f86b",
+   "title": "Secrets + Clues + Maybe It’s Live",
+   "mbYear": 2013
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Smokie",
+   "mbid": "165e2705-abf7-4f1b-8971-4ceed8769c4d",
+   "rg": "a4c7142c-440c-3e84-8226-1f2457cac8b3",
+   "title": "Greatest Hits Live",
+   "mbYear": 1989
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Smokie",
+   "mbid": "165e2705-abf7-4f1b-8971-4ceed8769c4d",
+   "rg": "1aebfb68-8f84-4557-93ea-374c49f1fe98",
+   "title": "Live",
+   "mbYear": 1998
+  },
+  {
+   "stake": 11,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Dave Mason",
+   "mbid": "d70c2ae1-911a-4bea-8ef4-63564a150ff2",
+   "rg": "285eacdb-30a2-496b-9349-6609cc2e7478",
+   "title": "Certified Live / Let It Flow",
+   "mbYear": 2011
+  },
+  {
+   "stake": 18,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Sandie Shaw",
+   "mbid": "16963107-9288-43a2-946c-81de2f5eddfa",
+   "rg": "3fdc8d95-8efd-4af2-8419-95577b214f01",
+   "title": "Long Live Love",
+   "mbYear": 2013
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Sandie Shaw",
+   "mbid": "16963107-9288-43a2-946c-81de2f5eddfa",
+   "rg": "b0fdd243-8067-45b5-b122-b58bbbd04c67",
+   "title": "Long Live Love (Her Greatest Hits)",
+   "mbYear": 1991
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "George Shearing",
+   "mbid": "ef83af4c-4da9-47d1-b9bd-df9db18b28e9",
+   "rg": "6b96b1ab-c3b5-4134-a8a4-88c8640c0dff",
+   "title": "The Complete Capitol Live Recordings Of George Shearing",
+   "mbYear": 1994
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Roger Whittaker",
+   "mbid": "80d07b5b-35b1-4d58-a72e-49ac98cba13f",
+   "rg": "44a0e179-49aa-4774-82d4-fbaa407ed4f4",
+   "title": "Greatest Hits Live",
+   "mbYear": 1996
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "GB",
+   "artist": "Petula Clark",
+   "mbid": "40e69149-45a7-4dab-8128-c5a4d9654eeb",
+   "rg": "db208258-b5e1-4559-a45c-9faf0f0393b5",
+   "title": "I Couldn't Live Without Your Love: Hits, Classics & More",
+   "mbYear": 2017
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "GR",
+   "artist": "Γιώργος Νταλάρας",
+   "mbid": "457a3e37-cbf5-41f5-8c0a-b6f20a2ed905",
+   "rg": "c5e5a359-64ab-4e1b-9d9b-091fa76a2441",
+   "title": "Live+ (Τα Μεγάλα Τραγούδια Επί Σκηνής)",
+   "mbYear": 2011
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "HU",
+   "artist": "Kovács Kati",
+   "mbid": "8dd96504-f19d-45e1-a80d-4d1ea627233d",
+   "rg": "6c541b9e-bb18-4f9e-907b-ef326f5c3934",
+   "title": "Rock and Roller (Kiadatlan koncert- és stúdiófelvételek)",
+   "mbYear": 2019
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "IS",
+   "artist": "Jón Rafnsson",
+   "mbid": "a2a78320-dd5c-4c21-bc20-f7d528e4b946",
+   "affectedRecords": 1,
+   "detail": "MB ~1958–… vs profile 1976–1983 (no QID)"
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "IT",
+   "artist": "Orchestra dell’Accademia Nazionale di Santa Cecilia",
+   "mbid": "8a5cda43-8147-474e-95ad-7d97414b69bb",
+   "affectedRecords": 90,
+   "detail": "MB ~1893–… vs profile 1912–1944 (WD Q1328398 inconclusive)"
+  },
+  {
+   "stake": 12,
+   "kind": "live-lexicon-untagged",
+   "country": "JM",
+   "artist": "Bob Marley & The Wailers",
+   "mbid": "c296e10c-110a-4103-9e77-47bfebb7fb2e",
+   "rg": "9eea31ca-21e4-3319-ac0a-394d5fc921f0",
+   "title": "Wake Up and Live",
+   "mbYear": 1994
+  },
+  {
+   "stake": 14,
+   "kind": "live-lexicon-untagged",
+   "country": "JP",
+   "artist": "吉田拓郎",
+   "mbid": "b2e1e69c-e24f-4f89-9621-250ca3b176c1",
+   "rg": "43a5f9a6-0cad-3c31-bdfc-3a59fbf6dfd7",
+   "title": "Golden☆best: 吉田拓郎 the Live Best",
+   "mbYear": 2002
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "MX",
+   "artist": "Kabah",
+   "mbid": "eae04d6c-28b9-4680-8ebc-72ad918b53e0",
+   "rg": "621bb752-c7c1-4f17-8a7c-0d9f42f47563",
+   "title": "En Vivo 2CD+DVD",
+   "mbYear": 2015
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "MX",
+   "artist": "Sergio Cárdenas",
+   "mbid": "45ad8c17-6291-496d-ab59-42146999589f",
+   "affectedRecords": 2,
+   "detail": "MB ~1951–… vs profile 1975–1979 (no QID)"
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "NL",
+   "artist": "Q65",
+   "mbid": "b81d3f0b-2c65-4075-84db-051e42a3f791",
+   "rg": "0c1ab0b1-f3a0-397c-a0ac-64172ba4674b",
+   "title": "The Life I Live",
+   "mbYear": 1998
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "NL",
+   "artist": "Rob de Nijs",
+   "mbid": "0bf7fb68-f8c1-495b-8d33-dfd8d12cd695",
+   "rg": "60d27583-7502-4eda-9293-45e95e3d473f",
+   "title": "Nestor: Het beste van / Live recordings",
+   "mbYear": 2011
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "NL",
+   "artist": "The Cats",
+   "mbid": "b2fb8b87-a5a9-40d2-b528-bacb47ca032a",
+   "rg": "5e4f3234-94f9-40fe-840b-a35f451eb126",
+   "title": "The Cats \"Live\"",
+   "mbYear": 1991
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "PL",
+   "artist": "Chór Filharmonii Narodowej",
+   "mbid": "738a27fd-582b-4145-a032-c5c2fedb07d9",
+   "affectedRecords": 2,
+   "detail": "MB ~1937–… vs profile 1955–1971 (WD Q9191995 inconclusive)"
+  },
+  {
+   "stake": 11,
+   "kind": "live-lexicon-untagged",
+   "country": "SE",
+   "artist": "Jussi Björling",
+   "mbid": "819a8713-67b7-4d15-bfa4-45a6c81cc1ee",
+   "rg": "7f927563-bfb7-47d5-b4e2-5531fd1186ae",
+   "title": "Best Recordings Live",
+   "mbYear": 2008
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "SE",
+   "artist": "Kungliga Filharmonikerna",
+   "mbid": "43938804-4ceb-46a7-969f-4b15e2bcf04e",
+   "affectedRecords": 95,
+   "detail": "MB ~1887–… vs profile 1915–1924 (WD Q1376146 inconclusive)"
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "SE",
+   "artist": "Radiokören",
+   "mbid": "7bf7b9f1-3c66-48db-beee-d4b971f1362d",
+   "affectedRecords": 38,
+   "detail": "MB ~1910–… vs profile 1995–2001 (WD Q5212259 inconclusive)"
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Nirvana",
+   "mbid": "5b11f4ce-a62d-471e-81fc-a69a8278c7da",
+   "rg": "48575a80-cf2b-303b-8c79-8c4d311fc03b",
+   "title": "Dynamic Live",
+   "mbYear": 1994
+  },
+  {
+   "stake": 14,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Madonna",
+   "mbid": "79239441-bfd5-4981-a70c-55c3f15c1287",
+   "rg": "1f6c6fca-63de-4cca-9405-281effd48ff5",
+   "title": "Live & Sexy",
+   "mbYear": 2022
+  },
+  {
+   "stake": 15,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Elvis Presley",
+   "mbid": "01809552-4f87-45b0-afff-2c6f0730a3be",
+   "rg": "5caca98f-707a-4f7b-b795-93fa7137f1bc",
+   "title": "Long Live the King",
+   "mbYear": 2016
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "The Beach Boys",
+   "mbid": "ebfc1398-8d96-47e3-82c3-f782abcdb13d",
+   "rg": "a57cadfe-8f1e-4f12-9c61-dc7fb199fe07",
+   "title": "Live (Signature Series)",
+   "mbYear": 1995
+  },
+  {
+   "stake": 14,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Neil Diamond",
+   "mbid": "a42d3fd5-55de-4206-86c3-4fbb5404018f",
+   "rg": "e81fa501-7327-439d-b46d-53607ccf67d2",
+   "title": "Greatest Hits Live",
+   "mbYear": 1994
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "James Brown",
+   "mbid": "20ff3303-4fe2-4a47-a1b6-291e26aa3438",
+   "rg": "bea5a867-445b-39ed-ad4f-f81ffb7cb08c",
+   "title": "His Greatest Performance! Live!",
+   "mbYear": 2000
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "James Brown",
+   "mbid": "20ff3303-4fe2-4a47-a1b6-291e26aa3438",
+   "rg": "c1adcb75-2ce9-4932-a4d9-4380a4ccda51",
+   "title": "Live",
+   "mbYear": 2000
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "James Brown",
+   "mbid": "20ff3303-4fe2-4a47-a1b6-291e26aa3438",
+   "rg": "70655776-8415-4930-8d1d-1a6dfb0829a9",
+   "title": "Live - I Feel Good",
+   "mbYear": 1999
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "James Brown",
+   "mbid": "20ff3303-4fe2-4a47-a1b6-291e26aa3438",
+   "rg": "19d57875-7519-40bf-8988-a918eb66ceaf",
+   "title": "Sex Machine Live",
+   "mbYear": 2006
+  },
+  {
+   "stake": 11,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Marvin Gaye",
+   "mbid": "afdb7919-059d-43c1-b668-ba1d265e7e42",
+   "rg": "abc93b5c-2672-3d1e-95cd-6c22a26e6276",
+   "title": "Marvin Gaye Live",
+   "mbYear": 1996
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Marvin Gaye",
+   "mbid": "afdb7919-059d-43c1-b668-ba1d265e7e42",
+   "rg": "8b3d721f-8d1e-4251-9602-7bbd42368725",
+   "title": "Live",
+   "mbYear": 1994
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Marvin Gaye",
+   "mbid": "afdb7919-059d-43c1-b668-ba1d265e7e42",
+   "rg": "660dbdd2-68e2-4b50-a6e0-fb0d20122050",
+   "title": "The Greatest Hits (Live)",
+   "mbYear": 2020
+  },
+  {
+   "stake": 11,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Iggy Pop",
+   "mbid": "f37b3f31-b1f8-4b88-8cb5-b34f709b17d7",
+   "rg": "aae1b813-19c3-487c-99f0-5228c1fa78b2",
+   "title": "Live",
+   "mbYear": 1993
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Blue Öyster Cult",
+   "mbid": "c7423e0c-ab3e-4ab4-be10-cdff5a9d3062",
+   "rg": "ea00fd25-deb8-4b44-8b8d-ccd9551836ab",
+   "title": "Triple Feature: Blue Öyster Cult / Fire of Unknown Origin / Extraterrestrial Live",
+   "mbYear": 2009
+  },
+  {
+   "stake": 12,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "B.B. King",
+   "mbid": "dcb03ce3-67a5-4eb3-b2d1-2a12d93a38f3",
+   "rg": "bc0b43c1-edfa-4fea-b573-506a263a52ce",
+   "title": "Completely Live & Well",
+   "mbYear": 1986
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Styx",
+   "mbid": "835a6d9c-fea0-4a71-ae52-9c4da946433a",
+   "rg": "e94ca575-bac8-41f8-8941-58235ad81302",
+   "title": "BMG 8-Track Clasics Live",
+   "mbYear": 2018
+  },
+  {
+   "stake": 12,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Louis Armstrong",
+   "mbid": "eea8a864-fcda-4602-9569-38ab446decd6",
+   "rg": "e37707b2-d837-3bf3-ac10-dac35cc3a0e7",
+   "title": "Great Original Live Performances",
+   "mbYear": 1987
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Ella Fitzgerald",
+   "mbid": "54799c0e-eb45-4eea-996d-c4d71a63c499",
+   "rg": "a3df0c19-9ba9-3e10-83a7-425a1ae26965",
+   "title": "Something to Live For",
+   "mbYear": 1999
+  },
+  {
+   "stake": 15,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Eagles",
+   "mbid": "f46bd570-5768-462e-b84c-c7c993bbf47e",
+   "rg": "ab667425-dcd9-4fc9-827e-4657cb336e73",
+   "title": "Greatest Hits Live",
+   "mbYear": 1993
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Nat King Cole",
+   "mbid": "fbe054ec-a143-4101-9e9e-64abc5ff5ac9",
+   "rg": "33b6e2d8-9090-34e2-94e4-eeb50db08175",
+   "title": "His Greatest Success: 32 Live Original Songs",
+   "mbYear": 1976
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "John Denver",
+   "mbid": "34e10b51-b5c6-4bc1-b70e-f05f141eda1e",
+   "rg": "eaadb886-0cc6-45a5-93e6-87ce89d62f4d",
+   "title": "The Very Best of John Denver Live",
+   "mbYear": 2012
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "The Mamas & the Papas",
+   "mbid": "ff294730-0315-440d-a543-54005779c15b",
+   "rg": "d3aa23d0-0dff-4f18-8d04-884b0f457f1a",
+   "title": "Monday, Monday live!",
+   "mbYear": 1999
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Van Halen",
+   "mbid": "b665b768-0d83-4363-950c-31ed39317c15",
+   "rg": "56524c86-c962-4ef4-98e3-fd37e2cb269f",
+   "title": "The Live Broadcast Collection",
+   "mbYear": 2015
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Fats Domino",
+   "mbid": "e787de5d-49e2-4b1f-9bde-1fd3a671b971",
+   "rg": "e9cde63a-70d5-41af-8608-f7ae5053b533",
+   "title": "Greatest Hits Live",
+   "mbYear": 1993
+  },
+  {
+   "stake": 15,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Fats Domino",
+   "mbid": "e787de5d-49e2-4b1f-9bde-1fd3a671b971",
+   "rg": "98bd6f57-0330-414c-9975-4e6967a235b9",
+   "title": "Fats Domino Live",
+   "mbYear": 1993
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Fats Domino",
+   "mbid": "e787de5d-49e2-4b1f-9bde-1fd3a671b971",
+   "rg": "11849c48-2208-42bc-a354-8090f1e3b3a2",
+   "title": "Live",
+   "mbYear": 2007
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "The Isley Brothers",
+   "mbid": "4a76400d-283f-492e-9754-18ef41755f81",
+   "rg": "8790b9a6-fd01-41e4-8b91-06aa219f21ce",
+   "title": "3+3 / Live It Up / Go for Your Guns",
+   "mbYear": 2024
+  },
+  {
+   "stake": 11,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Willie Nelson",
+   "mbid": "668fd73c-bf54-4310-a139-305517f05311",
+   "rg": "32e30532-4222-4ef9-b8c8-aa5c5b7ecedf",
+   "title": "Music Legends: The Best of Willie Live",
+   "mbYear": 2004
+  },
+  {
+   "stake": 21,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Joan Baez",
+   "mbid": "92d37892-6186-4459-9cc1-f0dde57652d0",
+   "rg": "e78eda35-3bd4-3c48-a653-8f1d1789092b",
+   "title": "Rare, Live & Classic",
+   "mbYear": 1993
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Buddy Holly",
+   "mbid": "d352f5dd-3023-4565-a7bb-52396bf8821d",
+   "rg": "ae698463-b897-4f0e-8776-c0304145e868",
+   "title": "That'll Be The Day / Buddy Holly \"Live\", Volume 5",
+   "mbYear": 1992
+  },
+  {
+   "stake": 11,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Kool & the Gang",
+   "mbid": "2469950a-f0ca-425a-bfbc-baf55ea3afde",
+   "rg": "a87a4d73-4d0f-427a-8c50-216568ed43f9",
+   "title": "Dejavu Retro Gold Collection: Greatest Hits Live / Unite",
+   "mbYear": 2000
+  },
+  {
+   "stake": 12,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Lou Rawls",
+   "mbid": "c8bd802a-6e4a-41a4-95fa-2c1ee33f65a5",
+   "rg": "b45f9fd1-9ece-42d1-84ae-c84470a190a3",
+   "title": "When You Hear Lou, You’ve Heard It All / Lou Rawls Live",
+   "mbYear": 2005
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Lou Rawls",
+   "mbid": "c8bd802a-6e4a-41a4-95fa-2c1ee33f65a5",
+   "rg": "0a3522b7-130e-4fe1-b537-d78243843f6e",
+   "title": "Let Me Be Good to You / Lou Rawls Live",
+   "mbYear": 1999
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Johnny Mathis",
+   "mbid": "48896dee-a985-424d-9849-84802f7e79c9",
+   "rg": "d63f7df7-7041-474f-8825-e26e88bde0d8",
+   "title": "I’ll Buy You a Star / Live It Up!",
+   "mbYear": 2009
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Glen Campbell",
+   "mbid": "57976431-1a5c-4968-a422-b92c5e9b0d4f",
+   "rg": "a2bfc120-b6e5-3885-b8ea-30bbb07cd083",
+   "title": "The World of Glen Campbell Live",
+   "mbYear": 1992
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Glen Campbell",
+   "mbid": "57976431-1a5c-4968-a422-b92c5e9b0d4f",
+   "rg": "e907bcd3-e1b1-4199-abe4-de58ae350be3",
+   "title": "Glen Campbell Live! His Greatest Hits",
+   "mbYear": 1994
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Glen Campbell",
+   "mbid": "57976431-1a5c-4968-a422-b92c5e9b0d4f",
+   "rg": "fa3f66d0-c988-4a93-bb90-d1602ce01823",
+   "title": "Live Anthology",
+   "mbYear": 2020
+  },
+  {
+   "stake": 11,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "The Drifters",
+   "mbid": "9e2d3f58-0653-4007-bcb7-1746fcdd9363",
+   "rg": "8993215f-4aef-4f50-8c6e-7b446af59cac",
+   "title": "Greatest Hits Live",
+   "mbYear": 1986
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "The Four Seasons",
+   "mbid": "3f64d38c-1ad4-4fb0-941e-7f4b51d4c9e6",
+   "rg": "c63a9c9e-0e07-4683-b428-f59f89fdf42b",
+   "title": "Ain’t That a Shame / Live on Stage",
+   "mbYear": 1996
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Commander Cody & His Lost Planet Airmen",
+   "mbid": "2d67f7f4-1e85-4278-bac6-424e6204a8b9",
+   "rg": "dd3d3f70-2ff9-4870-9034-c045994d8003",
+   "title": "Commander Cody & His Lost Planet Airmen / Tales From The Ozone / We've Got A Live One Here!",
+   "mbYear": 2016
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "The Everly Brothers",
+   "mbid": "091ec508-877f-4e3c-92a3-10903bbbc7ad",
+   "rg": "592dcd2b-8882-4b0f-bdb6-ed03d8c5e22d",
+   "title": "Live Volume 1",
+   "mbYear": 2000
+  },
+  {
+   "stake": 8,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Bobby Womack",
+   "mbid": "48e78462-2f0b-4a1a-9fa4-0585e2991e80",
+   "rg": "f88ea154-f2cc-4b29-a266-4a428ec7ea2b",
+   "title": "The Collection Live",
+   "mbYear": 1994
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Marty Robbins",
+   "mbid": "2c2add7c-9a99-4812-a20e-870d331f01fd",
+   "rg": "c40ac633-80f8-48aa-a595-d11047a2eade",
+   "title": "Marty Robbins The Lost Recordings (Unreleased Live)",
+   "mbYear": 2016
+  },
+  {
+   "stake": 10,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Marty Robbins",
+   "mbid": "2c2add7c-9a99-4812-a20e-870d331f01fd",
+   "rg": "de8f7a82-cb6f-465c-aa73-f3e3d04a6afc",
+   "title": "Legends of the Grand Ole Opry: Marty Robbins Singing His Hits Live!",
+   "mbYear": 2007
+  },
+  {
+   "kind": "quarantined-profile-disagrees",
+   "country": "US",
+   "artist": "The Rascals",
+   "mbid": "219ce30a-0f3a-468c-9a13-55ee358ac0f0",
+   "affectedRecords": 17,
+   "detail": "MB ~1949–1972 vs profile 1967–1968 (WD Q1757318 inconclusive)"
+  },
+  {
+   "stake": 45,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "The Andrews Sisters",
+   "mbid": "f5f22a9c-a00c-49f9-8123-329b632da79c",
+   "rg": "6f584b8f-8078-44bb-88d9-372682827f69",
+   "title": "Wake Up and Live!",
+   "mbYear": 2014
+  },
+  {
+   "stake": 13,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "The Ventures",
+   "mbid": "b2cc8903-0077-4bef-8454-ac5cef53d126",
+   "rg": "bfb57eaa-b3cf-4a1d-be91-21f838e7ae42",
+   "title": "Alive Five‐O Greatest Hits Live",
+   "mbYear": 2005
+  },
+  {
+   "stake": 9,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Joe Tex",
+   "mbid": "bb25e0ba-fd11-4d2a-8ec3-f5674f67c874",
+   "rg": "e5fb9ab3-6ae6-43df-b924-6bc205c19cf4",
+   "title": "Live and Lively / Soul Country",
+   "mbYear": 2002
+  },
+  {
+   "stake": 12,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Jerry Reed",
+   "mbid": "44419ff2-0251-49ba-933b-b09733ff9adb",
+   "rg": "4fc7de00-5f32-42e8-91db-7f3410ccf10a",
+   "title": "Live! / Sings Jim Croce / Texas Bound and Flyin' / Dixie Dreams",
+   "mbYear": 2025
+  },
+  {
+   "stake": 29,
+   "kind": "live-lexicon-untagged",
+   "country": "US",
+   "artist": "Louis Armstrong & His All-Stars",
+   "mbid": "f617ed55-7691-41cc-9671-c04a29641125",
+   "rg": "b5542aa6-ad6e-40ca-a806-67493e8b95bb",
+   "title": "Columbia and RCA Victor Live Recordings of Louis Armstrong and the All Stars",
+   "mbYear": 2014
+  }
+ ]
+}

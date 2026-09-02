@@ -155,8 +155,16 @@ export async function searchExplore(
 export interface ArtistEraRelease {
   id: string
   title: string
+  /** Display year — the CORRECTED year when era-dating evidence moved it. */
   date: string
   type?: string
+  /**
+   * A retrospective's true era, as a span of its recordings'
+   * years — present only when the group was re-dated at album level.
+   */
+  originalSpan?: [number, number]
+  /** The reissue/assembly year MusicBrainz records, when it differs. */
+  editionYear?: number
 }
 
 export interface ArtistEraDetails {
