@@ -158,8 +158,14 @@
   transition: border-color 0.2s ease;
 }
 
-.rowPlay:hover {
+.rowPlay:hover:not(:disabled) {
   border-color: var(--accent);
+}
+
+/* Skipped, not removed: a video that died since it was verified. */
+.rowPlay:disabled {
+  opacity: 0.4;
+  color: var(--text-muted);
 }
 
 .rowArtist,

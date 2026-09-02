@@ -127,6 +127,12 @@ interface QueuePlayerProps {
   onWiden?: () => void
   /** Label for the widen offer, e.g. "1964–1974". */
   widenLabel?: string
+  /**
+   * Replaces the "that's everything for <place> <year>" end line. A
+   * queue that is not a place and an era — a saved-songs playlist —
+   * needs to end in its own words.
+   */
+  endNote?: string
 }
 
 /** Minimal typing for the pieces of the IFrame API we drive. */
@@ -144,6 +150,8 @@ interface YtNamespace {
       events: {
         onReady: (event: { target: { playVideo: () => void } }) => void
         onStateChange: (event: { data: number }) => void
+        /** 2/5/100/101/150 — malformed id, or gone/unembeddable. */
+        onError: (event: { data: number }) => void
       }
     },
   ) => YtPlayer
@@ -191,6 +199,7 @@ export function QueuePlayer({
   buttonLabel,
   onWiden,
   widenLabel,
+  endNote,
 }: QueuePlayerProps) {
   const [active, setActive] = useState(false)
   const [tracks, setTracks] = useState<ResolvedTrack[]>([])
@@ -199,6 +208,14 @@ export function QueuePlayer({
   const [quotaHit, setQuotaHit] = useState(false)
   const [playerBroken, setPlayerBroken] = useState(false)
   const { atCapacity: likesAtCapacity, dismissCapacity } = useLikes()
+  /**
+   * Videos YouTube refused to play — pulled, private, or embedding
+   * switched off since the day they were verified. They are SKIPPED,
+   * not deleted: the row stays in the queue marked unplayable, because
+   * a saved song silently vanishing is worse than one that says why.
+   */
+  const [deadIds, setDeadIds] = useState<Set<string>>(new Set())
+  const deadRef = useRef<Set<string>>(new Set())
   /**
    * Genres the listener has switched OFF, live, while the music plays.
    * Distinct from the panel's genre chip, which narrows the pool before
@@ -305,9 +322,21 @@ export function QueuePlayer({
   function seekIncluded(from: number, step: 1 | -1): number {
     const list = tracksRef.current
     for (let i = from; i >= 0 && i < list.length; i += step) {
-      if (trackIncluded(list[i], excludedRef.current)) return i
+      if (
+        trackIncluded(list[i], excludedRef.current) &&
+        !deadRef.current.has(list[i].videoId)
+      ) {
+        return i
+      }
     }
     return -1
+  }
+
+  /** Ref AND state: the seek reads it synchronously, the list renders it. */
+  function markDead(videoId: string) {
+    if (deadRef.current.has(videoId)) return
+    deadRef.current = new Set([...deadRef.current, videoId])
+    setDeadIds(deadRef.current)
   }
 
   function jumpTo(index: number, step: 1 | -1 = 1) {
@@ -333,6 +362,15 @@ export function QueuePlayer({
             if (event.data === yt.PlayerState.ENDED) {
               jumpTo(currentRef.current + 1, 1)
             }
+          },
+          // Without this, ONE video that died since it was verified
+          // stalls the queue forever: ENDED never fires for a video
+          // that never started. Mark it and move on.
+          onError: () => {
+            const track = tracksRef.current[currentRef.current]
+            if (!track) return
+            markDead(track.videoId)
+            jumpTo(currentRef.current + 1, 1)
           },
         },
       })
@@ -869,9 +907,17 @@ export function QueuePlayer({
           whole panel claims to show, so it stays the visitor's choice. */}
       {exhausted && !building && !quotaHit && tracks.length > 0 && (
         <p className={styles.buildNote}>
-          {tracks.length < HONEST_MIN
-            ? `Only ${tracks.length} verified track${tracks.length === 1 ? '' : 's'} here — honest, not padded.`
-            : `That’s everything verified for ${placeName} ${year}.`}
+          {endNote ??
+            (tracks.length < HONEST_MIN
+              ? `Only ${tracks.length} verified track${tracks.length === 1 ? '' : 's'} here — honest, not padded.`
+              : `That’s everything verified for ${placeName} ${year}.`)}
+          {deadIds.size > 0 && (
+            <>
+              {' '}
+              {deadIds.size === 1 ? 'One track is' : `${deadIds.size} tracks are`}{' '}
+              no longer playable on YouTube — skipped, not removed.
+            </>
+          )}
           {onWiden && (
             <>
               {' '}
@@ -943,6 +989,7 @@ export function QueuePlayer({
         <ol className={styles.queueList}>
           {includedIndices.map((index, position) => {
             const track = tracks[index]
+            const dead = deadIds.has(track.videoId)
             return (
             <li
               key={`${track.videoId}:${index}`}
@@ -952,11 +999,17 @@ export function QueuePlayer({
                 type="button"
                 className={styles.rowPlay}
                 onClick={() => jumpTo(index)}
-                aria-label={`Play ${track.artistName}`}
+                disabled={dead}
+                aria-label={
+                  dead
+                    ? `${track.artistName} is no longer playable`
+                    : `Play ${track.artistName}`
+                }
+                title={dead ? 'No longer playable on YouTube' : undefined}
               >
                 {/* Numbered by what is SHOWN — with genres switched
                     off, raw track indices would read 1, 2, 5, 7. */}
-                {index === current ? '▶' : position + 1}
+                {dead ? '⊘' : index === current ? '▶' : position + 1}
               </button>
               {roster[track.mbid] ? (
                 <Link

@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useLikes } from '@/components/fans/LikesProvider'
+import { QueuePlayer } from '@/components/explore/QueuePlayer'
 import type { LikedTrack } from '@/lib/fans/likes'
 import styles from './LikedSongs.module.css'
 
@@ -107,6 +108,8 @@ export function LikedSongs({ roster }: { roster: RosterByMbid }) {
     [likes, genre, place],
   )
 
+  const filtered = genre !== ALL || place !== ALL
+
   if (!ready) {
     return (
       <div className={styles.shimmerBlock} aria-hidden="true">
@@ -161,6 +164,35 @@ export function LikedSongs({ roster }: { roster: RosterByMbid }) {
             onChange={setPlace}
             allLabel="Everywhere"
           />
+
+          {/* The queue is built from what is SHOWN, at click time — the
+              same contract the country panel has. Deliberately NOT
+              re-keyed on the filters: changing a chip mid-song must not
+              tear down a playing queue. */}
+          {shown.length > 0 && (
+            <QueuePlayer
+              placeName="your saved songs"
+              year={new Date().getFullYear()}
+              pool={[]}
+              roster={roster}
+              preresolved={shown.map((track) => ({
+                videoId: track.videoId,
+                title: track.title,
+                artistName: track.artistName,
+                mbid: track.mbid ?? '',
+                ...(track.genres?.length && { genres: track.genres }),
+              }))}
+              buttonLabel={
+                filtered
+                  ? `▶ Play these ${shown.length}`
+                  : `▶ Play all ${shown.length} saved`
+              }
+              // States completeness, not completion: a pre-resolved
+              // queue is "exhausted" from the moment it starts, so this
+              // line is on screen while track 1 is still playing.
+              endNote="That’s everything saved in this queue."
+            />
+          )}
 
           {shown.length === 0 ? (
             <p className={styles.empty}>
