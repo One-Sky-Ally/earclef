@@ -23,6 +23,8 @@ interface LikesContextValue {
   likes: LikedTrack[]
   /** False until the stored likes have been read — ♥ states wait for it. */
   ready: boolean
+  /** Whether these likes have anywhere to live beyond this browser. */
+  signedIn: boolean
   isLiked: (videoId: string) => boolean
   toggleLike: (draft: LikeDraft) => void
   /** The shelf is full: the last like was refused, nothing was dropped. */
@@ -33,6 +35,7 @@ interface LikesContextValue {
 const LikesContext = createContext<LikesContextValue>({
   likes: [],
   ready: false,
+  signedIn: false,
   isLiked: () => false,
   toggleLike: () => {},
   atCapacity: false,
@@ -80,6 +83,7 @@ async function postFan(body: unknown): Promise<FanPostResult> {
 export function LikesProvider({ children }: { children: React.ReactNode }) {
   const [likes, setLikes] = useState<LikedTrack[]>([])
   const [ready, setReady] = useState(false)
+  const [signedIn, setSignedIn] = useState(false)
   const [atCapacity, setAtCapacity] = useState(false)
   // The lists the writers read, without making every callback depend on
   // them (and so re-subscribe every ♥).
@@ -114,6 +118,7 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
             signedIn: boolean
             likes?: LikedTrack[]
           }
+          if (body.signedIn) setSignedIn(true)
           if (body.signedIn && Array.isArray(body.likes)) {
             let saved = body.likes
             if (pending.length > 0) {
@@ -208,7 +213,15 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <LikesContext.Provider
-      value={{ likes, ready, isLiked, toggleLike, atCapacity, dismissCapacity }}
+      value={{
+        likes,
+        ready,
+        signedIn,
+        isLiked,
+        toggleLike,
+        atCapacity,
+        dismissCapacity,
+      }}
     >
       {children}
     </LikesContext.Provider>

@@ -1,0 +1,199 @@
+/* Saved songs on /me — the fan's own playlist, in the taste map's
+   language: pill filters like the tier row, coral ♥ like the player. */
+
+.section {
+  margin: 2.5rem 0 0;
+  max-width: 720px;
+}
+
+.title {
+  font-family: var(--font-fraunces), serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+  color: var(--text);
+}
+
+.note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+
+.empty {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0.4rem 0 0;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.reset {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: inherit;
+}
+
+/* ── Filter chips ─────────────────────────────────────────────── */
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.65rem;
+}
+
+.chip {
+  padding: 0.28rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.chip:hover {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}
+
+.chipOn {
+  background: var(--accent-soft);
+  border-color: var(--accent-deep);
+  color: var(--accent);
+}
+
+/* ── The list ─────────────────────────────────────────────────── */
+
+.list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.4rem 0.4rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.unlike {
+  flex-shrink: 0;
+  line-height: 1;
+  font-size: 0.85rem;
+  color: #ff7a6b;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.1rem 0.35rem;
+  transition:
+    color 0.18s ease,
+    border-color 0.18s ease,
+    transform 0.15s ease;
+}
+
+.unlike:hover {
+  border-color: rgba(255, 122, 107, 0.5);
+}
+
+.unlike:active {
+  transform: scale(0.9);
+}
+
+.rowMain {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.rowArtist,
+.rowArtistLink {
+  color: var(--text);
+}
+
+.rowArtistLink {
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+.rowArtistLink:hover {
+  color: var(--text);
+}
+
+.rowTitle {
+  min-width: 0;
+  color: var(--text-muted);
+}
+
+.rowWhere {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Loading shimmer — same language as the taste map ──────────── */
+
+.shimmerBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 640px;
+  margin-top: 2.5rem;
+}
+
+.shimmer {
+  height: 1.1rem;
+  border-radius: 6px;
+  background: linear-gradient(
+    100deg,
+    var(--bg-elevated) 35%,
+    var(--accent-soft) 50%,
+    var(--bg-elevated) 65%
+  );
+  background-size: 220% 100%;
+  animation: likedShimmer 1.8s ease-in-out infinite;
+}
+
+.shimmerShort {
+  width: 55%;
+}
+
+@keyframes likedShimmer {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .rowWhere {
+    width: 100%;
+    padding-left: 1.65rem;
+  }
+}
