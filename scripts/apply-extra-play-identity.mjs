@@ -33,6 +33,8 @@ import { EVIDENCE_DIR, PLAY_PATH, ROOT, evidencePath } from './lib/extraPlayIden
 const REPORT_PATH = join(ROOT, 'data', 'extra-play-identity-report.json')
 const HELD_PATH = join(ROOT, 'data', 'extra-play-identity-held.json')
 const WRITE = process.argv.includes('--write')
+/** Write only the owner's held list (ruling-round material), not the dataset. */
+const HELD_ONLY = process.argv.includes('--held')
 
 const report = JSON.parse(readFileSync(REPORT_PATH, 'utf8'))
 const dataset = JSON.parse(readFileSync(PLAY_PATH, 'utf8'))
@@ -85,6 +87,7 @@ function heldCase(row) {
     countries: row.countries,
     bucket: row.bucket,
     reason: row.stored.reason,
+    legs: row.stored.legs ?? [],
     url: `https://www.youtube.com/watch?v=${row.stored.videoId}`,
     uploadTitle: row.stored.title,
     onRecords: records,
@@ -112,6 +115,12 @@ const serving = (map) => Object.values(map).filter((e) => e.play?.kind === 'yout
 console.log(`verdicts applied: ${JSON.stringify(counts)}`)
 console.log(`youtube links serving: ${serving(dataset.entries)} → ${serving(entries)} (kept-bucket links going dark: ${wentDark.length})`)
 console.log(`held for the owner: ${held.length}`)
+if (HELD_ONLY) {
+  const byReason = held.reduce((acc, c) => ({ ...acc, [c.reason]: (acc[c.reason] ?? 0) + 1 }), {})
+  writeFileSync(HELD_PATH, `${JSON.stringify({ generatedAt: today, total: held.length, byReason, cases: held }, null, 1)}\n`)
+  console.log(`written: ${HELD_PATH} (held list only; dataset untouched)`)
+  process.exit(0)
+}
 if (!WRITE) {
   console.log('\n(dry run — pass --write to commit; nothing written)')
   process.exit(0)

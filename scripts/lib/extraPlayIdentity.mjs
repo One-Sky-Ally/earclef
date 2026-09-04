@@ -204,6 +204,30 @@ export function titleVariants(title, aliases = new Set()) {
   return out
 }
 
+/**
+ * Does a whole segment of the upload title equal one of the artist's
+ * aliases? Segment equality, never containment — "Sugus - Wicked Got
+ * To Pay" names Sugus; "Sugusito Live" does not.
+ */
+export function titleNamesArtist(title, aliases) {
+  const spans = new Set()
+  for (const part of (title ?? '').split(SEGMENT_SPLIT)) spans.add(part)
+  for (const part of (title ?? '').split(/\s+=\s+/)) spans.add(part)
+  for (const quoted of (title ?? '').matchAll(/["“«„]([^"”»“]+)["”»]/g)) spans.add(quoted[1])
+  for (const span of spans) {
+    const key = normalizeName(span.replace(TRAILING_GROUP, '').replace(TRAILING_FEAT, ''))
+    if (key && aliases.has(key)) return true
+  }
+  return false
+}
+
+/** Discogs extra-credit roles that mean the artist PERFORMS on the record. */
+const PERFORMING_ROLE =
+  /featur|vocal|perform|sing|guitar|piano|drum|bass|sax|trumpet|trombone|solo|instrument|accordion|violin|organ|keyboard|percussion|harmonica|flute|band|orchestra|conductor|chorus|choir|rap|\bmc\b|voice|harp|kora|balafon|oud|sitar|tabla|marimba|steel|clarinet|cello|strings|horn|dj\b|turntable|scratch|toast|backing|lead/i
+export function isPerformingRole(role) {
+  return PERFORMING_ROLE.test(role ?? '')
+}
+
 /** Does any variant of `a` equal any variant of `b`? Exact keys only. */
 export function variantsIntersect(a, b) {
   for (const key of a) if (b.has(key)) return true

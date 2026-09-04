@@ -44,6 +44,7 @@ import { join } from 'node:path'
 import {
   EVIDENCE_DIR, ROOT, DISCOGS_VARIOUS_ID, normalizeName, aliasKeys, titleVariants,
   variantsIntersect, durationSeconds, channelIdsFromUrls, stripDiscogsDisambiguator,
+  titleNamesArtist, isPerformingRole,
 } from './lib/extraPlayIdentity.mjs'
 
 const argOf = (flag, fallback) => {
@@ -70,6 +71,7 @@ function anchorsFor(videoId, evidence, aliases, artistChannelIds) {
   const id = Number(evidence.discogsId)
   const anchors = []
   const uncredited = []
+  const heldOn = []
   const upload = titleVariants(youtube[videoId]?.title ?? '', aliases)
   for (const record of evidence.records) {
     if (!record.videos.some((v) => v.videoId === videoId)) continue
@@ -80,16 +82,22 @@ function anchorsFor(videoId, evidence, aliases, artistChannelIds) {
       continue
     }
     const whole = record.artists.length > 0 && record.artists.every((a) => a.id === id)
-    const shared = !whole && record.artists.some((a) => a.id === id)
+    const perTrackCredits = record.tracklist.some((t) => t.artists.length > 0)
+    const shared = !whole && record.artists.some((a) => a.id === id) && !perTrackCredits
     if (whole || shared) {
       // whole: the record is this artist's alone. shared: credited
-      // beside others (a band + its singer, a duet) — still ID-level,
-      // reported as its own class so the owner can rule on it.
+      // beside others on a record WITHOUT per-track credits (a band +
+      // its singer, a duet). A shared record WITH per-track credits is
+      // a split — each side belongs to someone — and falls through to
+      // the track-level rule below (owner-approved class, Sep 3).
       anchors.push({ kind: whole ? 'whole' : 'shared', record, titles: recordTitleVariants(record, aliases), durations: record.tracklist.map((t) => durationSeconds(t.duration)).filter(Boolean) })
       continue
     }
-    const ownTracks = record.tracklist.filter((t) => t.artists.includes(id) || t.extraartists?.some((a) => a.id === id))
-    const featuredOnRecord = record.extraartists?.some((a) => a.id === id)
+    const performingRoles = (roles) => roles.some((a) => a.id === id && isPerformingRole(a.role))
+    const nonPerformingOnly = (roles) => roles.some((a) => a.id === id) && !performingRoles(roles)
+    const ownTracks = record.tracklist.filter((t) => t.artists.includes(id) || performingRoles(t.extraartists ?? []))
+    const featuredOnRecord = performingRoles(record.extraartists ?? [])
+    const creditedNonPerforming = nonPerformingOnly(record.extraartists ?? []) || record.tracklist.some((t) => nonPerformingOnly(t.extraartists ?? []))
     if (ownTracks.length || featuredOnRecord) {
       const pool = ownTracks.length ? ownTracks : record.tracklist
       const matched = pool.filter((t) => variantsIntersect(upload, titleVariants(t.title, aliases)))
@@ -99,14 +107,32 @@ function anchorsFor(videoId, evidence, aliases, artistChannelIds) {
         continue
       }
       const otherTrack = record.tracklist.find((t) => !t.artists.includes(id) && t.artists.length && variantsIntersect(upload, titleVariants(t.title, aliases)))
-      uncredited.push({ record, reason: otherTrack ? 'title-matches-other-artist-track' : 'credited-on-a-track-but-no-track-title-match' })
+      if (otherTrack) uncredited.push({ record, reason: 'title-matches-other-artist-track' })
+      else heldOn.push({ record, reason: 'track-credit-without-title-match' })
+      continue
+    }
+    if (creditedNonPerforming) {
+      // Written-By / Producer / Arranged By / Remix: the artist's work,
+      // someone else's recording. Held for the owner, never served.
+      heldOn.push({ record, reason: 'non-performing-credit' })
       continue
     }
     uncredited.push({ record, reason: record.artists.some((a) => a.id === DISCOGS_VARIOUS_ID) ? 'attached-to-various-artists-record' : 'attached-to-record-without-credit' })
   }
   const channelId = youtube[videoId]?.channelId
   if (channelId && artistChannelIds.has(channelId)) anchors.push({ kind: 'channel', channelId })
-  return { anchors, uncredited }
+  return { anchors, uncredited, heldOn }
+}
+
+/**
+ * A "<Someone Else> - Topic" channel is YouTube's own statement of
+ * whose recording this is. When that someone is not an alias of ours,
+ * the evidence conflicts and the video is HELD, whatever the credit.
+ */
+function topicContradicts(videoId, aliases) {
+  const channel = youtube[videoId]?.channelTitle ?? ''
+  if (!/ - Topic$/.test(channel)) return false
+  return !aliases.has(normalizeName(channel.replace(/ - Topic$/, '')))
 }
 
 function corroborationsFor(videoId, anchors, evidence, aliases) {
@@ -128,18 +154,30 @@ function corroborationsFor(videoId, anchors, evidence, aliases) {
   if (mbTitles && variantsIntersect(upload, mbTitles)) legs.add('mb-title')
   const channelKey = normalizeName(meta.channelTitle ?? '')
   if (channelKey && [...aliases].some((alias) => channelKey === `${alias}topic`)) legs.add('topic')
+  // The uploader names the artist in a whole title segment. Counted as
+  // its own leg so the owner can rule on whether it corroborates a
+  // whole-credit anchor (it is the quarantine's own bar, made exact).
+  if (anchors.some((a) => a.kind === 'whole') && titleNamesArtist(meta.title, aliases)) legs.add('name')
   return [...legs]
+}
+
+/** Legs that verify on their own; 'name' only if the owner rules so. */
+const NAME_LEG_ACCEPTED = process.argv.includes('--accept-name-leg')
+function decisiveLegs(legs) {
+  return NAME_LEG_ACCEPTED ? legs : legs.filter((leg) => leg !== 'name')
 }
 
 function judgeVideo(videoId, evidence, aliases, artistChannelIds) {
   const meta = youtube[videoId]
-  const { anchors, uncredited } = anchorsFor(videoId, evidence, aliases, artistChannelIds)
+  const { anchors, uncredited, heldOn } = anchorsFor(videoId, evidence, aliases, artistChannelIds)
   const legs = corroborationsFor(videoId, anchors, evidence, aliases)
   const anchorKinds = anchors.map((a) => a.kind)
   const playable = !!meta && !meta.gone && meta.privacyStatus === 'public' && meta.embeddable
-  if (anchors.length && legs.length) return { videoId, verdict: 'verified', anchors: anchorKinds, legs, playable, title: meta?.title ?? null, durationSeconds: meta?.durationSeconds ?? null }
-  if (!anchors.length && uncredited.length) return { videoId, verdict: 'refuted', reason: uncredited[0].reason, record: `${uncredited[0].record.kind} ${uncredited[0].record.id} "${uncredited[0].record.title}" by ${uncredited[0].record.artists.map((a) => a.name).join(', ')}`, playable, title: meta?.title ?? null }
-  if (anchors.length) return { videoId, verdict: 'held', reason: `${anchorKinds[0]}-credit-without-corroboration`, anchors: anchorKinds, playable, title: meta?.title ?? null }
+  if (anchors.length && topicContradicts(videoId, aliases)) return { videoId, verdict: 'held', reason: 'topic-channel-names-another-artist', anchors: anchorKinds, legs, playable, title: meta?.title ?? null }
+  if (anchors.length && decisiveLegs(legs).length) return { videoId, verdict: 'verified', anchors: anchorKinds, legs, playable, title: meta?.title ?? null, durationSeconds: meta?.durationSeconds ?? null }
+  if (!anchors.length && uncredited.length && !heldOn.length) return { videoId, verdict: 'refuted', reason: uncredited[0].reason, record: `${uncredited[0].record.kind} ${uncredited[0].record.id} "${uncredited[0].record.title}" by ${uncredited[0].record.artists.map((a) => a.name).join(', ')}`, playable, title: meta?.title ?? null }
+  if (anchors.length) return { videoId, verdict: 'held', reason: `${anchorKinds[0]}-credit-without-corroboration`, anchors: anchorKinds, legs, playable, title: meta?.title ?? null }
+  if (heldOn.length) return { videoId, verdict: 'held', reason: heldOn[0].reason, playable, title: meta?.title ?? null }
   return { videoId, verdict: 'held', reason: meta?.gone ? 'video-gone' : 'not-located-on-fetched-records', playable, title: meta?.title ?? null }
 }
 
@@ -197,6 +235,8 @@ function main() {
       /** Classes the owner may want to rule on separately. */
       servingAnchor: tally(sub.filter((r) => r.verdict === 'verified' || r.verdict === 'replaced'), (r) => (r.verdict === 'verified' ? r.stored : r.replacement).anchors.sort((a, b) => (ANCHOR_RANK[a] ?? 9) - (ANCHOR_RANK[b] ?? 9))[0]),
       durationOnly: sub.filter((r) => (r.verdict === 'verified' && r.stored.legs.join() === 'duration') || (r.verdict === 'replaced' && r.replacement.legs.join() === 'duration')).length,
+      /** Held links a whole credit + exact name-in-title would verify (owner ruling d). */
+      rescuableByNameLeg: sub.filter((r) => r.verdict === 'held' && r.stored.anchors?.[0] === 'whole' && (r.stored.legs ?? []).includes('name')).length,
     }
   }
   const report = {
