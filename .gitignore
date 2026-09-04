@@ -84,3 +84,5 @@ data/rg-dating-corrections.json
 data/extra-play-evidence/
 data/extra-play-identity.log
 data/extra-play-identity-report.json
+data/extra-play-identity-full.log
+data/run-extra-play-identity-sweep.sh

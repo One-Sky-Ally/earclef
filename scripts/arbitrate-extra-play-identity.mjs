@@ -32,6 +32,12 @@
  * verified candidate (playable, ≥90 s) → replaced; else stored refuted
  * → refuted; else held. NOTHING IS DELETED: every verdict keeps the
  * stored URL and records its evidence legs.
+ *
+ * OWNER RULINGS (Sep 3, 2026, with the step-2 go): (a) a SHARED credit
+ * (the artist beside others on the record) is an accepted anchor;
+ * (b) DURATION-ONLY corroboration on a whole credit is accepted;
+ * (c) a stored link that is HELD is REPLACED when a verified candidate
+ * exists. All three are the behaviour encoded above.
  */
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'

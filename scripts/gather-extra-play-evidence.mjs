@@ -79,7 +79,23 @@ async function getJson(url, attempt = 0) {
       return getJson(url, attempt + 1)
     }
     log(`  fetch failed ${url.replace(/token=[^&]+/, 'token=…').slice(0, 100)}: ${error.message}`)
+    fetchFailures++
     return null
+  }
+}
+
+/**
+ * Failures inside one artist's gather (a sleeping Mac, a network blip)
+ * leave that artist's evidence INCOMPLETE. Such a file is written with
+ * `incomplete: true` and treated as not done on resume — missing
+ * records must never read as "no records" (standing lesson 5).
+ */
+let fetchFailures = 0
+function isComplete(path) {
+  try {
+    return JSON.parse(readFileSync(path, 'utf8')).incomplete !== true
+  } catch {
+    return false
   }
 }
 
@@ -279,7 +295,8 @@ async function main() {
   for (const [key, entry] of universe) {
     if (done >= LIMIT || Date.now() > deadline) break
     const path = evidencePath(key)
-    if (existsSync(path)) continue
+    if (existsSync(path) && isComplete(path)) continue
+    fetchFailures = 0
     const held = artists.get(key)
     const discogsId = discogsIdOf(held?.artist, entry)
     const profile = await discogs(`/artists/${discogsId}`, token)
@@ -313,11 +330,12 @@ async function main() {
       records,
       candidateVideoIds: [...candidates],
       gatheredAt: new Date().toISOString(),
+      ...(fetchFailures > 0 ? { incomplete: true, fetchFailures } : {}),
     }
     writeFileSync(path, JSON.stringify(evidence, null, 1))
     done++
     const credited = records.filter((r) => creditedOn(r, discogsId)).length
-    log(`${key} ${evidence.name} · ${records.length} records (${credited} credited) · ${candidates.size} candidates${evidence.musicbrainz?.mbid ? ' · MB' : ''}`)
+    log(`${key} ${evidence.name} · ${records.length} records (${credited} credited) · ${candidates.size} candidates${evidence.musicbrainz?.mbid ? ' · MB' : ''}${fetchFailures ? ` · INCOMPLETE (${fetchFailures} fetch failures, will redo)` : ''}`)
   }
   while (pending.length) await flushYoutube(ytKey)
   log(`gather done: ${done} artists this run`)
