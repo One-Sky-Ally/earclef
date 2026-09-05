@@ -111,6 +111,15 @@ for (const row of report.rows) {
   if (row.verdict === 'held') held.push(heldCase(row))
 }
 
+// Quarantined YouTube links the sweep could not scope (no Discogs id, or
+// a key no longer mapped to a dataset artist) stay dark with a reason.
+const covered = new Set(report.rows.map((row) => row.key))
+for (const [key, entry] of Object.entries(dataset.entries)) {
+  if (covered.has(key) || entry.play?.kind !== 'youtube-video' || !entry.identityUnverified) continue
+  entries[key] = { ...bare(entry), identityUnverified: true, identityHeld: 'out-of-scope-no-discogs-id' }
+  counts.held++
+}
+
 const serving = (map) => Object.values(map).filter((e) => e.play?.kind === 'youtube-video' && !e.identityUnverified).length
 console.log(`verdicts applied: ${JSON.stringify(counts)}`)
 console.log(`youtube links serving: ${serving(dataset.entries)} → ${serving(entries)} (kept-bucket links going dark: ${wentDark.length})`)

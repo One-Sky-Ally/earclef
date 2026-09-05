@@ -43,6 +43,20 @@ interface ExtraPlayEntry {
    * evidence — see the module header. Never served; kept for repair.
    */
   identityUnverified?: boolean
+  /**
+   * REPAIR (Sep 4, 2026, scripts/apply-extra-play-identity.mjs): a link
+   * that serves carries the evidence it passed on — one ID-level anchor
+   * (Discogs credit on the record carrying the video: whole / shared /
+   * track / featured, or the artist's linked channel) plus at least one
+   * corroboration (title, duration, mb-title, topic, name).
+   */
+  identityEvidence?: { anchors: string[]; legs: string[]; verifiedAt: string }
+  /** A quarantined link the repair REFUTED (e.g. master-id-collision). */
+  identityRefuted?: string
+  /** A quarantined link the repair could not decide — on the owner's held list. */
+  identityHeld?: string
+  /** The link a replacement superseded. Nothing is deleted. */
+  previousPlay?: PlayLink
 }
 
 /** A gap-fill entry ready to play in a queue with no resolver walk. */

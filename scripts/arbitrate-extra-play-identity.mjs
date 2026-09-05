@@ -161,8 +161,14 @@ function corroborationsFor(videoId, anchors, evidence, aliases) {
   return [...legs]
 }
 
-/** Legs that verify on their own; 'name' only if the owner rules so. */
-const NAME_LEG_ACCEPTED = process.argv.includes('--accept-name-leg')
+/**
+ * Legs that verify on their own. The 'name' leg (exact alias in a whole
+ * title segment, on a WHOLE-credit anchor) was ACCEPTED by the owner
+ * Sep 4, 2026 (ruling d); `--reject-name-leg` reproduces the pre-ruling
+ * count. Ruling (e), same day: featured credits are PERFORMING roles
+ * only — encoded in isPerformingRole.
+ */
+const NAME_LEG_ACCEPTED = !process.argv.includes('--reject-name-leg')
 function decisiveLegs(legs) {
   return NAME_LEG_ACCEPTED ? legs : legs.filter((leg) => leg !== 'name')
 }
@@ -235,8 +241,8 @@ function main() {
       /** Classes the owner may want to rule on separately. */
       servingAnchor: tally(sub.filter((r) => r.verdict === 'verified' || r.verdict === 'replaced'), (r) => (r.verdict === 'verified' ? r.stored : r.replacement).anchors.sort((a, b) => (ANCHOR_RANK[a] ?? 9) - (ANCHOR_RANK[b] ?? 9))[0]),
       durationOnly: sub.filter((r) => (r.verdict === 'verified' && r.stored.legs.join() === 'duration') || (r.verdict === 'replaced' && r.replacement.legs.join() === 'duration')).length,
-      /** Held links a whole credit + exact name-in-title would verify (owner ruling d). */
-      rescuableByNameLeg: sub.filter((r) => r.verdict === 'held' && r.stored.anchors?.[0] === 'whole' && (r.stored.legs ?? []).includes('name')).length,
+      /** Serving links whose ONLY corroboration is the name leg (owner ruling d). */
+      nameLegOnly: sub.filter((r) => (r.verdict === 'verified' && r.stored.legs.join() === 'name') || (r.verdict === 'replaced' && r.replacement.legs.join() === 'name')).length,
     }
   }
   const report = {
