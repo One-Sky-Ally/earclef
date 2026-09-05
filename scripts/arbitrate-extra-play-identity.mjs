@@ -193,7 +193,8 @@ function judgeArtist(evidence) {
     ...channelIdsFromUrls(evidence.profile?.urls),
     ...(evidence.musicbrainz?.channelIds ?? []),
   ])
-  const stored = judgeVideo(evidence.storedVideoId, evidence, aliases, artistChannelIds)
+  // Phase 2 (null bucket): no stored video — only candidates to judge.
+  const stored = evidence.storedVideoId ? judgeVideo(evidence.storedVideoId, evidence, aliases, artistChannelIds) : null
   const others = evidence.candidateVideoIds
     .filter((id) => id !== evidence.storedVideoId)
     .map((id) => judgeVideo(id, evidence, aliases, artistChannelIds))
@@ -201,7 +202,9 @@ function judgeArtist(evidence) {
   const replacement = others
     .filter((v) => v.verdict === 'verified' && v.playable && (v.durationSeconds ?? 0) >= MIN_SONG_SECONDS)
     .sort((a, b) => rank(a) - rank(b))[0] ?? null
-  const verdict = stored.verdict === 'verified' ? 'verified' : replacement ? 'replaced' : stored.verdict === 'refuted' ? 'refuted' : 'held'
+  const verdict = !stored
+    ? replacement ? 'found' : 'nothing'
+    : stored.verdict === 'verified' ? 'verified' : replacement ? 'replaced' : stored.verdict === 'refuted' ? 'refuted' : 'held'
   return {
     key: evidence.key,
     name: evidence.name,
@@ -228,21 +231,23 @@ function tally(rows, by) {
 function main() {
   const files = readdirSync(EVIDENCE_DIR).filter((f) => f.endsWith('.json') && f !== 'youtube.json')
   const rows = files.map((f) => judgeArtist(JSON.parse(readFileSync(join(EVIDENCE_DIR, f), 'utf8'))))
-  const buckets = ['quarantined', 'kept']
+  const buckets = ['quarantined', 'kept', 'null']
+  const servingVideo = (r) => (r.verdict === 'verified' ? r.stored : r.verdict === 'replaced' || r.verdict === 'found' ? r.replacement : null)
   const summary = {}
   for (const bucket of buckets) {
     const sub = rows.filter((r) => r.bucket === bucket)
+    const serving = sub.filter((r) => servingVideo(r))
     summary[bucket] = {
       artists: sub.length,
       verdicts: tally(sub, (r) => r.verdict),
-      storedVideo: tally(sub, (r) => r.stored.verdict + (r.stored.reason ? `:${r.stored.reason}` : '')),
+      storedVideo: tally(sub.filter((r) => r.stored), (r) => r.stored.verdict + (r.stored.reason ? `:${r.stored.reason}` : '')),
       verifiedLegs: tally(sub.filter((r) => r.verdict === 'verified'), (r) => `${r.stored.anchors.join('+')}|${r.stored.legs.join('+')}`),
-      replacedLegs: tally(sub.filter((r) => r.verdict === 'replaced'), (r) => `${r.replacement.anchors.join('+')}|${r.replacement.legs.join('+')}`),
+      replacedLegs: tally(sub.filter((r) => r.verdict === 'replaced' || r.verdict === 'found'), (r) => `${r.replacement.anchors.join('+')}|${r.replacement.legs.join('+')}`),
       /** Classes the owner may want to rule on separately. */
-      servingAnchor: tally(sub.filter((r) => r.verdict === 'verified' || r.verdict === 'replaced'), (r) => (r.verdict === 'verified' ? r.stored : r.replacement).anchors.sort((a, b) => (ANCHOR_RANK[a] ?? 9) - (ANCHOR_RANK[b] ?? 9))[0]),
-      durationOnly: sub.filter((r) => (r.verdict === 'verified' && r.stored.legs.join() === 'duration') || (r.verdict === 'replaced' && r.replacement.legs.join() === 'duration')).length,
+      servingAnchor: tally(serving, (r) => [...servingVideo(r).anchors].sort((a, b) => (ANCHOR_RANK[a] ?? 9) - (ANCHOR_RANK[b] ?? 9))[0]),
+      durationOnly: serving.filter((r) => servingVideo(r).legs.join() === 'duration').length,
       /** Serving links whose ONLY corroboration is the name leg (owner ruling d). */
-      nameLegOnly: sub.filter((r) => (r.verdict === 'verified' && r.stored.legs.join() === 'name') || (r.verdict === 'replaced' && r.replacement.legs.join() === 'name')).length,
+      nameLegOnly: serving.filter((r) => servingVideo(r).legs.join() === 'name').length,
     }
   }
   const report = {
@@ -256,9 +261,9 @@ function main() {
   console.log(JSON.stringify(summary, null, 1))
   if (VERBOSE) {
     for (const r of rows) {
-      const stored = `${r.stored.verdict}${r.stored.reason ? ` (${r.stored.reason})` : ''}${r.stored.legs?.length ? ` [${r.stored.anchors.join('+')} | ${r.stored.legs.join('+')}]` : ''}`
+      const stored = !r.stored ? '(no stored link)' : `${r.stored.verdict}${r.stored.reason ? ` (${r.stored.reason})` : ''}${r.stored.legs?.length ? ` [${r.stored.anchors.join('+')} | ${r.stored.legs.join('+')}]` : ''}`
       const repl = r.replacement ? ` → ${r.replacement.videoId} "${(r.replacement.title ?? '').slice(0, 50)}" [${r.replacement.anchors.join('+')} | ${r.replacement.legs.join('+')}]` : ''
-      console.log(`${r.bucket[0].toUpperCase()} ${r.verdict.padEnd(8)} ${r.key} ${stripDiscogsDisambiguator(r.name ?? '')} (${r.countries.join(',')}) · stored "${(r.stored.title ?? '').slice(0, 45)}" ${stored}${repl}`)
+      console.log(`${r.bucket[0].toUpperCase()} ${r.verdict.padEnd(8)} ${r.key} ${stripDiscogsDisambiguator(r.name ?? '')} (${r.countries.join(',')}) · stored "${(r.stored?.title ?? '').slice(0, 45)}" ${stored}${repl}`)
     }
   }
   console.log(`report → ${REPORT_PATH}`)

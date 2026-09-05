@@ -85,3 +85,4 @@ data/extra-play-evidence/
 data/extra-play-identity.log
 data/extra-play-identity-full.log
 data/run-extra-play-identity-sweep.sh
+data/extra-play-identity-phase1.log

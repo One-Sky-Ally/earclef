@@ -55,6 +55,13 @@ const SMOKE = Number(argOf('--smoke', 0))
 const LIMIT = Number(argOf('--limit', Infinity))
 const MINUTES = Number(argOf('--minutes', Infinity))
 const ONLY = argOf('--only', null)
+/**
+ * PHASE 2 (owner go, Sep 4 2026): sweep the swept-NULL entries instead
+ * of the committed links. The original walk's master-id defect starved
+ * this bucket too — when the mis-fetched release had no videos the walk
+ * moved on and the artist's real master videos were never examined.
+ */
+const NULLS = process.argv.includes('--nulls')
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 function log(line) {
@@ -280,7 +287,7 @@ async function main() {
 
   const artists = loadArtistsByKey()
   const entries = loadPlayEntries()
-  let universe = Object.entries(entries).filter(([, e]) => e.play?.kind === 'youtube-video')
+  let universe = Object.entries(entries).filter(([, e]) => (NULLS ? e.play === null : e.play?.kind === 'youtube-video'))
   const idless = universe.filter(([k, e]) => !discogsIdOf(artists.get(k)?.artist, e))
   universe = universe.filter(([k, e]) => discogsIdOf(artists.get(k)?.artist, e))
   if (ONLY) universe = universe.filter(([k]) => k === ONLY)
@@ -301,12 +308,12 @@ async function main() {
     const discogsId = discogsIdOf(held?.artist, entry)
     const profile = await discogs(`/artists/${discogsId}`, token)
     const { listedCount, records, masterRows } = await gatherRecords(discogsId, token)
-    const storedVideoId = videoIdOf(entry.play.url)
-    if (!records.some((r) => r.videos.some((v) => v.videoId === storedVideoId))) {
+    const storedVideoId = entry.play ? videoIdOf(entry.play.url) : null
+    if (storedVideoId && !records.some((r) => r.videos.some((v) => v.videoId === storedVideoId))) {
       const collision = await replayMasterCollision(masterRows, storedVideoId, token)
       if (collision) records.push(collision)
     }
-    const candidates = new Set([storedVideoId])
+    const candidates = new Set(storedVideoId ? [storedVideoId] : [])
     for (const record of records) {
       if (record.replayOfMasterId || !creditedOn(record, discogsId)) continue
       for (const video of record.videos) if (candidates.size < CANDIDATE_CAP) candidates.add(video.videoId)
@@ -317,7 +324,7 @@ async function main() {
       key,
       name: held?.artist.name ?? entry.name ?? null,
       countries: held?.countries ?? [],
-      bucket: entry.identityUnverified ? 'quarantined' : 'kept',
+      bucket: !entry.play ? 'null' : entry.identityUnverified ? 'quarantined' : 'kept',
       discogsId,
       storedVideoId,
       storedTitle: entry.title ?? null,

@@ -69,6 +69,20 @@ function applyVerdict(entry, row) {
         identityEvidence: evidenceOf(row.replacement),
       }
     }
+    case 'found': {
+      // Phase 2: a swept-null artist now has a verified link. No
+      // previousPlay — there was nothing before.
+      const meta = youtube[row.replacement.videoId] ?? {}
+      return {
+        ...base,
+        play: { kind: 'youtube-video', url: `https://www.youtube.com/watch?v=${row.replacement.videoId}` },
+        title: meta.title ?? row.replacement.title ?? null,
+        durationSeconds: meta.durationSeconds ?? row.replacement.durationSeconds ?? null,
+        identityEvidence: evidenceOf(row.replacement),
+      }
+    }
+    case 'nothing':
+      return entry
     case 'refuted':
       return { ...base, identityUnverified: true, identityRefuted: row.stored.reason }
     default:
@@ -96,12 +110,13 @@ function heldCase(row) {
 }
 
 const entries = { ...dataset.entries }
-const counts = { verified: 0, replaced: 0, refuted: 0, held: 0, missingEntry: 0 }
+const counts = { verified: 0, replaced: 0, refuted: 0, held: 0, found: 0, nothing: 0, missingEntry: 0 }
 const wentDark = []
 const held = []
 for (const row of report.rows) {
   const entry = dataset.entries[row.key]
-  if (!entry || entry.play?.kind !== 'youtube-video') {
+  const nullRow = row.verdict === 'found' || row.verdict === 'nothing'
+  if (!entry || (nullRow ? entry.play?.kind === 'archive' : entry.play?.kind !== 'youtube-video')) {
     counts.missingEntry++
     continue
   }
