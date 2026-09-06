@@ -107,9 +107,11 @@ export default function ForArtistsPage() {
               Ready when you are
             </h2>
             <p className={styles.sectionNote}>
-              Artist self-serve is on its way; today it starts with a
-              conversation. Tell us who you are and where your music lives,
-              and we&rsquo;ll build your page with you.
+              Not on the map at all yet? That part you can do yourself in
+              about ten minutes:{' '}
+              <Link href="/get-on-the-map">get on the map</Link>. A page of
+              your own still starts with a conversation. Tell us who you are
+              and where your music lives, and we&rsquo;ll build it with you.
             </p>
             <a
               className={styles.ctaButton}

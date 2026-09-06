@@ -1,0 +1,206 @@
+.main {
+  min-height: calc(100dvh - 200px);
+  padding-block: clamp(3rem, 8vw, 5.5rem);
+}
+
+.overline {
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.overline::before {
+  content: '';
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: var(--accent-deep);
+  vertical-align: middle;
+  margin-right: 0.9rem;
+}
+
+.title {
+  font-size: clamp(2.6rem, 7vw, 4.5rem);
+  font-weight: 480;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  color: var(--text-soft);
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+  max-width: 600px;
+  text-wrap: pretty;
+}
+
+.section {
+  max-width: 640px;
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+
+.heading {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 480;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.prose {
+  color: var(--text-soft);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  text-wrap: pretty;
+}
+
+.prose a,
+.step a,
+.item a {
+  color: var(--accent);
+  text-decoration-color: var(--accent-deep);
+}
+
+/* The three fields the map is built on — the one box on the page. */
+.callout {
+  border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  padding: 1.4rem 1.5rem;
+  background: var(--bg-elevated);
+}
+
+.calloutTitle {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.fields {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.fieldName {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 0.2rem;
+}
+
+.fieldBody {
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.step {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 0.9rem;
+}
+
+.step::before {
+  content: counter(step);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--accent);
+  padding-top: 0.15rem;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 480;
+  margin-bottom: 0.35rem;
+}
+
+.stepBody {
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.items {
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.item {
+  display: grid;
+  gap: 0.2rem;
+  padding-left: 1.1rem;
+  border-left: 1px solid var(--border-strong);
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.itemTitle {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.cta {
+  max-width: 640px;
+  padding: 1.8rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--bg-card);
+}
+
+.ctaTitle {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 480;
+  margin-bottom: 0.6rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ctaButton:hover {
+  background: var(--accent-deep);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 2.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--accent);
+}
+
+.footer p {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text-soft);
+}
+
+@media (max-width: 520px) {
+  .step {
+    grid-template-columns: 1.8rem 1fr;
+    gap: 0.6rem;
+  }
+}

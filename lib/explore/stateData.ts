@@ -1,5 +1,6 @@
 import stateArtists from './state-artists.json'
 import nationArtists from './uk-nation-artists.json'
+import { selfFiledFor, withPinned } from './selfFiled'
 import type { CountryYearDetails, PanelArtist, PoolArtist } from './panelData'
 
 /**
@@ -120,9 +121,17 @@ export function stateDetails(
   const top: PanelArtist[] = ordered
     .slice(0, ARTIST_LIMIT)
     .map((artist) => ({ id: artist.id, name: artist.name }))
-  const pool: PoolArtist[] = ordered
-    .slice(0, POOL_LIMIT)
-    .map((artist) => ({ id: artist.id, name: artist.name, tags: artist.t }))
+  // Self-filed artists (the /get-on-the-map cap bypass): a guaranteed
+  // slot at the end of the pool, same filters, never a rank.
+  const pinned = selfFiledFor(code).filter(
+    (artist) =>
+      activeInRange(artist, start, end) &&
+      (includeUndated || artist.cs !== null) &&
+      (!lens || artist.t.some((tag) => tag.toLowerCase() === lens)),
+  )
+  const pool: PoolArtist[] = withPinned(ordered, pinned, POOL_LIMIT).map(
+    (artist) => ({ id: artist.id, name: artist.name, tags: artist.t }),
+  )
 
   return {
     // Genre totals count the stored roster only — an honest floor; the

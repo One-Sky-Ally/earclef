@@ -584,7 +584,10 @@ export function CountryPanel({
           {pool.length === 0 && (
             <p className={styles.note}>
               No artists from here on record for {spanLabel} — yet. The
-              catalogs grow every day.
+              catalogs grow every day.{' '}
+              <Link href="/get-on-the-map">
+                Are you from here? Get on the map →
+              </Link>
             </p>
           )}
 

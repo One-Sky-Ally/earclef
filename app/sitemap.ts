@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/for-artists`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${SITE}/manifesto`, changeFrequency: 'yearly', priority: 0.6 },
     { url: `${SITE}/suggest`, changeFrequency: 'yearly', priority: 0.4 },
+    { url: `${SITE}/get-on-the-map`, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${SITE}/privacy`, changeFrequency: 'yearly', priority: 0.2 },
   ]
 

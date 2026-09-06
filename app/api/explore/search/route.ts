@@ -11,7 +11,12 @@ const MAX_PARENT_HOPS = 4
  * names shouldn't resolve to whoever scores highest. */
 const ARTIST_MIN_SCORE = 85
 
-const memo = new Map<string, SearchResult | null>()
+/**
+ * Hits only. A miss is never memoized: an artist who adds themselves to
+ * MusicBrainz after a friend searched for them must not stay "not
+ * found" for the life of the function (see /get-on-the-map).
+ */
+const memo = new Map<string, SearchResult>()
 
 interface MbArea {
   id: string
@@ -106,6 +111,11 @@ interface MbArtistHit {
   score?: number
 }
 
+/** MusicBrainz names its special-purpose artists in square brackets. */
+function isSpecialPurpose(name: string): boolean {
+  return /^\[.*\]$/.test(name.trim())
+}
+
 /** Confident artist match for the fallback, or null. Throws on MB
  * failure so a transient outage never memoizes as a permanent miss. */
 async function findArtist(query: string): Promise<SearchResult | null> {
@@ -116,6 +126,11 @@ async function findArtist(query: string): Promise<SearchResult | null> {
   const body = (await res.json()) as { artists?: MbArtistHit[] }
   const top = body.artists?.[0]
   if (!top || (top.score ?? 0) < ARTIST_MIN_SCORE) return null
+  // MusicBrainz's special-purpose artists ("[no artist]", "[unknown]",
+  // "[traditional]") win the normalized top score for gibberish, which
+  // sent a musician searching their own absent name to a bogus panel
+  // instead of the not-found line that points at /get-on-the-map.
+  if (isSpecialPurpose(top.name)) return null
   return { kind: 'artist', artist: { mbid: top.id, name: top.name } }
 }
 
@@ -126,14 +141,8 @@ export async function GET(request: Request) {
   }
 
   const key = query.toLowerCase()
-  if (memo.has(key)) {
-    const cached = memo.get(key)
-    return cached
-      ? withCacheHeaders(NextResponse.json(cached))
-      : withCacheHeaders(
-          NextResponse.json({ error: 'No match' }, { status: 404 }),
-        )
-  }
+  const cached = memo.get(key)
+  if (cached) return withCacheHeaders(NextResponse.json(cached))
 
   // Claimed places win first — "Tibet" (or an alias, Xizang included)
   // opens the claimed-place panel, never a walk up to a parent state.
@@ -186,16 +195,27 @@ export async function GET(request: Request) {
     // in this era?" is answered by the artist-era panel client-side).
     await sleep(1050)
     const artist = await findArtist(query)
-    memo.set(key, artist)
-    return artist
-      ? withCacheHeaders(NextResponse.json(artist))
-      : withCacheHeaders(
-          NextResponse.json({ error: 'No match' }, { status: 404 }),
-        )
+    if (artist) {
+      memo.set(key, artist)
+      return withCacheHeaders(NextResponse.json(artist))
+    }
+    return withMissHeaders(
+      NextResponse.json({ error: 'No match' }, { status: 404 }),
+    )
   } catch (error) {
     console.error(`explore search "${query}" failed:`, error)
     return NextResponse.json({ error: 'Search unavailable' }, { status: 502 })
   }
+}
+
+/** A miss expires in an hour: the 30-day hit TTL would hide a newly
+ * added artist from the very person who just added themselves. */
+const MISS_CACHE_CONTROL = 'public, s-maxage=3600, stale-while-revalidate=600'
+
+function withMissHeaders(response: NextResponse): NextResponse {
+  response.headers.set('Cache-Control', MISS_CACHE_CONTROL)
+  response.headers.set('Netlify-Vary', 'query=q')
+  return response
 }
 
 function withCacheHeaders(response: NextResponse): NextResponse {

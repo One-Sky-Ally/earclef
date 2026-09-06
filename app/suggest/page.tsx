@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { SiteNav } from '@/components/SiteNav'
 import { EarClefMark } from '@/components/EarClefMark'
+import Link from 'next/link'
 import { SuggestForm } from '@/components/SuggestForm'
 import styles from './suggest.module.css'
 
@@ -21,6 +22,8 @@ export default function SuggestPage() {
           <p className={styles.subtitle}>
             Who belongs here? Every suggestion gets a real listen — additions
             go through the same verified research as the rest of the roster.
+            Suggesting yourself, and not on the globe yet?{' '}
+            <Link href="/get-on-the-map">Get on the map</Link> first.
           </p>
           <SuggestForm />
         </div>

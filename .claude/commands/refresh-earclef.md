@@ -54,6 +54,29 @@ A large gap (10+ artists) → note it and run a dedicated session or the
 farm in CLI mode (requires the one-time `claude /login` in a plain
 terminal; see handoff).
 
+## Phase D — self-filed artists (~5 min, only when the inbox has any)
+
+Artists who followed /get-on-the-map email oneskyally@gmail.com with
+their MusicBrainz link (and, for the cap bypass, a page they control).
+
+1. For every country named in the inbox:
+   `node scripts/build-country-data.mjs --only XX --refresh` (merge is
+   monotonic; a re-sweep only ever adds rows). A US-state / UK-nation
+   artist also needs the region pass: `node scripts/build-state-data.mjs
+   --region US-XX`.
+2. Cap bypass (only when the country file says `truncated: true`, or
+   the artist asks): `node scripts/self-filed.mjs mint <mbid> --url
+   <page>` → reply with the printed token; once they say it is posted,
+   `node scripts/self-filed.mjs verify <mbid>`. Entries are served ONLY
+   with url + token + verifiedAt all present — never hand-edit
+   verifiedAt. Refused hosts (musicbrainz, discogs, wikidata,
+   wikipedia, earclef) are refused on purpose: proof of control, not
+   proof of an account.
+3. `node scripts/self-filed.mjs refresh` re-reads MusicBrainz fields
+   (career years, tags) for verified rows.
+4. Reply to each artist with what actually happened: listed, pinned, or
+   why not (usually: no Area or no begin date on their record).
+
 ## Close out
 
 - `node scripts/validate-content.mjs` + `npm run build` must pass.

@@ -1,6 +1,7 @@
 import type { CountryYearDetails, PanelArtist, PoolArtist } from './panelData'
 import { movedIn, movedOut } from './originCorrections'
 import { canonicalizeTags } from './genreFamilies'
+import { selfFiledFor, withPinned } from './selfFiled'
 import countryIndex from './country-artists-index.json'
 
 /**
@@ -182,7 +183,19 @@ export async function countryDetails(
   const top: PanelArtist[] = ordered
     .slice(0, ARTIST_LIMIT)
     .map((artist) => ({ id: artist.id, name: artist.name }))
-  const pool: PoolArtist[] = ordered.slice(0, POOL_LIMIT).map((artist) => ({
+  /**
+   * Self-filed artists (the /get-on-the-map cap bypass) are guaranteed
+   * a slot in the pool, never a rank — same span and lens filters as
+   * everyone else, appended at the end. Read-time like the corrections
+   * above, so a new pin needs no re-sweep.
+   */
+  const pinned = selfFiledFor(code).filter(
+    (artist) =>
+      activeInRange(artist, start, end) &&
+      (includeUndated || artist.cs !== null) &&
+      (!lens || artist.t.some((tag) => tag.toLowerCase() === lens)),
+  )
+  const pool: PoolArtist[] = withPinned(ordered, pinned, POOL_LIMIT).map((artist) => ({
     id: artist.id,
     name: artist.name,
     /**

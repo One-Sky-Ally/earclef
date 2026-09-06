@@ -56,9 +56,13 @@
   color: var(--bg);
 }
 
+/* The "Surprise me" button sits absolutely under the search row
+ * (ExploreClient .surprise, top 4.4rem); a note starting right under
+ * the row rendered THROUGH it. Clear the button so the not-found line
+ * and its link are readable — it is the front door of /get-on-the-map. */
 .error,
 .note {
-  margin-top: 0.5rem;
+  margin-top: 4.1rem;
   padding: 0.4rem 0.9rem;
   border-radius: 8px;
   background: rgba(22, 18, 16, 0.85);
@@ -69,4 +73,12 @@
 
 .error {
   color: var(--accent);
+}
+
+.errorLink {
+  color: var(--text);
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-deep);
+  text-underline-offset: 2px;
 }

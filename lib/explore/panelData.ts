@@ -118,6 +118,15 @@ export type SearchResult =
   | { kind: 'place'; country: string; area: string }
   | { kind: 'artist'; artist: { mbid: string; name: string } }
 
+/** Nothing matched — distinct from a failure, so the search box can
+ * point an absent artist at /get-on-the-map instead of a dead end. */
+export class SearchNotFoundError extends Error {
+  constructor() {
+    super("Couldn't find that — try a city, country, or artist name.")
+    this.name = 'SearchNotFoundError'
+  }
+}
+
 export async function searchExplore(
   query: string,
   signal: AbortSignal,
@@ -127,11 +136,7 @@ export async function searchExplore(
     `/api/explore/search?q=${encodeURIComponent(query)}`,
     signal,
   )
-  if (res.status === 404) {
-    throw new Error(
-      "Couldn't find that — try a city, country, or artist name.",
-    )
-  }
+  if (res.status === 404) throw new SearchNotFoundError()
   if (res.status === 429) {
     throw new Error('MusicBrainz is busy — try again in a moment.')
   }

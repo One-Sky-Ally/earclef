@@ -1,7 +1,12 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { searchExplore, type SearchResult } from '@/lib/explore/panelData'
+import Link from 'next/link'
+import {
+  SearchNotFoundError,
+  searchExplore,
+  type SearchResult,
+} from '@/lib/explore/panelData'
 import styles from './SearchBox.module.css'
 
 interface SearchBoxProps {
@@ -12,6 +17,7 @@ type SearchState =
   | { status: 'idle' }
   | { status: 'searching' }
   | { status: 'error'; message: string }
+  | { status: 'notFound'; message: string }
 
 export function SearchBox({ onResolved }: SearchBoxProps) {
   const [state, setState] = useState<SearchState>({ status: 'idle' })
@@ -37,7 +43,9 @@ export function SearchBox({ onResolved }: SearchBoxProps) {
       onResolved(result)
     } catch (error) {
       if (controller.signal.aborted) return
-      setState({ status: 'error', message: (error as Error).message })
+      const status =
+        error instanceof SearchNotFoundError ? 'notFound' : 'error'
+      setState({ status, message: (error as Error).message })
     }
   }
 
@@ -64,6 +72,14 @@ export function SearchBox({ onResolved }: SearchBoxProps) {
       </div>
       {state.status === 'error' && (
         <p className={styles.error}>{state.message}</p>
+      )}
+      {state.status === 'notFound' && (
+        <p className={styles.error}>
+          {state.message}{' '}
+          <Link className={styles.errorLink} href="/get-on-the-map">
+            Are you the artist? Get on the map →
+          </Link>
+        </p>
       )}
       {state.status === 'searching' && (
         <p className={styles.note}>Finding it on the map…</p>
