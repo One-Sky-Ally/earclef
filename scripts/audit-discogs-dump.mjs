@@ -18,7 +18,15 @@ import { COUNTRIES } from './lib/gap-fill-countries.mjs'
 import { countryCounts, releaseIndexAvailable, releasesFor } from './lib/discogsDump.mjs'
 
 const WORK_PATH = 'data/extra-artists-work-v2.json'
-const OUT_PATH = 'data/discogs-dump/audit.json'
+// Tracked (the dump dir itself is gitignored): the audit IS the evidence.
+const OUT_PATH = 'data/discogs-dump-audit.json'
+/**
+ * Discogs's placeholder credits (Various / Unknown Artist / No Artist)
+ * — the sweep's releaseCredits() dropped these at ingest, the index
+ * keeps the record as-is, so the comparison drops them on the dump
+ * side too. Same set as build-extra-artists.mjs GENERIC_CREDIT_IDS.
+ */
+const GENERIC_CREDIT_IDS = new Set([194, 118760, 355])
 
 if (!releaseIndexAvailable()) {
   console.error('release index not complete — nothing to audit')
@@ -65,12 +73,13 @@ for (const [code, state] of Object.entries(work)) {
       row.countryDiffers++
       diffs.push({ code, id, field: 'country', api: stored.country, dump: record.country })
     }
-    const apiIds = stored.credits.map((credit) => credit.id)
-    const dumpIds = record.artists.map((credit) => credit.id)
+    const apiIds = [...new Set(stored.credits.map((credit) => credit.id))]
+    const dumpCredits = record.artists.filter((credit) => !GENERIC_CREDIT_IDS.has(credit.id))
+    const dumpIds = [...new Set(dumpCredits.map((credit) => credit.id))]
     if (sameSet(apiIds, dumpIds)) {
       totals.creditIdsEqual++
-      const apiNames = stored.credits.map((credit) => `${credit.id}:${credit.name}`).sort()
-      const dumpNames = record.artists.map((credit) => `${credit.id}:${credit.name.replace(/\s*\(\d+\)\s*$/, '')}`).sort()
+      const apiNames = [...new Set(stored.credits.map((credit) => `${credit.id}:${credit.name}`))].sort()
+      const dumpNames = [...new Set(dumpCredits.map((credit) => `${credit.id}:${credit.name.replace(/\s*\(\d+\)\s*$/, '')}`))].sort()
       if (apiNames.join('|') === dumpNames.join('|')) totals.namesEqual++
       else diffs.push({ code, id, field: 'names', api: apiNames, dump: dumpNames })
     } else {

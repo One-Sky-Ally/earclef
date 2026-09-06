@@ -1,0 +1,1763 @@
+{
+  "generatedAt": "2026-09-06T19:02:23.394Z",
+  "summary": {
+    "cached": 37055,
+    "inDump": 36840,
+    "missing": 215,
+    "countryEqual": 36840,
+    "countryDiffers": 0,
+    "creditIdsEqual": 36798,
+    "creditIdsDiffer": 42,
+    "namesEqual": 36797,
+    "sweepTotal": 37679,
+    "dumpTotal": 48988,
+    "neverSeenBySweep": 11523,
+    "neverSeenShare": 0.235
+  },
+  "perCountry": {
+    "LA": {
+      "name": "Laos",
+      "sweepReleases": 148,
+      "dumpReleases": 161,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 13,
+      "strings": {
+        "Laos": {
+          "dump": 161,
+          "dumpTable": 161
+        }
+      },
+      "cached": 0,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "PY": {
+      "name": "Paraguay",
+      "sweepReleases": 982,
+      "dumpReleases": 1371,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 389,
+      "strings": {
+        "Paraguay": {
+          "dump": 1371,
+          "dumpTable": 1371
+        }
+      },
+      "cached": 0,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "BT": {
+      "name": "Bhutan",
+      "sweepReleases": 43,
+      "dumpReleases": 43,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Bhutan": {
+          "dump": 43,
+          "dumpTable": 43
+        }
+      },
+      "cached": 43,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "TL": {
+      "name": "Timor-Leste",
+      "sweepReleases": 130,
+      "dumpReleases": 130,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "East Timor": {
+          "dump": 130,
+          "dumpTable": 130
+        }
+      },
+      "cached": 130,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "AF": {
+      "name": "Afghanistan",
+      "sweepReleases": 175,
+      "dumpReleases": 198,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 23,
+      "strings": {
+        "Afghanistan": {
+          "dump": 198,
+          "dumpTable": 198
+        }
+      },
+      "cached": 175,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "TD": {
+      "name": "Chad",
+      "sweepReleases": 3,
+      "dumpReleases": 3,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Chad": {
+          "dump": 3,
+          "dumpTable": 3
+        }
+      },
+      "cached": 3,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "GQ": {
+      "name": "Equatorial Guinea",
+      "sweepReleases": 5,
+      "dumpReleases": 5,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Equatorial Guinea": {
+          "dump": 5,
+          "dumpTable": 5
+        }
+      },
+      "cached": 5,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "SB": {
+      "name": "Solomon Islands",
+      "sweepReleases": 7,
+      "dumpReleases": 7,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Solomon Islands": {
+          "dump": 7,
+          "dumpTable": 7
+        }
+      },
+      "cached": 7,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "DJ": {
+      "name": "Djibouti",
+      "sweepReleases": 11,
+      "dumpReleases": 11,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Djibouti": {
+          "dump": 11,
+          "dumpTable": 11
+        }
+      },
+      "cached": 11,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "VU": {
+      "name": "Vanuatu",
+      "sweepReleases": 13,
+      "dumpReleases": 13,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Vanuatu": {
+          "dump": 13,
+          "dumpTable": 13
+        }
+      },
+      "cached": 13,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "SZ": {
+      "name": "Eswatini",
+      "sweepReleases": 13,
+      "dumpReleases": 13,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Swaziland": {
+          "dump": 13,
+          "dumpTable": 13
+        }
+      },
+      "cached": 13,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "MR": {
+      "name": "Mauritania",
+      "sweepReleases": 14,
+      "dumpReleases": 14,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Mauritania": {
+          "dump": 14,
+          "dumpTable": 14
+        }
+      },
+      "cached": 14,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "RW": {
+      "name": "Rwanda",
+      "sweepReleases": 26,
+      "dumpReleases": 26,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Rwanda": {
+          "dump": 26,
+          "dumpTable": 26
+        }
+      },
+      "cached": 26,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "TJ": {
+      "name": "Tajikistan",
+      "sweepReleases": 27,
+      "dumpReleases": 28,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 1,
+      "strings": {
+        "Tajikistan": {
+          "dump": 28,
+          "dumpTable": 28
+        }
+      },
+      "cached": 27,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 2
+    },
+    "GW": {
+      "name": "Guinea-Bissau",
+      "sweepReleases": 29,
+      "dumpReleases": 29,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Guinea-Bissau": {
+          "dump": 29,
+          "dumpTable": 29
+        }
+      },
+      "cached": 29,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "LS": {
+      "name": "Lesotho",
+      "sweepReleases": 32,
+      "dumpReleases": 32,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Lesotho": {
+          "dump": 32,
+          "dumpTable": 32
+        }
+      },
+      "cached": 32,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "OM": {
+      "name": "Oman",
+      "sweepReleases": 32,
+      "dumpReleases": 34,
+      "sweepMissedInDump": 1,
+      "dumpMissingFromSweep": 3,
+      "strings": {
+        "Oman": {
+          "dump": 34,
+          "dumpTable": 34
+        }
+      },
+      "cached": 32,
+      "missing": 1,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "MW": {
+      "name": "Malawi",
+      "sweepReleases": 35,
+      "dumpReleases": 35,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Malawi": {
+          "dump": 35,
+          "dumpTable": 35
+        }
+      },
+      "cached": 35,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "NE": {
+      "name": "Niger",
+      "sweepReleases": 36,
+      "dumpReleases": 37,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 1,
+      "strings": {
+        "Niger": {
+          "dump": 37,
+          "dumpTable": 37
+        }
+      },
+      "cached": 36,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "GM": {
+      "name": "Gambia",
+      "sweepReleases": 41,
+      "dumpReleases": 41,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Gambia, The": {
+          "dump": 41,
+          "dumpTable": 41
+        },
+        "Gambia": {
+          "dump": 0,
+          "dumpTable": null
+        }
+      },
+      "cached": 41,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "SO": {
+      "name": "Somalia",
+      "sweepReleases": 60,
+      "dumpReleases": 60,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Somalia": {
+          "dump": 60,
+          "dumpTable": 60
+        }
+      },
+      "cached": 60,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "LR": {
+      "name": "Liberia",
+      "sweepReleases": 63,
+      "dumpReleases": 63,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Liberia": {
+          "dump": 63,
+          "dumpTable": 63
+        }
+      },
+      "cached": 63,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "BW": {
+      "name": "Botswana",
+      "sweepReleases": 69,
+      "dumpReleases": 69,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Botswana": {
+          "dump": 69,
+          "dumpTable": 69
+        }
+      },
+      "cached": 69,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "CF": {
+      "name": "Central African Republic",
+      "sweepReleases": 66,
+      "dumpReleases": 71,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 5,
+      "strings": {
+        "Central African Republic": {
+          "dump": 71,
+          "dumpTable": 71
+        }
+      },
+      "cached": 66,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "QA": {
+      "name": "Qatar",
+      "sweepReleases": 74,
+      "dumpReleases": 74,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Qatar": {
+          "dump": 74,
+          "dumpTable": 74
+        }
+      },
+      "cached": 74,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "BN": {
+      "name": "Brunei",
+      "sweepReleases": 78,
+      "dumpReleases": 82,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 4,
+      "strings": {
+        "Brunei": {
+          "dump": 82,
+          "dumpTable": 82
+        }
+      },
+      "cached": 78,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "TM": {
+      "name": "Turkmenistan",
+      "sweepReleases": 84,
+      "dumpReleases": 90,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 6,
+      "strings": {
+        "Turkmenistan": {
+          "dump": 90,
+          "dumpTable": 90
+        }
+      },
+      "cached": 84,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "KG": {
+      "name": "Kyrgyzstan",
+      "sweepReleases": 83,
+      "dumpReleases": 94,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 11,
+      "strings": {
+        "Kyrgyzstan": {
+          "dump": 94,
+          "dumpTable": 94
+        }
+      },
+      "cached": 83,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "SL": {
+      "name": "Sierra Leone",
+      "sweepReleases": 88,
+      "dumpReleases": 97,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 9,
+      "strings": {
+        "Sierra Leone": {
+          "dump": 97,
+          "dumpTable": 97
+        }
+      },
+      "cached": 88,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "BF": {
+      "name": "Burkina Faso",
+      "sweepReleases": 101,
+      "dumpReleases": 101,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 0,
+      "strings": {
+        "Burkina Faso": {
+          "dump": 101,
+          "dumpTable": 101
+        }
+      },
+      "cached": 101,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "NA": {
+      "name": "Namibia",
+      "sweepReleases": 111,
+      "dumpReleases": 112,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 1,
+      "strings": {
+        "Namibia": {
+          "dump": 112,
+          "dumpTable": 112
+        }
+      },
+      "cached": 111,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "ER": {
+      "name": "Eritrea",
+      "sweepReleases": 116,
+      "dumpReleases": 117,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 1,
+      "strings": {
+        "Eritrea": {
+          "dump": 117,
+          "dumpTable": 117
+        }
+      },
+      "cached": 116,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "PG": {
+      "name": "Papua New Guinea",
+      "sweepReleases": 169,
+      "dumpReleases": 179,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 10,
+      "strings": {
+        "Papua New Guinea": {
+          "dump": 179,
+          "dumpTable": 179
+        }
+      },
+      "cached": 169,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "YE": {
+      "name": "Yemen",
+      "sweepReleases": 169,
+      "dumpReleases": 198,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 29,
+      "strings": {
+        "Yemen": {
+          "dump": 198,
+          "dumpTable": 198
+        }
+      },
+      "cached": 169,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "TG": {
+      "name": "Togo",
+      "sweepReleases": 190,
+      "dumpReleases": 194,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 4,
+      "strings": {
+        "Togo": {
+          "dump": 194,
+          "dumpTable": 194
+        }
+      },
+      "cached": 190,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "GA": {
+      "name": "Gabon",
+      "sweepReleases": 218,
+      "dumpReleases": 233,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 15,
+      "strings": {
+        "Gabon": {
+          "dump": 233,
+          "dumpTable": 233
+        }
+      },
+      "cached": 218,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "FJ": {
+      "name": "Fiji",
+      "sweepReleases": 194,
+      "dumpReleases": 232,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 38,
+      "strings": {
+        "Fiji": {
+          "dump": 232,
+          "dumpTable": 232
+        }
+      },
+      "cached": 194,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "MM": {
+      "name": "Myanmar",
+      "sweepReleases": 462,
+      "dumpReleases": 542,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 80,
+      "strings": {
+        "Burma": {
+          "dump": 542,
+          "dumpTable": 542
+        }
+      },
+      "cached": 462,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 2
+    },
+    "KH": {
+      "name": "Cambodia",
+      "sweepReleases": 449,
+      "dumpReleases": 577,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 128,
+      "strings": {
+        "Cambodia": {
+          "dump": 577,
+          "dumpTable": 577
+        }
+      },
+      "cached": 449,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 2
+    },
+    "BD": {
+      "name": "Bangladesh",
+      "sweepReleases": 345,
+      "dumpReleases": 405,
+      "sweepMissedInDump": 4,
+      "dumpMissingFromSweep": 64,
+      "strings": {
+        "Bangladesh": {
+          "dump": 405,
+          "dumpTable": 405
+        }
+      },
+      "cached": 345,
+      "missing": 4,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 1
+    },
+    "NP": {
+      "name": "Nepal",
+      "sweepReleases": 410,
+      "dumpReleases": 507,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 97,
+      "strings": {
+        "Nepal": {
+          "dump": 507,
+          "dumpTable": 507
+        }
+      },
+      "cached": 410,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "MN": {
+      "name": "Mongolia",
+      "sweepReleases": 454,
+      "dumpReleases": 530,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 76,
+      "strings": {
+        "Mongolia": {
+          "dump": 530,
+          "dumpTable": 530
+        }
+      },
+      "cached": 454,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "LK": {
+      "name": "Sri Lanka",
+      "sweepReleases": 797,
+      "dumpReleases": 1054,
+      "sweepMissedInDump": 1,
+      "dumpMissingFromSweep": 258,
+      "strings": {
+        "Sri Lanka": {
+          "dump": 1054,
+          "dumpTable": 1054
+        }
+      },
+      "cached": 797,
+      "missing": 1,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "KP": {
+      "name": "North Korea",
+      "sweepReleases": 349,
+      "dumpReleases": 428,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 79,
+      "strings": {
+        "North Korea": {
+          "dump": 428,
+          "dumpTable": 428
+        }
+      },
+      "cached": 349,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "TZ": {
+      "name": "Tanzania",
+      "sweepReleases": 326,
+      "dumpReleases": 364,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 38,
+      "strings": {
+        "Tanzania": {
+          "dump": 364,
+          "dumpTable": 364
+        }
+      },
+      "cached": 326,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "UG": {
+      "name": "Uganda",
+      "sweepReleases": 477,
+      "dumpReleases": 543,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 66,
+      "strings": {
+        "Uganda": {
+          "dump": 543,
+          "dumpTable": 543
+        }
+      },
+      "cached": 477,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "ML": {
+      "name": "Mali",
+      "sweepReleases": 534,
+      "dumpReleases": 584,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 50,
+      "strings": {
+        "Mali": {
+          "dump": 584,
+          "dumpTable": 584
+        }
+      },
+      "cached": 534,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "GN": {
+      "name": "Guinea",
+      "sweepReleases": 616,
+      "dumpReleases": 461,
+      "sweepMissedInDump": 200,
+      "dumpMissingFromSweep": 45,
+      "strings": {
+        "Guinea": {
+          "dump": 461,
+          "dumpTable": 461
+        }
+      },
+      "cached": 616,
+      "missing": 200,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "SD": {
+      "name": "Sudan",
+      "sweepReleases": 546,
+      "dumpReleases": 682,
+      "sweepMissedInDump": 4,
+      "dumpMissingFromSweep": 140,
+      "strings": {
+        "Sudan": {
+          "dump": 682,
+          "dumpTable": 682
+        }
+      },
+      "cached": 546,
+      "missing": 4,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 1
+    },
+    "BJ": {
+      "name": "Benin",
+      "sweepReleases": 537,
+      "dumpReleases": 711,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 174,
+      "strings": {
+        "Benin": {
+          "dump": 711,
+          "dumpTable": 711
+        }
+      },
+      "cached": 537,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 6
+    },
+    "CM": {
+      "name": "Cameroon",
+      "sweepReleases": 728,
+      "dumpReleases": 903,
+      "sweepMissedInDump": 1,
+      "dumpMissingFromSweep": 176,
+      "strings": {
+        "Cameroon": {
+          "dump": 903,
+          "dumpTable": 903
+        }
+      },
+      "cached": 728,
+      "missing": 1,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "SN": {
+      "name": "Senegal",
+      "sweepReleases": 962,
+      "dumpReleases": 1299,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 337,
+      "strings": {
+        "Senegal": {
+          "dump": 1299,
+          "dumpTable": 1299
+        }
+      },
+      "cached": 962,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 2
+    },
+    "ET": {
+      "name": "Ethiopia",
+      "sweepReleases": 1000,
+      "dumpReleases": 1349,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 349,
+      "strings": {
+        "Ethiopia": {
+          "dump": 1349,
+          "dumpTable": 1349
+        }
+      },
+      "cached": 1000,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 2
+    },
+    "BZ": {
+      "name": "Belize",
+      "sweepReleases": 247,
+      "dumpReleases": 260,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 13,
+      "strings": {
+        "Belize": {
+          "dump": 260,
+          "dumpTable": 260
+        }
+      },
+      "cached": 247,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "GY": {
+      "name": "Guyana",
+      "sweepReleases": 272,
+      "dumpReleases": 340,
+      "sweepMissedInDump": 2,
+      "dumpMissingFromSweep": 70,
+      "strings": {
+        "Guyana": {
+          "dump": 340,
+          "dumpTable": 340
+        }
+      },
+      "cached": 272,
+      "missing": 2,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "HN": {
+      "name": "Honduras",
+      "sweepReleases": 540,
+      "dumpReleases": 742,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 202,
+      "strings": {
+        "Honduras": {
+          "dump": 742,
+          "dumpTable": 742
+        }
+      },
+      "cached": 540,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 2
+    },
+    "BS": {
+      "name": "Bahamas",
+      "sweepReleases": 942,
+      "dumpReleases": 963,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 21,
+      "strings": {
+        "Bahamas, The": {
+          "dump": 963,
+          "dumpTable": 963
+        },
+        "Bahamas": {
+          "dump": 0,
+          "dumpTable": null
+        }
+      },
+      "cached": 942,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 1
+    },
+    "SR": {
+      "name": "Suriname",
+      "sweepReleases": 742,
+      "dumpReleases": 969,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 227,
+      "strings": {
+        "Suriname": {
+          "dump": 969,
+          "dumpTable": 969
+        }
+      },
+      "cached": 742,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 1
+    },
+    "HT": {
+      "name": "Haiti",
+      "sweepReleases": 777,
+      "dumpReleases": 998,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 221,
+      "strings": {
+        "Haiti": {
+          "dump": 998,
+          "dumpTable": 998
+        }
+      },
+      "cached": 777,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "NI": {
+      "name": "Nicaragua",
+      "sweepReleases": 1248,
+      "dumpReleases": 1549,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 301,
+      "strings": {
+        "Nicaragua": {
+          "dump": 1549,
+          "dumpTable": 1549
+        }
+      },
+      "cached": 1248,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 1
+    },
+    "PS": {
+      "name": "Palestine",
+      "sweepReleases": 239,
+      "dumpReleases": 290,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 51,
+      "strings": {
+        "Palestine": {
+          "dump": 290,
+          "dumpTable": 290
+        }
+      },
+      "cached": 239,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "JO": {
+      "name": "Jordan",
+      "sweepReleases": 301,
+      "dumpReleases": 322,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 21,
+      "strings": {
+        "Jordan": {
+          "dump": 322,
+          "dumpTable": 322
+        }
+      },
+      "cached": 301,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "LY": {
+      "name": "Libya",
+      "sweepReleases": 321,
+      "dumpReleases": 385,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 64,
+      "strings": {
+        "Libya": {
+          "dump": 385,
+          "dumpTable": 385
+        }
+      },
+      "cached": 321,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "IQ": {
+      "name": "Iraq",
+      "sweepReleases": 303,
+      "dumpReleases": 403,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 100,
+      "strings": {
+        "Iraq": {
+          "dump": 403,
+          "dumpTable": 403
+        }
+      },
+      "cached": 303,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "KW": {
+      "name": "Kuwait",
+      "sweepReleases": 587,
+      "dumpReleases": 761,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 174,
+      "strings": {
+        "Kuwait": {
+          "dump": 761,
+          "dumpTable": 761
+        }
+      },
+      "cached": 587,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "AM": {
+      "name": "Armenia",
+      "sweepReleases": 587,
+      "dumpReleases": 775,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 188,
+      "strings": {
+        "Armenia": {
+          "dump": 775,
+          "dumpTable": 775
+        }
+      },
+      "cached": 587,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "UZ": {
+      "name": "Uzbekistan",
+      "sweepReleases": 762,
+      "dumpReleases": 1032,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 270,
+      "strings": {
+        "Uzbekistan": {
+          "dump": 1032,
+          "dumpTable": 1032
+        }
+      },
+      "cached": 762,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 3
+    },
+    "AL": {
+      "name": "Albania",
+      "sweepReleases": 822,
+      "dumpReleases": 1174,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 352,
+      "strings": {
+        "Albania": {
+          "dump": 1174,
+          "dumpTable": 1174
+        }
+      },
+      "cached": 822,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 3
+    },
+    "MD": {
+      "name": "Moldova",
+      "sweepReleases": 895,
+      "dumpReleases": 1281,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 386,
+      "strings": {
+        "Moldova, Republic of": {
+          "dump": 1281,
+          "dumpTable": 1281
+        },
+        "Moldova": {
+          "dump": 0,
+          "dumpTable": null
+        }
+      },
+      "cached": 895,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "XK": {
+      "name": "Kosovo",
+      "sweepReleases": 435,
+      "dumpReleases": 479,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 44,
+      "strings": {
+        "Kosovo": {
+          "dump": 479,
+          "dumpTable": 479
+        }
+      },
+      "cached": 435,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 0
+    },
+    "GL": {
+      "name": "Greenland",
+      "sweepReleases": 343,
+      "dumpReleases": 425,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 82,
+      "strings": {
+        "Greenland": {
+          "dump": 425,
+          "dumpTable": 425
+        }
+      },
+      "cached": 343,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 1
+    },
+    "VN": {
+      "name": "Vietnam",
+      "sweepReleases": 2240,
+      "dumpReleases": 2871,
+      "sweepMissedInDump": 1,
+      "dumpMissingFromSweep": 632,
+      "strings": {
+        "Vietnam": {
+          "dump": 1494,
+          "dumpTable": 1494
+        },
+        "South Vietnam": {
+          "dump": 1377,
+          "dumpTable": 1377
+        }
+      },
+      "cached": 2746,
+      "missing": 2,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 1
+    },
+    "GH": {
+      "name": "Ghana",
+      "sweepReleases": 2669,
+      "dumpReleases": 3938,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 1269,
+      "strings": {
+        "Ghana": {
+          "dump": 3938,
+          "dumpTable": 3938
+        }
+      },
+      "cached": 2669,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 2
+    },
+    "ZM": {
+      "name": "Zambia",
+      "sweepReleases": 1781,
+      "dumpReleases": 2662,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 881,
+      "strings": {
+        "Zambia": {
+          "dump": 2662,
+          "dumpTable": 2662
+        }
+      },
+      "cached": 1781,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 3
+    },
+    "CD": {
+      "name": "DR Congo",
+      "sweepReleases": 4308,
+      "dumpReleases": 5915,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 1607,
+      "strings": {
+        "Zaire": {
+          "dump": 2527,
+          "dumpTable": 2527
+        },
+        "Congo, Democratic Republic of the": {
+          "dump": 3095,
+          "dumpTable": 3095
+        },
+        "Belgian Congo": {
+          "dump": 293,
+          "dumpTable": 293
+        }
+      },
+      "cached": 4308,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 2
+    },
+    "TT": {
+      "name": "Trinidad & Tobago",
+      "sweepReleases": 3591,
+      "dumpReleases": 5218,
+      "sweepMissedInDump": 0,
+      "dumpMissingFromSweep": 1627,
+      "strings": {
+        "Trinidad & Tobago": {
+          "dump": 5218,
+          "dumpTable": 5218
+        }
+      },
+      "cached": 3591,
+      "missing": 0,
+      "countryDiffers": 0,
+      "creditIdsDiffer": 4
+    }
+  },
+  "diffs": [
+    {
+      "code": "TJ",
+      "id": 15355622,
+      "field": "creditIds",
+      "api": [
+        1459502
+      ],
+      "dump": [
+        3627412
+      ]
+    },
+    {
+      "code": "TJ",
+      "id": 18187213,
+      "field": "creditIds",
+      "api": [
+        9102874
+      ],
+      "dump": [
+        2497069
+      ]
+    },
+    {
+      "code": "MM",
+      "id": 25199611,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        12107425
+      ]
+    },
+    {
+      "code": "MM",
+      "id": 25199698,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        12107435
+      ]
+    },
+    {
+      "code": "KH",
+      "id": 11464289,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        18159423
+      ]
+    },
+    {
+      "code": "KH",
+      "id": 11464313,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        18159423
+      ]
+    },
+    {
+      "code": "BD",
+      "id": 31857497,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        15129317
+      ]
+    },
+    {
+      "code": "SD",
+      "id": 31088834,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        14777795
+      ]
+    },
+    {
+      "code": "BJ",
+      "id": 9230345,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        5137613
+      ]
+    },
+    {
+      "code": "BJ",
+      "id": 13053706,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        5137613
+      ]
+    },
+    {
+      "code": "BJ",
+      "id": 15297436,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        5137613
+      ]
+    },
+    {
+      "code": "BJ",
+      "id": 29450386,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        14016385
+      ]
+    },
+    {
+      "code": "BJ",
+      "id": 30418373,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        14458310
+      ]
+    },
+    {
+      "code": "BJ",
+      "id": 32390445,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        14458310
+      ]
+    },
+    {
+      "code": "SN",
+      "id": 1833674,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        1484469,
+        15882968
+      ]
+    },
+    {
+      "code": "SN",
+      "id": 4451762,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        3260639
+      ]
+    },
+    {
+      "code": "ET",
+      "id": 31667075,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        15044798,
+        15044801
+      ]
+    },
+    {
+      "code": "ET",
+      "id": 36854938,
+      "field": "creditIds",
+      "api": [
+        17489131
+      ],
+      "dump": [
+        18182970,
+        18182973,
+        6768918,
+        18182976
+      ]
+    },
+    {
+      "code": "HN",
+      "id": 12572298,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        12151255
+      ]
+    },
+    {
+      "code": "HN",
+      "id": 30688435,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        14608045
+      ]
+    },
+    {
+      "code": "BS",
+      "id": 27336438,
+      "field": "creditIds",
+      "api": [
+        7741912
+      ],
+      "dump": [
+        7741912,
+        13099011
+      ]
+    },
+    {
+      "code": "SR",
+      "id": 5652082,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        3808145,
+        368054,
+        1137027
+      ]
+    },
+    {
+      "code": "NI",
+      "id": 25925074,
+      "field": "creditIds",
+      "api": [
+        2267718
+      ],
+      "dump": [
+        2267718,
+        6002573
+      ]
+    },
+    {
+      "code": "UZ",
+      "id": 37501959,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        17801544
+      ]
+    },
+    {
+      "code": "UZ",
+      "id": 37502763,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        17801721
+      ]
+    },
+    {
+      "code": "UZ",
+      "id": 37502880,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        17745117,
+        17801721
+      ]
+    },
+    {
+      "code": "UZ",
+      "id": 37980615,
+      "field": "names",
+      "api": [
+        "18045861:elbowsway"
+      ],
+      "dump": [
+        "18045861:Elbowsway"
+      ]
+    },
+    {
+      "code": "AL",
+      "id": 5255082,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        3624131
+      ]
+    },
+    {
+      "code": "AL",
+      "id": 5255911,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        3624131
+      ]
+    },
+    {
+      "code": "AL",
+      "id": 18085570,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        1779710
+      ]
+    },
+    {
+      "code": "GL",
+      "id": 2866716,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        2227474
+      ]
+    },
+    {
+      "code": "VN",
+      "id": 7920003,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        9415672,
+        4635120,
+        4797712,
+        4797713
+      ]
+    },
+    {
+      "code": "GH",
+      "id": 14462133,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        4009051
+      ]
+    },
+    {
+      "code": "GH",
+      "id": 29645149,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        14103955
+      ]
+    },
+    {
+      "code": "ZM",
+      "id": 10900979,
+      "field": "creditIds",
+      "api": [
+        6023527
+      ],
+      "dump": [
+        6023527,
+        6023528
+      ]
+    },
+    {
+      "code": "ZM",
+      "id": 15868879,
+      "field": "creditIds",
+      "api": [
+        6023527
+      ],
+      "dump": [
+        6023527,
+        6023528
+      ]
+    },
+    {
+      "code": "ZM",
+      "id": 33028965,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        15680040
+      ]
+    },
+    {
+      "code": "CD",
+      "id": 8263826,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        4391702
+      ]
+    },
+    {
+      "code": "CD",
+      "id": 30975808,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        14722816
+      ]
+    },
+    {
+      "code": "TT",
+      "id": 5076079,
+      "field": "creditIds",
+      "api": [
+        2286263
+      ],
+      "dump": [
+        2286263,
+        12735590
+      ]
+    },
+    {
+      "code": "TT",
+      "id": 5645693,
+      "field": "creditIds",
+      "api": [],
+      "dump": [
+        1992447,
+        261682
+      ]
+    },
+    {
+      "code": "TT",
+      "id": 30515653,
+      "field": "creditIds",
+      "api": [
+        14503582
+      ],
+      "dump": [
+        2146222
+      ]
+    },
+    {
+      "code": "TT",
+      "id": 36299308,
+      "field": "creditIds",
+      "api": [
+        14503582
+      ],
+      "dump": [
+        2146222
+      ]
+    }
+  ]
+}
