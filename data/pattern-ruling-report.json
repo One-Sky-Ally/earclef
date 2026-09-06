@@ -163,8 +163,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "GM|dg|2044753",
@@ -193,8 +194,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "SO|wd|Q47067253",
@@ -646,7 +648,7 @@
       "mbArea": "United Kingdom",
       "entryYears": [
         1997,
-        1997
+        1999
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -703,8 +705,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "BD|dg|6388775",
@@ -920,6 +923,83 @@
         }
       },
       "eraOverlap": null,
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
+    },
+    {
+      "caseKey": "LK|dg|11557010",
+      "cc": "LK",
+      "key": "dg|11557010",
+      "name": "Jizzy",
+      "mbid": "81480528-2353-474c-9653-776f2ab79c6b",
+      "mbName": "Jizzy",
+      "mbArea": "India",
+      "entryYears": [
+        2020,
+        2020
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "India",
+        "life": {
+          "begin": "1993-07-07",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB begin-area India ≠ pool; distinctive name + era"
+    },
+    {
+      "caseKey": "LK|dg|1986499",
+      "cc": "LK",
+      "key": "dg|1986499",
+      "name": "Shankar Ganesh",
+      "mbid": "4ba9ef09-4f0f-4499-8774-8a297097f438",
+      "mbName": "Shankar Ganesh",
+      "mbArea": "India",
+      "entryYears": [
+        1987,
+        1987
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q7418632",
+          "description": "Indian music director duo",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q668",
+            "Q129286",
+            "Q1775277"
+          ],
+          "professions": [
+            "Q33999",
+            "Q36834"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
     },
@@ -1044,6 +1124,45 @@
       "why": "no corroboration either way"
     },
     {
+      "caseKey": "TZ|dg|1953694",
+      "cc": "TZ",
+      "key": "dg|1953694",
+      "name": "Maroon Commandos",
+      "mbid": "ce130cc5-2e6b-41ef-b80f-7a5c10f80430",
+      "mbName": "Maroon Commandos",
+      "mbArea": "Kenya",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q6772360",
+          "description": "Kenyan music group",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "Kenya",
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": "1970"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
       "caseKey": "UG|dg|7898954",
       "cc": "UG",
       "key": "dg|7898954",
@@ -1110,8 +1229,8 @@
         }
       },
       "eraOverlap": true,
-      "proposal": "held",
-      "why": "Matata: MB area Kenya + era overlap but common Swahili word — owner call",
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
       "audited": "override"
     },
     {
@@ -1138,6 +1257,37 @@
           "begin": null,
           "ended": false,
           "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
+    },
+    {
+      "caseKey": "UG|dg|13179735",
+      "cc": "UG",
+      "key": "dg|13179735",
+      "name": "Kabeaushé",
+      "mbid": "caf72aaf-b3af-43ae-a2b2-a25a6c0ed532",
+      "mbName": "Kabeaushé",
+      "mbArea": "Kenya",
+      "entryYears": [
+        2023,
+        2023
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
         }
       },
       "eraOverlap": null,
@@ -1171,8 +1321,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "ML|wd|Q124081315",
@@ -1248,6 +1399,45 @@
       "eraOverlap": null,
       "proposal": "keep-note",
       "why": "MB begin-area resolves into pool country (area is residence)"
+    },
+    {
+      "caseKey": "GN|dg|4798227",
+      "cc": "GN",
+      "key": "dg|4798227",
+      "name": "Orchestre De La Garde Républicaine",
+      "mbid": "4b118dde-d0aa-4372-80f4-b81647124966",
+      "mbName": "Orchestre de la Garde républicaine",
+      "mbArea": "France",
+      "entryYears": [
+        1967,
+        1967
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q17231723",
+          "description": "military unit",
+          "born": null,
+          "formed": null,
+          "origin": "Q142",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": "1848",
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q142 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "BJ|dg|10964558",
@@ -1331,8 +1521,8 @@
       "mbName": "Egide Sadey",
       "mbArea": "France",
       "entryYears": [
-        null,
-        null
+        1977,
+        1977
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -1349,8 +1539,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "CM|wd|Q61653380",
@@ -1483,6 +1674,47 @@
       "why": "origin/citizenship in pool country"
     },
     {
+      "caseKey": "CM|dg|5091563",
+      "cc": "CM",
+      "key": "dg|5091563",
+      "name": "Arbogaste",
+      "mbid": "8fc7df5d-d5f1-4549-ae76-a421f012ccb9",
+      "mbName": "Arbogaste",
+      "mbArea": "France",
+      "entryYears": [
+        1999,
+        1999
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q130396548",
+          "description": "Cameroonian singer (1941–2024)",
+          "born": "Q1009",
+          "formed": null,
+          "origin": null,
+          "citizenships": [],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Cameroon",
+        "life": {
+          "begin": "1941-10-06",
+          "ended": true,
+          "end": "2024-10-02"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country"
+    },
+    {
       "caseKey": "SN|dg|13488667",
       "cc": "SN",
       "key": "dg|13488667",
@@ -1598,6 +1830,36 @@
       "why": "origin/citizenship in pool country"
     },
     {
+      "caseKey": "SN|dg|342180",
+      "cc": "SN",
+      "key": "dg|342180",
+      "name": "Djanka Diabate",
+      "mbid": "2c8d80a6-9096-49d4-8c11-ad4547b4ee57",
+      "mbName": "Djanka Diabate",
+      "mbArea": "France",
+      "entryYears": [
+        1997,
+        1997
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Guinea",
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
       "caseKey": "ET|dg|6307064",
       "cc": "ET",
       "key": "dg|6307064",
@@ -1642,8 +1904,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): release in Amharic script (ፍሊፕ ማርቲን እና ሄለን ጳውሎስ, Solar Music Shop) — an Ethiopian Philip Martin, not the UK match",
+      "audited": "override"
     },
     {
       "caseKey": "BZ|dg|666405",
@@ -1906,8 +2169,8 @@
       "mbName": "Jerry Jackson",
       "mbArea": "United States",
       "entryYears": [
-        null,
-        null
+        1975,
+        1975
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -1954,6 +2217,67 @@
         }
       },
       "eraOverlap": null,
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-proven-other, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
+    },
+    {
+      "caseKey": "GY|dg|4542688",
+      "cc": "GY",
+      "key": "dg|4542688",
+      "name": "Together Brothers",
+      "mbid": "ba824ed9-b9b0-4bd0-b65b-e547929315cf",
+      "mbName": "Together Brothers",
+      "mbArea": "United States",
+      "entryYears": [
+        1977,
+        1977
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "GY|dg|10758736",
+      "cc": "GY",
+      "key": "dg|10758736",
+      "name": "Vincent Morgan",
+      "mbid": "496974c9-255b-4175-aae6-be4684e2ea59",
+      "mbName": "Vincent Morgan",
+      "mbArea": "United States",
+      "entryYears": [
+        1983,
+        1983
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
     },
@@ -1966,8 +2290,8 @@
       "mbName": "Los Costeños",
       "mbArea": "Mexico",
       "entryYears": [
-        null,
-        null
+        1973,
+        1973
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -1984,8 +2308,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): profile: originario de San Pedro Sula, Honduras",
+      "audited": "override"
     },
     {
       "caseKey": "HN|dg|8080528",
@@ -2041,7 +2366,7 @@
       "mbArea": "United States",
       "entryYears": [
         2004,
-        2012
+        2016
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -2092,46 +2417,6 @@
       "why": "generic name, no origin evidence — era coincidence is not identity"
     },
     {
-      "caseKey": "HN|dg|3482615",
-      "cc": "HN",
-      "key": "dg|3482615",
-      "name": "Los Caminantes",
-      "mbid": "e3db73f3-ea97-4a4e-a073-8e4262693659",
-      "mbName": "Los Caminantes",
-      "mbArea": "Mexico",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q933490",
-          "description": "Mexican musical group",
-          "born": null,
-          "formed": null,
-          "origin": "Q96",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": "Mexico",
-        "life": {
-          "ended": false,
-          "begin": "1976",
-          "end": null
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "Los Caminantes: semi-generic Spanish band name (multiple bands share it), no era data — identity uncorroborated",
-      "audited": "override"
-    },
-    {
       "caseKey": "HN|dg|14728423",
       "cc": "HN",
       "key": "dg|14728423",
@@ -2158,8 +2443,9 @@
         }
       },
       "eraOverlap": false,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner ruling Aug 26 2026 (worksheet B1): keep, presumed-local restored — collision disproven: entry 2011 pre-dates MB Sicarius 2014 formation (impossible identity, Sweet Exorcist class); MB artist links no Discogs page",
+      "audited": "override"
     },
     {
       "caseKey": "BS|dg|2342492",
@@ -2188,8 +2474,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-note",
+      "why": "owner-delegated-f44-keep-note (Aug 28 2026): profile: Trinidad-born pannist, based Grand Bahama since 1957 (real name Leslie Hoyte) — based-edge in BS; birth noted",
+      "audited": "override"
     },
     {
       "caseKey": "BS|dg|4854847",
@@ -2231,7 +2518,7 @@
       "mbArea": "United States",
       "entryYears": [
         1978,
-        1978
+        1981
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -2548,8 +2835,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): profile: Freeport, Grand Bahama based entertainer (Felix Johnson)",
+      "audited": "override"
     },
     {
       "caseKey": "BS|dg|15620388",
@@ -2618,8 +2906,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "BS|dg|16365373",
@@ -2678,8 +2967,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "SR|dg|432514",
@@ -2966,6 +3256,36 @@
       "why": "origin/citizenship in pool country"
     },
     {
+      "caseKey": "SR|dg|1855423",
+      "cc": "SR",
+      "key": "dg|1855423",
+      "name": "Solat",
+      "mbid": "920ff0e7-7efb-410f-ba1f-cc661c446279",
+      "mbName": "Solat",
+      "mbArea": "Netherlands",
+      "entryYears": [
+        1976,
+        1976
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
       "caseKey": "HT|dg|2005085",
       "cc": "HT",
       "key": "dg|2005085",
@@ -3079,8 +3399,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): release Dwet Sou Bouch (Haitian Creole) on Antilles Mizik",
+      "audited": "override"
     },
     {
       "caseKey": "HT|wd|Q6259075",
@@ -3170,6 +3491,36 @@
       "why": "origin/citizenship in pool country"
     },
     {
+      "caseKey": "HT|dg|8035467",
+      "cc": "HT",
+      "key": "dg|8035467",
+      "name": "Jonathan Laurince",
+      "mbid": "5fa79964-8c02-4417-8c83-02179b2166bf",
+      "mbName": "Jonathan Laurince",
+      "mbArea": "United States",
+      "entryYears": [
+        2018,
+        2018
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
       "caseKey": "NI|dg|5439964",
       "cc": "NI",
       "key": "dg|5439964",
@@ -3209,7 +3560,7 @@
       "mbArea": "Mexico",
       "entryYears": [
         1965,
-        1968
+        1977
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -3260,36 +3611,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "NI|dg|7776971",
-      "cc": "NI",
-      "key": "dg|7776971",
-      "name": "Los Shippy's",
-      "mbid": "b01a1d68-ce2e-4f45-bddd-0dc4da096dc4",
-      "mbName": "Los Shippy's",
-      "mbArea": "Mexico",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": "Mexico",
-        "life": {
-          "ended": true,
-          "end": "1969-09-01",
-          "begin": "1965"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
       "caseKey": "NI|dg|2680740",
       "cc": "NI",
       "key": "dg|2680740",
@@ -3313,66 +3634,6 @@
           "ended": false,
           "begin": null,
           "end": null
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "NI|dg|8090092",
-      "cc": "NI",
-      "key": "dg|8090092",
-      "name": "Los Seims",
-      "mbid": "565e90e9-358b-4e31-bb46-ab86bcbc6ab2",
-      "mbName": "Los Seims",
-      "mbArea": "Mexico",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": null,
-        "life": {
-          "end": null,
-          "begin": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "NI|dg|1490923",
-      "cc": "NI",
-      "key": "dg|1490923",
-      "name": "Beto Orlando",
-      "mbid": "6cbaf0b9-8fbe-484f-90b7-5eb73bbbcf2f",
-      "mbName": "Beto Orlando",
-      "mbArea": "Mexico",
-      "entryYears": [
-        1972,
-        1973
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": null,
-        "life": {
-          "begin": null,
-          "end": null,
-          "ended": false
         }
       },
       "eraOverlap": null,
@@ -3480,36 +3741,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "NI|dg|1681249",
-      "cc": "NI",
-      "key": "dg|1681249",
-      "name": "Gustavo Pimentel",
-      "mbid": "99097da8-f784-4ed9-9a63-9765f9572bec",
-      "mbName": "Gustavo Pimentel",
-      "mbArea": "Mexico",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": "Mexico",
-        "life": {
-          "ended": true,
-          "begin": "1930-06-26",
-          "end": "2004-07-09"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
       "caseKey": "NI|dg|7801071",
       "cc": "NI",
       "key": "dg|7801071",
@@ -3596,16 +3827,17 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
-      "caseKey": "NI|dg|3499970",
+      "caseKey": "NI|dg|7861667",
       "cc": "NI",
-      "key": "dg|3499970",
-      "name": "Los Randal",
-      "mbid": "f41a828c-33dd-4f54-b2aa-48a16d640a33",
-      "mbName": "Los Randal",
+      "key": "dg|7861667",
+      "name": "Orquesta De Gustavo Pimentel",
+      "mbid": "80c897f3-7798-41a7-96b3-c971a47c5f1f",
+      "mbName": "Orquesta de Gustavo Pimentel",
       "mbArea": "Mexico",
       "entryYears": [
         null,
@@ -3620,9 +3852,9 @@
         "wd": null,
         "beginCountry": null,
         "life": {
-          "begin": null,
+          "ended": false,
           "end": null,
-          "ended": false
+          "begin": null
         }
       },
       "eraOverlap": null,
@@ -3630,12 +3862,179 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "NI|dg|1197992",
+      "caseKey": "NI|dg|1114685",
       "cc": "NI",
-      "key": "dg|1197992",
-      "name": "Paco Michel",
-      "mbid": "51edc7cc-5238-4668-a383-85981b129102",
-      "mbName": "Paco Michel",
+      "key": "dg|1114685",
+      "name": "Toni Arden",
+      "mbid": "3e651418-2c5d-45e3-8cb0-fd7d7b643c82",
+      "mbName": "Toni Arden",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q7821241",
+          "description": "Band Singer; Radio, TV and Nightclub Performer, (1924–2012)",
+          "born": "Q30",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "ended": true,
+          "end": "2012-05-29",
+          "begin": "1924-02-15"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "NI|dg|80084",
+      "cc": "NI",
+      "key": "dg|80084",
+      "name": "Saturday Night Band",
+      "mbid": "c9ccce05-9f80-4606-9bfe-79d042d7ad5c",
+      "mbName": "Saturday Night Band",
+      "mbArea": "United States",
+      "entryYears": [
+        1979,
+        1979
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "NI|dg|640555",
+      "cc": "NI",
+      "key": "dg|640555",
+      "name": "Andy Russell",
+      "mbid": "1ac1deee-861c-49f2-8cec-32d8da31ef18",
+      "mbName": "Andy Russell",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q944152",
+          "description": "American singer (1919-1992)",
+          "born": "Q30",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q33999",
+            "Q177220",
+            "Q386854",
+            "Q10798782",
+            "Q15981151"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "begin": "1919-09-16",
+          "ended": true,
+          "end": "1992-04-16"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "NI|dg|2353918",
+      "cc": "NI",
+      "key": "dg|2353918",
+      "name": "Cepillin",
+      "mbid": "bccce313-79af-4b3e-b78b-828fd17351a0",
+      "mbName": "Cepillín",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1978,
+        1978
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q938948",
+          "description": "Mexican clown, television host, actor and singer (1946-2022)",
+          "born": "Q96",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q96"
+          ],
+          "professions": [
+            "Q7358",
+            "Q33999",
+            "Q177220",
+            "Q10798782",
+            "Q10800557"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q96 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "NI|dg|1272743",
+      "cc": "NI",
+      "key": "dg|1272743",
+      "name": "Hermanos Zavala",
+      "mbid": "fcf9430f-8752-4651-a201-e3e0a2aef1ad",
+      "mbName": "Hermanos Zavala",
       "mbArea": "Mexico",
       "entryYears": [
         null,
@@ -3648,14 +4047,44 @@
       "missingInResult": false,
       "evidence": {
         "wd": null,
-        "beginCountry": "Mexico",
+        "beginCountry": null,
         "life": {
-          "begin": "1930-01-07",
-          "ended": true,
-          "end": "1977-12-25"
+          "ended": false,
+          "end": null,
+          "begin": null
         }
       },
       "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "NI|dg|16705909",
+      "cc": "NI",
+      "key": "dg|16705909",
+      "name": "Emanuel Espinosa",
+      "mbid": "00a09c5e-06bb-4f42-a8c7-64c17d45b839",
+      "mbName": "Emanuel Espinosa",
+      "mbArea": "Mexico",
+      "entryYears": [
+        1972,
+        1972
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Mexico",
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": "1987-03-01"
+        }
+      },
+      "eraOverlap": false,
       "proposal": "held",
       "why": "no corroboration either way"
     },
@@ -3704,36 +4133,6 @@
       "why": "generic name, no origin evidence — era coincidence is not identity"
     },
     {
-      "caseKey": "PS|dg|3434655",
-      "cc": "PS",
-      "key": "dg|3434655",
-      "name": "باسكال مشعلاني",
-      "mbid": "3edf530a-fda6-42e8-85bd-39dbaf3ac7ce",
-      "mbName": "باسكال مشعلاني",
-      "mbArea": "Lebanon",
-      "entryYears": [
-        2004,
-        2004
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": null,
-        "life": {
-          "begin": null,
-          "end": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
       "caseKey": "PS|dg|4481121",
       "cc": "PS",
       "key": "dg|4481121",
@@ -3760,52 +4159,53 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
-      "caseKey": "JO|dg|3089830",
-      "cc": "JO",
-      "key": "dg|3089830",
-      "name": "يارا",
-      "mbid": "96613432-4837-469f-8b70-482458c5888d",
-      "mbName": "يارا",
-      "mbArea": "Lebanon",
+      "caseKey": "PS|dg|3008296",
+      "cc": "PS",
+      "key": "dg|3008296",
+      "name": "شعبان عبد الرحيم",
+      "mbid": "3c15dc9b-fe87-47ff-9306-b152c46b74a4",
+      "mbName": "شعبان عبد الرحيم",
+      "mbArea": "Egypt",
       "entryYears": [
-        2005,
-        2008
+        2001,
+        2001
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
-      "nameClass": "generic",
+      "nameClass": "distinctive",
       "pinned": null,
       "missingInResult": false,
       "evidence": {
         "wd": {
-          "qid": "Q3137273",
-          "description": "Lebanese pop singer",
-          "born": "Q822",
+          "qid": "Q2920703",
+          "description": "Egyptian singer (1957–2019)",
+          "born": "Q79",
           "formed": null,
           "origin": null,
           "citizenships": [
-            "Q822"
+            "Q79",
+            "Q170468"
           ],
           "professions": [
-            "Q33999",
             "Q177220"
           ],
           "musician": true
         },
-        "beginCountry": null,
+        "beginCountry": "Egypt",
         "life": {
-          "begin": "1983-06-01",
           "end": null,
-          "ended": false
+          "ended": false,
+          "begin": "1957-03-15"
         }
       },
       "eraOverlap": true,
-      "proposal": "held",
-      "why": "foreign origin on MB match but generic name — identity uncorroborated"
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q79 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "JO|dg|3691243",
@@ -3864,8 +4264,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "LY|dg|3016481",
@@ -3972,8 +4373,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "LY|wd|Q64454347",
@@ -4019,49 +4421,6 @@
       "why": "origin/citizenship in pool country"
     },
     {
-      "caseKey": "IQ|dg|4068887",
-      "cc": "IQ",
-      "key": "dg|4068887",
-      "name": "ایرج",
-      "mbid": "a80f4149-ca61-465e-8555-121db986826e",
-      "mbName": "ایرج",
-      "mbArea": "Iran",
-      "entryYears": [
-        1966,
-        1966
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "generic",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q3141000",
-          "description": "Iranian singer",
-          "born": "Q794",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q794"
-          ],
-          "professions": [
-            "Q177220"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Iran",
-        "life": {
-          "end": "2026-08-12",
-          "begin": "1933-01-01",
-          "ended": true
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "held",
-      "why": "foreign origin on MB match but generic name — identity uncorroborated"
-    },
-    {
       "caseKey": "IQ|dg|4302097",
       "cc": "IQ",
       "key": "dg|4302097",
@@ -4088,8 +4447,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): profile: Firqat al-Fajr was an Iraqi group",
+      "audited": "override"
     },
     {
       "caseKey": "IQ|dg|4930138",
@@ -4178,152 +4538,6 @@
       "why": "origin/citizenship in pool country"
     },
     {
-      "caseKey": "KW|dg|3487601",
-      "cc": "KW",
-      "key": "dg|3487601",
-      "name": "هيام يونس",
-      "mbid": "6e1524a9-836c-4802-85e4-0e4402df9c50",
-      "mbName": "هيام يونس",
-      "mbArea": "Lebanon",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q22690487",
-          "description": "Lebanese singer",
-          "born": null,
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q822"
-          ],
-          "professions": [
-            "Q33999"
-          ],
-          "musician": false
-        },
-        "beginCountry": "Lebanon",
-        "life": {
-          "end": null,
-          "ended": false,
-          "begin": "1945"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "KW|dg|5502913",
-      "cc": "KW",
-      "key": "dg|5502913",
-      "name": "رباب",
-      "mbid": "51c708ce-cf13-498f-bf2a-78c46c14a41f",
-      "mbName": "رباب",
-      "mbArea": "Iraq",
-      "entryYears": [
-        1982,
-        1983
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "generic",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q17388007",
-          "description": "Iraqi Singer",
-          "born": "Q796",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q796"
-          ],
-          "professions": [
-            "Q177220"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Iraq",
-        "life": {
-          "end": "2010-07-02",
-          "begin": "1947-11-10",
-          "ended": true
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "held",
-      "why": "foreign origin on MB match but generic name — identity uncorroborated"
-    },
-    {
-      "caseKey": "KW|dg|3111597",
-      "cc": "KW",
-      "key": "dg|3111597",
-      "name": "محمد محي",
-      "mbid": "6fe9777b-3dfa-42c9-9f86-a944d271673d",
-      "mbName": "محمد محي",
-      "mbArea": "Egypt",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": null,
-        "life": {
-          "begin": "1970-06-01",
-          "ended": false,
-          "end": null
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "KW|dg|3124657",
-      "cc": "KW",
-      "key": "dg|3124657",
-      "name": "عبد الرب إدريس",
-      "mbid": "35101cbd-09dd-4abb-b283-49f1bc5afd26",
-      "mbName": "عبد الرب إدريس",
-      "mbArea": "Saudi Arabia",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": "Yemen",
-        "life": {
-          "begin": "1946-07-11",
-          "ended": false,
-          "end": null
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
       "caseKey": "KW|dg|4457019",
       "cc": "KW",
       "key": "dg|4457019",
@@ -4350,20 +4564,110 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
-      "caseKey": "KW|dg|3475118",
+      "caseKey": "KW|dg|4219705",
       "cc": "KW",
-      "key": "dg|3475118",
-      "name": "أصيل أبو بكر",
-      "mbid": "a7e18064-b7d7-41d1-9c75-7f8f4a749065",
-      "mbName": "أصيل أبو بكر",
+      "key": "dg|4219705",
+      "name": "عبد الرحمن السديس",
+      "mbid": "dcad48a4-b336-461a-b417-ba7397d0e19d",
+      "mbName": "عبد الرحمن السديس",
       "mbArea": "Saudi Arabia",
       "entryYears": [
-        1996,
-        1996
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q317948",
+          "description": "imam and preacher at the Grand Mosque in Mecca",
+          "born": "Q851",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q851"
+          ],
+          "professions": [
+            "Q121594",
+            "Q125482",
+            "Q1999841"
+          ],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": "1962-11-22"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q851 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "KW|dg|4219706",
+      "cc": "KW",
+      "key": "dg|4219706",
+      "name": "سعود الشريم",
+      "mbid": "001269cc-a5e5-491e-81d7-1e5fd228120a",
+      "mbName": "سعود الشريم",
+      "mbArea": "Saudi Arabia",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q270540",
+          "description": "Former Imam Saudi at Masjid al-Haram",
+          "born": "Q851",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q851"
+          ],
+          "professions": [
+            "Q16533",
+            "Q125482"
+          ],
+          "musician": false
+        },
+        "beginCountry": "Saudi Arabia",
+        "life": {
+          "begin": "1966-01-19",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q851 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "KW|dg|4048246",
+      "cc": "KW",
+      "key": "dg|4048246",
+      "name": "عائلة بندلي",
+      "mbid": "41ea794b-dcfc-46d2-9faf-3d9ca416f7bb",
+      "mbName": "عائلة بندلي",
+      "mbArea": "Lebanon",
+      "entryYears": [
+        null,
+        null
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -4374,9 +4678,9 @@
         "wd": null,
         "beginCountry": null,
         "life": {
+          "end": null,
           "ended": false,
-          "begin": null,
-          "end": null
+          "begin": null
         }
       },
       "eraOverlap": null,
@@ -4493,8 +4797,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "AM|wd|Q108640990",
@@ -4852,6 +5157,36 @@
       "why": "origin/citizenship in pool country"
     },
     {
+      "caseKey": "AM|dg|3337005",
+      "cc": "AM",
+      "key": "dg|3337005",
+      "name": "The_Storytellers",
+      "mbid": "5b539162-2281-40fc-9048-3d0ce4be2537",
+      "mbName": "The Storytellers",
+      "mbArea": "United States",
+      "entryYears": [
+        2013,
+        2013
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
       "caseKey": "UZ|dg|7181939",
       "cc": "UZ",
       "key": "dg|7181939",
@@ -4879,37 +5214,8 @@
       },
       "eraOverlap": null,
       "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "UZ|dg|922797",
-      "cc": "UZ",
-      "key": "dg|922797",
-      "name": "Sculptor",
-      "mbid": "806b1321-32fc-4773-ae63-98a0f0470cb0",
-      "mbName": "Sculptor",
-      "mbArea": "Russia",
-      "entryYears": [
-        2016,
-        2016
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": null,
-        "life": {
-          "end": null,
-          "begin": "2007",
-          "ended": false
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "why": "owner-delegated-f44-HELD (Aug 28 2026, genuinely unsure): See The Sea / Smart Phenomena labels lean Russian-scene but I cannot verify the labels' origin to exclusion standard",
+      "audited": "override"
     },
     {
       "caseKey": "UZ|dg|4735276",
@@ -4938,8 +5244,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "UZ|dg|3033206",
@@ -4950,7 +5257,7 @@
       "mbName": "Nevod",
       "mbArea": "Russia",
       "entryYears": [
-        2023,
+        2010,
         2023
       ],
       "wdIsCandidate": false,
@@ -4965,6 +5272,96 @@
           "begin": null,
           "ended": false,
           "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
+    },
+    {
+      "caseKey": "UZ|dg|807181",
+      "cc": "UZ",
+      "key": "dg|807181",
+      "name": "Сергей Михалков",
+      "mbid": "137e9eb0-8cdb-4d2c-8c90-5aacfa4b1d1a",
+      "mbName": "Сергей Михалков",
+      "mbArea": "Russia",
+      "entryYears": [
+        1993,
+        1993
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q208116",
+          "description": "Soviet and Russian writer (1913–2009)",
+          "born": "Q159",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q159",
+            "Q15180",
+            "Q34266",
+            "Q139319"
+          ],
+          "professions": [
+            "Q28389",
+            "Q36180",
+            "Q49757",
+            "Q82955",
+            "Q164236",
+            "Q214917",
+            "Q333634",
+            "Q662729",
+            "Q753110",
+            "Q822146",
+            "Q4853732",
+            "Q6051619",
+            "Q12144794",
+            "Q18844224"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Russia",
+        "life": {
+          "ended": true,
+          "end": "2009-08-27",
+          "begin": "1913-03-13"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q159 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "UZ|dg|1103641",
+      "cc": "UZ",
+      "key": "dg|1103641",
+      "name": "Oxana",
+      "mbid": "163a7c30-9bcd-426e-8669-57bd8f1f8ed0",
+      "mbName": "Oxana",
+      "mbArea": "Russia",
+      "entryYears": [
+        2017,
+        2017
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
         }
       },
       "eraOverlap": null,
@@ -5043,8 +5440,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "AL|dg|688709",
@@ -5073,8 +5471,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "AL|dg|1347993",
@@ -5103,8 +5502,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "AL|dg|2254255",
@@ -5133,8 +5533,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "AL|dg|766984",
@@ -5163,8 +5564,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "AL|dg|3033857",
@@ -5206,7 +5608,7 @@
       "mbArea": "Italy",
       "entryYears": [
         2009,
-        2009
+        2010
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -5223,8 +5625,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "AL|wd|Q31670631",
@@ -5311,6 +5714,244 @@
       "eraOverlap": null,
       "proposal": "keep-note",
       "why": "origin/citizenship in pool country"
+    },
+    {
+      "caseKey": "AL|dg|7368369",
+      "cc": "AL",
+      "key": "dg|7368369",
+      "name": "Tayna",
+      "mbid": "751409fe-4ded-4e25-bda4-bd099cd96d7c",
+      "mbName": "Tayna",
+      "mbArea": "Kosovo",
+      "entryYears": [
+        2019,
+        2019
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q57368002",
+          "description": "Kosovo-Albanian rapper and singer",
+          "born": "Q1246",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q1246"
+          ],
+          "professions": [
+            "Q177220",
+            "Q753110",
+            "Q2252262"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Kosovo",
+        "life": {
+          "begin": "1996-12-14",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q1246 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "AL|dg|71518",
+      "cc": "AL",
+      "key": "dg|71518",
+      "name": "Splashfunk",
+      "mbid": "dcf969af-6eaa-4215-83b6-1f8adc698807",
+      "mbName": "SplashFunk",
+      "mbArea": "Italy",
+      "entryYears": [
+        2013,
+        2013
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "AL|dg|383258",
+      "cc": "AL",
+      "key": "dg|383258",
+      "name": "Andrea Bellicapelli",
+      "mbid": "e349d28c-a350-4435-8c7a-2634a22a3e4f",
+      "mbName": "Andrea Belli",
+      "mbArea": "Italy",
+      "entryYears": [
+        2013,
+        2013
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "AL|dg|4581402",
+      "cc": "AL",
+      "key": "dg|4581402",
+      "name": "Spiteful",
+      "mbid": "4da3132d-58e8-4612-8998-4a805bc5da59",
+      "mbName": "Spiteful",
+      "mbArea": "Italy",
+      "entryYears": [
+        2019,
+        2019
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": true
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "AL|dg|12952005",
+      "cc": "AL",
+      "key": "dg|12952005",
+      "name": "Albina Kelmendi",
+      "mbid": "af93a978-f7b5-446a-bcc4-3a7173cce648",
+      "mbName": "Albina Kelmendi",
+      "mbArea": "Kosovo",
+      "entryYears": [
+        2022,
+        2022
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q115802685",
+          "description": "Kosovo-Albanian singer",
+          "born": "Q1246",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q1246"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Kosovo",
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": "1998-01-27"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q1246 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "AL|dg|7195636",
+      "cc": "AL",
+      "key": "dg|7195636",
+      "name": "XVIII",
+      "mbid": "41769d0c-3003-4599-9c01-611ba6050ca8",
+      "mbName": "XVIII",
+      "mbArea": "Kosovo",
+      "entryYears": [
+        2025,
+        2025
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "AL|dg|17541504",
+      "cc": "AL",
+      "key": "dg|17541504",
+      "name": "Ryva Kajtazi",
+      "mbid": "dabd96c1-1026-445a-b3ac-32bec3408ab9",
+      "mbName": "Ryva Kajtazi",
+      "mbArea": "Kosovo",
+      "entryYears": [
+        2005,
+        2005
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Kosovo",
+        "life": {
+          "begin": "1980-02-09",
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB begin-area Kosovo ≠ pool; distinctive name + era"
     },
     {
       "caseKey": "MD|wd|Q2269223",
@@ -5409,7 +6050,7 @@
       "mbArea": "Romania",
       "entryYears": [
         2022,
-        2023
+        2024
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -5456,38 +6097,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "MD|dg|2318733",
-      "cc": "MD",
-      "key": "dg|2318733",
-      "name": "Vasile Gorbani",
-      "mbid": "277a267b-f023-404a-b32a-bfdcc7bc41ce",
-      "mbName": "Vasile Gorbani",
-      "mbArea": "Romania",
-      "entryYears": [
-        2016,
-        2016
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": null,
-        "life": {
-          "ended": false,
-          "begin": null,
-          "end": null
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "MD|dg|4919807",
@@ -5516,8 +6128,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "MD|dg|2095296",
@@ -5546,8 +6159,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "MD|dg|3174892",
@@ -5576,8 +6190,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "MD|dg|7637075",
@@ -5607,7 +6222,8 @@
       },
       "eraOverlap": null,
       "proposal": "held",
-      "why": "no corroboration either way"
+      "why": "owner-delegated-f44-HELD (Aug 28 2026, genuinely unsure): possibly Moldovan-born and Russia-active (the Naghma shape if so) — one release on Trend Music proves neither",
+      "audited": "override"
     },
     {
       "caseKey": "MD|dg|1728172",
@@ -5680,8 +6296,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "MD|dg|1376978",
@@ -5710,38 +6327,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "MD|dg|16189432",
-      "cc": "MD",
-      "key": "dg|16189432",
-      "name": "Grenouer Inc.",
-      "mbid": "e27227f0-8137-4462-931b-05543b8cf229",
-      "mbName": "Grenouer Inc.",
-      "mbArea": "Russia",
-      "entryYears": [
-        2025,
-        2025
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": null,
-        "life": {
-          "end": null,
-          "ended": false,
-          "begin": "2021"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "MD|dg|6741890",
@@ -5770,8 +6358,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "MD|dg|1717656",
@@ -5783,7 +6372,7 @@
       "mbArea": "Russia",
       "entryYears": [
         2019,
-        2019
+        2020
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -5796,6 +6385,67 @@
         "life": {
           "begin": null,
           "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
+    },
+    {
+      "caseKey": "MD|dg|8915701",
+      "cc": "MD",
+      "key": "dg|8915701",
+      "name": "ЁЖ",
+      "mbid": "f6fdd0b1-8b6f-4d4d-9971-8e04a61879e5",
+      "mbName": "Валерий Лысенко",
+      "mbArea": "Russia",
+      "entryYears": [
+        2003,
+        2003
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity"
+    },
+    {
+      "caseKey": "MD|dg|7349626",
+      "cc": "MD",
+      "key": "dg|7349626",
+      "name": "Helen&Boys",
+      "mbid": "b0d92efe-83e1-4e6f-bc1f-ac3d6036c0c9",
+      "mbName": "Helen&Boys",
+      "mbArea": "Ukraine",
+      "entryYears": [
+        2026,
+        2026
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Ukraine",
+        "life": {
+          "end": null,
+          "begin": null,
           "ended": false
         }
       },
@@ -5901,51 +6551,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "XK|dg|10650493",
-      "cc": "XK",
-      "key": "dg|10650493",
-      "name": "Adem Ramadani",
-      "mbid": "9936b460-bbc9-49a1-8d00-e92ace785f64",
-      "mbName": "Adem Ramadani",
-      "mbArea": "Albania",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q16347668",
-          "description": "Albanian singer",
-          "born": null,
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q222"
-          ],
-          "professions": [
-            "Q177220"
-          ],
-          "musician": true
-        },
-        "beginCountry": "North Macedonia",
-        "life": {
-          "end": null,
-          "begin": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "XK|dg|1100696",
@@ -6004,8 +6612,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026, no evidence either way): Danish-language children's record on Arctic Enterprise (Greenland label) — weak signals both ways, status quo",
+      "audited": "override"
     },
     {
       "caseKey": "GL|dg|1917072",
@@ -6118,8 +6727,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|4700855",
@@ -6148,8 +6758,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|7037772",
@@ -6178,8 +6789,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|6317999",
@@ -6191,7 +6803,7 @@
       "mbArea": "United States",
       "entryYears": [
         1963,
-        1991
+        1997
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -6281,7 +6893,7 @@
       "mbArea": "France",
       "entryYears": [
         1957,
-        1970
+        1971
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -6298,8 +6910,9 @@
         }
       },
       "eraOverlap": true,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|1878200",
@@ -6367,8 +6980,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|6281510",
@@ -6397,8 +7011,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): profile: Vietnamese singer (1950–2003), Lữ Anh Tú",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|15889094",
@@ -6408,12 +7023,15 @@
       "mbid": "2d3bc78b-96a4-40f8-84e9-0a1611f65b2c",
       "mbName": "Xuân Quỳnh",
       "mbArea": "United States",
-      "entryYears": null,
+      "entryYears": [
+        1990,
+        1990
+      ],
       "wdIsCandidate": false,
       "candidateWdId": null,
       "nameClass": "distinctive",
       "pinned": null,
-      "missingInResult": true,
+      "missingInResult": false,
       "evidence": {
         "wd": null,
         "beginCountry": null,
@@ -6435,12 +7053,15 @@
       "mbid": "d36b6a36-b60d-422c-bc37-f1f7112584c6",
       "mbName": "Hoàng Cầm",
       "mbArea": "United States",
-      "entryYears": null,
+      "entryYears": [
+        1971,
+        1990
+      ],
       "wdIsCandidate": false,
       "candidateWdId": null,
       "nameClass": "distinctive",
       "pinned": null,
-      "missingInResult": true,
+      "missingInResult": false,
       "evidence": {
         "wd": null,
         "beginCountry": null,
@@ -6481,8 +7102,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|4738209",
@@ -6554,38 +7176,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "VN|dg|3594813",
-      "cc": "VN",
-      "key": "dg|3594813",
-      "name": "DJ Ultimate Bass",
-      "mbid": "8eb6ca01-395e-4492-a0c9-c3de509dcfa7",
-      "mbName": "DJ Ultimate Bass",
-      "mbArea": "France",
-      "entryYears": [
-        2013,
-        2014
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": null,
-        "life": {
-          "ended": false,
-          "end": null,
-          "begin": "1977-05-07"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|9413908",
@@ -6595,12 +7188,15 @@
       "mbid": "cba160d2-5c8e-431a-82e3-0442da2e963a",
       "mbName": "Đức Minh",
       "mbArea": "United States",
-      "entryYears": null,
+      "entryYears": [
+        1995,
+        1995
+      ],
       "wdIsCandidate": false,
       "candidateWdId": null,
       "nameClass": "distinctive",
       "pinned": null,
-      "missingInResult": true,
+      "missingInResult": false,
       "evidence": {
         "wd": null,
         "beginCountry": null,
@@ -6618,16 +7214,19 @@
       "caseKey": "VN|dg|9413911",
       "cc": "VN",
       "key": "dg|9413911",
-      "name": "Khánh Dũng",
+      "name": "Khánh Dung",
       "mbid": "9abd5ba0-8e88-4f74-928b-f2a14b972f0b",
       "mbName": "Khánh Dũng",
       "mbArea": "United States",
-      "entryYears": null,
+      "entryYears": [
+        1995,
+        1995
+      ],
       "wdIsCandidate": false,
       "candidateWdId": null,
       "nameClass": "distinctive",
       "pinned": null,
-      "missingInResult": true,
+      "missingInResult": false,
       "evidence": {
         "wd": null,
         "beginCountry": null,
@@ -6668,8 +7267,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|9062194",
@@ -6698,8 +7298,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): profile: Vietnamese classical composer (1922–1991)",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|14138",
@@ -7079,51 +7680,6 @@
       "why": "origin/citizenship in pool country"
     },
     {
-      "caseKey": "VN|dg|1146653",
-      "cc": "VN",
-      "key": "dg|1146653",
-      "name": "Thao Nguyen",
-      "mbid": "f6ec447a-c240-4c43-bc9f-d71d958432bb",
-      "mbName": "Thao Nguyen",
-      "mbArea": "United States",
-      "entryYears": [
-        2006,
-        2006
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q16209913",
-          "description": "American singer-songwriter",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q36834",
-            "Q488205",
-            "Q713200"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "end": null,
-          "ended": false,
-          "begin": "1984-03-19"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "VN|dg|4701806",
       "cc": "VN",
       "key": "dg|4701806",
@@ -7150,8 +7706,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): profile: Vietnamese singer (Trương Chiêu Thông)",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|4538030",
@@ -7361,8 +7918,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|12399016",
@@ -7391,8 +7949,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|7002691",
@@ -7421,8 +7980,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|4520225",
@@ -7433,8 +7993,8 @@
       "mbName": "Chí Tâm",
       "mbArea": "United States",
       "entryYears": [
-        null,
-        null
+        1966,
+        1966
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -7459,7 +8019,7 @@
           "ended": false
         }
       },
-      "eraOverlap": null,
+      "eraOverlap": true,
       "proposal": "keep-note",
       "why": "MB begin-area resolves into pool country (area is residence)"
     },
@@ -7529,8 +8089,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|7780160",
@@ -7559,8 +8120,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|5807509",
@@ -7611,7 +8173,7 @@
       "mbArea": "United States",
       "entryYears": [
         1965,
-        1968
+        1970
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -7630,53 +8192,6 @@
       "eraOverlap": null,
       "proposal": "keep-note",
       "why": "MB begin-area resolves into pool country (area is residence)"
-    },
-    {
-      "caseKey": "VN|dg|5209361",
-      "cc": "VN",
-      "key": "dg|5209361",
-      "name": "Mai-Lan",
-      "mbid": "65b1de19-50cb-49fe-b802-d1d8616f9ebe",
-      "mbName": "Mai Lan",
-      "mbArea": "France",
-      "entryYears": [
-        1967,
-        1969
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q15211605",
-          "description": "French-Vietnamese singer and fashion designer",
-          "born": "Q142",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q142"
-          ],
-          "professions": [
-            "Q36834",
-            "Q177220",
-            "Q488205",
-            "Q639669",
-            "Q3501317"
-          ],
-          "musician": true
-        },
-        "beginCountry": "France",
-        "life": {
-          "begin": "1982",
-          "ended": false,
-          "end": null
-        }
-      },
-      "eraOverlap": false,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q142 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "VN|dg|6080145",
@@ -7705,8 +8220,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|7101584",
@@ -7735,8 +8251,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|6257923",
@@ -7795,47 +8312,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "VN|dg|2091213",
-      "cc": "VN",
-      "key": "dg|2091213",
-      "name": "Les Fantômes",
-      "mbid": "2910018e-9df4-4d04-b516-97b3585c88da",
-      "mbName": "Les Fantômes",
-      "mbArea": "France",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q3232519",
-          "description": "French musical group; instrumental rock band",
-          "born": null,
-          "formed": null,
-          "origin": "Q142",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": null,
-        "life": {
-          "end": null,
-          "begin": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q142 ≠ pool; identity via distinctive name"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): profile: famous Vietnamese singer b.1942 — Bạch Yến, consistent with the existing diaspora keep block",
+      "audited": "override"
     },
     {
       "caseKey": "VN|dg|7012345",
@@ -7864,8 +8343,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved",
+      "audited": "override"
     },
     {
       "caseKey": "VN|wd|Q8199738",
@@ -7908,6 +8388,195 @@
       "why": "origin/citizenship in pool country"
     },
     {
+      "caseKey": "VN|dg|4753041",
+      "cc": "VN",
+      "key": "dg|4753041",
+      "name": "Họa Mi",
+      "mbid": "b291fb6c-a075-4469-832b-34df96e3cb3c",
+      "mbName": "Họa Mi",
+      "mbArea": "United States",
+      "entryYears": [
+        1981,
+        1981
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q16157169",
+          "description": null,
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|1384053",
+      "cc": "VN",
+      "key": "dg|1384053",
+      "name": "SoShy",
+      "mbid": "0127749b-106e-4597-be63-600b996f5ee4",
+      "mbName": "SoShy",
+      "mbArea": "France",
+      "entryYears": [
+        2018,
+        2018
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q267581",
+          "description": "French-American musician",
+          "born": "Q142",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30",
+            "Q142"
+          ],
+          "professions": [
+            "Q36834",
+            "Q177220",
+            "Q488205",
+            "Q639669"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": "1979-09-14"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q142 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "VN|dg|9409084",
+      "cc": "VN",
+      "key": "dg|9409084",
+      "name": "Ngọc Lễ",
+      "mbid": "90a465da-bac4-4aff-a7ec-ecb6acbbeab4",
+      "mbName": "Ngọc Lễ",
+      "mbArea": "United States",
+      "entryYears": [
+        1997,
+        1997
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|3969828",
+      "cc": "VN",
+      "key": "dg|3969828",
+      "name": "Wong Li",
+      "mbid": "afddee79-c187-4f2e-a07f-8e7f2b9b1990",
+      "mbName": "Wang Li",
+      "mbArea": "France",
+      "entryYears": [
+        1971,
+        1971
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "China",
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "VN|dg|11115785",
+      "cc": "VN",
+      "key": "dg|11115785",
+      "name": "Hoàng Thanh",
+      "mbid": "10ac992a-e079-4771-ad6b-73dada0bee17",
+      "mbName": "Duy Khánh",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q3739520",
+          "description": "Vietnamese singer",
+          "born": "Q881",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q881"
+          ],
+          "professions": [
+            "Q753110"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Vietnam",
+        "life": {
+          "ended": true,
+          "end": "2003-02-12",
+          "begin": "1936-06-01"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country"
+    },
+    {
       "caseKey": "GH|dg|1733455",
       "cc": "GH",
       "key": "dg|1733455",
@@ -7934,8 +8603,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): profile: 60s highlife bigband from Ghana, feat. Ebo Taylor",
+      "audited": "override"
     },
     {
       "caseKey": "GH|dg|2718209",
@@ -8011,85 +8681,6 @@
       "why": "MB begin-area resolves into pool country (area is residence)"
     },
     {
-      "caseKey": "GH|dg|286116",
-      "cc": "GH",
-      "key": "dg|286116",
-      "name": "The Funkees",
-      "mbid": "5bdc8759-a592-4202-a48c-691d4bec5c6d",
-      "mbName": "The Funkees",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        1973,
-        1973
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q17109370",
-          "description": "Nigerian afro-rock group",
-          "born": null,
-          "formed": null,
-          "origin": null,
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": "Nigeria",
-        "life": {
-          "end": null,
-          "begin": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "GH|dg|297751",
-      "cc": "GH",
-      "key": "dg|297751",
-      "name": "Greyhound",
-      "mbid": "1f1b39d1-ef8e-4580-8dfc-f0634e95f152",
-      "mbName": "Greyhound",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        1972,
-        1972
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q1288372",
-          "description": "band",
-          "born": null,
-          "formed": null,
-          "origin": "Q145",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": null,
-        "life": {
-          "ended": false,
-          "begin": "1970",
-          "end": null
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "held",
-      "why": "Greyhound: single common word + wd description just \"band\" — identity too thin to exclude",
-      "audited": "override"
-    },
-    {
       "caseKey": "GH|wd|Q16216853",
       "cc": "GH",
       "key": "wd|Q16216853",
@@ -8159,8 +8750,9 @@
         }
       },
       "eraOverlap": true,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "ZM|dg|1474849",
@@ -8189,38 +8781,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "ZM|dg|1668349",
-      "cc": "ZM",
-      "key": "dg|1668349",
-      "name": "Nyami Nyami Sounds",
-      "mbid": "28f2af6c-1742-43eb-8df6-f2bc391cb50d",
-      "mbName": "Nyami Nyami Sounds",
-      "mbArea": "Zimbabwe",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": null,
-        "life": {
-          "end": null,
-          "begin": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "ZM|dg|15522192",
@@ -8249,8 +8812,166 @@
         }
       },
       "eraOverlap": null,
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026, no evidence either way): one no-label gospel release, generic name — no evidence either way, status quo",
+      "audited": "override"
+    },
+    {
+      "caseKey": "ZM|dg|246655",
+      "cc": "ZM",
+      "key": "dg|246655",
+      "name": "Matumbi",
+      "mbid": "1057d846-c3d6-4073-aefb-ff186390fd3b",
+      "mbName": "Matumbi",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        1981,
+        1981
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q6791970",
+          "description": "UK musical group",
+          "born": null,
+          "formed": null,
+          "origin": "Q145",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "United Kingdom",
+        "life": {
+          "ended": true,
+          "end": "1982",
+          "begin": "1971"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "ZM|dg|1612230",
+      "cc": "ZM",
+      "key": "dg|1612230",
+      "name": "Devera Ngwena Jazz Band",
+      "mbid": "79116acd-66d4-4d20-9a31-aa282d9e6225",
+      "mbName": "Devera Ngwena Jazz Band",
+      "mbArea": "Zimbabwe",
+      "entryYears": [
+        1981,
+        1981
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "ZM|dg|1985763",
+      "cc": "ZM",
+      "key": "dg|1985763",
+      "name": "Leonard Dembo",
+      "mbid": "a4da5d5c-aa42-48e5-811b-618675f5cd86",
+      "mbName": "Leonard Dembo",
+      "mbArea": "Zimbabwe",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q6525230",
+          "description": "Zimbabwean musician",
+          "born": "Q954",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q954"
+          ],
+          "professions": [
+            "Q177220",
+            "Q639669"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Zimbabwe",
+        "life": {
+          "begin": "1959-02-06",
+          "end": "1996-04-09",
+          "ended": true
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q954 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "ZM|dg|2779941",
+      "cc": "ZM",
+      "key": "dg|2779941",
+      "name": "Natasha",
+      "mbid": "f36c611f-5b46-42e1-9db9-07ed0fa1fdfc",
+      "mbName": "Natasha England",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        1985,
+        1985
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q21228729",
+          "description": "Scottish pop singer",
+          "born": "Q145",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q145"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United Kingdom",
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": "1952-12-18"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "held",
+      "why": "Sep 6 2026 top-up review: bare forename \"Natasha\" matched to Natasha England — mononyms decide nothing (owner ruling Aug 11/15); a Zambian Natasha is the likelier referent",
+      "audited": "override"
     },
     {
       "caseKey": "CD|dg|1502752",
@@ -8292,7 +9013,7 @@
       "mbArea": "France",
       "entryYears": [
         1999,
-        1999
+        2003
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -8309,8 +9030,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): Congolese gospel scene (B. Mas Production, Mont Sinaï) — likely local/diaspora, moderate confidence",
+      "audited": "override"
     },
     {
       "caseKey": "CD|dg|3524201",
@@ -8339,8 +9061,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-note",
+      "why": "owner-delegated-f44-keep-note (Aug 28 2026): profile: Belgian-based Zairean band (Liège 1965) — metropole-residence, pattern a; origin Zaire",
+      "audited": "override"
     },
     {
       "caseKey": "CD|dg|3440835",
@@ -8723,6 +9446,189 @@
       "why": "origin/citizenship in pool country"
     },
     {
+      "caseKey": "CD|dg|5305130",
+      "cc": "CD",
+      "key": "dg|5305130",
+      "name": "Fanfare Garde Républicaine",
+      "mbid": "885bf715-6955-42a3-a432-47bfe4461551",
+      "mbName": "Musique de la Garde républicaine",
+      "mbArea": "France",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "CD|dg|694078",
+      "cc": "CD",
+      "key": "dg|694078",
+      "name": "Gary \"L'Ange Noir\" Et Ses Démons",
+      "mbid": "845bb219-d3e0-4993-9dec-3562d08208a2",
+      "mbName": "Gary l'Ange Noir et ses Démons",
+      "mbArea": "France",
+      "entryYears": [
+        1962,
+        1962
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "CD|dg|3208601",
+      "cc": "CD",
+      "key": "dg|3208601",
+      "name": "Jean-Marc Bertrand",
+      "mbid": "050dea94-9454-48f9-9698-2fe72bee0937",
+      "mbName": "Jean-Marc Bertrand",
+      "mbArea": "Belgium",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Belgium",
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": "1942"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "CD|dg|3538238",
+      "cc": "CD",
+      "key": "dg|3538238",
+      "name": "Koré",
+      "mbid": "0c8ac4dc-2d37-4f7b-b66a-dd8b8b78878a",
+      "mbName": "Kore",
+      "mbArea": "France",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q15868605",
+          "description": "French record producer of Algerian origin",
+          "born": "Q142",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q142"
+          ],
+          "professions": [
+            "Q36834",
+            "Q130857",
+            "Q183945"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "foreign origin on MB match but generic name — identity uncorroborated"
+    },
+    {
+      "caseKey": "CD|dg|14665545",
+      "cc": "CD",
+      "key": "dg|14665545",
+      "name": "Roger Bernard",
+      "mbid": "4b0f8bc2-1eb3-46a9-9360-b79d39fe5668",
+      "mbName": "Roger Bernard",
+      "mbArea": "France",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q2740495",
+          "description": "French linguist and slavist (1908–1997)",
+          "born": "Q142",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q142"
+          ],
+          "professions": [
+            "Q333634",
+            "Q1622272",
+            "Q13418253",
+            "Q14467526",
+            "Q15976341",
+            "Q112118876"
+          ],
+          "musician": false
+        },
+        "beginCountry": "France",
+        "life": {
+          "begin": "1908-08-05",
+          "ended": true,
+          "end": "1997-04-11"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q142 ≠ pool; identity via distinctive name"
+    },
+    {
       "caseKey": "TT|dg|706456",
       "cc": "TT",
       "key": "dg|706456",
@@ -8732,7 +9638,7 @@
       "mbArea": "United States",
       "entryYears": [
         1975,
-        1984
+        1994
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -8749,8 +9655,9 @@
         }
       },
       "eraOverlap": false,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-proven-other, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|3470671",
@@ -8761,7 +9668,7 @@
       "mbName": "King Solomon",
       "mbArea": "United States",
       "entryYears": [
-        1965,
+        1962,
         1965
       ],
       "wdIsCandidate": false,
@@ -8791,7 +9698,7 @@
       "mbName": "The Trade Winds",
       "mbArea": "United States",
       "entryYears": [
-        1967,
+        1962,
         1976
       ],
       "wdIsCandidate": false,
@@ -8849,38 +9756,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "TT|dg|191325",
-      "cc": "TT",
-      "key": "dg|191325",
-      "name": "The Fifth Dimension",
-      "mbid": "43f14898-3db4-4f29-85ae-b11c6b1aa4ae",
-      "mbName": "The Fifth Dimension",
-      "mbArea": "United States",
-      "entryYears": [
-        1976,
-        1976
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": null,
-        "life": {
-          "end": null,
-          "begin": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|3287807",
@@ -8909,8 +9787,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner ruling Aug 26 2026 (worksheet B7): keep, presumed-local restored — collision disproven on the record: dg realname Seecharan Chotilal, chutney discography (Creation 1979) — different person from MB SIPPY (AU-born US-based producer)",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|2365832",
@@ -8921,7 +9800,7 @@
       "mbName": "Frankie Francis",
       "mbArea": "United Kingdom",
       "entryYears": [
-        1961,
+        1959,
         1967
       ],
       "wdIsCandidate": false,
@@ -9079,8 +9958,9 @@
         }
       },
       "eraOverlap": false,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): profile: Trinidad & Tobago soul artist from 1977 + era guard (MB match formed 2007, entry 1977 — impossible identity)",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|892022",
@@ -9149,8 +10029,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|893312",
@@ -9210,7 +10091,8 @@
       },
       "eraOverlap": null,
       "proposal": "held",
-      "why": "no corroboration either way"
+      "why": "owner-delegated-f44-HELD (Aug 28 2026, genuinely unsure): page shows Bombay/Times Music (Indian scene) but TT's Indo-Trinidadian chutney scene shares names and repertoire — which person the TT credit is remains open",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|246028",
@@ -9533,8 +10415,9 @@
         }
       },
       "eraOverlap": true,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|4075935",
@@ -9757,8 +10640,9 @@
         }
       },
       "eraOverlap": false,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner ruling Aug 26 2026 (worksheet B8): keep, presumed-local restored — collision disproven: entry 1959 pre-dates MB Teentones 1962 formation (impossible identity); MB artist links no Discogs page",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|1156720",
@@ -9829,7 +10713,7 @@
       "mbName": "manCHILD",
       "mbArea": "United States",
       "entryYears": [
-        1981,
+        1980,
         1981
       ],
       "wdIsCandidate": false,
@@ -9920,8 +10804,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): Christmas record on Tropico, the TT parang tradition",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|8638752",
@@ -10012,7 +10897,7 @@
       "mbArea": "United States",
       "entryYears": [
         1995,
-        1995
+        1996
       ],
       "wdIsCandidate": false,
       "candidateWdId": null,
@@ -10069,8 +10954,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|6010173",
@@ -10099,8 +10985,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): profile: Calypso performer — the TT scene, not the UK name-match",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|247954",
@@ -10199,8 +11086,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|3258384",
@@ -10229,8 +11117,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "archive-keep",
+      "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-proven-other, no origin signal — records verified pressed in pool country, origin unestablished",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|13568818",
@@ -10259,8 +11148,9 @@
         }
       },
       "eraOverlap": null,
-      "proposal": "held",
-      "why": "no corroboration either way"
+      "proposal": "keep-policy-c",
+      "why": "owner-delegated-f44-keep (Aug 28 2026): Ah Cultural Jam on Humming Bird — Trini-creole title, TT label",
+      "audited": "override"
     },
     {
       "caseKey": "TT|dg|3500270",
@@ -10394,6 +11284,712 @@
       "eraOverlap": false,
       "proposal": "keep-note",
       "why": "origin/citizenship in pool country"
+    },
+    {
+      "caseKey": "TT|dg|3158016",
+      "cc": "TT",
+      "key": "dg|3158016",
+      "name": "Danny Boy",
+      "mbid": "630156f6-c7ea-4da4-bf82-560bba702538",
+      "mbName": "Danny Boy",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q8353742",
+          "description": "American singer",
+          "born": "Q30",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "begin": "1977-10-31",
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "Sep 6 2026 top-up review: TT audit class + generic stage name; the US Danny Boy on a WIRL pressing is plausible but unproven — owner call",
+      "audited": "override"
+    },
+    {
+      "caseKey": "TT|dg|994840",
+      "cc": "TT",
+      "key": "dg|994840",
+      "name": "Charles Ross",
+      "mbid": "ba3e6399-5c27-4b28-aa24-ae27a5930a78",
+      "mbName": "Charles Ross",
+      "mbArea": "United States",
+      "entryYears": [
+        1957,
+        1957
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "TT|dg|1812167",
+      "cc": "TT",
+      "key": "dg|1812167",
+      "name": "Scorpio",
+      "mbid": "9e08916e-a215-4e9f-9c66-331b814483cb",
+      "mbName": "Scorpio",
+      "mbArea": "United States",
+      "entryYears": [
+        1978,
+        1978
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q99675616",
+          "description": "American hip hop musician",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q100493654"
+          ],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "TT|dg|1087265",
+      "cc": "TT",
+      "key": "dg|1087265",
+      "name": "Ralph Marterie",
+      "mbid": "4655f40f-51f5-4ca6-9244-9ccc7f7b33f5",
+      "mbName": "Ralph Marterie",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q3929797",
+          "description": "Italian musician (1914–1978)",
+          "born": "Q38",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30",
+            "Q38",
+            "Q172579"
+          ],
+          "professions": [
+            "Q158852",
+            "Q639669",
+            "Q12377274"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Italy",
+        "life": {
+          "begin": "1914-12-24",
+          "end": "1978-10-10",
+          "ended": true
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q38 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "TT|dg|503475",
+      "cc": "TT",
+      "key": "dg|503475",
+      "name": "The Lemon Pipers",
+      "mbid": "fd86da6c-c2e2-4792-85c8-b68282da6271",
+      "mbName": "The Lemon Pipers",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q466992",
+          "description": "band",
+          "born": null,
+          "formed": null,
+          "origin": "Q30",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "United States",
+        "life": {
+          "begin": "1966",
+          "end": "1969",
+          "ended": true
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "TT|dg|579277",
+      "cc": "TT",
+      "key": "dg|579277",
+      "name": "George Beverly Shea",
+      "mbid": "5d21397f-44df-463b-a90a-3d5031aadf09",
+      "mbName": "George Beverly Shea",
+      "mbArea": "United States",
+      "entryYears": [
+        1968,
+        1968
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q888118",
+          "description": "American gospel singer and hymn composer born in Canada (1909–2013)",
+          "born": "Q16",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q177220",
+            "Q753110"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Canada",
+        "life": {
+          "end": "2013-04-16",
+          "ended": true,
+          "begin": "1909-02-01"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q16 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "TT|dg|761980",
+      "cc": "TT",
+      "key": "dg|761980",
+      "name": "Square One",
+      "mbid": "4d17755e-f1f7-409c-9638-e44c0bcc3739",
+      "mbName": "Square One",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        1998,
+        1998
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "TT|dg|7756379",
+      "cc": "TT",
+      "key": "dg|7756379",
+      "name": "Wave Form",
+      "mbid": "a2ac19aa-9428-439d-b00a-8514efcd0fd3",
+      "mbName": "Wave Form",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "TT|dg|7939832",
+      "cc": "TT",
+      "key": "dg|7939832",
+      "name": "Shirley King",
+      "mbid": "8d56a4dc-11b2-4eda-ac04-ff272c241b0b",
+      "mbName": "Shirley King",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "TT|dg|341973",
+      "cc": "TT",
+      "key": "dg|341973",
+      "name": "Living Brass",
+      "mbid": "aef5222d-8d53-4196-912e-3e437f0911a1",
+      "mbName": "Living Brass",
+      "mbArea": "United States",
+      "entryYears": [
+        1966,
+        1966
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "TT|dg|12328543",
+      "cc": "TT",
+      "key": "dg|12328543",
+      "name": "Warrior",
+      "mbid": "11ff65fc-32aa-4595-9fef-8988fc0b1c02",
+      "mbName": "Warrior",
+      "mbArea": "United States",
+      "entryYears": [
+        1994,
+        1994
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q425977",
+          "description": "American heavy metal band",
+          "born": null,
+          "formed": "Q30",
+          "origin": "Q30",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "United States",
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": "1983"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "held",
+      "why": "Sep 6 2026 top-up review: TT audit class: local calypso/soca acts share names with foreign MB matches (Blue Boy/Gypsy/Swallow precedent); a second \"Warrior\" already sits in the TT pool",
+      "audited": "override"
+    },
+    {
+      "caseKey": "TT|dg|1257699",
+      "cc": "TT",
+      "key": "dg|1257699",
+      "name": "Norman Beaton",
+      "mbid": "b7766736-acf9-4487-ab83-9ab6746df247",
+      "mbName": "Norman Beaton",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        1960,
+        1960
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q7051959",
+          "description": "Guyanese actor (1934–1994)",
+          "born": "Q734",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q145"
+          ],
+          "professions": [
+            "Q33999"
+          ],
+          "musician": false
+        },
+        "beginCountry": "Guyana",
+        "life": {
+          "ended": true,
+          "end": "1994-12-13",
+          "begin": "1934-10-31"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q734 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "TT|dg|902711",
+      "cc": "TT",
+      "key": "dg|902711",
+      "name": "Traffik",
+      "mbid": "272dde23-f14d-4259-8ee4-84daf807c211",
+      "mbName": "Traffik",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        1992,
+        1992
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "TT|dg|16472106",
+      "cc": "TT",
+      "key": "dg|16472106",
+      "name": "Allan Clarke",
+      "mbid": "fcc0da8f-a85c-4fac-b503-a694588e4cb4",
+      "mbName": "Allan Clarke",
+      "mbArea": "United Kingdom",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q2837697",
+          "description": "British rock singer and songwriter",
+          "born": "Q145",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q145"
+          ],
+          "professions": [
+            "Q36834",
+            "Q177220",
+            "Q639669",
+            "Q753110",
+            "Q855091"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United Kingdom",
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": "1942-04-05"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "TT|dg|340205",
+      "cc": "TT",
+      "key": "dg|340205",
+      "name": "Don Robertson",
+      "mbid": "de8f8d97-9520-43fd-b832-dcdb80351bab",
+      "mbName": "Don Robertson",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q5293419",
+          "description": "American composer b. 1942",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q36834"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "ended": false,
+          "begin": "1942",
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "TT|dg|654996",
+      "cc": "TT",
+      "key": "dg|654996",
+      "name": "Billy 'Crash' Craddock",
+      "mbid": "643d2a1e-39b3-4a0c-80cd-8cdf59276d61",
+      "mbName": "Billy “Crash” Craddock",
+      "mbArea": "United States",
+      "entryYears": [
+        1968,
+        1968
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q863285",
+          "description": "American singer",
+          "born": "Q30",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q30"
+          ],
+          "professions": [
+            "Q177220",
+            "Q639669",
+            "Q753110",
+            "Q806349"
+          ],
+          "musician": true
+        },
+        "beginCountry": "United States",
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": "1939-06-16"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "TT|dg|1489077",
+      "cc": "TT",
+      "key": "dg|1489077",
+      "name": "Tom Sullivan",
+      "mbid": "c26d6edc-b3b8-458a-adc4-a382ff5213d0",
+      "mbName": "Tom Sullivan",
+      "mbArea": "United States",
+      "entryYears": [
+        1976,
+        1976
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "TT|dg|766318",
+      "cc": "TT",
+      "key": "dg|766318",
+      "name": "The Globetrotters",
+      "mbid": "93570db9-8014-4cb0-a3c7-4c71bb669271",
+      "mbName": "The Globetrotters",
+      "mbArea": "United States",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "TT|dg|6369282",
+      "cc": "TT",
+      "key": "dg|6369282",
+      "name": "The Dew Drops",
+      "mbid": "23c22200-81ca-4f37-be62-771445e87cb1",
+      "mbName": "The Dew Drops",
+      "mbArea": "United States",
+      "entryYears": [
+        1962,
+        1962
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "United States",
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
     }
   ]
 }

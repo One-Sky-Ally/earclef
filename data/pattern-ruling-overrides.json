@@ -538,5 +538,17 @@
   "VN|dg|7101584": {
     "proposal": "keep-policy-c",
     "why": "owner-delegated-f44-keep-group (Aug 28 2026, VN×US diaspora-era): either-way keep: if the entry IS the US-filed diaspora artist, residence-not-origin keeps it (the ruled Saigon block); if not, it is a local artist — both branches keep, identity need not be resolved"
+  },
+  "ZM|dg|2779941": {
+    "proposal": "held",
+    "why": "Sep 6 2026 top-up review: bare forename \"Natasha\" matched to Natasha England — mononyms decide nothing (owner ruling Aug 11/15); a Zambian Natasha is the likelier referent"
+  },
+  "TT|dg|12328543": {
+    "proposal": "held",
+    "why": "Sep 6 2026 top-up review: TT audit class: local calypso/soca acts share names with foreign MB matches (Blue Boy/Gypsy/Swallow precedent); a second \"Warrior\" already sits in the TT pool"
+  },
+  "TT|dg|3158016": {
+    "proposal": "held",
+    "why": "Sep 6 2026 top-up review: TT audit class + generic stage name; the US Danny Boy on a WIRL pressing is plausible but unproven — owner call"
   }
 }

@@ -62456,19 +62456,6 @@
         "wikidataId": null
       },
       {
-        "name": "Jizzy",
-        "source": "discogs",
-        "firstYear": 2020,
-        "lastYear": 2020,
-        "styles": [
-          "Dubstep",
-          "Electronic"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 11557010,
-        "wikidataId": null
-      },
-      {
         "name": "Joseph Seneviratne And Party",
         "source": "discogs",
         "firstYear": 1949,
@@ -80797,20 +80784,6 @@
         ]
       },
       {
-        "name": "Orchestre De La Garde Républicaine",
-        "source": "discogs",
-        "firstYear": 1967,
-        "lastYear": 1967,
-        "styles": [
-          "Afro-Cuban Jazz",
-          "African",
-          "Jazz"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 4798227,
-        "wikidataId": null
-      },
-      {
         "name": "Pathe Moloko",
         "source": "discogs",
         "firstYear": 1999,
@@ -92974,7 +92947,8 @@
         "wikidataId": null,
         "aliases": [
           "Arbogaste Mbella Mtoné"
-        ]
+        ],
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 8fc7df5d-d5f1-4549-ae76-a421f012ccb9 area=France recorded as residence-not-origin."
       },
       {
         "name": "Archanges Celestes",
@@ -143707,20 +143681,6 @@
         "wikidataId": null
       },
       {
-        "name": "Cepillin",
-        "source": "discogs",
-        "firstYear": 1978,
-        "lastYear": 1978,
-        "styles": [
-          "Nursery Rhymes",
-          "Latin",
-          "Children's"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 2353918,
-        "wikidataId": null
-      },
-      {
         "name": "César Andrade",
         "source": "discogs",
         "firstYear": 1978,
@@ -146473,19 +146433,6 @@
         "wikidataId": null
       },
       {
-        "name": "Andy Russell",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Pop",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 640555,
-        "wikidataId": null
-      },
-      {
         "name": "Armando Morales Barillas",
         "source": "discogs",
         "firstYear": null,
@@ -148219,19 +148166,6 @@
         "wikidataId": null
       },
       {
-        "name": "Toni Arden",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Bossa Nova",
-          "Jazz"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 1114685,
-        "wikidataId": null
-      },
-      {
         "name": "Toñita Reyes De Cajina",
         "source": "discogs",
         "firstYear": null,
@@ -148757,21 +148691,6 @@
         "wikidataId": "Q12212833",
         "aliases": [
           "Raed Kabaha"
-        ]
-      },
-      {
-        "name": "شعبان عبد الرحيم",
-        "source": "discogs",
-        "firstYear": 2001,
-        "lastYear": 2001,
-        "styles": [
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 3008296,
-        "wikidataId": null,
-        "aliases": [
-          "Shaaban"
         ]
       },
       {
@@ -161173,23 +161092,6 @@
         "wikidataId": null
       },
       {
-        "name": "سعود الشريم",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Religious",
-          "Spoken Word",
-          "Non-Music"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 4219706,
-        "wikidataId": null,
-        "aliases": [
-          "Sheikh Al Shuraim"
-        ]
-      },
-      {
         "name": "سلمان المنكوب",
         "source": "discogs",
         "firstYear": null,
@@ -161323,23 +161225,6 @@
         "wikidataId": null,
         "aliases": [
           "الاستاذ عبد الجبار علي"
-        ]
-      },
-      {
-        "name": "عبد الرحمن السديس",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Religious",
-          "Spoken Word",
-          "Non-Music"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 4219705,
-        "wikidataId": null,
-        "aliases": [
-          "Sheikh Al Sudais"
         ]
       },
       {
@@ -173661,20 +173546,6 @@
         "wikidataId": null
       },
       {
-        "name": "Сергей Михалков",
-        "source": "discogs",
-        "firstYear": 1993,
-        "lastYear": 1993,
-        "styles": [
-          "Story",
-          "Non-Music",
-          "Children's"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 807181,
-        "wikidataId": null
-      },
-      {
         "name": "Фаттаххан Мамадалиев",
         "source": "discogs",
         "firstYear": 2001,
@@ -176833,19 +176704,6 @@
         "wikidataId": null
       },
       {
-        "name": "Albina Kelmendi",
-        "source": "discogs",
-        "firstYear": 2022,
-        "lastYear": 2022,
-        "styles": [
-          "Pop",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 12952005,
-        "wikidataId": null
-      },
-      {
         "name": "Aleks Micka",
         "source": "discogs",
         "firstYear": 2006,
@@ -179635,19 +179493,6 @@
         "wikidataId": null
       },
       {
-        "name": "Ryva Kajtazi",
-        "source": "discogs",
-        "firstYear": 2005,
-        "lastYear": 2005,
-        "styles": [
-          "Pop",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 17541504,
-        "wikidataId": null
-      },
-      {
         "name": "Saba Hysa",
         "source": "discogs",
         "firstYear": 2006,
@@ -179941,20 +179786,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 4606629,
-        "wikidataId": null
-      },
-      {
-        "name": "Tayna",
-        "source": "discogs",
-        "firstYear": 2019,
-        "lastYear": 2019,
-        "styles": [
-          "Pop Rap",
-          "Hip Hop",
-          "Pop"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 7368369,
         "wikidataId": null
       },
       {
@@ -204129,19 +203960,6 @@
         "wikidataId": null
       },
       {
-        "name": "SoShy",
-        "source": "discogs",
-        "firstYear": 2018,
-        "lastYear": 2018,
-        "styles": [
-          "Hardstyle",
-          "Electronic"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 1384053,
-        "wikidataId": null
-      },
-      {
         "name": "Soyro",
         "source": "discogs",
         "firstYear": 2020,
@@ -209542,7 +209360,8 @@
         "wikidataId": "Q111631526",
         "pressedAs": [
           "South Vietnam"
-        ]
+        ],
+        "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 10ac992a-e079-4771-ad6b-73dada0bee17 area=United States recorded as residence-not-origin."
       },
       {
         "name": "Hoang-Kim",
@@ -234675,19 +234494,6 @@
         "wikidataId": null
       },
       {
-        "name": "Matumbi",
-        "source": "discogs",
-        "firstYear": 1981,
-        "lastYear": 1981,
-        "styles": [
-          "Roots Reggae",
-          "Reggae"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 246655,
-        "wikidataId": null
-      },
-      {
         "name": "Max Siame",
         "source": "discogs",
         "firstYear": 1985,
@@ -238645,19 +238451,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 2221388,
-        "wikidataId": null
-      },
-      {
-        "name": "Leonard Dembo",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "African",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 1985763,
         "wikidataId": null
       },
       {
@@ -260929,20 +260722,6 @@
         ]
       },
       {
-        "name": "Roger Bernard",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "African",
-          "Rumba",
-          "Charanga"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 14665545,
-        "wikidataId": null
-      },
-      {
         "name": "Roger Salmon Et L' Orch Ebuka-Buka Dynamic",
         "source": "discogs",
         "firstYear": null,
@@ -269889,22 +269668,6 @@
         "wikidataId": null
       },
       {
-        "name": "Billy 'Crash' Craddock",
-        "source": "discogs",
-        "firstYear": 1968,
-        "lastYear": 1968,
-        "styles": [
-          "Country",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 654996,
-        "wikidataId": null,
-        "aliases": [
-          "Billy (Cras) Craddock"
-        ]
-      },
-      {
         "name": "Black Wizard",
         "source": "discogs",
         "firstYear": 1985,
@@ -271279,20 +271042,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 16802092,
-        "wikidataId": null
-      },
-      {
-        "name": "George Beverly Shea",
-        "source": "discogs",
-        "firstYear": 1968,
-        "lastYear": 1968,
-        "styles": [
-          "Religious",
-          "Vocal",
-          "Pop"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 579277,
         "wikidataId": null
       },
       {
@@ -273052,20 +272801,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 8031665,
-        "wikidataId": null
-      },
-      {
-        "name": "Norman Beaton",
-        "source": "discogs",
-        "firstYear": 1960,
-        "lastYear": 1960,
-        "styles": [
-          "Calypso",
-          "Latin Jazz",
-          "Jazz"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 1257699,
         "wikidataId": null
       },
       {
@@ -277023,19 +276758,6 @@
         "wikidataId": null
       },
       {
-        "name": "Allan Clarke",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Soca",
-          "Reggae"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 16472106,
-        "wikidataId": null
-      },
-      {
         "name": "Alphonsus (Phonso) Niles",
         "source": "discogs",
         "firstYear": null,
@@ -280479,19 +280201,6 @@
         ]
       },
       {
-        "name": "Ralph Marterie",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Twist",
-          "Jazz"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 1087265,
-        "wikidataId": null
-      },
-      {
         "name": "Ramayan Sewak Sang",
         "source": "discogs",
         "firstYear": null,
@@ -281655,19 +281364,6 @@
         ],
         "releaseCount": 1,
         "discogsArtistId": 13195320,
-        "wikidataId": null
-      },
-      {
-        "name": "The Lemon Pipers",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Pop Rock",
-          "Rock"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 503475,
         "wikidataId": null
       },
       {
