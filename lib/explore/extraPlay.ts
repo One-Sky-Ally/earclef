@@ -18,6 +18,7 @@
  * (Internet Archive exact-alias) may still verify honestly, but the
  * stored link never serves. The URL is preserved for the repair pass.
  */
+import { MIN_DURATION_SECONDS } from '../play/contentGates'
 import type { PlayLink } from '../play/types'
 import extraPlay from './extra-play.json'
 
@@ -112,6 +113,13 @@ export function extraQueueTrack(key: string): ExtraQueueTrack | null {
   if (!entry || entry.play?.kind !== 'youtube-video') return null
   if (entry.identityUnverified || entry.queueEligible === false) return null
   if (!entry.title) return null
+  // Read-time guard for the song floor, independent of the stored flag
+  // (standing lesson 2: committed data outlives the pass that wrote it).
+  // A missing duration is not a pass (lesson 5).
+  if ((entry.durationSeconds ?? 0) < MIN_DURATION_SECONDS) return null
+  // Only a link that carries identity evidence may auto-play (Sep 5,
+  // 2026 ruling opened the queue gate on exactly this dataset).
+  if (!entry.identityEvidence) return null
   const videoId = videoIdOf(entry.play.url)
   return videoId ? { videoId, title: entry.title } : null
 }

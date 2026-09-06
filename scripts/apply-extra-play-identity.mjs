@@ -53,33 +53,45 @@ function evidenceOf(video) {
   return { anchors: video.anchors, legs: video.legs, verifiedAt: today }
 }
 
+/**
+ * The queue floor (lib/play/contentGates MIN_DURATION_SECONDS): a serving
+ * link under 90 s keeps its pill but may not auto-play in a queue. The
+ * enrichment pass set this flag; `bare()` strips it, so it is re-derived
+ * here for every serving entry (missing duration = not eligible).
+ */
+const MIN_SONG_SECONDS = 90
+function withQueueFloor(entry) {
+  const eligible = (entry.durationSeconds ?? 0) >= MIN_SONG_SECONDS
+  return eligible ? entry : { ...entry, queueEligible: false }
+}
+
 function applyVerdict(entry, row) {
   const base = bare(entry)
   switch (row.verdict) {
     case 'verified':
-      return { ...base, identityEvidence: evidenceOf(row.stored) }
+      return withQueueFloor({ ...base, identityEvidence: evidenceOf(row.stored) })
     case 'replaced': {
       const meta = youtube[row.replacement.videoId] ?? {}
-      return {
+      return withQueueFloor({
         ...base,
         play: { kind: 'youtube-video', url: `https://www.youtube.com/watch?v=${row.replacement.videoId}` },
         title: meta.title ?? row.replacement.title ?? base.title,
         durationSeconds: meta.durationSeconds ?? row.replacement.durationSeconds ?? base.durationSeconds,
         previousPlay: entry.previousPlay ?? entry.play,
         identityEvidence: evidenceOf(row.replacement),
-      }
+      })
     }
     case 'found': {
       // Phase 2: a swept-null artist now has a verified link. No
       // previousPlay — there was nothing before.
       const meta = youtube[row.replacement.videoId] ?? {}
-      return {
+      return withQueueFloor({
         ...base,
         play: { kind: 'youtube-video', url: `https://www.youtube.com/watch?v=${row.replacement.videoId}` },
         title: meta.title ?? row.replacement.title ?? null,
         durationSeconds: meta.durationSeconds ?? row.replacement.durationSeconds ?? null,
         identityEvidence: evidenceOf(row.replacement),
-      }
+      })
     }
     case 'nothing':
       return entry

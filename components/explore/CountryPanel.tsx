@@ -72,23 +72,23 @@ const RENDER_CAP = 100
 /** Dropdown option cap — searchable, so a cap loses nothing. */
 const GENRE_OPTION_CAP = 250
 /**
- * BLOCKED PENDING OWNER RULING (Aug 30, 2026 — gap-fill play identity).
- * Gap-fill entries carry a pre-verified `queueTrack` and the queue can
- * play them with no resolver walk at all, which is exactly what sparse
- * places need. But the enrichment pass that gave those videos titles
- * revealed that the committed links frequently name the WRONG ARTIST:
- * "T.O. Jazz" (Ghana) plays a Leipzig boys' choir carol, "C.K. Mann"
- * plays Keith Jarrett's Köln Concert, Louis Armstrong plays a techno
- * remix. Root cause in scripts/build-extra-play.mjs: it takes any
- * community video attached to a Discogs release the artist appears on
- * — somebody else's track, on a compilation — and verifies only that
- * the video is playable, never whose it is.
+ * OPENED BY OWNER RULING (Sep 5, 2026) after the gap-fill play repair.
+ * Gap-fill entries carry a pre-verified `queueTrack` the queue can play
+ * with no resolver walk at all — exactly what sparse places need.
  *
- * A wrong pill is one bad click the visitor can judge; a wrong queue
- * entry AUTO-PLAYS. So the queue stays MusicBrainz-only until the
- * dataset is repaired (see data/gap-fill-play-identity-audit.json).
+ * It was held shut Aug 30 – Sep 5 because the original sweep bound
+ * videos to artists by Discogs release-attachment alone (and, worse,
+ * fetched master ids as release ids), so the committed links often
+ * named the WRONG ARTIST — a wrong pill is one bad click, a wrong
+ * queue entry AUTO-PLAYS. The repair (scripts/gather-extra-play-
+ * evidence.mjs → arbitrate → apply) re-verified every link under an
+ * identity bar: an ID-level Discogs credit or linked-channel anchor
+ * plus an independent corroboration. lib/explore/extraPlay.ts serves a
+ * `queueTrack` ONLY for an entry that carries that `identityEvidence`,
+ * is at or above the song floor, and has a title — so this flag opens
+ * the door to verified links and nothing else.
  */
-const GAP_FILL_QUEUES_ENABLED = false
+const GAP_FILL_QUEUES_ENABLED = true
 
 function nextTier(visible: number): number {
   return visible === TIER_BASE
@@ -611,9 +611,9 @@ export function CountryPanel({
 
           {/* Discovery ends in sound — the queue walks the same
               popularity ranking, and now the same genre filter, as the
-              list below. MusicBrainz entries only for the moment: see
-              GAP_FILL_QUEUES_ENABLED above for why the gap-fill half
-              is held back.
+              list below. MusicBrainz entries resolve live; gap-fill
+              entries join with their pre-verified queueTrack (see
+              GAP_FILL_QUEUES_ENABLED above).
 
               Deliberately NOT re-keyed on genreFilter: the pool is
               read at click time, so changing the filter mid-song

@@ -2004,7 +2004,8 @@
           "title"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "wd:Q9069216": {
       "play": null,
@@ -3010,7 +3011,8 @@
           "title"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:17537799": {
       "play": {
@@ -7965,7 +7967,8 @@
           "duration"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "wd:Q6967303": {
       "play": null
@@ -15704,7 +15707,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:2443070": {
       "play": null
@@ -23472,7 +23476,8 @@
           "topic"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:5697135": {
       "play": null
@@ -27939,7 +27944,8 @@
           "duration"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:3771609": {
       "play": {
@@ -28458,7 +28464,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:2624585": {
       "play": {
@@ -36685,7 +36692,8 @@
           "duration"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:4379269": {
       "play": {
@@ -49782,7 +49790,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:10900774": {
       "play": null
@@ -50261,7 +50270,8 @@
           "title"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:4734836": {
       "play": {
@@ -58098,7 +58108,8 @@
           "title"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:5619548": {
       "play": {
@@ -59337,7 +59348,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:4067466": {
       "play": {
@@ -84196,7 +84208,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:3201964": {
       "play": {
@@ -93128,7 +93141,8 @@
           "topic"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:681066": {
       "play": {
@@ -93473,7 +93487,8 @@
           "topic"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:7974733": {
       "play": {
@@ -97983,7 +97998,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:6498332": {
       "play": {
@@ -98104,7 +98120,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:6110351": {
       "play": {
@@ -102157,7 +102174,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:1754123": {
       "play": {
@@ -107913,7 +107931,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:44925": {
       "play": {
@@ -108820,7 +108839,8 @@
           "topic"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:17742849": {
       "play": null
@@ -112723,7 +112743,8 @@
           "topic"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:13868182": {
       "play": null
@@ -120735,7 +120756,8 @@
           "topic"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:6642482": {
       "play": null
@@ -123006,7 +123028,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:14013439": {
       "play": null
@@ -127462,7 +127485,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:15866672": {
       "play": null
@@ -129138,7 +129162,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:16792837": {
       "play": {
@@ -136032,7 +136057,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:17118559": {
       "play": null
@@ -137023,7 +137049,8 @@
           "topic"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:2824209": {
       "play": null
@@ -155756,7 +155783,8 @@
           "name"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:9037765": {
       "play": null
@@ -156048,7 +156076,8 @@
           "title"
         ],
         "verifiedAt": "2026-09-05"
-      }
+      },
+      "queueEligible": false
     },
     "dg:3158114": {
       "play": null
