@@ -214,9 +214,10 @@ export default function GetOnTheMapPage() {
               ))}
             </ol>
             <p className={styles.prose} style={{ marginTop: '1.5rem' }}>
-              Adding a new artist or release normally shows on MusicBrainz
-              straight away. Changes to records that already exist can wait
-              up to seven days for other editors to vote.
+              Adding yourself goes live at once. MusicBrainz applies a new
+              artist and its links automatically, with no vote to wait for.
+              Changes to records that already exist can wait up to seven days
+              for other editors to vote.
             </p>
           </section>
 
