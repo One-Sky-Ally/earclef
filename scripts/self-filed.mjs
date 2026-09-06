@@ -10,7 +10,8 @@
  *
  * Usage:
  *   node scripts/self-filed.mjs mint <mbid> --url <page>   # add + print token
- *   node scripts/self-filed.mjs verify [mbid]              # fetch page(s), record the date
+ *   node scripts/self-filed.mjs verify [mbid] [--url <page>] # fetch page(s), record the date
+ *                                    (--url re-points ONE entry's evidence page first)
  *   node scripts/self-filed.mjs refresh                    # re-read MB fields for verified rows
  *   node scripts/self-filed.mjs list
  *
@@ -206,7 +207,24 @@ async function mint() {
 
 async function verify() {
   const only = process.argv[3]
-  const list = readList()
+  const newUrl = flagValue('--url')
+  if (newUrl && !MBID_PATTERN.test(only ?? '')) {
+    throw new Error('--url re-points one entry: verify <mbid> --url <page>')
+  }
+  const stored = readList()
+  // Re-point the evidence page (the token stays): the first entry was
+  // minted against a YouTube "- Topic" channel, auto-generated and
+  // uneditable, because that is what the MusicBrainz record links.
+  const list = newUrl
+    ? {
+        ...stored,
+        artists: stored.artists.map((artist) =>
+          artist.mbid === only
+            ? { ...artist, evidence: { ...artist.evidence, url: assertControllablePage(newUrl), verifiedAt: null } }
+            : artist,
+        ),
+      }
+    : stored
   const targets = list.artists.filter(
     (artist) => (!only || artist.mbid === only) && (only || !artist.evidence.verifiedAt),
   )

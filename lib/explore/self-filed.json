@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T04:14:07.542Z",
+  "generatedAt": "2026-09-06T05:09:44.579Z",
   "artists": [
     {
       "mbid": "8cd399b7-b52b-478f-af05-b9953aad49ac",
@@ -11,9 +11,9 @@
       "tags": [],
       "filedAt": "2026-09-06T04:14:07.541Z",
       "evidence": {
-        "url": "https://www.youtube.com/channel/UC2Yf-Wykss1jm73UAiIzmPw/about",
+        "url": "https://www.youtube.com/channel/UC6y3HfoyyMyrr600Jir5uWw/about",
         "token": "earclef-sYQJnFk9",
-        "verifiedAt": null
+        "verifiedAt": "2026-09-06T05:09:44.570Z"
       }
     }
   ]
