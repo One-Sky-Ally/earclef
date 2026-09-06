@@ -50,6 +50,11 @@ import {
   titleKeys,
 } from './lib/dedup-rule.mjs'
 import { COUNTRIES } from './lib/gap-fill-countries.mjs'
+import {
+  releaseIndexAvailable,
+  releasesFor,
+  releasesMeta,
+} from './lib/discogsDump.mjs'
 
 const WORK_PATH = 'data/extra-artists-work-v2.json'
 const OUT_PATH = 'lib/explore/extra-artists.json'
@@ -72,9 +77,28 @@ const DG_MAX_PAGES = 120
 const LABEL_LANGS =
   'en,es,fr,pt,ar,fa,ru,uk,sq,hy,az,ro,vi,km,my,dz,ne,si,bn,mn,th,lo,uz,tg,ky,tk,kk,ms,sw,am,ti,so,ha,yo,da,kl'
 
-const targets = process.argv.slice(2).filter((code) => COUNTRIES[code])
+/**
+ * Flags (Sep 6, 2026):
+ *   --source=api   force the Discogs web API even when the local dump
+ *                  index exists (the dump is the default source)
+ *   --replace      overwrite a country's committed list with this run's
+ *                  result. WITHOUT it, a country that already has a
+ *                  committed list is MERGED: every existing entry keeps
+ *                  every field (presence, note, aliases, retention) and
+ *                  only era/press-count widen; new artists are appended.
+ *                  Replacing forgets state that later passes wrote onto
+ *                  entries (standing lesson 2), so it must be asked for.
+ *   ALL            every configured country
+ */
+const argv = process.argv.slice(2)
+const FORCE_DISCOGS_API = argv.includes('--source=api')
+const REPLACE = argv.includes('--replace')
+const codeArgs = argv.filter((arg) => !arg.startsWith('--'))
+const targets = codeArgs.includes('ALL')
+  ? Object.keys(COUNTRIES)
+  : codeArgs.filter((code) => COUNTRIES[code])
 if (targets.length === 0) {
-  console.error('Usage: node scripts/build-extra-artists.mjs CC [CC ...]')
+  console.error('Usage: node scripts/build-extra-artists.mjs CC [CC ...] | ALL  [--replace] [--source=api]')
   console.error(`Valid codes: ${Object.keys(COUNTRIES).join(' ')}`)
   process.exit(1)
 }
@@ -316,6 +340,45 @@ async function releaseCredits(releaseId) {
   }
 }
 
+const stripDisambiguation = (name) => name.replace(/\s*\(\d+\)\s*$/, '').trim()
+
+/**
+ * A dump row in the shape the API search pass stored — the title is
+ * rebuilt as "credits – title" (the search's display form) so
+ * titleKeys() and the display-string fallback behave identically.
+ */
+function dumpRelease(row) {
+  const names = row.artists.map((credit) =>
+    credit.anv ? credit.anv : stripDisambiguation(credit.name),
+  )
+  return {
+    title: names.length > 0 ? `${names.join(' / ')} – ${row.title}` : row.title,
+    year: row.year,
+    id: row.id,
+    label: row.labels[0]?.name ?? null,
+    style: [...row.styles, ...row.genres].slice(0, 3),
+  }
+}
+
+/** Same filter releaseCredits() applied to the API record. */
+function dumpCredits(row) {
+  const credits = row.artists.flatMap((credit) => {
+    if (!credit.id || GENERIC_CREDIT_IDS.has(credit.id)) return []
+    const canonical = stripDisambiguation(credit.name)
+    if (
+      !canonical ||
+      canonical.length < 2 ||
+      canonical.length > 80 ||
+      GENERIC_NAMES.has(canonical.toLowerCase())
+    ) {
+      return []
+    }
+    const anv = (credit.anv ?? '').replace(/\*+\s*$/, '').trim()
+    return [{ id: credit.id, name: canonical, anv: anv || null }]
+  })
+  return { country: row.country, credits }
+}
+
 /** Resolve a surviving candidate to its Discogs artist page. */
 async function discogsArtistId(name) {
   const body = await getJson(
@@ -328,6 +391,108 @@ async function discogsArtistId(name) {
     if (normalize(title) === wanted) return result.id ?? null
   }
   return null
+}
+
+// ---------------------------------------------------------- merge assembly
+
+const minYear = (a, b) => (a === null ? b : b === null ? a : Math.min(a, b))
+const maxYear = (a, b) => (a === null ? b : b === null ? a : Math.max(a, b))
+
+/** Dataset order: documented years first, then the most-pressed. */
+function byDatedThenPressed(a, b) {
+  return (
+    (a.firstYear === null ? 1 : 0) - (b.firstYear === null ? 1 : 0) ||
+    b.releaseCount - a.releaseCount ||
+    a.name.localeCompare(b.name)
+  )
+}
+
+/**
+ * TOP-UP SEMANTICS (owner go, Sep 6, 2026). The committed list is the
+ * owner's state: presence rulings, notes, attested aliases, drift
+ * retention and reinstatements were all written ONTO entries by later
+ * passes, so an entry is never rebuilt — only its era and press count
+ * may widen from releases the sweep had never seen. A fresh artist is
+ * appended when neither its Discogs id nor its name/aliases match an
+ * existing entry; a name-only clash with an existing entry is skipped
+ * and reported (same-name-different-id is an identity call, not a
+ * merge). Returns a NEW list, never mutates the committed one.
+ */
+function mergeIntoCommitted(current, fresh) {
+  const byId = new Map()
+  const byWikidata = new Map()
+  const byName = new Map()
+  const idless = new Map()
+  current.forEach((artist, index) => {
+    if (artist.discogsArtistId != null) byId.set(String(artist.discogsArtistId), index)
+    if (artist.wikidataId) byWikidata.set(artist.wikidataId, index)
+    // An entry with neither id IS its name (the id-less class); a
+    // same-name candidate that also has no id is the same entry.
+    if (artist.discogsArtistId == null && !artist.wikidataId) {
+      const key = normalize(artist.name)
+      if (key && !idless.has(key)) idless.set(key, index)
+    }
+    for (const label of [artist.name, ...(artist.aliases ?? [])]) {
+      const key = normalize(label)
+      if (key && !byName.has(key)) byName.set(key, index)
+    }
+  })
+  const list = [...current]
+  let added = 0
+  let widened = 0
+  const nameClash = []
+  const addedNames = []
+  for (const artist of fresh) {
+    const idKey = artist.discogsArtistId != null ? String(artist.discogsArtistId) : null
+    const index =
+      (idKey !== null ? byId.get(idKey) : undefined) ??
+      (artist.wikidataId ? byWikidata.get(artist.wikidataId) : undefined) ??
+      (idKey === null && !artist.wikidataId ? idless.get(normalize(artist.name)) : undefined)
+    if (index !== undefined) {
+      const committed = list[index]
+      const next = {
+        ...committed,
+        firstYear: minYear(committed.firstYear, artist.firstYear),
+        lastYear: maxYear(committed.lastYear, artist.lastYear),
+        releaseCount: Math.max(committed.releaseCount, artist.releaseCount),
+        ...(committed.styles.length === 0 && artist.styles.length > 0
+          ? { styles: artist.styles }
+          : {}),
+        // Provenance the ingest now knows (historical-entity pressings,
+        // owner fix-forward Aug 26): additive, display-neutral.
+        ...(artist.pressedAs && !committed.pressedAs
+          ? { pressedAs: artist.pressedAs }
+          : {}),
+      }
+      if (
+        next.firstYear !== committed.firstYear ||
+        next.lastYear !== committed.lastYear ||
+        next.releaseCount !== committed.releaseCount ||
+        next.styles !== committed.styles ||
+        next.pressedAs !== committed.pressedAs
+      ) {
+        list[index] = next
+        widened++
+      }
+      continue
+    }
+    const clash = [artist.name, ...(artist.aliases ?? [])]
+      .map(normalize)
+      .find((key) => key && byName.has(key))
+    if (clash) {
+      nameClash.push(`${artist.name} ↔ ${list[byName.get(clash)].name}`)
+      continue
+    }
+    list.push(artist)
+    addedNames.push(artist.name)
+    added++
+    if (idKey !== null) byId.set(idKey, list.length - 1)
+    for (const label of [artist.name, ...(artist.aliases ?? [])]) {
+      const key = normalize(label)
+      if (key && !byName.has(key)) byName.set(key, list.length - 1)
+    }
+  }
+  return { list: list.sort(byDatedThenPressed), added, widened, nameClash, addedNames }
 }
 
 // ------------------------------------------------------------------- main
@@ -367,10 +532,41 @@ async function main() {
       `  Wikidata: ${wd.length} musicians (${wdWithMb} already carry MB ids)`,
     )
 
-    // 2. Discogs: what the crates hold. Multi-string countries (ZW's
-    // Rhodesia, CD's Zaire) sweep each string; merge by release id.
-    if (!state.releases) {
-      console.log('  Discogs pass…')
+    // 2. Discogs: what the crates hold. THE DUMP IS THE RECORD (Sep 6,
+    // 2026): every release filed under a configured string, credits
+    // included, straight from the local index — no search layer to
+    // lose a fifth of them, no rate limit. Releases the stored sweep
+    // never saw are unioned in; cached API credits stand (audited
+    // identical to the dump) and only recordless releases take theirs
+    // from the dump. The API path survives as --source=api.
+    const useDump = !FORCE_DISCOGS_API && releaseIndexAvailable()
+    if (useDump) {
+      const edition = releasesMeta()?.source ?? 'dump'
+      const stored = state.releases?.length ?? 0
+      const known = new Set((state.releases ?? []).map((release) => release.id))
+      const added = []
+      let creditsFromDump = 0
+      state.credits ??= {}
+      for (const label of config.discogs) {
+        for (const row of releasesFor(label)) {
+          if (!known.has(row.id)) {
+            known.add(row.id)
+            added.push(dumpRelease(row))
+          }
+          if (state.credits[row.id] === undefined || state.credits[row.id] === null) {
+            state.credits[row.id] = dumpCredits(row)
+            creditsFromDump++
+          }
+        }
+      }
+      state.releases = [...(state.releases ?? []), ...added]
+      state.discogsSource = { source: 'dump', edition, addedReleases: added.length }
+      console.log(
+        `  Discogs (${edition}): ${state.releases.length} releases — ${stored} stored, +${added.length} never seen, ${creditsFromDump} credit records from the dump`,
+      )
+      writeFileSync(WORK_PATH, JSON.stringify(work))
+    } else if (!state.releases) {
+      console.log('  Discogs pass (api)…')
       const merged = []
       const seen = new Set()
       for (const label of config.discogs) {
@@ -712,7 +908,7 @@ async function main() {
   for (const code of targets) {
     const state = work.countries[code]
     if (!state?.result) continue
-    out.countries[code] = state.result.map((artist) => {
+    const fresh = state.result.map((artist) => {
       const attested = attestedAliases.get(String(artist.discogsArtistId))
       if (!attested) return artist
       const merged = [
@@ -721,6 +917,9 @@ async function main() {
       ]
       return { ...artist, aliases: merged }
     })
+    const current = existing.countries[code]
+    const mergeStats = current && !REPLACE ? mergeIntoCommitted(current, fresh) : null
+    out.countries[code] = mergeStats ? mergeStats.list : fresh
     const verdicts = Object.values(state.verdicts ?? {})
     const count = (name) =>
       verdicts.filter((entry) => entry.verdict === name).length
@@ -744,6 +943,19 @@ async function main() {
       },
       dated: state.result.filter((a) => a.firstYear !== null).length,
       sample: state.result.slice(0, 8).map((a) => `${a.name}${a.firstYear ? ` (${a.firstYear})` : ''}`),
+      ...(state.discogsSource ? { discogsSource: state.discogsSource } : {}),
+      ...(mergeStats
+        ? {
+            merge: {
+              committedBefore: current.length,
+              committedAfter: mergeStats.list.length,
+              added: mergeStats.added,
+              widened: mergeStats.widened,
+              skippedNameClash: mergeStats.nameClash,
+              addedSample: mergeStats.addedNames.slice(0, 10),
+            },
+          }
+        : { merge: REPLACE ? 'replaced' : 'fresh' }),
     }
   }
   out.countries = { ...existing.countries, ...out.countries }

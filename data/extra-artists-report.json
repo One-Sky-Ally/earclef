@@ -1,14 +1,145 @@
 {
-  "VN": {
-    "name": "Vietnam",
-    "wikidataMusicians": 666,
-    "discogsReleases": 2240,
-    "candidates": 1495,
-    "newArtists": 948,
+  "LA": {
+    "name": "Laos",
+    "wikidataMusicians": 8,
+    "discogsReleases": 173,
+    "candidates": 143,
+    "newArtists": 132,
     "dropped": {
-      "duplicate": 240,
-      "foreignCatalog": 72,
-      "wikidataCrosswalk": 138
+      "duplicate": 7,
+      "foreignCatalog": 4,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 1,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 2,
+      "uncorroboratedKept": 2
+    },
+    "dated": 24,
+    "sample": [
+      "ສົມຟອງ (1967)",
+      "ສຸມຸນທາ ສີຣິມະໂນທັມ (1967)",
+      "Pumpkins (2005)",
+      "Dreamer (1990)",
+      "DVB (2004)",
+      "Mekmorakoth (1991)",
+      "Noi Sengsourigna (2004)",
+      "Y-Power (2003)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 129,
+      "committedAfter": 135,
+      "added": 6,
+      "widened": 5,
+      "skippedNameClash": [
+        "ຄຳພູ ທະວິວັນ ↔ ຄຳພູ ທະວຶວັນ",
+        "ສຸມຸນທາ ສິຣິມະໂນທັມ ↔ ສຸມຸນທາ ສີຣິມະໂນທັມ",
+        "ບຸນເກິດ ຜັນທະວົງ ↔ ອ ຈ ບຸນເກິດ ຜັນທະວົງ"
+      ],
+      "addedSample": [
+        "Ding",
+        "ກອບແກ້ວ ປຽ່ນມາໄລ",
+        "ສຸວັນ ທັນວົງສາ",
+        "ແສງອະຣຸນ",
+        "ນະຣາມ ແກ້ວປະຊາ",
+        "ພອນເທພ ເທພພິທັກ"
+      ]
+    }
+  },
+  "PY": {
+    "name": "Paraguay",
+    "wikidataMusicians": 120,
+    "discogsReleases": 1759,
+    "candidates": 855,
+    "newArtists": 584,
+    "dropped": {
+      "duplicate": 93,
+      "foreignCatalog": 162,
+      "wikidataCrosswalk": 16
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 4,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 67,
+      "uncorroboratedKept": 44
+    },
+    "dated": 374,
+    "sample": [
+      "Quemil Yambay Y Su Conjunto Los Alfonsinos (1964)",
+      "Wisdom (1995)",
+      "Dúo Quintana-Escalante (1978)",
+      "Eduardo Rivas (1967)",
+      "Los Troveros De América (1977)",
+      "Oscar Pérez Con La Alegre Fórmula Nueva (1973)",
+      "Aníbal Lovera (1941)",
+      "Betty Figueredo (1980)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 581,
+      "committedAfter": 658,
+      "added": 77,
+      "widened": 122,
+      "skippedNameClash": [
+        "Margarita Pildayn ↔ margarita pildayn",
+        "The Suffer ↔ The Suffer",
+        "Antonio \"Ñito\" Ocampos ↔ Ñito Ocampos",
+        "D.A ↔ D.A",
+        "Kiko García ↔ Kiko García",
+        "Lobo Martínez ↔ Rubén Darío Martínez",
+        "Los Castillos ↔ Los Castillos",
+        "Myriam Y Eduardo ↔ Miriam y Eduardo",
+        "Nat Mendoza ↔ Nat Mendoza",
+        "Roberto Tello ↔ Roberto Tello",
+        "Ensemble Fausto Gonzalez ↔ Fausto Gonzalez Y Su Conjunto Paraguayo",
+        "Oscar Torales ↔ Oscar Torales, Su Piano, Y Orquesta De Cuerdas",
+        "Lorenzo Álvarez Y Su Orquesta De Ritmos Internacionales ↔ Lorenzo Álvarez Y Su Orq. De Ritmos Internacionales",
+        "Yuli Sánchez Y Su Conjunto \"Tradición\" ↔ Yuli Sánchez Y Su Conjunto"
+      ],
+      "addedSample": [
+        "Radek Kopel",
+        "Los Joker's",
+        "Aftermad's",
+        "Ab Ovo",
+        "Los Jokers",
+        "Enanitos Verdes",
+        "Murcielagos",
+        "Alfonso González Y Su Conjunto",
+        "América 4",
+        "Báez - Franco"
+      ]
+    }
+  },
+  "TD": {
+    "name": "Chad",
+    "wikidataMusicians": 29,
+    "discogsReleases": 3,
+    "candidates": 24,
+    "newArtists": 22,
+    "dropped": {
+      "duplicate": 2,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 0
     },
     "recordGuard": {
       "countryMismatch": 0,
@@ -18,19 +149,4007 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 111,
-      "uncorroboratedKept": 190
+      "collisionKept": 2,
+      "uncorroboratedKept": 0
     },
-    "dated": 700,
+    "dated": 14,
+    "sample": [
+      "Obie G (2023)",
+      "Abdoulaye Nderguet (1987)",
+      "Anonyme (2001)",
+      "Célestin Mawndoé (1995)",
+      "Chari Jazz (1964)",
+      "Diego Mustapha Ngarade (2015)",
+      "Kadeux (2018)",
+      "Lincy (2007)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 22,
+      "committedAfter": 22,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "GQ": {
+    "name": "Equatorial Guinea",
+    "wikidataMusicians": 20,
+    "discogsReleases": 5,
+    "candidates": 21,
+    "newArtists": 20,
+    "dropped": {
+      "duplicate": 1,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 1,
+      "uncorroboratedKept": 1
+    },
+    "dated": 15,
+    "sample": [
+      "Koz 2 Rim (2009)",
+      "Nelida Karr (2016)",
+      "Orquesta Tu Y Yo (1992)",
+      "Piruchi Apo (2011)",
+      "Baron ya Búklu (1975)",
+      "Fernando Nguema Medja (1978)",
+      "Fifi La Mirey (1984)",
+      "Fructuoso Ndongo Mayé (2006)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 20,
+      "committedAfter": 20,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "SB": {
+    "name": "Solomon Islands",
+    "wikidataMusicians": 0,
+    "discogsReleases": 7,
+    "candidates": 8,
+    "newArtists": 6,
+    "dropped": {
+      "duplicate": 2,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 0,
+      "uncorroboratedKept": 0
+    },
+    "dated": 4,
+    "sample": [
+      "Unisound Band (1995)",
+      "Francis Ramo (1996)",
+      "Max Lulu (1996)",
+      "Ti Roy (1995)",
+      "Ian Ronnie",
+      "Sam Iro"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 6,
+      "committedAfter": 6,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "DJ": {
+    "name": "Djibouti",
+    "wikidataMusicians": 6,
+    "discogsReleases": 11,
+    "candidates": 11,
+    "newArtists": 11,
+    "dropped": {
+      "duplicate": 0,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 2,
+      "uncorroboratedKept": 1
+    },
+    "dated": 11,
+    "sample": [
+      "Abaïzid Ali (2000)",
+      "Aïdarous A. Badri (2000)",
+      "Getachew Degefu (1995)",
+      "Abdulkadir Omar M. Yusuf Jubba (2011)",
+      "Creepseed (2017)",
+      "Dinkara (2000)",
+      "Guy Bagnol (1979)",
+      "Isbjerg (2007)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 11,
+      "committedAfter": 11,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "VU": {
+    "name": "Vanuatu",
+    "wikidataMusicians": 2,
+    "discogsReleases": 13,
+    "candidates": 10,
+    "newArtists": 9,
+    "dropped": {
+      "duplicate": 0,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 0,
+      "uncorroboratedKept": 1
+    },
+    "dated": 9,
+    "sample": [
+      "Vatdoro (1992)",
+      "Huarere (1997)",
+      "Kros Rod (2002)",
+      "Lonwolwol String Band (1991)",
+      "Pacific Steppaz (2015)",
+      "Paran Latan (2023)",
+      "Royal Crewz (2009)",
+      "XX Squad (2003)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 9,
+      "committedAfter": 9,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "SZ": {
+    "name": "Eswatini",
+    "wikidataMusicians": 3,
+    "discogsReleases": 13,
+    "candidates": 13,
+    "newArtists": 9,
+    "dropped": {
+      "duplicate": 3,
+      "foreignCatalog": 1,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 1,
+      "uncorroboratedKept": 3
+    },
+    "dated": 7,
+    "sample": [
+      "Black Roses (2001)",
+      "Imphandze (1984)",
+      "Milo Hrnić (1990)",
+      "Msandi Kababa (2008)",
+      "Re-Count (2025)",
+      "Soufflé Caramel (2018)",
+      "The Ymr Experience (2018)",
+      "Peter Kreuder Mit Seinen Solisten"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 9,
+      "committedAfter": 9,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "MR": {
+    "name": "Mauritania",
+    "wikidataMusicians": 10,
+    "discogsReleases": 14,
+    "candidates": 15,
+    "newArtists": 12,
+    "dropped": {
+      "duplicate": 3,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 1,
+      "uncorroboratedKept": 4
+    },
+    "dated": 9,
+    "sample": [
+      "Hadrami Ould Meidah (1973)",
+      "محجوبة منت الميداح (1965)",
+      "994 Crew (2004)",
+      "Minen Teye (2009)",
+      "Thiedel Mbaye (2006)",
+      "Yella Alamary (2006)",
+      "Ouleya Mint Amartichitt (1984)",
+      "Saïd Senhaji (1983)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 12,
+      "committedAfter": 12,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "RW": {
+    "name": "Rwanda",
+    "wikidataMusicians": 63,
+    "discogsReleases": 26,
+    "candidates": 75,
+    "newArtists": 61,
+    "dropped": {
+      "duplicate": 10,
+      "foreignCatalog": 2,
+      "wikidataCrosswalk": 2
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 5,
+      "uncorroboratedKept": 3
+    },
+    "dated": 33,
+    "sample": [
+      "Beauty For Ashes (2013)",
+      "Derek YmG (2021)",
+      "Kenny K-Shot (2021)",
+      "Masabo Nyangezi (1985)",
+      "Sema Kweli Crew (2009)",
+      "Shanel (2009)",
+      "Strong Voice Band (2017)",
+      "Aline Sano Shengero. (2010)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 61,
+      "committedAfter": 61,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "TJ": {
+    "name": "Tajikistan",
+    "wikidataMusicians": 125,
+    "discogsReleases": 28,
+    "candidates": 126,
+    "newArtists": 120,
+    "dropped": {
+      "duplicate": 5,
+      "foreignCatalog": 1,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 2,
+      "uncorroboratedKept": 5
+    },
+    "dated": 109,
+    "sample": [
+      "Звуковая Артель (1992)",
+      "Далер Назаров (2003)",
+      "Константин Паршин (1992)",
+      "Kide & The Jeans Community (1999)",
+      "Зло (2005)",
+      "Farzona Khurshed (2004)",
+      "Jinn (2003)",
+      "Red Planet (2013)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 120,
+      "committedAfter": 120,
+      "added": 0,
+      "widened": 1,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "GW": {
+    "name": "Guinea-Bissau",
+    "wikidataMusicians": 14,
+    "discogsReleases": 29,
+    "candidates": 25,
+    "newArtists": 18,
+    "dropped": {
+      "duplicate": 5,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 2
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 3,
+      "uncorroboratedKept": 3
+    },
+    "dated": 12,
+    "sample": [
+      "Kaoguiamo (1974)",
+      "Patcheco de Gumbe (1993)",
+      "Zezinho Cabana (1999)",
+      "Alberto And His Top Tropical (1993)",
+      "Ammy Injai (2010)",
+      "Bela (2004)",
+      "MC Mario Maxposs (2017)",
+      "Pwkw (1998)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 18,
+      "committedAfter": 18,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "LS": {
+    "name": "Lesotho",
+    "wikidataMusicians": 5,
+    "discogsReleases": 32,
+    "candidates": 25,
+    "newArtists": 23,
+    "dropped": {
+      "duplicate": 1,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 2,
+      "uncorroboratedKept": 3
+    },
+    "dated": 11,
+    "sample": [
+      "Suuth (2010)",
+      "Manka Le Phallang (1989)",
+      "The Sage (2010)",
+      "Basotho Dihoba (1979)",
+      "BigBar Raps (2014)",
+      "Melly M (2013)",
+      "Nov1ce (2012)",
+      "Pie (2013)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 23,
+      "committedAfter": 23,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "OM": {
+    "name": "Oman",
+    "wikidataMusicians": 6,
+    "discogsReleases": 35,
+    "candidates": 26,
+    "newArtists": 24,
+    "dropped": {
+      "duplicate": 0,
+      "foreignCatalog": 2,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 4,
+      "uncorroboratedKept": 2
+    },
+    "dated": 12,
+    "sample": [
+      "Arabian Penthouse (2021)",
+      "فرقة الأخوة (1989)",
+      "آسيا الكندي (1987)",
+      "مدين مسلم (2012)",
+      "Arabia (2007)",
+      "Lonesome Road (1999)",
+      "Sons Of Ernesto (2004)",
+      "توفيق نهيان (2013)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 20,
+      "committedAfter": 24,
+      "added": 4,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Lonesome Road",
+        "حمدان الوطني",
+        "خميس يوسف الصوري",
+        "محمد سلطان المقيمي"
+      ]
+    }
+  },
+  "MW": {
+    "name": "Malawi",
+    "wikidataMusicians": 59,
+    "discogsReleases": 35,
+    "candidates": 85,
+    "newArtists": 75,
+    "dropped": {
+      "duplicate": 9,
+      "foreignCatalog": 1,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 2,
+      "uncorroboratedKept": 11
+    },
+    "dated": 32,
+    "sample": [
+      "Chichiri Queens (1973)",
+      "Robert Fumulani (1963)",
+      "The M.B.C. Band (1973)",
+      "Amaro (2019)",
+      "Likhubula River Jazz Band (1978)",
+      "Mlaka Maliro (2000)",
+      "Wambali Mkandawire (2011)",
+      "Charles Nsaku (2005)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 75,
+      "committedAfter": 75,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "NE": {
+    "name": "Niger",
+    "wikidataMusicians": 37,
+    "discogsReleases": 37,
+    "candidates": 50,
+    "newArtists": 39,
+    "dropped": {
+      "duplicate": 8,
+      "foreignCatalog": 3,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 4,
+      "uncorroboratedKept": 2
+    },
+    "dated": 23,
+    "sample": [
+      "Orchestre Harmonie Nigérienne de la Capitale (1972)",
+      "Ratne (2025)",
+      "Alexandre Canhoni (2019)",
+      "Boureima Disco (2004)",
+      "Fatayi Ayilara & His Apala Group (1975)",
+      "Fati Mariko (1979)",
+      "Mali Yaro & Co Goumlio Star (2008)",
+      "NIGGER GANG (2019)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 39,
+      "committedAfter": 39,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "GM": {
+    "name": "Gambia",
+    "wikidataMusicians": 34,
+    "discogsReleases": 41,
+    "candidates": 46,
+    "newArtists": 42,
+    "dropped": {
+      "duplicate": 2,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 5,
+      "uncorroboratedKept": 5
+    },
+    "dated": 36,
+    "sample": [
+      "Jaliba Kuyateh (1972)",
+      "Salam Band (1995)",
+      "The Kumareh Band (1995)",
+      "Juffureh Band (2020)",
+      "U.C.A.S. Band De Sedhiou (1997)",
+      "AFROVOX (1989)",
+      "Amina Taylor Sonko (2016)",
+      "Bajaly Suso (1999)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 42,
+      "committedAfter": 42,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "BT": {
+    "name": "Bhutan",
+    "wikidataMusicians": 7,
+    "discogsReleases": 43,
+    "candidates": 20,
+    "newArtists": 19,
+    "dropped": {
+      "duplicate": 1,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 1,
+      "uncorroboratedKept": 1
+    },
+    "dated": 14,
+    "sample": [
+      "Tashi Nencha (2000)",
+      "Tsheten Dorji (1996)",
+      "Ugyen Dorji (1996)",
+      "Aa-Yang Ensemble (2013)",
+      "Aum Thinley Om (2007)",
+      "Karma Tshering (2003)",
+      "Namgay Jigs (2010)",
+      "Namkha Lhamo (2003)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 19,
+      "committedAfter": 19,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "SO": {
+    "name": "Somalia",
+    "wikidataMusicians": 41,
+    "discogsReleases": 60,
+    "candidates": 69,
+    "newArtists": 58,
+    "dropped": {
+      "duplicate": 9,
+      "foreignCatalog": 1,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 3,
+      "uncorroboratedKept": 7
+    },
+    "dated": 36,
+    "sample": [
+      "Magool (1963)",
+      "Hassan Aden Samatar (2009)",
+      "Ahmed Rabsha (1975)",
+      "Khadra Silimo (2018)",
+      "Abdu Hussein (1973)",
+      "Abdulkadir Omar M. Yusuf Jubba (1995)",
+      "Ahmed Sharief Yusuf (1975)",
+      "Cabdirisaaq Saleebaan Gaas (2001)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 58,
+      "committedAfter": 58,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "LR": {
+    "name": "Liberia",
+    "wikidataMusicians": 17,
+    "discogsReleases": 63,
+    "candidates": 60,
+    "newArtists": 56,
+    "dropped": {
+      "duplicate": 1,
+      "foreignCatalog": 2,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 8,
+      "uncorroboratedKept": 7
+    },
+    "dated": 25,
+    "sample": [
+      "ABC Group (1976)",
+      "Moffort Band (1963)",
+      "Morris Dorley (1975)",
+      "Fatu Gayflor (1981)",
+      "Jhone P. Dopoe (1975)",
+      "Melody \"8\" Dance Band (1963)",
+      "Yatta Zoe (1976)",
+      "African JB (1980)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 56,
+      "committedAfter": 56,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "BW": {
+    "name": "Botswana",
+    "wikidataMusicians": 78,
+    "discogsReleases": 69,
+    "candidates": 120,
+    "newArtists": 103,
+    "dropped": {
+      "duplicate": 12,
+      "foreignCatalog": 2,
+      "wikidataCrosswalk": 3
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 7,
+      "uncorroboratedKept": 4
+    },
+    "dated": 49,
+    "sample": [
+      "Dikakapa (2008)",
+      "Gaoabiwe Thapson (2019)",
+      "Sloane (2016)",
+      "$nass (2002)",
+      "Afro Musica (2008)",
+      "Aimo (2020)",
+      "BomBazz (2001)",
+      "Citie Seetso (2016)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 103,
+      "committedAfter": 103,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "CF": {
+    "name": "Central African Republic",
+    "wikidataMusicians": 7,
+    "discogsReleases": 71,
+    "candidates": 32,
+    "newArtists": 30,
+    "dropped": {
+      "duplicate": 1,
+      "foreignCatalog": 1,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 3,
+      "uncorroboratedKept": 3
+    },
+    "dated": 13,
+    "sample": [
+      "Orchestre Centrafrican Jazz (1967)",
+      "Tropical Fiesta (1967)",
+      "Louis Sarno (1986)",
+      "Aggas Zokoko (1985)",
+      "Charlie Perrière (1969)",
+      "L'Orchestre Canon Star Superstar (1996)",
+      "Aby Ngomateke (2013)",
+      "BB Matou (2000)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 30,
+      "committedAfter": 30,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "QA": {
+    "name": "Qatar",
+    "wikidataMusicians": 7,
+    "discogsReleases": 74,
+    "candidates": 57,
+    "newArtists": 46,
+    "dropped": {
+      "duplicate": 4,
+      "foreignCatalog": 6,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 12,
+      "uncorroboratedKept": 5
+    },
+    "dated": 27,
+    "sample": [
+      "Audiovek (2015)",
+      "Sirena (2013)",
+      "BRYZ (2022)",
+      "Danny Serrano (2016)",
+      "Faraj (2015)",
+      "HE MI (2021)",
+      "Hector Moran (2021)",
+      "Jets To Zurich (2011)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 46,
+      "committedAfter": 46,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "BN": {
+    "name": "Brunei",
+    "wikidataMusicians": 12,
+    "discogsReleases": 82,
+    "candidates": 69,
+    "newArtists": 33,
+    "dropped": {
+      "duplicate": 17,
+      "foreignCatalog": 19,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 8,
+      "uncorroboratedKept": 0
+    },
+    "dated": 30,
+    "sample": [
+      "Daemon (1991)",
+      "Darklord (1993)",
+      "Grotesque (1993)",
+      "Sereignos (2020)",
+      "The Mystickal East (1995)",
+      "Awangku Mohd Yusri (1984)",
+      "Blood Flag Ritual (2020)",
+      "Inferior (1994)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 33,
+      "committedAfter": 33,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "TM": {
+    "name": "Turkmenistan",
+    "wikidataMusicians": 33,
+    "discogsReleases": 90,
+    "candidates": 92,
+    "newArtists": 74,
+    "dropped": {
+      "duplicate": 14,
+      "foreignCatalog": 3,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 3,
+      "uncorroboratedKept": 1
+    },
+    "dated": 22,
+    "sample": [
+      "Shatlyk Nuryyew (2010)",
+      "Tofik Mamedov (2025)",
+      "Cynar Jumayewa (2011)",
+      "Sergei Babaev (2026)",
+      "Şükran Ay (1979)",
+      "Кужур Ализамаев (2025)",
+      "Лола Юлдашева (2001)",
+      "Annagul Gurdova (1966)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 70,
+      "committedAfter": 74,
+      "added": 4,
+      "widened": 1,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Dowran Nuryagduyew (Tokgayew)",
+        "Dowran Saparow",
+        "Meylis Halbaev",
+        "Toyly Orazgylyjow"
+      ]
+    }
+  },
+  "KG": {
+    "name": "Kyrgyzstan",
+    "wikidataMusicians": 78,
+    "discogsReleases": 94,
+    "candidates": 127,
+    "newArtists": 117,
+    "dropped": {
+      "duplicate": 3,
+      "foreignCatalog": 7,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 5,
+      "uncorroboratedKept": 8
+    },
+    "dated": 88,
+    "sample": [
+      "Zan-zan-zawa-veia (2011)",
+      "Knotholes (2016)",
+      "Жусуп Айсаев (2006)",
+      "Кудабай Абышев (2006)",
+      "Уркаш Мамбеталиев (2006)",
+      "Ordo Sakhna (2000)",
+      "Каныкей (2009)",
+      "6rba (2023)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 113,
+      "committedAfter": 117,
+      "added": 4,
+      "widened": 3,
+      "skippedNameClash": [],
+      "addedSample": [
+        "6rba",
+        "Pers",
+        "Samantha Scanline",
+        "Tripology"
+      ]
+    }
+  },
+  "SL": {
+    "name": "Sierra Leone",
+    "wikidataMusicians": 15,
+    "discogsReleases": 97,
+    "candidates": 66,
+    "newArtists": 60,
+    "dropped": {
+      "duplicate": 3,
+      "foreignCatalog": 2,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 6,
+      "uncorroboratedKept": 5
+    },
+    "dated": 27,
+    "sample": [
+      "Salia Koroma (1969)",
+      "Big Fayia (1972)",
+      "The Invisible Five (1970)",
+      "Geraldo Pino (1963)",
+      "Stanley Kabia (1970)",
+      "The Heartbeats (1963)",
+      "John Gbla (1998)",
+      "Khangamuwa Of Malawi (1977)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 54,
+      "committedAfter": 60,
+      "added": 6,
+      "widened": 4,
+      "skippedNameClash": [],
+      "addedSample": [
+        "The Sierra Leone Military Dance Band",
+        "Akpata Jazz Band",
+        "Big Faiah",
+        "Ralph Wright And His Rhythm Boys",
+        "The Kabba Brothers",
+        "Val Koker"
+      ]
+    }
+  },
+  "BF": {
+    "name": "Burkina Faso",
+    "wikidataMusicians": 139,
+    "discogsReleases": 101,
+    "candidates": 193,
+    "newArtists": 167,
+    "dropped": {
+      "duplicate": 15,
+      "foreignCatalog": 6,
+      "wikidataCrosswalk": 5
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 9,
+      "uncorroboratedKept": 15
+    },
+    "dated": 87,
+    "sample": [
+      "Amity Meria (1981)",
+      "Faso Kombat (2004)",
+      "Ibrahim Keita (2011)",
+      "Nankama (2011)",
+      "Sami Rama (1986)",
+      "Sandwidi Pierre (1984)",
+      "3ème Régiment (2003)",
+      "Akilignouma (2012)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 167,
+      "committedAfter": 167,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "NA": {
+    "name": "Namibia",
+    "wikidataMusicians": 48,
+    "discogsReleases": 112,
+    "candidates": 100,
+    "newArtists": 83,
+    "dropped": {
+      "duplicate": 11,
+      "foreignCatalog": 2,
+      "wikidataCrosswalk": 4
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 13,
+      "uncorroboratedKept": 7
+    },
+    "dated": 64,
+    "sample": [
+      "Mascato Youth Choir (1999)",
+      "Bedrock (2000)",
+      "Ome Backoz (2011)",
+      "VMSix (2019)",
+      "L'Amour Isaacs (2011)",
+      "Morocky Mbwaluh (1998)",
+      "Pulakena (1998)",
+      "Sunshine Kids (1999)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 83,
+      "committedAfter": 83,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "ER": {
+    "name": "Eritrea",
+    "wikidataMusicians": 25,
+    "discogsReleases": 117,
+    "candidates": 77,
+    "newArtists": 66,
+    "dropped": {
+      "duplicate": 8,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 3
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 1,
+      "uncorroboratedKept": 0
+    },
+    "dated": 44,
+    "sample": [
+      "ተስፋይ መሓሪ (ፍሒራ) (1991)",
+      "ወዲ ትኹል (1993)",
+      "Yehdego Gebremedhin (1999)",
+      "ተመስገን ገብረሰላሴ /ጣኒቆ/ (1995)",
+      "ኣብረሀት ኣንከረ (1992)",
+      "ኣብራር ዑስማን (1999)",
+      "Asghedom W. Michael (1995)",
+      "Girmaye Solomon (1997)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 65,
+      "committedAfter": 66,
+      "added": 1,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Haileab Bereket"
+      ]
+    }
+  },
+  "TL": {
+    "name": "Timor-Leste",
+    "wikidataMusicians": 7,
+    "discogsReleases": 130,
+    "candidates": 144,
+    "newArtists": 132,
+    "dropped": {
+      "duplicate": 4,
+      "foreignCatalog": 8,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 7,
+      "uncorroboratedKept": 12
+    },
+    "dated": 45,
+    "sample": [
+      "Abito Gama (2008)",
+      "Tonny Pereira (2009)",
+      "Ameu Livre D.C. (2009)",
+      "Lalatak (2005)",
+      "Juga Gama (2009)",
+      "El-Mar Voice (2009)",
+      "Lilly Ribeiro (2002)",
+      "Toinino (2009)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 132,
+      "committedAfter": 132,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "PG": {
+    "name": "Papua New Guinea",
+    "wikidataMusicians": 9,
+    "discogsReleases": 179,
+    "candidates": 112,
+    "newArtists": 89,
+    "dropped": {
+      "duplicate": 14,
+      "foreignCatalog": 8,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 8,
+      "uncorroboratedKept": 6
+    },
+    "dated": 68,
+    "sample": [
+      "George Telek (1984)",
+      "Superintendent Mike Thomas (1960)",
+      "Kales Gadagads (1989)",
+      "O.N.E.T.O.X (2009)",
+      "William Takaku (1980)",
+      "Dejays (2008)",
+      "Jenny Low (1999)",
+      "Paramana Strangers (1981)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 84,
+      "committedAfter": 89,
+      "added": 5,
+      "widened": 4,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Chanted Groove",
+        "Kaluli",
+        "Kantriman",
+        "Solgos",
+        "John Wong"
+      ]
+    }
+  },
+  "YE": {
+    "name": "Yemen",
+    "wikidataMusicians": 60,
+    "discogsReleases": 198,
+    "candidates": 121,
+    "newArtists": 113,
+    "dropped": {
+      "duplicate": 7,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 3,
+      "uncorroboratedKept": 1
+    },
+    "dated": 50,
+    "sample": [
+      "أبو بكر سالم بلفقيه (1992)",
+      "علي الآنسي (1966)",
+      "أيوب طارش (1997)",
+      "(2) أحمد قاسم (1967)",
+      "فرسان خليفة (1967)",
+      "أحمد العديني (1968)",
+      "عوض أحمد (1969)",
+      "شفاف (1967)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 106,
+      "committedAfter": 112,
+      "added": 6,
+      "widened": 6,
+      "skippedNameClash": [
+        "معتوق يحيى ↔ Maetuq Yahyaa"
+      ],
+      "addedSample": [
+        "محمد صالح الصنعاني",
+        "محمد صالح العدني",
+        "Maetuq Yahyaa",
+        "علي أبو بكر العطاس",
+        "علي احمد جاوي",
+        "عمر محمد غيثان"
+      ]
+    }
+  },
+  "TG": {
+    "name": "Togo",
+    "wikidataMusicians": 80,
+    "discogsReleases": 194,
+    "candidates": 184,
+    "newArtists": 162,
+    "dropped": {
+      "duplicate": 10,
+      "foreignCatalog": 11,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 10,
+      "uncorroboratedKept": 24
+    },
+    "dated": 85,
+    "sample": [
+      "Ali Bawa (1965)",
+      "Ambroise Kossi Ouyi Tassane (1965)",
+      "Bidot Audat (1969)",
+      "Efy (2010)",
+      "Fifi Rafiatou (1978)",
+      "Degbe Dosse (1985)",
+      "Dynamite Eryco Jazz De Lomé (1969)",
+      "Ernesto Hundjafo (1998)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 160,
+      "committedAfter": 162,
+      "added": 2,
+      "widened": 1,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Groupe Kodjovi",
+        "Moustapha Thiombiano"
+      ]
+    }
+  },
+  "AF": {
+    "name": "Afghanistan",
+    "wikidataMusicians": 141,
+    "discogsReleases": 198,
+    "candidates": 244,
+    "newArtists": 221,
+    "dropped": {
+      "duplicate": 15,
+      "foreignCatalog": 2,
+      "wikidataCrosswalk": 5
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 8,
+      "uncorroboratedKept": 12
+    },
+    "dated": 116,
+    "sample": [
+      "جليل زولاند (1957)",
+      "Hamida Rokhshana (1965)",
+      "بیلتون (1928)",
+      "پروین (1960)",
+      "Sarahang (1959)",
+      "ارمان (1959)",
+      "حمیدالله چاریکاری (1980)",
+      "خیال (1960)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 211,
+      "committedAfter": 221,
+      "added": 10,
+      "widened": 11,
+      "skippedNameClash": [],
+      "addedSample": [
+        "طالب احمد شالا اَغا",
+        "امانی",
+        "(2) افسانه",
+        "پرستو",
+        "رحیم مهریار",
+        "طالب حمید اللّه",
+        "فرزانه",
+        "فيض كاريزى",
+        "مانگ جان",
+        "مير قام"
+      ]
+    }
+  },
+  "GA": {
+    "name": "Gabon",
+    "wikidataMusicians": 47,
+    "discogsReleases": 233,
+    "candidates": 181,
+    "newArtists": 160,
+    "dropped": {
+      "duplicate": 11,
+      "foreignCatalog": 7,
+      "wikidataCrosswalk": 3
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 13,
+      "uncorroboratedKept": 20
+    },
+    "dated": 82,
+    "sample": [
+      "Orchestre Banowita (1983)",
+      "Groupe Kounabeli De Masuku (1983)",
+      "Groupe D'Animation U.F.P.D.G (1982)",
+      "Les Diablotins (1985)",
+      "Sec Bidens (1980)",
+      "Aziz' Inanga (1966)",
+      "Mack Joss (1961)",
+      "Mavuela Somo (1982)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 152,
+      "committedAfter": 160,
+      "added": 8,
+      "widened": 5,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Krash Lo Grav K",
+        "Luxury Breaks",
+        "Max G. Massala",
+        "Orchestre Macchi",
+        "Georges Lemboma",
+        "Japonais",
+        "Mwamy Menghe",
+        "Théo Abieri"
+      ]
+    }
+  },
+  "FJ": {
+    "name": "Fiji",
+    "wikidataMusicians": 10,
+    "discogsReleases": 232,
+    "candidates": 183,
+    "newArtists": 127,
+    "dropped": {
+      "duplicate": 26,
+      "foreignCatalog": 28,
+      "wikidataCrosswalk": 2
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 12,
+      "uncorroboratedKept": 29
+    },
+    "dated": 107,
+    "sample": [
+      "Seru Serevi (1987)",
+      "[DATABURST] (2016)",
+      "Conua Entertainment Group (1992)",
+      "Nawaka Entertainment Group (1991)",
+      "The Owl Room (2019)",
+      "Voqa Ni Delai Dokidoki (2002)",
+      "Kabu Ni Delai Kade (1988)",
+      "Manila Ice (2018)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 110,
+      "committedAfter": 127,
+      "added": 17,
+      "widened": 12,
+      "skippedNameClash": [],
+      "addedSample": [
+        "(青Tux)",
+        "Boss Mahn",
+        "Dezonator",
+        "Geno-{psyber}",
+        "Hvoth",
+        "IDDQD 神モード",
+        "J.W. Balmar",
+        "Kini Cava",
+        "Nasoni Sauloma",
+        "Sleepwellers"
+      ]
+    }
+  },
+  "BZ": {
+    "name": "Belize",
+    "wikidataMusicians": 17,
+    "discogsReleases": 260,
+    "candidates": 163,
+    "newArtists": 142,
+    "dropped": {
+      "duplicate": 12,
+      "foreignCatalog": 6,
+      "wikidataCrosswalk": 3
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 20,
+      "uncorroboratedKept": 20
+    },
+    "dated": 126,
+    "sample": [
+      "Ewing R. Samuels III (2024)",
+      "Bro. David (1996)",
+      "Marcus Perigo (2015)",
+      "Titiman Flores (1996)",
+      "Tribal Vibes (1996)",
+      "Alejandro Iglesias (2025)",
+      "Auric (2025)",
+      "Aziatic (1999)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 136,
+      "committedAfter": 142,
+      "added": 6,
+      "widened": 5,
+      "skippedNameClash": [],
+      "addedSample": [
+        "ADR Arregoitia",
+        "DHYAN DROIK",
+        "Doctor Nativo",
+        "Evren",
+        "Loht Vostok",
+        "Raelani"
+      ]
+    }
+  },
+  "PS": {
+    "name": "Palestine",
+    "wikidataMusicians": 87,
+    "discogsReleases": 290,
+    "candidates": 214,
+    "newArtists": 145,
+    "dropped": {
+      "duplicate": 23,
+      "foreignCatalog": 40,
+      "wikidataCrosswalk": 6
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 1,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 13,
+      "uncorroboratedKept": 15
+    },
+    "dated": 88,
+    "sample": [
+      "Fairuz (2001)",
+      "فرقة سرية رام الله الأولى للفن الشعبي (1992)",
+      "جورج وسوف (2001)",
+      "فرقة الفنون الشعبية الفلسطينية (1989)",
+      "الشيخ إمام (1999)",
+      "بالعكس (2015)",
+      "سعيد مراد (1973)",
+      "شادي البوريني (2012)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 128,
+      "committedAfter": 145,
+      "added": 17,
+      "widened": 11,
+      "skippedNameClash": [],
+      "addedSample": [
+        "شعبان عبد الرحيم",
+        "عصام شعبان",
+        "وفاء عامر",
+        "رنا عليان",
+        "يعاد",
+        "رضا العبد الله",
+        "Ch. Samir",
+        "Silver Stones",
+        "بسام بشارة",
+        "حميد أبو ليل"
+      ]
+    }
+  },
+  "JO": {
+    "name": "Jordan",
+    "wikidataMusicians": 79,
+    "discogsReleases": 322,
+    "candidates": 246,
+    "newArtists": 177,
+    "dropped": {
+      "duplicate": 23,
+      "foreignCatalog": 43,
+      "wikidataCrosswalk": 3
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 22,
+      "uncorroboratedKept": 49
+    },
+    "dated": 163,
+    "sample": [
+      "Youssef Khasho (1985)",
+      "دمار (2014)",
+      "Katsu (2020)",
+      "Ruslan Device (2020)",
+      "جدل (2009)",
+      "Fresh Code (2016)",
+      "Nuaro (2014)",
+      "Deme3us (2020)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 172,
+      "committedAfter": 177,
+      "added": 5,
+      "widened": 7,
+      "skippedNameClash": [],
+      "addedSample": [
+        "DJ Geri",
+        "Munma",
+        "Sergey Shvets",
+        "U-Mount",
+        "نورهان"
+      ]
+    }
+  },
+  "GY": {
+    "name": "Guyana",
+    "wikidataMusicians": 13,
+    "discogsReleases": 342,
+    "candidates": 252,
+    "newArtists": 211,
+    "dropped": {
+      "duplicate": 12,
+      "foreignCatalog": 27,
+      "wikidataCrosswalk": 2
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 31,
+      "uncorroboratedKept": 33
+    },
+    "dated": 101,
+    "sample": [
+      "Terry Nelson (1972)",
+      "Lord Melody (1954)",
+      "The Mighty Enchanter (1975)",
+      "Sugrim Gobin (1973)",
+      "First Born (1999)",
+      "Dasy Panchu (1969)",
+      "Ivor Lynch (1976)",
+      "Johnny Braff (1965)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 176,
+      "committedAfter": 211,
+      "added": 35,
+      "widened": 25,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Lord Coffee",
+        "Calvin Wilson & The Magnetos",
+        "Duane Stephenson",
+        "Eze Rockcliffe",
+        "Guyana Syncopators",
+        "Harry Whittaker's Calypso 7",
+        "Hazarisingh",
+        "Kassri Narine",
+        "Lionel Abel",
+        "Sookram Soman"
+      ]
+    }
+  },
+  "TZ": {
+    "name": "Tanzania",
+    "wikidataMusicians": 273,
+    "discogsReleases": 364,
+    "candidates": 480,
+    "newArtists": 423,
+    "dropped": {
+      "duplicate": 35,
+      "foreignCatalog": 11,
+      "wikidataCrosswalk": 11
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 17,
+      "uncorroboratedKept": 52
+    },
+    "dated": 177,
+    "sample": [
+      "Tabora Jazz Band (1976)",
+      "Arusha Mjini (1976)",
+      "Mr II (1995)",
+      "Issa Matona (1976)",
+      "Kwaya Ya Uinjilisti (1976)",
+      "Lucky Star Musical Club (1972)",
+      "Black Star Music Club (1976)",
+      "BoiSlee (2016)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 409,
+      "committedAfter": 420,
+      "added": 11,
+      "widened": 16,
+      "skippedNameClash": [
+        "Baba Ilunga Jazz ↔ Baba Gaston",
+        "Jumanne ↔ Jumanne",
+        "Tanzanian New Life Band ↔ New Life Band"
+      ],
+      "addedSample": [
+        "Baragumu Choir",
+        "Mheshimiwa Temba",
+        "Mzee Wa Busara",
+        "Ordinary Charter Music",
+        "Bakari Abeid",
+        "Kaluta Amri bin Abedi",
+        "Mambo Shwari",
+        "Maroon Commandos",
+        "Radical Kids",
+        "Saadini Abdu Kandoro"
+      ]
+    }
+  },
+  "LY": {
+    "name": "Libya",
+    "wikidataMusicians": 48,
+    "discogsReleases": 385,
+    "candidates": 231,
+    "newArtists": 214,
+    "dropped": {
+      "duplicate": 12,
+      "foreignCatalog": 4,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 16,
+      "uncorroboratedKept": 4
+    },
+    "dated": 116,
+    "sample": [
+      "أبو عبعاب (1968)",
+      "الشرقاوي (1967)",
+      "سمير الكردي (1992)",
+      "نجيب الهوش (1996)",
+      "أبو بكر عبد العزيز (1970)",
+      "العربي أبو سرحة (1968)",
+      "أشرف محفوظ (1999)",
+      "شوشان (1969)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 198,
+      "committedAfter": 214,
+      "added": 16,
+      "widened": 27,
+      "skippedNameClash": [],
+      "addedSample": [
+        "(2) محمد مختار",
+        "أمين شعبان",
+        "بن عيسى",
+        "علي الزائدي",
+        "فرقة النسور بتاورغاء",
+        "فرقة موسيقى ليبيا",
+        "محمد أبو الحمد",
+        "ميلاد السايح",
+        "ناصر الفاخري",
+        "سامي البارودي"
+      ]
+    }
+  },
+  "IQ": {
+    "name": "Iraq",
+    "wikidataMusicians": 195,
+    "discogsReleases": 403,
+    "candidates": 277,
+    "newArtists": 243,
+    "dropped": {
+      "duplicate": 18,
+      "foreignCatalog": 10,
+      "wikidataCrosswalk": 4
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 11,
+      "uncorroboratedKept": 17
+    },
+    "dated": 188,
+    "sample": [
+      "حضيري أبو عزيز (1924)",
+      "وحيدة خليل (1943)",
+      "داخل حسن (1924)",
+      "حامد السعدي (1971)",
+      "صيون إبراهيم كوهين (1928)",
+      "عزوري هارون (1928)",
+      "لميعة توفيق (1952)",
+      "إسكندر الكمانجاتي (1928)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 220,
+      "committedAfter": 242,
+      "added": 22,
+      "widened": 26,
+      "skippedNameClash": [
+        "اسكندر الكمانجاتي ↔ إسكندر الكمانجاتي"
+      ],
+      "addedSample": [
+        "Denny",
+        "Ewan Shamdinani",
+        "Faint Worship",
+        "Iraqi National Symphony Orchestra",
+        "Jimmy Vermin",
+        "Kerc",
+        "Mixolydian",
+        "Moment",
+        "Musto Dadar",
+        "Risen Immortal"
+      ]
+    }
+  },
+  "BD": {
+    "name": "Bangladesh",
+    "wikidataMusicians": 475,
+    "discogsReleases": 409,
+    "candidates": 389,
+    "newArtists": 269,
+    "dropped": {
+      "duplicate": 74,
+      "foreignCatalog": 7,
+      "wikidataCrosswalk": 39
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 16,
+      "uncorroboratedKept": 13
+    },
+    "dated": 137,
+    "sample": [
+      "ওয়ারফেইজ (1991)",
+      "Ashik (2011)",
+      "Left (2016)",
+      "সাবিনা ইয়াসমিন (1986)",
+      "Adity Mohsin (2003)",
+      "Axtillar (2023)",
+      "Tahmid Islam (2021)",
+      "Uday Biswas (2020)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 258,
+      "committedAfter": 269,
+      "added": 11,
+      "widened": 10,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Bashir Ahmed",
+        "Durbadal Chatterjee",
+        "DurVee",
+        "Md Asadul Islam",
+        "Overlord",
+        "Sahana Bajpaie",
+        "Sharalipi",
+        "Sohel Arman",
+        "দিলরুবা খান",
+        "মোঃ হাসেম"
+      ]
+    }
+  },
+  "KP": {
+    "name": "North Korea",
+    "wikidataMusicians": 31,
+    "discogsReleases": 428,
+    "candidates": 93,
+    "newArtists": 85,
+    "dropped": {
+      "duplicate": 8,
+      "foreignCatalog": 0,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 2,
+      "uncorroboratedKept": 3
+    },
+    "dated": 26,
+    "sample": [
+      "Pochonbo Electronic Ensemble (1991)",
+      "Mansudae Art Troupe (1973)",
+      "The Korean People's Army Merited State Chorus (2000)",
+      "Choe Sam Suk (2000)",
+      "State Symphony Orchestra (1976)",
+      "방송합창단 (1950)",
+      "조선인민군공훈합창단 (2002)",
+      "The Korean People's Army Band (2003)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 77,
+      "committedAfter": 85,
+      "added": 8,
+      "widened": 12,
+      "skippedNameClash": [],
+      "addedSample": [
+        "국립교향악단 합창단",
+        "국립민족예술극장 민요단",
+        "김정화",
+        "만경대학생소년궁전",
+        "신정순",
+        "왕재산 경음단",
+        "조선인민군 협주단 합창단",
+        "평양제15중학교합창대"
+      ]
+    }
+  },
+  "GL": {
+    "name": "Greenland",
+    "wikidataMusicians": 10,
+    "discogsReleases": 425,
+    "candidates": 215,
+    "newArtists": 156,
+    "dropped": {
+      "duplicate": 40,
+      "foreignCatalog": 14,
+      "wikidataCrosswalk": 5
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 6,
+      "uncorroboratedKept": 26
+    },
+    "dated": 120,
+    "sample": [
+      "Grønlændertruppen Mik (1964)",
+      "Henry Hansens Spillemandskvartet (1964)",
+      "Aalut (1984)",
+      "Juaaka (1978)",
+      "Pele Møller Band (1993)",
+      "Erinarsoqatigiit MIK (1961)",
+      "Inneruulat (1981)",
+      "Erinarsoqatigiit Aavaat (1999)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 128,
+      "committedAfter": 155,
+      "added": 27,
+      "widened": 18,
+      "skippedNameClash": [
+        "Pavia Willumsen ↔ Pavia Geisler"
+      ],
+      "addedSample": [
+        "Tũkak'",
+        "Arctic Medusa",
+        "Hanne Qvist",
+        "Inussuit",
+        "Ippiarsuk!",
+        "Jens' Trio + 1",
+        "Karl Lynge",
+        "Kattunneq",
+        "Lone Josefsen",
+        "Malik Kleist"
+      ]
+    }
+  },
+  "XK": {
+    "name": "Kosovo",
+    "wikidataMusicians": 80,
+    "discogsReleases": 479,
+    "candidates": 361,
+    "newArtists": 294,
+    "dropped": {
+      "duplicate": 27,
+      "foreignCatalog": 28,
+      "wikidataCrosswalk": 12
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 2,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 69,
+      "uncorroboratedKept": 68
+    },
+    "dated": 244,
+    "sample": [
+      "Viola Syla (2006)",
+      "Silent Existence (2010)",
+      "Gili (1993)",
+      "Asgjë Sikur Dielli (1996)",
+      "Nuno Zanga (2012)",
+      "Ilirët (2006)",
+      "Andreas Florin (2012)",
+      "Ilire Avdiu (2017)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 275,
+      "committedAfter": 294,
+      "added": 19,
+      "widened": 10,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Bulah",
+        "Energun",
+        "Ganez The Terrible",
+        "Garillo Dansek",
+        "Giovanni Santoro",
+        "Hajzer Aliti",
+        "Hyper Binary",
+        "Ismet Shaini",
+        "Jay Wong",
+        "Luani Lugines"
+      ]
+    }
+  },
+  "NP": {
+    "name": "Nepal",
+    "wikidataMusicians": 160,
+    "discogsReleases": 507,
+    "candidates": 424,
+    "newArtists": 330,
+    "dropped": {
+      "duplicate": 66,
+      "foreignCatalog": 18,
+      "wikidataCrosswalk": 9
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 24,
+      "uncorroboratedKept": 32
+    },
+    "dated": 213,
+    "sample": [
+      "Kumar Basnet (1958)",
+      "Prem Rana (1999)",
+      "Santa Ratna Shakya (2000)",
+      "Tara Devi (1962)",
+      "Namaste Band (1995)",
+      "Shree Krishna Shahi (2001)",
+      "Robin 'N' Looza (2000)",
+      "The Kathmandu Killers (2017)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 282,
+      "committedAfter": 330,
+      "added": 48,
+      "widened": 14,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Ani Choying Dolma",
+        "Tibetan Institute Of Performing Arts",
+        "Ani Tsering Wangmo",
+        "Bima Kumari Dura",
+        "Chautari",
+        "Circuit Trip",
+        "Dáša Fon Fľaša",
+        "Dj Yuva",
+        "Gulivert",
+        "Hideki Mitsumori"
+      ]
+    }
+  },
+  "MN": {
+    "name": "Mongolia",
+    "wikidataMusicians": 154,
+    "discogsReleases": 530,
+    "candidates": 408,
+    "newArtists": 360,
+    "dropped": {
+      "duplicate": 33,
+      "foreignCatalog": 10,
+      "wikidataCrosswalk": 5
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 25,
+      "uncorroboratedKept": 16
+    },
+    "dated": 286,
+    "sample": [
+      "Б. Сарантуяа (1993)",
+      "Т.Ариунаа (1982)",
+      "The Lemons (2006)",
+      "Зэвсэгт хүчний жанжин штабын үлгэр жишээ үлээвэр найрал хөгжим (1961)",
+      "Dreamlogicc (2019)",
+      "Odonbat & MO (2017)",
+      "Дэмбэрэлийн Жаргалсайхан (1971)",
+      "Монголын Ардын Армийн Дуу Бужгийн Чуулга (1981)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 341,
+      "committedAfter": 360,
+      "added": 19,
+      "widened": 29,
+      "skippedNameClash": [],
+      "addedSample": [
+        "BEHI",
+        "Tatar",
+        "X VIT",
+        "Аззаяа Батжаргал",
+        "Айзам",
+        "Б. Батцэцэглэн",
+        "Баатарын Галсансүх",
+        "Билэгийн Дамдинсүрэн",
+        "Г. Дашдаваа",
+        "Лувсанжамбын Мөрдорж"
+      ]
+    }
+  },
+  "MM": {
+    "name": "Myanmar",
+    "wikidataMusicians": 181,
+    "discogsReleases": 542,
+    "candidates": 470,
+    "newArtists": 398,
+    "dropped": {
+      "duplicate": 48,
+      "foreignCatalog": 12,
+      "wikidataCrosswalk": 12
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 9,
+      "uncorroboratedKept": 15
+    },
+    "dated": 127,
+    "sample": [
+      "Hlaing Win Maung (2007)",
+      "Myo Khun Khur (1975)",
+      "Zaw Win Shein (1984)",
+      "The Wild Ones (1973)",
+      "No U Turn (2009)",
+      "YNZO (2025)",
+      "ငဝ်းၽူၼ် (1982)",
+      "Gita Lulin Maung Ko Ko (2000)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 365,
+      "committedAfter": 394,
+      "added": 29,
+      "widened": 25,
+      "skippedNameClash": [
+        "Sai Kham Kho ↔ စိုင်းခမ်းခိုး",
+        "ၸၢႆးၺၢၼ်ႇယ ↔ ၸႆၢးၺၢၼ်ႇယႃႉ",
+        "ၸၢႆးလိူၼ်ၶမ်း ↔ ၸၢႆးလိူၼ်းၶမ်း",
+        "ယဉ်းငဲစွို့ ↔ ယဉ်ငဲ့စွိုႇ"
+      ],
+      "addedSample": [
+        "Makkhus",
+        "Hkang Ma Pan Tsin",
+        "Hlaing Oo",
+        "Juke-Box",
+        "La Hpai Zau Hkam",
+        "Linn Linn",
+        "M. Brang San Aung",
+        "Maung Maung Zaw Latt",
+        "Nang Khin Thein Myint",
+        "ၶမ်းဢျောဢ်လွႃံႇ"
+      ]
+    }
+  },
+  "UG": {
+    "name": "Uganda",
+    "wikidataMusicians": 221,
+    "discogsReleases": 543,
+    "candidates": 475,
+    "newArtists": 338,
+    "dropped": {
+      "duplicate": 74,
+      "foreignCatalog": 54,
+      "wikidataCrosswalk": 9
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 19,
+      "uncorroboratedKept": 21
+    },
+    "dated": 183,
+    "sample": [
+      "The Tames (1973)",
+      "Cristopher Sebadduka (1969)",
+      "The Cranes (1972)",
+      "David SonJC (2018)",
+      "Bernard Nsubuga (1969)",
+      "The Ebonies (1981)",
+      "Top Ten Band (1974)",
+      "Dan Mugula (1971)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 325,
+      "committedAfter": 338,
+      "added": 13,
+      "widened": 22,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Kabeaushé",
+        "Nikita von Tiraspol",
+        "Nohart",
+        "Sarah Ndagire",
+        "The Tabs",
+        "Troposphere 7",
+        "Yohana Mangon Bernard",
+        "Ab'omu Badongo Dancers",
+        "Charles Senkatuka",
+        "G. Kabogoza"
+      ]
+    }
+  },
+  "KH": {
+    "name": "Cambodia",
+    "wikidataMusicians": 65,
+    "discogsReleases": 577,
+    "candidates": 232,
+    "newArtists": 181,
+    "dropped": {
+      "duplicate": 31,
+      "foreignCatalog": 8,
+      "wikidataCrosswalk": 12
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 6,
+      "uncorroboratedKept": 9
+    },
+    "dated": 105,
+    "sample": [
+      "The Cambodian Space Project (2011)",
+      "នាងសារាំប៉ាក់ (1953)",
+      "Pov Vannary (2013)",
+      "នាយស្រលូត (1953)",
+      "Handicap Of Banteaysrey Temple Siem Reap Angkor Wat (2010)",
+      "老玉春香班 (1952)",
+      "Neou Narin (1966)",
+      "Thom Thom (2007)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 165,
+      "committedAfter": 180,
+      "added": 15,
+      "widened": 16,
+      "skippedNameClash": [
+        "យក់ ថិតរដ្ឋ ↔ យក់ ថិតរដ្ឋា"
+      ],
+      "addedSample": [
+        "Lavurn Lee",
+        "Sous Sumaly",
+        "Vartey Ganiva",
+        "ឃុំ ប៉ុណ្ណាដែត",
+        "នាងម៉ាលីះថង",
+        "នាយឡាយ",
+        "ស្មៀន យ៉ុន",
+        "វង់ភ្លេងកុមារតូរ្យតន្ត្រីយ៍",
+        "Kanha",
+        "Khmer Orchestra"
+      ]
+    }
+  },
+  "ML": {
+    "name": "Mali",
+    "wikidataMusicians": 153,
+    "discogsReleases": 584,
+    "candidates": 339,
+    "newArtists": 221,
+    "dropped": {
+      "duplicate": 59,
+      "foreignCatalog": 26,
+      "wikidataCrosswalk": 32
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 14,
+      "uncorroboratedKept": 56
+    },
+    "dated": 90,
+    "sample": [
+      "Coumba Sidibe (1965)",
+      "Saramba Kouyaté (2012)",
+      "Molobali Keita (1992)",
+      "Adama Namakoro Fomba (1998)",
+      "Daouda Sangare (1983)",
+      "Kagbe Sidibe (1998)",
+      "Lamissa Bengali (1998)",
+      "Molobaly Traore (1993)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 211,
+      "committedAfter": 221,
+      "added": 10,
+      "widened": 7,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Djigui Traore",
+        "Drissa Sangare",
+        "Las Maravillas De Mali",
+        "Youssouf Karembe",
+        "Bitou Sarre",
+        "Brahima Dougoune",
+        "Djagawara Saly",
+        "Haïra Arby",
+        "Ramses Damarifa",
+        "Sachets Keneyadji"
+      ]
+    }
+  },
+  "GN": {
+    "name": "Guinea",
+    "wikidataMusicians": 110,
+    "discogsReleases": 661,
+    "candidates": 267,
+    "newArtists": 222,
+    "dropped": {
+      "duplicate": 28,
+      "foreignCatalog": 4,
+      "wikidataCrosswalk": 13
+    },
+    "recordGuard": {
+      "countryMismatch": 199,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 18,
+      "uncorroboratedKept": 36
+    },
+    "dated": 102,
+    "sample": [
+      "Djely Fode Kouyate (1979)",
+      "Kaloum Star (1974)",
+      "Sékouba Kandia Kouyate (1990)",
+      "Ensemble Instrumental De La Radiodiffusion Nationale (1967)",
+      "Kadé Diawara (1976)",
+      "Kill Point (1989)",
+      "Orchestre De La Paillotte (1967)",
+      "Sextet Camayenne (1974)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 212,
+      "committedAfter": 222,
+      "added": 10,
+      "widened": 10,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Iya Sako",
+        "Kémo Kouyaté",
+        "Orchestre De La Garde Républicaine",
+        "Bad Boys De Coléah",
+        "Danger De Coleah",
+        "Kolima De Labé",
+        "Magika",
+        "Maitre Diallo-Adboul Gadiry",
+        "Poetik Justice",
+        "Prophète De Race"
+      ]
+    }
+  },
+  "SD": {
+    "name": "Sudan",
+    "wikidataMusicians": 111,
+    "discogsReleases": 686,
+    "candidates": 279,
+    "newArtists": 251,
+    "dropped": {
+      "duplicate": 26,
+      "foreignCatalog": 1,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 4,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 1,
+      "uncorroboratedKept": 1
+    },
+    "dated": 125,
+    "sample": [
+      "إبراهيم عوض (1969)",
+      "(2) أحمد الجابري (1971)",
+      "ثنائي النغم (1969)",
+      "أبو عركي البخيت (1974)",
+      "أحمد المصطفى (1977)",
+      "عبد القادر سالم (1973)",
+      "أبو عبيدة حسن (1971)",
+      "الطيب عبد الله (1969)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 230,
+      "committedAfter": 251,
+      "added": 21,
+      "widened": 30,
+      "skippedNameClash": [],
+      "addedSample": [
+        "أيمن دقلة",
+        "الشاب سعد",
+        "حاج التوم من الله",
+        "Mario Bol",
+        "عبد الله على",
+        "فرقة نيامورا بان جاز",
+        "محمد موسی",
+        "محمود فلاح",
+        "مليك كوال مليك",
+        "ميانق طون"
+      ]
+    }
+  },
+  "BJ": {
+    "name": "Benin",
+    "wikidataMusicians": 121,
+    "discogsReleases": 711,
+    "candidates": 452,
+    "newArtists": 397,
+    "dropped": {
+      "duplicate": 43,
+      "foreignCatalog": 7,
+      "wikidataCrosswalk": 3
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 28,
+      "uncorroboratedKept": 27
+    },
+    "dated": 152,
+    "sample": [
+      "Yedenou Adjahoui & Son Groupe Folklorique D'Avrankou (1975)",
+      "Gnonnas Pedro Et Ses Dadjes (1979)",
+      "Tohon Stanislas (1977)",
+      "L'Orchestre Les Perles Noires Du Benin (1976)",
+      "Les Sympathics (1978)",
+      "Adjaho G. Coffi (1963)",
+      "Assa-Cica (1980)",
+      "Eboa Lotin (1976)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 343,
+      "committedAfter": 397,
+      "added": 54,
+      "widened": 52,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Vata Mombasa",
+        "A. M. Deballot",
+        "Amadou Balaké",
+        "Djinesto",
+        "El Jowania Y Su Orquesta Africa Mania",
+        "Henry Bowane",
+        "Joachim Boya Et Ses Nympheas",
+        "Monia Monica",
+        "Orchestre Echos National",
+        "Orchestre Inter. Sebene Ya Zaire"
+      ]
+    }
+  },
+  "HN": {
+    "name": "Honduras",
+    "wikidataMusicians": 34,
+    "discogsReleases": 742,
+    "candidates": 433,
+    "newArtists": 292,
+    "dropped": {
+      "duplicate": 18,
+      "foreignCatalog": 119,
+      "wikidataCrosswalk": 4
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 52,
+      "uncorroboratedKept": 39
+    },
+    "dated": 242,
+    "sample": [
+      "Voces Universitarias De Honduras (1970)",
+      "Los Silver Star (1971)",
+      "Los Gatos Bravos (1975)",
+      "Moises Canello (1970)",
+      "Los Profesionales (1984)",
+      "Trío Honduras (1967)",
+      "Blasfemia (2006)",
+      "Engendro (2002)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 239,
+      "committedAfter": 290,
+      "added": 51,
+      "widened": 45,
+      "skippedNameClash": [
+        "Grupo Vocal Centralista ↔ Fredy O. Quiróz",
+        "Nono Y Jam-V: Los Bohemios Del Reggaeton ↔ Nono Y Jam-V"
+      ],
+      "addedSample": [
+        "Cesar Osmin",
+        "Charlie Massó",
+        "Adrian Sigfred",
+        "Altieri",
+        "Angel Isaac Chiriboga",
+        "Banda One",
+        "Bob Porter Coros y Orquesta",
+        "Conjunto Los Aladinos",
+        "Coro De La Escuela Para Ciegos Pilar Salinas",
+        "Dashitai"
+      ]
+    }
+  },
+  "KW": {
+    "name": "Kuwait",
+    "wikidataMusicians": 68,
+    "discogsReleases": 761,
+    "candidates": 361,
+    "newArtists": 292,
+    "dropped": {
+      "duplicate": 9,
+      "foreignCatalog": 59,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 25,
+      "uncorroboratedKept": 18
+    },
+    "dated": 119,
+    "sample": [
+      "شادي الخليج (1984)",
+      "عبد المحسن المهنا (1953)",
+      "فرقة التلفزيون للفنون (1980)",
+      "يوسف المطرف (1981)",
+      "حمد خليفة (1979)",
+      "حسين جاسم (1967)",
+      "بطي البذالي (1960)",
+      "عوض دوخي (1947)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 262,
+      "committedAfter": 292,
+      "added": 30,
+      "widened": 62,
+      "skippedNameClash": [],
+      "addedSample": [
+        "حمود ناصر",
+        "خالد سليم",
+        "عصام كمال",
+        "فيصل الفرج",
+        "Fadi Alghoul",
+        "بدر الشعيبي",
+        "بسام",
+        "عبد المجيد عبد الله",
+        "مي سليم",
+        "محمد الساحر"
+      ]
+    }
+  },
+  "AM": {
+    "name": "Armenia",
+    "wikidataMusicians": 534,
+    "discogsReleases": 775,
+    "candidates": 765,
+    "newArtists": 625,
+    "dropped": {
+      "duplicate": 71,
+      "foreignCatalog": 32,
+      "wikidataCrosswalk": 32
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 58,
+      "uncorroboratedKept": 54
+    },
+    "dated": 582,
+    "sample": [
+      "Արսեն Սաֆարյան (1992)",
+      "Arman Peshtmaljyan (2022)",
+      "Նանա (2005)",
+      "Arabo Ispiryan (2012)",
+      "Armen (2004)",
+      "Vnas (VnasaKar, RedLight) (2016)",
+      "Սոֆի (2000)",
+      "Fabien Kamb (2009)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 579,
+      "committedAfter": 627,
+      "added": 48,
+      "widened": 44,
+      "skippedNameClash": [],
+      "addedSample": [
+        "_förm",
+        "666.28",
+        "Ancestralis",
+        "Andrew Dream",
+        "Ani Aghabekyan",
+        "Arman Mnatsakanyan",
+        "Arnak",
+        "ARTE-X",
+        "Blanka Barbara",
+        "closeyoureyes"
+      ]
+    }
+  },
+  "CM": {
+    "name": "Cameroon",
+    "wikidataMusicians": 288,
+    "discogsReleases": 904,
+    "candidates": 767,
+    "newArtists": 665,
+    "dropped": {
+      "duplicate": 63,
+      "foreignCatalog": 12,
+      "wikidataCrosswalk": 22
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 26,
+      "uncorroboratedKept": 51
+    },
+    "dated": 317,
+    "sample": [
+      "Les Black Styl (1972)",
+      "Les Negro Styl's (1972)",
+      "Les Titans International (1976)",
+      "D.O. 7 Shirati Jazz (1975)",
+      "Nkotti François (1977)",
+      "Orchestre Richard Band De Zoetele (1963)",
+      "Les Veterans (1978)",
+      "Daniel Ndo (1972)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 592,
+      "committedAfter": 662,
+      "added": 70,
+      "widened": 71,
+      "skippedNameClash": [
+        "Les Idoles ↔ Orchestre Les Idoles De Nanga-Eboko",
+        "Nelle Eyoum Emmanuel ↔ Nelle Eyoum",
+        "Tony-Solo ↔ Tony Solo"
+      ],
+      "addedSample": [
+        "Les Sans Visas",
+        "Marc Nkodo",
+        "Ady Lionel",
+        "Afrika Wanda",
+        "Ange Bagnia",
+        "Arbogaste",
+        "B.B. Diamant",
+        "Benoit Sadey",
+        "Continental Revolution",
+        "Franck Bell"
+      ]
+    }
+  },
+  "BS": {
+    "name": "Bahamas",
+    "wikidataMusicians": 18,
+    "discogsReleases": 963,
+    "candidates": 410,
+    "newArtists": 338,
+    "dropped": {
+      "duplicate": 38,
+      "foreignCatalog": 28,
+      "wikidataCrosswalk": 6
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 34,
+      "uncorroboratedKept": 67
+    },
+    "dated": 209,
+    "sample": [
+      "Richie Delamore (1960)",
+      "Eddie Minnis (1975)",
+      "Dudley Smith Steel Band (1960)",
+      "Dry Bread (1974)",
+      "Wendell Stuart (1969)",
+      "George Symonette (1955)",
+      "George Symonette And His Goombay Sextette (1955)",
+      "Little Sparrow (1960)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 333,
+      "committedAfter": 338,
+      "added": 5,
+      "widened": 12,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Brown's Bimini Calypso Teen-agers",
+        "Charlie Saunders",
+        "Sly Roker's Sunshine City",
+        "Biosis Now",
+        "The Gospel Vision Lights"
+      ]
+    }
+  },
+  "SR": {
+    "name": "Suriname",
+    "wikidataMusicians": 235,
+    "discogsReleases": 969,
+    "candidates": 697,
+    "newArtists": 590,
+    "dropped": {
+      "duplicate": 16,
+      "foreignCatalog": 83,
+      "wikidataCrosswalk": 4
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 49,
+      "uncorroboratedKept": 61
+    },
+    "dated": 436,
+    "sample": [
+      "Silvy Singoredjo (1979)",
+      "Oema Lobi (1980)",
+      "Orchestra Tropical (1978)",
+      "The Kaseko Masters (1977)",
+      "YNR Rohan (2022)",
+      "Kaseko Stars (1972)",
+      "Conjunto Latinos (1973)",
+      "Astaria (1977)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 517,
+      "committedAfter": 590,
+      "added": 73,
+      "widened": 87,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Original Strings",
+        "Alvin Ashton",
+        "Andre Ketang",
+        "Annemarie Hunsel's Gang",
+        "Auki Prisiri",
+        "Bacha Ranking",
+        "Behaw Jhinkoe",
+        "Benefit",
+        "Boedhram Oedairam",
+        "Bomika"
+      ]
+    }
+  },
+  "HT": {
+    "name": "Haiti",
+    "wikidataMusicians": 219,
+    "discogsReleases": 998,
+    "candidates": 622,
+    "newArtists": 500,
+    "dropped": {
+      "duplicate": 82,
+      "foreignCatalog": 18,
+      "wikidataCrosswalk": 22
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 1,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 35,
+      "uncorroboratedKept": 69
+    },
+    "dated": 366,
+    "sample": [
+      "Da One (2015)",
+      "Raoul Guillaume Et Son Groupe (1962)",
+      "Super Ensemble Webert Sicot (1960)",
+      "D.P. Express (1976)",
+      "D-Fi Powèt Revòlte (2016)",
+      "Ansy Derose (1949)",
+      "Les Ambassadeurs (1970)",
+      "Roger Colas (1952)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 431,
+      "committedAfter": 500,
+      "added": 69,
+      "widened": 57,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Jean-Louis Maguy",
+        "Miu Haiti",
+        "Panorama Des Cayes",
+        "Accolade De New York",
+        "AsiZ",
+        "Ayenn",
+        "B-Art Etènèl Powèt",
+        "Bickson-G",
+        "Brothers Posse",
+        "Chaj' Vocal"
+      ]
+    }
+  },
+  "UZ": {
+    "name": "Uzbekistan",
+    "wikidataMusicians": 168,
+    "discogsReleases": 1032,
+    "candidates": 506,
+    "newArtists": 453,
+    "dropped": {
+      "duplicate": 33,
+      "foreignCatalog": 13,
+      "wikidataCrosswalk": 7
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 38,
+      "uncorroboratedKept": 81
+    },
+    "dated": 418,
+    "sample": [
+      "Alex Greenhouse (2016)",
+      "Limora (2025)",
+      "Liyna (2025)",
+      "Xeneze (2024)",
+      "Bobryuko (2016)",
+      "Craig Brown (2016)",
+      "Arian Vey (2026)",
+      "Riltim (2026)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 402,
+      "committedAfter": 453,
+      "added": 51,
+      "widened": 100,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Blackframe",
+        "Missmaxine",
+        "Skull-R",
+        "Stereoway",
+        "Яшлик",
+        "2xum",
+        "Alexandre Allix",
+        "Anor",
+        "Atmoss (SP)",
+        "Bergville Vuma"
+      ]
+    }
+  },
+  "LK": {
+    "name": "Sri Lanka",
+    "wikidataMusicians": 134,
+    "discogsReleases": 1055,
+    "candidates": 603,
+    "newArtists": 483,
+    "dropped": {
+      "duplicate": 87,
+      "foreignCatalog": 12,
+      "wikidataCrosswalk": 19
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 41,
+      "uncorroboratedKept": 39
+    },
+    "dated": 299,
+    "sample": [
+      "Milton Mallawarachchi (1960)",
+      "Victor Ratnayake (1957)",
+      "Gypsies (1976)",
+      "Hush (2025)",
+      "M. S. Fernando (1968)",
+      "Super Golden Chimes (1971)",
+      "Desmond De Silva (1977)",
+      "Sunflower (1998)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 419,
+      "committedAfter": 481,
+      "added": 62,
+      "widened": 56,
+      "skippedNameClash": [
+        "Rukmani Devi ↔ රුක්මණි දේවි",
+        "මර්වින් පෙරේරා ↔ Mervyn Perera"
+      ],
+      "addedSample": [
+        "Funeral In Heaven",
+        "Indunil Andramana",
+        "Aelian de Soysa",
+        "Art Alien",
+        "Big Bacterials",
+        "Chandrakanthi Shilpadhipathi",
+        "Colombo Symphony Orchestra",
+        "Corrine Almeida",
+        "Dharmi Amarasinghe",
+        "Getiey"
+      ]
+    }
+  },
+  "AL": {
+    "name": "Albania",
+    "wikidataMusicians": 332,
+    "discogsReleases": 1174,
+    "candidates": 853,
+    "newArtists": 679,
+    "dropped": {
+      "duplicate": 71,
+      "foreignCatalog": 58,
+      "wikidataCrosswalk": 44
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 95,
+      "uncorroboratedKept": 89
+    },
+    "dated": 530,
+    "sample": [
+      "Poni (1996)",
+      "R10(Al) (2020)",
+      "Lori Kacka (1999)",
+      "010010 (2023)",
+      "Andy Gramm (2009)",
+      "David Dreshaj (2019)",
+      "Elizabeta Marku (2016)",
+      "Evi Reçi (2005)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 571,
+      "committedAfter": 679,
+      "added": 108,
+      "widened": 68,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Sabian Medini",
+        "Antre Albania",
+        "Bionika",
+        "Bryan Dalton",
+        "Chriss V",
+        "Goncalo M",
+        "Jeta Faqolli",
+        "Marco Woods",
+        "13130 Space Project",
+        "Akustika"
+      ]
+    }
+  },
+  "MD": {
+    "name": "Moldova",
+    "wikidataMusicians": 180,
+    "discogsReleases": 1281,
+    "candidates": 850,
+    "newArtists": 552,
+    "dropped": {
+      "duplicate": 77,
+      "foreignCatalog": 181,
+      "wikidataCrosswalk": 31
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 136,
+      "uncorroboratedKept": 169
+    },
+    "dated": 541,
+    "sample": [
+      "Ионел Истрати (2005)",
+      "Dying Raven (2021)",
+      "Alikast (2015)",
+      "The HIDD3NS (2023)",
+      "(Project) Ritual Noise (2009)",
+      "Amind Two Guys (2013)",
+      "Claudiu Adam (2021)",
+      "MacroS (2010)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 462,
+      "committedAfter": 551,
+      "added": 89,
+      "widened": 97,
+      "skippedNameClash": [
+        "Adriana Ochișan-Botgros ↔ Adriana Ochișanu"
+      ],
+      "addedSample": [
+        "4YÛ",
+        "Alexey Union",
+        "Arnold van Tilborg",
+        "Eissa Morphide",
+        "Long Play",
+        "Maurice Giovannini",
+        "Alan Morris",
+        "AlterDNA",
+        "Ana Lyssa",
+        "Andjru Werderitsch"
+      ]
+    }
+  },
+  "SN": {
+    "name": "Senegal",
+    "wikidataMusicians": 126,
+    "discogsReleases": 1299,
+    "candidates": 590,
+    "newArtists": 448,
+    "dropped": {
+      "duplicate": 95,
+      "foreignCatalog": 23,
+      "wikidataCrosswalk": 24
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 35,
+      "uncorroboratedKept": 73
+    },
+    "dated": 319,
+    "sample": [
+      "Le Super Etoile De Dakar (1981)",
+      "Le Setsima Group (1995)",
+      "Star Number One (1976)",
+      "D.L.C (1994)",
+      "Alioune Kasse (1968)",
+      "Jaliba Kuyateh (1995)",
+      "Le Jolof Band (2001)",
+      "Le Nguewel-Gui (1999)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 368,
+      "committedAfter": 448,
+      "added": 80,
+      "widened": 59,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Le Takander Group",
+        "Omar Ndiaye",
+        "Abdou Rass",
+        "Abou Diouba Deh",
+        "Aboubacry Seck (Farba)",
+        "Adiouza",
+        "African Akhlou Bi",
+        "Amadou Barry",
+        "Assu K Tene",
+        "Baïré J"
+      ]
+    }
+  },
+  "ET": {
+    "name": "Ethiopia",
+    "wikidataMusicians": 181,
+    "discogsReleases": 1349,
+    "candidates": 652,
+    "newArtists": 537,
+    "dropped": {
+      "duplicate": 83,
+      "foreignCatalog": 5,
+      "wikidataCrosswalk": 22
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 8,
+      "uncorroboratedKept": 39
+    },
+    "dated": 252,
+    "sample": [
+      "Ephrem Tamiru (1983)",
+      "Asefu Debalke (1988)",
+      "አረጋኸኝ ወራሽ (1991)",
+      "Kennedy Mengesha (1981)",
+      "Birtukan Dubale (1983)",
+      "Bezunesh Bekele (1972)",
+      "Fikreaddis Nekatibeb (1997)",
+      "Wubishet Fisseha (1975)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 468,
+      "committedAfter": 539,
+      "added": 71,
+      "widened": 83,
+      "skippedNameClash": [
+        "Wubeshet Fisseha ↔ Wubishet Fisseha",
+        "አበበ ተሰማ ↔ Abebe Tessema"
+      ],
+      "addedSample": [
+        "The Araya Family",
+        "Antene Worqu",
+        "Fekade Atlaw",
+        "Getie Anley",
+        "ተይ አትሚኝ",
+        "Addisuu Furgaasaa",
+        "Amin Hussen",
+        "Anis Gabi",
+        "Baaro",
+        "Balkew Alemu"
+      ]
+    }
+  },
+  "NI": {
+    "name": "Nicaragua",
+    "wikidataMusicians": 47,
+    "discogsReleases": 1549,
+    "candidates": 736,
+    "newArtists": 474,
+    "dropped": {
+      "duplicate": 38,
+      "foreignCatalog": 217,
+      "wikidataCrosswalk": 7
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 121,
+      "uncorroboratedKept": 64
+    },
+    "dated": 304,
+    "sample": [
+      "Los Rockets (1965)",
+      "Miltinho (1966)",
+      "Tulio Enrique Leon (1966)",
+      "The Bad Boys (1966)",
+      "Los Panzer's (1969)",
+      "El Greco (1969)",
+      "Germaín De La Fuente (1969)",
+      "Hermanos Palazzio (1969)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 409,
+      "committedAfter": 474,
+      "added": 65,
+      "widened": 72,
+      "skippedNameClash": [],
+      "addedSample": [
+        "Sonorisima Siguaray",
+        "Brigitte",
+        "Mrs. Mills",
+        "Aniceto Prieto",
+        "Banda Marcial De Guatemala",
+        "Bemol 5",
+        "Bisser Kirov",
+        "Bo Donaldson & The Heywoods",
+        "Cepillin",
+        "Cotton, Lloyd & Christian"
+      ]
+    }
+  },
+  "VN": {
+    "name": "Vietnam",
+    "wikidataMusicians": 666,
+    "discogsReleases": 2872,
+    "candidates": 1580,
+    "newArtists": 1083,
+    "dropped": {
+      "duplicate": 248,
+      "foreignCatalog": 83,
+      "wikidataCrosswalk": 140
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 114,
+      "uncorroboratedKept": 197
+    },
+    "dated": 808,
     "sample": [
       "Hà Thanh (1965)",
       "Hữu Phước (1959)",
       "Mỹ Châu (1964)",
       "Thành Được (1959)",
       "Bạch Tuyết (1960)",
-      "Nhật Trường (1965)",
+      "Út Bạch-Lan (1959)",
       "Thanh Thúy (1958)",
-      "Út Bạch-Lan (1959)"
-    ]
+      "Minh Cảnh (1960)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 944,
+      "committedAfter": 1071,
+      "added": 127,
+      "widened": 471,
+      "skippedNameClash": [
+        "Đức Minh ↔ Đức Minh",
+        "Họa Mi ↔ Hoà Mi",
+        "Mỹ Dung ↔ Mỹ Dung",
+        "Re-Cycle ↔ Re-Cycle",
+        "Thanh Hòa ↔ Thanh Thanh Hoa",
+        "Bo-Bo ↔ Bobo Hoàng",
+        "Hữu-Phước ↔ Hữu Phước",
+        "Kim Oanh ↔ Kim Oanh",
+        "Lê Phi ↔ Le Phi",
+        "Năm Nghĩa ↔ Nam Nghia",
+        "Thanh Thuỷ ↔ Thanh Thúy",
+        "Văn Lấm ↔ Văn Lâm"
+      ],
+      "addedSample": [
+        "Khánh Dung",
+        "Ban Ca Nhạc Đài Phát Thanh TNVN",
+        "Bùi Lệ Chi",
+        "Cẩm Lynh",
+        "Cồ Huy Hùng",
+        "Dunadry",
+        "Hoàng Cầm",
+        "Khả Năng",
+        "Minh Thạch",
+        "Rain On Pan"
+      ]
+    }
+  },
+  "GH": {
+    "name": "Ghana",
+    "wikidataMusicians": 368,
+    "discogsReleases": 3938,
+    "candidates": 1541,
+    "newArtists": 1243,
+    "dropped": {
+      "duplicate": 167,
+      "foreignCatalog": 83,
+      "wikidataCrosswalk": 45
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 92,
+      "uncorroboratedKept": 136
+    },
+    "dated": 669,
+    "sample": [
+      "African Brothers (1966)",
+      "E. T. Mensah & His Tempos Band (1953)",
+      "Akwaboah's Band (1966)",
+      "The Wonderful Alex Konadu's Band (1976)",
+      "C.K. Mann & His Carousel 7 (1967)",
+      "Onyina's Guitar Band (1958)",
+      "K. Frimpong & His Cubano Fiestas (1975)",
+      "K. Gyasi's Guitar Band (1965)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 1024,
+      "committedAfter": 1239,
+      "added": 215,
+      "widened": 264,
+      "skippedNameClash": [
+        "Alabaster Box ↔ Alabaster Box",
+        "Avengers ↔ Avengers",
+        "Starlite Band ↔ Supreme Starlite Band",
+        "The Ambassadors Band ↔ Rex Ofosu And His Ambassadors"
+      ],
+      "addedSample": [
+        "Agya Bɔmɔfoɔ",
+        "Appiah Fordjour",
+        "Famous Blue Diamonds Band",
+        "Gapophone Various Bands",
+        "Kojokrom Harmonic Singers",
+        "Kumasi Bethany Singers",
+        "Kusum Gboo Dance Ensemble",
+        "Marriots Band",
+        "Osei Korankye",
+        "Richard Kwakye Danquah"
+      ]
+    }
+  },
+  "ZM": {
+    "name": "Zambia",
+    "wikidataMusicians": 55,
+    "discogsReleases": 2662,
+    "candidates": 1259,
+    "newArtists": 776,
+    "dropped": {
+      "duplicate": 69,
+      "foreignCatalog": 255,
+      "wikidataCrosswalk": 14
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 112,
+      "uncorroboratedKept": 74
+    },
+    "dated": 560,
+    "sample": [
+      "Nashil Pichen Kazembe (1975)",
+      "Orchestra Super Mazembe (1975)",
+      "Peter Tsotsi (1979)",
+      "Fire Family (1981)",
+      "Teddy Chilambe (1977)",
+      "Greg Miyanda (1978)",
+      "Emmanuel Mulemena (1974)",
+      "Orchestre T.P.O.K. Jazz (1977)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 617,
+      "committedAfter": 775,
+      "added": 158,
+      "widened": 243,
+      "skippedNameClash": [
+        "The Super Mazembe Band ↔ Orchestra Super Mazembe"
+      ],
+      "addedSample": [
+        "Junior Mulemena Boys",
+        "Lady Isa",
+        "Caitlin Papier",
+        "Cyprian Liswaniso & Group",
+        "Freedom Sengwayo",
+        "Inga Express",
+        "Ipi-Tombi",
+        "Orchestre Lipua-Lipua",
+        "Quatre Etoiles",
+        "Rain & Chillz"
+      ]
+    }
+  },
+  "CD": {
+    "name": "DR Congo",
+    "wikidataMusicians": 286,
+    "discogsReleases": 5915,
+    "candidates": 1686,
+    "newArtists": 1372,
+    "dropped": {
+      "duplicate": 211,
+      "foreignCatalog": 56,
+      "wikidataCrosswalk": 44
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 86,
+      "uncorroboratedKept": 115
+    },
+    "dated": 695,
+    "sample": [
+      "Orchestre T.P.O.K. Jazz (1956)",
+      "Orchestre Afrisa L'International (1966)",
+      "Orchestre Cobantou (1966)",
+      "Orchestre Nègro Succès (1965)",
+      "Orchestre Stukas (1972)",
+      "L'Orchestre African Fiesta Sukisa (1968)",
+      "Orchestre African Jazz (1959)",
+      "Grand Kalle And African Jazz (1960)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 1177,
+      "committedAfter": 1370,
+      "added": 193,
+      "widened": 731,
+      "skippedNameClash": [
+        "Rolly Daniel ↔ Frère Rolly",
+        "Dafoma Kintueni Sukisa ↔ Orchestre Kintueni Sukisa"
+      ],
+      "addedSample": [
+        "L'orchestre Festival Des Maquisards",
+        "Beya Maduma",
+        "Joyce Nsola",
+        "Orchestre Historia",
+        "Orchestre Kintueni Sukisa",
+        "Stanel Mbenza",
+        "Aimé Mputu",
+        "Ampire Joven's",
+        "Bankolo Miziki",
+        "Beaufils Pitschi"
+      ]
+    }
+  },
+  "TT": {
+    "name": "Trinidad & Tobago",
+    "wikidataMusicians": 93,
+    "discogsReleases": 5218,
+    "candidates": 1781,
+    "newArtists": 1412,
+    "dropped": {
+      "duplicate": 145,
+      "foreignCatalog": 204,
+      "wikidataCrosswalk": 20
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 175,
+      "uncorroboratedKept": 272
+    },
+    "dated": 929,
+    "sample": [
+      "Joey Lewis And His Orchestra (1959)",
+      "Fitz Vaughan Bryan Orchestra (1957)",
+      "Cyril Diaz & Orchestra (1956)",
+      "Johnny Gomez And His Orchestra (1958)",
+      "She She Calypso Band (1954)",
+      "JONBANNER (2014)",
+      "King Fighter (1958)",
+      "Lord Blakie (1957)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "merge": {
+      "committedBefore": 1134,
+      "committedAfter": 1406,
+      "added": 272,
+      "widened": 376,
+      "skippedNameClash": [
+        "Joey Lewis his Guitar and Orchestra ↔ Joey Lewis And His Orchestra",
+        "RCA All-Star Recording Orchestra ↔ The RCA All Star Recording Orchestra",
+        "The Five Flames ↔ The Five Flames",
+        "Warrior ↔ Warrior",
+        "The Hawk ↔ The Hawk",
+        "The New Street Rythm Band ↔ New Street Rhythm Band"
+      ],
+      "addedSample": [
+        "Billy Daniels And His Band",
+        "Clarence Curvan",
+        "Devon Russell",
+        "Karla Gonzales",
+        "King Augustus",
+        "King Harry",
+        "Mano Marcellin",
+        "Marilyn Williams",
+        "Southern All Stars Steel Orchestra",
+        "The George's Rhythmic Group"
+      ]
+    }
   }
 }
