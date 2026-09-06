@@ -86,3 +86,7 @@ data/extra-play-identity.log
 data/extra-play-identity-full.log
 data/run-extra-play-identity-sweep.sh
 data/extra-play-identity-phase1.log
+
+# Discogs monthly dumps + derived index (Sep 2026) — rebuildable, never committed
+data/discogs-dump/
+__pycache__/

@@ -19,19 +19,41 @@
  * Verdicts: 'new' | 'duplicate' | 'foreign-catalog' | 'crosswalk'
  *         | 'collision-kept' | 'uncorroborated-kept' | 'fuzzy-kept'
  * Only 'duplicate', 'foreign-catalog', 'crosswalk' drop a candidate.
+ *
+ * DATA SOURCES (owner go, Sep 6, 2026 — plumbing only, the six points
+ * above are untouched): each MusicBrainz lookup the rule makes has a
+ * LOCAL path read from the CC0 JSON dumps under data/mb-dump, used
+ * automatically when the index exists and falling back to the web
+ * service otherwise (EARCLEF_MB_SOURCE=api forces the API).
+ *   candidates      artist-names index   ← was Lucene search, limit 5
+ *   release groups  rg-by-artist index   ← was one call, limit 100
+ *   area walk       area-parents index   ← was one call per hop
+ * Deliberate differences, all in the direction of MORE evidence: every
+ * exact-name artist is a candidate (not the search's top five), every
+ * release group counts (not the first 100), and the area walk climbs
+ * the whole chain (not four hops). dedupDataSources() reports which
+ * path is live so every run logs it.
  */
+import { normalizeName } from './normalizeName.mjs'
+import { artistsNamed, nameIndexAvailable } from './mbNameIndex.mjs'
+import { areaChain, areaIndexAvailable } from './mbAreaIndex.mjs'
+import { dumpIndexAvailable, releaseGroupsFor } from './mbDumpIndex.mjs'
+
+export { normalizeName }
 
 const MB_UA =
   'EarClefDedup/0.3 (https://earclef.com; fiohmemorial@gmail.com)'
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
-export function normalizeName(value) {
-  return value
-    .toLowerCase()
-    .normalize('NFKD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[^\p{L}\p{N}]+/gu, ' ')
-    .trim()
+const FORCE_API = process.env.EARCLEF_MB_SOURCE === 'api'
+
+/** Which path each lookup takes right now — log this at run start. */
+export function dedupDataSources() {
+  return {
+    candidates: !FORCE_API && nameIndexAvailable() ? 'local' : 'api',
+    releaseGroups: !FORCE_API && dumpIndexAvailable() ? 'local' : 'api',
+    areas: !FORCE_API && areaIndexAvailable() ? 'local' : 'api',
+  }
 }
 
 /** Comparable title keys from a Discogs display title or plain title. */
@@ -75,7 +97,41 @@ export async function fetchMbArtistRecord(mbid) {
   )
 }
 
-export async function searchMbArtists(name) {
+/**
+ * Candidate MB artists for a probe. Local: every artist whose name or
+ * typed alias equals the probe, with the swept country's own artists
+ * first (`country` is the ISO code, `areaName` MB's country-area name)
+ * so a same-name pair resolves to the local one when one exists; the
+ * API path returns the search's five, as before, and ignores opts.
+ */
+export async function searchMbArtists(name, opts = {}) {
+  if (!FORCE_API && nameIndexAvailable()) {
+    const wantedCountry = opts.country ?? null
+    const wantedArea = opts.areaName ?? null
+    const local = (artist) =>
+      (wantedCountry && artist.country === wantedCountry) ||
+      (wantedArea &&
+        (artist.area?.name === wantedArea ||
+          artist['begin-area']?.name === wantedArea))
+        ? 0
+        : 1
+    // Largest catalogs next: the namesake most likely to carry a shared
+    // title or the large-catalog policy must never fall past the cap.
+    const catalog = new Map()
+    const size = (artist) => {
+      if (!catalog.has(artist.id)) {
+        catalog.set(
+          artist.id,
+          dumpIndexAvailable() ? releaseGroupsFor(artist.id).length : 0,
+        )
+      }
+      return catalog.get(artist.id)
+    }
+    return [...artistsNamed(name)].sort(
+      (a, b) =>
+        local(a) - local(b) || size(b) - size(a) || a.id.localeCompare(b.id),
+    )
+  }
   const body = await mbJson(
     `https://musicbrainz.org/ws/2/artist?query=${encodeURIComponent(`artist:"${name}"`)}&limit=5&fmt=json`,
   )
@@ -105,11 +161,16 @@ export function exactNameHit(artist, probe) {
 }
 
 export async function artistReleaseGroupTitles(mbid) {
-  const body = await mbJson(
-    `https://musicbrainz.org/ws/2/release-group?artist=${mbid}&limit=100&fmt=json`,
-  )
+  const groups =
+    !FORCE_API && dumpIndexAvailable()
+      ? releaseGroupsFor(mbid)
+      : (
+          await mbJson(
+            `https://musicbrainz.org/ws/2/release-group?artist=${mbid}&limit=100&fmt=json`,
+          )
+        )?.['release-groups'] ?? []
   const titles = new Set()
-  for (const group of body?.['release-groups'] ?? []) {
+  for (const group of groups) {
     const key = normalizeName(group.title ?? '')
     if (key.length >= 3) titles.add(key)
   }
@@ -124,6 +185,19 @@ export async function areaResolvesToCountry(areaId, areaName, countryName) {
   if (areaName === countryName) return 'match'
   const cacheKey = `${areaId}|${countryName}`
   if (areaCache.has(cacheKey)) return areaCache.get(cacheKey)
+  if (!FORCE_API && areaIndexAvailable()) {
+    // Same walk, off the dump: an id the index does not know is
+    // 'unknown' (as a failed fetch was), never a match.
+    const chain = areaChain(areaId)
+    const local =
+      chain.length === 0
+        ? 'unknown'
+        : chain.some((area) => area.name === countryName)
+          ? 'match'
+          : 'other'
+    areaCache.set(cacheKey, local)
+    return local
+  }
   let current = areaId
   let result = 'other'
   for (let depth = 0; depth < 4 && current; depth++) {
@@ -194,6 +268,14 @@ export async function judgeNameHit(candidate, artist, hitBasis, countryName) {
     const fullNameEquality =
       normalizeName(artist.name ?? '') === normalizeName(candidate.names[0]) ||
       hitBasis === 'typed-alias'
+    // KNOWN COST, kept deliberately (Sep 6, 2026 audit): with every
+    // namesake judged this fires on one-word names too — a Gulf singer
+    // "Manal" is excluded because the Argentine band shares the word.
+    // A token-count gate was tried and reverted: it also readmitted
+    // Madness, Chicago, DeBarge and Exodus to local pools, the
+    // famous-artist pollution this policy exists to stop. Mononym
+    // false exclusions are surfaced by scripts/audit-dedup-local.mjs
+    // for the owner rather than traded for pollution.
     if (fullNameEquality && rgTitles.size >= 12) {
       return {
         verdict: 'foreign-catalog',
@@ -208,6 +290,66 @@ export async function judgeNameHit(candidate, artist, hitBasis, countryName) {
     return { verdict: 'duplicate', basis: 'era-overlap', ...evidence }
   }
   return { verdict: 'uncorroborated-kept', basis: 'name-only', ...evidence }
+}
+
+/**
+ * Evidence strength of a verdict's basis — used to choose among
+ * several exact-name MB artists (namesakes). Record-level facts first:
+ * a shared release title identifies the referent of THESE pressings;
+ * a hierarchy-resolved area match next; then the ratified
+ * large-catalog policy; era overlap; and only then the two "kept"
+ * bases, which carry no corroboration at all.
+ */
+const BASIS_RANK = {
+  'shared-title': 0,
+  'shared-title+foreign-area': 0,
+  area: 1,
+  'large-catalog-full-name': 2,
+  'era-overlap': 3,
+  'area-contradiction': 4,
+  'name-only': 5,
+}
+/**
+ * Generic names ("Fire", "Franco") can have dozens of namesakes; each
+ * local judgment is a shard lookup, so the cap is generous. The API
+ * path never sees more than the search's five anyway.
+ */
+const MAX_NAMESAKES_JUDGED = 64
+
+/**
+ * Judge one candidate against MusicBrainz: every probe, EVERY
+ * exact-name artist (up to MAX_NAMESAKES_JUDGED, swept country first),
+ * and the verdict with the strongest basis wins. Returns null when no
+ * probe has an exact hit — the caller records 'new'.
+ *
+ * SELECTION POLICY (Sep 6, 2026): the API-era code judged the first
+ * exact hit among the search's five results, which for namesake-heavy
+ * names was arbitrary — the fidelity audit showed the same candidate
+ * flipping between 'foreign-catalog' (the famous namesake judged) and
+ * 'uncorroborated-kept' (a minor one judged) purely on ordering.
+ * Judging all and keeping the best-corroborated verdict is the
+ * evidence-first reading of rule point 2; `namesakes` on the verdict
+ * records how many were weighed, so the choice stays auditable.
+ */
+export async function judgeCandidate(candidate, opts, probes = dedupProbes(candidate.names)) {
+  const countryName = opts.areaName
+  let best = null
+  for (const probe of probes) {
+    const artists = await searchMbArtists(probe, opts)
+    const hits = artists
+      .map((artist) => ({ artist, basis: exactNameHit(artist, probe) }))
+      .filter((entry) => entry.basis)
+      .slice(0, MAX_NAMESAKES_JUDGED)
+    for (const hit of hits) {
+      const judged = await judgeNameHit(candidate, hit.artist, hit.basis, countryName)
+      judged.namesakes = hits.length
+      const rank = BASIS_RANK[judged.basis] ?? 9
+      if (!best || rank < best.rank) best = { rank, judged }
+      if (rank === 0) break
+    }
+    if (best) break
+  }
+  return best?.judged ?? null
 }
 
 /** Multi-token probes only — bare forenames never decide anything. */

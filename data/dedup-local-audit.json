@@ -1,0 +1,1409 @@
+{
+  "generatedAt": "2026-09-06T12:39:02.866Z",
+  "sources": {
+    "candidates": "local",
+    "releaseGroups": "local",
+    "areas": "local"
+  },
+  "tally": {
+    "agree": 1613,
+    "disagree": 81,
+    "unreconstructible": 2
+  },
+  "matrix": {
+    "duplicate → duplicate": 203,
+    "new → new": 1051,
+    "uncorroborated-kept → uncorroborated-kept": 141,
+    "collision-kept → collision-kept": 113,
+    "foreign-catalog → foreign-catalog": 127,
+    "foreign-catalog → collision-kept": 5,
+    "uncorroborated-kept → duplicate": 5,
+    "collision-kept → duplicate": 8,
+    "new → duplicate": 10,
+    "uncorroborated-kept → collision-kept": 15,
+    "collision-kept → foreign-catalog": 4,
+    "new → uncorroborated-kept": 1,
+    "new → collision-kept": 6,
+    "uncorroborated-kept → foreign-catalog": 2,
+    "new → foreign-catalog": 3
+  },
+  "disagreements": [
+    {
+      "code": "TL",
+      "key": "dg|6296835",
+      "name": "Akin",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "488c0ea1-52e1-4ea2-b787-855c7cd472f9",
+        "mbName": "Akin"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "c8af594b-1e56-48bc-be4a-216ff3ea222f",
+        "mbName": "Akīn"
+      }
+    },
+    {
+      "code": "AF",
+      "key": "dg|2248305",
+      "name": "Zarsanga",
+      "stored": {
+        "verdict": "foreign-catalog",
+        "basis": "owner-ruling-foreign-origin (Pakistani artist on Afghan pressings, Aug 10 2026)",
+        "mbid": "f1a7154d-40cd-4d0d-bd59-0154f334dc8a",
+        "mbName": "Zarsanga"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "f1a7154d-40cd-4d0d-bd59-0154f334dc8a",
+        "mbName": "Zarsanga"
+      }
+    },
+    {
+      "code": "TJ",
+      "key": "dg|2124542",
+      "name": "Red Planet",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "e8ba1a14-0e41-4cd4-b277-d438da7dded9",
+        "mbName": "Red Planet"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "67291585-02d0-4939-bdff-6bc2e4d3508a",
+        "mbName": "Red Planet"
+      }
+    },
+    {
+      "code": "TJ",
+      "key": "dg|2424514",
+      "name": "Зло",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "98abbd6d-1619-4c8c-98e6-819a307c031c",
+        "mbName": "Зло"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "1337d69d-9641-45e4-b2c0-68e9a136eb3e",
+        "mbName": "Зло"
+      }
+    },
+    {
+      "code": "TJ",
+      "key": "dg|3627284",
+      "name": "Jinn",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "09ad183b-d988-4ab9-8b21-c0422e0bcb94",
+        "mbName": "Jinn"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "d4e8d133-dbf7-4237-9a9a-35e09c7d5fd7",
+        "mbName": "Jinn"
+      }
+    },
+    {
+      "code": "GW",
+      "key": "dg|5089844",
+      "name": "Iva",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "07c5dc07-9bcf-4612-ab8c-a130550fb8ad",
+        "mbName": "Iva"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "9289f335-8659-4121-93a8-11f2539985b3",
+        "mbName": "Iva"
+      }
+    },
+    {
+      "code": "GW",
+      "key": "dg|7663075",
+      "name": "Bela",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "bcc61c14-1bac-41dd-b9b8-dfb47fb88c5e",
+        "mbName": "Bela"
+      }
+    },
+    {
+      "code": "OM",
+      "key": "dg|3760306",
+      "name": "Arabia",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "61f4b733-d2b2-463c-bac1-aa15327786fe",
+        "mbName": "Arabia"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "4503ac50-7c7f-4dd1-b45e-f84dfe9a05b6",
+        "mbName": "Arabia"
+      }
+    },
+    {
+      "code": "MW",
+      "key": "dg|5706917",
+      "name": "The Woodpeckers",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "a98c89ac-e55e-4b8c-b327-6229e5aa2263",
+        "mbName": "The Woodpeckers"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "c7841ad7-9d88-455d-96ed-e4275bac75b8",
+        "mbName": "The Woodpeckers"
+      }
+    },
+    {
+      "code": "MW",
+      "key": "dg|7217225",
+      "name": "Amaro",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "73f00665-15dc-418b-8b9a-4fa67f0bdb04",
+        "mbName": "Amaro"
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "243b6730-010d-49c3-ace9-e7d8c1a5511f",
+        "mbName": "Amaro"
+      }
+    },
+    {
+      "code": "SO",
+      "key": "dg|4683071",
+      "name": "Maxamed Axmed Kuluc",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "d18f98ea-3298-4d8f-a8fa-83c305861724",
+        "mbName": "Mohamed Ahmed"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "b3a8c33a-ea4d-44e4-a7ad-487e96577a13",
+        "mbName": "Skinz"
+      }
+    },
+    {
+      "code": "LR",
+      "key": "dg|11366531",
+      "name": "The Peacemakers",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "4e3ff82f-281b-408a-ad45-722040a6ca75",
+        "mbName": "The Peacemakers"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "b2e82b8d-51bc-4c67-8dda-14ccbdc6b06e",
+        "mbName": "The Peacemakers"
+      }
+    },
+    {
+      "code": "BW",
+      "key": "dg|9488068",
+      "name": "Sloane",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "6faff5df-8483-4a2c-bde2-840edf2c66a9",
+        "mbName": "Sloane"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "0262ba00-fa6f-4cb1-943f-3e92172b9fd8",
+        "mbName": "Sloane"
+      }
+    },
+    {
+      "code": "CF",
+      "key": "dg|4306809",
+      "name": "vibro success intercontinental orchestra",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "ef789fe8-0a43-429d-a051-100e61455c9b",
+        "mbName": "Vibro Success Intercontinental Orchestra"
+      }
+    },
+    {
+      "code": "QA",
+      "key": "dg|3735450",
+      "name": "Sirena",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "be1319ea-bc51-45b3-a7ab-301f0ffef534",
+        "mbName": "Sirena"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "5c4300b7-8426-4580-b00d-20807472110b",
+        "mbName": "Sirena"
+      }
+    },
+    {
+      "code": "QA",
+      "key": "dg|1931854",
+      "name": "Manal",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "84c5f4ff-d513-4334-b5ca-ee7ffc496f45",
+        "mbName": "Manal"
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "38940693-d952-424b-b729-5a9d8f9e5081",
+        "mbName": "Manal"
+      }
+    },
+    {
+      "code": "BN",
+      "key": "dg|10857190",
+      "name": "Daemon",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "0c275ae1-4a07-4eca-bc09-7bede290247e",
+        "mbName": "Daemon"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "42cf0066-0809-4c7e-af32-f94a398a044e",
+        "mbName": "Daemon"
+      }
+    },
+    {
+      "code": "TM",
+      "key": "dg|16531511",
+      "name": "ABM",
+      "stored": {
+        "verdict": "duplicate",
+        "basis": "era-overlap",
+        "mbid": "672bed00-98ef-4333-8f3e-e8f1de21ce98",
+        "mbName": "Abm"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "9e251081-6b72-4f6d-ae2e-e9861c6a3a0f",
+        "mbName": "ABM"
+      }
+    },
+    {
+      "code": "KG",
+      "key": "dg|2006192",
+      "name": "Светлана Назаренко",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "70bc3a1a-aa07-4214-a857-bb4fdbef49b7",
+        "mbName": "Svetlana Nazarenko"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "0c3c2d99-4eea-40b7-a629-a8ae8e252f13",
+        "mbName": "Aя"
+      }
+    },
+    {
+      "code": "BF",
+      "key": "dg|15097301",
+      "name": "Wahid",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "3682bce7-2f17-49a7-b676-514e8a9628b4",
+        "mbName": "Wahid"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "7466c76e-fe70-43ad-9c98-ea03527374cd",
+        "mbName": "Wahid"
+      }
+    },
+    {
+      "code": "BF",
+      "key": "dg|6929684",
+      "name": "Ibrahim Keita",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "5a84faef-7ad7-4730-9cf6-ad07facc43f6",
+        "mbName": "Bram’s"
+      }
+    },
+    {
+      "code": "BF",
+      "key": "dg|9342886",
+      "name": "Diaspora",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "52709a10-17c1-49e1-adf6-dba9947e9f37",
+        "mbName": "Diaspora"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "1d90a9c3-1814-4b1a-a0a2-1dda4b39fd10",
+        "mbName": "Diaspora"
+      }
+    },
+    {
+      "code": "NA",
+      "key": "dg|9052888",
+      "name": "Blossom",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "fec91c90-9882-4c5a-8b8e-173563d312a1",
+        "mbName": "Blossom"
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "6c01d9e9-7b27-4d30-bc4b-296e0caa5b80",
+        "mbName": "Blossom"
+      }
+    },
+    {
+      "code": "NA",
+      "key": "dg|2084673",
+      "name": "Pedrito",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "e21b3603-13d2-488d-ac87-381dd5b5db8d",
+        "mbName": "Pedrito"
+      },
+      "local": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "b8ce4fd4-5cb3-4bde-9ccd-f44cb4823b61",
+        "mbName": "Pedrito"
+      }
+    },
+    {
+      "code": "PG",
+      "key": "dg|10198672",
+      "name": "The Strangers",
+      "stored": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "54771e2f-5bb8-4feb-8a4c-7008708e01c1",
+        "mbName": "The Strangers"
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "shared-title+foreign-area",
+        "mbid": "d6cd01e6-e143-42d7-a46e-196a6bd5ea4d",
+        "mbName": "De Strangers"
+      }
+    },
+    {
+      "code": "PG",
+      "key": "dg|330303",
+      "name": "Dragon",
+      "stored": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "aae96072-e23c-496a-9016-8637be8c67bc",
+        "mbName": "Dragon"
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "shared-title+foreign-area",
+        "mbid": "df78ce0f-3c9a-4c3d-bf45-967919e66e94",
+        "mbName": "Dragon"
+      }
+    },
+    {
+      "code": "PG",
+      "key": "dg|1564386",
+      "name": "Metro",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "344e360c-068b-47eb-b396-fd3062efb063",
+        "mbName": "Metro"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "95df7409-2a37-4d48-b48d-3be6c3eecef8",
+        "mbName": "Metro"
+      }
+    },
+    {
+      "code": "MM",
+      "key": "dg|7403937",
+      "name": "Tracy",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "1a5df42a-c32d-498e-95ef-507c75f08670",
+        "mbName": "Tracy Ackerman"
+      }
+    },
+    {
+      "code": "BD",
+      "key": "dg|10903630",
+      "name": "EF",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "41bc6aa8-c097-4a7c-9758-564fc64d0d6b",
+        "mbName": "Ef"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "a32286a9-6ce0-4f51-8efb-f1acb4249fb8",
+        "mbName": "EF"
+      }
+    },
+    {
+      "code": "BD",
+      "key": "dg|6388775",
+      "name": "H2SO4",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "ccd57459-2d4c-4acc-8acf-db098d334b58",
+        "mbName": "H2SO4"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "67e13aa4-8381-435c-a4dc-3c8160392465",
+        "mbName": "H2SO4"
+      }
+    },
+    {
+      "code": "NP",
+      "key": "dg|5665148",
+      "name": "Charisma",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "16715a73-d18a-4b2f-bc02-22bd8960ac8f",
+        "mbName": "Charisma"
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "41a4d2dc-0dae-4e93-afd5-2aa32dd02313",
+        "mbName": "Charisma"
+      }
+    },
+    {
+      "code": "NP",
+      "key": "dg|2675180",
+      "name": "Knife",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "53935ff2-4f91-4a85-a769-5e5d68b9aec3",
+        "mbName": "Knife"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "711ed807-45be-43cf-9161-4dddb5ef8484",
+        "mbName": "Dope KNife"
+      }
+    },
+    {
+      "code": "NP",
+      "key": "dg|5665632",
+      "name": "Banned",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "46692037-2980-4cc0-bdbb-a45a201be1d4",
+        "mbName": "Banned"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "185b30d4-8dd4-4599-a129-2dbb2d4b5f6a",
+        "mbName": "Banned"
+      }
+    },
+    {
+      "code": "MN",
+      "key": "dg|4533177",
+      "name": "The Lemons",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "b06928d4-f2e8-4ec3-901f-69c5ff542999",
+        "mbName": "The Lemons"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "c6c434e1-0d16-4d0d-947f-c981f97d1aa7",
+        "mbName": "The Lemons"
+      }
+    },
+    {
+      "code": "MN",
+      "key": "dg|47395",
+      "name": "Fire",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "b736df8b-51bd-4aac-8b37-610f40e512e4",
+        "mbName": "Fire"
+      }
+    },
+    {
+      "code": "LK",
+      "key": "dg|1223764",
+      "name": "Forlorn Hope",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "457b118f-d17c-42ea-9bb0-74c847330e2d",
+        "mbName": "Forlorn Hope"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "31aa262a-3a01-4196-83bb-2579735e64de",
+        "mbName": "Forlorn Hope"
+      }
+    },
+    {
+      "code": "LK",
+      "key": "dg|9221464",
+      "name": "JAP",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "5fcb8e0f-e681-4585-954b-8134d7c48eec",
+        "mbName": "JAP"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "d9b952fc-dff3-4372-81e4-018ea4f003b1",
+        "mbName": "JAP"
+      }
+    },
+    {
+      "code": "LK",
+      "key": "dg|12620342",
+      "name": "Mechanic",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "32761732-f6b8-4218-b7ff-df9554eaa2fd",
+        "mbName": "Mechanic..."
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "f94a5982-962d-4973-9851-6bcb0bbc8752",
+        "mbName": "Mechanic"
+      }
+    },
+    {
+      "code": "KP",
+      "key": "dg|2483596",
+      "name": "Pochonbo Electronic Ensemble",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "cd72e086-d7a8-4fd8-a6b8-829229a28e8c",
+        "mbName": "보천보전자악단"
+      }
+    },
+    {
+      "code": "KP",
+      "key": "dg|1293356",
+      "name": "State Symphony Orchestra",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "2a5df5d7-b806-4d1e-930f-47205cad3b07",
+        "mbName": "조선국립교향악단"
+      }
+    },
+    {
+      "code": "KP",
+      "key": "dg|3755780",
+      "name": "Kim Myong Duk",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "3dc363e0-fbc9-4198-be16-9cb7a51e8e74",
+        "mbName": "김명독"
+      }
+    },
+    {
+      "code": "KP",
+      "key": "dg|10725868",
+      "name": "조선인민군공훈합창단",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "1e5053ea-0895-44bf-aec3-c6a810523d64",
+        "mbName": "공훈국가합창단"
+      }
+    },
+    {
+      "code": "KP",
+      "key": "dg|2596430",
+      "name": "The Korean People's Army Merited State Chorus",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "1e5053ea-0895-44bf-aec3-c6a810523d64",
+        "mbName": "공훈국가합창단"
+      }
+    },
+    {
+      "code": "TZ",
+      "key": "dg|1964254",
+      "name": "Safari Sound Band",
+      "stored": {
+        "verdict": "foreign-catalog",
+        "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): MB match wd description \"Kenyan band\" — regional circuit class (Safari Sound Band)",
+        "mbid": "2dae4568-0955-4d4b-ba54-16facb46e06f",
+        "mbName": "Safari Sound Band"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "2dae4568-0955-4d4b-ba54-16facb46e06f",
+        "mbName": "Safari Sound Band"
+      }
+    },
+    {
+      "code": "TZ",
+      "key": "dg|1421183",
+      "name": "Tid",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "937e105a-dc95-47ab-a3b3-e244eadcc9fd",
+        "mbName": "Tid"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "afb5855d-10e7-4048-84b9-ea479131a1ab",
+        "mbName": "TID"
+      }
+    },
+    {
+      "code": "ML",
+      "key": "dg|1121237",
+      "name": "Amkoullel",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "4f7b6eb8-1aa9-4fd3-a7b0-fc8106df2024",
+        "mbName": "Amkoullel"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "4f7b6eb8-1aa9-4fd3-a7b0-fc8106df2024",
+        "mbName": "Amkoullel"
+      }
+    },
+    {
+      "code": "GN",
+      "key": "dg|10470676",
+      "name": "Les Heritiers",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "4a8c37fc-d961-4286-962f-65c4c3f6c1a0",
+        "mbName": "Les Héritiers"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "0df1dffd-b62b-4f49-989e-025661ea1bf3",
+        "mbName": "Les Héritiers"
+      }
+    },
+    {
+      "code": "GN",
+      "key": "dg|6661436",
+      "name": "Diaspora",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "52709a10-17c1-49e1-adf6-dba9947e9f37",
+        "mbName": "Diaspora"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "1d90a9c3-1814-4b1a-a0a2-1dda4b39fd10",
+        "mbName": "Diaspora"
+      }
+    },
+    {
+      "code": "ET",
+      "key": "dg|6035005",
+      "name": "Bezunesh Bekele",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "0cb91707-8590-46ee-bb33-957fdddb7b7b",
+        "mbName": "Bzunèsh Bèqèlè"
+      }
+    },
+    {
+      "code": "BZ",
+      "key": "dg|365507",
+      "name": "Frederic",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "b42dbf00-65cd-4751-8014-b7dd9df45377",
+        "mbName": "フレデリック"
+      }
+    },
+    {
+      "code": "BZ",
+      "key": "dg|2040813",
+      "name": "Jonathan David",
+      "stored": {
+        "verdict": "foreign-catalog",
+        "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): MB begin-area United States ≠ pool; distinctive name + era",
+        "mbid": "13353f8a-e81f-44fc-903e-70544ac91365",
+        "mbName": "Jonathan David"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "13353f8a-e81f-44fc-903e-70544ac91365",
+        "mbName": "Jonathan David"
+      }
+    },
+    {
+      "code": "BZ",
+      "key": "dg|129722",
+      "name": "Aramis",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "dcefe043-4551-4166-b64d-d9a6d77465bf",
+        "mbName": "Aramis"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "08754d87-1464-40c4-bea6-fd2a8de782f5",
+        "mbName": "Aramis"
+      }
+    },
+    {
+      "code": "GY",
+      "key": "dg|254866",
+      "name": "The Astronauts",
+      "stored": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "e97d0a22-6b6d-46d8-a189-54311bfeebf4",
+        "mbName": "The Astronauts"
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "9993b1b5-4925-42b1-ab9f-6627f9be65fd",
+        "mbName": "The Astronauts"
+      }
+    },
+    {
+      "code": "GY",
+      "key": "dg|2990054",
+      "name": "Serpent",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "6acd9369-8386-41d1-98bd-e961b8ef4256",
+        "mbName": "Serpent"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "17be7945-b204-42d4-a2a3-ea0813be0966",
+        "mbName": "Serpent"
+      }
+    },
+    {
+      "code": "HN",
+      "key": "dg|5241229",
+      "name": "G.O.D.",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "6e0920b3-6508-4ad4-b067-ee7d274c90ce",
+        "mbName": "G.O.D"
+      }
+    },
+    {
+      "code": "BS",
+      "key": "dg|1352855",
+      "name": "Bradley Dean",
+      "stored": {
+        "verdict": "foreign-catalog",
+        "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): MB begin-area United States ≠ pool; distinctive name + era",
+        "mbid": "cfa0cbd0-acbb-4718-8554-b4a04ffff08a",
+        "mbName": "Bradley Dean"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "cfa0cbd0-acbb-4718-8554-b4a04ffff08a",
+        "mbName": "Bradley Dean"
+      }
+    },
+    {
+      "code": "BS",
+      "key": "dg|8764516",
+      "name": "Gary Hudson",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "d0a67f54-165c-4379-ab8c-bd68bee6bfc0",
+        "mbName": "Lil’ Fly"
+      }
+    },
+    {
+      "code": "SR",
+      "key": "dg|15931575",
+      "name": "Black Earth",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "5acf824a-b044-4acd-ac18-b6e8cd80f749",
+        "mbName": "Black Earth"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "5026be63-4689-481e-8c68-fa8c0d06da6f",
+        "mbName": "Black Earth"
+      }
+    },
+    {
+      "code": "SR",
+      "key": "dg|6636561",
+      "name": "The Black Magic",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "4a96ec66-f597-407f-8126-4ad7acfb5705",
+        "mbName": "The Black Magic"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "384882ee-883e-4b03-96c4-b6159675f083",
+        "mbName": "The Black Magic"
+      }
+    },
+    {
+      "code": "HT",
+      "key": "dg|337449",
+      "name": "Maestro",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "e8d5bf3b-096e-42f0-92ae-fd1ed710aedf",
+        "mbName": "Maestro"
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "ab1fa4e8-c30a-4439-8f80-582b601705b3",
+        "mbName": "Maestro Fresh‐Wes"
+      }
+    },
+    {
+      "code": "HT",
+      "key": "dg|3582830",
+      "name": "Christopher Laroche",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "3fe00718-af48-4730-929b-24de92188ee0",
+        "mbName": "Freedom"
+      }
+    },
+    {
+      "code": "PS",
+      "key": "dg|5260039",
+      "name": "Muqata'a",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "d1446a0e-5e3d-46af-adbd-7bf45104d686",
+        "mbName": "مُقاطَعة"
+      }
+    },
+    {
+      "code": "PS",
+      "key": "dg|726742",
+      "name": "Fairuz",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "shared-title+foreign-area",
+        "mbid": "338bbb53-5b96-447a-9444-8906844a0790",
+        "mbName": "فيروز"
+      }
+    },
+    {
+      "code": "PS",
+      "key": "dg|3016481",
+      "name": "حميد الشاعري",
+      "stored": {
+        "verdict": "foreign-catalog",
+        "basis": "owner-ruling-pattern-b-foreign-origin (Aug 11 2026): MB match's Wikidata origin Q1016 ≠ pool; identity via distinctive name",
+        "mbid": "8325f818-ff9b-4d02-ac92-0b03b9c8c82e",
+        "mbName": "حميد الشاعري"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "8325f818-ff9b-4d02-ac92-0b03b9c8c82e",
+        "mbName": "حميد الشاعري"
+      }
+    },
+    {
+      "code": "JO",
+      "key": "dg|92406",
+      "name": "Yunis",
+      "stored": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "9113c82b-c83b-4152-bf41-c1cf1442b38c",
+        "mbName": "yunis"
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "shared-title+foreign-area",
+        "mbid": "8789c164-9266-47a4-95b7-841a238d02cd",
+        "mbName": "YUNIS"
+      }
+    },
+    {
+      "code": "JO",
+      "key": "dg|3539831",
+      "name": "Abide",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "58f41b4e-7004-4073-8212-717b77f2cce8",
+        "mbName": "Abide"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "0fcfa6e3-2ad3-4e4f-846b-d6041922f60c",
+        "mbName": "abide"
+      }
+    },
+    {
+      "code": "JO",
+      "key": "dg|3298366",
+      "name": "Dan Thompson",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "4b86ba3d-5e0d-4d5e-a05e-59cee8ca1843",
+        "mbName": "Dan Thompson"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "4b1d90dd-3b6f-49db-98e8-0d52f416adf2",
+        "mbName": "Dan Thompson"
+      }
+    },
+    {
+      "code": "IQ",
+      "key": "dg|4172869",
+      "name": "هایده",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "da616429-d71b-4869-8b4e-cd279d94301c",
+        "mbName": "Hayedeh"
+      }
+    },
+    {
+      "code": "KW",
+      "key": "dg|120826",
+      "name": "Eve",
+      "stored": {
+        "verdict": "foreign-catalog",
+        "basis": "large-catalog-full-name",
+        "mbid": "66bdd1c9-d1c5-40b7-a487-5061fffbd87d",
+        "mbName": "Eve"
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "shared-title+foreign-area",
+        "mbid": "1ac10f5e-2079-4435-b78f-dda6ecdeba15",
+        "mbName": "Eve"
+      }
+    },
+    {
+      "code": "AL",
+      "key": "dg|3211101",
+      "name": "Dunkelheit",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "ce102870-2c1f-492a-b183-55fa3734453a",
+        "mbName": "Dunkelheit"
+      },
+      "local": {
+        "verdict": "foreign-catalog",
+        "basis": "shared-title+foreign-area",
+        "mbid": "973aa724-9595-408e-8965-9754e1a5cc2a",
+        "mbName": "Dunkelheit"
+      }
+    },
+    {
+      "code": "MD",
+      "key": "dg|7773435",
+      "name": "Наталья Гордиенко",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "shared-title",
+        "mbid": "e6769362-0ddf-4bef-9eb3-3a032aaedb98",
+        "mbName": "Natalia Gordienko"
+      }
+    },
+    {
+      "code": "MD",
+      "key": "dg|5730753",
+      "name": "Kamaji",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "96d5ab35-98ce-46fa-8aed-c7c42a148846",
+        "mbName": "Kamaji"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "774402e8-5786-45a2-831a-ed202982c00d",
+        "mbName": "Kamaji"
+      }
+    },
+    {
+      "code": "XK",
+      "key": "dg|3031292",
+      "name": "Por-No",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "290e8dce-e03d-4af8-b382-647ca26b259d",
+        "mbName": "Por No"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "af3736a3-e7ed-4634-8496-fbd6e5a45788",
+        "mbName": "por-nó"
+      }
+    },
+    {
+      "code": "XK",
+      "key": "dg|17373325",
+      "name": "Alkan Gashi",
+      "stored": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "f251c80f-2a65-444f-931b-a0422a10b425",
+        "mbName": "Alkan Gashi"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "099924f3-467a-4699-b70f-fd45d61b94c4",
+        "mbName": "Alkan Gashi"
+      }
+    },
+    {
+      "code": "VN",
+      "key": "dg|8962039",
+      "name": "Max Mason",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "3e099e0a-7504-4104-b9a2-a1c6a490e043",
+        "mbName": "Max Mason"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "a781bd57-5a4e-4e37-9f05-73b55a752c8a",
+        "mbName": "Max Mason"
+      }
+    },
+    {
+      "code": "GH",
+      "key": "dg|1439628",
+      "name": "Tony Sarfo",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "c1fac99b-c5fe-4f07-a782-14b44203cda3",
+        "mbName": "Tony Sarfo"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "c1fac99b-c5fe-4f07-a782-14b44203cda3",
+        "mbName": "Tony Sarfo"
+      }
+    },
+    {
+      "code": "GH",
+      "key": "dg|2101512",
+      "name": "Afrodisiac",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "e0ab6c63-cec8-4968-b127-775a21d5e240",
+        "mbName": "Afrodisiac"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "96d5031f-4354-48ff-9a95-c3f09fb0a3bb",
+        "mbName": "Afrodisiac"
+      }
+    },
+    {
+      "code": "GH",
+      "key": "dg|4835931",
+      "name": "The Sparrows",
+      "stored": {
+        "verdict": "uncorroborated-kept",
+        "basis": "name-only",
+        "mbid": "4fa499b2-8b68-46a0-98ef-7e07c5b34ba7",
+        "mbName": "The Sparrows"
+      },
+      "local": {
+        "verdict": "duplicate",
+        "basis": "area",
+        "mbid": "4f93191e-e965-457e-a0b3-9a0b130231b7",
+        "mbName": "The Sparrows"
+      }
+    },
+    {
+      "code": "ZM",
+      "key": "dg|137184",
+      "name": "Kelly Brown",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "a34ac515-ebda-4e18-90b6-9d3278fb93a8",
+        "mbName": "Kelly Brown"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "3fc07ab8-26ba-4fb8-bc9d-5947a0d3b428",
+        "mbName": "Kelly Brown"
+      }
+    },
+    {
+      "code": "CD",
+      "key": "dg|2163495",
+      "name": "Orchestre Kin-Bantou",
+      "stored": {
+        "verdict": "new",
+        "basis": "no-exact-hit",
+        "mbid": null,
+        "mbName": null
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "076bbf05-b30a-4a28-abcd-8a7ef4d7eb75",
+        "mbName": "Orchestra Kin-Bantous"
+      }
+    },
+    {
+      "code": "TT",
+      "key": "dg|892022",
+      "name": "Swallow",
+      "stored": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "3ca28161-a0df-4af8-8e8d-e3712d2340a8",
+        "mbName": "Swallow"
+      },
+      "local": {
+        "verdict": "collision-kept",
+        "basis": "area-contradiction",
+        "mbid": "f4c28d48-f41b-47d7-a679-942ae218a886",
+        "mbName": "SWALLOW"
+      }
+    }
+  ]
+}

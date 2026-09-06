@@ -17,8 +17,9 @@
 import { existsSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-const OUT_DIR = 'data/mb-dump/rg-by-artist'
-const META_PATH = 'data/mb-dump/index-meta.json'
+const DUMP_DIR = process.env.EARCLEF_MB_DUMP_DIR ?? 'data/mb-dump'
+const OUT_DIR = `${DUMP_DIR}/rg-by-artist`
+const META_PATH = `${DUMP_DIR}/index-meta.json`
 
 const shardCache = new Map()
 

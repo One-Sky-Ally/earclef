@@ -45,10 +45,8 @@
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import {
-  dedupProbes,
-  exactNameHit,
-  judgeNameHit,
-  searchMbArtists,
+  dedupDataSources,
+  judgeCandidate,
   titleKeys,
 } from './lib/dedup-rule.mjs'
 import { COUNTRIES } from './lib/gap-fill-countries.mjs'
@@ -337,6 +335,9 @@ async function discogsArtistId(name) {
 async function main() {
   mkdirSync('data', { recursive: true })
   const work = loadJson(WORK_PATH, { countries: {} })
+  // Which MusicBrainz path the dedup takes (local dump indexes vs the
+  // 1 req/s API) — logged so every run's evidence source is on record.
+  console.log(`dedup sources: ${JSON.stringify(dedupDataSources())}`)
 
   for (const code of targets) {
     const config = COUNTRIES[code]
@@ -586,19 +587,14 @@ async function main() {
           years: [...new Set(candidate.years)],
           titles: candidate.titles ?? new Set(),
         }
-        let judged = null
-        for (const probe of dedupProbes(cand.names)) {
-          const artists = await searchMbArtists(probe)
-          const hit = artists
-            .map((artist) => ({ artist, basis: exactNameHit(artist, probe) }))
-            .find((entry) => entry.basis)
-          if (hit) {
-            // MB's own area name (verified per country) — a display-name
-            // mismatch here would turn real duplicates into collisions.
-            judged = await judgeNameHit(cand, hit.artist, hit.basis, config.mbArea)
-            break
-          }
-        }
+        // Every exact-name namesake is weighed and the best-corroborated
+        // verdict wins (judgeCandidate). MB's own area name (verified
+        // per country) is the country test — a display-name mismatch
+        // here would turn real duplicates into collisions.
+        const judged = await judgeCandidate(cand, {
+          country: code,
+          areaName: config.mbArea,
+        })
         state.verdicts[key] = judged ?? { verdict: 'new', basis: 'no-exact-hit' }
       }
       done++
