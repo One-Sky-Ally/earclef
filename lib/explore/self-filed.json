@@ -1,4 +1,20 @@
 {
-  "generatedAt": null,
-  "artists": []
+  "generatedAt": "2026-09-06T04:14:07.542Z",
+  "artists": [
+    {
+      "mbid": "8cd399b7-b52b-478f-af05-b9953aad49ac",
+      "name": "Aplete",
+      "country": "US",
+      "region": null,
+      "cs": 2004,
+      "end": null,
+      "tags": [],
+      "filedAt": "2026-09-06T04:14:07.541Z",
+      "evidence": {
+        "url": "https://www.youtube.com/channel/UC2Yf-Wykss1jm73UAiIzmPw/about",
+        "token": "earclef-sYQJnFk9",
+        "verifiedAt": null
+      }
+    }
+  ]
 }

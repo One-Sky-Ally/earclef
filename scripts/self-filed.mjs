@@ -95,19 +95,28 @@ function regionCodeOf(area) {
   return (area?.['iso-3166-2-codes'] ?? []).find((code) => REGION_PATTERN.test(code))
 }
 
-/** Walk "part of" upward until an area carries a region code, or give up. */
-async function resolveRegion(area) {
+/**
+ * Walk "part of" upward, collecting the first region code (US-NV,
+ * GB-SCT) and the first country code met. MusicBrainz leaves an
+ * artist's `country` EMPTY when their Area is a city (bLiNd, Area =
+ * Las Vegas, country: null), so the country has to come from the walk
+ * exactly as the search route derives it — or an artist who files the
+ * city their music happened in would fall off the map.
+ */
+async function resolvePlace(area) {
+  let region = null
   let current = area
   for (let hop = 0; hop < MAX_PARENT_HOPS && current; hop++) {
-    const region = regionCodeOf(current)
-    if (region) return region
-    if (current['iso-3166-1-codes']?.length) return null
+    region = region ?? regionCodeOf(current) ?? null
+    const country = current['iso-3166-1-codes']?.[0]
+    if (country) return { region, country }
     await sleep(MB_DELAY_MS)
     const body = await mbJson(
       `https://musicbrainz.org/ws/2/area/${current.id}?inc=area-rels&fmt=json`,
     )
-    const bodyRegion = regionCodeOf(body)
-    if (bodyRegion) return bodyRegion
+    region = region ?? regionCodeOf(body) ?? null
+    const bodyCountry = body['iso-3166-1-codes']?.[0]
+    if (bodyCountry) return { region, country: bodyCountry }
     const partOf = (body.relations ?? []).filter(
       (rel) => rel.type === 'part of' && rel.area,
     )
@@ -116,7 +125,7 @@ async function resolveRegion(area) {
       partOf[0]?.area ??
       null
   }
-  return null
+  return { region, country: null }
 }
 
 /** The MusicBrainz record, reduced to what the serving layers rank. */
@@ -124,23 +133,30 @@ async function mbArtist(mbid) {
   const artist = await mbJson(
     `https://musicbrainz.org/ws/2/artist/${mbid}?inc=tags&fmt=json`,
   )
-  if (!artist.country) {
-    throw new Error(
-      `${artist.name} has no country on MusicBrainz — the Area field is what puts an artist on the map`,
-    )
-  }
   const beginYear = Number(artist['life-span']?.begin?.slice(0, 4))
   const endYear = Number(artist['life-span']?.end?.slice(0, 4))
   const voted = (artist.tags ?? []).filter((tag) => (tag.count ?? 0) > 0)
+  // Country comes from Area only (the country layer's rule). Region is
   // Area OR begin-area, as build-state-data.mjs discovers regions: The
   // Killers carry Area = United States and Begin area = Las Vegas, and
   // it is the second that places them in Nevada.
-  const region =
-    (artist.area ? await resolveRegion(artist.area) : null) ??
-    (artist['begin-area'] ? await resolveRegion(artist['begin-area']) : null)
+  const fromArea = artist.area
+    ? await resolvePlace(artist.area)
+    : { region: null, country: null }
+  const fromBegin =
+    !fromArea.region && artist['begin-area']
+      ? await resolvePlace(artist['begin-area'])
+      : null
+  const region = fromArea.region ?? fromBegin?.region ?? null
+  const country = artist.country ?? fromArea.country ?? null
+  if (!country) {
+    throw new Error(
+      `${artist.name} has no Area that resolves to a country on MusicBrainz — the Area field is what puts an artist on the map`,
+    )
+  }
   return {
     name: artist.name,
-    country: artist.country,
+    country,
     region,
     cs: Number.isFinite(beginYear)
       ? beginYear + (artist.type === 'Person' ? PERSON_CAREER_OFFSET_YEARS : 0)
