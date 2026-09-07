@@ -17895,26 +17895,6 @@
         "originEvidence": "Firuz Bakhor - Tajik composer. Born 1942 in Dushanbe"
       },
       {
-        "name": "Абулькасим Лахути",
-        "source": "discogs",
-        "firstYear": 1987,
-        "lastYear": 1987,
-        "styles": [
-          "Poetry",
-          "Non-Music",
-          "Classical"
-        ],
-        "releaseCount": 3,
-        "discogsArtistId": 2337423,
-        "wikidataId": null,
-        "pressedAs": [
-          "USSR · Tashkent plant"
-        ],
-        "originBasis": "profile-origin",
-        "originEvidence": "Iranian poet who has lived in Soviet Union, mainly in Tajikistan (1887-1957)",
-        "note": "profile-origin (mixed claims IR): Iranian poet who has lived in Soviet Union, mainly in Tajikistan (1887-1957)"
-      },
-      {
         "name": "Авнер Аминов",
         "source": "discogs",
         "firstYear": 1980,
@@ -17998,25 +17978,6 @@
         ],
         "originBasis": "profile-origin",
         "originEvidence": "Tajik artist"
-      },
-      {
-        "name": "Николай Никитский",
-        "source": "discogs",
-        "firstYear": 1989,
-        "lastYear": 1989,
-        "styles": [
-          "Pop",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 3,
-        "discogsArtistId": 1630320,
-        "wikidataId": null,
-        "pressedAs": [
-          "USSR · Tashkent plant"
-        ],
-        "originBasis": "profile-origin",
-        "originEvidence": "19 December 1921, Moscow - June 12, 1995, Moscow. Pop singer and actor. In 1951 he graduated from GITIS. Worked in Stalinabad drama theater Mayakovsky, Minsk Ru",
-        "note": "profile-origin (mixed claims RU): 19 December 1921, Moscow - June 12, 1995, Moscow. Pop singer and actor. In 1951 he graduated from GITIS. Worked in Stalinabad drama theater Mayakovsky, Minsk Ru"
       },
       {
         "name": "Яхиэль Сабзанов",
@@ -28069,27 +28030,6 @@
         ],
         "originBasis": "profile-origin",
         "originEvidence": "Bolush Madazimov (born 1927) is a Kyrgyz komuz player."
-      },
-      {
-        "name": "Борис Феферман",
-        "source": "discogs",
-        "firstYear": 1970,
-        "lastYear": 1970,
-        "styles": [
-          "Classical",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 9066625,
-        "wikidataId": null,
-        "aliases": [
-          "Б. Феферман"
-        ],
-        "pressedAs": [
-          "USSR · Tashkent plant"
-        ],
-        "originBasis": "profile-origin",
-        "originEvidence": "(1920, Alexandria (now Ukraine), USSR - 1998) - Soviet composer, conductor, teacher, and folklorist. He worked a lot in Kyrgyzstan and Uzbekistan."
       },
       {
         "name": "Каныбек Качкынбаев",
@@ -173567,25 +173507,6 @@
         "originEvidence": "Zakhid Khaknazarov (November 12, 1937, Tashkent - July 18, 2019, Alania, Turkey) - Soviet and Uzbek conductor, music teacher, public figure."
       },
       {
-        "name": "Игорь Саруханов",
-        "source": "discogs",
-        "firstYear": 1987,
-        "lastYear": 1990,
-        "styles": [
-          "Rock",
-          "Pop"
-        ],
-        "releaseCount": 3,
-        "discogsArtistId": 914016,
-        "wikidataId": null,
-        "pressedAs": [
-          "USSR · Tashkent plant"
-        ],
-        "originBasis": "profile-origin",
-        "originEvidence": "Was born 06.04.1956 in Samarkand, UzbSSR. Russian pop/rock-singer and composer. In groups: - from 1979 to 1981 - from 1982 to 1985 - from 1983 to 1985 Started s",
-        "note": "profile-origin (mixed claims RU): Was born 06.04.1956 in Samarkand, UzbSSR. Russian pop/rock-singer and composer. In groups: - from 1979 to 1981 - from 1982 to 1985 - from 1983 to 1985 Started s"
-      },
-      {
         "name": "Лола Юлдашева",
         "source": "discogs",
         "firstYear": 2001,
@@ -179386,28 +179307,6 @@
         "releaseCount": 1,
         "discogsArtistId": 2424159,
         "wikidataId": null
-      },
-      {
-        "name": "Rudolf Kerer",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Modern",
-          "Classical"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 2059948,
-        "wikidataId": null,
-        "aliases": [
-          "Р. Керер"
-        ],
-        "pressedAs": [
-          "USSR · Tashkent plant"
-        ],
-        "originBasis": "profile-origin",
-        "originEvidence": "Russian pianist. (1923-2013) A titan of the Soviet piano school, Rudolf Kerer (also spelled Kehrer) had his early career profoundly disrupted in October 1941 wh",
-        "note": "profile-origin (mixed claims RU/DE): Russian pianist. (1923-2013) A titan of the Soviet piano school, Rudolf Kerer (also spelled Kehrer) had his early career profoundly disrupted in October 1941 wh"
       },
       {
         "name": "Shashmacoms",

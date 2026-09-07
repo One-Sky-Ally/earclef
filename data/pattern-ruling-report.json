@@ -928,36 +928,6 @@
       "audited": "override"
     },
     {
-      "caseKey": "LK|dg|11557010",
-      "cc": "LK",
-      "key": "dg|11557010",
-      "name": "Jizzy",
-      "mbid": "81480528-2353-474c-9653-776f2ab79c6b",
-      "mbName": "Jizzy",
-      "mbArea": "India",
-      "entryYears": [
-        2020,
-        2020
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": "India",
-        "life": {
-          "begin": "1993-07-07",
-          "end": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB begin-area India ≠ pool; distinctive name + era"
-    },
-    {
       "caseKey": "LK|dg|1986499",
       "cc": "LK",
       "key": "dg|1986499",
@@ -1399,45 +1369,6 @@
       "eraOverlap": null,
       "proposal": "keep-note",
       "why": "MB begin-area resolves into pool country (area is residence)"
-    },
-    {
-      "caseKey": "GN|dg|4798227",
-      "cc": "GN",
-      "key": "dg|4798227",
-      "name": "Orchestre De La Garde Républicaine",
-      "mbid": "4b118dde-d0aa-4372-80f4-b81647124966",
-      "mbName": "Orchestre de la Garde républicaine",
-      "mbArea": "France",
-      "entryYears": [
-        1967,
-        1967
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q17231723",
-          "description": "military unit",
-          "born": null,
-          "formed": null,
-          "origin": "Q142",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": null,
-        "life": {
-          "begin": "1848",
-          "ended": false,
-          "end": null
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q142 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "BJ|dg|10964558",
@@ -3862,49 +3793,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "NI|dg|1114685",
-      "cc": "NI",
-      "key": "dg|1114685",
-      "name": "Toni Arden",
-      "mbid": "3e651418-2c5d-45e3-8cb0-fd7d7b643c82",
-      "mbName": "Toni Arden",
-      "mbArea": "United States",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q7821241",
-          "description": "Band Singer; Radio, TV and Nightclub Performer, (1924–2012)",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q177220"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "ended": true,
-          "end": "2012-05-29",
-          "begin": "1924-02-15"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "NI|dg|80084",
       "cc": "NI",
       "key": "dg|80084",
@@ -3933,100 +3821,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "NI|dg|640555",
-      "cc": "NI",
-      "key": "dg|640555",
-      "name": "Andy Russell",
-      "mbid": "1ac1deee-861c-49f2-8cec-32d8da31ef18",
-      "mbName": "Andy Russell",
-      "mbArea": "United States",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q944152",
-          "description": "American singer (1919-1992)",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q33999",
-            "Q177220",
-            "Q386854",
-            "Q10798782",
-            "Q15981151"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "begin": "1919-09-16",
-          "ended": true,
-          "end": "1992-04-16"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
-      "caseKey": "NI|dg|2353918",
-      "cc": "NI",
-      "key": "dg|2353918",
-      "name": "Cepillin",
-      "mbid": "bccce313-79af-4b3e-b78b-828fd17351a0",
-      "mbName": "Cepillín",
-      "mbArea": "Mexico",
-      "entryYears": [
-        1978,
-        1978
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q938948",
-          "description": "Mexican clown, television host, actor and singer (1946-2022)",
-          "born": "Q96",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q96"
-          ],
-          "professions": [
-            "Q7358",
-            "Q33999",
-            "Q177220",
-            "Q10798782",
-            "Q10800557"
-          ],
-          "musician": true
-        },
-        "beginCountry": null,
-        "life": {
-          "end": null,
-          "ended": false,
-          "begin": null
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q96 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "NI|dg|1272743",
@@ -4162,50 +3956,6 @@
       "proposal": "archive-keep",
       "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
       "audited": "override"
-    },
-    {
-      "caseKey": "PS|dg|3008296",
-      "cc": "PS",
-      "key": "dg|3008296",
-      "name": "شعبان عبد الرحيم",
-      "mbid": "3c15dc9b-fe87-47ff-9306-b152c46b74a4",
-      "mbName": "شعبان عبد الرحيم",
-      "mbArea": "Egypt",
-      "entryYears": [
-        2001,
-        2001
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q2920703",
-          "description": "Egyptian singer (1957–2019)",
-          "born": "Q79",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q79",
-            "Q170468"
-          ],
-          "professions": [
-            "Q177220"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Egypt",
-        "life": {
-          "end": null,
-          "ended": false,
-          "begin": "1957-03-15"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q79 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "JO|dg|3691243",
@@ -4567,95 +4317,6 @@
       "proposal": "archive-keep",
       "why": "presence-model archive edge (Aug 25 2026, owner-approved model; vetoable per case): identity id-confirmed, no origin signal — records verified pressed in pool country, origin unestablished",
       "audited": "override"
-    },
-    {
-      "caseKey": "KW|dg|4219705",
-      "cc": "KW",
-      "key": "dg|4219705",
-      "name": "عبد الرحمن السديس",
-      "mbid": "dcad48a4-b336-461a-b417-ba7397d0e19d",
-      "mbName": "عبد الرحمن السديس",
-      "mbArea": "Saudi Arabia",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q317948",
-          "description": "imam and preacher at the Grand Mosque in Mecca",
-          "born": "Q851",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q851"
-          ],
-          "professions": [
-            "Q121594",
-            "Q125482",
-            "Q1999841"
-          ],
-          "musician": false
-        },
-        "beginCountry": null,
-        "life": {
-          "end": null,
-          "ended": false,
-          "begin": "1962-11-22"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q851 ≠ pool; identity via distinctive name"
-    },
-    {
-      "caseKey": "KW|dg|4219706",
-      "cc": "KW",
-      "key": "dg|4219706",
-      "name": "سعود الشريم",
-      "mbid": "001269cc-a5e5-491e-81d7-1e5fd228120a",
-      "mbName": "سعود الشريم",
-      "mbArea": "Saudi Arabia",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q270540",
-          "description": "Former Imam Saudi at Masjid al-Haram",
-          "born": "Q851",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q851"
-          ],
-          "professions": [
-            "Q16533",
-            "Q125482"
-          ],
-          "musician": false
-        },
-        "beginCountry": "Saudi Arabia",
-        "life": {
-          "begin": "1966-01-19",
-          "end": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q851 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "KW|dg|4048246",
@@ -5280,65 +4941,6 @@
       "audited": "override"
     },
     {
-      "caseKey": "UZ|dg|807181",
-      "cc": "UZ",
-      "key": "dg|807181",
-      "name": "Сергей Михалков",
-      "mbid": "137e9eb0-8cdb-4d2c-8c90-5aacfa4b1d1a",
-      "mbName": "Сергей Михалков",
-      "mbArea": "Russia",
-      "entryYears": [
-        1993,
-        1993
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q208116",
-          "description": "Soviet and Russian writer (1913–2009)",
-          "born": "Q159",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q159",
-            "Q15180",
-            "Q34266",
-            "Q139319"
-          ],
-          "professions": [
-            "Q28389",
-            "Q36180",
-            "Q49757",
-            "Q82955",
-            "Q164236",
-            "Q214917",
-            "Q333634",
-            "Q662729",
-            "Q753110",
-            "Q822146",
-            "Q4853732",
-            "Q6051619",
-            "Q12144794",
-            "Q18844224"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Russia",
-        "life": {
-          "ended": true,
-          "end": "2009-08-27",
-          "begin": "1913-03-13"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q159 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "UZ|dg|1103641",
       "cc": "UZ",
       "key": "dg|1103641",
@@ -5367,6 +4969,50 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "UZ|dg|914016",
+      "cc": "UZ",
+      "key": "dg|914016",
+      "name": "Игорь Саруханов",
+      "mbid": "14de3eb0-a7a5-42bc-9abf-a6744dab8528",
+      "mbName": "Игорь Саруханов",
+      "mbArea": "Russia",
+      "entryYears": null,
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": true,
+      "evidence": {
+        "wd": {
+          "qid": "Q4408826",
+          "description": "Russian musician",
+          "born": "Q265",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q159",
+            "Q15180"
+          ],
+          "professions": [
+            "Q36834",
+            "Q49757",
+            "Q177220",
+            "Q488205"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Uzbekistan",
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": "1956-04-06"
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country"
     },
     {
       "caseKey": "AL|dg|5718922",
@@ -5716,51 +5362,6 @@
       "why": "origin/citizenship in pool country"
     },
     {
-      "caseKey": "AL|dg|7368369",
-      "cc": "AL",
-      "key": "dg|7368369",
-      "name": "Tayna",
-      "mbid": "751409fe-4ded-4e25-bda4-bd099cd96d7c",
-      "mbName": "Tayna",
-      "mbArea": "Kosovo",
-      "entryYears": [
-        2019,
-        2019
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q57368002",
-          "description": "Kosovo-Albanian rapper and singer",
-          "born": "Q1246",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q1246"
-          ],
-          "professions": [
-            "Q177220",
-            "Q753110",
-            "Q2252262"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Kosovo",
-        "life": {
-          "begin": "1996-12-14",
-          "end": null,
-          "ended": false
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q1246 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "AL|dg|71518",
       "cc": "AL",
       "key": "dg|71518",
@@ -5851,49 +5452,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "AL|dg|12952005",
-      "cc": "AL",
-      "key": "dg|12952005",
-      "name": "Albina Kelmendi",
-      "mbid": "af93a978-f7b5-446a-bcc4-3a7173cce648",
-      "mbName": "Albina Kelmendi",
-      "mbArea": "Kosovo",
-      "entryYears": [
-        2022,
-        2022
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q115802685",
-          "description": "Kosovo-Albanian singer",
-          "born": "Q1246",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q1246"
-          ],
-          "professions": [
-            "Q177220"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Kosovo",
-        "life": {
-          "ended": false,
-          "end": null,
-          "begin": "1998-01-27"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q1246 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "AL|dg|7195636",
       "cc": "AL",
       "key": "dg|7195636",
@@ -5922,36 +5480,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "AL|dg|17541504",
-      "cc": "AL",
-      "key": "dg|17541504",
-      "name": "Ryva Kajtazi",
-      "mbid": "dabd96c1-1026-445a-b3ac-32bec3408ab9",
-      "mbName": "Ryva Kajtazi",
-      "mbArea": "Kosovo",
-      "entryYears": [
-        2005,
-        2005
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": null,
-        "beginCountry": "Kosovo",
-        "life": {
-          "begin": "1980-02-09",
-          "ended": false,
-          "end": null
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB begin-area Kosovo ≠ pool; distinctive name + era"
     },
     {
       "caseKey": "MD|wd|Q2269223",
@@ -8427,53 +7955,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "VN|dg|1384053",
-      "cc": "VN",
-      "key": "dg|1384053",
-      "name": "SoShy",
-      "mbid": "0127749b-106e-4597-be63-600b996f5ee4",
-      "mbName": "SoShy",
-      "mbArea": "France",
-      "entryYears": [
-        2018,
-        2018
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q267581",
-          "description": "French-American musician",
-          "born": "Q142",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30",
-            "Q142"
-          ],
-          "professions": [
-            "Q36834",
-            "Q177220",
-            "Q488205",
-            "Q639669"
-          ],
-          "musician": true
-        },
-        "beginCountry": null,
-        "life": {
-          "end": null,
-          "ended": false,
-          "begin": "1979-09-14"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q142 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "VN|dg|9409084",
       "cc": "VN",
       "key": "dg|9409084",
@@ -8817,45 +8298,6 @@
       "audited": "override"
     },
     {
-      "caseKey": "ZM|dg|246655",
-      "cc": "ZM",
-      "key": "dg|246655",
-      "name": "Matumbi",
-      "mbid": "1057d846-c3d6-4073-aefb-ff186390fd3b",
-      "mbName": "Matumbi",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        1981,
-        1981
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q6791970",
-          "description": "UK musical group",
-          "born": null,
-          "formed": null,
-          "origin": "Q145",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": "United Kingdom",
-        "life": {
-          "ended": true,
-          "end": "1982",
-          "begin": "1971"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "ZM|dg|1612230",
       "cc": "ZM",
       "key": "dg|1612230",
@@ -8884,50 +8326,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "ZM|dg|1985763",
-      "cc": "ZM",
-      "key": "dg|1985763",
-      "name": "Leonard Dembo",
-      "mbid": "a4da5d5c-aa42-48e5-811b-618675f5cd86",
-      "mbName": "Leonard Dembo",
-      "mbArea": "Zimbabwe",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q6525230",
-          "description": "Zimbabwean musician",
-          "born": "Q954",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q954"
-          ],
-          "professions": [
-            "Q177220",
-            "Q639669"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Zimbabwe",
-        "life": {
-          "begin": "1959-02-06",
-          "end": "1996-04-09",
-          "ended": true
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q954 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "ZM|dg|2779941",
@@ -9579,54 +8977,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "foreign origin on MB match but generic name — identity uncorroborated"
-    },
-    {
-      "caseKey": "CD|dg|14665545",
-      "cc": "CD",
-      "key": "dg|14665545",
-      "name": "Roger Bernard",
-      "mbid": "4b0f8bc2-1eb3-46a9-9360-b79d39fe5668",
-      "mbName": "Roger Bernard",
-      "mbArea": "France",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q2740495",
-          "description": "French linguist and slavist (1908–1997)",
-          "born": "Q142",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q142"
-          ],
-          "professions": [
-            "Q333634",
-            "Q1622272",
-            "Q13418253",
-            "Q14467526",
-            "Q15976341",
-            "Q112118876"
-          ],
-          "musician": false
-        },
-        "beginCountry": "France",
-        "life": {
-          "begin": "1908-08-05",
-          "ended": true,
-          "end": "1997-04-11"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q142 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "TT|dg|706456",
@@ -11403,136 +10753,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "TT|dg|1087265",
-      "cc": "TT",
-      "key": "dg|1087265",
-      "name": "Ralph Marterie",
-      "mbid": "4655f40f-51f5-4ca6-9244-9ccc7f7b33f5",
-      "mbName": "Ralph Marterie",
-      "mbArea": "United States",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q3929797",
-          "description": "Italian musician (1914–1978)",
-          "born": "Q38",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30",
-            "Q38",
-            "Q172579"
-          ],
-          "professions": [
-            "Q158852",
-            "Q639669",
-            "Q12377274"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Italy",
-        "life": {
-          "begin": "1914-12-24",
-          "end": "1978-10-10",
-          "ended": true
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q38 ≠ pool; identity via distinctive name"
-    },
-    {
-      "caseKey": "TT|dg|503475",
-      "cc": "TT",
-      "key": "dg|503475",
-      "name": "The Lemon Pipers",
-      "mbid": "fd86da6c-c2e2-4792-85c8-b68282da6271",
-      "mbName": "The Lemon Pipers",
-      "mbArea": "United States",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q466992",
-          "description": "band",
-          "born": null,
-          "formed": null,
-          "origin": "Q30",
-          "citizenships": [],
-          "professions": [],
-          "musician": false
-        },
-        "beginCountry": "United States",
-        "life": {
-          "begin": "1966",
-          "end": "1969",
-          "ended": true
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
-    },
-    {
-      "caseKey": "TT|dg|579277",
-      "cc": "TT",
-      "key": "dg|579277",
-      "name": "George Beverly Shea",
-      "mbid": "5d21397f-44df-463b-a90a-3d5031aadf09",
-      "mbName": "George Beverly Shea",
-      "mbArea": "United States",
-      "entryYears": [
-        1968,
-        1968
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q888118",
-          "description": "American gospel singer and hymn composer born in Canada (1909–2013)",
-          "born": "Q16",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q177220",
-            "Q753110"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Canada",
-        "life": {
-          "end": "2013-04-16",
-          "ended": true,
-          "begin": "1909-02-01"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q16 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "TT|dg|761980",
       "cc": "TT",
       "key": "dg|761980",
@@ -11693,49 +10913,6 @@
       "audited": "override"
     },
     {
-      "caseKey": "TT|dg|1257699",
-      "cc": "TT",
-      "key": "dg|1257699",
-      "name": "Norman Beaton",
-      "mbid": "b7766736-acf9-4487-ab83-9ab6746df247",
-      "mbName": "Norman Beaton",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        1960,
-        1960
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q7051959",
-          "description": "Guyanese actor (1934–1994)",
-          "born": "Q734",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q145"
-          ],
-          "professions": [
-            "Q33999"
-          ],
-          "musician": false
-        },
-        "beginCountry": "Guyana",
-        "life": {
-          "ended": true,
-          "end": "1994-12-13",
-          "begin": "1934-10-31"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q734 ≠ pool; identity via distinctive name"
-    },
-    {
       "caseKey": "TT|dg|902711",
       "cc": "TT",
       "key": "dg|902711",
@@ -11764,53 +10941,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "TT|dg|16472106",
-      "cc": "TT",
-      "key": "dg|16472106",
-      "name": "Allan Clarke",
-      "mbid": "fcc0da8f-a85c-4fac-b503-a694588e4cb4",
-      "mbName": "Allan Clarke",
-      "mbArea": "United Kingdom",
-      "entryYears": [
-        null,
-        null
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q2837697",
-          "description": "British rock singer and songwriter",
-          "born": "Q145",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q145"
-          ],
-          "professions": [
-            "Q36834",
-            "Q177220",
-            "Q639669",
-            "Q753110",
-            "Q855091"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United Kingdom",
-        "life": {
-          "ended": false,
-          "end": null,
-          "begin": "1942-04-05"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q145 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "TT|dg|340205",
@@ -11854,52 +10984,6 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
-    },
-    {
-      "caseKey": "TT|dg|654996",
-      "cc": "TT",
-      "key": "dg|654996",
-      "name": "Billy 'Crash' Craddock",
-      "mbid": "643d2a1e-39b3-4a0c-80cd-8cdf59276d61",
-      "mbName": "Billy “Crash” Craddock",
-      "mbArea": "United States",
-      "entryYears": [
-        1968,
-        1968
-      ],
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": false,
-      "evidence": {
-        "wd": {
-          "qid": "Q863285",
-          "description": "American singer",
-          "born": "Q30",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q30"
-          ],
-          "professions": [
-            "Q177220",
-            "Q639669",
-            "Q753110",
-            "Q806349"
-          ],
-          "musician": true
-        },
-        "beginCountry": "United States",
-        "life": {
-          "ended": false,
-          "end": null,
-          "begin": "1939-06-16"
-        }
-      },
-      "eraOverlap": true,
-      "proposal": "exclude",
-      "why": "MB match's Wikidata origin Q30 ≠ pool; identity via distinctive name"
     },
     {
       "caseKey": "TT|dg|1489077",
