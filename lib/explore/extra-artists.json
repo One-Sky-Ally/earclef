@@ -17652,6 +17652,29 @@
     ],
     "TJ": [
       {
+        "name": "Одина Хашимов",
+        "source": "discogs",
+        "firstYear": 1972,
+        "lastYear": 1983,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 15,
+        "discogsArtistId": 4495199,
+        "wikidataId": null,
+        "aliases": [
+          "Одина Ҳошимов",
+          "Odina Khashimov",
+          "Одина Хошимов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Odina Hoshimov (1937-1993) was a Tajik singer and musician."
+      },
+      {
         "name": "Jurabek Nabiev",
         "source": "wikidata",
         "firstYear": 1956,
@@ -17667,6 +17690,50 @@
         "pressedAs": [
           "USSR · Tashkent plant"
         ]
+      },
+      {
+        "name": "Джурабек Муродов",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1980,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk",
+          "Vocal"
+        ],
+        "releaseCount": 8,
+        "discogsArtistId": 4901450,
+        "wikidataId": null,
+        "aliases": [
+          "Джурабек Мурадов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Джурабек Муродов (Jurabek Murodov) is a singer from Tajikistan. He was a People's Artist of Tajikistan and People's Artist of USSR in 1979."
+      },
+      {
+        "name": "Лейла Шарипова",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1980,
+        "styles": [
+          "Pop",
+          "Vocal",
+          "Folk"
+        ],
+        "releaseCount": 8,
+        "discogsArtistId": 3146096,
+        "wikidataId": null,
+        "aliases": [
+          "Лайло Шарипова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Leyla Sharipova was born on January 16, 1930 in the City of Baku is a Tajik singer and poet, who also lived and performed in Azerbaijan from 1978 to 1988.н"
       },
       {
         "name": "Мастона Эргашева",
@@ -17701,6 +17768,72 @@
         ]
       },
       {
+        "name": "Исхак Катаев",
+        "source": "discogs",
+        "firstYear": 1978,
+        "lastYear": 1985,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 4801489,
+        "wikidataId": null,
+        "aliases": [
+          "Исҳоқ Катаев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Iskhak Kataev is a Tajik singer and player of the tanbur (a Central Asian string instrument in the lute family)"
+      },
+      {
+        "name": "Махфират Ҳамрақулова",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1990,
+        "styles": [
+          "Funk / Soul",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 4403505,
+        "wikidataId": null,
+        "aliases": [
+          "Махфират Ҳамроқулова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "(Born April 11, 1955, Stalinabad, Tajik SSR, USSR) - Tajik Soviet pop singer, soloist of the Gulshan ensemble, and Honored Artist of Tajikistan. She rose to fam"
+      },
+      {
+        "name": "Фазлиддин Шахобов",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1989,
+        "styles": [
+          "Folk, World, & Country",
+          "Vocal",
+          "Classical"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 3022170,
+        "wikidataId": null,
+        "aliases": [
+          "Фазлиддин Шаҳобов",
+          "Ф. Шахобов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Faziliddin Shakhobov (1911-1974) was a Tajik musicologist and composer, musician and singer."
+      },
+      {
         "name": "Абдуджалил Хашимов",
         "source": "wikidata",
         "firstYear": 1959,
@@ -17716,6 +17849,89 @@
         "pressedAs": [
           "USSR · Tashkent plant"
         ]
+      },
+      {
+        "name": "Толиб Шахиди",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1990,
+        "styles": [
+          "Contemporary",
+          "Classical"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 3668692,
+        "wikidataId": null,
+        "aliases": [
+          "Т. Шахиди"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Tolib Shahidi (born 1946 in Dushanbe, USSR) is a Tajik, Russian, and Soviet composer. He is the son of (Ziyodullo Shahidi). Народный артист Республики Таджикист",
+        "note": "profile-origin (mixed claims RU): Tolib Shahidi (born 1946 in Dushanbe, USSR) is a Tajik, Russian, and Soviet composer. He is the son of (Ziyodullo Shahidi). Народный артист Республики Таджикист"
+      },
+      {
+        "name": "Фируз Бахор",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1988,
+        "styles": [
+          "Classical",
+          "Contemporary",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 5648878,
+        "wikidataId": null,
+        "aliases": [
+          "Ф. Бахор"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Firuz Bakhor - Tajik composer. Born 1942 in Dushanbe"
+      },
+      {
+        "name": "Абулькасим Лахути",
+        "source": "discogs",
+        "firstYear": 1987,
+        "lastYear": 1987,
+        "styles": [
+          "Poetry",
+          "Non-Music",
+          "Classical"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 2337423,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Iranian poet who has lived in Soviet Union, mainly in Tajikistan (1887-1957)",
+        "note": "profile-origin (mixed claims IR): Iranian poet who has lived in Soviet Union, mainly in Tajikistan (1887-1957)"
+      },
+      {
+        "name": "Авнер Аминов",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1980,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country",
+          "Mugham"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 4037166,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Avner Aminov. Doira player from Tajikistan."
       },
       {
         "name": "Далер Назаров",
@@ -17744,6 +17960,110 @@
         "wikidataId": null
       },
       {
+        "name": "Лоиқ Шералӣ",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1989,
+        "styles": [
+          "Non-Music",
+          "Folk, World, & Country",
+          "Poetry"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 14849251,
+        "wikidataId": null,
+        "aliases": [
+          "Лоик Шерали"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Loiq Sherali (1941-2000) was a Tajik poet."
+      },
+      {
+        "name": "Муродбек Насриддинов",
+        "source": "discogs",
+        "firstYear": 1986,
+        "lastYear": 1990,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 4169883,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Tajik artist"
+      },
+      {
+        "name": "Николай Никитский",
+        "source": "discogs",
+        "firstYear": 1989,
+        "lastYear": 1989,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 1630320,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "19 December 1921, Moscow - June 12, 1995, Moscow. Pop singer and actor. In 1951 he graduated from GITIS. Worked in Stalinabad drama theater Mayakovsky, Minsk Ru",
+        "note": "profile-origin (mixed claims RU): 19 December 1921, Moscow - June 12, 1995, Moscow. Pop singer and actor. In 1951 he graduated from GITIS. Worked in Stalinabad drama theater Mayakovsky, Minsk Ru"
+      },
+      {
+        "name": "Яхиэль Сабзанов",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1982,
+        "styles": [
+          "Classical",
+          "Modern",
+          "Opera"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 5648879,
+        "wikidataId": null,
+        "aliases": [
+          "Я. Сабзанов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Tajik composer. Born 1926 in Dushanbe, died 2013 in New York."
+      },
+      {
+        "name": "3аррина Миршакар",
+        "source": "discogs",
+        "firstYear": 1983,
+        "lastYear": 1985,
+        "styles": [
+          "Contemporary",
+          "Classical",
+          "Romantic"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5017474,
+        "wikidataId": null,
+        "aliases": [
+          "3.Миршакар",
+          "Зарина Миршакар"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Composer from Tajikistan."
+      },
+      {
         "name": "Kide & The Jeans Community",
         "source": "discogs",
         "firstYear": 1999,
@@ -17757,6 +18077,26 @@
         "wikidataId": null
       },
       {
+        "name": "Зиядулло Шахиди",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [
+          "Modern",
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 3022199,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ziyodullo Shahidiev (1914 - 1985) was a Tajik musician and father of Persian Symphonic Music in Tajikistan. He is the father of (Tolib Shahidi).",
+        "note": "profile-origin (mixed claims IR): Ziyodullo Shahidiev (1914 - 1985) was a Tajik musician and father of Persian Symphonic Music in Tajikistan. He is the father of (Tolib Shahidi)."
+      },
+      {
         "name": "Зло",
         "source": "discogs",
         "firstYear": 2005,
@@ -17768,6 +18108,64 @@
         "releaseCount": 2,
         "discogsArtistId": 2424514,
         "wikidataId": null
+      },
+      {
+        "name": "Нисон Шаулов",
+        "source": "discogs",
+        "firstYear": 1970,
+        "lastYear": 1970,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6546616,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Nison Shoulov (1925-2002) was a Tajik ney (flute) player."
+      },
+      {
+        "name": "Рафаэль Толмасов",
+        "source": "discogs",
+        "firstYear": 1983,
+        "lastYear": 1983,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4916183,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Rafael Tolmasov (born 1923, Samarkand, Uzbekistan) was a Soviet Tajik opera singer."
+      },
+      {
+        "name": "Шарофиддин Сайфиддинов",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1985,
+        "styles": [
+          "Persian Classical",
+          "Folk, World, & Country",
+          "Modern"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 3358509,
+        "wikidataId": null,
+        "aliases": [
+          "Ш. Сайфиддинов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Sharofiddin Saifiddinov (1929-2015) was a Tajik composer."
       },
       {
         "name": "Farzona Khurshed",
@@ -17829,6 +18227,85 @@
         ]
       },
       {
+        "name": "Агзам Салиев",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1985,
+        "styles": [
+          "Classical",
+          "Folk"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14822215,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Azam Fazylovich Saliev - Born. 19 Dec. 1941 in Dushanbe, Tajik SSR. Composer. Son of"
+      },
+      {
+        "name": "Ахмад Бабакулов",
+        "source": "discogs",
+        "firstYear": 1967,
+        "lastYear": 1967,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5035769,
+        "wikidataId": null,
+        "aliases": [
+          "А. Бабакулов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Akhmad Babakulov – Tajik opera vocalist (tenor). 1931—1990."
+      },
+      {
+        "name": "Қудратуллоҳ Яҳёев",
+        "source": "discogs",
+        "firstYear": 1990,
+        "lastYear": 1990,
+        "styles": [
+          "Psychedelic",
+          "Electronic",
+          "Funk / Soul"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4886529,
+        "wikidataId": null,
+        "aliases": [
+          "Қудратулло Яҳёев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Kudratullah Yahoyev (born 1946) is a Tajik composer."
+      },
+      {
+        "name": "Садриддин Айни",
+        "source": "discogs",
+        "firstYear": 1979,
+        "lastYear": 1979,
+        "styles": [
+          "Poetry",
+          "Speech",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4857183,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Sadriddin Aini (27 April 1878 - 15 July 1954) was a Tajik intellectual and writer. He was a member of the Supreme Council and the Chairman of the Academy of Sci"
+      },
+      {
         "name": "Самандар Полудов",
         "source": "discogs",
         "firstYear": 2004,
@@ -17843,6 +18320,44 @@
         "aliases": [
           "Samandar"
         ]
+      },
+      {
+        "name": "Фазыл Салиев",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1982,
+        "styles": [
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5027695,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Fazyl Saliev (1914 - 27 January 1976). Composer. Honorary Artist of the Tajik SSR (1974). Father of"
+      },
+      {
+        "name": "Шохназар Сохибов",
+        "source": "discogs",
+        "firstYear": 1986,
+        "lastYear": 1986,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8026441,
+        "wikidataId": null,
+        "aliases": [
+          "Шохназар Соҳибов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Shokhnazar Sokhibov (1903-1973) was a Tajik singer, musician and composer."
       },
       {
         "name": "Abdu Rozik",
@@ -18821,6 +19336,45 @@
         ]
       },
       {
+        "name": "Боки Рахим-Заде",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Poetry",
+          "Non-Music"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 3022240,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Tajik poet. 1910 - 1980."
+      },
+      {
+        "name": "Александр Ленский",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 13786291,
+        "wikidataId": null,
+        "aliases": [
+          "А. Ленский"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "12 March 1910 - 7 October 1978 Composer, conductor and teacher. Honored Artist of the Tajik SSR (1945)."
+      },
+      {
         "name": "Группа Далера Назарова",
         "source": "discogs",
         "firstYear": null,
@@ -18832,6 +19386,26 @@
         "releaseCount": 1,
         "discogsArtistId": 5468197,
         "wikidataId": null
+      },
+      {
+        "name": "Мамаджан Муминов",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4037170,
+        "wikidataId": null,
+        "aliases": [
+          "Мамаджон Муминов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Tajik musician on dutar."
       },
       {
         "name": "Поиск",
@@ -25817,6 +26391,94 @@
     ],
     "TM": [
       {
+        "name": "Gunesh",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1985,
+        "styles": [
+          "Fusion",
+          "Prog Rock",
+          "Folk"
+        ],
+        "releaseCount": 11,
+        "discogsArtistId": 1600410,
+        "wikidataId": null,
+        "aliases": [
+          "Гунеш",
+          "\"Gunesh\" Ensemble"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Turkmenian (once USSR) cross-culture folk and new music fusion ensemble, formed in the early 1970s, led by drummer ."
+      },
+      {
+        "name": "Арай",
+        "source": "discogs",
+        "firstYear": 1984,
+        "lastYear": 1987,
+        "styles": [
+          "Vocal",
+          "Pop",
+          "Jazz"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 1729496,
+        "wikidataId": null,
+        "aliases": [
+          "Ансамбль «Арай»",
+          "Ансамбль „Арай “"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "A band from Kazakhstan later transformed into . Was a backing band for singer . Lead by Таскын Окапов. ВИА «Арай» был создан в 1979 году, как аккомпаниаторский ",
+        "note": "profile-origin (mixed claims RU/LV/EE/KZ): A band from Kazakhstan later transformed into . Was a backing band for singer . Lead by Таскын Окапов. ВИА «Арай» был создан в 1979 году, как аккомпаниаторский "
+      },
+      {
+        "name": "Чары Нурымов",
+        "source": "discogs",
+        "firstYear": 1969,
+        "lastYear": 1987,
+        "styles": [
+          "Contemporary",
+          "Classical",
+          "Modern"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 2510395,
+        "wikidataId": null,
+        "aliases": [
+          "Ch. Nurymov"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Tjary Nurymov (1940 - 1993) is a composer from Turkmenistan."
+      },
+      {
+        "name": "Дурды Нурыев",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1987,
+        "styles": [
+          "Modern",
+          "Contemporary",
+          "Classical"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 5020284,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Durdy Nuriyev (1933 - 1992) was a composer from Turkmenistan."
+      },
+      {
         "name": "Murad Sadykov",
         "source": "wikidata",
         "firstYear": 1951,
@@ -25832,6 +26494,86 @@
         "pressedAs": [
           "USSR · Tashkent plant"
         ]
+      },
+      {
+        "name": "Гульджан Хуммедова",
+        "source": "discogs",
+        "firstYear": 1974,
+        "lastYear": 1981,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country",
+          "Funk / Soul"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 3581110,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Gulzhan Khummedova - singer from Turkmenistan."
+      },
+      {
+        "name": "Нуры Мухатов",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1989,
+        "styles": [
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 5022044,
+        "wikidataId": null,
+        "aliases": [
+          "Н. Мухатов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Nury Mukhatov – Turkmen composer and conductor. Also known as Nury Mukhadov (Нуры Мухадов). Born 1924, died 1999."
+      },
+      {
+        "name": "Нуры Халмамедов",
+        "source": "discogs",
+        "firstYear": 1969,
+        "lastYear": 1985,
+        "styles": [
+          "Modern",
+          "Contemporary",
+          "Classical"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 3370741,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Halmämmet Nury; Born 1940 February 24h, Passed away - 1983 August 4th. Turkmen composer. People's Artist of Turkmenistan (1991 - posthumously)."
+      },
+      {
+        "name": "Чары Тачмамедов",
+        "source": "discogs",
+        "firstYear": 1974,
+        "lastYear": 1982,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 4544872,
+        "wikidataId": null,
+        "aliases": [
+          "Чары Тәчмәммедов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Dutar player from Turkmenistan."
       },
       {
         "name": "Shatlyk Nuryyew",
@@ -25858,6 +26600,119 @@
         "releaseCount": 2,
         "discogsArtistId": 16862542,
         "wikidataId": null
+      },
+      {
+        "name": "Ата Авлиев",
+        "source": "discogs",
+        "firstYear": 1974,
+        "lastYear": 1989,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4544869,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ata Abliev (1925-2002) was a Turkmen dutar player and singer."
+      },
+      {
+        "name": "Ата Эсадов",
+        "source": "discogs",
+        "firstYear": 1978,
+        "lastYear": 1978,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7036889,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Composer, Choirmaster. Honored Artist of the Turkmen SSR, Artistic Director and Choirmaster of the Turkmen State Philharmonic, Ashgabat, Turkmen SSR."
+      },
+      {
+        "name": "Ашир Кулиев",
+        "source": "discogs",
+        "firstYear": 1989,
+        "lastYear": 1989,
+        "styles": [
+          "Classical"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5660710,
+        "wikidataId": null,
+        "aliases": [
+          "А. Кулиев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ashir Kuliev – Turkmen composer of mostly stage, orchestral, choral, and vocal works. Born 21 December 1918, in Köşi, Ahal Province – died 11 August 2000, in As"
+      },
+      {
+        "name": "Махтумкули Карлиев",
+        "source": "discogs",
+        "firstYear": 1983,
+        "lastYear": 1983,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4362884,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Makhtumkuli Karliev (1881–1957) was a Turkmen singer and dutar player."
+      },
+      {
+        "name": "Оразгельды Ильясов",
+        "source": "discogs",
+        "firstYear": 1984,
+        "lastYear": 1984,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7475182,
+        "wikidataId": null,
+        "aliases": [
+          "Оразгелди Ылясов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Orazgeldy Ilyasov - turkmen folk singer."
+      },
+      {
+        "name": "Annaseiit Annamuradov",
+        "source": "discogs",
+        "firstYear": 1989,
+        "lastYear": 1989,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8134163,
+        "wikidataId": null,
+        "aliases": [
+          "Аннасеид Аннамурадов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Annamuradov Annaseiit is a dutar teacher and performer from Turkmenistan."
       },
       {
         "name": "Cynar Jumayewa",
@@ -25899,6 +26754,47 @@
         "wikidataId": null
       },
       {
+        "name": "Государственный Оркестр Народных Инструментов Туркменской ССР",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1982,
+        "styles": [
+          "Folk",
+          "Mugham",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6050491,
+        "wikidataId": null,
+        "aliases": [
+          "Государственный Оркестр Туркменских Народных Инструментов Им. Пурли Сарыева"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Turkmenistan State Orchestra of Folk Instruments. Conductors: Курбан Кулиев ( ) (1948-?)"
+      },
+      {
+        "name": "Зохраб Адигезал-заде",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1980,
+        "styles": [
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8183664,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "родился 3 июля 1940 года в Баку в семье служащих. Родители его не были музыкантами, но, по его же словам, ни одно их семейное торжество не обходилось без музыки",
+        "note": "profile-origin (mixed claims RU/AZ/TR): родился 3 июля 1940 года в Баку в семье служащих. Родители его не были музыкантами, но, по его же словам, ни одно их семейное торжество не обходилось без музыки"
+      },
+      {
         "name": "Кужур Ализамаев",
         "source": "discogs",
         "firstYear": 2025,
@@ -25922,6 +26818,43 @@
         "releaseCount": 1,
         "discogsArtistId": 4056862,
         "wikidataId": null
+      },
+      {
+        "name": "Мыллы Тачмурадов",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5295273,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Tachmuradov Mylly, Turkmen folk musician, composer"
+      },
+      {
+        "name": "Сахи Джеппаров",
+        "source": "discogs",
+        "firstYear": 1969,
+        "lastYear": 1969,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4726205,
+        "wikidataId": null,
+        "aliases": [
+          "С. Джеппаров"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Turkmen vocalist"
       },
       {
         "name": "Annagul Gurdova",
@@ -26591,6 +27524,26 @@
         "wikidataId": "Q136042890"
       },
       {
+        "name": "Матвей Равич",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7079660,
+        "wikidataId": null,
+        "aliases": [
+          "М. Равич"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Turkmenistan composer. Born 1923, in Ukraine – died 1971, in Turkmenistan."
+      },
+      {
         "name": "Abadan Halmedowa",
         "source": "wikidata",
         "firstYear": null,
@@ -26724,6 +27677,48 @@
         ]
       },
       {
+        "name": "Мукаш Абдраев",
+        "source": "discogs",
+        "firstYear": 1970,
+        "lastYear": 1978,
+        "styles": [
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 4914660,
+        "wikidataId": null,
+        "aliases": [
+          "М. Абдраев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Mukash Abdraev (1920-1979) - composer from Kyrgyzstan."
+      },
+      {
+        "name": "Тугельбай Казаков",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1988,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 4471822,
+        "wikidataId": null,
+        "aliases": [
+          "Түгөлбай Казаков"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Tugolbai Kazakov (born 1951) is a Kyrgyz musician, composer and public figure. He was Minister of Culture, Information and Tourism of the Kyrgyz Republic in 201"
+      },
+      {
         "name": "Knotholes",
         "source": "discogs",
         "firstYear": 2016,
@@ -26736,6 +27731,50 @@
         "releaseCount": 4,
         "discogsArtistId": 2255291,
         "wikidataId": null
+      },
+      {
+        "name": "Асанкалый Керимбаев",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1988,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 5052170,
+        "wikidataId": null,
+        "aliases": [
+          "Асан Керимбаев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Asankaly Kerimbaev (1950–1999) was a Kyrgyz musician and singer."
+      },
+      {
+        "name": "Государственный Оркестр Народных Инструментов Имени Карамолдо Орозова",
+        "source": "discogs",
+        "firstYear": 1971,
+        "lastYear": 1990,
+        "styles": [
+          "Classical",
+          "Folk, World, & Country",
+          "Stage & Screen"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 13901746,
+        "wikidataId": null,
+        "aliases": [
+          "Оркестр Народных Инструментов Им. К. Орозова",
+          "Гос. Оркестр Нар. Инстр. Им. К. Орозова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "The State Folk Instrument Orchestra of Kyrgyzstan was founded in 1936 by Pyotr Shubin (Петр Шубин). Later, it was conducted by Boris Feferman ( ). In the 1950s,"
       },
       {
         "name": "Динара Акулова",
@@ -26819,6 +27858,51 @@
         "wikidataId": null
       },
       {
+        "name": "Гулмайрам Момушева",
+        "source": "discogs",
+        "firstYear": 1971,
+        "lastYear": 1971,
+        "styles": [
+          "Jazz",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 6087402,
+        "wikidataId": null,
+        "aliases": [
+          "Гульмайром Момушева"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Gulmairam Momusheva (born 1948) is a Kyrgyz singer."
+      },
+      {
+        "name": "Кайыргуль Сартбаева",
+        "source": "discogs",
+        "firstYear": 1972,
+        "lastYear": 1984,
+        "styles": [
+          "Schlager",
+          "Pop",
+          "Opera"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 10021144,
+        "wikidataId": null,
+        "aliases": [
+          "Каиргуль Сартбаева",
+          "Кайыргүл Сартбаева"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Kaiyrgul Sartbaeva (born 1936) is a Kyrgyz opera singer."
+      },
+      {
         "name": "Каныкей",
         "source": "discogs",
         "firstYear": 2009,
@@ -26834,6 +27918,85 @@
         "aliases": [
           "Kanykei"
         ]
+      },
+      {
+        "name": "Наристе",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [
+          "Beat",
+          "Schlager",
+          "Pop Rock"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 3984628,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Formed in 1971 by Vladimir Pruglo (Владимир Пругло) in Kirghiz republic of USSR."
+      },
+      {
+        "name": "Симфонический Оркестр Киргизского Телевидения И Радио",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1985,
+        "styles": [
+          "Folk, World, & Country",
+          "Classical"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 4530436,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Symphony Orchestra of Kyrgyz Television and Radio"
+      },
+      {
+        "name": "Токтогул Сатылганов",
+        "source": "discogs",
+        "firstYear": 1984,
+        "lastYear": 1989,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk",
+          "Spoken Word"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 5962684,
+        "wikidataId": null,
+        "aliases": [
+          "Токтогул"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Toktogul Satylganov (1864-1933) - was the most famous of the Kyrgyz Akyns – improvising poets and singers."
+      },
+      {
+        "name": "Чингиз Айтматов",
+        "source": "discogs",
+        "firstYear": 1977,
+        "lastYear": 1982,
+        "styles": [
+          "Radioplay",
+          "Non-Music",
+          "Classical"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 807198,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Чингиз Айтматов (Kyrgyz: Чыңгыз Айтматов; 1928–2008) was a Soviet and Kyrgyz author who wrote in both Russian and Kyrgyz. He is one of the best known figures in",
+        "note": "profile-origin (mixed claims RU): Чингиз Айтматов (Kyrgyz: Чыңгыз Айтматов; 1928–2008) was a Soviet and Kyrgyz author who wrote in both Russian and Kyrgyz. He is one of the best known figures in"
       },
       {
         "name": "6rba",
@@ -26890,6 +28053,126 @@
         "wikidataId": null
       },
       {
+        "name": "Болуш Мадазимов",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1986,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 9066655,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Bolush Madazimov (born 1927) is a Kyrgyz komuz player."
+      },
+      {
+        "name": "Борис Феферман",
+        "source": "discogs",
+        "firstYear": 1970,
+        "lastYear": 1970,
+        "styles": [
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 9066625,
+        "wikidataId": null,
+        "aliases": [
+          "Б. Феферман"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "(1920, Alexandria (now Ukraine), USSR - 1998) - Soviet composer, conductor, teacher, and folklorist. He worked a lot in Kyrgyzstan and Uzbekistan."
+      },
+      {
+        "name": "Каныбек Качкынбаев",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1986,
+        "styles": [
+          "Folk, World, & Country",
+          "Spoken Word",
+          "Folk"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 15750765,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Kanybek Kachkynbaev - Kyrgyz singer and komuz player."
+      },
+      {
+        "name": "Канымгүл Досмамбетова",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1985,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 14710777,
+        "wikidataId": null,
+        "aliases": [
+          "Канымгуль Досмамбетова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Kanymgul Dosmambetova (1935-1978) was a Kyrgyz singer, composer and actress."
+      },
+      {
+        "name": "Кеңеш Сулайманов",
+        "source": "discogs",
+        "firstYear": 1986,
+        "lastYear": 1986,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 15731085,
+        "wikidataId": null,
+        "aliases": [
+          "Кенеш Сулайманов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Kenesh Sulaimanov - Kyrgyz komuz player."
+      },
+      {
+        "name": "Мыскал Омурканова",
+        "source": "discogs",
+        "firstYear": 1984,
+        "lastYear": 1984,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4471920,
+        "wikidataId": null,
+        "aliases": [
+          "Мыскал Өмүрканова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Myskal Omurkanova (1915—1976) singer and komuz player from Kyrgyzstan."
+      },
+      {
         "name": "Светлана Назаренко",
         "source": "discogs",
         "firstYear": 1996,
@@ -26906,6 +28189,27 @@
           "Svetlana Nazarenko"
         ],
         "note": "Owner ruling Aug 11 2026 (pattern a, metropole-residence): keep — origin/citizenship in pool country; MB 70bc3a1a-aa07-4214-a857-bb4fdbef49b7 area=Russia recorded as residence-not-origin."
+      },
+      {
+        "name": "Суйдум Толокова",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1980,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7916889,
+        "wikidataId": null,
+        "aliases": [
+          "Суйдум Төлөкова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Süidüm Tölökova (born 1926) is a Kyrgyz singer, komuz and temir komuz player."
       },
       {
         "name": "33 Марта",
@@ -27127,6 +28431,58 @@
         "wikidataId": null
       },
       {
+        "name": "Алтынбек Джаныбеков",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1985,
+        "styles": [
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8838550,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Altynbek Zhanybekov (b. 1934) - composer from Kyrgyzstan."
+      },
+      {
+        "name": "Анарбек Ибраев",
+        "source": "discogs",
+        "firstYear": 1990,
+        "lastYear": 1990,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4471765,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Anarbek Ibraev (born 1951) is a Kyrgyz singer."
+      },
+      {
+        "name": "Арашан",
+        "source": "discogs",
+        "firstYear": 1984,
+        "lastYear": 1984,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4791874,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "VIA from Kirghiz SSR, formed in 1975."
+      },
+      {
         "name": "Асель Турдалиева",
         "source": "discogs",
         "firstYear": 2004,
@@ -27139,6 +28495,79 @@
         "releaseCount": 1,
         "discogsArtistId": 4392128,
         "wikidataId": null
+      },
+      {
+        "name": "Асылбэк Эшмамбетов",
+        "source": "discogs",
+        "firstYear": 1972,
+        "lastYear": 1972,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4959659,
+        "wikidataId": null,
+        "aliases": [
+          "Асылбек Эшмамбетов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Asylbek Eshmambetov – Kyrgyz musician on instrument 'komuz'. 1915 - 1967. In 1940-1967 he worked as an artist at the Kyrgyz State Philharmonic named after T. Sa"
+      },
+      {
+        "name": "Ашыралы Айталиев",
+        "source": "discogs",
+        "firstYear": 1979,
+        "lastYear": 1979,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4959691,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ashyraly Aitaliev (born 1927) is a Kyrgyz poet, musician and singer."
+      },
+      {
+        "name": "Бейшеке Жандоров",
+        "source": "discogs",
+        "firstYear": 1971,
+        "lastYear": 1971,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 15919143,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Beisheke Zhandorov - Kyrgyz komuz player."
+      },
+      {
+        "name": "Бектемир Эгинчиев",
+        "source": "discogs",
+        "firstYear": 1972,
+        "lastYear": 1972,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5962735,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Bektemir Eginchiev – Kyrgyz composer, singer, actor. 1916–1964. He worked in the Kyrgyz State Philharmonic in 1942-1959."
       },
       {
         "name": "БИЗ",
@@ -27155,6 +28584,28 @@
         "wikidataId": null
       },
       {
+        "name": "Гос. Оркестр Народных Инструментов Им. К. Орозова",
+        "source": "discogs",
+        "firstYear": 1979,
+        "lastYear": 1979,
+        "styles": [
+          "Folk",
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4530427,
+        "wikidataId": null,
+        "aliases": [
+          "The Orozov Folk Instruments Orchestra"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "The State Folk Instrument Orchestra of Kyrgyzstan was founded in 1936 by Pyotr Shubin (Петр Шубин). Later, it was conducted by Boris Feferman ( ). In the 1950s,"
+      },
+      {
         "name": "Гульнара Тойгонбаева",
         "source": "discogs",
         "firstYear": 2013,
@@ -27167,6 +28618,171 @@
         "wikidataId": null
       },
       {
+        "name": "Гульсун Мамашева",
+        "source": "discogs",
+        "firstYear": 1972,
+        "lastYear": 1972,
+        "styles": [
+          "Schlager",
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 16419082,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Gulsun Mamasheva (born November 3, 1947) – artist, singer, Honored Artist of the Kyrgyz SSR (1976), People's Artist of the Kyrgyz Republic (2011)."
+      },
+      {
+        "name": "Гүлчехра Валиулина",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1968,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 9593359,
+        "wikidataId": null,
+        "aliases": [
+          "Г. Валиуллина"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Gulchehra Valiulina (1923-2014) was a Kyrgyz singer."
+      },
+      {
+        "name": "Джумамудун Шералиев",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [
+          "Vocal",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4471732,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Kirghiz composer. 1915 - 1994. Transliteration: Dzhumamudun Sheraliyev."
+      },
+      {
+        "name": "Жалил Садыков",
+        "source": "discogs",
+        "firstYear": 1983,
+        "lastYear": 1983,
+        "styles": [
+          "Radioplay",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 15935511,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Zhalil Sadykov (1932-2010) was a Kyrgyz poet, playwright and translator."
+      },
+      {
+        "name": "Жапар Чабалдаев",
+        "source": "discogs",
+        "firstYear": 1984,
+        "lastYear": 1984,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14635485,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Japar Chabaldaev (1932-1988) was a Kyrgyz singer and komuz player."
+      },
+      {
+        "name": "Калыкбай Чекеев",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1982,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14634138,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Kalykbai Chekeev - Kyrgyz singer"
+      },
+      {
+        "name": "Карамолдо Орозов",
+        "source": "discogs",
+        "firstYear": 1979,
+        "lastYear": 1979,
+        "styles": [
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5792847,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Karamoldo Orozov (1883 -1960) - komuz player and singer from Kyrgyzstan."
+      },
+      {
+        "name": "Касымыптуу Салманов",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1980,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14777654,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Kasymyptuu Salmanov - Kyrgyz komuz player"
+      },
+      {
+        "name": "Койсун Карасартова",
+        "source": "discogs",
+        "firstYear": 1989,
+        "lastYear": 1989,
+        "styles": [
+          "Folk, World, & Country",
+          "Stage & Screen"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14710684,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Koysun Karasartova (1926-2009 ) was a Kyrgyz actress and singer. Wife of (Seyitkazy Andabekov)."
+      },
+      {
         "name": "Континент",
         "source": "discogs",
         "firstYear": 1992,
@@ -27177,6 +28793,47 @@
         "releaseCount": 1,
         "discogsArtistId": 18038472,
         "wikidataId": null
+      },
+      {
+        "name": "Михаил Раухвергер",
+        "source": "discogs",
+        "firstYear": 1970,
+        "lastYear": 1970,
+        "styles": [
+          "Opera",
+          "Classical",
+          "Children's"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 3359961,
+        "wikidataId": null,
+        "aliases": [
+          "М. Раухвергер"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "(November 22 1901, Odessa — October 18, 1989, Moscow) was a Soviet pianist, composer and teacher. People's Artist of the Kyrgyz SSR (1961), Honored Artist of th"
+      },
+      {
+        "name": "Насыр Давлесов",
+        "source": "discogs",
+        "firstYear": 1979,
+        "lastYear": 1979,
+        "styles": [
+          "Classical",
+          "Folk, World, & Country",
+          "Stage & Screen"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6656836,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Nasyr Davlesov (1929-2011) was a Kyrgyz conductor, songwriter and composer."
       },
       {
         "name": "Нуриса Абазова",
@@ -27193,6 +28850,23 @@
         "wikidataId": null
       },
       {
+        "name": "Оркестр Народных Инструментов Киргизской гос. Филармонии",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1968,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4914662,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Orchestra of Folk Instruments of the Kyrgyz State Philharmonic"
+      },
+      {
         "name": "Радиостанция доктора Франкенштейна",
         "source": "discogs",
         "firstYear": 2016,
@@ -27207,6 +28881,41 @@
         "aliases": [
           "РДФ"
         ]
+      },
+      {
+        "name": "Салморбек Шералиев",
+        "source": "discogs",
+        "firstYear": 1971,
+        "lastYear": 1971,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 15919140,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Salmorbek Sheraliev - Kyrgyz singer"
+      },
+      {
+        "name": "Сейитказы Андабеков",
+        "source": "discogs",
+        "firstYear": 1989,
+        "lastYear": 1989,
+        "styles": [
+          "Folk, World, & Country",
+          "Stage & Screen"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14710681,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Seyitkazy Andabekov (1925-2015) was a Kyrgyz actor and singer. Husband of ."
       },
       {
         "name": "Сыймык Бейшекеев",
@@ -27235,6 +28944,97 @@
         "releaseCount": 1,
         "discogsArtistId": 4394769,
         "wikidataId": null
+      },
+      {
+        "name": "Таштан Эрматов",
+        "source": "discogs",
+        "firstYear": 1989,
+        "lastYear": 1989,
+        "styles": [
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7627559,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Tashtan Ermatov (1928-1997) was a Kyrgyz composer."
+      },
+      {
+        "name": "Токтосун Тыныбеков",
+        "source": "discogs",
+        "firstYear": 1977,
+        "lastYear": 1977,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6751096,
+        "wikidataId": null,
+        "aliases": [
+          "Т. Тыныбеков"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Toktosun Tynybekov (1927-1982) was a Kyrgyz poet."
+      },
+      {
+        "name": "Тургун Бердалиев",
+        "source": "discogs",
+        "firstYear": 1986,
+        "lastYear": 1986,
+        "styles": [
+          "Spoken Word",
+          "Folk",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 15750762,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Turgun Berdaliev (born 1947) is a Kyrgyz actor."
+      },
+      {
+        "name": "Улукмурза Полотов",
+        "source": "discogs",
+        "firstYear": 1987,
+        "lastYear": 1987,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6087417,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ulukmyrza Polotov (born 1943) is a Kyrgyz singer, musician and teacher."
+      },
+      {
+        "name": "Ыбрай Туманов",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5962617,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Kyrgyz composer and musician on instrument 'komuz'. Born 1888, died 1967."
       },
       {
         "name": "Aaly Tutkuchev",
@@ -169307,6 +171107,29 @@
         "wikidataId": null
       },
       {
+        "name": "Камолиддин Рахимов",
+        "source": "discogs",
+        "firstYear": 1971,
+        "lastYear": 1990,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country",
+          "Psychedelic"
+        ],
+        "releaseCount": 30,
+        "discogsArtistId": 3835583,
+        "wikidataId": null,
+        "aliases": [
+          "Камолиддин Раҳимов",
+          "Камалиддин Рахимов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Kamoliddin Rakhimov – Uzbek folk singer. 1943 — 2015."
+      },
+      {
         "name": "Faxriddin Umarov",
         "source": "wikidata",
         "firstYear": 1939,
@@ -169364,6 +171187,30 @@
         "wikidataId": null
       },
       {
+        "name": "Юнус Ражабий",
+        "source": "discogs",
+        "firstYear": 1966,
+        "lastYear": 1990,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country",
+          "Mugham"
+        ],
+        "releaseCount": 19,
+        "discogsArtistId": 5353758,
+        "wikidataId": null,
+        "aliases": [
+          "Ю. Раджаби",
+          "Юнус Раджаби",
+          "Ю. Ражабий"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "5.01.1897 — 23.04.1976 Yunus Rajabiy - Soviet Uzbek composer, academician, People's Artist of the Uzbek SSR, singer, instrumentalist, folklorist, organizer and "
+      },
+      {
         "name": "Arian Vey",
         "source": "discogs",
         "firstYear": 2026,
@@ -169408,6 +171255,29 @@
         "wikidataId": null
       },
       {
+        "name": "Бабамурад Хамдамов",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1991,
+        "styles": [
+          "Folk, World, & Country",
+          "Stage & Screen",
+          "Folk"
+        ],
+        "releaseCount": 17,
+        "discogsArtistId": 3212617,
+        "wikidataId": null,
+        "aliases": [
+          "Бобомурод Ҳамдамов",
+          "Бобомурод Хамдамов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek singer, born in 1940 in Lebob."
+      },
+      {
         "name": "Vlad Bodhi",
         "source": "discogs",
         "firstYear": 2017,
@@ -169434,6 +171304,47 @@
         "releaseCount": 15,
         "discogsArtistId": 6111392,
         "wikidataId": null
+      },
+      {
+        "name": "Мухаммаджон Каримов",
+        "source": "discogs",
+        "firstYear": 1970,
+        "lastYear": 1980,
+        "styles": [
+          "Folk",
+          "Mugham",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 15,
+        "discogsArtistId": 6144127,
+        "wikidataId": null,
+        "aliases": [
+          "Мамат Каримов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek folk music singer."
+      },
+      {
+        "name": "Оригинал",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1984,
+        "styles": [
+          "Pop",
+          "Disco",
+          "Funk / Soul"
+        ],
+        "releaseCount": 15,
+        "discogsArtistId": 4249896,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Original – group from Uzbekistan, formed in 1980."
       },
       {
         "name": "3NV3LOP3",
@@ -169642,6 +171553,98 @@
         "wikidataId": null
       },
       {
+        "name": "Zakir Abidov",
+        "source": "discogs",
+        "firstYear": 1961,
+        "lastYear": 1983,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk",
+          "Mugham"
+        ],
+        "releaseCount": 10,
+        "discogsArtistId": 2087962,
+        "wikidataId": null,
+        "aliases": [
+          "Закирджон Абидов",
+          "З. Абидов",
+          "Зокиржон Обидов",
+          "Закирджан Абидов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Zakir Abidov. Dutar player from Uzbekistan."
+      },
+      {
+        "name": "Абрам Толмасов",
+        "source": "discogs",
+        "firstYear": 1986,
+        "lastYear": 1988,
+        "styles": [
+          "Folk",
+          "Psychedelic Rock",
+          "Rock"
+        ],
+        "releaseCount": 10,
+        "discogsArtistId": 4500063,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Abram Tolmasov (Born 1956 in Samarkand) is an Uzbek singer."
+      },
+      {
+        "name": "Наво",
+        "source": "discogs",
+        "firstYear": 1977,
+        "lastYear": 1984,
+        "styles": [
+          "Vocal",
+          "Jazz",
+          "Funk / Soul"
+        ],
+        "releaseCount": 10,
+        "discogsArtistId": 3442840,
+        "wikidataId": null,
+        "aliases": [
+          "Вок.-инстр. Ансамбль \"Наво\"",
+          "Вок.-Инстр. Ансамбль \"Наво\""
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek ensemble Navo, formed in 1973."
+      },
+      {
+        "name": "Рўзимбек Муродов",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1972,
+        "styles": [
+          "Spoken Word",
+          "Folk",
+          "Non-Music"
+        ],
+        "releaseCount": 10,
+        "discogsArtistId": 7090998,
+        "wikidataId": null,
+        "aliases": [
+          "Розимбек Мурадов",
+          "Мурад Бахши Оглы",
+          "Рузимбек Мурадов",
+          "Бахши Рузимбек Мурадов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ruzimbek Murodov – uzbek bard, folk singer."
+      },
+      {
         "name": "Фаттаххан Мамадалиев",
         "source": "discogs",
         "firstYear": 1976,
@@ -169689,6 +171692,31 @@
         "releaseCount": 9,
         "discogsArtistId": 7133801,
         "wikidataId": null
+      },
+      {
+        "name": "Т. Жалилов Номли Ўзбекистон Давлат Халқ Чолғу Асбоблари Оркестри",
+        "source": "discogs",
+        "firstYear": 1978,
+        "lastYear": 1990,
+        "styles": [
+          "Classical",
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 9,
+        "discogsArtistId": 4073472,
+        "wikidataId": null,
+        "aliases": [
+          "Тўхтасин Жалилов Номли Ўзбекистон Давлат Халқ Чолғу Асбоблари Оркестри",
+          "Т. Жалилов Номли Ўзбекистон Давлат Халқ Чолғу Асбоблари Ансамбли Оркестри",
+          "Т. Жалилов Номидаги Ўзбекистон Давлат Халқ Чолғу Оркестри",
+          "Оркестр Народных Инструментов Им. Т. Джалилова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Orchestra in English: Uzbekistan (state) orchestra of folk instruments named after T. Zhalilov."
       },
       {
         "name": "EFH",
@@ -169745,6 +171773,123 @@
         "releaseCount": 8,
         "discogsArtistId": 7157290,
         "wikidataId": null
+      },
+      {
+        "name": "Ансамбль Макомистов Гостелерадио Узбекистана",
+        "source": "discogs",
+        "firstYear": 1966,
+        "lastYear": 1989,
+        "styles": [
+          "Mugham",
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 8,
+        "discogsArtistId": 4914727,
+        "wikidataId": null,
+        "aliases": [
+          "Макомчилар Ансамбли Ижро Этади",
+          "Ўзбек Телевидение Ва Радиосининг Мақом Ансамбли Чолғучилари Ижро Этган",
+          "Ўзбек Телевидение Ва Радиосининг Мақом Ансамбли",
+          "Ўзбек Телевидение Ва Радиосининг Мақом Ансамбли Ижро Этган",
+          "Ю. Ражабий Ўзбекистон Телевидениеси Ва Радиосининг Мақомчилар Ансамбли"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "The Maqom Ensemble of Uzbek State Radio was founded in 1959 under the name Макомчилар ансамбли (Makomist ensemble), and was led by Yunus Razhabi ( ). After Raza"
+      },
+      {
+        "name": "Икромжон Буронов",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1986,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 8,
+        "discogsArtistId": 5106703,
+        "wikidataId": null,
+        "aliases": [
+          "Икрамджан Буранов",
+          "И. Буранов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek singer"
+      },
+      {
+        "name": "Камерный Оркестр Узбекского Телевидения И Радио",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1987,
+        "styles": [
+          "Modern",
+          "Contemporary",
+          "Classical"
+        ],
+        "releaseCount": 8,
+        "discogsArtistId": 4867614,
+        "wikidataId": null,
+        "aliases": [
+          "Камерный оркестр узбекского радио"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Chamber orchestra of Uzbek television and radio."
+      },
+      {
+        "name": "Кувандык Искандеров",
+        "source": "discogs",
+        "firstYear": 1966,
+        "lastYear": 1977,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 8,
+        "discogsArtistId": 7149296,
+        "wikidataId": null,
+        "aliases": [
+          "Қувондиқ Искандаров",
+          "К. Искандеров",
+          "Кувондик Искандаров",
+          "Қувандик Искандаров"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Quvondiq Iskandarov – Uzbek folk singer. 1930 — 2004."
+      },
+      {
+        "name": "Мухтар Ашрафи",
+        "source": "discogs",
+        "firstYear": 1966,
+        "lastYear": 1991,
+        "styles": [
+          "Opera",
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 8,
+        "discogsArtistId": 5023847,
+        "wikidataId": null,
+        "aliases": [
+          "М. Ашрафий",
+          "М. Ашрафи",
+          "Мухтор Ашрафий"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Mukhtar Ashrafi (1912–75), Uzbek composer and conductor."
       },
       {
         "name": "Aykan Emir",
@@ -169806,6 +171951,119 @@
         "releaseCount": 7,
         "discogsArtistId": 7155338,
         "wikidataId": null
+      },
+      {
+        "name": "Ариф Алимахсумов",
+        "source": "discogs",
+        "firstYear": 1961,
+        "lastYear": 1976,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 7,
+        "discogsArtistId": 4546216,
+        "wikidataId": null,
+        "aliases": [
+          "Ориф Алимахсумов",
+          "Ориф Алимаҳсумов",
+          "Arif Alimakhsumov"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Arif Alimakhsumov (born 1927 in Tashkent) was an Uzbek singer and folk musician."
+      },
+      {
+        "name": "Борис Гиенко",
+        "source": "discogs",
+        "firstYear": 1969,
+        "lastYear": 1984,
+        "styles": [
+          "Contemporary",
+          "Classical",
+          "Modern"
+        ],
+        "releaseCount": 7,
+        "discogsArtistId": 6110309,
+        "wikidataId": null,
+        "aliases": [
+          "Б. Гиенко"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Composer from Uzbekistan. 1917– 2000. Transliterating in English: Boris Gienko."
+      },
+      {
+        "name": "Комилжон Отаниёзов",
+        "source": "discogs",
+        "firstYear": 1953,
+        "lastYear": 1991,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country",
+          "Stage & Screen"
+        ],
+        "releaseCount": 7,
+        "discogsArtistId": 6436757,
+        "wikidataId": null,
+        "aliases": [
+          "К. Атаниязов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Komiljon Otaniyozov (1917-1975) wass an Uzbek singer, musician, actor and composer. Name in Russian: Камилджан Атаниязов",
+        "note": "profile-origin (mixed claims RU): Komiljon Otaniyozov (1917-1975) wass an Uzbek singer, musician, actor and composer. Name in Russian: Камилджан Атаниязов"
+      },
+      {
+        "name": "Орифхон Хатамов",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1990,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 7,
+        "discogsArtistId": 4575112,
+        "wikidataId": null,
+        "aliases": [
+          "Арифхан Хатамов",
+          "А. Хатамов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Orifxon Hotamov – Uzbek musician on instruments tanbur and gijak. 1927 — 2002."
+      },
+      {
+        "name": "Оркестр Народных Инструментов Узбекского Радио",
+        "source": "discogs",
+        "firstYear": 1966,
+        "lastYear": 1989,
+        "styles": [
+          "Folk, World, & Country",
+          "Mugham",
+          "Folk"
+        ],
+        "releaseCount": 7,
+        "discogsArtistId": 3985645,
+        "wikidataId": null,
+        "aliases": [
+          "Ўзбекистон Радио Ва Телевидениясининг Халқ Чолғу Асбоблари Оркестри",
+          "Ўзбек Радиосининг Халқ Чолғу Асбоблари Ансамбли",
+          "Оркестр нар. инстр. Узбекского Радиокомитета"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Orchestra of Folk Instruments of the Uzbek Radio. In Uzbek: Өзбәкстан Телевидение Вә Радиосиниң Хәлиқ Чалғу Оркестри. For ensemble please use -"
       },
       {
         "name": "555-5555",
@@ -169939,6 +172197,114 @@
         "aliases": [
           "Bolalar"
         ]
+      },
+      {
+        "name": "Муродулла Норкулов",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1985,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 4974430,
+        "wikidataId": null,
+        "aliases": [
+          "Муродулло Норқулов",
+          "Мурадулла Норқулов",
+          "Мурадулла Наркулов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Murodulla Norkulov – Uzbek singer."
+      },
+      {
+        "name": "Мустафо Бафоев",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1991,
+        "styles": [
+          "Classical",
+          "Neo-Classical",
+          "Folk"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 5645476,
+        "wikidataId": null,
+        "aliases": [
+          "М. Бафоев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Mustafo Bafoyev - composer and conductor from Uzbekistan. Born 1946."
+      },
+      {
+        "name": "Олмахон Хаитова",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1979,
+        "styles": [
+          "Folk, World, & Country",
+          "Mugham",
+          "Folk"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 2110291,
+        "wikidataId": null,
+        "aliases": [
+          "Олмахон Хайитова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Olamxon Hayitova (1940-2014) was an Uzbek singer."
+      },
+      {
+        "name": "Синтез",
+        "source": "discogs",
+        "firstYear": 1974,
+        "lastYear": 1974,
+        "styles": [
+          "Folk Rock",
+          "Psychedelic Rock",
+          "Rock"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 3263571,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek vocal-instrumental ensemble \"Synthesis\", directed by ."
+      },
+      {
+        "name": "Феликс Янов-Яновский",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1984,
+        "styles": [
+          "Classical",
+          "Contemporary",
+          "Modern"
+        ],
+        "releaseCount": 6,
+        "discogsArtistId": 1455394,
+        "wikidataId": null,
+        "aliases": [
+          "Ф. Янов-Яновский"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Felix Yanov-Yanovsky (May 28, 1934, Tashkent, Uzbek SSR) - Uzbek and Soviet composer, music teacher, professor. Father of composer ."
       },
       {
         "name": "Alexander Compo",
@@ -170085,6 +172451,211 @@
         "wikidataId": null
       },
       {
+        "name": "Алижон Эркаев",
+        "source": "discogs",
+        "firstYear": 1964,
+        "lastYear": 1973,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 7577573,
+        "wikidataId": null,
+        "aliases": [
+          "А. Эркаев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Alijon Erkayev (1933 - 2003) was an Uzbek teacher and singer."
+      },
+      {
+        "name": "Артыкходжа Имамходжаев",
+        "source": "discogs",
+        "firstYear": 1961,
+        "lastYear": 1983,
+        "styles": [
+          "Mugham",
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 7577651,
+        "wikidataId": null,
+        "aliases": [
+          "Ортиқҳўжа Имомҳўжаев",
+          "Artykhodzha Imamkhodzhaev"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ortykhoja Imamhojaev - an Uzbek singer."
+      },
+      {
+        "name": "Камильджан Баратов",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1974,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country",
+          "Mugham"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 7147731,
+        "wikidataId": null,
+        "aliases": [
+          "К. Баратов",
+          "Камил Баратов",
+          "Комилжон Баратов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Kamil Baratov. Soviet / Uzbek singer."
+      },
+      {
+        "name": "Мухаббат Шамаева",
+        "source": "discogs",
+        "firstYear": 1969,
+        "lastYear": 1985,
+        "styles": [
+          "Folk, World, & Country",
+          "Vocal",
+          "Folk"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 1563807,
+        "wikidataId": null,
+        "aliases": [
+          "Муҳаббат Шамаева"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Soviet Uzbek singer known for classic maqoms performances (b. 1944)."
+      },
+      {
+        "name": "Саодат Кобулова",
+        "source": "discogs",
+        "firstYear": 1966,
+        "lastYear": 1969,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 4545024,
+        "wikidataId": null,
+        "aliases": [
+          "Саодат Кабулова",
+          "С. Кабулова",
+          "Саадат Кабулова",
+          "Саадат Кобулова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Saodat Kobulova — Uzbek opera vocalist (soprano). Name in contemporary Uzbek: Saodat Qobulova. 1925 – 2007."
+      },
+      {
+        "name": "Талиб Садыков",
+        "source": "discogs",
+        "firstYear": 1966,
+        "lastYear": 1975,
+        "styles": [
+          "Opera",
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 13990420,
+        "wikidataId": null,
+        "aliases": [
+          "Т. Садыков",
+          "Толибжон Содиков"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Talib Sadykovich Sadykov (Uzb. Tolibjon Sodikov; February 27 (March 12), 1907 - September 5, 1957) Soviet composer and conductor, one of the founders of the Uzb"
+      },
+      {
+        "name": "Шаходат Рахимова",
+        "source": "discogs",
+        "firstYear": 1964,
+        "lastYear": 1967,
+        "styles": [
+          "Folk, World, & Country",
+          "Classical"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 6547422,
+        "wikidataId": null,
+        "aliases": [
+          "Ш. Рахимова",
+          "Шахидат Рахимова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "(Born 1919, Uzbekistan), Uzbek actress; People's Artist of the Uzbek SSR (1940). Mother of ."
+      },
+      {
+        "name": "Элдор Азимов",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1987,
+        "styles": [
+          "Modern",
+          "Classical",
+          "Contemporary"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 4867615,
+        "wikidataId": null,
+        "aliases": [
+          "Эльдар Азимов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Azimov Eldor Sarvarovich (1945.6.2, Tashkent) - conductor. Honored Artist of Uzbekistan (1989). He graduated from the Tashkent Conservatory, first in violin, th"
+      },
+      {
+        "name": "Эмиль Залялетдинов",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1980,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country",
+          "Easy Listening"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": 4077140,
+        "wikidataId": null,
+        "aliases": [
+          "Эмиль Заляльдинов",
+          "Эмиль Заляльтдинов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Emil Zalyaletdinov (July 2, 1933, Samarkand, Samarkand region, Uzbek SSR, USSR - March 19, 2023, Kazan, Republic of Tatarstan, Russian Federation) - Tatar singe",
+        "note": "profile-origin (mixed claims RU/TT): Emil Zalyaletdinov (July 2, 1933, Samarkand, Samarkand region, Uzbek SSR, USSR - March 19, 2023, Kazan, Republic of Tatarstan, Russian Federation) - Tatar singe"
+      },
+      {
         "name": "Aeropitune",
         "source": "discogs",
         "firstYear": 2020,
@@ -170141,6 +172712,29 @@
         "releaseCount": 4,
         "discogsArtistId": 17801811,
         "wikidataId": null
+      },
+      {
+        "name": "Georgi Mushel",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1986,
+        "styles": [
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 2108732,
+        "wikidataId": null,
+        "aliases": [
+          "Георгий Мушель",
+          "Г. Мушель"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Russian/Uzbek composer, born in Tambov 1909, died in Tashkent 1989.",
+        "note": "profile-origin (mixed claims RU): Russian/Uzbek composer, born in Tambov 1909, died in Tashkent 1989."
       },
       {
         "name": "Liana Ovelis",
@@ -170241,6 +172835,327 @@
         "releaseCount": 4,
         "discogsArtistId": 7138713,
         "wikidataId": null
+      },
+      {
+        "name": "Берта Давыдова",
+        "source": "discogs",
+        "firstYear": 1972,
+        "lastYear": 1972,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 7151028,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Soviet Uzbek singer of Bukharan Jewish origin (1922-2007), a lyrical soprano famous for classic maqoms performances."
+      },
+      {
+        "name": "Джурахон Султанов",
+        "source": "discogs",
+        "firstYear": 1986,
+        "lastYear": 1986,
+        "styles": [
+          "Persian Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 6173848,
+        "wikidataId": null,
+        "aliases": [
+          "Жўрахон Султонов",
+          "Джурахан Султанов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Жўрахон Султонов = Jo‘raxon Sultonov = Джурахон Султанов = Jurakhon Sultanov Uzbek singer, composer and instrumentalist. There is conflicting information regard",
+        "note": "profile-origin (mixed claims RU): Жўрахон Султонов = Jo‘raxon Sultonov = Джурахон Султанов = Jurakhon Sultanov Uzbek singer, composer and instrumentalist. There is conflicting information regard"
+      },
+      {
+        "name": "Дони Закиров",
+        "source": "discogs",
+        "firstYear": 1989,
+        "lastYear": 1989,
+        "styles": [
+          "Modern",
+          "Classical",
+          "Opera"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 3985644,
+        "wikidataId": null,
+        "aliases": [
+          "Д. Закиров",
+          "Дани Закиров"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Doni Zakirov – Uzbek composer. 1914 – 1985."
+      },
+      {
+        "name": "Икрам Акбаров",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1987,
+        "styles": [
+          "Modern",
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 5025671,
+        "wikidataId": null,
+        "aliases": [
+          "И. Акбаров"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ikram Akbarov, Uzbek composer, 1921–2011."
+      },
+      {
+        "name": "Камильджан Ибрагимов",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1980,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 7163993,
+        "wikidataId": null,
+        "aliases": [
+          "К. Ибрагимов",
+          "Комилжон Иброҳимов",
+          "Камилджан Ибрагимов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Komilzhon Ibrohimov – Uzbek singer of folk music."
+      },
+      {
+        "name": "Камильджан Рахимов",
+        "source": "discogs",
+        "firstYear": 1978,
+        "lastYear": 1978,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 6948001,
+        "wikidataId": null,
+        "aliases": [
+          "Комилжон Раҳимов",
+          "Комилжон Рахимов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Komiljon Rahimov (born 1943 in Namangan) is an Uzbek singer."
+      },
+      {
+        "name": "Манас Левиев",
+        "source": "discogs",
+        "firstYear": 1963,
+        "lastYear": 1972,
+        "styles": [
+          "Comedy",
+          "Non-Music",
+          "Musical"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 12842594,
+        "wikidataId": null,
+        "aliases": [
+          "М. Левиев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "25.07.1912 - 12.05.1990 Uzbek composer"
+      },
+      {
+        "name": "Мансур Ташматов",
+        "source": "discogs",
+        "firstYear": 1977,
+        "lastYear": 1977,
+        "styles": [
+          "Rock",
+          "Funk / Soul",
+          "Pop"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 4951606,
+        "wikidataId": null,
+        "aliases": [
+          "Мансур Тошматов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Born September 14, 1954, Tashkent Soviet and Uzbek pop and jazz singer, People's Artist of Uzbekistan (1995), Honored Artist of the Uzbek SSR (1986) Son of"
+      },
+      {
+        "name": "Маъмуржон Узоқов",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1982,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 4527676,
+        "wikidataId": null,
+        "aliases": [
+          "Мамурджан Узаков"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ma'murjon Uzoqov (1904 - 1963) was an Uzbek singer Маъмуржон Узоқов (Uzbek spelling) Мамуржон Узаков (Russian spelling)",
+        "note": "profile-origin (mixed claims RU): Ma'murjon Uzoqov (1904 - 1963) was an Uzbek singer Маъмуржон Узоқов (Uzbek spelling) Мамуржон Узаков (Russian spelling)"
+      },
+      {
+        "name": "Мухаммаджон Мирзаев",
+        "source": "discogs",
+        "firstYear": 1954,
+        "lastYear": 1968,
+        "styles": [
+          "Folk, World, & Country",
+          "Mugham"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 7147600,
+        "wikidataId": null,
+        "aliases": [
+          "М. Мирзаев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "People's Artist of Uzbekistan, composer and musician Muhammadjon Mirzayev has won the respect of the people with his wonderful songs, chants, and melodies. His "
+      },
+      {
+        "name": "Наталья Нурмухамедова",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1988,
+        "styles": [
+          "Jazz",
+          "Funk / Soul",
+          "Pop"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 808511,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Natalia Nurmukhamedova (born 1951) is an Uzbek pop singer."
+      },
+      {
+        "name": "Румиль Вильданов",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1990,
+        "styles": [
+          "Soundtrack",
+          "Easy Listening",
+          "Stage & Screen"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 5354330,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek composer Rumil Vildanov. 1939 - 1987."
+      },
+      {
+        "name": "Садо",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1985,
+        "styles": [
+          "Prog Rock",
+          "Musical",
+          "Stage & Screen"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 3586505,
+        "wikidataId": null,
+        "aliases": [
+          "Ансамбль \"Садо\"",
+          "\"Sado\" Ensemble"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Transliterated name: Sado Wide ranging progressive and pop band from Tashkent, Uzbekistan."
+      },
+      {
+        "name": "Халима Носирова",
+        "source": "discogs",
+        "firstYear": 1953,
+        "lastYear": 1983,
+        "styles": [
+          "Folk, World, & Country",
+          "Opera",
+          "Classical"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 4545014,
+        "wikidataId": null,
+        "aliases": [
+          "Халима Насырова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Halima Nosirova (1913-2003) was an Uzbek Soviet opera singer, actress and teacher. Artist of the USSR in 1937."
+      },
+      {
+        "name": "Энмарк Салихов",
+        "source": "discogs",
+        "firstYear": 1967,
+        "lastYear": 1978,
+        "styles": [
+          "Easy Listening",
+          "Schlager",
+          "Jazz"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 1482578,
+        "wikidataId": null,
+        "aliases": [
+          "Э. Салихов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "12.09.1934 - 05.03.2022 Uzbek Soviet composer, Honored Artist of the Uzbek SSR, Honored Artist of the Musical Arts of Russia."
       },
       {
         "name": "Ailand",
@@ -170482,6 +173397,24 @@
         "wikidataId": null
       },
       {
+        "name": "R. Ibrahimov",
+        "source": "discogs",
+        "firstYear": 1961,
+        "lastYear": 1961,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 2412653,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Раби Ибрагимов. Doira player from Uzbekistan"
+      },
+      {
         "name": "R3hajor",
         "source": "discogs",
         "firstYear": 2020,
@@ -170575,6 +173508,84 @@
         "wikidataId": null
       },
       {
+        "name": "Ансамбль Народных Инструментов Узбекского Радио",
+        "source": "discogs",
+        "firstYear": 1970,
+        "lastYear": 1974,
+        "styles": [
+          "Mugham",
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 13732621,
+        "wikidataId": null,
+        "aliases": [
+          "Ансамбль Народных Инструментов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Folk Instruments Uzbek Radio Ensemble"
+      },
+      {
+        "name": "Государственный Симфонический Оркестр Узбекистана",
+        "source": "discogs",
+        "firstYear": 1984,
+        "lastYear": 1990,
+        "styles": [
+          "Modern",
+          "Classical",
+          "Romantic"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 1414731,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbekistan State Symphony Orchestra. For an soloists ensemble, use -"
+      },
+      {
+        "name": "Захид Хакназаров",
+        "source": "discogs",
+        "firstYear": 1984,
+        "lastYear": 1986,
+        "styles": [
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 1414730,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Zakhid Khaknazarov (November 12, 1937, Tashkent - July 18, 2019, Alania, Turkey) - Soviet and Uzbek conductor, music teacher, public figure."
+      },
+      {
+        "name": "Игорь Саруханов",
+        "source": "discogs",
+        "firstYear": 1987,
+        "lastYear": 1990,
+        "styles": [
+          "Rock",
+          "Pop"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 914016,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Was born 06.04.1956 in Samarkand, UzbSSR. Russian pop/rock-singer and composer. In groups: - from 1979 to 1981 - from 1982 to 1985 - from 1983 to 1985 Started s",
+        "note": "profile-origin (mixed claims RU): Was born 06.04.1956 in Samarkand, UzbSSR. Russian pop/rock-singer and composer. In groups: - from 1979 to 1981 - from 1982 to 1985 - from 1983 to 1985 Started s"
+      },
+      {
         "name": "Лола Юлдашева",
         "source": "discogs",
         "firstYear": 2001,
@@ -170589,6 +173600,107 @@
         "aliases": [
           "Lola"
         ]
+      },
+      {
+        "name": "М. Мухамедов",
+        "source": "discogs",
+        "firstYear": 1967,
+        "lastYear": 1968,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 6546684,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek ney musician."
+      },
+      {
+        "name": "Мирсадык Таджиев",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1985,
+        "styles": [
+          "Contemporary",
+          "Classical"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 5025508,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek composer (1944–96). In English: Mirsadyk Tajiyev"
+      },
+      {
+        "name": "Сабо",
+        "source": "discogs",
+        "firstYear": 1983,
+        "lastYear": 1983,
+        "styles": [
+          "Pop Rock",
+          "Schlager",
+          "Folk Rock"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 4768730,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Sabo ‎– uzbek vocal-instrumental ensemble."
+      },
+      {
+        "name": "Сайфи Джалил",
+        "source": "discogs",
+        "firstYear": 1966,
+        "lastYear": 1984,
+        "styles": [
+          "Contemporary",
+          "Symphony",
+          "Classical"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 6110882,
+        "wikidataId": null,
+        "aliases": [
+          "С. Джалил",
+          "С. Жалил"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek composer. Also known as Джалил Джалилов. Born 1932 in Samarkand."
+      },
+      {
+        "name": "Тилаш Ходжамбердиев",
+        "source": "discogs",
+        "firstYear": 1970,
+        "lastYear": 1974,
+        "styles": [
+          "Mugham",
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 13732642,
+        "wikidataId": null,
+        "aliases": [
+          "Т. Ходжамбердиева",
+          "Т. Ходжамбердиев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Tilash Khojamberdiev is a Soviet and Uzbek conductor. Artistic director of the national ensemble of folk instruments of the Uzbek Television and Radio Company."
       },
       {
         "name": "6th Sphere",
@@ -171061,6 +174173,27 @@
         "wikidataId": null
       },
       {
+        "name": "Nurilla Zakirov",
+        "source": "discogs",
+        "firstYear": 1983,
+        "lastYear": 1984,
+        "styles": [
+          "Classical"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7583369,
+        "wikidataId": null,
+        "aliases": [
+          "Нурулла Закиров",
+          "Н. Закиров"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Nurilla Zakirov (born 1942 in Tashkent, Uzbekistan; died 2003 in Atlanta, USA), was an Uzbek composer and pianist."
+      },
+      {
         "name": "Nwonknu",
         "source": "discogs",
         "firstYear": 2017,
@@ -171188,6 +174321,29 @@
         "wikidataId": null
       },
       {
+        "name": "Sobir Boboyev",
+        "source": "discogs",
+        "firstYear": 1964,
+        "lastYear": 1966,
+        "styles": [
+          "Opera",
+          "Classical",
+          "Modern"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6225035,
+        "wikidataId": null,
+        "aliases": [
+          "Собир Бобоев",
+          "С. Бабаев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek composer, 1920—2004."
+      },
+      {
         "name": "Stereoway",
         "source": "discogs",
         "firstYear": 2017,
@@ -171271,6 +174427,126 @@
         "wikidataId": null
       },
       {
+        "name": "Акмал Пулат",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1968,
+        "styles": [
+          "Folk, World, & Country",
+          "Poetry",
+          "Non-Music"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7722032,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek poet"
+      },
+      {
+        "name": "Александр Двоскин",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1968,
+        "styles": [
+          "Vocal",
+          "Pop"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 1586461,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "(October 20, 1919, Yekaterinoslav, Russian Empire - 2005) - Soviet composer. Honored Artist of the Uzbek SSR (1970), Honored Artist of the RSFSR (1980).",
+        "note": "profile-origin (mixed claims RU): (October 20, 1919, Yekaterinoslav, Russian Empire - 2005) - Soviet composer. Honored Artist of the Uzbek SSR (1970), Honored Artist of the RSFSR (1980)."
+      },
+      {
+        "name": "Алимджан Арифджанов",
+        "source": "discogs",
+        "firstYear": 1983,
+        "lastYear": 1983,
+        "styles": [
+          "Mugham",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 12843503,
+        "wikidataId": null,
+        "aliases": [
+          "Олимжон Орифжонов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek Singer"
+      },
+      {
+        "name": "Ахмеджан Дадаев",
+        "source": "discogs",
+        "firstYear": 1984,
+        "lastYear": 1984,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5060979,
+        "wikidataId": null,
+        "aliases": [
+          "Аҳмаджон Дадаев",
+          "Ахмаджон Дадаев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ahmedjan Dadaev - uzbek folk singer."
+      },
+      {
+        "name": "Гулям Абдурахманов",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1982,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 12985134,
+        "wikidataId": null,
+        "aliases": [
+          "Г. Абдурахманов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Gulyam Abdurakhmanov (uzb. Ғулом Абдураҳмонов; May 1 , 1910, Turkestan - May 15, 1987) - Soviet Uzbek opera singer (tenor). People's Artist of the Uzbek SSR (19"
+      },
+      {
+        "name": "Гулямджан Хаджикулов",
+        "source": "discogs",
+        "firstYear": 1987,
+        "lastYear": 1987,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4914726,
+        "wikidataId": null,
+        "aliases": [
+          "Ғуломжон Ҳожиқулов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek singer and musician."
+      },
+      {
         "name": "Даврон Гаипов",
         "source": "discogs",
         "firstYear": 1991,
@@ -171289,6 +174565,520 @@
         "pressedAs": [
           "USSR · Tashkent plant"
         ]
+      },
+      {
+        "name": "Дилором Каюмова",
+        "source": "discogs",
+        "firstYear": 1971,
+        "lastYear": 1971,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4705831,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Female singer from Uzbekistan."
+      },
+      {
+        "name": "Дилором Сайдаминова",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1976,
+        "styles": [
+          "Contemporary",
+          "Classical",
+          "Modern"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6094156,
+        "wikidataId": null,
+        "aliases": [
+          "D. Saidaminova",
+          "Сайдаминова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Dilorom Saydaminova - Uzbek composer, born 1943 in Tashkent."
+      },
+      {
+        "name": "Исмоилхон Орифхонов",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1982,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6162923,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek folk singer."
+      },
+      {
+        "name": "К. Муминов",
+        "source": "discogs",
+        "firstYear": 1983,
+        "lastYear": 1990,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5598122,
+        "wikidataId": null,
+        "aliases": [
+          "Карим Мўминов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "K. Muminov. Uzbek singer."
+      },
+      {
+        "name": "Камиль Кенджаев",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1976,
+        "styles": [
+          "Contemporary",
+          "Classical",
+          "Modern"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6094155,
+        "wikidataId": null,
+        "aliases": [
+          "K. Kendzhaev",
+          "Кенджаев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Born 1939, Uzbek composer."
+      },
+      {
+        "name": "Карим Закиров",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country",
+          "Choral"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 13727464,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Karim Zakirov (March 12, 1912, Tashkent - 1977, Tashkent) - Soviet and Uzbek opera singer (baritone). People's Artist of the Uzbek SSR (1939). Founder of the Za"
+      },
+      {
+        "name": "Лариса Кандалова",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [
+          "Vocal",
+          "Pop",
+          "Soundtrack"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 1464948,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "(March 20, 1950, Kirov, RSFSR, USSR — August 3, 2007, Moscow, Russia) - Soviet and Russian singer, music teacher. Laureate of the VI All-Union Competition of po",
+        "note": "profile-origin (mixed claims RU): (March 20, 1950, Kirov, RSFSR, USSR — August 3, 2007, Moscow, Russia) - Soviet and Russian singer, music teacher. Laureate of the VI All-Union Competition of po"
+      },
+      {
+        "name": "Малика Алимова",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1983,
+        "styles": [
+          "Vocal",
+          "Schlager",
+          "Pop"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4027521,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Singer from Soviet Uzbekistan."
+      },
+      {
+        "name": "Маҳаматхон Ҳатамов",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1982,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6162924,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek folk singer."
+      },
+      {
+        "name": "Маҳмуджон Азимов",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1991,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5958050,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Folk singer and musician from Uzbekistan."
+      },
+      {
+        "name": "Мирза Тоиров",
+        "source": "discogs",
+        "firstYear": 1991,
+        "lastYear": 1991,
+        "styles": [
+          "Folk",
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7090345,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Mirza Toyrov ‎– Uzbek singer."
+      },
+      {
+        "name": "Миртемир Турсунов",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1989,
+        "styles": [
+          "Folk, World, & Country",
+          "Non-Music"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 13717879,
+        "wikidataId": null,
+        "aliases": [
+          "Миртемир"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Mirtemir (real name - Mirtemir Umarbekovich Tursunov; Uzbek: Mirtemi Tursunov, May 28, 1910 - January 25, 1979) - Uzbek poet. People's poet of Uzbekistan. Laure"
+      },
+      {
+        "name": "Назира Ахмедова",
+        "source": "discogs",
+        "firstYear": 1954,
+        "lastYear": 1982,
+        "styles": [
+          "Folk, World, & Country",
+          "Opera",
+          "Classical"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4476607,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Nazira Akhmedova (June 5, 1913, Namangan - February 25, 1964, Tashkent) was an Uzbek opera singer (lyric-coloratura soprano). People's Artist of Uzbekistan (195"
+      },
+      {
+        "name": "Насим Хашимов",
+        "source": "discogs",
+        "firstYear": 1954,
+        "lastYear": 1990,
+        "styles": [
+          "Mugham",
+          "Folk, World, & Country",
+          "Opera"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 1563810,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Nasim Khashimov. Uzbek folk singer. (1920 - ?)."
+      },
+      {
+        "name": "Офелия Юсупова",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1986,
+        "styles": [
+          "Modern",
+          "Classical",
+          "Jazz"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6108575,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek pianist. Born August 11, 1938, in Tashkent"
+      },
+      {
+        "name": "Расулқори Мамадалиев",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1990,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6167599,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Расулқори Мамадалиев = Rasul Qâri Mamadaliev Uzbek singer and instrumentalist (1928-1976)"
+      },
+      {
+        "name": "Совет Варелас",
+        "source": "discogs",
+        "firstYear": 1970,
+        "lastYear": 1985,
+        "styles": [
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 1660703,
+        "wikidataId": null,
+        "aliases": [
+          "С. Варелас"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Soviet Varelas – composer from Uzbekistan. Educated at Tashkent conservatoire (class of composition). Born 17.03.1923 - died 25.05.1997."
+      },
+      {
+        "name": "Тамара Дошумова",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1976,
+        "styles": [
+          "Vocal",
+          "Folk, World, & Country",
+          "Children's"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 7090342,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Tamara Doshumova - Uzbek singer."
+      },
+      {
+        "name": "Тельман Хасанов",
+        "source": "discogs",
+        "firstYear": 1971,
+        "lastYear": 1971,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 4961077,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Born 5 April 1940 Uzbek Composer, Conductor"
+      },
+      {
+        "name": "Тулкун Курбанов",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1982,
+        "styles": [
+          "Contemporary",
+          "Classical",
+          "Symphony"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6110881,
+        "wikidataId": null,
+        "aliases": [
+          "Т. Курбанов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek composer. Born 1936. Transliterating in English: Tulkun Kurbanov."
+      },
+      {
+        "name": "Уйғун",
+        "source": "discogs",
+        "firstYear": 1990,
+        "lastYear": 1990,
+        "styles": [
+          "Non-Music",
+          "Folk, World, & Country",
+          "Dialogue"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 3035154,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uyg‘un (in Russian: Уйгун) was the pseudonym of Rahmatulla Otaqo‘zi (1905—1990), an Uzbek poet and public figure.",
+        "note": "profile-origin (mixed claims RU): Uyg‘un (in Russian: Уйгун) was the pseudonym of Rahmatulla Otaqo‘zi (1905—1990), an Uzbek poet and public figure."
+      },
+      {
+        "name": "Уринбай Нуралиев",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1983,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6069724,
+        "wikidataId": null,
+        "aliases": [
+          "Ўринбой Нуралиев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek singer."
+      },
+      {
+        "name": "Хадия Юсупова",
+        "source": "discogs",
+        "firstYear": 1974,
+        "lastYear": 1978,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 13988185,
+        "wikidataId": null,
+        "aliases": [
+          "Ҳадъя Юсупова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Hadiya Yusupova - Uzbek folk singer"
+      },
+      {
+        "name": "Эргаш Йўлдошев",
+        "source": "discogs",
+        "firstYear": 1972,
+        "lastYear": 1972,
+        "styles": [
+          "Folk, World, & Country",
+          "Mugham"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 5022917,
+        "wikidataId": null,
+        "aliases": [
+          "Э. Юлдашев",
+          "Эргаш Юлдашев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ergash Yo'ldoshev - Uzbek vocalist (tenor). 1924 – 1991."
+      },
+      {
+        "name": "Эркин Самандаров",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 18078144,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Erkin Samandar (1935-2024) was an Uzbek journalist, writer, poet, playwright, and statesman. He served as Deputy Prime Minister of Uzbekistan from 1990 to 1993."
+      },
+      {
+        "name": "Эркиной Бекджанова",
+        "source": "discogs",
+        "firstYear": 1958,
+        "lastYear": 1989,
+        "styles": [
+          "Folk",
+          "Mugham",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 3021772,
+        "wikidataId": null,
+        "aliases": [
+          "Эркиной Бекжонова",
+          "Э. Бекджанова"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Erkinoj Bekjanova. Uzbek singer"
       },
       {
         "name": "2xum",
@@ -171946,6 +175736,29 @@
         "releaseCount": 1,
         "discogsArtistId": 7176059,
         "wikidataId": null
+      },
+      {
+        "name": "Erkin Vohidov",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1980,
+        "styles": [
+          "Poetry",
+          "Folk",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7577535,
+        "wikidataId": null,
+        "aliases": [
+          "Эркин Вахидов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Erkin Vohidov (1936-2016) was an Uzbek poet, playwright, translator, and statesman. name in Uzbek Cyrillic: Эркин Воҳидов name in Russian: Эркин Вахидович Вахид",
+        "note": "profile-origin (mixed claims RU): Erkin Vohidov (1936-2016) was an Uzbek poet, playwright, translator, and statesman. name in Uzbek Cyrillic: Эркин Воҳидов name in Russian: Эркин Вахидович Вахид"
       },
       {
         "name": "F Base",
@@ -173560,6 +177373,271 @@
         "wikidataId": null
       },
       {
+        "name": "А. Убайдуллаев",
+        "source": "discogs",
+        "firstYear": 1987,
+        "lastYear": 1987,
+        "styles": [
+          "Mugham",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7086806,
+        "wikidataId": null,
+        "aliases": [
+          "Аскар Убайдуллаев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Askar Ubaydullaev. Uzbek musician"
+      },
+      {
+        "name": "А. Хасанов",
+        "source": "discogs",
+        "firstYear": 1965,
+        "lastYear": 1965,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6150390,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek folk singer."
+      },
+      {
+        "name": "Абдулла Арипов",
+        "source": "discogs",
+        "firstYear": 1986,
+        "lastYear": 1986,
+        "styles": [
+          "Poetry",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 808525,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Abdulla Aripov (Uzbek: Abdulla Oripov) (March 21, 1941 - November 5, 2016) - Uzbek Soviet poet, classic of Uzbek poetry, Hero of Uzbekistan (1998), people's poe"
+      },
+      {
+        "name": "Абдухамид Султанов",
+        "source": "discogs",
+        "firstYear": 1971,
+        "lastYear": 1971,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7150430,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek folk music singer."
+      },
+      {
+        "name": "Аваз Мансуров",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1985,
+        "styles": [
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6113942,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek composer. Born 1957. Transliterating in English: Avaz Mansurov."
+      },
+      {
+        "name": "Анвар Исроилов",
+        "source": "discogs",
+        "firstYear": 1975,
+        "lastYear": 1975,
+        "styles": [
+          "Folk",
+          "Poetry",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 15001900,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Anvar Isroilov (1937-1992) - Soviet Uzbek poet."
+      },
+      {
+        "name": "Ансамбль Народных Инструментов Узбекской Государственной Филармонии",
+        "source": "discogs",
+        "firstYear": 1954,
+        "lastYear": 1954,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5802272,
+        "wikidataId": null,
+        "aliases": [
+          "Оркестр нар. инстр. Узбекской Госфилармонии"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Orchestra of Folk Instruments of the Uzbek State Philharmonic"
+      },
+      {
+        "name": "Асад Азимов",
+        "source": "discogs",
+        "firstYear": 1984,
+        "lastYear": 1984,
+        "styles": [
+          "Classical",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4942758,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "10.06.1927 - 23.11.1995 Opera singer (lyric tenor). People's Artist of the Uzbek SSR (1978)."
+      },
+      {
+        "name": "Бахрулло Лутфуллаев",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1985,
+        "styles": [
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6113941,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek composer. Born 1948. Transliterating in English: Bakhrullo Lutfullayev."
+      },
+      {
+        "name": "Борис Бровцын",
+        "source": "discogs",
+        "firstYear": 1967,
+        "lastYear": 1967,
+        "styles": [
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6116994,
+        "wikidataId": null,
+        "aliases": [
+          "Б. Бровцын"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Composer and conductor from Uzbekistan. 1903 - 1987. Conductor of Союзкино orchestras, Uzbek Radio, Uzbek State Philharmonic Symphony Orchestra."
+      },
+      {
+        "name": "Вячеслав Гринченко",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [
+          "Opera",
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4185563,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "(1938-1998) — Soviet, Uzbek and Russian opera singer. People's Artist of the USSR (1980).",
+        "note": "profile-origin (mixed claims RU): (1938-1998) — Soviet, Uzbek and Russian opera singer. People's Artist of the USSR (1980)."
+      },
+      {
+        "name": "Гулямкадыр Эргашев",
+        "source": "discogs",
+        "firstYear": 1975,
+        "lastYear": 1975,
+        "styles": [
+          "Mugham",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6150052,
+        "wikidataId": null,
+        "aliases": [
+          "Ғуломқодир Иргашев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Gulyamkadyr Ergashev - Uzbek player of the Afghan rabab",
+        "note": "profile-origin (mixed claims AF): Gulyamkadyr Ergashev - Uzbek player of the Afghan rabab"
+      },
+      {
+        "name": "Д. Бекджанов",
+        "source": "discogs",
+        "firstYear": 1958,
+        "lastYear": 1958,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 11865587,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek singer"
+      },
+      {
+        "name": "Д. Ибрагимов",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1980,
+        "styles": [
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 10244896,
+        "wikidataId": null,
+        "aliases": [
+          "Джахангир Ибрагимов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek cellist."
+      },
+      {
         "name": "Дилъфуза Рахимова",
         "source": "discogs",
         "firstYear": 2004,
@@ -173617,6 +177695,140 @@
         "wikidataId": null
       },
       {
+        "name": "Леви Бабаханов",
+        "source": "discogs",
+        "firstYear": 1979,
+        "lastYear": 1979,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 11330771,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Levi Babakhanov (1873-1926) was the court singer of the last two Emirs of Bukhara."
+      },
+      {
+        "name": "Леонид Атабеков",
+        "source": "discogs",
+        "firstYear": 1986,
+        "lastYear": 1986,
+        "styles": [
+          "Fusion",
+          "Folk",
+          "Contemporary Jazz"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4476611,
+        "wikidataId": null,
+        "aliases": [
+          "Л. Атабеков"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Leonid Atabekov is a Soviet, Uzbek and Russian composer, arranger, guitarist and teacher. Now lives in Russia. Founder of LDA Studio .",
+        "note": "profile-origin (mixed claims RU): Leonid Atabekov is a Soviet, Uzbek and Russian composer, arranger, guitarist and teacher. Now lives in Russia. Founder of LDA Studio ."
+      },
+      {
+        "name": "Леонид Макеев",
+        "source": "discogs",
+        "firstYear": 1980,
+        "lastYear": 1980,
+        "styles": [
+          "Vocal",
+          "Schlager",
+          "Pop"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4027522,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Leonid Makeev - singer from Soviet Uzbekistan."
+      },
+      {
+        "name": "Луиза Закирова",
+        "source": "discogs",
+        "firstYear": 1971,
+        "lastYear": 1971,
+        "styles": [
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 1773465,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Born 07.01.1938 Luiza Zakirova is an Uzbek singer. Soloist of Daughter of , Sister of"
+      },
+      {
+        "name": "М. Рахимов",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1968,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7165467,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek singer"
+      },
+      {
+        "name": "Матлуба Дадабоева",
+        "source": "discogs",
+        "firstYear": 1987,
+        "lastYear": 1987,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5191562,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek singer"
+      },
+      {
+        "name": "Матнияз Юсупов",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1982,
+        "styles": [
+          "Vocal",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2206841,
+        "wikidataId": null,
+        "aliases": [
+          "Матниёз Юсупов"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Matniyoz Yusupov - Soviet (Uzbek) composer (1925 - 1992)"
+      },
+      {
         "name": "Миржалол Уринбоев",
         "source": "discogs",
         "firstYear": 2014,
@@ -173630,6 +177842,78 @@
         "wikidataId": null
       },
       {
+        "name": "Мирхалил Махмудов",
+        "source": "discogs",
+        "firstYear": 1981,
+        "lastYear": 1981,
+        "styles": [
+          "Modern",
+          "Contemporary",
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5025375,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Mirkhalil Makhmudov - Uzbek composer, born 1947 in Tashkent."
+      },
+      {
+        "name": "Муроджон Аҳмедов",
+        "source": "discogs",
+        "firstYear": 1985,
+        "lastYear": 1985,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6163569,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Murodjon Ahmedov (1918-1988) was an Uzbek actor and singer."
+      },
+      {
+        "name": "Мухиддин Кари Якубов",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1982,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8072433,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Mukhitdin Kari-Yakubov (May 1, 1896 - February 2, 1957, Tashkent) - Uzbek Soviet theater figure, singer (baritone), one of the founders of the Uzbek musical the"
+      },
+      {
+        "name": "Надим Нарходжаев",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1976,
+        "styles": [
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6140561,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek composer. Born in 1947 in Tash­kent. Transliterating in English: Nadim Norkhodjaev."
+      },
+      {
         "name": "Ойпопук Эшонхонова",
         "source": "discogs",
         "firstYear": 2004,
@@ -173641,6 +177925,25 @@
         "releaseCount": 1,
         "discogsArtistId": 6119574,
         "wikidataId": null
+      },
+      {
+        "name": "Омон Матжон",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1982,
+        "styles": [
+          "Poetry",
+          "Folk",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8270806,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Omon Matjon (1943-2020) was an Uzbek poet"
       },
       {
         "name": "Орифжон Эргашев",
@@ -173680,6 +177983,145 @@
         "wikidataId": null
       },
       {
+        "name": "Рустам Абдуллаев",
+        "source": "discogs",
+        "firstYear": 1984,
+        "lastYear": 1984,
+        "styles": [
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 12572894,
+        "wikidataId": null,
+        "aliases": [
+          "Р. Абдуллаев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Rustam Abdullaev is an Uzbek composer. Born February 12, 1947, Khiva"
+      },
+      {
+        "name": "Сара Ишантураева",
+        "source": "discogs",
+        "firstYear": 1977,
+        "lastYear": 1977,
+        "styles": [
+          "Non-Music",
+          "Folk, World, & Country",
+          "Stage & Screen"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 13992547,
+        "wikidataId": null,
+        "aliases": [
+          "Сара Эшонтўраева"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "08.11.1911 - 08.09.1998 Sara Abdurahmanovna Ishanturaeva (узб. Sora Abdurahmonovna Eshontoʻrayeva). Soviet, Uzbek theater and film actress, public figure. Peopl"
+      },
+      {
+        "name": "Саттар Ярашев",
+        "source": "discogs",
+        "firstYear": 1953,
+        "lastYear": 1953,
+        "styles": [
+          "Opera",
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 4962550,
+        "wikidataId": null,
+        "aliases": [
+          "Саттар Яррашев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Sattar Yarashev – opera vocalist (dramatic tenor) from Uzbekistan. 1915 – 1991."
+      },
+      {
+        "name": "Улмас Умарбеков",
+        "source": "discogs",
+        "firstYear": 1972,
+        "lastYear": 1972,
+        "styles": [
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14529568,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Ўлмас Умарбеков / Oʻlmas Umarbekov Uzbek writer. 1934-1994"
+      },
+      {
+        "name": "Умар Отаев",
+        "source": "discogs",
+        "firstYear": 1970,
+        "lastYear": 1970,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5021707,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Umar Otaev - Uzbek singer"
+      },
+      {
+        "name": "Уткур Рашид",
+        "source": "discogs",
+        "firstYear": 1977,
+        "lastYear": 1977,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 8106039,
+        "wikidataId": null,
+        "aliases": [
+          "Ўткир Рашид"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Уткур Рашид (Рашидов) Махмуд Uzbek poet, born in Kokand in 1915."
+      },
+      {
+        "name": "Хабиби",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1968,
+        "styles": [
+          "Poetry",
+          "Non-Music"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 6378867,
+        "wikidataId": null,
+        "aliases": [
+          "Закирджан Хабибий"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Khabibi - Закирджан Халматов - Zokirjon Xolmuhammad o‘g‘li Habibiy (1890-1980) was an Uzbek poet"
+      },
+      {
         "name": "Хўжа Гуруҳи",
         "source": "discogs",
         "firstYear": 2002,
@@ -173695,6 +178137,23 @@
         ]
       },
       {
+        "name": "Хуршид",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1976,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7827199,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Shamsutdin Khurshid (Шамсутдин Хуршид) (May 1892 - 13. IX. 1960) - Uzbek poet and playwright, director, translator. A special place in the work of Khurshid is o"
+      },
+      {
         "name": "Ҳардқор Опа",
         "source": "discogs",
         "firstYear": 2002,
@@ -173707,6 +178166,66 @@
         "releaseCount": 1,
         "discogsArtistId": 12181741,
         "wikidataId": null
+      },
+      {
+        "name": "Чен-Чун",
+        "source": "discogs",
+        "firstYear": 1978,
+        "lastYear": 1978,
+        "styles": [
+          "Funk / Soul",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5224670,
+        "wikidataId": null,
+        "aliases": [
+          "Эстрадный Ансамбль \"Чен-Чун\""
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Korean group from Soviet Uzbekistan.",
+        "note": "profile-origin (mixed claims KR): Korean group from Soviet Uzbekistan."
+      },
+      {
+        "name": "Шавкат Мирзаев",
+        "source": "discogs",
+        "firstYear": 1968,
+        "lastYear": 1968,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 5727885,
+        "wikidataId": null,
+        "aliases": [
+          "Ш. Мирзаев"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Shavkat Mirzaev (born February 10, 1942 in Tashkent - died 2021) - Soviet, Uzbek musician and composer. Son of composer and musician Muhammadjon Mirzaev = ."
+      },
+      {
+        "name": "Юнус Тураев",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 1976,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2206840,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Yunus Turaev - folk singer from Uzbekistan."
       },
       {
         "name": "Abdugʻaffor Qodirov",
@@ -174699,6 +179218,24 @@
         "wikidataId": "Q131722649"
       },
       {
+        "name": "Струнный Квартет Узбекского Радио",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": 6108225,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "String quartet of Uzbek Radio."
+      },
+      {
         "name": "Abror Zufarov",
         "source": "discogs",
         "firstYear": null,
@@ -174737,6 +179274,29 @@
         "releaseCount": 2,
         "discogsArtistId": 13855003,
         "wikidataId": null
+      },
+      {
+        "name": "Борис Зейдман",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Opera",
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 2,
+        "discogsArtistId": 6118268,
+        "wikidataId": null,
+        "aliases": [
+          "Б. Зейдман"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Boris Zeidman (January 28 1909, St. Petersburg, Russian Empire - January 1, 1982, Tashkent, Uzbek SSR, USSR) - Soviet composer and music teacher. Honored Artist",
+        "note": "profile-origin (mixed claims RU): Boris Zeidman (January 28 1909, St. Petersburg, Russian Empire - January 1, 1982, Tashkent, Uzbek SSR, USSR) - Soviet composer and music teacher. Honored Artist"
       },
       {
         "name": "Abbos",
@@ -174828,6 +179388,28 @@
         "wikidataId": null
       },
       {
+        "name": "Rudolf Kerer",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Modern",
+          "Classical"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2059948,
+        "wikidataId": null,
+        "aliases": [
+          "Р. Керер"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Russian pianist. (1923-2013) A titan of the Soviet piano school, Rudolf Kerer (also spelled Kehrer) had his early career profoundly disrupted in October 1941 wh",
+        "note": "profile-origin (mixed claims RU/DE): Russian pianist. (1923-2013) A titan of the Soviet piano school, Rudolf Kerer (also spelled Kehrer) had his early career profoundly disrupted in October 1941 wh"
+      },
+      {
         "name": "Shashmacoms",
         "source": "discogs",
         "firstYear": null,
@@ -174890,6 +179472,26 @@
         "wikidataId": null
       },
       {
+        "name": "Александр Берлин",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Children's"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 7071315,
+        "wikidataId": null,
+        "aliases": [
+          "А. Берлин"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Alexander Berlin (born 1930 in Tashkent) is a Soviet and Uzbek composer."
+      },
+      {
         "name": "Давуров Даврон",
         "source": "discogs",
         "firstYear": null,
@@ -174904,6 +179506,28 @@
         "aliases": [
           "Davron"
         ]
+      },
+      {
+        "name": "Салимахон Ходжаева",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Choral",
+          "Vocal",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 13727461,
+        "wikidataId": null,
+        "aliases": [
+          "С. Ходжаева"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Salimakhon Khojaeva (1916-2004) - Soviet and Uzbek opera singer (lyric-dramatic soprano)."
       },
       {
         "name": "Скисерз",
@@ -174959,6 +179583,44 @@
         "releaseCount": 1,
         "discogsArtistId": 16806199,
         "wikidataId": null
+      },
+      {
+        "name": "Эстрадно-Симфонический Оркестр Узбекского Телевидения И Радио",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Jazz",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 14999197,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbek Radio Variety-Symphony Orchestra. EST. 1964"
+      },
+      {
+        "name": "Эстрадный Оркестр Узбекистана",
+        "source": "discogs",
+        "firstYear": null,
+        "lastYear": null,
+        "styles": [
+          "Vocal",
+          "Pop",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": 2127684,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ],
+        "originBasis": "profile-origin",
+        "originEvidence": "Uzbekistan Variety Orchestra, created in 1958. Main conductors (leaders of orchestra): (1960–1962) (1962– ....)"
       },
       {
         "name": "Al-Vakil",

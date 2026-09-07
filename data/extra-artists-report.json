@@ -3,11 +3,11 @@
     "name": "Uzbekistan",
     "wikidataMusicians": 168,
     "discogsReleases": 9734,
-    "candidates": 511,
-    "newArtists": 453,
+    "candidates": 659,
+    "newArtists": 591,
     "dropped": {
-      "duplicate": 35,
-      "foreignCatalog": 14,
+      "duplicate": 41,
+      "foreignCatalog": 16,
       "wikidataCrosswalk": 8
     },
     "recordGuard": {
@@ -18,68 +18,84 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 37,
-      "uncorroboratedKept": 81
+      "collisionKept": 45,
+      "uncorroboratedKept": 82
     },
-    "dated": 420,
+    "dated": 552,
     "sample": [
       "Alex Greenhouse (2016)",
       "Sherali Juraev (1971)",
       "Limora (2025)",
       "Liyna (2025)",
+      "Камолиддин Рахимов (1971)",
       "Фахриддин Умаров (1939)",
       "Xeneze (2024)",
-      "Bobryuko (2016)",
-      "Craig Brown (2016)"
+      "Bobryuko (2016)"
     ],
     "discogsSource": {
       "source": "dump",
       "edition": "discogs_20260901_releases.xml.gz",
-      "addedReleases": 8702
+      "addedReleases": 0
     },
     "plantSlices": {
       "releases": 8702,
       "candidates": 2909,
       "originResolved": 1,
       "mbKnown": 4,
-      "originUnknown": 2904,
+      "profileClaim": 130,
+      "profileMixed": 15,
+      "profileBornOnlyHeld": 15,
+      "profileForeign": 1052,
+      "originUnknown": 1692,
       "originUnknownSample": [
-        "Владимир Высоцкий (113)",
-        "Алла Пугачева (103)",
-        "София Ротару (51)",
-        "Юрий Антонов (51)",
-        "Валерий Леонтьев (47)",
         "Синяя Птица (44)",
-        "Весёлые Ребята (42)",
-        "The Beatles (40)",
-        "Anna German (38)",
-        "Ильгам Шакиров (36)",
-        "Песняры (35)",
-        "Насиба Абдуллаева (35)",
-        "Гульшан (35)",
         "Михаил Пляцковский (31)",
-        "The Rolling Stones (31)"
+        "The Rolling Stones (31)",
+        "Hans Christian Andersen (29)",
+        "Мелодия (27)",
+        "Гулямджан Якубов (25)",
+        "Поющие Сердца (23)",
+        "Группа Стаса Намина (22)",
+        "Евгений Мартынов (21)",
+        "Здравствуй, Песня (21)",
+        "Голубые Гитары (19)",
+        "Рафаэль Ильясов (18)",
+        "Уйгурский ансамбль мукамистов Узбекского ТВ и радио п/у Х. Хелямова (17)",
+        "Бибігүл Төлегенова (17)",
+        "Дустар (16)"
+      ],
+      "profileForeignSample": [
+        "Friedrich Lips → RU",
+        "Charles Munch → DE/FR",
+        "Eduardas Balsys → LT",
+        "Қудратуллоҳ Яҳёев → TJ",
+        "Сулейман Юсупов → TT",
+        "Комбинация → RU",
+        "Николай Голованов → RU",
+        "Арташес Аветян → RU/AM/DE/IR",
+        "Людмила Гурченко → RU/UA",
+        "Евгений Бачурин → RU"
       ]
     },
     "merge": {
-      "committedBefore": 452,
-      "committedAfter": 453,
-      "added": 1,
-      "widened": 5,
-      "skippedNameClash": [],
-      "addedSample": [
-        "Monâjât Yultchieva"
-      ]
+      "committedBefore": 592,
+      "committedAfter": 592,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [
+        "Дилором Саидаминова ↔ Дилором Сайдаминова"
+      ],
+      "addedSample": []
     }
   },
   "TJ": {
     "name": "Tajikistan",
     "wikidataMusicians": 125,
     "discogsReleases": 8730,
-    "candidates": 130,
-    "newArtists": 120,
+    "candidates": 160,
+    "newArtists": 146,
     "dropped": {
-      "duplicate": 5,
+      "duplicate": 7,
       "foreignCatalog": 1,
       "wikidataCrosswalk": 0
     },
@@ -91,54 +107,70 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 2,
-      "uncorroboratedKept": 5
+      "collisionKept": 3,
+      "uncorroboratedKept": 6
     },
-    "dated": 109,
+    "dated": 132,
     "sample": [
+      "Одина Хашимов (1972)",
       "Джурабек Набиев (1956)",
+      "Джурабек Муродов (1980)",
+      "Лейла Шарипова (1968)",
       "Мастона Эргашева (1967)",
       "Звуковая Артель (1992)",
-      "Абдуҷалил Ҳошимов (1959)",
-      "Далер Назаров (2003)",
-      "Константин Паршин (1992)",
-      "Kide & The Jeans Community (1999)",
-      "Зло (2005)"
+      "Исхак Катаев (1978)",
+      "Махфират Ҳамрақулова (1985)"
     ],
     "discogsSource": {
       "source": "dump",
       "edition": "discogs_20260901_releases.xml.gz",
-      "addedReleases": 8702
+      "addedReleases": 0
     },
     "plantSlices": {
       "releases": 8702,
       "candidates": 2918,
       "originResolved": 4,
       "mbKnown": 0,
-      "originUnknown": 2914,
+      "profileClaim": 26,
+      "profileMixed": 2,
+      "profileBornOnlyHeld": 4,
+      "profileForeign": 1168,
+      "originUnknown": 1714,
       "originUnknownSample": [
-        "Владимир Высоцкий (113)",
-        "Алла Пугачева (103)",
-        "Ялла (54)",
-        "София Ротару (51)",
-        "Юрий Антонов (51)",
-        "Валерий Леонтьев (47)",
         "Синяя Птица (44)",
-        "Весёлые Ребята (42)",
-        "The Beatles (40)",
-        "Anna German (38)",
-        "Ильгам Шакиров (36)",
-        "Песняры (35)",
-        "Насиба Абдуллаева (35)",
-        "Гульшан (35)",
-        "Михаил Пляцковский (31)"
+        "Михаил Пляцковский (31)",
+        "The Rolling Stones (31)",
+        "Hans Christian Andersen (29)",
+        "Мелодия (27)",
+        "Гулямджан Якубов (25)",
+        "Поющие Сердца (23)",
+        "Группа Стаса Намина (22)",
+        "Евгений Мартынов (21)",
+        "Здравствуй, Песня (21)",
+        "Голубые Гитары (19)",
+        "Рафаэль Ильясов (18)",
+        "Уйгурский ансамбль мукамистов Узбекского ТВ и радио п/у Х. Хелямова (17)",
+        "Бибігүл Төлегенова (17)",
+        "Дустар (16)"
+      ],
+      "profileForeignSample": [
+        "Friedrich Lips → RU",
+        "Саодат Кобулова → UZ",
+        "Charles Munch → DE/FR",
+        "Eduardas Balsys → LT",
+        "Фахриддин Умаров → UZ",
+        "Сулейман Юсупов → TT",
+        "Комбинация → RU",
+        "Николай Голованов → RU",
+        "Арташес Аветян → RU/AM/DE/IR",
+        "Людмила Гурченко → RU/UA"
       ]
     },
     "merge": {
-      "committedBefore": 120,
-      "committedAfter": 120,
+      "committedBefore": 148,
+      "committedAfter": 148,
       "added": 0,
-      "widened": 4,
+      "widened": 0,
       "skippedNameClash": [],
       "addedSample": []
     }
@@ -147,10 +179,10 @@
     "name": "Kyrgyzstan",
     "wikidataMusicians": 78,
     "discogsReleases": 8796,
-    "candidates": 128,
-    "newArtists": 117,
+    "candidates": 175,
+    "newArtists": 160,
     "dropped": {
-      "duplicate": 3,
+      "duplicate": 6,
       "foreignCatalog": 7,
       "wikidataCrosswalk": 0
     },
@@ -165,51 +197,67 @@
       "collisionKept": 5,
       "uncorroboratedKept": 8
     },
-    "dated": 88,
+    "dated": 131,
     "sample": [
       "Zan-zan-zawa-veia (2011)",
       "Калый Молдобасанов (1944)",
+      "Мукаш Абдраев (1970)",
+      "Тугельбай Казаков (1981)",
       "Knotholes (2016)",
-      "Динара Акулова (1988)",
-      "Жусуп Айсаев (2006)",
-      "Кудабай Абышев (2006)",
-      "Уркаш Мамбеталиев (2006)",
-      "Ordo Sakhna (2000)"
+      "Асанкалый Керимбаев (1982)",
+      "Государственный Оркестр Народных Инструментов Имени Карамолдо Орозова (1971)",
+      "Динара Акулова (1988)"
     ],
     "discogsSource": {
       "source": "dump",
       "edition": "discogs_20260901_releases.xml.gz",
-      "addedReleases": 8702
+      "addedReleases": 0
     },
     "plantSlices": {
       "releases": 8702,
       "candidates": 2917,
       "originResolved": 1,
       "mbKnown": 0,
-      "originUnknown": 2916,
+      "profileClaim": 45,
+      "profileMixed": 1,
+      "profileBornOnlyHeld": 1,
+      "profileForeign": 1157,
+      "originUnknown": 1712,
       "originUnknownSample": [
-        "Владимир Высоцкий (113)",
-        "Алла Пугачева (103)",
-        "Ялла (54)",
-        "София Ротару (51)",
-        "Юрий Антонов (51)",
-        "Валерий Леонтьев (47)",
         "Синяя Птица (44)",
-        "Весёлые Ребята (42)",
-        "The Beatles (40)",
-        "Anna German (38)",
-        "Ильгам Шакиров (36)",
-        "Песняры (35)",
-        "Насиба Абдуллаева (35)",
-        "Гульшан (35)",
-        "Михаил Пляцковский (31)"
+        "Михаил Пляцковский (31)",
+        "The Rolling Stones (31)",
+        "Hans Christian Andersen (29)",
+        "Мелодия (27)",
+        "Гулямджан Якубов (25)",
+        "Поющие Сердца (23)",
+        "Группа Стаса Намина (22)",
+        "Евгений Мартынов (21)",
+        "Здравствуй, Песня (21)",
+        "Голубые Гитары (19)",
+        "Рафаэль Ильясов (18)",
+        "Уйгурский ансамбль мукамистов Узбекского ТВ и радио п/у Х. Хелямова (17)",
+        "Бибігүл Төлегенова (17)",
+        "Дустар (16)"
+      ],
+      "profileForeignSample": [
+        "Friedrich Lips → RU",
+        "Саодат Кобулова → UZ",
+        "Charles Munch → DE/FR",
+        "Eduardas Balsys → LT",
+        "Фахриддин Умаров → UZ",
+        "Қудратуллоҳ Яҳёев → TJ",
+        "Сулейман Юсупов → TT",
+        "Комбинация → RU",
+        "Николай Голованов → RU",
+        "Арташес Аветян → RU/AM/DE/IR"
       ]
     },
     "merge": {
-      "committedBefore": 117,
-      "committedAfter": 117,
+      "committedBefore": 161,
+      "committedAfter": 161,
       "added": 0,
-      "widened": 2,
+      "widened": 0,
       "skippedNameClash": [],
       "addedSample": []
     }
@@ -218,10 +266,10 @@
     "name": "Turkmenistan",
     "wikidataMusicians": 33,
     "discogsReleases": 8792,
-    "candidates": 94,
-    "newArtists": 74,
+    "candidates": 115,
+    "newArtists": 93,
     "dropped": {
-      "duplicate": 15,
+      "duplicate": 17,
       "foreignCatalog": 3,
       "wikidataCrosswalk": 1
     },
@@ -233,54 +281,70 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 3,
-      "uncorroboratedKept": 2
+      "collisionKept": 4,
+      "uncorroboratedKept": 3
     },
-    "dated": 22,
+    "dated": 40,
     "sample": [
+      "Gunesh (1980)",
+      "Арай (1984)",
+      "Чары Нурымов (1969)",
+      "Дурды Нурыев (1985)",
+      "Гульджан Хуммедова (1974)",
       "Мурад Садыков (1951)",
-      "Shatlyk Nuryyew (2010)",
-      "Tofik Mamedov (2025)",
-      "Cynar Jumayewa (2011)",
-      "Sergei Babaev (2026)",
-      "Şükran Ay (1979)",
-      "Кужур Ализамаев (2025)",
-      "Лола Юлдашева (2001)"
+      "Нуры Мухатов (1982)",
+      "Нуры Халмамедов (1969)"
     ],
     "discogsSource": {
       "source": "dump",
       "edition": "discogs_20260901_releases.xml.gz",
-      "addedReleases": 8702
+      "addedReleases": 0
     },
     "plantSlices": {
       "releases": 8702,
       "candidates": 2918,
       "originResolved": 1,
       "mbKnown": 1,
-      "originUnknown": 2916,
+      "profileClaim": 19,
+      "profileMixed": 2,
+      "profileBornOnlyHeld": 0,
+      "profileForeign": 1184,
+      "originUnknown": 1711,
       "originUnknownSample": [
-        "Владимир Высоцкий (113)",
-        "Алла Пугачева (103)",
-        "Ялла (54)",
-        "София Ротару (51)",
-        "Юрий Антонов (51)",
-        "Валерий Леонтьев (47)",
         "Синяя Птица (44)",
-        "Весёлые Ребята (42)",
-        "The Beatles (40)",
-        "Anna German (38)",
-        "Ильгам Шакиров (36)",
-        "Песняры (35)",
-        "Насиба Абдуллаева (35)",
-        "Гульшан (35)",
-        "Михаил Пляцковский (31)"
+        "Михаил Пляцковский (31)",
+        "The Rolling Stones (31)",
+        "Hans Christian Andersen (29)",
+        "Мелодия (27)",
+        "Гулямджан Якубов (25)",
+        "Поющие Сердца (23)",
+        "Группа Стаса Намина (22)",
+        "Евгений Мартынов (21)",
+        "Здравствуй, Песня (21)",
+        "Голубые Гитары (19)",
+        "Рафаэль Ильясов (18)",
+        "Уйгурский ансамбль мукамистов Узбекского ТВ и радио п/у Х. Хелямова (17)",
+        "Бибігүл Төлегенова (17)",
+        "Дустар (16)"
+      ],
+      "profileForeignSample": [
+        "Friedrich Lips → RU",
+        "Саодат Кобулова → UZ",
+        "Charles Munch → DE/FR",
+        "Eduardas Balsys → LT",
+        "Фахриддин Умаров → UZ",
+        "Қудратуллоҳ Яҳёев → TJ",
+        "Сулейман Юсупов → TT",
+        "Комбинация → RU",
+        "Николай Голованов → RU",
+        "Арташес Аветян → RU/AM/DE/IR"
       ]
     },
     "merge": {
-      "committedBefore": 74,
-      "committedAfter": 74,
+      "committedBefore": 93,
+      "committedAfter": 93,
       "added": 0,
-      "widened": 1,
+      "widened": 0,
       "skippedNameClash": [],
       "addedSample": []
     }

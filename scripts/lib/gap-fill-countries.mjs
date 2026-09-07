@@ -118,6 +118,12 @@ export const COUNTRIES = {
   SR: { qid: 'Q730', name: 'Suriname', mbArea: 'Suriname', discogs: ['Suriname'] },
   HT: { qid: 'Q790', name: 'Haiti', mbArea: 'Haiti', discogs: ['Haiti'] },
   UZ: { qid: 'Q265', name: 'Uzbekistan', mbArea: 'Uzbekistan', discogs: ['Uzbekistan'], plantSlices: [TASHKENT] },
+  // Kazakhstan (proposed Sep 7, 2026, AWAITING OWNER GO for its first
+  // run): MB 911 releases 1900–2005 (below the LA/PY bar), 512 MB
+  // artists, 1,704 Discogs releases under its own string, 211 Wikidata
+  // musicians — and 207 profile-claimed Kazakh artists on Tashkent
+  // pressings. Entry present so the go is one command.
+  KZ: { qid: 'Q232', name: 'Kazakhstan', mbArea: 'Kazakhstan', discogs: ['Kazakhstan'], plantSlices: [TASHKENT] },
   LK: { qid: 'Q854', name: 'Sri Lanka', mbArea: 'Sri Lanka', discogs: ['Sri Lanka'] },
   AL: { qid: 'Q222', name: 'Albania', mbArea: 'Albania', discogs: ['Albania'] },
   // Discogs records carry the formal "Moldova, Republic of" (Gambia-class

@@ -37,6 +37,14 @@ interface ExtraArtist {
    */
   pressedAs?: string[]
   /**
+   * How origin was established when neither MusicBrainz nor Wikidata
+   * placed the artist (owner ruling Sep 7, 2026): 'profile-origin' =
+   * an explicit nationality claim in the Discogs profile, quoted in
+   * originEvidence. Provenance only — never display.
+   */
+  originBasis?: 'profile-origin'
+  originEvidence?: string
+  /**
    * Presence-model edge kind (Aug 2026). Absent = presumed-local (the
    * approved gap-fill default). 'archive' = identity established but
    * origin affirmatively unestablished: the records were verified

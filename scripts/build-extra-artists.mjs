@@ -51,11 +51,16 @@ import {
 } from './lib/dedup-rule.mjs'
 import { COUNTRIES } from './lib/gap-fill-countries.mjs'
 import {
+  artistRecord,
   plantSliceRows,
   releaseIndexAvailable,
   releasesFor,
   releasesMeta,
 } from './lib/discogsDump.mjs'
+import { classifyProfile } from './lib/profileOrigin.mjs'
+
+/** Born-only profile cases, held for the owner (regenerated per run). */
+const PROFILE_HELD_PATH = 'data/profile-origin-held.json'
 
 const WORK_PATH = 'data/extra-artists-work-v2.json'
 const OUT_PATH = 'lib/explore/extra-artists.json'
@@ -798,24 +803,44 @@ async function main() {
     // releases ships only if this country's Wikidata pass claims them
     // (the loop above set wikidataId by Discogs id or exact name). A
     // Wikidata person carrying an MB id is MB-known and flows on to the
-    // dedup, which records 'crosswalk'. No origin evidence at all → the
-    // plant alone never places anyone: counted, sampled, dropped.
+    // dedup, which records 'crosswalk'. Otherwise the PROFILE-ORIGIN
+    // RULE (owner ruling, Sep 7, 2026 — scripts/lib/profileOrigin.mjs):
+    // an explicit nationality claim in the Discogs profile ships
+    // (basis profile-origin), a mixed claim ships with a note, a
+    // birth-clause-only mention is HELD for the owner, a foreign claim
+    // is not this pool's. No evidence at all → the plant alone never
+    // places anyone: counted, sampled, dropped.
     if (sliceByLabel.size > 0) {
       const stats = {
         releases: state.releases.filter((release) => release.slice).length,
         candidates: 0,
         originResolved: 0,
         mbKnown: 0,
+        profileClaim: 0,
+        profileMixed: 0,
+        profileBornOnlyHeld: 0,
+        profileForeign: 0,
         originUnknown: 0,
         originUnknownSample: [],
+        profileForeignSample: [],
       }
+      const held = []
       const wdByDiscogs = new Map(
         wd.filter((person) => person.discogsId).map((person) => [String(person.discogsId), person]),
       )
       const wdByName = new Map(wd.map((person) => [normalize(person.name), person]))
       const unknown = []
-      for (const [key, candidate] of candidates.entries()) {
-        if (!candidate.sliceOnly) continue
+      // Walk slice-only candidates in artist-shard order so each of the
+      // 256 Discogs artist shards is read once, not thrashed through a
+      // small cache (was ~20 min per run, now ~1).
+      const sliceOnlyEntries = [...candidates.entries()]
+        .filter(([, candidate]) => candidate.sliceOnly)
+        .sort(
+          ([, a], [, b]) =>
+            ((a.discogsArtistId ?? 0) % 256) - ((b.discogsArtistId ?? 0) % 256) ||
+            (a.discogsArtistId ?? 0) - (b.discogsArtistId ?? 0),
+        )
+      for (const [key, candidate] of sliceOnlyEntries) {
         stats.candidates++
         if (candidate.wikidataId) {
           stats.originResolved++
@@ -831,6 +856,41 @@ async function main() {
           stats.mbKnown++
           continue
         }
+        const profile = artistRecord(candidate.discogsArtistId)?.profile ?? null
+        const ruling = classifyProfile(profile, code)
+        if (ruling.verdict === 'claim' || ruling.verdict === 'mixed') {
+          stats[ruling.verdict === 'claim' ? 'profileClaim' : 'profileMixed']++
+          candidate.originBasis = 'profile-origin'
+          candidate.originEvidence = ruling.excerpt
+          if (ruling.verdict === 'mixed') {
+            candidate.note = `profile-origin (mixed claims ${ruling.foreignClaims.join('/')}): ${ruling.excerpt}`
+          }
+          continue
+        }
+        const years = [...new Set(candidate.years)].sort((a, b) => a - b)
+        if (ruling.verdict === 'born-only') {
+          stats.profileBornOnlyHeld++
+          held.push({
+            code,
+            key,
+            name: candidate.name,
+            discogsArtistId: candidate.discogsArtistId,
+            releaseCount: candidate.releaseCount,
+            years: years.length ? `${years[0]}–${years[years.length - 1]}` : null,
+            foreignClaims: ruling.foreignClaims,
+            profile: ruling.excerpt,
+          })
+          candidates.delete(key)
+          continue
+        }
+        if (ruling.verdict === 'foreign') {
+          stats.profileForeign++
+          if (stats.profileForeignSample.length < 10) {
+            stats.profileForeignSample.push(`${candidate.name} → ${ruling.foreignClaims.join('/')}`)
+          }
+          candidates.delete(key)
+          continue
+        }
         stats.originUnknown++
         unknown.push(candidate)
         candidates.delete(key)
@@ -840,8 +900,9 @@ async function main() {
         .slice(0, 15)
         .map((candidate) => `${candidate.name} (${candidate.releaseCount})`)
       state.plantSlices = stats
+      state.profileHeld = held.sort((a, b) => b.releaseCount - a.releaseCount)
       console.log(
-        `  plant slices: ${stats.releases} releases → ${stats.candidates} slice-only candidates: ${stats.originResolved} origin resolved via Wikidata, ${stats.mbKnown} MB-known, ${stats.originUnknown} origin unknown (not shipped)`,
+        `  plant slices: ${stats.releases} releases → ${stats.candidates} slice-only candidates: ${stats.originResolved} via Wikidata, ${stats.mbKnown} MB-known, profile claim ${stats.profileClaim} + mixed ${stats.profileMixed} ship, ${stats.profileBornOnlyHeld} born-only HELD, ${stats.profileForeign} foreign, ${stats.originUnknown} unknown (not shipped)`,
       )
     }
 
@@ -964,6 +1025,12 @@ async function main() {
           ...(survivor.pressedAs?.size
             ? { pressedAs: [...survivor.pressedAs].sort() }
             : {}),
+          // Profile-origin provenance (display-neutral) and the owner's
+          // keep-with-note for mixed claims.
+          ...(survivor.originBasis
+            ? { originBasis: survivor.originBasis, originEvidence: survivor.originEvidence }
+            : {}),
+          ...(survivor.note ? { note: survivor.note } : {}),
         }
       })
       // Documented years first, then the most-pressed.
@@ -1049,6 +1116,27 @@ async function main() {
   out.countries = { ...existing.countries, ...out.countries }
   writeFileSync(OUT_PATH, JSON.stringify(out, null, 2))
   writeFileSync(REPORT_PATH, JSON.stringify(report, null, 2))
+
+  // Profile-origin HELD list: regenerated for the countries run, other
+  // countries' entries carried over (lesson 2: derived, re-derived).
+  const heldFile = loadJson(PROFILE_HELD_PATH, { generatedAt: null, cases: [] })
+  const carried = heldFile.cases.filter((entry) => !targets.includes(entry.code))
+  const fresh = targets.flatMap((code) => work.countries[code]?.profileHeld ?? [])
+  if (fresh.length > 0 || carried.length !== heldFile.cases.length) {
+    writeFileSync(
+      PROFILE_HELD_PATH,
+      JSON.stringify(
+        {
+          generatedAt: new Date().toISOString(),
+          rule: 'profile-origin (owner ruling Sep 7 2026): born-only mentions are held, never shipped on the plant alone',
+          cases: [...carried, ...fresh],
+        },
+        null,
+        2,
+      ) + '\n',
+    )
+    console.log(`profile-origin held list: ${fresh.length} new cases → ${PROFILE_HELD_PATH}`)
+  }
   console.log(`\nDone → ${OUT_PATH}`)
   console.log(JSON.stringify(report, null, 2))
 }
