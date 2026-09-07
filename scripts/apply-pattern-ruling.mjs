@@ -69,6 +69,9 @@ const PARENT = {
   KW: ['Egypt', 'Lebanon', 'Iraq', 'Saudi Arabia', 'India'],
   AM: ['Russia', 'Georgia', 'Iran', 'United States', 'France'],
   UZ: ['Russia'], AL: ['Italy', 'Greece', 'North Macedonia', 'Kosovo'],
+  // Kazakhstan (Sep 7, 2026): Soviet metropole + the Tashkent-pressing
+  // circuit it shares with Uzbekistan.
+  KZ: ['Russia', 'Soviet Union', 'Uzbekistan'],
   MD: ['Russia', 'Romania', 'Ukraine'],
   XK: ['Serbia', 'Albania', 'North Macedonia'], GL: ['Denmark'],
   VN: ['France', 'United States'],

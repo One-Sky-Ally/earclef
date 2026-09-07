@@ -4971,50 +4971,6 @@
       "why": "no corroboration either way"
     },
     {
-      "caseKey": "UZ|dg|914016",
-      "cc": "UZ",
-      "key": "dg|914016",
-      "name": "Игорь Саруханов",
-      "mbid": "14de3eb0-a7a5-42bc-9abf-a6744dab8528",
-      "mbName": "Игорь Саруханов",
-      "mbArea": "Russia",
-      "entryYears": null,
-      "wdIsCandidate": false,
-      "candidateWdId": null,
-      "nameClass": "distinctive",
-      "pinned": null,
-      "missingInResult": true,
-      "evidence": {
-        "wd": {
-          "qid": "Q4408826",
-          "description": "Russian musician",
-          "born": "Q265",
-          "formed": null,
-          "origin": null,
-          "citizenships": [
-            "Q159",
-            "Q15180"
-          ],
-          "professions": [
-            "Q36834",
-            "Q49757",
-            "Q177220",
-            "Q488205"
-          ],
-          "musician": true
-        },
-        "beginCountry": "Uzbekistan",
-        "life": {
-          "end": null,
-          "ended": false,
-          "begin": "1956-04-06"
-        }
-      },
-      "eraOverlap": null,
-      "proposal": "keep-note",
-      "why": "origin/citizenship in pool country"
-    },
-    {
       "caseKey": "AL|dg|5718922",
       "cc": "AL",
       "key": "dg|5718922",
@@ -11074,6 +11030,686 @@
       "eraOverlap": null,
       "proposal": "held",
       "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "KZ|dg|265124",
+      "cc": "KZ",
+      "key": "dg|265124",
+      "name": "Nole Plastique",
+      "mbid": "0fe2d9c0-5757-4b14-8abe-ec9eece2cc2a",
+      "mbName": "Nole Plastique",
+      "mbArea": "Russia",
+      "entryYears": [
+        2007,
+        2007
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "end": null,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "KZ|dg|5434436",
+      "cc": "KZ",
+      "key": "dg|5434436",
+      "name": "Восток",
+      "mbid": "897824b2-b923-46c6-a0df-1bc76fba9167",
+      "mbName": "Восток",
+      "mbArea": "Russia",
+      "entryYears": [
+        2007,
+        2007
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q4126418",
+          "description": null,
+          "born": null,
+          "formed": null,
+          "origin": "Q159",
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": "1996",
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "held",
+      "why": "Sep 7 2026 KZ review: common-noun band name (\"East\") shared by several Soviet-era ensembles — generic names decide nothing; owner call",
+      "audited": "override"
+    },
+    {
+      "caseKey": "KZ|dg|5493962",
+      "cc": "KZ",
+      "key": "dg|5493962",
+      "name": "Шахзод",
+      "mbid": "3c984a5e-c3c9-44a1-9f28-f770aeb8f225",
+      "mbName": "Shahzod",
+      "mbArea": "Uzbekistan",
+      "entryYears": [
+        2005,
+        2005
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": "1989",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "KZ|dg|5707263",
+      "cc": "KZ",
+      "key": "dg|5707263",
+      "name": "Forest Hum",
+      "mbid": "33551712-2a97-4737-a6b9-6fbc82f40a26",
+      "mbName": "forest hum",
+      "mbArea": "Russia",
+      "entryYears": [
+        2017,
+        2017
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "KZ|dg|703194",
+      "cc": "KZ",
+      "key": "dg|703194",
+      "name": "Александр Зингер",
+      "mbid": "a464263e-1bac-4c94-aeda-22204fcfca27",
+      "mbName": "Александр Зингер",
+      "mbArea": "Russia",
+      "entryYears": [
+        2008,
+        2008
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "KZ|dg|1278124",
+      "cc": "KZ",
+      "key": "dg|1278124",
+      "name": "Исаак Дунаевский",
+      "mbid": "f03de526-c8b2-4854-b894-656d21ae7623",
+      "mbName": "Исаак Дунаевский",
+      "mbArea": "Soviet Union",
+      "entryYears": [
+        1960,
+        1993
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q638638",
+          "description": "Soviet composer (1900–1955)",
+          "born": "Q212",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q15180",
+            "Q34266"
+          ],
+          "professions": [
+            "Q36834",
+            "Q158852",
+            "Q1415090",
+            "Q16145150"
+          ],
+          "musician": true
+        },
+        "beginCountry": "Ukraine",
+        "life": {
+          "begin": "1900-01-30",
+          "end": "1955-07-25",
+          "ended": true
+        }
+      },
+      "eraOverlap": false,
+      "proposal": "exclude",
+      "why": "MB match's Wikidata origin Q212 ≠ pool; identity via distinctive name"
+    },
+    {
+      "caseKey": "KZ|dg|2823955",
+      "cc": "KZ",
+      "key": "dg|2823955",
+      "name": "Алибек Днишев",
+      "mbid": "594f4fd9-91cc-45fe-9a6a-7e85cb6e9075",
+      "mbName": "Алибек Днишев",
+      "mbArea": "Soviet Union",
+      "entryYears": [
+        1973,
+        2017
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q4163310",
+          "description": "Soviet singer and opera singer",
+          "born": "Q232",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q232",
+            "Q15180"
+          ],
+          "professions": [
+            "Q2865819",
+            "Q16145150"
+          ],
+          "musician": false
+        },
+        "beginCountry": "Kazakhstan",
+        "life": {
+          "begin": "1951-07-30",
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country"
+    },
+    {
+      "caseKey": "KZ|dg|1648766",
+      "cc": "KZ",
+      "key": "dg|1648766",
+      "name": "Ермек Серкебаев",
+      "mbid": "0dafa861-777c-4466-a15d-327bf0cc4058",
+      "mbName": "Ермек Серкебаев",
+      "mbArea": "Soviet Union",
+      "entryYears": [
+        1964,
+        2017
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q4417660",
+          "description": "Soviet singer, opera singer and actor (1926-2013)",
+          "born": "Q232",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q232",
+            "Q15180"
+          ],
+          "professions": [
+            "Q33999",
+            "Q82955",
+            "Q2865819"
+          ],
+          "musician": false
+        },
+        "beginCountry": "Kazakhstan",
+        "life": {
+          "ended": true,
+          "end": "2013-11-16",
+          "begin": "1926-07-04"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country"
+    },
+    {
+      "caseKey": "KZ|dg|11458475",
+      "cc": "KZ",
+      "key": "dg|11458475",
+      "name": "v ci Vi",
+      "mbid": "e92fcdb4-a57a-48d5-84bc-336f90f7ca7a",
+      "mbName": "v ci Vi",
+      "mbArea": "Russia",
+      "entryYears": [
+        2023,
+        2023
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "KZ|dg|13084932",
+      "cc": "KZ",
+      "key": "dg|13084932",
+      "name": "Esophageal Worm",
+      "mbid": "43c38c40-83ae-4c38-a74a-66b272827382",
+      "mbName": "Esophageal Worm",
+      "mbArea": "Russia",
+      "entryYears": [
+        2023,
+        2023
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "KZ|dg|1994107",
+      "cc": "KZ",
+      "key": "dg|1994107",
+      "name": "Бис",
+      "mbid": "7e071061-460a-465a-8bcf-6528ae96385b",
+      "mbName": "БиС",
+      "mbArea": "Russia",
+      "entryYears": [
+        2009,
+        2009
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "generic",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q4086179",
+          "description": null,
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [],
+          "professions": [],
+          "musician": false
+        },
+        "beginCountry": "Russia",
+        "life": {
+          "ended": true,
+          "end": "2010",
+          "begin": "2007"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-policy-c",
+      "why": "generic name, no origin evidence — era coincidence is not identity"
+    },
+    {
+      "caseKey": "KZ|dg|1642806",
+      "cc": "KZ",
+      "key": "dg|1642806",
+      "name": "Леший",
+      "mbid": "ce689253-ddf6-441f-951f-a56d7f8c763d",
+      "mbName": "Леший",
+      "mbArea": "Russia",
+      "entryYears": [
+        2025,
+        2025
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Russia",
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "KZ|dg|10613932",
+      "cc": "KZ",
+      "key": "dg|10613932",
+      "name": "Крошка Нетопырь И Малыш Мёртвая Голова",
+      "mbid": "02f74f6b-68d1-4bff-87cb-71e6b10dec46",
+      "mbName": "Крошка Нетопырь и Малыш Мёртвая Голова",
+      "mbArea": "Russia",
+      "entryYears": [
+        2025,
+        2025
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "begin": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "KZ|dg|5707309",
+      "cc": "KZ",
+      "key": "dg|5707309",
+      "name": "Tsygun",
+      "mbid": "ec22fe60-b69e-43e3-b459-224952b0c416",
+      "mbName": "Tsygun",
+      "mbArea": "Russia",
+      "entryYears": [
+        2024,
+        2024
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": "Russia",
+        "life": {
+          "begin": "2015",
+          "ended": false,
+          "end": null
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "exclude",
+      "why": "MB begin-area Russia ≠ pool; distinctive name + era"
+    },
+    {
+      "caseKey": "KZ|dg|17735571",
+      "cc": "KZ",
+      "key": "dg|17735571",
+      "name": "Акцент",
+      "mbid": "ceaa820d-9923-43bc-bb05-aa19347377ab",
+      "mbName": "АкЦент",
+      "mbArea": "Russia",
+      "entryYears": [
+        2001,
+        2001
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "ended": false,
+          "begin": null,
+          "end": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "KZ|dg|1837980",
+      "cc": "KZ",
+      "key": "dg|1837980",
+      "name": "Мовсар Минцаев",
+      "mbid": "876a1b4f-54e9-4186-a76c-57d32e1111dc",
+      "mbName": "Мовсар Минцаев",
+      "mbArea": "Russia",
+      "entryYears": [
+        1984,
+        1984
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q14499409",
+          "description": null,
+          "born": "Q232",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q159",
+            "Q15180"
+          ],
+          "professions": [
+            "Q2865819"
+          ],
+          "musician": false
+        },
+        "beginCountry": "Kazakhstan",
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": "1952-04-08"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country"
+    },
+    {
+      "caseKey": "KZ|dg|1849111",
+      "cc": "KZ",
+      "key": "dg|1849111",
+      "name": "Анатолий Молодов",
+      "mbid": "177ec83b-5d0a-4a35-bf7d-3e2afb516843",
+      "mbName": "Анатолий Молодов",
+      "mbArea": "Russia",
+      "entryYears": [
+        1986,
+        1986
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": null,
+        "beginCountry": null,
+        "life": {
+          "end": null,
+          "ended": false,
+          "begin": null
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "held",
+      "why": "no corroboration either way"
+    },
+    {
+      "caseKey": "KZ|dg|1956924",
+      "cc": "KZ",
+      "key": "dg|1956924",
+      "name": "Евгений Брусиловский",
+      "mbid": "e17794d8-ba01-4d52-8748-8057437f4ff8",
+      "mbName": "Евгений Брусиловский",
+      "mbArea": "Russia",
+      "entryYears": [
+        1968,
+        1970
+      ],
+      "wdIsCandidate": false,
+      "candidateWdId": null,
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q502137",
+          "description": "Russian composer (1905–1981)",
+          "born": "Q159",
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q15180",
+            "Q34266"
+          ],
+          "professions": [
+            "Q36834",
+            "Q16145150"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": "1905-11-12",
+          "ended": true,
+          "end": "1981-05-09"
+        }
+      },
+      "eraOverlap": true,
+      "proposal": "held",
+      "why": "Sep 7 2026 KZ review: Russian-born composer who founded Kazakh classical music and was based in Alma-Ata 1933–1970s (wrote the Kazakh SSR anthem): a presence-model \"based\" edge — origin says exclude, residence says keep; owner call",
+      "audited": "override"
+    },
+    {
+      "caseKey": "KZ|wd|Q130547623",
+      "cc": "KZ",
+      "key": "wd|Q130547623",
+      "name": "Liili",
+      "mbid": "31ef3695-9e8c-4ade-bf1f-46b7a84b4856",
+      "mbName": "Liili",
+      "mbArea": "Russia",
+      "entryYears": [
+        null,
+        null
+      ],
+      "wdIsCandidate": true,
+      "candidateWdId": "Q130547623",
+      "nameClass": "distinctive",
+      "pinned": null,
+      "missingInResult": false,
+      "evidence": {
+        "wd": {
+          "qid": "Q130547623",
+          "description": "Signer that uses Russian, English, Chineese, Kazakh languages",
+          "born": null,
+          "formed": null,
+          "origin": null,
+          "citizenships": [
+            "Q232"
+          ],
+          "professions": [
+            "Q177220"
+          ],
+          "musician": true
+        },
+        "beginCountry": null,
+        "life": {
+          "begin": null,
+          "end": null,
+          "ended": false
+        }
+      },
+      "eraOverlap": null,
+      "proposal": "keep-note",
+      "why": "origin/citizenship in pool country"
     }
   ]
 }

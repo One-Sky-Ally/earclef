@@ -71,6 +71,13 @@ test('claims for another nation only are foreign, and the pool country never lea
   assert.equal(verdict('Ukrainian vocal-instrumental ensemble.', 'KG'), 'foreign')
 })
 
+test('a profile that is nothing but the country name is a claim', () => {
+  assert.equal(verdict('Kazakhstan', 'KZ'), 'claim')
+  assert.equal(verdict('Kazakhstan.', 'KZ'), 'claim')
+  assert.equal(verdict('Kazakhstan', 'UZ'), 'foreign')
+  assert.equal(verdict('Lives in Kazakhstan.', 'KZ'), 'born-only')
+})
+
 test('language words and homonymous cities are not claims', () => {
   assert.equal(verdict('Composer. Born 1946, studied in Tashkent conservatoire. Transliterating in English: Khabibulla', 'UZ'), 'born-only')
   assert.equal(classifyProfile('Uzbek composer. Transliterating in English: Rakhimov', 'UZ').foreignClaims.length, 0)

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T06:39:13.994Z",
+  "generatedAt": "2026-09-07T07:33:48.397Z",
   "rule": "profile-origin (owner ruling Sep 7 2026): born-only mentions are held, never shipped on the plant alone",
   "cases": [
     {
@@ -230,6 +230,67 @@
       "years": "1970–1970",
       "foreignClaims": [],
       "profile": "(1920, Alexandria (now Ukraine), USSR - 1998) - Soviet composer, conductor, teacher, and folklorist. He worked a lot in Kyrgyzstan and Uzbekistan."
+    },
+    {
+      "code": "KZ",
+      "key": "dg|1584762",
+      "name": "Лариса Мондрус",
+      "discogsArtistId": 1584762,
+      "releaseCount": 11,
+      "years": "1965–1971",
+      "foreignClaims": [
+        "RU",
+        "LV",
+        "DE"
+      ],
+      "profile": "Larisa Israelevna Mondrus (Latvian: Larisa Mondrusa, German: Larissa Mondrus; born 15 November 1943 in Dzhambul, Kazakh SSR) is a Soviet singer (soprano), who w"
+    },
+    {
+      "code": "KZ",
+      "key": "dg|1920432",
+      "name": "Oscar Strock",
+      "discogsArtistId": 1920432,
+      "releaseCount": 2,
+      "years": "1973–1973",
+      "foreignClaims": [
+        "RU",
+        "LV"
+      ],
+      "profile": "Born January 18, 1892, Dinaburg (Russian Empire, now Daugavpils, Latvia) - passed away June 22, 1975 (Riga, Latvian SSR, USSR), was a Latvian composer. Some sou"
+    },
+    {
+      "code": "KZ",
+      "key": "dg|807919",
+      "name": "Ефим Адлер",
+      "discogsArtistId": 807919,
+      "releaseCount": 2,
+      "years": "1976–1976",
+      "foreignClaims": [],
+      "profile": "Ефим Самуилович Адлер родился 3 марта 1937 года в совхозе Пахта-Арал Казахской ССР. В 1962 году окончил историко-теоретический факультет Одесской консерватории,"
+    },
+    {
+      "code": "KZ",
+      "key": "dg|1417568",
+      "name": "Интеграл",
+      "discogsArtistId": 1417568,
+      "releaseCount": 1,
+      "years": "1981–1981",
+      "foreignClaims": [
+        "RU"
+      ],
+      "profile": "In English: Integral Russian pop-rock band, formed in 1967 in Ust-Kamenogorsk, Kazakhstan. In 1969 the band was put on hold due to military service, reforming i"
+    },
+    {
+      "code": "KZ",
+      "key": "dg|3409256",
+      "name": "Галия Семенова",
+      "discogsArtistId": 3409256,
+      "releaseCount": 1,
+      "years": "1969–1969",
+      "foreignClaims": [
+        "RU"
+      ],
+      "profile": "Galija Semenova (1943-2003) Soviet and Russian pop singer. Was born in Kazakhstan. In 1963 married Vladimir Semenov, in that time musician and singer of Astrakh"
     }
   ]
 }

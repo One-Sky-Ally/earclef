@@ -151,7 +151,18 @@ export function classifyProfile(profile, poolCode) {
   const text = (profile ?? '').replace(/\[[^\]]*\]/g, ' ').replace(/\s+/g, ' ').trim()
   if (!terms || !text) return { verdict: 'none', poolClaim: null, foreignClaims: [], excerpt: '' }
   const outsideBirth = neutraliseBirthPlaces(text, terms)
+  // A one-word profile that IS the country ("Kazakhstan.") is a claim:
+  // Discogs contributors file origin that way for minor Soviet-era acts.
+  const bare = text.replace(/[.\s]+$/u, '')
+  const wholeProfileCountry =
+    Object.keys(COUNTRY_NAMES).find((code) =>
+      new RegExp(`^(?:${COUNTRY_NAMES[code].join('|')})$`, 'iu').test(bare),
+    ) ?? null
+  if (wholeProfileCountry && wholeProfileCountry !== poolCode) {
+    return { verdict: 'foreign', poolClaim: null, foreignClaims: [wholeProfileCountry], excerpt: text.slice(0, 160) }
+  }
   const poolClaim =
+    (wholeProfileCountry === poolCode ? bare : null) ??
     outsideBirth.match(terms.claim)?.[0] ??
     outsideBirth.match(terms.from)?.[0] ??
     outsideBirth.match(terms.attributive)?.[0] ??
