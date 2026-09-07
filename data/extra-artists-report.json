@@ -1,13 +1,363 @@
 {
+  "UZ": {
+    "name": "Uzbekistan",
+    "wikidataMusicians": 168,
+    "discogsReleases": 9734,
+    "candidates": 659,
+    "newArtists": 591,
+    "dropped": {
+      "duplicate": 41,
+      "foreignCatalog": 16,
+      "wikidataCrosswalk": 8
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 44,
+      "uncorroboratedKept": 82
+    },
+    "dated": 552,
+    "sample": [
+      "Alex Greenhouse (2016)",
+      "Sherali Juraev (1971)",
+      "Limora (2025)",
+      "Liyna (2025)",
+      "Камолиддин Рахимов (1971)",
+      "Фахриддин Умаров (1939)",
+      "Xeneze (2024)",
+      "Bobryuko (2016)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "plantSlices": {
+      "releases": 8702,
+      "candidates": 2909,
+      "originResolved": 1,
+      "mbKnown": 4,
+      "profileClaim": 130,
+      "profileMixed": 15,
+      "profileBornOnlyHeld": 15,
+      "profileForeign": 1053,
+      "originUnknown": 1691,
+      "originUnknownSample": [
+        "Синяя Птица (44)",
+        "Михаил Пляцковский (31)",
+        "The Rolling Stones (31)",
+        "Hans Christian Andersen (29)",
+        "Мелодия (27)",
+        "Гулямджан Якубов (25)",
+        "Поющие Сердца (23)",
+        "Группа Стаса Намина (22)",
+        "Евгений Мартынов (21)",
+        "Здравствуй, Песня (21)",
+        "Голубые Гитары (19)",
+        "Рафаэль Ильясов (18)",
+        "Уйгурский ансамбль мукамистов Узбекского ТВ и радио п/у Х. Хелямова (17)",
+        "Бибігүл Төлегенова (17)",
+        "Дустар (16)"
+      ],
+      "profileForeignSample": [
+        "Friedrich Lips → RU",
+        "Charles Munch → DE/FR",
+        "Eduardas Balsys → LT",
+        "Қудратуллоҳ Яҳёев → TJ",
+        "Сулейман Юсупов → TT",
+        "Комбинация → RU",
+        "Николай Голованов → RU",
+        "Арташес Аветян → RU/AM/DE/IR",
+        "Людмила Гурченко → RU/UA",
+        "Евгений Бачурин → RU"
+      ]
+    },
+    "merge": {
+      "committedBefore": 590,
+      "committedAfter": 590,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [
+        "Дилором Саидаминова ↔ Дилором Сайдаминова"
+      ],
+      "addedSample": []
+    }
+  },
+  "TJ": {
+    "name": "Tajikistan",
+    "wikidataMusicians": 125,
+    "discogsReleases": 8730,
+    "candidates": 160,
+    "newArtists": 146,
+    "dropped": {
+      "duplicate": 7,
+      "foreignCatalog": 1,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 2,
+      "uncorroboratedKept": 6
+    },
+    "dated": 132,
+    "sample": [
+      "Одина Хашимов (1972)",
+      "Джурабек Набиев (1956)",
+      "Джурабек Муродов (1980)",
+      "Лейла Шарипова (1968)",
+      "Мастона Эргашева (1967)",
+      "Звуковая Артель (1992)",
+      "Исхак Катаев (1978)",
+      "Махфират Ҳамрақулова (1985)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "plantSlices": {
+      "releases": 8702,
+      "candidates": 2918,
+      "originResolved": 4,
+      "mbKnown": 0,
+      "profileClaim": 26,
+      "profileMixed": 2,
+      "profileBornOnlyHeld": 4,
+      "profileForeign": 1169,
+      "originUnknown": 1713,
+      "originUnknownSample": [
+        "Синяя Птица (44)",
+        "Михаил Пляцковский (31)",
+        "The Rolling Stones (31)",
+        "Hans Christian Andersen (29)",
+        "Мелодия (27)",
+        "Гулямджан Якубов (25)",
+        "Поющие Сердца (23)",
+        "Группа Стаса Намина (22)",
+        "Евгений Мартынов (21)",
+        "Здравствуй, Песня (21)",
+        "Голубые Гитары (19)",
+        "Рафаэль Ильясов (18)",
+        "Уйгурский ансамбль мукамистов Узбекского ТВ и радио п/у Х. Хелямова (17)",
+        "Бибігүл Төлегенова (17)",
+        "Дустар (16)"
+      ],
+      "profileForeignSample": [
+        "Friedrich Lips → RU",
+        "Саодат Кобулова → UZ",
+        "Charles Munch → DE/FR",
+        "Eduardas Balsys → LT",
+        "Фахриддин Умаров → UZ",
+        "Сулейман Юсупов → TT",
+        "Комбинация → RU",
+        "Николай Голованов → RU",
+        "Арташес Аветян → RU/AM/DE/IR",
+        "Людмила Гурченко → RU/UA"
+      ]
+    },
+    "merge": {
+      "committedBefore": 146,
+      "committedAfter": 146,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "KG": {
+    "name": "Kyrgyzstan",
+    "wikidataMusicians": 78,
+    "discogsReleases": 8796,
+    "candidates": 175,
+    "newArtists": 160,
+    "dropped": {
+      "duplicate": 6,
+      "foreignCatalog": 7,
+      "wikidataCrosswalk": 0
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 5,
+      "uncorroboratedKept": 8
+    },
+    "dated": 131,
+    "sample": [
+      "Zan-zan-zawa-veia (2011)",
+      "Калый Молдобасанов (1944)",
+      "Мукаш Абдраев (1970)",
+      "Тугельбай Казаков (1981)",
+      "Knotholes (2016)",
+      "Асанкалый Керимбаев (1982)",
+      "Государственный Оркестр Народных Инструментов Имени Карамолдо Орозова (1971)",
+      "Динара Акулова (1988)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "plantSlices": {
+      "releases": 8702,
+      "candidates": 2917,
+      "originResolved": 1,
+      "mbKnown": 0,
+      "profileClaim": 45,
+      "profileMixed": 1,
+      "profileBornOnlyHeld": 1,
+      "profileForeign": 1158,
+      "originUnknown": 1711,
+      "originUnknownSample": [
+        "Синяя Птица (44)",
+        "Михаил Пляцковский (31)",
+        "The Rolling Stones (31)",
+        "Hans Christian Andersen (29)",
+        "Мелодия (27)",
+        "Гулямджан Якубов (25)",
+        "Поющие Сердца (23)",
+        "Группа Стаса Намина (22)",
+        "Евгений Мартынов (21)",
+        "Здравствуй, Песня (21)",
+        "Голубые Гитары (19)",
+        "Рафаэль Ильясов (18)",
+        "Уйгурский ансамбль мукамистов Узбекского ТВ и радио п/у Х. Хелямова (17)",
+        "Бибігүл Төлегенова (17)",
+        "Дустар (16)"
+      ],
+      "profileForeignSample": [
+        "Friedrich Lips → RU",
+        "Саодат Кобулова → UZ",
+        "Charles Munch → DE/FR",
+        "Eduardas Balsys → LT",
+        "Фахриддин Умаров → UZ",
+        "Қудратуллоҳ Яҳёев → TJ",
+        "Сулейман Юсупов → TT",
+        "Комбинация → RU",
+        "Николай Голованов → RU",
+        "Арташес Аветян → RU/AM/DE/IR"
+      ]
+    },
+    "merge": {
+      "committedBefore": 160,
+      "committedAfter": 160,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
+  "TM": {
+    "name": "Turkmenistan",
+    "wikidataMusicians": 33,
+    "discogsReleases": 8792,
+    "candidates": 115,
+    "newArtists": 93,
+    "dropped": {
+      "duplicate": 17,
+      "foreignCatalog": 3,
+      "wikidataCrosswalk": 1
+    },
+    "recordGuard": {
+      "countryMismatch": 0,
+      "noCountry": 0,
+      "unfetchedSkipped": 0
+    },
+    "foreignByOrigin": 0,
+    "keptDespiteNameHit": {
+      "fuzzyKept": 0,
+      "collisionKept": 4,
+      "uncorroboratedKept": 3
+    },
+    "dated": 40,
+    "sample": [
+      "Gunesh (1980)",
+      "Арай (1984)",
+      "Чары Нурымов (1969)",
+      "Дурды Нурыев (1985)",
+      "Гульджан Хуммедова (1974)",
+      "Мурад Садыков (1951)",
+      "Нуры Мухатов (1982)",
+      "Нуры Халмамедов (1969)"
+    ],
+    "discogsSource": {
+      "source": "dump",
+      "edition": "discogs_20260901_releases.xml.gz",
+      "addedReleases": 0
+    },
+    "plantSlices": {
+      "releases": 8702,
+      "candidates": 2918,
+      "originResolved": 1,
+      "mbKnown": 1,
+      "profileClaim": 19,
+      "profileMixed": 2,
+      "profileBornOnlyHeld": 0,
+      "profileForeign": 1185,
+      "originUnknown": 1710,
+      "originUnknownSample": [
+        "Синяя Птица (44)",
+        "Михаил Пляцковский (31)",
+        "The Rolling Stones (31)",
+        "Hans Christian Andersen (29)",
+        "Мелодия (27)",
+        "Гулямджан Якубов (25)",
+        "Поющие Сердца (23)",
+        "Группа Стаса Намина (22)",
+        "Евгений Мартынов (21)",
+        "Здравствуй, Песня (21)",
+        "Голубые Гитары (19)",
+        "Рафаэль Ильясов (18)",
+        "Уйгурский ансамбль мукамистов Узбекского ТВ и радио п/у Х. Хелямова (17)",
+        "Бибігүл Төлегенова (17)",
+        "Дустар (16)"
+      ],
+      "profileForeignSample": [
+        "Friedrich Lips → RU",
+        "Саодат Кобулова → UZ",
+        "Charles Munch → DE/FR",
+        "Eduardas Balsys → LT",
+        "Фахриддин Умаров → UZ",
+        "Қудратуллоҳ Яҳёев → TJ",
+        "Сулейман Юсупов → TT",
+        "Комбинация → RU",
+        "Николай Голованов → RU",
+        "Арташес Аветян → RU/AM/DE/IR"
+      ]
+    },
+    "merge": {
+      "committedBefore": 93,
+      "committedAfter": 93,
+      "added": 0,
+      "widened": 0,
+      "skippedNameClash": [],
+      "addedSample": []
+    }
+  },
   "KZ": {
     "name": "Kazakhstan",
     "wikidataMusicians": 211,
     "discogsReleases": 10406,
-    "candidates": 1294,
-    "newArtists": 861,
+    "candidates": 1295,
+    "newArtists": 859,
     "dropped": {
-      "duplicate": 131,
-      "foreignCatalog": 296,
+      "duplicate": 132,
+      "foreignCatalog": 298,
       "wikidataCrosswalk": 6
     },
     "recordGuard": {
@@ -18,10 +368,10 @@
     "foreignByOrigin": 0,
     "keptDespiteNameHit": {
       "fuzzyKept": 0,
-      "collisionKept": 97,
+      "collisionKept": 95,
       "uncorroboratedKept": 57
     },
-    "dated": 802,
+    "dated": 800,
     "sample": [
       "Ai.KA - Digital Singer (2005)",
       "Cain (2014)",
@@ -43,8 +393,8 @@
       "originResolved": 1,
       "mbKnown": 1,
       "profileClaim": 179,
-      "profileMixed": 9,
-      "profileBornOnlyHeld": 5,
+      "profileMixed": 10,
+      "profileBornOnlyHeld": 4,
       "profileForeign": 1134,
       "originUnknown": 1541,
       "originUnknownSample": [
@@ -78,14 +428,12 @@
       ]
     },
     "merge": {
-      "committedBefore": 860,
-      "committedAfter": 861,
-      "added": 1,
+      "committedBefore": 859,
+      "committedAfter": 859,
+      "added": 0,
       "widened": 0,
       "skippedNameClash": [],
-      "addedSample": [
-        "Шанақ Ауғанбаев"
-      ]
+      "addedSample": []
     }
   }
 }

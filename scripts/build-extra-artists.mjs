@@ -878,6 +878,10 @@ async function main() {
             releaseCount: candidate.releaseCount,
             years: years.length ? `${years[0]}–${years[years.length - 1]}` : null,
             foreignClaims: ruling.foreignClaims,
+            // Which presence edge this case needs — born / based /
+            // performed — so the held list is Artist Chapters phase 2
+            // seed data, not a backlog (owner, Sep 7 2026).
+            edgeNeeded: ruling.edgeNeeded ?? 'born',
             profile: ruling.excerpt,
           })
           candidates.delete(key)

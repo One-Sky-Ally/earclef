@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T07:33:48.397Z",
+  "generatedAt": "2026-09-07T08:59:10.048Z",
   "rule": "profile-origin (owner ruling Sep 7 2026): born-only mentions are held, never shipped on the plant alone",
   "cases": [
     {
@@ -12,6 +12,7 @@
       "foreignClaims": [
         "RU"
       ],
+      "edgeNeeded": "born",
       "profile": "Yuri Antonov (Russian: Юрий Михайлович Антонов; born February 19, 1945 in Tashkent) is a Russian composer, singer and musician, People's Artist of Russia (1997)"
     },
     {
@@ -26,6 +27,7 @@
         "PL",
         "DE"
       ],
+      "edgeNeeded": "based",
       "profile": "Born February 14, 1936 in Urgench, died August 26, 1982 in Warszawa. Polish singer. Anna German was immensely popular in Poland and in the Soviet Union. She rel"
     },
     {
@@ -38,6 +40,7 @@
       "foreignClaims": [
         "RU"
       ],
+      "edgeNeeded": "born",
       "profile": "Aleksandr Borisovich Zhurbin Born in Tashkent, Uzbekistan on 7 August 1945 Is a Soviet and Russian composer"
     },
     {
@@ -50,6 +53,7 @@
       "foreignClaims": [
         "RU"
       ],
+      "edgeNeeded": "born",
       "profile": "Roxana Babayan (Born: May 30, 1946 in Tashkent, Uzbek SSR) is a Soviet/Russian pop singer and actress, People's Artist of Russia (1999). Married to ."
     },
     {
@@ -62,6 +66,7 @@
       "foreignClaims": [
         "RU"
       ],
+      "edgeNeeded": "born",
       "profile": "Was born 06.04.1956 in Samarkand, UzbSSR. Russian pop/rock-singer and composer. In groups: - from 1979 to 1981 - from 1982 to 1985 - from 1983 to 1985 Started s"
     },
     {
@@ -72,6 +77,7 @@
       "releaseCount": 3,
       "years": "1969–1979",
       "foreignClaims": [],
+      "edgeNeeded": "based",
       "profile": "Composer, conductor, pedagogue from USSR. Born 1905 in Kiev, Ukraine, died 1977 in Tashkent, Uzbekistan. Transliteration: Alexey Kozlovsky."
     },
     {
@@ -84,6 +90,7 @@
       "foreignClaims": [
         "RU"
       ],
+      "edgeNeeded": "born",
       "profile": "Rina (Yekaterina) Vasilyevna Zelyonaya 25 October (7 November) 1901, Tashkent, Syrdarya region, Russian Empire — 1 April 1991, Moscow, RSFSR, USSR. Soviet theat"
     },
     {
@@ -94,6 +101,7 @@
       "releaseCount": 2,
       "years": "1978–1978",
       "foreignClaims": [],
+      "edgeNeeded": "based",
       "profile": "Saydakram Tolegenov (1942-2001) was an Uyghur folk and maqam singer. Born in Ghulja (Yining) in Xinjiang, and graduating as a vet, he moved to Uzbekistan in 196"
     },
     {
@@ -104,6 +112,7 @@
       "releaseCount": 2,
       "years": "1970–1970",
       "foreignClaims": [],
+      "edgeNeeded": "based",
       "profile": "(1920, Alexandria (now Ukraine), USSR - 1998) - Soviet composer, conductor, teacher, and folklorist. He worked a lot in Kyrgyzstan and Uzbekistan."
     },
     {
@@ -116,6 +125,7 @@
       "foreignClaims": [
         "TJ"
       ],
+      "edgeNeeded": "born",
       "profile": "Rafael Tolmasov (born 1923, Samarkand, Uzbekistan) was a Soviet Tajik opera singer."
     },
     {
@@ -128,6 +138,7 @@
       "foreignClaims": [
         "TM"
       ],
+      "edgeNeeded": "born",
       "profile": "Firyuza was a Turkmenian ethnic/prog/jazz/fusion instrumental band, founded in 1979 in USSR under the artistic direction of pianist and organist Dmitry Sablin ."
     },
     {
@@ -138,6 +149,7 @@
       "releaseCount": 1,
       "years": "1982–1982",
       "foreignClaims": [],
+      "edgeNeeded": "based",
       "profile": "(1947 - 2019) Born in Uzbekistan. He moved to North Ossetia at a young age. He has been living in Sochi for the last few years. People's Artist of North Ossetia"
     },
     {
@@ -151,6 +163,7 @@
         "RU",
         "DE"
       ],
+      "edgeNeeded": "born",
       "profile": "Russian pianist. (1923-2013) A titan of the Soviet piano school, Rudolf Kerer (also spelled Kehrer) had his early career profoundly disrupted in October 1941 wh"
     },
     {
@@ -161,6 +174,7 @@
       "releaseCount": 1,
       "years": "1985–1985",
       "foreignClaims": [],
+      "edgeNeeded": "based",
       "profile": "Composer. Born 1946, studied in Tashkent (Uzbekistan) conservatoire. Transliterating in English: Khabibulla Rakhimov."
     },
     {
@@ -173,6 +187,7 @@
       "foreignClaims": [
         "RU"
       ],
+      "edgeNeeded": "born",
       "profile": "Russian jazz pianist (* 1951 in Tashkent, Uzbekistan, Soviet Union)."
     },
     {
@@ -183,6 +198,7 @@
       "releaseCount": 9,
       "years": "1966–1980",
       "foreignClaims": [],
+      "edgeNeeded": "based",
       "profile": "born: 03 September 1925 in Dushanbe, Tajik ASSR, USSR died: 26 June 2010 in New York City, NY, USA Renowned singer."
     },
     {
@@ -195,6 +211,7 @@
       "foreignClaims": [
         "RU"
       ],
+      "edgeNeeded": "based",
       "profile": "19 December 1921, Moscow - June 12, 1995, Moscow. Pop singer and actor. In 1951 he graduated from GITIS. Worked in Stalinabad drama theater Mayakovsky, Minsk Ru"
     },
     {
@@ -207,6 +224,7 @@
       "foreignClaims": [
         "IR"
       ],
+      "edgeNeeded": "based",
       "profile": "Iranian poet who has lived in Soviet Union, mainly in Tajikistan (1887-1957)"
     },
     {
@@ -219,6 +237,7 @@
       "foreignClaims": [
         "UZ"
       ],
+      "edgeNeeded": "based",
       "profile": "Eduard Kalandarov (born July 8, 1941 in Dushanbe) is an Uzbek composer, conductor, and pianist. In 1967, he graduated from the Tashkent Conservatory in composit"
     },
     {
@@ -229,6 +248,7 @@
       "releaseCount": 2,
       "years": "1970–1970",
       "foreignClaims": [],
+      "edgeNeeded": "based",
       "profile": "(1920, Alexandria (now Ukraine), USSR - 1998) - Soviet composer, conductor, teacher, and folklorist. He worked a lot in Kyrgyzstan and Uzbekistan."
     },
     {
@@ -243,6 +263,7 @@
         "LV",
         "DE"
       ],
+      "edgeNeeded": "born",
       "profile": "Larisa Israelevna Mondrus (Latvian: Larisa Mondrusa, German: Larissa Mondrus; born 15 November 1943 in Dzhambul, Kazakh SSR) is a Soviet singer (soprano), who w"
     },
     {
@@ -256,6 +277,7 @@
         "RU",
         "LV"
       ],
+      "edgeNeeded": "based",
       "profile": "Born January 18, 1892, Dinaburg (Russian Empire, now Daugavpils, Latvia) - passed away June 22, 1975 (Riga, Latvian SSR, USSR), was a Latvian composer. Some sou"
     },
     {
@@ -266,19 +288,8 @@
       "releaseCount": 2,
       "years": "1976–1976",
       "foreignClaims": [],
+      "edgeNeeded": "based",
       "profile": "Ефим Самуилович Адлер родился 3 марта 1937 года в совхозе Пахта-Арал Казахской ССР. В 1962 году окончил историко-теоретический факультет Одесской консерватории,"
-    },
-    {
-      "code": "KZ",
-      "key": "dg|1417568",
-      "name": "Интеграл",
-      "discogsArtistId": 1417568,
-      "releaseCount": 1,
-      "years": "1981–1981",
-      "foreignClaims": [
-        "RU"
-      ],
-      "profile": "In English: Integral Russian pop-rock band, formed in 1967 in Ust-Kamenogorsk, Kazakhstan. In 1969 the band was put on hold due to military service, reforming i"
     },
     {
       "code": "KZ",
@@ -290,6 +301,7 @@
       "foreignClaims": [
         "RU"
       ],
+      "edgeNeeded": "based",
       "profile": "Galija Semenova (1943-2003) Soviet and Russian pop singer. Was born in Kazakhstan. In 1963 married Vladimir Semenov, in that time musician and singer of Astrakh"
     }
   ]

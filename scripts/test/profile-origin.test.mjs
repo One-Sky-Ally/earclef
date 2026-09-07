@@ -71,6 +71,20 @@ test('claims for another nation only are foreign, and the pool country never lea
   assert.equal(verdict('Ukrainian vocal-instrumental ensemble.', 'KG'), 'foreign')
 })
 
+test('formation in the pool country is an origin claim, as the Wikidata pass treats P740', () => {
+  assert.equal(verdict('In English: Integral Russian pop-rock band, formed in 1967 in Ust-Kamenogorsk, Kazakhstan. In 1969 the band was', 'KZ'), 'mixed')
+  assert.equal(verdict('Folk ensemble founded in Tashkent in 1958.', 'UZ'), 'claim')
+  assert.equal(verdict('Rock band formed 1985 in Frunze.', 'KG'), 'claim')
+  assert.equal(verdict('Ансамбль, основан в 1970 году в Алма-Ате.', 'KZ'), 'claim')
+  assert.equal(verdict('Formed in Moscow; toured Kazakhstan in 1975.', 'KZ'), 'born-only')
+})
+
+test('held cases carry the presence edge they need', () => {
+  assert.equal(classifyProfile('Russian jazz pianist (* 1951 in Tashkent).', 'UZ').edgeNeeded, 'born')
+  assert.equal(classifyProfile('Composer. Born 1905 in Kiev, died 1977 in Tashkent, taught at the conservatoire.', 'UZ').edgeNeeded, 'based')
+  assert.equal(classifyProfile('Formed in Moscow; toured Kazakhstan in 1975.', 'KZ').edgeNeeded, 'performed')
+})
+
 test('a profile that is nothing but the country name is a claim', () => {
   assert.equal(verdict('Kazakhstan', 'KZ'), 'claim')
   assert.equal(verdict('Kazakhstan.', 'KZ'), 'claim')

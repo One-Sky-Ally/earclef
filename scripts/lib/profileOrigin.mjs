@@ -39,11 +39,11 @@ const POOL_LISTS = {
   },
   TJ: {
     claim: [`tajik(?:istani)?`, 'tadjik', 'tadzhik', `tadschik${L}*`, `таджик${L}*`, `тоҷик${L}*`],
-    place: ['tajikistan', `таджикистан${L}*`, 'dushanbe', 'душанбе', 'stalinabad', `сталинабад${L}*`, 'khujand', 'khodjent', 'leninabad', `ленинабад${L}*`, `худжанд${L}*`, 'kulob', 'kulyab', `куляб${L}*`, 'khorog', `хорог${L}*`, `pamir${L}*`, `памир${L}*`],
+    place: ['tajikistan', `таджикистан${L}*`, 'dushanbe', 'душанбе', 'stalinabad', `сталинабад${L}*`, 'khujand', 'khodjent', 'leninabad', `ленинабад${L}*`, `худжанд${L}*`, 'kulob', 'kulyab', `куляб${L}*`, 'khorog', `хорог${L}*`, `pamir${L}*`, `памир${L}*`, `таджики${L}*`],
   },
   KG: {
     claim: [`kyrgyz(?:stani)?`, `kirghiz(?:ian)?`, 'kirgiz', `kirgisisch${L}*`, `киргиз${L}*`, `кыргыз${L}*`],
-    place: ['kyrgyzstan', 'kirghizia', 'kirgizia', 'киргизия', `кыргызстан${L}*`, 'bishkek', 'бишкек', 'frunze', 'фрунзе', 'osh', 'ош', 'issyk[- ]?kul', `иссык[- ]?куль${L}*`, 'naryn', 'нарын'],
+    place: ['kyrgyzstan', 'kirghizia', 'kirgizia', `киргизи${L}*`, `кыргызстан${L}*`, 'bishkek', `бишкек${L}*`, 'frunze', 'фрунзе', 'osh', 'ош', 'issyk[- ]?kul', `иссык[- ]?кул${L}*`, 'naryn', `нарын${L}*`],
   },
   TM: {
     claim: [`turkmen(?:istani)?`, 'turkmenian', `туркмен${L}*`, `türkmen${L}*`],
@@ -53,7 +53,8 @@ const POOL_LISTS = {
   },
   KZ: {
     claim: [`kazakh(?:stani)?`, `kasach${L}*`, `казах${L}*`, `қазақ${L}*`],
-    place: ['kazakhstan', `казахстан${L}*`, 'almaty', 'alma[- ]?ata', 'алма[- ]?ата', 'алматы', 'astana', 'астана', 'nur-sultan', 'karaganda', `караганд${L}*`, 'shymkent', 'chimkent', 'чимкент', 'шымкент', 'semipalatinsk', `семипалатинск${L}*`, 'semey', 'pavlodar', `павлодар${L}*`, 'aktobe', `актюбинск${L}*`, 'uralsk', `уральск${L}*`, 'kokshetau', 'kokchetav', `кокчетав${L}*`, 'taraz', 'dzhambul', `джамбул${L}*`, 'kyzylorda', 'кзыл-орда', 'ust-kamenogorsk', `усть-каменогорск${L}*`, 'petropavlovsk', `петропавловск${L}*`],
+    // Cyrillic place names carry case endings ("в Алма-Ате", "в Астане").
+    place: ['kazakhstan', `казахстан${L}*`, 'almaty', 'alma[- ]?ata', `алма[- ]?ат${L}*`, 'алматы', 'astana', `астан${L}*`, 'nur-sultan', 'karaganda', `караганд${L}*`, 'shymkent', 'chimkent', 'чимкент', 'шымкент', 'semipalatinsk', `семипалатинск${L}*`, 'semey', 'pavlodar', `павлодар${L}*`, 'aktobe', `актюбинск${L}*`, 'uralsk', `уральск${L}*`, 'kokshetau', 'kokchetav', `кокчетав${L}*`, 'taraz', 'dzhambul', `джамбул${L}*`, 'kyzylorda', 'кзыл-орда', 'ust-kamenogorsk', `усть-каменогорск${L}*`, 'petropavlovsk', `петропавловск${L}*`],
   },
 }
 
@@ -86,6 +87,14 @@ const POOL_TERMS = Object.fromEntries(
       // naming an institution is an origin claim.
       attributive: new RegExp(
         `(?<![${L}])(?:${COUNTRY_NAMES[code].join('|')})\\s+(?:\\(\\p{L}+\\)\\s+)?(?:${L}+\\s+){0,2}(?:${ROLE_NOUNS})(?![${L}])`,
+        'iu',
+      ),
+      // FORMATION IS ORIGIN (owner, Sep 7 2026 — "same as the Wikidata
+      // pass already does" with P740): "formed in 1967 in
+      // Ust-Kamenogorsk, Kazakhstan", "founded in Tashkent",
+      // "основан в Алма-Ате" claim the pool for a group.
+      formed: new RegExp(
+        `(?<![${L}])(?:formed|founded|established|created|originated|started|основан${L}*|образован${L}*|создан${L}*|сформирован${L}*)(?:\\s+(?:in|at|в|во))?(?:\\s+(?:the\\s+)?(?:\\p{N}{4}|\\p{L}+)){0,4}?\\s+(?:in|at|в|во|of)\\s+(?:${L}+\\s+){0,2}(?:${lists.place.join('|')})(?![${L}\\p{N}])`,
         'iu',
       ),
       // Inside a birth clause only PLACE phrases are neutral — "Uzbek
@@ -166,6 +175,7 @@ export function classifyProfile(profile, poolCode) {
     outsideBirth.match(terms.claim)?.[0] ??
     outsideBirth.match(terms.from)?.[0] ??
     outsideBirth.match(terms.attributive)?.[0] ??
+    outsideBirth.match(terms.formed)?.[0] ??
     null
   const otherCodes = new Set()
   for (const [code, pattern] of OTHER_NATIONS) {
@@ -179,7 +189,17 @@ export function classifyProfile(profile, poolCode) {
   if (poolClaim && foreignClaims.length > 0) return { verdict: 'mixed', poolClaim, foreignClaims, excerpt }
   if (poolClaim) return { verdict: 'claim', poolClaim, foreignClaims, excerpt }
   if (terms.claim.test(text) || terms.place.test(text)) {
-    return { verdict: 'born-only', poolClaim: null, foreignClaims, excerpt }
+    // Which presence edge this case needs (Artist Chapters phase 2 seed
+    // data, owner Sep 7 2026): a birthplace mention is a `born` edge; a
+    // life spent there — lived, worked, based, moved to, died in — is a
+    // `based` edge; a visit — performed, toured, recorded in — is
+    // `performed`.
+    const edgeNeeded = /(?<![\p{L}])(?:lived|worked|based|moved|settled|resided|died|taught|studied|жил\p{L}*|работал\p{L}*|переехал\p{L}*|умер\p{L}*|преподавал\p{L}*|учил\p{L}*)(?![\p{L}])/iu.test(text)
+      ? 'based'
+      : /(?<![\p{L}])(?:performed|toured|recorded|played|гастрол\p{L}*|выступал\p{L}*|записал\p{L}*)(?![\p{L}])/iu.test(text)
+        ? 'performed'
+        : 'born'
+    return { verdict: 'born-only', poolClaim: null, foreignClaims, excerpt, edgeNeeded }
   }
   if (foreignClaims.length > 0) return { verdict: 'foreign', poolClaim: null, foreignClaims, excerpt }
   return { verdict: 'none', poolClaim: null, foreignClaims: [], excerpt }
