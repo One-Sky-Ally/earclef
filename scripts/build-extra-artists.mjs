@@ -51,6 +51,7 @@ import {
 } from './lib/dedup-rule.mjs'
 import { COUNTRIES } from './lib/gap-fill-countries.mjs'
 import {
+  plantSliceRows,
   releaseIndexAvailable,
   releasesFor,
   releasesMeta,
@@ -559,6 +560,27 @@ async function main() {
           }
         }
       }
+      // PLANT SLICES: releases of a multi-state string ("USSR") that
+      // name this country's plant. They enter as candidates only — the
+      // origin gate below decides who ships (see gap-fill-countries).
+      for (const slice of config.plantSlices ?? []) {
+        let sliceAdded = 0
+        const rows = plantSliceRows(slice)
+        for (const row of rows) {
+          if (!known.has(row.id)) {
+            known.add(row.id)
+            added.push({ ...dumpRelease(row), slice: slice.label })
+            sliceAdded++
+          }
+          if (state.credits[row.id] === undefined || state.credits[row.id] === null) {
+            state.credits[row.id] = dumpCredits(row)
+            creditsFromDump++
+          }
+        }
+        console.log(
+          `   plant slice "${slice.label}" (${slice.country}): ${rows.length} releases name it, +${sliceAdded} new to this state`,
+        )
+      }
       state.releases = [...(state.releases ?? []), ...added]
       state.discogsSource = { source: 'dump', edition, addedReleases: added.length }
       console.log(
@@ -614,6 +636,9 @@ async function main() {
     // for the display-string fallback + Wikidata-only people.
     const candidates = new Map()
     const allowedCountries = new Set(config.discogs)
+    const sliceByLabel = new Map(
+      (config.plantSlices ?? []).map((slice) => [slice.label, slice]),
+    )
     let unparsed = 0
     let fallbackReleases = 0
     let unfetchedSkipped = 0
@@ -659,6 +684,9 @@ async function main() {
         candidates.set(key, entry)
         continue
       }
+      // A plant-slice release is admitted only under ITS country string
+      // ("USSR"); the plant on the record is what carved it out.
+      const slice = release.slice ? (sliceByLabel.get(release.slice) ?? null) : null
       // RECORD-LEVEL COUNTRY GUARD (rule on the record, not the query):
       // the release's own country field must exactly equal a configured
       // string. Absent never matches (standing lesson 4).
@@ -668,7 +696,10 @@ async function main() {
           noCountry++
           continue
         }
-        if (!allowedCountries.has(recordCountry)) {
+        const admitted = slice
+          ? recordCountry === slice.country
+          : allowedCountries.has(recordCountry)
+        if (!admitted) {
           countryMismatch++
           continue
         }
@@ -676,9 +707,11 @@ async function main() {
       // Provenance fix-forward (owner, Aug 26 2026): when the record's
       // own country string is an approved HISTORICAL entity (config
       // .historical registry), keep it — the sweep knew this at ingest
-      // and must never throw it away again.
-      const pressedAs =
-        !legacy && (config.historical ?? []).includes(stored?.country ?? '')
+      // and must never throw it away again. A slice release records its
+      // plant the same way ("USSR · Tashkent plant").
+      const pressedAs = slice
+        ? `${slice.country} · ${slice.label}`
+        : !legacy && (config.historical ?? []).includes(stored?.country ?? '')
           ? stored.country
           : null
       for (const credit of credits) {
@@ -692,8 +725,11 @@ async function main() {
           titles: new Set(),
           discogsArtistId: credit.id,
           releaseCount: 0,
+          // True until a release OUTSIDE any slice names this artist.
+          sliceOnly: Boolean(slice),
         }
         entry.releaseCount++
+        entry.sliceOnly = entry.sliceOnly && Boolean(slice)
         if (pressedAs) (entry.pressedAs ??= new Set()).add(pressedAs)
         if (credit.anv && normalize(credit.anv) !== normalize(credit.name)) {
           entry.aliases.add(credit.anv)
@@ -757,6 +793,57 @@ async function main() {
         ` ${foreignByOrigin} dropped as foreign by origin)`,
     )
     state.foreignByOrigin = foreignByOrigin
+
+    // PLANT-SLICE ORIGIN GATE. A candidate known ONLY from slice
+    // releases ships only if this country's Wikidata pass claims them
+    // (the loop above set wikidataId by Discogs id or exact name). A
+    // Wikidata person carrying an MB id is MB-known and flows on to the
+    // dedup, which records 'crosswalk'. No origin evidence at all → the
+    // plant alone never places anyone: counted, sampled, dropped.
+    if (sliceByLabel.size > 0) {
+      const stats = {
+        releases: state.releases.filter((release) => release.slice).length,
+        candidates: 0,
+        originResolved: 0,
+        mbKnown: 0,
+        originUnknown: 0,
+        originUnknownSample: [],
+      }
+      const wdByDiscogs = new Map(
+        wd.filter((person) => person.discogsId).map((person) => [String(person.discogsId), person]),
+      )
+      const wdByName = new Map(wd.map((person) => [normalize(person.name), person]))
+      const unknown = []
+      for (const [key, candidate] of candidates.entries()) {
+        if (!candidate.sliceOnly) continue
+        stats.candidates++
+        if (candidate.wikidataId) {
+          stats.originResolved++
+          continue
+        }
+        const person =
+          (candidate.discogsArtistId != null
+            ? wdByDiscogs.get(String(candidate.discogsArtistId))
+            : null) ??
+          wdByName.get(normalize(candidate.name)) ??
+          [...candidate.aliases].map((alias) => wdByName.get(normalize(alias))).find(Boolean)
+        if (person?.mbid) {
+          stats.mbKnown++
+          continue
+        }
+        stats.originUnknown++
+        unknown.push(candidate)
+        candidates.delete(key)
+      }
+      stats.originUnknownSample = unknown
+        .sort((a, b) => b.releaseCount - a.releaseCount)
+        .slice(0, 15)
+        .map((candidate) => `${candidate.name} (${candidate.releaseCount})`)
+      state.plantSlices = stats
+      console.log(
+        `  plant slices: ${stats.releases} releases → ${stats.candidates} slice-only candidates: ${stats.originResolved} origin resolved via Wikidata, ${stats.mbKnown} MB-known, ${stats.originUnknown} origin unknown (not shipped)`,
+      )
+    }
 
     // 3. Dedup against MusicBrainz under RULE v3 (owner-approved,
     // Aug 9 2026 — see scripts/lib/dedup-rule.mjs): fuzzy never
@@ -944,6 +1031,7 @@ async function main() {
       dated: state.result.filter((a) => a.firstYear !== null).length,
       sample: state.result.slice(0, 8).map((a) => `${a.name}${a.firstYear ? ` (${a.firstYear})` : ''}`),
       ...(state.discogsSource ? { discogsSource: state.discogsSource } : {}),
+      ...(state.plantSlices ? { plantSlices: state.plantSlices } : {}),
       ...(mergeStats
         ? {
             merge: {

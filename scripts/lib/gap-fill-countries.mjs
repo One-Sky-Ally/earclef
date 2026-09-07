@@ -13,6 +13,17 @@
  *             is a token of another Discogs country, so a release whose
  *             detail fetch failed cannot be attributed on the record;
  *             it is skipped and counted instead (rule on the record)
+ *   plantSlices — (owner go, Sep 7, 2026) CANDIDATE POOLS carved out of
+ *             a multi-state country string by the record's own pressing
+ *             plant ("USSR" pressed at the Tashkent plant). A plant is
+ *             manufacture, not presence: it never places an artist by
+ *             itself. Origin is decided exactly as for any candidate —
+ *             this country's Wikidata pass (Discogs-id crosswalk, then
+ *             exact name) and the MusicBrainz dedup — and a slice-only
+ *             candidate with no origin evidence is counted in the
+ *             report and NEVER shipped. Shipped entries carry the
+ *             pressing as `pressedAs` provenance ("USSR · Tashkent").
+ *             {country, label, pressedBy: [company-name prefixes]}
  *
  * Batches (each runs only on its own explicit go):
  *   smoke: BT TL AF
@@ -20,6 +31,18 @@
  *   B3:    Caribbean/Central America · B4: MENA + Europe/ex-USSR
  *   C:     VN GH ZM CD TT (owner opt-in, after B4)
  */
+/**
+ * The Tashkent plant pressed Melodiya's Central Asian repertoire —
+ * ~10,000 "USSR" releases name it (Sep 1 2026 dump: 8,628 under the
+ * full name, 1,242 via its print shop, 135 short form). No Minsk plant
+ * ever existed, so Belarus has no equivalent; Riga serves Latvia.
+ */
+const TASHKENT = {
+  country: 'USSR',
+  label: 'Tashkent plant',
+  pressedBy: ['Ташкентский Завод', 'Типография Ташкентского Завода'],
+}
+
 export const COUNTRIES = {
   // ------------------------------------------------- pilot (complete)
   LA: { qid: 'Q819', name: 'Laos', mbArea: 'Laos', discogs: ['Laos'] },
@@ -34,7 +57,7 @@ export const COUNTRIES = {
   SZ: { qid: 'Q1050', name: 'Eswatini', mbArea: 'Eswatini', discogs: ['Swaziland'] },
   MR: { qid: 'Q1025', name: 'Mauritania', mbArea: 'Mauritania', discogs: ['Mauritania'] },
   RW: { qid: 'Q1037', name: 'Rwanda', mbArea: 'Rwanda', discogs: ['Rwanda'] },
-  TJ: { qid: 'Q863', name: 'Tajikistan', mbArea: 'Tajikistan', discogs: ['Tajikistan'] },
+  TJ: { qid: 'Q863', name: 'Tajikistan', mbArea: 'Tajikistan', discogs: ['Tajikistan'], plantSlices: [TASHKENT] },
   GW: { qid: 'Q1007', name: 'Guinea-Bissau', mbArea: 'Guinea-Bissau', discogs: ['Guinea-Bissau'] },
   LS: { qid: 'Q1013', name: 'Lesotho', mbArea: 'Lesotho', discogs: ['Lesotho'] },
   OM: { qid: 'Q842', name: 'Oman', mbArea: 'Oman', discogs: ['Oman'] },
@@ -50,8 +73,8 @@ export const COUNTRIES = {
   CF: { qid: 'Q929', name: 'Central African Republic', mbArea: 'Central African Republic', discogs: ['Central African Republic'] },
   QA: { qid: 'Q846', name: 'Qatar', mbArea: 'Qatar', discogs: ['Qatar'] },
   BN: { qid: 'Q921', name: 'Brunei', mbArea: 'Brunei', discogs: ['Brunei'] },
-  TM: { qid: 'Q874', name: 'Turkmenistan', mbArea: 'Turkmenistan', discogs: ['Turkmenistan'] },
-  KG: { qid: 'Q813', name: 'Kyrgyzstan', mbArea: 'Kyrgyzstan', discogs: ['Kyrgyzstan'] },
+  TM: { qid: 'Q874', name: 'Turkmenistan', mbArea: 'Turkmenistan', discogs: ['Turkmenistan'], plantSlices: [TASHKENT] },
+  KG: { qid: 'Q813', name: 'Kyrgyzstan', mbArea: 'Kyrgyzstan', discogs: ['Kyrgyzstan'], plantSlices: [TASHKENT] },
   SL: { qid: 'Q1044', name: 'Sierra Leone', mbArea: 'Sierra Leone', discogs: ['Sierra Leone'] },
   BF: { qid: 'Q965', name: 'Burkina Faso', mbArea: 'Burkina Faso', discogs: ['Burkina Faso'] },
   NA: { qid: 'Q1030', name: 'Namibia', mbArea: 'Namibia', discogs: ['Namibia'] },
@@ -94,7 +117,7 @@ export const COUNTRIES = {
   BS: { qid: 'Q778', name: 'Bahamas', mbArea: 'Bahamas', discogs: ['Bahamas, The', 'Bahamas'] },
   SR: { qid: 'Q730', name: 'Suriname', mbArea: 'Suriname', discogs: ['Suriname'] },
   HT: { qid: 'Q790', name: 'Haiti', mbArea: 'Haiti', discogs: ['Haiti'] },
-  UZ: { qid: 'Q265', name: 'Uzbekistan', mbArea: 'Uzbekistan', discogs: ['Uzbekistan'] },
+  UZ: { qid: 'Q265', name: 'Uzbekistan', mbArea: 'Uzbekistan', discogs: ['Uzbekistan'], plantSlices: [TASHKENT] },
   LK: { qid: 'Q854', name: 'Sri Lanka', mbArea: 'Sri Lanka', discogs: ['Sri Lanka'] },
   AL: { qid: 'Q222', name: 'Albania', mbArea: 'Albania', discogs: ['Albania'] },
   // Discogs records carry the formal "Moldova, Republic of" (Gambia-class

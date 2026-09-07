@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06",
+  "generatedAt": "2026-09-07",
   "countries": {
     "LA": [
       {
@@ -17652,6 +17652,39 @@
     ],
     "TJ": [
       {
+        "name": "Jurabek Nabiev",
+        "source": "wikidata",
+        "firstYear": 1956,
+        "lastYear": 1990,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country",
+          "Persian Classical"
+        ],
+        "releaseCount": 13,
+        "discogsArtistId": "2873458",
+        "wikidataId": "Q20615679",
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ]
+      },
+      {
+        "name": "Мастона Эргашева",
+        "source": "wikidata",
+        "firstYear": 1967,
+        "lastYear": 1986,
+        "styles": [
+          "Folk, World, & Country",
+          "Pop"
+        ],
+        "releaseCount": 7,
+        "discogsArtistId": 4494983,
+        "wikidataId": "Q13201585",
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ]
+      },
+      {
         "name": "Звуковая Артель",
         "source": "discogs",
         "firstYear": 1992,
@@ -17665,6 +17698,23 @@
         "wikidataId": null,
         "aliases": [
           "Группа \"Звуковая Артель\""
+        ]
+      },
+      {
+        "name": "Абдуджалил Хашимов",
+        "source": "wikidata",
+        "firstYear": 1959,
+        "lastYear": 1980,
+        "styles": [
+          "Folk, World, & Country",
+          "Mugham",
+          "Folk"
+        ],
+        "releaseCount": 5,
+        "discogsArtistId": null,
+        "wikidataId": "Q20604464",
+        "pressedAs": [
+          "USSR · Tashkent plant"
         ]
       },
       {
@@ -17760,6 +17810,23 @@
         "releaseCount": 1,
         "discogsArtistId": 2124542,
         "wikidataId": null
+      },
+      {
+        "name": "Umar Ziyaev",
+        "source": "wikidata",
+        "firstYear": 1966,
+        "lastYear": 1987,
+        "styles": [
+          "Folk",
+          "Synth-pop",
+          "Electronic"
+        ],
+        "releaseCount": 1,
+        "discogsArtistId": "4403502",
+        "wikidataId": "Q20611048",
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ]
       },
       {
         "name": "Самандар Полудов",
@@ -18058,16 +18125,6 @@
         "wikidataId": "Q4308158"
       },
       {
-        "name": "Jurabek Nabiev",
-        "source": "wikidata",
-        "firstYear": 1956,
-        "lastYear": 1956,
-        "styles": [],
-        "releaseCount": 0,
-        "discogsArtistId": "2873458",
-        "wikidataId": "Q20615679"
-      },
-      {
         "name": "Kova Tilavpur",
         "source": "wikidata",
         "firstYear": 2008,
@@ -18288,16 +18345,6 @@
         "wikidataId": "Q25591670"
       },
       {
-        "name": "Umar Ziyaev",
-        "source": "wikidata",
-        "firstYear": 1966,
-        "lastYear": 1966,
-        "styles": [],
-        "releaseCount": 0,
-        "discogsArtistId": "4403502",
-        "wikidataId": "Q20611048"
-      },
-      {
         "name": "Zarrina Mirshakar",
         "source": "wikidata",
         "firstYear": 1962,
@@ -18326,16 +18373,6 @@
         "releaseCount": 0,
         "discogsArtistId": null,
         "wikidataId": "Q61136545"
-      },
-      {
-        "name": "Абдуджалил Хашимов",
-        "source": "wikidata",
-        "firstYear": 1959,
-        "lastYear": 1959,
-        "styles": [],
-        "releaseCount": 0,
-        "discogsArtistId": null,
-        "wikidataId": "Q20604464"
       },
       {
         "name": "Абдулло Назри",
@@ -18506,16 +18543,6 @@
         "releaseCount": 0,
         "discogsArtistId": null,
         "wikidataId": "Q20608453"
-      },
-      {
-        "name": "Мастона Эргашева",
-        "source": "wikidata",
-        "firstYear": 1967,
-        "lastYear": 1967,
-        "styles": [],
-        "releaseCount": 0,
-        "discogsArtistId": 4494983,
-        "wikidataId": "Q13201585"
       },
       {
         "name": "Маҳмадсаид Аҳмадов",
@@ -25790,6 +25817,23 @@
     ],
     "TM": [
       {
+        "name": "Murad Sadykov",
+        "source": "wikidata",
+        "firstYear": 1951,
+        "lastYear": 1974,
+        "styles": [
+          "Vocal",
+          "Schlager",
+          "Pop"
+        ],
+        "releaseCount": 3,
+        "discogsArtistId": "1417535",
+        "wikidataId": "Q28355436",
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ]
+      },
+      {
         "name": "Shatlyk Nuryyew",
         "source": "discogs",
         "firstYear": 2010,
@@ -25978,16 +26022,6 @@
         "releaseCount": 0,
         "discogsArtistId": null,
         "wikidataId": "Q12554314"
-      },
-      {
-        "name": "Murad Sadykov",
-        "source": "wikidata",
-        "firstYear": 1951,
-        "lastYear": 1951,
-        "styles": [],
-        "releaseCount": 0,
-        "discogsArtistId": "1417535",
-        "wikidataId": "Q28355436"
       },
       {
         "name": "Natavan Habibi",
@@ -26673,6 +26707,23 @@
         "wikidataId": null
       },
       {
+        "name": "Kaly Moldobasanov",
+        "source": "wikidata",
+        "firstYear": 1944,
+        "lastYear": 1990,
+        "styles": [
+          "Funk / Soul",
+          "Pop",
+          "Modern"
+        ],
+        "releaseCount": 8,
+        "discogsArtistId": "4037113",
+        "wikidataId": "Q4300315",
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ]
+      },
+      {
         "name": "Knotholes",
         "source": "discogs",
         "firstYear": 2016,
@@ -26685,6 +26736,26 @@
         "releaseCount": 4,
         "discogsArtistId": 2255291,
         "wikidataId": null
+      },
+      {
+        "name": "Динара Акулова",
+        "source": "discogs",
+        "firstYear": 1988,
+        "lastYear": 2004,
+        "styles": [
+          "Synth-pop",
+          "Schlager",
+          "Disco"
+        ],
+        "releaseCount": 4,
+        "discogsArtistId": 4392170,
+        "wikidataId": null,
+        "aliases": [
+          "Динара"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ]
       },
       {
         "name": "Жусуп Айсаев",
@@ -26817,23 +26888,6 @@
         "releaseCount": 2,
         "discogsArtistId": 16611101,
         "wikidataId": null
-      },
-      {
-        "name": "Динара Акулова",
-        "source": "discogs",
-        "firstYear": 2004,
-        "lastYear": 2004,
-        "styles": [
-          "Synth-pop",
-          "Schlager",
-          "Disco"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 4392170,
-        "wikidataId": null,
-        "aliases": [
-          "Динара"
-        ]
       },
       {
         "name": "Светлана Назаренко",
@@ -27341,16 +27395,6 @@
         "releaseCount": 0,
         "discogsArtistId": null,
         "wikidataId": "Q9283969"
-      },
-      {
-        "name": "Kaly Moldobasanov",
-        "source": "wikidata",
-        "firstYear": 1944,
-        "lastYear": 1944,
-        "styles": [],
-        "releaseCount": 0,
-        "discogsArtistId": "4037113",
-        "wikidataId": "Q4300315"
       },
       {
         "name": "Kalybek Tagaev",
@@ -169222,6 +169266,21 @@
         "wikidataId": null
       },
       {
+        "name": "Sherali Juraev",
+        "source": "discogs",
+        "firstYear": 1971,
+        "lastYear": 1990,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 32,
+        "discogsArtistId": 1305771,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ]
+      },
+      {
         "name": "Limora",
         "source": "discogs",
         "firstYear": 2025,
@@ -169246,6 +169305,22 @@
         "releaseCount": 31,
         "discogsArtistId": 17801661,
         "wikidataId": null
+      },
+      {
+        "name": "Faxriddin Umarov",
+        "source": "wikidata",
+        "firstYear": 1939,
+        "lastYear": 1991,
+        "styles": [
+          "Folk, World, & Country",
+          "Folk"
+        ],
+        "releaseCount": 26,
+        "discogsArtistId": "3985665",
+        "wikidataId": "Q4475328",
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ]
       },
       {
         "name": "Xeneze",
@@ -169567,6 +169642,41 @@
         "wikidataId": null
       },
       {
+        "name": "Фаттаххан Мамадалиев",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 2001,
+        "styles": [
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 10,
+        "discogsArtistId": 4035873,
+        "wikidataId": null,
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ]
+      },
+      {
+        "name": "Яшлик",
+        "source": "discogs",
+        "firstYear": 1976,
+        "lastYear": 2025,
+        "styles": [
+          "Folk Rock",
+          "Prog Rock",
+          "Psychedelic"
+        ],
+        "releaseCount": 10,
+        "discogsArtistId": 4773795,
+        "wikidataId": null,
+        "aliases": [
+          "Yashlik"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ]
+      },
+      {
         "name": "Mahasela",
         "source": "discogs",
         "firstYear": 2019,
@@ -169648,6 +169758,27 @@
         "releaseCount": 7,
         "discogsArtistId": 17801736,
         "wikidataId": null
+      },
+      {
+        "name": "Monâjât Yultchieva",
+        "source": "discogs",
+        "firstYear": 1982,
+        "lastYear": 1990,
+        "styles": [
+          "Folk",
+          "Folk, World, & Country"
+        ],
+        "releaseCount": 7,
+        "discogsArtistId": 1300833,
+        "wikidataId": null,
+        "aliases": [
+          "Муножот Йулчиева",
+          "Муножот Йўлчиева",
+          "Мунаджат Юлчиева"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
+        ]
       },
       {
         "name": "Orhan Murray",
@@ -171140,20 +171271,23 @@
         "wikidataId": null
       },
       {
-        "name": "Яшлик",
+        "name": "Даврон Гаипов",
         "source": "discogs",
-        "firstYear": 2025,
-        "lastYear": 2025,
+        "firstYear": 1991,
+        "lastYear": 1991,
         "styles": [
-          "Folk Rock",
-          "Prog Rock",
-          "Psychedelic"
+          "Synth-pop",
+          "Electronic",
+          "Rock"
         ],
         "releaseCount": 2,
-        "discogsArtistId": 4773795,
+        "discogsArtistId": 4249895,
         "wikidataId": null,
         "aliases": [
-          "Yashlik"
+          "Davron Goyipov"
+        ],
+        "pressedAs": [
+          "USSR · Tashkent plant"
         ]
       },
       {
@@ -173546,18 +173680,6 @@
         "wikidataId": null
       },
       {
-        "name": "Фаттаххан Мамадалиев",
-        "source": "discogs",
-        "firstYear": 2001,
-        "lastYear": 2001,
-        "styles": [
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 4035873,
-        "wikidataId": null
-      },
-      {
         "name": "Хўжа Гуруҳи",
         "source": "discogs",
         "firstYear": 2002,
@@ -173845,16 +173967,6 @@
         "releaseCount": 0,
         "discogsArtistId": null,
         "wikidataId": "Q120846451"
-      },
-      {
-        "name": "Faxriddin Umarov",
-        "source": "wikidata",
-        "firstYear": 1939,
-        "lastYear": 1939,
-        "styles": [],
-        "releaseCount": 0,
-        "discogsArtistId": "3985665",
-        "wikidataId": "Q4475328"
       },
       {
         "name": "Gavriel Mullokandov",
@@ -174728,18 +174840,6 @@
         "wikidataId": null
       },
       {
-        "name": "Sherali Juraev",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 1305771,
-        "wikidataId": null
-      },
-      {
         "name": "Sultan Ali",
         "source": "discogs",
         "firstYear": null,
@@ -174788,23 +174888,6 @@
         "releaseCount": 1,
         "discogsArtistId": 11662457,
         "wikidataId": null
-      },
-      {
-        "name": "Даврон Гаипов",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Synth-pop",
-          "Electronic",
-          "Rock"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 4249895,
-        "wikidataId": null,
-        "aliases": [
-          "Davron Goyipov"
-        ]
       },
       {
         "name": "Давуров Даврон",

@@ -74,6 +74,9 @@ function expandRelease(row) {
     genres: row.g ?? [],
     styles: row.s ?? [],
     tracks: row.k ?? [],
+    // [{name, role}] — role is Discogs's entity_type_name ("Pressed By",
+    // "Recorded At", …); absent on indexes built before Sep 7, 2026.
+    companies: (row.co ?? []).map(([name, role]) => ({ name, role })),
     masterId: row.m ?? null,
   }
 }
@@ -109,6 +112,33 @@ export function releasesFor(country) {
   return readGzJsonl(join(INDEX_DIR, 'releases-by-country', `${slug}.jsonl.gz`)).map(
     expandRelease,
   )
+}
+
+/**
+ * Does this release name one of the slice's plants? Company names are
+ * matched by prefix (Discogs files the Tashkent plant under its full
+ * honorific name, a short form, and its print shop); the role is not
+ * consulted, since the same plant appears as "Pressed By",
+ * "Manufactured By" or "Printed By" across eras.
+ */
+export function plantMatches(release, slice) {
+  return (release.companies ?? []).some((company) =>
+    slice.pressedBy.some((prefix) => company.name.startsWith(prefix)),
+  )
+}
+
+const sliceCache = new Map()
+
+/** Every release of `slice.country` that names one of its plants (cached). */
+export function plantSliceRows(slice) {
+  const key = `${slice.country}|${slice.pressedBy.join('|')}`
+  if (!sliceCache.has(key)) {
+    sliceCache.set(
+      key,
+      releasesFor(slice.country).filter((release) => plantMatches(release, slice)),
+    )
+  }
+  return sliceCache.get(key)
 }
 
 const artistShards = new Map()

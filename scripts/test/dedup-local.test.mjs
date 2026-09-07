@@ -195,5 +195,19 @@ test('discogs reader refuses an incomplete index and expands a complete one', as
   assert.deepEqual(releases[0].artists, [{ id: 1210440, name: 'Nadainfinitum', anv: null }])
   assert.deepEqual(releases[0].labels, [{ name: 'Covenant Productions', catno: 'CP-01' }])
   assert.equal(releases[0].year, 2000)
+  assert.deepEqual(releases[0].companies, [])
   assert.deepEqual(reader.releasesFor('Atlantis'), [])
+})
+
+test('plant slices match company names by prefix, whatever the role', async () => {
+  const reader = await import('../lib/discogsDump.mjs')
+  const slice = { country: 'USSR', label: 'Tashkent plant', pressedBy: ['Ташкентский Завод', 'Типография Ташкентского Завода'] }
+  const tashkent = { companies: [{ name: 'Ташкентский Завод Грампластинок им. М. Т. Ташмухамедова', role: 'Pressed By' }] }
+  const printShop = { companies: [{ name: 'Типография Ташкентского Завода Грампластинок', role: 'Printed By' }] }
+  const riga = { companies: [{ name: 'Рижский Завод Грампластинок', role: 'Pressed By' }] }
+  assert.equal(reader.plantMatches(tashkent, slice), true)
+  assert.equal(reader.plantMatches(printShop, slice), true)
+  assert.equal(reader.plantMatches(riga, slice), false)
+  assert.equal(reader.plantMatches({ companies: [] }, slice), false)
+  assert.equal(reader.plantMatches({}, slice), false)
 })

@@ -159,6 +159,16 @@ def release_row(elem):
                 for desc in desc_list.findall('description'):
                     if desc.text and desc.text not in descriptions:
                         descriptions.append(desc.text)
+    # Companies with their role ("Pressed By", "Recorded At", "Published
+    # By"…): the pressing plant is the record-level fact that localises
+    # a "USSR"/"Yugoslavia" release to a city (owner go, Sep 7, 2026).
+    companies = []
+    company_list = elem.find('companies')
+    if company_list is not None:
+        for company in company_list.findall('company'):
+            name = text(company, 'name')
+            if name:
+                companies.append([name, text(company, 'entity_type_name') or ''])
     genres = [g.text for g in elem.findall('genres/genre') if g.text]
     styles = [s.text for s in elem.findall('styles/style') if s.text]
     tracks = [t.text for t in elem.findall('tracklist/track/title') if t.text]
@@ -176,6 +186,7 @@ def release_row(elem):
         'g': genres,
         's': styles,
         'k': tracks,
+        'co': companies,
     }
     if master:
         row['m'] = int(master)
