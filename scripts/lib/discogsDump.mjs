@@ -141,6 +141,112 @@ export function plantSliceRows(slice) {
   return sliceCache.get(key)
 }
 
+const videoShards = new Map()
+
+export function videoIndexAvailable() {
+  const meta = releasesMeta()
+  return Boolean(meta && meta.complete && meta.videosByArtist)
+}
+
+const YOUTUBE_ID = /[?&]v=([\w-]{11})|youtu\.be\/([\w-]{11})/
+
+const shardOf = (numeric) => (numeric % 256).toString(16).padStart(2, '0')
+
+/** The identity gatherer's record shape (`shapeRecord` in the API gatherer). */
+function expandVideoRelease(row) {
+  return {
+    kind: 'release',
+    id: row.i,
+    listedRole: null,
+    title: row.t,
+    year: row.y ?? null,
+    country: row.c ?? null,
+    mainRelease: null,
+    artists: (row.cs ?? []).map((credit) => ({ id: credit.i, name: credit.n, anv: credit.v ?? '' })),
+    extraartists: (row.x ?? []).map(([cid, name, role]) => ({ id: cid, name, role })),
+    tracklist: (row.tl ?? []).map(([position, title, duration, artists]) => ({
+      position,
+      title,
+      duration,
+      artists: artists ?? [],
+      extraartists: [],
+    })),
+    ...(row.tt ? { tracklistTruncated: true } : {}),
+    videos: (row.vs ?? [])
+      .map(([url, title, duration]) => {
+        const match = url.match(YOUTUBE_ID)
+        return { videoId: match?.[1] ?? match?.[2] ?? null, title, duration: duration ?? null, url }
+      })
+      .filter((video) => video.videoId),
+  }
+}
+
+/**
+ * Release ids of every video-bearing record this Discogs artist is
+ * credited on, with the credit kind: 'm' main, 't' track, 'x' extra.
+ * Empty when the artist has none — a real answer (check
+ * videoIndexAvailable()).
+ */
+export function videoReleaseRefsFor(id) {
+  const numeric = Number(id)
+  if (!Number.isInteger(numeric) || numeric <= 0 || !videoIndexAvailable()) return []
+  const shard = shardOf(numeric)
+  let map = videoShards.get(shard)
+  if (!map) {
+    map = new Map()
+    for (const row of readGzJsonl(join(INDEX_DIR, 'videos-by-artist', `${shard}.jsonl.gz`))) {
+      const list = map.get(row.a)
+      const ref = { releaseId: row.r, kind: row.k ?? 'm' }
+      if (list) list.push(ref)
+      else map.set(row.a, [ref])
+    }
+    videoShards.set(shard, map)
+    if (videoShards.size > ARTIST_SHARD_CACHE_MAX) videoShards.delete(videoShards.keys().next().value)
+  }
+  return map.get(numeric) ?? []
+}
+
+/** Which release shard holds this id — for callers that batch by shard. */
+export function videoReleaseShardOf(releaseId) {
+  return shardOf(Number(releaseId))
+}
+
+/**
+ * Every video-bearing release in one shard, id → record. Loading a
+ * shard is the expensive step; a sweep that groups its release ids by
+ * shard (videoReleaseShardOf) loads each of the 256 shards once.
+ */
+export function videoReleaseShard(shard) {
+  const map = new Map()
+  for (const row of readGzJsonl(join(INDEX_DIR, 'video-releases', `${shard}.jsonl.gz`))) {
+    map.set(row.i, expandVideoRelease(row))
+  }
+  return map
+}
+
+/**
+ * Convenience for one artist (tests, spot checks): every record they
+ * are credited on that carries videos, in the gatherer's shape. Sweeps
+ * should use videoReleaseRefsFor + videoReleaseShard instead.
+ */
+export function videosForArtist(id) {
+  const refs = videoReleaseRefsFor(id)
+  const byShard = new Map()
+  for (const ref of refs) {
+    const shard = videoReleaseShardOf(ref.releaseId)
+    ;(byShard.get(shard) ?? byShard.set(shard, []).get(shard)).push(ref.releaseId)
+  }
+  const records = []
+  for (const [shard, ids] of byShard) {
+    const map = videoReleaseShard(shard)
+    for (const releaseId of ids) {
+      const record = map.get(releaseId)
+      if (record) records.push(record)
+    }
+  }
+  return records
+}
+
 const artistShards = new Map()
 
 function loadArtistShard(shard) {

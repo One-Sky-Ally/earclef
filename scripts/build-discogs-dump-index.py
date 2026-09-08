@@ -59,6 +59,14 @@ import xml.etree.ElementTree as ET
 INDEX_DIR_DEFAULT = 'data/discogs-dump/index'
 PROGRESS_EVERY = 250_000
 YEAR_RE = re.compile(r'^(\d{4})')
+# Discogs's placeholder credits (Various / Unknown Artist / No Artist).
+GENERIC_CREDIT_IDS = {194, 118760, 355}
+# videos-by-artist bounds (see the writer): rows per release, tracks and
+# extra credits per row. A gap-fill artist's own records are small; the
+# giant compilations these caps touch anchor nothing for anyone.
+MAX_CREDITED_ROWS = 40
+MAX_TRACKLIST_PER_ROW = 80
+MAX_EXTRA_PER_ROW = 60
 
 
 def slugify(country: str) -> str:
@@ -169,9 +177,49 @@ def release_row(elem):
             name = text(company, 'name')
             if name:
                 companies.append([name, text(company, 'entity_type_name') or ''])
+    # Community videos attached to the release (owner go, Sep 7, 2026):
+    # the verified-play sweep's candidate source, previously fetched at
+    # 55/min with a four-release cap per artist. Kept OFF the country
+    # rows (size) and written to videos-by-artist shards instead.
+    videos = []
+    for video in elem.findall('videos/video'):
+        src = video.get('src')
+        if not src:
+            continue
+        duration = video.get('duration')
+        try:
+            duration = int(duration) if duration else None
+        except ValueError:
+            duration = None
+        videos.append([src, text(video, 'title') or '', duration])
     genres = [g.text for g in elem.findall('genres/genre') if g.text]
     styles = [s.text for s in elem.findall('styles/style') if s.text]
     tracks = [t.text for t in elem.findall('tracklist/track/title') if t.text]
+    # Full tracklist for the identity bar (per-track credits anchor a
+    # video to THIS artist's track; durations corroborate within ±3 s).
+    # Only carried on videos-by-artist rows, never on country rows.
+    tracklist = []
+    for track in elem.findall('tracklist/track'):
+        track_credits = []
+        for credit in track.findall('artists/artist'):
+            try:
+                cid = int(text(credit, 'id') or 0)
+            except ValueError:
+                cid = 0
+            if cid > 0:
+                track_credits.append(cid)
+        tracklist.append([text(track, 'position') or '', text(track, 'title') or '',
+                          text(track, 'duration') or '', track_credits])
+    # Release-level extra credits with roles (featured / performer
+    # anchors are weaker than the main credit; the arbitrator ranks them).
+    extra_credits = []
+    for credit in elem.findall('extraartists/artist'):
+        try:
+            cid = int(text(credit, 'id') or 0)
+        except ValueError:
+            cid = 0
+        if cid > 0:
+            extra_credits.append([cid, text(credit, 'name') or '', text(credit, 'role') or ''])
     master = text(elem, 'master_id')
     row = {
         'i': int(elem.get('id')),
@@ -190,7 +238,7 @@ def release_row(elem):
     }
     if master:
         row['m'] = int(master)
-    return row
+    return row, videos, tracklist, extra_credits
 
 
 def artist_row(elem):
@@ -230,9 +278,16 @@ def run(args):
     mode = args.mode
     record_tag = 'release' if mode == 'releases' else 'artist'
     writers = ShardWriters(os.path.join(index_dir, 'releases-by-country' if mode == 'releases' else 'artists'))
+    # Two stores: a tiny artist → release-id map, and each video-bearing
+    # release stored ONCE by release id (a per-artist copy of every
+    # tracklist made the first attempt several GB).
+    video_writers = ShardWriters(os.path.join(index_dir, 'videos-by-artist')) if mode == 'releases' else None
+    video_release_writers = ShardWriters(os.path.join(index_dir, 'video-releases')) if mode == 'releases' else None
     counts = {}
     started = time.time()
     records = 0
+    video_releases = 0
+    video_rows = 0
     complete = False
     truncated_error = None
     source = open_source(args)
@@ -247,10 +302,45 @@ def run(args):
                 continue
             records += 1
             if mode == 'releases':
-                row = release_row(elem)
+                row, videos, tracklist, extra_credits = release_row(elem)
                 country = row['c']
                 shard = slugify(country) if country else '_no-country'
                 writers.write(shard, row)
+                if videos:
+                    video_releases += 1
+                    # One row per artist credited on the release OR on a
+                    # track OR as an extra credit: the identity bar asks
+                    # "which videos sit on records this artist is on".
+                    # BOUNDED: a 100-track various-artists compilation
+                    # with per-track credits would otherwise write 100
+                    # rows of 100 tracks each (quadratic; the first
+                    # attempt stalled). Placeholder credits never get a
+                    # row; past MAX_CREDITED_ROWS artists only the main
+                    # credits do; a row's tracklist is capped and flagged.
+                    main_ids = [c['i'] for c in row['a'] if c['i'] not in GENERIC_CREDIT_IDS]
+                    credited = set(main_ids)
+                    for track in tracklist:
+                        credited.update(track[3])
+                    credited.update(extra[0] for extra in extra_credits)
+                    credited.difference_update(GENERIC_CREDIT_IDS)
+                    if len(credited) > MAX_CREDITED_ROWS:
+                        credited = set(main_ids)
+                    track_ids = set()
+                    for track in tracklist:
+                        track_ids.update(track[3])
+                    extra_ids = {extra[0] for extra in extra_credits}
+                    for artist_id in credited:
+                        video_rows += 1
+                        kind = 'm' if artist_id in main_ids else 't' if artist_id in track_ids else 'x'
+                        video_writers.write(f'{artist_id % 256:02x}', {'a': artist_id, 'r': row['i'], 'k': kind})
+                    if credited:
+                        video_release_writers.write(f'{row["i"] % 256:02x}', {
+                            'i': row['i'], 't': row['t'], 'y': row['y'], 'c': country,
+                            'cs': row['a'], 'x': extra_credits[:MAX_EXTRA_PER_ROW],
+                            'tl': tracklist[:MAX_TRACKLIST_PER_ROW],
+                            **({'tt': True} if len(tracklist) > MAX_TRACKLIST_PER_ROW else {}),
+                            'vs': videos,
+                        })
                 bucket = counts.setdefault(country or '', {'slug': shard, 'total': 0, 'dated': 0, 'undated': 0, 'byYear': {}})
                 bucket['total'] += 1
                 if row['y'] is None:
@@ -278,6 +368,9 @@ def run(args):
             writers.close()
             raise
     writers.close()
+    if video_writers:
+        video_writers.close()
+        video_release_writers.close()
     if args.limit and records >= args.limit:
         complete = False
     meta_path = os.path.join(index_dir, f'{mode}-meta.json')
@@ -290,6 +383,8 @@ def run(args):
         'limit': args.limit or None,
         'truncatedError': truncated_error,
     }
+    if mode == 'releases':
+        meta['videosByArtist'] = {'releasesWithVideos': video_releases, 'rows': video_rows}
     with open(meta_path, 'w', encoding='utf-8') as handle:
         json.dump(meta, handle, indent=2, ensure_ascii=False)
     if mode == 'releases':

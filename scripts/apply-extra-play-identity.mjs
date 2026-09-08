@@ -126,8 +126,11 @@ const counts = { verified: 0, replaced: 0, refuted: 0, held: 0, found: 0, nothin
 const wentDark = []
 const held = []
 for (const row of report.rows) {
-  const entry = dataset.entries[row.key]
   const nullRow = row.verdict === 'found' || row.verdict === 'nothing'
+  // A key the play file never held (an artist added after the last
+  // sweep) is a null entry for a null-row verdict — the dump gather
+  // (Sep 7, 2026) covers artists the original sweep never reached.
+  const entry = dataset.entries[row.key] ?? (nullRow ? { name: row.name, play: null } : null)
   if (!entry || (nullRow ? entry.play?.kind === 'archive' : entry.play?.kind !== 'youtube-video')) {
     counts.missingEntry++
     continue

@@ -199,6 +199,38 @@ test('discogs reader refuses an incomplete index and expands a complete one', as
   assert.deepEqual(reader.releasesFor('Atlantis'), [])
 })
 
+test('videos-by-artist rows expand to the identity gatherer\x27s record shape', async () => {
+  const dg = join(fixtures, 'dg')
+  mkdirSync(join(dg, 'videos-by-artist'), { recursive: true })
+  writeFileSync(join(dg, 'releases-meta.json'), JSON.stringify({ complete: true, videosByArtist: { rows: 1 } }))
+  mkdirSync(join(dg, 'video-releases'), { recursive: true })
+  const release = {
+    i: 555, t: 'Duet Single', y: 1971, c: 'Laos',
+    cs: [{ i: 4897853, n: 'ກ. ວິເສດ', v: 'ກ. ວຶເສສ' }, { i: 9001, n: 'ນາງສາວຮະບຽບ' }],
+    x: [[777, 'Producer Person', 'Producer']],
+    tl: [['A', 'Side A', '3:12', [4897853]], ['B', 'Side B', '', [9001]]],
+    vs: [['https://www.youtube.com/watch?v=Z9Pg-XMIEdg', 'Duet', 192], ['https://example.com/notyoutube', 'x', null]],
+  }
+  const hex = (n) => (n % 256).toString(16).padStart(2, '0')
+  writeFileSync(join(dg, 'videos-by-artist', `${hex(4897853)}.jsonl.gz`), gzipSync(JSON.stringify({ a: 4897853, r: 555, k: 'm' }) + '\n'))
+  writeFileSync(join(dg, 'video-releases', `${hex(555)}.jsonl.gz`), gzipSync(JSON.stringify(release) + '\n'))
+  const reader = await import('../lib/discogsDump.mjs')
+  assert.equal(reader.videoIndexAvailable(), true)
+  assert.deepEqual(reader.videoReleaseRefsFor(4897853), [{ releaseId: 555, kind: 'm' }])
+  assert.equal(reader.videoReleaseShardOf(555), hex(555))
+  const records = reader.videosForArtist(4897853)
+  assert.equal(records.length, 1)
+  const [record] = records
+  assert.equal(record.kind, 'release')
+  assert.deepEqual(record.artists, [{ id: 4897853, name: 'ກ. ວິເສດ', anv: 'ກ. ວຶເສສ' }, { id: 9001, name: 'ນາງສາວຮະບຽບ', anv: '' }])
+  assert.deepEqual(record.extraartists, [{ id: 777, name: 'Producer Person', role: 'Producer' }])
+  assert.deepEqual(record.tracklist[0], { position: 'A', title: 'Side A', duration: '3:12', artists: [4897853], extraartists: [] })
+  // Only YouTube videos survive, with the id the arbitrator keys on.
+  assert.equal(record.videos.length, 1)
+  assert.equal(record.videos[0].videoId, 'Z9Pg-XMIEdg')
+  assert.deepEqual(reader.videosForArtist(123456789), [])
+})
+
 test('plant slices match company names by prefix, whatever the role', async () => {
   const reader = await import('../lib/discogsDump.mjs')
   const slice = { country: 'USSR', label: 'Tashkent plant', pressedBy: ['Ташкентский Завод', 'Типография Ташкентского Завода'] }
