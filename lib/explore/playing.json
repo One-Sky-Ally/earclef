@@ -944,7 +944,7 @@
       "era": "The chart at feed speed",
       "kind": "charted",
       "basis": "Anchored to the Billboard Hot 100 archive, documented week by week through the present.",
-      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen. In 2026 the long run came from Nashville again: [[Ella Langley]]'s Choosin' Texas held the Hot 100 summit for sixteen weeks, more than every other 2026 #1 combined.",
+      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen. In 2026 the long run came from Nashville again: [[Ella Langley]]'s Choosin' Texas kept returning to the Hot 100 summit — twenty-two non-consecutive weeks by September, tying the all-time record — while [[Taylor Swift]]'s I Knew It, I Knew You, from Toy Story 5, became her fifteenth #1, more than any artist this century.",
       "items": [
         {
           "artist": "The Weeknd",
@@ -964,7 +964,7 @@
         {
           "artist": "Shaboozey",
           "work": "A Bar Song (Tipsy)",
-          "note": "Hot 100 #1 for 19 weeks, 2024 — tying the all-time record"
+          "note": "Hot 100 #1 for 19 weeks, 2024 — tying what was then the all-time record"
         },
         {
           "artist": "Kendrick Lamar",
@@ -979,7 +979,12 @@
         {
           "artist": "Ella Langley",
           "work": "Choosin' Texas",
-          "note": "Hot 100 #1 for 16 weeks — the longest-running #1 of 2026 so far"
+          "note": "Hot 100 #1 for 22 non-consecutive weeks by September 2026 — tying the all-time record, shared with Mariah Carey's All I Want for Christmas Is You"
+        },
+        {
+          "artist": "Taylor Swift",
+          "work": "I Knew It, I Knew You",
+          "note": "from Toy Story 5 — her 15th Hot 100 #1, the most of any artist in the 21st century, 2026"
         }
       ],
       "sources": [
@@ -1002,7 +1007,7 @@
       "era": "Streaming Britain, homegrown edition",
       "kind": "charted",
       "basis": "Anchored to the Official Charts Company archive, documented week by week through the present.",
-      "story": "Britain's 2020s chart is a streaming ledger with a local accent. [[Dave]] and [[Central Cee]]'s Sprinter gave UK rap a ten-week #1 in 2023, [[Ed Sheeran]] kept his grip with Bad Habits, and [[Miley Cyrus]]'s Flowers matched Sprinter's ten weeks the same year. [[Sabrina Carpenter]] stacked twenty-one #1 weeks in a single calendar year — a record for a female artist — and in 2025 [[Alex Warren]]'s Ordinary ran twelve straight weeks, the longest uninterrupted UK #1 ever by a US male solo artist. Then 2026 broke the oldest record on the board: [[Sam Fender]] and [[Olivia Dean]]'s Rein Me In kept returning to #1 — four separate runs from February to July, nineteen non-consecutive weeks in all, longer than any single in the chart's history.",
+      "story": "Britain's 2020s chart is a streaming ledger with a local accent. [[Dave]] and [[Central Cee]]'s Sprinter gave UK rap a ten-week #1 in 2023, [[Ed Sheeran]] kept his grip with Bad Habits, and [[Miley Cyrus]]'s Flowers matched Sprinter's ten weeks the same year. [[Sabrina Carpenter]] stacked twenty-one #1 weeks in a single calendar year — a record for a female artist — and in 2025 [[Alex Warren]]'s Ordinary ran twelve straight weeks, the longest uninterrupted UK #1 ever by a US male solo artist. Then 2026 broke the oldest record on the board: [[Sam Fender]] and [[Olivia Dean]]'s Rein Me In kept returning to #1 through the first half of the year — twenty-three non-consecutive weeks in all, longer than any single in the chart's history — and [[Ella Langley]]'s Choosin' Texas then held the top for ten weeks from July.",
       "items": [
         {
           "artist": "The Weeknd",
@@ -1037,7 +1042,12 @@
         {
           "artist": "Sam Fender and Olivia Dean",
           "work": "Rein Me In",
-          "note": "UK #1 across four separate runs in 2026 — nineteen non-consecutive weeks, the longest run in UK chart history"
+          "note": "UK #1 for 23 non-consecutive weeks across 2026 — the longest run in UK chart history"
+        },
+        {
+          "artist": "Ella Langley",
+          "work": "Choosin' Texas",
+          "note": "UK #1 for 10 weeks from 2 July 2026"
         }
       ],
       "sources": [
@@ -1060,7 +1070,7 @@
       "era": "Shanties, party schlager, and rap royalty",
       "kind": "charted",
       "basis": "Anchored to Germany's official chart archives (GfK Entertainment), via the year-by-year number-one lists.",
-      "story": "Germany's 2020s chart swung between internet moments and homegrown giants. [[Nathan Evans]]' sea shanty Wellerman sailed off TikTok to #1 in 2021; the party-schlager Layla by [[DJ Robin]] and Schürze topped the chart in 2022 even as cities like Würzburg kept it off their volksfest stages; and in 2023 [[Udo Lindenberg]], German rock's elder statesman, joined rapper [[Apache 207]] on Komet — #1 for 21 non-consecutive weeks, the longest-running German chart-topper of all time.",
+      "story": "Germany's 2020s chart swung between internet moments and homegrown giants. [[Nathan Evans]]' sea shanty Wellerman sailed off TikTok to #1 in 2021; the party-schlager Layla by [[DJ Robin]] and Schürze topped the chart in 2022 even as cities like Würzburg kept it off their volksfest stages; and in 2023 [[Udo Lindenberg]], German rock's elder statesman, joined rapper [[Apache 207]] on Komet — #1 for 21 non-consecutive weeks, the longest-running German chart-topper of all time. In summer 2026 the chart stood still: [[Shakira]] and [[Burna Boy]]'s Dai Dai held #1 for eleven straight weeks from July into September.",
       "items": [
         {
           "artist": "Nathan Evans",
@@ -1076,6 +1086,11 @@
           "artist": "Udo Lindenberg",
           "work": "Komet",
           "note": "with Apache 207 — German #1 for 21 weeks, an all-time record, 2023"
+        },
+        {
+          "artist": "Shakira and Burna Boy",
+          "work": "Dai Dai",
+          "note": "German #1 for 11 straight weeks from 3 July 2026, through the 11 September chart"
         }
       ],
       "sources": [
@@ -1106,7 +1121,7 @@
       "era": "The Bizarrap decade",
       "kind": "charted",
       "basis": "Anchored to Promusicae's official singles chart — Spain's sales-and-streaming chart — via the archived year-by-year number-one lists.",
-      "story": "Spain's 2020s chart speaks the global language of Spanish-language pop. A Canary Islands rapper and an Argentine producer set the decade's template: [[Quevedo]]'s Bzrp session Quédate went from viral freestyle to #1 in 2022, [[Rosalía]]'s Despechá ruled the same summer, [[Bad Bunny]] was never far from the top — and in 2023 [[Shakira]] recorded a Bizarrap session of her own that was heard around the world.",
+      "story": "Spain's 2020s chart speaks the global language of Spanish-language pop. A Canary Islands rapper and an Argentine producer set the decade's template: [[Quevedo]]'s Bzrp session Quédate went from viral freestyle to #1 in 2022, [[Rosalía]]'s Despechá ruled the same summer, [[Bad Bunny]] was never far from the top — and in 2023 [[Shakira]] recorded a Bizarrap session of her own that was heard around the world. By 2026 the top spot changed hands almost weekly — [[Aitana]]'s Superestrella came back to #1 four separate times — until [[Shakira]] and [[Burna Boy]]'s Dai Dai held it for most of the summer.",
       "items": [
         {
           "artist": "Quevedo",
@@ -1127,6 +1142,16 @@
           "artist": "Shakira",
           "work": "Shakira: Bzrp Music Sessions, Vol. 53",
           "note": "with Bizarrap — Spanish #1, 2023"
+        },
+        {
+          "artist": "Aitana",
+          "work": "Superestrella",
+          "note": "Spanish #1 across four separate runs between March and June 2026"
+        },
+        {
+          "artist": "Shakira and Burna Boy",
+          "work": "Dai Dai",
+          "note": "Spanish #1 for 7 weeks across two runs, July–August 2026"
         }
       ],
       "sources": [
@@ -1281,6 +1306,266 @@
       ],
       "model": "claude-opus-5 (in-session)",
       "at": "2026-08-06"
+    },
+    {
+      "country": "SE",
+      "from": 1963,
+      "to": 1975,
+      "era": "From the Hep Stars to ABBA — the Kvällstoppen years",
+      "kind": "charted",
+      "basis": "Kvällstoppen was Sveriges Radio's weekly sales list from 10 July 1962 to 19 August 1975, ranking the twenty best-selling records from selected shops with singles and albums in one chart; every week count here is read from the Swedish Wikipedia list of its number ones, cross-checked against per-song pages.",
+      "story": "Sweden's sales chart was a year old when [[The Beatles]] played their first shows outside Britain — a school hall in Karlstad on 25 October 1963, then Stockholm and Gothenburg — and a month later She Loves You gave the list its first Beatles number one. Every chart-topper had been in English until December 1964, when [[Sven-Ingvars]] took Fröken Fräken to the top. The homegrown beat boom came next: [[The Hep Stars]], with a young Benny Andersson on organ, put three of his own songs at number one in 1966 and held it nine straight weeks with Consolation, while Gothenburg's [[Tages]], often rated the best Swedish band of the era, were the rivals. Swedish-language pop kept its foothold — [[Anna-Lena Löfgren]]'s Lyckliga gatan, a translation of Adriano Celentano's Il ragazzo della via Gluck, ran six weeks in early 1968, and the week it ended [[Agnetha Fältskog]] had her first number one. Because singles and albums shared one chart, the early 1970s belong to LPs: [[Ted Gärdestad]]'s debut Undringar, with the four future members of ABBA playing and singing behind him, held ten weeks in 1972, and [[Hoola Bandoola Band]], a progg group on the MNW label, sat at number one for a month in 1973 — on the very sales chart that the progg movement, with its open contempt for the pop of Stikkan Anderson and ABBA, defined itself against. Then came the pivot. [[ABBA]], still billed as Björn, Benny, Agnetha & Frida, had six weeks with Ring Ring in 1973 after finishing third in the Eurovision selection; in 1974 Waterloo won Melodifestivalen on 9 February, won Eurovision in Brighton on 6 April, and the album held number one for twelve weeks while the single sat behind it at two and three. The chart's last spring belonged to [[Björn Skifs]]' Michelangelo and to ABBA's self-titled album, sixteen weeks at the top, even as the progg scene staged its Alternativfestivalen in a Stockholm tent in March 1975 as a protest against Melodifestivalen and everything it stood for.",
+      "items": [
+        {
+          "artist": "The Beatles",
+          "work": "She Loves You",
+          "note": "The first Beatles number one on the list, 26 November 1963 — six weeks at the top across two runs, a month after their first foreign tour opened in Karlstad"
+        },
+        {
+          "artist": "Sven-Ingvars",
+          "work": "Fröken Fräken",
+          "note": "Number one in December 1964 — the first Swedish-language title to top the list"
+        },
+        {
+          "artist": "The Hep Stars",
+          "work": "Consolation",
+          "note": "9 consecutive weeks at number one from 8 November 1966, plus one more in January 1967 — written by the band's organist, Benny Andersson"
+        },
+        {
+          "artist": "Tages",
+          "work": "In My Dreams",
+          "note": "3 weeks at number one from 9 August 1966"
+        },
+        {
+          "artist": "Anna-Lena Löfgren",
+          "work": "Lyckliga gatan",
+          "note": "6 weeks at number one from 16 January 1968 — the Swedish version of Adriano Celentano's Il ragazzo della via Gluck"
+        },
+        {
+          "artist": "Agnetha Fältskog",
+          "work": "Jag var så kär",
+          "note": "Number one for the week of 27 February 1968 — a solo chart-topper six years before Waterloo"
+        },
+        {
+          "artist": "Ted Gärdestad",
+          "work": "Undringar",
+          "note": "10 weeks at number one from 4 July 1972 — his debut LP on Polar Music, with Björn Ulvaeus, Benny Andersson, Agnetha Fältskog and Anni-Frid Lyngstad on the record"
+        },
+        {
+          "artist": "Björn, Benny, Agnetha & Frida",
+          "work": "Ring ring (bara du slog en signal)",
+          "note": "6 weeks at number one from 20 March 1973 — ABBA's first, after the song finished third in the Eurovision selection on 10 February"
+        },
+        {
+          "artist": "Hoola Bandoola Band",
+          "work": "På väg",
+          "note": "4 weeks at number one from 27 November 1973 — a progg LP on the MNW label topping the sales chart"
+        },
+        {
+          "artist": "ABBA",
+          "work": "Waterloo",
+          "note": "The album: 12 weeks at number one from 19 March 1974, while the single peaked at two and three in its Swedish and English versions — Eurovision winner in Brighton on 6 April 1974"
+        },
+        {
+          "artist": "Björn Skifs",
+          "work": "Michelangelo",
+          "note": "6 weeks at number one from 18 March 1975 — fifth at Melodifestivalen 1975, first on the sales list"
+        },
+        {
+          "artist": "ABBA",
+          "work": "Abba",
+          "note": "The album: 16 weeks at number one from 29 April 1975 — the chart's last long run before it ended on 19 August 1975"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Lista över ettor på Kvällstoppen (Swedish Wikipedia)",
+          "url": "https://sv.wikipedia.org/wiki/Lista_%C3%B6ver_ettor_p%C3%A5_Kv%C3%A4llstoppen"
+        },
+        {
+          "label": "Kvällstoppen (Swedish Wikipedia)",
+          "url": "https://sv.wikipedia.org/wiki/Kv%C3%A4llstoppen"
+        },
+        {
+          "label": "The Beatles — 1963 Sweden tour (Swedish Wikipedia)",
+          "url": "https://sv.wikipedia.org/wiki/The_Beatles"
+        },
+        {
+          "label": "Hep Stars (Swedish Wikipedia)",
+          "url": "https://sv.wikipedia.org/wiki/Hep_Stars"
+        },
+        {
+          "label": "Tages (Swedish Wikipedia)",
+          "url": "https://sv.wikipedia.org/wiki/Tages"
+        },
+        {
+          "label": "Il ragazzo della via Gluck / Lyckliga gatan (Swedish Wikipedia)",
+          "url": "https://sv.wikipedia.org/wiki/Il_ragazzo_della_via_Gluck"
+        },
+        {
+          "label": "Undringar (Swedish Wikipedia)",
+          "url": "https://sv.wikipedia.org/wiki/Undringar"
+        },
+        {
+          "label": "Ring Ring (ABBA song) (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Ring_Ring_(ABBA_song)"
+        },
+        {
+          "label": "På väg (Swedish Wikipedia)",
+          "url": "https://sv.wikipedia.org/wiki/P%C3%A5_v%C3%A4g_(musikalbum)"
+        },
+        {
+          "label": "Progg (Swedish Wikipedia)",
+          "url": "https://sv.wikipedia.org/wiki/Progg"
+        },
+        {
+          "label": "Waterloo (ABBA song) (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Waterloo_(ABBA_song)"
+        },
+        {
+          "label": "Michelangelo (Swedish Wikipedia)",
+          "url": "https://sv.wikipedia.org/wiki/Michelangelo_(s%C3%A5ng)"
+        },
+        {
+          "label": "Alternativfestivalen (Swedish Wikipedia)",
+          "url": "https://sv.wikipedia.org/wiki/Alternativfestivalen"
+        }
+      ],
+      "model": "claude-fable-5-1 (in-session)",
+      "at": "2026-09-16T22:24:42.818Z"
+    },
+    {
+      "country": "AU",
+      "from": 1966,
+      "to": 1974,
+      "era": "The Go-Set years — from Friday on My Mind to Eagle Rock",
+      "kind": "charted",
+      "basis": "Australia's first national pop chart ran in the Melbourne weekly Go-Set from 5 October 1966 until the paper closed on 24 August 1974; week counts here come from Go-Set's own number-one table as republished online with its chart compiler's permission, and differ in places from David Kent's later retro-calculated charts.",
+      "story": "Australia had no national chart until Go-Set, a Melbourne teen weekly, printed one on 5 October 1966 with Yellow Submarine at number one. Three months later [[The Easybeats]] took Friday on My Mind to the top for a single week — the song an industry panel would name the best Australian song ever written, in 2001. [[The Seekers]] came home in March 1967 to an estimated 200,000 people at Melbourne's Myer Music Bowl and had the year's biggest single with Georgy Girl; [[Johnny Farnham]] followed with a novelty about a cleaning lady, his first solo single, five weeks at number one and the top record of 1968. [[Russell Morris]]' The Real Thing — Johnny Young's song stretched to six minutes by producer Ian \"Molly\" Meldrum — was 1969's. Then the industry went to war with itself: from May to October 1970 commercial radio refused to play major-label British and Australian records in a pay-for-play dispute, Go-Set switched to surveying record shops directly, and [[The Mixtures]]' cover of In the Summertime on the minor Fable label held number one for nine weeks. [[Daddy Cool]]'s Eagle Rock, a debut single, ran ten weeks in 1971 and their album became the first Australian LP to sell 100,000 copies. Local acts thinned out at the top after the ban — [[Blackfeather]] was one of only two Australian number ones in 1972 — and Go-Set's final chart, in August 1974, belonged to Paper Lace. David Kent's Kent Music Report, launched that May, became the official chart; Countdown went to air on the ABC on 8 November 1974; and [[Skyhooks]] had just released Living in the 70's with six of its ten tracks banned from commercial radio.",
+      "items": [
+        {
+          "artist": "The Beatles",
+          "work": "Yellow Submarine / Eleanor Rigby",
+          "note": "Number one on Go-Set's first national chart, 5 October 1966 — 2 weeks"
+        },
+        {
+          "artist": "The Easybeats",
+          "work": "Friday on My Mind",
+          "note": "Number one for the week of 4 January 1967 — named the best Australian song of all time by an APRA industry panel in 2001"
+        },
+        {
+          "artist": "The Seekers",
+          "work": "Georgy Girl",
+          "note": "2 weeks at number one, 29 March–5 April 1967, and Go-Set's number one single of 1967"
+        },
+        {
+          "artist": "Johnny Farnham",
+          "work": "Sadie (The Cleaning Lady)",
+          "note": "5 weeks at number one, 31 January–28 February 1968, and Go-Set's number one single of 1968 — his first solo single"
+        },
+        {
+          "artist": "Russell Morris",
+          "work": "The Real Thing",
+          "note": "Number one for the week of 31 May 1969 and Go-Set's number one single of 1969 — written by Johnny Young, produced by Ian \"Molly\" Meldrum"
+        },
+        {
+          "artist": "Johnny Farnham",
+          "work": "Raindrops Keep Fallin' on My Head",
+          "note": "7 weeks at number one, 24 January–7 March 1970"
+        },
+        {
+          "artist": "The Mixtures",
+          "work": "In the Summertime",
+          "note": "9 weeks at number one, 29 August–24 October 1970, co-charted with Mungo Jerry's original during the radio ban"
+        },
+        {
+          "artist": "Daddy Cool",
+          "work": "Eagle Rock",
+          "note": "10 weeks at number one, 10 July–11 September 1971, and Go-Set's number one single of 1971 — the band's debut single"
+        },
+        {
+          "artist": "Blackfeather",
+          "work": "Boppin' the Blues",
+          "note": "4 weeks at number one, 14 October–4 November 1972 — one of only two Australian acts to reach number one that year"
+        },
+        {
+          "artist": "Paper Lace",
+          "work": "Billy Don't Be a Hero",
+          "note": "8 weeks at number one, 6 July–24 August 1974 — the last Go-Set number one before the paper closed"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Go-Set number-one singles 1966–1974 (gosetcharts.com)",
+          "url": "https://gosetcharts.com/singles.html"
+        },
+        {
+          "label": "About the Go-Set charts site — compiled with Ed Nimmervoll’s permission",
+          "url": "https://gosetcharts.com/about.html"
+        },
+        {
+          "label": "Go-Set Top 40 for 1967",
+          "url": "https://gosetcharts.com/1967/top1967.html"
+        },
+        {
+          "label": "Go-Set Top 40 for 1968",
+          "url": "https://gosetcharts.com/1968/top1968.html"
+        },
+        {
+          "label": "Go-Set Top 40 for 1969",
+          "url": "https://gosetcharts.com/1969/top1969.html"
+        },
+        {
+          "label": "Go-Set Top Singles for 1971",
+          "url": "https://gosetcharts.com/1971/top1971.html"
+        },
+        {
+          "label": "Go-Set (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Go-Set"
+        },
+        {
+          "label": "1970 radio ban (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/1970_radio_ban"
+        },
+        {
+          "label": "Kent Music Report (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Kent_Music_Report"
+        },
+        {
+          "label": "Friday on My Mind (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Friday_on_My_Mind"
+        },
+        {
+          "label": "The Seekers (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/The_Seekers"
+        },
+        {
+          "label": "Sadie (The Cleaning Lady) (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Sadie_(The_Cleaning_Lady)"
+        },
+        {
+          "label": "The Real Thing (Russell Morris song) (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/The_Real_Thing_(Russell_Morris_song)"
+        },
+        {
+          "label": "Eagle Rock (song) (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Eagle_Rock_(song)"
+        },
+        {
+          "label": "Daddy Cool (band) (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Daddy_Cool_(band)"
+        },
+        {
+          "label": "Celebrating Countdown, 50 years on ABC (ABC media centre)",
+          "url": "https://www.abc.net.au/about/media-centre/press-releases/celebrating-countdown-50-years-on-abc/104483236"
+        },
+        {
+          "label": "Skyhooks (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Skyhooks_(band)"
+        }
+      ],
+      "model": "claude-fable-5-1 (in-session)",
+      "at": "2026-09-16T22:24:42.818Z"
     }
   ]
 }
