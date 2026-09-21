@@ -1,0 +1,593 @@
+{
+ "generatedAt": "2026-09-21T10:11:18.791Z",
+ "status": "REPORT ONLY — nothing changed",
+ "counts": {
+  "same-verified": 9,
+  "unverifiable": 6
+ },
+ "reviews": [
+  {
+   "country": "MW",
+   "poolEntry": {
+    "name": "Wambali Mkandawire",
+    "discogsArtistId": 5081591,
+    "matchedBy": "discogsId"
+   },
+   "wikidataItem": {
+    "id": "Q7966917",
+    "name": "Wambali Mkandawire",
+    "discogsId": "5081591",
+    "classes": [
+     "P106:Q15981151"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "8df918db-bc5b-4a04-92dd-8a8d90e3b4f9",
+    "discogsIds": [
+     "5081591"
+    ],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": null
+   },
+   "verdict": "same-verified",
+   "corroboration": {
+    "discogsTitles": [
+     "Calabrash Breath",
+     "Liberty"
+    ],
+    "mbTitles": [],
+    "shared": []
+   }
+  },
+  {
+   "country": "KH",
+   "poolEntry": {
+    "name": "Kong Nai",
+    "discogsArtistId": 2297717,
+    "matchedBy": "discogsId"
+   },
+   "wikidataItem": {
+    "id": "Q3198648",
+    "name": "Kong Nay",
+    "discogsId": "2297717",
+    "classes": [
+     "P106:Q21166956"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "31219974-a2c8-41a3-9097-553be4b53e94",
+    "discogsIds": [
+     "2297717"
+    ],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": null
+   },
+   "verdict": "same-verified",
+   "corroboration": {
+    "discogsTitles": [
+     "3 Songs For Human Rights"
+    ],
+    "mbTitles": [
+     "Mekong Delta Blues",
+     "Cambodge. Kong Nay. un barde cambodgien. Kong Nay. A Cambodian bard",
+     "Time To Rise"
+    ],
+    "shared": []
+   }
+  },
+  {
+   "country": "ET",
+   "poolEntry": {
+    "name": "Fekade Amde Maskal",
+    "discogsArtistId": 538540,
+    "matchedBy": "discogsId"
+   },
+   "wikidataItem": {
+    "id": "Q140814778",
+    "name": "ከፋቃደ አሞደ መስቀል",
+    "discogsId": "538540",
+    "classes": [
+     "P106:Q584301",
+     "P106:Q12800682"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "93f39b70-e795-4bcd-8973-0a0407dedd4f",
+    "discogsIds": [
+     "538540"
+    ],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": null
+   },
+   "verdict": "same-verified",
+   "corroboration": {
+    "discogsTitles": [
+     "Ethio Jazz =  የካተት"
+    ],
+    "mbTitles": [
+     "Ethio Jazz"
+    ],
+    "shared": []
+   }
+  },
+  {
+   "country": "VN",
+   "poolEntry": {
+    "name": "Lê Dung",
+    "discogsArtistId": 2765260,
+    "matchedBy": "name"
+   },
+   "wikidataItem": {
+    "id": "Q2686625",
+    "name": "Lê Dung",
+    "discogsId": null,
+    "classes": [
+     "P106:Q2865819"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "e69bbd90-2f06-42e4-9826-06d171301ae5",
+    "discogsIds": [],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": {
+     "name": "Lê Dung",
+     "type": "Person",
+     "area": null,
+     "disambiguation": null
+    }
+   },
+   "verdict": "unverifiable",
+   "corroboration": {
+    "discogsTitles": [
+     "Tiếng Hát",
+     " Những Tác Phẩm Thính Phòng"
+    ],
+    "mbTitles": [],
+    "shared": []
+   }
+  },
+  {
+   "country": "VN",
+   "poolEntry": {
+    "name": "UnlimiteD",
+    "discogsArtistId": 2745828,
+    "matchedBy": "name"
+   },
+   "wikidataItem": {
+    "id": "Q10832134",
+    "name": "UnlimiteD",
+    "discogsId": null,
+    "classes": [
+     "P31:Q5741069"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "378d1925-e800-46f2-ae05-4407dd6ae2dd",
+    "discogsIds": [],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": {
+     "name": "UnlimiteD",
+     "type": "Group",
+     "area": "Vietnam",
+     "disambiguation": "Vietnamese metal band"
+    }
+   },
+   "verdict": "unverifiable",
+   "corroboration": {
+    "discogsTitles": [
+     "Symphony",
+     "Tai Sinh"
+    ],
+    "mbTitles": [
+     "Tái sinh",
+     "Symphony"
+    ],
+    "shared": [
+     "Tái sinh",
+     "Symphony"
+    ]
+   }
+  },
+  {
+   "country": "VN",
+   "poolEntry": {
+    "name": "Phạm Anh Khoa",
+    "discogsArtistId": 8529357,
+    "matchedBy": "discogsId"
+   },
+   "wikidataItem": {
+    "id": "Q56284671",
+    "name": "Phạm Anh Khoa",
+    "discogsId": "8529357",
+    "classes": [
+     "P106:Q2643890",
+     "P106:Q104218554"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "b2355075-b062-45f1-9a8e-a8a15765b875",
+    "discogsIds": [],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": {
+     "name": "Phạm Anh Khoa",
+     "type": null,
+     "area": null,
+     "disambiguation": null
+    }
+   },
+   "verdict": "same-verified",
+   "corroboration": {
+    "discogsTitles": [
+     "PAK (Vol. 2 / Làm Sao Nói Hết)",
+     "01"
+    ],
+    "mbTitles": [],
+    "shared": []
+   }
+  },
+  {
+   "country": "GH",
+   "poolEntry": {
+    "name": "Ball J",
+    "discogsArtistId": 1767743,
+    "matchedBy": "name"
+   },
+   "wikidataItem": {
+    "id": "Q20740993",
+    "name": "Ball J",
+    "discogsId": null,
+    "classes": [
+     "P106:Q183945",
+     "P106:Q2252262"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "499e0968-fd14-48cc-9a36-90c40d01dfa0",
+    "discogsIds": [],
+    "linksBackToWikidataItem": false,
+    "nameIndexRecord": {
+     "name": "Ball J",
+     "type": null,
+     "area": null,
+     "disambiguation": null
+    }
+   },
+   "verdict": "unverifiable",
+   "corroboration": {
+    "discogsTitles": [
+     "Mr. Lover Lover"
+    ],
+    "mbTitles": [],
+    "shared": []
+   }
+  },
+  {
+   "country": "GH",
+   "poolEntry": {
+    "name": "Ɔbrafoɔ",
+    "discogsArtistId": 1089505,
+    "matchedBy": "name"
+   },
+   "wikidataItem": {
+    "id": "Q64211521",
+    "name": "Obrafour",
+    "discogsId": null,
+    "classes": [
+     "P106:Q2252262"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "b38b2987-f029-47b5-99c2-dd1a2ab8ed65",
+    "discogsIds": [],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": {
+     "name": "Obrafour",
+     "type": "Person",
+     "area": "Ghana",
+     "disambiguation": "Ghanaian hiplife musician Michael Elliot Kwabena Okyere Darko"
+    }
+   },
+   "verdict": "unverifiable",
+   "corroboration": {
+    "discogsTitles": [
+     "Pae Mu Ka",
+     "Dues",
+     "Asem Sebe",
+     "TOFA"
+    ],
+    "mbTitles": [],
+    "shared": []
+   }
+  },
+  {
+   "country": "GH",
+   "poolEntry": {
+    "name": "Blackway",
+    "discogsArtistId": 3670163,
+    "matchedBy": "name"
+   },
+   "wikidataItem": {
+    "id": "Q130478561",
+    "name": "Blackway",
+    "discogsId": null,
+    "classes": [
+     "P106:Q2252262"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "28fcc9d7-e92c-44c6-a6b7-6fa54216d8a9",
+    "discogsIds": [],
+    "linksBackToWikidataItem": false,
+    "nameIndexRecord": null
+   },
+   "verdict": "unverifiable",
+   "corroboration": {
+    "discogsTitles": [
+     "Raise My Flag"
+    ],
+    "mbTitles": [],
+    "shared": []
+   }
+  },
+  {
+   "country": "TT",
+   "poolEntry": {
+    "name": "Neville Marcano",
+    "discogsArtistId": 1213338,
+    "matchedBy": "discogsId"
+   },
+   "wikidataItem": {
+    "id": "Q5611695",
+    "name": "Growling Tiger",
+    "discogsId": "1213338",
+    "classes": [
+     "P106:Q5024685"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "9a2cca5b-1cd9-45c8-89ee-c612c227e826",
+    "discogsIds": [
+     "1213338",
+     "1284760"
+    ],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": {
+     "name": "Growling Tiger",
+     "type": "Person",
+     "area": "Trinidad and Tobago",
+     "disambiguation": null
+    }
+   },
+   "verdict": "same-verified",
+   "corroboration": {
+    "discogsTitles": [
+     "Dingo Lay / Young Girl's Touch"
+    ],
+    "mbTitles": [
+     "Knockdown Calypsos",
+     "The Growling Tiger of Calypso"
+    ],
+    "shared": []
+   }
+  },
+  {
+   "country": "TT",
+   "poolEntry": {
+    "name": "Dictator",
+    "discogsArtistId": 2032849,
+    "matchedBy": "discogsId"
+   },
+   "wikidataItem": {
+    "id": "Q109673883",
+    "name": "Mighty Dictator",
+    "discogsId": "2032849",
+    "classes": [
+     "P106:Q5024685",
+     "P106:Q753110"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "19cf4c65-c96f-4f03-9e95-5cd1056c3ec4",
+    "discogsIds": [
+     "2032849"
+    ],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": {
+     "name": "Dictator",
+     "type": "Person",
+     "area": "Trinidad and Tobago",
+     "disambiguation": "Calypsonian, aka Kenneth St. Bernard, Mighty Dictator"
+    }
+   },
+   "verdict": "same-verified",
+   "corroboration": {
+    "discogsTitles": [
+     "Ah! Lord Invaders / Man Centipede",
+     "Last Train To San Fernando / Old Time Calypso",
+     "Moonia / Nylon Dance",
+     "The Queens' Canary / Can Can Girls",
+     "My Conception Of Female Beauty / Thieving Bajan Policeman",
+     "Trinidad Is The Place To Go / Diana Come Back",
+     "Me Mama Say No Give / Cake Sticking",
+     "America The Beautiful / A Man In A Uniform",
+     "I Am Going Home To The Lord / Mambo Woman",
+     "Don't Worry Your Head / Stiring Cashew",
+     "Family Size / Sweet Trinidad",
+     "Chinese Cricket Match / Federation"
+    ],
+    "mbTitles": [],
+    "shared": []
+   }
+  },
+  {
+   "country": "TT",
+   "poolEntry": {
+    "name": "King Radio",
+    "discogsArtistId": 893312,
+    "matchedBy": "discogsId"
+   },
+   "wikidataItem": {
+    "id": "Q6411973",
+    "name": "King Radio",
+    "discogsId": "893312",
+    "classes": [
+     "P106:Q5024685"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "2e432d96-f70b-4de7-9b5e-94b8852fc038",
+    "discogsIds": [
+     "893312"
+    ],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": {
+     "name": "King Radio",
+     "type": "Person",
+     "area": "Trinidad and Tobago",
+     "disambiguation": "Calypso singer"
+    }
+   },
+   "verdict": "same-verified",
+   "corroboration": {
+    "discogsTitles": [
+     " Brown Skin Girl / MacDonald Almanac",
+     "We Want Ramadin On The Ball / McGee",
+     "Wild Indian / I Don't Want No Woman",
+     "Wash Pan Wash / Madras Wedding",
+     "The La La Key / Girl In The Mirror",
+     "The La La Key / Anna",
+     "Leave Me All Alone Mabel / Boy Blue",
+     "Marian / The Lost Watch",
+     "Who Dead Canaan / Juck Waist",
+     "Brown Skin Girl / Venezuela",
+     "Radio It's The Great Aviator / Do-Re-Do-Re"
+    ],
+    "mbTitles": [],
+    "shared": []
+   }
+  },
+  {
+   "country": "KZ",
+   "poolEntry": {
+    "name": "Алибек Днишев",
+    "discogsArtistId": 2823955,
+    "matchedBy": "discogsId"
+   },
+   "wikidataItem": {
+    "id": "Q4163310",
+    "name": "Alibek Dnishev",
+    "discogsId": "2823955",
+    "classes": [
+     "P106:Q2865819",
+     "P106:Q16145150"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "594f4fd9-91cc-45fe-9a6a-7e85cb6e9075",
+    "discogsIds": [
+     "2823955"
+    ],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": null
+   },
+   "verdict": "same-verified",
+   "corroboration": {
+    "discogsTitles": [
+     "Қазақ операсының аңыздары =  Легенды казахской оперы = Legends Of  The Kazakh Opera ",
+     "Popular Kazakh, Russian, Italian Songs",
+     "Песни военных лет"
+    ],
+    "mbTitles": [],
+    "shared": []
+   }
+  },
+  {
+   "country": "PS",
+   "poolEntry": {
+    "name": "محمود درويش",
+    "discogsArtistId": 3039906,
+    "matchedBy": "discogsId"
+   },
+   "wikidataItem": {
+    "id": "Q207720",
+    "name": "Mahmoud Darwish",
+    "discogsId": "3039906",
+    "classes": [
+     "P106:Q753110"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "ddefe734-0aee-4986-85f8-52c3425a0edd",
+    "discogsIds": [
+     "3039906"
+    ],
+    "linksBackToWikidataItem": true,
+    "nameIndexRecord": {
+     "name": "Mahmoud Darwish",
+     "type": "Person",
+     "area": "Palestine",
+     "disambiguation": null
+    }
+   },
+   "verdict": "same-verified",
+   "corroboration": {
+    "discogsTitles": [
+     "في ظل الكلام"
+    ],
+    "mbTitles": [
+     "(Andalusia of Love) أندلس الحُب",
+     "The Intifada 1987",
+     "Récital Mahmoud Darwich",
+     "Al Manara"
+    ],
+    "shared": []
+   }
+  },
+  {
+   "country": "PS",
+   "poolEntry": {
+    "name": "شب جديد",
+    "discogsArtistId": 7608027,
+    "matchedBy": "name"
+   },
+   "wikidataItem": {
+    "id": "Q106570586",
+    "name": "Shabjdeed",
+    "discogsId": null,
+    "classes": [
+     "P106:Q2252262",
+     "P106:Q100493654"
+    ]
+   },
+   "musicbrainz": {
+    "mbid": "99e070e6-e232-4731-81db-666b448626d7",
+    "discogsIds": [],
+    "linksBackToWikidataItem": false,
+    "nameIndexRecord": {
+     "name": "Shabjdeed",
+     "type": "Person",
+     "area": "West Bank",
+     "disambiguation": "Palestinian rapper"
+    }
+   },
+   "verdict": "unverifiable",
+   "corroboration": {
+    "discogsTitles": [
+     "في حرب",
+     "مربح",
+     " SULTAN - س​ل​ط​ا​ن"
+    ],
+    "mbTitles": [
+     "SINDIBAD EL WARD - سندباد الورد",
+     "Kteer Ktar كتير كتار",
+     "أمريكا - Amrikkka",
+     "SULTAN",
+     "Jdeed, Vol. 1",
+     "Jdeed, Vol. 3",
+     "YOUMI"
+    ],
+    "shared": []
+   }
+  }
+ ]
+}
