@@ -1,0 +1,337 @@
+{
+ "generatedAt": "2026-09-22T20:15:17.212Z",
+ "ruledOn": "2026-09-22",
+ "ruling": "Owner, Sep 22 2026: for each verified duplicate keep whichever copy is better on the site and move the other to this held file with the evidence attached; nothing gets deleted. The five name-only cases stay in the pool. Mahmoud Darwish stays under the spoken-word ruling: Discogs files \"À L'Ombre Des Mots\" (France 2009) and its Palestinian pressing \"في ظل الكلام\" as joint artist credits with Le Trio Joubran under a music genre — his readings over music, released.",
+ "cases": [
+  {
+   "country": "MW",
+   "name": "Wambali Mkandawire",
+   "mbid": "8df918db-bc5b-4a04-92dd-8a8d90e3b4f9",
+   "discogsArtistId": 5081591,
+   "why": "MB copy dated 1967–2021 with tags; pool copy 2011–15 from two releases, no ▶",
+   "kept": "mb",
+   "moved": "pool (already on record)",
+   "movedRecord": {
+    "name": "Wambali Mkandawire",
+    "source": "discogs",
+    "firstYear": 2011,
+    "lastYear": 2015,
+    "styles": [
+     "African",
+     "Jazz-Rock",
+     "Jazz"
+    ],
+    "releaseCount": 2,
+    "discogsArtistId": 5081591,
+    "wikidataId": null
+   },
+   "evidence": {
+    "verdict": "same-verified",
+    "musicbrainz": {
+     "mbid": "8df918db-bc5b-4a04-92dd-8a8d90e3b4f9",
+     "discogsIds": [
+      "5081591"
+     ],
+     "linksBackToWikidataItem": true,
+     "nameIndexRecord": null
+    },
+    "wikidataItem": {
+     "id": "Q7966917",
+     "name": "Wambali Mkandawire",
+     "discogsId": "5081591",
+     "classes": [
+      "P106:Q15981151"
+     ]
+    },
+    "corroboration": {
+     "discogsTitles": [
+      "Calabrash Breath",
+      "Liberty"
+     ],
+     "mbTitles": [],
+     "shared": []
+    }
+   }
+  },
+  {
+   "country": "ET",
+   "name": "Fekade Amde Maskal",
+   "mbid": "93f39b70-e795-4bcd-8973-0a0407dedd4f",
+   "discogsArtistId": 538540,
+   "why": "MB copy undated (never places on a year); pool copy dated 1974 with a verified ▶",
+   "kept": "pool",
+   "moved": "mb (already on record)",
+   "movedRecord": {
+    "id": "93f39b70-e795-4bcd-8973-0a0407dedd4f",
+    "name": "Fèqadu Amdè‐Mesqel",
+    "cs": null,
+    "end": null,
+    "w": 0,
+    "t": []
+   },
+   "evidence": {
+    "verdict": "same-verified",
+    "musicbrainz": {
+     "mbid": "93f39b70-e795-4bcd-8973-0a0407dedd4f",
+     "discogsIds": [
+      "538540"
+     ],
+     "linksBackToWikidataItem": true,
+     "nameIndexRecord": null
+    },
+    "wikidataItem": {
+     "id": "Q140814778",
+     "name": "ከፋቃደ አሞደ መስቀል",
+     "discogsId": "538540",
+     "classes": [
+      "P106:Q584301",
+      "P106:Q12800682"
+     ]
+    },
+    "corroboration": {
+     "discogsTitles": [
+      "Ethio Jazz =  የካተት"
+     ],
+     "mbTitles": [
+      "Ethio Jazz"
+     ],
+     "shared": []
+    }
+   }
+  },
+  {
+   "country": "TT",
+   "name": "Dictator",
+   "mbid": "19cf4c65-c96f-4f03-9e95-5cd1056c3ec4",
+   "discogsArtistId": 2032849,
+   "why": "MB copy undated; pool copy dated 1951–56 from 12 releases with a verified ▶",
+   "kept": "pool",
+   "moved": "mb (already on record)",
+   "movedRecord": {
+    "id": "19cf4c65-c96f-4f03-9e95-5cd1056c3ec4",
+    "name": "Dictator",
+    "cs": null,
+    "end": null,
+    "w": 0,
+    "t": []
+   },
+   "evidence": {
+    "verdict": "same-verified",
+    "musicbrainz": {
+     "mbid": "19cf4c65-c96f-4f03-9e95-5cd1056c3ec4",
+     "discogsIds": [
+      "2032849"
+     ],
+     "linksBackToWikidataItem": true,
+     "nameIndexRecord": {
+      "name": "Dictator",
+      "type": "Person",
+      "area": "Trinidad and Tobago",
+      "disambiguation": "Calypsonian, aka Kenneth St. Bernard, Mighty Dictator"
+     }
+    },
+    "wikidataItem": {
+     "id": "Q109673883",
+     "name": "Mighty Dictator",
+     "discogsId": "2032849",
+     "classes": [
+      "P106:Q5024685",
+      "P106:Q753110"
+     ]
+    },
+    "corroboration": {
+     "discogsTitles": [
+      "Ah! Lord Invaders / Man Centipede",
+      "Last Train To San Fernando / Old Time Calypso",
+      "Moonia / Nylon Dance",
+      "The Queens' Canary / Can Can Girls",
+      "My Conception Of Female Beauty / Thieving Bajan Policeman",
+      "Trinidad Is The Place To Go / Diana Come Back",
+      "Me Mama Say No Give / Cake Sticking",
+      "America The Beautiful / A Man In A Uniform",
+      "I Am Going Home To The Lord / Mambo Woman",
+      "Don't Worry Your Head / Stiring Cashew",
+      "Family Size / Sweet Trinidad",
+      "Chinese Cricket Match / Federation"
+     ],
+     "mbTitles": [],
+     "shared": []
+    }
+   }
+  },
+  {
+   "country": "TT",
+   "name": "King Radio",
+   "mbid": "2e432d96-f70b-4de7-9b5e-94b8852fc038",
+   "discogsArtistId": 893312,
+   "why": "MB copy undated; pool copy dated 1948–55 from 11 releases with an archive ▶",
+   "kept": "pool",
+   "moved": "mb (already on record)",
+   "movedRecord": {
+    "id": "2e432d96-f70b-4de7-9b5e-94b8852fc038",
+    "name": "King Radio",
+    "cs": null,
+    "end": null,
+    "w": 1,
+    "t": [
+     "calypso"
+    ]
+   },
+   "evidence": {
+    "verdict": "same-verified",
+    "musicbrainz": {
+     "mbid": "2e432d96-f70b-4de7-9b5e-94b8852fc038",
+     "discogsIds": [
+      "893312"
+     ],
+     "linksBackToWikidataItem": true,
+     "nameIndexRecord": {
+      "name": "King Radio",
+      "type": "Person",
+      "area": "Trinidad and Tobago",
+      "disambiguation": "Calypso singer"
+     }
+    },
+    "wikidataItem": {
+     "id": "Q6411973",
+     "name": "King Radio",
+     "discogsId": "893312",
+     "classes": [
+      "P106:Q5024685"
+     ]
+    },
+    "corroboration": {
+     "discogsTitles": [
+      " Brown Skin Girl / MacDonald Almanac",
+      "We Want Ramadin On The Ball / McGee",
+      "Wild Indian / I Don't Want No Woman",
+      "Wash Pan Wash / Madras Wedding",
+      "The La La Key / Girl In The Mirror",
+      "The La La Key / Anna",
+      "Leave Me All Alone Mabel / Boy Blue",
+      "Marian / The Lost Watch",
+      "Who Dead Canaan / Juck Waist",
+      "Brown Skin Girl / Venezuela",
+      "Radio It's The Great Aviator / Do-Re-Do-Re"
+     ],
+     "mbTitles": [],
+     "shared": []
+    }
+   }
+  }
+ ],
+ "kept": [
+  {
+   "country": "VN",
+   "name": "Phạm Anh Khoa",
+   "mbid": "b2355075-b062-45f1-9a8e-a8a15765b875",
+   "discogsArtistId": 8529357,
+   "why": "MB knows the artist but files no copy on the site for VN — nothing to move",
+   "kept": "pool",
+   "moved": "nothing-on-site",
+   "evidence": {
+    "verdict": "same-verified",
+    "musicbrainz": {
+     "mbid": "b2355075-b062-45f1-9a8e-a8a15765b875",
+     "discogsIds": [],
+     "linksBackToWikidataItem": true,
+     "nameIndexRecord": {
+      "name": "Phạm Anh Khoa",
+      "type": null,
+      "area": null,
+      "disambiguation": null
+     }
+    },
+    "wikidataItem": {
+     "id": "Q56284671",
+     "name": "Phạm Anh Khoa",
+     "discogsId": "8529357",
+     "classes": [
+      "P106:Q2643890",
+      "P106:Q104218554"
+     ]
+    },
+    "corroboration": {
+     "discogsTitles": [
+      "PAK (Vol. 2 / Làm Sao Nói Hết)",
+      "01"
+     ],
+     "mbTitles": [],
+     "shared": []
+    }
+   }
+  },
+  {
+   "country": "KZ",
+   "name": "Алибек Днишев",
+   "mbid": "594f4fd9-91cc-45fe-9a6a-7e85cb6e9075",
+   "discogsArtistId": 2823955,
+   "why": "MB copy is filed under the Soviet Union (owner ruling Aug 11 2026: residence, not origin) — nothing on the KZ site to move",
+   "kept": "pool",
+   "moved": "nothing-on-site",
+   "evidence": {
+    "verdict": "same-verified",
+    "musicbrainz": {
+     "mbid": "594f4fd9-91cc-45fe-9a6a-7e85cb6e9075",
+     "discogsIds": [
+      "2823955"
+     ],
+     "linksBackToWikidataItem": true,
+     "nameIndexRecord": null
+    },
+    "wikidataItem": {
+     "id": "Q4163310",
+     "name": "Alibek Dnishev",
+     "discogsId": "2823955",
+     "classes": [
+      "P106:Q2865819",
+      "P106:Q16145150"
+     ]
+    },
+    "corroboration": {
+     "discogsTitles": [
+      "Қазақ операсының аңыздары =  Легенды казахской оперы = Legends Of  The Kazakh Opera ",
+      "Popular Kazakh, Russian, Italian Songs",
+      "Песни военных лет"
+     ],
+     "mbTitles": [],
+     "shared": []
+    }
+   }
+  }
+ ],
+ "deferred": [
+  {
+   "country": "KH",
+   "name": "Kong Nai",
+   "mbid": "31219974-a2c8-41a3-9097-553be4b53e94",
+   "discogsArtistId": 2297717,
+   "why": "MB copy dated 1959–2024 but silent; pool copy 2012 (one release) with the only verified ▶",
+   "awaiting": "owner picks the copy: dated-but-silent MB vs. audible pool"
+  },
+  {
+   "country": "VN",
+   "name": "UnlimiteD",
+   "mbid": "378d1925-e800-46f2-ae05-4407dd6ae2dd",
+   "discogsArtistId": 2745828,
+   "why": "MB copy dated 2003 with a YouTube channel relation; pool copy 2009 with the only verified ▶",
+   "awaiting": "owner picks the copy: dated-but-silent MB vs. audible pool"
+  },
+  {
+   "country": "TT",
+   "name": "Neville Marcano",
+   "mbid": "9a2cca5b-1cd9-45c8-89ee-c612c227e826",
+   "discogsArtistId": 1213338,
+   "why": "MB copy \"Growling Tiger\" dated 1931–1993 but silent; pool copy 1935 with the only verified ▶",
+   "awaiting": "owner picks the copy: dated-but-silent MB vs. audible pool"
+  },
+  {
+   "country": "PS",
+   "name": "محمود درويش",
+   "mbid": "ddefe734-0aee-4986-85f8-52c3425a0edd",
+   "discogsArtistId": 3039906,
+   "why": "MB copy dated 1956–2008 but silent; pool copy undated with the only verified ▶ (stays as an artist under the spoken-word ruling)",
+   "awaiting": "owner picks the copy: dated-but-silent MB vs. audible pool"
+  }
+ ]
+}

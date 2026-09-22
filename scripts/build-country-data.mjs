@@ -53,6 +53,12 @@ import {
 import { join } from 'node:path'
 
 const GEOJSON_PATH = 'public/data/countries-110m.geojson'
+/**
+ * MB copies the owner moved out as verified duplicates of a gap-fill
+ * entry (scripts/apply-mb-duplicate-rulings.mjs, Sep 2026). The held
+ * file is the source of truth; a regen must not resurrect them.
+ */
+const MB_DUPLICATES_HELD_PATH = 'data/mb-duplicates-held.json'
 const OUT_DIR = 'lib/explore/country-artists'
 const INDEX_PATH = 'lib/explore/country-artists-index.json'
 /**
@@ -248,11 +254,18 @@ async function sweepCountry(code, name) {
  * Every pass must be monotonic: rows only accumulate, and `complete`
  * only becomes true when a run actually reached the end.
  */
+function heldMbids() {
+  if (!existsSync(MB_DUPLICATES_HELD_PATH)) return new Set()
+  const held = JSON.parse(readFileSync(MB_DUPLICATES_HELD_PATH, 'utf8'))
+  return new Set(held.cases.filter((item) => item.moved === 'mb').map((item) => item.mbid))
+}
+
 function foldIntoStored(name, existing, swept) {
   const byId = new Map()
   for (const record of existing?.artists ?? []) byId.set(record.id, record)
   for (const record of swept.records) byId.set(record.id, record)
-  const records = [...byId.values()]
+  const held = heldMbids()
+  const records = [...byId.values()].filter((record) => !held.has(record.id))
   const roster = composeRoster(records)
   const claimed = Math.max(swept.claimed, existing?.total ?? 0)
   return {
