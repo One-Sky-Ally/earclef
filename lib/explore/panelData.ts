@@ -60,7 +60,27 @@ export interface CountryYearDetails {
      * stored pre-change payloads; the panel degrades to no section.
      */
     archive?: ExtraPoolArtist[]
+    /**
+     * Undated entries no visitor can reach (outside every top-100 the
+     * panel can render, and not queue-playable), sent as counts only —
+     * the list is identical for every year of a country and most of a
+     * sparse panel's weight. The panel adds these back into its totals
+     * and genre counts. Absent when nothing was left out, and on
+     * pre-change payloads. See withReachableUndated (panelPool.ts).
+     */
+    undatedOmitted?: OmittedUndated
   }
+}
+
+/**
+ * Undated gap-fill entries left out of a response because no visitor
+ * can reach them — summarized so every count still includes them.
+ */
+export interface OmittedUndated {
+  /** How many entries were left out. */
+  count: number
+  /** Canonical tag → how many left-out entries carry it. */
+  tags: Record<string, number>
 }
 
 /** A gap-fill entry as the panel pool consumes it — data-free client. */
