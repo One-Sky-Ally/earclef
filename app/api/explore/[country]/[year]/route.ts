@@ -13,6 +13,7 @@ import { countryDetails, hasCountryData } from '@/lib/explore/countryData'
 import { extraArtistGroupsFor } from '@/lib/explore/extraArtistsServer'
 import { withHistoricalArtists } from '@/lib/explore/historicalArtistsServer'
 import { claimedPlaceDetails } from '@/lib/explore/claimedPlacesServer'
+import { withReachableUndated } from '@/lib/explore/panelPool'
 import type {
   CountryYearDetails,
   PanelArtist,
@@ -407,17 +408,23 @@ export async function GET(
   // panels on the next deploy (which purges the CDN) without a cache
   // version bump. The client receives shaped entries; the dataset
   // itself never enters a browser bundle (Aug 2026 bandwidth lesson).
+  /**
+   * Historical-area roster merges at respond time like the gap-fill
+   * attach: cached payloads stay as stored, roster updates ride each
+   * deploy. Subdivision codes miss the country-keyed roster and no-op.
+   *
+   * The undated trim runs LAST, over the finished pool: which undated
+   * entries a visitor can reach depends on everything ranked above
+   * them, historical-area artists included.
+   */
+  const attachAtRespondTime = (details: CountryYearDetails) =>
+    withReachableUndated({
+      ...withHistoricalArtists(details, country, start, end, genre),
+      extraArtists: extraArtistGroupsFor(country, start, end),
+    })
+
   const respond = (details: CountryYearDetails) =>
-    withCacheHeaders(
-      NextResponse.json({
-        // Historical-area roster merges at respond time like the
-        // gap-fill attach: cached payloads stay as stored, roster
-        // updates ride each deploy. Subdivision codes miss the
-        // country-keyed roster and no-op.
-        ...withHistoricalArtists(details, country, start, end, genre),
-        extraArtists: extraArtistGroupsFor(country, start, end),
-      }),
-    )
+    withCacheHeaders(NextResponse.json(attachAtRespondTime(details)))
 
   /**
    * The same panel, served because MusicBrainz could not be reached.
@@ -430,8 +437,7 @@ export async function GET(
    */
   const respondStale = (details: CountryYearDetails) => {
     const response = NextResponse.json({
-      ...withHistoricalArtists(details, country, start, end, genre),
-      extraArtists: extraArtistGroupsFor(country, start, end),
+      ...attachAtRespondTime(details),
       /** The panel says so rather than passing stored data off as live. */
       stored: true,
     })

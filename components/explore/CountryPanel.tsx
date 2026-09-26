@@ -10,8 +10,13 @@ import {
   type PanelArtist,
   type PoolArtist,
 } from '@/lib/explore/panelData'
+import {
+  RENDER_CAP,
+  panelPoolOf,
+  queueEligible,
+  type PanelPoolArtist,
+} from '@/lib/explore/panelPool'
 import { YEAR_MAX, YEAR_MIN, type DataSource } from '@/lib/explore/counts'
-import { canonicalizeTags } from '@/lib/explore/genreFamilies'
 import { fetchArtistPlay } from '@/lib/play/client'
 import { pickPlayForService } from '@/lib/play/pick'
 import { PLAY_LABELS, type ArtistPlay } from '@/lib/play/types'
@@ -62,13 +67,13 @@ const NEARBY_OFFER_THRESHOLD = 5
 
 /**
  * Discovery tiers: 5 → 20 → +20 steps → 100. Strict popularity order —
- * each expansion is the next tier down. 100 is also the hard render
- * cap everywhere (tiers, chip filters, name search).
+ * each expansion is the next tier down. 100 (RENDER_CAP, shared with
+ * the server's undated trim) is also the hard render cap everywhere
+ * (tiers, chip filters, name search).
  */
 const TIER_BASE = 5
 const TIER_SECOND = 20
 const TIER_STEP = 20
-const RENDER_CAP = 100
 /** Dropdown option cap — searchable, so a cap loses nothing. */
 const GENRE_OPTION_CAP = 250
 /**
@@ -108,11 +113,15 @@ interface GenreOption {
  * overall top 100 become reachable. Excluded: the active global lens
  * (the pool is already filtered to it) and the place's own name
  * ("finland" is a popular MB tag, but it isn't a genre).
+ *
+ * `omittedTags` counts the undated entries the server left out as
+ * unreachable, so every count reads exactly as if they were here.
  */
 function genreOptions(
   pool: PoolArtist[],
   lens: string | null,
   placeName: string,
+  omittedTags: Record<string, number> = {},
 ): GenreOption[] {
   const prevalence = new Map<string, number>()
   for (const artist of pool) {
@@ -120,11 +129,20 @@ function genreOptions(
       prevalence.set(tag, (prevalence.get(tag) ?? 0) + 1)
     }
   }
+  for (const [tag, count] of Object.entries(omittedTags)) {
+    prevalence.set(tag, (prevalence.get(tag) ?? 0) + count)
+  }
   const place = placeName.trim().toLowerCase()
   return [...prevalence.entries()]
     .filter(([tag]) => tag !== lens && tag.toLowerCase() !== place)
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .map(([tag, count]) => ({ tag, count }))
+}
+
+/** Left-out entries carrying `tag` — own keys only, so a genre named
+ * "constructor" can never read an Object.prototype member. */
+function omittedWithTag(tags: Record<string, number>, tag: string): number {
+  return Object.prototype.hasOwnProperty.call(tags, tag) ? tags[tag] : 0
 }
 
 type PanelState =
@@ -149,25 +167,6 @@ function smartArtistHref(
           : links.youtube
   // links.website removed from the chain (Aug 29 2026 incident).
   return serviceLink ?? links.wikipedia ?? null
-}
-
-/**
- * The panel's render pool. MusicBrainz entries and the gap-fill
- * entries (Discogs/Wikidata, for places MB has no record of) are ONE
- * list to visitors — same pill, same tiers, same genre filter. The
- * only difference is where a pill points, and it is invisible until
- * clicked. "Never merge" is a data rule (separate storage, separate
- * dedup, MB canonical); it is not a display rule.
- */
-interface PanelPoolArtist extends PoolArtist {
-  /** Non-MB entry: the pill links out to the source documenting it. */
-  externalUrl?: string
-  /** Source carries no date at all — sorts last, tagged quietly. */
-  undated?: boolean
-  /** Verified-play resolver key for non-MB entries (dg:/wd:/nm:). */
-  playKey?: string
-  /** Non-MB entry's pre-verified video for the queue (see QueuePlayer). */
-  queueTrack?: { videoId: string; title: string }
 }
 
 interface PanelArtistPillProps {
@@ -376,46 +375,22 @@ export function CountryPanel({
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [onClose])
 
-  // The discovery pool — cached pre-pool responses degrade to the
-  // top-12 list (no tags → no chips, search over what's there).
-  const mbPool: PoolArtist[] = useMemo(
-    () =>
-      state.status !== 'ready'
-        ? []
-        : (state.details.panelArtists?.length
-            ? state.details.panelArtists
-            : state.details.originArtists.map((artist) => ({
-                ...artist,
-                tags: [],
-              }))),
+  // One list, MusicBrainz then dated then undated gap-fill — built by
+  // the same function the server trims against (lib/explore/panelPool).
+  const pool: PanelPoolArtist[] = useMemo(
+    () => (state.status === 'ready' ? panelPoolOf(state.details) : []),
     [state],
   )
-
   /**
-   * One list. MusicBrainz first (tag-weight ranked, the deepest
-   * signal), then era-dated gap-fill entries in press-count order,
-   * then undated ones — no cross-source ranking is invented, because
-   * MB tag votes and Discogs pressing counts share no scale. Styles
-   * lowercase so they pool with MB tags in the genre filter.
+   * Undated entries the server left out because no visitor can reach
+   * them — never rendered, never queued. They still count: every total
+   * below adds them back, so the numbers read exactly as before.
    */
-  const pool: PanelPoolArtist[] = useMemo(() => {
-    // Gap-fill entries arrive SHAPED from the API (pill URL + play key
-    // computed server-side) — the dataset never ships to the client.
-    // Stored pre-change payloads lack the field; degrade to MB-only.
-    // Archive-presence entries are NOT in this pool: they render in
-    // their own section and never join the count or the genre filter.
-    const extra =
-      state.status === 'ready' ? state.details.extraArtists : undefined
-    // One canonicalization for every source that reaches this list.
-    // MB entries arrive already collapsed (the server had to, before
-    // its top-4 cut destroyed the evidence); gap-fill styles, state,
-    // historical and claimed-place entries carry their full lists and
-    // are collapsed here. canonicalizeTags is idempotent, so the one
-    // call covers all of them without caring which is which.
-    return [...mbPool, ...(extra?.dated ?? []), ...(extra?.undated ?? [])].map(
-      (artist) => ({ ...artist, tags: canonicalizeTags(artist.tags) }),
-    )
-  }, [mbPool, state])
+  const omitted =
+    state.status === 'ready'
+      ? state.details.extraArtists?.undatedOmitted
+      : undefined
+  const poolTotal = pool.length + (omitted?.count ?? 0)
   const archivePool: PanelPoolArtist[] = useMemo(
     () =>
       state.status === 'ready'
@@ -424,8 +399,8 @@ export function CountryPanel({
     [state],
   )
   const options = useMemo(
-    () => genreOptions(pool, genre, country.name),
-    [pool, genre, country.name],
+    () => genreOptions(pool, genre, country.name, omitted?.tags),
+    [pool, genre, country.name, omitted],
   )
   const shownOptions = useMemo(() => {
     const q = genreQuery.trim().toLowerCase()
@@ -443,10 +418,14 @@ export function CountryPanel({
   const queuePool = useMemo(
     () =>
       GAP_FILL_QUEUES_ENABLED
-        ? filtered.filter((artist) => !artist.playKey || artist.queueTrack)
+        ? filtered.filter(queueEligible)
         : filtered.filter((artist) => !artist.playKey),
     [filtered],
   )
+  const filteredTotal = genreFilter
+    ? filtered.length +
+      (omitted ? omittedWithTag(omitted.tags, genreFilter) : 0)
+    : poolTotal
   const shown = filtered.slice(0, Math.min(visible, RENDER_CAP))
 
   function selectGenre(tag: string | null) {
@@ -573,7 +552,7 @@ export function CountryPanel({
           {/* Editorial line (locked): only artists FROM a place appear —
               distribution reach is not local culture. Release data still
               feeds the heat map and listen links under the hood. */}
-          {country.code === 'AQ' && pool.length > 0 && (
+          {country.code === 'AQ' && poolTotal > 0 && (
             <p className={styles.penguinNote}>
               Yes, really — no one lives here, but some artists register
               Antarctica as home as a running joke. We report the database
@@ -581,7 +560,7 @@ export function CountryPanel({
             </p>
           )}
 
-          {pool.length === 0 && (
+          {poolTotal === 0 && (
             <p className={styles.note}>
               No artists from here on record for {spanLabel} — yet. The
               catalogs grow every day.{' '}
@@ -592,7 +571,7 @@ export function CountryPanel({
           )}
 
           {/* Thin year? One tap widens to nearby years — never a dead end. */}
-          {!nearby && pool.length < NEARBY_OFFER_THRESHOLD && (
+          {!nearby && poolTotal < NEARBY_OFFER_THRESHOLD && (
             <button
               type="button"
               className={styles.widen}
@@ -660,7 +639,7 @@ export function CountryPanel({
             </div>
           )}
 
-          {pool.length > 0 && (
+          {poolTotal > 0 && (
             <>
               {/* Filter by genre — the discovery lever, above the list:
                   every tag in this place+era's pool, tiny scenes
@@ -754,7 +733,7 @@ export function CountryPanel({
                     ? `${genre} `
                     : ''}
                 artists from {country.name} ·{' '}
-                {(genreFilter ? filtered.length : pool.length).toLocaleString()}
+                {filteredTotal.toLocaleString()}
               </h3>
 
               {shown.length === 0 ? (
@@ -774,7 +753,7 @@ export function CountryPanel({
                 </ul>
               )}
 
-              {shown.length < Math.min(filtered.length, RENDER_CAP) && (
+              {shown.length < Math.min(filteredTotal, RENDER_CAP) && (
                 <button
                   type="button"
                   className={styles.showAll}
@@ -792,7 +771,7 @@ export function CountryPanel({
                   Show fewer
                 </button>
               )}
-              {shown.length >= RENDER_CAP && filtered.length > RENDER_CAP && (
+              {shown.length >= RENDER_CAP && filteredTotal > RENDER_CAP && (
                 <p className={styles.capNote}>
                   {genreFilter
                     ? `Top ${RENDER_CAP} ${genreFilter} artists shown.`
