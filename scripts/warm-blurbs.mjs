@@ -106,14 +106,13 @@ if (!snapshotRes.ok) {
   process.exit(1)
 }
 const { items } = await snapshotRes.json()
-// The feed renders only the newest ~50 (plus tier-filtered views) — warm
-// the plausibly-visible window, not the deep catalog. --all overrides.
-const VISIBLE_WINDOW = 80
-const all = process.argv.includes('--all')
+// The WHOLE snapshot, not just the newest ~50 the default feed shows: the
+// tier and following filters reach every item, and a warm that stops at
+// the top leaves a backlog that only grows (399 misses by Sep 16, 2026).
+// `--all` is still accepted; it is now the default.
 const wanted = items
   .filter((item) => (onlySlug ? item.slug === onlySlug : true))
   .sort((a, b) => b.date.localeCompare(a.date))
-  .slice(0, onlySlug || all ? items.length : VISIBLE_WINDOW)
 console.log(`${wanted.length} feed items${onlySlug ? ` for ${onlySlug}` : ''}`)
 
 // Ask the cache-only route which keys are already warm.

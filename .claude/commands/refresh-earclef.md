@@ -8,21 +8,34 @@ jobs. One commit/push at the end; update the handoff's refresh log line.
 Read EAR_CLEF_HANDOFF.md §7 first. Check `git status` — coordinate with
 any other session mid-work before committing.
 
-## Phase A — feed blurb freshness (~5 min)
+## Phase A — feed blurb freshness (every missing blurb, every run)
 
-1. `node scripts/list-blurb-misses.mjs` → JSON list of feed items whose
-   blurb cache entry is missing (probes the prod snapshot against the
-   cache; roster growth is the usual source).
-2. Write the missing blurbs IN-SESSION. Rules (same as the farm):
+EVERY item in the snapshot that lacks a blurb gets one this run, not
+just the top of the feed. The default feed shows the newest 50, but the
+tier and "following" filters reach the whole 600-item snapshot, and
+misses left for "next runs" pile up: Jul 30 filled 120 of 397 and Aug 6
+the newest 60 of 318, and after five skipped weeks Sep 16 found 399.
+Only this phase ever writes blurbs, so whatever it leaves stays missing.
+
+1. `node scripts/list-blurb-misses.mjs` → JSON list of EVERY snapshot
+   item whose blurb cache entry is missing (probes the whole prod
+   snapshot against the cache; roster growth and new uploads are the
+   usual sources). Note the count for the log.
+2. Write ALL the missing blurbs IN-SESSION. Rules (same as the farm):
    metadata + general knowledge ONLY, never scraped text; name
    collaborators only when certain; 1–2 sentences; specific when you
-   know the release, honest metadata-derived when you don't.
+   know the release, honest metadata-derived when you don't. A few
+   hundred is normal after a gap or a roster expansion; finish them
+   before Phase B.
 3. Seed via `POST https://earclef.com/api/studio/seed-blurbs` with
    `x-owner-key` (OWNER_KEY in .env.local), body
    `{"blurbs": {"v2/<slug>/<type>/<normalizedTitle>": "text", ...}}`,
-   ≤60 keys per batch. Verify: re-run the miss lister → near-empty.
-4. The feed snapshot itself self-rebuilds daily server-side (no AI) —
-   nothing to do unless /api/feed/snapshot reports stale.
+   ≤60 keys per batch. Verify: re-run the miss lister → it must print
+   an EMPTY list. Anything left: write and seed it, then re-run again.
+4. The feed snapshot itself self-rebuilds daily server-side (no AI).
+   If /api/feed/snapshot reports stale and you trigger a rebuild, re-run
+   the miss lister after it finishes — a rebuild rotates new items in —
+   and cover those too, back to an empty list.
 
 ## Phase B — "What was playing" combos (~15 min)
 
@@ -81,6 +94,7 @@ their MusicBrainz link (and, for the cap bypass, a page they control).
 
 - `node scripts/validate-content.mjs` + `npm run build` must pass.
 - One commit/push (playing.json, any content, this doc if amended).
-- Update the handoff refresh-log line: date, blurbs seeded, combos
-  added, year-roll result, story-card coverage status.
+- Update the handoff refresh-log line: date, blurb misses found →
+  seeded → remaining (remaining must be 0), combos added, year-roll
+  result, story-card coverage status.
 - Post-deploy: probe one new combo on earclef.com and one seeded blurb.
