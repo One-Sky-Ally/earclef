@@ -457,12 +457,19 @@ export function finalizeSnapshot(progress: BuildProgress): FeedSnapshot {
 }
 
 /**
- * A snapshot is fresh only if it's recent AND covers the current roster.
- * Age alone isn't enough — a same-day snapshot built before new artists
- * were added would otherwise pass the age check and silently block a
- * rebuild for up to 26h every time the roster grows.
+ * A snapshot is fresh only if it was built today (UTC) AND covers the
+ * current roster. Age alone isn't enough — a same-day snapshot built
+ * before new artists were added would otherwise silently block a rebuild
+ * every time the roster grows.
+ *
+ * Freshness is the UTC DATE, not an age window: the old "< 26h" check
+ * skipped every other nightly run. The 00:20 cron's pass finishes around
+ * 00:35, so at the next 00:20 the snapshot is ~23h40m old — "fresh" — and
+ * the scheduled run exited without rebuilding (the Sep 16 skip). Any age
+ * window longer than 24h minus the build time does the same.
  */
 export function isFresh(snapshot: FeedSnapshot): boolean {
   if (snapshot.rosterLength !== ROSTER_LENGTH) return false
-  return Date.now() - Date.parse(snapshot.builtAt) < 26 * 60 * 60 * 1000
+  const today = new Date().toISOString().slice(0, 10)
+  return snapshot.builtAt.slice(0, 10) === today
 }
