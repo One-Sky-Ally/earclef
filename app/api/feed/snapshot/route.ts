@@ -11,11 +11,15 @@ export async function GET() {
   const snapshot = await readSnapshot()
 
   if (!snapshot || !isFresh(snapshot)) {
-    // Fire-and-forget rebuild; never block the request on it.
+    // Awaited, not fire-and-forget: the function can freeze as soon as the
+    // response is returned, abandoning an unawaited fetch (the same failure
+    // feed-snapshot-background's self-trigger hit). Background functions
+    // answer 202 at once, and the timeout keeps a slow one off the request.
     const base = process.env.URL
     if (base) {
-      fetch(`${base}/.netlify/functions/feed-snapshot-background`, {
+      await fetch(`${base}/.netlify/functions/feed-snapshot-background`, {
         method: 'POST',
+        signal: AbortSignal.timeout(3000),
       }).catch(() => {})
     }
   }
