@@ -28,6 +28,7 @@
  */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { COUNTRIES } from './lib/gap-fill-countries.mjs'
+import { isMusicalProfession } from './lib/musicOccupations.mjs'
 
 const WORK_PATH = 'data/extra-artists-work-v2.json'
 const RULE_WORK_PATH = 'data/pattern-ruling-work.json'
@@ -98,12 +99,6 @@ const PINNED_HELD = new Map([
   ['TL|dg|5264459', 'TL×Indonesia occupation era (Jerry Btn)'],
   ['KP|dg|5697431', 'Korea partition (김승연)'],
   ['NP|dg|4893434', 'Tibetan exile community on Nepali pressings'],
-])
-
-/** Wikidata country-QID ↔ the pool test; MB name for begin-area test. */
-const MUSICAL_PROFESSIONS = new Set([
-  'Q639669', 'Q177220', 'Q36834', 'Q488205', 'Q855091', 'Q2252262',
-  'Q753110', 'Q158852', 'Q183945', 'Q128124', 'Q1259917', 'Q806349',
 ])
 
 async function getJson(url, tries = 3) {
@@ -334,9 +329,7 @@ async function gather() {
               born: origin.born, formed: origin.formed, origin: origin.origin,
               citizenships: [...origin.citizenships],
               professions: [...origin.professions],
-              musician: [...origin.professions].some((p) =>
-                MUSICAL_PROFESSIONS.has(p),
-              ),
+              musician: [...origin.professions].some(isMusicalProfession),
             }
           }
         }

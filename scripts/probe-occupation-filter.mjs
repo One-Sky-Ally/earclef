@@ -6,8 +6,14 @@
  *   data/occupation-filter-probe.json   raw per-country result (resumable)
  *   data/occupation-filter-lists.json   bucketed per-artist lists + the
  *                                       owner ruling they are held under
- * It never touches the dataset or the sweep's work file. The fix itself
- * is PROPOSED, NOT BUILT — see the handoff entry of Sep 21, 2026.
+ * It never touches the dataset or the sweep's work file. See the handoff
+ * entry of Sep 21, 2026.
+ *
+ * Buckets come from lib/musicOccupations.mjs, the same lists the sweep
+ * admits by (Sep 2026 fix): performer / ownerRuled by a present listed
+ * class; excluded when every class is on the excluded list; unlisted
+ * when a walk-reached class is on no list at all — those are NOT
+ * admitted by the sweep and surface here for a ruling.
  *
  * Usage: node scripts/probe-occupation-filter.mjs [CC ...] [--lists-only]
  *        [--max-minutes=N]
@@ -15,6 +21,12 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { setTimeout as sleep } from 'node:timers/promises'
 import { COUNTRIES } from './lib/gap-fill-countries.mjs'
+import {
+  EXCLUDED_P106,
+  OWNER_RULED_P106,
+  classifyOccupations,
+  passesLegacyFilter,
+} from './lib/musicOccupations.mjs'
 
 const PROBE_PATH = 'data/occupation-filter-probe.json'
 const LISTS_PATH = 'data/occupation-filter-lists.json'
@@ -22,40 +34,6 @@ const POOL_PATH = 'lib/explore/extra-artists.json'
 const UA = 'EarClefDiagnostic/1.0 (https://earclef.com; read-only occupation-filter probe)'
 const LABEL_LANGS =
   'en,es,fr,pt,ar,fa,ru,uk,sq,hy,az,ro,vi,km,my,dz,ne,si,bn,mn,th,lo,uz,tg,ky,tk,kk,ms,sw,am,ti,so,ha,yo,da,kl'
-
-/** What the sweep admits today — exact matches only. */
-const CURRENT_P106 = new Set(['Q639669', 'Q177220', 'Q36834', 'Q488205'])
-const CURRENT_P31 = new Set(['Q215380'])
-
-/**
- * Classes a subclass walk reaches that are NOT performers. Sole
- * membership here keeps an artist OUT (Yemen: 144 songwriter-only
- * items are a batch import of lyric poets; Wikidata files Quran
- * reciters under singer).
- */
-const EXCLUDE = new Set([
-  'Q753110', // songwriter
-  'Q16145150', // music educator
-  'Q81759238', // music professor
-  'Q3595924', // qāriʾ
-  'Q23037330', // reciter
-  'Q625163', // hafiz
-  'Q10730252', // radio DJ
-  'Q7939609', // voice teacher
-  'Q101572682', // guitar teacher
-])
-
-/** Owner-ruled classes — admitted per artist, never per class. */
-const OWNER_RULED = new Set([
-  'Q183945', // record producer
-  'Q158852', // conductor
-  'Q1076502', // choir director
-  'Q42227156', // chorus master
-  'Q691031', // concertmaster
-  'Q1643514', // music arranger
-  'Q17378128', // spoken word artist
-  'Q4087517', // beatmaker
-])
 
 const OWNER_RULING = {
   ruledOn: '2026-09-21',
@@ -148,11 +126,7 @@ function collectItems(rows) {
   return [...byItem.values()]
 }
 
-const passesCurrentFilter = (entry) =>
-  [...entry.classes].some((tagged) => {
-    const [via, cls] = tagged.split(':')
-    return via === 'P106' ? CURRENT_P106.has(cls) : CURRENT_P31.has(cls)
-  })
+const passesCurrentFilter = (entry) => passesLegacyFilter([...entry.classes])
 
 /** Both sides present before any equality means anything (lesson 5). */
 function poolMatcher(committed) {
@@ -212,16 +186,20 @@ async function probeCountry(code, pool) {
 }
 
 function bucketOf(record) {
-  const classes = record.classes.map((tagged) => tagged.split(':')[1])
-  if (classes.some((cls) => !EXCLUDE.has(cls) && !OWNER_RULED.has(cls))) return 'performer'
-  return classes.some((cls) => OWNER_RULED.has(cls)) ? 'ownerRuled' : 'excluded'
+  const admission = classifyOccupations(record.classes)
+  if (admission) return admission
+  const excluded = record.classes.every((tagged) => {
+    const [via, cls] = tagged.split(':')
+    return via === 'P106' && EXCLUDED_P106.has(cls)
+  })
+  return excluded ? 'excluded' : 'unlisted'
 }
 
 function writeLists(probe) {
   const countries = {}
-  const totals = { performer: 0, ownerRuled: 0, excluded: 0, possibleMbDuplicatesInPool: 0 }
+  const totals = { performer: 0, ownerRuled: 0, excluded: 0, unlisted: 0, possibleMbDuplicatesInPool: 0 }
   for (const [code, result] of Object.entries(probe.countries)) {
-    const lists = { performer: [], ownerRuled: [], excluded: [] }
+    const lists = { performer: [], ownerRuled: [], excluded: [], unlisted: [] }
     for (const record of result.recoverable) lists[bucketOf(record)].push(record)
     const possibleMbDuplicatesInPool = result.mbKnown.filter((record) => record.poolEntry)
     countries[code] = { ...lists, possibleMbDuplicatesInPool }
@@ -230,12 +208,12 @@ function writeLists(probe) {
   }
   const out = {
     generatedAt: new Date().toISOString(),
-    status: 'PROPOSED, NOT BUILT — nothing here has been applied to the dataset',
+    status: 'DIAGNOSTIC — the probe applies nothing; the sweep admits by scripts/lib/musicOccupations.mjs',
     countriesProbed: Object.keys(probe.countries).length,
     totals,
     ownerRuling: OWNER_RULING,
-    excludedClasses: [...EXCLUDE],
-    ownerRuledClasses: [...OWNER_RULED],
+    excludedClasses: [...EXCLUDED_P106],
+    ownerRuledClasses: [...OWNER_RULED_P106],
     countries,
   }
   writeFileSync(LISTS_PATH, JSON.stringify(out, null, 1))
