@@ -9,11 +9,7 @@
  * the meaning of an area field.
  */
 import { mbJson, wdJson, wikidataQidFrom } from './held-rerun-io.mjs'
-
-const MUSICAL_PROFESSIONS = new Set([
-  'Q639669', 'Q177220', 'Q36834', 'Q488205', 'Q855091', 'Q2252262',
-  'Q753110', 'Q158852', 'Q183945', 'Q128124', 'Q1259917', 'Q806349',
-])
+import { isMusicalProfession } from './musicOccupations.mjs'
 
 /** Walk an MB area up "part of" until a Country-type area; its name. */
 export async function areaToCountry(areaId, cache) {
@@ -77,7 +73,7 @@ async function wikidataOrigin(qid) {
     origin,
     citizenships: [...citizenships],
     professions: [...professions],
-    musician: [...professions].some((profession) => MUSICAL_PROFESSIONS.has(profession)),
+    musician: [...professions].some(isMusicalProfession),
   }
 }
 
@@ -113,5 +109,3 @@ export async function gatherArtistEvidence(mbid, areaCache) {
     wd,
   }
 }
-
-export { MUSICAL_PROFESSIONS }

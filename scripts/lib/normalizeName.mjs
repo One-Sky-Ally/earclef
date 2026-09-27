@@ -16,3 +16,13 @@ export function normalizeName(value) {
     .replace(/[^\p{L}\p{N}]+/gu, ' ')
     .trim()
 }
+
+/**
+ * Exact name equality under normalizeName that an empty key can never
+ * satisfy: a symbol-only label normalizes to '' and '' === '' must not
+ * count as a match (standing lesson 5).
+ */
+export function sameName(a, b) {
+  const key = normalizeName(a)
+  return key !== '' && key === normalizeName(b)
+}

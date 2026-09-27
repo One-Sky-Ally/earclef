@@ -56,11 +56,29 @@ import {
   releaseIndexAvailable,
   releasesFor,
   releasesMeta,
+  videoIndexAvailable,
+  videoReleaseRefsFor,
 } from './lib/discogsDump.mjs'
+import { getJson } from './lib/fetchJson.mjs'
+import { assertNothingRemoved, mergeIntoCommitted } from './lib/gapFillMerge.mjs'
+import {
+  collectWikidataRows,
+  ownerRuledDecision,
+  wikidataQuery,
+} from './lib/gapFillWikidata.mjs'
+import {
+  OCCUPATION_FILTER_VERSION,
+  ownerRuledClassesOf,
+} from './lib/musicOccupations.mjs'
+import { sameName } from './lib/normalizeName.mjs'
 import { classifyProfile } from './lib/profileOrigin.mjs'
 
 /** Born-only profile cases, held for the owner (regenerated per run). */
 const PROFILE_HELD_PATH = 'data/profile-origin-held.json'
+/** Per-artist decisions under the Sep 21 owner ruling (regenerated per run). */
+const OWNER_RULED_PATH = 'data/occupation-owner-ruled-report.json'
+/** Where the owner ruling is recorded verbatim — copied into the report. */
+const OCCUPATION_LISTS_PATH = 'data/occupation-filter-lists.json'
 
 const WORK_PATH = 'data/extra-artists-work-v2.json'
 const OUT_PATH = 'lib/explore/extra-artists.json'
@@ -140,87 +158,23 @@ function loadJson(path, fallback) {
   }
 }
 
-async function getJson(url, headers, tries = 3) {
-  for (let attempt = 1; attempt <= tries; attempt++) {
-    try {
-      const res = await fetch(url, { headers })
-      if (res.status === 429 || res.status === 503) {
-        await sleep(3000 * attempt)
-        continue
-      }
-      if (!res.ok) throw new Error(`HTTP ${res.status}`)
-      return res.json()
-    } catch (error) {
-      if (attempt === tries) throw error
-      await sleep(2000 * attempt)
-    }
-  }
-  throw new Error('unreachable')
-}
-
 // ---------------------------------------------------------------- Wikidata
 
 /**
  * Musicians and groups tied to a country, with dates and the ID
  * crosswalk. A P434 (MusicBrainz ID) means MB already knows them —
- * those become dedup fuel, never candidates.
+ * those become dedup fuel, never candidates. Occupation admission is
+ * the explicit list in lib/musicOccupations.mjs (occupation-filter fix,
+ * Sep 2026); query and row handling live in lib/gapFillWikidata.mjs.
+ * Throws after bounded retries — the caller skips the country.
  */
 async function wikidataPass(qid) {
-  // P27 is CITIZENSHIP, which is not musical origin (the Tina Turner
-  // problem). Birthplace and formation location are pulled alongside
-  // it so the filter below can tell a national from a resident.
-  const query = `SELECT ?item ?itemLabel ?mbid ?discogs ?birth ?formed ?bornIn ?formedIn ?citizen WHERE {
-  { ?item wdt:P27 wd:${qid} } UNION { ?item wdt:P495 wd:${qid} }
-  { ?item wdt:P106 wd:Q639669 } UNION { ?item wdt:P106 wd:Q177220 }
-  UNION { ?item wdt:P106 wd:Q36834 } UNION { ?item wdt:P106 wd:Q488205 }
-  UNION { ?item wdt:P31 wd:Q215380 }
-  OPTIONAL { ?item wdt:P434 ?mbid }
-  OPTIONAL { ?item wdt:P1953 ?discogs }
-  OPTIONAL { ?item wdt:P569 ?birth }
-  OPTIONAL { ?item wdt:P571 ?formed }
-  OPTIONAL { ?item wdt:P19 ?bp . ?bp wdt:P17 ?bornIn }
-  OPTIONAL { ?item wdt:P740 ?fp . ?fp wdt:P17 ?formedIn }
-  OPTIONAL { ?item wdt:P27 ?citizen }
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "${LABEL_LANGS}". }
-}`
   const body = await getJson(
-    `https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(query)}`,
+    `https://query.wikidata.org/sparql?format=json&query=${encodeURIComponent(wikidataQuery(qid, LABEL_LANGS))}`,
     { 'User-Agent': MB_UA, Accept: 'application/sparql-results+json' },
+    { tries: 4, timeoutMs: 120_000, backoffMs: 5000 },
   )
-  const byItem = new Map()
-  const qidOf = (row, key) => row[key]?.value.split('/').pop() ?? null
-  for (const row of body.results.bindings) {
-    const id = row.item.value.split('/').pop()
-    const label = row.itemLabel?.value ?? ''
-    // Unlabelled items surface as their own QID — useless as a name.
-    if (!label || /^Q\d+$/.test(label)) continue
-    const existing = byItem.get(id)
-    if (existing) {
-      // Multi-valued properties arrive as extra rows; union them.
-      const citizen = qidOf(row, 'citizen')
-      if (citizen) existing.citizenships.add(citizen)
-      existing.bornIn ??= qidOf(row, 'bornIn')
-      existing.formedIn ??= qidOf(row, 'formedIn')
-      continue
-    }
-    const birth = row.birth?.value ? Number(row.birth.value.slice(0, 4)) : null
-    const formed = row.formed?.value
-      ? Number(row.formed.value.slice(0, 4))
-      : null
-    const citizen = qidOf(row, 'citizen')
-    byItem.set(id, {
-      wikidataId: id,
-      name: label,
-      mbid: row.mbid?.value ?? null,
-      discogsId: row.discogs?.value ?? null,
-      // Career-start proxy, matching the MB convention used site-wide.
-      year: formed ?? (birth ? birth + 15 : null),
-      bornIn: qidOf(row, 'bornIn'),
-      formedIn: qidOf(row, 'formedIn'),
-      citizenships: new Set(citizen ? [citizen] : []),
-    })
-  }
-  return [...byItem.values()]
+  return collectWikidataRows(body.results.bindings)
 }
 
 /**
@@ -235,6 +189,29 @@ function isForeignByOrigin(person, qid) {
   const origin = person.formedIn ?? person.bornIn
   if (!origin || origin === qid) return false
   return !person.citizenships.has(qid)
+}
+
+/**
+ * What admitted this country's Wikidata people, for the run report:
+ * per-bucket counts and, per listed class, its label and how many
+ * people carry it — so the classes can be read before anything ships.
+ */
+function occupationStats(wd, ownerRuled) {
+  const classes = {}
+  for (const person of wd) {
+    for (const tagged of person.occupations ?? []) {
+      const entry = (classes[tagged] ??= { label: person.occupationLabels?.[tagged] ?? null, people: 0 })
+      entry.label ??= person.occupationLabels?.[tagged] ?? null
+      entry.people++
+    }
+  }
+  const decided = (decision) => ownerRuled.filter((entry) => entry.decision === decision).length
+  return {
+    filter: OCCUPATION_FILTER_VERSION,
+    performer: wd.filter((person) => person.admission === 'performer').length,
+    ownerRuled: { admitted: decided('admit'), held: decided('held'), leftOut: decided('out') },
+    classes,
+  }
 }
 
 // ----------------------------------------------------------------- Discogs
@@ -391,115 +368,14 @@ async function discogsArtistId(name) {
     `https://api.discogs.com/database/search?type=artist&q=${encodeURIComponent(name)}&per_page=5&token=${token}`,
     { 'User-Agent': DG_UA },
   )
-  const wanted = normalize(name)
   for (const result of body.results ?? []) {
     const title = (result.title ?? '').replace(/\s*\(\d+\)\s*$/, '')
-    if (normalize(title) === wanted) return result.id ?? null
+    if (sameName(title, name)) return result.id ?? null
   }
   return null
 }
 
 // ---------------------------------------------------------- merge assembly
-
-const minYear = (a, b) => (a === null ? b : b === null ? a : Math.min(a, b))
-const maxYear = (a, b) => (a === null ? b : b === null ? a : Math.max(a, b))
-
-/** Dataset order: documented years first, then the most-pressed. */
-function byDatedThenPressed(a, b) {
-  return (
-    (a.firstYear === null ? 1 : 0) - (b.firstYear === null ? 1 : 0) ||
-    b.releaseCount - a.releaseCount ||
-    a.name.localeCompare(b.name)
-  )
-}
-
-/**
- * TOP-UP SEMANTICS (owner go, Sep 6, 2026). The committed list is the
- * owner's state: presence rulings, notes, attested aliases, drift
- * retention and reinstatements were all written ONTO entries by later
- * passes, so an entry is never rebuilt — only its era and press count
- * may widen from releases the sweep had never seen. A fresh artist is
- * appended when neither its Discogs id nor its name/aliases match an
- * existing entry; a name-only clash with an existing entry is skipped
- * and reported (same-name-different-id is an identity call, not a
- * merge). Returns a NEW list, never mutates the committed one.
- */
-function mergeIntoCommitted(current, fresh) {
-  const byId = new Map()
-  const byWikidata = new Map()
-  const byName = new Map()
-  const idless = new Map()
-  current.forEach((artist, index) => {
-    if (artist.discogsArtistId != null) byId.set(String(artist.discogsArtistId), index)
-    if (artist.wikidataId) byWikidata.set(artist.wikidataId, index)
-    // An entry with neither id IS its name (the id-less class); a
-    // same-name candidate that also has no id is the same entry.
-    if (artist.discogsArtistId == null && !artist.wikidataId) {
-      const key = normalize(artist.name)
-      if (key && !idless.has(key)) idless.set(key, index)
-    }
-    for (const label of [artist.name, ...(artist.aliases ?? [])]) {
-      const key = normalize(label)
-      if (key && !byName.has(key)) byName.set(key, index)
-    }
-  })
-  const list = [...current]
-  let added = 0
-  let widened = 0
-  const nameClash = []
-  const addedNames = []
-  for (const artist of fresh) {
-    const idKey = artist.discogsArtistId != null ? String(artist.discogsArtistId) : null
-    const index =
-      (idKey !== null ? byId.get(idKey) : undefined) ??
-      (artist.wikidataId ? byWikidata.get(artist.wikidataId) : undefined) ??
-      (idKey === null && !artist.wikidataId ? idless.get(normalize(artist.name)) : undefined)
-    if (index !== undefined) {
-      const committed = list[index]
-      const next = {
-        ...committed,
-        firstYear: minYear(committed.firstYear, artist.firstYear),
-        lastYear: maxYear(committed.lastYear, artist.lastYear),
-        releaseCount: Math.max(committed.releaseCount, artist.releaseCount),
-        ...(committed.styles.length === 0 && artist.styles.length > 0
-          ? { styles: artist.styles }
-          : {}),
-        // Provenance the ingest now knows (historical-entity pressings,
-        // owner fix-forward Aug 26): additive, display-neutral.
-        ...(artist.pressedAs && !committed.pressedAs
-          ? { pressedAs: artist.pressedAs }
-          : {}),
-      }
-      if (
-        next.firstYear !== committed.firstYear ||
-        next.lastYear !== committed.lastYear ||
-        next.releaseCount !== committed.releaseCount ||
-        next.styles !== committed.styles ||
-        next.pressedAs !== committed.pressedAs
-      ) {
-        list[index] = next
-        widened++
-      }
-      continue
-    }
-    const clash = [artist.name, ...(artist.aliases ?? [])]
-      .map(normalize)
-      .find((key) => key && byName.has(key))
-    if (clash) {
-      nameClash.push(`${artist.name} ↔ ${list[byName.get(clash)].name}`)
-      continue
-    }
-    list.push(artist)
-    addedNames.push(artist.name)
-    added++
-    if (idKey !== null) byId.set(idKey, list.length - 1)
-    for (const label of [artist.name, ...(artist.aliases ?? [])]) {
-      const key = normalize(label)
-      if (key && !byName.has(key)) byName.set(key, list.length - 1)
-    }
-  }
-  return { list: list.sort(byDatedThenPressed), added, widened, nameClash, addedNames }
-}
 
 // ------------------------------------------------------------------- main
 
@@ -509,6 +385,33 @@ async function main() {
   // Which MusicBrainz path the dedup takes (local dump indexes vs the
   // 1 req/s API) — logged so every run's evidence source is on record.
   console.log(`dedup sources: ${JSON.stringify(dedupDataSources())}`)
+  // Owner-ruled evidence sources (Sep 21 ruling) — logged like the above.
+  const videoIndex = videoIndexAvailable()
+  console.log(
+    `occupation filter: ${OCCUPATION_FILTER_VERSION}; owner-ruled evidence: sweep credits` +
+      (videoIndex ? ' + Discogs video index' : ' only (Discogs video index unavailable)'),
+  )
+
+  // A Wikidata pass cached under an older occupation filter is stale:
+  // re-running it is the fix taking effect (lesson 2 — the cache
+  // outlives the code). That refresh runs in TOP-UP mode only, where
+  // nobody already committed can be removed; --replace would forget
+  // them, so the two are refused together.
+  const staleWikidata = (state) =>
+    Boolean(state?.wikidata) && state.wikidataFilter !== OCCUPATION_FILTER_VERSION
+  const staleTargets = targets.filter((code) => staleWikidata(work.countries[code]))
+  if (REPLACE && staleTargets.length > 0) {
+    console.error(
+      `--replace refused: ${staleTargets.join(' ')} would refresh a Wikidata pass cached under an older occupation filter.` +
+        ' Run the refresh without --replace (top-up merge) first.',
+    )
+    process.exit(1)
+  }
+
+  // Countries whose Wikidata pass failed this run. They are left exactly
+  // as committed and retried by the next invocation — never built from a
+  // stale or missing pass.
+  const skipped = []
 
   for (const code of targets) {
     const config = COUNTRIES[code]
@@ -516,15 +419,29 @@ async function main() {
     console.log(`\n=== ${config.name} (${code})`)
 
     // 1. Wikidata: canon names + the crosswalk.
-    if (!state.wikidata) {
-      console.log('  Wikidata pass…')
-      // Sets don't survive JSON checkpoints — store citizenships as
-      // arrays (a resumed run once crashed on {}.has; lesson 2 again:
-      // stored state outlives the code that wrote it).
-      state.wikidata = (await wikidataPass(config.qid)).map((person) => ({
+    if (!state.wikidata || staleWikidata(state)) {
+      console.log(
+        state.wikidata
+          ? `  Wikidata pass (cached under ${state.wikidataFilter ?? 'the pre-fix filter'} — refreshing)…`
+          : '  Wikidata pass…',
+      )
+      let people
+      try {
+        people = await wikidataPass(config.qid)
+      } catch (error) {
+        console.warn(`  ⚠ SKIPPED ${code}: Wikidata pass failed (${error.message}) — rerun to retry`)
+        skipped.push(code)
+        continue
+      }
+      // Sets don't survive JSON checkpoints — store them as arrays (a
+      // resumed run once crashed on {}.has; lesson 2 again: stored state
+      // outlives the code that wrote it).
+      state.wikidata = people.map((person) => ({
         ...person,
         citizenships: [...person.citizenships],
+        occupations: [...person.occupations],
       }))
+      state.wikidataFilter = OCCUPATION_FILTER_VERSION
       writeFileSync(WORK_PATH, JSON.stringify(work))
     }
     const wd = state.wikidata.map((person) => ({
@@ -757,23 +674,65 @@ async function main() {
         ` ${unfetchedSkipped} unfetched-skipped`,
     )
     let foreignByOrigin = 0
+    const ownerRuled = []
     for (const person of wd) {
       if (person.mbid) continue
       if (isForeignByOrigin(person, config.qid)) {
         foreignByOrigin++
         continue
       }
+      // OWNER-RULED OCCUPATIONS (Sep 21, 2026): conductors, choir
+      // directors, producer-only, spoken word, arrangers, beatmakers
+      // enter per artist, only on id-linked evidence of a released
+      // recording (lib/gapFillWikidata.mjs ownerRuledDecision). They
+      // never attach to a candidate by name.
+      if (person.admission === 'ownerRuled') {
+        const byId = person.discogsId ? candidates.get(`dg|${person.discogsId}`) : undefined
+        const ruling = ownerRuledDecision(person, {
+          creditedInSweep: byId !== undefined,
+          mainCreditRefs:
+            person.discogsId && videoIndex ? videoReleaseRefsFor(person.discogsId) : [],
+        })
+        ownerRuled.push({
+          code,
+          wikidataId: person.wikidataId,
+          name: person.name,
+          classes: ownerRuledClassesOf(person.occupations),
+          discogsId: person.discogsId ?? null,
+          decision: ruling.decision,
+          basis: ruling.basis,
+          // Credited on a release this sweep ingested: that credit is its
+          // own (pre-existing) path into the pool, whatever the decision.
+          discogsCandidate: byId !== undefined,
+        })
+        if (ruling.decision !== 'admit') continue
+        if (byId) {
+          byId.wikidataId = person.wikidataId
+          if (person.year) byId.years.push(person.year)
+          continue
+        }
+        candidates.set(`wd|${person.wikidataId}`, {
+          name: person.name,
+          source: 'wikidata',
+          years: person.year ? [person.year] : [],
+          styles: new Set(),
+          aliases: new Set(),
+          titles: new Set(),
+          wikidataId: person.wikidataId,
+          discogsArtistId: person.discogsId,
+          releaseCount: 0,
+        })
+        continue
+      }
       // Match by Discogs id first (the reliable crosswalk), then by
-      // exact normalized name against canonical names and aliases.
-      const wanted = normalize(person.name)
+      // exact normalized name against canonical names and aliases —
+      // both sides present (a symbol-only label normalizes to '').
       const existing =
         (person.discogsId ? candidates.get(`dg|${person.discogsId}`) : null) ??
         [...candidates.values()].find(
           (candidate) =>
-            normalize(candidate.name) === wanted ||
-            [...candidate.aliases].some(
-              (alias) => normalize(alias) === wanted,
-            ),
+            sameName(candidate.name, person.name) ||
+            [...candidate.aliases].some((alias) => sameName(alias, person.name)),
         )
       if (existing) {
         existing.wikidataId = person.wikidataId
@@ -798,6 +757,14 @@ async function main() {
         ` ${foreignByOrigin} dropped as foreign by origin)`,
     )
     state.foreignByOrigin = foreignByOrigin
+    state.ownerRuled = ownerRuled
+    state.occupationAdmission = occupationStats(wd, ownerRuled)
+    console.log(
+      `  occupations: ${state.occupationAdmission.performer} performer-class; owner-ruled` +
+        ` ${ownerRuled.filter((entry) => entry.decision === 'admit').length} admitted,` +
+        ` ${ownerRuled.filter((entry) => entry.decision === 'held').length} held,` +
+        ` ${ownerRuled.filter((entry) => entry.decision === 'out').length} left out`,
+    )
 
     // PLANT-SLICE ORIGIN GATE. A candidate known ONLY from slice
     // releases ships only if this country's Wikidata pass claims them
@@ -828,7 +795,11 @@ async function main() {
       const wdByDiscogs = new Map(
         wd.filter((person) => person.discogsId).map((person) => [String(person.discogsId), person]),
       )
-      const wdByName = new Map(wd.map((person) => [normalize(person.name), person]))
+      const wdByName = new Map(
+        wd
+          .map((person) => [normalize(person.name), person])
+          .filter(([key]) => key !== ''),
+      )
       const unknown = []
       // Walk slice-only candidates in artist-shard order so each of the
       // 256 Discogs artist shards is read once, not thrashed through a
@@ -922,10 +893,9 @@ async function main() {
     console.log(`  Dedup (rule v3): ${pending.length} to judge against MusicBrainz…`)
     let done = 0
     for (const [key, candidate] of pending) {
-      const wanted = normalize(candidate.name)
       // A Wikidata item carrying an MB id is definitionally known.
       const wdMatch = wd.find(
-        (person) => normalize(person.name) === wanted && person.mbid,
+        (person) => person.mbid && sameName(person.name, candidate.name),
       )
       if (wdMatch) {
         state.verdicts[key] = { verdict: 'crosswalk', mbid: wdMatch.mbid }
@@ -968,9 +938,16 @@ async function main() {
     // 5. Resolve Discogs artist pages — only the fallback/Wikidata
     // candidates need this now; credited artists carry their id.
     state.artistIds ??= {}
+    // Keyed by normalized name, so an empty key would let every
+    // symbol-only name share one resolution: those are not resolved.
+    const resolvedArtistId = (name) => {
+      const key = normalize(name)
+      return key === '' ? null : (state.artistIds[key] ?? null)
+    }
     for (const survivor of survivors) {
       const key = normalize(survivor.name)
       if (
+        key === '' ||
         survivor.discogsArtistId != null ||
         state.artistIds[key] !== undefined
       ) {
@@ -993,7 +970,7 @@ async function main() {
     const mergedSurvivors = []
     for (const survivor of survivors) {
       const resolvedId =
-        survivor.discogsArtistId ?? state.artistIds[normalize(survivor.name)]
+        survivor.discogsArtistId ?? resolvedArtistId(survivor.name)
       const idKey = resolvedId != null ? String(resolvedId) : null
       const existing = idKey ? byResolvedId.get(idKey) : null
       if (existing) {
@@ -1012,7 +989,6 @@ async function main() {
 
     state.result = mergedSurvivors
       .map((survivor) => {
-        const key = normalize(survivor.name)
         const years = [...new Set(survivor.years)].sort((a, b) => a - b)
         const aliases = [...survivor.aliases].slice(0, 6)
         return {
@@ -1023,7 +999,7 @@ async function main() {
           styles: [...survivor.styles].slice(0, 3),
           releaseCount: survivor.releaseCount,
           discogsArtistId:
-            survivor.discogsArtistId ?? state.artistIds[key] ?? null,
+            survivor.discogsArtistId ?? resolvedArtistId(survivor.name),
           wikidataId: survivor.wikidataId ?? null,
           ...(aliases.length > 0 ? { aliases } : {}),
           ...(survivor.pressedAs?.size
@@ -1061,9 +1037,12 @@ async function main() {
     }
   }
 
+  // A skipped country is left exactly as committed (and out of every
+  // derived list below) until a rerun builds it from a fresh pass.
+  const built = targets.filter((code) => !skipped.includes(code))
   const out = { generatedAt: new Date().toISOString().slice(0, 10), countries: {} }
   const report = {}
-  for (const code of targets) {
+  for (const code of built) {
     const state = work.countries[code]
     if (!state?.result) continue
     const fresh = state.result.map((artist) => {
@@ -1077,6 +1056,7 @@ async function main() {
     })
     const current = existing.countries[code]
     const mergeStats = current && !REPLACE ? mergeIntoCommitted(current, fresh) : null
+    if (mergeStats) assertNothingRemoved(code, current, mergeStats.list)
     out.countries[code] = mergeStats ? mergeStats.list : fresh
     const verdicts = Object.values(state.verdicts ?? {})
     const count = (name) =>
@@ -1094,6 +1074,7 @@ async function main() {
       },
       recordGuard: state.guard ?? null,
       foreignByOrigin: state.foreignByOrigin ?? 0,
+      ...(state.occupationAdmission ? { occupationAdmission: state.occupationAdmission } : {}),
       keptDespiteNameHit: {
         fuzzyKept: count('fuzzy-kept'),
         collisionKept: count('collision-kept'),
@@ -1124,8 +1105,8 @@ async function main() {
   // Profile-origin HELD list: regenerated for the countries run, other
   // countries' entries carried over (lesson 2: derived, re-derived).
   const heldFile = loadJson(PROFILE_HELD_PATH, { generatedAt: null, cases: [] })
-  const carried = heldFile.cases.filter((entry) => !targets.includes(entry.code))
-  const fresh = targets.flatMap((code) => work.countries[code]?.profileHeld ?? [])
+  const carried = heldFile.cases.filter((entry) => !built.includes(entry.code))
+  const fresh = built.flatMap((code) => work.countries[code]?.profileHeld ?? [])
   if (fresh.length > 0 || carried.length !== heldFile.cases.length) {
     writeFileSync(
       PROFILE_HELD_PATH,
@@ -1141,8 +1122,41 @@ async function main() {
     )
     console.log(`profile-origin held list: ${fresh.length} new cases → ${PROFILE_HELD_PATH}`)
   }
+
+  // Owner-ruled decisions (Sep 21 ruling), per artist: admitted, held
+  // for the owner's ear (spoken word), or left out, each with its basis.
+  // Regenerated for the countries built, others carried over.
+  const ruledFile = loadJson(OWNER_RULED_PATH, { cases: [] })
+  const ruledCarried = ruledFile.cases.filter((entry) => !built.includes(entry.code))
+  const ruledFresh = built.flatMap((code) => work.countries[code]?.ownerRuled ?? [])
+  if (ruledFresh.length > 0 || ruledCarried.length !== ruledFile.cases.length) {
+    writeFileSync(
+      OWNER_RULED_PATH,
+      JSON.stringify(
+        {
+          generatedAt: new Date().toISOString(),
+          filter: OCCUPATION_FILTER_VERSION,
+          ownerRuling: loadJson(OCCUPATION_LISTS_PATH, {}).ownerRuling ?? null,
+          note:
+            'decision governs the Wikidata entry/link only; discogsCandidate=true means the artist is ' +
+            'credited on a release this sweep ingested and enters (or not) through the Discogs path and dedup as before',
+          cases: [...ruledCarried, ...ruledFresh],
+        },
+        null,
+        2,
+      ) + '\n',
+    )
+    console.log(`owner-ruled occupations: ${ruledFresh.length} decisions → ${OWNER_RULED_PATH}`)
+  }
   console.log(`\nDone → ${OUT_PATH}`)
   console.log(JSON.stringify(report, null, 2))
+  if (skipped.length > 0) {
+    console.warn(
+      `\n⚠ ${skipped.length} country(ies) SKIPPED — Wikidata pass failed, left as committed.` +
+        ` Retry: node scripts/build-extra-artists.mjs ${skipped.join(' ')}`,
+    )
+    process.exitCode = 2
+  }
 }
 
 main().catch((error) => {
