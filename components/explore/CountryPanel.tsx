@@ -25,7 +25,10 @@ import type { ListenService } from '@/lib/listen/services'
 import type { ArtistLinks } from '@/lib/explore/panelData'
 import { WhatWasPlaying } from '@/components/explore/WhatWasPlaying'
 import { HitsSection } from '@/components/explore/HitsSection'
-import { QueuePlayer } from '@/components/explore/QueuePlayer'
+import {
+  QUEUE_HONEST_MIN,
+  QueuePlayer,
+} from '@/components/explore/QueuePlayer'
 import {
   CONTESTED_NOTE,
   isContestedEra,
@@ -60,8 +63,14 @@ interface CountryPanelProps {
 /** Spotlight draws from this many top-tier artists, rank-weighted. */
 const SPOTLIGHT_TIER = 8
 
-/** ±reach of the one-tap "show nearby years" widen. */
-const NEARBY_REACH = 5
+/**
+ * The widen's steps, ±years around the chosen year: a small step
+ * first, a wider one only if that runs dry too. A sparse place reaches
+ * the wide step on its own because it runs dry sooner — the data
+ * decides how far, not a density formula. The larger step is the old
+ * single ±5, so no place can end up narrower than before.
+ */
+const NEARBY_STEPS = [3, 5] as const
 /** Below this many results, the panel offers to widen. */
 const NEARBY_OFFER_THRESHOLD = 5
 
@@ -315,15 +324,23 @@ export function CountryPanel({
   const [attempt, setAttempt] = useState(0)
   /** A refetch over already-shown data (a widen), not a cold load. */
   const [refreshing, setRefreshing] = useState(false)
-  // One-tap widen for thin year+place combos: fetches ±NEARBY_REACH
-  // years through the still-span-capable API instead of dead-ending.
-  // Resets naturally — the parent keys this component by country+year.
-  const [nearby, setNearby] = useState(false)
+  // One-tap widen for thin year+place combos: fetches ±reach years
+  // through the still-span-capable API instead of dead-ending, one
+  // NEARBY_STEPS step at a time. 0 = the chosen year only. Resets
+  // naturally — the parent keys this component by country+year.
+  const [reach, setReach] = useState(0)
+  const nearby = reach > 0
+  /** The next step out, or undefined once the widest is reached. */
+  const nextReach = NEARBY_STEPS.find((step) => step > reach)
+  const nextSpanLabel =
+    nextReach === undefined
+      ? ''
+      : `${Math.max(YEAR_MIN, year - nextReach)}–${Math.min(YEAR_MAX, year + nextReach)}`
 
   const [contestedOpen, setContestedOpen] = useState(false)
   useEffect(() => setContestedOpen(false), [country.code, year])
-  const yearStart = nearby ? Math.max(YEAR_MIN, year - NEARBY_REACH) : year
-  const yearEnd = nearby ? Math.min(YEAR_MAX, year + NEARBY_REACH) : year
+  const yearStart = Math.max(YEAR_MIN, year - reach)
+  const yearEnd = Math.min(YEAR_MAX, year + reach)
   const claimedPlace = claimedPlaceById(country.code)
   // A claimed place is contested by definition — that is why it is
   // not a plain country; the asterisk and the one note always apply.
@@ -415,13 +432,27 @@ export function CountryPanel({
         : pool,
     [pool, genreFilter],
   )
+  // The WHOLE panel's queue-eligible artists, not the chip-filtered
+  // list: the chip goes to the queue as `panelGenre`, its starting
+  // filter, so a listener can broaden from inside the player.
   const queuePool = useMemo(
     () =>
       GAP_FILL_QUEUES_ENABLED
-        ? filtered.filter(queueEligible)
-        : filtered.filter((artist) => !artist.playKey),
-    [filtered],
+        ? pool.filter(queueEligible)
+        : pool.filter((artist) => !artist.playKey),
+    [pool],
   )
+  /** What the queue would start with — the pool under the chip. */
+  const queueStartCount = genreFilter
+    ? queuePool.filter((artist) => artist.tags.includes(genreFilter)).length
+    : queuePool.length
+  /**
+   * The queue box makes the thin-year widen offer itself when it has a
+   * few artists but too few for a real queue — so the panel's own
+   * button stands down there rather than stack a second, identical one.
+   */
+  const queueOffersWiden =
+    queueStartCount > 0 && queueStartCount < QUEUE_HONEST_MIN
   const filteredTotal = genreFilter
     ? filtered.length +
       (omitted ? omittedWithTag(omitted.tags, genreFilter) : 0)
@@ -571,21 +602,22 @@ export function CountryPanel({
           )}
 
           {/* Thin year? One tap widens to nearby years — never a dead end. */}
-          {!nearby && poolTotal < NEARBY_OFFER_THRESHOLD && (
-            <button
-              type="button"
-              className={styles.widen}
-              onClick={() => setNearby(true)}
-            >
-              Show nearby years ({Math.max(YEAR_MIN, year - NEARBY_REACH)}–
-              {Math.min(YEAR_MAX, year + NEARBY_REACH)}) →
-            </button>
-          )}
+          {nextReach !== undefined &&
+            poolTotal < NEARBY_OFFER_THRESHOLD &&
+            !queueOffersWiden && (
+              <button
+                type="button"
+                className={styles.widen}
+                onClick={() => setReach(nextReach)}
+              >
+                Show {nearby ? 'more ' : ''}nearby years ({nextSpanLabel}) →
+              </button>
+            )}
           {nearby && (
             <button
               type="button"
               className={styles.widen}
-              onClick={() => setNearby(false)}
+              onClick={() => setReach(0)}
             >
               ← Back to {year} only
             </button>
@@ -597,10 +629,12 @@ export function CountryPanel({
               entries join with their pre-verified queueTrack (see
               GAP_FILL_QUEUES_ENABLED above).
 
-              Deliberately NOT re-keyed on genreFilter: the pool is
-              read at click time, so changing the filter mid-song
-              leaves the playing queue standing rather than tearing
-              down the player. Place and year DO re-key — they are a
+              Deliberately NOT re-keyed on genreFilter: the chip is the
+              filter the queue STARTS under (read at click time), so
+              changing it mid-song leaves the playing queue standing
+              rather than tearing down the player — and the queue box
+              offers to follow the new chip, so the two controls never
+              silently disagree. Place and year DO re-key — they are a
               different place and era, not a different view of one. */}
           <QueuePlayer
             key={`${country.code}:${year}:${genre ?? ''}`}
@@ -615,10 +649,16 @@ export function CountryPanel({
                 : undefined
             }
             // Offered only while there is somewhere to widen TO: the
-            // queue asks when it runs dry, and widening the panel is
-            // what answers it — one truth for the list and the queue.
-            onWiden={nearby ? undefined : () => setNearby(true)}
-            widenLabel={`${Math.max(YEAR_MIN, year - NEARBY_REACH)}–${Math.min(YEAR_MAX, year + NEARBY_REACH)}`}
+            // queue asks when it runs dry (or is too thin to start), and
+            // widening the panel is what answers it — one truth for the
+            // list and the queue. Each offer is the next step out.
+            onWiden={
+              nextReach === undefined ? undefined : () => setReach(nextReach)
+            }
+            widenLabel={nextSpanLabel}
+            widenFurther={nearby}
+            spanLabel={spanLabel}
+            panelGenre={genreFilter}
           />
 
           {spotlightArtist && (

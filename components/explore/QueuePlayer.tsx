@@ -9,6 +9,17 @@ import {
   releasePlan,
   type AppendPlan,
 } from '@/lib/explore/queueOrder'
+import {
+  ALL_GENRES,
+  filterForPanelGenre,
+  genreOn,
+  genresIncluded,
+  isAllGenres,
+  matchesPanelGenre,
+  onlyGenre,
+  toggleGenre as toggledFilter,
+  type QueueGenreFilter,
+} from '@/lib/explore/queueGenreFilter'
 import type { RosterByMbid } from './CountryPanel'
 import { LikeButton } from '@/components/fans/LikeButton'
 import { useLikes, type LikeDraft } from '@/components/fans/LikesProvider'
@@ -45,8 +56,13 @@ const QUEUE_FETCH_TIMEOUT_MS = 20_000
 const FIRST_TRACK_DEADLINE_MS = 60_000
 /** Concurrent resolves: first hit plays sooner; same total API calls. */
 const QUEUE_CONCURRENCY = 4
-/** Below this many playable tracks, say so — never pad the queue. */
-const HONEST_MIN = 5
+/**
+ * Below this many playable tracks, say so — never pad the queue.
+ * Exported because the panel hides its own thin-year widen while the
+ * queue is the one offering it (one offer, not two stacked).
+ */
+export const QUEUE_HONEST_MIN = 5
+const HONEST_MIN = QUEUE_HONEST_MIN
 /**
  * Tracks from outside a demoted genre family that must play before a
  * held one is released (owner ruling, Aug 2026). Children's and
@@ -109,6 +125,14 @@ interface QueuePlayerProps {
    */
   placeCode?: string
   year: number
+  /**
+   * Every queue-eligible artist on the panel, NOT narrowed by the
+   * panel's genre chip — the chip arrives separately as `panelGenre`
+   * and becomes the queue's starting filter. Passing the whole pool is
+   * what lets a listener broaden a genre queue from inside the player,
+   * and it keeps a chip change mid-song from silently changing which
+   * artists later refills draw from.
+   */
   pool: QueuePoolArtist[]
   roster: RosterByMbid
   /**
@@ -127,6 +151,22 @@ interface QueuePlayerProps {
   onWiden?: () => void
   /** Label for the widen offer, e.g. "1964–1974". */
   widenLabel?: string
+  /** A widen already happened — this offer is the next, wider step. */
+  widenFurther?: boolean
+  /**
+   * The years the queue is now drawing from, e.g. "1964–1974" after a
+   * widen — so the end line names what was actually searched. `year`
+   * stays the chosen year: it is the era the resolver picks against
+   * and what a ♥ records.
+   */
+  spanLabel?: string
+  /**
+   * The panel's genre chip (null = all genres; undefined = this queue
+   * has no panel). It sets the filter the queue STARTS under. Changing
+   * it while the queue plays never rebuilds the queue on its own — the
+   * queue offers to follow it, and the listener decides.
+   */
+  panelGenre?: string | null
   /**
    * Replaces the "that's everything for <place> <year>" end line. A
    * queue that is not a place and an era — a saved-songs playlist —
@@ -199,6 +239,9 @@ export function QueuePlayer({
   buttonLabel,
   onWiden,
   widenLabel,
+  widenFurther = false,
+  spanLabel,
+  panelGenre,
   endNote,
 }: QueuePlayerProps) {
   const [active, setActive] = useState(false)
@@ -217,14 +260,20 @@ export function QueuePlayer({
   const [deadIds, setDeadIds] = useState<Set<string>>(new Set())
   const deadRef = useRef<Set<string>>(new Set())
   /**
-   * Genres the listener has switched OFF, live, while the music plays.
-   * Distinct from the panel's genre chip, which narrows the pool before
-   * the queue is built and cannot be changed once it is playing.
+   * Which genres play, switchable live while the music plays: some
+   * switched off, or only some switched on (lib/explore/queueGenreFilter).
+   * Starts from the panel's genre chip at the moment the queue starts.
    */
-  const [excludedGenres, setExcludedGenres] = useState<Set<string>>(
-    () => new Set(),
-  )
+  const [genreFilter, setGenreFilter] = useState<QueueGenreFilter>(ALL_GENRES)
   const [genresOpen, setGenresOpen] = useState(false)
+  /**
+   * The chip value this queue last agreed with — set at start, and
+   * again when the listener follows or declines a chip change. A chip
+   * that differs from it is a change made while the music played.
+   */
+  const [syncedPanelGenre, setSyncedPanelGenre] = useState<string | null>(
+    null,
+  )
   /**
    * Playback was stopped because the listener switched off every genre
    * in the queue — remembered so turning one back on resumes, instead
@@ -250,32 +299,50 @@ export function QueuePlayer({
   /** Video ids already queued — the last word on duplicates. */
   const queuedVideosRef = useRef(new Set<string>())
   /**
-   * The exclusions as the YouTube callbacks see them. The player's
-   * onStateChange closure is created once, so it would otherwise
-   * advance using whatever was excluded when the track started.
+   * The filter as the YouTube callbacks and fill workers see it. The
+   * player's onStateChange closure is created once, so it would
+   * otherwise advance using whatever filter was on when the track
+   * started. Written together with the state by `applyFilter`, so a
+   * fill started in the same tick (start()) already sees it.
    */
-  const excludedRef = useRef<Set<string>>(new Set())
-  useEffect(() => {
-    excludedRef.current = excludedGenres
-  }, [excludedGenres])
+  const filterRef = useRef<QueueGenreFilter>(ALL_GENRES)
+  function applyFilter(next: QueueGenreFilter) {
+    filterRef.current = next
+    setGenreFilter(next)
+  }
   /** Demoted-family tracks waiting for their lead-in to fill. */
   const heldRef = useRef<ResolvedTrack[]>([])
   /** Tracks queued from outside the demoted families. */
   const leadInRef = useRef(0)
   /**
    * Hold anything back only when there is something else to lead with.
-   * One condition covers the two cases that must not stall: a visitor
-   * who filtered the panel TO "kids music" (they asked for it), and a
-   * place whose whole pool is one — both arrive here as a pool with no
-   * non-demoted artist in it, and both should just play.
+   * One condition covers the cases that must not stall: a visitor who
+   * filtered TO "kids music" (on the panel chip or with "only" in the
+   * player — they asked for it), and a place whose whole pool is one —
+   * all arrive here as a filtered pool with no non-demoted artist in
+   * it, and all should just play.
    *
-   * Derived from `pool`, and read by the fill workers out of the same
-   * render's closure the workers already take `pool` from — so the two
-   * can never disagree about which pool is being walked.
+   * The fill workers ask `deferNow()`, which takes `pool` from the
+   * same render's closure the workers already walk and the filter from
+   * its ref — so it is right even for the first batch, which starts in
+   * the same tick the chip's filter is applied. `deferActive` is the
+   * same answer as render state, for the effect that lets held tracks
+   * in the moment deferral stops applying.
    */
+  function shouldDefer(filter: QueueGenreFilter): boolean {
+    return pool.some(
+      (artist) =>
+        genresIncluded(artist.tags, filter) && !isDemotedArtist(artist.tags),
+    )
+  }
+  function deferNow(): boolean {
+    return shouldDefer(filterRef.current)
+  }
   const deferActive = useMemo(
-    () => pool.some((artist) => !isDemotedArtist(artist.tags)),
-    [pool],
+    () => shouldDefer(genreFilter),
+    // shouldDefer reads only `pool` and its argument.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [pool, genreFilter],
   )
   /** True while a batch is in flight — top-ups are idempotent. */
   const fillingRef = useRef(false)
@@ -301,17 +368,12 @@ export function QueuePlayer({
     [],
   )
 
-  /**
-   * Excluding a genre hides EVERY track whose artist carries it, not
-   * just tracks where it is the leading tag: someone switching off
-   * "metal" means the metal artists, and a band tagged
-   * [black metal, rock] is one of them.
-   */
+  /** Whether a track plays under a filter — the rule is in queueGenreFilter. */
   function trackIncluded(
     track: ResolvedTrack,
-    excluded: Set<string>,
+    filter: QueueGenreFilter,
   ): boolean {
-    return !(track.genres ?? []).some((genre) => excluded.has(genre))
+    return genresIncluded(track.genres, filter)
   }
 
   /**
@@ -323,7 +385,7 @@ export function QueuePlayer({
     const list = tracksRef.current
     for (let i = from; i >= 0 && i < list.length; i += step) {
       if (
-        trackIncluded(list[i], excludedRef.current) &&
+        trackIncluded(list[i], filterRef.current) &&
         !deadRef.current.has(list[i].videoId)
       ) {
         return i
@@ -423,7 +485,7 @@ export function QueuePlayer({
       planAppend(
         fresh,
         { leadIn: leadInRef.current, held: heldRef.current },
-        deferActive,
+        deferNow(),
         LEAD_IN_TRACKS,
       ),
     )
@@ -455,7 +517,7 @@ export function QueuePlayer({
         !resolvedIdsRef.current.has(artist.id) &&
         // Resolving a switched-off artist spends a request on a track
         // that would be hidden the moment it arrived.
-        !artist.tags.some((tag) => excludedRef.current.has(tag)),
+        genresIncluded(artist.tags, filterRef.current),
     )
     if (queue.length === 0) return 0
     const slice = queue.slice(0, size)
@@ -562,9 +624,15 @@ export function QueuePlayer({
   function drawFromReserves(size: number): ResolvedTrack[] {
     const drawn: ResolvedTrack[] = []
     let reserves = reservesRef.current
-    while (drawn.length < size && reserves.some((r) => r.tracks.length > 0)) {
+    // Switched-off artists keep their reserves for later — drawing them
+    // now would only queue hidden rows and drain songs the listener may
+    // switch back on.
+    const playable = (reserve: ArtistReserve) =>
+      reserve.tracks.length > 0 &&
+      genresIncluded(reserve.genres, filterRef.current)
+    while (drawn.length < size && reserves.some(playable)) {
       reserves = reserves.map((reserve) => {
-        if (drawn.length >= size || reserve.tracks.length === 0) return reserve
+        if (drawn.length >= size || !playable(reserve)) return reserve
         const [next, ...rest] = reserve.tracks
         drawn.push({
           videoId: next.videoId,
@@ -631,6 +699,11 @@ export function QueuePlayer({
       setExhausted(true)
       return
     }
+    // The panel's chip at this moment is the filter the queue starts
+    // under. Applied through the ref before the first fill, so the
+    // workers already walk the chip's genre.
+    applyFilter(filterForPanelGenre(panelGenre))
+    setSyncedPanelGenre(panelGenre ?? null)
     const controller = new AbortController()
     abortRef.current = controller
     const deadline = setTimeout(() => {
@@ -663,7 +736,7 @@ export function QueuePlayer({
     // playing nothing, and the fill would never top it up.
     const remaining = tracks
       .slice(current + 1)
-      .filter((track) => trackIncluded(track, excludedGenres)).length
+      .filter((track) => trackIncluded(track, genreFilter)).length
     if (remaining >= REFILL_LOOKAHEAD) return
     void fill(REFILL_BATCH)
     // `fill` is stable in behaviour and guarded by fillingRef; tracking
@@ -679,6 +752,10 @@ export function QueuePlayer({
     current,
     pool,
     fillTick,
+    // A narrower filter can leave too little playable ahead without
+    // the playing track changing — "only highlife" in a queue holding
+    // one highlife track has to go and fetch more.
+    genreFilter,
   ])
 
   /**
@@ -687,13 +764,28 @@ export function QueuePlayer({
    * resolved ids, reserves and the playing track all stand.
    */
   useEffect(() => {
-    if (pool.some((artist) => !resolvedIdsRef.current.has(artist.id))) {
+    if (
+      pool.some((artist) => !resolvedIdsRef.current.has(artist.id)) ||
+      reservesRef.current.length > 0
+    ) {
       setExhausted(false)
     }
-    // `excludedGenres` matters here too: the fill skips switched-off
-    // artists, so a queue can exhaust purely because everything left
-    // was filtered out. Switching a genre back on has to reopen it.
-  }, [pool, excludedGenres])
+    // The filter matters here too: the fill skips switched-off artists
+    // and their reserves, so a queue can exhaust purely because
+    // everything left was filtered out. Switching a genre back on — or
+    // choosing "only" a different one — has to reopen it.
+  }, [pool, genreFilter])
+
+  /**
+   * Deferral can stop applying mid-queue — the listener chose "only
+   * kids music", or switched off everything else. Held tracks then
+   * come in at once rather than waiting on a lead-in that cannot come.
+   */
+  useEffect(() => {
+    if (active && !deferActive) releaseHeld()
+    // releaseHeld is a stable helper reading refs.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [active, deferActive])
 
   /**
    * Switching off the genre of what is PLAYING stops it. Anything else
@@ -705,7 +797,7 @@ export function QueuePlayer({
     if (!active) return
     const playing = tracksRef.current[currentRef.current]
     if (!playing) return
-    if (trackIncluded(playing, excludedGenres)) {
+    if (trackIncluded(playing, genreFilter)) {
       // Something is playable again after everything was switched off.
       if (pausedByFilterRef.current) {
         pausedByFilterRef.current = false
@@ -722,13 +814,21 @@ export function QueuePlayer({
       playerRef.current?.pauseVideo()
       return
     }
+    // A track that fits arrived (the fill went looking for an "only"
+    // genre) or survived: play it, and forget the pause — otherwise the
+    // next pass would read "playable again" and restart from the top.
+    pausedByFilterRef.current = false
     jumpTo(target)
     // jumpTo/seekIncluded are stable helpers reading refs; tracking them
     // would re-run this on every render instead of on a real change.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [excludedGenres, active, tracks])
+  }, [genreFilter, active, tracks])
 
-  /** Genres present in THIS queue, most common first. */
+  /**
+   * Genres present in THIS queue, most common first. A genre chosen
+   * with "only" stays listed even before its first track arrives, so
+   * the listener can always see — and undo — what they asked for.
+   */
   const genreCounts = useMemo(() => {
     const counts = new Map<string, number>()
     for (const track of tracks) {
@@ -736,18 +836,23 @@ export function QueuePlayer({
         counts.set(genre, (counts.get(genre) ?? 0) + 1)
       }
     }
+    if (genreFilter.mode === 'only') {
+      for (const genre of genreFilter.genres) {
+        if (!counts.has(genre)) counts.set(genre, 0)
+      }
+    }
     return [...counts.entries()].sort(
       (a, b) => b[1] - a[1] || a[0].localeCompare(b[0]),
     )
-  }, [tracks])
+  }, [tracks, genreFilter])
 
   /** Track indices still playable, in queue order. */
   const includedIndices = useMemo(
     () =>
       tracks.flatMap((track, index) =>
-        trackIncluded(track, excludedGenres) ? [index] : [],
+        trackIncluded(track, genreFilter) ? [index] : [],
       ),
-    [tracks, excludedGenres],
+    [tracks, genreFilter],
   )
 
   /**
@@ -770,12 +875,52 @@ export function QueuePlayer({
   }
 
   function toggleGenre(genre: string) {
-    setExcludedGenres((current) => {
-      const next = new Set(current)
-      if (next.has(genre)) next.delete(genre)
-      else next.add(genre)
-      return next
-    })
+    applyFilter(toggledFilter(genre, filterRef.current))
+  }
+
+  /** "highlife" or "highlife / afrobeat" — the genres chosen with only. */
+  function onlyLabel(): string {
+    return [...genreFilter.genres].join(' / ')
+  }
+
+  /** The genre control's closed-state label: what is playing, briefly. */
+  function genreSummary(): string {
+    if (genreFilter.mode === 'only') {
+      if (genreFilter.genres.size === 0) return '♪ Genres · all off'
+      if (genreFilter.genres.size === 1) return `♪ Only ${onlyLabel()}`
+      return `♪ Only ${genreFilter.genres.size} genres`
+    }
+    return genreFilter.genres.size > 0
+      ? `♪ Genres · ${genreFilter.genres.size} off`
+      : `♪ Genres · ${genreCounts.length}`
+  }
+
+  /** The chip changed while the music played — follow it, or don't. */
+  const chipOffer =
+    active &&
+    !preresolved &&
+    panelGenre !== undefined &&
+    panelGenre !== syncedPanelGenre &&
+    !matchesPanelGenre(genreFilter, panelGenre)
+
+  function followChip() {
+    applyFilter(filterForPanelGenre(panelGenre))
+    setSyncedPanelGenre(panelGenre ?? null)
+  }
+
+  /** The widen offer, as one button wherever the queue makes it. */
+  function widenButton(forMore: boolean) {
+    if (!onWiden) return null
+    return (
+      <button
+        type="button"
+        className={styles.widenQueueButton}
+        onClick={onWiden}
+      >
+        ⊕ Widen {widenFurther ? 'further ' : ''}to {widenLabel}
+        {forMore ? ' for more' : ''}
+      </button>
+    )
   }
 
   // Pool guards decide whether to OFFER a queue — they must never tear
@@ -789,12 +934,20 @@ export function QueuePlayer({
       // the pool guards are resolver-walk economics, not honesty.
       if (preresolved.length === 0) return null
     } else {
-      if (pool.length === 0) return null
-      if (pool.length < HONEST_MIN) {
+      // What the queue would start with: the pool under the chip.
+      const startCount = panelGenre
+        ? pool.filter((artist) => artist.tags.includes(panelGenre)).length
+        : pool.length
+      if (startCount === 0) return null
+      if (startCount < HONEST_MIN) {
+        // Never a dead end while there are nearby years to reach: the
+        // same widen the queue offers when it runs dry. Offered, never
+        // performed — it changes what the whole panel shows.
         return (
           <p className={styles.sparseNote}>
             Too few artists on record here for a real queue — no padding, no
             fillers.
+            {onWiden && <> {widenButton(false)}</>}
           </p>
         )
       }
@@ -910,7 +1063,7 @@ export function QueuePlayer({
           {endNote ??
             (tracks.length < HONEST_MIN
               ? `Only ${tracks.length} verified track${tracks.length === 1 ? '' : 's'} here — honest, not padded.`
-              : `That’s everything verified for ${placeName} ${year}.`)}
+              : `That’s everything verified for ${placeName} ${spanLabel ?? year}.`)}
           {deadIds.size > 0 && (
             <>
               {' '}
@@ -918,18 +1071,30 @@ export function QueuePlayer({
               no longer playable on YouTube — skipped, not removed.
             </>
           )}
-          {onWiden && (
-            <>
-              {' '}
-              <button
-                type="button"
-                className={styles.widenQueueButton}
-                onClick={onWiden}
-              >
-                ⊕ Widen to {widenLabel} for more
-              </button>
-            </>
-          )}
+          {onWiden && <> {widenButton(true)}</>}
+        </p>
+      )}
+
+      {/* The panel's chip changed while this queue played. The queue
+          is never rebuilt from under the listener — it asks. */}
+      {chipOffer && (
+        <p className={styles.buildNote}>
+          <button
+            type="button"
+            className={styles.widenQueueButton}
+            onClick={followChip}
+          >
+            {panelGenre
+              ? `▶ Play only ${panelGenre} from here`
+              : '▶ Play all genres from here'}
+          </button>{' '}
+          <button
+            type="button"
+            className={styles.chipDismiss}
+            onClick={() => setSyncedPanelGenre(panelGenre ?? null)}
+          >
+            keep this queue as it is
+          </button>
         </p>
       )}
 
@@ -937,7 +1102,7 @@ export function QueuePlayer({
           narrows the pool before the queue is built and cannot be
           changed once it is running. This filters what is already
           here and what gets fetched next. */}
-      {genreCounts.length > 1 && (
+      {(genreCounts.length > 1 || !isAllGenres(genreFilter)) && (
         <div className={styles.genreControl}>
           <button
             type="button"
@@ -945,26 +1110,49 @@ export function QueuePlayer({
             onClick={() => setGenresOpen((open) => !open)}
             aria-expanded={genresOpen}
           >
-            ♪ Genres{' '}
-            {excludedGenres.size > 0
-              ? `· ${excludedGenres.size} off`
-              : `· ${genreCounts.length}`}{' '}
-            {genresOpen ? '▾' : '▸'}
+            {genreSummary()} {genresOpen ? '▾' : '▸'}
           </button>
           {genresOpen && (
             <ul className={styles.genreList}>
+              {!isAllGenres(genreFilter) && (
+                <li>
+                  <button
+                    type="button"
+                    className={styles.genreOnly}
+                    onClick={() => applyFilter(ALL_GENRES)}
+                  >
+                    All on
+                  </button>
+                </li>
+              )}
               {genreCounts.map(([genre, count]) => {
-                const off = excludedGenres.has(genre)
+                const on = genreOn(genre, genreFilter)
+                const soleOnly =
+                  genreFilter.mode === 'only' &&
+                  genreFilter.genres.size === 1 &&
+                  genreFilter.genres.has(genre)
                 return (
-                  <li key={genre}>
+                  <li key={genre} className={styles.genreItem}>
                     <button
                       type="button"
-                      className={off ? styles.genreOff : styles.genreOn}
+                      className={on ? styles.genreOn : styles.genreOff}
                       onClick={() => toggleGenre(genre)}
-                      aria-pressed={!off}
+                      aria-pressed={on}
                     >
-                      {off ? '○' : '●'} {genre} · {count}
+                      {on ? '●' : '○'} {genre} · {count}
                     </button>
+                    {/* One tap to hear just this — switching the other
+                        22 off one by one is not a control. */}
+                    {!soleOnly && (
+                      <button
+                        type="button"
+                        className={styles.genreOnly}
+                        onClick={() => applyFilter(onlyGenre(genre))}
+                        aria-label={`Play only ${genre}`}
+                      >
+                        only
+                      </button>
+                    )}
                   </li>
                 )
               })}
@@ -974,11 +1162,15 @@ export function QueuePlayer({
       )}
       {includedIndices.length === 0 && tracks.length > 0 && (
         <p className={styles.sparseNote}>
-          Every genre in this queue is switched off.{' '}
+          {genreFilter.mode === 'only' && genreFilter.genres.size > 0
+            ? exhausted && !building
+              ? `No verified ${onlyLabel()} here.`
+              : `Looking for ${onlyLabel()}…`
+            : 'Every genre in this queue is switched off.'}{' '}
           <button
             type="button"
             className={styles.widenQueueButton}
-            onClick={() => setExcludedGenres(new Set())}
+            onClick={() => applyFilter(ALL_GENRES)}
           >
             Turn them all back on
           </button>
