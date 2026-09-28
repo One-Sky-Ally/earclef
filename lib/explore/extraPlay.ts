@@ -18,7 +18,7 @@
  * (Internet Archive exact-alias) may still verify honestly, but the
  * stored link never serves. The URL is preserved for the repair pass.
  */
-import { MIN_DURATION_SECONDS } from '../play/contentGates'
+import { MIN_DURATION_SECONDS, isNonSongTitle } from '../play/contentGates'
 import type { PlayLink } from '../play/types'
 import extraPlay from './extra-play.json'
 
@@ -120,6 +120,12 @@ export function extraQueueTrack(key: string): ExtraQueueTrack | null {
   // Only a link that carries identity evidence may auto-play (Sep 5,
   // 2026 ruling opened the queue gate on exactly this dataset).
   if (!entry.identityEvidence) return null
+  // A playlist should always play music (owner, Aug 2026; applied to
+  // gap-fill Sep 28): the same title markers the resolver applies, read
+  // from the annotation only — teasers, previews, snippets, an EPK. The
+  // pill still links the video; only auto-play is withheld. YouTube's
+  // topic and description checks need data this file does not carry.
+  if (isNonSongTitle(entry.title)) return null
   const videoId = videoIdOf(entry.play.url)
   return videoId ? { videoId, title: entry.title } : null
 }

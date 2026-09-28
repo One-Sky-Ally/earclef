@@ -57,9 +57,19 @@ export const MIN_DURATION_SECONDS = 90
  * DELIBERATELY ABSENT: `part` and `pt.`. Real records are numbered —
  * "The Industry - Dark Side Version, Pt.1" is a legitimate track in
  * Egypt's own queue — so a part-number marker would cost music.
+ *
+ * `clip` REMOVED (owner go, Sep 28 2026). It came from the hits sweep,
+ * where it meant an excerpt — but "Clip Officiel", "Video Clip", "Clip
+ * Original" and a bare "(CLIP)" are how French, Arabic and Spanish
+ * channels label the OFFICIAL MUSIC VIDEO. Measured on the committed
+ * gap-fill queue videos: 33 of the 54 titles this list flagged were
+ * music videos rejected for the word "clip" alone (Zaïko Langa Langa,
+ * Rachid Taha, Kadim Al Saher…). Excerpts keep their own words —
+ * preview, snippet, teaser — and the 90 s floor already stops short
+ * clips by length.
  */
 export const NON_SONG_MARKERS =
-  /\b(trailer|teaser|behind the scenes|making of|documentary|interview|preview|snippet|clip|reaction|announcement|album sampler|karaoke|karaoke version|documentaire|documental|reportage|entrevista|entretien|bande annonce|episode|epk|press kit|aftershow|listening party|webisode|docuseries)\b/i
+  /\b(trailer|teaser|behind the scenes|making of|documentary|interview|preview|snippet|reaction|announcement|album sampler|karaoke|karaoke version|documentaire|documental|reportage|entrevista|entretien|bande annonce|episode|epk|press kit|aftershow|listening party|webisode|docuseries)\b/i
 
 /**
  * Script-aware normalize: the ASCII-only version reduced non-Latin
@@ -109,6 +119,48 @@ export function isNonSongUpload(
   artistName: string,
 ): boolean {
   const annotation = annotationOf(uploadTitle, workTitle, artistName)
+  return annotation ? NON_SONG_MARKERS.test(annotation) : false
+}
+
+/**
+ * The annotation of an upload title when the WORK title is unknown —
+ * the gap-fill queue videos, verified by identity evidence rather than
+ * matched to a named song, so there is nothing to subtract the way
+ * annotationOf does. Only the parts of a title that conventionally
+ * annotate are read:
+ *   - bracketed groups: (…) […] {…} 【…】
+ *   - a third or later segment of "Artist - Song - …" (any dash, a bar,
+ *     or //), since the first two are who and what;
+ *   - text after a quoted song title: Tigran Hamasyan "Luys i Luso" teaser.
+ * The song name itself is never read, so a record named with a marker
+ * word ("Chainsaw - The Announcement (Full Album)") is left alone.
+ * Known misses, stated rather than assumed: a title that opens with the
+ * marker and has no brackets ("Announcement of the new 2020 album…").
+ */
+export function titleAnnotation(uploadTitle: string): string {
+  const parts: string[] = []
+  for (const match of uploadTitle.matchAll(/\(([^()]*)\)|\[([^\]]*)\]|\{([^}]*)\}|【([^】]*)】/g)) {
+    parts.push(match[1] ?? match[2] ?? match[3] ?? match[4] ?? '')
+  }
+  const unbracketed = uploadTitle.replace(/\([^()]*\)|\[[^\]]*\]|\{[^}]*\}|【[^】]*】/g, ' ')
+  const segments = unbracketed.split(/\s+[-–—|]\s+|\s*\/\/\s*/)
+  parts.push(...segments.slice(2))
+  const quoted = /["“«]([^"”»]+)["”»]/g
+  let lastEnd = -1
+  for (const match of unbracketed.matchAll(quoted)) {
+    lastEnd = (match.index ?? 0) + match[0].length
+  }
+  if (lastEnd !== -1) parts.push(unbracketed.slice(lastEnd))
+  return parts.map((part) => normalize(part)).filter(Boolean).join(' ')
+}
+
+/**
+ * The title-marker check for an upload whose work title is unknown.
+ * An empty annotation asserts nothing and gates nothing (standing
+ * lesson 5).
+ */
+export function isNonSongTitle(uploadTitle: string): boolean {
+  const annotation = titleAnnotation(uploadTitle)
   return annotation ? NON_SONG_MARKERS.test(annotation) : false
 }
 
