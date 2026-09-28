@@ -100,3 +100,18 @@
     max-height: 38vh;
   }
 }
+
+/* Phones: a block in the stage's column, after the era bar, rather
+   than a card over the globe. */
+@media (max-width: 640px) {
+  .card {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    max-height: none;
+    overflow: visible;
+    grid-column: 1 / -1;
+    order: 5;
+  }
+}

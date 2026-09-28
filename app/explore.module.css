@@ -5,7 +5,10 @@
 }
 
 .header {
-  width: 100%;
+  /* No width here: the element also carries the global .container,
+     whose width IS the side gutter. A width: 100% in this module (it
+     loads after globals) overrode it, so the heading ran to the screen
+     edge at every size. */
   padding-block: clamp(2.5rem, 6vw, 4rem) 1rem;
 }
 
@@ -42,6 +45,7 @@
 }
 
 .hint {
+  padding-inline: 1rem;
   text-align: center;
   font-size: 0.8rem;
   letter-spacing: 0.14em;
@@ -77,4 +81,46 @@
 
 .footerLinks a:hover {
   color: var(--accent);
+}
+
+/* The hint speaks the visitor's gesture: mouse words for a pointer,
+   touch words for a finger. */
+.hintTouch {
+  display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .hintPointer {
+    display: none;
+  }
+
+  .hintTouch {
+    display: inline;
+  }
+}
+
+/* Phones: a shorter header, so the globe starts on the first screen. */
+@media (max-width: 640px) {
+  .header {
+    padding-block: 1.25rem 0.75rem;
+  }
+
+  .overline {
+    margin-bottom: 0.5rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .hint {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+  }
 }

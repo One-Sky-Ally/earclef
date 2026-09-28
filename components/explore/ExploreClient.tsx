@@ -84,6 +84,54 @@ export function ExploreClient({
   const [spotlightKey, setSpotlightKey] = useState<string | null>(null)
   const surpriseSeen = useRef(new Set<string>())
   const yearTween = useRef<ReturnType<typeof setInterval> | null>(null)
+  // Phones: where the open panel begins, and the era bar stuck above it.
+  const panelAnchorRef = useRef<HTMLDivElement>(null)
+  const controlsRef = useRef<HTMLDivElement>(null)
+  const stageRef = useRef<HTMLDivElement>(null)
+
+  // The era bar floats over the bottom of the stage on wider screens,
+  // and its height changes (genre menu open or shut, fonts, widths). The
+  // non-globe fallback list must END above it rather than scroll under
+  // it, so the stage carries the bar's measured footprint as a CSS
+  // variable instead of a guessed constant.
+  useEffect(() => {
+    const stage = stageRef.current
+    const controls = controlsRef.current
+    if (!stage || !controls) return
+    const measure = () => {
+      const clearance =
+        stage.getBoundingClientRect().bottom -
+        controls.getBoundingClientRect().top +
+        12
+      stage.style.setProperty('--controls-clearance', `${Math.max(0, Math.round(clearance))}px`)
+    }
+    measure()
+    const observer = new ResizeObserver(measure)
+    observer.observe(controls)
+    observer.observe(stage)
+    return () => observer.disconnect()
+  }, [])
+
+  // On a phone the panel opens BELOW the era bar (one column), so a
+  // place opened from the globe, the search or a surprise would appear
+  // off-screen. Bring its top to just under the stuck era bar. Wider
+  // screens float the panel beside the globe and need no scroll.
+  const openKey = artist ? `a:${artist.mbid}` : selected ? `c:${selected.code}` : null
+  useEffect(() => {
+    if (!openKey) return
+    if (!window.matchMedia('(max-width: 640px)').matches) return
+    const frame = requestAnimationFrame(() => {
+      const anchor = panelAnchorRef.current
+      const controls = controlsRef.current
+      if (!anchor) return
+      const stuckAbove = controls ? controls.getBoundingClientRect().height : 0
+      // 53px nav + the bar's 0.4rem sticky gap + a little air.
+      const top =
+        anchor.getBoundingClientRect().top + window.scrollY - (53 + 6 + stuckAbove + 10)
+      window.scrollTo({ top, behavior: 'smooth' })
+    })
+    return () => cancelAnimationFrame(frame)
+  }, [openKey])
 
   useEffect(
     () => () => {
@@ -284,7 +332,7 @@ export function ExploreClient({
   }
 
   return (
-    <div className={styles.stage}>
+    <div ref={stageRef} className={styles.stage}>
       <GlobeScene
         forceFallback={noGlobe}
         year={year}
@@ -323,6 +371,7 @@ export function ExploreClient({
         <span className={styles.surpriseLabel}>Surprise me</span>
       </button>
       {lens && <GenreStory key={lens} genre={lens} />}
+      <div ref={panelAnchorRef} className={styles.panelAnchor} aria-hidden="true" />
       {artist && (
         <ArtistEraPanel
           key={`${artist.mbid}:${panelYear}`}
@@ -344,6 +393,7 @@ export function ExploreClient({
         />
       )}
       <div
+        ref={controlsRef}
         className={`${styles.controls} ${
           selected || artist ? styles.controlsBehindPanel : ''
         }`}

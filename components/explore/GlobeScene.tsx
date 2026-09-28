@@ -114,9 +114,21 @@ export interface FocusRequest {
 
 /** The globe couldn't render — explore continues without it. */
 interface GlobeFallback {
-  reason: 'webgl-unsupported' | 'globe-init-failed' | 'dataset-fetch-failed'
+  reason:
+    | 'webgl-unsupported'
+    | 'globe-init-failed'
+    | 'dataset-fetch-failed'
+    | 'context-lost'
   countries: { code: string; name: string }[]
 }
+
+/**
+ * How long a lost WebGL context gets to come back before the globe
+ * gives way to the country list. Browsers restore a context after a
+ * brief GPU reset within a second or two; one that stays lost is not
+ * coming back this session.
+ */
+const CONTEXT_RESTORE_GRACE_MS = 3000
 
 function webglSupported(): boolean {
   try {
@@ -198,6 +210,13 @@ export function GlobeScene({
   const featureByCode = useRef<Map<string, CountryFeature>>(new Map())
   const pausedRef = useRef(paused)
   const cursorOverGlobeRef = useRef(false)
+  /**
+   * The visitor has touched or clicked the globe. The idle drift is an
+   * invitation, not a feature — once someone reaches for a country it
+   * stops for good, because chasing a small country across a drifting
+   * globe is what made them hard to hit.
+   */
+  const interactedRef = useRef(false)
   // The zoomed-in region layer (US states + UK nations): features +
   // heat load lazily on the first threshold crossing; the view swap
   // rides globe.gl's onZoom.
@@ -213,7 +232,9 @@ export function GlobeScene({
     const globe = globeRef.current
     if (globe) {
       globe.controls().autoRotate =
-        !pausedRef.current && !cursorOverGlobeRef.current
+        !interactedRef.current &&
+        !pausedRef.current &&
+        !cursorOverGlobeRef.current
     }
   }
 
@@ -428,7 +449,17 @@ export function GlobeScene({
         name: feature.properties.ADMIN,
       })
     } else {
-      onCountryClick({ code, name: focusRequest.name })
+      // No globe to fly (the fallback list, or the globe still loading):
+      // open the panel under the place's real name. A deep link carries
+      // only the code (?c=PG), and the fallback header used to read
+      // "PG" instead of Papua New Guinea.
+      onCountryClick({
+        code,
+        name:
+          feature?.properties.ADMIN ??
+          regionByCode(code)?.name ??
+          focusRequest.name,
+      })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps -- fire per resolved search only
   }, [focusRequest])
@@ -602,6 +633,7 @@ export function GlobeScene({
 
     let globe: GlobeInstance | undefined
     let observer: ResizeObserver | undefined
+    let removeTouchGate: (() => void) | undefined
     let disposed = false
     // The map identity never changes; captured so cleanup can't read a
     // ref that has moved on.
@@ -683,6 +715,14 @@ export function GlobeScene({
       )
       countries.features = features
       countryViewRef.current = features
+      // Names by code, before the WebGL decision: the fallback needs
+      // them too, to title a deep-linked panel (?c=PG → Papua New Guinea).
+      featureByCode.current = new Map(
+        features.flatMap((feature) => {
+          const code = featureCode(feature)
+          return code ? [[code, feature] as const] : []
+        }),
+      )
 
       // No WebGL (hardware acceleration off, GPU blocklisted, remote
       // desktop) is PERSISTENT — reloading never helps. Skip straight
@@ -717,12 +757,6 @@ export function GlobeScene({
         return
       }
       if (disposed) return
-      featureByCode.current = new Map(
-        features.flatMap((feature) => {
-          const code = featureCode(feature)
-          return code ? [[code, feature] as const] : []
-        }),
-      )
       const codes = [...featureByCode.current.keys()]
       const { counts, source } = await loadCounts(codes)
       if (disposed) return
@@ -836,7 +870,10 @@ export function GlobeScene({
         .height(mount.clientHeight)
 
       globe.globeMaterial().color.set(SPHERE_COLOR)
-      globe.pointOfView({ lat: 24, lng: -30, altitude: 2.1 }, 0)
+      // A phone's globe is a block the width of the screen: open a
+      // little closer so the world fills it rather than floating in it.
+      const narrow = window.matchMedia('(max-width: 640px)').matches
+      globe.pointOfView({ lat: 24, lng: -30, altitude: narrow ? 1.75 : 2.1 }, 0)
       applyHeat(globe)
       globeRef.current = globe
       // Announced only once the globe can act on focus requests — URL
@@ -853,6 +890,81 @@ export function GlobeScene({
       controls.minDistance = 160
       controls.maxDistance = 480
       syncRotation()
+
+      // The first touch or click on the globe ends the drift for good
+      // (capture phase, so it lands before the controls act on it).
+      // Switching autoRotate off is not enough on its own: the controls'
+      // damping carries the drift's momentum forward and lets it decay
+      // a fraction PER FRAME, so on a slow device the globe kept sliding
+      // for seconds after the touch. Clear that momentum too. It is an
+      // internal of three's OrbitControls, so it is guarded, and a
+      // version without it simply keeps the (short) glide.
+      mount.addEventListener(
+        'pointerdown',
+        () => {
+          if (!interactedRef.current) {
+            const momentum = (
+              controls as unknown as {
+                _sphericalDelta?: { set: (r: number, p: number, t: number) => void }
+              }
+            )._sphericalDelta
+            momentum?.set(0, 0, 0)
+          }
+          interactedRef.current = true
+          syncRotation()
+        },
+        { capture: true },
+      )
+
+      // ONE FINGER, TWO JOBS. A vertical drag on the globe is someone
+      // scrolling the page; a sideways drag is someone spinning the
+      // world. The canvas's touch-action (pan-y, in the stylesheet) lets
+      // the browser scroll, but the controls follow the same finger on
+      // document-level pointermoves and tilted the globe to a pole while
+      // the page scrolled. So each one-finger touch that starts on the
+      // globe is classified by its first few pixels of travel, and a
+      // vertical one never reaches the controls — a window CAPTURE
+      // listener runs before their document listener. Two fingers are a
+      // pinch and pass straight through.
+      const touchStarts = new Map<number, { x: number; y: number }>()
+      const verticalTouches = new Set<number>()
+      const decidedTouches = new Set<number>()
+      const onTouchDown = (event: PointerEvent) => {
+        if (event.pointerType !== 'touch') return
+        touchStarts.set(event.pointerId, { x: event.clientX, y: event.clientY })
+      }
+      const onTouchMove = (event: PointerEvent) => {
+        if (event.pointerType !== 'touch') return
+        const start = touchStarts.get(event.pointerId)
+        if (!start || touchStarts.size > 1) return
+        if (verticalTouches.has(event.pointerId)) {
+          event.stopImmediatePropagation()
+          return
+        }
+        if (decidedTouches.has(event.pointerId)) return
+        const dx = event.clientX - start.x
+        const dy = event.clientY - start.y
+        if (Math.hypot(dx, dy) < 6) return
+        decidedTouches.add(event.pointerId)
+        if (Math.abs(dy) > Math.abs(dx)) {
+          verticalTouches.add(event.pointerId)
+          event.stopImmediatePropagation()
+        }
+      }
+      const onTouchEnd = (event: PointerEvent) => {
+        touchStarts.delete(event.pointerId)
+        verticalTouches.delete(event.pointerId)
+        decidedTouches.delete(event.pointerId)
+      }
+      mount.addEventListener('pointerdown', onTouchDown, { capture: true })
+      window.addEventListener('pointermove', onTouchMove, { capture: true })
+      window.addEventListener('pointerup', onTouchEnd, { capture: true })
+      window.addEventListener('pointercancel', onTouchEnd, { capture: true })
+      removeTouchGate = () => {
+        window.removeEventListener('pointermove', onTouchMove, { capture: true })
+        window.removeEventListener('pointerup', onTouchEnd, { capture: true })
+        window.removeEventListener('pointercancel', onTouchEnd, { capture: true })
+      }
 
       // Chasing small countries on a spinning globe is maddening —
       // rest the cursor on the globe and it holds still.
@@ -872,6 +984,39 @@ export function GlobeScene({
         globe?.width(mount.clientWidth).height(mount.clientHeight)
       })
       observer.observe(mount)
+
+      // A LOST CONTEXT: the browser can take the GPU away mid-session —
+      // a graphics-driver reset, memory pressure from other tabs, or the
+      // GPU process crashing. The canvas then goes blank with no error
+      // anywhere, which is how the globe "disappeared mid-use". Ask for
+      // it back (preventDefault is what makes a restore possible); if it
+      // does not return within the grace period, hand the page to the
+      // country list rather than leave an empty stage.
+      const canvas: HTMLCanvasElement = globe.renderer().domElement
+      let restoreTimer: ReturnType<typeof setTimeout> | undefined
+      canvas.addEventListener('webglcontextlost', (event: Event) => {
+        event.preventDefault()
+        reportClientError('globe-context', 'WebGL context lost')
+        restoreTimer = setTimeout(() => {
+          if (disposed) return
+          reportClientError('globe-context', 'WebGL context not restored')
+          observer?.disconnect()
+          globeRef.current = null
+          try {
+            globe?._destructor()
+          } catch {
+            // Already torn down with its context.
+          }
+          globe = undefined
+          setFallback({
+            reason: 'context-lost',
+            countries: countryList(features),
+          })
+        }, CONTEXT_RESTORE_GRACE_MS)
+      })
+      canvas.addEventListener('webglcontextrestored', () => {
+        clearTimeout(restoreTimer)
+      })
     }
 
     // Anything the staged handlers above didn't catch — most likely
@@ -895,6 +1040,7 @@ export function GlobeScene({
     return () => {
       disposed = true
       observer?.disconnect()
+      removeTouchGate?.()
       markers.clear()
       globeRef.current = null
       globe?._destructor()
@@ -902,13 +1048,38 @@ export function GlobeScene({
     // eslint-disable-next-line react-hooks/exhaustive-deps -- init once; year updates flow through refs
   }, [])
 
+  // Keyed apart: without distinct keys React REUSES the globe's div for
+  // the fallback and leaves globe.gl's own canvas inside it — after a
+  // lost context, a dead 680px canvas pushed the country list off the
+  // page. A different key makes it a fresh element.
   if (fallback) {
     return (
-      <div className={`${styles.scene} ${styles.fallback}`}>
+      <div key="fallback" className={`${styles.scene} ${styles.fallback}`}>
         <p className={styles.fallbackNote}>
           {fallback.reason === 'dataset-fetch-failed'
             ? 'The map data would not load here — but the search above still finds any city, country, or artist.'
-            : "This device can't render the 3D globe — no matter: pick a country below or use the search above."}
+            : fallback.reason === 'context-lost'
+              ? 'The 3D globe stopped — your browser took its graphics back. Pick a country below or use the search above.'
+              : forceFallback
+                ? 'Globe off — pick a country below or use the search above.'
+                : "This browser can't draw the 3D globe right now — pick a country below or use the search above."}
+          {/* Not forced: the globe may well work again. A browser that
+              lost its graphics often keeps 3D switched off until it is
+              restarted, so say so rather than promise a reload fixes it. */}
+          {!forceFallback && fallback.reason !== 'dataset-fetch-failed' && (
+            <>
+              {' '}
+              If the globe usually works here, restarting the browser
+              tends to bring it back.{' '}
+              <button
+                type="button"
+                className={styles.fallbackRetry}
+                onClick={() => window.location.reload()}
+              >
+                Try the globe again
+              </button>
+            </>
+          )}
         </p>
         {fallback.countries.length > 0 && (
           <ul className={styles.fallbackList}>
@@ -929,5 +1100,5 @@ export function GlobeScene({
     )
   }
 
-  return <div ref={containerRef} className={styles.scene} />
+  return <div key="globe" ref={containerRef} className={styles.scene} />
 }

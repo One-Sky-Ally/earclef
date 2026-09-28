@@ -16,6 +16,17 @@
   cursor: grabbing;
 }
 
+/* TOUCH: a vertical swipe scrolls the PAGE, a sideways swipe spins the
+   globe. The orbit controls stamp `touch-action: none` inline on their
+   canvas, which made the globe swallow every swipe — on a phone the
+   page below it was nearly unreachable. pan-y hands vertical pans back
+   to the browser; pinch is not a browser gesture here, so a two-finger
+   pinch still reaches the controls and zooms the globe. The cost,
+   taken knowingly: on touch the globe no longer tilts north–south. */
+.scene canvas {
+  touch-action: pan-y !important;
+}
+
 .error {
   display: grid;
   place-items: center;
@@ -249,10 +260,27 @@
   align-items: center;
   justify-content: flex-start;
   gap: 1.2rem;
-  /* Bottom clearance keeps the last rows clickable above the
-     floating era controls. */
-  padding: 2.5rem 1.25rem 12rem;
+  /* The list scrolls in the space ABOVE the floating era controls
+     rather than under them — rows used to slide beneath the slider's
+     translucent bar and read through it. */
+  bottom: var(--controls-clearance, 11rem);
+  padding: 2.5rem 1.25rem 1.5rem;
   overflow-y: auto;
+  mask-image: linear-gradient(to bottom, black calc(100% - 2rem), transparent);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black calc(100% - 2rem),
+    transparent
+  );
+}
+
+.fallbackRetry {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .fallbackNote {
@@ -285,4 +313,31 @@
 .fallbackCountry:hover {
   color: var(--accent);
   border-color: var(--accent-deep);
+}
+
+/* ── Phones ─────────────────────────────────────────────────────────
+   The stage becomes one column (ExploreClient.module.css): the globe
+   is a block in the flow, sized to the screen instead of filling the
+   stage, so the search, the year bar and the panel each get their own
+   room below it instead of floating on top. */
+@media (max-width: 640px) {
+  .scene {
+    position: relative;
+    inset: auto;
+    grid-column: 1 / -1;
+    order: 3;
+    /* Full-bleed: the stage's side gutter is for text and controls,
+       not for the world. */
+    margin-inline: -1rem;
+    height: min(88vw, 360px);
+  }
+
+  .fallback {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    padding: 0.5rem 1rem 1rem;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
 }

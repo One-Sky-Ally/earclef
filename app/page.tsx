@@ -49,8 +49,14 @@ export default function HomePage() {
           )}
         />
         <p className={styles.hint}>
-          Drag to spin · scroll to zoom · slide through time · click a country
-          or search a place for its artists &amp; releases
+          <span className={styles.hintPointer}>
+            Drag to spin · scroll to zoom · slide through time · click a
+            country or search a place for its artists &amp; releases
+          </span>
+          <span className={styles.hintTouch}>
+            Swipe sideways to spin · pinch to zoom · slide through time · tap
+            a country or search a place for its artists &amp; releases
+          </span>
         </p>
       </main>
       <footer className={styles.footer}>
