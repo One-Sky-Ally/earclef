@@ -61,6 +61,7 @@ import {
 } from './lib/discogsDump.mjs'
 import { getJson } from './lib/fetchJson.mjs'
 import { assertNothingRemoved, mergeIntoCommitted } from './lib/gapFillMerge.mjs'
+import { heldPoolIds } from './lib/originHeld.mjs'
 import {
   collectWikidataRows,
   ownerRuledDecision,
@@ -1042,18 +1043,31 @@ async function main() {
   const built = targets.filter((code) => !skipped.includes(code))
   const out = { generatedAt: new Date().toISOString().slice(0, 10), countries: {} }
   const report = {}
+  // Entries a ruling moved OUT of the pool into a held file. The top-up
+  // merge appends any artist the committed list lacks, so without this
+  // every held artist would come straight back on the next sweep.
+  const held = heldPoolIds()
   for (const code of built) {
     const state = work.countries[code]
     if (!state?.result) continue
-    const fresh = state.result.map((artist) => {
-      const attested = attestedAliases.get(String(artist.discogsArtistId))
-      if (!attested) return artist
-      const merged = [
-        ...attested,
-        ...(artist.aliases ?? []).filter((alias) => !attested.includes(alias)),
-      ]
-      return { ...artist, aliases: merged }
-    })
+    const heldHere = held.get(code) ?? new Set()
+    const heldSkipped = state.result.filter(
+      (artist) => artist.discogsArtistId != null && heldHere.has(String(artist.discogsArtistId)),
+    ).length
+    if (heldSkipped > 0) console.log(`  ${code}: ${heldSkipped} held artist(s) not re-added (data/origin-held.json, data/mb-duplicates-held.json)`)
+    const fresh = state.result
+      .filter(
+        (artist) => !(artist.discogsArtistId != null && heldHere.has(String(artist.discogsArtistId))),
+      )
+      .map((artist) => {
+        const attested = attestedAliases.get(String(artist.discogsArtistId))
+        if (!attested) return artist
+        const merged = [
+          ...attested,
+          ...(artist.aliases ?? []).filter((alias) => !attested.includes(alias)),
+        ]
+        return { ...artist, aliases: merged }
+      })
     const current = existing.countries[code]
     const mergeStats = current && !REPLACE ? mergeIntoCommitted(current, fresh) : null
     if (mergeStats) assertNothingRemoved(code, current, mergeStats.list)

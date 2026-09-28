@@ -1,0 +1,1758 @@
+{
+ "generatedAt": "2026-09-28",
+ "method": "Every queue-eligible gap-fill video (identity evidence, not unverified, >= 90 s) scanned by TITLE only. (1) wordList: a broad news/TV/talk/tribute vocabulary, case-insensitive whole words - a triage net, most hits are music. (2) siteMarkers: the site's own NON_SONG_MARKERS as of main on Sep 27, applied to the whole title. Neither is a verdict; YouTube topic and description were not available here.",
+ "queueEligible": 6990,
+ "findings": {
+  "wordListFlags": 72,
+  "siteMarkerHits": 54,
+  "siteMarkerHitsThatAreMusicVideoLabels": 33,
+  "note": "\"clip\" is a music-video label in French and Arabic usage (\"Clip Officiel\", \"Video Clip\"); 33 of the marker hits are \"clip\" — official music videos on inspection. The genuine non-songs are ~15: teasers, previews, snippets, an EPK, a karaoke instrumental, an album announcement."
+ },
+ "wordList": [
+  {
+   "key": "dg:5171225",
+   "countries": [
+    "PY"
+   ],
+   "artist": "Equipo 87",
+   "title": "EQUIPO 87 - HOY VIVIRÉ - Discos Cerro Cora & Canal 13 Teledifusora Paraguaya",
+   "dur": 2041,
+   "words": [
+    "canal"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:2561705",
+   "countries": [
+    "PY"
+   ],
+   "artist": "Funeral",
+   "title": "Funeral - Circle of Fire",
+   "dur": 223,
+   "words": [
+    "funeral"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:6587404",
+   "countries": [
+    "SL"
+   ],
+   "artist": "Emma Garnett",
+   "title": "Danny Groenland // Time the Healer feat. Fehdah & Zaska (Radio Edit)",
+   "dur": 264,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "featured"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:7975446",
+   "countries": [
+    "FJ"
+   ],
+   "artist": "Black Rose",
+   "title": "Black Rose - I don't wanna talk (1997 Fiji modern soul pop track with electric guitar)",
+   "dur": 296,
+   "words": [
+    "talk"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:3166701",
+   "countries": [
+    "LK"
+   ],
+   "artist": "Elaine Winter",
+   "title": "Hardcharger Vs Aurora And Toxic Feat Elaine Winter - One Kiss (Original Radio Edit)",
+   "dur": 239,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "mb-title"
+   ]
+  },
+  {
+   "key": "dg:2286992",
+   "countries": [
+    "LK"
+   ],
+   "artist": "Plecto Aliquem Capite",
+   "title": "Plecto Aliquem Capite & Funeral In Heaven - Crestfallen Immolating Shakthi",
+   "dur": 514,
+   "words": [
+    "funeral"
+   ],
+   "anchors": [
+    "track"
+   ],
+   "legs": [
+    "title",
+    "duration"
+   ]
+  },
+  {
+   "key": "dg:2374745",
+   "countries": [
+    "ML"
+   ],
+   "artist": "Iba One",
+   "title": "Papito ft Iba One - Yereyira (Radio Rip)",
+   "dur": 231,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "track"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:4390310",
+   "countries": [
+    "GN"
+   ],
+   "artist": "Kaloum Star",
+   "title": "Kaloum Star - Gbassikolo (Radio Martiko)",
+   "dur": 216,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:627720",
+   "countries": [
+    "GN"
+   ],
+   "artist": "Orchestre De La Paillotte",
+   "title": "Orchestre De La Paillote - Kankan-Yarabi (Radio Martiko)",
+   "dur": 183,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:780108",
+   "countries": [
+    "GN"
+   ],
+   "artist": "Syli Authentic",
+   "title": "Syli Authentic - Fabara (Radio Martiko)",
+   "dur": 324,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole",
+    "track",
+    "track"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:1377594",
+   "countries": [
+    "GN"
+   ],
+   "artist": "Le Simandou De Beyla",
+   "title": "Le Simandou De Beyla - Festival (Radio Martiko)",
+   "dur": 302,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole",
+    "track",
+    "track",
+    "track"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:3627959",
+   "countries": [
+    "GN"
+   ],
+   "artist": "Tele Jazz De Telemele",
+   "title": "Télé-Jazz de Télémelé - Beere Modya (audio)",
+   "dur": 359,
+   "words": [
+    "télé"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:3567043",
+   "countries": [
+    "BJ"
+   ],
+   "artist": "Etron Kpeto Deka Alafia",
+   "title": "tron kpedo deka alafia - African religion music - hommage a togninviadji - from Ghana to Bénin",
+   "dur": 2465,
+   "words": [
+    "hommage"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:5295080",
+   "countries": [
+    "CM"
+   ],
+   "artist": "Ulanda",
+   "title": "Ulanda - A Tribute To Mama (Instr) - Peach Tree 354",
+   "dur": 295,
+   "words": [
+    "tribute"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:2174689",
+   "countries": [
+    "SN"
+   ],
+   "artist": "Cabo Verde Show",
+   "title": "Cabo Verde Show – Toute Femme Cone Ça – Recordo Penssa",
+   "dur": 256,
+   "words": [
+    "show"
+   ],
+   "anchors": [
+    "whole",
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:4741494",
+   "countries": [
+    "SN"
+   ],
+   "artist": "N'Diaxas Band",
+   "title": "Niominka Bi-  N'Deysaan( tribute to Souleymane Sarr)",
+   "dur": 279,
+   "words": [
+    "tribute"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title",
+    "duration"
+   ]
+  },
+  {
+   "key": "dg:1794790",
+   "countries": [
+    "SN"
+   ],
+   "artist": "René Cabral",
+   "title": "Cabo Verde Show - Sodade (audio)",
+   "dur": 399,
+   "words": [
+    "show"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title",
+    "duration"
+   ]
+  },
+  {
+   "key": "dg:4539030",
+   "countries": [
+    "GY"
+   ],
+   "artist": "Bhawanie Singh",
+   "title": "BHAWANIE SINGH- Drinking In The Bar-  CANAL NO 2 POLDER REUNION 2018",
+   "dur": 193,
+   "words": [
+    "canal"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "name"
+   ]
+  },
+  {
+   "key": "dg:5860420",
+   "countries": [
+    "HN"
+   ],
+   "artist": "Ixkal",
+   "title": "Ixkal - 6to dia (Album teaser)",
+   "dur": 216,
+   "words": [
+    "teaser"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:748836",
+   "countries": [
+    "BS"
+   ],
+   "artist": "Eddie Minnis",
+   "title": "Eddie Minnis - Show & Tell",
+   "dur": 189,
+   "words": [
+    "show"
+   ],
+   "anchors": [
+    "whole",
+    "shared"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:1579691",
+   "countries": [
+    "BS"
+   ],
+   "artist": "Brad Lundy",
+   "title": "Brad Lundy - (I'm At) THE BREAKING POINT  (1967)",
+   "dur": 143,
+   "words": [
+    "breaking"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:2486962",
+   "countries": [
+    "SR"
+   ],
+   "artist": "Combo Five",
+   "title": "Combo Five - Liars talk - Full LP",
+   "dur": 2476,
+   "words": [
+    "talk"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:3032948",
+   "countries": [
+    "HT"
+   ],
+   "artist": "Joanne Borgella",
+   "title": "Joanne Borgella - Sake Bitch (Radio Edit)",
+   "dur": 182,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "wd:Q12897681",
+   "countries": [
+    null
+   ],
+   "artist": null,
+   "title": "The Good News is The Bad News Was Wrong",
+   "dur": 342,
+   "words": [
+    "news"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "topic"
+   ]
+  },
+  {
+   "key": "dg:3430120",
+   "countries": [
+    "PS"
+   ],
+   "artist": "جورج وسوف",
+   "title": "George Wassouf - Helef El Amar (Ohm Hourani's Abu Wadee's Tribute Remix) [INTERP010]",
+   "dur": 706,
+   "words": [
+    "tribute"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:3962516",
+   "countries": [
+    "JO",
+    "MD"
+   ],
+   "artist": "Bigtopo",
+   "title": "Bigtopo, Ariel & Danilo - Back Up (Original Mix) [TEASER]",
+   "dur": 102,
+   "words": [
+    "teaser"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:4338896",
+   "countries": [
+    "LY"
+   ],
+   "artist": "سالم البارودي",
+   "title": "Salim El Baroudi - سالم البارودي  - Fatouma (Radio Martiko RMLP005)",
+   "dur": 199,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "track"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:3098183",
+   "countries": [
+    "IQ"
+   ],
+   "artist": "الثلاثي المرح",
+   "title": "Al Thoulathy Al Mareh - الثلاثي المرح - Asmar Ya Sukkar (Radio Martiko RMLP005)",
+   "dur": 184,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "name"
+   ]
+  },
+  {
+   "key": "dg:2716640",
+   "countries": [
+    "AM"
+   ],
+   "artist": "Arthur Satyan",
+   "title": "Voco a Poco (Arthur Satyan) - ARTology' Album Teaser",
+   "dur": 362,
+   "words": [
+    "teaser"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:4598471",
+   "countries": [
+    "AM"
+   ],
+   "artist": "Harutyun Topikyan",
+   "title": "Tigran Hamasyan \"Luys i Luso\"  teaser",
+   "dur": 94,
+   "words": [
+    "teaser"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title",
+    "mb-title"
+   ]
+  },
+  {
+   "key": "wd:Q4043687",
+   "countries": [
+    null
+   ],
+   "artist": null,
+   "title": "MDP – MM...Yeah (Radio Edit) [PH-06]",
+   "dur": 310,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:7989207",
+   "countries": [
+    "UZ"
+   ],
+   "artist": "Afina",
+   "title": "Alex Greenhouse, Afina - Come To You - Karaoke (26) [Original Instrumental]",
+   "dur": 186,
+   "words": [
+    "karaoke"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title",
+    "duration"
+   ]
+  },
+  {
+   "key": "dg:10631851",
+   "countries": [
+    "MD"
+   ],
+   "artist": "Alexandru Manciu",
+   "title": "Karizma ONE with Alexandru Manciu - As Vrea ( Radio Edit )",
+   "dur": 222,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "featured"
+   ],
+   "legs": [
+    "title",
+    "duration"
+   ]
+  },
+  {
+   "key": "dg:10625521",
+   "countries": [
+    "MD"
+   ],
+   "artist": "Karizma One",
+   "title": "Karizma ONE - O Nota In Plus ( Radio Edit )",
+   "dur": 219,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:5913002",
+   "countries": [
+    "MD"
+   ],
+   "artist": "Ozgun",
+   "title": "Olly James & Ozgun & Max Aeris  - Hooked (Radio Edit) [RRR003]",
+   "dur": 179,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title",
+    "mb-title"
+   ]
+  },
+  {
+   "key": "dg:2291673",
+   "countries": [
+    "XK"
+   ],
+   "artist": "Monoline",
+   "title": "Monoline - Speech Cobras (Flug Remix) [SEANCE1204 | NovaFuture Blog Track Premiere]",
+   "dur": 536,
+   "words": [
+    "speech"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:4625928",
+   "countries": [
+    "XK"
+   ],
+   "artist": "Esoteric Bloom",
+   "title": "Secret Space Program",
+   "dur": 473,
+   "words": [
+    "program"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "topic"
+   ]
+  },
+  {
+   "key": "dg:16915078",
+   "countries": [
+    "VN"
+   ],
+   "artist": "Đại Nhân",
+   "title": "Today I Miss You - Đại Nhân (Special TV Cut)",
+   "dur": 327,
+   "words": [
+    "tv"
+   ],
+   "anchors": [
+    "track"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:7806703",
+   "countries": [
+    "VN"
+   ],
+   "artist": "Xuân Hinh",
+   "title": "Hề Chèo Xuân Hinh- Hề Chèo Việt Nam- Funny TV- TuvanMedia",
+   "dur": 7016,
+   "words": [
+    "tv"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:11058",
+   "countries": [
+    "VN"
+   ],
+   "artist": "Maya",
+   "title": "The Tamperer Feat. Maya - Feel It (Radio Mix)",
+   "dur": 190,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "track"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:4690889",
+   "countries": [
+    "VN"
+   ],
+   "artist": "Thu Hằng",
+   "title": "Hề Chèo Xuân Hinh- Hề Chèo Việt Nam- Funny TV- TuvanMedia",
+   "dur": 7016,
+   "words": [
+    "tv"
+   ],
+   "anchors": [
+    "featured"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:4044133",
+   "countries": [
+    "VN"
+   ],
+   "artist": "任劍輝",
+   "title": "紅線女, 任劍輝 ‎– 一代天嬌 / 秋  1959 Mee Shing Radio M 3132",
+   "dur": 1587,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "track"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:2212916",
+   "countries": [
+    "VN"
+   ],
+   "artist": "The Central Ethnical Music Orchestra",
+   "title": "the central ethnical music orchestra # the clear canal",
+   "dur": 359,
+   "words": [
+    "canal"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:2163726",
+   "countries": [
+    "ZM"
+   ],
+   "artist": "The Mulemena Boys",
+   "title": "The Mulemena Boys ‎– A Tribute To The Late Emmanuel Mulemena [1984 Full Album]",
+   "dur": 2695,
+   "words": [
+    "tribute"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:6023527",
+   "countries": [
+    "ZM"
+   ],
+   "artist": "Mansa Radio Band",
+   "title": "Mansa Radio Band & Spokes Chola - Njeni Kasala / Tata Kabumba - Full Zambian Single",
+   "dur": 488,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:3937335",
+   "countries": [
+    "ZM"
+   ],
+   "artist": "Lusaka Radio Band",
+   "title": "LUSAKA RADIO BAND - Ubulofwa Bwakale / Tubahangenu",
+   "dur": 328,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:6023528",
+   "countries": [
+    "ZM"
+   ],
+   "artist": "Spokes Chola",
+   "title": "Mansa Radio Band - Ubulanda Kuli Ba Chimfwembe/Mwe Bekala Chalo (Full Single)",
+   "dur": 464,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:8389569",
+   "countries": [
+    "ZM"
+   ],
+   "artist": "Majoza Band",
+   "title": "Majoza Band - Botswana Show - Full Zambian Album",
+   "dur": 2308,
+   "words": [
+    "show"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:8539257",
+   "countries": [
+    "ZM"
+   ],
+   "artist": "The News",
+   "title": "The News – Glad To Be Alive / Balume Bandi  [Zamrock / Disco]",
+   "dur": 406,
+   "words": [
+    "news"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:7271477",
+   "countries": [
+    "ZM"
+   ],
+   "artist": "Alick Nkhata's Quartet",
+   "title": "\"Imbote\" - Lusaka Radio Band with Alick Nkhata's Quartet (1950)",
+   "dur": 180,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:12323269",
+   "countries": [
+    "CD"
+   ],
+   "artist": "Maman Micheline Shabani",
+   "title": "Micheline Shabani - Jésus La Pierre Angulaire (Album) | Worship Fever Channel",
+   "dur": 3657,
+   "words": [
+    "channel"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:1225784",
+   "countries": [
+    "CD"
+   ],
+   "artist": "Saak Saakul",
+   "title": "Orchestre Show Machine   Kinshasa",
+   "dur": 284,
+   "words": [
+    "show"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:8718565",
+   "countries": [
+    "CD"
+   ],
+   "artist": "Orchestre Show Machine",
+   "title": "Orchestre Show Machine   Kinshasa",
+   "dur": 284,
+   "words": [
+    "show"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:12359086",
+   "countries": [
+    "CD"
+   ],
+   "artist": "Athom's Mbuma",
+   "title": "Adorons L'Eternel - Live Celebration a la Fikin (2005) (Entier/ Full) (+BONUS MAKING OF)",
+   "dur": 9672,
+   "words": [
+    "making of"
+   ],
+   "anchors": [
+    "featured"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:5568611",
+   "countries": [
+    "CD"
+   ],
+   "artist": "Fabregas Le Métis Noir",
+   "title": "Fabregas Le Métis Noir - Anapipo (DVD) - Teaser",
+   "dur": 104,
+   "words": [
+    "teaser"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:1831784",
+   "countries": [
+    "CD"
+   ],
+   "artist": "Seskain Molenga",
+   "title": "Zalaka Na Ngai // SEKE SESKAIN MOLENGA & ORCHESTRE SHOW MACHINE",
+   "dur": 421,
+   "words": [
+    "show"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:4405579",
+   "countries": [
+    "CD"
+   ],
+   "artist": "Itoua Abel",
+   "title": "orchestre télé music  - faux mari",
+   "dur": 506,
+   "words": [
+    "télé"
+   ],
+   "anchors": [
+    "featured"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:3334143",
+   "countries": [
+    "CD"
+   ],
+   "artist": "L'Orchestre Télé-Music De Brazzaville",
+   "title": "orchestre télé music  - faux mari",
+   "dur": 506,
+   "words": [
+    "télé"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "wd:Q129084813",
+   "countries": [
+    null
+   ],
+   "artist": null,
+   "title": "Adorons L'Eternel - Live Celebration a la Fikin (2005) (Entier/ Full) (+BONUS MAKING OF)",
+   "dur": 9672,
+   "words": [
+    "making of"
+   ],
+   "anchors": [
+    "featured"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:11881481",
+   "countries": [
+    "CD"
+   ],
+   "artist": "Nadège Mbuma",
+   "title": "Adorons L'Eternel - Live Celebration a la Fikin (2005) (Entier/ Full) (+BONUS MAKING OF)",
+   "dur": 9672,
+   "words": [
+    "making of"
+   ],
+   "anchors": [
+    "featured"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:2469434",
+   "countries": [
+    "TT"
+   ],
+   "artist": "Billy Reece",
+   "title": "Billy Reece   Bad Lad Tribute To Trinidad",
+   "dur": 224,
+   "words": [
+    "tribute"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:1413930",
+   "countries": [
+    "TT"
+   ],
+   "artist": "X-A-Dus",
+   "title": "X-A-Dus -Someone To Talk To (Barbados 1979)",
+   "dur": 225,
+   "words": [
+    "talk"
+   ],
+   "anchors": [
+    "track"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:1156729",
+   "countries": [
+    "TT"
+   ],
+   "artist": "Carlton Joseph",
+   "title": "Tribute To San fernando",
+   "dur": 422,
+   "words": [
+    "tribute"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:3888106",
+   "countries": [
+    "TT"
+   ],
+   "artist": "Skiffle Bunch Steelband",
+   "title": "Skiffle Bunch & 3 Canal - Blue",
+   "dur": 302,
+   "words": [
+    "canal"
+   ],
+   "anchors": [
+    "shared"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:4136419",
+   "countries": [
+    "TT"
+   ],
+   "artist": "The Hatters Steel Orchestra",
+   "title": "\"Tribute to Spree\" by Hatters Steel Orchestra (Panorama Champions 1975)",
+   "dur": 555,
+   "words": [
+    "tribute"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration"
+   ]
+  },
+  {
+   "key": "dg:11291531",
+   "countries": [
+    "CD"
+   ],
+   "artist": "Robert Ngoy",
+   "title": "Adorons L'Eternel - Live Celebration a la Fikin (2005) (Entier/ Full) (+BONUS MAKING OF)",
+   "dur": 9672,
+   "words": [
+    "making of"
+   ],
+   "anchors": [
+    "featured"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:11479829",
+   "countries": [
+    "UZ"
+   ],
+   "artist": "Deeplosax",
+   "title": "Summer Feelings (Radio Edit)",
+   "dur": 227,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "topic"
+   ]
+  },
+  {
+   "key": "dg:14999197",
+   "countries": [
+    "UZ"
+   ],
+   "artist": "Эстрадно-Симфонический Оркестр Узбекского Телевидения И Радио",
+   "title": "B - U. Turayev, Uzbek Radio Variety Orchestra - Carnaival Walsy",
+   "dur": 335,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "track"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:2058639",
+   "countries": [
+    "LK"
+   ],
+   "artist": "Funeral In Heaven",
+   "title": "Funeral In Heaven – Janaani Janmabhumisca Svargadapi Gariyasi (2009) (Black Metal Sri Lanka) [Demo]",
+   "dur": 560,
+   "words": [
+    "funeral"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:2206840",
+   "countries": [
+    "UZ"
+   ],
+   "artist": "Юнус Тураев",
+   "title": "B - U. Turayev, Uzbek Radio Variety Orchestra - Carnaival Walsy",
+   "dur": 335,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "track"
+   ],
+   "legs": [
+    "title"
+   ]
+  },
+  {
+   "key": "dg:2979935",
+   "countries": [
+    "SR"
+   ],
+   "artist": "Henk Spalburg",
+   "title": "Henk Spalburg – She Talk Too Much / Grontapoe Abie Makka",
+   "dur": 403,
+   "words": [
+    "talk"
+   ],
+   "anchors": [
+    "whole"
+   ],
+   "legs": [
+    "title",
+    "name"
+   ]
+  },
+  {
+   "key": "dg:80084",
+   "countries": [
+    "NI"
+   ],
+   "artist": "Saturday Night Band",
+   "title": "Saturday Night Band - Come On Dance, Dance (Radio Edit)",
+   "dur": 266,
+   "words": [
+    "radio"
+   ],
+   "anchors": [
+    "whole",
+    "whole",
+    "track",
+    "track"
+   ],
+   "legs": [
+    "title",
+    "duration",
+    "mb-title",
+    "name"
+   ]
+  }
+ ],
+ "siteMarkers": [
+  {
+   "key": "dg:5966022",
+   "title": "AGONIC - WAR SACRIFICE (CLIP)",
+   "durationSeconds": 291,
+   "marker": "CLIP",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:2985429",
+   "title": "Chainsaw - The Announcement (Full Album)",
+   "durationSeconds": 1646,
+   "marker": "Announcement",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:7297103",
+   "title": "Announcement of the new 2020 musical album \"Sayaa\" by the Juffureh Band of Sukuta, The Gambia",
+   "durationSeconds": 511,
+   "marker": "Announcement",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:4485291",
+   "title": "Jacob Salem & Somkieta - CLIP - Nanluli (Official)",
+   "durationSeconds": 204,
+   "marker": "CLIP",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:10335475",
+   "title": "Viktor Marek & Patrick Kabré - One shot  (Clip Officiel)",
+   "durationSeconds": 205,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:3016482",
+   "title": "Hanan - Abdel Halim Hafez Medley - Video Clip | حنان - ميدلى عبد الحليم حافظ - فيديو كليب",
+   "durationSeconds": 393,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:1696176",
+   "title": "Rachid Taha - Je suis Africain (Clip Officiel)",
+   "durationSeconds": 232,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:6318790",
+   "title": "Maï Kouyaté - Korossi (Clip officiel)",
+   "durationSeconds": 308,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:340758",
+   "title": "Madou - 'Witte Nachten' video clip (1981)",
+   "durationSeconds": 179,
+   "marker": "clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:14007568",
+   "title": "Consty Adeva Nawodi Bekwadi ft Mama Nguea ( clip officiel )",
+   "durationSeconds": 332,
+   "marker": "clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:1311805",
+   "title": "Gigolo / Belka TOBIS - Clip Officiel",
+   "durationSeconds": 298,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:12542438",
+   "title": "Babacar Seck - Music Clap [Clip Officiel]",
+   "durationSeconds": 246,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:6564743",
+   "title": "LASS - Bumayé (clip officiel)",
+   "durationSeconds": 204,
+   "marker": "clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:5860420",
+   "title": "Ixkal - 6to dia (Album teaser)",
+   "durationSeconds": 216,
+   "marker": "teaser",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:3396391",
+   "title": "Original Makinety - Kabam swity (clip  officiel )",
+   "durationSeconds": 209,
+   "marker": "clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:3773548",
+   "title": "Audy - Lagu Sendu (Video Clip)",
+   "durationSeconds": 200,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:3923132",
+   "title": "Lewis Meliano - La Vie Compliquee ( CLIP ORIGINAL ) 1976",
+   "durationSeconds": 225,
+   "marker": "CLIP",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:3962516",
+   "title": "Bigtopo, Ariel & Danilo - Back Up (Original Mix) [TEASER]",
+   "durationSeconds": 102,
+   "marker": "TEASER",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:4612568",
+   "title": "Allen Belg - Breath (Original Mix) [TF008] PREVIEW",
+   "durationSeconds": 190,
+   "marker": "PREVIEW",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:2987895",
+   "title": "Nicola Maddaloni - Freedom (Preview)",
+   "durationSeconds": 301,
+   "marker": "Preview",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "wd:Q106784902",
+   "title": "Kadim Al Saher ... Akrahouha - Video Clip | كاظم الساهر - اكرهها - فيديو كليب",
+   "durationSeconds": 342,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:5528998",
+   "title": "Shatha Hassoun ... Mazyoon - Video Clip | شذى حسون ... مزيون - فيديو كليب",
+   "durationSeconds": 350,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:245421",
+   "title": "Shafiq Husayn - Shafiq En' A-Free-Ka (EPK I)",
+   "durationSeconds": 279,
+   "marker": "EPK",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:2716640",
+   "title": "Voco a Poco (Arthur Satyan) - ARTology' Album Teaser",
+   "durationSeconds": 362,
+   "marker": "Teaser",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:4598471",
+   "title": "Tigran Hamasyan \"Luys i Luso\"  teaser",
+   "durationSeconds": 94,
+   "marker": "teaser",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:7989207",
+   "title": "Alex Greenhouse, Afina - Come To You - Karaoke (26) [Original Instrumental]",
+   "durationSeconds": 186,
+   "marker": "Karaoke",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:5244265",
+   "title": "TYNG & KMRN feat Shadisha - Disco Queen (Original Mix) (Snippet)",
+   "durationSeconds": 128,
+   "marker": "Snippet",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:2692280",
+   "title": "Frank Dueffel & TEKNO -  Two Faces (preview)",
+   "durationSeconds": 301,
+   "marker": "preview",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:1398964",
+   "title": "(PREVIEW) FU-5 - Through my window / SUBSIST.72D",
+   "durationSeconds": 179,
+   "marker": "PREVIEW",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:5259495",
+   "title": "Azurity - Twisted World (Official HQ Preview)",
+   "durationSeconds": 228,
+   "marker": "Preview",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:5259353",
+   "title": "PsyHuman & Ground Invaders - Magic (Official Preview)",
+   "durationSeconds": 194,
+   "marker": "Preview",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:1689541",
+   "title": "LeYan & Tomapam Ft. Cyph4 - A.M. Horrorscope (Official Clip)",
+   "durationSeconds": 225,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:7778159",
+   "title": "Hector Sithole & On Paper - High Life (Sample / Snippet)",
+   "durationSeconds": 210,
+   "marker": "Snippet",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:11185859",
+   "title": "Soeur Lydie Nseya - Yawe sala (clip officiel)",
+   "durationSeconds": 220,
+   "marker": "clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:12359086",
+   "title": "Adorons L'Eternel - Live Celebration a la Fikin (2005) (Entier/ Full) (+BONUS MAKING OF)",
+   "durationSeconds": 9672,
+   "marker": "MAKING OF",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:5568611",
+   "title": "Fabregas Le Métis Noir - Anapipo (DVD) - Teaser",
+   "durationSeconds": 104,
+   "marker": "Teaser",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:12340771",
+   "title": "Toko tombola mapeka Jack Malembe clip officiel",
+   "durationSeconds": 377,
+   "marker": "clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:6458950",
+   "title": "Simolo Katondi / Danos kanta nyboma  / Mj 30  - A qui la faute ? (Clip officiel)",
+   "durationSeconds": 306,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:16083561",
+   "title": "Martin Sélekeza - Digne de Gloire (Clip Officiel)",
+   "durationSeconds": 326,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:12276208",
+   "title": "L'Or Mbongo - MA ROBE DE GLOIRE (Clip Officiel)",
+   "durationSeconds": 354,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:14134312",
+   "title": "HENRY ET OCEAN KABUYA   \"JESUS EST EXCELLENT\" CLIP",
+   "durationSeconds": 426,
+   "marker": "CLIP",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:12407323",
+   "title": "Teddy Diso - Lelo lelo (clip officiel)",
+   "durationSeconds": 300,
+   "marker": "clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:12407347",
+   "title": "Trina Fukiau - Après ce combat (Couronnée) clip officiel",
+   "durationSeconds": 253,
+   "marker": "clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "wd:Q3290425",
+   "title": "MARESHAL  DJ     SEKA SEKA   CLIP OFFICIEL",
+   "durationSeconds": 327,
+   "marker": "CLIP",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:11986274",
+   "title": "Kanguma Senga Sache que Dieu t'aime ( Clip Officiel )",
+   "durationSeconds": 324,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "wd:Q129084813",
+   "title": "Adorons L'Eternel - Live Celebration a la Fikin (2005) (Entier/ Full) (+BONUS MAKING OF)",
+   "durationSeconds": 9672,
+   "marker": "MAKING OF",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:4847704",
+   "title": "Jpson Cardinal - Nzoto (Clip Officiel)",
+   "durationSeconds": 585,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:7607344",
+   "title": "Zaïko Langa Langa - AMBIANCE EYENGA (Clip officiel)",
+   "durationSeconds": 549,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:11881481",
+   "title": "Adorons L'Eternel - Live Celebration a la Fikin (2005) (Entier/ Full) (+BONUS MAKING OF)",
+   "durationSeconds": 9672,
+   "marker": "MAKING OF",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:11291531",
+   "title": "Adorons L'Eternel - Live Celebration a la Fikin (2005) (Entier/ Full) (+BONUS MAKING OF)",
+   "durationSeconds": 9672,
+   "marker": "MAKING OF",
+   "musicVideoLabel": false
+  },
+  {
+   "key": "dg:12371731",
+   "title": "Blaise Kinkela - Il a Tout Accompli (CLIP 2006)",
+   "durationSeconds": 389,
+   "marker": "CLIP",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:17854011",
+   "title": "Né Au Congo – Prince Cirhuza (Clip Officiel)",
+   "durationSeconds": 152,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:3961881",
+   "title": "Adiouza - Li Ma Doon - Clip Officiel",
+   "durationSeconds": 238,
+   "marker": "Clip",
+   "musicVideoLabel": true
+  },
+  {
+   "key": "dg:4576018",
+   "title": "Boy Marone : yow mi  (clip officielle)",
+   "durationSeconds": 286,
+   "marker": "clip",
+   "musicVideoLabel": true
+  }
+ ]
+}
