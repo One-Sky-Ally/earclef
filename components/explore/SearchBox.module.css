@@ -82,3 +82,15 @@
   text-decoration-color: var(--accent-deep);
   text-underline-offset: 2px;
 }
+
+/* Phones: first in the stage's single column (ExploreClient), sharing
+   its row with the surprise mark instead of floating on the globe. */
+@media (max-width: 640px) {
+  .search {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    order: 1;
+  }
+}

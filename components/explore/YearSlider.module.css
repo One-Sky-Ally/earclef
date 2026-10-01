@@ -102,4 +102,10 @@
   .track {
     margin-block: 0.25rem;
   }
+
+  /* The bar sticks under the nav on a phone; the 1900/2026 labels are
+     the one line it can spare — the track itself shows the span. */
+  .bounds {
+    display: none;
+  }
 }

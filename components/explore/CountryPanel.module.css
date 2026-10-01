@@ -448,15 +448,28 @@
   color: var(--text-muted);
 }
 
+/* Phones: the panel is a section of the page BELOW the era bar, not a
+   sheet over the bottom of the globe — the sheet hid the year slider
+   the moment a country opened. It takes its natural height and the
+   page scrolls, so its own inner scroller is switched off. */
 @media (max-width: 640px) {
   .panel {
+    position: relative;
     top: auto;
-    left: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.75rem;
+    right: auto;
+    bottom: auto;
     width: auto;
-    max-height: 62%;
+    max-height: none;
+    overflow: visible;
+    grid-column: 1 / -1;
+    order: 6;
+    padding: 1.1rem 1rem;
     animation-name: slide-up;
+  }
+
+  .body {
+    overflow-y: visible;
+    padding-right: 0;
   }
 
   @keyframes slide-up {

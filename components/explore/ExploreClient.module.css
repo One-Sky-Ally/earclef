@@ -57,11 +57,6 @@
   color: var(--text);
 }
 
-@media (max-width: 640px) {
-  .surprise {
-    top: 4.1rem;
-  }
-}
 
 .loading {
   place-self: center;
@@ -154,13 +149,77 @@
   max-width: 560px;
 }
 
+/* A panel is open (wider screens): the panel owns the right edge, so
+   the era bar centres itself in the space LEFT of it instead of
+   running underneath — the panel used to cover the slider's right end,
+   hiding the years after the one selected. Widths mirror .panel's
+   min(380px, 100% - 2rem) and its 1rem right inset. */
+@media (min-width: 641px) {
+  .controlsBehindPanel {
+    --panel-room: calc(min(380px, 100% - 2rem) + 2rem);
+    left: calc((100% - var(--panel-room)) / 2);
+    width: min(600px, calc(100% - var(--panel-room) - 1.5rem));
+  }
+}
+
+/* Where a phone's panel begins — scrolled to when a place opens. */
+.panelAnchor {
+  display: none;
+}
+
+/* ── Phones ─────────────────────────────────────────────────────────
+   One column, nothing floating on the globe: search + surprise, the
+   globe, the era bar, then the open panel BELOW it. The panel used to
+   be a sheet over the bottom of the globe that hid the era bar
+   entirely; now the bar sticks under the nav while the panel scrolls
+   past, so the year is always one thumb away. */
 @media (max-width: 640px) {
-  /* Compact bar: collapsed genres + tighter slider, results stay visible. */
+  .stage {
+    height: auto;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 0.6rem;
+    row-gap: 0.75rem;
+    padding-inline: 1rem;
+  }
+
+  .surprise {
+    position: static;
+    order: 2;
+    padding: 0.3rem;
+  }
+
+  /* The mark alone on a phone; the button keeps its aria-label. */
+  .surpriseLabel {
+    display: none;
+  }
+
+  .loading {
+    grid-column: 1 / -1;
+    order: 3;
+    height: min(88vw, 360px);
+    display: grid;
+    place-items: center;
+  }
+
+  /* Compact bar: collapsed genres + tighter slider. Sticky under the
+     nav (53px, the same figure main's min-height uses). */
   .controls {
-    padding: 0.6rem 0.9rem 0.5rem;
-    gap: 0.2rem;
-    bottom: 0.6rem;
-    width: calc(100% - 1.2rem);
+    position: sticky;
+    top: calc(53px + 0.4rem);
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: auto;
+    grid-column: 1 / -1;
+    order: 4;
+    z-index: 20;
+    padding: 0.45rem 0.9rem 0.35rem;
+    gap: 0.1rem;
+    /* Stuck over a scrolling panel: solid, so the page moving
+       beneath never reads through the year (the blur alone did not
+       hide it where backdrop-filter is unavailable). */
+    background: rgb(22, 18, 16);
   }
 
   .lensRowOpen {
@@ -172,9 +231,9 @@
     display: none;
   }
 
-  /* The results sheet owns the bottom of a phone screen — the control
-     bar yields entirely while a country panel is open. */
-  .controlsBehindPanel {
-    display: none;
+  .panelAnchor {
+    display: block;
+    grid-column: 1 / -1;
+    order: 5;
   }
 }
