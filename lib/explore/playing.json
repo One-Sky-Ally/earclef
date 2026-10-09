@@ -979,12 +979,17 @@
         {
           "artist": "Ella Langley",
           "work": "Choosin' Texas",
-          "note": "Hot 100 #1 for 22 non-consecutive weeks by September 2026 — tying the all-time record, shared with Mariah Carey's All I Want for Christmas Is You"
+          "note": "Hot 100 #1 for 24 non-consecutive weeks by October 2026 — the longest run in Hot 100 history, passing Mariah Carey's All I Want for Christmas Is You"
         },
         {
           "artist": "Taylor Swift",
           "work": "I Knew It, I Knew You",
           "note": "from Toy Story 5 — her 15th Hot 100 #1, the most of any artist in the 21st century, 2026"
+        },
+        {
+          "artist": "Taylor Swift",
+          "work": "Patient Zero",
+          "note": "debuted at #1 in October 2026 — her fourth Hot 100 number one of the year, the most of any artist in 2026"
         }
       ],
       "sources": [
@@ -1047,7 +1052,17 @@
         {
           "artist": "Ella Langley",
           "work": "Choosin' Texas",
-          "note": "UK #1 for 10 weeks from 2 July 2026"
+          "note": "UK #1 for a week in September 2026, after its record-breaking US run"
+        },
+        {
+          "artist": "Sienna Spiro",
+          "work": "Great Expectation",
+          "note": "UK #1 for 3 weeks, September–October 2026"
+        },
+        {
+          "artist": "Taylor Swift",
+          "work": "Patient Zero",
+          "note": "UK #1, October 2026"
         }
       ],
       "sources": [
@@ -1090,7 +1105,12 @@
         {
           "artist": "Shakira and Burna Boy",
           "work": "Dai Dai",
-          "note": "German #1 for 11 straight weeks from 3 July 2026, through the 11 September chart"
+          "note": "German #1 for 13 straight weeks from 3 July 2026, through the 25 September chart"
+        },
+        {
+          "artist": "Taylor Swift",
+          "work": "Patient Zero",
+          "note": "German #1, October 2026 — ending the Dai Dai run"
         }
       ],
       "sources": [
@@ -1566,6 +1586,101 @@
       ],
       "model": "claude-fable-5-1 (in-session)",
       "at": "2026-09-16T22:24:42.818Z"
+    },
+    {
+      "country": "IT",
+      "from": 1964,
+      "to": 1973,
+      "era": "From Sanremo to the cantautori — the Musica e dischi years",
+      "kind": "charted",
+      "basis": "Weeks at #1 are read from Musica e dischi's own archive of its weekly best-selling-singles chart, compiled from 1959/60, and cross-read against the Hit Parade Italia-based year lists on Wikipedia; where the two disagree, the Musica e dischi figure is used and said so.",
+      "story": "In 1964 the Sanremo festival still made each song be sung twice, by an Italian and a foreign guest, and [[Bobby Solo]] was thrown out of it for singing to a backing track — then held #1 for nine weeks anyway, while sixteen-year-old [[Gigliola Cinquetti]] won Sanremo and Eurovision in the same spring. The beat boom followed: Little Tony's Elvis act, Caterina Caselli out-selling the festival winner, and the Italian-language covers of foreign hits that filled the chart (Mina's biggest record of the span was a Nino Ferrer song). By 1968 [[Patty Pravo]] had nine weeks on top with La bambola, and Paolo Conte had written Azzurro for [[Adriano Celentano]]. Then the songwriters took the chart: [[Lucio Dalla]]'s 4/3/1943 out-sold the 1971 Sanremo winner by the compiler's count, and [[Lucio Battisti]]'s Pensieri e parole sat at #1 for fourteen summer weeks. Fabrizio De André never appears in these #1 tables; the cantautori who did were Battisti and Dalla. Two archives cover these years and often disagree on week counts — the numbers here follow the compiler's own.",
+      "items": [
+        {
+          "artist": "Bobby Solo",
+          "work": "Una lacrima sul viso",
+          "note": "Italian #1 for 9 weeks, February–April 1964 (Musica e dischi) — after Sanremo disqualified it for a lip-synced performance"
+        },
+        {
+          "artist": "Gigliola Cinquetti",
+          "work": "Non ho l'età",
+          "note": "Italian #1, spring 1964 — Sanremo and Eurovision winner at sixteen"
+        },
+        {
+          "artist": "Gianni Morandi",
+          "work": "In ginocchio da te",
+          "note": "Italian #1 for 13 weeks, July–October 1964 (Musica e dischi) — the year's best seller, arranged by Ennio Morricone"
+        },
+        {
+          "artist": "Mina",
+          "work": "Un anno d'amore",
+          "note": "Italian #1, 1965 — an Italian version of Nino Ferrer's C'est irréparable; the two archives disagree widely on its run"
+        },
+        {
+          "artist": "Caterina Caselli",
+          "work": "Nessuno mi può giudicare",
+          "note": "Italian #1 for 6 weeks, February–April 1966 (Musica e dischi) — second at Sanremo, it out-sold the winner"
+        },
+        {
+          "artist": "Little Tony",
+          "work": "Cuore matto",
+          "note": "Italian #1 for 9 weeks, February–April 1967"
+        },
+        {
+          "artist": "Patty Pravo",
+          "work": "La bambola",
+          "note": "Italian #1 for 9 weeks, May–June 1968"
+        },
+        {
+          "artist": "Adriano Celentano",
+          "work": "Azzurro",
+          "note": "Italian #1 for 6 weeks, autumn 1968 (Musica e dischi) — written for him by Paolo Conte"
+        },
+        {
+          "artist": "Nicola Di Bari",
+          "work": "La prima cosa bella",
+          "note": "Italian #1 for 8 weeks, March–May 1970"
+        },
+        {
+          "artist": "Lucio Dalla",
+          "work": "4/3/1943",
+          "note": "Italian #1 for 9 weeks, March–May 1971 (Musica e dischi) — while the Sanremo winner, Il cuore è uno zingaro, peaked at #2 beneath it"
+        },
+        {
+          "artist": "Lucio Battisti",
+          "work": "Pensieri e parole",
+          "note": "Italian #1 for 14 weeks, June–September 1971 — the longest run of the span, on both archives' count"
+        },
+        {
+          "artist": "Patty Pravo",
+          "work": "Pazza idea",
+          "note": "Italian #1 for 12 weeks, August–October 1973 (Musica e dischi) — her second #1 of the span"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Musica e dischi — chart archive (Singoli)",
+          "url": "https://www.musicaedischi.it/classifiche_archivio.php"
+        },
+        {
+          "label": "Musica e dischi — example card: Una lacrima sul viso, week by week",
+          "url": "https://www.musicaedischi.it/classifiche_details.php?tipo=2&id=3595"
+        },
+        {
+          "label": "Musica e dischi — the compiler's history",
+          "url": "https://www.musicaedischi.it/storia.php"
+        },
+        {
+          "label": "Wikipedia — Italian number-one hits by year (Hit Parade Italia lineage)",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_hits_(Italy)"
+        },
+        {
+          "label": "Wikipedia — Sanremo Music Festival 1964",
+          "url": "https://en.wikipedia.org/wiki/Sanremo_Music_Festival_1964"
+        }
+      ],
+      "model": "claude-fable-5-1 (in-session, research agent + owner-gate verification)",
+      "at": "2026-10-09"
     }
   ]
 }
