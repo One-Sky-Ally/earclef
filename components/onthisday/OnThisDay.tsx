@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { QueuePlayer } from '@/components/explore/QueuePlayer'
 import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
 import type { OnThisDayItem, OnThisDayPayload } from '@/lib/explore/onThisDay'
 import styles from './OnThisDay.module.css'
@@ -34,6 +35,30 @@ const label = (monthDay: string) => {
 }
 const formatCount = (value: number) => value.toLocaleString('en-US')
 
+/**
+ * A shuffle that is random per visit but stable while the page is open
+ * (a re-render must not reshuffle a playing queue): mulberry32 seeded by
+ * a per-visit random number mixed with the date.
+ */
+function shuffled<T>(items: readonly T[], seed: number): T[] {
+  let state = seed >>> 0
+  const next = () => {
+    state = (state + 0x6d2b79f5) >>> 0
+    let t = state
+    t = Math.imul(t ^ (t >>> 15), t | 1)
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  }
+  const out = [...items]
+  for (let index = out.length - 1; index > 0; index--) {
+    const swap = Math.floor(next() * (index + 1))
+    ;[out[index], out[swap]] = [out[swap], out[index]]
+  }
+  return out
+}
+
+const dateSeed = (monthDay: string) => Number(monthDay.replace('-', ''))
+
 /** The visitor's date, read on their device; null while rendering on the server. */
 const subscribeToNothing = () => () => {}
 const useLocalToday = () => useSyncExternalStore(subscribeToNothing, localToday, () => null)
@@ -66,6 +91,19 @@ function Item({ item, countryName }: { item: OnThisDayItem; countryName: string 
       <span className={styles.what}>
         <span className={styles.release}>{item.t}</span>
         <span className={styles.kind}>{item.k}</span>
+        {/* Only a verified video gets a play button (owner's standing rule). */}
+        {item.v && (
+          <a
+            className={styles.playBadge}
+            href={`https://www.youtube.com/watch?v=${item.v}`}
+            target="_blank"
+            rel="noreferrer"
+            title={item.vt}
+            aria-label={`Play “${item.vs ?? item.t}” by ${item.n} on YouTube`}
+          >
+            ▶
+          </a>
+        )}
         <span className={styles.by}>
           {artist} ·{' '}
           <Link className={styles.place} href={`/?y=${item.y}&c=${item.c}`}>
@@ -82,6 +120,9 @@ export function OnThisDay({ initialDate }: { initialDate: string | null }) {
   const [chosen, setChosen] = useState<string | null>(initialDate)
   const [answer, setAnswer] = useState<Answer | null>(null)
   const [oldOnly, setOldOnly] = useState(false)
+  // One random number per visit: the playlist's order is random, but a
+  // re-render never reshuffles it.
+  const [seed] = useState(() => Math.floor(Math.random() * 2 ** 31))
   // No date in the URL: the visitor's own today.
   const date = chosen ?? today
 
@@ -145,7 +186,7 @@ export function OnThisDay({ initialDate }: { initialDate: string | null }) {
         <p className={styles.note}>This day could not be loaded. Try again in a moment.</p>
       )}
       {current && 'payload' in current && (
-        <DayView payload={current.payload} oldOnly={oldOnly} setOldOnly={setOldOnly} />
+        <DayView payload={current.payload} oldOnly={oldOnly} setOldOnly={setOldOnly} seed={seed} />
       )}
     </section>
   )
@@ -155,10 +196,12 @@ function DayView({
   payload,
   oldOnly,
   setOldOnly,
+  seed,
 }: {
   payload: OnThisDayPayload
   oldOnly: boolean
   setOldOnly: (value: boolean) => void
+  seed: number
 }) {
   const decades = useMemo(
     () => Object.entries(payload.byDecade).sort(([a], [b]) => Number(a) - Number(b)),
@@ -169,6 +212,23 @@ function DayView({
     .reduce((sum, [, count]) => sum + count, 0)
   const countries = Object.keys(payload.byCountry).length
   const shown = payload.items.filter((item) => !oldOnly || item.y < 2000)
+  // The playlist: verified songs among what is SHOWN, in random order.
+  const playlist = useMemo(
+    () =>
+      shuffled(
+        payload.items.filter((item) => item.v),
+        seed ^ dateSeed(payload.date),
+      ).map((item) => ({
+        videoId: item.v as string,
+        title: item.vs ?? item.t,
+        artistName: item.n,
+        mbid: item.a ?? '',
+        genres: item.genres,
+        y: item.y,
+      })),
+    [payload, seed],
+  )
+  const playable = playlist.filter((track) => !oldOnly || track.y < 2000)
 
   // January 1 is left out by rule, not by absence: say which.
   if (payload.date === '01-01') {
@@ -209,6 +269,35 @@ function DayView({
           Older records are thin here, and that is the sources, not the music: exact
           release days were rarely written down before the 1990s, so most of the past
           only appears in its year, not on its day.
+        </p>
+      )}
+      {playable.length > 0 ? (
+        <div className={styles.player}>
+          <QueuePlayer
+            key={`on-this-day:${payload.date}`}
+            placeName={label(payload.date)}
+            year={new Date().getFullYear()}
+            pool={[]}
+            roster={{}}
+            preresolved={playable.map((track) => ({
+              videoId: track.videoId,
+              title: track.title,
+              artistName: track.artistName,
+              mbid: track.mbid,
+              ...(track.genres.length > 0 && { genres: track.genres }),
+            }))}
+            buttonLabel={`▶ Play ${label(payload.date)} — ${playable.length} song${playable.length === 1 ? '' : 's'}, shuffled`}
+            endNote={`That’s every verified song listed for ${label(payload.date)}.`}
+          />
+          <p className={styles.playNote}>
+            {playable.length} of the {shown.length} listed releases can play: a play button
+            appears only where a video is verified as this release by this artist.
+          </p>
+        </div>
+      ) : (
+        <p className={styles.playNote}>
+          None of the releases listed here has a verified video yet, so nothing plays
+          for this day.
         </p>
       )}
       <label className={styles.toggle}>

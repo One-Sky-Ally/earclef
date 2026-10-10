@@ -52,14 +52,14 @@ test('a day keeps a decade-balanced, country-diverse selection and counts everyt
     ...Array.from({ length: 9 }, (_, n) => item(2015, 'US', 90 - n)),
     item(1985, 'GH', 1, { gapFill: true }),
   ]
-  const day = selectDay(items, { perDecade: 6, perCountryInDecade: 3 })
+  const day = selectDay(items, { perDecade: 6 })
   assert.equal(day.total, items.length)
   assert.equal(day.byDecade['1960'], 2)
   assert.equal(day.byDecade['2020'], 40)
   assert.equal(day.byCountry.JM, 1)
   // Old decades keep everything they have.
   assert.ok(day.items.some((entry) => entry.c === 'JM'))
-  // No decade holds more than its quota; no country more than its share of it.
+  // No decade holds more than its quota; countries take turns within it.
   const in2020 = day.items.filter((entry) => entry.y >= 2020)
   assert.equal(in2020.length, 6)
   assert.ok(in2020.filter((entry) => entry.c === 'US').length <= 3)
@@ -70,7 +70,7 @@ test('a day keeps a decade-balanced, country-diverse selection and counts everyt
 })
 
 test('an empty day is an honest zero', () => {
-  assert.deepEqual(selectDay([], { perDecade: 6, perCountryInDecade: 3 }), { total: 0, byDecade: {}, byCountry: {}, items: [] })
+  assert.deepEqual(selectDay([], { perDecade: 6 }), { total: 0, byDecade: {}, byCountry: {}, items: [] })
 })
 
 test('after 2000 a decade is shared round-robin across countries, gap-fill or not — no flood', () => {
@@ -80,10 +80,16 @@ test('after 2000 a decade is shared round-robin across countries, gap-fill or no
     ...Array.from({ length: 10 }, (_, n) => item(2023, 'JP', 80 - n)),
     item(2024, 'NG', 5),
   ]
-  const day = selectDay(items, { perDecade: 8, perCountryInDecade: 3 })
+  const day = selectDay(items, { perDecade: 8 })
   const counts = {}
   for (const entry of day.items) counts[entry.c] = (counts[entry.c] ?? 0) + 1
   assert.equal(day.items.length, 8)
   assert.deepEqual(Object.keys(counts).sort(), ['JP', 'MD', 'NG', 'US'])
   assert.ok(counts.MD <= 3)
+})
+
+test('a decade with room shows everything it has, even when one country holds it all', () => {
+  const items = [item(1952, 'US', 9), item(1955, 'US', 8), item(1957, 'US', 7), item(1958, 'US', 6)]
+  const day = selectDay(items, { perDecade: 12 })
+  assert.equal(day.items.length, 4)
 })

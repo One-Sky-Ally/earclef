@@ -41,9 +41,8 @@ const DG_DIR = 'data/discogs-dump/index/releases-by-country'
 const WORK_PATH = 'data/on-this-day-work.json'
 const OUT_DIR = 'lib/explore/on-this-day'
 const FRESH = process.argv.includes('--fresh')
-/** Listed per decade on a day, and from one country before others get room. */
+/** Listed per decade on a day, dealt round-robin across countries. */
 const PER_DECADE = 12
-const PER_COUNTRY_IN_DECADE = 3
 /** Discogs "Various" (the dump's own id). */
 const VARIOUS_ID = 194
 
@@ -73,7 +72,8 @@ function siteArtists() {
     const stored = readJson(join(COUNTRY_DIR, file))
     if (stored.name) countryNames[code] = stored.name
     for (const artist of stored.artists ?? []) {
-      if (!byId.has(artist.id)) byId.set(artist.id, { c: code, n: artist.name, w: artist.w ?? 0 })
+      // `g`: the artist's raw tags — canonicalized when served, as the panels do.
+      if (!byId.has(artist.id)) byId.set(artist.id, { c: code, n: artist.name, w: artist.w ?? 0, g: (artist.t ?? []).slice(0, 8) })
     }
   }
   return byId
@@ -105,7 +105,7 @@ async function musicBrainzItems(artists) {
       // A group credited to several site artists is listed once, under the
       // most-followed of them.
       if (held && held.w >= artist.w) continue
-      byGroup.set(row.i, { md: day.monthDay, y: day.year, t: row.t, k: row.p, c: artist.c, n: artist.n, w: artist.w, a: row.a })
+      byGroup.set(row.i, { md: day.monthDay, y: day.year, t: row.t, k: row.p, c: artist.c, n: artist.n, w: artist.w, a: row.a, g: artist.g })
     }
   }
   console.log(`MusicBrainz: ${rows.toLocaleString()} rows → ${byGroup.size.toLocaleString()} exact-dated originals`)
@@ -135,7 +135,7 @@ async function discogsItems(pool) {
   for (const [code, list] of Object.entries(pool.countries)) {
     for (const entry of list) {
       if (entry.discogsArtistId != null && !artistPool.has(entry.discogsArtistId)) {
-        artistPool.set(entry.discogsArtistId, { c: code, n: entry.name, w: entry.releaseCount ?? 0 })
+        artistPool.set(entry.discogsArtistId, { c: code, n: entry.name, w: entry.releaseCount ?? 0, g: (entry.styles ?? []).map((style) => style.toLowerCase()).slice(0, 8) })
       }
     }
   }
@@ -154,7 +154,8 @@ async function discogsItems(pool) {
       const day = exactDay(row.r, today)
       if (!day) continue
       const artist = artistPool.get(credit.i)
-      candidates.push({ md: day.monthDay, y: day.year, t: row.t, k: (row.fd ?? [])[0] ?? (row.f ?? [])[0] ?? 'Release', c: artist.c, n: artist.n, w: artist.w, dg: row.i, m: row.m ?? 0, gapFill: true })
+      // `ga`: the credited gap-fill artist's Discogs id — the play check anchors on it.
+      candidates.push({ md: day.monthDay, y: day.year, t: row.t, k: (row.fd ?? [])[0] ?? (row.f ?? [])[0] ?? 'Release', c: artist.c, n: artist.n, w: artist.w, g: artist.g, dg: row.i, ga: credit.i, m: row.m ?? 0, gapFill: true })
     }
     if ((index + 1) % 50 === 0) console.log(`  Discogs: ${index + 1}/${files.length} country files`)
   }
@@ -179,7 +180,7 @@ async function main() {
   mkdirSync(OUT_DIR, { recursive: true })
   const months = {}
   for (const [monthDay, items] of byDay) {
-    const day = selectDay(items, { perDecade: PER_DECADE, perCountryInDecade: PER_COUNTRY_IN_DECADE })
+    const day = selectDay(items, { perDecade: PER_DECADE })
     const month = monthDay.slice(0, 2)
     months[month] ??= {}
     // Weights rank the selection; the page does not need them.
@@ -201,7 +202,6 @@ async function main() {
     builtAt: new Date().toISOString(),
     datedThrough: today,
     perDecade: PER_DECADE,
-    perCountryInDecade: PER_COUNTRY_IN_DECADE,
     totals: { musicbrainz: mb.length, gapFill: dg.length, byDecade },
     countryNames,
   }, null, 2)}\n`)

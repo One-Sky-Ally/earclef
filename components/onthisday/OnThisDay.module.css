@@ -190,3 +190,27 @@
   color: var(--text-muted);
   max-width: 70ch;
 }
+
+.player {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.playNote {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.playBadge {
+  color: var(--accent);
+  font-size: 0.8rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.playBadge:hover {
+  color: var(--text);
+}

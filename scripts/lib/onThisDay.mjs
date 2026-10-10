@@ -72,14 +72,14 @@ const tally = (items, keyOf) => {
  * the same quota (perDecade). Inside a decade the quota is dealt
  * ROUND-ROBIN across countries — each country's best (by artist weight)
  * in turn, countries ordered by their best — so one place cannot fill
- * it, and no country takes more than perCountryInDecade. Before 2000,
+ * it while others wait. Before 2000,
  * gap-fill entries (the archive's sparse places, rare on the old record)
  * are always kept on top of the quota; after 2000 they take turns like
  * everyone. Items come back oldest first.
  */
 const RARE_BEFORE = 2000
 
-function roundRobin(entries, quota, perCountry) {
+function roundRobin(entries, quota) {
   const byCountry = new Map()
   for (const entry of entries) {
     if (!byCountry.has(entry.c)) byCountry.set(entry.c, [])
@@ -88,17 +88,19 @@ function roundRobin(entries, quota, perCountry) {
   const queues = [...byCountry.values()]
     .map((list) => list.sort((a, b) => b.w - a.w || a.y - b.y || a.t.localeCompare(b.t)))
     .sort((a, b) => b[0].w - a[0].w || a[0].c.localeCompare(b[0].c))
+  // One per country per round, until the decade's slots are full: every
+  // country gets a turn before any gets a second, and a decade with room
+  // shows everything it holds.
   const picked = []
-  for (let round = 0; round < perCountry && picked.length < quota; round++) {
-    for (const queue of queues) {
-      if (picked.length >= quota) break
-      if (queue[round]) picked.push(queue[round])
-    }
+  for (let round = 0; picked.length < quota; round++) {
+    const waiting = queues.filter((queue) => queue[round])
+    if (waiting.length === 0) break
+    for (const queue of waiting.slice(0, quota - picked.length)) picked.push(queue[round])
   }
   return picked
 }
 
-export function selectDay(items, { perDecade, perCountryInDecade }) {
+export function selectDay(items, { perDecade }) {
   if (items.length === 0) return { total: 0, byDecade: {}, byCountry: {}, items: [] }
   const byDecade = new Map()
   for (const entry of items) {
@@ -111,7 +113,7 @@ export function selectDay(items, { perDecade, perCountryInDecade }) {
     const rare = Number(decade) < RARE_BEFORE
     const keptRare = rare ? group.filter((entry) => entry.gapFill) : []
     const contenders = rare ? group.filter((entry) => !entry.gapFill) : group
-    chosen.push(...keptRare, ...roundRobin(contenders, perDecade, perCountryInDecade))
+    chosen.push(...keptRare, ...roundRobin(contenders, perDecade))
   }
   chosen.sort((a, b) => a.y - b.y || b.w - a.w || a.t.localeCompare(b.t))
   return {

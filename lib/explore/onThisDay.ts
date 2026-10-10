@@ -1,4 +1,5 @@
 import onThisDayIndex from './on-this-day/index.json'
+import { canonicalizeTags } from './genreFamilies'
 
 /**
  * "On this day" (owner, Oct 10 2026): music released on a calendar day in
@@ -27,7 +28,22 @@ export interface OnThisDayItem {
   /** Discogs release id, when from a gap-fill artist's Discogs original. */
   dg?: number
   gapFill?: boolean
+  /**
+   * A VERIFIED, playable video of this release (scripts/verify-on-this-
+   * day-play.mjs): id-anchored to the artist, the same release, and
+   * playability-checked. Absent = no play button, not in the playlist.
+   */
+  v?: string
+  /** The video's YouTube title. */
+  vt?: string
+  /** The song the video is: the matched track, or the release itself. */
+  vs?: string
+  /** The artist's genres, canonicalized exactly as the Explore panels do. */
+  genres: string[]
 }
+
+/** What the shards store: raw tags, canonicalized on the way out. */
+type StoredItem = Omit<OnThisDayItem, 'genres'> & { g?: string[] }
 
 export interface OnThisDayDay {
   /** Every exact-dated original on this calendar day. */
@@ -38,9 +54,20 @@ export interface OnThisDayDay {
   items: OnThisDayItem[]
 }
 
+interface StoredDay extends Omit<OnThisDayDay, 'items'> {
+  items: StoredItem[]
+}
+
 interface MonthShard {
   month: string
-  days: Record<string, OnThisDayDay>
+  days: Record<string, StoredDay>
+}
+
+/** Matches POOL_TAG_LIMIT in countryData.ts, so genres read as they do on a panel. */
+const GENRE_LIMIT = 4
+
+function servedItem({ g, ...item }: StoredItem): OnThisDayItem {
+  return { ...item, genres: canonicalizeTags(g ?? []).slice(0, GENRE_LIMIT) }
 }
 
 interface OnThisDayIndex {
@@ -94,7 +121,8 @@ export async function onThisDay(monthDay: string): Promise<OnThisDayPayload | nu
   const date = parseMonthDay(monthDay)
   if (!date) return null
   const shard = await loadMonth(date.slice(0, 2))
-  const day = shard?.days[date] ?? EMPTY_DAY
+  const stored = shard?.days[date]
+  const day: OnThisDayDay = stored ? { ...stored, items: stored.items.map(servedItem) } : EMPTY_DAY
   const codes = new Set([...Object.keys(day.byCountry), ...day.items.map((item) => item.c)])
   return {
     ...day,
