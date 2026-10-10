@@ -1,0 +1,1437 @@
+{
+  "generatedAt": "2026-10-10T09:00:44.293Z",
+  "filter": "performer-allowlist-2026-09-21",
+  "ownerRuling": {
+    "ruledOn": "2026-09-21",
+    "appliesTo": "ownerRuled bucket (conductors, choir directors, record-producer-only, spoken word, arrangers, beatmakers)",
+    "rule": "Any of them can be added if they made and released original audio. If they did not, leave them out. Spoken word gets in only if it is over music or delivered with some melody. Unsung speech with no music behind it stays out.",
+    "howToApply": "Per artist at build time: admission needs POSITIVE evidence of a released original recording (a Discogs/MB release credited to them as artist, or an equivalent verified record). No evidence is not a pass — absent never satisfies the check."
+  },
+  "note": "decision governs the Wikidata entry/link only; discogsCandidate=true means the artist is credited on a release this sweep ingested and enters (or not) through the Discogs path and dedup as before",
+  "cases": [
+    {
+      "code": "PY",
+      "wikidataId": "Q5668784",
+      "name": "Alicia Martin",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "RW",
+      "wikidataId": "Q139857925",
+      "name": "Kina Beat",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "RW",
+      "wikidataId": "Q139857962",
+      "name": "Logic Hit it",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "TJ",
+      "wikidataId": "Q25586595",
+      "name": "Маҳмадназар Отамов",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "MW",
+      "wikidataId": "Q27964987",
+      "name": "Benn Gilbert Kamoto",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "MW",
+      "wikidataId": "Q134304466",
+      "name": "Ruth Kachitseko",
+      "classes": [
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KG",
+      "wikidataId": "Q25597845",
+      "name": "Султан Юсупов",
+      "classes": [
+        "Q158852",
+        "Q1076502",
+        "Q42227156"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KG",
+      "wikidataId": "Q81104543",
+      "name": "Saiidrakhman Sarbayevich Matiyev",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "SL",
+      "wikidataId": "Q133860482",
+      "name": "Elkan",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "BF",
+      "wikidataId": "Q131843974",
+      "name": "Aboudou Dabo Dabs",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "YE",
+      "wikidataId": "Q136007744",
+      "name": "Amina Atiq",
+      "classes": [
+        "Q17378128"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "spoken word — no Discogs id, no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AF",
+      "wikidataId": "Q110028761",
+      "name": "Shogufa Safi",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "BZ",
+      "wikidataId": "Q26997640",
+      "name": "John Alexander Watler",
+      "classes": [
+        "Q17378128"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "spoken word — no Discogs id, no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "PS",
+      "wikidataId": "Q7042177",
+      "name": "Nizar Wattad",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "TZ",
+      "wikidataId": "Q27662478",
+      "name": "Tudd Thomas",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "LY",
+      "wikidataId": "Q124425914",
+      "name": "Tariq Kashkar",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "IQ",
+      "wikidataId": "Q4866774",
+      "name": "Bashar Lulua",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "BD",
+      "wikidataId": "Q97764911",
+      "name": "Pradip Saha",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "BD",
+      "wikidataId": "Q97814071",
+      "name": "Rajesh Ghosh",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "BD",
+      "wikidataId": "Q97999642",
+      "name": "Delwar Arjuda Sharaf",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KP",
+      "wikidataId": "Q4967698",
+      "name": "Kim Hoyun",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KP",
+      "wikidataId": "Q11285932",
+      "name": "Ho Mun-yong",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "XK",
+      "wikidataId": "Q111541772",
+      "name": "Rzon",
+      "classes": [
+        "Q183945",
+        "Q1643514"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "XK",
+      "wikidataId": "Q117818637",
+      "name": "Baki Jashari",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "MN",
+      "wikidataId": "Q135934968",
+      "name": "Bazarvaaniin Avirmed",
+      "classes": [
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "UG",
+      "wikidataId": "Q110440546",
+      "name": "Ronie On Dis One",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "UG",
+      "wikidataId": "Q111730247",
+      "name": "Eddy Yawe",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "UG",
+      "wikidataId": "Q131221696",
+      "name": "Carolyne Miriam Acen",
+      "classes": [
+        "Q17378128"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "spoken word — no Discogs id, no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "UG",
+      "wikidataId": "Q136734670",
+      "name": "Nantege Rhona Kyewalabye",
+      "classes": [
+        "Q17378128"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "spoken word — no Discogs id, no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "UG",
+      "wikidataId": "Q139850523",
+      "name": "Esther Nabaasa Mugizi",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "UG",
+      "wikidataId": "Q141257381",
+      "name": "Isthismaximise",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KH",
+      "wikidataId": "Q133586301",
+      "name": "Cheky Athiporn",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "GN",
+      "wikidataId": "Q92173889",
+      "name": "Benedi",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "BJ",
+      "wikidataId": "Q109534596",
+      "name": "André Quenum",
+      "classes": [
+        "Q1643514"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "BJ",
+      "wikidataId": "Q141191855",
+      "name": "Meko Prod",
+      "classes": [
+        "Q4087517"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q4783923",
+      "name": "Aram Gharabekian",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q5554926",
+      "name": "Gevorg Sargsyan",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q6370020",
+      "name": "Karen Sargsyan",
+      "classes": [
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q13055123",
+      "name": "Tigran Hekekyan",
+      "classes": [
+        "Q158852",
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q14529124",
+      "name": "Aram Katanyan",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q16381656",
+      "name": "Jirayr Altunyan",
+      "classes": [
+        "Q158852",
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q20507307",
+      "name": "Hakob Voskanyan",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q20508268",
+      "name": "Yuri Davtyan",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q20508478",
+      "name": "Rafael Mangasaryan",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q20509347",
+      "name": "Manvel Beglaryan",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": "4990505",
+      "decision": "out",
+      "basis": "no main-credit release found",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q64786554",
+      "name": "Davit Zalyan",
+      "classes": [
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q23019289",
+      "name": "Gevorg Muradian",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q27653038",
+      "name": "Naira Gyurjinyan",
+      "classes": [
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q28729302",
+      "name": "Vilen Charchoghlyan",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q44155446",
+      "name": "David Terzyan",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q116234139",
+      "name": "Henry Mangasaryan",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q116258004",
+      "name": "Ara Markosyan",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AM",
+      "wikidataId": "Q116738166",
+      "name": "Araksya Khachatryan",
+      "classes": [
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "CM",
+      "wikidataId": "Q121128895",
+      "name": "Erise Mary Dinga",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "CM",
+      "wikidataId": "Q126095108",
+      "name": "Louis Tsoungui",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "CM",
+      "wikidataId": "Q27999566",
+      "name": "Amobé Mévégué",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "CM",
+      "wikidataId": "Q139794061",
+      "name": "Gervais Ngongang",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "SR",
+      "wikidataId": "Q106671560",
+      "name": "Werner Duttenhofer",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "SR",
+      "wikidataId": "Q107169405",
+      "name": "Roberto Banel",
+      "classes": [
+        "Q183945",
+        "Q1643514"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "SR",
+      "wikidataId": "Q141495589",
+      "name": "Walther Leerdam",
+      "classes": [
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KZ",
+      "wikidataId": "Q12532767",
+      "name": "Базаргали Ажиевич Жаманбаев",
+      "classes": [
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KZ",
+      "wikidataId": "Q4054493",
+      "name": "Абдрашев, Толепберген Абдрашевич",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KZ",
+      "wikidataId": "Q14566097",
+      "name": "Gennady Kim",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KZ",
+      "wikidataId": "Q15076508",
+      "name": "Anatoliy Molodov",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": "1849111",
+      "decision": "admit",
+      "basis": "discogs-main-credit-in-sweep",
+      "discogsCandidate": true
+    },
+    {
+      "code": "KZ",
+      "wikidataId": "Q106526362",
+      "name": "Rakhmonov Shaxbozbek",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KZ",
+      "wikidataId": "Q133529259",
+      "name": "Baks Bondy",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KZ",
+      "wikidataId": "Q137210530",
+      "name": "Bolat Raqymjanov",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "KZ",
+      "wikidataId": "Q97253166",
+      "name": "Erlan Bekchurin",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "LK",
+      "wikidataId": "Q24258783",
+      "name": "Sachith Peiris",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "LK",
+      "wikidataId": "Q93423361",
+      "name": "Leslie Suganandarajah",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "LK",
+      "wikidataId": "Q110124321",
+      "name": "Araliya Jayasundara",
+      "classes": [
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "LK",
+      "wikidataId": "Q114736232",
+      "name": "DJ soiree",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "LK",
+      "wikidataId": "Q135268214",
+      "name": "Deemal Chandima",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AL",
+      "wikidataId": "Q11834878",
+      "name": "Rifat Teqja",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AL",
+      "wikidataId": "Q112333294",
+      "name": "Deniola Kuraja",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AL",
+      "wikidataId": "Q141681861",
+      "name": "Petrika Afezolli",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AL",
+      "wikidataId": "Q16351472",
+      "name": "Bujar Llapaj",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "AL",
+      "wikidataId": "Q13048095",
+      "name": "Zhani Ciko",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "MD",
+      "wikidataId": "Q4089403",
+      "name": "Efim Bogdanovschii",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "MD",
+      "wikidataId": "Q4102093",
+      "name": "Liudmyla Vaverko",
+      "classes": [
+        "Q691031"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "MD",
+      "wikidataId": "Q4134003",
+      "name": "Veronica Garștea",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "MD",
+      "wikidataId": "Q4372658",
+      "name": "Svetlana Popov",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "MD",
+      "wikidataId": "Q4407091",
+      "name": "Alexander Samoile",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "MD",
+      "wikidataId": "Q15063941",
+      "name": "Lidia Axionov",
+      "classes": [
+        "Q158852",
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "MD",
+      "wikidataId": "Q16627806",
+      "name": "Юрий Ботнари",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "MD",
+      "wikidataId": "Q137948290",
+      "name": "Stefan Caranfil",
+      "classes": [
+        "Q158852",
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "ET",
+      "wikidataId": "Q140621047",
+      "name": "BABY YO",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q26921033",
+      "name": "Dương Khắc Linh",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q118250121",
+      "name": "Đặng Châu Anh",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q124713979",
+      "name": "Trần Nhật Minh",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q124721173",
+      "name": "Lê Đóa",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q125446522",
+      "name": "Nguyễn Hoàng Duy",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q111444505",
+      "name": "Phạm Ngọc Khôi",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q111744515",
+      "name": "Đồng Quang Vinh",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q115129658",
+      "name": "Lê Phi Phi",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q135661251",
+      "name": "Aiden Nguyễn",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q135661343",
+      "name": "Đông Âu",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q135904821",
+      "name": "Minh Vy",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q137030297",
+      "name": "Kriss Ngô",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q137211200",
+      "name": "Drum7",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q137645035",
+      "name": "Nguyễn Hải Yến",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "VN",
+      "wikidataId": "Q140011243",
+      "name": "Cirna",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "GH",
+      "wikidataId": "Q6167062",
+      "name": "Jay Q",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "GH",
+      "wikidataId": "Q20873449",
+      "name": "Nenebi",
+      "classes": [
+        "Q17378128"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "spoken word — no Discogs id, no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "GH",
+      "wikidataId": "Q28861395",
+      "name": "Magnom",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "GH",
+      "wikidataId": "Q80132977",
+      "name": "Asante",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "GH",
+      "wikidataId": "Q101518805",
+      "name": "IPappi",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "GH",
+      "wikidataId": "Q116694142",
+      "name": "1ucid",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "GH",
+      "wikidataId": "Q123561439",
+      "name": "Sonny Kwaku Bedwei",
+      "classes": [
+        "Q17378128"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "spoken word — no Discogs id, no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "GH",
+      "wikidataId": "Q123989484",
+      "name": "Samsney",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "GH",
+      "wikidataId": "Q134593224",
+      "name": "Beatz Vampire",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "GH",
+      "wikidataId": "Q110884774",
+      "name": "Ivan Beatz",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "ZM",
+      "wikidataId": "Q60497382",
+      "name": "KB Killa Beats",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "CD",
+      "wikidataId": "Q1307335",
+      "name": "Elombo Bolayela",
+      "classes": [
+        "Q1076502"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "CD",
+      "wikidataId": "Q109607634",
+      "name": "Didier Ndenga",
+      "classes": [
+        "Q183945"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "TT",
+      "wikidataId": "Q573821",
+      "name": "Anthony Prospect",
+      "classes": [
+        "Q158852"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "no Discogs id — no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "TT",
+      "wikidataId": "Q6218294",
+      "name": "John Agitation",
+      "classes": [
+        "Q17378128"
+      ],
+      "discogsId": null,
+      "decision": "out",
+      "basis": "spoken word — no Discogs id, no release evidence",
+      "discogsCandidate": false
+    },
+    {
+      "code": "TT",
+      "wikidataId": "Q28781669",
+      "name": "Olive Walke",
+      "classes": [
+        "Q1076502"
+      ],
+      "discogsId": "6108745",
+      "decision": "out",
+      "basis": "no main-credit release found",
+      "discogsCandidate": false
+    }
+  ]
+}

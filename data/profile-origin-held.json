@@ -1,7 +1,68 @@
 {
-  "generatedAt": "2026-09-07T08:59:10.048Z",
+  "generatedAt": "2026-10-10T09:00:44.291Z",
   "rule": "profile-origin (owner ruling Sep 7 2026): born-only mentions are held, never shipped on the plant alone",
   "cases": [
+    {
+      "code": "TJ",
+      "key": "dg|1806235",
+      "name": "Shoista Mullodzhanova",
+      "discogsArtistId": 1806235,
+      "releaseCount": 9,
+      "years": "1966–1980",
+      "foreignClaims": [],
+      "edgeNeeded": "based",
+      "profile": "born: 03 September 1925 in Dushanbe, Tajik ASSR, USSR died: 26 June 2010 in New York City, NY, USA Renowned singer."
+    },
+    {
+      "code": "TJ",
+      "key": "dg|1630320",
+      "name": "Николай Никитский",
+      "discogsArtistId": 1630320,
+      "releaseCount": 3,
+      "years": "1989–1989",
+      "foreignClaims": [
+        "RU"
+      ],
+      "edgeNeeded": "based",
+      "profile": "19 December 1921, Moscow - June 12, 1995, Moscow. Pop singer and actor. In 1951 he graduated from GITIS. Worked in Stalinabad drama theater Mayakovsky, Minsk Ru"
+    },
+    {
+      "code": "TJ",
+      "key": "dg|2337423",
+      "name": "Абулькасим Лахути",
+      "discogsArtistId": 2337423,
+      "releaseCount": 3,
+      "years": "1987–1987",
+      "foreignClaims": [
+        "IR"
+      ],
+      "edgeNeeded": "based",
+      "profile": "Iranian poet who has lived in Soviet Union, mainly in Tajikistan (1887-1957)"
+    },
+    {
+      "code": "TJ",
+      "key": "dg|15001507",
+      "name": "Эдуард Каландаров",
+      "discogsArtistId": 15001507,
+      "releaseCount": 1,
+      "years": "1982–1982",
+      "foreignClaims": [
+        "UZ"
+      ],
+      "edgeNeeded": "based",
+      "profile": "Eduard Kalandarov (born July 8, 1941 in Dushanbe) is an Uzbek composer, conductor, and pianist. In 1967, he graduated from the Tashkent Conservatory in composit"
+    },
+    {
+      "code": "KG",
+      "key": "dg|9066625",
+      "name": "Борис Феферман",
+      "discogsArtistId": 9066625,
+      "releaseCount": 2,
+      "years": "1970–1970",
+      "foreignClaims": [],
+      "edgeNeeded": "based",
+      "profile": "(1920, Alexandria (now Ukraine), USSR - 1998) - Soviet composer, conductor, teacher, and folklorist. He worked a lot in Kyrgyzstan and Uzbekistan."
+    },
     {
       "code": "UZ",
       "key": "dg|704157",
@@ -189,67 +250,6 @@
       ],
       "edgeNeeded": "born",
       "profile": "Russian jazz pianist (* 1951 in Tashkent, Uzbekistan, Soviet Union)."
-    },
-    {
-      "code": "TJ",
-      "key": "dg|1806235",
-      "name": "Shoista Mullodzhanova",
-      "discogsArtistId": 1806235,
-      "releaseCount": 9,
-      "years": "1966–1980",
-      "foreignClaims": [],
-      "edgeNeeded": "based",
-      "profile": "born: 03 September 1925 in Dushanbe, Tajik ASSR, USSR died: 26 June 2010 in New York City, NY, USA Renowned singer."
-    },
-    {
-      "code": "TJ",
-      "key": "dg|1630320",
-      "name": "Николай Никитский",
-      "discogsArtistId": 1630320,
-      "releaseCount": 3,
-      "years": "1989–1989",
-      "foreignClaims": [
-        "RU"
-      ],
-      "edgeNeeded": "based",
-      "profile": "19 December 1921, Moscow - June 12, 1995, Moscow. Pop singer and actor. In 1951 he graduated from GITIS. Worked in Stalinabad drama theater Mayakovsky, Minsk Ru"
-    },
-    {
-      "code": "TJ",
-      "key": "dg|2337423",
-      "name": "Абулькасим Лахути",
-      "discogsArtistId": 2337423,
-      "releaseCount": 3,
-      "years": "1987–1987",
-      "foreignClaims": [
-        "IR"
-      ],
-      "edgeNeeded": "based",
-      "profile": "Iranian poet who has lived in Soviet Union, mainly in Tajikistan (1887-1957)"
-    },
-    {
-      "code": "TJ",
-      "key": "dg|15001507",
-      "name": "Эдуард Каландаров",
-      "discogsArtistId": 15001507,
-      "releaseCount": 1,
-      "years": "1982–1982",
-      "foreignClaims": [
-        "UZ"
-      ],
-      "edgeNeeded": "based",
-      "profile": "Eduard Kalandarov (born July 8, 1941 in Dushanbe) is an Uzbek composer, conductor, and pianist. In 1967, he graduated from the Tashkent Conservatory in composit"
-    },
-    {
-      "code": "KG",
-      "key": "dg|9066625",
-      "name": "Борис Феферман",
-      "discogsArtistId": 9066625,
-      "releaseCount": 2,
-      "years": "1970–1970",
-      "foreignClaims": [],
-      "edgeNeeded": "based",
-      "profile": "(1920, Alexandria (now Ukraine), USSR - 1998) - Soviet composer, conductor, teacher, and folklorist. He worked a lot in Kyrgyzstan and Uzbekistan."
     },
     {
       "code": "KZ",
