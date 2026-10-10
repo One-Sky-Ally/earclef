@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08",
+  "generatedAt": "2026-10-10",
   "entries": {
     "dg:16011273": {
       "play": null
@@ -2098,16 +2098,9 @@
       "resolvedArtistId": 3326553,
       "title": "Marcha Presidencial - OSCA",
       "durationSeconds": 66,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      },
-      "queueEligible": false
+      "queueEligible": false,
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "wd:Q9069216": {
       "play": null,
@@ -3157,16 +3150,9 @@
       },
       "title": "Marcha Presidencial - OSCA",
       "durationSeconds": 66,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      },
-      "queueEligible": false
+      "queueEligible": false,
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:17537799": {
       "play": {
@@ -3354,16 +3340,8 @@
       },
       "title": "ບຸນທ ົງ ມະນີວົງ (บุญทอง มณีวงศ์) \"ຄິດເຖິງ\" (\"คิดถึง\") [Laos vinyl record 45 rpm NSK001]",
       "durationSeconds": 246,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:13766566": {
       "play": {
@@ -3372,16 +3350,8 @@
       },
       "title": "ບຸນທ ົງ ມະນີວົງ (บุญทอง มณีวงศ์) \"ຄິດເຖິງ\" (\"คิดถึง\") [Laos vinyl record 45 rpm NSK001]",
       "durationSeconds": 246,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:11475059": {
       "play": null
@@ -3438,15 +3408,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=rIYiNcmEDJ4"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1210430": {
       "play": null
@@ -3637,16 +3600,8 @@
       },
       "title": "D Funk (Original Mix)",
       "durationSeconds": 153,
-      "identityEvidence": {
-        "anchors": [
-          "shared",
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:14435684": {
       "play": {
@@ -4003,15 +3958,8 @@
       },
       "title": "General Stroessner - OSCA & Coro Escuela Municpal de Canto",
       "durationSeconds": 239,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5604860": {
       "play": {
@@ -5149,16 +5097,8 @@
       },
       "title": "D Funk (Original Mix)",
       "durationSeconds": 153,
-      "identityEvidence": {
-        "anchors": [
-          "shared",
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2672669": {
       "play": {
@@ -5509,16 +5449,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=FvjBx0om2H4"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "mb-title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "dg:2168509": {
       "play": {
@@ -9863,15 +9795,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=dQc7HTTJsKk"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "wd:Q107224610": {
       "play": null
@@ -10262,15 +10187,8 @@
       },
       "title": "Maseru & Hlotse Methodist Choir (conducted by Alex Gwinsta), \"Sanctus\"",
       "durationSeconds": 174,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8504070": {
       "play": null
@@ -10310,15 +10228,8 @@
       },
       "title": "Maseru & Hlotse Methodist Choir (conducted by Alex Gwinsta), \"Sanctus\"",
       "durationSeconds": 174,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "wd:Q112292393": {
       "play": null
@@ -11481,15 +11392,8 @@
       },
       "title": "Abdu Hasseen N Mahmud Sheck Mahamed D- Haya Nagheti (Part 2)",
       "durationSeconds": 228,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5071286": {
       "play": {
@@ -11592,15 +11496,8 @@
       },
       "title": "Abdu Hasseen N Mahmud Sheck Mahamed D- Haya Nagheti (Part 2)",
       "durationSeconds": 228,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8393676": {
       "play": null
@@ -11649,15 +11546,8 @@
       },
       "title": "Hatim, Ahlam, Ahmed - Dubra Zamana - Somalia Oldies Vinyl 1970s",
       "durationSeconds": 518,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "wd:Q3378014": {
       "play": null
@@ -12940,15 +12830,8 @@
       },
       "title": "Orchestre Yaya  Mas - Rampa Rampa",
       "durationSeconds": 156,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:13713346": {
       "play": null
@@ -13049,15 +12932,8 @@
       },
       "title": "Orchestre Yaya  Mas - Rampa Rampa",
       "durationSeconds": 156,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3276568": {
       "play": {
@@ -13167,15 +13043,8 @@
       },
       "title": "Hector Moran, He Mi - Buruka ( Sublee Remix) [OBD002]",
       "durationSeconds": 781,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2716243": {
       "play": {
@@ -14333,16 +14202,8 @@
       },
       "title": "Чынара Токтоналиева & Шеркул Дуйшеналиев - Кырманда (Kyrgyzstan, USSR 1986)",
       "durationSeconds": 101,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "wd:Q13173252": {
       "play": null
@@ -15292,16 +15153,8 @@
       },
       "title": "Jacob Salem & Somkieta - CLIP - Nanluli (Official)",
       "durationSeconds": 204,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4521486": {
       "play": {
@@ -15842,15 +15695,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=I48fJvXjkxg"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "wd:Q137668695": {
       "play": null
@@ -17861,16 +17707,8 @@
       },
       "title": "Bidot Audat et Orchestre Poly Rythmo De Cotonou - Laisses Les Dire",
       "durationSeconds": 220,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "mb-title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2121786": {
       "play": {
@@ -18782,15 +18620,8 @@
       },
       "title": "Kokouvi Dolla & Kodjo Adjavon Et Leur Groupe D'Agoe-Nyive, Togo ‎– La Geomancie Africaine",
       "durationSeconds": 2778,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:17425633": {
       "play": null
@@ -20400,15 +20231,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=lV2fyJWEXP8"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1771226": {
       "play": {
@@ -22560,15 +22384,8 @@
       },
       "title": "Inle Myint Maung & Yi Yi Thant  - Phong Moe Thoon Laun",
       "durationSeconds": 301,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "mb-title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:8144875": {
       "play": null
@@ -23279,18 +23096,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=A2Oxmn6QNnQ"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration",
-          "mb-title",
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "wd:Q13076287": {
       "play": null
@@ -23417,16 +23224,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=QzM60UAjo0Y"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3483484": {
       "play": {
@@ -23953,16 +23752,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=qbt1pbwsJYE"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6269352": {
       "play": null
@@ -24051,15 +23842,8 @@
       },
       "title": "សម្តេចឪយើង",
       "durationSeconds": 144,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:13265046": {
       "play": null
@@ -27059,15 +26843,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=4G-YQA_bsOU"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:7918925": {
       "play": {
@@ -27076,15 +26853,8 @@
       },
       "title": "Jonon - Mongolz",
       "durationSeconds": 191,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5269591": {
       "play": {
@@ -27466,15 +27236,8 @@
       },
       "title": "Jonon - Mongolz",
       "durationSeconds": 191,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:9562675": {
       "play": null
@@ -28107,15 +27870,8 @@
       "resolvedArtistId": 4537364,
       "title": "Bilegiin Damdinsuren - Gerelgo's Aria",
       "durationSeconds": 154,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4722572": {
       "play": {
@@ -28544,15 +28300,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=gk7I0f8LPrA"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4542826": {
       "play": {
@@ -28565,15 +28314,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=gk7I0f8LPrA"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4602943": {
       "play": {
@@ -28688,16 +28430,8 @@
       },
       "title": "Арван тавны сар (МУГЖ Г.Дорждэрэм)",
       "durationSeconds": 202,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7884815": {
       "play": {
@@ -28706,16 +28440,8 @@
       },
       "title": "Арван тавны сар (МУГЖ Г.Дорждэрэм)",
       "durationSeconds": 202,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3451359": {
       "play": {
@@ -28756,16 +28482,8 @@
       },
       "title": "Арван тавны сар (МУГЖ Г.Дорждэрэм)",
       "durationSeconds": 202,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4537381": {
       "play": {
@@ -28947,15 +28665,8 @@
       },
       "title": "01 - Fadah x Kdor - Le goût des choses (Prod. Metronom / cuts Dj Shogun) (Son officiel)",
       "durationSeconds": 248,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "wd:Q20993823": {
       "play": null
@@ -29428,15 +29139,8 @@
       },
       "title": "LTM Vs MaxRevenge - Back To That Place (Must Rush remix)",
       "durationSeconds": 190,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6343896": {
       "play": null
@@ -32159,15 +31863,8 @@
       },
       "title": "North Korea 78rpm: 김요숙 ‎– 혁명가",
       "durationSeconds": 133,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:10725868": {
       "play": {
@@ -35284,15 +34981,8 @@
       },
       "title": "MARCOS SUZANO + 沼澤 尚 + 勝井祐二 + 内田直之 \"FIM DE TARDE\"",
       "durationSeconds": 138,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:8621682": {
       "play": null
@@ -35432,15 +35122,8 @@
       },
       "title": "Slim Ali & The Famous Hodi Boys - Watoto Nyara",
       "durationSeconds": 315,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3260159": {
       "play": {
@@ -37465,16 +37148,8 @@
       },
       "title": "Pekos/Yoro Diallo - Track 1",
       "durationSeconds": 829,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1622088": {
       "play": {
@@ -38636,15 +38311,8 @@
       },
       "title": "Kandia denke",
       "durationSeconds": 459,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:4299632": {
       "play": {
@@ -39189,15 +38857,8 @@
       },
       "title": "Horoya Band National - Karan-Gbegne – Guinée, 1972",
       "durationSeconds": 246,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7005234": {
       "play": null
@@ -41332,15 +40993,8 @@
       },
       "title": "Mour Chani El Maamoun, Ahmed Hassan Jomah - Mawfourat El Nafal",
       "durationSeconds": 297,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4373474": {
       "play": null
@@ -41358,15 +41012,8 @@
       },
       "title": "Mour Chani El Maamoun, Ahmed Hassan Jomah - Mawfourat El Nafal",
       "durationSeconds": 297,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4369725": {
       "play": null
@@ -41779,15 +41426,8 @@
       },
       "title": "Sagbohan Danialou, \"Zoun Min Ti Gbo\"",
       "durationSeconds": 556,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1474819": {
       "play": {
@@ -43601,15 +43241,8 @@
       },
       "title": "Ouedraogo L'Amidou - Kyerematen (Benin, 19??)",
       "durationSeconds": 556,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8979826": {
       "play": null
@@ -43694,15 +43327,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=NxyOhFBoxSY"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:9493165": {
       "play": null
@@ -43881,15 +43507,8 @@
       },
       "title": "Samadou - Orchestre African All Stars International // AFRO FUNK BENIN",
       "durationSeconds": 317,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:14433743": {
       "play": null
@@ -44631,15 +44250,8 @@
       },
       "title": "PRINCE LUCIANO KIMPOUNI & LES KAMBA  KAMBA  -  MBUALE",
       "durationSeconds": 620,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6848232": {
       "play": null
@@ -44710,16 +44322,8 @@
       },
       "title": "Achille Johnny - Unité Nationale",
       "durationSeconds": 220,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2528816": {
       "play": {
@@ -44843,16 +44447,8 @@
       },
       "title": "Les Abidjanais, \"Mauya\"",
       "durationSeconds": 143,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:9740332": {
       "play": null
@@ -46028,15 +45624,8 @@
       },
       "title": "Nfon Emmanuel et Los Kolo Kolo - Natondi Mado (Disques Cousin DC8003)",
       "durationSeconds": 336,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5848094": {
       "play": null
@@ -46429,15 +46018,8 @@
       },
       "title": "Abega Owona Dieudonné et la chorale St Kisito de Mvog Mbi - Alleluia bon bivindi (Sonafric 1976)",
       "durationSeconds": 267,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7929487": {
       "play": null
@@ -46504,15 +46086,8 @@
       },
       "title": "Nfon Emmanuel et Los Kolo Kolo - Natondi Mado (Disques Cousin DC8003)",
       "durationSeconds": 336,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2054587": {
       "play": {
@@ -46720,15 +46295,8 @@
       },
       "title": "Georges Dikson - Jackalina (Africalypso)",
       "durationSeconds": 400,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:10931600": {
       "play": {
@@ -46907,15 +46475,8 @@
       },
       "title": "Koullé Paul et les Black Styl - Mama Na Papa (Afro Disc 1977 AD057)",
       "durationSeconds": 281,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3862867": {
       "play": {
@@ -48728,15 +48289,8 @@
       },
       "title": "Bekombo Massoua et l'Orchestre Los Calvinos - Muna Bobe (Jicco JC60)",
       "durationSeconds": 226,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5847856": {
       "play": null
@@ -48748,15 +48302,8 @@
       },
       "title": "Sadey Egide et les Negro Styls - André car toujours nouveau (Disques cousin 1977 DC80006)",
       "durationSeconds": 463,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5823617": {
       "play": {
@@ -48769,15 +48316,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=oVn64RTmFG8"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4698974": {
       "play": {
@@ -48849,15 +48389,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=oVn64RTmFG8"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8217811": {
       "play": {
@@ -49138,15 +48671,8 @@
       },
       "title": "Alisson - emma (l'andoulanga plus - PRM 1990)",
       "durationSeconds": 295,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6427581": {
       "play": {
@@ -50480,15 +50006,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=BTSFU4nuJ_Y"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4007083": {
       "play": {
@@ -50660,16 +50179,8 @@
       },
       "title": "Johnny Tezano et l'Orchestre Kevithas - mauvais camara (Africana star ASLPS006)",
       "durationSeconds": 512,
-      "identityEvidence": {
-        "anchors": [
-          "shared",
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:4825194": {
       "play": {
@@ -50759,15 +50270,8 @@
       },
       "title": "Les Vétérans Présentent Ahanda - Envuvut Man Minga (Ebobolo Fia DTC024)",
       "durationSeconds": 406,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5807666": {
       "play": {
@@ -51219,15 +50723,8 @@
       "resolvedArtistId": 1272023,
       "title": "Toto Guillaume et les Black Styl - Na Demedi Oa (Afro Disc 1975 AD008)",
       "durationSeconds": 302,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "wd:Q137945841": {
       "play": null
@@ -51856,16 +51353,8 @@
       },
       "title": "Pape Fall   Artisanat",
       "durationSeconds": 311,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "dg:2362874": {
       "play": {
@@ -52157,16 +51646,9 @@
       },
       "title": "Mankind Solidarity - Galas & The A-Threes / Aziz Pablo - Serengeti Music Promo mix",
       "durationSeconds": 57,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      },
-      "queueEligible": false
+      "queueEligible": false,
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4734836": {
       "play": {
@@ -52189,15 +51671,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=RLvQKFpG8kE"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6738439": {
       "play": null
@@ -52539,15 +52014,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=5CcSLkgBYC8"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:11891777": {
       "play": {
@@ -52795,15 +52263,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=5CcSLkgBYC8"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:14981596": {
       "play": {
@@ -52834,15 +52295,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=RLvQKFpG8kE"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5420482": {
       "play": null
@@ -53285,16 +52739,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=JYReLRRUKjw"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1703834": {
       "play": {
@@ -53617,15 +53063,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=_YUakfy_pyQ"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6910207": {
       "play": null
@@ -53705,15 +53144,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=8-Ar9q2MW1g"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:10749106": {
       "play": null
@@ -54511,15 +53943,8 @@
       },
       "title": "Pape Niang et le Kourel - Sey",
       "durationSeconds": 225,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4310315": {
       "play": {
@@ -55856,15 +55281,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=gxdJqncir4Y"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4428133": {
       "play": {
@@ -56214,15 +55632,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=MY0xkq8J59c"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:538540": {
       "play": {
@@ -57190,15 +56601,8 @@
       },
       "title": "Menelik Wossenatchew & Telela Kebede - Aderetch Arada / Kelemawa",
       "durationSeconds": 445,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4429562": {
       "play": {
@@ -57585,15 +56989,8 @@
       },
       "title": "Fikreaddis Nekatibeb & Dereje Degefaw -  ዛሬም አላፈፉ",
       "durationSeconds": 370,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:15976017": {
       "play": null
@@ -59135,15 +58532,8 @@
       },
       "title": "Bro David & Tribal Vibes - Never Ever Before (1991 Caye Records)",
       "durationSeconds": 341,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7590411": {
       "play": {
@@ -59733,15 +59123,8 @@
       },
       "title": "Redskins & Danman   Don't Worry Dub Mix Kemet 1992",
       "durationSeconds": 301,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "wd:Q42418889": {
       "play": null
@@ -60188,15 +59571,8 @@
       },
       "title": "MAY-YAH-NA  -  DASY PANCHU  from GUYANA old local (ORIGINAL) song.",
       "durationSeconds": 163,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7735666": {
       "play": null
@@ -60321,15 +59697,8 @@
       },
       "title": "The Breakers Two - Betrayed [Guyana ska 45]",
       "durationSeconds": 161,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6581380": {
       "play": {
@@ -60338,15 +59707,8 @@
       },
       "title": "The Invitation - In The Ghetto",
       "durationSeconds": 166,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:12419560": {
       "play": {
@@ -60538,15 +59900,8 @@
       },
       "title": "Graduates Combo - Make It With You (Guyana 1971)",
       "durationSeconds": 205,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5550545": {
       "play": null
@@ -60575,15 +59930,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=qAdn6v8ehio"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:13769938": {
       "play": null
@@ -60777,15 +60125,8 @@
       },
       "title": "Graduates Combo - Make It With You (Guyana 1971)",
       "durationSeconds": 205,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4293690": {
       "play": null
@@ -61936,15 +61277,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=uDlgIyH_ZrA"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4745707": {
       "play": {
@@ -63179,15 +62513,8 @@
       },
       "title": "Guillermo Anderson - Ese Mortal Llamado Morazan",
       "durationSeconds": 267,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:8080528": {
       "play": {
@@ -63364,16 +62691,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=ux3tt-rX-xw"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:9374650": {
       "play": null
@@ -63889,15 +63208,8 @@
       },
       "title": "Paco Medina-Caminito",
       "durationSeconds": 173,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "dg:2339366": {
       "play": {
@@ -65401,15 +64713,8 @@
       },
       "title": "Frank Penn - Scull Down The Shore",
       "durationSeconds": 216,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4340054": {
       "play": {
@@ -65428,15 +64733,8 @@
       },
       "title": "Frankie Zhivago Young and the Rams - Pumpkin, Bananas, Peas & Corn",
       "durationSeconds": 163,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:3654028": {
       "play": {
@@ -66066,15 +65364,8 @@
       },
       "title": "Eddie Minnis - Carmen",
       "durationSeconds": 227,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7685286": {
       "play": {
@@ -66293,16 +65584,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=LC7gVvI6Bts"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3943783": {
       "play": {
@@ -66311,15 +65594,8 @@
       },
       "title": "Monte Browne – Music, Music",
       "durationSeconds": 278,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:14947916": {
       "play": {
@@ -66949,15 +66225,8 @@
       },
       "title": "Ossie Parker Jr. The Islanders - Saturday Night.",
       "durationSeconds": 153,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:418882": {
       "play": {
@@ -68382,15 +67651,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=IF1gXo8Z0PI"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2004352": {
       "play": {
@@ -68917,15 +68179,8 @@
       },
       "title": "Iwan Esseboom joins Njoeng Ting - indjo heroewahé",
       "durationSeconds": 351,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2174491": {
       "play": {
@@ -69050,15 +68305,8 @@
       },
       "title": "O Jane Wali- Operation Makonaima (Sookdew(anand)Jagdew)",
       "durationSeconds": 191,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:5865263": {
       "play": {
@@ -69387,15 +68635,8 @@
       },
       "title": "N.J.B. Band Roetoe Kotie - malonie",
       "durationSeconds": 248,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1900916": {
       "play": {
@@ -70600,15 +69841,8 @@
       },
       "title": "Mark Bryan - Searching For The Pieces",
       "durationSeconds": 202,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2030504": {
       "play": {
@@ -70683,15 +69917,8 @@
       },
       "title": "N.J.B. Band Roetoe Kotie - malonie",
       "durationSeconds": 248,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4888377": {
       "play": {
@@ -72324,15 +71551,8 @@
       "resolvedArtistId": 1943700,
       "title": "Palo Palo - EDDY ASSAN & T - GROUP",
       "durationSeconds": 162,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1429434": {
       "play": {
@@ -72525,15 +71745,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=2tqcsIQbs5s"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5051018": {
       "play": {
@@ -73986,16 +73199,8 @@
       },
       "title": "Gason Roland",
       "durationSeconds": 407,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration",
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1959340": {
       "play": {
@@ -74106,15 +73311,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=2PJE0fv9YKg"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:989035": {
       "play": {
@@ -74253,15 +73451,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=iflG4qxB5VE"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2435366": {
       "play": {
@@ -74308,15 +73499,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=JhV32gW6U1Q"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6616299": {
       "play": {
@@ -74698,16 +73882,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=3PeIKrctnBM"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5369605": {
       "play": {
@@ -78055,15 +77231,8 @@
       },
       "title": "Joe Trouillot rencontre Les Diables du Rythme à Montreal - Haïti Pou'N Aller [Haitian Vinyl Archive]",
       "durationSeconds": 230,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7586381": {
       "play": null
@@ -78182,15 +77351,8 @@
       },
       "title": "Ferere Laguerre & Onichel Augustin – Les Cordes et Les Cloches Anglaises",
       "durationSeconds": 1477,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:6256662": {
       "play": null
@@ -78597,15 +77759,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=mLYa94kFTbw"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "wd:Q12889783": {
       "play": null
@@ -79483,15 +78638,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=fG7UDgpLoUA"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5316693": {
       "play": {
@@ -79846,15 +78994,8 @@
       },
       "title": "Marco - La historia de un muchacho que te quería",
       "durationSeconds": 186,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1490923": {
       "play": null
@@ -80333,16 +79474,8 @@
       },
       "title": "Taimur & Artro - Know Your Friends (Vox Version) [BLKMUSIC013]",
       "durationSeconds": 370,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7380360": {
       "play": null
@@ -81694,15 +80827,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=zVdRr1gqXHE"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5121181": {
       "play": {
@@ -82012,15 +81138,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=-hm0DHyNW6g"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:12317755": {
       "play": {
@@ -82963,15 +82082,8 @@
       },
       "title": "AMOR   Cuarteto Flores   Daniel Santos   Pedro Flores",
       "durationSeconds": 179,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1923565": {
       "play": {
@@ -84967,16 +84079,8 @@
       },
       "title": "John Tilbury, John Lely and Dirar Kalash - 'Seaside'",
       "durationSeconds": 305,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "mb-title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:13080630": {
       "play": null
@@ -85079,15 +84183,8 @@
       },
       "title": "فارس - ح كتبلك",
       "durationSeconds": 347,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3035588": {
       "play": null
@@ -85671,15 +84768,8 @@
       },
       "title": "غنائية أحمد العربي - مارسيل خليفة و محمود درويش | Ahmad Al Arabi - Marcel Khalife & Mahmoud Darwish",
       "durationSeconds": 1086,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:5451439": {
       "play": {
@@ -85941,16 +85031,8 @@
       },
       "title": "Brannco, Maya Days - Push The Feeling On (Pseudo Video)",
       "durationSeconds": 159,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2604690": {
       "play": null
@@ -86496,15 +85578,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=PeG3C_7d2jY"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8152905": {
       "play": {
@@ -87297,16 +86372,8 @@
       },
       "title": "يزن الروسان  ( فرقة رم ) - من نص ساعة  - Yazan Al -Raousan",
       "durationSeconds": 350,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3471093": {
       "play": {
@@ -87454,15 +86521,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=GSukeYgDAy8"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "wd:Q17241092": {
       "play": null
@@ -88334,15 +87394,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=d1bTCIjFNDI"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3627978": {
       "play": null
@@ -88390,16 +87443,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=d1bTCIjFNDI"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:17306986": {
       "play": null
@@ -88589,15 +87634,8 @@
       },
       "title": "Noury El Lafi and Sons of Badia Band - Yalaymin / نوري اللافي و فرقة أبناء البادية - يالايمين",
       "durationSeconds": 271,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:16854820": {
       "play": null
@@ -88660,15 +87698,8 @@
       },
       "title": "Noury El Lafi and Sons of Badia Band - Yalaymin / نوري اللافي و فرقة أبناء البادية - يالايمين",
       "durationSeconds": 271,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4058481": {
       "play": null
@@ -88772,15 +87803,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=oRdxUFDoQe0"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:12736253": {
       "play": {
@@ -92592,16 +91616,8 @@
       },
       "title": "Edgar Hovhannisyan - Symphony No. 3",
       "durationSeconds": 1679,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "mb-title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:700184": {
       "play": {
@@ -93037,15 +92053,8 @@
       },
       "title": "Deep 2000 (Navidad) - Dj Jabato & Paco Buggin",
       "durationSeconds": 4434,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4356422": {
       "play": {
@@ -93355,15 +92364,8 @@
       },
       "title": "Marcato, Tiny Toon feat. Aston Martinez - Million Kisses",
       "durationSeconds": 219,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1907179": {
       "play": {
@@ -96645,16 +95647,8 @@
       },
       "title": "Alex Greenhouse feat. Cameron J. - Do You Know? (Dave Huev Remix)",
       "durationSeconds": 321,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:16906444": {
       "play": null
@@ -97491,16 +96485,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=r2BsITlaR68"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7193550": {
       "play": {
@@ -97548,16 +96534,8 @@
       },
       "title": "White Sparkz, Ailand - On Drums (Original Mix)",
       "durationSeconds": 208,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2800148": {
       "play": {
@@ -98631,17 +97609,8 @@
       },
       "title": "Dusk (Original Mix)",
       "durationSeconds": 282,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration",
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:12823880": {
       "play": null
@@ -99608,16 +98577,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=WZd5xepzpF4"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7031259": {
       "play": {
@@ -101193,16 +100154,8 @@
       },
       "title": "Hafize Leskoviku Me Sazet - Kush te ka moj Ruske",
       "durationSeconds": 183,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:10402204": {
       "play": null
@@ -101603,15 +100556,8 @@
       },
       "title": "Dimas Pres. D-Formation ‎– Starstuff (Original BF Mix)",
       "durationSeconds": 465,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1180924": {
       "play": null
@@ -102481,15 +101427,8 @@
       },
       "title": "Belocca, Soneec, Chris Lauer & Canard 'Plastic Crock' (Original Club Mix)",
       "durationSeconds": 527,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8045494": {
       "play": null
@@ -102501,16 +101440,8 @@
       },
       "title": "ROUGH003 | Lifekiss&Hoover & Pascal Dior - Kissin' Me (Original Mix)",
       "durationSeconds": 474,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:18040578": {
       "play": null
@@ -102688,16 +101619,8 @@
       },
       "title": "Hafize Leskoviku Me Sazet - Kush te ka moj Ruske",
       "durationSeconds": 183,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1179810": {
       "play": {
@@ -103025,15 +101948,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=ImyYZfKE-ts"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1979933": {
       "play": null
@@ -104971,17 +103887,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=Zsad1N0txns"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration",
-          "mb-title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3604252": {
       "play": null
@@ -106143,16 +105050,8 @@
       },
       "title": "Marcus Santoro x 88Birds - Goodbye",
       "durationSeconds": 156,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6497432": {
       "play": {
@@ -106368,16 +105267,8 @@
       },
       "title": "Anastasia Lazariuc - Ziua Florilor (disco pop, Moldova, USSR 1989)",
       "durationSeconds": 194,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5842193": {
       "play": null
@@ -114299,15 +113190,8 @@
       },
       "title": "Duyên Chàng Nợ Thiếp | Hữu Phước & các nghệ sĩ | Đĩa Hát Lam Sơn 471 (1960) (Đĩa 1/3)",
       "durationSeconds": 348,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4636427": {
       "play": {
@@ -114421,15 +113305,8 @@
       },
       "title": "Duyên Chàng Nợ Thiếp | Hữu Phước & các nghệ sĩ | Đĩa Hát Lam Sơn 471 (1960) (Đĩa 1/3)",
       "durationSeconds": 348,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4636141": {
       "play": {
@@ -114438,15 +113315,8 @@
       },
       "title": "Duyên Chàng Nợ Thiếp | Hữu Phước & các nghệ sĩ | Đĩa Hát Lam Sơn 471 (1960) (Đĩa 1/3)",
       "durationSeconds": 348,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4636425": {
       "play": {
@@ -114522,15 +113392,8 @@
       },
       "title": "Ăn Trộm Hết Thời | Ba Vân, Sáu Thoàng, Mỵ Lan | Đĩa hát Kim Thanh (1950s)",
       "durationSeconds": 338,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2569272": {
       "play": {
@@ -114574,15 +113437,8 @@
       },
       "title": "Chung Vô Diệm - Bạch Tuyết, TấnTài, Phượng Liên, Văn Hường, Mai-Lan, Phượng Mai, Kim-Quang, Diệu Nga",
       "durationSeconds": 2246,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:4831639": {
       "play": {
@@ -114591,15 +113447,8 @@
       },
       "title": "TIÊU ANH PHỤNG -  Nguyên tuồng (Trước 1975)",
       "durationSeconds": 4727,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:6026626": {
       "play": {
@@ -114608,15 +113457,8 @@
       },
       "title": "Duyên Chàng Nợ Thiếp | Hữu Phước & các nghệ sĩ | Đĩa Hát Lam Sơn 471 (1960) (Đĩa 1/3)",
       "durationSeconds": 348,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7998097": {
       "play": {
@@ -114642,15 +113484,8 @@
       },
       "title": "Đẹp Duyên Chùa Tháp | Út Trà Ôn, Hữu Phước và các nghệ sĩ | Đĩa hát Thống Nhất (1950s) (đĩa 1/6)",
       "durationSeconds": 376,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4798560": {
       "play": {
@@ -114745,15 +113580,8 @@
       },
       "title": "Tam Cung Nguyệt Kiểu | Út Bạch Huệ, Minh Chí & các nghệ sĩ | Đĩa hát Hồng Hoa 1994 (1950s) (Đĩa 2/3)",
       "durationSeconds": 353,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6060583": {
       "play": {
@@ -114860,15 +113688,8 @@
       },
       "title": "Khép Cánh Song Thưa | Thanh Hương, Văn Chung | Đĩa Hát Trường Sơn (1950s) (Đĩa 2/3)",
       "durationSeconds": 347,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3800423": {
       "play": {
@@ -114905,15 +113726,8 @@
       },
       "title": "Duyên Chàng Nợ Thiếp | Hữu Phước & các nghệ sĩ | Đĩa Hát Lam Sơn 471 (1960) (Đĩa 1/3)",
       "durationSeconds": 348,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6467904": {
       "play": {
@@ -115011,15 +113825,8 @@
       },
       "title": "Hạng Võ Biệt Ngu Cơ | Cô Ngọc Xứng, Kim Cúc và các nghệ sĩ | Đĩa hát Sơn Ca (1950s)",
       "durationSeconds": 355,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4715711": {
       "play": {
@@ -115153,15 +113960,8 @@
       },
       "title": "Giữ Vẹn Hương Tình | Mai Hoa, Út Hậu | Đĩa hát Thái Sơn (Đĩa 3/3) (1950s)",
       "durationSeconds": 359,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7931723": {
       "play": {
@@ -115264,15 +114064,8 @@
       },
       "title": "Ăn Trộm Hết Thời | Ba Vân, Sáu Thoàng, Mỵ Lan | Đĩa hát Kim Thanh (1950s)",
       "durationSeconds": 338,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4635182": {
       "play": {
@@ -115425,15 +114218,8 @@
       },
       "title": "Đệ nhất danh ca Út Trà Ôn - Tân cổ \"Thích Ca tầm đạo\" với Ngọc Bích , Hề Sa",
       "durationSeconds": 791,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2809559": {
       "play": {
@@ -115442,15 +114228,8 @@
       },
       "title": "Đẹp Duyên Chùa Tháp | Út Trà Ôn, Hữu Phước và các nghệ sĩ | Đĩa hát Thống Nhất (1950s) (đĩa 1/6)",
       "durationSeconds": 376,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6044939": {
       "play": {
@@ -115496,15 +114275,8 @@
       },
       "title": "TIÊU ANH PHỤNG -  Nguyên tuồng (Trước 1975)",
       "durationSeconds": 4727,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:6553582": {
       "play": {
@@ -115549,15 +114321,8 @@
       },
       "title": "Đẹp Duyên Chùa Tháp | Út Trà Ôn, Hữu Phước và các nghệ sĩ | Đĩa hát Thống Nhất (1950s) (đĩa 1/6)",
       "durationSeconds": 376,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6259968": {
       "play": null
@@ -115857,15 +114622,8 @@
       },
       "title": "LP Một Ngày Một Đời - Phạm Duy, Thái Hằng, Thái Hiền (1976) | One Day One Life",
       "durationSeconds": 1817,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4635213": {
       "play": null
@@ -115924,15 +114682,8 @@
       },
       "title": "Đệ nhất danh ca Út Trà Ôn - Tân cổ \"Thích Ca tầm đạo\" với Ngọc Bích , Hề Sa",
       "durationSeconds": 791,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:17782293": {
       "play": {
@@ -116150,15 +114901,8 @@
       },
       "title": "Mộng Đoàn Viên | Minh Chí, Ngọc Xứng ca | Đĩa hát Hoàng Mai (1950s)",
       "durationSeconds": 340,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6267337": {
       "play": null
@@ -116422,15 +115166,8 @@
       },
       "title": "Phillipines Five Sisters - 大家樂 Happy Dance - 1971 - Singapore",
       "durationSeconds": 695,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:4311103": {
       "play": {
@@ -116439,15 +115176,8 @@
       },
       "title": "Phillipines Five Sisters - 大家樂 Happy Dance - 1971 - Singapore",
       "durationSeconds": 695,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:4310420": {
       "play": {
@@ -116900,15 +115630,8 @@
       },
       "title": "Chung Vô Diệm - Bạch Tuyết, TấnTài, Phượng Liên, Văn Hường, Mai-Lan, Phượng Mai, Kim-Quang, Diệu Nga",
       "durationSeconds": 2246,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:11886923": {
       "play": null
@@ -117018,15 +115741,8 @@
       },
       "title": "TIÊU ANH PHỤNG -  Nguyên tuồng (Trước 1975)",
       "durationSeconds": 4727,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:16914610": {
       "play": null
@@ -117824,15 +116540,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=bYr9uVAMgfI"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1763494": {
       "play": {
@@ -119154,15 +117863,8 @@
       "resolvedArtistId": 6080148,
       "title": "Giữ Vẹn Hương Tình | Mai Hoa, Út Hậu | Đĩa hát Thái Sơn (Đĩa 3/3) (1950s)",
       "durationSeconds": 359,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "wd:Q30920002": {
       "play": null
@@ -119920,15 +118622,8 @@
       },
       "title": "Giữ Vẹn Hương Tình | Mai Hoa, Út Hậu | Đĩa hát Thái Sơn (Đĩa 3/3) (1950s)",
       "durationSeconds": 359,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8031738": {
       "play": null
@@ -119950,15 +118645,8 @@
       },
       "title": "Mộng Đoàn Viên | Minh Chí, Ngọc Xứng ca | Đĩa hát Hoàng Mai (1950s)",
       "durationSeconds": 340,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:12399016": {
       "play": {
@@ -119984,15 +118672,8 @@
       },
       "title": "San Hậu ( thứ ba ) | Nhiều Nghệ Sĩ | Đĩa Hát Asia Electric (1940s)",
       "durationSeconds": 405,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7395692": {
       "play": {
@@ -120038,15 +118719,8 @@
       },
       "title": "Ăn Trộm Hết Thời | Ba Vân, Sáu Thoàng, Mỵ Lan | Đĩa hát Kim Thanh (1950s)",
       "durationSeconds": 338,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5153281": {
       "play": {
@@ -120132,15 +118806,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=WVlrijWhK_4"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:16509812": {
       "play": {
@@ -120149,15 +118816,8 @@
       },
       "title": "Tam Cung Nguyệt Kiểu | Út Bạch Huệ, Minh Chí & các nghệ sĩ | Đĩa hát Hồng Hoa 1994 (1950s) (Đĩa 2/3)",
       "durationSeconds": 353,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7998110": {
       "play": null
@@ -120317,15 +118977,8 @@
       },
       "title": "San Hậu ( thứ ba ) | Nhiều Nghệ Sĩ | Đĩa Hát Asia Electric (1940s)",
       "durationSeconds": 405,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7002691": {
       "play": {
@@ -120579,15 +119232,8 @@
       },
       "title": "Đẹp Duyên Chùa Tháp | Út Trà Ôn, Hữu Phước và các nghệ sĩ | Đĩa hát Thống Nhất (1950s) (đĩa 1/6)",
       "durationSeconds": 376,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:12847505": {
       "play": null
@@ -120767,15 +119413,8 @@
       },
       "title": "San Hậu ( thứ ba ) | Nhiều Nghệ Sĩ | Đĩa Hát Asia Electric (1940s)",
       "durationSeconds": 405,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:16509917": {
       "play": null
@@ -121008,15 +119647,8 @@
       },
       "title": "Đẹp Duyên Chùa Tháp | Út Trà Ôn, Hữu Phước và các nghệ sĩ | Đĩa hát Thống Nhất (1950s) (đĩa 1/6)",
       "durationSeconds": 376,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:18017415": {
       "play": null
@@ -121146,15 +119778,8 @@
       },
       "title": "San Hậu ( thứ ba ) | Nhiều Nghệ Sĩ | Đĩa Hát Asia Electric (1940s)",
       "durationSeconds": 405,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8021443": {
       "play": null
@@ -121351,15 +119976,8 @@
       },
       "title": "金像歌星 (2) - 譚炳文 鄭幗寶",
       "durationSeconds": 576,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5254931": {
       "play": null
@@ -122090,15 +120708,8 @@
       },
       "title": "Jewel Ackah & Prof  Kofi Abraham - Megya, Da Ben Da - Ghana Gospel Highlife 1994",
       "durationSeconds": 298,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "dg:2852645": {
       "play": {
@@ -122677,15 +121288,8 @@
       },
       "title": "Lunch time",
       "durationSeconds": 287,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1302163": {
       "play": {
@@ -123432,15 +122036,8 @@
       },
       "title": "Germaine Jourias - Salabogo",
       "durationSeconds": 203,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1915191": {
       "play": null
@@ -123475,15 +122072,8 @@
       },
       "title": "Nyame Bekyere - Medley",
       "durationSeconds": 765,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:4753889": {
       "play": {
@@ -124943,15 +123533,8 @@
       },
       "title": "Lunch time",
       "durationSeconds": 287,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:16013619": {
       "play": null
@@ -125184,15 +123767,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=YlV3SheLRTo"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:17749170": {
       "play": {
@@ -125254,15 +123830,8 @@
       },
       "title": "King Bruce -  Srotoi Yemlin",
       "durationSeconds": 167,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "dg:3850305": {
       "play": {
@@ -125888,16 +124457,8 @@
       },
       "title": "Tshitsha",
       "durationSeconds": 354,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:439385": {
       "play": {
@@ -128688,15 +127249,8 @@
       },
       "title": "Slim Young - Ko Man Bi",
       "durationSeconds": 389,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4932621": {
       "play": {
@@ -130535,16 +129089,8 @@
       },
       "title": "The Techniques with Byron Lee and The Dragonaires - No One",
       "durationSeconds": 156,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "mb-title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:11647946": {
       "play": null
@@ -130675,15 +129221,8 @@
       },
       "title": "Vocal Band d'Abidjan - Mingohon Ebela Bo (Ivory Coast)",
       "durationSeconds": 312,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5398423": {
       "play": {
@@ -131127,15 +129666,8 @@
       },
       "title": "Nashil Pichen & His Super Mazembe - Peace Work",
       "durationSeconds": 248,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:911035": {
       "play": {
@@ -132193,15 +130725,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=1mtpEVAKVGg"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:13257096": {
       "play": {
@@ -132748,16 +131273,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=O8wtLRtCUrg"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7323046": {
       "play": {
@@ -132880,15 +131397,8 @@
       },
       "title": "Albert Mule & Bangwelu Lakeside Band - Nampundu / Chabula - Zambian Music Single (Bemba)",
       "durationSeconds": 536,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3674060": {
       "play": {
@@ -132952,15 +131462,8 @@
       },
       "title": "Albert Mule & Bangwelu Lakeside Band - Nampundu / Chabula - Zambian Music Single (Bemba)",
       "durationSeconds": 536,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8136989": {
       "play": null
@@ -133270,15 +131773,8 @@
       },
       "title": "Joyce Nyrirongo - Sebe (Official Video)",
       "durationSeconds": 269,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7333506": {
       "play": null
@@ -134657,16 +133153,8 @@
       },
       "title": "PK Chishala - Na Musonda",
       "durationSeconds": 479,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4424508": {
       "play": {
@@ -135229,15 +133717,8 @@
       },
       "title": "M.Z. Lembi / N.L. Sackoul - No Matter How Long, I Will Wait / Cherry  [Zamrock]",
       "durationSeconds": 417,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:15662766": {
       "play": {
@@ -135500,15 +133981,8 @@
       },
       "title": "M.Z. Lembi / N.L. Sackoul - No Matter How Long, I Will Wait / Cherry  [Zamrock]",
       "durationSeconds": 417,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3976767": {
       "play": {
@@ -135878,15 +134352,8 @@
       },
       "title": "Slim Ali & The Famous Hodi Boys - Watoto Nyara",
       "durationSeconds": 315,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:398749": {
       "play": {
@@ -137819,15 +136286,8 @@
       },
       "title": "Isaac Mpofu & The Heathen Band - Do You Know / So Fine  [Zamrock]",
       "durationSeconds": 336,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4309932": {
       "play": {
@@ -138125,15 +136585,8 @@
       },
       "title": "Hector Sithole & On Paper - High Life (Sample / Snippet)",
       "durationSeconds": 210,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "dg:16316527": {
       "play": {
@@ -138191,16 +136644,8 @@
       },
       "title": "Mbaraka Mwinshehe - Kasema Hakutaki (AEML4)",
       "durationSeconds": 272,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "mb-title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5549738": {
       "play": null
@@ -139083,15 +137528,8 @@
       },
       "title": "Kiyika Masamba & Orchestre Kara de Kinshasa, \"Kady Kady\"",
       "durationSeconds": 517,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1642957": {
       "play": {
@@ -139229,15 +137667,8 @@
       },
       "title": "Kosilika Te Doudou / Sengola (Kabaselé) - African Jazz",
       "durationSeconds": 339,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3444476": {
       "play": {
@@ -139366,15 +137797,8 @@
       },
       "title": "Léon Bukasa, Albino Kalombo na groupe rythmique Ngoma - Majivuno Ya Wana Wake",
       "durationSeconds": 179,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1392706": {
       "play": {
@@ -139521,15 +137945,8 @@
       },
       "title": "Mwena Joseph / John Ouwerx - Ma Bawzo Makeki",
       "durationSeconds": 164,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6225124": {
       "play": null
@@ -140006,15 +138423,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=dV0hujAEOs0"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1391468": {
       "play": {
@@ -140023,15 +138433,8 @@
       },
       "title": "Zaïko Langa Langa, Adios Alemba - Bongama Kamata Position (1987)",
       "durationSeconds": 1866,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:7271570": {
       "play": null
@@ -140109,15 +138512,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=hMdYu3B1oPQ"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:4225490": {
       "play": {
@@ -140153,15 +138549,8 @@
       },
       "title": "Lucie Eyenga et African Soul - Sekele Ya Gina Angebi",
       "durationSeconds": 247,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "dg:3946410": {
       "play": null
@@ -140431,15 +138820,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=SOJSM46nWwo"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3526614": {
       "play": null
@@ -140770,16 +139152,8 @@
       },
       "title": "Orchestre Le Peuple Trio Ce. Pa. Kos - Lettre ouverte (Congo, 1975)",
       "durationSeconds": 791,
-      "identityEvidence": {
-        "anchors": [
-          "shared",
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5180402": {
       "play": {
@@ -141039,16 +139413,8 @@
       },
       "title": "choc stars --- ibrahim bula",
       "durationSeconds": 478,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6581519": {
       "play": null
@@ -142216,16 +140582,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=c_34N87Eokk"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:16487034": {
       "play": null
@@ -143887,15 +142245,8 @@
       },
       "title": "Moseka Tika Mobali // BEBE MANZENZA & ORCHESTRE BABY CHOC MUSIC",
       "durationSeconds": 609,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:15058082": {
       "play": null
@@ -144257,16 +142608,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=hWRJFM9QeaM"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:12330034": {
       "play": null
@@ -144512,16 +142855,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=fBuhOjNEALk"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:14073169": {
       "play": {
@@ -144751,15 +143086,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=xj7YsZ3aZ9Q"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:14299741": {
       "play": null
@@ -144921,16 +143249,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=B38HTB1Ib20"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "wd:Q102289958": {
       "play": null
@@ -145104,15 +143424,8 @@
       },
       "title": "josky madilu malage --- heritage ya bankoko",
       "durationSeconds": 483,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:921187": {
       "play": {
@@ -145825,15 +144138,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=sYbtgfXH8VI"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3690327": {
       "play": {
@@ -145864,15 +144170,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=eMMtIypq9KE"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1290078": {
       "play": {
@@ -145952,15 +144251,8 @@
       },
       "title": "Charon Justin / John Ouwerx - Suzanne",
       "durationSeconds": 162,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:14630703": {
       "play": null
@@ -146013,15 +144305,8 @@
       },
       "title": "Orcherstre Les Esprits - Francine",
       "durationSeconds": 326,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6415933": {
       "play": null
@@ -147159,15 +145444,8 @@
       },
       "title": "Par Bakunda Ilondjoko or Les Kinois - Renault Zaire",
       "durationSeconds": 267,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:45119": {
       "play": {
@@ -147357,15 +145635,8 @@
       },
       "title": "Cengol / John Ouwerx - Haribu mapendo",
       "durationSeconds": 147,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:13667044": {
       "play": null
@@ -147511,15 +145782,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=Zw6ry1XqtXY"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "dg:14101024": {
       "play": null
@@ -147624,15 +145888,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=MqewxBks5Hc"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:14956190": {
       "play": null
@@ -147644,15 +145901,8 @@
       },
       "title": "Eza-rythme 1",
       "durationSeconds": 417,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:5760754": {
       "play": {
@@ -147681,15 +145931,8 @@
       },
       "title": "Sita Edouard / John Ouwerx - Helene na wakutshe la zana e zibula",
       "durationSeconds": 173,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8094931": {
       "play": {
@@ -148065,15 +146308,8 @@
       },
       "title": "Jacky Toto Presente Lutchiana Mobulu - Wapi",
       "durationSeconds": 269,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5563137": {
       "play": null
@@ -148750,17 +146986,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=JXjyyu_XUBE"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration",
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "dg:4509780": {
       "play": null
@@ -148985,15 +147212,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=bXpdMTOSn4o"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:9428350": {
       "play": null
@@ -151890,16 +150110,8 @@
       },
       "title": "The Mighty Spoiler - \"Father Christmas\"",
       "durationSeconds": 179,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:1435568": {
       "play": {
@@ -152029,15 +150241,8 @@
       },
       "title": "Neighbor Jacqueline",
       "durationSeconds": 194,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:3480022": {
       "play": {
@@ -152542,15 +150747,8 @@
       },
       "title": "Lord Melody, Cook Calypso Combo, The March Of Dimes – The River / The Jumbie",
       "durationSeconds": 499,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:701226": {
       "play": {
@@ -153983,16 +152181,8 @@
       },
       "title": "Mighty Sparrow - Freezing In New York",
       "durationSeconds": 181,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4556388": {
       "play": {
@@ -154106,15 +152296,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=NdU0fQzt0h8"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2767513": {
       "play": {
@@ -154201,15 +152384,8 @@
       },
       "title": "The Bonaparte Brothers Orchestra, Cook Recording Orchestra – Always / Fur Elise",
       "durationSeconds": 337,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3490119": {
       "play": {
@@ -154530,15 +152706,8 @@
       },
       "title": "Max Nijman - Sranang",
       "durationSeconds": 150,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3231189": {
       "play": null
@@ -154750,15 +152919,8 @@
       },
       "title": "King Fighter – The Closet / Calypsonians Dying Out",
       "durationSeconds": 388,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7171282": {
       "play": null
@@ -154894,16 +153056,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=COZKkA6ejRU"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared",
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:7177733": {
       "play": null
@@ -155293,15 +153447,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=AfwisVKqSK4"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2553412": {
       "play": null
@@ -156647,15 +154794,8 @@
       },
       "title": "Pan In Harmony = Pan-Jazz Conversations",
       "durationSeconds": 543,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:3806833": {
       "play": {
@@ -157176,15 +155316,8 @@
       },
       "title": "Lord Melody, Cook Calypso Combo, The March Of Dimes – The River / The Jumbie",
       "durationSeconds": 499,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8093557": {
       "play": null
@@ -160090,15 +158223,8 @@
       },
       "title": "Mookraj Sahadeo - Indian Soca (Ramdeo Seelochan)",
       "durationSeconds": 196,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:17801031": {
       "play": {
@@ -160780,15 +158906,8 @@
       },
       "title": "The Shah - The My Lai Incident",
       "durationSeconds": 207,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5032784": {
       "play": {
@@ -160829,15 +158948,8 @@
       },
       "title": "Lena - Andre Tanker Five",
       "durationSeconds": 168,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6149264": {
       "play": {
@@ -161557,15 +159669,8 @@
       },
       "title": "Small Island Pride - Cannes Brules Carnival",
       "durationSeconds": 165,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3158034": {
       "play": {
@@ -161633,15 +159738,8 @@
       },
       "title": "Wayne T & Silky Slim  – Dream (Bonus Beat)",
       "durationSeconds": 366,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3922183": {
       "play": {
@@ -162059,15 +160157,8 @@
       },
       "title": "Milo And The Kings - The Wedding",
       "durationSeconds": 161,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8188215": {
       "play": {
@@ -162214,16 +160305,8 @@
       },
       "title": "Wayne T & Silky Slim  – Dream (Bonus Beat)",
       "durationSeconds": 366,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "mb-title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:13090389": {
       "play": null
@@ -162311,15 +160394,8 @@
       },
       "title": "Sagar Sookraj - West Indies Vs. Trinidad -  The Bharat Sangeet Orchestra",
       "durationSeconds": 216,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:16355059": {
       "play": {
@@ -162819,15 +160895,8 @@
       },
       "title": "Fats Shake 'E Up Pt. 1- Claude 'Fats' Greene Orch.",
       "durationSeconds": 163,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:1575107": {
       "play": {
@@ -164353,15 +162422,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=MD9gXo9EJN4"
       },
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:969674": {
       "play": {
@@ -166558,16 +164620,8 @@
       },
       "title": "Manloko",
       "durationSeconds": 222,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:10820191": {
       "name": "Diana Stoica",
@@ -167406,15 +165460,8 @@
       },
       "title": "Joey Lewis Orchestra - Nut Vendor",
       "durationSeconds": 314,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:11581262": {
       "name": "Nohart",
@@ -167757,16 +165804,8 @@
       },
       "title": "Charlie's Roots  -  \"Skylab\"",
       "durationSeconds": 366,
-      "identityEvidence": {
-        "anchors": [
-          "shared",
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:11937410": {
       "name": "ၼၢင်းၸၢမ်ၽူး",
@@ -168342,15 +166381,8 @@
       },
       "title": "🎼🎼🎼",
       "durationSeconds": 193,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:12417778": {
       "name": "Турар Алипбаев",
@@ -168871,15 +166903,8 @@
       },
       "title": "A1 Orchestra Bella Bella & Soki Vangu   Pambi Ndoni",
       "durationSeconds": 604,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "dg:1307628": {
       "name": "azter",
@@ -169519,15 +167544,8 @@
       },
       "title": "Uzbek – Салимахон Ходжаева – \"Алла\" 78 rpm",
       "durationSeconds": 183,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:13729222": {
       "name": "Gérard Kongi Aska",
@@ -171420,16 +169438,8 @@
       },
       "title": "The WLT pres. AlterDNA - Synthesis",
       "durationSeconds": 259,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:15843800": {
       "name": "Inner Max",
@@ -173898,15 +171908,8 @@
       },
       "title": "LUCAS ORTEGA Con LOS BRILLANTES TRIUNFADORES DE CAACUPE - DÚO:QUIÑONEZ-PINEDA - Discos Piribebuy",
       "durationSeconds": 1818,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:18074697": {
       "name": "Желез-диез",
@@ -175546,16 +173549,8 @@
       },
       "title": "LEONARD DEMBO   IMBA YEMASHOKO",
       "durationSeconds": 361,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2228141": {
       "name": "Jagjit & Chitra Singh",
@@ -176580,15 +174575,8 @@
       },
       "title": "Cook Recording Orchestra – Obsever Goodbye / Ring The National Guard",
       "durationSeconds": 375,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:2725830": {
       "name": "Joe \"Chet\" Sampson",
@@ -177347,15 +175335,8 @@
       },
       "title": "Зайнаб Полвонова. Офарин.",
       "durationSeconds": 162,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:3022170": {
       "name": "Фазлиддин Шахобов",
@@ -178460,15 +176441,8 @@
       },
       "title": "Ron Berridge “Afro Lipso” (1968)",
       "durationSeconds": 180,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-compilation"
     },
     "dg:3479995": {
       "name": "Vic Lange His Vibes And Combo",
@@ -180427,15 +178401,8 @@
       },
       "title": "🎼🎼🎼",
       "durationSeconds": 193,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4077140": {
       "name": "Эмиль Залялетдинов",
@@ -180536,15 +178503,8 @@
       },
       "title": "David Amunga & Michael - America To Africa/Natamani Helena (Full Single)",
       "durationSeconds": 342,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:411187": {
       "name": "Hot Rod All Stars",
@@ -180894,15 +178854,8 @@
       },
       "title": "Maisha Ya Meli",
       "durationSeconds": 280,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "topic"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:4254226": {
       "name": "Orchestre Minzoto Sangela",
@@ -181058,16 +179011,8 @@
       },
       "title": "Charlie's Roots  -  \"Skylab\"",
       "durationSeconds": 366,
-      "identityEvidence": {
-        "anchors": [
-          "shared",
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4295152": {
       "name": "Ndongo Dnana Jean",
@@ -181992,15 +179937,8 @@
       },
       "title": "Bilegiin Damdinsuren - Gerelgo's Aria",
       "durationSeconds": 154,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4537370": {
       "name": "Лувсанжамбын Мөрдорж",
@@ -182169,15 +180107,8 @@
       },
       "title": "High Voltage - Funky Soca",
       "durationSeconds": 380,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4593653": {
       "name": "Mighty Crooner",
@@ -182323,15 +180254,8 @@
       },
       "title": "David Amunga & Michael - America To Africa/Natamani Helena (Full Single)",
       "durationSeconds": 342,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4650215": {
       "name": "Marc Nkodo",
@@ -182760,15 +180684,8 @@
       },
       "title": "Bilegiin Damdinsuren - Gerelgo's Aria",
       "durationSeconds": 154,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:4799295": {
       "name": "Мурат Ахмадиев",
@@ -183708,15 +181625,8 @@
       },
       "title": "Pan In Harmony = Pan-Jazz Conversations",
       "durationSeconds": 543,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-every-track"
     },
     "dg:5006244": {
       "name": "Анатолий Бычков",
@@ -183940,16 +181850,8 @@
       },
       "title": "closeyoureyes × raveny — adrift 2",
       "durationSeconds": 674,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5055506": {
       "name": "Brahima Dougoune",
@@ -184361,16 +182263,8 @@
       },
       "title": "Evren Ulusoy & Daniel De Roma - The Hypnosis",
       "durationSeconds": 416,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5170785": {
       "name": "Mpongo Love Et Son Ensemble",
@@ -185143,15 +183037,8 @@
       },
       "title": "Mystic Prowler   \"Mystic Blast (Jam Funk and Mash) Soca\"",
       "durationSeconds": 295,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:5411571": {
       "name": "Мағрупа Мұқажанова",
@@ -189221,16 +187108,8 @@
       },
       "title": "Tom Charles And The Synchopators - Guyana Bhoom Featuring Claude Allen On Trumpet",
       "durationSeconds": 180,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "mb-title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:6808073": {
       "name": "Unholy Tenebris",
@@ -192949,15 +190828,8 @@
       },
       "title": "Instrumental Music Of Turkmenistan",
       "durationSeconds": 3285,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-video-not-tied-to-a-track"
     },
     "dg:8135762": {
       "name": "Mwansa's Experience",
@@ -193086,15 +190958,8 @@
       },
       "title": "Touty Mbaye   Day Baax",
       "durationSeconds": 317,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8164857": {
       "name": "Touty Mbaye",
@@ -193104,15 +190969,8 @@
       },
       "title": "Touty Mbaye   Day Baax",
       "durationSeconds": 317,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:8172993": {
       "name": "Geo-Steve & Burton",
@@ -193937,17 +191795,8 @@
       },
       "title": "Enerdizer, Lyd14, Chavano - Move The Mountains (Ablazing Records)",
       "durationSeconds": 359,
-      "identityEvidence": {
-        "anchors": [
-          "shared"
-        ],
-        "legs": [
-          "title",
-          "duration",
-          "mb-title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "shared-credit-no-performer-credit-on-track"
     },
     "dg:9220855": {
       "name": "(2) افسانه",

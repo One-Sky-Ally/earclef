@@ -90,3 +90,4 @@ data/extra-play-identity-phase1.log
 # Discogs monthly dumps + derived index (Sep 2026) — rebuildable, never committed
 data/discogs-dump/
 __pycache__/
+data/shared-credit-recheck/
