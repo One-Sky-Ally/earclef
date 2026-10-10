@@ -1,15 +1,15 @@
 {
-  "builtAt": "2026-10-10T13:54:01.894Z",
-  "listedItems": 28234,
-  "withDiscogsLink": 27859,
-  "withIdentityVerifiedCandidate": 11004,
-  "playable": 10550,
+  "builtAt": "2026-10-10T23:30:39.366Z",
+  "listedItems": 28897,
+  "withDiscogsLink": 28522,
+  "withIdentityVerifiedCandidate": 11457,
+  "playable": 10977,
   "candidatesRefused": {
-    "television-topic": 55,
-    "not-public-or-embeddable": 460,
-    "video-gone": 480,
-    "under-90s": 160,
-    "topic-channel-names-another-artist": 218,
+    "television-topic": 57,
+    "not-public-or-embeddable": 470,
+    "video-gone": 511,
+    "under-90s": 162,
+    "topic-channel-names-another-artist": 244,
     "title-marker": 49,
     "describes-talking": 1,
     "describes-promo": 1
@@ -32,28 +32,28 @@
       "playable": 63
     },
     "1930": {
-      "listed": 430,
-      "playable": 239
+      "listed": 460,
+      "playable": 251
     },
     "1940": {
-      "listed": 307,
-      "playable": 115
+      "listed": 319,
+      "playable": 121
     },
     "1950": {
-      "listed": 584,
-      "playable": 227
+      "listed": 616,
+      "playable": 243
     },
     "1960": {
-      "listed": 1844,
-      "playable": 979
+      "listed": 2005,
+      "playable": 1078
     },
     "1970": {
-      "listed": 2900,
-      "playable": 1609
+      "listed": 3241,
+      "playable": 1837
     },
     "1980": {
-      "listed": 4326,
-      "playable": 2223
+      "listed": 4413,
+      "playable": 2289
     },
     "1990": {
       "listed": 4608,
@@ -73,9 +73,9 @@
     }
   },
   "youtube": {
-    "videosListCallsThisRun": 479,
-    "quotaUnitsThisRun": 479,
-    "videosCheckedThisRun": 23914,
+    "videosListCallsThisRun": 21,
+    "quotaUnitsThisRun": 21,
+    "videosCheckedThisRun": 1040,
     "note": "videos.list costs 1 unit per call of up to 50 ids; nothing else here calls YouTube, and the site serves the result as static data."
   }
 }
