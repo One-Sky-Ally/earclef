@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-10-10",
+  "ruledOn": "2026-10-10",
+  "ruling": "Owner, Oct 10 2026: \"Hold the three Uzbek ashiks until I've listened to them.\"",
+  "cases": [
+    {
+      "caseKey": "UZ|Q126327433",
+      "country": "UZ",
+      "wikidataId": "Q126327433",
+      "reason": "Wikidata occupation Q7097633 (ashik) only; near-sequential QID batch; held for the owner to listen",
+      "record": {
+        "name": "Gʻulomjon Roʻziboyev",
+        "source": "wikidata",
+        "firstYear": 1932,
+        "lastYear": 1932,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q126327433"
+      }
+    },
+    {
+      "caseKey": "UZ|Q126331866",
+      "country": "UZ",
+      "wikidataId": "Q126331866",
+      "reason": "Wikidata occupation Q7097633 (ashik) only; near-sequential QID batch; held for the owner to listen",
+      "record": {
+        "name": "Yunusqori Yusupov",
+        "source": "wikidata",
+        "firstYear": 1952,
+        "lastYear": 1952,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q126331866"
+      }
+    },
+    {
+      "caseKey": "UZ|Q126332003",
+      "country": "UZ",
+      "wikidataId": "Q126332003",
+      "reason": "Wikidata occupation Q7097633 (ashik) only; near-sequential QID batch; held for the owner to listen",
+      "record": {
+        "name": "Nazirjon Akbarov",
+        "source": "wikidata",
+        "firstYear": 1934,
+        "lastYear": 1934,
+        "styles": [],
+        "releaseCount": 0,
+        "discogsArtistId": null,
+        "wikidataId": "Q126332003"
+      }
+    }
+  ],
+  "released": []
+}

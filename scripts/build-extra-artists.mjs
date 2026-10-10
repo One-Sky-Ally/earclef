@@ -61,7 +61,7 @@ import {
 } from './lib/discogsDump.mjs'
 import { getJson } from './lib/fetchJson.mjs'
 import { assertNothingRemoved, mergeIntoCommitted } from './lib/gapFillMerge.mjs'
-import { heldPoolIds } from './lib/originHeld.mjs'
+import { heldPoolIds, isHeldInPool } from './lib/originHeld.mjs'
 import {
   collectWikidataRows,
   ownerRuledDecision,
@@ -1050,15 +1050,10 @@ async function main() {
   for (const code of built) {
     const state = work.countries[code]
     if (!state?.result) continue
-    const heldHere = held.get(code) ?? new Set()
-    const heldSkipped = state.result.filter(
-      (artist) => artist.discogsArtistId != null && heldHere.has(String(artist.discogsArtistId)),
-    ).length
-    if (heldSkipped > 0) console.log(`  ${code}: ${heldSkipped} held artist(s) not re-added (data/origin-held.json, data/mb-duplicates-held.json)`)
+    const heldSkipped = state.result.filter((artist) => isHeldInPool(held, code, artist)).length
+    if (heldSkipped > 0) console.log(`  ${code}: ${heldSkipped} held artist(s) not re-added (data/origin-held.json, data/mb-duplicates-held.json, data/occupation-held.json)`)
     const fresh = state.result
-      .filter(
-        (artist) => !(artist.discogsArtistId != null && heldHere.has(String(artist.discogsArtistId))),
-      )
+      .filter((artist) => !isHeldInPool(held, code, artist))
       .map((artist) => {
         const attested = attestedAliases.get(String(artist.discogsArtistId))
         if (!attested) return artist
