@@ -72,6 +72,31 @@ export const NON_SONG_MARKERS =
   /\b(trailer|teaser|behind the scenes|making of|documentary|interview|preview|snippet|reaction|announcement|album sampler|karaoke|karaoke version|documentaire|documental|reportage|entrevista|entretien|bande annonce|episode|epk|press kit|aftershow|listening party|webisode|docuseries)\b/i
 
 /**
+ * PROMO, TALK AND PRODUCT MARKERS (owner, Oct 10 2026 — the Uruguay 1996
+ * news clip; "test it on fresh place-years it wasn't built from").
+ *
+ * Fitted on 802 real queue tracks from 20 place-years (data/queue-
+ * nonmusic-audit.json) and VALIDATED on 494 from 20 different ones
+ * (data/queue-nonmusic-validation.json): 0 false positives there. The
+ * words added from the second sample (encuentro, conversation, charla,
+ * numbered серия, watch party, sampler, box-set promos) were checked the
+ * other way round: 0 hits, so 0 false positives, on the first. Same rule
+ * as NON_SONG_MARKERS: tested against the ANNOTATION only, so a song
+ * named "Good News" or "Encuentro" is never read.
+ *
+ * LEFT OUT ON PURPOSE: bare "bts" (also a band — "feat. BTS"), a bare
+ * "серия" ("Золотая серия" is a compilation series), and "reel" (an
+ * Irish dance-tune label, not only a tour reel).
+ *
+ * Unicode-aware word edges: in JS \b treats non-ASCII letters as edges.
+ */
+export const PROMO_MARKERS =
+  /(?<![\p{L}\p{N}])(news|noticias|q a|unboxing|tutorial|lesson|leccion|clase de guitarra|recap|making log|story behind|behind the album|capitulo|episodio|ep \d+|special movie|goods|samples of|recuerdan|talking about|chamada|encuentro|conversacion|conversation|charla|\d+ серия|watch party|completist edition|deluxe box|sampler)(?![\p{L}\p{N}])/iu
+
+const hasNonSongMarker = (annotation: string) =>
+  NON_SONG_MARKERS.test(annotation) || PROMO_MARKERS.test(annotation)
+
+/**
  * Script-aware normalize: the ASCII-only version reduced non-Latin
  * names and titles to '', and '' === '' passes every comparison
  * (standing lesson 5 — missing is not a match).
@@ -119,7 +144,7 @@ export function isNonSongUpload(
   artistName: string,
 ): boolean {
   const annotation = annotationOf(uploadTitle, workTitle, artistName)
-  return annotation ? NON_SONG_MARKERS.test(annotation) : false
+  return annotation ? hasNonSongMarker(annotation) : false
 }
 
 /**
@@ -161,7 +186,84 @@ export function titleAnnotation(uploadTitle: string): string {
  */
 export function isNonSongTitle(uploadTitle: string): boolean {
   const annotation = titleAnnotation(uploadTitle)
-  return annotation ? NON_SONG_MARKERS.test(annotation) : false
+  return annotation ? hasNonSongMarker(annotation) : false
+}
+
+/**
+ * SELF-TITLED RELEASES (owner, Oct 10 2026 — the Uruguay 1996 news clip).
+ *
+ * The channel path accepts an upload whose title CONTAINS a release
+ * title. When the release is named after the artist, every upload on the
+ * artist's own channel contains it, and the least-annotated one wins:
+ * "El Cuarteto de Nos - Info News" (8 minutes of news) beat the band's
+ * songs, and a self-titled album lent its era to any song on the channel
+ * (Beyoncé's 2008 "Ego" filed under the 2013 BEYONCÉ). Measured on 802
+ * real queue tracks: 28 self-titled matches, every one either non-music
+ * or a different song carrying the wrong era.
+ *
+ * So a self-titled match must name the RECORD: the name twice ("Artist -
+ * Artist"), or once with only whole-record words around it ("Full
+ * Album", "Álbum Completo 1996"). Anything else names only the band.
+ */
+const WHOLE_RECORD_WORDS = new Set([
+  'full', 'album', 'completo', 'completa', 'complet', 'complete', 'entero', 'integral',
+  'lp', 'ep', 'disco', 'vinyl', 'vinilo', 'official', 'oficial', 'officiel', 'ufficiale',
+  'audio', 'hd', 'hq', 'remastered', 'remaster', 'deluxe', 'edition', 'version', 'the',
+])
+const RECORD_NOUNS = new Set(['album', 'lp', 'ep', 'disco'])
+
+export function isSelfTitled(workTitle: string, artistName: string): boolean {
+  const work = normalize(workTitle)
+  return work !== '' && work === normalize(artistName)
+}
+
+export function namesTheSelfTitledRecord(
+  uploadTitle: string,
+  workTitle: string,
+  artistName: string,
+): boolean {
+  if (!isSelfTitled(workTitle, artistName)) return false
+  // Whole-word runs of the name, scanned over tokens (adjacent copies
+  // share no separator, so a padded string split would miss one).
+  const name = normalize(workTitle).split(' ')
+  const words = normalize(uploadTitle).split(' ').filter(Boolean)
+  const rest: string[] = []
+  let occurrences = 0
+  for (let at = 0; at < words.length; ) {
+    if (name.every((word, offset) => words[at + offset] === word)) {
+      occurrences++
+      at += name.length
+    } else {
+      rest.push(words[at])
+      at++
+    }
+  }
+  if (occurrences === 0) return false
+  const onlyRecordWords = rest.every((word) => WHOLE_RECORD_WORDS.has(word) || /^\d+$/.test(word))
+  if (!onlyRecordWords) return false
+  return occurrences >= 2 || rest.some((word) => RECORD_NOUNS.has(word))
+}
+
+/**
+ * The READ-TIME gate over a cached queue track (owner, Oct 10 2026:
+ * "apply the checks to queues that are already cached"). Each cached
+ * track stores the `eraTitle` it was matched on for exactly this, so the
+ * title checks re-run at zero YouTube quota: the self-titled rule, then
+ * the annotation markers. Tracks cached before era titles were stored
+ * fall back to the title-only annotation check.
+ */
+export function cachedTrackPasses(
+  track: { title: string; eraTitle?: string },
+  artistName: string,
+): boolean {
+  if (!track.eraTitle) return !isNonSongTitle(track.title)
+  if (
+    isSelfTitled(track.eraTitle, artistName) &&
+    !namesTheSelfTitledRecord(track.title, track.eraTitle, artistName)
+  ) {
+    return false
+  }
+  return !isNonSongUpload(track.title, track.eraTitle, artistName)
 }
 
 /** ISO-8601 duration (YouTube contentDetails) → seconds; 0 if absent. */
@@ -274,6 +376,21 @@ export function describesTalkingAboutMusic(
  * reinstated inferred-only verdicts was built and removed — see the
  * resolver — but the distinction is real and worth keeping visible.
  */
+/**
+ * The description's FIRST LINE announcing a promo or an interview (Oct 10
+ * 2026, same validation as PROMO_MARKERS: caught Tavella's "un pequeño
+ * documental, o EPK", Last Knight's "Teaser trailer…", Shakira's "gives
+ * Vevo News an exclusive interview"; 0 false positives over 1,296 real
+ * queue tracks). "documentary" stays out for The Who's reason above.
+ */
+export const PROMO_DESCRIPTION =
+  /(?<![\p{L}\p{N}])(epk|teaser|trailer|interview|entrevista|q&a)(?![\p{L}\p{N}])/iu
+
+export function describesPromo(description: string | undefined): boolean {
+  const firstLine = (description ?? '').split('\n')[0]
+  return firstLine ? PROMO_DESCRIPTION.test(firstLine) : false
+}
+
 export interface NonMusicVerdict {
   reasons: string[]
 }
@@ -292,6 +409,7 @@ export function nonMusicVerdict(input: {
   if (describesTalkingAboutMusic(input.description)) {
     reasons.push('describes-talking')
   }
+  if (describesPromo(input.description)) reasons.push('describes-promo')
   if (isTelevisionProgramme(input.topicUrls)) reasons.push('television-topic')
   return { reasons }
 }

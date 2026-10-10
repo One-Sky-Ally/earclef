@@ -3,8 +3,12 @@ import { getStore } from '@netlify/blobs'
 import { queueCacheKey } from '@/lib/play/resolve'
 import {
   annotationOf,
+  cachedTrackPasses,
+  describesPromo,
   isNonSongUpload,
+  isSelfTitled,
   isSongLength,
+  namesTheSelfTitledRecord,
   nonMusicVerdict,
 } from '@/lib/play/contentGates'
 import {
@@ -117,6 +121,11 @@ interface CachedResolve {
   tracks?: QueueTrack[]
   /** Resolver rules version; absent = pre-gate (see GATE_PASS). */
   pass?: number
+  /**
+   * PROMO_CHECK version this entry's descriptions were read under. Absent
+   * = written before the description promo gate (Oct 10 2026).
+   */
+  promo?: number
   /**
    * Era-dating corrections version this entry was resolved under.
    * Only checked for artists that HAVE corrections — everyone else's
@@ -479,6 +488,52 @@ async function playableSet(
   return { playable, meta }
 }
 
+/**
+ * Description promo gate over a CACHED entry (Oct 10 2026). The EPK
+ * that opened Uruguay 1996 (Santiago Tavella, "Bien clarito…") is only
+ * visible in its description, which the cache does not store. Rather
+ * than re-resolve every cached artist (a GATE_PASS bump: MusicBrainz +
+ * channel scan, up to a 100-unit search each), an entry written before
+ * this gate gets ONE batched videos.list (1 unit) the first time it is
+ * served: tracks whose description opens as an EPK/trailer/interview,
+ * or that are no longer playable, drop out, and the entry is stamped so
+ * it is never checked again. Quota trouble or a failed call serves the
+ * title-gated tracks as before and leaves the entry for the next visit.
+ * Returns the tracks to serve, or null when none survives (re-resolve).
+ */
+const PROMO_CHECK = 1
+
+async function promoChecked(
+  key: string,
+  cached: CachedResolve,
+  passing: QueueTrack[],
+): Promise<QueueTrack[] | null> {
+  const apiKey = process.env.YOUTUBE_API_KEY
+  if ((cached.promo ?? 0) >= PROMO_CHECK || passing.length === 0 || !apiKey) return passing
+  let kept: QueueTrack[]
+  try {
+    const { playable, meta } = await playableSet(passing.map((cachedTrack) => cachedTrack.videoId), apiKey)
+    kept = passing.filter(
+      (cachedTrack) =>
+        playable.has(cachedTrack.videoId) &&
+        !describesPromo(meta.get(cachedTrack.videoId)?.description),
+    )
+  } catch {
+    return passing
+  }
+  try {
+    await store().setJSON(key, {
+      ...cached,
+      track: kept[0] ?? null,
+      tracks: kept,
+      promo: PROMO_CHECK,
+    } satisfies CachedResolve)
+  } catch {
+    // Cache writes are best-effort; the check simply runs again.
+  }
+  return kept.length > 0 ? kept : null
+}
+
 export async function GET(
   request: Request,
   ctx: { params: Promise<{ mbid: string; decade: string }> },
@@ -516,23 +571,31 @@ export async function GET(
     // else's entries stay good, so a corrections refresh cannot cause
     // a fleet-wide re-resolve.
     const redated = dating !== null && cached?.cv !== RG_DATING_VERSION
+    // Read-time gate (owner, Oct 10 2026): the title checks re-run over
+    // every cached track at zero quota — the self-titled rule and the
+    // annotation markers, against each track's stored era title. An
+    // entry whose every track now fails is treated as a miss and
+    // re-resolved under the current gates; one that never had a track
+    // keeps its null until the TTL, as before.
+    const cachedTracks = cached?.tracks ?? (cached?.track ? [cached.track] : [])
+    const passing = cachedTracks.filter((cachedTrack) => cachedTrackPasses(cachedTrack, name))
+    const emptiedByGate = cachedTracks.length > 0 && passing.length === 0
     if (
       cached &&
       !poisoned &&
       !ungated &&
       !redated &&
+      !emptiedByGate &&
       (cached.track !== null ||
         Date.now() - Date.parse(cached.at) < NULL_TTL_MS)
     ) {
-      return withCacheHeaders(
-        NextResponse.json({
-          track: cached.track,
-          // Pre-multi-track entries can't be cached (GATE_PASS 2), so a
-          // served entry always has its list; the fallback is belt-and-
-          // braces for a hand-written or partially-written blob.
-          tracks: cached.tracks ?? (cached.track ? [cached.track] : []),
-        }),
-      )
+      const served = await promoChecked(key, cached, passing)
+      if (served !== null) {
+        return withCacheHeaders(
+          NextResponse.json({ track: served[0] ?? null, tracks: served }),
+        )
+      }
+      // Every track was a promo: resolve again under the current gates.
     }
   } catch {
     // Cache read failure — resolve live.
@@ -585,6 +648,7 @@ export async function GET(
           if (candidates.length >= MAX_CANDIDATES) break
           const wanted = normalize(entry.title)
           if (!wanted) continue
+          const selfTitled = isSelfTitled(entry.title, name)
           // ONE video per work. Depth should mean more of the artist's
           // CATALOGUE, not four uploads of one song: matching a whole
           // catalogue returned "Sabali" twice and "Se Te Djon Ye"
@@ -600,6 +664,9 @@ export async function GET(
             // channel carries interviews, trailers and making-ofs under
             // the record's exact title. Free — no API spend to reject.
             if (isNonSongUpload(upload.title, entry.title, name)) continue
+            // A self-titled release is contained in EVERY upload on the
+            // channel; only an upload that names the record may match it.
+            if (selfTitled && !namesTheSelfTitledRecord(upload.title, entry.title, name)) continue
             const noise = annotationOf(upload.title, entry.title, name).length
             if (!best || noise < best.noise) best = { upload, noise }
           }
@@ -624,6 +691,7 @@ export async function GET(
       const hits = await searchVerified(name, pick.title, apiKey)
       for (const hit of hits.slice(0, 3)) {
         if (isNonSongUpload(hit.title, pick.title, name)) continue
+        if (isSelfTitled(pick.title, name) && !namesTheSelfTitledRecord(hit.title, pick.title, name)) continue
         candidates.push({
           videoId: hit.videoId,
           title: hit.title,
@@ -703,6 +771,7 @@ export async function GET(
         track,
         tracks,
         pass: GATE_PASS,
+        promo: PROMO_CHECK,
         cv: RG_DATING_VERSION,
       } satisfies CachedResolve)
     } catch {

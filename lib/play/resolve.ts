@@ -20,6 +20,7 @@
  * background function, whose bundler doesn't read tsconfig paths.
  */
 import { getStore } from '@netlify/blobs'
+import { cachedTrackPasses } from './contentGates'
 import type { ArtistPlay, PlayKind, PlayLink, ReadLink } from './types'
 
 const USER_AGENT =
@@ -88,6 +89,14 @@ export function queueCacheKey(
   return `${legacyEmptyName ? 'v2/' : ''}artist/${mbid}/${decade}`
 }
 
+interface CachedQueueTrack {
+  videoId?: string
+  title?: string
+  eraTitle?: string
+  source?: string
+  corroborated?: boolean
+}
+
 /** Step 0: a queue-resolved, playability-checked video for this era. */
 async function queueCachedVideo(
   mbid: string,
@@ -100,13 +109,14 @@ async function queueCachedVideo(
       name: 'queue',
       consistency: 'eventual',
     }).get(queueCacheKey(mbid, decade, name), { type: 'json' })) as {
-      track?: {
-        videoId?: string
-        source?: string
-        corroborated?: boolean
-      } | null
+      track?: CachedQueueTrack | null
+      tracks?: CachedQueueTrack[]
     } | null
-    const track = cached?.track
+    // Same read-time gate as the queue route (Oct 10 2026): the first
+    // cached track that still passes the title checks, if any.
+    const track = (cached?.tracks ?? (cached?.track ? [cached.track] : [])).find(
+      (candidate) => cachedTrackPasses({ title: candidate.title ?? '', eraTitle: candidate.eraTitle }, name),
+    )
     // Same purge rule as the queue route (John Mayer, Aug 9 2026):
     // pre-rule search-sourced tracks were identity-by-bare-name and
     // must never feed a ▶; channel/corroborated entries stand.

@@ -22,11 +22,17 @@
  * artist; a rerun continues where it stopped (--fresh restarts).
  *
  * Usage: node --env-file=.env.local scripts/measure-queue-nonmusic.mjs [--fresh]
+ *          [--combos "CU-1960,JM-1975"] [--out data/queue-nonmusic-validation.json]
  */
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 
 const SITE = 'https://earclef.com'
-const OUT_PATH = 'data/queue-nonmusic-audit.json'
+const argOf = (flag, fallback) => {
+  const at = process.argv.indexOf(flag)
+  return at === -1 ? fallback : process.argv[at + 1]
+}
+/** --out keeps a second sample (e.g. a validation set) apart from the first. */
+const OUT_PATH = argOf('--out', 'data/queue-nonmusic-audit.json')
 const ARTISTS_PER_COMBO = 12
 const DELAY_MS = 1500
 const SLOW_MS = 4000
@@ -34,12 +40,17 @@ const MAX_LIVE_RESOLVES = 20
 const FRESH = process.argv.includes('--fresh')
 
 /** Spread across regions and eras; UY 1996 is the reported case. */
-const COMBOS = [
+const DEFAULT_COMBOS = [
   ['UY', 1996], ['AR', 1985], ['MX', 2005], ['CL', 2000], ['CO', 2010],
   ['BR', 1990], ['ES', 2010], ['FR', 2000], ['IT', 1980], ['DE', 1995],
   ['JP', 2000], ['KR', 2015], ['IN', 2005], ['NG', 1985], ['EG', 2015],
   ['TR', 1995], ['US', 2010], ['GB', 1985], ['SE', 2005], ['PE', 1975],
 ]
+/** --combos "CU-1960,JM-1975" samples other place-years (a fresh validation set). */
+const COMBOS = argOf('--combos', null)
+  ?.split(',')
+  .map((pair) => pair.trim().split('-'))
+  .map(([country, year]) => [country, Number(year)]) ?? DEFAULT_COMBOS
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
