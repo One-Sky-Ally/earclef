@@ -24,6 +24,7 @@
  * Cache:  data/wiki-cache/ (gitignored) so parser iterations refetch nothing.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { cellText } from './lib/wikiCell.mjs'
 
 const USER_AGENT =
   'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
@@ -31,6 +32,8 @@ const API = 'https://en.wikipedia.org/w/api.php'
 const CACHE_DIR = 'data/wiki-cache'
 const OUT_DIR = 'lib/hits'
 const DELAY_MS = 1500
+/** Above the longest single UK reign on record (16 weeks, 1991). */
+const MAX_UK_REIGN_WEEKS = 20
 
 const NOW_YEAR = new Date().getFullYear()
 const argOf = (flag, fallback) => {
@@ -45,27 +48,6 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 const MONTHS = {
   january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
   july: 7, august: 8, september: 9, october: 10, november: 11, december: 12,
-}
-
-function decodeEntities(text) {
-  return text
-    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&nbsp;/g, ' ')
-}
-
-/** Tag-strip + footnote-marker strip ("[nb 2]", "[a]") + whitespace. */
-function cellText(cellHtml) {
-  const text = decodeEntities(cellHtml.replace(/<[^>]+>/g, ''))
-  return text
-    .replace(/\[[^\]]{0,12}\]/g, '')
-    .replace(/[†‡♦]/g, '') // best-seller/annotation daggers, not titles
-    .replace(/\s+/g, ' ')
-    .trim()
 }
 
 async function fetchPage(title) {
@@ -258,6 +240,12 @@ function parseUkDecade(html) {
     if (!title || !artist || !Number.isFinite(weeks)) continue
     const year = Number(dateMatch[3])
     const first = isoDate(year, dateMatch[2], dateMatch[1])
+    // A reign is a whole number of chart weeks. Anything else is a cell
+    // the parser misread (Oct 2026: a hidden sort key made "Cara Mia"
+    // 910 weeks) — fail the build rather than ship it.
+    if (!Number.isInteger(weeks) || weeks < 1 || weeks > MAX_UK_REIGN_WEEKS) {
+      throw new Error(`UK ${first} "${title}": ${weeks} weeks — parser or page anomaly`)
+    }
     byYear[year] ??= []
     // A returning reign can repeat title+artist within a year — keep
     // both rows honest rather than merging what the chart lists apart.
