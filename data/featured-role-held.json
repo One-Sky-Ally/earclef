@@ -1,0 +1,385 @@
+{
+ "generatedAt": "2026-10-10",
+ "ruling": "Owner ruling (e), Sep 4 2026: featured credits count only for PERFORMING roles. Role test fixed Oct 10 2026 (it matched substrings: \"Photography By\" read as rap).",
+ "note": "entryBefore is each entry exactly as it was; restoring one is putting it back.",
+ "total": 12,
+ "cases": [
+  {
+   "key": "dg:9480979",
+   "artist": "Kaung Kaung",
+   "countries": [
+    "MM"
+   ],
+   "title": "The Rebel Riot - One Day",
+   "url": "https://www.youtube.com/watch?v=3ODKj6E-L5E",
+   "roles": [
+    "Photography By"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=3ODKj6E-L5E"
+    },
+    "title": "The Rebel Riot - One Day",
+    "durationSeconds": 237,
+    "previousPlay": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=J-XsPXj8OjA"
+    },
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  },
+  {
+   "key": "dg:154409",
+   "artist": "Geert Verbeke",
+   "countries": [
+    "NP"
+   ],
+   "title": "Marky Ramone & the Speedkings - Saturday Night",
+   "url": "https://www.youtube.com/watch?v=5Bujhx92dsE",
+   "roles": [
+    "Photography By"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=5Bujhx92dsE"
+    },
+    "title": "Marky Ramone & the Speedkings - Saturday Night",
+    "durationSeconds": 156,
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title",
+      "duration"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  },
+  {
+   "key": "dg:5832800",
+   "artist": "Aleczandah",
+   "countries": [
+    "UG"
+   ],
+   "title": "Jay Mitta  - Tatizo Pesa (feat. Dogo Janja)  2019",
+   "url": "https://www.youtube.com/watch?v=KGuvPE6oqdE",
+   "roles": [
+    "Graphics"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=KGuvPE6oqdE"
+    },
+    "title": "Jay Mitta  - Tatizo Pesa (feat. Dogo Janja)  2019",
+    "durationSeconds": 186,
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title",
+      "duration"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  },
+  {
+   "key": "dg:6903605",
+   "artist": "DTM",
+   "countries": [
+    "GN"
+   ],
+   "title": "Manman ka pléré - Jospy / Begood (DTM) KOS (K.O.S)",
+   "url": "https://www.youtube.com/watch?v=rYmmmiSji-k",
+   "roles": [
+    "Instrumentation By"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=rYmmmiSji-k"
+    },
+    "title": "Manman ka pléré - Jospy / Begood (DTM) KOS (K.O.S)",
+    "durationSeconds": 233,
+    "previousPlay": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=iWxFIDdcMD8"
+    },
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title",
+      "duration"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  },
+  {
+   "key": "dg:6822608",
+   "artist": "Bob Lemoine",
+   "countries": [
+    "HT"
+   ],
+   "title": "Les Animateurs, \"Patience\"",
+   "url": "https://www.youtube.com/watch?v=sBdB1QR7tKE",
+   "roles": [
+    "Photography By, Cover, Engineer [Recording]"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=sBdB1QR7tKE"
+    },
+    "title": "Les Animateurs, \"Patience\"",
+    "durationSeconds": 234,
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  },
+  {
+   "key": "dg:5577618",
+   "artist": "Naldo Labrín",
+   "countries": [
+    "NI"
+   ],
+   "title": "Las Municiones",
+   "url": "https://www.youtube.com/watch?v=9cYQrJnCzCM",
+   "roles": [
+    "Arranged By [Orchestra And Choral]"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=9cYQrJnCzCM"
+    },
+    "title": "Las Municiones",
+    "durationSeconds": 315,
+    "previousPlay": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=9FiR5wsN56k"
+    },
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  },
+  {
+   "key": "dg:7002841",
+   "artist": "Click",
+   "countries": [
+    "UZ"
+   ],
+   "title": "Ame-Deus ‎– Sera Con Te / Piccola Mia",
+   "url": "https://www.youtube.com/watch?v=fFSwt9RVL_M",
+   "roles": [
+    "Photography"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=fFSwt9RVL_M"
+    },
+    "title": "Ame-Deus ‎– Sera Con Te / Piccola Mia",
+    "durationSeconds": 171,
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  },
+  {
+   "key": "dg:2405169",
+   "artist": "Naldi",
+   "countries": [
+    "AL"
+   ],
+   "title": "Early Groovers - At The Scene Of The Prime",
+   "url": "https://www.youtube.com/watch?v=Y0z0CGPOq7E",
+   "roles": [
+    "Artwork",
+    "Photography By"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=Y0z0CGPOq7E"
+    },
+    "title": "Early Groovers - At The Scene Of The Prime",
+    "durationSeconds": 408,
+    "previousPlay": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=90SmRVLqzXY"
+    },
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title",
+      "duration"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  },
+  {
+   "key": "dg:3394404",
+   "artist": "Adrian Ursu",
+   "countries": [
+    "MD"
+   ],
+   "title": "Overlord - Stay Alive [Full Album]",
+   "url": "https://www.youtube.com/watch?v=xUYGoAP1KKs",
+   "roles": [
+    "Graphics"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=xUYGoAP1KKs"
+    },
+    "title": "Overlord - Stay Alive [Full Album]",
+    "durationSeconds": 2273,
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  },
+  {
+   "key": "dg:3800423",
+   "artist": "Guido Hermans",
+   "countries": [
+    "VN"
+   ],
+   "title": "Downshot - Trust",
+   "url": "https://www.youtube.com/watch?v=o-7TonmNcAE",
+   "roles": [
+    "Photography By"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=o-7TonmNcAE"
+    },
+    "title": "Downshot - Trust",
+    "durationSeconds": 127,
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title",
+      "duration"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  },
+  {
+   "key": "dg:5626536",
+   "artist": "Don Nguyễn",
+   "countries": [
+    "VN"
+   ],
+   "title": "Dick Crook - Spirit Song",
+   "url": "https://www.youtube.com/watch?v=aR2exSccXVw",
+   "roles": [
+    "Photography By [Front Cover]"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=aR2exSccXVw"
+    },
+    "title": "Dick Crook - Spirit Song",
+    "durationSeconds": 612,
+    "previousPlay": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=sul16s0VSzs"
+    },
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title",
+      "duration"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  },
+  {
+   "key": "dg:6330436",
+   "artist": "John Mendes",
+   "countries": [
+    "TT"
+   ],
+   "title": "Denyse Plummer ‎- Really Try",
+   "url": "https://www.youtube.com/watch?v=96JuwZE--Dc",
+   "roles": [
+    "Design, Artwork",
+    "Liner Notes",
+    "Photography By"
+   ],
+   "entryBefore": {
+    "play": {
+     "kind": "youtube-video",
+     "url": "https://www.youtube.com/watch?v=96JuwZE--Dc"
+    },
+    "title": "Denyse Plummer ‎- Really Try",
+    "durationSeconds": 357,
+    "identityEvidence": {
+     "anchors": [
+      "featured"
+     ],
+     "legs": [
+      "title"
+     ],
+     "verifiedAt": "2026-09-08"
+    }
+   }
+  }
+ ]
+}

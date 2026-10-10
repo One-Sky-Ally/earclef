@@ -29,8 +29,8 @@
  *        single-track-record      the record has one track, so its
  *                                 credit can only be about that track
  * Writing, producing, arranging and design roles are not performing
- * (isPerformingCredit below — stricter than the arbitration's
- * substring test, which reads "Photography By" as a rap credit).
+ * (isPerformingRole in extraPlayIdentity.mjs — the one definition,
+ * shared with the arbitration).
  *
  * `looseReadingPass` reports the other reading for the owner: release
  * credits inherited by every track (not a compilation, track tied).
@@ -60,31 +60,8 @@ function flatTracks(tracklist) {
   })
 }
 
-/**
- * A credit role is PERFORMING when any of its comma-separated parts is.
- * The shared isPerformingRole matches substrings, so "Photography By"
- * (rap), "Arranged By [Horns]" and "Orchestrated By" read as playing;
- * here an "… By" part counts only as Performed/Played/Sung/Conducted/
- * Accompanied By,
- * bracket qualifiers are ignored, and design/engineering words never do.
- */
-const PERFORMING_BY = /^(performed|played|sung|conducted|vocals|accompanied) by$/i
-/**
- * Performing words the shared English list lacks, each seen on a real
- * held record's credits (Oct 10 re-check): Spanish "Arpa", the
- * harmonium, the Kazakh kobyz, the Persian tar, plain "Musician" and
- * "Ensemble". Whole words only.
- */
-const EXTRA_PERFORMING = /\b(arpa|harmonium|kobyz|tar|musician|ensemble)\b/i
-const NEVER_PERFORMING = /design|photo|graphic|typograph|artwork|liner|master|mix|engineer|lacquer|layout|art direction/i
-export function isPerformingCredit(role) {
-  return String(role ?? '').split(',').some((raw) => {
-    const part = raw.replace(/\[[^\]]*\]/g, '').trim()
-    if (!part || NEVER_PERFORMING.test(part)) return false
-    if (/\bby\b|-by$/i.test(part)) return PERFORMING_BY.test(part)
-    return isPerformingRole(part) || EXTRA_PERFORMING.test(part)
-  })
-}
+/** One definition of a performing credit: the shared library's (fixed Oct 10 2026). */
+export const isPerformingCredit = isPerformingRole
 
 /**
  * Discogs stores, on each release artist, the `join` text to the NEXT

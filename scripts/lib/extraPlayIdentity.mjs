@@ -16,8 +16,8 @@ export const ROOT = process.cwd()
 export const DATASET_PATH = join(ROOT, 'lib', 'explore', 'extra-artists.json')
 export const PLAY_PATH = join(ROOT, 'lib', 'explore', 'extra-play.json')
 export const EVIDENCE_DIR = join(ROOT, 'data', 'extra-play-evidence')
-/** Discogs's "Various" pseudo-artist — never an identity. */
-export const DISCOGS_VARIOUS_ID = 194930
+/** Discogs's "Various" pseudo-artist — never an identity (id 194; was 194930 until Oct 10 2026). */
+export const DISCOGS_VARIOUS_ID = 194
 
 export function env(name) {
   if (process.env[name]) return process.env[name]
@@ -221,11 +221,38 @@ export function titleNamesArtist(title, aliases) {
   return false
 }
 
-/** Discogs extra-credit roles that mean the artist PERFORMS on the record. */
-const PERFORMING_ROLE =
-  /featur|vocal|perform|sing|guitar|piano|drum|bass|sax|trumpet|trombone|solo|instrument|accordion|violin|organ|keyboard|percussion|harmonica|flute|band|orchestra|conductor|chorus|choir|rap|\bmc\b|voice|harp|kora|balafon|oud|sitar|tabla|marimba|steel|clarinet|cello|strings|horn|dj\b|turntable|scratch|toast|backing|lead/i
+/**
+ * Discogs extra-credit roles that mean the artist PERFORMS on the record.
+ *
+ * Fixed Oct 10 2026: the old test matched SUBSTRINGS, so "Photography
+ * By" read as rap, "Graphic Design" as rap, "Arranged By [Horns]" as
+ * horn and "Orchestrated By" as orchestra — writing, arranging and
+ * design credits anchored play links as "featured" performers. Now a
+ * role is read part by part (Discogs joins several with commas), words
+ * match from their start (a bracket qualifier may carry them), an "… By" part
+ * performs only as Performed/Played/Sung/Conducted/Accompanied By, and
+ * design/engineering words never do. Arpa, Harmonium, Kobyz, Tar,
+ * Musician and Ensemble come from the Oct 10 shared-credit re-check,
+ * where real records used them.
+ */
+const PERFORMING_WORD =
+  /\b(featur|vocal|perform|sing|guitar|piano|drum|bass|sax|trumpet|trombone|solo|instrument|accordion|violin|organ|keyboard|percussion|harmonica|flute|band|orchestra|conductor|chorus|choir|rap|mc\b|voice|harp|kora|balafon|oud|sitar|tabla|marimba|steel|clarinet|cello|strings|horn|dj\b|turntable|scratch|toast|backing|lead|arpa\b|harmonium|kobyz|tar\b|musician|ensemble|oboe|duduk|synth|mandolin|banjo|ukulele|conga|bongo|timbal|ngoni|djembe|xylophone|vibraphone|glockenspiel|tuba|viola|bassoon|charango|cuatro|bandone|maraca|cajon|santur|qanun|kanun|kamancheh|kemenche|darbuka|ney\b|whistl|beatbox|theremin)/i
+const PERFORMING_BY = /^(performed|played|sung|conducted|vocals|accompanied) by$/i
+const NEVER_PERFORMING =
+  /\b(design\w*|photo\w*|graphic\w*|typograph\w*|artwork|liner|master\w*|mixed|engineer\w*|lacquer|layout|art direction)\b/i
+
 export function isPerformingRole(role) {
-  return PERFORMING_ROLE.test(role ?? '')
+  return String(role ?? '').split(',').some((raw) => {
+    const part = raw.trim()
+    // The "… By" rule reads the role without its qualifier ("Arranged By
+    // [Horns]" is arranging); the performing words read the whole part,
+    // since a qualifier can carry them ("Oboe [Soloist]", "Other
+    // [Whooping Choir]").
+    const bare = part.replace(/\[[^\]]*\]/g, '').trim()
+    if (!bare || NEVER_PERFORMING.test(bare)) return false
+    if (/\bby\b|-by$/i.test(bare)) return PERFORMING_BY.test(bare)
+    return PERFORMING_WORD.test(part)
+  })
 }
 
 /** Does any variant of `a` equal any variant of `b`? Exact keys only. */

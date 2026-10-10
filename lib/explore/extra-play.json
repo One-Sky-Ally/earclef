@@ -23038,15 +23038,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=J-XsPXj8OjA"
       },
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "wd:Q107389460": {
       "play": null
@@ -25596,16 +25589,8 @@
       },
       "title": "Marky Ramone & the Speedkings - Saturday Night",
       "durationSeconds": 156,
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "dg:946686": {
       "play": {
@@ -34679,16 +34664,8 @@
       },
       "title": "Jay Mitta  - Tatizo Pesa (feat. Dogo Janja)  2019",
       "durationSeconds": 186,
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "dg:15766935": {
       "play": null
@@ -39568,16 +39545,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=iWxFIDdcMD8"
       },
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "dg:2764000": {
       "play": {
@@ -77014,15 +76983,8 @@
       },
       "title": "Les Animateurs, \"Patience\"",
       "durationSeconds": 234,
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "dg:7448185": {
       "play": {
@@ -79173,15 +79135,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=9FiR5wsN56k"
       },
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "dg:3098477": {
       "play": {
@@ -96754,15 +96709,8 @@
       },
       "title": "Ame-Deus ‎– Sera Con Te / Piccola Mia",
       "durationSeconds": 171,
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "dg:11479310": {
       "play": null
@@ -103049,16 +102997,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=90SmRVLqzXY"
       },
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "dg:10631530": {
       "play": null
@@ -105078,15 +105018,8 @@
       },
       "title": "Overlord - Stay Alive [Full Album]",
       "durationSeconds": 2273,
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "dg:17429329": {
       "play": null
@@ -113698,16 +113631,8 @@
       },
       "title": "Downshot - Trust",
       "durationSeconds": 127,
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "dg:4635150": {
       "play": {
@@ -117439,16 +117364,8 @@
         "kind": "youtube-video",
         "url": "https://www.youtube.com/watch?v=sul16s0VSzs"
       },
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title",
-          "duration"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "wd:Q139715423": {
       "play": null
@@ -161629,15 +161546,8 @@
       },
       "title": "Denyse Plummer ‎- Really Try",
       "durationSeconds": 357,
-      "identityEvidence": {
-        "anchors": [
-          "featured"
-        ],
-        "legs": [
-          "title"
-        ],
-        "verifiedAt": "2026-09-08"
-      }
+      "identityUnverified": true,
+      "identityHeld": "non-performing-credit"
     },
     "dg:2845893": {
       "play": {
