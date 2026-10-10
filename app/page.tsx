@@ -4,6 +4,7 @@ import { getAllArtists } from '@/lib/content'
 import { SiteNav } from '@/components/SiteNav'
 import { EarClefMark } from '@/components/EarClefMark'
 import { ExploreClient } from '@/components/explore/ExploreClient'
+import { OnThisDayLink } from '@/components/onthisday/OnThisDayLink'
 import type { RosterByMbid } from '@/components/explore/CountryPanel'
 import playing from '@/lib/explore/playing.json'
 import type { PlayingEntry } from '@/lib/explore/playing'
@@ -35,6 +36,7 @@ export default function HomePage() {
           <p className={styles.subtitle}>
             Spin the earth. Pick a year. Hear the world.
           </p>
+          <OnThisDayLink />
         </div>
         <ExploreClient
           roster={roster}
@@ -66,6 +68,7 @@ export default function HomePage() {
           <Link href="/manifesto">Manifesto</Link> ·{' '}
           <Link href="/for-artists">For artists</Link> ·{' '}
           <Link href="/get-on-the-map">Get on the map</Link> ·{' '}
+          <Link href="/on-this-day">On this day</Link> ·{' '}
           <Link href="/privacy">Privacy</Link>
         </p>
       </footer>
