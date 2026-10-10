@@ -30,12 +30,19 @@ const HIDDEN_OPEN = /<(span|sup|div)\b[^>]*\bstyle\s*=\s*["'][^"']*\b(?:display\
 function stripHidden(html) {
   let out = html
   for (let match = HIDDEN_OPEN.exec(out); match; match = HIDDEN_OPEN.exec(out)) {
+    // A self-closing hidden tag hides nothing but itself.
+    if (match[0].endsWith('/>')) {
+      out = out.slice(0, match.index) + out.slice(match.index + match[0].length)
+      continue
+    }
     const tag = match[1].toLowerCase()
     const tagPattern = new RegExp(`<(/?)${tag}\\b[^>]*>`, 'gi')
     tagPattern.lastIndex = match.index + match[0].length
     let depth = 1
     let end = out.length
     for (let inner = tagPattern.exec(out); inner; inner = tagPattern.exec(out)) {
+      // Self-closing tags open nothing, so they never change the depth.
+      if (inner[0].endsWith('/>')) continue
       depth += inner[1] ? -1 : 1
       if (depth === 0) {
         end = inner.index + inner[0].length

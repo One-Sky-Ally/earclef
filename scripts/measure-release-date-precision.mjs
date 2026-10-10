@@ -29,6 +29,7 @@
  */
 import { createReadStream, existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
+import { pathToFileURL } from 'node:url'
 import { createGunzip } from 'node:zlib'
 import { areaChain } from './lib/mbAreaIndex.mjs'
 
@@ -37,23 +38,25 @@ const DG_DIR = 'data/discogs-dump/index/releases-by-country'
 const OUT_PATH = 'data/release-date-precision.json'
 const FRESH = process.argv.includes('--fresh')
 
-const DAY = /^(\d{4})-(\d{2})-(\d{2})$/
-const MONTH = /^(\d{4})-(\d{2})(?:-00)?$/
-const YEAR = /^(\d{4})(?:-00-00)?$/
+const DATE = /^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/
 
-/** 'day' | 'jan1' | 'month' | 'year' | 'none' */
+/**
+ * 'day' | 'jan1' | 'month' | 'year' | 'none'. A field that is out of
+ * range degrades to the precision still known: "1975-00-12" and
+ * "1975-13-40" are year-precise, "1975-03-00" month-precise.
+ */
 export function precisionOf(value) {
-  if (typeof value !== 'string' || value.trim() === '') return 'none'
-  const date = value.trim()
-  const day = DAY.exec(date)
-  if (day && day[2] !== '00' && day[3] !== '00') {
-    return day[2] === '01' && day[3] === '01' ? 'jan1' : 'day'
-  }
-  const month = MONTH.exec(date)
-  if (month && month[2] !== '00') return 'month'
-  if (YEAR.test(date)) return 'year'
-  return 'none'
+  if (typeof value !== 'string') return 'none'
+  const match = DATE.exec(value.trim())
+  if (!match) return 'none'
+  const month = Number(match[2] ?? 0)
+  const day = Number(match[3] ?? 0)
+  if (month < 1 || month > 12) return 'year'
+  if (day < 1 || day > 31) return 'month'
+  return month === 1 && day === 1 ? 'jan1' : 'day'
 }
+
+const PRECISION_RANK = { none: 0, year: 1, month: 2, jan1: 3, day: 3 }
 
 const emptyTally = () => ({ total: 0, day: 0, jan1: 0, month: 0, year: 0, none: 0, byDecade: {} })
 /** Decade of a dated value ('1970'), or 'undated'. */
@@ -149,8 +152,20 @@ async function mbPass() {
   return { source: 'MusicBrainz release groups (first release date) by artist country', worldwide, byCountry }
 }
 
-/** Earlier of two date strings; a dated value always beats an undated one. */
-const earlier = (a, b) => (!a ? b : !b ? a : a <= b ? a : b)
+/**
+ * The better ORIGINAL date of two: the earlier year wins; within one
+ * year the more precise value wins ("1975" says nothing about March,
+ * and a plain string compare would rank it before "1975-03-12").
+ * A dated value always beats an undated one.
+ */
+function earlier(a, b) {
+  if (!a) return b
+  if (!b) return a
+  const yearA = a.slice(0, 4)
+  const yearB = b.slice(0, 4)
+  if (yearA !== yearB) return yearA < yearB ? a : b
+  return PRECISION_RANK[precisionOf(a)] >= PRECISION_RANK[precisionOf(b)] ? a : b
+}
 
 async function discogsPass() {
   const worldwide = emptyTally()
@@ -213,7 +228,8 @@ async function main() {
   console.log(`Done → ${OUT_PATH}`)
 }
 
-main().catch((error) => {
+// Run only when invoked directly — importing precisionOf must not start a pass.
+if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) main().catch((error) => {
   console.error('Fatal:', error)
   process.exit(1)
 })

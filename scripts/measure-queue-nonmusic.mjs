@@ -56,8 +56,9 @@ const normalize = (value) =>
  * in the languages of the sample. Whole words, title or first
  * description line. Most hits will be music; that is what review is for.
  */
+// Unicode-aware word edges: in JS, \b treats "é" as a non-word character.
 const NEWS_WORDS =
-  /\b(news|noticias?|noticiero|informativo|telediario|nachrichten|journal|actualit[eé]s?|notizie|tg\d?|jornal|entrevista|interview|intervista|entretien|reportaje|reportage|reportagem|programa|show de tv|tv|televisi[oó]n|canal|channel \d+|nuevo [aá]lbum|novo [aá]lbum|nuevo disco|new album|nouvel album|nuovo album|presenta(?:ci[oó]n)?|lanzamiento|lan[cç]amento|anuncio|announces?|estreno|premiere|en conversaci[oó]n|charla|habla|talks?|conferencia de prensa|press conference|info)\b/i
+  /(?<![\p{L}\p{N}])(news|noticias?|noticiero|informativo|telediario|nachrichten|journal|actualit[eé]s?|notizie|tg\d?|jornal|entrevista|interview|intervista|entretien|reportaje|reportage|reportagem|programa|show de tv|tv|televisi[oó]n|canal|channel \d+|nuevo [aá]lbum|novo [aá]lbum|nuevo disco|new album|nouvel album|nuovo album|presenta(?:ci[oó]n)?|lanzamiento|lan[cç]amento|anuncio|announces?|estreno|premiere|en conversaci[oó]n|charla|habla|talks?|conferencia de prensa|press conference|info)(?![\p{L}\p{N}])/iu
 
 function flagsFor(track, facts, artistName) {
   const flags = []
@@ -102,6 +103,8 @@ async function collect(state) {
     }
     const decade = Math.floor(year / 10) * 10
     for (const artist of combo.pool) {
+      // A fetch that failed outright (status 0) is retried, not counted as done.
+      combo.artists = combo.artists.filter((done) => done.status !== 0)
       if (combo.artists.some((done) => done.mbid === artist.mbid)) continue
       const url = `${SITE}/api/queue/artist/${artist.mbid}/${decade}?name=${encodeURIComponent(artist.name)}`
       let result
@@ -210,7 +213,12 @@ function summarize(state) {
 async function main() {
   const state = load()
   state.startedAt ??= new Date().toISOString()
-  if (!state.stopped) await collect(state)
+  // A rerun resumes: an earlier stop (quota or the live-resolve cap) is
+  // cleared and its count reset, so collection continues where it ended.
+  if (state.stopped) console.log(`resuming after: ${state.stopped}`)
+  state.stopped = null
+  state.liveResolves = 0
+  await collect(state)
   await enrich(state)
   summarize(state)
   if (state.stopped) console.log(`stopped early: ${state.stopped}`)

@@ -34,3 +34,9 @@ test('visible text, links and entities are kept; footnote markers stripped', () 
   assert.equal(cellText('Simon &amp; Garfunkel<sup class="reference">[a]</sup>'), 'Simon & Garfunkel')
   assert.equal(cellText('<span style="white-space:nowrap">2 July 1954</span>'), '2 July 1954')
 })
+
+test('self-closing tags neither swallow the cell nor unbalance a hidden span', () => {
+  assert.equal(cellText('<span style="display:none"/>10'), '10')
+  assert.equal(cellText('<span style="display:none">9<span/></span>10'), '10')
+  assert.equal(cellText('<span style="display:none">9<br/></span>10'), '10')
+})
