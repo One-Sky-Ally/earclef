@@ -43,6 +43,8 @@ const ARCHIVE = 'data/mb-dump/release.tar.xz'
 const MEMBER = 'mbdump/release'
 const SHARD_DIR = 'lib/explore/on-this-day'
 const OUT_PATH = join(SHARD_DIR, 'places.json')
+/** Every group's places, untrimmed (gitignored) — what --trim always cuts from. */
+const FULL_PATH = 'data/on-this-day-places-full.json'
 /** Resume point (gitignored): saved every PROGRESS_EVERY releases, removed when done. */
 const CHECKPOINT_PATH = 'data/on-this-day-places-work.json'
 const PROGRESS_EVERY = 250_000
@@ -206,9 +208,10 @@ async function main() {
   // --trim: re-cut an existing places.json to the songs listed now (after
   // a day rebuild or re-verify) without rescanning the 21 GB dump.
   if (process.argv.includes('--trim')) {
-    const current = readJson(OUT_PATH)
-    const groups = trimmed(current.groups, listedSongs())
-    writeFileSync(OUT_PATH, JSON.stringify({ ...current, groups }))
+    if (!existsSync(FULL_PATH)) throw new Error(`${FULL_PATH} missing — run the full extraction first`)
+    const full = readJson(FULL_PATH)
+    const groups = trimmed(full.groups, listedSongs())
+    writeFileSync(OUT_PATH, JSON.stringify({ builtAt: full.builtAt, groups }))
     console.log(`trimmed → ${OUT_PATH}: ${Object.keys(groups).length.toLocaleString()} release groups`)
     return
   }
@@ -226,7 +229,9 @@ async function main() {
     if (!release && Object.keys(tracks).length === 0) continue
     groups[rg] = { ...(release ? { release } : {}), ...(Object.keys(tracks).length ? { tracks } : {}) }
   }
-  writeFileSync(OUT_PATH, JSON.stringify({ builtAt: new Date().toISOString(), groups: trimmed(groups, listedSongs()) }))
+  const builtAt = new Date().toISOString()
+  writeFileSync(FULL_PATH, JSON.stringify({ builtAt, groups }))
+  writeFileSync(OUT_PATH, JSON.stringify({ builtAt, groups: trimmed(groups, listedSongs()) }))
   rmSync(CHECKPOINT_PATH, { force: true })
   console.log(`Done → ${OUT_PATH}: ${Object.keys(groups).length.toLocaleString()} release groups with a verified recording place`)
 }

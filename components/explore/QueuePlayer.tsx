@@ -94,7 +94,7 @@ interface ResolvedTrack {
    * Sydney, Australia"), linking to that place on the globe in the
    * song's year. Only "On this day" passes it today.
    */
-  place?: { label: string; href: string }
+  place?: { label: string; href: string; title?: string }
 }
 
 /**
@@ -1006,7 +1006,7 @@ export function QueuePlayer({
           </span>
         </div>
         {nowPlaying.place && (
-          <Link className={styles.nowPlace} href={nowPlaying.place.href}>
+          <Link className={styles.nowPlace} href={nowPlaying.place.href} title={nowPlaying.place.title}>
             {nowPlaying.place.label}
           </Link>
         )}
@@ -1231,7 +1231,7 @@ export function QueuePlayer({
                 <Link
                   className={styles.rowPlace}
                   href={track.place.href}
-                  title={track.place.label}
+                  title={track.place.title ?? track.place.label}
                 >
                   {track.place.label}
                 </Link>

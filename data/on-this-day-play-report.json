@@ -1,9 +1,9 @@
 {
-  "builtAt": "2026-10-11T00:25:42.976Z",
+  "builtAt": "2026-10-11T06:00:41.555Z",
   "listedItems": 28897,
-  "withDiscogsLink": 28522,
-  "withIdentityVerifiedCandidate": 11457,
-  "playable": 10977,
+  "withDiscogsLink": 28521,
+  "withIdentityVerifiedCandidate": 11448,
+  "playable": 10968,
   "candidatesRefused": {
     "television-topic": 57,
     "not-public-or-embeddable": 470,
@@ -53,15 +53,15 @@
     },
     "1980": {
       "listed": 4413,
-      "playable": 2289
+      "playable": 2287
     },
     "1990": {
       "listed": 4608,
-      "playable": 1767
+      "playable": 1761
     },
     "2000": {
       "listed": 4380,
-      "playable": 1662
+      "playable": 1661
     },
     "2010": {
       "listed": 4380,
@@ -73,9 +73,9 @@
     }
   },
   "youtube": {
-    "videosListCallsThisRun": 0,
-    "quotaUnitsThisRun": 0,
-    "videosCheckedThisRun": 0,
+    "videosListCallsThisRun": 1,
+    "quotaUnitsThisRun": 1,
+    "videosCheckedThisRun": 12,
     "note": "videos.list costs 1 unit per call of up to 50 ids; nothing else here calls YouTube, and the site serves the result as static data."
   }
 }

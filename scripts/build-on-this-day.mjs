@@ -32,6 +32,7 @@ import { join } from 'node:path'
 import { createGunzip } from 'node:zlib'
 import { COUNTRIES } from './lib/gap-fill-countries.mjs'
 import { correctedAway, exactDay, isOriginalMbGroup, selectDay } from './lib/onThisDay.mjs'
+import { globePlace } from './lib/onThisDayGlobePlace.mjs'
 
 const COUNTRY_DIR = 'lib/explore/country-artists'
 const DATING_DIR = 'lib/explore/rg-dating'
@@ -39,6 +40,8 @@ const POOL_PATH = 'lib/explore/extra-artists.json'
 const MB_RG_DIR = 'data/mb-dump/rg-by-artist'
 const DG_DIR = 'data/discogs-dump/index/releases-by-country'
 const WORK_PATH = 'data/on-this-day-work.json'
+/** Bumped when the cached Discogs items gain a field (2: the globe place `h`). */
+const WORK_VERSION = 2
 const OUT_DIR = 'lib/explore/on-this-day'
 const FRESH = process.argv.includes('--fresh')
 /** Listed per decade on a day, dealt round-robin across countries. */
@@ -62,21 +65,76 @@ async function* lines(path) {
   if (pending) yield pending
 }
 
+const yearOf = (value) => {
+  const year = Number(String(value ?? '').slice(0, 4))
+  return Number.isInteger(year) && year > 0 ? year : null
+}
+
+/**
+ * Every place the GLOBE puts each MusicBrainz artist, with the dated span
+ * it era-gates them by — the same sources the panels serve from: the
+ * country files with origin corrections applied (lib/explore/
+ * originCorrections.ts moves an artist out of `from` into `to`), the
+ * historical-area roster, claimed places and self-filed entries.
+ * mbid → [{ place, from, to }]
+ */
+function mbPlacements(countryFiles) {
+  const moves = readJson('lib/explore/origin-corrections.json').moves ?? {}
+  const placements = new Map()
+  const add = (mbid, place, from, to) => {
+    if (!mbid || !place) return
+    if (!placements.has(mbid)) placements.set(mbid, [])
+    placements.get(mbid).push({ place, from: yearOf(from), to: yearOf(to) })
+  }
+  for (const [code, artists] of countryFiles) {
+    for (const artist of artists) add(artist.id, moves[artist.id]?.to ?? code, artist.cs, artist.end)
+  }
+  for (const [code, artists] of Object.entries(readJson('lib/explore/historical-area-artists.json').countries ?? {})) {
+    for (const artist of artists) add(artist.mbid, code, artist.lifeBegin, artist.lifeEnd)
+  }
+  for (const file of readdirSync('lib/explore/claimed-places').filter((name) => name.endsWith('.json'))) {
+    const claimed = readJson(join('lib/explore/claimed-places', file))
+    for (const artist of claimed.artists ?? []) add(artist.mbid, claimed.placeId, artist.lifeBegin, artist.lifeEnd)
+  }
+  for (const artist of readJson('lib/explore/self-filed.json').artists ?? []) {
+    add(artist.mbid, artist.country, artist.cs, artist.end)
+  }
+  return { placements, moves }
+}
+
+/** Gap-fill artist (Discogs id) → every pool listing them, dated by the pool's years. */
+function poolPlacements(pool) {
+  const placements = new Map()
+  for (const [code, list] of Object.entries(pool.countries)) {
+    for (const entry of list) {
+      if (entry.discogsArtistId == null) continue
+      if (!placements.has(entry.discogsArtistId)) placements.set(entry.discogsArtistId, [])
+      placements.get(entry.discogsArtistId).push({ place: code, from: yearOf(entry.firstYear), to: yearOf(entry.lastYear) })
+    }
+  }
+  return placements
+}
+
 /** Country code → display name, from the files the site already shows. */
 const countryNames = Object.fromEntries(Object.entries(COUNTRIES).map(([code, entry]) => [code, entry.name]))
 
 function siteArtists() {
   const byId = new Map()
+  const countryFiles = []
   for (const file of readdirSync(COUNTRY_DIR).filter((name) => name.endsWith('.json'))) {
     const code = file.replace('.json', '')
     const stored = readJson(join(COUNTRY_DIR, file))
     if (stored.name) countryNames[code] = stored.name
+    countryFiles.push([code, stored.artists ?? []])
     for (const artist of stored.artists ?? []) {
       // `g`: the artist's raw tags — canonicalized when served, as the panels do.
       if (!byId.has(artist.id)) byId.set(artist.id, { c: code, n: artist.name, w: artist.w ?? 0, g: (artist.t ?? []).slice(0, 8) })
     }
   }
-  return byId
+  // The globe's placement: an origin-corrected artist is shown under `to`.
+  const { placements, moves } = mbPlacements(countryFiles)
+  for (const [id, artist] of byId) if (moves[id]?.to) byId.set(id, { ...artist, c: moves[id].to })
+  return { byId, placements }
 }
 
 const datingShards = new Map()
@@ -89,7 +147,7 @@ function datingFor(mbid) {
   return datingShards.get(prefix)[mbid] ?? null
 }
 
-async function musicBrainzItems(artists) {
+async function musicBrainzItems(artists, placements) {
   const byGroup = new Map()
   let rows = 0
   for (const file of readdirSync(MB_RG_DIR).filter((name) => name.endsWith('.jsonl')).sort()) {
@@ -106,7 +164,11 @@ async function musicBrainzItems(artists) {
       // most-followed of them.
       if (held && held.w >= artist.w) continue
       // `rg`: the release group — the key the recording-place pass joins on.
-      byGroup.set(row.i, { md: day.monthDay, y: day.year, t: row.t, k: row.p, c: artist.c, n: artist.n, w: artist.w, a: row.a, rg: row.i, g: artist.g })
+      // `h`: where the globe places this artist for this year — the
+      // fallback place when no recording place is known (absent when the
+      // globe has them in several places with no dated way to choose).
+      const home = globePlace(placements.get(row.a) ?? [], day.year)
+      byGroup.set(row.i, { md: day.monthDay, y: day.year, t: row.t, k: row.p, c: artist.c, n: artist.n, w: artist.w, a: row.a, rg: row.i, g: artist.g, ...(home ? { h: home } : {}) })
     }
   }
   console.log(`MusicBrainz: ${rows.toLocaleString()} rows → ${byGroup.size.toLocaleString()} exact-dated originals`)
@@ -126,7 +188,7 @@ function betterOriginal(a, b) {
 async function discogsItems(pool) {
   if (!FRESH && existsSync(WORK_PATH)) {
     const work = readJson(WORK_PATH)
-    if (work.today === today) {
+    if (work.today === today && work.version === WORK_VERSION) {
       console.log(`Discogs: ${work.items.length} gap-fill originals from the cached pass`)
       return work.items
     }
@@ -140,6 +202,7 @@ async function discogsItems(pool) {
       }
     }
   }
+  const pooled = poolPlacements(pool)
   const bestOfMaster = new Map()
   const candidates = []
   const files = readdirSync(DG_DIR).filter((name) => name.endsWith('.jsonl.gz')).sort()
@@ -156,7 +219,8 @@ async function discogsItems(pool) {
       if (!day) continue
       const artist = artistPool.get(credit.i)
       // `ga`: the credited gap-fill artist's Discogs id — the play check anchors on it.
-      candidates.push({ md: day.monthDay, y: day.year, t: row.t, k: (row.fd ?? [])[0] ?? (row.f ?? [])[0] ?? 'Release', c: artist.c, n: artist.n, w: artist.w, g: artist.g, dg: row.i, ga: credit.i, m: row.m ?? 0, gapFill: true })
+      const home = globePlace(pooled.get(credit.i) ?? [], day.year)
+      candidates.push({ md: day.monthDay, y: day.year, t: row.t, k: (row.fd ?? [])[0] ?? (row.f ?? [])[0] ?? 'Release', c: artist.c, n: artist.n, w: artist.w, g: artist.g, dg: row.i, ga: credit.i, m: row.m ?? 0, gapFill: true, ...(home ? { h: home } : {}) })
     }
     if ((index + 1) % 50 === 0) console.log(`  Discogs: ${index + 1}/${files.length} country files`)
   }
@@ -164,14 +228,14 @@ async function discogsItems(pool) {
     .filter((item) => !item.m || bestOfMaster.get(item.m)?.i === item.dg)
     .map((item) => Object.fromEntries(Object.entries(item).filter(([field]) => field !== 'm')))
   console.log(`Discogs: ${candidates.length} exact-dated gap-fill releases → ${items.length} originals`)
-  writeFileSync(WORK_PATH, JSON.stringify({ today, items }))
+  writeFileSync(WORK_PATH, JSON.stringify({ today, version: WORK_VERSION, items }))
   return items
 }
 
 async function main() {
-  const artists = siteArtists()
+  const { byId: artists, placements } = siteArtists()
   console.log(`site artists: ${artists.size.toLocaleString()}`)
-  const mb = await musicBrainzItems(artists)
+  const mb = await musicBrainzItems(artists, placements)
   const dg = await discogsItems(readJson(POOL_PATH))
   const byDay = new Map()
   for (const item of [...mb, ...dg]) {

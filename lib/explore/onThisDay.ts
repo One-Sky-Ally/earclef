@@ -1,6 +1,7 @@
 import onThisDayIndex from './on-this-day/index.json'
 import { canonicalizeTags } from './genreFamilies'
 import usStates from './us-states.json'
+import { CLAIMED_PLACES } from './claimedPlaces'
 import ukNations from './uk-nations.json'
 
 /**
@@ -45,6 +46,12 @@ export interface OnThisDayItem {
   /** MusicBrainz release group (the recording-place key). */
   rg?: string
   /**
+   * Where the GLOBE places this artist for this song's year (the same
+   * placement the panels use; absent when the globe has them in several
+   * places with no dated way to choose) — the fallback place.
+   */
+  h?: string
+  /**
    * Where this song was MADE — recorded — when MusicBrainz says so by id
    * (scripts/build-on-this-day-places.mjs). Never a birthplace, never a
    * country of issue. City when known, else the country alone.
@@ -53,10 +60,16 @@ export interface OnThisDayItem {
 }
 
 export interface SongPlace {
-  /** "Recorded in Sydney, Australia" / "Recorded in Australia". */
+  /**
+   * "Recorded in Sydney, Australia" — a verified recording place — or,
+   * when none is on record, "On the globe in Sweden": where the globe
+   * places this artist's music. Never "from".
+   */
   label: string
   /** The place on the globe, in the song's year. */
   href: string
+  /** What the label rests on, for a hover/long-press note. */
+  title: string
 }
 
 /** What the shards store: raw tags, canonicalized on the way out. */
@@ -126,17 +139,33 @@ const SUBDIVISION_NAMES = new Map(
   ),
 )
 
-/** The song's own recording first, the whole release only when the song has none. */
+const CLAIMED_NAMES = new Map(CLAIMED_PLACES.map((place) => [place.id, place.name] as const))
+
+const placeName = (code: string) => index.countryNames[code] ?? CLAIMED_NAMES.get(code) ?? code
+
+/**
+ * A verified recording place — the song's own recording first, the whole
+ * release only when the song has none — else where the globe places the
+ * artist for that year, labelled as exactly that. Playable songs only.
+ */
 function placeFor(item: StoredItem, places: PlacesFile | null): SongPlace | undefined {
-  if (!item.v || !item.rg || !places) return undefined
-  const group = places.groups[item.rg]
+  if (!item.v) return undefined
+  const group = item.rg ? places?.groups[item.rg] : undefined
   const stored = group?.tracks?.[songKey(item.vs ?? item.t)] ?? group?.release
-  if (!stored) return undefined
+  if (!stored) {
+    if (!item.h) return undefined
+    return {
+      label: `On the globe in ${placeName(item.h)}`,
+      href: `/?y=${item.y}&c=${item.h}`,
+      title: 'Where Ear Clef’s globe places this artist’s music. No recording place is on record for this song.',
+    }
+  }
   const countryName = index.countryNames[stored.country] ?? stored.countryName
   // City when known; else the US state / UK nation the record names; else the country.
   const local = stored.city ?? (stored.sub ? SUBDIVISION_NAMES.get(stored.sub) : undefined)
   return {
     label: local ? `Recorded in ${local}, ${countryName}` : `Recorded in ${countryName}`,
+    title: 'Where this recording was made, as MusicBrainz records it.',
     href: `/?y=${item.y}&c=${stored.sub ?? stored.country}`,
   }
 }
