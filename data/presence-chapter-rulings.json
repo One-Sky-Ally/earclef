@@ -1,0 +1,26 @@
+{
+  "rule": "Hand-read chapters from the owner's own notes, one case each, with the statement quoted. A place is a chapter only where the statement says the artist lived AND made music there; birth, study and death places are never chapters (owner rulings Oct 11, 2026). Years only as the statement gives them.",
+  "cases": [
+    {
+      "key": "dg:3547062",
+      "name": "Naghma",
+      "home": "AF",
+      "chapters": [{ "kind": "based", "country": "US" }],
+      "evidence": "Owner ruling Aug 10 2026: keep — Afghan-origin, US-resident; MB stub c27e26b0 area=US is residence, not origin (Tina Turner pattern)."
+    },
+    {
+      "key": "dg:3524201",
+      "name": "Los Nickelos",
+      "home": "CD",
+      "chapters": [{ "kind": "based", "country": "BE", "place": "Liège", "from": 1965 }],
+      "evidence": "owner-delegated-f44-keep-note (Aug 28 2026): profile: Belgian-based Zairean band (Liège 1965) — metropole-residence, pattern a; origin Zaire"
+    },
+    {
+      "key": "dg:4476611",
+      "name": "Леонид Атабеков",
+      "home": "UZ",
+      "chapters": [{ "kind": "based", "country": "RU" }],
+      "evidence": "Discogs profile: \"Leonid Atabekov is a Soviet, Uzbek and Russian composer, arranger, guitarist and teacher. Now lives in Russia. Founder of LDA Studio.\""
+    }
+  ]
+}

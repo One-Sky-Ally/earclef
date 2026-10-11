@@ -88,20 +88,7 @@ export function extraArtistGroupsFor(
   const archiveAll = (DATASET.countries[code] ?? []).filter(
     (artist) => artist.presence === 'archive',
   )
-  const shape = (artist: ExtraArtist, undated: boolean): ExtraPoolArtist => {
-    const playKey = extraPlayKey(artist)
-    // One video ID and title per entry — never the dataset itself.
-    const queueTrack = extraQueueTrack(playKey)
-    return {
-      id: `x:${playKey}`,
-      name: artist.name,
-      tags: artist.styles.map((style) => style.toLowerCase()),
-      externalUrl: extraArtistUrl(artist, playKey),
-      playKey,
-      ...(undated ? { undated: true as const } : {}),
-      ...(queueTrack ? { queueTrack } : {}),
-    }
-  }
+  const shape = shapeExtraArtist
   const inSpan = (artist: ExtraArtist) =>
     artist.firstYear !== null &&
     yearEnd >= artist.firstYear - ERA_REACH &&
@@ -118,6 +105,41 @@ export function extraArtistGroupsFor(
         .map((artist) => shape(artist, true)),
     ],
   }
+}
+
+function shapeExtraArtist(artist: ExtraArtist, undated: boolean): ExtraPoolArtist {
+  const playKey = extraPlayKey(artist)
+  // One video ID and title per entry — never the dataset itself.
+  const queueTrack = extraQueueTrack(playKey)
+  return {
+    id: `x:${playKey}`,
+    name: artist.name,
+    tags: artist.styles.map((style) => style.toLowerCase()),
+    externalUrl: extraArtistUrl(artist, playKey),
+    playKey,
+    ...(undated ? { undated: true as const } : {}),
+    ...(queueTrack ? { queueTrack } : {}),
+  }
+}
+
+/** playKey → the pool entry it keys, for chapter arrivals (built once). */
+let byPlayKey: Map<string, { code: string; artist: ExtraArtist }> | null = null
+
+/**
+ * One gap-fill entry, SHAPED, looked up by its verified-play key — how
+ * a dated chapter brings an entry into a second country's panel
+ * (chaptersServer.ts). Null when no pool entry carries the key.
+ */
+export function shapedExtraArtist(playKey: string): ExtraPoolArtist | null {
+  if (!byPlayKey) {
+    byPlayKey = new Map()
+    for (const [code, artists] of Object.entries(DATASET.countries)) {
+      for (const artist of artists) byPlayKey.set(extraPlayKey(artist), { code, artist })
+    }
+  }
+  const found = byPlayKey.get(playKey)
+  if (!found || found.artist.presence === 'archive') return null
+  return shapeExtraArtist(found.artist, found.artist.firstYear === null)
 }
 
 /** Where an entry's pill points: its own page on the source that has it. */

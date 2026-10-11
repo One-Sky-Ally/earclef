@@ -178,6 +178,27 @@ function smartArtistHref(
   return serviceLink ?? links.wikipedia ?? null
 }
 
+/**
+ * Artist Chapters (presence model, Oct 2026): the other places this
+ * artist's music happened, as the server composed them — "Burkina
+ * Faso · Paris 1985–2002" — and, on its own line, sessions abroad.
+ * Quiet, under the name, inside the same pill. Nothing when the artist
+ * has no chapter.
+ */
+function ChapterLines({ artist }: { artist: PanelPoolArtist }) {
+  if (!artist.chapterLine && !artist.recordedLine) return null
+  return (
+    <>
+      {artist.chapterLine && (
+        <span className={styles.chapterLine}>{artist.chapterLine}</span>
+      )}
+      {artist.recordedLine && (
+        <span className={styles.chapterLine}>{artist.recordedLine}</span>
+      )}
+    </>
+  )
+}
+
 interface PanelArtistPillProps {
   artist: PanelPoolArtist
   /** The panel's decade — lets the resolver reuse queue-verified videos. */
@@ -267,6 +288,7 @@ function PanelArtistPill({ artist, decade, rosterEntry }: PanelArtistPillProps) 
           {artist.undated && (
             <span className={styles.undatedTag}> · undated</span>
           )}
+          <ChapterLines artist={artist} />
         </a>
       ) : rosterEntry ? (
         <Link
@@ -275,6 +297,7 @@ function PanelArtistPill({ artist, decade, rosterEntry }: PanelArtistPillProps) 
           title="On the Ear Clef roster — opens their page here"
         >
           {artist.name}
+          <ChapterLines artist={artist} />
         </Link>
       ) : (
         <a
@@ -285,6 +308,7 @@ function PanelArtistPill({ artist, decade, rosterEntry }: PanelArtistPillProps) 
           rel="noreferrer"
         >
           {resolving ? `${artist.name}…` : artist.name}
+          <ChapterLines artist={artist} />
         </a>
       )}
       {play && (
@@ -457,7 +481,20 @@ export function CountryPanel({
     ? filtered.length +
       (omitted ? omittedWithTag(omitted.tags, genreFilter) : 0)
     : poolTotal
-  const shown = filtered.slice(0, Math.min(visible, RENDER_CAP))
+  /**
+   * Artist Chapters arrivals — rows a dated chapter placed here while
+   * the artist's own entry sits elsewhere. Full pool members (counted,
+   * filtered, queued), but shown in their own section rather than deep
+   * in the tiers, where a row appended after the ranked pool would
+   * never be reached.
+   */
+  const chapterArrivals = useMemo(
+    () => filtered.filter((artist) => artist.chapterHere),
+    [filtered],
+  )
+  const shown = filtered
+    .filter((artist) => !artist.chapterHere)
+    .slice(0, Math.min(visible, RENDER_CAP))
 
   function selectGenre(tag: string | null) {
     setGenreFilter(tag)
@@ -819,6 +856,29 @@ export function CountryPanel({
                 </p>
               )}
             </>
+          )}
+
+          {/* Artist Chapters (presence model, Oct 2026): artists whose
+              own entry is elsewhere but whose music happened here in
+              these years, by a dated chapter. Counted in the total
+              above; the line under each name says where they are from
+              and when they were here. */}
+          {chapterArrivals.length > 0 && (
+            <section className={styles.chaptersSection}>
+              <h3 className={styles.archiveHeading}>
+                Artist chapters · {country.name}
+              </h3>
+              <ul className={styles.artists}>
+                {chapterArrivals.map((artist) => (
+                  <PanelArtistPill
+                    key={artist.id}
+                    artist={artist}
+                    decade={Math.floor(year / 10) * 10}
+                    rosterEntry={roster[artist.id]}
+                  />
+                ))}
+              </ul>
+            </section>
           )}
 
           {/* Archive presence (presence model, Aug 2026): identity

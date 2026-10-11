@@ -581,6 +581,24 @@
   color: var(--text-muted);
 }
 
+/* Artist Chapters (presence model, Oct 2026): "Origin · Place years"
+   under the name, inside the pill — a fact line, muted, one per
+   chapter kind. */
+.chapterLine {
+  display: block;
+  font-size: 0.68rem;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.3;
+  text-wrap: pretty;
+}
+
+/* Artist Chapters arrivals: their own short section above the archive
+   divider — same pills, same heading style as the divider. */
+.chaptersSection {
+  margin-top: 1.2rem;
+}
+
 /* Archive presence (presence model, Aug 2026): the honest divider.
    Visually quieter than the pool — a hairline above, muted heading —
    because the claim is smaller: records verified pressed here, origin

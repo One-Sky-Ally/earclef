@@ -12,6 +12,7 @@ import { hasStateData, stateDetails } from '@/lib/explore/stateData'
 import { countryDetails, hasCountryData } from '@/lib/explore/countryData'
 import { extraArtistGroupsFor } from '@/lib/explore/extraArtistsServer'
 import { withHistoricalArtists } from '@/lib/explore/historicalArtistsServer'
+import { withChapters } from '@/lib/explore/chaptersServer'
 import { claimedPlaceDetails } from '@/lib/explore/claimedPlacesServer'
 import { withReachableUndated } from '@/lib/explore/panelPool'
 import type {
@@ -417,11 +418,24 @@ export async function GET(
    * entries a visitor can reach depends on everything ranked above
    * them, historical-area artists included.
    */
+  /**
+   * Artist Chapters join after every pool source and before the trim:
+   * chapter lines go on the finished rows, and the artists a dated
+   * chapter places here arrive as pool members (chaptersServer.ts).
+   */
   const attachAtRespondTime = (details: CountryYearDetails) =>
-    withReachableUndated({
-      ...withHistoricalArtists(details, country, start, end, genre),
-      extraArtists: extraArtistGroupsFor(country, start, end),
-    })
+    withReachableUndated(
+      withChapters(
+        {
+          ...withHistoricalArtists(details, country, start, end, genre),
+          extraArtists: extraArtistGroupsFor(country, start, end),
+        },
+        country,
+        start,
+        end,
+        genre,
+      ),
+    )
 
   const respond = (details: CountryYearDetails) =>
     withCacheHeaders(NextResponse.json(attachAtRespondTime(details)))

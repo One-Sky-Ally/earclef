@@ -16,6 +16,23 @@ export interface PoolArtist {
   name: string
   /** Top MusicBrainz tag names — the place's genre fingerprint. */
   tags: string[]
+  /**
+   * Artist Chapters (presence model, Oct 2026): "Origin · Place years"
+   * for the other places the artist's music happened, composed
+   * server-side from lib/explore/presence-edges.json. Shown on the
+   * home row and on the row of any panel a dated chapter places them
+   * in. Absent when the artist has no chapter.
+   */
+  chapterLine?: string
+  /** "Recorded in Copenhagen 1984" — sessions abroad; a line only, never a placement. */
+  recordedLine?: string
+  /**
+   * This row is here BECAUSE of a dated chapter (the artist's own entry
+   * sits in another country): a full pool member for counts, the genre
+   * filter and the queue, rendered in the panel's chapters section so a
+   * visitor can always find it.
+   */
+  chapterHere?: true
 }
 
 export interface CountryYearDetails {
