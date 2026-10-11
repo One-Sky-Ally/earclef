@@ -89,6 +89,12 @@ interface ResolvedTrack {
    * lose the labels its own filter is built on.
    */
   genres?: string[]
+  /**
+   * Where this song was made, when a source verifies it ("Recorded in
+   * Sydney, Australia"), linking to that place on the globe in the
+   * song's year. Only "On this day" passes it today.
+   */
+  place?: { label: string; href: string }
 }
 
 /**
@@ -969,6 +975,7 @@ export function QueuePlayer({
       <div className={styles.playerFrame} ref={mountRef} />
 
       {nowPlaying && includedIndices.length > 0 && (
+        <>
         <div className={styles.nowPlaying}>
           <span className={styles.nowIndex}>
             {includedIndices.indexOf(current) + 1}/{includedIndices.length}
@@ -998,6 +1005,12 @@ export function QueuePlayer({
             </button>
           </span>
         </div>
+        {nowPlaying.place && (
+          <Link className={styles.nowPlace} href={nowPlaying.place.href}>
+            {nowPlaying.place.label}
+          </Link>
+        )}
+        </>
       )}
 
       {/* A full shelf refuses the save rather than dropping an older
@@ -1214,6 +1227,15 @@ export function QueuePlayer({
                 <span className={styles.rowArtist}>{track.artistName}</span>
               )}
               <span className={styles.rowTitle}>{track.title}</span>
+              {track.place && (
+                <Link
+                  className={styles.rowPlace}
+                  href={track.place.href}
+                  title={track.place.label}
+                >
+                  {track.place.label}
+                </Link>
+              )}
               <LikeButton track={likeDraft(track)} variant="row" />
             </li>
             )

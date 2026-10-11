@@ -105,7 +105,8 @@ async function musicBrainzItems(artists) {
       // A group credited to several site artists is listed once, under the
       // most-followed of them.
       if (held && held.w >= artist.w) continue
-      byGroup.set(row.i, { md: day.monthDay, y: day.year, t: row.t, k: row.p, c: artist.c, n: artist.n, w: artist.w, a: row.a, g: artist.g })
+      // `rg`: the release group — the key the recording-place pass joins on.
+      byGroup.set(row.i, { md: day.monthDay, y: day.year, t: row.t, k: row.p, c: artist.c, n: artist.n, w: artist.w, a: row.a, rg: row.i, g: artist.g })
     }
   }
   console.log(`MusicBrainz: ${rows.toLocaleString()} rows → ${byGroup.size.toLocaleString()} exact-dated originals`)

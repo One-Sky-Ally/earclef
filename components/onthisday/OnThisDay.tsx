@@ -224,6 +224,7 @@ function DayView({
         artistName: item.n,
         mbid: item.a ?? '',
         genres: item.genres,
+        place: item.place,
         y: item.y,
       })),
     [payload, seed],
@@ -285,6 +286,7 @@ function DayView({
               artistName: track.artistName,
               mbid: track.mbid,
               ...(track.genres.length > 0 && { genres: track.genres }),
+              ...(track.place && { place: track.place }),
             }))}
             buttonLabel={`▶ Play ${label(payload.date)} — ${playable.length} song${playable.length === 1 ? '' : 's'}, shuffled`}
             endNote={`That’s every verified song listed for ${label(payload.date)}.`}
