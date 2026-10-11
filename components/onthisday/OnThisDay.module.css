@@ -1,0 +1,216 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: 2rem 3rem;
+}
+
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.fieldLabel {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.field select,
+.today {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  min-height: 2.5rem;
+}
+
+.today {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.today:hover,
+.field select:hover {
+  background: var(--hover-wash);
+}
+
+.overline {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.1;
+  margin: 0.5rem 0 0;
+}
+
+.summary {
+  font-size: 1.05rem;
+  color: var(--text-soft);
+  max-width: 60ch;
+}
+
+.honest {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--text-muted);
+  max-width: 60ch;
+  border-left: 2px solid var(--accent-deep);
+  padding-left: 0.9rem;
+}
+
+.note {
+  color: var(--text-muted);
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  cursor: pointer;
+}
+
+.toggle input {
+  accent-color: var(--accent);
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.decade {
+  margin-top: 1rem;
+}
+
+.decadeTitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+.decadeCount {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0.75rem;
+  padding-block: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.year {
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.what {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.6rem;
+  min-width: 0;
+}
+
+.release {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.kind {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.by {
+  flex-basis: 100%;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  overflow-wrap: anywhere;
+}
+
+.by a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 3px;
+}
+
+.by a:hover {
+  color: var(--accent);
+}
+
+.by a.place {
+  color: var(--text-soft);
+}
+
+.method {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  max-width: 70ch;
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.playNote {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: 60ch;
+  margin: 0;
+}
+
+.playBadge {
+  color: var(--accent);
+  font-size: 0.8rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.playBadge:hover {
+  color: var(--text);
+}

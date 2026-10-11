@@ -91,3 +91,5 @@ data/extra-play-identity-phase1.log
 data/discogs-dump/
 __pycache__/
 data/shared-credit-recheck/
+data/on-this-day-work.json
+data/on-this-day-play-cache.json

@@ -1,0 +1,81 @@
+{
+  "builtAt": "2026-10-10T23:30:39.366Z",
+  "listedItems": 28897,
+  "withDiscogsLink": 28522,
+  "withIdentityVerifiedCandidate": 11457,
+  "playable": 10977,
+  "candidatesRefused": {
+    "television-topic": 57,
+    "not-public-or-embeddable": 470,
+    "video-gone": 511,
+    "under-90s": 162,
+    "topic-channel-names-another-artist": 244,
+    "title-marker": 49,
+    "describes-talking": 1,
+    "describes-promo": 1
+  },
+  "byDecade": {
+    "1890": {
+      "listed": 4,
+      "playable": 0
+    },
+    "1900": {
+      "listed": 1,
+      "playable": 0
+    },
+    "1910": {
+      "listed": 2,
+      "playable": 0
+    },
+    "1920": {
+      "listed": 88,
+      "playable": 63
+    },
+    "1930": {
+      "listed": 460,
+      "playable": 251
+    },
+    "1940": {
+      "listed": 319,
+      "playable": 121
+    },
+    "1950": {
+      "listed": 616,
+      "playable": 243
+    },
+    "1960": {
+      "listed": 2005,
+      "playable": 1078
+    },
+    "1970": {
+      "listed": 3241,
+      "playable": 1837
+    },
+    "1980": {
+      "listed": 4413,
+      "playable": 2289
+    },
+    "1990": {
+      "listed": 4608,
+      "playable": 1767
+    },
+    "2000": {
+      "listed": 4380,
+      "playable": 1662
+    },
+    "2010": {
+      "listed": 4380,
+      "playable": 1033
+    },
+    "2020": {
+      "listed": 4380,
+      "playable": 633
+    }
+  },
+  "youtube": {
+    "videosListCallsThisRun": 21,
+    "quotaUnitsThisRun": 21,
+    "videosCheckedThisRun": 1040,
+    "note": "videos.list costs 1 unit per call of up to 50 ids; nothing else here calls YouTube, and the site serves the result as static data."
+  }
+}
