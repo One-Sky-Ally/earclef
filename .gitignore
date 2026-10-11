@@ -96,3 +96,6 @@ data/on-this-day-play-cache.json
 data/on-this-day-places-work.json
 data/on-this-day-places-work.json.tmp
 data/on-this-day-places-full.json
+data/wikidata-residence-work.json
+data/wikidata-residence-work.json.tmp
+data/mb-artist-places.json
