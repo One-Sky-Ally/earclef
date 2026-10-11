@@ -137,3 +137,27 @@
   color: var(--text-muted);
   cursor: default;
 }
+
+.song {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.songMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.songMeta .listen {
+  margin-top: 0;
+}
+
+.songKind {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}

@@ -8,9 +8,15 @@
 import Anthropic from '@anthropic-ai/sdk'
 // Relative imports (not the @/ alias): this module is bundled into the
 // Netlify background function, whose bundler doesn't read tsconfig paths.
-import { resolveMbArtistPlay } from '../play/resolve'
+import {
+  bandcampRel,
+  fetchMbArtist,
+  mbAliasNames,
+  resolveMbArtistPlay,
+} from '../play/resolve'
 import type { PlayLink, ReadLink } from '../play/types'
 import roster from './roster.json'
+import { resolveDiscoverSong, type DiscoverSong } from './song'
 
 export interface DiscoverPick {
   name: string
@@ -31,6 +37,14 @@ export interface DiscoverPick {
   read: ReadLink
   /** Back-compat mirror of play?.url ?? read.url. Never a search URL. */
   listenHref: string
+  /**
+   * A verified, playable YouTube song (Oct 11 2026; see ./song): the
+   * card embeds it and keeps a small Bandcamp link beside it. null =
+   * no verified song, and the card renders play/read as before.
+   */
+  song: DiscoverSong | null
+  /** The artist's MB-linked Bandcamp page, whatever `play` picked. */
+  bandcamp: string | null
 }
 
 export interface DiscoverPool {
@@ -45,6 +59,12 @@ interface RawPick {
 }
 
 const POOL_SIZE = 12
+/**
+ * Wall-clock budget for song resolution across the pool (Discogs at 25
+ * calls/min, ~30 s a pick). The background function has 15 minutes;
+ * picks past this line get no song rather than no pool.
+ */
+const SONG_BUDGET_MS = 10 * 60 * 1000
 const MB_USER_AGENT =
   'EarClefDiscover/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 
@@ -168,6 +188,29 @@ interface MbReleaseGroup {
   'primary-type'?: string
 }
 
+interface VerifiedCatalog {
+  knownFor: string
+  /** The artist's release-group titles, knownFor first then newest first. */
+  titles: string[]
+}
+
+/** Catalog titles for the song resolver's channel path, newest first. */
+function catalogTitles(groups: MbReleaseGroup[], knownFor: string): string[] {
+  const dated = groups
+    .filter((group): group is MbReleaseGroup & { title: string } => Boolean(group.title))
+    .sort((a, b) =>
+      (b['first-release-date'] ?? '').localeCompare(a['first-release-date'] ?? ''),
+    )
+    .map((group) => group.title)
+  const seen = new Set<string>()
+  return [knownFor, ...dated].filter((title) => {
+    const key = normalize(title)
+    if (!key || seen.has(key)) return false
+    seen.add(key)
+    return true
+  })
+}
+
 /**
  * Verify the model's knownFor title against the artist's real catalog:
  * a normalized match among their release groups, else one recording
@@ -178,7 +221,7 @@ interface MbReleaseGroup {
 async function verifiedKnownFor(
   mbid: string,
   proposed: string,
-): Promise<string | null> {
+): Promise<VerifiedCatalog | null> {
   const rgUrl = `https://musicbrainz.org/ws/2/release-group?artist=${mbid}&limit=100&fmt=json`
   let groups: MbReleaseGroup[] = []
   try {
@@ -197,7 +240,7 @@ async function verifiedKnownFor(
     proposedKey &&
     groups.some((group) => normalize(group.title ?? '') === proposedKey)
   ) {
-    return proposed
+    return { knownFor: proposed, titles: catalogTitles(groups, proposed) }
   }
 
   try {
@@ -212,7 +255,7 @@ async function verifiedKnownFor(
       const body = (await res.json()) as { count?: number }
       if ((body.count ?? 0) > 0) {
         await sleep(1100)
-        return proposed
+        return { knownFor: proposed, titles: catalogTitles(groups, proposed) }
       }
     }
   } catch {
@@ -231,7 +274,9 @@ async function verifiedKnownFor(
     dated.find((group) => group['primary-type'] === 'Album') ??
     dated[0] ??
     groups.find((group) => group.title)
-  return replacement?.title ?? null
+  return replacement?.title
+    ? { knownFor: replacement.title, titles: catalogTitles(groups, replacement.title) }
+    : null
 }
 
 /** Full pipeline: model -> roster/repeat filters -> MusicBrainz -> pool. */
@@ -244,6 +289,7 @@ export async function generatePool(
   const recentKeys = new Set(recentNames.map(normalize))
   const seen = new Set<string>()
   const picks: DiscoverPick[] = []
+  const songDeadline = Date.now() + SONG_BUDGET_MS
 
   for (const pick of raw) {
     const key = normalize(pick.name)
@@ -255,15 +301,25 @@ export async function generatePool(
     await sleep(1100) // MusicBrainz rate limit: 1 req/s
     if (!match) continue
 
-    const knownFor = await verifiedKnownFor(match.mbid, pick.knownFor)
-    if (!knownFor) continue // no verifiable catalog — the pick is out
+    const catalog = await verifiedKnownFor(match.mbid, pick.knownFor)
+    if (!catalog) continue // no verifiable catalog — the pick is out
 
-    const { play, read } = await resolveMbArtistPlay(match.mbid, null)
+    // One MB artist call feeds the play chain AND the song resolver.
+    const artist = await fetchMbArtist(match.mbid)
     await sleep(1100)
+    const { play, read } = await resolveMbArtistPlay(match.mbid, null, artist)
+    const song = await resolveDiscoverSong({
+      name: match.canonicalName,
+      knownFor: catalog.knownFor,
+      relations: artist?.relations ?? [],
+      aliases: mbAliasNames(artist),
+      titles: catalog.titles,
+      deadline: songDeadline,
+    })
     picks.push({
       name: match.canonicalName,
       why: pick.why,
-      knownFor,
+      knownFor: catalog.knownFor,
       knownForVerified: true,
       mbid: match.mbid,
       play,
@@ -272,6 +328,8 @@ export async function generatePool(
         url: `https://musicbrainz.org/artist/${match.mbid}`,
       },
       listenHref: play?.url ?? read?.url ?? `https://musicbrainz.org/artist/${match.mbid}`,
+      song,
+      bandcamp: bandcampRel(artist?.relations),
     })
   }
 

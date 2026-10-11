@@ -2,12 +2,21 @@ import { NextResponse } from 'next/server'
 import { getStore } from '@netlify/blobs'
 import { queueCacheKey } from '@/lib/play/resolve'
 import {
+  channelId,
+  channelUploads,
+  decodeEntities,
+  playableSet,
+  QuotaError,
+  youtubeRel,
+  ytJson,
+  type Upload,
+} from '@/lib/play/channelSongs'
+import {
   annotationOf,
   cachedTrackPasses,
   describesPromo,
   isNonSongUpload,
   isSelfTitled,
-  isSongLength,
   namesTheSelfTitledRecord,
   nonMusicVerdict,
 } from '@/lib/play/contentGates'
@@ -40,15 +49,6 @@ const USER_AGENT =
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 const DECADE = /^(19|20)\d0$/
 const MB_DELAY_MS = 1100
-/**
- * Upload pages (of 50) scanned on the artist's own channel. Raised
- * 2 → 4 with multi-track (Aug 31, 2026): the window, not the matching,
- * was the yield limit — a deep catalogue can't be found in 100 uploads.
- * Costs 1 unit per page and is SELF-TARGETING: the scan stops at the
- * last page, so small channels still cost 1-2 units and only prolific
- * ones pay 4 — exactly the artists with more songs to give.
- */
-const UPLOAD_PAGES = 4
 /**
  * Songs returned per artist, so a queue can keep playing without
  * re-resolving (owner-approved Aug 31, 2026: a listener on a sparse
@@ -83,12 +83,6 @@ const NULL_TTL_MS = 30 * 24 * 60 * 60 * 1000
  *     served forever without this bump.
  */
 const GATE_PASS = 3
-
-/** What videos.list tells us about a candidate beyond playability. */
-interface VideoFacts {
-  description?: string
-  topicUrls?: string[]
-}
 
 export interface QueueTrack {
   videoId: string
@@ -140,16 +134,6 @@ function store() {
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
-
-/** YouTube API titles arrive HTML-encoded; store them as plain text. */
-function decodeEntities(value: string): string {
-  return value
-    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-}
 
 /**
  * Script-aware: the ASCII-only version reduced non-Latin names AND
@@ -308,89 +292,6 @@ function rankEraTitles(
     .slice(0, MAX_TITLES)
 }
 
-/** The artist's MB-linked YouTube channel URL, if curated. */
-function youtubeRel(
-  relations: { url?: { resource?: string } }[] | undefined,
-): string | null {
-  for (const relation of relations ?? []) {
-    const resource = relation.url?.resource
-    if (!resource) continue
-    try {
-      const host = new URL(resource).hostname.replace(/^www\.|^m\./, '')
-      if (host === 'youtube.com') return resource
-    } catch {
-      // Malformed URL in MB — skip.
-    }
-  }
-  return null
-}
-
-class QuotaError extends Error {}
-
-async function ytJson(url: string): Promise<unknown> {
-  const res = await fetch(url, { signal: AbortSignal.timeout(8000) })
-  if (res.status === 403) {
-    const body = (await res.json().catch(() => ({}))) as {
-      error?: { errors?: { reason?: string }[] }
-    }
-    const reason = body.error?.errors?.[0]?.reason ?? ''
-    if (reason.includes('quota') || reason.includes('rateLimit')) {
-      throw new QuotaError()
-    }
-    throw new Error('YouTube 403')
-  }
-  if (!res.ok) throw new Error(`YouTube HTTP ${res.status}`)
-  return res.json()
-}
-
-/** Resolve a channel URL to its ID: free for /channel/UC…, 1 unit else. */
-async function channelId(url: string, key: string): Promise<string | null> {
-  const direct = url.match(/\/channel\/(UC[0-9A-Za-z_-]{22})/)
-  if (direct) return direct[1]
-  const handle = url.match(/\/(@[^/?]+)/)
-  const user = url.match(/\/user\/([^/?]+)/)
-  const param = handle
-    ? `forHandle=${encodeURIComponent(handle[1])}`
-    : user
-      ? `forUsername=${encodeURIComponent(user[1])}`
-      : null
-  if (!param) return null
-  const body = (await ytJson(
-    `https://www.googleapis.com/youtube/v3/channels?part=id&${param}&key=${key}`,
-  )) as { items?: { id?: string }[] }
-  return body.items?.[0]?.id ?? null
-}
-
-interface Upload {
-  videoId: string
-  title: string
-}
-
-/** Uploads scan: 1 unit per page of 50 — the cheap path. */
-async function channelUploads(id: string, key: string): Promise<Upload[]> {
-  const playlist = `UU${id.slice(2)}`
-  const uploads: Upload[] = []
-  let pageToken = ''
-  for (let page = 0; page < UPLOAD_PAGES; page++) {
-    const body = (await ytJson(
-      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlist}&maxResults=50${pageToken ? `&pageToken=${pageToken}` : ''}&key=${key}`,
-    )) as {
-      nextPageToken?: string
-      items?: {
-        snippet?: { title?: string; resourceId?: { videoId?: string } }
-      }[]
-    }
-    for (const item of body.items ?? []) {
-      const videoId = item.snippet?.resourceId?.videoId
-      const title = item.snippet?.title
-      if (videoId && title) uploads.push({ videoId, title })
-    }
-    if (!body.nextPageToken) break
-    pageToken = body.nextPageToken
-  }
-  return uploads
-}
-
 interface SearchHit {
   videoId: string
   title: string
@@ -438,54 +339,6 @@ async function searchVerified(
       ? [{ videoId, title, channelTitle }]
       : []
   })
-}
-
-/**
- * Playability gate: public + embeddable + long enough to be a record.
- * BATCHED — videos.list takes up to 50 ids for ONE unit, so checking a
- * dozen candidates costs less than the old one-at-a-time walk over
- * three. Returns the subset of ids that pass, order not guaranteed.
- *
- * The duration floor is half of standing lesson 7: a title match
- * cannot tell a Short or a clip from the song it names.
- */
-async function playableSet(
-  videoIds: string[],
-  key: string,
-): Promise<{ playable: Set<string>; meta: Map<string, VideoFacts> }> {
-  const playable = new Set<string>()
-  const meta = new Map<string, VideoFacts>()
-  if (videoIds.length === 0) return { playable, meta }
-  // `snippet` and `topicDetails` ride along FREE: videos.list costs one
-  // unit per call whatever parts are asked for, and this call already
-  // happens for every candidate.
-  const body = (await ytJson(
-    `https://www.googleapis.com/youtube/v3/videos?part=snippet,status,contentDetails,topicDetails&id=${videoIds.slice(0, 50).join(',')}&key=${key}`,
-  )) as {
-    items?: {
-      id?: string
-      snippet?: { title?: string; description?: string }
-      status?: { embeddable?: boolean; privacyStatus?: string }
-      contentDetails?: { duration?: string }
-      topicDetails?: { topicCategories?: string[] }
-    }[]
-  }
-  for (const item of body.items ?? []) {
-    // Missing id can't identify anything — missing is not a match.
-    if (!item.id) continue
-    meta.set(item.id, {
-      description: item.snippet?.description,
-      topicUrls: item.topicDetails?.topicCategories,
-    })
-    if (
-      item.status?.embeddable &&
-      item.status.privacyStatus === 'public' &&
-      isSongLength(item.contentDetails?.duration)
-    ) {
-      playable.add(item.id)
-    }
-  }
-  return { playable, meta }
 }
 
 /**

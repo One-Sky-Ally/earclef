@@ -35,6 +35,8 @@ function sanitizePool(pool: DiscoverPool): DiscoverPool {
         play: null,
         read: { kind: 'musicbrainz', url: mbUrl },
         listenHref: mbUrl,
+        song: null,
+        bandcamp: null,
       }
     }),
   }

@@ -311,10 +311,56 @@ async function archiveAudioItem(aliases: string[]): Promise<PlayLink | null> {
   return null
 }
 
+/** The MB artist lookup the chain reads: name, typed aliases, url-rels. */
+export interface MbArtistBody {
+  name?: string
+  aliases?: { name?: string; type?: string | null }[]
+  relations?: MbUrlRelation[]
+}
+
+/** One MB call: callers that need the rels for more than play pass it on. */
+export async function fetchMbArtist(mbid: string): Promise<MbArtistBody | null> {
+  return (await fetchJson(
+    `https://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels+aliases&fmt=json`,
+  )) as MbArtistBody | null
+}
+
+/**
+ * The artist's names for exact comparison: canonical name plus "Artist
+ * name" / "Legal name" aliases only — untyped or search-hint aliases
+ * include bot-added junk (owner ruling, Aug 8).
+ */
+export function mbAliasNames(body: MbArtistBody | null): string[] {
+  return [
+    ...(body?.name ? [body.name] : []),
+    ...(body?.aliases ?? []).flatMap((alias) =>
+      alias.name && (alias.type === 'Artist name' || alias.type === 'Legal name')
+        ? [alias.name]
+        : [],
+    ),
+  ]
+}
+
+/** The artist's MB-linked Bandcamp page, whatever the play pick is. */
+export function bandcampRel(relations: MbUrlRelation[] | undefined): string | null {
+  for (const relation of relations ?? []) {
+    const resource = relation.url?.resource
+    if (!resource) continue
+    try {
+      const host = new URL(resource).hostname.replace(/^www\./, '')
+      if (host === 'bandcamp.com' || host.endsWith('.bandcamp.com')) return resource
+    } catch {
+      continue
+    }
+  }
+  return null
+}
+
 /** Full chain for a MusicBrainz artist. */
 export async function resolveMbArtistPlay(
   mbid: string,
   decade: string | null,
+  prefetched?: MbArtistBody | null,
 ): Promise<ArtistPlay> {
   const read: ReadLink = {
     kind: 'musicbrainz',
@@ -323,13 +369,7 @@ export async function resolveMbArtistPlay(
 
   // MB first: the canonical name (needed for the queue cache key and
   // the IA search) and aliases ride the same url-rels call.
-  const body = (await fetchJson(
-    `https://musicbrainz.org/ws/2/artist/${mbid}?inc=url-rels+aliases&fmt=json`,
-  )) as {
-    name?: string
-    aliases?: { name?: string; type?: string | null }[]
-    relations?: MbUrlRelation[]
-  } | null
+  const body = prefetched === undefined ? await fetchMbArtist(mbid) : prefetched
   const rels = classifyRelations(body?.relations ?? [])
   const readLink: ReadLink = rels.wikipedia
     ? { kind: 'wikipedia', url: rels.wikipedia }
@@ -349,14 +389,7 @@ export async function resolveMbArtistPlay(
   // name" and "Legal name" count: untyped or search-hint aliases
   // include bot-added junk, and a false exact match from junk is the
   // Alexandra failure with better paperwork (owner ruling, Aug 8).
-  const aliases = [
-    ...(body?.name ? [body.name] : []),
-    ...(body?.aliases ?? []).flatMap((alias) =>
-      alias.name && (alias.type === 'Artist name' || alias.type === 'Legal name')
-        ? [alias.name]
-        : [],
-    ),
-  ]
+  const aliases = mbAliasNames(body)
   const archive = aliases.length > 0 ? await archiveAudioItem(aliases) : null
   if (archive) return { play: archive, read: readLink }
 

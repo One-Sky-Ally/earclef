@@ -30,7 +30,10 @@ export default async function handler(): Promise<Response> {
     const pool = await generatePool(today, await readRecentNames(today))
     await writePool(pool)
     await appendHistory(pool)
-    console.log(`discover: generated ${pool.picks.length} picks for ${today}`)
+    const withSongs = pool.picks.filter((pick) => pick.song !== null).length
+    console.log(
+      `discover: generated ${pool.picks.length} picks for ${today} (${withSongs} with a song)`,
+    )
     return new Response('generated')
   } catch (error) {
     console.error('discover generation failed:', error)

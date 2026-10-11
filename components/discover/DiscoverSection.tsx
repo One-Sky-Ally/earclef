@@ -1,9 +1,19 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { YouTubeEmbed } from '@/components/YouTubeEmbed'
 import { getOwnerKey } from '@/lib/curation/ownerClient'
 import { PLAY_LABELS, type PlayLink, type ReadLink } from '@/lib/play/types'
 import styles from './DiscoverSection.module.css'
+
+type SongKind = 'official-video' | 'audio' | 'video'
+
+/** The verified song the card plays (lib/discover/song.ts), as rendered. */
+interface DiscoverSong {
+  videoId: string
+  title: string
+  kind: SongKind
+}
 
 interface DiscoverPick {
   name: string
@@ -15,6 +25,50 @@ interface DiscoverPick {
   play: PlayLink | null
   read: ReadLink
   listenHref: string
+  song: DiscoverSong | null
+  /** The artist's own Bandcamp page, kept under the player (owner, Oct 11 2026). */
+  bandcamp: string | null
+}
+
+const SONG_KIND_LABELS: Record<SongKind, string> = {
+  'official-video': 'Official video',
+  audio: 'Audio',
+  video: 'Video',
+}
+
+const VIDEO_ID = /^[\w-]{11}$/
+
+/**
+ * Render-time guard over stored output (standing lesson 2: stored
+ * pools outlive their generators): a song plays only with a well-formed
+ * video id and a title; anything else is no song.
+ */
+function songOf(song: Partial<DiscoverSong> | null | undefined): DiscoverSong | null {
+  if (!song || typeof song.videoId !== 'string' || !VIDEO_ID.test(song.videoId)) return null
+  if (typeof song.title !== 'string' || song.title === '') return null
+  const kind: SongKind =
+    song.kind === 'official-video' || song.kind === 'audio' ? song.kind : 'video'
+  return { videoId: song.videoId, title: song.title, kind }
+}
+
+/** Only a real Bandcamp page earns the link under the player. */
+function bandcampOf(pick: Partial<DiscoverPick>): string | null {
+  const candidate =
+    typeof pick.bandcamp === 'string'
+      ? pick.bandcamp
+      : pick.play?.kind === 'bandcamp'
+        ? pick.play.url
+        : null
+  if (!candidate) return null
+  try {
+    const url = new URL(candidate)
+    const host = url.hostname.replace(/^www\./, '')
+    return url.protocol === 'https:' && (host === 'bandcamp.com' || host.endsWith('.bandcamp.com'))
+      ? candidate
+      : null
+  } catch {
+    return null
+  }
 }
 
 type DiscoverState =
@@ -43,6 +97,8 @@ function normalizePick(pick: Partial<DiscoverPick>): DiscoverPick[] {
       play: pick.play ?? null,
       read: pick.read ?? { kind: 'musicbrainz', url: mbUrl },
       listenHref: pick.play?.url ?? pick.read?.url ?? mbUrl,
+      song: songOf(pick.song),
+      bandcamp: bandcampOf(pick),
     },
   ]
 }
@@ -159,7 +215,32 @@ export function DiscoverSection() {
                 <li key={pick.mbid} className={styles.card}>
                   <span className={styles.name}>{pick.name}</span>
                   <span className={styles.why}>{pick.why}</span>
-                  {pick.play ? (
+                  {pick.song ? (
+                    // A verified song plays here, on the site. The
+                    // Bandcamp page stays as a small link so listeners
+                    // can buy from the artist directly (owner, Oct 11).
+                    <div className={styles.song}>
+                      <YouTubeEmbed
+                        video={{ youtubeId: pick.song.videoId, title: pick.song.title }}
+                      />
+                      <div className={styles.songMeta}>
+                        <span className={styles.songKind}>
+                          {SONG_KIND_LABELS[pick.song.kind]}
+                        </span>
+                        {pick.bandcamp && (
+                          <a
+                            className={styles.listen}
+                            href={pick.bandcamp}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={`${pick.name} on Bandcamp`}
+                          >
+                            Bandcamp →
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  ) : pick.play ? (
                     <a
                       className={styles.listen}
                       href={pick.play.url}
