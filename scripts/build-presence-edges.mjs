@@ -26,6 +26,12 @@
  *   wikidata        data/wikidata-residence.json (phase 4 sweep output,
  *                   when present): P551 residence / P937 work location
  *                   with start/end qualifiers → dated based chapters.
+ *   musicbrainz     data/mb-artist-places.json (phase 3, from the local
+ *                   artist dump): artist→place relationships whose type
+ *                   means music was made there (taught at, concert venue,
+ *                   composer/artist in residence, organist, engineer
+ *                   positions — never "studied at"), dated as MB dates
+ *                   them, city from the place's area chain.
  *
  * Standing rules: nothing fuzzy (every join is by id), nothing invented
  * (years only as a source states them), nothing deleted.
@@ -33,55 +39,18 @@
  *   node scripts/build-presence-edges.mjs            # write
  *   node scripts/build-presence-edges.mjs --dry-run  # report only
  */
-import { readFileSync, readdirSync, writeFileSync, existsSync } from 'node:fs'
+import { writeFileSync, existsSync } from 'node:fs'
+import { readdirSync } from 'node:fs'
 import { join } from 'node:path'
-import { CLAIMED_PLACES } from '../lib/explore/claimedPlaces.ts'
+import { countryNames, extraPlayKey, mbHomes, readJson, POOL_PATH, CORRECTIONS_PATH } from './lib/presenceSources.mjs'
 
 const OUT_PATH = 'lib/explore/presence-edges.json'
-const POOL_PATH = 'lib/explore/extra-artists.json'
-const CORRECTIONS_PATH = 'lib/explore/origin-corrections.json'
 const PLACES_PATH = 'lib/explore/on-this-day/places.json'
 const ON_THIS_DAY_DIR = 'lib/explore/on-this-day'
-const COUNTRY_DIR = 'lib/explore/country-artists'
 const RULINGS_PATH = 'data/presence-chapter-rulings.json'
 const WIKIDATA_PATH = 'data/wikidata-residence.json'
+const MB_PLACES_PATH = 'data/mb-artist-places.json'
 const DRY_RUN = process.argv.includes('--dry-run')
-
-const readJson = (path) => JSON.parse(readFileSync(path, 'utf8'))
-
-/** code → name, from the committed country files (the globe's own names). */
-function countryNames() {
-  const names = new Map()
-  for (const file of readdirSync(COUNTRY_DIR)) {
-    if (!file.endsWith('.json')) continue
-    const code = file.replace('.json', '')
-    const stored = readJson(join(COUNTRY_DIR, file))
-    if (stored.name) names.set(code, stored.name)
-  }
-  // Claimed places live on the globe under their own ids (lib/explore/claimedPlaces.ts).
-  for (const place of CLAIMED_PLACES) names.set(place.id, place.name)
-  return names
-}
-
-/** The verified-play key the server uses for a gap-fill entry (extraArtistsServer.ts, ported exactly). */
-function extraPlayKey(artist) {
-  if (artist.discogsArtistId) return `dg:${artist.discogsArtistId}`
-  if (artist.wikidataId) return `wd:${artist.wikidataId}`
-  const slug = artist.name
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 60)
-  return `nm:${slug || `h${djb2(artist.name)}`}`
-}
-
-function djb2(value) {
-  let hash = 5381
-  for (let index = 0; index < value.length; index++) hash = ((hash << 5) + hash + value.charCodeAt(index)) >>> 0
-  return hash.toString(16)
-}
 
 /** Accumulates chapters per artist; same kind+country+place merges, a dated reading wins over an undated one. */
 class Edges {
@@ -91,7 +60,7 @@ class Edges {
     this.report = []
   }
 
-  artist(key, { name, home, playKey, tags }) {
+  artist(key, { name, home, playKey, tags, ended }) {
     const homeName = this.names.get(home)
     if (!homeName) {
       // An artist whose own entry is filed where the globe has no panel
@@ -101,7 +70,15 @@ class Edges {
     }
     const existing = this.artists.get(key)
     if (existing) return existing
-    const created = { name, home, homeName, ...(playKey ? { playKey } : {}), ...(tags ? { tags } : {}), chapters: [] }
+    const created = {
+      name,
+      home,
+      homeName,
+      ...(playKey ? { playKey } : {}),
+      ...(tags ? { tags } : {}),
+      ...(ended ? { ended } : {}),
+      chapters: [],
+    }
     this.artists.set(key, created)
     return created
   }
@@ -172,25 +149,12 @@ function corrections(edges) {
   const moves = readJson(CORRECTIONS_PATH).moves ?? {}
   let written = 0
   for (const [mbid, move] of Object.entries(moves)) {
-    const who = { name: move.name, home: move.to, tags: move.tags ?? [] }
+    const endYear = Number(move.end)
+    const who = { name: move.name, home: move.to, tags: move.tags ?? [], ended: Number.isFinite(endYear) ? endYear : null }
     const evidence = `MusicBrainz area ${move.from}; begin-area ${move.beginArea ?? '—'} → ${move.to}; ${move.why ?? ''}`.trim()
     if (edges.add(mbid, who, { kind: 'based', country: move.from, source: 'origin-correction', evidence })) written++
   }
   return written
-}
-
-/** The globe's own country for each MusicBrainz artist (corrections applied), with name and tags. */
-function mbHomes() {
-  const moves = readJson(CORRECTIONS_PATH).moves ?? {}
-  const homes = new Map()
-  for (const file of readdirSync(COUNTRY_DIR)) {
-    if (!file.endsWith('.json')) continue
-    const code = file.replace('.json', '')
-    for (const artist of readJson(join(COUNTRY_DIR, file)).artists ?? []) {
-      homes.set(artist.id, { name: artist.name, home: moves[artist.id]?.to ?? code, tags: artist.t ?? [] })
-    }
-  }
-  return homes
 }
 
 /** Pass 3: verified recording places abroad → recorded lines. */
@@ -282,6 +246,51 @@ function wikidata(edges, pool, homes) {
   return written
 }
 
+/**
+ * MusicBrainz artist→place relationship types that mean the artist MADE
+ * MUSIC at the place (owner rule, Oct 11 2026). Not "studied at" (the
+ * owner's explicit exclusion), not founder/owner/named-after/associated
+ * (not music-making), not school director (administration).
+ */
+const MB_MUSIC_RELATIONS = new Map([
+  ['taught at', 'taught at'],
+  ['composer-in-residence', 'composer in residence at'],
+  ['artist-in-residence', 'artist in residence at'],
+  ['primary concert venue', 'primary concert venue'],
+  ['organist', 'organist at'],
+  ['carillonneur', 'carillonneur at'],
+  ['engineer position', 'engineer at'],
+  ['recording engineer position', 'recording engineer at'],
+  ['mixing engineer position', 'mixing engineer at'],
+  ['mastering engineer position', 'mastering engineer at'],
+])
+
+/** Pass 6: MusicBrainz artist→place relationships (phase 3), from the local dump facts. */
+function musicBrainzPlaces(edges, homes) {
+  if (!existsSync(MB_PLACES_PATH)) return 0
+  const facts = readJson(MB_PLACES_PATH).artists ?? {}
+  let written = 0
+  for (const [mbid, fact] of Object.entries(facts)) {
+    const who = homes.get(mbid)
+    if (!who || !fact.places) continue
+    for (const relation of fact.places) {
+      const verb = MB_MUSIC_RELATIONS.get(relation.type)
+      if (!verb || !relation.iso) continue
+      const chapter = {
+        kind: 'based',
+        country: relation.iso,
+        ...(relation.city ? { place: relation.city } : {}),
+        from: relation.begin ?? null,
+        to: relation.end ?? null,
+        source: 'musicbrainz-place',
+        evidence: `MusicBrainz: ${verb} ${relation.place} (place ${relation.placeId})${relation.begin || relation.end ? `, ${relation.begin ?? '…'}–${relation.end ?? '…'}` : ''}`,
+      }
+      if (edges.add(mbid, who, chapter)) written++
+    }
+  }
+  return written
+}
+
 function main() {
   const names = countryNames()
   const codeByName = new Map([...names].map(([code, name]) => [name, code]))
@@ -295,6 +304,7 @@ function main() {
     recording: recordingPlaces(edges, homes),
     rulings: rulings(edges, pool, homes),
     wikidata: wikidata(edges, pool, homes),
+    musicbrainz: musicBrainzPlaces(edges, homes),
   }
 
   const artists = Object.fromEntries([...edges.artists].sort(([a], [b]) => a.localeCompare(b)))

@@ -27,6 +27,10 @@ export interface OriginMove {
   weight: number
   tags: string[]
   beginArea: string | null
+  /** Person or Group — a group's begin date is its formation, so no career offset applies. */
+  type?: string | null
+  /** The basis recorded by the pass that wrote the move. */
+  why?: string
 }
 
 const DATASET = corrections as unknown as {
@@ -62,22 +66,28 @@ export function movedIn(
   rangeStart: number,
   rangeEnd: number,
   personCareerOffset: number,
-): { artist: PoolArtist; weight: number }[] {
+): { artist: PoolArtist; weight: number; cs: number | null; end: number | null }[] {
   const arrivals = byTo.get(country) ?? []
   return arrivals.flatMap(({ mbid, move }) => {
     const beginYear = Number(move.begin)
     // Same era gate the live pool applies: began by the range's end,
     // didn't end before it started. Undated artists stay eligible.
-    if (Number.isFinite(beginYear)) {
-      const careerStart = beginYear + personCareerOffset
-      if (careerStart > rangeEnd) return []
-    }
+    // A Person's MB begin is their birth; a Group's is its formation.
+    const careerStart = Number.isFinite(beginYear)
+      ? move.type === 'Group'
+        ? beginYear
+        : beginYear + personCareerOffset
+      : null
+    if (careerStart !== null && careerStart > rangeEnd) return []
     const endYear = Number(move.end)
-    if (Number.isFinite(endYear) && endYear < rangeStart) return []
+    const end = Number.isFinite(endYear) ? endYear : null
+    if (end !== null && end < rangeStart) return []
     return [
       {
         artist: { id: mbid, name: move.name, tags: move.tags },
         weight: move.weight,
+        cs: careerStart,
+        end,
       },
     ]
   })

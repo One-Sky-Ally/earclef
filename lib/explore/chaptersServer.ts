@@ -120,7 +120,7 @@ export function withChapters(
   for (const key of arrivalsFor(code)) {
     const artist = DATASET.artists[key]
     if (!artist || artist.home === code) continue
-    if (!artist.chapters.some((chapter) => chapter.country === code && placesArtistIn(chapter, yearStart, yearEnd))) continue
+    if (!artist.chapters.some((chapter) => chapter.country === code && placesArtistIn(chapter, yearStart, yearEnd, artist.ended))) continue
     if (MBID.test(key)) {
       if (present.has(key) || !lensOk(artist.tags ?? [])) continue
       mbArrivals.push({ id: key, name: artist.name, tags: artist.tags ?? [], ...lines(artist), chapterHere: true })

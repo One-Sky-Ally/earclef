@@ -43,6 +43,11 @@ export interface ArtistChapters {
   /** The pool country the artist's own entry sits in — their origin. */
   home: string
   homeName: string
+  /**
+   * The year the artist's own record ends (death, dissolution), when a
+   * source has it. An open-ended chapter runs no further than this.
+   */
+  ended?: number | null
   /** Gap-fill entries carry their verified-play key; MusicBrainz artists are keyed by MBID. */
   playKey?: string
   tags?: string[]
@@ -122,13 +127,20 @@ export function recordedLine(chapters: Chapter[]): string | undefined {
 
 /**
  * Whether this chapter puts the artist in its country's panel for the
- * span: based, dated at its start, and overlapping. An open end runs on;
- * a missing start can never be gated, so it stays a line.
+ * span: based, dated at its start, and overlapping. An open end runs on
+ * — but never past the artist's own end (`artistEnd`: death or
+ * dissolution) when a source has it; a missing start can never be
+ * gated, so it stays a line.
  */
-export function placesArtistIn(chapter: Chapter, yearStart: number, yearEnd: number): boolean {
+export function placesArtistIn(
+  chapter: Chapter,
+  yearStart: number,
+  yearEnd: number,
+  artistEnd?: number | null,
+): boolean {
   if (chapter.kind !== 'based' || chapter.from == null) return false
   const start = yearBounds(chapter.from)[0]
-  const end = chapter.to == null ? Infinity : yearBounds(chapter.to)[1]
+  const end = chapter.to != null ? yearBounds(chapter.to)[1] : (artistEnd ?? Infinity)
   return start <= yearEnd && end >= yearStart
 }
 

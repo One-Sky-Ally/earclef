@@ -85,6 +85,11 @@ test('a chapter places the artist in its country only when it is dated at the st
   assert.equal(placesArtistIn(dated, 1970, 1985), true)
   // Open end: the source records a start and no end.
   assert.equal(placesArtistIn(based({ from: 1985 }), 2020, 2024), true)
+  // …but never past the artist's own end when one is known.
+  assert.equal(placesArtistIn(based({ from: 1889 }), 1975, 1975, 1924), false)
+  assert.equal(placesArtistIn(based({ from: 1889 }), 1920, 1930, 1924), true)
+  // A stated chapter end outranks the artist's end.
+  assert.equal(placesArtistIn(based({ from: 1889, to: 1930 }), 1928, 1928, 1924), true)
   // Rough start gates on the decade reading, not an invented year.
   assert.equal(placesArtistIn(based({ from: 'mid-1980s', to: 1990 }), 1983, 1983), true)
   assert.equal(placesArtistIn(based({ from: 'mid-1980s', to: 1990 }), 1981, 1982), false)

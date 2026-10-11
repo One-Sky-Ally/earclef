@@ -164,11 +164,13 @@ export async function countryDetails(
   const arrivals = movedIn(code, start, end, PERSON_CAREER_OFFSET_YEARS)
     .filter(({ artist }) => !lens || artist.tags.includes(lens))
     .filter(({ artist }) => !matching.some((held) => held.id === artist.id))
-    .map(({ artist, weight }) => ({
+    // Carrying the move's own dates, so a moved artist era-ranks like
+    // any other pooled artist instead of sorting with the undated.
+    .map(({ artist, weight, cs, end: moveEnd }) => ({
       id: artist.id,
       name: artist.name,
-      cs: null,
-      end: null,
+      cs,
+      end: moveEnd,
       w: weight,
       t: artist.tags,
     }))
