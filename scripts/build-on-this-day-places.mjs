@@ -31,6 +31,7 @@
  * removed once places.json is written.
  *
  *   node --max-old-space-size=12000 scripts/build-on-this-day-places.mjs
+ *   node scripts/build-on-this-day-places.mjs --trim   # re-cut to the listed songs, no rescan
  */
 import { spawn } from 'node:child_process'
 import { existsSync, readFileSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs'
@@ -60,12 +61,41 @@ function globeSubdivisions() {
 }
 
 function targetGroups() {
-  const groups = new Set()
+  return new Set(listedSongs().keys())
+}
+
+/**
+ * rg → the song keys listed for it (the verified song `vs` and the
+ * release title). Only these and the release-wide place are ever read,
+ * so only these are written — every track of every album was 13.7 MB.
+ */
+function listedSongs() {
+  const songs = new Map()
   for (let month = 1; month <= 12; month++) {
     const shard = readJson(join(SHARD_DIR, `${String(month).padStart(2, '0')}.json`))
-    for (const day of Object.values(shard.days)) for (const item of day.items) if (item.rg) groups.add(item.rg)
+    for (const day of Object.values(shard.days)) {
+      for (const item of day.items) {
+        if (!item.rg) continue
+        const keys = songs.get(item.rg) ?? new Set()
+        for (const title of [item.vs, item.t]) if (title) keys.add(songKey(title))
+        songs.set(item.rg, keys)
+      }
+    }
   }
-  return groups
+  return songs
+}
+
+/** Keep each group's release-wide place and only its listed songs. */
+function trimmed(groups, songs) {
+  const out = {}
+  for (const [rg, group] of Object.entries(groups)) {
+    const wanted = songs.get(rg)
+    if (!wanted) continue
+    const tracks = Object.fromEntries(Object.entries(group.tracks ?? {}).filter(([key]) => wanted.has(key)))
+    if (!group.release && Object.keys(tracks).length === 0) continue
+    out[rg] = { ...(group.release ? { release: group.release } : {}), ...(Object.keys(tracks).length ? { tracks } : {}) }
+  }
+  return out
 }
 
 /** Area ids a list of relationships says the music was recorded in. */
@@ -173,6 +203,15 @@ async function scan(targets) {
 }
 
 async function main() {
+  // --trim: re-cut an existing places.json to the songs listed now (after
+  // a day rebuild or re-verify) without rescanning the 21 GB dump.
+  if (process.argv.includes('--trim')) {
+    const current = readJson(OUT_PATH)
+    const groups = trimmed(current.groups, listedSongs())
+    writeFileSync(OUT_PATH, JSON.stringify({ ...current, groups }))
+    console.log(`trimmed → ${OUT_PATH}: ${Object.keys(groups).length.toLocaleString()} release groups`)
+    return
+  }
   const targets = targetGroups()
   console.log(`release groups listed on "On this day": ${targets.size.toLocaleString()}`)
   const subdivisions = globeSubdivisions()
@@ -187,7 +226,7 @@ async function main() {
     if (!release && Object.keys(tracks).length === 0) continue
     groups[rg] = { ...(release ? { release } : {}), ...(Object.keys(tracks).length ? { tracks } : {}) }
   }
-  writeFileSync(OUT_PATH, JSON.stringify({ builtAt: new Date().toISOString(), groups }))
+  writeFileSync(OUT_PATH, JSON.stringify({ builtAt: new Date().toISOString(), groups: trimmed(groups, listedSongs()) }))
   rmSync(CHECKPOINT_PATH, { force: true })
   console.log(`Done → ${OUT_PATH}: ${Object.keys(groups).length.toLocaleString()} release groups with a verified recording place`)
 }

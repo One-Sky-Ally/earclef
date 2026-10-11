@@ -1,5 +1,7 @@
 import onThisDayIndex from './on-this-day/index.json'
 import { canonicalizeTags } from './genreFamilies'
+import usStates from './us-states.json'
+import ukNations from './uk-nations.json'
 
 /**
  * "On this day" (owner, Oct 10 2026): music released on a calendar day in
@@ -116,6 +118,14 @@ const songKey = (value: string) =>
     .replace(/[^\p{L}\p{N}]+/gu, ' ')
     .trim()
 
+/** The globe's US states and UK nations by code — named when there is no city. */
+const SUBDIVISION_NAMES = new Map(
+  [...(usStates as { states: { code: string; name: string }[] }).states,
+    ...(ukNations as { states: { code: string; name: string }[] }).states].map(
+    (entry) => [entry.code, entry.name] as const,
+  ),
+)
+
 /** The song's own recording first, the whole release only when the song has none. */
 function placeFor(item: StoredItem, places: PlacesFile | null): SongPlace | undefined {
   if (!item.v || !item.rg || !places) return undefined
@@ -123,8 +133,10 @@ function placeFor(item: StoredItem, places: PlacesFile | null): SongPlace | unde
   const stored = group?.tracks?.[songKey(item.vs ?? item.t)] ?? group?.release
   if (!stored) return undefined
   const countryName = index.countryNames[stored.country] ?? stored.countryName
+  // City when known; else the US state / UK nation the record names; else the country.
+  const local = stored.city ?? (stored.sub ? SUBDIVISION_NAMES.get(stored.sub) : undefined)
   return {
-    label: stored.city ? `Recorded in ${stored.city}, ${countryName}` : `Recorded in ${countryName}`,
+    label: local ? `Recorded in ${local}, ${countryName}` : `Recorded in ${countryName}`,
     href: `/?y=${item.y}&c=${stored.sub ?? stored.country}`,
   }
 }
