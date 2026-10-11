@@ -25,7 +25,7 @@
  *   node scripts/sweep-wikidata-residence.mjs            # run / resume
  *   node scripts/sweep-wikidata-residence.mjs --derive   # re-derive from the checkpoint only
  */
-import { existsSync, readFileSync, writeFileSync, renameSync } from 'node:fs'
+import { existsSync, readdirSync, writeFileSync, renameSync } from 'node:fs'
 import { countryNames, gapFillArtists, mbHomes, mbWikidataIds, readJson } from './lib/presenceSources.mjs'
 
 const WORK_PATH = 'data/wikidata-residence-work.json'
@@ -35,6 +35,14 @@ const PACE_MS = 1500
 const ENDPOINT = 'https://query.wikidata.org/sparql'
 const USER_AGENT = 'EarClef/1.0 (Artist Chapters sweep; https://earclef.com)'
 const DERIVE_ONLY = process.argv.includes('--derive')
+/** Shards: --from/--to bound the item indexes this worker sweeps; --work names its checkpoint. --derive merges every data/wikidata-residence-work*.json. */
+const argValue = (flag) => {
+  const index = process.argv.indexOf(flag)
+  return index >= 0 ? process.argv[index + 1] : null
+}
+const FROM = Number(argValue('--from') ?? 0)
+const TO = argValue('--to') ? Number(argValue('--to')) : Infinity
+const WORK = argValue('--work') ?? WORK_PATH
 
 function targets() {
   const homes = mbHomes()
@@ -99,8 +107,21 @@ async function fetchBatch(qids) {
 }
 
 function saveWork(work) {
-  writeFileSync(`${WORK_PATH}.tmp`, JSON.stringify(work))
-  renameSync(`${WORK_PATH}.tmp`, WORK_PATH)
+  writeFileSync(`${WORK}.tmp`, JSON.stringify(work))
+  renameSync(`${WORK}.tmp`, WORK)
+}
+
+/** Every shard's results, merged (a shard's rows for an item win over an empty entry). */
+function mergedResults() {
+  const results = {}
+  for (const file of readdirSync('data')) {
+    if (!/^wikidata-residence-work.*\.json$/.test(file)) continue
+    const shard = readJson(`data/${file}`)
+    for (const [qid, rows] of Object.entries(shard.results ?? {})) {
+      if (!results[qid] || results[qid].length === 0) results[qid] = rows
+    }
+  }
+  return results
 }
 
 /** A Wikidata time value as a chapter year: exact for year precision or finer, a decade reading for decade precision, nothing coarser. */
@@ -118,7 +139,7 @@ function derive(work, names) {
   const stats = { withStatements: 0, rows: 0, abroad: 0, dated: 0, noCountry: 0, notOnGlobe: 0, homeOnly: 0 }
   const seen = new Set()
   for (const target of work.targets) {
-    const rows = work.results[target.qid]
+    const rows = work.results[String(target.qid)]
     if (!rows || rows.length === 0) continue
     stats.withStatements++
     for (const row of rows) {
@@ -161,25 +182,27 @@ function derive(work, names) {
 
 async function main() {
   const names = countryNames()
-  let work = existsSync(WORK_PATH) ? readJson(WORK_PATH) : null
-  if (!work || DERIVE_ONLY) {
-    if (!work) {
-      const all = targets()
-      console.log(`${all.length} artists with a Wikidata item (${all.filter((t) => t.key.includes('-')).length} MusicBrainz, ${all.filter((t) => !t.key.includes('-')).length} gap-fill)`)
-      work = { startedAt: new Date().toISOString(), targets: all, done: 0, results: {} }
-      saveWork(work)
-    }
+  // The target list lives in the main checkpoint; a shard copies it so every worker indexes the same list.
+  const base = existsSync(WORK_PATH) ? readJson(WORK_PATH) : null
+  let work = existsSync(WORK) ? readJson(WORK) : null
+  if (!work) {
+    const all = base?.targets ?? targets()
+    if (!base) console.log(`${all.length} artists with a Wikidata item (${all.filter((t) => t.key.includes('-')).length} MusicBrainz, ${all.filter((t) => !t.key.includes('-')).length} gap-fill)`)
+    work = { startedAt: new Date().toISOString(), targets: all, done: FROM, results: {} }
+    saveWork(work)
   }
   if (!DERIVE_ONLY) {
-    const qids = [...new Set(work.targets.map((t) => t.qid))]
-    console.log(`${qids.length} distinct items · ${work.done} already swept`)
-    for (let index = work.done; index < qids.length; index += BATCH) {
-      const batch = qids.slice(index, index + BATCH)
+    // Index-stable (no dedup): shards must agree on positions.
+    const qids = work.targets.map((t) => String(t.qid))
+    const stop = Math.min(TO, qids.length)
+    console.log(`${qids.length} items · this worker sweeps ${Math.max(work.done, FROM)} → ${stop} (${work.done} already done)`)
+    for (let index = Math.max(work.done, FROM); index < stop; index += BATCH) {
+      const batch = [...new Set(qids.slice(index, Math.min(index + BATCH, stop)))]
       const rows = await fetchBatch(batch)
       const results = { ...work.results }
       for (const qid of batch) results[qid] = results[qid] ?? []
       for (const row of rows) results[row.qid] = [...(results[row.qid] ?? []), row]
-      work = { ...work, done: Math.min(index + BATCH, qids.length), results }
+      work = { ...work, done: Math.min(index + BATCH, stop), results }
       saveWork(work)
       if ((index / BATCH) % 20 === 0) {
         const withAny = Object.values(results).filter((list) => list.length > 0).length
@@ -188,7 +211,7 @@ async function main() {
       await new Promise((resolve) => setTimeout(resolve, PACE_MS))
     }
   }
-  const { chapters, stats } = derive(work, names)
+  const { chapters, stats } = derive({ ...work, results: mergedResults() }, names)
   writeFileSync(OUT_PATH, `${JSON.stringify({ generatedAt: new Date().toISOString(), targets: work.targets.length, stats, chapters }, null, 1)}\n`)
   console.log('derived:', stats)
   console.log(`→ ${OUT_PATH} (${chapters.length} chapters, ${stats.dated} dated)`)

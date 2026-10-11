@@ -307,6 +307,13 @@ function main() {
     musicbrainz: musicBrainzPlaces(edges, homes),
   }
 
+  // Chapters in time order: dated ones by their start, undated ones after, each group keeping source order.
+  const startOf = (chapter) => (typeof chapter.from === 'number' ? chapter.from : Number(String(chapter.from).match(/\d{4}/)?.[0]))
+  for (const artist of edges.artists.values()) {
+    const dated = artist.chapters.filter((chapter) => chapter.from != null).sort((a, b) => startOf(a) - startOf(b))
+    const undated = artist.chapters.filter((chapter) => chapter.from == null)
+    artist.chapters = [...dated, ...undated]
+  }
   const artists = Object.fromEntries([...edges.artists].sort(([a], [b]) => a.localeCompare(b)))
   const based = Object.values(artists).flatMap((artist) => artist.chapters.filter((chapter) => chapter.kind === 'based'))
   const dated = based.filter((chapter) => chapter.from != null)
