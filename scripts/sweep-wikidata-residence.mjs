@@ -23,6 +23,7 @@
  * reads as its wikidata pass.
  *
  *   node scripts/sweep-wikidata-residence.mjs            # run / resume
+ *   node scripts/sweep-wikidata-residence.mjs --cities   # stage 2: districts → their city (then --derive)
  *   node scripts/sweep-wikidata-residence.mjs --derive   # re-derive from the checkpoint only
  */
 import { existsSync, readdirSync, writeFileSync, renameSync } from 'node:fs'
@@ -35,6 +36,7 @@ const PACE_MS = 1500
 const ENDPOINT = 'https://query.wikidata.org/sparql'
 const USER_AGENT = 'EarClef/1.0 (Artist Chapters sweep; https://earclef.com)'
 const DERIVE_ONLY = process.argv.includes('--derive')
+const CITIES_ONLY = process.argv.includes('--cities')
 /** Shards: --from/--to bound the item indexes this worker sweeps; --work names its checkpoint. --derive merges every data/wikidata-residence-work*.json. */
 const argValue = (flag) => {
   const index = process.argv.indexOf(flag)
@@ -124,6 +126,86 @@ function mergedResults() {
   return results
 }
 
+/**
+ * Stage 2 (--cities): a residence or work location that is a settlement
+ * INSIDE a city (a borough, a district, a neighbourhood) names the city
+ * (owner, Oct 11: "Prenzlauer Berg" → Berlin). The nearest item up the
+ * value's P131 chain — itself first — that is an instance of a city
+ * class (P31/P279* Q515) wins; a settlement with no city above it (a
+ * village, a town) keeps its own name. Cached in the main checkpoint.
+ */
+function cityQuery(qids) {
+  const values = qids.map((qid) => `wd:${qid}`).join(' ')
+  return `SELECT ?place ?a1 ?a2 ?a3 ?a4 ?c0 ?c1 ?c2 ?c3 ?c4 ?a1Label ?a2Label ?a3Label ?a4Label ?placeLabel WHERE {
+  VALUES ?place { ${values} }
+  BIND(EXISTS { ?place wdt:P31/wdt:P279* wd:Q515 } AS ?c0)
+  OPTIONAL { ?place wdt:P131 ?a1 . BIND(EXISTS { ?a1 wdt:P31/wdt:P279* wd:Q515 } AS ?c1)
+    OPTIONAL { ?a1 wdt:P131 ?a2 . BIND(EXISTS { ?a2 wdt:P31/wdt:P279* wd:Q515 } AS ?c2)
+      OPTIONAL { ?a2 wdt:P131 ?a3 . BIND(EXISTS { ?a3 wdt:P31/wdt:P279* wd:Q515 } AS ?c3)
+        OPTIONAL { ?a3 wdt:P131 ?a4 . BIND(EXISTS { ?a4 wdt:P31/wdt:P279* wd:Q515 } AS ?c4) } } } }
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}`
+}
+
+async function fetchCities(qids) {
+  for (let attempt = 1; attempt <= 5; attempt++) {
+    try {
+      const res = await fetch(`${ENDPOINT}?format=json&query=${encodeURIComponent(cityQuery(qids))}`, {
+        headers: { 'User-Agent': USER_AGENT, Accept: 'application/sparql-results+json' },
+        signal: AbortSignal.timeout(90_000),
+      })
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      const json = await res.json()
+      const best = {}
+      for (const b of json.results.bindings) {
+        const place = b.place.value.split('/').pop()
+        const hops = [
+          ['c0', 'place', 'placeLabel'],
+          ['c1', 'a1', 'a1Label'],
+          ['c2', 'a2', 'a2Label'],
+          ['c3', 'a3', 'a3Label'],
+          ['c4', 'a4', 'a4Label'],
+        ]
+        for (let depth = 0; depth < hops.length; depth++) {
+          const [flag, item, label] = hops[depth]
+          if (b[flag]?.value !== 'true' || !b[item]) continue
+          const candidate = { qid: b[item].value.split('/').pop(), label: b[label]?.value ?? null, depth }
+          // Nearest city wins; equal depth → alphabetical, for determinism.
+          if (!best[place] || candidate.depth < best[place].depth || (candidate.depth === best[place].depth && (candidate.label ?? '') < (best[place].label ?? ''))) best[place] = candidate
+          break
+        }
+      }
+      return best
+    } catch (error) {
+      const wait = 5_000 * attempt
+      console.warn(`  cities batch failed (${error.message}) — retry ${attempt}/5 in ${wait / 1000}s`)
+      await new Promise((resolve) => setTimeout(resolve, wait))
+    }
+  }
+  throw new Error('cities batch failed 5 times')
+}
+
+async function resolveCities(work, names) {
+  const results = mergedResults()
+  const homeOf = new Map(work.targets.map((t) => [String(t.qid), t.home]))
+  const wanted = new Set()
+  for (const [qid, rows] of Object.entries(results)) {
+    for (const row of rows) {
+      if (row.isSettlement && !row.isCountry && row.iso && row.iso !== homeOf.get(qid) && names.has(row.iso)) wanted.add(row.place)
+    }
+  }
+  const cities = { ...(work.cities ?? {}) }
+  const todo = [...wanted].filter((qid) => !(qid in cities))
+  console.log(`${wanted.size} settlement places in chapters abroad · ${todo.length} to resolve`)
+  for (let index = 0; index < todo.length; index += BATCH) {
+    const batch = todo.slice(index, index + BATCH)
+    const found = await fetchCities(batch)
+    for (const qid of batch) cities[qid] = found[qid] ? { qid: found[qid].qid, label: found[qid].label } : null
+    await new Promise((resolve) => setTimeout(resolve, PACE_MS))
+  }
+  return { ...work, cities }
+}
+
 /** A Wikidata time value as a chapter year: exact for year precision or finer, a decade reading for decade precision, nothing coarser. */
 function chapterYear(value, precision) {
   if (!value || precision == null) return null
@@ -156,7 +238,9 @@ function derive(work, names) {
         stats.notOnGlobe++
         continue
       }
-      const place = row.isSettlement && !row.isCountry ? row.placeLabel : null
+      // The settlement's own name, or the city it sits inside when stage 2 found one.
+      const city = row.isSettlement && !row.isCountry ? (work.cities?.[row.place] ?? null) : null
+      const place = row.isSettlement && !row.isCountry ? (city?.label ?? row.placeLabel) : null
       const from = chapterYear(row.start, row.startPrec)
       const to = chapterYear(row.end, row.endPrec)
       const dedupe = `${target.key}|${row.iso}|${place ?? ''}|${from ?? ''}|${to ?? ''}`
@@ -173,7 +257,7 @@ function derive(work, names) {
         ...(place ? { place } : {}),
         ...(from != null ? { from } : {}),
         ...(to != null ? { to } : {}),
-        evidence: `Wikidata ${target.qid} ${label}: ${row.placeLabel ?? row.place} (${row.place})${when ? `, ${when}` : ''}`,
+        evidence: `Wikidata ${target.qid} ${label}: ${row.placeLabel ?? row.place} (${row.place})${city && city.qid !== row.place ? `, in ${city.label} (${city.qid})` : ''}${when ? `, ${when}` : ''}`,
       })
     }
   }
@@ -191,7 +275,11 @@ async function main() {
     work = { startedAt: new Date().toISOString(), targets: all, done: FROM, results: {} }
     saveWork(work)
   }
-  if (!DERIVE_ONLY) {
+  if (CITIES_ONLY) {
+    work = await resolveCities(work, names)
+    saveWork(work)
+  }
+  if (!DERIVE_ONLY && !CITIES_ONLY) {
     // Index-stable (no dedup): shards must agree on positions.
     const qids = work.targets.map((t) => String(t.qid))
     const stop = Math.min(TO, qids.length)
@@ -211,7 +299,8 @@ async function main() {
       await new Promise((resolve) => setTimeout(resolve, PACE_MS))
     }
   }
-  const { chapters, stats } = derive({ ...work, results: mergedResults() }, names)
+  const main = existsSync(WORK_PATH) ? readJson(WORK_PATH) : work
+  const { chapters, stats } = derive({ ...work, cities: main.cities ?? work.cities, results: mergedResults() }, names)
   writeFileSync(OUT_PATH, `${JSON.stringify({ generatedAt: new Date().toISOString(), targets: work.targets.length, stats, chapters }, null, 1)}\n`)
   console.log('derived:', stats)
   console.log(`→ ${OUT_PATH} (${chapters.length} chapters, ${stats.dated} dated)`)

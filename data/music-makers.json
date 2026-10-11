@@ -1,0 +1,4531 @@
+{
+ "checkedAt": "2026-10-11T09:01:19.526Z",
+ "checked": 1500,
+ "unjudged": 104,
+ "nonMusicians": {
+  "0090546a-8e9c-4476-acff-ab0a7eaa8204": {
+   "qid": "Q3491241",
+   "name": "Soro Solo",
+   "occupations": "journalist / radio personality"
+  },
+  "01e894c6-7a97-476f-969b-333274685c6b": {
+   "qid": "Q9161",
+   "name": "Josip Broz Tito",
+   "occupations": "politician / marshal / machinist / statesperson / Esperantist / resistance fighter / revolutionary / locksmith"
+  },
+  "041e079c-65d3-43b7-a6ba-f81e7c6d0d65": {
+   "qid": "Q1662233",
+   "name": "Ines Torelli",
+   "occupations": "actor / stage actor / film actor"
+  },
+  "0689340e-f44b-44a5-b126-3cd89c7f9238": {
+   "qid": "Q1683837",
+   "name": "Jasna Fritzi Bauer",
+   "occupations": "actor / stage actor / film actor / dub actor"
+  },
+  "074d02d9-570f-42e6-b08f-fc2270c2bc5a": {
+   "qid": "Q272504",
+   "name": "Marcus Garvey",
+   "occupations": "politician / entrepreneur / printer / author / journalist / civil rights advocate / sociologist / religious leader"
+  },
+  "09fbbc1b-f924-40cb-95ec-470b96b66f74": {
+   "qid": "Q307988",
+   "name": "Abdellah Taïa",
+   "occupations": "screenwriter / writer / journalist / film director / filmmaker / novelist"
+  },
+  "0a6bb701-bf2e-4813-8785-067396c9fd64": {
+   "qid": "Q78509",
+   "name": "Joseph Roth",
+   "occupations": "writer / playwright / journalist"
+  },
+  "0cef8c65-f5b7-4c06-91e5-e4c0d40cd83b": {
+   "qid": "Q241248",
+   "name": "Orhan Pamuk",
+   "occupations": "screenwriter / writer / journalist / academic / novelist / essayist"
+  },
+  "0dba1485-2e95-42e7-a7cd-2b473095001c": {
+   "qid": "Q47087",
+   "name": "Arthur C. Clarke",
+   "occupations": "screenwriter / writer / physicist / inventor / futurist / explorer / novelist / non-fiction writer / science fiction writer"
+  },
+  "0ef52d92-06fe-47ce-a58d-68dbed569f50": {
+   "qid": "Q184935",
+   "name": "Mihai Eminescu",
+   "occupations": "actor / writer / politician / poet / librarian / journalist / essayist / prose writer"
+  },
+  "127e8b55-c6ed-4712-8fe8-64205c58e37c": {
+   "qid": "Q3104163",
+   "name": "Germaine Acogny",
+   "occupations": "pedagogue / dancer / choreographer"
+  },
+  "12d9534d-c149-4903-a931-cbd7d7625d54": {
+   "qid": "Q1267643",
+   "name": "Hermann Langbein",
+   "occupations": "actor / writer / politician / historian / stage actor / resistance fighter"
+  },
+  "130bc777-1ba1-4c58-bff4-e7105afa87ea": {
+   "qid": "Q1750537",
+   "name": "Martin Jarvis",
+   "occupations": "actor / stage actor / voice actor / television actor / film actor"
+  },
+  "146e61f3-9da3-4777-8244-08d6e6cd8d11": {
+   "qid": "Q164111",
+   "name": "Farah Pahlavi",
+   "occupations": "writer / politician / architect / translator / queen consort"
+  },
+  "1a54b906-00d8-48ba-aecc-8d210fc437a6": {
+   "qid": "Q148285",
+   "name": "Osho",
+   "occupations": "writer / teacher / guru / religious leader / autobiographer / mystic"
+  },
+  "1aca86a6-d650-4b3c-80a1-37cdbfcf5b1a": {
+   "qid": "Q77325",
+   "name": "Arno Schmidt",
+   "occupations": "writer / poet / accountant / merchant / translator / librettist / essayist / linguist"
+  },
+  "1e71c53c-d327-4fe9-8324-eafda9af855c": {
+   "qid": "Q7200",
+   "name": "Александр Пушкин",
+   "occupations": "writer / poet / historian / dramaturge / translator / playwright / children's writer / literary critic / novelist / opinion journalist / librettist / book collector / film screenwriter / translator of Adam Mickiewicz / translator of William Wordsworth / bretteur / essayist"
+  },
+  "1fc78551-2ddf-47c2-af90-91fcc48ec3a8": {
+   "qid": "Q256531",
+   "name": "Iman Mohamed Abdulmajid",
+   "occupations": "actor / entrepreneur / fashion model / model / television actor / film actor / autobiographer"
+  },
+  "250841fd-2278-4d10-a8a0-9951fe322c7c": {
+   "qid": "Q1892595",
+   "name": "Marc Elsberg",
+   "occupations": "writer / designer / consultant"
+  },
+  "286f522c-58f9-49b6-8dfb-5e16a094d71f": {
+   "qid": "Q115188865",
+   "name": "Sanu Sharma",
+   "occupations": "writer / poet / lyricist / novelist / short story writer / prose writer"
+  },
+  "28d0bf6d-7f03-4bbb-94f9-ad19b9ad2f08": {
+   "qid": "Q958151",
+   "name": "Mario Testino",
+   "occupations": "photographer / fashion photographer"
+  },
+  "2abe29c1-dc41-46c6-97db-8187b100320f": {
+   "qid": "Q298221",
+   "name": "Kathy Reichs",
+   "occupations": "writer / television producer / author / university teacher / researcher / academic / anthropologist / novelist / crime fiction writer / science fiction writer / forensic anthropologist"
+  },
+  "2b18eb74-2159-4e3c-9082-731cbc652469": {
+   "qid": "Q636653",
+   "name": "Danai Gurira",
+   "occupations": "screenwriter / actor / writer / teacher / playwright / stage actor / television actor / founder / film actor / UN Women Goodwill Ambassador"
+  },
+  "2c32fd52-1a18-4cfc-9b59-733f1b5373a2": {
+   "qid": "Q192214",
+   "name": "René Goscinny",
+   "occupations": "screenwriter / writer / author / illustrator / editor-in-chief / cartoonist / comics artist / editor / film producer / children's writer / film director / draftsperson / comics writer / humorist"
+  },
+  "2d084f0c-30c7-4504-907a-c8a316120561": {
+   "qid": "Q38049",
+   "name": "Herta Müller",
+   "occupations": "writer / poet / translator / artist / novelist / linguist / essayist"
+  },
+  "2d80709c-2160-4d14-abfa-c8a228167fa2": {
+   "qid": "Q1893287",
+   "name": "Lilinho Micaia",
+   "occupations": "writer / minister / politician / poet / revolutionary"
+  },
+  "305d706a-fc74-4f18-8cd1-fc9ec681796d": {
+   "qid": "Q18637166",
+   "name": "Andrew Tate",
+   "occupations": "entrepreneur / Internet celebrity / television personality / influencer / digital marketing specialist / dating coach / matchmaker / mixed martial arts fighter / podcaster / kickboxer"
+  },
+  "314dd2ed-2781-4374-aed3-24b5dec863b8": {
+   "qid": "Q313182",
+   "name": "Yasmina Khadra",
+   "occupations": "writer / military personnel"
+  },
+  "345c66a9-959a-412b-9e39-1bf0ddb25772": {
+   "qid": "Q256942",
+   "name": "林青霞",
+   "occupations": "television actor / film actor"
+  },
+  "3705ef0e-1de7-42cf-a1ea-334e1128b1f7": {
+   "qid": "Q3335",
+   "name": "George Orwell",
+   "occupations": "writer"
+  },
+  "372abcd1-0367-41fd-8bcc-efe2b7c1c8bf": {
+   "qid": "Q76483",
+   "name": "Rainer Maria Rilke",
+   "occupations": "writer / poet / translator / playwright / novelist"
+  },
+  "385c3cf5-ba97-4d13-882b-b228502e7b27": {
+   "qid": "Q357970",
+   "name": "Wilbur Smith",
+   "occupations": "screenwriter / writer / business executive / novelist"
+  },
+  "38f35803-8743-41ac-a373-93479674087a": {
+   "qid": "Q443868",
+   "name": "Jon Fosse",
+   "occupations": "writer / poet / playwright / translator / children's writer / novelist / essayist / literary scholar"
+  },
+  "3981c7b6-0b72-41e8-93d8-d72642836c42": {
+   "qid": "Q78213",
+   "name": "Georg Maurer",
+   "occupations": "writer / poet / translator"
+  },
+  "3b5ffe22-2841-41da-8f13-dcb5c2d88f35": {
+   "qid": "Q310379",
+   "name": "John Irving",
+   "occupations": "screenwriter / writer / novelist"
+  },
+  "3c1b7c11-1ff4-4fc2-aad4-e5a5cc3215a1": {
+   "qid": "Q3877354",
+   "name": "Nitin Ganatra",
+   "occupations": "actor / television actor"
+  },
+  "3db5e88d-ea25-4344-a9fd-cefb1ae64630": {
+   "qid": "Q4985",
+   "name": "Herman Melville",
+   "occupations": "writer / teacher / poet / sailor / customs officer / seaman / lecturer / literary critic / novelist / art collector / librettist / essayist"
+  },
+  "3dd966a1-9f0a-4012-8b49-15e9ac34d8bd": {
+   "qid": "Q155855",
+   "name": "Karel Čapek",
+   "occupations": "photographer / writer / poet / translator / playwright / dramaturge / illustrator / painter / director / journalist / children's writer / philosopher / literary critic / novelist / essayist / traveler / science fiction writer / satirical novelist / feuilletonist / draftsperson"
+  },
+  "3df656a6-0387-4904-944e-29a352fa7d00": {
+   "qid": "Q59200217",
+   "name": "Oona Doherty",
+   "occupations": "artist / choreographer / dancer"
+  },
+  "3e2307a2-3570-4bda-9b2e-3acd430efea6": {
+   "qid": "Q290491",
+   "name": "Gioconda Belli",
+   "occupations": "writer / poet / journalist / librettist / activist / essayist"
+  },
+  "3fa7ef2d-0301-49b5-8c61-c9280e590f2b": {
+   "qid": "Q128790",
+   "name": "Georges Simenon",
+   "occupations": "writer / photographer / author / journalist / novelist / crime fiction writer / amateur photographer / film screenwriter"
+  },
+  "414eb641-a876-4786-8731-67eaf2e14dc3": {
+   "qid": "Q968637",
+   "name": "Tawfiq Ziad",
+   "occupations": "writer / politician / poet / opinion journalist"
+  },
+  "41b6c447-c941-4e06-bf14-67183641fc34": {
+   "qid": "Q22981478",
+   "name": "Jude Akuwudike",
+   "occupations": "actor / performing artist / stage actor / assistant director / film actor / television actor"
+  },
+  "42a94861-112d-40af-9e2f-4bc85710a63e": {
+   "qid": "Q4665055",
+   "name": "Abdoldjavad Falaturi",
+   "occupations": "writer / theologian / university teacher / Islamic jurist / Islamicist / philosopher"
+  },
+  "43984651-8573-4b2d-b64d-40cc4e1dfb0f": {
+   "qid": "Q83059",
+   "name": "Saul Bellow",
+   "occupations": "writer / author / university teacher / journalist / sociologist / novelist / anthropologist / essayist"
+  },
+  "47705caf-13b8-4959-9091-243d3c841404": {
+   "qid": "Q44040",
+   "name": "Richard David Precht",
+   "occupations": "screenwriter / writer / columnist / pundit / university teacher / journalist / philosopher / publicist / opinion journalist / Germanist / essayist / presenter"
+  },
+  "4a41890e-221e-420e-b0a4-5fad210593d1": {
+   "qid": "Q723839",
+   "name": "Gostan Zarian",
+   "occupations": "writer / poet / painter / journalist / novelist"
+  },
+  "4db659c6-b604-4c81-a204-d9374577b996": {
+   "qid": "Q3515579",
+   "name": "Bassem Youssef",
+   "occupations": "writer / physician / television producer / columnist / television presenter / satirist / cardiac surgeon"
+  },
+  "4e68630e-85c2-40df-afe4-964f687d5adb": {
+   "qid": "Q52255",
+   "name": "Emma Donoghue",
+   "occupations": "screenwriter / writer / playwright / novelist / literary historian / film screenwriter"
+  },
+  "51ba0416-9192-461b-8e13-763c8c7d3f13": {
+   "qid": "Q26678511",
+   "name": "Lisa Eckhart",
+   "occupations": "writer / poet / novelist / slam poet / Germanist / cabaret performer"
+  },
+  "5449362b-d4e6-4cec-9f2d-63c3f416520b": {
+   "qid": "Q113653034",
+   "name": "Esther Manito",
+   "occupations": "comedian"
+  },
+  "5a3cff9f-04be-4e50-a9ac-bfc14c196348": {
+   "qid": "Q123521",
+   "name": "Philippe Jaccottet",
+   "occupations": "writer / poet / translator / essayist"
+  },
+  "5ad168a9-ba27-4bf7-90ed-543b002d4df9": {
+   "qid": "Q3091214",
+   "name": "Joyce Mansour",
+   "occupations": "writer / poet / playwright"
+  },
+  "5bf9777f-df11-4073-982f-33691832ce12": {
+   "qid": "Q80064",
+   "name": "Elias Canetti",
+   "occupations": "writer / playwright / psychologist / chemist / aphorist / novelist / philosopher / essayist"
+  },
+  "5c4f0391-829a-4a01-8961-78aaa2fa25e1": {
+   "qid": "Q1687317",
+   "name": "Jens Okking",
+   "occupations": "screenwriter / actor / politician / farmer / member of parliament / film director / voice actor / film actor"
+  },
+  "5ca3f366-96ef-4be1-aa66-426b7ec98ce6": {
+   "qid": "Q57971",
+   "name": "Cornelia Funke",
+   "occupations": "screenwriter / writer / illustrator / film producer / children's writer / young adult author"
+  },
+  "5cca5de5-49b6-4667-bc4f-4ad5dbaa655d": {
+   "qid": "Q239105",
+   "name": "Graça Machel",
+   "occupations": "teacher / minister / politician / social activist"
+  },
+  "5cd54aa5-6b2f-488b-99ba-71b1a1b9897c": {
+   "qid": "Q923556",
+   "name": "Jonas Jonasson",
+   "occupations": "writer / television producer / journalist"
+  },
+  "5d85da73-37a7-4ff2-8076-7ab46e5a7260": {
+   "qid": "Q15969",
+   "name": "Jean Améry",
+   "occupations": "writer / resistance fighter / philosopher / opinion journalist"
+  },
+  "5eb430b0-1c07-41bd-bc04-e0e7a4a8ad1f": {
+   "qid": "Q210059",
+   "name": "Neil Gaiman",
+   "occupations": "screenwriter / actor / writer / poet / beekeeper / journalist / film producer / film director / novelist / science fiction writer / blogger / television writer / comics writer"
+  },
+  "5ff53e7d-39ef-4b02-85d0-ec2da6286df3": {
+   "qid": "Q4756825",
+   "name": "Andrew Dosunmu",
+   "occupations": "photographer / film director"
+  },
+  "62bb4fa4-7eb9-499b-abc9-36a7a678db51": {
+   "qid": "Q901649",
+   "name": "Arya",
+   "occupations": "actor"
+  },
+  "63600545-ed32-44b0-bbc6-9080896edd41": {
+   "qid": "Q298224",
+   "name": "Ama Ata Aidoo",
+   "occupations": "writer / poet / politician / minister / playwright / lecturer / academic / novelist / activist"
+  },
+  "6386d3db-cdb2-410c-a6c1-64b8cad39f71": {
+   "qid": "Q160115",
+   "name": "艾未未",
+   "occupations": "photographer / architect / artist / sculptor / painter / human rights defender / film director / visual artist / designer / social activist / director / installation artist / performance artist"
+  },
+  "6497b857-e1f5-40cf-ba5f-267ac147e8ae": {
+   "qid": "Q140052",
+   "name": "Zadie Smith",
+   "occupations": "writer / academic / novelist / essayist"
+  },
+  "6511f096-30cc-4e36-a751-43d5f3585706": {
+   "qid": "Q89261",
+   "name": "Anna Gmeyner",
+   "occupations": "screenwriter / writer / playwright / novelist"
+  },
+  "6727a7fb-8609-417e-a5e9-bcc99b8b062f": {
+   "qid": "Q42831",
+   "name": "Иван Тургенев",
+   "occupations": "writer / poet / playwright / translator / dramaturge / novelist / prose writer / opinion journalist / short story writer"
+  },
+  "69c5eff8-e84c-4f0e-bb9e-f38044c5edba": {
+   "qid": "Q1356355",
+   "name": "Hubert Reeves",
+   "occupations": "docent / astrophysicist / university teacher / environmentalist / science communicator / non-fiction writer"
+  },
+  "6c5a8114-cc72-43bc-a741-00756b317e0e": {
+   "qid": "Q1067",
+   "name": "Dante Alighieri",
+   "occupations": "writer / poet / intellectual / politician / theologian / prose writer / linguist / philosopher / political theorist"
+  },
+  "6d2f1fca-16bc-429c-b039-74fa97b86463": {
+   "qid": "Q78511",
+   "name": "Gustav Meyrink",
+   "occupations": "screenwriter / writer / playwright / translator / banker / novelist / science fiction writer"
+  },
+  "6e6202c2-d1ac-446a-b882-466c374e9c70": {
+   "qid": "Q715838",
+   "name": "Neill Blomkamp",
+   "occupations": "screenwriter / animator / director / film director"
+  },
+  "7026c28a-01ee-408b-8749-d218a182872a": {
+   "qid": "Q2859996",
+   "name": "Arshag Chobanian",
+   "occupations": "writer / poet / translator / playwright / editor-in-chief / literary critic / philologist / literary scholar / opinion journalist / lecturer"
+  },
+  "72a1f4ff-ce20-40b0-8831-cab0812249b2": {
+   "qid": "Q168542",
+   "name": "Adalbert Stifter",
+   "occupations": "writer / poet / teacher / painter / preservationist"
+  },
+  "7302fd79-fb9a-452e-b404-220fa94e6196": {
+   "qid": "Q6530",
+   "name": "Stanisław Lem",
+   "occupations": "screenwriter / writer / physician / poet / playwright / futurist / researcher / philosopher / satirist / essayist / science fiction writer"
+  },
+  "75825c19-ba15-43b7-bb03-a72ed50f90a9": {
+   "qid": "Q266224",
+   "name": "Markus Alexei",
+   "occupations": "game programmer / video game producer / designer / programmer"
+  },
+  "776619bf-7913-4a2a-bc2a-3f1bac844607": {
+   "qid": "Q120836115",
+   "name": "Dhémanane Kafechina",
+   "occupations": "screenwriter / writer / film director"
+  },
+  "7944fbe8-8264-43fd-98a1-8242ed509197": {
+   "qid": "Q249197",
+   "name": "Frederick Forsyth",
+   "occupations": "screenwriter / writer / journalist / aircraft pilot / correspondent / spy / novelist / Foreign correspondent"
+  },
+  "7bc6d6f1-5ab8-44f5-932b-01973476b51f": {
+   "qid": "Q7724",
+   "name": "August Strindberg",
+   "occupations": "screenwriter / writer / photographer / poet / playwright / artist / painter / autobiographer / essayist / novelist / librettist / prose writer"
+  },
+  "7d83b9be-b7a4-40f3-b682-a83934a0e8ab": {
+   "qid": "Q9049",
+   "name": "Noam Chomsky",
+   "occupations": "writer / computer scientist / historian / psychologist / educator / human rights defender / university teacher / philosopher / anthropologist / opinion journalist / media critic / philologist / linguist / political writer"
+  },
+  "8135f122-4746-4169-b70f-472ce7a861f9": {
+   "qid": "Q885331",
+   "name": "Ranga Yogeshwar",
+   "occupations": "writer / physicist / television presenter / opinion journalist / science journalist / presenter / television editor"
+  },
+  "8168b56d-b417-4ea6-ab55-e37c7cb5c296": {
+   "qid": "Q66276",
+   "name": "Kurt Held",
+   "occupations": "writer / poet / editing staff / resistance fighter / children's writer"
+  },
+  "81b7f880-3bea-4832-b91d-cb8ad6e284ff": {
+   "qid": "Q1429663",
+   "name": "Florian Freistetter",
+   "occupations": "naturalist / astronomer / non-fiction writer / blogger / podcaster / science communicator"
+  },
+  "81e1e828-5c90-4bc6-b547-2e848620111f": {
+   "qid": "Q37327",
+   "name": "Samuel Beckett",
+   "occupations": "screenwriter / writer / poet / teacher / intellectual / playwright / cinematographer / translator / film director / filmmaker / novelist / video artist / cricketer / linguist / French resistance fighter / draftsperson"
+  },
+  "8258bc7a-99ea-48fa-b646-f683ad8388d9": {
+   "qid": "Q5753263",
+   "name": "Carolina Ramírez",
+   "occupations": "actor / ballet dancer"
+  },
+  "8313b68a-25f8-4607-9d94-474a85c3623f": {
+   "qid": "Q2484404",
+   "name": "יובל נח הררי",
+   "occupations": "writer / historian / military historian / medievalist / university teacher / philosopher / popular science author"
+  },
+  "835254cb-e7ee-43ed-a751-c96ba5543f36": {
+   "qid": "Q855",
+   "name": "Иосиф Виссарионович Сталин",
+   "occupations": "politician / statesperson / official / revolutionary / opinion journalist / linguist"
+  },
+  "836e3ac0-e514-4616-a5aa-23706ed9a9a9": {
+   "qid": "Q433708",
+   "name": "Jack Higgins",
+   "occupations": "screenwriter / writer / author / school teacher / novelist"
+  },
+  "8510fda4-0ab1-4212-a2d6-37176c7f1ad1": {
+   "qid": "Q181568",
+   "name": "Հովհաննես Այվազյան",
+   "occupations": "painter / visual artist / art collector"
+  },
+  "8651f1bb-55fb-4278-80af-3d6e809a4f02": {
+   "qid": "Q115630",
+   "name": "Pascal Mercier",
+   "occupations": "writer / university teacher / philosopher / non-fiction writer"
+  },
+  "86ed970c-1ed7-4372-a872-18c1f95aca90": {
+   "qid": "Q154545",
+   "name": "Léopold Sédar Senghor",
+   "occupations": "writer / poet / politician / teacher / philosopher / French resistance fighter"
+  },
+  "86fb8e43-641f-410a-83cf-626945ffc80e": {
+   "qid": "Q25973",
+   "name": "Hermann Hesse",
+   "occupations": "writer / poet / illustrator / bookseller / painter / resistance fighter / philosopher / novelist / pacifist / librettist / literary scholar / Nobel Prize winner"
+  },
+  "87c0d279-a251-4666-9910-f86d1ba438c7": {
+   "qid": "Q4727179",
+   "name": "Alison Saar",
+   "occupations": "photographer / illustrator / painter / sculptor / visual artist / printmaker / installation artist"
+  },
+  "89bcae83-eff6-4f04-9a69-35753adb322d": {
+   "qid": "Q1042835",
+   "name": "Carlos Cruz-Diez",
+   "occupations": "sculptor / painter / graphic artist / jewelry designer / designer / light artist / installation artist / serigrapher"
+  },
+  "89c448ad-02d6-4296-bb0f-7d44dc3580d0": {
+   "qid": "Q2833770",
+   "name": "Alexandre Jollien",
+   "occupations": "actor / writer / author / film director / philosopher"
+  },
+  "8a6a2280-8264-4fed-b2e1-8a1f7bba1db9": {
+   "qid": "Q21583218",
+   "name": "Hazel Brugger",
+   "occupations": "actor / poet / comedian / author / columnist / slam poet / presenter / podcaster / opinion journalist / cabaret performer / YouTuber"
+  },
+  "8a95e097-e926-44d2-a77f-e50397ccc115": {
+   "qid": "Q77319",
+   "name": "Saša Stanišić",
+   "occupations": "screenwriter / writer / children's writer / novelist"
+  },
+  "8bd1b6b8-82c5-429f-8bde-514b5d8da8a7": {
+   "qid": "Q7359869",
+   "name": "Roibeard Ó Maolaigh",
+   "occupations": "linguist"
+  },
+  "8d33212f-e521-47bb-9833-b9b1a4873508": {
+   "qid": "Q271944",
+   "name": "Karin Viard",
+   "occupations": "screenwriter / actor / stage actor / film actor"
+  },
+  "8d48ad13-ac19-44ff-8160-b974825735a8": {
+   "qid": "Q87485",
+   "name": "Martin Sonneborn",
+   "occupations": "screenwriter / actor / writer / politician / journalist / editing staff / satirist"
+  },
+  "91cdafca-3005-409c-bcc5-ef977000cbbc": {
+   "qid": "Q835",
+   "name": "Михаил Булгаков",
+   "occupations": "screenwriter / writer / physician / playwright / journalist / biographer / theatre director / novelist / librettist / satirist / prose writer / science fiction writer / short story writer"
+  },
+  "91fe0301-fdb5-48d2-95b5-656731286657": {
+   "qid": "Q218800",
+   "name": "David Oyelowo",
+   "occupations": "actor / film director / stage actor / television actor / film producer / film actor / director"
+  },
+  "921108ff-319f-443e-83eb-3a21a767f7ef": {
+   "qid": "Q34981",
+   "name": "Isaac Asimov",
+   "occupations": "screenwriter / writer / university teacher / journalist / biochemist / science writer / novelist / crime fiction writer / prose writer / science fiction writer / non-fiction writer / autobiographer"
+  },
+  "959a8698-38b4-4ebc-8786-e139ee33e82d": {
+   "qid": "Q1133441",
+   "name": "Alexe Mateevici",
+   "occupations": "writer / poet / military personnel / translator / educator / Eastern Orthodox priest"
+  },
+  "95d9abe7-2d5a-4ecc-b2b3-179e6747daf6": {
+   "qid": "Q2607",
+   "name": "Erich Honecker",
+   "occupations": "head of state / politician / resistance fighter / autobiographer"
+  },
+  "9ab4a3b4-3206-4c12-ac6b-50d64ca98119": {
+   "qid": "Q41166",
+   "name": "Jonathan Swift",
+   "occupations": "writer / poet / public figure / human rights defender / Anglican priest / children's writer / opinion journalist / novelist / essayist / philosopher / satirist / prose writer / science fiction writer / pamphleteer / satirical novelist"
+  },
+  "9bb444ab-e696-4cd4-880c-2d4cf30dbd09": {
+   "qid": "Q325458",
+   "name": "الناصر",
+   "occupations": "entrepreneur / banker / investor"
+  },
+  "9d547e4d-07f1-44fd-95eb-297a1933c295": {
+   "qid": "Q112880",
+   "name": "Friedrich Torberg",
+   "occupations": "screenwriter / writer / translator / journalist / editor / opinion journalist / critic / theatre critic / linguist"
+  },
+  "9d646abc-e5f7-4c98-bee8-d07ef34f4a1e": {
+   "qid": "Q3481642",
+   "name": "Jim Jefferies",
+   "occupations": "actor / screenwriter / writer / comedian / television producer / podcaster / film actor / television writer / television actor"
+  },
+  "a20aadf2-7b95-41f4-beed-5754f67d1749": {
+   "qid": "Q792956",
+   "name": "Ayi Kwei Armah",
+   "occupations": "writer / screenwriter / poet / translator / editor / publisher / university teacher / essayist / novelist / cultural activist"
+  },
+  "a23163be-34ee-408c-8d13-a66bc2e751e8": {
+   "qid": "Q440316",
+   "name": "Etel Adnan",
+   "occupations": "writer / poet / teacher / artist / painter / designer / librettist / essayist / philosopher / draftsperson"
+  },
+  "a30c96a5-e2e7-490c-aa39-cf9498e4fc6e": {
+   "qid": "Q88247",
+   "name": "Otto Schenk",
+   "occupations": "photographer / actor / screenwriter / theatre manager / stage actor / director / film director / talent manager / theatre director / film actor / cabaret performer / opera director"
+  },
+  "a3551cf3-1df3-4af9-a433-e6f1f57ce7b3": {
+   "qid": "Q32732",
+   "name": "Malala Yousafzai",
+   "occupations": "writer / human rights defender / memoirist / blogger / activist / women's rights activist"
+  },
+  "a5a1f00b-04c7-4282-abc4-2ecbc1012d1a": {
+   "qid": "Q777997",
+   "name": "Арсений Тарковский",
+   "occupations": "writer / poet / translator / linguist"
+  },
+  "a9feede1-5089-4497-81ec-6dfa51878a69": {
+   "qid": "Q76819",
+   "name": "Christoph Waltz",
+   "occupations": "actor / stage actor / film director / film actor / television actor"
+  },
+  "acc760e5-7ce8-4cc4-b467-3db27d54d942": {
+   "qid": "Q77991",
+   "name": "Christian Ulmen",
+   "occupations": "actor / entertainer / television producer / narrator / television director / film director / television presenter / television actor / film actor"
+  },
+  "af6308fc-e2ca-4587-8349-b24bf5fea449": {
+   "qid": "Q2501601",
+   "name": "Toks Olagundoye",
+   "occupations": "actor"
+  },
+  "b054e06b-d47d-4792-a385-13572b0b3c88": {
+   "qid": "Q6437735",
+   "name": "Kristel Fulgar",
+   "occupations": "actor"
+  },
+  "b4101b98-b7e8-4a3e-853e-0ce1ce0196c6": {
+   "qid": "Q21027193",
+   "name": "宝树",
+   "occupations": "writer / translator / science fiction writer"
+  },
+  "b5316590-b39e-4991-8602-dbf276361eed": {
+   "qid": "Q5809",
+   "name": "Che Guevara",
+   "occupations": "physician / partisan / revolutionary"
+  },
+  "b5970b3e-a411-4378-b536-c616de308242": {
+   "qid": "Q122370",
+   "name": "Gottfried Keller",
+   "occupations": "writer / poet / painter / chancery manager / librettist / novelist"
+  },
+  "b618dff4-dafd-4fea-be54-680046f1c281": {
+   "qid": "Q52224",
+   "name": "Сергей Лукьяненко",
+   "occupations": "screenwriter / writer / physician / psychiatrist / physician writer / children's writer / blogger / prose writer / science fiction writer"
+  },
+  "b90c119b-e33f-4924-bc0b-f84df75b2aa6": {
+   "qid": "Q465890",
+   "name": "Kate Morton",
+   "occupations": "writer / novelist"
+  },
+  "bc1392e7-7e1e-44dd-9b1c-6be31b3bcc7a": {
+   "qid": "Q296752",
+   "name": "Carlos Ruiz Zafón",
+   "occupations": "screenwriter / writer / journalist / publicist / novelist / film screenwriter"
+  },
+  "bc15061a-a79c-4b71-a3a9-e71caccd1226": {
+   "qid": "Q43867020",
+   "name": "Armin Navabi",
+   "occupations": "author / vlogger / podcaster / women's rights activist"
+  },
+  "bc1fbace-7ef8-48d6-a413-65ab9a227bdc": {
+   "qid": "Q318506",
+   "name": "Deepak Chopra",
+   "occupations": "writer / physician / endocrinologist / internist / non-fiction writer / documentary participant / Ayurveda practitioner / wellness guru / motivational speaker"
+  },
+  "bc36b09d-0c31-44a0-8548-46643d5597e5": {
+   "qid": "Q3840847",
+   "name": "Lupita Nyong’o",
+   "occupations": "film actor"
+  },
+  "bda50f29-5613-47d8-aa08-5dc954ba634b": {
+   "qid": "Q18391",
+   "name": "Elie Wiesel",
+   "occupations": "writer / architect / playwright / translator / association football player / correspondent / university teacher / philosopher / Judaic scholar / autobiographer / political activist / novelist / humanist"
+  },
+  "be1e06b8-88a7-49e1-b00e-74c1705ea9f9": {
+   "qid": "Q77206",
+   "name": "Janosch",
+   "occupations": "photographer / writer / playwright / artist / illustrator / children's writer / librettist / novelist / textile designer"
+  },
+  "bf83c3d7-6afe-471a-af44-7820a9013f13": {
+   "qid": "Q447776",
+   "name": "Ignacio Ramonet",
+   "occupations": "writer / information scientist / journalist / editing staff / sociologist / semiologist / communication scholar / geopolitical analyst"
+  },
+  "c02629f7-6ef5-4d66-85e7-d4fd36a78260": {
+   "qid": "Q12706",
+   "name": "Максим Горький",
+   "occupations": "writer / poet / politician / playwright / dramaturge / public figure / journalist / publisher / opinion journalist / autobiographer / diarist / novelist"
+  },
+  "c0c99c8f-4779-4c35-9497-67d60a73310a": {
+   "qid": "Q535",
+   "name": "Victor Hugo",
+   "occupations": "writer / poet / politician / playwright / author / illustrator / member of parliament / graphic artist / art historian / travel writer / essayist / librettist / opinion journalist / draftsperson / novelist"
+  },
+  "c19db5bd-047d-4c65-8e43-b15d41a1fdd9": {
+   "qid": "Q200608",
+   "name": "Ephrem the Syrian",
+   "occupations": "deacon"
+  },
+  "c4bd7519-d921-456c-8ec0-cdb56da0379f": {
+   "qid": "Q123206",
+   "name": "Bruno Ganz",
+   "occupations": "stage actor / film director / film actor / television actor"
+  },
+  "c5d06255-af86-48df-b126-d515fc3cae99": {
+   "qid": "Q4955182",
+   "name": "Brady Haran",
+   "occupations": "video journalist / television producer / journalist / film director / podcaster / YouTuber"
+  },
+  "c756d94e-2bc2-4570-b361-d99d73c6cb4d": {
+   "qid": "Q78487",
+   "name": "Robert Musil",
+   "occupations": "screenwriter / writer / engineer / librarian / playwright / reserve officer / editing staff / editor / critic / essayist / prose writer / novelist"
+  },
+  "c7fe837d-8bf1-4a07-8ea4-8b98177ab5ba": {
+   "qid": "Q2298313",
+   "name": "Reza Aslan",
+   "occupations": "writer / television producer / Trekkie / university teacher / opinion journalist / religious studies scholar"
+  },
+  "c87acfb2-65dc-4938-b5eb-3ebb7e7db341": {
+   "qid": "Q29447145",
+   "name": "Yetide Badaki",
+   "occupations": "screenwriter / voice actor / stage actor / film producer / television actor / film actor"
+  },
+  "ca8acd72-3ea4-4b15-baf0-49bf9ab60d53": {
+   "qid": "Q30875",
+   "name": "Oscar Wilde",
+   "occupations": "screenwriter / writer / poet / playwright / author / fabulist / children's writer / essayist / novelist / prose writer / librettist / opinion journalist / short story writer"
+  },
+  "cb24c35d-e4ab-468e-be3b-cce1139c7ffc": {
+   "qid": "Q108223458",
+   "name": "Hakos Baelz",
+   "occupations": "VTuber"
+  },
+  "cffe665a-5ee2-4b5f-828e-905ca40eccf5": {
+   "qid": "Q254988",
+   "name": "Avetik Isahakyan",
+   "occupations": "writer / poet / public figure / prose writer / opinion journalist"
+  },
+  "d1ee4fe6-1b92-4441-b9ba-301cb9592017": {
+   "qid": "Q76699",
+   "name": "Bernhard Schlink",
+   "occupations": "judge / screenwriter / writer / jurist / university teacher / poet lawyer / novelist"
+  },
+  "d37466a4-6585-4074-928c-c4729411f878": {
+   "qid": "Q313671",
+   "name": "Colm Meaney",
+   "occupations": "actor / television actor / stage actor / film actor"
+  },
+  "d4c9c457-0382-4e9b-a59c-baba6893abb4": {
+   "qid": "Q3303527",
+   "name": "Ray Comfort",
+   "occupations": "writer / missionary / preacher / television producer / theologian / evangelist / film director / film producer / scholar / protestant clergyman"
+  },
+  "d56d76ee-f179-4496-ae8b-c22b7c326687": {
+   "qid": "Q160478",
+   "name": "Οδυσσέας Ελύτης",
+   "occupations": "writer / poet / translator / art critic / librettist"
+  },
+  "d6f0db60-675a-4cd1-98bb-18a27aa92ec8": {
+   "qid": "Q3687126",
+   "name": "Conor Woodman",
+   "occupations": "author / economist / presenter"
+  },
+  "d74dafbd-e974-4393-9d01-3bc2d81e2dc8": {
+   "qid": "Q6882",
+   "name": "James Joyce",
+   "occupations": "writer / teacher / poet / author / journalist / literary critic / novelist / librettist / prose writer"
+  },
+  "d765b0b8-5ed4-4027-bbc3-2429684726df": {
+   "qid": "Q455931",
+   "name": "Jurgis Mačiūnas",
+   "occupations": "architect / art dealer / painter / sculptor / printmaker / performance artist"
+  },
+  "d8da1ede-4326-4179-8cf9-371f2864e025": {
+   "qid": "Q213416",
+   "name": "Amílcar Cabral",
+   "occupations": "writer / poet / engineer / politician / political scientist / agronomist / agricultural engineer"
+  },
+  "d948df75-46b1-4621-aac1-663f3b2fdb5b": {
+   "qid": "Q1477082",
+   "name": "Lutz Seiler",
+   "occupations": "writer / poet / novelist / short story writer"
+  },
+  "d96a14a9-0d51-4971-bc6b-83b0a7078496": {
+   "qid": "Q153905",
+   "name": "Paul Celan",
+   "occupations": "writer / poet / translator / lyricist / literary editor / essayist"
+  },
+  "d977a67c-cdb6-4dd7-8db6-ba0b455049e0": {
+   "qid": "Q78504",
+   "name": "Ernst H. Gombrich",
+   "occupations": "writer / professor / historian / art historian / aesthetician"
+  },
+  "d9c60aab-7fb5-40e9-a2dd-a5c9a1623fd4": {
+   "qid": "Q930220",
+   "name": "Fellag",
+   "occupations": "actor / writer / comedian / theatre director / novelist / stage actor / film actor / television actor"
+  },
+  "db4b03c7-9c6d-4d22-8937-3531b5175544": {
+   "qid": "Q290261",
+   "name": "Janne Teller",
+   "occupations": "writer / novelist / essayist"
+  },
+  "dd15fbd2-6947-429e-af21-f4f7001ff91c": {
+   "qid": "Q380376",
+   "name": "Håkan Nesser",
+   "occupations": "writer / screenwriter / teacher / secondary school teacher"
+  },
+  "de8d2a0c-c813-44e8-afd3-cba965cf27cb": {
+   "qid": "Q2094584",
+   "name": "Stasys Eidrigevičius",
+   "occupations": "photographer / illustrator / graphic designer / painter / performance artist / draftsperson / graphic artist / installation artist / exlibrist"
+  },
+  "e6747806-0dcf-4688-91a0-a5ffb4143286": {
+   "qid": "Q44461",
+   "name": "Richard Dawkins",
+   "occupations": "screenwriter / actor / writer / author / zoologist / voice actor / biologist / geneticist / television actor / university teacher / science writer / essayist / science communicator / epistemologist / film actor / film screenwriter / video game actor / evolutionary biologist / theoretical biologist / ethologist / sociobiologist"
+  },
+  "e98dccfd-ca52-47c5-932d-2c8dc063b3d7": {
+   "qid": "Q515592",
+   "name": "Andrzej Seweryn",
+   "occupations": "actor / film director / film actor / television actor"
+  },
+  "ec1f2ac4-54c3-48f5-a16b-ccb1ad1f0529": {
+   "qid": "Q380797",
+   "name": "Hovhannes Tumanyan",
+   "occupations": "writer / poet / public figure / prose writer"
+  },
+  "edd45d39-5891-463e-99f2-d5afccd6d347": {
+   "qid": "Q348001",
+   "name": "Rainis",
+   "occupations": "writer / poet / politician / translator / playwright / journalist"
+  },
+  "ef9e60c9-c738-4f61-8c1d-ece78093a613": {
+   "qid": "Q36661",
+   "name": "Henrik Ibsen",
+   "occupations": "writer / poet / playwright / librettist / director"
+  },
+  "f0a59ba1-5f32-41ce-ad60-2a4efc41c245": {
+   "qid": "Q18735049",
+   "name": "Mia Khalifa",
+   "occupations": "pornographic film actor / webcam model / Internet celebrity / influencer / erotic photography model / political activist / YouTuber"
+  },
+  "f1b303ea-8965-44dc-a31b-3b8266800ba9": {
+   "qid": "Q6538",
+   "name": "Günter Grass",
+   "occupations": "screenwriter / photographer / writer / poet / altar server / playwright / artist / painter / illustrator / lyricist / graphic artist / sculptor / novelist / librettist / autobiographer / printmaker / essayist"
+  },
+  "f3ac2a9c-07b4-4d13-907e-5bbaa03eae40": {
+   "qid": "Q173481",
+   "name": "Fernando Pessoa",
+   "occupations": "writer / poet / translator / publisher / philosopher / literary critic / essayist / prose writer"
+  },
+  "f794b88b-51c4-4b42-826d-a6051e5b0706": {
+   "qid": "Q113310",
+   "name": "איציק מאַנגער",
+   "occupations": "writer / poet / literary critic"
+  },
+  "fcb230f9-129b-4841-be7e-4183ef4cdb8b": {
+   "qid": "Q933129",
+   "name": "Chris O’Dowd",
+   "occupations": "screenwriter / actor / writer / comedian / television producer / stage actor / film director / television actor / film actor / Gaelic football player"
+  },
+  "fde3d706-7202-476f-be60-8ef4567dc6ed": {
+   "qid": "Q57386",
+   "name": "Kurt Tucholsky",
+   "occupations": "writer / poet / playwright / jurist / journalist / poet lawyer / opinion journalist / critic / librettist / prose writer / satirist"
+  },
+  "ff22312f-ea46-4353-adfb-2bdae08d7350": {
+   "qid": "Q36014",
+   "name": "Hồ Chí Minh",
+   "occupations": "politician"
+  }
+ },
+ "musicMakers": {
+  "0059d0f1-8d04-4363-a2b2-d79f8b9a29b8": {
+   "qid": "Q188848"
+  },
+  "00a1afe3-79c6-44a5-a666-c77e281ee7fe": {
+   "qid": "Q462109"
+  },
+  "0103c1cc-4a09-4a5d-a344-56ad99a77193": {
+   "qid": "Q30449"
+  },
+  "01807344-be40-44c1-a7f2-f4e04f18d2b2": {
+   "qid": "Q547669"
+  },
+  "01a27866-7340-4882-9563-649c6269489f": {
+   "qid": "Q7530703"
+  },
+  "01f1cb3f-a459-48bb-9e37-453e076a78b4": {
+   "qid": "Q110776658"
+  },
+  "022589ac-7177-460d-a178-9976cf70e29f": {
+   "qid": "Q15869"
+  },
+  "026c1c22-8d1c-473c-a33f-a27fd02d6975": {
+   "qid": "Q51033104"
+  },
+  "02b21439-02f9-4d46-9938-27da30088ef4": {
+   "qid": "Q45457"
+  },
+  "02bd2dff-f337-4788-9e75-0eb6beb932ac": {
+   "qid": "Q268575"
+  },
+  "02fd93f4-c04b-4568-bbe8-e9cdd6849aad": {
+   "qid": "Q86131"
+  },
+  "030742b1-e314-486e-b2c5-80e23ab59a86": {
+   "qid": "Q3548056"
+  },
+  "034d2431-0dec-4b41-887d-99d6ae01019c": {
+   "qid": "Q3347393"
+  },
+  "035dbc45-074a-4901-9851-bc33bbf59829": {
+   "qid": "Q122899846"
+  },
+  "03b9caf2-523c-4af2-be47-b6ffc632d75e": {
+   "qid": "Q4302514"
+  },
+  "042c35d3-0756-4804-b2c2-be57a683efa2": {
+   "qid": "Q201908"
+  },
+  "043eefc9-9d94-4d06-b6f3-93252fa52154": {
+   "qid": "Q882"
+  },
+  "04799001-3b4b-4b55-9f0f-e6f930c43a3a": {
+   "qid": "Q11859006"
+  },
+  "05968b3c-8c45-4352-8e25-50bf32aac01b": {
+   "qid": "Q225878"
+  },
+  "05d462ef-9ee6-4575-8bb3-8595cce62747": {
+   "qid": "Q718059"
+  },
+  "05dcedbd-ea39-4d38-bc07-fe557af41f66": {
+   "qid": "Q1602742"
+  },
+  "05deb750-8107-4796-ae8f-c8cb01932225": {
+   "qid": "Q169030"
+  },
+  "067239b7-dc9b-4d44-a808-735dae3961d3": {
+   "qid": "Q2877094"
+  },
+  "06dd06a8-5915-4b23-8cd6-d52b74232e6f": {
+   "qid": "Q2918713"
+  },
+  "07159b74-91a4-45d2-81d5-1055c7db463f": {
+   "qid": "Q2082436"
+  },
+  "071ab0f1-ac3f-48f6-9ee6-11b72eb73e57": {
+   "qid": "Q610267"
+  },
+  "075f634e-0c0b-4b6a-9c2c-da556a452778": {
+   "qid": "Q247694"
+  },
+  "0764f317-5b19-4c96-b7ce-2fb408eb3c2a": {
+   "qid": "Q94513"
+  },
+  "076682b0-e1bf-43eb-9bad-79f831712e5e": {
+   "qid": "Q2343525"
+  },
+  "07713667-fcf9-4b8b-bbe8-c257994738fb": {
+   "qid": "Q12206185"
+  },
+  "07bc334a-a5dc-416b-ba0e-0cd6b8e44693": {
+   "qid": "Q320589"
+  },
+  "07c766d0-7734-4574-ad5a-0798ae57ff5d": {
+   "qid": "Q357291"
+  },
+  "07f8f125-8b7a-4796-89fa-814979cc7e84": {
+   "qid": "Q54932827"
+  },
+  "0887484d-aed1-4aa6-9862-930a25815696": {
+   "qid": "Q58257004"
+  },
+  "08898a1e-39e4-4d78-944f-b1535c4f7a52": {
+   "qid": "Q13629678"
+  },
+  "090d2aef-c6f5-4f38-a2bf-bf3fc50454b8": {
+   "qid": "Q18753009"
+  },
+  "090e9c0a-6767-49e0-8f51-84a43226a174": {
+   "qid": "Q712765"
+  },
+  "09b8609a-ca39-4f34-a2f6-5b81afc2c32d": {
+   "qid": "Q154662"
+  },
+  "09cbb94a-c594-4674-8255-87112032a751": {
+   "qid": "Q1370493"
+  },
+  "09ff1fe8-d61c-4b98-bb82-18487c74d7b7": {
+   "qid": "Q1268"
+  },
+  "0ac844ea-b756-4755-b9ff-20150a8012af": {
+   "qid": "Q121097"
+  },
+  "0aeae1bd-a229-4ee6-a8a6-99d0b7139f8f": {
+   "qid": "Q3768548"
+  },
+  "0b28170e-8773-4257-b225-d1cc8d332414": {
+   "qid": "Q5753273"
+  },
+  "0b40d946-2362-4445-90f6-a3a5f333bd30": {
+   "qid": "Q54738460"
+  },
+  "0b962cba-230c-4a11-ac14-d89f2d46a1c7": {
+   "qid": "Q234771"
+  },
+  "0bcb4b8f-7328-4770-be30-46a5db444862": {
+   "qid": "Q427597"
+  },
+  "0c183408-a964-49da-b9fe-4bf2d2af73e7": {
+   "qid": "Q4521671"
+  },
+  "0c217af9-2060-46a2-8365-2974c68af072": {
+   "qid": "Q11940411"
+  },
+  "0c2d1de8-fc3a-4ca9-a90b-eea69a5968a5": {
+   "qid": "Q178237"
+  },
+  "0cb38216-4daf-452a-ab93-9a943f807de0": {
+   "qid": "Q5340123"
+  },
+  "0cd7b5b4-7481-49a2-b583-b14e8885f0f5": {
+   "qid": "Q78590"
+  },
+  "0d72039b-5734-407d-9b19-23511c09a306": {
+   "qid": "Q12238123"
+  },
+  "0d9b88f3-054a-4f53-b447-2f3f503c8290": {
+   "qid": "Q255233"
+  },
+  "0da56ec9-dbf9-4779-a16c-e688ce984fba": {
+   "qid": "Q876853"
+  },
+  "0df890e1-f4f2-4b21-a413-cd8af1af32d8": {
+   "qid": "Q1086291"
+  },
+  "0e067986-50a7-4c67-b577-b48a1d60f6b2": {
+   "qid": "Q122223134"
+  },
+  "0e3d0e49-ff40-4c35-a0a3-4cc507fcd1f8": {
+   "qid": "Q3051154"
+  },
+  "0e51e67b-a28f-4b8b-a46b-12d570002176": {
+   "qid": "Q876853"
+  },
+  "0e542eed-6429-4b57-8f2e-883463083624": {
+   "qid": "Q717603"
+  },
+  "0e649bfa-5e63-4454-9449-81ff21093920": {
+   "qid": "Q10278529"
+  },
+  "0e738f68-783c-4a6a-80ae-4f7500861060": {
+   "qid": "Q55004"
+  },
+  "0e976166-9493-4d09-b504-9d317b2a43ad": {
+   "qid": "Q2378234"
+  },
+  "0ed6e209-dd4d-4c47-b6d0-c3a1ae06fef5": {
+   "qid": "Q317033"
+  },
+  "0f763421-4f85-473c-9acb-a6f0bce56c01": {
+   "qid": "Q97487479"
+  },
+  "0f853563-7552-40d9-b308-30b4b14c2c55": {
+   "qid": "Q332046"
+  },
+  "0fbf1500-a8bd-4db2-b372-86d195c69682": {
+   "qid": "Q731429"
+  },
+  "0ffcc552-fc9d-4b79-a6d5-b78912a7cdfb": {
+   "qid": "Q189164"
+  },
+  "100b939f-8b65-4e57-9568-854f7ab44027": {
+   "qid": "Q542135"
+  },
+  "1040bdbc-578a-44eb-9bfe-bc8d4a9b10ad": {
+   "qid": "Q6377255"
+  },
+  "10c4445f-307a-4e1a-8bac-50be3e2223ba": {
+   "qid": "Q110900387"
+  },
+  "10ccb5d8-f9d5-4954-9441-3419b522a214": {
+   "qid": "Q185165"
+  },
+  "10dfbada-81b8-41d5-9626-0cdbdd168b8b": {
+   "qid": "Q952288"
+  },
+  "11395c65-588d-4a8f-b365-47d1f39a03c7": {
+   "qid": "Q478275"
+  },
+  "116ed804-4d04-43fd-809f-24e18b17233c": {
+   "qid": "Q232468"
+  },
+  "11adfca8-faac-4576-b58b-9935de7fcc05": {
+   "qid": "Q3646668"
+  },
+  "122b7731-6b85-4292-b2b8-5c400568a7c5": {
+   "qid": "Q111359676"
+  },
+  "12636e82-b355-422b-82a0-ad0204260db8": {
+   "qid": "Q705333"
+  },
+  "12735d4f-8295-42ed-8ca4-f0438e48fccd": {
+   "qid": "Q569471"
+  },
+  "12c51843-7190-4dfa-9023-6e390a12efa5": {
+   "qid": "Q10326393"
+  },
+  "1332d94d-19c5-4895-8e39-f6dc04836eba": {
+   "qid": "Q551414"
+  },
+  "137d5af9-c72e-4546-b73a-864985acc9a3": {
+   "qid": "Q2336032"
+  },
+  "13ab7709-b687-4fb5-a5c3-bb9a9ef9a5cb": {
+   "qid": "Q592440"
+  },
+  "13b00208-fff9-4dbd-bfc1-f769c182fbf8": {
+   "qid": "Q1317748"
+  },
+  "14044cad-ad2a-46bf-b5c9-1b8bc356950c": {
+   "qid": "Q7367403"
+  },
+  "1410b99c-9cfc-4156-9926-bb5b780e1984": {
+   "qid": "Q1273471"
+  },
+  "14ced464-fd2f-4140-8fc6-c433bdd1c874": {
+   "qid": "Q511817"
+  },
+  "150facc9-3ecc-492b-8e17-358b0d6c1330": {
+   "qid": "Q28109988"
+  },
+  "15122bd0-ca47-4e33-8997-27255f5397ac": {
+   "qid": "Q403161"
+  },
+  "151d9c35-43b8-49b9-a69a-5db6525dbcd2": {
+   "qid": "Q17478270"
+  },
+  "15316b5d-232c-4288-a74e-14f9912a5b1d": {
+   "qid": "Q23806108"
+  },
+  "15507f7d-3210-45a5-90bb-b5bd9fac27b9": {
+   "qid": "Q1050947"
+  },
+  "15674cab-ca9c-4704-b15f-c601d2f4409b": {
+   "qid": "Q231015"
+  },
+  "15775a2f-be83-4aa8-9fff-66bc7ed2784b": {
+   "qid": "Q363430"
+  },
+  "15b1cbac-060a-4136-9e07-4622c52c0f60": {
+   "qid": "Q320146"
+  },
+  "15eeb75e-868d-493e-a374-21161ce2b861": {
+   "qid": "Q1834613"
+  },
+  "1618bd2e-459a-4556-9a8d-b394e692e139": {
+   "qid": "Q136808808"
+  },
+  "161b32e2-2c37-4445-9087-a597ebcd0fd4": {
+   "qid": "Q1184931"
+  },
+  "16501378-eeed-44e9-bc8f-46f0508a2fed": {
+   "qid": "Q512168"
+  },
+  "16b7ae14-d979-401c-b8dc-f7b0067cb423": {
+   "qid": "Q2027005"
+  },
+  "16bdc7b3-6bfc-4f1c-89ad-d0756af40327": {
+   "qid": "Q161819"
+  },
+  "16dad944-c492-43dd-88ed-e0b7ac520c40": {
+   "qid": "Q361646"
+  },
+  "18288a13-0259-4a44-a9dc-558229fbfdd2": {
+   "qid": "Q1264406"
+  },
+  "18b85c1e-5a33-486e-8041-95d3a049dde5": {
+   "qid": "Q536762"
+  },
+  "18c1e06b-fe76-4802-b070-53a2f6b707bd": {
+   "qid": "Q316282"
+  },
+  "191cba6a-b83f-49ca-883c-02b20c7a9dd5": {
+   "qid": "Q4612"
+  },
+  "1928a9f4-7ce0-4c68-855c-85410c5d06a7": {
+   "qid": "Q468626"
+  },
+  "197b70c7-8910-4030-ad03-632d82aa40e3": {
+   "qid": "Q61586861"
+  },
+  "1a211f06-b0a4-4d35-b920-d2b632df2d71": {
+   "qid": "Q5559783"
+  },
+  "1a7ff9dc-f86c-44e9-9afb-0ecda6a4212f": {
+   "qid": "Q2975027"
+  },
+  "1aa94ade-14c7-4d48-bd91-b41b04b582ac": {
+   "qid": "Q2626275"
+  },
+  "1b4ad2da-13b8-48a1-9e2b-7b044ca6649d": {
+   "qid": "Q23001666"
+  },
+  "1b966fa8-621b-49d9-9e42-92caff45e94b": {
+   "qid": "Q17280846"
+  },
+  "1cd63202-054c-4883-80c1-17765a1c3323": {
+   "qid": "Q2148636"
+  },
+  "1cdf5351-c6dd-48ba-b515-f8689748ccd0": {
+   "qid": "Q2922991"
+  },
+  "1d354a67-3404-44ee-8284-61805ae12a3a": {
+   "qid": "Q11892368"
+  },
+  "1d7b71ba-7904-4f5a-bd13-e2b31a367d91": {
+   "qid": "Q1476652"
+  },
+  "1e462219-17e9-47db-9725-57fac598e20b": {
+   "qid": "Q9068575"
+  },
+  "1e51eeba-c1d3-4e2d-987a-7509456a913c": {
+   "qid": "Q1984215"
+  },
+  "1e52f345-e76e-4b3c-898e-f8b043781e0a": {
+   "qid": "Q1382528"
+  },
+  "1e96e328-9fa3-49e9-85fe-e9d9b430a045": {
+   "qid": "Q12410281"
+  },
+  "1e9efedb-eea2-4e33-800c-31494f4929ba": {
+   "qid": "Q382700"
+  },
+  "1eebbf55-7172-4bb1-97bd-007521954636": {
+   "qid": "Q1985740"
+  },
+  "1f38c451-563f-4c6e-8b76-09cbf33bc830": {
+   "qid": "Q499840"
+  },
+  "1f3c507e-dc9d-4368-a597-dd198d66e462": {
+   "qid": "Q1476346"
+  },
+  "1f5054b4-7a5a-416a-815f-8c329b604212": {
+   "qid": "Q124092"
+  },
+  "1f5a820f-41fc-472c-b799-e5cee8ba2343": {
+   "qid": "Q543221"
+  },
+  "1f8c82a6-c2de-4c41-a568-4af536f83868": {
+   "qid": "Q3247454"
+  },
+  "1f9df192-a621-4f54-8850-2c5373b7eac9": {
+   "qid": "Q255"
+  },
+  "1fd8c24b-eaf3-4ee2-9931-b8130099d789": {
+   "qid": "Q484540"
+  },
+  "1fe5f1ab-38c8-4b5e-866b-45499bd900e6": {
+   "qid": "Q263442"
+  },
+  "2085b44c-f939-41cc-8745-9f7d63868118": {
+   "qid": "Q377558"
+  },
+  "2088ea37-9862-4425-9c48-b43012371b40": {
+   "qid": "Q19760581"
+  },
+  "20aa13d5-e25a-4fcc-a587-2cdf926b8aba": {
+   "qid": "Q1162582"
+  },
+  "20d7e82a-c880-4aa9-9366-179fc514c6bf": {
+   "qid": "Q11287191"
+  },
+  "21442134-2f58-41ed-aa6d-70a250c44c54": {
+   "qid": "Q76498"
+  },
+  "215394ba-3d0c-4b57-b284-ec5bb4a5ad25": {
+   "qid": "Q454807"
+  },
+  "217a78ba-0715-40cd-bd69-19fbf129f146": {
+   "qid": "Q432871"
+  },
+  "21f8e84f-f6ce-4fb4-b79f-9c4c24774f64": {
+   "qid": "Q530413"
+  },
+  "220e3347-b669-4571-92f8-82ccf120e532": {
+   "qid": "Q48502"
+  },
+  "2228a756-d93d-44f0-8ef5-424c1f0da7de": {
+   "qid": "Q1441466"
+  },
+  "22769a76-f172-48e3-94ab-18c70cc06d10": {
+   "qid": "Q47489453"
+  },
+  "22790383-30ea-4dcc-a8d6-882fb1eb4669": {
+   "qid": "Q130759"
+  },
+  "22cbb87e-1f16-4546-ac30-7b2b2bf3b3bb": {
+   "qid": "Q519606"
+  },
+  "235abd9b-3d2f-4613-9d67-a7a1bb59ec3d": {
+   "qid": "Q1388947"
+  },
+  "236c32a7-1e40-43b6-a9bc-7b739278e794": {
+   "qid": "Q13107727"
+  },
+  "244f758f-5154-49c8-b3e1-551491e502f3": {
+   "qid": "Q93604"
+  },
+  "2482d29d-62e5-4b41-9f5a-c33c31543d5b": {
+   "qid": "Q426671"
+  },
+  "249adbb3-3e3e-457c-af69-ffd3a58df80d": {
+   "qid": "Q7416826"
+  },
+  "24dade80-0518-4ae7-b62e-cbd31489bb5d": {
+   "qid": "Q563321"
+  },
+  "2516feb1-35d5-4c85-bb85-fca7d4a2b18f": {
+   "qid": "Q65613507"
+  },
+  "251b4bd6-be10-43c3-b907-275e554b226c": {
+   "qid": "Q6165467"
+  },
+  "25218a2e-b892-4204-a737-2b5bc5835c15": {
+   "qid": "Q3502562"
+  },
+  "252dc1af-a04c-49de-92d6-1728ca843bce": {
+   "qid": "Q3182345"
+  },
+  "255497f8-26fb-4044-b97e-d4787d5974f6": {
+   "qid": "Q338786"
+  },
+  "255e2420-5b02-452b-9771-0512ebe78090": {
+   "qid": "Q383541"
+  },
+  "2581f3a2-222e-4808-a3de-be8ca5866501": {
+   "qid": "Q4110001"
+  },
+  "25a960b3-4840-4ad8-91f1-f5837f9ea1ee": {
+   "qid": "Q78811"
+  },
+  "2608488a-a71c-4bab-8e4c-49f683cd979b": {
+   "qid": "Q2073164"
+  },
+  "2619c907-4ae9-4c98-b464-31d7cb71f54f": {
+   "qid": "Q2227698"
+  },
+  "264da861-02dc-49a6-8ea9-8fb0343199da": {
+   "qid": "Q1577711"
+  },
+  "26dc1641-9e83-46bb-ba77-bf331ca41bfb": {
+   "qid": "Q349703"
+  },
+  "26fa9eaa-a094-449a-aac3-9c9f9981332e": {
+   "qid": "Q738092"
+  },
+  "274774a7-1cde-486a-bc3d-375ec54d552d": {
+   "qid": "Q1151"
+  },
+  "27870d47-bb98-42d1-bf2b-c7e972e6befc": {
+   "qid": "Q7302"
+  },
+  "27b0750a-7318-4075-9470-43b82d454ea0": {
+   "qid": "Q51584"
+  },
+  "27c607da-eed0-4add-ae39-bfb36ae58db4": {
+   "qid": "Q6447676"
+  },
+  "28442ebf-7450-4eb1-96a9-ab771bc9cd80": {
+   "qid": "Q1980296"
+  },
+  "291881d5-c1b6-45f4-9163-ce8796b5e45d": {
+   "qid": "Q66019"
+  },
+  "2933b6e4-777f-4ca6-bad3-7af5434114a9": {
+   "qid": "Q5953371"
+  },
+  "29c75fb9-d75c-4186-8892-6752d4bbc0a2": {
+   "qid": "Q123249"
+  },
+  "29ec65e9-0dcf-4dfa-9155-7f13cef07335": {
+   "qid": "Q237081"
+  },
+  "29ffd1d9-bffe-43aa-aa1e-ecdacf9a3a7b": {
+   "qid": "Q50286844"
+  },
+  "2a583470-0398-4360-883f-bf3cbad135f0": {
+   "qid": "Q561073"
+  },
+  "2a8949f5-d681-4df2-a2fd-a08966ae2d31": {
+   "qid": "Q156814"
+  },
+  "2abc5fbb-f1fc-4f6f-9150-c701233e2086": {
+   "qid": "Q6270688"
+  },
+  "2afe916a-21fc-40f8-97ff-642f4f70bf93": {
+   "qid": "Q3587696"
+  },
+  "2b04abce-2b0d-4cc0-ac78-52ea227d0dde": {
+   "qid": "Q3566375"
+  },
+  "2b67658e-429f-425a-adf5-345b13112fc1": {
+   "qid": "Q75997191"
+  },
+  "2b75141c-05e9-42eb-ae63-6695d86cdc19": {
+   "qid": "Q317155"
+  },
+  "2b9032a4-9a8b-456c-b69e-68f81d05e4fa": {
+   "qid": "Q13421024"
+  },
+  "2b9ef1d1-1fcf-48e1-85af-6297a416dea4": {
+   "qid": "Q2221511"
+  },
+  "2c145d01-a05a-4b68-9bf8-06c949df66ea": {
+   "qid": "Q78602"
+  },
+  "2c3f7c5d-17b4-42ed-b7ab-9f55df40326c": {
+   "qid": "Q101092228"
+  },
+  "2c98ca27-6cfc-40a9-bb7d-4b61781776a2": {
+   "qid": "Q449928"
+  },
+  "2cb59168-b0f6-44f0-9b99-fec3d732211c": {
+   "qid": "Q5043421"
+  },
+  "2cd475bb-1abd-40c4-9904-6d4b691c752c": {
+   "qid": "Q41309"
+  },
+  "2cf48701-c346-447c-947a-30a85a26f0d9": {
+   "qid": "Q376383"
+  },
+  "2db43da6-401e-4dd7-898d-8f6da60c58da": {
+   "qid": "Q359849"
+  },
+  "2f2608ed-ff2b-400e-b614-8c648bfaae7b": {
+   "qid": "Q454010"
+  },
+  "2f4ac21a-95e4-4c30-ab89-e95ac02cbd7d": {
+   "qid": "Q237420"
+  },
+  "2f745f25-7681-4c44-b713-34d37a307575": {
+   "qid": "Q80510"
+  },
+  "2fa6f017-59a5-4efc-80ba-c4120ae7c1fd": {
+   "qid": "Q2451955"
+  },
+  "2fcffd9a-f02a-4a2c-8085-6257f918949d": {
+   "qid": "Q208537"
+  },
+  "308e5834-5506-4b75-a7c3-3320b38b7b5c": {
+   "qid": "Q482670"
+  },
+  "30a57b7b-47c9-4234-86fd-9b8ff660e7cb": {
+   "qid": "Q38460106"
+  },
+  "30aeb57f-bb16-47fa-86ca-79fc57b4d12c": {
+   "qid": "Q26707663"
+  },
+  "30df1299-811b-4333-9f40-463bc13e9d36": {
+   "qid": "Q116020"
+  },
+  "30f53666-aa3b-44c1-80c1-4d09929e28e8": {
+   "qid": "Q77177"
+  },
+  "31288c75-2310-47cd-aa53-2b6631c69564": {
+   "qid": "Q1182064"
+  },
+  "3130e469-2ef7-46d6-a5bc-7732d0bb2739": {
+   "qid": "Q4165121"
+  },
+  "31445b1e-96f3-4c7f-84ec-dd02e647e690": {
+   "qid": "Q16728588"
+  },
+  "31461356-7fee-400b-ae2c-d965b2c3a06d": {
+   "qid": "Q950090"
+  },
+  "3147dc19-641f-4b4a-ad37-ffe82e3afc09": {
+   "qid": "Q1819099"
+  },
+  "31db8f14-8c86-4626-8e67-76ebdd086c5e": {
+   "qid": "Q110264640"
+  },
+  "3206cf3e-4aae-4a7d-908b-6af02ed1e2a6": {
+   "qid": "Q3310931"
+  },
+  "324fb9d5-214c-407e-9a62-b57682c69840": {
+   "qid": "Q2045019"
+  },
+  "32673e42-5ba2-4528-b3fe-a000a0c606e3": {
+   "qid": "Q709024"
+  },
+  "327e24c0-95b4-4754-b509-108dc7f8abfa": {
+   "qid": "Q449908"
+  },
+  "32812b1f-c62e-4625-be28-812c190e5219": {
+   "qid": "Q2823929"
+  },
+  "32965586-52e5-4677-a8ab-170e24ce2db0": {
+   "qid": "Q11903819"
+  },
+  "32f04f6d-e3df-4d0d-9c59-eee7d9247cd6": {
+   "qid": "Q15448489"
+  },
+  "32f2d6bd-c22b-42cf-a7bc-0c4b48cd2bcb": {
+   "qid": "Q190076"
+  },
+  "336a4d1d-0823-4fc5-a4de-bf601114b118": {
+   "qid": "Q9614654"
+  },
+  "33ce4a70-005d-4563-bb6e-2d253fab9842": {
+   "qid": "Q52392"
+  },
+  "33d286c3-7f43-42de-8883-267d35b4588b": {
+   "qid": "Q348652"
+  },
+  "33e534de-d097-4349-a8e3-1f2c795e7b55": {
+   "qid": "Q713632"
+  },
+  "3407dabb-a82d-4e35-a786-9134f8f4a07b": {
+   "qid": "Q213567"
+  },
+  "3496a091-fd3c-48a7-9ff0-d5c6bfed60d9": {
+   "qid": "Q56306624"
+  },
+  "3498173f-6071-42a8-bad8-472889db18b8": {
+   "qid": "Q1250575"
+  },
+  "34d61873-7bdd-4dd8-91d4-9ae585b4622b": {
+   "qid": "Q158957"
+  },
+  "34fc95da-78b6-4a22-bb63-befdf68a5a14": {
+   "qid": "Q1415651"
+  },
+  "35b6749d-3b74-424b-b900-3e4bfd24b8e3": {
+   "qid": "Q4984362"
+  },
+  "35f866dc-c061-48ba-8157-cf2e0eac4857": {
+   "qid": "Q47122"
+  },
+  "360ab539-bd0f-486c-98fd-6f819d978155": {
+   "qid": "Q57210"
+  },
+  "360d95c3-bcd5-49c0-997e-b9ceb1ddff72": {
+   "qid": "Q1362908"
+  },
+  "36322fdd-0975-4a0b-99fe-f68bc163fda0": {
+   "qid": "Q4449195"
+  },
+  "367c3abd-e649-4b39-8e51-5d3678caec1b": {
+   "qid": "Q710487"
+  },
+  "36b9a5da-8213-457a-aeaa-25fbdbafe8a6": {
+   "qid": "Q81520"
+  },
+  "374a63ed-2502-495a-8e31-139e3ed7507e": {
+   "qid": "Q17151338"
+  },
+  "37975cba-2416-4068-9b55-e684ba609359": {
+   "qid": "Q366711"
+  },
+  "37cd67d1-a786-4f5c-b91b-14f93b90ca04": {
+   "qid": "Q918339"
+  },
+  "3830b3b7-63ff-44ec-b6c8-9f092821c3f0": {
+   "qid": "Q2276463"
+  },
+  "385966f0-b912-4755-bad6-4780ebf3f4cd": {
+   "qid": "Q208258"
+  },
+  "38d388d7-8a32-4ac0-be9f-9f5bd6d39305": {
+   "qid": "Q2516"
+  },
+  "38dd6337-19ae-4793-ab4b-313eff523457": {
+   "qid": "Q312674"
+  },
+  "38e788cb-7dfd-471a-a801-eb0c349cec20": {
+   "qid": "Q1900233"
+  },
+  "38f1a777-0db6-4e92-8be9-c3b6a1a3429f": {
+   "qid": "Q434790"
+  },
+  "3905011f-ac59-4d50-9095-1545a9944de8": {
+   "qid": "Q160223"
+  },
+  "3922ffc0-f624-4703-99cc-2a0da88d9855": {
+   "qid": "Q744257"
+  },
+  "398f9067-ff97-4743-82f3-16dcb68c3654": {
+   "qid": "Q560685"
+  },
+  "39bba85f-e589-4a35-8388-259195fe9c5b": {
+   "qid": "Q160257"
+  },
+  "39e84597-3e0f-4ccc-89d2-6ee1dd6fb050": {
+   "qid": "Q151608"
+  },
+  "3a523f68-2c8f-40ef-9e2e-9e25e60c9fbf": {
+   "qid": "Q5699604"
+  },
+  "3a6240a7-46c0-4971-befd-c4ca40299533": {
+   "qid": "Q273213"
+  },
+  "3aae6a6c-c86a-490a-a8d6-8d261526a203": {
+   "qid": "Q4213419"
+  },
+  "3abc3eb1-7318-41d2-a52b-cbe14a14d8a0": {
+   "qid": "Q312434"
+  },
+  "3b0c1efb-8dba-4ba4-b966-f65cb5f2c385": {
+   "qid": "Q507110"
+  },
+  "3b90a8fa-26e9-4691-8ba8-d8c99b5aeb53": {
+   "qid": "Q434389"
+  },
+  "3ba37600-ef36-4aae-a095-89a3c4234173": {
+   "qid": "Q465396"
+  },
+  "3bb7845a-bc8a-4ac6-bc31-32046b604e47": {
+   "qid": "Q605011"
+  },
+  "3bb8b89e-5700-4d7a-aa0b-d48f8706831d": {
+   "qid": "Q156810"
+  },
+  "3bbd6c44-385e-4e51-8250-fbb23435f165": {
+   "qid": "Q7425737"
+  },
+  "3bce590b-479f-42ca-b9e0-82883e0db9a2": {
+   "qid": "Q156193"
+  },
+  "3bd08e76-bf53-4b16-82ee-63f95ca5cdae": {
+   "qid": "Q372489"
+  },
+  "3c0be798-4c22-4106-ad4a-593299bf57fb": {
+   "qid": "Q465189"
+  },
+  "3c1b2224-53b3-494a-8c63-fbc062138991": {
+   "qid": "Q1582611"
+  },
+  "3c94b740-1fe3-4977-b426-e930ae094791": {
+   "qid": "Q3553276"
+  },
+  "3cd01947-d4e5-4bc0-b257-052dde469851": {
+   "qid": "Q11878748"
+  },
+  "3d04eedc-54fa-4d01-93a1-1e25f2d0f6ad": {
+   "qid": "Q4187903"
+  },
+  "3d0bbb01-6a0b-4913-8220-c3bdf7965a17": {
+   "qid": "Q6314745"
+  },
+  "3d2d0086-c32c-4d75-a1ab-9a5cd5f6b341": {
+   "qid": "Q48617"
+  },
+  "3d4c9a99-24d7-4a73-8993-33cb83280bad": {
+   "qid": "Q568534"
+  },
+  "3d538df4-e793-460e-bcdd-587e1d7092d4": {
+   "qid": "Q1549884"
+  },
+  "3d6788e5-aefa-4296-8a89-b2d5b11b6ff4": {
+   "qid": "Q2028076"
+  },
+  "3d748bf4-6fb8-47db-b9d2-6b5db0710096": {
+   "qid": "Q16185548"
+  },
+  "3dc93820-2336-455d-82db-215b06662835": {
+   "qid": "Q549617"
+  },
+  "3eb72791-6322-466b-87d3-24d74901eb2d": {
+   "qid": "Q271602"
+  },
+  "3ebf466f-d1b6-471d-9ae6-7fb94aff2408": {
+   "qid": "Q1346393"
+  },
+  "3ec9b73e-a064-405e-a84b-0448a67dee4a": {
+   "qid": "Q97661"
+  },
+  "3f4be01a-da34-4360-8b87-4e4e4dceae86": {
+   "qid": "Q896380"
+  },
+  "3f5a0c97-54c2-4648-84a7-505908d34865": {
+   "qid": "Q108831555"
+  },
+  "3fe8f885-6bb9-4204-84bd-f94576c44607": {
+   "qid": "Q6099495"
+  },
+  "3ffe1ce5-0150-4b9f-b17a-cf36732f7e71": {
+   "qid": "Q85990468"
+  },
+  "4007aa03-8a05-4cb7-8f82-8cb82219978d": {
+   "qid": "Q518230"
+  },
+  "400af8a0-1664-442e-9dc4-4c68753d5309": {
+   "qid": "Q1422928"
+  },
+  "401c3991-b76b-499d-8082-9f2df958ef78": {
+   "qid": "Q144622"
+  },
+  "4034bdc9-e19d-4f70-8603-4c01aa2e89cb": {
+   "qid": "Q813553"
+  },
+  "40627299-0979-45ba-8924-2af5fdc36ea8": {
+   "qid": "Q719841"
+  },
+  "4068eaba-ca03-4c34-9172-2b709b8050e6": {
+   "qid": "Q57244"
+  },
+  "4083d781-7973-4717-8e1b-0f8786437709": {
+   "qid": "Q152880"
+  },
+  "40a51ae8-f1b0-43ec-80f6-0fa96518615b": {
+   "qid": "Q5186350"
+  },
+  "40e7505a-4c30-4ac7-84d3-2a9aef92cc44": {
+   "qid": "Q78933"
+  },
+  "412035e4-a609-4c23-9d88-464eef9757f3": {
+   "qid": "Q936781"
+  },
+  "41259fa5-5f9b-445c-8bba-ec28bbb7f2e5": {
+   "qid": "Q128085"
+  },
+  "41521210-ef91-49cc-9b0b-55ca8f9f053c": {
+   "qid": "Q1389182"
+  },
+  "41cbe1ee-8b6e-43ce-9aa2-c306435f738b": {
+   "qid": "Q117317361"
+  },
+  "41cbf376-7a0b-4b30-ba14-40bdd3cc3cf3": {
+   "qid": "Q122446144"
+  },
+  "420e923e-e74c-42ef-b771-2e2bcee93394": {
+   "qid": "Q1888059"
+  },
+  "423d647e-9a8b-403e-883b-81f6e84b7095": {
+   "qid": "Q932884"
+  },
+  "42794669-24f6-4dbc-8a04-24f87d27a64d": {
+   "qid": "Q691598"
+  },
+  "42f809f7-ab4a-4797-aebe-849fd54cf149": {
+   "qid": "Q6452483"
+  },
+  "42fd0db2-eb03-4ae1-86ad-daa2b2bda4d1": {
+   "qid": "Q6124175"
+  },
+  "4333251a-2d59-45b5-8278-e5a6d7ea9a09": {
+   "qid": "Q1931218"
+  },
+  "436bc3c4-c66b-4bf2-bed0-8d826e86baed": {
+   "qid": "Q742149"
+  },
+  "43e1570a-1a0d-479f-9c95-fba971aec91a": {
+   "qid": "Q155713"
+  },
+  "43f1a5f0-24e1-4498-a3b4-ecbad865943c": {
+   "qid": "Q4496955"
+  },
+  "44314bbf-2414-4b6c-8531-2114e49678f8": {
+   "qid": "Q2074541"
+  },
+  "4452b4df-730c-43e8-a8a6-534cd7989c9f": {
+   "qid": "Q16565824"
+  },
+  "449222bf-de48-4197-b2c2-a7c889619c58": {
+   "qid": "Q365433"
+  },
+  "44e91847-6fdc-4be4-b830-14e903a7481b": {
+   "qid": "Q965805"
+  },
+  "44ebe351-50ae-4b87-bd59-c43a2f71bf43": {
+   "qid": "Q46036"
+  },
+  "454b95b7-d1d2-4fb9-9f66-685e5756ab6d": {
+   "qid": "Q712762"
+  },
+  "454e1386-d2ce-4bee-9cfe-0fb2aed62dcc": {
+   "qid": "Q18693443"
+  },
+  "4554ec28-0e97-45f1-ad3d-696a48326f1c": {
+   "qid": "Q1239006"
+  },
+  "456173e7-b1de-451e-8dfd-78ab94fce7cc": {
+   "qid": "Q100264"
+  },
+  "456596a9-1d4f-4b47-b4e0-ac402ca672b0": {
+   "qid": "Q241432"
+  },
+  "4572fd63-f042-4af7-88ce-eb919e497c73": {
+   "qid": "Q2086512"
+  },
+  "4607a34c-fa1e-4533-8148-d3439dbe8595": {
+   "qid": "Q41505182"
+  },
+  "46182d24-f469-477e-8b0d-ae53522ec2ad": {
+   "qid": "Q5665975"
+  },
+  "4644d754-bdef-4323-9854-9e82acbdaa79": {
+   "qid": "Q449571"
+  },
+  "4674c0a3-7959-4a90-8f07-28c4462ed3fc": {
+   "qid": "Q1903841"
+  },
+  "46e5fe2b-bbd6-47cb-915c-c31ff69df072": {
+   "qid": "Q1993134"
+  },
+  "470967b1-f9ef-4712-82df-6971b517ebdb": {
+   "qid": "Q106641"
+  },
+  "4727376f-ee96-4237-adc5-05ead325300e": {
+   "qid": "Q108573775"
+  },
+  "47c8f88b-987a-4b64-9175-2b1b57809727": {
+   "qid": "Q73437"
+  },
+  "47e5b999-b81f-4f6d-9b2d-5702fc8d0f98": {
+   "qid": "Q336166"
+  },
+  "47ea59b7-81c2-4001-8ac3-567877b3172a": {
+   "qid": "Q277976"
+  },
+  "47eef6d9-2019-4195-a9f1-7a11c0a1be6f": {
+   "qid": "Q450670"
+  },
+  "47f92b39-aeb0-4cbe-8777-3e0c99bf6975": {
+   "qid": "Q28674882"
+  },
+  "482dc0a4-0c39-40dc-9d6d-ca250a5ef833": {
+   "qid": "Q185040"
+  },
+  "4843d5fc-d8e2-4653-86dc-3519163a7ecf": {
+   "qid": "Q87568"
+  },
+  "4889f5d3-b438-4cdc-a1f7-0ebb6e12d11b": {
+   "qid": "Q1905137"
+  },
+  "489c293d-c9bc-4e6a-83d7-660984370cbf": {
+   "qid": "Q357172"
+  },
+  "4982faaa-b251-43a5-b99d-326d999bbd54": {
+   "qid": "Q22002900"
+  },
+  "49d67664-6962-4f69-adc4-f52208c78dd2": {
+   "qid": "Q27267034"
+  },
+  "4a159e06-bb09-4938-92a8-879772022320": {
+   "qid": "Q354016"
+  },
+  "4a26bd1f-07be-460b-8e96-083de40c0b8e": {
+   "qid": "Q2036199"
+  },
+  "4a2b8def-5a86-45fd-9c21-31c3356a3774": {
+   "qid": "Q191957"
+  },
+  "4a37c64f-4151-4c4b-ab69-a58450f9967e": {
+   "qid": "Q84148"
+  },
+  "4a7b88fc-0634-48a2-9be5-e58250890933": {
+   "qid": "Q274067"
+  },
+  "4a7f3a02-b1ba-4e26-8e30-f580ece1150c": {
+   "qid": "Q6527"
+  },
+  "4a8005fa-b151-43a1-8ca4-3dfbbec086e0": {
+   "qid": "Q3564217"
+  },
+  "4aae17a7-9f0c-487b-b60e-f8eafb410b1d": {
+   "qid": "Q192668"
+  },
+  "4b0e51ee-a024-4540-a6f4-abf4b5488647": {
+   "qid": "Q1056805"
+  },
+  "4b0f0c8b-d661-4d1e-96e0-eed0f68ef495": {
+   "qid": "Q271429"
+  },
+  "4b237afb-f308-4a90-8eed-eed5f7f0e900": {
+   "qid": "Q3560275"
+  },
+  "4b29d9f4-fe27-4514-9852-331bea23f348": {
+   "qid": "Q1055200"
+  },
+  "4b4fe01a-0df8-4b24-a43d-39b194a4bb0b": {
+   "qid": "Q1789389"
+  },
+  "4b682288-d046-4865-91ff-9ad503edd752": {
+   "qid": "Q29554348"
+  },
+  "4ba2e13e-3b5c-4f4c-b5e5-feb5e8c5de5c": {
+   "qid": "Q1500902"
+  },
+  "4bd8741e-dc1e-4604-8204-12609a96b1d1": {
+   "qid": "Q2144589"
+  },
+  "4bdcee62-4902-4773-8cd1-e252e2e31225": {
+   "qid": "Q130742"
+  },
+  "4be809bc-4e37-4ec1-ae04-29b2c9ed28f4": {
+   "qid": "Q2034544"
+  },
+  "4bea512e-c8d9-4a5f-94bc-c01f85505e9b": {
+   "qid": "Q31749372"
+  },
+  "4c1958b2-d09b-45ae-99b9-26047180ca28": {
+   "qid": "Q433749"
+  },
+  "4c1efa1e-173c-43f6-aeea-9f1704f19892": {
+   "qid": "Q2159402"
+  },
+  "4c7a5854-6b75-4623-a684-6a3d785d9015": {
+   "qid": "Q230622"
+  },
+  "4cdf451e-1436-4cd5-b0bb-ce9f7dc94c0e": {
+   "qid": "Q585680"
+  },
+  "4d1f686e-1589-42e8-80be-a85078cc0a77": {
+   "qid": "Q20898796"
+  },
+  "4d5447d7-c61c-4120-ba1b-d7f471d385b9": {
+   "qid": "Q1203"
+  },
+  "4d7ebadc-2bdb-4343-b0f5-27965993e3aa": {
+   "qid": "Q539112"
+  },
+  "4da0193e-f9a7-4531-a0c4-86d130c8002b": {
+   "qid": "Q263855"
+  },
+  "4da58868-23ff-4839-b7f3-e79b00cf6d6f": {
+   "qid": "Q1123533"
+  },
+  "4eb39376-4545-4867-b619-588b45e0bce8": {
+   "qid": "Q4142425"
+  },
+  "4ec01cb3-dd89-465f-b36b-1d6c5e60d6e1": {
+   "qid": "Q112052"
+  },
+  "4f3fe3d6-ff99-4b4b-926c-baec6d2bfd25": {
+   "qid": "Q16409"
+  },
+  "4f70e325-8e95-406e-962c-e79190c7a5bf": {
+   "qid": "Q728951"
+  },
+  "4f7a2984-e64f-48c6-ad6a-dffa2d27907a": {
+   "qid": "Q1321507"
+  },
+  "4f8ef4a3-40fa-46b5-8773-97686a8424f4": {
+   "qid": "Q1631"
+  },
+  "4f93c537-9b98-4c79-94f2-4ec6638f2133": {
+   "qid": "Q5863138"
+  },
+  "4f9c23d4-a07f-4156-857a-ef4395a5a2cb": {
+   "qid": "Q28792012"
+  },
+  "50574fed-3a38-4982-854f-a15edd3ab867": {
+   "qid": "Q446767"
+  },
+  "508c8f0f-01c9-4de3-b0da-688b1f0b92b2": {
+   "qid": "Q66425353"
+  },
+  "509f20b2-5df3-4aec-9bbc-002131fb3f99": {
+   "qid": "Q714325"
+  },
+  "50b92f6b-aa99-441c-8c21-16ad60f23f1d": {
+   "qid": "Q2599717"
+  },
+  "50c629c6-6f22-4bf9-a3c2-f2855e6704be": {
+   "qid": "Q310298"
+  },
+  "50f10489-c87e-4df3-800f-be1f8d6bda4b": {
+   "qid": "Q363490"
+  },
+  "50f7ed3e-5e43-493d-9002-4bd4614c61d4": {
+   "qid": "Q873543"
+  },
+  "515ab730-796b-49bd-b6ee-63556042d945": {
+   "qid": "Q1762367"
+  },
+  "51d0f1d0-26c5-482d-b466-1ddbe09e735f": {
+   "qid": "Q270873"
+  },
+  "51db257b-7435-4f97-aaa6-62cf7baf2b9f": {
+   "qid": "Q935950"
+  },
+  "51dd5de3-1e2a-4b6b-bf04-d3c896b7d195": {
+   "qid": "Q1489599"
+  },
+  "52178b97-17eb-491a-9874-52bdd1645262": {
+   "qid": "Q785404"
+  },
+  "521df2bd-01f6-456e-9d5f-f081068819c2": {
+   "qid": "Q130853"
+  },
+  "525e72ed-609a-426c-a84f-0056357e2c24": {
+   "qid": "Q87263"
+  },
+  "528cdbaf-ed32-4ee8-a2ea-56ed94722bed": {
+   "qid": "Q90031"
+  },
+  "53832b43-e9c4-4503-99e5-110ffa77f9dc": {
+   "qid": "Q688067"
+  },
+  "53982694-9850-463d-b2fe-ef6e2c70d51b": {
+   "qid": "Q78530"
+  },
+  "53c653dd-d38b-4f9c-8d31-9d6ec6361781": {
+   "qid": "Q17177183"
+  },
+  "53ed456e-dcdb-4aa7-b8ac-8aa0dcf7fa4c": {
+   "qid": "Q1565763"
+  },
+  "5486f401-0f75-4e65-ae02-d54bdb25c83e": {
+   "qid": "Q918640"
+  },
+  "549dc0da-d165-4bff-839e-dca65cf51c0c": {
+   "qid": "Q151972"
+  },
+  "54a8da32-bfaf-45b3-910d-61884352168d": {
+   "qid": "Q233932"
+  },
+  "54ccb2ec-3dd9-4bd1-a11d-220bb1442048": {
+   "qid": "Q1973210"
+  },
+  "551a74e2-fe5c-4923-9a0d-15bc1fd837bd": {
+   "qid": "Q3364612"
+  },
+  "552a563a-a3b7-4a4a-b074-75723c5246bc": {
+   "qid": "Q168345"
+  },
+  "554180e0-5e8c-431b-a541-46447aa99d45": {
+   "qid": "Q78491"
+  },
+  "554fbabf-54f4-4640-8eb6-88693b6085c7": {
+   "qid": "Q919127"
+  },
+  "557e9776-1e44-494b-80c7-c967910ed8ec": {
+   "qid": "Q28188179"
+  },
+  "562a41a8-bcc9-477d-a670-4af2c63dadbf": {
+   "qid": "Q272236"
+  },
+  "5637c6d5-c4d0-4512-88ff-01658951f98f": {
+   "qid": "Q172035"
+  },
+  "568e3b31-1f44-4d3f-9cee-1e41963a7180": {
+   "qid": "Q4766583"
+  },
+  "56f7a85d-49e2-4486-8810-42d7f7ad25d9": {
+   "qid": "Q4792706"
+  },
+  "57117a88-aeeb-4522-af8b-a932d797abfc": {
+   "qid": "Q61777319"
+  },
+  "574257e9-156c-4a16-8297-9ce86d727c93": {
+   "qid": "Q2501478"
+  },
+  "57cf7d67-5372-420a-9c89-77c7513d6506": {
+   "qid": "Q2655756"
+  },
+  "57fca0e2-f9ad-4ae6-af9d-6a6f50cbcd5f": {
+   "qid": "Q153172"
+  },
+  "583fa36a-313d-47f6-878a-a63df3537a30": {
+   "qid": "Q1500522"
+  },
+  "5849fa32-0283-4204-9d1b-507cfaf9d4a2": {
+   "qid": "Q161805"
+  },
+  "58cd7264-e25c-456c-aa74-aa37f0f21c22": {
+   "qid": "Q18038636"
+  },
+  "59359efa-9d95-4586-a808-9701d384ee04": {
+   "qid": "Q1385110"
+  },
+  "5938c629-1d06-480b-9780-859b153af11e": {
+   "qid": "Q202536"
+  },
+  "5978ca05-f0dd-42ef-b716-4ec0cbf659f8": {
+   "qid": "Q712017"
+  },
+  "597c3e34-16f7-4e9a-81da-d6bda8b4d740": {
+   "qid": "Q707268"
+  },
+  "59d839f8-953e-4f3f-9f0c-72e6fe31e486": {
+   "qid": "Q3264630"
+  },
+  "5a7ac986-0e4b-4223-ab54-d3a1878c9de2": {
+   "qid": "Q263730"
+  },
+  "5b3f4700-d190-4f70-8f36-9b68e76d9464": {
+   "qid": "Q534960"
+  },
+  "5b9890b9-a2e8-4768-ad70-9f28bb81fc00": {
+   "qid": "Q259788"
+  },
+  "5ba5d957-13cd-4978-ac31-5f6bf4cee717": {
+   "qid": "Q400686"
+  },
+  "5bb3702f-8225-42ad-be86-9782ad90557b": {
+   "qid": "Q15485985"
+  },
+  "5bf64d94-efd9-4334-96fd-e6197b0b02b8": {
+   "qid": "Q313627"
+  },
+  "5c0892b4-4e1a-4d52-9eb3-2a48766ad144": {
+   "qid": "Q2194897"
+  },
+  "5c46967a-3473-4266-a3c8-94f4d18a6c0c": {
+   "qid": "Q3187564"
+  },
+  "5cff1c1e-2cd9-423b-8c23-4154a96186de": {
+   "qid": "Q15452419"
+  },
+  "5d33dbec-231d-4e41-9047-941966755528": {
+   "qid": "Q2342115"
+  },
+  "5d4a0da1-7516-483e-a541-3c9efb555e01": {
+   "qid": "Q210962"
+  },
+  "5db7d778-be9e-42b4-92eb-49b6f36ba5f0": {
+   "qid": "Q712805"
+  },
+  "5dfa70d0-d170-4b5d-a901-e6c2edc96dd1": {
+   "qid": "Q507940"
+  },
+  "5e6a64b3-3059-477b-acfe-d9e9d4156724": {
+   "qid": "Q6793590"
+  },
+  "5f264b87-d5f6-487d-aa3e-ae4c5f0c6fc9": {
+   "qid": "Q1785"
+  },
+  "5f50ff52-e736-4dfa-8514-f808b89d5499": {
+   "qid": "Q111597782"
+  },
+  "5f7c9ce4-e0e3-486c-a424-f752232c10c3": {
+   "qid": "Q86106"
+  },
+  "5f942196-a424-4cbd-b553-64b42e27ad6f": {
+   "qid": "Q21402689"
+  },
+  "5fbe2df2-ac70-4931-8482-3b70366c80c4": {
+   "qid": "Q4402042"
+  },
+  "5fed8b75-cba8-4423-9dd7-d0520d2e48d4": {
+   "qid": "Q137527805"
+  },
+  "6005fb1b-4f18-4941-8c8d-a33a30f9a2d5": {
+   "qid": "Q1158440"
+  },
+  "60091eff-cb84-4530-b9d9-b184aa5b4875": {
+   "qid": "Q2508581"
+  },
+  "6099dfba-3225-42e4-b725-3ba76af78cc9": {
+   "qid": "Q1786326"
+  },
+  "61489e73-b397-48d2-ba35-5e8a0c619df0": {
+   "qid": "Q1362514"
+  },
+  "62174e1d-287f-441b-906f-6f6855adf61c": {
+   "qid": "Q1165809"
+  },
+  "625f1d57-8bac-4a3a-97af-f407f2967755": {
+   "qid": "Q353822"
+  },
+  "626c5a3c-b9a0-414f-89d6-756b0f1eceb5": {
+   "qid": "Q1148781"
+  },
+  "6289f8dd-6eda-419f-8be4-e9e5fb346b71": {
+   "qid": "Q85313466"
+  },
+  "62c28bc0-f696-4c50-8e54-5f8e9120bdb8": {
+   "qid": "Q221289"
+  },
+  "633c13a3-335a-466f-8e01-535837faeff5": {
+   "qid": "Q242110"
+  },
+  "636e0fb6-f2ad-45fc-b385-4d994665e7e3": {
+   "qid": "Q4970416"
+  },
+  "63b0ed42-f590-4c24-90d8-b8522f181b21": {
+   "qid": "Q704705"
+  },
+  "63b53711-8aad-4769-bd2d-00deb0f5005d": {
+   "qid": "Q5663434"
+  },
+  "643a8052-3eb3-4633-968f-eb96cf491996": {
+   "qid": "Q106156085"
+  },
+  "6508cf1d-4da2-4d71-81ec-0e072338991f": {
+   "qid": "Q156783"
+  },
+  "6529bf81-8dae-43e3-b9af-f4ac3bbbda79": {
+   "qid": "Q327856"
+  },
+  "65542956-ed7d-4ef3-b653-4a729c94ad8d": {
+   "qid": "Q1349794"
+  },
+  "6571aaf2-c0dc-4464-83cb-a52e3c822d3e": {
+   "qid": "Q211337"
+  },
+  "6584d3ef-606b-41b3-a42f-2cda5fbd75bc": {
+   "qid": "Q17486002"
+  },
+  "65957932-0c77-4863-9147-ea4e52497d18": {
+   "qid": "Q107965920"
+  },
+  "6598c5e5-bfe5-48e7-b341-66cc6db310ea": {
+   "qid": "Q1347993"
+  },
+  "66197dbc-c16b-4c95-9e1b-cc617783cb8c": {
+   "qid": "Q153455"
+  },
+  "66ab36ce-8f58-46fb-9284-396c2c90ecbd": {
+   "qid": "Q84323645"
+  },
+  "66b01c9c-3344-46b1-b5fe-cab3c2834e32": {
+   "qid": "Q314587"
+  },
+  "6775554d-38f8-4771-a036-a779c88c582a": {
+   "qid": "Q918647"
+  },
+  "679d7a73-41ec-4ede-8176-b68b0e9a48fa": {
+   "qid": "Q505921"
+  },
+  "679ec43c-bc04-4bb0-b619-2da702a214ba": {
+   "qid": "Q106221"
+  },
+  "67b1b0f2-3198-4cd3-8659-7f1c77e44d08": {
+   "qid": "Q215982"
+  },
+  "67d2cb7a-9ddb-4a7f-82bf-5a2d1a038e98": {
+   "qid": "Q155879"
+  },
+  "67f4ab30-bfe1-483a-a5ae-c6e6067497b8": {
+   "qid": "Q294144"
+  },
+  "68057aab-5f54-4a2f-ab9a-af0cbcbb09b9": {
+   "qid": "Q4961845"
+  },
+  "6806600b-f824-4874-b574-f7b9a3e6cd3d": {
+   "qid": "Q48654131"
+  },
+  "68997318-51eb-4a1f-8084-43af7f012e54": {
+   "qid": "Q7454247"
+  },
+  "68d311c0-525f-4f72-a044-84e54565d02d": {
+   "qid": "Q87130314"
+  },
+  "68fc3352-2940-4a55-add1-57c3d31f567b": {
+   "qid": "Q78522"
+  },
+  "697f8b9f-0454-40f2-bba2-58f35668cdbe": {
+   "qid": "Q103774"
+  },
+  "698d6fa5-003a-46d3-af1c-12298f4ef94a": {
+   "qid": "Q517605"
+  },
+  "69a7d073-869e-4af2-a58b-a62fe34454d6": {
+   "qid": "Q322172"
+  },
+  "6a3850d0-5f35-4995-afc1-fddfe1714c7e": {
+   "qid": "Q2893601"
+  },
+  "6a6d7262-051e-44dc-8176-81a32ae66ea6": {
+   "qid": "Q123775383"
+  },
+  "6aa0dbce-a3e1-4615-94fe-39892b101eff": {
+   "qid": "Q774685"
+  },
+  "6ada7176-3fdb-4015-b1f4-cbefb3bf82d3": {
+   "qid": "Q689474"
+  },
+  "6b508316-a8f2-468a-8d96-38da2ef8d677": {
+   "qid": "Q3506024"
+  },
+  "6bb7017b-3844-4760-9cbf-3893bed17272": {
+   "qid": "Q3150539"
+  },
+  "6bba0cc9-74c4-4a83-8171-a225726e9644": {
+   "qid": "Q2583955"
+  },
+  "6c3f5aaf-bd58-49ff-8160-26af9d777f54": {
+   "qid": "Q76915"
+  },
+  "6cb79cb2-9087-44d4-828b-5c6fdff2c957": {
+   "qid": "Q331731"
+  },
+  "6cdb1ac1-8d9d-4ba5-850c-b4cc0cc36daf": {
+   "qid": "Q2658653"
+  },
+  "6d608819-131d-4f40-912e-59f060853d30": {
+   "qid": "Q450156"
+  },
+  "6e855ecb-5e1c-4ca4-9bdd-1b365326c3fe": {
+   "qid": "Q12881"
+  },
+  "6ec4ecc5-0271-4291-a305-c589dc8f8645": {
+   "qid": "Q159117"
+  },
+  "6ed4df75-c42d-4890-906d-d34f0a1db984": {
+   "qid": "Q27886955"
+  },
+  "6ee2b4d1-febd-44c4-89d2-aeb38e9c8d59": {
+   "qid": "Q313917"
+  },
+  "6ef70816-5cd3-4515-a0c5-91a3357305fe": {
+   "qid": "Q1175616"
+  },
+  "6f167c78-a30e-4fd9-8348-a5fbb425f8e1": {
+   "qid": "Q434862"
+  },
+  "6f1a58bf-9b1b-49cf-a44a-6cefad7ae04f": {
+   "qid": "Q21914464"
+  },
+  "6f6fd596-76e0-4b82-aa37-f558ac2d337b": {
+   "qid": "Q489643"
+  },
+  "6fc35d50-6492-427e-b3ff-5ae85d87a0d4": {
+   "qid": "Q3197039"
+  },
+  "7035d143-70ef-4ab1-b428-03c47bff4a01": {
+   "qid": "Q5233791"
+  },
+  "708f66ff-1972-444f-9e98-4e9814fbc0c9": {
+   "qid": "Q454753"
+  },
+  "70b1a5a2-46f2-4c36-90d2-53c92871394d": {
+   "qid": "Q136352181"
+  },
+  "70ea63ea-70dc-4b63-951a-2c249d2b3b0a": {
+   "qid": "Q128799"
+  },
+  "711782ec-24db-410c-9a5c-7038f7999924": {
+   "qid": "Q1469360"
+  },
+  "717d1c41-76a2-4203-9f36-f5d2dc873cc6": {
+   "qid": "Q1275145"
+  },
+  "71b79646-5a0c-465b-b4da-e26af5120165": {
+   "qid": "Q313371"
+  },
+  "71c9f6ae-6836-4e3c-8121-3c0fbb22befd": {
+   "qid": "Q3108660"
+  },
+  "7210240b-d15d-48fb-b41d-4af70c0d43dc": {
+   "qid": "Q433159"
+  },
+  "73b91864-dee4-4df7-b2c3-edc7ff866454": {
+   "qid": "Q124148"
+  },
+  "747e5054-f50b-498c-bff3-85f7313aeb80": {
+   "qid": "Q1345565"
+  },
+  "74ce8ef4-7ad6-41ec-92a6-d6c50ecd1637": {
+   "qid": "Q4493066"
+  },
+  "74df4e2f-fe75-4b4a-87c5-3f1b4bc95aa2": {
+   "qid": "Q363074"
+  },
+  "7507ecd7-db04-4df9-9ee6-17fc0912dc5a": {
+   "qid": "Q4476228"
+  },
+  "75167b8b-44e4-407b-9d35-effe87b223cf": {
+   "qid": "Q633"
+  },
+  "751adfe4-6e40-4ab4-866c-ed14f5087d76": {
+   "qid": "Q47470320"
+  },
+  "751e5901-a74a-416f-b56c-07942e972cca": {
+   "qid": "Q1554339"
+  },
+  "7570a0dd-5a67-401b-b19a-261eee01a284": {
+   "qid": "Q207898"
+  },
+  "76576ebc-ccc8-48ec-91d9-b052b740c5cd": {
+   "qid": "Q1719234"
+  },
+  "7699f64f-9a90-4291-902e-afeeed3e138f": {
+   "qid": "Q432411"
+  },
+  "76f1d623-9eb5-4914-bd7f-d292aab9d9c8": {
+   "qid": "Q3743209"
+  },
+  "770928cc-50db-4ed9-9d51-688e2f55c7bc": {
+   "qid": "Q2916422"
+  },
+  "77787147-bdda-40f4-bcdd-5e327318c145": {
+   "qid": "Q28113670"
+  },
+  "77ba5bd8-5f53-4de6-925c-341f58211033": {
+   "qid": "Q1318316"
+  },
+  "785c0e9c-89f6-4bf4-8296-443a46632d62": {
+   "qid": "Q642477"
+  },
+  "78646249-1df4-4677-90b9-ebc7ba2a5c2a": {
+   "qid": "Q12213045"
+  },
+  "78fb5470-e2e6-4c56-9d0d-692152c351d4": {
+   "qid": "Q241014"
+  },
+  "7904b189-33e1-4c7d-acb4-5b40c03b9538": {
+   "qid": "Q115717"
+  },
+  "79494a58-eb27-49d1-8969-f1eac5433b5d": {
+   "qid": "Q256025"
+  },
+  "795071f0-f110-41c8-aaee-f5ea7f460a4d": {
+   "qid": "Q1509818"
+  },
+  "79a0aee1-a05c-42e3-a3bd-43cc7046248b": {
+   "qid": "Q369787"
+  },
+  "79de65f4-4f6e-4118-9f1d-87787d15d247": {
+   "qid": "Q439812"
+  },
+  "7a23102a-2bf0-4f24-9897-129b2cdf32f5": {
+   "qid": "Q4134665"
+  },
+  "7aa5ea5a-9017-4a56-92db-ea253c213a7f": {
+   "qid": "Q69773"
+  },
+  "7ab4d1b8-ae96-49e2-89b5-b017249e087c": {
+   "qid": "Q5106578"
+  },
+  "7ad58c84-d9d2-4ab2-8d23-333a70348210": {
+   "qid": "Q104806230"
+  },
+  "7aef9197-6547-4dae-872c-b28f9a1590af": {
+   "qid": "Q2911436"
+  },
+  "7b004920-b04e-4ff2-b2e5-55d8f1cc0522": {
+   "qid": "Q465977"
+  },
+  "7b1a3022-6f4d-4c6b-acb3-bfa8919222b9": {
+   "qid": "Q467027"
+  },
+  "7b72659f-6ecd-416d-8cca-2e8775878b25": {
+   "qid": "Q1303307"
+  },
+  "7b8930ed-54f4-4bcc-a0c0-e547a0f946fe": {
+   "qid": "Q1557923"
+  },
+  "7bcfc64a-ce4a-4065-947c-d037bca1e230": {
+   "qid": "Q123164"
+  },
+  "7c089ba3-b3dc-4216-bd99-a428a6e9f1c5": {
+   "qid": "Q12961588"
+  },
+  "7c09d8af-895a-4337-bb46-b4b6dcabff10": {
+   "qid": "Q199418"
+  },
+  "7c445f60-d56f-48f5-9d9f-a052d46a1d17": {
+   "qid": "Q1360354"
+  },
+  "7cc89d05-3db5-4d08-bea0-9c328aa56c39": {
+   "qid": "Q183182"
+  },
+  "7d98417c-60b0-4567-b807-a250c25261ef": {
+   "qid": "Q318355"
+  },
+  "7dd2a29e-5415-4180-9af9-231b1d5716ad": {
+   "qid": "Q370441"
+  },
+  "7de2f9f7-32d1-439b-917d-35f7efb73f6b": {
+   "qid": "Q85171"
+  },
+  "7e2f420a-03d7-4265-99b2-9a7c037c75f9": {
+   "qid": "Q864364"
+  },
+  "7e4b7257-d5d7-457c-968d-3c40851b03cf": {
+   "qid": "Q6553623"
+  },
+  "7e9ad754-55ac-4e82-a671-2bc77db90b23": {
+   "qid": "Q4864416"
+  },
+  "7ea8a45c-193e-4ba3-bbfa-bab3db926a2a": {
+   "qid": "Q9022533"
+  },
+  "7eb57432-59b5-4976-a2f2-0695601966da": {
+   "qid": "Q3539876"
+  },
+  "7efc2ba5-9597-47a5-946d-867844143542": {
+   "qid": "Q11172"
+  },
+  "7f233cda-eacb-4235-b681-5f7be343a1a2": {
+   "qid": "Q27655344"
+  },
+  "7f347782-eb14-40c3-98e2-17b6e1bfe56c": {
+   "qid": "Q834621"
+  },
+  "7f378f19-4686-41aa-b83e-3df359ae1578": {
+   "qid": "Q129591"
+  },
+  "7f59885a-d458-4f6e-bbd4-8d98705a0360": {
+   "qid": "Q3509359"
+  },
+  "7f8e85df-12d8-438f-98dd-7194c004d123": {
+   "qid": "Q25873"
+  },
+  "7fa60724-bc8a-44c7-9a5d-363430283095": {
+   "qid": "Q353085"
+  },
+  "7fb4a3df-377c-41c0-91ee-f286ecca1e0f": {
+   "qid": "Q328437"
+  },
+  "7fdcca4c-b2ea-4fa5-b0b6-59a5a14c1a0d": {
+   "qid": "Q119576599"
+  },
+  "7fe5b36a-9ef7-476f-8a5e-ca78fcea4d8e": {
+   "qid": "Q1382014"
+  },
+  "7ffdf6af-0b1a-4ace-a067-970f0a611d93": {
+   "qid": "Q298838"
+  },
+  "804bdf2a-7653-4d7a-96d5-7579c908f6d5": {
+   "qid": "Q1381620"
+  },
+  "80c3bce9-0b54-409c-aa10-3b0c7dbbc597": {
+   "qid": "Q157814"
+  },
+  "80d07b5b-35b1-4d58-a72e-49ac98cba13f": {
+   "qid": "Q436759"
+  },
+  "80f8f8c5-175f-4f51-b0bf-0c896614cf68": {
+   "qid": "Q4120377"
+  },
+  "80f972b2-491d-4548-97de-4354756c4934": {
+   "qid": "Q12213110"
+  },
+  "80fe34d0-6b4f-4ccd-81c3-281ab37f0451": {
+   "qid": "Q231276"
+  },
+  "8178a020-3825-418d-9c94-e9a103acb686": {
+   "qid": "Q723499"
+  },
+  "819eaeb2-8dd8-48a5-ad07-0bcd137985ef": {
+   "qid": "Q7298"
+  },
+  "8238ac21-e5eb-4127-b018-2e752c964bad": {
+   "qid": "Q7399337"
+  },
+  "824e5bfa-ccb5-4aaa-8dde-90724e5bfe6e": {
+   "qid": "Q107124843"
+  },
+  "82b37d51-51fa-4688-aee7-219e1a5556d3": {
+   "qid": "Q2679771"
+  },
+  "82be29c4-5d62-4d22-b348-b4dd33ad6959": {
+   "qid": "Q102184040"
+  },
+  "8327d28f-0019-46c7-835c-f45e33b8b65c": {
+   "qid": "Q4298170"
+  },
+  "8329398b-92b1-419c-b2ed-cfa4cf0e131a": {
+   "qid": "Q1980893"
+  },
+  "833afb1c-b24e-4820-9adc-cc893d311d00": {
+   "qid": "Q836054"
+  },
+  "8360056a-96e2-4c7f-b81a-2d20d83e519a": {
+   "qid": "Q571645"
+  },
+  "837cdbca-b803-4ecf-adf2-c56020f78785": {
+   "qid": "Q470945"
+  },
+  "83970769-d8ea-434b-8734-88899213c922": {
+   "qid": "Q151976"
+  },
+  "83aea1d5-ddd4-4f51-b572-930081ab90fb": {
+   "qid": "Q3341978"
+  },
+  "83c850eb-9f0d-49eb-b9fc-84674df83d7a": {
+   "qid": "Q158899"
+  },
+  "8408d6b8-f124-46f4-9cb5-c37e03a6e08a": {
+   "qid": "Q270374"
+  },
+  "841236a2-176d-4032-a371-b2539f18ddca": {
+   "qid": "Q465311"
+  },
+  "842e1b63-9a2f-4964-801c-8bb9326585f9": {
+   "qid": "Q2708494"
+  },
+  "847e8a0c-cc20-4213-9e16-975515c2a926": {
+   "qid": "Q5105"
+  },
+  "8554cf23-a0d1-4458-9c72-be2417d44b94": {
+   "qid": "Q1379356"
+  },
+  "85d783d6-6795-4726-b817-9d83095ad7be": {
+   "qid": "Q194436"
+  },
+  "8634968a-1b1e-4d63-ad2d-d41ba6f44d3b": {
+   "qid": "Q873976"
+  },
+  "864d7069-57dc-45f6-b408-875b35106dd3": {
+   "qid": "Q725969"
+  },
+  "87195fff-2f31-4503-b7c3-76b39c60d89b": {
+   "qid": "Q353461"
+  },
+  "873a5f8b-f9f4-4458-84b3-476aab0ac922": {
+   "qid": "Q2075573"
+  },
+  "8766468c-9a0f-41e2-8466-601d94d5098e": {
+   "qid": "Q239357"
+  },
+  "87a75fc3-59e7-4598-925c-8e230bce5db9": {
+   "qid": "Q26690130"
+  },
+  "87c4d0fb-3ce8-4a3f-b65a-c0e7fd3afd89": {
+   "qid": "Q1222518"
+  },
+  "87ff5ccd-64cd-45d6-bba3-ba2647e85d74": {
+   "qid": "Q16730833"
+  },
+  "883ece23-2779-4091-b527-62eb07ee79d4": {
+   "qid": "Q193273"
+  },
+  "885f90ef-6bd9-409a-b2df-e165e553c68e": {
+   "qid": "Q314397"
+  },
+  "8894ff02-c790-42c1-884c-661537293093": {
+   "qid": "Q266429"
+  },
+  "88b8d585-02c6-4ac7-b1ee-f160f83afa78": {
+   "qid": "Q346204"
+  },
+  "88ec8580-cbdf-4a06-9cf1-2f501391b279": {
+   "qid": "Q671446"
+  },
+  "892694d8-2560-458b-84e0-581039965409": {
+   "qid": "Q1568729"
+  },
+  "89380b6c-0961-44ad-a7fe-f9115d840aac": {
+   "qid": "Q1175803"
+  },
+  "89a26511-c37c-44c7-81bd-b9892299a40c": {
+   "qid": "Q93444"
+  },
+  "8a30f739-ea2c-47cb-8436-b4edd983478e": {
+   "qid": "Q1396576"
+  },
+  "8a701db6-1180-4bfb-bd69-417614406212": {
+   "qid": "Q766930"
+  },
+  "8aee107e-f22b-40cf-95cb-67fce8fa5fbd": {
+   "qid": "Q121655"
+  },
+  "8b0f05ce-354e-4121-9e0b-8b4732ea844f": {
+   "qid": "Q43189"
+  },
+  "8b5ef312-4e5d-4ef3-9a66-c97f01d4fefd": {
+   "qid": "Q708911"
+  },
+  "8c806f4e-850e-4bdc-bc80-82d86dd3227d": {
+   "qid": "Q365574"
+  },
+  "8cc00e45-94c9-40e0-882b-0e76dd5b472b": {
+   "qid": "Q2409501"
+  },
+  "8cd06796-ca15-4918-873a-459d833617f4": {
+   "qid": "Q4105808"
+  },
+  "8cd68aac-fa87-4cde-8828-12ee7fdee9c8": {
+   "qid": "Q2287729"
+  },
+  "8ce4615c-2788-4d3b-9466-524e1cb5738f": {
+   "qid": "Q1145788"
+  },
+  "8d08cabf-03a3-4f38-a815-8197a0984f19": {
+   "qid": "Q230401"
+  },
+  "8d08d03f-2ef9-41ec-b721-6adbd6945c9e": {
+   "qid": "Q7934832"
+  },
+  "8d610e51-64b4-4654-b8df-064b0fb7a9d9": {
+   "qid": "Q7304"
+  },
+  "8e030cfc-2f0c-4d45-8687-d5b347a33732": {
+   "qid": "Q379684"
+  },
+  "8e98df63-b8e4-4a0d-95c7-ca93d442afa9": {
+   "qid": "Q523350"
+  },
+  "8eac9119-9acc-4271-bc17-800875f18fc9": {
+   "qid": "Q19668675"
+  },
+  "8f036ea7-abeb-4429-aed6-d25adf607acf": {
+   "qid": "Q2558825"
+  },
+  "8fa5d80d-37e8-4133-9d5c-6bad446c63f0": {
+   "qid": "Q192260"
+  },
+  "9047fd95-770f-4a8a-a6e3-3b071a882e4d": {
+   "qid": "Q1344002"
+  },
+  "904d15da-bd29-40d2-b69e-24612f18803e": {
+   "qid": "Q966080"
+  },
+  "9072df14-b61e-42e2-b4f4-6bbb7fdb5586": {
+   "qid": "Q131814"
+  },
+  "90ba431f-99ca-4ff7-b3f4-76e1db35e106": {
+   "qid": "Q10861553"
+  },
+  "9119e57f-1086-48b2-8a93-57feacb7f6d9": {
+   "qid": "Q546592"
+  },
+  "9153b056-330e-4368-ae78-a30df88417f8": {
+   "qid": "Q461111"
+  },
+  "91bdeb38-a3f8-4239-8443-135ccb7144c8": {
+   "qid": "Q71840832"
+  },
+  "91cf23d6-db53-4101-ab86-9447334e3a98": {
+   "qid": "Q4138280"
+  },
+  "91e2087e-c3e9-4d39-87fa-5b1a91818a6c": {
+   "qid": "Q12223145"
+  },
+  "91f603ca-b126-42a2-9c29-820ca687347c": {
+   "qid": "Q552384"
+  },
+  "92131d53-a4a7-4513-a879-c067643f0747": {
+   "qid": "Q503355"
+  },
+  "92209920-382b-4d38-a83e-87907ba0063b": {
+   "qid": "Q21127480"
+  },
+  "92677e54-c738-4e33-8c08-e51ba490285b": {
+   "qid": "Q20873497"
+  },
+  "92854228-237c-408a-bfef-e4ae089c4064": {
+   "qid": "Q1716597"
+  },
+  "9292adda-2e2f-4d65-bf95-3339654aa521": {
+   "qid": "Q5090877"
+  },
+  "92b5c34a-ba8c-42fd-ac57-1f209356f47a": {
+   "qid": "Q121770675"
+  },
+  "92ed8183-8f22-42b2-af4e-d44137610fa0": {
+   "qid": "Q211094"
+  },
+  "92fa1fd1-5270-4774-9d52-0e2b88d7eb42": {
+   "qid": "Q3124237"
+  },
+  "94034b69-b892-4536-aa4b-4ff42dd7c3e9": {
+   "qid": "Q60585396"
+  },
+  "942ac880-095f-4428-8380-0f8062158553": {
+   "qid": "Q251187"
+  },
+  "9448f4b0-b798-4f0b-a8a2-60bf9c247b59": {
+   "qid": "Q3446458"
+  },
+  "9498f42c-3f6e-4517-9c3d-5e6a1985988c": {
+   "qid": "Q12246707"
+  },
+  "94bf8ccf-61ea-4aa7-a273-b22184aa718a": {
+   "qid": "Q2353139"
+  },
+  "9512b75b-0715-40c8-bee0-e8d142058a82": {
+   "qid": "Q631344"
+  },
+  "95309762-51f2-4e36-9c49-2709e7cf250e": {
+   "qid": "Q767237"
+  },
+  "9664f46d-eea5-41e0-b0be-06666aa151cc": {
+   "qid": "Q54913732"
+  },
+  "96938fe0-ae23-4a71-b3dd-fb54b1971eee": {
+   "qid": "Q704160"
+  },
+  "9777e544-cca0-45d7-b12a-eac58d8f38d7": {
+   "qid": "Q528748"
+  },
+  "979022b2-c3c5-4eb5-9d8a-4e52a00b7272": {
+   "qid": "Q3337382"
+  },
+  "979a1796-24de-4ef1-b3f8-43693cccd9d1": {
+   "qid": "Q10303150"
+  },
+  "97a0d9e1-556d-4b6f-96b9-c85ea52df4be": {
+   "qid": "Q5297793"
+  },
+  "98335327-e62c-4a4b-a8d0-bbc5473f4fa1": {
+   "qid": "Q20051319"
+  },
+  "98589612-a3c7-4b53-bc7e-b685b696dec3": {
+   "qid": "Q12247820"
+  },
+  "989544ee-40ae-4b82-b655-3ccb283cc771": {
+   "qid": "Q442479"
+  },
+  "98b40321-a346-4a73-ba89-7ce868743371": {
+   "qid": "Q123728"
+  },
+  "98cba638-9e48-4b12-b054-4465682f41fe": {
+   "qid": "Q452654"
+  },
+  "98fd0571-0ddb-4ee8-9e1b-19a9a7294554": {
+   "qid": "Q16866345"
+  },
+  "9937c3e3-430d-4b1f-8a4a-5879ff618dce": {
+   "qid": "Q284731"
+  },
+  "9960b51b-f542-419a-b77f-418432a71f96": {
+   "qid": "Q1825882"
+  },
+  "9974cbc1-6a00-4a97-8a36-e4a25bfe0293": {
+   "qid": "Q261027"
+  },
+  "998a4911-a71b-4c3d-b27c-d67aec5bcc0b": {
+   "qid": "Q1543003"
+  },
+  "9a74c259-7ab8-42a8-b4e2-fedbd3e868e5": {
+   "qid": "Q78006"
+  },
+  "9a976838-8e77-4065-bdbb-748d17ad773b": {
+   "qid": "Q106775"
+  },
+  "9a9f7126-8c15-4911-8acf-a0ac36719c45": {
+   "qid": "Q20638908"
+  },
+  "9ae2e869-7b2c-4451-b952-69e552f8dd0f": {
+   "qid": "Q3085412"
+  },
+  "9b0f6048-5f17-4c2e-9530-71d521979f65": {
+   "qid": "Q236943"
+  },
+  "9b3cbab0-d530-4d41-b6f3-819583855364": {
+   "qid": "Q1971489"
+  },
+  "9b490b96-ad82-4d7b-9055-f0a196ad64cc": {
+   "qid": "Q154770"
+  },
+  "9b58672a-e68e-4972-956e-a8985a165a1f": {
+   "qid": "Q207773"
+  },
+  "9bd20e6a-b41d-4983-a5b6-c0ff849fa235": {
+   "qid": "Q56158"
+  },
+  "9bfa4127-939a-401d-be50-c215f2ed0d0f": {
+   "qid": "Q24270968"
+  },
+  "9c258098-28e4-4dfb-92b7-44ce7d37c167": {
+   "qid": "Q318465"
+  },
+  "9c99afe4-aa35-40a9-9281-b36388d417fe": {
+   "qid": "Q2343243"
+  },
+  "9cd5d37b-b32f-458c-b0a4-b491d2c20789": {
+   "qid": "Q3015829"
+  },
+  "9da378d4-2a00-46c7-8050-26d51dd522ac": {
+   "qid": "Q20979380"
+  },
+  "9ddd7abc-9e1b-471d-8031-583bc6bc8be9": {
+   "qid": "Q7315"
+  },
+  "9dee40b2-25ad-404c-9c9a-139feffd4b57": {
+   "qid": "Q128297"
+  },
+  "9e06f50c-aaed-48d2-8fa6-72935359ec4a": {
+   "qid": "Q471537"
+  },
+  "9e222e9e-64af-41f9-bb6a-263a808959c0": {
+   "qid": "Q2183186"
+  },
+  "9e585bf7-feb0-4960-9b6a-eefe3ae6a61e": {
+   "qid": "Q234918"
+  },
+  "9ec1d912-010d-4158-805e-b814feff7857": {
+   "qid": "Q56488037"
+  },
+  "9edc05f7-33cb-4909-a56c-4d6d2c60df34": {
+   "qid": "Q1089127"
+  },
+  "9f23b139-e3b7-49c4-b17c-460c5d50ae52": {
+   "qid": "Q466120"
+  },
+  "9f6b69f9-6d6c-4508-8099-5cf39b442168": {
+   "qid": "Q16594393"
+  },
+  "9f726c9d-ce99-4398-9531-e168cb835f8c": {
+   "qid": "Q12410819"
+  },
+  "9f8bd506-cb45-4da8-9eb4-451961e79bc7": {
+   "qid": "Q116054"
+  },
+  "9fa54043-7a2c-4492-9f06-9508eeb17b3b": {
+   "qid": "Q7105685"
+  },
+  "9fab30ab-c2f5-45a2-bc9c-f06a69443975": {
+   "qid": "Q1361982"
+  },
+  "9ffeffed-7fe2-4175-aacb-4597c7fe13a9": {
+   "qid": "Q16599914"
+  },
+  "a04a3ecc-0b46-4aa2-9c33-06aaeb3d07c0": {
+   "qid": "Q12227134"
+  },
+  "a0877b03-1c20-48f8-8a37-eb19e437a368": {
+   "qid": "Q1361994"
+  },
+  "a08918ab-bfe3-4468-b6d8-429b36e79a53": {
+   "qid": "Q240430"
+  },
+  "a0920ae6-2968-4f92-ac14-67448452bd18": {
+   "qid": "Q117249"
+  },
+  "a0bde59a-3ef4-4f81-8b2e-49e15f18f162": {
+   "qid": "Q516845"
+  },
+  "a11feb37-7516-4303-a301-e03d238f6ec2": {
+   "qid": "Q296828"
+  },
+  "a14c1fdb-3246-408d-9a51-ae939e4774b2": {
+   "qid": "Q4517266"
+  },
+  "a1c29c2f-778f-4b02-9ac7-80f0c37cdea9": {
+   "qid": "Q726295"
+  },
+  "a277bf70-9b60-4a64-9ae0-e0b9b771a2f7": {
+   "qid": "Q13034459"
+  },
+  "a2e33d5d-e38a-4eac-9daa-2bbe54e0b462": {
+   "qid": "Q3237077"
+  },
+  "a35237a0-4f47-40a6-b6f3-1e786db23402": {
+   "qid": "Q182655"
+  },
+  "a362fb56-5261-449d-bebf-bfe974fcd936": {
+   "qid": "Q1042748"
+  },
+  "a3c46d8c-557d-438b-9794-71526c2ac563": {
+   "qid": "Q11177980"
+  },
+  "a406a684-7c88-442b-836d-3b9b67bbc91d": {
+   "qid": "Q16297"
+  },
+  "a4487c4f-e0be-489d-8c8d-7116e3adc8a5": {
+   "qid": "Q55553684"
+  },
+  "a4715848-6a74-404f-ab1d-f4515e72e855": {
+   "qid": "Q4768929"
+  },
+  "a4f94049-7b13-4308-9a19-c50348df5825": {
+   "qid": "Q706765"
+  },
+  "a52c2c88-0c51-46d5-b40d-76c8cd769a0c": {
+   "qid": "Q78632"
+  },
+  "a5386648-7b2c-4e0a-8094-ac5d16b91e54": {
+   "qid": "Q2123936"
+  },
+  "a550abe0-3d1c-449e-909c-9eaa6e60bb5c": {
+   "qid": "Q322790"
+  },
+  "a56dfbb1-a51d-46c3-a0bd-c60dcad1f27c": {
+   "qid": "Q1975172"
+  },
+  "a56f5af0-3e87-4877-b68f-390f62903381": {
+   "qid": "Q231156"
+  },
+  "a59a8349-137c-4c11-9a6c-078a195e6878": {
+   "qid": "Q9218979"
+  },
+  "a65d57ec-36a7-49ad-b99d-79f01cd45478": {
+   "qid": "Q272184"
+  },
+  "a68eae98-e3b3-422f-9c51-932fd1032c0d": {
+   "qid": "Q536185"
+  },
+  "a697ac23-9d82-45db-9c19-d72babbccfc9": {
+   "qid": "Q19880047"
+  },
+  "a69a0536-5df7-4815-905c-5457e889e9b2": {
+   "qid": "Q1210514"
+  },
+  "a6a83501-6241-4851-bd37-720f8feafb59": {
+   "qid": "Q434291"
+  },
+  "a6d6e77f-e284-45b8-b54f-e6e881339d9a": {
+   "qid": "Q713467"
+  },
+  "a6de8ef9-b1a1-4756-97aa-481bbb8a4069": {
+   "qid": "Q205721"
+  },
+  "a7ef6698-3056-4e80-880d-0f9d106cc8e2": {
+   "qid": "Q186264"
+  },
+  "a7f7df4a-77d8-4f12-8acd-5c60c93f4de8": {
+   "qid": "Q345494"
+  },
+  "a8671cde-7059-47b0-a6cc-241f3b62dbd0": {
+   "qid": "Q135179669"
+  },
+  "a874e630-134c-4450-97c4-54e596404290": {
+   "qid": "Q65843"
+  },
+  "a907965d-7882-4cac-a808-97e096a371ee": {
+   "qid": "Q387481"
+  },
+  "a9196ce3-d4fe-4626-8c04-3d8972c1a592": {
+   "qid": "Q243113"
+  },
+  "a9707856-2b6c-4e4b-bb54-ef51d08a3c50": {
+   "qid": "Q1355089"
+  },
+  "a9eb4540-9e96-4bc1-94ab-e0a009abe071": {
+   "qid": "Q16302030"
+  },
+  "aaa354df-14b2-4ae7-8f93-5752aad1af37": {
+   "qid": "Q4539896"
+  },
+  "aaaaab61-aa05-47e9-a607-5da742148efb": {
+   "qid": "Q5297751"
+  },
+  "aaab031c-a45a-4ab0-8be1-282984cb466c": {
+   "qid": "Q3380013"
+  },
+  "aac2a3d9-7407-483a-9e13-8f56b1d31a55": {
+   "qid": "Q1798353"
+  },
+  "aade955c-56a5-41a4-be08-969dab35045f": {
+   "qid": "Q110254884"
+  },
+  "aae12a3d-8f00-410a-a87b-f19f8d7fd24e": {
+   "qid": "Q504011"
+  },
+  "aaea1cb9-b34c-4270-9d51-7588b79d3019": {
+   "qid": "Q3723470"
+  },
+  "ab5835be-c642-4f0c-a8e8-8770382ab7e3": {
+   "qid": "Q888576"
+  },
+  "ab6d3162-ef92-48b8-8440-1fedfd6cd323": {
+   "qid": "Q217613"
+  },
+  "ab966c0f-e526-46ae-b492-82c27b87f81f": {
+   "qid": "Q2836528"
+  },
+  "abe3bf5f-d11a-4891-871b-995641ad46f7": {
+   "qid": "Q7608247"
+  },
+  "ac0d99e4-a534-48fb-a3ff-225dba39f350": {
+   "qid": "Q28777217"
+  },
+  "ac4211e4-db84-4785-8fc2-d670e57b72e2": {
+   "qid": "Q4074760"
+  },
+  "ac711099-4048-4fa9-8783-d5cae7e8fe54": {
+   "qid": "Q3751706"
+  },
+  "ac82b7db-5910-41c2-9d10-f02df4f4e1e1": {
+   "qid": "Q77006"
+  },
+  "aca24359-8388-4e63-ba77-9199f444cd35": {
+   "qid": "Q113533846"
+  },
+  "ad3f14d8-a34c-4fcd-aeb0-f304465b3b30": {
+   "qid": "Q5502833"
+  },
+  "adca5319-8f80-4980-b0b5-ca7e1687355b": {
+   "qid": "Q116538560"
+  },
+  "adf017f5-76d6-4d31-b1b9-a0211675e7c2": {
+   "qid": "Q247293"
+  },
+  "ae04395d-b4f9-414c-8598-8b00df156b31": {
+   "qid": "Q48866680"
+  },
+  "ae0b2424-d4c5-4c54-82ac-fe3be5453270": {
+   "qid": "Q189534"
+  },
+  "ae0d2a97-4c75-4807-9c7f-5dcf01849f93": {
+   "qid": "Q99150"
+  },
+  "ae33ce8d-f41a-4f6b-b9c6-7859acbd04ef": {
+   "qid": "Q171235"
+  },
+  "ae9ed5e2-4caf-4b3d-9cb3-2ad626b91714": {
+   "qid": "Q276745"
+  },
+  "afa02917-17ce-439d-8e8d-09980d82d7cf": {
+   "qid": "Q314319"
+  },
+  "afc59bef-d405-41ff-9161-774cb41b46a2": {
+   "qid": "Q5804605"
+  },
+  "afd456eb-12fe-40e8-a6c8-2b4954d908f8": {
+   "qid": "Q453949"
+  },
+  "aff352dd-b20e-4349-a01b-cc01d53e077b": {
+   "qid": "Q489556"
+  },
+  "b01659df-2aac-417c-ade3-c15fb579b001": {
+   "qid": "Q274149"
+  },
+  "b02e4ca5-312a-4d2e-b087-30db9d5ec579": {
+   "qid": "Q296872"
+  },
+  "b074c480-ecb1-4418-a193-0f609c753ff9": {
+   "qid": "Q34038887"
+  },
+  "b0884dd2-1544-45a3-80e7-82427b9e89ba": {
+   "qid": "Q4165122"
+  },
+  "b1843b14-9ef2-430f-866e-b4bc9ac72bd0": {
+   "qid": "Q4182038"
+  },
+  "b1c124b3-cf60-41a6-8699-92728c8a3fe0": {
+   "qid": "Q450429"
+  },
+  "b215b03a-8e0b-48ca-b832-bbbd0db504f0": {
+   "qid": "Q107424"
+  },
+  "b254df07-01e9-45d0-ae9b-0cd717d2163d": {
+   "qid": "Q376588"
+  },
+  "b2aa6322-3617-4a0f-a2f0-778be6f78e95": {
+   "qid": "Q8965024"
+  },
+  "b2cc1d81-8f46-41ca-bd1d-e9e8cb02f411": {
+   "qid": "Q1383645"
+  },
+  "b2d66616-7613-45b5-b595-5e5007e60c88": {
+   "qid": "Q61472658"
+  },
+  "b2fbd053-4380-412c-95d2-35c6da8f1011": {
+   "qid": "Q3303251"
+  },
+  "b38a00f2-3746-4e9e-93de-8257ca5b1680": {
+   "qid": "Q2062208"
+  },
+  "b3bb492f-15da-40ff-be6b-48267293233e": {
+   "qid": "Q52255017"
+  },
+  "b3dbe3c4-b922-4317-a6d7-7f692a60ec4e": {
+   "qid": "Q2910906"
+  },
+  "b447afda-56c9-4bb3-b37b-304b78a70f3d": {
+   "qid": "Q983297"
+  },
+  "b448240c-4be0-4e4b-8e5e-923d672cf909": {
+   "qid": "Q494964"
+  },
+  "b4a479aa-4384-4acf-88b0-dee9188faeb5": {
+   "qid": "Q312609"
+  },
+  "b4c3792e-a8c2-4908-8fe9-03499061f42d": {
+   "qid": "Q314288"
+  },
+  "b4d55aa8-7257-429f-8cc9-11606f91eb26": {
+   "qid": "Q287828"
+  },
+  "b539e453-c4fe-47e3-8a07-8517eac74429": {
+   "qid": "Q234598"
+  },
+  "b55854ad-d778-49ce-af7f-74625c8ef308": {
+   "qid": "Q41272"
+  },
+  "b560a560-c2ad-4e6c-99ad-45dd0de43a76": {
+   "qid": "Q4481562"
+  },
+  "b5e4a02e-9355-4d73-b024-99a68186af98": {
+   "qid": "Q18018695"
+  },
+  "b6458172-8cd1-47c3-a8d3-2011dd96b4cf": {
+   "qid": "Q37030"
+  },
+  "b6a8f165-b329-433e-8904-06aec124266f": {
+   "qid": "Q719447"
+  },
+  "b6be348d-a772-473d-87a9-59bbeba59b6e": {
+   "qid": "Q260610"
+  },
+  "b7179522-d90d-4b02-8082-af4e3589f337": {
+   "qid": "Q62871650"
+  },
+  "b725da05-6d6e-4a28-b2c4-c639c24fc1cd": {
+   "qid": "Q24008612"
+  },
+  "b750d27e-6c28-4470-986c-17aa4aa91c36": {
+   "qid": "Q440081"
+  },
+  "b7975e35-f1f3-4285-b20c-87deda17e5ad": {
+   "qid": "Q1390722"
+  },
+  "b83bc61f-8451-4a5d-8b8e-7e9ed295e822": {
+   "qid": "Q2808"
+  },
+  "b8634d0b-e1f8-4671-9ed9-21e9a03973ed": {
+   "qid": "Q1334042"
+  },
+  "b8df5180-ff51-4a36-abcb-80d2ed027b99": {
+   "qid": "Q4053738"
+  },
+  "b8e210c9-2795-46a2-a39f-70d36f4bf9e0": {
+   "qid": "Q16729954"
+  },
+  "b8ecf204-6be8-4041-ab11-6d9971ea2711": {
+   "qid": "Q101698"
+  },
+  "b9348d59-b91b-423f-847b-8db155a0653b": {
+   "qid": "Q11637"
+  },
+  "b972f589-fb0e-474e-b64a-803b0364fa75": {
+   "qid": "Q254"
+  },
+  "b9c00256-d27a-4f3b-bb0e-c5132483f4ec": {
+   "qid": "Q313974"
+  },
+  "ba9ce7a9-277a-4df4-88f8-3f1aa5ec6f52": {
+   "qid": "Q4104431"
+  },
+  "baa41044-b721-4797-9801-2cbba59358b6": {
+   "qid": "Q518839"
+  },
+  "bb1598ca-6b6c-4507-96c5-98a0eacf151a": {
+   "qid": "Q585972"
+  },
+  "bb25e37e-ceef-41cb-b33b-c29d768e192b": {
+   "qid": "Q116787323"
+  },
+  "bb695b29-9f7f-4f53-a620-2a942603afa9": {
+   "qid": "Q1635535"
+  },
+  "bba68465-fa17-42ec-85ae-57078b0bcc01": {
+   "qid": "Q1363942"
+  },
+  "bbcb3337-fa1d-4ca9-bda4-dc04c7865b9d": {
+   "qid": "Q2050320"
+  },
+  "bc12bcac-4a2e-4ce1-9b7b-11d4cc9afa25": {
+   "qid": "Q6434507"
+  },
+  "bc5efa94-a038-49bf-839b-4dabbe907b35": {
+   "qid": "Q712049"
+  },
+  "bc6af694-5880-4770-bdf1-82d03fea43f4": {
+   "qid": "Q126300982"
+  },
+  "bc807a53-e825-4452-960e-3c87e3bc95f7": {
+   "qid": "Q389851"
+  },
+  "bc82f076-2d4f-478d-809a-04c8c80fa47b": {
+   "qid": "Q572547"
+  },
+  "bc9dceeb-47cf-436d-b557-b2220820e175": {
+   "qid": "Q508891"
+  },
+  "bdb70d5d-ded0-4b06-a9d3-8b9e9d0f932d": {
+   "qid": "Q228611"
+  },
+  "bdcb3d13-56fa-4838-817b-8a4ae5afe208": {
+   "qid": "Q669942"
+  },
+  "bddb655c-4ab6-4dd3-8ddb-c96604ab7467": {
+   "qid": "Q97029562"
+  },
+  "be09216a-f1bd-4bd2-812d-616a5464e055": {
+   "qid": "Q922841"
+  },
+  "be179398-f253-4966-bc1c-5713703ebea2": {
+   "qid": "Q288768"
+  },
+  "be50643c-0377-4968-b48c-47e06b2e2a3b": {
+   "qid": "Q4700"
+  },
+  "bf20775b-54b5-4bcf-9d05-c1906988a474": {
+   "qid": "Q56311034"
+  },
+  "bf24ca37-25f4-4e34-9aec-460b94364cfc": {
+   "qid": "Q34424"
+  },
+  "bf27c046-38b4-4b0f-ad65-358ed588cddf": {
+   "qid": "Q154216"
+  },
+  "bfc4370b-c0d9-46c7-825b-bf09f9b65264": {
+   "qid": "Q561097"
+  },
+  "bfdbd620-2ab2-4a28-a36f-fd248d1ac2c5": {
+   "qid": "Q548817"
+  },
+  "c118d897-3e73-48e3-a307-b02ea1541e3f": {
+   "qid": "Q297717"
+  },
+  "c12e6a0e-2317-40d1-b092-cc70f50fd548": {
+   "qid": "Q960524"
+  },
+  "c168a027-da9a-48d1-9019-930628a0918e": {
+   "qid": "Q2754371"
+  },
+  "c197848a-506b-425f-af0c-649b55ecc913": {
+   "qid": "Q6397789"
+  },
+  "c241f43e-a2a3-4189-a35c-007c38f7edd3": {
+   "qid": "Q1622682"
+  },
+  "c2579104-1d3d-4ed6-a0ca-6a4a0886821a": {
+   "qid": "Q6559151"
+  },
+  "c27296f1-857c-4555-9e81-2c6f1cb1baf4": {
+   "qid": "Q7839350"
+  },
+  "c275a578-c6dc-4975-8e6a-77f455ec59f5": {
+   "qid": "Q515696"
+  },
+  "c278de2c-9696-4fdf-a919-0781cd945e2c": {
+   "qid": "Q7314"
+  },
+  "c2de59ca-07b1-431f-b946-e3e5421ede63": {
+   "qid": "Q1441262"
+  },
+  "c3395434-dfdd-4de8-a8c2-0a3b110ef3ef": {
+   "qid": "Q153469"
+  },
+  "c35427ce-89e2-4fbe-9a0d-cef16bbd528a": {
+   "qid": "Q65285140"
+  },
+  "c36e294b-729c-4a8e-a271-7ac80dc83c82": {
+   "qid": "Q2230281"
+  },
+  "c37baf13-2cb0-41a4-a76a-ad4d024146d9": {
+   "qid": "Q321630"
+  },
+  "c3a08f0c-df7e-47eb-9327-45c22959c99b": {
+   "qid": "Q108538348"
+  },
+  "c3c82bdc-d9e7-4836-9746-c24ead47ca19": {
+   "qid": "Q425821"
+  },
+  "c4449abc-11da-46c1-9b15-7a4e51d7648c": {
+   "qid": "Q16006921"
+  },
+  "c4ac4b97-2eac-46f6-85ae-f916c93847e4": {
+   "qid": "Q106462586"
+  },
+  "c4ad50d9-31ed-45b3-a8c7-bbf864be2cc3": {
+   "qid": "Q7938171"
+  },
+  "c54c854c-22b3-4554-bb97-bf2fed8f124b": {
+   "qid": "Q1650952"
+  },
+  "c57e3280-5182-42a5-812b-02659a079c44": {
+   "qid": "Q542126"
+  },
+  "c5c435e0-fb49-4faf-b3fd-1d52da792983": {
+   "qid": "Q1522677"
+  },
+  "c610d388-4f1c-49ed-898b-a493a4aa3aa0": {
+   "qid": "Q7347730"
+  },
+  "c642482a-daa7-434e-9177-417009a0e8ef": {
+   "qid": "Q42593429"
+  },
+  "c6cf542a-1637-4fad-9994-f1e978b824a5": {
+   "qid": "Q588354"
+  },
+  "c70d12a2-24fe-4f83-a6e6-57d84f8efb51": {
+   "qid": "Q7294"
+  },
+  "c7379dd2-0908-4ef0-9bd5-9910b16aaaad": {
+   "qid": "Q1512"
+  },
+  "c75d637d-bcca-4123-9ffa-fab3c01be71a": {
+   "qid": "Q215076"
+  },
+  "c7740223-c657-4b0a-a0a4-b8349169e760": {
+   "qid": "Q377104"
+  },
+  "c78a77fa-507c-4c07-947a-0355029453bd": {
+   "qid": "Q193982"
+  },
+  "c7bdd07e-a0fd-4608-95e8-c2af71d8ce0f": {
+   "qid": "Q206647"
+  },
+  "c7cf9662-8891-4cda-90ba-e871e45b9b7b": {
+   "qid": "Q78506"
+  },
+  "c7f95664-8328-4625-8678-8afc3ce45b89": {
+   "qid": "Q3563710"
+  },
+  "c8c021ad-6397-4990-b3b7-23d027c5931a": {
+   "qid": "Q319777"
+  },
+  "c8db85b3-59c2-4baf-b9cf-4f4e6964059e": {
+   "qid": "Q1351055"
+  },
+  "c8eadd70-ee3d-4e44-936d-88a2efcc124d": {
+   "qid": "Q5545287"
+  },
+  "c96fa0f7-271a-47f2-bd1c-cfdd28094793": {
+   "qid": "Q3015977"
+  },
+  "c9956945-54dc-450c-97ea-d024bfca2e34": {
+   "qid": "Q43252"
+  },
+  "c9bda94f-d379-4405-a20e-7de6a3ee9b77": {
+   "qid": "Q599896"
+  },
+  "ca06cc43-220c-4c82-8e37-18f1966d6420": {
+   "qid": "Q1968083"
+  },
+  "ca23d6ea-6e57-4636-b285-4dd35fc354d3": {
+   "qid": "Q503672"
+  },
+  "ca38de79-600f-4330-b386-0c99f2b43e32": {
+   "qid": "Q5562176"
+  },
+  "caa5e2af-d79c-47a7-bd31-5e853cac791a": {
+   "qid": "Q4937542"
+  },
+  "cab67e98-340d-424e-baf1-b127902c200b": {
+   "qid": "Q219551"
+  },
+  "cb904c93-64d7-407e-9b1f-af0b7c828b7f": {
+   "qid": "Q511507"
+  },
+  "cbabfb37-b1f2-463c-a8a7-3995b92d426d": {
+   "qid": "Q61814973"
+  },
+  "cbadeb12-bb3c-490f-95f4-f6444c111f32": {
+   "qid": "Q651376"
+  },
+  "cbf4da20-7d23-4008-801b-886af5bb9fe9": {
+   "qid": "Q2745408"
+  },
+  "cc27368f-f916-43ce-b7a2-057056a7f16d": {
+   "qid": "Q1689349"
+  },
+  "cc697814-eb8f-48b7-8ebe-ee538f37f581": {
+   "qid": "Q20429372"
+  },
+  "cc7d4686-ea02-45fd-956e-94c1a322558c": {
+   "qid": "Q270724"
+  },
+  "cd4636e1-06a3-41fc-848a-624b84bbb023": {
+   "qid": "Q180278"
+  },
+  "cd4c6c7e-aa0a-4144-9efe-c77a86a79819": {
+   "qid": "Q452352"
+  },
+  "cd6c3ed0-09e2-411e-aedf-5234c4b8955c": {
+   "qid": "Q4383076"
+  },
+  "cd71e6e9-42bb-4a1a-b5ce-17f41682b3e2": {
+   "qid": "Q703787"
+  },
+  "cdae350c-8f28-4e4e-bd69-99ef1034ede6": {
+   "qid": "Q513935"
+  },
+  "cdb34f45-c9d3-4f14-a79a-bc1da62455cc": {
+   "qid": "Q84241"
+  },
+  "cdd81dd0-fd6c-43c1-aa81-7a26d9860e6e": {
+   "qid": "Q213611"
+  },
+  "cec59910-2d12-46ec-8e39-85ca06acb0ed": {
+   "qid": "Q242454"
+  },
+  "cf446851-7c71-4822-a3b9-333b87ff2b60": {
+   "qid": "Q297562"
+  },
+  "d0030d01-c157-4596-a08e-be4387e2eff5": {
+   "qid": "Q66825645"
+  },
+  "d0669940-1957-4bc4-8843-1dc0cdf3a4b3": {
+   "qid": "Q13407662"
+  },
+  "d0c31d52-b13a-4407-a4f1-b9d01be751b4": {
+   "qid": "Q2379706"
+  },
+  "d0fb642e-7700-4f99-8c74-0f568f631713": {
+   "qid": "Q4717011"
+  },
+  "d13d07fc-24a1-4040-8c4f-2affd432dc11": {
+   "qid": "Q7906339"
+  },
+  "d14eee5e-849e-4fac-be35-a52a9b04a145": {
+   "qid": "Q4936139"
+  },
+  "d1591eff-428d-44ed-b7f0-f9936f1ab656": {
+   "qid": "Q259121"
+  },
+  "d1ae5de1-a8b5-4b2e-95d7-6f171ffb980e": {
+   "qid": "Q57240257"
+  },
+  "d1b668d8-8382-4a5a-b850-f6a3a023102c": {
+   "qid": "Q5441073"
+  },
+  "d1be849f-d09e-4f3c-a411-91546de3dbb6": {
+   "qid": "Q5233708"
+  },
+  "d20d70cd-db2d-476c-80f5-87ebfda2a850": {
+   "qid": "Q9358"
+  },
+  "d27a28c9-93c9-472e-bff2-6451bc6517ed": {
+   "qid": "Q4219033"
+  },
+  "d290d27c-ed19-415a-ab43-ddb2f4071f76": {
+   "qid": "Q274792"
+  },
+  "d2b3524f-67e8-45ef-bfc1-693cac525135": {
+   "qid": "Q5436372"
+  },
+  "d2c1559a-29d2-4698-960a-72e7115f126f": {
+   "qid": "Q6381846"
+  },
+  "d2ced2f1-6b58-47cf-ae87-5943e2ab6d99": {
+   "qid": "Q154895"
+  },
+  "d2eb0e1f-7b95-4b4c-ad7e-de57b683a49f": {
+   "qid": "Q10395772"
+  },
+  "d3301edb-305f-4e6d-a171-82942b6789ae": {
+   "qid": "Q17182547"
+  },
+  "d35c272c-46f4-4f05-bdb2-9bab3bbc268f": {
+   "qid": "Q333201"
+  },
+  "d41468ad-65f9-4b68-9b2b-f5fdcac88c45": {
+   "qid": "Q2635946"
+  },
+  "d505ecac-d858-45cb-8383-f136655191be": {
+   "qid": "Q493058"
+  },
+  "d51c08f6-435f-4503-9a1d-90bdf14ee46b": {
+   "qid": "Q601577"
+  },
+  "d51d1525-4bca-4001-ac5a-af694c39adaa": {
+   "qid": "Q1298330"
+  },
+  "d5288230-a81d-4661-92aa-5a7495e4dcae": {
+   "qid": "Q503351"
+  },
+  "d5eb154a-8768-4ee8-91db-9c2467b4e0f0": {
+   "qid": "Q235203"
+  },
+  "d6127833-8fdc-420d-9f39-39dbdee0c1e7": {
+   "qid": "Q332596"
+  },
+  "d6263f3a-0cdb-418c-90ec-2b7621c54a28": {
+   "qid": "Q26776821"
+  },
+  "d66a8c28-9d67-4b81-a068-af4beb185570": {
+   "qid": "Q464813"
+  },
+  "d68fda90-ab8d-4799-be56-317ba4ae700f": {
+   "qid": "Q1387726"
+  },
+  "d6aa9458-a40b-4be7-bcbb-f6ceb811a84f": {
+   "qid": "Q78585"
+  },
+  "d731ae85-7707-48f0-884f-0b33b551708c": {
+   "qid": "Q469901"
+  },
+  "d735497b-25f9-4503-8fb5-f50150730c18": {
+   "qid": "Q256783"
+  },
+  "d7437c1b-08fd-4903-9b3a-ec7be866c38d": {
+   "qid": "Q560953"
+  },
+  "d74790d1-b903-4dc5-a4ae-19b3728cce96": {
+   "qid": "Q74178858"
+  },
+  "d79b2e2c-2e60-4b60-a077-be40e9b65981": {
+   "qid": "Q437307"
+  },
+  "d7a0beac-444a-4649-8160-f21de3e829c3": {
+   "qid": "Q6438006"
+  },
+  "d7e869c9-e438-4b78-88f7-bcd71fa5d150": {
+   "qid": "Q3481731"
+  },
+  "d7fa27a7-123e-4c70-b421-97b92f1b3926": {
+   "qid": "Q2714779"
+  },
+  "d86216c4-5134-47ab-aaf1-018a735df5aa": {
+   "qid": "Q1232563"
+  },
+  "d915907f-0fc2-406b-8690-a0057fb3af4c": {
+   "qid": "Q1392377"
+  },
+  "d98a14fc-3346-4885-852c-4c015394dcae": {
+   "qid": "Q11988389"
+  },
+  "d9c37ee9-9e84-4e20-822a-57616cdcda35": {
+   "qid": "Q1795390"
+  },
+  "d9eac9a1-13ba-4bc7-84eb-237b4c579212": {
+   "qid": "Q4348516"
+  },
+  "da47a4e0-078e-4b0e-9ad1-bf25dd545075": {
+   "qid": "Q465605"
+  },
+  "da5e774b-026a-4117-82a4-11d246c05a8b": {
+   "qid": "Q154331"
+  },
+  "da7e9824-acc4-468d-9209-4bf595b3a34b": {
+   "qid": "Q3262694"
+  },
+  "da969dec-81be-4a21-a009-5ecb9f9c93b1": {
+   "qid": "Q4341382"
+  },
+  "da96be23-ef88-420e-8173-3efb7fd995cc": {
+   "qid": "Q13003"
+  },
+  "da9d310b-0411-460a-b473-61ab71f1a3b3": {
+   "qid": "Q89117"
+  },
+  "dac7eb38-3ad9-4f9f-899e-8848e6f20ed2": {
+   "qid": "Q2094426"
+  },
+  "daef735c-50ba-462e-9b06-7a120f13492f": {
+   "qid": "Q113911"
+  },
+  "db4624cf-0e44-481e-a9dc-2142b833ec2f": {
+   "qid": "Q47875"
+  },
+  "dbaf5e32-4d22-4e61-8ea0-8af7ae633f29": {
+   "qid": "Q6109582"
+  },
+  "dbb38b36-09de-431f-a0f6-5d8a39745616": {
+   "qid": "Q2385915"
+  },
+  "dbdc6775-ddac-4380-9dea-cab8527991e0": {
+   "qid": "Q1287249"
+  },
+  "dbf61f1e-77f3-4393-8be4-890eccdae102": {
+   "qid": "Q240890"
+  },
+  "dc12d3c8-4110-420c-8c83-5e40050c1a76": {
+   "qid": "Q207076"
+  },
+  "dcbd3fc9-3ef7-46e1-9f59-476e996ac326": {
+   "qid": "Q572761"
+  },
+  "dd24030a-a62f-4d3c-91ff-6e602841b0f0": {
+   "qid": "Q436155"
+  },
+  "dd2abaa1-0b73-4ded-82ed-c80cce8d6378": {
+   "qid": "Q409259"
+  },
+  "dd4141e0-bce1-4838-a3c6-f904ae5d248b": {
+   "qid": "Q6743079"
+  },
+  "de242082-2f3e-4ce5-99e1-7839559da089": {
+   "qid": "Q719205"
+  },
+  "debb88fc-ff61-4e4c-82b3-3fdd5fab7bd4": {
+   "qid": "Q549579"
+  },
+  "def46021-7d4e-4c98-a20d-f915bfc7c406": {
+   "qid": "Q922246"
+  },
+  "df6220cf-9efb-4c4e-a46c-9f0bfc9611b2": {
+   "qid": "Q312825"
+  },
+  "dfa6d053-2bd8-4119-9b17-7bb39af0a5a5": {
+   "qid": "Q2717075"
+  },
+  "dg:10432207": {
+   "qid": "Q105751447"
+  },
+  "dg:1082804": {
+   "qid": "Q25417835"
+  },
+  "dg:11115755": {
+   "qid": "Q30921130"
+  },
+  "dg:11115785": {
+   "qid": "Q111631526"
+  },
+  "dg:11188211": {
+   "qid": "Q124081315"
+  },
+  "dg:1209609": {
+   "qid": "Q96240699"
+  },
+  "dg:128119": {
+   "qid": "Q115388832"
+  },
+  "dg:12986889": {
+   "qid": "Q16398433"
+  },
+  "dg:13579744": {
+   "qid": "Q128401904"
+  },
+  "dg:14790218": {
+   "qid": "Q134126024"
+  },
+  "dg:16614977": {
+   "qid": "Q138047619"
+  },
+  "dg:16981918": {
+   "qid": "Q130547623"
+  },
+  "dg:1743469": {
+   "qid": "Q97175681"
+  },
+  "dg:17538663": {
+   "qid": "Q5938752"
+  },
+  "dg:17742303": {
+   "qid": "Q125424214"
+  },
+  "dg:17921235": {
+   "qid": "Q124393212"
+  },
+  "dg:1982048": {
+   "qid": "Q42492081"
+  },
+  "dg:2046696": {
+   "qid": "Q2269223"
+  },
+  "dg:2067912": {
+   "qid": "Q106764401"
+  },
+  "dg:2067913": {
+   "qid": "Q106764281"
+  },
+  "dg:2086073": {
+   "qid": "Q109430308"
+  },
+  "dg:2146905": {
+   "qid": "Q134580309"
+  },
+  "dg:2369215": {
+   "qid": "Q2878323"
+  },
+  "dg:2413803": {
+   "qid": "Q366307"
+  },
+  "dg:2529521": {
+   "qid": "Q116694117"
+  },
+  "dg:2584025": {
+   "qid": "Q76125092"
+  },
+  "dg:2655690": {
+   "qid": "Q131553302"
+  },
+  "dg:2718854": {
+   "qid": "Q3362774"
+  },
+  "dg:2875008": {
+   "qid": "Q95630777"
+  },
+  "dg:2875384": {
+   "qid": "Q106887215"
+  },
+  "dg:2912934": {
+   "qid": "Q26262539"
+  },
+  "dg:2939148": {
+   "qid": "Q464703"
+  },
+  "dg:3004089": {
+   "qid": "Q61653380"
+  },
+  "dg:3215808": {
+   "qid": "Q47067253"
+  },
+  "dg:3263589": {
+   "qid": "Q108640990"
+  },
+  "dg:3369192": {
+   "qid": "Q25695055"
+  },
+  "dg:3447418": {
+   "qid": "Q21702848"
+  },
+  "dg:3554054": {
+   "qid": "Q15453647"
+  },
+  "dg:3592005": {
+   "qid": "Q6821368"
+  },
+  "dg:381896": {
+   "qid": "Q110687251"
+  },
+  "dg:3995538": {
+   "qid": "Q16269431"
+  },
+  "dg:408285": {
+   "qid": "Q110687081"
+  },
+  "dg:4214153": {
+   "qid": "Q20507509"
+  },
+  "dg:4422110": {
+   "qid": "Q116751517"
+  },
+  "dg:4521486": {
+   "qid": "Q115971168"
+  },
+  "dg:4550605": {
+   "qid": "Q140374564"
+  },
+  "dg:4588044": {
+   "qid": "Q5158636"
+  },
+  "dg:4630366": {
+   "qid": "Q134580295"
+  },
+  "dg:466054": {
+   "qid": "Q89473025"
+  },
+  "dg:4703302": {
+   "qid": "Q132058164"
+  },
+  "dg:4735596": {
+   "qid": "Q1612834"
+  },
+  "dg:4753639": {
+   "qid": "Q7640402"
+  },
+  "dg:4855036": {
+   "qid": "Q85855697"
+  },
+  "dg:5081919": {
+   "qid": "Q16381632"
+  },
+  "dg:5301215": {
+   "qid": "Q17030501"
+  },
+  "dg:5522339": {
+   "qid": "Q6259075"
+  },
+  "dg:5636140": {
+   "qid": "Q136745706"
+  },
+  "dg:5812878": {
+   "qid": "Q20509735"
+  },
+  "dg:584450": {
+   "qid": "Q31721223"
+  },
+  "dg:5981082": {
+   "qid": "Q120892364"
+  },
+  "dg:6031109": {
+   "qid": "Q11321014"
+  },
+  "dg:6317999": {
+   "qid": "Q10784332"
+  },
+  "dg:653028": {
+   "qid": "Q119059960"
+  },
+  "dg:662049": {
+   "qid": "Q110701099"
+  },
+  "dg:6763536": {
+   "qid": "Q105731695"
+  },
+  "dg:67680": {
+   "qid": "Q16653052"
+  },
+  "dg:6782388": {
+   "qid": "Q6056109"
+  },
+  "dg:6825336": {
+   "qid": "Q16662890"
+  },
+  "dg:7068707": {
+   "qid": "Q126325171"
+  },
+  "dg:7179244": {
+   "qid": "Q20972030"
+  },
+  "dg:7204675": {
+   "qid": "Q141593869"
+  },
+  "dg:7325676": {
+   "qid": "Q111594849"
+  },
+  "dg:746037": {
+   "qid": "Q112189110"
+  },
+  "dg:7465678": {
+   "qid": "Q16186310"
+  },
+  "dg:7618846": {
+   "qid": "Q127694546"
+  },
+  "dg:7654285": {
+   "qid": "Q61079694"
+  },
+  "dg:7685844": {
+   "qid": "Q21484287"
+  },
+  "dg:7752502": {
+   "qid": "Q828196"
+  },
+  "dg:7775128": {
+   "qid": "Q141326426"
+  },
+  "dg:7910697": {
+   "qid": "Q31270288"
+  },
+  "dg:7928691": {
+   "qid": "Q109430367"
+  },
+  "dg:8011351": {
+   "qid": "Q123995507"
+  },
+  "dg:8096280": {
+   "qid": "Q114460671"
+  },
+  "dg:8110397": {
+   "qid": "Q4764405"
+  },
+  "dg:821564": {
+   "qid": "Q16216853"
+  },
+  "dg:8281332": {
+   "qid": "Q31670631"
+  },
+  "dg:8485077": {
+   "qid": "Q61133116"
+  },
+  "dg:8505210": {
+   "qid": "Q125868811"
+  },
+  "dg:8583804": {
+   "qid": "Q98825033"
+  },
+  "dg:8626386": {
+   "qid": "Q21212659"
+  },
+  "dg:86343": {
+   "qid": "Q41672675"
+  },
+  "dg:959826": {
+   "qid": "Q105696327"
+  },
+  "dg:9623923": {
+   "qid": "Q118375154"
+  },
+  "dg:9721153": {
+   "qid": "Q6059191"
+  },
+  "dg:988439": {
+   "qid": "Q701041"
+  },
+  "e0443586-8830-4b7a-91c1-d6876c16d669": {
+   "qid": "Q1574893"
+  },
+  "e05d7222-6d1c-4254-945e-f4cc9be9b521": {
+   "qid": "Q18763855"
+  },
+  "e0692411-ae8b-40db-9dfe-b3f29c0d212d": {
+   "qid": "Q920593"
+  },
+  "e09941c4-4546-4c23-a947-c1e671118a97": {
+   "qid": "Q930809"
+  },
+  "e0b884e9-94c6-4a6e-976e-da87a66d31d9": {
+   "qid": "Q4718966"
+  },
+  "e0d70573-a721-489f-8ccb-824fcee4fb51": {
+   "qid": "Q237615"
+  },
+  "e193397d-a888-4b4d-b11d-2a602c24b023": {
+   "qid": "Q957007"
+  },
+  "e1975032-7d64-417c-80c8-c9b7e95c3e07": {
+   "qid": "Q440048"
+  },
+  "e19dfb4a-6b17-4669-a9df-e77bd7b2b529": {
+   "qid": "Q1735512"
+  },
+  "e1fb2501-3d1f-4e31-9411-761fe6e3ee4e": {
+   "qid": "Q5558037"
+  },
+  "e2345fdf-2be7-47c5-a6dd-be64353ad134": {
+   "qid": "Q154216"
+  },
+  "e254f818-d794-404a-9ba1-109d6755abe6": {
+   "qid": "Q1509255"
+  },
+  "e261c42a-cbd7-4b97-8b72-218801bdc5b9": {
+   "qid": "Q283069"
+  },
+  "e29c2f4d-9381-488f-90c0-1bf29d5951b4": {
+   "qid": "Q12731430"
+  },
+  "e2aa7c41-2c51-4d6c-bd78-5b419ef71407": {
+   "qid": "Q1396403"
+  },
+  "e2b29000-86b3-4d52-80b9-3b4f7a15536c": {
+   "qid": "Q350360"
+  },
+  "e2b294b7-f705-4317-a96b-fd94da3719e5": {
+   "qid": "Q152043"
+  },
+  "e2f73100-bd6d-4891-9e1d-5de68a76e484": {
+   "qid": "Q287817"
+  },
+  "e3702c12-e490-4795-9c5f-ea17cced1e65": {
+   "qid": "Q1495124"
+  },
+  "e378c6b3-7d74-48b5-ab04-9aac0df7562c": {
+   "qid": "Q294225"
+  },
+  "e39e5e16-cc13-4c20-99d2-1ddd4f374166": {
+   "qid": "Q2850402"
+  },
+  "e3c4c4af-f83b-4168-84cb-898009dd0447": {
+   "qid": "Q271916"
+  },
+  "e3ccda71-396a-49ff-a666-1905a7d36f67": {
+   "qid": "Q1807945"
+  },
+  "e3d50ece-9931-4ecf-88f1-8fa5295b6829": {
+   "qid": "Q345446"
+  },
+  "e3f33323-f1a9-4cc2-b462-2ae822e1f20e": {
+   "qid": "Q388094"
+  },
+  "e42e9b22-c96a-4310-b272-7b70b100a5a6": {
+   "qid": "Q20408556"
+  },
+  "e43f8c07-2d2e-47fd-8279-dc0e9880882c": {
+   "qid": "Q465191"
+  },
+  "e4d389bb-fe8f-472d-8ffd-c2cb02a7b2b7": {
+   "qid": "Q170726"
+  },
+  "e4d4e4fe-e109-4849-a33b-4e4f7da723da": {
+   "qid": "Q134463226"
+  },
+  "e4f4eab7-e864-4838-9908-8ccd37c9ce35": {
+   "qid": "Q571868"
+  },
+  "e5712ceb-c37a-4c49-a11c-ccf4e21852d4": {
+   "qid": "Q1362028"
+  },
+  "e5a1c17d-d0ff-41e8-8556-2f9b936f3b52": {
+   "qid": "Q680690"
+  },
+  "e5c1744b-6bdb-4ee4-a189-e82f24eed66c": {
+   "qid": "Q395725"
+  },
+  "e644d4d8-166a-40d2-84e3-ea7ce74c2150": {
+   "qid": "Q274781"
+  },
+  "e65a7ef7-9e4b-4351-9531-927793bf7276": {
+   "qid": "Q932884"
+  },
+  "e71738bd-39d4-4699-b6c2-688f95b31732": {
+   "qid": "Q285330"
+  },
+  "e73173c3-5706-4bd6-bcb6-d34293b07694": {
+   "qid": "Q1290689"
+  },
+  "e7a8e086-16df-44a7-91e4-640986bcff72": {
+   "qid": "Q44606"
+  },
+  "e8608780-e53e-4a09-9443-1e9ead1df35e": {
+   "qid": "Q21931273"
+  },
+  "e86492c1-0376-4df0-8042-8ba058c83960": {
+   "qid": "Q520296"
+  },
+  "e8b57027-efb5-4914-853d-e021931ab8f3": {
+   "qid": "Q1065451"
+  },
+  "e91fbf2b-178d-4243-972e-73eff6a5676f": {
+   "qid": "Q123234"
+  },
+  "e9c71942-f014-41e3-8279-fb0fb9bfd520": {
+   "qid": "Q519811"
+  },
+  "e9e198ed-fd48-4256-ad54-b18c6ac0479e": {
+   "qid": "Q430110"
+  },
+  "e9ed318d-8cc5-4cf8-ab77-505e39ab6ea4": {
+   "qid": "Q42"
+  },
+  "ea9a6d55-4e80-4b17-a78f-4a71d47ccf8e": {
+   "qid": "Q6130338"
+  },
+  "eabaac32-2625-446f-8663-b11ab9456cca": {
+   "qid": "Q117110"
+  },
+  "eb0f86f3-55f1-42bd-bc2b-ca1cb396fed6": {
+   "qid": "Q1737419"
+  },
+  "eb3f70ce-f226-428f-8d7f-046c8dbfd98f": {
+   "qid": "Q266429"
+  },
+  "ebdeb195-ab86-4009-a25b-d5941063969f": {
+   "qid": "Q3610796"
+  },
+  "ebe0666c-6d24-4866-afaa-fc20f2768adf": {
+   "qid": "Q513314"
+  },
+  "ec0e1da9-cda0-4f3e-a0c7-2b93eca22df5": {
+   "qid": "Q102532269"
+  },
+  "ec21de7d-2288-4640-a015-edecf6ac147f": {
+   "qid": "Q527055"
+  },
+  "ec31485a-e199-4e76-a66b-3b09ad749461": {
+   "qid": "Q14437341"
+  },
+  "eca53e25-c9b2-428a-aef4-2c167203045d": {
+   "qid": "Q78704"
+  },
+  "ecd032cc-19c8-4a05-902c-e539d3bc75fd": {
+   "qid": "Q60036307"
+  },
+  "ed1201f9-71be-4821-a21e-f5f86ba47c60": {
+   "qid": "Q1594567"
+  },
+  "ed28d391-e91e-47d8-b89b-d16547d66092": {
+   "qid": "Q3529406"
+  },
+  "ee79471f-3ae5-426e-a469-d9f2aa312986": {
+   "qid": "Q318829"
+  },
+  "ee7d5783-2a2a-453d-b3a4-671b9d0a29a4": {
+   "qid": "Q958494"
+  },
+  "eea85c38-427d-438a-8c59-6036e1c05d0e": {
+   "qid": "Q403873"
+  },
+  "ef8694eb-09d9-4695-8eee-1c2717564a37": {
+   "qid": "Q230412"
+  },
+  "f01dc67a-9046-4709-8e1a-f756a9e0d737": {
+   "qid": "Q5506891"
+  },
+  "f053ae01-dae6-4aae-9883-e8c279fdbef4": {
+   "qid": "Q218091"
+  },
+  "f0764ad5-b3dc-418c-b228-27a5e523dc0e": {
+   "qid": "Q604720"
+  },
+  "f07a96a8-4f53-48e3-9f1e-b9b782c600a6": {
+   "qid": "Q56253106"
+  },
+  "f08013f6-ef5d-4380-bc7b-a762298e8194": {
+   "qid": "Q28839685"
+  },
+  "f0875b38-21f6-4f11-80f8-e7f34c362a31": {
+   "qid": "Q1680582"
+  },
+  "f088566e-0022-4eb8-aba6-96a45b3944fb": {
+   "qid": "Q7365688"
+  },
+  "f0a4c8af-2b25-45cf-9b41-19171cf4d80f": {
+   "qid": "Q1344651"
+  },
+  "f0ed72a3-ae8f-4cf7-b51d-2696a2330230": {
+   "qid": "Q189599"
+  },
+  "f15d09e3-4d5d-4051-b0fb-3b324ee0cb1e": {
+   "qid": "Q78540"
+  },
+  "f1693075-b637-49f8-8d0e-8cee8bec77cb": {
+   "qid": "Q86351247"
+  },
+  "f1806a4b-297d-43e0-93f5-ef36a4d7e08e": {
+   "qid": "Q1235687"
+  },
+  "f1a0bfbb-18b0-45ad-a2d9-413249e93850": {
+   "qid": "Q383534"
+  },
+  "f209a93f-6169-4e31-91b7-b24d6468ee8b": {
+   "qid": "Q679333"
+  },
+  "f225e9cb-022f-4fe2-988d-dd24e2440ebb": {
+   "qid": "Q13142685"
+  },
+  "f2492c31-54a8-4347-a1fc-f81f72873bbf": {
+   "qid": "Q14517"
+  },
+  "f31f1ac7-ed36-49ca-9572-38da14c3940c": {
+   "qid": "Q4356380"
+  },
+  "f389a455-4ff0-4b1f-95f8-64c53d3c0e56": {
+   "qid": "Q180518"
+  },
+  "f3970436-2a79-4f17-9ba1-fbd06e706dac": {
+   "qid": "Q1827208"
+  },
+  "f3b20d5a-013b-4bbb-a4ac-94cd8340a349": {
+   "qid": "Q890622"
+  },
+  "f3b8e107-abe8-4743-b6a3-4a4ee995e71f": {
+   "qid": "Q107432"
+  },
+  "f3e5d65a-0510-4dd2-8bfb-0d06e86b6035": {
+   "qid": "Q77268"
+  },
+  "f3ea5ebc-4afc-40c4-8002-da0cec218ec7": {
+   "qid": "Q5639427"
+  },
+  "f3f80922-9801-4108-b5bb-744908d309aa": {
+   "qid": "Q5819473"
+  },
+  "f3fd7e43-aca4-4e25-9f2d-a5c992a575fc": {
+   "qid": "Q703216"
+  },
+  "f468b272-235e-4d31-851a-a1d9859ac89a": {
+   "qid": "Q1374693"
+  },
+  "f48975d8-94be-460c-8f1d-bbee677f5312": {
+   "qid": "Q706680"
+  },
+  "f5331ac5-ec02-4741-aca5-ee55f7ad1437": {
+   "qid": "Q2045859"
+  },
+  "f53776e2-9b4c-420e-a7d5-2268a22db8ba": {
+   "qid": "Q116265"
+  },
+  "f5b8d14c-3adb-4cd3-aa97-140a557c7302": {
+   "qid": "Q434328"
+  },
+  "f5dfa020-ad69-41cd-b3d4-fd7af0414e94": {
+   "qid": "Q117139"
+  },
+  "f644de80-3ae7-413d-bb3c-2061fa2674d5": {
+   "qid": "Q90552"
+  },
+  "f68018f5-24d4-4b23-ab17-747d9e8e9cce": {
+   "qid": "Q538219"
+  },
+  "f6cfe334-c8e2-49fb-9f53-8398f90aca3d": {
+   "qid": "Q856272"
+  },
+  "f7625f34-1799-42a4-a1c6-22b5377c767b": {
+   "qid": "Q16149863"
+  },
+  "f77da9ff-e841-4f48-bfe4-cd0a290ec259": {
+   "qid": "Q668020"
+  },
+  "f7eb3be3-1065-4a53-94d4-e2d0c15c0b33": {
+   "qid": "Q216934"
+  },
+  "f8914fed-92f4-4aad-b087-aa29ed509452": {
+   "qid": "Q242535"
+  },
+  "f8c7d8c5-cc14-4c74-9e30-035421f17f17": {
+   "qid": "Q2096443"
+  },
+  "f910ac7e-3fa8-4de0-8161-af94b168dc18": {
+   "qid": "Q1369531"
+  },
+  "f95594fd-8ba6-4540-8854-7c149153a891": {
+   "qid": "Q714021"
+  },
+  "f96b7604-74ed-43b3-8ddc-a6c666b417f6": {
+   "qid": "Q3835111"
+  },
+  "f9c78c5d-205a-4339-a1d4-9f93e1a91ae4": {
+   "qid": "Q9069445"
+  },
+  "fa39bc82-9b27-4bbb-9425-d719a72e09ac": {
+   "qid": "Q152505"
+  },
+  "faa21ccf-f0d3-4a84-95d4-ae596aa40744": {
+   "qid": "Q18411604"
+  },
+  "faabb55d-3c9e-4c23-8779-732ac2ee2c0d": {
+   "qid": "Q131433"
+  },
+  "fb09fcfb-8bba-4efb-8b23-332fba448fc1": {
+   "qid": "Q1948488"
+  },
+  "fb42bc41-953c-4040-88e7-0f6757339ea1": {
+   "qid": "Q229353"
+  },
+  "fbab03b9-b375-4d9c-b610-6b33061b8dbc": {
+   "qid": "Q4223352"
+  },
+  "fbb72ddb-af9e-4c7b-9715-37e1631ccc5f": {
+   "qid": "Q27479503"
+  },
+  "fbc93292-4f01-4ede-9fdc-08f084650129": {
+   "qid": "Q1349055"
+  },
+  "fbca566a-3a40-4649-871f-6367babb768f": {
+   "qid": "Q3341978"
+  },
+  "fbd20a33-1e13-4685-a91a-2f02aacdd92b": {
+   "qid": "Q1645018"
+  },
+  "fbe69047-e53a-40d6-bb5e-ff622aa52a2e": {
+   "qid": "Q274154"
+  },
+  "fd99f6fc-c753-440c-ae39-ba5f6ae996b8": {
+   "qid": "Q1766082"
+  },
+  "fdfea72e-82f6-4d99-9ddb-992b5861dd31": {
+   "qid": "Q353449"
+  },
+  "fe47ce05-4fae-4a9c-8592-e4ac701503b1": {
+   "qid": "Q527741"
+  },
+  "ff06ecc0-72a5-4a81-a253-d840d9aefb32": {
+   "qid": "Q292135"
+  },
+  "ff73b026-61f2-47b8-83df-78d34a4c171c": {
+   "qid": "Q111840132"
+  },
+  "ff82ff36-5d5a-41ce-b305-0ccdef9c4cdc": {
+   "qid": "Q240885"
+  },
+  "ff9c106f-e342-4543-a376-776e08121f69": {
+   "qid": "Q1352256"
+  },
+  "ffbcbcb9-b0c1-4692-b2c7-d5452f10c809": {
+   "qid": "Q94882"
+  },
+  "ffdb8203-3861-4685-b7dd-9f643a85e036": {
+   "qid": "Q12223145"
+  },
+  "ffeb8e39-dcb5-4f03-893f-7039ecde74e3": {
+   "qid": "Q56451577"
+  },
+  "wd:Q10357563": {
+   "qid": "Q10357563"
+  },
+  "wd:Q105531608": {
+   "qid": "Q105531608"
+  },
+  "wd:Q106395131": {
+   "qid": "Q106395131"
+  },
+  "wd:Q106906868": {
+   "qid": "Q106906868"
+  },
+  "wd:Q107303627": {
+   "qid": "Q107303627"
+  },
+  "wd:Q108681589": {
+   "qid": "Q108681589"
+  },
+  "wd:Q109470574": {
+   "qid": "Q109470574"
+  },
+  "wd:Q110113454": {
+   "qid": "Q110113454"
+  },
+  "wd:Q110604850": {
+   "qid": "Q110604850"
+  },
+  "wd:Q111610800": {
+   "qid": "Q111610800"
+  },
+  "wd:Q113376437": {
+   "qid": "Q113376437"
+  },
+  "wd:Q115915566": {
+   "qid": "Q115915566"
+  },
+  "wd:Q116137050": {
+   "qid": "Q116137050"
+  },
+  "wd:Q116759160": {
+   "qid": "Q116759160"
+  },
+  "wd:Q116759265": {
+   "qid": "Q116759265"
+  },
+  "wd:Q116877586": {
+   "qid": "Q116877586"
+  },
+  "wd:Q120122527": {
+   "qid": "Q120122527"
+  },
+  "wd:Q123860175": {
+   "qid": "Q123860175"
+  },
+  "wd:Q125845345": {
+   "qid": "Q125845345"
+  },
+  "wd:Q128796618": {
+   "qid": "Q128796618"
+  },
+  "wd:Q131153630": {
+   "qid": "Q131153630"
+  },
+  "wd:Q131295677": {
+   "qid": "Q131295677"
+  },
+  "wd:Q131557552": {
+   "qid": "Q131557552"
+  },
+  "wd:Q131581777": {
+   "qid": "Q131581777"
+  },
+  "wd:Q134005490": {
+   "qid": "Q134005490"
+  },
+  "wd:Q134304162": {
+   "qid": "Q134304162"
+  },
+  "wd:Q134306637": {
+   "qid": "Q134306637"
+  },
+  "wd:Q134350483": {
+   "qid": "Q134350483"
+  },
+  "wd:Q134562815": {
+   "qid": "Q134562815"
+  },
+  "wd:Q134958755": {
+   "qid": "Q134958755"
+  },
+  "wd:Q135049417": {
+   "qid": "Q135049417"
+  },
+  "wd:Q136001648": {
+   "qid": "Q136001648"
+  },
+  "wd:Q136467648": {
+   "qid": "Q136467648"
+  },
+  "wd:Q136723897": {
+   "qid": "Q136723897"
+  },
+  "wd:Q137428120": {
+   "qid": "Q137428120"
+  },
+  "wd:Q137640805": {
+   "qid": "Q137640805"
+  },
+  "wd:Q137768550": {
+   "qid": "Q137768550"
+  },
+  "wd:Q138219415": {
+   "qid": "Q138219415"
+  },
+  "wd:Q138290382": {
+   "qid": "Q138290382"
+  },
+  "wd:Q138497952": {
+   "qid": "Q138497952"
+  },
+  "wd:Q138521443": {
+   "qid": "Q138521443"
+  },
+  "wd:Q138762628": {
+   "qid": "Q138762628"
+  },
+  "wd:Q138873763": {
+   "qid": "Q138873763"
+  },
+  "wd:Q139670332": {
+   "qid": "Q139670332"
+  },
+  "wd:Q139890474": {
+   "qid": "Q139890474"
+  },
+  "wd:Q139961317": {
+   "qid": "Q139961317"
+  },
+  "wd:Q141292065": {
+   "qid": "Q141292065"
+  },
+  "wd:Q1618047": {
+   "qid": "Q1618047"
+  },
+  "wd:Q16393685": {
+   "qid": "Q16393685"
+  },
+  "wd:Q16399094": {
+   "qid": "Q16399094"
+  },
+  "wd:Q16399895": {
+   "qid": "Q16399895"
+  },
+  "wd:Q19702368": {
+   "qid": "Q19702368"
+  },
+  "wd:Q20508995": {
+   "qid": "Q20508995"
+  },
+  "wd:Q20510044": {
+   "qid": "Q20510044"
+  },
+  "wd:Q20513271": {
+   "qid": "Q20513271"
+  },
+  "wd:Q20513513": {
+   "qid": "Q20513513"
+  },
+  "wd:Q25683428": {
+   "qid": "Q25683428"
+  },
+  "wd:Q2907443": {
+   "qid": "Q2907443"
+  },
+  "wd:Q30343074": {
+   "qid": "Q30343074"
+  },
+  "wd:Q31446992": {
+   "qid": "Q31446992"
+  },
+  "wd:Q320491": {
+   "qid": "Q320491"
+  },
+  "wd:Q3300562": {
+   "qid": "Q3300562"
+  },
+  "wd:Q3576316": {
+   "qid": "Q3576316"
+  },
+  "wd:Q41761808": {
+   "qid": "Q41761808"
+  },
+  "wd:Q4309072": {
+   "qid": "Q4309072"
+  },
+  "wd:Q4511906": {
+   "qid": "Q4511906"
+  },
+  "wd:Q5413009": {
+   "qid": "Q5413009"
+  },
+  "wd:Q61971025": {
+   "qid": "Q61971025"
+  },
+  "wd:Q6421214": {
+   "qid": "Q6421214"
+  },
+  "wd:Q64454347": {
+   "qid": "Q64454347"
+  },
+  "wd:Q64861374": {
+   "qid": "Q64861374"
+  },
+  "wd:Q7266402": {
+   "qid": "Q7266402"
+  },
+  "wd:Q79314200": {
+   "qid": "Q79314200"
+  },
+  "wd:Q95280200": {
+   "qid": "Q95280200"
+  },
+  "wd:Q98399011": {
+   "qid": "Q98399011"
+  },
+  "wd:Q99617147": {
+   "qid": "Q99617147"
+  }
+ }
+}

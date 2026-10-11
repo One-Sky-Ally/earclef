@@ -50,14 +50,17 @@ const ON_THIS_DAY_DIR = 'lib/explore/on-this-day'
 const RULINGS_PATH = 'data/presence-chapter-rulings.json'
 const WIKIDATA_PATH = 'data/wikidata-residence.json'
 const MB_PLACES_PATH = 'data/mb-artist-places.json'
+const MUSIC_MAKERS_PATH = 'data/music-makers.json'
 const DRY_RUN = process.argv.includes('--dry-run')
 
 /** Accumulates chapters per artist; same kind+country+place merges, a dated reading wins over an undated one. */
 class Edges {
-  constructor(names) {
+  constructor(names, nonMusicians) {
     this.names = names
+    this.nonMusicians = nonMusicians
     this.artists = new Map()
     this.report = []
+    this.skippedNonMusician = 0
   }
 
   artist(key, { name, home, playKey, tags, ended }) {
@@ -85,6 +88,13 @@ class Edges {
 
   add(key, who, chapter) {
     if (chapter.country === who.home) return false
+    // Chapters are only for places where MUSIC was made (owner, Oct 11):
+    // a person whose Wikidata occupations hold no music-making one keeps
+    // their recorded-session lines but gets no based chapter.
+    if (chapter.kind === 'based' && this.nonMusicians.has(key)) {
+      this.skippedNonMusician++
+      return false
+    }
     const countryName = this.names.get(chapter.country)
     if (!countryName) {
       this.report.push(`skip ${who.name}: ${chapter.country} is not on the globe (${chapter.source})`)
@@ -150,9 +160,17 @@ function corrections(edges) {
   let written = 0
   for (const [mbid, move] of Object.entries(moves)) {
     const endYear = Number(move.end)
+    const beginYear = Number(move.begin)
     const who = { name: move.name, home: move.to, tags: move.tags ?? [], ended: Number.isFinite(endYear) ? endYear : null }
-    const evidence = `MusicBrainz area ${move.from}; begin-area ${move.beginArea ?? '—'} → ${move.to}; ${move.why ?? ''}`.trim()
-    if (edges.add(mbid, who, { kind: 'based', country: move.from, source: 'origin-correction', evidence })) written++
+    // A GROUP moved to its formation country: the country it is filed
+    // under is where it was based, and it counts there for the years the
+    // group was active (owner ruling Oct 11) — MB's life-span, as dated.
+    const formation = move.type === 'Group' && (move.why ?? '').startsWith('formed in')
+    const span = formation && Number.isFinite(beginYear) ? { from: beginYear, to: Number.isFinite(endYear) ? endYear : null } : {}
+    const evidence = formation
+      ? `MusicBrainz area ${move.from} — the country the group is filed under; active ${Number.isFinite(beginYear) ? beginYear : '…'}–${Number.isFinite(endYear) ? endYear : ''}; ${move.why}`
+      : `MusicBrainz area ${move.from}; begin-area ${move.beginArea ?? '—'} → ${move.to}; ${move.why ?? ''}`.trim()
+    if (edges.add(mbid, who, { kind: 'based', country: move.from, ...span, source: 'origin-correction', evidence })) written++
   }
   return written
 }
@@ -296,7 +314,9 @@ function main() {
   const codeByName = new Map([...names].map(([code, name]) => [name, code]))
   const pool = readJson(POOL_PATH)
   const homes = mbHomes()
-  const edges = new Edges(names)
+  // scripts/check-music-makers.mjs: artists whose Wikidata occupations hold nothing musical.
+  const nonMusicians = new Set(existsSync(MUSIC_MAKERS_PATH) ? Object.keys(readJson(MUSIC_MAKERS_PATH).nonMusicians ?? {}) : [])
+  const edges = new Edges(names, nonMusicians)
 
   const counts = {
     'keep-notes': keepNotes(edges, pool, codeByName),
@@ -321,6 +341,7 @@ function main() {
 
   for (const line of edges.report) console.log(`  ${line}`)
   console.log('chapters written per pass:', counts)
+  console.log(`based chapters withheld from non-musicians: ${edges.skippedNonMusician} (${nonMusicians.size} artists on the list)`)
   console.log(
     `${Object.keys(artists).length} artists with chapters · based ${based.length} (dated ${dated.length} — these place the artist in a second panel) · recorded ${recorded.length} (lines only)`,
   )

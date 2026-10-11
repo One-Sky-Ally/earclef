@@ -1,10 +1,10 @@
 {
- "generatedAt": "2026-10-11T08:40:29.757Z",
+ "generatedAt": "2026-10-11T08:59:28.637Z",
  "targets": 62753,
  "stats": {
   "withStatements": 3578,
   "rows": 5588,
-  "abroad": 1661,
+  "abroad": 1658,
   "dated": 299,
   "noCountry": 176,
   "notOnGlobe": 55,
@@ -37,9 +37,9 @@
    "key": "0103c1cc-4a09-4a5d-a344-56ad99a77193",
    "home": "CA",
    "country": "US",
-   "place": "Bel Air",
+   "place": "Los Angeles",
    "to": 2012,
-   "evidence": "Wikidata Q30449 residence (P551): Bel Air (Q86768), end 2012-01-01"
+   "evidence": "Wikidata Q30449 residence (P551): Bel Air (Q86768), in Los Angeles (Q65), end 2012-01-01"
   },
   {
    "key": "0103c1cc-4a09-4a5d-a344-56ad99a77193",
@@ -311,18 +311,18 @@
    "key": "0689340e-f44b-44a5-b126-3cd89c7f9238",
    "home": "CH",
    "country": "DE",
-   "place": "Reinickendorf",
+   "place": "Berlin",
    "from": 2008,
    "to": 2008,
-   "evidence": "Wikidata Q1683837 residence (P551): Reinickendorf (Q158876), start 2008-01-01, end 2008-01-01"
+   "evidence": "Wikidata Q1683837 residence (P551): Reinickendorf (Q158876), in Berlin (Q64), start 2008-01-01, end 2008-01-01"
   },
   {
    "key": "0689340e-f44b-44a5-b126-3cd89c7f9238",
    "home": "CH",
    "country": "DE",
-   "place": "Prenzlauer Berg",
+   "place": "Berlin",
    "from": 2008,
-   "evidence": "Wikidata Q1683837 residence (P551): Prenzlauer Berg (Q313186), start 2008-01-01"
+   "evidence": "Wikidata Q1683837 residence (P551): Prenzlauer Berg (Q313186), in Berlin (Q64), start 2008-01-01"
   },
   {
    "key": "071ab0f1-ac3f-48f6-9ee6-11b72eb73e57",
@@ -730,8 +730,8 @@
    "key": "0e738f68-783c-4a6a-80ae-4f7500861060",
    "home": "US",
    "country": "DE",
-   "place": "Dessau",
-   "evidence": "Wikidata Q55004 residence (P551): Dessau (Q487070)"
+   "place": "Dessau-Roßlau",
+   "evidence": "Wikidata Q55004 residence (P551): Dessau (Q487070), in Dessau-Roßlau (Q3828)"
   },
   {
    "key": "0e738f68-783c-4a6a-80ae-4f7500861060",
@@ -744,8 +744,8 @@
    "key": "0ed6e209-dd4d-4c47-b6d0-c3a1ae06fef5",
    "home": "UA",
    "country": "US",
-   "place": "Hollywood",
-   "evidence": "Wikidata Q317033 work location (P937): Hollywood (Q34006)"
+   "place": "Los Angeles",
+   "evidence": "Wikidata Q317033 work location (P937): Hollywood (Q34006), in Los Angeles (Q65)"
   },
   {
    "key": "0ed6e209-dd4d-4c47-b6d0-c3a1ae06fef5",
@@ -2195,8 +2195,8 @@
    "key": "33ce4a70-005d-4563-bb6e-2d253fab9842",
    "home": "GB",
    "country": "US",
-   "place": "Toluca Lake",
-   "evidence": "Wikidata Q52392 residence (P551): Toluca Lake (Q1814220)"
+   "place": "Burbank",
+   "evidence": "Wikidata Q52392 residence (P551): Toluca Lake (Q1814220), in Burbank (Q39561)"
   },
   {
    "key": "33d286c3-7f43-42de-8883-267d35b4588b",
@@ -2247,8 +2247,8 @@
    "key": "3407dabb-a82d-4e35-a786-9134f8f4a07b",
    "home": "IE",
    "country": "GB",
-   "place": "Maida Vale",
-   "evidence": "Wikidata Q213567 residence (P551): Maida Vale (Q122744)"
+   "place": "City of Westminster",
+   "evidence": "Wikidata Q213567 residence (P551): Maida Vale (Q122744), in City of Westminster (Q179351)"
   },
   {
    "key": "34d61873-7bdd-4dd8-91d4-9ae585b4622b",
@@ -2439,8 +2439,8 @@
    "key": "3905011f-ac59-4d50-9095-1545a9944de8",
    "home": "CL",
    "country": "US",
-   "place": "Douglaston",
-   "evidence": "Wikidata Q160223 residence (P551): Douglaston (Q5302197)"
+   "place": "Queens",
+   "evidence": "Wikidata Q160223 residence (P551): Douglaston (Q5302197), in Queens (Q18424)"
   },
   {
    "key": "39e84597-3e0f-4ccc-89d2-6ee1dd6fb050",
@@ -2731,15 +2731,15 @@
    "key": "3eb72791-6322-466b-87d3-24d74901eb2d",
    "home": "SE",
    "country": "US",
-   "place": "Brooklyn",
-   "evidence": "Wikidata Q271602 residence (P551): Brooklyn (Q18419)"
+   "place": "New York City",
+   "evidence": "Wikidata Q271602 residence (P551): Brooklyn (Q18419), in New York City (Q60)"
   },
   {
    "key": "3eb72791-6322-466b-87d3-24d74901eb2d",
    "home": "SE",
    "country": "US",
-   "place": "East Village",
-   "evidence": "Wikidata Q271602 residence (P551): East Village (Q1043326)"
+   "place": "Manhattan",
+   "evidence": "Wikidata Q271602 residence (P551): East Village (Q1043326), in Manhattan (Q11299)"
   },
   {
    "key": "3ec9b73e-a064-405e-a84b-0448a67dee4a",
@@ -2821,8 +2821,8 @@
    "key": "4083d781-7973-4717-8e1b-0f8786437709",
    "home": "FR",
    "country": "GR",
-   "place": "Kypseli, Athens",
-   "evidence": "Wikidata Q152880 residence (P551): Kypseli, Athens (Q1795153)"
+   "place": "Athens",
+   "evidence": "Wikidata Q152880 residence (P551): Kypseli, Athens (Q1795153), in Athens (Q1524)"
   },
   {
    "key": "401c3991-b76b-499d-8082-9f2df958ef78",
@@ -3466,8 +3466,8 @@
    "key": "4c7a5854-6b75-4623-a684-6a3d785d9015",
    "home": "GB",
    "country": "US",
-   "place": "Brooklyn",
-   "evidence": "Wikidata Q230622 residence (P551): Brooklyn (Q18419)"
+   "place": "New York City",
+   "evidence": "Wikidata Q230622 residence (P551): Brooklyn (Q18419), in New York City (Q60)"
   },
   {
    "key": "4cdf451e-1436-4cd5-b0bb-ce9f7dc94c0e",
@@ -3723,8 +3723,8 @@
    "key": "525e72ed-609a-426c-a84f-0056357e2c24",
    "home": "AT",
    "country": "CZ",
-   "place": "Moravská Ostrava",
-   "evidence": "Wikidata Q87263 work location (P937): Moravská Ostrava (Q3524703)"
+   "place": "Ostrava",
+   "evidence": "Wikidata Q87263 work location (P937): Moravská Ostrava (Q3524703), in Ostrava (Q8385)"
   },
   {
    "key": "52178b97-17eb-491a-9874-52bdd1645262",
@@ -3973,8 +3973,8 @@
    "key": "5938c629-1d06-480b-9780-859b153af11e",
    "home": "MX",
    "country": "US",
-   "place": "Di Lido Island",
-   "evidence": "Wikidata Q202536 residence (P551): Di Lido Island (Q5270041)"
+   "place": "Miami Beach",
+   "evidence": "Wikidata Q202536 residence (P551): Di Lido Island (Q5270041), in Miami Beach (Q201516)"
   },
   {
    "key": "5978ca05-f0dd-42ef-b716-4ec0cbf659f8",
@@ -4214,8 +4214,8 @@
    "key": "5f7c9ce4-e0e3-486c-a424-f752232c10c3",
    "home": "AT",
    "country": "CZ",
-   "place": "Moravská Ostrava",
-   "evidence": "Wikidata Q86106 work location (P937): Moravská Ostrava (Q3524703)"
+   "place": "Ostrava",
+   "evidence": "Wikidata Q86106 work location (P937): Moravská Ostrava (Q3524703), in Ostrava (Q8385)"
   },
   {
    "key": "5ff53e7d-39ef-4b02-85d0-ec2da6286df3",
@@ -4317,8 +4317,8 @@
    "key": "626c5a3c-b9a0-414f-89d6-756b0f1eceb5",
    "home": "FR",
    "country": "US",
-   "place": "Brooklyn",
-   "evidence": "Wikidata Q1148781 residence (P551): Brooklyn (Q18419)"
+   "place": "New York City",
+   "evidence": "Wikidata Q1148781 residence (P551): Brooklyn (Q18419), in New York City (Q60)"
   },
   {
    "key": "62bb4fa4-7eb9-499b-abc9-36a7a678db51",
@@ -4642,9 +4642,9 @@
    "key": "6cb79cb2-9087-44d4-828b-5c6fdff2c957",
    "home": "GB",
    "country": "US",
-   "place": "Northridge",
+   "place": "Los Angeles",
    "from": 2012,
-   "evidence": "Wikidata Q331731 residence (P551): Northridge (Q2050326), start 2012-01-01"
+   "evidence": "Wikidata Q331731 residence (P551): Northridge (Q2050326), in Los Angeles (Q65), start 2012-01-01"
   },
   {
    "key": "6c3f5aaf-bd58-49ff-8160-26af9d777f54",
@@ -4739,13 +4739,6 @@
    "country": "US",
    "place": "Miami",
    "evidence": "Wikidata Q3197039 work location (P937): Miami (Q8652)"
-  },
-  {
-   "key": "6fc35d50-6492-427e-b3ff-5ae85d87a0d4",
-   "home": "JM",
-   "country": "US",
-   "place": "Allapattah",
-   "evidence": "Wikidata Q3197039 residence (P551): Allapattah (Q1660549)"
   },
   {
    "key": "6fc35d50-6492-427e-b3ff-5ae85d87a0d4",
@@ -4857,8 +4850,8 @@
    "key": "71c9f6ae-6836-4e3c-8121-3c0fbb22befd",
    "home": "JM",
    "country": "US",
-   "place": "Brooklyn",
-   "evidence": "Wikidata Q3108660 work location (P937): Brooklyn (Q18419)"
+   "place": "New York City",
+   "evidence": "Wikidata Q3108660 work location (P937): Brooklyn (Q18419), in New York City (Q60)"
   },
   {
    "key": "72a1f4ff-ce20-40b0-8831-cab0812249b2",
@@ -5747,9 +5740,9 @@
    "key": "87c4d0fb-3ce8-4a3f-b65a-c0e7fd3afd89",
    "home": "CH",
    "country": "DE",
-   "place": "Hirschfelde",
+   "place": "Werneuchen",
    "from": 2003,
-   "evidence": "Wikidata Q1222518 residence (P551): Hirschfelde (Q1620417), start 2003-01-01"
+   "evidence": "Wikidata Q1222518 residence (P551): Hirschfelde (Q1620417), in Werneuchen (Q502855), start 2003-01-01"
   },
   {
    "key": "87a75fc3-59e7-4598-925c-8e230bce5db9",
@@ -5790,15 +5783,8 @@
    "key": "8894ff02-c790-42c1-884c-661537293093",
    "home": "NL",
    "country": "US",
-   "place": "Venice",
-   "evidence": "Wikidata Q266429 work location (P937): Venice (Q773853)"
-  },
-  {
-   "key": "8894ff02-c790-42c1-884c-661537293093",
-   "home": "NL",
-   "country": "US",
-   "place": "Tarzana",
-   "evidence": "Wikidata Q266429 residence (P551): Tarzana (Q2708222)"
+   "place": "Los Angeles",
+   "evidence": "Wikidata Q266429 work location (P937): Venice (Q773853), in Los Angeles (Q65)"
   },
   {
    "key": "892694d8-2560-458b-84e0-581039965409",
@@ -6042,8 +6028,8 @@
    "key": "8eac9119-9acc-4271-bc17-800875f18fc9",
    "home": "CA",
    "country": "US",
-   "place": "Brooklyn",
-   "evidence": "Wikidata Q19668675 residence (P551): Brooklyn (Q18419)"
+   "place": "New York City",
+   "evidence": "Wikidata Q19668675 residence (P551): Brooklyn (Q18419), in New York City (Q60)"
   },
   {
    "key": "8e98df63-b8e4-4a0d-95c7-ca93d442afa9",
@@ -6077,10 +6063,10 @@
    "key": "9072df14-b61e-42e2-b4f4-6bbb7fdb5586",
    "home": "US",
    "country": "DE",
-   "place": "Marienburg",
+   "place": "Cologne",
    "from": "1980s",
    "to": 1994,
-   "evidence": "Wikidata Q131814 residence (P551): Marienburg (Q1231010), start 1980-01-01, end 1994-01-01"
+   "evidence": "Wikidata Q131814 residence (P551): Marienburg (Q1231010), in Cologne (Q365), start 1980-01-01, end 1994-01-01"
   },
   {
    "key": "9072df14-b61e-42e2-b4f4-6bbb7fdb5586",
@@ -6415,8 +6401,8 @@
    "key": "9960b51b-f542-419a-b77f-418432a71f96",
    "home": "AU",
    "country": "US",
-   "place": "Q189074",
-   "evidence": "Wikidata Q1825882 work location (P937): Q189074 (Q189074)"
+   "place": "Manhattan",
+   "evidence": "Wikidata Q1825882 work location (P937): Q189074 (Q189074), in Manhattan (Q11299)"
   },
   {
    "key": "9960b51b-f542-419a-b77f-418432a71f96",
@@ -6609,10 +6595,10 @@
    "key": "9ddd7abc-9e1b-471d-8031-583bc6bc8be9",
    "home": "RU",
    "country": "CH",
-   "place": "Clarens",
+   "place": "Montreux",
    "from": 1877,
    "to": 1877,
-   "evidence": "Wikidata Q7315 residence (P551): Clarens (Q178508), start 1877-10-01, end 1877-11-01"
+   "evidence": "Wikidata Q7315 residence (P551): Clarens (Q178508), in Montreux (Q69354), start 1877-10-01, end 1877-11-01"
   },
   {
    "key": "9ddd7abc-9e1b-471d-8031-583bc6bc8be9",
@@ -6627,8 +6613,8 @@
    "key": "9d646abc-e5f7-4c98-bee8-d07ef34f4a1e",
    "home": "AU",
    "country": "US",
-   "place": "Studio City",
-   "evidence": "Wikidata Q3481642 residence (P551): Studio City (Q3143067)"
+   "place": "Los Angeles",
+   "evidence": "Wikidata Q3481642 residence (P551): Studio City (Q3143067), in Los Angeles (Q65)"
   },
   {
    "key": "9d547e4d-07f1-44fd-95eb-297a1933c295",
@@ -6654,8 +6640,8 @@
    "key": "9edc05f7-33cb-4909-a56c-4d6d2c60df34",
    "home": "JM",
    "country": "US",
-   "place": "Brooklyn",
-   "evidence": "Wikidata Q1089127 residence (P551): Brooklyn (Q18419)"
+   "place": "New York City",
+   "evidence": "Wikidata Q1089127 residence (P551): Brooklyn (Q18419), in New York City (Q60)"
   },
   {
    "key": "9e585bf7-feb0-4960-9b6a-eefe3ae6a61e",
@@ -6752,8 +6738,8 @@
    "key": "a1c29c2f-778f-4b02-9ac7-80f0c37cdea9",
    "home": "NO",
    "country": "US",
-   "place": "Brooklyn",
-   "evidence": "Wikidata Q726295 work location (P937): Brooklyn (Q18419)"
+   "place": "New York City",
+   "evidence": "Wikidata Q726295 work location (P937): Brooklyn (Q18419), in New York City (Q60)"
   },
   {
    "key": "a14c1fdb-3246-408d-9a51-ae939e4774b2",
@@ -6899,9 +6885,9 @@
    "key": "a52c2c88-0c51-46d5-b40d-76c8cd769a0c",
    "home": "AT",
    "country": "DE",
-   "place": "Neubabelsberg",
+   "place": "Potsdam",
    "to": 1933,
-   "evidence": "Wikidata Q78632 residence (P551): Neubabelsberg (Q1979246), end 1933-01-01"
+   "evidence": "Wikidata Q78632 residence (P551): Neubabelsberg (Q1979246), in Potsdam (Q1711), end 1933-01-01"
   },
   {
    "key": "a52c2c88-0c51-46d5-b40d-76c8cd769a0c",
@@ -6929,8 +6915,8 @@
    "key": "a6de8ef9-b1a1-4756-97aa-481bbb8a4069",
    "home": "CA",
    "country": "US",
-   "place": "Bel Air",
-   "evidence": "Wikidata Q205721 residence (P551): Bel Air (Q86768)"
+   "place": "Los Angeles",
+   "evidence": "Wikidata Q205721 residence (P551): Bel Air (Q86768), in Los Angeles (Q65)"
   },
   {
    "key": "a65d57ec-36a7-49ad-b99d-79f01cd45478",
@@ -6964,8 +6950,8 @@
    "key": "a6a83501-6241-4851-bd37-720f8feafb59",
    "home": "HR",
    "country": "US",
-   "place": "Hollywood",
-   "evidence": "Wikidata Q434291 residence (P551): Hollywood (Q34006)"
+   "place": "Los Angeles",
+   "evidence": "Wikidata Q434291 residence (P551): Hollywood (Q34006), in Los Angeles (Q65)"
   },
   {
    "key": "a68eae98-e3b3-422f-9c51-932fd1032c0d",
@@ -7205,8 +7191,8 @@
    "key": "ae33ce8d-f41a-4f6b-b9c6-7859acbd04ef",
    "home": "MX",
    "country": "US",
-   "place": "Bel Air",
-   "evidence": "Wikidata Q171235 residence (P551): Bel Air (Q86768)"
+   "place": "Los Angeles",
+   "evidence": "Wikidata Q171235 residence (P551): Bel Air (Q86768), in Los Angeles (Q65)"
   },
   {
    "key": "ae33ce8d-f41a-4f6b-b9c6-7859acbd04ef",
@@ -7708,8 +7694,8 @@
    "key": "bc1fbace-7ef8-48d6-a413-65ab9a227bdc",
    "home": "IN",
    "country": "US",
-   "place": "La Jolla",
-   "evidence": "Wikidata Q318506 residence (P551): La Jolla (Q840668)"
+   "place": "San Diego",
+   "evidence": "Wikidata Q318506 residence (P551): La Jolla (Q840668), in San Diego (Q16552)"
   },
   {
    "key": "bc12bcac-4a2e-4ce1-9b7b-11d4cc9afa25",
@@ -8755,8 +8741,8 @@
    "key": "cc7d4686-ea02-45fd-956e-94c1a322558c",
    "home": "SE",
    "country": "US",
-   "place": "Laurel Canyon",
-   "evidence": "Wikidata Q270724 residence (P551): Laurel Canyon (Q462539)"
+   "place": "Los Angeles",
+   "evidence": "Wikidata Q270724 residence (P551): Laurel Canyon (Q462539), in Los Angeles (Q65)"
   },
   {
    "key": "cc697814-eb8f-48b7-8ebe-ee538f37f581",
@@ -8886,8 +8872,8 @@
    "key": "d1b668d8-8382-4a5a-b850-f6a3a023102c",
    "home": "IT",
    "country": "US",
-   "place": "Brooklyn",
-   "evidence": "Wikidata Q5441073 work location (P937): Brooklyn (Q18419)"
+   "place": "New York City",
+   "evidence": "Wikidata Q5441073 work location (P937): Brooklyn (Q18419), in New York City (Q60)"
   },
   {
    "key": "d1be849f-d09e-4f3c-a411-91546de3dbb6",
@@ -9841,15 +9827,8 @@
    "key": "eb3f70ce-f226-428f-8d7f-046c8dbfd98f",
    "home": "NL",
    "country": "US",
-   "place": "Venice",
-   "evidence": "Wikidata Q266429 work location (P937): Venice (Q773853)"
-  },
-  {
-   "key": "eb3f70ce-f226-428f-8d7f-046c8dbfd98f",
-   "home": "NL",
-   "country": "US",
-   "place": "Tarzana",
-   "evidence": "Wikidata Q266429 residence (P551): Tarzana (Q2708222)"
+   "place": "Los Angeles",
+   "evidence": "Wikidata Q266429 work location (P937): Venice (Q773853), in Los Angeles (Q65)"
   },
   {
    "key": "ebe0666c-6d24-4866-afaa-fc20f2768adf",
@@ -9943,8 +9922,8 @@
    "key": "edd45d39-5891-463e-99f2-d5afccd6d347",
    "home": "LV",
    "country": "CH",
-   "place": "Castagnola",
-   "evidence": "Wikidata Q348001 work location (P937): Castagnola (Q25238183)"
+   "place": "Lugano",
+   "evidence": "Wikidata Q348001 work location (P937): Castagnola (Q25238183), in Lugano (Q7024)"
   },
   {
    "key": "edd45d39-5891-463e-99f2-d5afccd6d347",
@@ -10548,8 +10527,8 @@
    "key": "faa21ccf-f0d3-4a84-95d4-ae596aa40744",
    "home": "CL",
    "country": "US",
-   "place": "Washington Heights",
-   "evidence": "Wikidata Q18411604 residence (P551): Washington Heights (Q1370292)"
+   "place": "Manhattan",
+   "evidence": "Wikidata Q18411604 residence (P551): Washington Heights (Q1370292), in Manhattan (Q11299)"
   },
   {
    "key": "fb09fcfb-8bba-4efb-8b23-332fba448fc1",
@@ -11025,8 +11004,8 @@
    "key": "dg:9623923",
    "home": "KH",
    "country": "US",
-   "place": "Sherman Oaks",
-   "evidence": "Wikidata Q118375154 residence (P551): Sherman Oaks (Q1015874)"
+   "place": "Los Angeles",
+   "evidence": "Wikidata Q118375154 residence (P551): Sherman Oaks (Q1015874), in Los Angeles (Q65)"
   },
   {
    "key": "wd:Q320491",
@@ -11146,8 +11125,8 @@
    "key": "dg:8583804",
    "home": "SN",
    "country": "US",
-   "place": "Hollywood",
-   "evidence": "Wikidata Q98825033 residence (P551): Hollywood (Q34006)"
+   "place": "Los Angeles",
+   "evidence": "Wikidata Q98825033 residence (P551): Hollywood (Q34006), in Los Angeles (Q65)"
   },
   {
    "key": "dg:2718854",
@@ -11379,8 +11358,8 @@
    "key": "dg:8110397",
    "home": "AM",
    "country": "GB",
-   "place": "Brighton",
-   "evidence": "Wikidata Q4764405 residence (P551): Brighton (Q131491)"
+   "place": "Brighton and Hove",
+   "evidence": "Wikidata Q4764405 residence (P551): Brighton (Q131491), in Brighton and Hove (Q1022488)"
   },
   {
    "key": "dg:14790218",

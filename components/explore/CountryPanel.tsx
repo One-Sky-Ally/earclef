@@ -862,11 +862,11 @@ export function CountryPanel({
               own entry is elsewhere but whose music happened here in
               these years, by a dated chapter. Counted in the total
               above; the line under each name says where they are from
-              and when they were here. */}
+              and when they were here. Heading wording: owner, Oct 11. */}
           {chapterArrivals.length > 0 && (
             <section className={styles.chaptersSection}>
               <h3 className={styles.archiveHeading}>
-                Artist chapters · {country.name}
+                Made music in {country.name}
               </h3>
               <ul className={styles.artists}>
                 {chapterArrivals.map((artist) => (
