@@ -303,3 +303,34 @@
 .chipDismiss:hover {
   color: var(--accent);
 }
+
+/* Where the song was made ("Recorded in …"), linking to that place on
+   the globe in the song's year. */
+.nowPlace {
+  display: block;
+  margin: -0.15rem 0 0.35rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 3px;
+}
+
+.nowPlace:hover,
+.rowPlace:hover {
+  color: var(--accent);
+}
+
+.rowPlace {
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 45%;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+}

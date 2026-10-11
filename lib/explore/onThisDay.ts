@@ -1,5 +1,7 @@
 import onThisDayIndex from './on-this-day/index.json'
 import { canonicalizeTags } from './genreFamilies'
+import usStates from './us-states.json'
+import ukNations from './uk-nations.json'
 
 /**
  * "On this day" (owner, Oct 10 2026): music released on a calendar day in
@@ -40,6 +42,21 @@ export interface OnThisDayItem {
   vs?: string
   /** The artist's genres, canonicalized exactly as the Explore panels do. */
   genres: string[]
+  /** MusicBrainz release group (the recording-place key). */
+  rg?: string
+  /**
+   * Where this song was MADE — recorded — when MusicBrainz says so by id
+   * (scripts/build-on-this-day-places.mjs). Never a birthplace, never a
+   * country of issue. City when known, else the country alone.
+   */
+  place?: SongPlace
+}
+
+export interface SongPlace {
+  /** "Recorded in Sydney, Australia" / "Recorded in Australia". */
+  label: string
+  /** The place on the globe, in the song's year. */
+  href: string
 }
 
 /** What the shards store: raw tags, canonicalized on the way out. */
@@ -66,8 +83,71 @@ interface MonthShard {
 /** Matches POOL_TAG_LIMIT in countryData.ts, so genres read as they do on a panel. */
 const GENRE_LIMIT = 4
 
-function servedItem({ g, ...item }: StoredItem): OnThisDayItem {
-  return { ...item, genres: canonicalizeTags(g ?? []).slice(0, GENRE_LIMIT) }
+interface StoredPlace {
+  city: string | null
+  country: string
+  countryName: string
+  /** The globe's own US-state / UK-nation code, when the place is in one. */
+  sub?: string
+}
+
+interface PlacesFile {
+  groups: Record<string, { release?: StoredPlace; tracks?: Record<string, StoredPlace> }>
+}
+
+let placesFile: PlacesFile | null | undefined
+
+async function loadPlaces(): Promise<PlacesFile | null> {
+  if (placesFile !== undefined) return placesFile
+  try {
+    const loaded = await import('./on-this-day/places.json')
+    placesFile = (loaded.default ?? loaded) as PlacesFile
+  } catch {
+    // No places file is no opinion: songs simply show no place.
+    placesFile = null
+  }
+  return placesFile
+}
+
+/** The key recordings are stored under (scripts/lib/onThisDayPlace.mjs songKey). */
+const songKey = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim()
+
+/** The globe's US states and UK nations by code — named when there is no city. */
+const SUBDIVISION_NAMES = new Map(
+  [...(usStates as { states: { code: string; name: string }[] }).states,
+    ...(ukNations as { states: { code: string; name: string }[] }).states].map(
+    (entry) => [entry.code, entry.name] as const,
+  ),
+)
+
+/** The song's own recording first, the whole release only when the song has none. */
+function placeFor(item: StoredItem, places: PlacesFile | null): SongPlace | undefined {
+  if (!item.v || !item.rg || !places) return undefined
+  const group = places.groups[item.rg]
+  const stored = group?.tracks?.[songKey(item.vs ?? item.t)] ?? group?.release
+  if (!stored) return undefined
+  const countryName = index.countryNames[stored.country] ?? stored.countryName
+  // City when known; else the US state / UK nation the record names; else the country.
+  const local = stored.city ?? (stored.sub ? SUBDIVISION_NAMES.get(stored.sub) : undefined)
+  return {
+    label: local ? `Recorded in ${local}, ${countryName}` : `Recorded in ${countryName}`,
+    href: `/?y=${item.y}&c=${stored.sub ?? stored.country}`,
+  }
+}
+
+function servedItem({ g, ...item }: StoredItem, places: PlacesFile | null): OnThisDayItem {
+  const place = placeFor(item, places)
+  return {
+    ...item,
+    genres: canonicalizeTags(g ?? []).slice(0, GENRE_LIMIT),
+    ...(place ? { place } : {}),
+  }
 }
 
 interface OnThisDayIndex {
@@ -120,9 +200,11 @@ export interface OnThisDayPayload extends OnThisDayDay {
 export async function onThisDay(monthDay: string): Promise<OnThisDayPayload | null> {
   const date = parseMonthDay(monthDay)
   if (!date) return null
-  const shard = await loadMonth(date.slice(0, 2))
+  const [shard, places] = await Promise.all([loadMonth(date.slice(0, 2)), loadPlaces()])
   const stored = shard?.days[date]
-  const day: OnThisDayDay = stored ? { ...stored, items: stored.items.map(servedItem) } : EMPTY_DAY
+  const day: OnThisDayDay = stored
+    ? { ...stored, items: stored.items.map((item) => servedItem(item, places)) }
+    : EMPTY_DAY
   const codes = new Set([...Object.keys(day.byCountry), ...day.items.map((item) => item.c)])
   return {
     ...day,
