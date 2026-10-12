@@ -19,6 +19,8 @@ const SERVICE_KIND: Partial<Record<ListenService, PlayLink['kind']>> = {
   spotify: 'spotify',
   appleMusic: 'apple-music',
   amazonMusic: 'amazon-music',
+  deezer: 'deezer',
+  tidal: 'tidal',
   // 'youtube' maps to nothing: a fan preferring YouTube wants the
   // verified-video chain, which already ran and found none here.
 }

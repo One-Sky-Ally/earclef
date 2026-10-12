@@ -16,3 +16,8 @@
 .link:hover {
   color: var(--accent-deep);
 }
+
+.verified {
+  font-size: 0.8em;
+  color: var(--text-muted);
+}

@@ -1,20 +1,30 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { fetchCatalog, type CatalogResponse } from '@/lib/artist/browserData'
-import { coverArtUrl } from '@/lib/links'
+import {
+  fetchCatalog,
+  type CatalogItem,
+  type CatalogResponse,
+} from '@/lib/artist/browserData'
+import {
+  archiveAudioSearchUrl,
+  bandcampSearchUrl,
+  coverArtUrl,
+} from '@/lib/links'
+import {
+  resolveListenHref,
+  type ArtistServicePresence,
+} from '@/lib/listen/services'
+import { useListenService } from '@/components/listen/ServiceProvider'
 import { Modal } from '@/components/Modal'
 import styles from './popupBrowser.module.css'
 
-/**
- * The full discography from MusicBrainz, to browse. NO LINKS (owner
- * ruling, Oct 12 2026): every tile used to open a music-service search,
- * which breaks the no-search-links rule. Verified per-release links
- * come later; until then the catalog informs and promises nothing.
- */
 interface CatalogPopupProps {
   mbid: string
   artistName: string
+  /** Show a Bandcamp search per item when the artist's catalog lives there. */
+  hasBandcamp?: boolean
+  presence?: ArtistServicePresence
   onClose: () => void
 }
 
@@ -23,7 +33,18 @@ type PopupState =
   | { status: 'error' }
   | { status: 'ready'; catalog: CatalogResponse }
 
-export function CatalogPopup({ mbid, artistName, onClose }: CatalogPopupProps) {
+function isPre1950(item: CatalogItem): boolean {
+  return item.year !== undefined && Number(item.year) < 1950
+}
+
+export function CatalogPopup({
+  mbid,
+  artistName,
+  hasBandcamp = false,
+  presence,
+  onClose,
+}: CatalogPopupProps) {
+  const { service } = useListenService()
   const [state, setState] = useState<PopupState>({ status: 'loading' })
   const [activeKey, setActiveKey] = useState<string | null>(null)
 
@@ -45,7 +66,7 @@ export function CatalogPopup({ mbid, artistName, onClose }: CatalogPopupProps) {
   return (
     <Modal
       title="Full catalog"
-      subtitle={`${artistName} — the discography on MusicBrainz, to browse; nothing here links out`}
+      subtitle={`${artistName} — every tile opens a search on your service ↗, not a guaranteed match`}
       onClose={onClose}
     >
       {state.status === 'loading' && (
@@ -76,9 +97,15 @@ export function CatalogPopup({ mbid, artistName, onClose }: CatalogPopupProps) {
           </ul>
           <div className={styles.main}>
             <ul className={styles.grid}>
-              {active.items.map((item) => (
-                <li key={item.rgid} className={styles.tileWrap}>
-                  <div className={styles.tile}>
+              {active.items.map((item) => {
+                const listen = resolveListenHref(
+                  service,
+                  presence,
+                  artistName,
+                  item.title,
+                )
+                const tile = (
+                  <>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       className={styles.cover}
@@ -97,16 +124,60 @@ export function CatalogPopup({ mbid, artistName, onClose }: CatalogPopupProps) {
                         {item.rare && (
                         <span
                           className={styles.rareChip}
-                          title="May be hard to find online"
+                          title="May be hard to find online — links open a search, not a guaranteed match"
                         >
                             rare
                           </span>
                         )}
                       </span>
                     )}
-                  </div>
+                    {listen.kind === 'absent' && (
+                      <span className={styles.tileMeta}>*{listen.note}</span>
+                    )}
+                  </>
+                )
+                return (
+                <li key={item.rgid} className={styles.tileWrap}>
+                  {listen.kind === 'search' ? (
+                    <a
+                      className={styles.tile}
+                      href={listen.href}
+                      title={`${listen.label} ↗: ${item.title}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {tile}
+                    </a>
+                  ) : (
+                    <div className={styles.tile}>{tile}</div>
+                  )}
+                  {(hasBandcamp || isPre1950(item)) && (
+                    <span className={styles.sources}>
+                      {hasBandcamp && (
+                        <a
+                          className={styles.sourceLink}
+                          href={bandcampSearchUrl(artistName, item.title)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Search Bandcamp ↗
+                        </a>
+                      )}
+                      {isPre1950(item) && (
+                        <a
+                          className={styles.sourceLink}
+                          href={archiveAudioSearchUrl(artistName, item.title)}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Search Archive ↗
+                        </a>
+                      )}
+                    </span>
+                  )}
                 </li>
-              ))}
+                )
+              })}
             </ul>
           </div>
         </div>

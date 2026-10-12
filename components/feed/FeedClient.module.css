@@ -263,3 +263,10 @@ li:last-child .row {
   font-size: 0.82rem;
   color: var(--text-soft);
 }
+
+.upcomingAction {
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}

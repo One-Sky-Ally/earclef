@@ -4,6 +4,14 @@
   margin-top: 2.5rem;
 }
 
+/* "Listen on" picker — sits under the platform pills, right-aligned
+   on wide screens like it does on /feed. */
+.pickerRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
 .more {
   display: inline-block;
   margin-top: 1.75rem;

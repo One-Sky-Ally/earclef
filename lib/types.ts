@@ -65,7 +65,7 @@ export interface FeaturedAlbum {
  * "not on X" claims — missing platform IDs never imply absence.
  */
 export interface ListenAbsence {
-  platform: 'spotify' | 'appleMusic' | 'amazonMusic'
+  platform: 'spotify' | 'appleMusic' | 'amazonMusic' | 'deezer' | 'tidal'
   /** Owner-written line, e.g. "Not on Spotify — by her choice." */
   note?: string
 }

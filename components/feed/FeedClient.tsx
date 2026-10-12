@@ -19,6 +19,7 @@ import {
 import { blurbKey, normalizedTitle } from '@/lib/feed/blurbKey'
 import { displayTitle } from '@/lib/feed/displayTitle'
 import {
+  SEARCH_LABELS,
   musicServiceSearchUrl,
   type ArtistServicePresence,
 } from '@/lib/listen/services'
@@ -602,6 +603,9 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
               </span>
               <span className={styles.upcomingTitle}>
                 {item.artistName} — {displayTitle(item.title)}
+              </span>
+              <span className={styles.upcomingAction}>
+                {SEARCH_LABELS.appleMusic} ↗
               </span>
             </a>
           ))}

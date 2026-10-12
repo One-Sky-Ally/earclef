@@ -186,10 +186,12 @@
 /* A song admitted "across all years" says which years it is from. */
 .rowEra {
   flex: none;
+  max-width: 45%;
   font-size: 0.66rem;
   font-style: italic;
+  line-height: 1.2;
+  text-align: right;
   color: var(--text-muted);
-  white-space: nowrap;
 }
 
 .rowTitle {

@@ -143,8 +143,8 @@ export function WhatWasPlaying({
               <div className={styles.itemText}>
                 <a
                   className={styles.itemWork}
-                  href={listen.href}
-                  title={`${listen.label}: ${item.work}`}
+                  href={listen.kind === 'search' ? listen.href : undefined}
+                  title={listen.kind === 'search' ? `${listen.label} ↗: ${item.work}` : listen.note}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -157,12 +157,12 @@ export function WhatWasPlaying({
               </div>
               <a
                 className={styles.listenLink}
-                href={listen.href}
+                href={listen.kind === 'search' ? listen.href : undefined}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`${listen.label}: ${item.work} by ${item.artist}`}
+                aria-label={`${listen.kind === 'search' ? listen.label : listen.note}: ${item.work} by ${item.artist}`}
               >
-                {listen.label} ↗
+                {listen.kind === 'search' ? `${listen.label} ↗` : `*${listen.note}`}
               </a>
             </li>
           )

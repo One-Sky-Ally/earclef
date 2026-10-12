@@ -85,9 +85,15 @@ const LEAD_IN_TRACKS = 5
  */
 type TrackEra = 'in-era' | 'nearby' | 'catalog' | 'unknown'
 
-/** Only in-era counts as verified FOR THE YEAR the button promises. */
+/**
+ * What plays under the year's button: in-era songs, and songs with no
+ * release date to hold to a year from an artist the pool places in
+ * this era (gap-fill, pre-era cache entries) — owner ruling, Oct 13
+ * 2026: "let them play under the year, labeled honestly". Nearby and
+ * catalog songs carry a date that says another era, and wait.
+ */
 function verifiedForYear(era: TrackEra): boolean {
-  return era === 'in-era'
+  return era === 'in-era' || era === 'unknown'
 }
 
 function eraLabel(era: TrackEra): string {
@@ -97,7 +103,7 @@ function eraLabel(era: TrackEra): string {
     case 'catalog':
       return 'other years'
     case 'unknown':
-      return 'year unverified'
+      return 'artist from this era · song year not confirmed'
     default:
       return ''
   }
@@ -583,7 +589,8 @@ export function QueuePlayer({
         // Gap-fill entries carry their video already — no request, no
         // quota, no waiting. They land in resolution order like every
         // other track, so a queue with them starts sounding sooner.
-        // Verified as the artist's own, not as the year's: era unknown.
+        // Verified as the artist's own; the song's year is unconfirmed,
+        // so it plays under the year with that said on the row.
         if (artist.queueTrack) {
           admit(artist, demoted, [
             {
@@ -1383,10 +1390,14 @@ export function QueuePlayer({
                 <span className={styles.rowArtist}>{track.artistName}</span>
               )}
               <span className={styles.rowTitle}>{track.title}</span>
-              {track.era && !verifiedForYear(track.era) && (
+              {track.era && track.era !== 'in-era' && (
                 <span
                   className={styles.rowEra}
-                  title={`Verified as ${track.artistName}'s — not as ${year}'s`}
+                  title={
+                    track.era === 'unknown'
+                      ? `${track.artistName} is placed in this era; this recording's own year is not confirmed`
+                      : `Verified as ${track.artistName}'s — not as ${year}'s`
+                  }
                 >
                   {eraLabel(track.era)}
                 </span>

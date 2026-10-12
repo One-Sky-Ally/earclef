@@ -41,41 +41,53 @@ export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
     item.type === 'release'
       ? resolveListenHref(service, item.presence, item.artistName, item.title)
       : null
-  const href = resolved?.href ?? item.href
+  // Videos carry a verified watch URL; a release is a labeled search on
+  // the fan's service — or, when the artist is confirmed absent from
+  // it, a note and no link at all.
+  const link =
+    resolved === null
+      ? { href: item.href, label: 'Watch on YouTube' }
+      : resolved.kind === 'search'
+        ? { href: resolved.href, label: resolved.label }
+        : null
   // Raw hashtags are metadata, not a headline.
   const headline = displayTitle(item.title)
 
+  const art = (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      className={item.type === 'video' ? styles.thumb : styles.cover}
+      src={item.imageLarge ?? item.image}
+      alt=""
+      loading="lazy"
+      onError={(event) => {
+        const img = event.currentTarget
+        // maxresdefault (and some covers) 404 — step down, then out.
+        if (img.src !== item.image && item.image.startsWith('http')) {
+          img.src = item.image
+        } else {
+          img.src = '/images/hero-placeholder.svg'
+        }
+      }}
+    />
+  )
+
   return (
     <article className={styles.card}>
-      <a
-        className={styles.media}
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={
-          resolved
-            ? `${resolved.label}: ${headline} by ${item.artistName}`
-            : `Watch ${headline} on YouTube`
-        }
-        title={resolved ? resolved.label : undefined}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className={item.type === 'video' ? styles.thumb : styles.cover}
-          src={item.imageLarge ?? item.image}
-          alt=""
-          loading="lazy"
-          onError={(event) => {
-            const img = event.currentTarget
-            // maxresdefault (and some covers) 404 — step down, then out.
-            if (img.src !== item.image && item.image.startsWith('http')) {
-              img.src = item.image
-            } else {
-              img.src = '/images/hero-placeholder.svg'
-            }
-          }}
-        />
-      </a>
+      {link ? (
+        <a
+          className={styles.media}
+          href={link.href}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${link.label}: ${headline} by ${item.artistName}`}
+          title={`${link.label} ↗`}
+        >
+          {art}
+        </a>
+      ) : (
+        <div className={styles.media}>{art}</div>
+      )}
       <div className={styles.body}>
         <p className={styles.meta}>
           <span className={styles.badge}>
@@ -86,14 +98,34 @@ export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
           </Link>
           <span className={styles.date}>{item.dateLabel}</span>
         </p>
-        <a
-          className={styles.title}
-          href={href}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {headline}
-        </a>
+        {link ? (
+          <a
+            className={styles.title}
+            href={link.href}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {headline}
+          </a>
+        ) : (
+          <span className={styles.title}>{headline}</span>
+        )}
+        {/* Says what the click does before the click: a search on a
+            service, a watch on YouTube, or a confirmed absence. */}
+        {link ? (
+          <a
+            className={styles.action}
+            href={link.href}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {link.label} ↗
+          </a>
+        ) : (
+          resolved?.kind === 'absent' && (
+            <span className={styles.absent}>*{resolved.note}</span>
+          )
+        )}
         {blurb ? (
           <p className={styles.blurb}>{blurb}</p>
         ) : (

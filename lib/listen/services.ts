@@ -1,9 +1,11 @@
 /**
- * Fan-chosen listening service (v1 — links only, no APIs). Every listen
- * click resolves to the fan's service using per-artist data from the
- * content JSONs; release-level links are search URLs on that service
- * (we hold no per-release IDs), labeled as searches — "Search on X",
- * never a ▶ that promises playback.
+ * Fan-chosen listening service (v1 — links only, no APIs). The site
+ * hosts no music: every listen click resolves to the fan's service
+ * using per-artist data from the content JSONs; release-level links
+ * are search URLs on that service (we hold no per-release IDs),
+ * labeled as searches — "Search on X ↗", never a ▶ that promises
+ * playback (owner rule, restated Oct 13 2026: music-service links are
+ * fine when labeled honestly; only YouTube search links are banned).
  *
  * YouTube search URLs are BANNED (Aug 8, 2026 ruling): a YouTube miss
  * lands on unrelated video content, where a music-service miss lands
@@ -13,17 +15,30 @@
  *
  * HONESTY RULE: a missing platform ID never implies absence — most
  * dormant Spotify IDs simply were never captured. "Not on X" is claimed
- * ONLY when the owner asserts it in the artist's listen.notOn.
+ * ONLY when the owner asserts it in the artist's listen.notOn, or when
+ * scripts/verify-service-absence.mjs confirmed it against the service
+ * itself (lib/listen/service-absence.json). A confirmed absence shows
+ * a small note where the link would be — never a link, never a silent
+ * reroute to another service.
  */
 import type { ArtistContent } from '../types'
+import { confirmedAbsences } from './serviceAbsence'
 
-export type ListenService = 'youtube' | 'spotify' | 'appleMusic' | 'amazonMusic'
+export type ListenService =
+  | 'youtube'
+  | 'spotify'
+  | 'appleMusic'
+  | 'amazonMusic'
+  | 'deezer'
+  | 'tidal'
 
 export const SERVICE_ORDER: ListenService[] = [
   'youtube',
   'spotify',
   'appleMusic',
   'amazonMusic',
+  'deezer',
+  'tidal',
 ]
 
 export const SERVICE_LABELS: Record<ListenService, string> = {
@@ -31,6 +46,8 @@ export const SERVICE_LABELS: Record<ListenService, string> = {
   spotify: 'Spotify',
   appleMusic: 'Apple Music',
   amazonMusic: 'Amazon Music',
+  deezer: 'Deezer',
+  tidal: 'TIDAL',
 }
 
 export function isListenService(value: unknown): value is ListenService {
@@ -40,11 +57,22 @@ export function isListenService(value: unknown): value is ListenService {
   )
 }
 
-/** Owner-asserted absence from a service (never inferred from data). */
+/** Music services that release-level searches may target — no YouTube. */
+export type MusicSearchService = Exclude<ListenService, 'youtube'>
+
+export function isMusicSearchService(
+  value: unknown,
+): value is MusicSearchService {
+  return isListenService(value) && value !== 'youtube'
+}
+
+/** Owner-asserted or verified absence from a service (never inferred). */
 export interface ServiceAbsence {
-  platform: Exclude<ListenService, 'youtube'>
+  platform: MusicSearchService
   /** Owner-written line, e.g. "Not on Spotify — by her choice." */
   note?: string
+  /** Where the claim comes from: the owner's file, or the verifier. */
+  source?: 'owner' | 'verified'
 }
 
 /** What a listen surface needs to know about one artist. */
@@ -57,6 +85,8 @@ export interface ArtistServicePresence {
   spotifyUrl?: string
   /** Artist page on Amazon Music, when a verified link exists. */
   amazonMusicUrl?: string
+  /** The artist's own storefront (Bandcamp) — where a note can still point. */
+  bandcampUrl?: string
 }
 
 /** Everything the listen surfaces need, derived once per artist. */
@@ -74,23 +104,36 @@ export function presenceFromContent(
   const amazonMusicUrl = content.listen.platforms.find(
     (p) => p.platform === 'amazonMusic',
   )?.url
+  const bandcampUrl = content.listen.platforms.find(
+    (p) => p.platform === 'bandcamp',
+  )?.url
+  // The owner's word first; the verifier's confirmed absences fill in
+  // the services the owner did not rule on.
+  const owner: ServiceAbsence[] = (content.listen.notOn ?? [])
+    .filter((absence) => isMusicSearchService(absence.platform))
+    .map((absence) => ({ ...absence, source: 'owner' as const }))
+  const ruled = new Set(owner.map((absence) => absence.platform))
+  const verified = confirmedAbsences(content.slug).filter(
+    (absence) => !ruled.has(absence.platform),
+  )
+  const notOn = [...owner, ...verified]
   return {
     artistName: content.hero.name,
-    notOn: content.listen.notOn,
+    ...(notOn.length > 0 ? { notOn } : {}),
     appleMusicUrl,
     spotifyUrl,
     amazonMusicUrl,
+    bandcampUrl,
   }
 }
-
-/** Music services that release-level searches may target — no YouTube. */
-export type MusicSearchService = Exclude<ListenService, 'youtube'>
 
 /** Honest action labels: these links search, they don't play. */
 export const SEARCH_LABELS: Record<MusicSearchService, string> = {
   spotify: 'Search on Spotify',
   appleMusic: 'Search on Apple Music',
   amazonMusic: 'Search on Amazon Music',
+  deezer: 'Search on Deezer',
+  tidal: 'Search on TIDAL',
 }
 
 export function musicServiceSearchUrl(
@@ -106,6 +149,10 @@ export function musicServiceSearchUrl(
       return `https://open.spotify.com/search/${query}`
     case 'amazonMusic':
       return `https://music.amazon.com/search/${query}`
+    case 'deezer':
+      return `https://www.deezer.com/search/${query}`
+    case 'tidal':
+      return `https://listen.tidal.com/search?q=${query}`
     default:
       return `https://music.apple.com/us/search?term=${query}`
   }
@@ -118,20 +165,34 @@ export function absenceFor(
   return presence?.notOn?.find((absence) => absence.platform === service)
 }
 
-export interface ResolvedListen {
-  href: string
-  /** The service actually linked (differs when rerouted around an absence). */
-  service: MusicSearchService
-  /** Honest action label for the link: "Search on X". */
-  label: string
-  rerouted: boolean
+/** The small note shown where a link would be: "Not on Spotify". */
+export function absenceNote(absence: ServiceAbsence): string {
+  return absence.note ?? `Not on ${SERVICE_LABELS[absence.platform]}`
 }
+
+export type ResolvedListen =
+  | {
+      kind: 'search'
+      href: string
+      /** The service actually linked (Apple Music for YouTube fans). */
+      service: MusicSearchService
+      /** Honest action label for the link: "Search on X". */
+      label: string
+      rerouted: boolean
+    }
+  | {
+      /** The artist is confirmed absent from the chosen service: a
+       * note, not a link, and never a silent reroute elsewhere. */
+      kind: 'absent'
+      service: MusicSearchService
+      note: string
+      absence: ServiceAbsence
+    }
 
 /**
  * A release-level listen link for the chosen service. YouTube fans
- * reroute to Apple Music (YouTube search is banned); artists asserted
- * absent from the target reroute to the first service the owner has
- * not marked them absent from.
+ * reroute to Apple Music (YouTube search is banned); an artist
+ * confirmed absent from the chosen service gets a note instead.
  */
 export function resolveListenHref(
   service: ListenService,
@@ -141,18 +202,20 @@ export function resolveListenHref(
 ): ResolvedListen {
   const requested: MusicSearchService =
     service === 'youtube' ? 'appleMusic' : service
-  const order: MusicSearchService[] = [
-    requested,
-    'appleMusic',
-    'amazonMusic',
-    'spotify',
-  ]
-  const resolved =
-    order.find((candidate) => !absenceFor(candidate, presence)) ?? requested
+  const absence = absenceFor(requested, presence)
+  if (absence) {
+    return {
+      kind: 'absent',
+      service: requested,
+      note: absenceNote(absence),
+      absence,
+    }
+  }
   return {
-    href: musicServiceSearchUrl(resolved, artistName, title),
-    service: resolved,
-    label: SEARCH_LABELS[resolved],
-    rerouted: resolved !== service,
+    kind: 'search',
+    href: musicServiceSearchUrl(requested, artistName, title),
+    service: requested,
+    label: SEARCH_LABELS[requested],
+    rerouted: requested !== service,
   }
 }

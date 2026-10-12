@@ -185,12 +185,12 @@ export function ArtistEraPanel({
                       </div>
                       <a
                         className={styles.listenLink}
-                        href={listen.href}
+                        href={listen.kind === 'search' ? listen.href : undefined}
                         target="_blank"
                         rel="noreferrer"
-                        aria-label={`${listen.label}: ${release.title} by ${artist.name}`}
+                        aria-label={`${listen.kind === 'search' ? listen.label : listen.note}: ${release.title} by ${artist.name}`}
                       >
-                        {listen.label} ↗
+                        {listen.kind === 'search' ? `${listen.label} ↗` : `*${listen.note}`}
                       </a>
                     </li>
                   )
