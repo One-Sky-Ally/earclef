@@ -75,11 +75,40 @@ const HONEST_MIN = QUEUE_HONEST_MIN
  */
 const LEAD_IN_TRACKS = 5
 
+/**
+ * How true a track is to the chosen year, as the resolver rated it:
+ * in-era = released in the chosen decade; nearby = within ±15 years;
+ * catalog = anywhere else in the artist's catalog; unknown = verified
+ * as the artist's own, with no release date to hold it to a year
+ * (gap-fill tracks). Absent on pre-verified queues (#1 hits, songs
+ * about a place), which are era-true by construction.
+ */
+type TrackEra = 'in-era' | 'nearby' | 'catalog' | 'unknown'
+
+/** Only in-era counts as verified FOR THE YEAR the button promises. */
+function verifiedForYear(era: TrackEra): boolean {
+  return era === 'in-era'
+}
+
+function eraLabel(era: TrackEra): string {
+  switch (era) {
+    case 'nearby':
+      return 'nearby years'
+    case 'catalog':
+      return 'other years'
+    case 'unknown':
+      return 'year unverified'
+    default:
+      return ''
+  }
+}
+
 interface ResolvedTrack {
   videoId: string
   title: string
   artistName: string
   mbid: string
+  era?: TrackEra
   /** In a genre family the queue holds out of its opening run. */
   demoted?: boolean
   /**
@@ -109,7 +138,7 @@ interface ArtistReserve {
   mbid: string
   demoted: boolean
   genres: string[]
-  tracks: { videoId: string; title: string }[]
+  tracks: { videoId: string; title: string; era?: TrackEra }[]
 }
 
 /**
@@ -302,6 +331,21 @@ export function QueuePlayer({
   const resolvedIdsRef = useRef(new Set<string>())
   /** Unplayed songs held back from artists already in the queue. */
   const reservesRef = useRef<ArtistReserve[]>([])
+  /**
+   * THE YEAR PROMISE (owner ruling, Oct 12 2026): "▶ Play Paraguay
+   * 1910" may only play what is verified for that year. Songs the
+   * resolver rated nearby / catalog / unknown are held HERE, out of the
+   * queue, until the listener chooses to explore the place across all
+   * years — and that choice is labelled as exactly that. Before, the
+   * queue played them under the year's name (1970s and 1994 videos for
+   * 1910).
+   */
+  const offEraRef = useRef<ArtistReserve[]>([])
+  /** Artists with off-year songs on hold — what the offer can promise. */
+  const [offEraCount, setOffEraCount] = useState(0)
+  /** The listener chose "across all years": every era now plays, labelled. */
+  const [anyYear, setAnyYear] = useState(false)
+  const anyYearRef = useRef(false)
   /** Video ids already queued — the last word on duplicates. */
   const queuedVideosRef = useRef(new Set<string>())
   /**
@@ -539,15 +583,13 @@ export function QueuePlayer({
         // Gap-fill entries carry their video already — no request, no
         // quota, no waiting. They land in resolution order like every
         // other track, so a queue with them starts sounding sooner.
+        // Verified as the artist's own, not as the year's: era unknown.
         if (artist.queueTrack) {
-          appendTracks([
+          admit(artist, demoted, [
             {
               videoId: artist.queueTrack.videoId,
               title: artist.queueTrack.title,
-              artistName: artist.name,
-              mbid: artist.id,
-              demoted,
-              genres: artist.tags,
+              era: 'unknown',
             },
           ])
           continue
@@ -575,8 +617,8 @@ export function QueuePlayer({
           }
           if (!res.ok) continue
           const body = (await res.json()) as {
-            track: { videoId: string; title: string } | null
-            tracks?: { videoId: string; title: string }[]
+            track: { videoId: string; title: string; era?: TrackEra } | null
+            tracks?: { videoId: string; title: string; era?: TrackEra }[]
           }
           const found = body.tracks?.length
             ? body.tracks
@@ -584,30 +626,17 @@ export function QueuePlayer({
               ? [body.track]
               : []
           if (found.length === 0) continue
-          // Queue their era-truest song now; the rest go to reserve, to
-          // be drawn on only once every artist has had a turn.
-          appendTracks([
-            {
-              videoId: found[0].videoId,
-              title: found[0].title,
-              artistName: artist.name,
-              mbid: artist.id,
-              demoted,
-              genres: artist.tags,
-            },
-          ])
-          if (found.length > 1) {
-            reservesRef.current = [
-              ...reservesRef.current,
-              {
-                artistName: artist.name,
-                mbid: artist.id,
-                demoted,
-                genres: artist.tags,
-                tracks: found.slice(1),
-              },
-            ]
-          }
+          admit(
+            artist,
+            demoted,
+            // A cached entry from before era ratings carries none: it
+            // is the artist's, not the year's.
+            found.map((track) => ({
+              videoId: track.videoId,
+              title: track.title,
+              era: track.era ?? 'unknown',
+            })),
+          )
         } catch {
           // A per-request timeout skips ONE artist; a controller abort
           // ends the worker. Unmount aborts fall out of the while.
@@ -619,6 +648,83 @@ export function QueuePlayer({
       Array.from({ length: QUEUE_CONCURRENCY }, () => worker()),
     )
     return slice.length
+  }
+
+  /**
+   * One artist's verified songs, era-rated, arriving from the resolver
+   * or a gap-fill entry. Their era-truest admitted song queues now; the
+   * rest go to reserve, drawn on only once every artist has had a turn.
+   * Songs NOT verified for the chosen year wait in the off-year hold
+   * until the listener asks for the place across all years.
+   */
+  function admit(
+    artist: QueuePoolArtist,
+    demoted: boolean,
+    songs: { videoId: string; title: string; era: TrackEra }[],
+  ) {
+    const reserve = {
+      artistName: artist.name,
+      mbid: artist.id,
+      demoted,
+      genres: artist.tags,
+    }
+    const now = songs.filter(
+      (song) => anyYearRef.current || verifiedForYear(song.era),
+    )
+    const later = songs.filter(
+      (song) => !(anyYearRef.current || verifiedForYear(song.era)),
+    )
+    if (now.length > 0) {
+      appendTracks([{ ...now[0], ...reserve }])
+      if (now.length > 1) {
+        reservesRef.current = [
+          ...reservesRef.current,
+          { ...reserve, tracks: now.slice(1) },
+        ]
+      }
+    }
+    if (later.length > 0) {
+      offEraRef.current = [...offEraRef.current, { ...reserve, tracks: later }]
+      setOffEraCount((count) => count + 1)
+    }
+  }
+
+  /**
+   * The listener chose the place across all years. Every held song
+   * joins — one per artist now, the rest to reserve — labelled by the
+   * era it earned; from here on the fill admits every era too.
+   */
+  function playAnyYear() {
+    anyYearRef.current = true
+    setAnyYear(true)
+    const held = offEraRef.current
+    offEraRef.current = []
+    setOffEraCount(0)
+    const firsts: ResolvedTrack[] = []
+    for (const reserve of held) {
+      const [first, ...rest] = reserve.tracks
+      if (!first) continue
+      firsts.push({
+        videoId: first.videoId,
+        title: first.title,
+        era: first.era,
+        artistName: reserve.artistName,
+        mbid: reserve.mbid,
+        demoted: reserve.demoted,
+        genres: reserve.genres,
+      })
+      if (rest.length > 0) {
+        reservesRef.current = [...reservesRef.current, { ...reserve, tracks: rest }]
+      }
+    }
+    // A queue that gave up aborted its controller — the fill needs a
+    // live one to keep walking the pool.
+    if (!abortRef.current || abortRef.current.signal.aborted) {
+      abortRef.current = new AbortController()
+    }
+    setGaveUp(false)
+    setExhausted(false)
+    appendTracks(firsts)
   }
 
   /**
@@ -643,6 +749,7 @@ export function QueuePlayer({
         drawn.push({
           videoId: next.videoId,
           title: next.title,
+          era: next.era,
           artistName: reserve.artistName,
           mbid: reserve.mbid,
           demoted: reserve.demoted,
@@ -969,6 +1076,16 @@ export function QueuePlayer({
   }
 
   const nowPlaying = tracks[current]
+  /**
+   * The fill has stopped with nothing verified for the year, while
+   * off-year songs wait on hold: say so, and offer them as what they
+   * are. (`gaveUp` is the first-track deadline; `exhausted` the pool.)
+   */
+  const noneForYear =
+    !anyYear &&
+    tracks.length === 0 &&
+    offEraCount > 0 &&
+    (gaveUp || (exhausted && !building))
 
   return (
     <div className={styles.queueBox}>
@@ -1038,15 +1155,42 @@ export function QueuePlayer({
           The player would not load here — the queue below still links out.
         </p>
       )}
-      {!nowPlaying && !quotaHit && !gaveUp && (
+      {anyYear && (
         <p className={styles.buildNote}>
-          Finding the sound of {placeName} {year}…
+          Playing {placeName} across all years — not limited to {year}; each
+          song says which years it is from.
         </p>
       )}
-      {gaveUp && tracks.length === 0 && (
+      {!nowPlaying && !quotaHit && !gaveUp && !noneForYear && (
+        <p className={styles.buildNote}>
+          {anyYear
+            ? `Finding more from ${placeName}, any year…`
+            : `Finding the sound of ${placeName} ${year}…`}
+        </p>
+      )}
+      {gaveUp && tracks.length === 0 && offEraCount === 0 && (
         <p className={styles.sparseNote}>
           Couldn&rsquo;t find the sound of {placeName} {year} tonight —
           the pills below still play one by one.
+        </p>
+      )}
+      {/* The year promise, kept out loud: nothing verified for this year,
+          and the alternative named for what it is. */}
+      {noneForYear && (
+        <p className={styles.sparseNote}>
+          No verified recordings for {placeName} {year}.{' '}
+          {offEraCount === 1
+            ? 'One artist from here has'
+            : `${offEraCount} artists from here have`}{' '}
+          verified music from other years.{' '}
+          <button
+            type="button"
+            className={styles.widenQueueButton}
+            onClick={playAnyYear}
+          >
+            ▶ Explore {placeName} across all years
+          </button>
+          {onWiden && <> {widenButton(false)}</>}
         </p>
       )}
       {building && nowPlaying && (
@@ -1085,6 +1229,18 @@ export function QueuePlayer({
             </>
           )}
           {onWiden && <> {widenButton(true)}</>}
+          {!anyYear && offEraCount > 0 && (
+            <>
+              {' '}
+              <button
+                type="button"
+                className={styles.widenQueueButton}
+                onClick={playAnyYear}
+              >
+                ▶ Keep going with {placeName} across all years
+              </button>
+            </>
+          )}
         </p>
       )}
 
@@ -1227,6 +1383,14 @@ export function QueuePlayer({
                 <span className={styles.rowArtist}>{track.artistName}</span>
               )}
               <span className={styles.rowTitle}>{track.title}</span>
+              {track.era && !verifiedForYear(track.era) && (
+                <span
+                  className={styles.rowEra}
+                  title={`Verified as ${track.artistName}'s — not as ${year}'s`}
+                >
+                  {eraLabel(track.era)}
+                </span>
+              )}
               {track.place && (
                 <Link
                   className={styles.rowPlace}

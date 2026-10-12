@@ -122,6 +122,34 @@ li:last-child .row {
   margin-bottom: 1.6rem;
 }
 
+/* Section heads: the dated feed, the editorial picks and the extras
+   each say what they are, so "newest first" is only ever claimed where
+   it is true. */
+.sectionHead {
+  margin: 2rem 0 0.35rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.sectionHead::before {
+  content: '';
+  display: inline-block;
+  width: 2rem;
+  height: 1px;
+  background: var(--accent-deep);
+  vertical-align: middle;
+  margin-right: 0.9rem;
+}
+
+.sectionNote {
+  margin-bottom: 1rem;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
 .showMore {
   display: block;
   margin-bottom: 1.6rem;

@@ -22,7 +22,7 @@ export function VideosLauncher({
     if (!fallbackUrl) return null
     return (
       <a className={className} href={fallbackUrl} target="_blank" rel="noreferrer">
-        View all videos →
+        View all videos on YouTube ↗
       </a>
     )
   }

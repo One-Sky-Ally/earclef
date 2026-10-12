@@ -151,9 +151,32 @@ export interface PlaceResult {
   area: string
 }
 
+/**
+ * One thing a search can open. `roster` is an Ear Clef artist page —
+ * checked first, and the only kind that leaves the globe. `detail` is
+ * the one line that tells two same-named choices apart.
+ */
+export type SearchChoice =
+  | {
+      kind: 'roster'
+      artist: { slug: string; name: string }
+      detail?: string
+    }
+  | { kind: 'place'; country: string; area: string; detail?: string }
+  | {
+      kind: 'artist'
+      artist: { mbid: string; name: string }
+      detail?: string
+    }
+
+/**
+ * A certain match opens on its own; an uncertain one comes back as
+ * `choices` and the visitor picks (owner ruling, Oct 12 2026: never
+ * silently pick when the match is a guess).
+ */
 export type SearchResult =
-  | { kind: 'place'; country: string; area: string }
-  | { kind: 'artist'; artist: { mbid: string; name: string } }
+  | SearchChoice
+  | { kind: 'choices'; choices: SearchChoice[] }
 
 /** Nothing matched — distinct from a failure, so the search box can
  * point an absent artist at /get-on-the-map instead of a dead end. */
@@ -182,16 +205,49 @@ export async function searchExplore(
   }
   const body = (await res.json()) as Partial<PlaceResult> & {
     kind?: SearchResult['kind']
-    artist?: { mbid: string; name: string }
+    artist?: { mbid?: string; slug?: string; name: string }
+    choices?: SearchChoice[]
+    detail?: string
+  }
+  if (body.kind === 'choices' && Array.isArray(body.choices)) {
+    const choices = body.choices.filter(isSearchChoice)
+    if (choices.length > 0) return { kind: 'choices', choices }
+    throw new SearchNotFoundError()
+  }
+  if (body.kind === 'roster' && body.artist?.slug) {
+    return {
+      kind: 'roster',
+      artist: { slug: body.artist.slug, name: body.artist.name },
+    }
   }
   // CDN-cached responses from before the artist fallback carry no kind.
-  if (body.kind === 'artist' && body.artist) {
-    return { kind: 'artist', artist: body.artist }
+  if (body.kind === 'artist' && body.artist?.mbid) {
+    return {
+      kind: 'artist',
+      artist: { mbid: body.artist.mbid, name: body.artist.name },
+    }
   }
   if (body.country && body.area) {
     return { kind: 'place', country: body.country, area: body.area }
   }
   throw new Error('Search failed — please try again.')
+}
+
+/** Stored and cached output outlives the generator: trust the shape, not the field. */
+function isSearchChoice(value: unknown): value is SearchChoice {
+  if (!value || typeof value !== 'object') return false
+  const choice = value as Record<string, unknown>
+  const artist = choice.artist as Record<string, unknown> | undefined
+  switch (choice.kind) {
+    case 'roster':
+      return typeof artist?.slug === 'string' && typeof artist?.name === 'string'
+    case 'artist':
+      return typeof artist?.mbid === 'string' && typeof artist?.name === 'string'
+    case 'place':
+      return typeof choice.country === 'string' && typeof choice.area === 'string'
+    default:
+      return false
+  }
 }
 
 export interface ArtistEraRelease {

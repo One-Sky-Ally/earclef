@@ -6,6 +6,7 @@ import {
   type ArtistServicePresence,
 } from '@/lib/listen/services'
 import { useListenService } from '@/components/listen/ServiceProvider'
+import { displayTitle } from '@/lib/feed/displayTitle'
 import styles from './FeedPostCard.module.css'
 
 export interface FeedPostItem {
@@ -41,6 +42,8 @@ export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
       ? resolveListenHref(service, item.presence, item.artistName, item.title)
       : null
   const href = resolved?.href ?? item.href
+  // Raw hashtags are metadata, not a headline.
+  const headline = displayTitle(item.title)
 
   return (
     <article className={styles.card}>
@@ -51,8 +54,8 @@ export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
         rel="noreferrer"
         aria-label={
           resolved
-            ? `${resolved.label}: ${item.title} by ${item.artistName}`
-            : `Watch ${item.title} on YouTube`
+            ? `${resolved.label}: ${headline} by ${item.artistName}`
+            : `Watch ${headline} on YouTube`
         }
         title={resolved ? resolved.label : undefined}
       >
@@ -89,7 +92,7 @@ export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
           target="_blank"
           rel="noreferrer"
         >
-          {item.title}
+          {headline}
         </a>
         {blurb ? (
           <p className={styles.blurb}>{blurb}</p>

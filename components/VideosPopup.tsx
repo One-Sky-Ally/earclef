@@ -45,7 +45,7 @@ export function VideosPopup({
   return (
     <Modal
       title="Videos"
-      subtitle={`${artistName} — official channel uploads`}
+      subtitle={`${artistName} — official channel uploads; each opens on YouTube ↗`}
       onClose={onClose}
     >
       {state.status === 'loading' && (

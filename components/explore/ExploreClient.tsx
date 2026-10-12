@@ -20,7 +20,7 @@ import {
   type GenreEmergenceData,
   type GenreLens,
 } from '@/lib/explore/genreData'
-import type { SearchResult } from '@/lib/explore/panelData'
+import type { SearchChoice } from '@/lib/explore/panelData'
 import type { FocusRequest } from '@/components/explore/GlobeScene'
 import { YearSlider } from '@/components/explore/YearSlider'
 import { SearchBox } from '@/components/explore/SearchBox'
@@ -304,7 +304,9 @@ export function ExploreClient({
     return () => clearTimeout(timer)
   }, [year, selected, lens, noGlobe])
 
-  function onSearchResolved(result: SearchResult) {
+  function onSearchResolved(
+    result: Exclude<SearchChoice, { kind: 'roster' }>,
+  ) {
     if (result.kind === 'artist') {
       setSelected(null)
       setArtist(result.artist)

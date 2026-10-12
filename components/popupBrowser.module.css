@@ -120,22 +120,8 @@
   cursor: help;
 }
 
-.sources {
-  display: flex;
-  gap: 0.7rem;
-}
 
-.sourceLink {
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  transition: color 0.15s ease;
-}
 
-.sourceLink:hover {
-  color: var(--accent);
-}
 
 .note {
   font-family: var(--font-display);

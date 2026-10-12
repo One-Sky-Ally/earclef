@@ -1,15 +1,38 @@
 import { NextResponse } from 'next/server'
 import { subdivisionByName } from '@/lib/explore/subdivisions'
 import { regionByCode, regionByName } from '@/lib/explore/states'
-import type { SearchResult } from '@/lib/explore/panelData'
+import type { SearchChoice, SearchResult } from '@/lib/explore/panelData'
 import { claimedPlaceByQuery } from '@/lib/explore/claimedPlaces'
+import {
+  rosterExact,
+  rosterPartial,
+  type RosterMatch,
+  type RosterRow,
+} from '@/lib/explore/rosterMatch'
+import roster from '@/lib/discover/roster.json'
 
 const USER_AGENT =
   'EarClefExplore/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
 const MAX_PARENT_HOPS = 4
-/** Artist fallback only fires on confident matches — typo'd place
- * names shouldn't resolve to whoever scores highest. */
-const ARTIST_MIN_SCORE = 85
+/**
+ * MusicBrainz normalizes scores so the TOP hit is always 100 — the old
+ * ≥85 bar let "Trust in the Sun" open "Suntrust" with full confidence.
+ * Now the top hit opens on its own ONLY when its name IS the query;
+ * everything else at or above this score is offered as a choice.
+ */
+const ARTIST_CHOICE_MIN_SCORE = 60
+const ARTIST_CHOICES = 3
+const ROSTER_ROWS = roster as RosterRow[]
+
+/**
+ * ORDER OF TRUTH (owner ruling, Oct 12 2026): the Ear Clef roster is
+ * checked first; a certain match opens on its own; an uncertain one is
+ * returned as `choices` for the visitor to pick from — never a silent
+ * guess. Certain = the normalized name IS the query (a roster artist,
+ * a claimed place or subdivision, a MusicBrainz area, or the top
+ * MusicBrainz artist). Roster partials ride along as choices whenever
+ * anything else matched, so the band's own page is always one tap away.
+ */
 
 /**
  * Hits only. A miss is never memoized: an artist who adds themselves to
@@ -109,6 +132,10 @@ interface MbArtistHit {
   id: string
   name: string
   score?: number
+  disambiguation?: string
+  type?: string
+  country?: string
+  'life-span'?: { begin?: string }
 }
 
 /** MusicBrainz names its special-purpose artists in square brackets. */
@@ -116,22 +143,70 @@ function isSpecialPurpose(name: string): boolean {
   return /^\[.*\]$/.test(name.trim())
 }
 
-/** Confident artist match for the fallback, or null. Throws on MB
- * failure so a transient outage never memoizes as a permanent miss. */
-async function findArtist(query: string): Promise<SearchResult | null> {
+/** "Suntrust, 1969" was a disambiguation shown as a name. Keep the name
+ * clean and put what tells two artists apart on its own line. */
+function artistDetail(hit: MbArtistHit): string | undefined {
+  const parts = [
+    hit.disambiguation,
+    hit.type,
+    hit.country,
+    hit['life-span']?.begin?.slice(0, 4),
+  ].filter((part): part is string => Boolean(part))
+  return parts.length > 0 ? `MusicBrainz · ${parts.join(' · ')}` : 'MusicBrainz'
+}
+
+/**
+ * MusicBrainz artists for the query: `certain` when the top hit's name
+ * IS the query, otherwise up to three plausible hits as choices.
+ * Throws on MB failure so a transient outage never memoizes as a
+ * permanent miss.
+ */
+async function findArtists(
+  query: string,
+): Promise<{ certain: SearchChoice | null; choices: SearchChoice[] }> {
   const res = await mbFetch(
-    `https://musicbrainz.org/ws/2/artist?query=${encodeURIComponent(query)}&limit=3&fmt=json`,
+    `https://musicbrainz.org/ws/2/artist?query=${encodeURIComponent(query)}&limit=${ARTIST_CHOICES}&fmt=json`,
   )
   if (!res.ok) throw new Error(`artist search HTTP ${res.status}`)
   const body = (await res.json()) as { artists?: MbArtistHit[] }
-  const top = body.artists?.[0]
-  if (!top || (top.score ?? 0) < ARTIST_MIN_SCORE) return null
   // MusicBrainz's special-purpose artists ("[no artist]", "[unknown]",
   // "[traditional]") win the normalized top score for gibberish, which
   // sent a musician searching their own absent name to a bogus panel
   // instead of the not-found line that points at /get-on-the-map.
-  if (isSpecialPurpose(top.name)) return null
-  return { kind: 'artist', artist: { mbid: top.id, name: top.name } }
+  const hits = (body.artists ?? []).filter(
+    (hit) => !isSpecialPurpose(hit.name) && (hit.score ?? 0) >= ARTIST_CHOICE_MIN_SCORE,
+  )
+  const choices: SearchChoice[] = hits.map((hit) => ({
+    kind: 'artist',
+    artist: { mbid: hit.id, name: hit.name },
+    detail: artistDetail(hit),
+  }))
+  const top = hits[0]
+  const certain =
+    top && normalizedName(top.name) === normalizedName(query)
+      ? choices[0]
+      : null
+  return { certain, choices }
+}
+
+function rosterChoice(match: RosterMatch): SearchChoice {
+  return {
+    kind: 'roster',
+    artist: { slug: match.slug, name: match.name },
+    detail: match.identity ? `On Ear Clef · ${match.identity}` : 'On Ear Clef',
+  }
+}
+
+/** Nothing else is in doubt → open it; roster partials in play → ask. */
+function certainOr(
+  result: SearchChoice,
+  rosterPartials: RosterMatch[],
+): SearchResult {
+  if (rosterPartials.length === 0) return result
+  return {
+    kind: 'choices',
+    choices: [...rosterPartials.map(rosterChoice), result],
+  }
 }
 
 export async function GET(request: Request) {
@@ -142,32 +217,42 @@ export async function GET(request: Request) {
 
   const key = query.toLowerCase()
   const cached = memo.get(key)
-  if (cached) return withCacheHeaders(NextResponse.json(cached))
+  if (cached) return respond(cached)
 
-  // Claimed places win first — "Tibet" (or an alias, Xizang included)
+  // Our own roster first. An exact name opens the artist's page here.
+  const onRoster = rosterExact(ROSTER_ROWS, query)
+  if (onRoster) {
+    const result: SearchResult = rosterChoice(onRoster)
+    memo.set(key, result)
+    return respond(result)
+  }
+  // Looser roster matches are never opened alone — they ride along as
+  // choices beside whatever else matches, and stand alone only when
+  // nothing else does.
+  const rosterPartials = rosterPartial(ROSTER_ROWS, query)
+
+  // Claimed places win next — "Tibet" (or an alias, Xizang included)
   // opens the claimed-place panel, never a walk up to a parent state.
   const claimed = claimedPlaceByQuery(query)
   if (claimed) {
-    const result: SearchResult = {
-      kind: 'place',
-      country: claimed.id,
-      area: claimed.name,
-    }
+    const result = certainOr(
+      { kind: 'place', country: claimed.id, area: claimed.name },
+      rosterPartials,
+    )
     memo.set(key, result)
-    return withCacheHeaders(NextResponse.json(result))
+    return respond(result)
   }
 
   // Configured subdivisions and regions win by name — "Hawaii" opens
   // US-HI, "Scotland" opens GB-SCT, never the whole country.
   const subdivision = subdivisionByName(query) ?? regionByName(query)
   if (subdivision) {
-    const result: SearchResult = {
-      kind: 'place',
-      country: subdivision.code,
-      area: subdivision.name,
-    }
+    const result = certainOr(
+      { kind: 'place', country: subdivision.code, area: subdivision.name },
+      rosterPartials,
+    )
     memo.set(key, result)
-    return withCacheHeaders(NextResponse.json(result))
+    return respond(result)
   }
 
   try {
@@ -186,18 +271,31 @@ export async function GET(request: Request) {
     const country = top ? await resolveCountry(top) : undefined
 
     if (top && country) {
-      const result: SearchResult = { kind: 'place', country, area: top.name }
+      const result = certainOr(
+        { kind: 'place', country, area: top.name },
+        rosterPartials,
+      )
       memo.set(key, result)
-      return withCacheHeaders(NextResponse.json(result))
+      return respond(result)
     }
 
     // No place matched — maybe it's an artist ("what did they put out
     // in this era?" is answered by the artist-era panel client-side).
     await sleep(1050)
-    const artist = await findArtist(query)
-    if (artist) {
-      memo.set(key, artist)
-      return withCacheHeaders(NextResponse.json(artist))
+    const artists = await findArtists(query)
+    if (artists.certain) {
+      const result = certainOr(artists.certain, rosterPartials)
+      memo.set(key, result)
+      return respond(result)
+    }
+    const choices: SearchChoice[] = [
+      ...rosterPartials.map(rosterChoice),
+      ...artists.choices,
+    ]
+    if (choices.length > 0) {
+      const result: SearchResult = { kind: 'choices', choices }
+      memo.set(key, result)
+      return respond(result)
     }
     return withMissHeaders(
       NextResponse.json({ error: 'No match' }, { status: 404 }),
@@ -211,6 +309,23 @@ export async function GET(request: Request) {
 /** A miss expires in an hour: the 30-day hit TTL would hide a newly
  * added artist from the very person who just added themselves. */
 const MISS_CACHE_CONTROL = 'public, s-maxage=3600, stale-while-revalidate=600'
+
+/**
+ * A roster hit or a list of choices is cached a DAY, not a month: the
+ * roster grows, and a list of choices is where a newly added artist
+ * must appear next time, not in thirty days.
+ */
+const SHORT_CACHE_CONTROL = 'public, s-maxage=86400, stale-while-revalidate=3600'
+
+function respond(result: SearchResult): NextResponse {
+  const response = NextResponse.json(result)
+  if (result.kind === 'roster' || result.kind === 'choices') {
+    response.headers.set('Cache-Control', SHORT_CACHE_CONTROL)
+    response.headers.set('Netlify-Vary', 'query=q')
+    return response
+  }
+  return withCacheHeaders(response)
+}
 
 function withMissHeaders(response: NextResponse): NextResponse {
   response.headers.set('Cache-Control', MISS_CACHE_CONTROL)

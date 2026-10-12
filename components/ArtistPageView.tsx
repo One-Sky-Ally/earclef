@@ -1,4 +1,5 @@
 import type { ArtistContent } from '@/lib/types'
+import { withoutPlaceholders } from '@/lib/content/placeholders'
 import { presenceFromContent } from '@/lib/listen/services'
 import { SiteNav } from '@/components/SiteNav'
 import { Hero } from '@/components/Hero'
@@ -19,7 +20,13 @@ interface ArtistPageViewProps {
   anchorBase: string
 }
 
-export function ArtistPageView({ content, anchorBase }: ArtistPageViewProps) {
+export function ArtistPageView({
+  content: stored,
+  anchorBase,
+}: ArtistPageViewProps) {
+  // Placeholder tracks, EDIT-ME paragraphs and "Placeholder" labels
+  // stay in the owner's file and never reach the page.
+  const content = withoutPlaceholders(stored)
   const youtubeChannelUrl =
     content.hero.socials.find((social) => social.platform === 'youtube')?.url ??
     (content.integrations.youtube.channelId

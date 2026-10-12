@@ -17,8 +17,12 @@ export function LinkPills({ links, ariaLabel }: LinkPillsProps) {
             href={link.url}
             target="_blank"
             rel="noreferrer"
+            title={`Opens ${platformLabel(link.platform)} in a new tab`}
           >
             {platformLabel(link.platform)}
+            <span className={styles.out} aria-hidden="true">
+              ↗
+            </span>
           </a>
         </li>
       ))}

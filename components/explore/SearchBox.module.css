@@ -94,3 +94,69 @@
     order: 1;
   }
 }
+
+/* An uncertain match is a list to pick from, never a silent guess. It
+   clears the "Surprise me" button like the notes above it. */
+.choices {
+  margin-top: 4.1rem;
+  padding: 0.6rem 0.9rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  background: rgba(22, 18, 16, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.choicesHead {
+  margin-bottom: 0.45rem;
+  font-size: 0.74rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.choiceList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.4rem 0.55rem;
+  border-radius: 8px;
+  text-align: left;
+  color: var(--text);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.choice:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.choiceName {
+  font-size: 0.88rem;
+}
+
+.choiceDetail {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.choicesDismiss {
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.choicesDismiss:hover {
+  color: var(--accent);
+}

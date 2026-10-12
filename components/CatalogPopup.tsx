@@ -1,30 +1,20 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import {
-  fetchCatalog,
-  type CatalogItem,
-  type CatalogResponse,
-} from '@/lib/artist/browserData'
-import {
-  archiveAudioSearchUrl,
-  bandcampSearchUrl,
-  coverArtUrl,
-} from '@/lib/links'
-import {
-  resolveListenHref,
-  type ArtistServicePresence,
-} from '@/lib/listen/services'
-import { useListenService } from '@/components/listen/ServiceProvider'
+import { fetchCatalog, type CatalogResponse } from '@/lib/artist/browserData'
+import { coverArtUrl } from '@/lib/links'
 import { Modal } from '@/components/Modal'
 import styles from './popupBrowser.module.css'
 
+/**
+ * The full discography from MusicBrainz, to browse. NO LINKS (owner
+ * ruling, Oct 12 2026): every tile used to open a music-service search,
+ * which breaks the no-search-links rule. Verified per-release links
+ * come later; until then the catalog informs and promises nothing.
+ */
 interface CatalogPopupProps {
   mbid: string
   artistName: string
-  /** Show a Bandcamp search per item when the artist's catalog lives there. */
-  hasBandcamp?: boolean
-  presence?: ArtistServicePresence
   onClose: () => void
 }
 
@@ -33,18 +23,7 @@ type PopupState =
   | { status: 'error' }
   | { status: 'ready'; catalog: CatalogResponse }
 
-function isPre1950(item: CatalogItem): boolean {
-  return item.year !== undefined && Number(item.year) < 1950
-}
-
-export function CatalogPopup({
-  mbid,
-  artistName,
-  hasBandcamp = false,
-  presence,
-  onClose,
-}: CatalogPopupProps) {
-  const { service } = useListenService()
+export function CatalogPopup({ mbid, artistName, onClose }: CatalogPopupProps) {
   const [state, setState] = useState<PopupState>({ status: 'loading' })
   const [activeKey, setActiveKey] = useState<string | null>(null)
 
@@ -66,7 +45,7 @@ export function CatalogPopup({
   return (
     <Modal
       title="Full catalog"
-      subtitle={`${artistName} — every click opens a search, not a guaranteed match`}
+      subtitle={`${artistName} — the discography on MusicBrainz, to browse; nothing here links out`}
       onClose={onClose}
     >
       {state.status === 'loading' && (
@@ -99,16 +78,7 @@ export function CatalogPopup({
             <ul className={styles.grid}>
               {active.items.map((item) => (
                 <li key={item.rgid} className={styles.tileWrap}>
-                  <a
-                    className={styles.tile}
-                    href={
-                      resolveListenHref(service, presence, artistName, item.title)
-                        .href
-                    }
-                    title={`${resolveListenHref(service, presence, artistName, item.title).label}: ${item.title}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <div className={styles.tile}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       className={styles.cover}
@@ -127,38 +97,14 @@ export function CatalogPopup({
                         {item.rare && (
                         <span
                           className={styles.rareChip}
-                          title="May be hard to find online — links open a search, not a guaranteed match"
+                          title="May be hard to find online"
                         >
                             rare
                           </span>
                         )}
                       </span>
                     )}
-                  </a>
-                  {(hasBandcamp || isPre1950(item)) && (
-                    <span className={styles.sources}>
-                      {hasBandcamp && (
-                        <a
-                          className={styles.sourceLink}
-                          href={bandcampSearchUrl(artistName, item.title)}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Search Bandcamp ↗
-                        </a>
-                      )}
-                      {isPre1950(item) && (
-                        <a
-                          className={styles.sourceLink}
-                          href={archiveAudioSearchUrl(artistName, item.title)}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Search Archive ↗
-                        </a>
-                      )}
-                    </span>
-                  )}
+                  </div>
                 </li>
               ))}
             </ul>

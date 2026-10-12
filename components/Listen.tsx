@@ -1,5 +1,6 @@
 import type { ListenContent } from '@/lib/types'
 import type { ArtistServicePresence } from '@/lib/listen/services'
+import { platformLabel } from '@/lib/platforms'
 import { SectionHeader } from '@/components/SectionHeader'
 import { LinkPills } from '@/components/LinkPills'
 import { AlbumCard } from '@/components/AlbumCard'
@@ -15,14 +16,10 @@ interface ListenProps {
 }
 
 export function Listen({ listen, artistName, mbid, presence }: ListenProps) {
-  const bandcampUrl = listen.platforms.find(
-    (p) => p.platform === 'bandcamp',
-  )?.url
-  const fallbackUrl =
-    bandcampUrl ??
-    listen.platforms.find((p) => p.platform === 'appleMusic')?.url ??
-    listen.platforms[0]?.url
-  const hasBandcamp = Boolean(bandcampUrl)
+  const fallback =
+    listen.platforms.find((p) => p.platform === 'bandcamp') ??
+    listen.platforms.find((p) => p.platform === 'appleMusic') ??
+    listen.platforms[0]
 
   return (
     <section id="listen" className="section" aria-labelledby="listen-heading">
@@ -37,8 +34,6 @@ export function Listen({ listen, artistName, mbid, presence }: ListenProps) {
                 key={album.title}
                 album={album}
                 artistName={artistName}
-                hasBandcamp={hasBandcamp}
-                presence={presence}
               />
             ))}
           </div>
@@ -46,9 +41,8 @@ export function Listen({ listen, artistName, mbid, presence }: ListenProps) {
         <CatalogLauncher
           artistName={artistName}
           mbid={mbid}
-          fallbackUrl={fallbackUrl}
-          hasBandcamp={hasBandcamp}
-          presence={presence}
+          fallbackUrl={fallback?.url}
+          fallbackLabel={fallback ? platformLabel(fallback.platform) : undefined}
           className={styles.more}
         />
       </div>

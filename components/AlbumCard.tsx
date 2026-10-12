@@ -3,24 +3,12 @@
 import { useState } from 'react'
 import type { FeaturedAlbum } from '@/lib/types'
 import { fetchAlbumDetails } from '@/lib/artist/browserData'
-import {
-  archiveAudioSearchUrl,
-  bandcampSearchUrl,
-  coverArtUrl,
-} from '@/lib/links'
-import {
-  resolveListenHref,
-  type ArtistServicePresence,
-} from '@/lib/listen/services'
-import { useListenService } from '@/components/listen/ServiceProvider'
+import { coverArtUrl } from '@/lib/links'
 import styles from './AlbumCard.module.css'
 
 interface AlbumCardProps {
   album: FeaturedAlbum
   artistName: string
-  /** Show a Bandcamp search when the artist's catalog lives there. */
-  hasBandcamp?: boolean
-  presence?: ArtistServicePresence
 }
 
 type TracksState =
@@ -29,13 +17,14 @@ type TracksState =
   | { status: 'error' }
   | { status: 'ready'; tracks: string[] }
 
-export function AlbumCard({
-  album,
-  artistName,
-  hasBandcamp = false,
-  presence,
-}: AlbumCardProps) {
-  const { service } = useListenService()
+/**
+ * A featured album: artwork, title, year and a tracklist read from
+ * MusicBrainz. NO LINKS (owner ruling, Oct 12 2026): the card used to
+ * open a music-service search, which breaks the no-search-links rule
+ * — a search is a guess, not a destination. Verified per-album links
+ * come later; until then the card informs and promises nothing.
+ */
+export function AlbumCard({ album, artistName }: AlbumCardProps) {
   const [tracksState, setTracksState] = useState<TracksState>({
     status: 'closed',
   })
@@ -62,18 +51,12 @@ export function AlbumCard({
     }
   }
 
-  const resolved = resolveListenHref(service, presence, artistName, album.title)
-  const pre1950 = album.year !== undefined && Number(album.year) < 1950
-
   return (
-    <article className={styles.card}>
-      <a
-        className={styles.head}
-        href={resolved.href}
-        target="_blank"
-        rel="noreferrer"
-        aria-label={`${resolved.label}: ${album.title} by ${artistName}`}
-      >
+    <article
+      className={styles.card}
+      aria-label={`${album.title} by ${artistName}`}
+    >
+      <div className={styles.head}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className={styles.cover}
@@ -91,36 +74,8 @@ export function AlbumCard({
         <span className={styles.info}>
           <span className={styles.title}>{album.title}</span>
           {album.year && <span className={styles.year}>{album.year}</span>}
-          {/* A search, labeled as one — ▶ would promise playback. */}
-          <span className={styles.listenHint}>{resolved.label} ↗</span>
         </span>
-      </a>
-
-      {(hasBandcamp || pre1950) && (
-        <p className={styles.sources}>
-          Also try:{' '}
-          {hasBandcamp && (
-            <a
-              className={styles.sourceLink}
-              href={bandcampSearchUrl(artistName, album.title)}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Search Bandcamp ↗
-            </a>
-          )}
-          {pre1950 && (
-            <a
-              className={styles.sourceLink}
-              href={archiveAudioSearchUrl(artistName, album.title)}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Search Internet Archive ↗
-            </a>
-          )}
-        </p>
-      )}
+      </div>
 
       {album.mbReleaseGroupId && (
         <button
@@ -143,17 +98,8 @@ export function AlbumCard({
       {tracksState.status === 'ready' && (
         <ol className={styles.tracks}>
           {tracksState.tracks.map((track, index) => (
-            <li key={`${index}-${track}`}>
-              <a
-                className={styles.track}
-                href={
-                  resolveListenHref(service, presence, artistName, track).href
-                }
-                target="_blank"
-                rel="noreferrer"
-              >
-                {track}
-              </a>
+            <li key={`${index}-${track}`} className={styles.track}>
+              {track}
             </li>
           ))}
         </ol>

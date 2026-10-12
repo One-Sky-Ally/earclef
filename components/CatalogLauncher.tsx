@@ -1,15 +1,15 @@
 'use client'
 
 import { useState } from 'react'
-import type { ArtistServicePresence } from '@/lib/listen/services'
 import { CatalogPopup } from '@/components/CatalogPopup'
 
 interface CatalogLauncherProps {
   artistName: string
   mbid?: string
+  /** Artist page on a platform, when MusicBrainz has no catalog for them. */
   fallbackUrl?: string
-  hasBandcamp?: boolean
-  presence?: ArtistServicePresence
+  /** The platform the fallback opens — named on the link, never implied. */
+  fallbackLabel?: string
   className: string
 }
 
@@ -17,8 +17,7 @@ export function CatalogLauncher({
   artistName,
   mbid,
   fallbackUrl,
-  hasBandcamp = false,
-  presence,
+  fallbackLabel,
   className,
 }: CatalogLauncherProps) {
   const [open, setOpen] = useState(false)
@@ -27,7 +26,7 @@ export function CatalogLauncher({
     if (!fallbackUrl) return null
     return (
       <a className={className} href={fallbackUrl} target="_blank" rel="noreferrer">
-        View full catalog →
+        View full catalog{fallbackLabel ? ` on ${fallbackLabel}` : ''} ↗
       </a>
     )
   }
@@ -41,8 +40,6 @@ export function CatalogLauncher({
         <CatalogPopup
           mbid={mbid}
           artistName={artistName}
-          hasBandcamp={hasBandcamp}
-          presence={presence}
           onClose={() => setOpen(false)}
         />
       )}

@@ -17,6 +17,7 @@ import {
   youtubeWatchUrl,
 } from '@/lib/links'
 import { blurbKey, normalizedTitle } from '@/lib/feed/blurbKey'
+import { displayTitle } from '@/lib/feed/displayTitle'
 import {
   musicServiceSearchUrl,
   type ArtistServicePresence,
@@ -56,22 +57,16 @@ interface FeedItem {
   presence?: ArtistServicePresence
 }
 
-interface StoryRow {
-  type: 'story'
-  card: StoryCard
-}
-
-type FeedRow = FeedItem | StoryRow
-
 const FEED_LIMIT = 50
 // Every entry gets the rich treatment, revealed a page at a time.
 const PAGE_SIZE = 10
-// One story card woven in after every N feed items — the feed leans
-// editorial: stories and substantive items over raw channel uploads.
-const STORY_INTERVAL = 3
+// Story cards (editorial picks) keep their own section, a few at a time.
+const STORIES_PAGE = 3
 const UPCOMING_LIMIT = 6
 
-// --- Daily-seeded shuffle: same order all day, fresh order tomorrow. ---
+// --- Daily-seeded shuffle for the STORIES section: same order all day,
+// fresh order tomorrow. The dated feed itself is never shuffled (owner
+// ruling, Oct 12 2026): "newest first" means newest first. ---
 
 function daySeed(): number {
   const day = new Date().toISOString().slice(0, 10)
@@ -102,27 +97,9 @@ function seededShuffle<T>(items: T[], random: () => number): T[] {
   return result
 }
 
-/**
- * Shuffle WITHIN each month bucket: recency ordering holds (this month
- * before last month), but the order inside a month rotates daily — fresh
- * without being manipulative.
- */
-function monthShuffled(items: FeedItem[]): FeedItem[] {
-  const random = mulberry32(daySeed())
-  const out: FeedItem[] = []
-  let bucket: FeedItem[] = []
-  let currentMonth = ''
-  for (const item of items) {
-    const month = item.date.slice(0, 7)
-    if (month !== currentMonth) {
-      out.push(...seededShuffle(bucket, random))
-      bucket = []
-      currentMonth = month
-    }
-    bucket.push(item)
-  }
-  out.push(...seededShuffle(bucket, random))
-  return out
+/** Newest first, reliably — the only order the dated feed has. */
+function newestFirst(items: FeedItem[]): FeedItem[] {
+  return [...items].sort((a, b) => b.date.localeCompare(a.date))
 }
 // A batch that hits the server's generation throttle retries once, after
 // the throttle window has passed.
@@ -228,6 +205,8 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   // shimmer until their key settles, then show the blurb or nothing.
   const [settledKeys, setSettledKeys] = useState<Set<string>>(new Set())
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE)
+  const [extrasCount, setExtrasCount] = useState(PAGE_SIZE)
+  const [storiesCount, setStoriesCount] = useState(STORIES_PAGE)
   const [retryTick, setRetryTick] = useState(0)
   // null = signed out (or unknown): the Following pill stays hidden.
   const [follows, setFollows] = useState<string[] | null>(null)
@@ -377,9 +356,16 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   // Filter before the newest-50 cut so each tier surfaces its own latest,
   // not just its members of the overall top 50. Future-dated releases
   // split into the "Coming" strip; on release day they flow back in here.
-  const { upcoming, visible } = useMemo(() => {
+  // Filler-classified videos (no named work, no story) get their own
+  // dated section below the feed — demoted, never silently deleted, and
+  // never out of order inside the main list.
+  const { upcoming, visible, extras } = useMemo(() => {
     if (state.status !== 'ready')
-      return { upcoming: [] as FeedItem[], visible: [] as FeedItem[] }
+      return {
+        upcoming: [] as FeedItem[],
+        visible: [] as FeedItem[],
+        extras: [] as FeedItem[],
+      }
     const tierBySlug = new Map(roster.map((entry) => [entry.slug, entry.tier]))
     const followSet = new Set(follows ?? [])
     const filtered = state.items
@@ -390,28 +376,27 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
       .filter((item) => !followingOnly || followSet.has(item.slug))
     const isUpcoming = (item: FeedItem) =>
       item.type === 'release' && item.date.slice(0, 10) > todayIso
-    // Hard demotion: filler-classified videos only surface after every
-    // substantive item — with a full window they never make the cut,
-    // but a tight tier/following filter can still fall back to them.
-    const current = monthShuffled(filtered.filter((item) => !isUpcoming(item)))
-    const substantive = current.filter((item) => item.substance !== 'filler')
-    const filler = current.filter((item) => item.substance === 'filler')
+    const current = newestFirst(filtered.filter((item) => !isUpcoming(item)))
     return {
       upcoming: filtered
         .filter(isUpcoming)
         .sort((a, b) => a.date.localeCompare(b.date))
         .slice(0, UPCOMING_LIMIT),
-      visible: [...substantive, ...filler].slice(0, FEED_LIMIT),
+      visible: current
+        .filter((item) => item.substance !== 'filler')
+        .slice(0, FEED_LIMIT),
+      extras: current
+        .filter((item) => item.substance === 'filler')
+        .slice(0, FEED_LIMIT),
     }
   }, [state, tierChoice, roster, follows, followingOnly, todayIso])
 
-  // Weave one story card in after every STORY_INTERVAL feed items —
-  // story order rotates with the same daily seed.
-  const rows = useMemo<FeedRow[]>(() => {
-    if (visible.length === 0) return []
+  // Editorial picks live in their own section, never woven into the
+  // dated list — their order rotates daily, which a dated feed can't.
+  const stories = useMemo<StoryCard[]>(() => {
     const tierBySlug = new Map(roster.map((entry) => [entry.slug, entry.tier]))
     const followSet = new Set(follows ?? [])
-    const cards = seededShuffle(
+    return seededShuffle(
       storyCards
         .filter(
           (card) =>
@@ -420,21 +405,14 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         .filter((card) => !followingOnly || followSet.has(card.slug)),
       mulberry32(daySeed() ^ 0x9e3779b9),
     )
-    const out: FeedRow[] = []
-    let cardIndex = 0
-    visible.forEach((item, index) => {
-      out.push(item)
-      if ((index + 1) % STORY_INTERVAL === 0 && cardIndex < cards.length) {
-        out.push({ type: 'story', card: cards[cardIndex] })
-        cardIndex += 1
-      }
-    })
-    return out
-  }, [visible, storyCards, tierChoice, followingOnly, follows, roster])
+  }, [storyCards, tierChoice, followingOnly, follows, roster])
 
   const rendered = useMemo(
-    () => rows.slice(0, visibleCount),
-    [rows, visibleCount],
+    () => [
+      ...visible.slice(0, visibleCount),
+      ...extras.slice(0, extrasCount),
+    ],
+    [visible, visibleCount, extras, extrasCount],
   )
 
   // Blurbs for whatever is on screen: cached ones come back instantly
@@ -442,10 +420,7 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   // mount, tracked in a ref; a batch that hit the server's generation
   // throttle retries exactly once after the window passes.
   useEffect(() => {
-    const feedItems = rendered.filter(
-      (row): row is FeedItem => row.type !== 'story',
-    )
-    const missing = feedItems.filter((item) => {
+    const missing = rendered.filter((item) => {
       const key = blurbKey(item.slug, item.type, item.title)
       return !requestedBlurbs.current.has(key)
     })
@@ -523,7 +498,21 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   const availableTiers = [
     ...new Set(roster.flatMap((entry) => (entry.tier ? [entry.tier] : []))),
   ]
-  const remaining = rows.length - rendered.length
+  const remaining = visible.length - Math.min(visibleCount, visible.length)
+  const remainingExtras = extras.length - Math.min(extrasCount, extras.length)
+  const remainingStories = stories.length - Math.min(storiesCount, stories.length)
+
+  function card(item: FeedItem) {
+    const key = blurbKey(item.slug, item.type, item.title)
+    return (
+      <FeedPostCard
+        key={`${item.type}-${item.href}`}
+        item={{ ...item, dateLabel: formatFeedDate(item.date) }}
+        blurb={blurbs[key]}
+        blurbPending={!settledKeys.has(key)}
+      />
+    )
+  }
 
   return (
     <>
@@ -534,6 +523,8 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
           onChange={(choice) => {
             setTierChoice(choice)
             setVisibleCount(PAGE_SIZE)
+            setExtrasCount(PAGE_SIZE)
+            setStoriesCount(STORIES_PAGE)
           }}
         />
         {follows && follows.length > 0 && (
@@ -545,6 +536,8 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
             onClick={() => {
               setFollowingOnly((current) => !current)
               setVisibleCount(PAGE_SIZE)
+              setExtrasCount(PAGE_SIZE)
+              setStoriesCount(STORIES_PAGE)
             }}
           >
             ♥ Following
@@ -608,36 +601,77 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
                 Coming {formatFeedDate(item.date)}
               </span>
               <span className={styles.upcomingTitle}>
-                {item.artistName} — {item.title}
+                {item.artistName} — {displayTitle(item.title)}
               </span>
             </a>
           ))}
         </div>
       )}
-      <div className={styles.featured}>
-        {rendered.map((row) => {
-          if (row.type === 'story') {
-            return <StoryCardView key={row.card.id} card={row.card} showArtist />
-          }
-          const key = blurbKey(row.slug, row.type, row.title)
-          return (
-            <FeedPostCard
-              key={`${row.type}-${row.href}`}
-              item={{ ...row, dateLabel: formatFeedDate(row.date) }}
-              blurb={blurbs[key]}
-              blurbPending={!settledKeys.has(key)}
-            />
-          )
-        })}
-      </div>
-      {remaining > 0 && (
-        <button
-          type="button"
-          className={styles.showMore}
-          onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
-        >
-          Show {Math.min(PAGE_SIZE, remaining)} more ↓
-        </button>
+      {stories.length > 0 && (
+        <section aria-labelledby="feed-stories-heading">
+          <h2 id="feed-stories-heading" className={styles.sectionHead}>
+            Ear Clef stories
+          </h2>
+          <p className={styles.sectionNote}>
+            Editorial picks, rotating daily — not part of the dated feed.
+          </p>
+          <div className={styles.featured}>
+            {stories.slice(0, storiesCount).map((card) => (
+              <StoryCardView key={card.id} card={card} showArtist />
+            ))}
+          </div>
+          {remainingStories > 0 && (
+            <button
+              type="button"
+              className={styles.showMore}
+              onClick={() => setStoriesCount((count) => count + STORIES_PAGE)}
+            >
+              Show {Math.min(STORIES_PAGE, remainingStories)} more stories ↓
+            </button>
+          )}
+        </section>
+      )}
+      {visible.length > 0 && (
+        <section aria-labelledby="feed-latest-heading">
+          <h2 id="feed-latest-heading" className={styles.sectionHead}>
+            Latest — newest first
+          </h2>
+          <div className={styles.featured}>
+            {visible.slice(0, visibleCount).map(card)}
+          </div>
+          {remaining > 0 && (
+            <button
+              type="button"
+              className={styles.showMore}
+              onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
+            >
+              Show {Math.min(PAGE_SIZE, remaining)} more ↓
+            </button>
+          )}
+        </section>
+      )}
+      {extras.length > 0 && (
+        <section aria-labelledby="feed-extras-heading">
+          <h2 id="feed-extras-heading" className={styles.sectionHead}>
+            Short clips &amp; extras
+          </h2>
+          <p className={styles.sectionNote}>
+            Channel uploads with no named song or story — kept apart from the
+            feed, newest first.
+          </p>
+          <div className={styles.featured}>
+            {extras.slice(0, extrasCount).map(card)}
+          </div>
+          {remainingExtras > 0 && (
+            <button
+              type="button"
+              className={styles.showMore}
+              onClick={() => setExtrasCount((count) => count + PAGE_SIZE)}
+            >
+              Show {Math.min(PAGE_SIZE, remainingExtras)} more clips ↓
+            </button>
+          )}
+        </section>
       )}
     </>
   )

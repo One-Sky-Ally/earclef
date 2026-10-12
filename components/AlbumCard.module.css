@@ -45,32 +45,9 @@
   font-variant-numeric: tabular-nums;
 }
 
-.listenHint {
-  margin-top: 0.3rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
 
-.sources {
-  margin-top: 0.7rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  display: flex;
-  gap: 0.7rem;
-}
 
-.sourceLink {
-  color: var(--text-muted);
-  transition: color 0.15s ease;
-}
 
-.sourceLink:hover {
-  color: var(--accent);
-}
 
 .tracksToggle {
   margin-top: 0.9rem;
@@ -103,9 +80,5 @@
 
 .track {
   color: var(--text-soft);
-  transition: color 0.15s ease;
 }
 
-.track:hover {
-  color: var(--accent);
-}

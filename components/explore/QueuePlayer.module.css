@@ -183,6 +183,15 @@
   color: var(--text);
 }
 
+/* A song admitted "across all years" says which years it is from. */
+.rowEra {
+  flex: none;
+  font-size: 0.66rem;
+  font-style: italic;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
 .rowTitle {
   /* Takes the slack so the row's ♥ sits at the right edge. */
   flex: 1;
