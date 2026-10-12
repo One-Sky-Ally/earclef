@@ -32,7 +32,7 @@ export interface ServiceAbsenceFile {
 
 const FILE = verdicts as ServiceAbsenceFile
 
-const SERVICES = new Set(['spotify', 'appleMusic', 'amazonMusic', 'deezer', 'tidal'])
+const SERVICES = new Set(['youtubeMusic', 'spotify', 'appleMusic', 'amazonMusic', 'deezer', 'tidal'])
 
 /** Verified absences for one roster artist — only `absent` verdicts. */
 export function confirmedAbsences(slug: string): ServiceAbsence[] {

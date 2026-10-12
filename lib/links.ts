@@ -1,9 +1,9 @@
 /**
  * Shared outbound-link builders — keyless artwork, verified watch URLs.
- * YouTube SEARCH builders were removed under the Aug 8, 2026 ruling: a
- * YouTube miss lands on unrelated video content. Verified video IDs
- * come from lib/play; release-level searches go to music services
- * (lib/listen/services) with honest "Search on X" labels.
+ * Release-level searches live in lib/listen/services (YouTube Music
+ * included since the Oct 13, 2026 ruling) with honest "Search on X ↗"
+ * labels; verified video IDs come from lib/play. ▶ means only a
+ * verified video that plays here.
  */
 
 export function youtubeWatchUrl(videoId: string): string {

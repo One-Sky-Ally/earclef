@@ -44,3 +44,9 @@ test('a search hit counts only on the exact normalized name', () => {
   assert.equal(searchNamesArtist(['Björk'], 'Bjork'), true)
   assert.equal(searchNamesArtist([], 'Joanna Newsom'), false)
 })
+
+test('a YouTube channel or YouTube Music page proves presence on YouTube Music', () => {
+  assert.equal(hostMatchesService('https://www.youtube.com/channel/UCabc', 'youtubeMusic'), true)
+  assert.equal(hostMatchesService('https://music.youtube.com/channel/UCabc', 'youtubeMusic'), true)
+  assert.equal(hostMatchesService('https://open.spotify.com/artist/abc', 'youtubeMusic'), false)
+})

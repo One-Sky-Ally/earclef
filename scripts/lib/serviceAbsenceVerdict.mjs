@@ -21,6 +21,7 @@ import { sameName } from './normalizeName.mjs'
 
 /** Hosts whose URL relations prove a presence on a service. */
 export const SERVICE_HOSTS = {
+  youtubeMusic: ['music.youtube.com', 'youtube.com', 'www.youtube.com'],
   spotify: ['open.spotify.com'],
   appleMusic: ['music.apple.com', 'itunes.apple.com'],
   amazonMusic: ['music.amazon.com', 'music.amazon.co.uk', 'music.amazon.de', 'music.amazon.fr', 'music.amazon.co.jp', 'music.amazon.ca', 'amazon.com'],

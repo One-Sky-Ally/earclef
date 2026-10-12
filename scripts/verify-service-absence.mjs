@@ -17,9 +17,11 @@
  *   SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET   — any Spotify developer app
  *   TIDAL_CLIENT_ID / TIDAL_CLIENT_SECRET       — developer.tidal.com app
  * Apple Music (iTunes Search API) and Deezer need no key. Amazon Music
- * has no public search: it is confirmed only by a link (content file or
- * MusicBrainz) and otherwise stays unknown — the owner's `listen.notOn`
- * is the only way to claim an Amazon absence.
+ * and YouTube Music have no public artist search here (a YouTube Data
+ * API channel search costs 100 units per artist): they are confirmed
+ * only by a link or channel id (content file or MusicBrainz) and
+ * otherwise stay unknown — the owner's `listen.notOn` is the only way
+ * to claim an absence from either.
  *
  * Three legs per pair, decided by scripts/lib/serviceAbsenceVerdict.mjs:
  *   content     — a platform link or id for the service in content/*.json
@@ -85,6 +87,8 @@ function contentLeg(artist, service) {
   if (platforms.some((p) => p.platform === service && p.url)) return 'present'
   if (service === 'spotify' && artist.integrations?.spotify?.artistId) return 'present'
   if (service === 'appleMusic' && artist.integrations?.itunes?.artistId) return 'present'
+  if (service === 'youtubeMusic' && artist.integrations?.youtube?.channelId) return 'present'
+  if (service === 'youtubeMusic' && (artist.hero?.socials ?? []).some((s) => s.platform === 'youtube' && s.url)) return 'present'
   if (platforms.some((p) => p.url && hostMatchesService(p.url, service))) return 'present'
   return 'absent'
 }

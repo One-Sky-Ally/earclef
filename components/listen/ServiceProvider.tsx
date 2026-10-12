@@ -8,7 +8,9 @@ import {
   useState,
 } from 'react'
 import {
+  DEFAULT_SERVICE,
   isListenService,
+  searchServiceFor,
   type ListenService,
 } from '@/lib/listen/services'
 
@@ -20,18 +22,19 @@ interface ServiceContextValue {
 }
 
 const ServiceContext = createContext<ServiceContextValue>({
-  service: 'youtube',
+  service: DEFAULT_SERVICE,
   setService: () => {},
 })
 
 /**
  * The fan's chosen listening service, site-wide. Renders with the
- * YouTube default, then upgrades after mount from localStorage and —
- * for signed-in fans — their fan record (which wins, so the preference
- * follows them across devices). Changing it writes both.
+ * YouTube Music default, then upgrades after mount from localStorage
+ * and — for signed-in fans — their fan record (which wins, so the
+ * preference follows them across devices). Changing it writes both. A
+ * stored legacy 'youtube' reads as YouTube Music.
  */
 export function ServiceProvider({ children }: { children: React.ReactNode }) {
-  const [service, setServiceState] = useState<ListenService>('youtube')
+  const [service, setServiceState] = useState<ListenService>(DEFAULT_SERVICE)
 
   useEffect(() => {
     let cancelled = false
@@ -52,7 +55,7 @@ export function ServiceProvider({ children }: { children: React.ReactNode }) {
       } catch {
         // localStorage (or the default) carries it.
       }
-      if (!cancelled && next) setServiceState(next)
+      if (!cancelled && next) setServiceState(searchServiceFor(next))
     })()
     return () => {
       cancelled = true
