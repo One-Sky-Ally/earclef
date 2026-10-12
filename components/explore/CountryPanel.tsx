@@ -29,6 +29,7 @@ import {
   QUEUE_HONEST_MIN,
   QueuePlayer,
 } from '@/components/explore/QueuePlayer'
+import { SongsAboutSection } from '@/components/explore/SongsAboutSection'
 import {
   CONTESTED_NOTE,
   isContestedEra,
@@ -926,6 +927,17 @@ export function CountryPanel({
               countryName={country.name}
               yearStart={yearStart}
               yearEnd={yearEnd}
+            />
+          )}
+          {/* Songs written about this place (owner, Oct 12 2026): not
+              era-gated — a song about Paris belongs to Paris in every
+              year — so it keys on the place alone. Renders nothing
+              where the sweep found nothing it can play. */}
+          {!genre && (
+            <SongsAboutSection
+              key={`songs-about:${country.code}`}
+              placeCode={country.code}
+              placeName={country.name}
             />
           )}
 
