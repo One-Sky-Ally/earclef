@@ -16,8 +16,11 @@ function normalizedTitle(title) {
     .replace(/[([](feat|ft|with|deluxe|expanded|remaster(ed)?|special)[^)\]]*[)\]]/g, '')
     .replace(/[^a-z0-9]+/g, '')
 }
+// The public route cuts titles to 200 chars BEFORE keying (a 606-char
+// "We Are The World [feat. …]" credit list reported a false miss on
+// Oct 12, 2026) — mirror that, or long titles can never be satisfied.
 const blurbKey = (slug, type, title) =>
-  `v2/${slug}/${type}/${normalizedTitle(title) || 'untitled'}`
+  `v2/${slug}/${type}/${normalizedTitle(title.trim().slice(0, 200)) || 'untitled'}`
 
 const slugsArg = process.argv[2]
 const slugs = slugsArg ? new Set(slugsArg.split(',')) : null

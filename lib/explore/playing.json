@@ -1062,7 +1062,7 @@
         {
           "artist": "Taylor Swift",
           "work": "Patient Zero",
-          "note": "UK #1, October 2026"
+          "note": "UK #1 for 2 weeks from 8 October 2026"
         }
       ],
       "sources": [
@@ -1076,7 +1076,7 @@
         }
       ],
       "model": "claude-fable-5 (in-session)",
-      "at": "2026-07-20T06:55:36.000Z"
+      "at": "2026-10-12T05:03:26.434Z"
     },
     {
       "country": "DE",
@@ -1110,7 +1110,7 @@
         {
           "artist": "Taylor Swift",
           "work": "Patient Zero",
-          "note": "German #1, October 2026 — ending the Dai Dai run"
+          "note": "German #1 for 2 weeks from 2 October 2026 — ending the Dai Dai run"
         }
       ],
       "sources": [
@@ -1129,10 +1129,14 @@
         {
           "label": "Wikipedia — Komet",
           "url": "https://en.wikipedia.org/wiki/Komet_(song)"
+        },
+        {
+          "label": "List of number-one hits of 2026 (Germany) — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_hits_of_2026_(Germany)"
         }
       ],
       "model": "claude-fable-5 (in-session)",
-      "at": "2026-07-20T06:55:36.000Z"
+      "at": "2026-10-12T05:03:14.227Z"
     },
     {
       "country": "ES",
@@ -1140,7 +1144,7 @@
       "to": 2026,
       "era": "The Bizarrap decade",
       "kind": "charted",
-      "basis": "Anchored to Promusicae's official singles chart — Spain's sales-and-streaming chart — via the archived year-by-year number-one lists.",
+      "basis": "Anchored to Promusicae's official charts — the Top 100 Canciones (streaming, downloads and sales) and the Top 50 radio-airplay list — via the archived year-by-year number-one lists; each note names the chart it comes from.",
       "story": "Spain's 2020s chart speaks the global language of Spanish-language pop. A Canary Islands rapper and an Argentine producer set the decade's template: [[Quevedo]]'s Bzrp session Quédate went from viral freestyle to #1 in 2022, [[Rosalía]]'s Despechá ruled the same summer, [[Bad Bunny]] was never far from the top — and in 2023 [[Shakira]] recorded a Bizarrap session of her own that was heard around the world. By 2026 the top spot changed hands almost weekly — [[Aitana]]'s Superestrella came back to #1 four separate times — until [[Shakira]] and [[Burna Boy]]'s Dai Dai held it for most of the summer.",
       "items": [
         {
@@ -1166,12 +1170,17 @@
         {
           "artist": "Aitana",
           "work": "Superestrella",
-          "note": "Spanish #1 across four separate runs between March and June 2026"
+          "note": "Promusicae radio-airplay #1 for 7 weeks across five separate runs between March and June 2026"
+        },
+        {
+          "artist": "Quevedo and Elvis Crespo",
+          "work": "La Graciosa",
+          "note": "Spanish #1 on the streaming-and-sales chart for 15 weeks across two runs, April–August 2026 — the year's longest"
         },
         {
           "artist": "Shakira and Burna Boy",
           "work": "Dai Dai",
-          "note": "Spanish #1 for 7 weeks across two runs, July–August 2026"
+          "note": "Promusicae radio-airplay #1 for 8 weeks across two runs, July–August 2026"
         }
       ],
       "sources": [
@@ -1186,10 +1195,14 @@
         {
           "label": "Promusicae — El Portal de Música",
           "url": "https://www.elportaldemusica.es/"
+        },
+        {
+          "label": "List of number-one singles of 2026 (Spain) — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_singles_of_2026_(Spain)"
         }
       ],
       "model": "claude-fable-5 (in-session)",
-      "at": "2026-07-20T06:55:36.000Z"
+      "at": "2026-10-12T05:03:14.227Z"
     },
     {
       "country": "CU",
@@ -1681,6 +1694,113 @@
       ],
       "model": "claude-fable-5-1 (in-session, research agent + owner-gate verification)",
       "at": "2026-10-09"
+    },
+    {
+      "country": "NL",
+      "from": 1965,
+      "to": 1975,
+      "era": "Veronica’s Top 40 — from the pirate ship to Hilversum",
+      "kind": "charted",
+      "basis": "Every peak, week count and date is read from the Dutch Top 40’s own archive (Stichting Nederlandse Top 40, top40.nl): the weekly lists for each week at #1, the song pages and the compiler’s chart-position data; Wikipedia’s per-year number-one lists cross-read, with the one disagreement said so on the item.",
+      "story": "The Dutch Top 40 went on air on 2 January 1965 from the offshore pirate Radio Veronica, the idea of its DJ Joost den Draaijer after the American radio charts, with the Beatles’ I Feel Fine at number one. The Hague was the country’s beat capital — the Golden Earrings, Q65 and the Motions formed there, and [[Shocking Blue]] in 1967 — and the chart of these years is theirs as much as anyone’s: [[Golden Earring]] on top with Back Home in 1970 and Radar Love in 1973, [[Boudewijn de Groot]] singing Dutch, [[The Cats]] from Volendam, [[Tee-Set]] and Mouth & MacNeal. Shocking Blue’s Venus never passed #3 at home, then became the first US number one by a Dutch band in February 1970. On Saturday 31 August 1974 at six in the evening Veronica switched off, the day before the anti-pirate law took effect; former Veronica staff had already set up the Stichting Nederlandse Top 40, and from October the TROS carried the list on Hilversum 3 as the Nederlandse Top 40 — the chart outlived the ship.",
+      "items": [
+        {
+          "artist": "Boudewijn de Groot",
+          "work": "Het Land van Maas en Waal",
+          "note": "Dutch Top 40 #1 for 3 weeks from 11 February 1967"
+        },
+        {
+          "artist": "Heintje",
+          "work": "Ich bau’ dir ein Schloss",
+          "note": "Dutch Top 40 #1 for 10 weeks, 29 June–31 August 1968 — the longest run of these twelve"
+        },
+        {
+          "artist": "Shocking Blue",
+          "work": "Venus",
+          "note": "peaked at #3 on the Dutch Top 40, 26 July 1969 — never a Dutch number one; then #1 on the Billboard Hot 100, week of 7 February 1970, the first US number one by a Dutch band"
+        },
+        {
+          "artist": "The Cats",
+          "work": "Marian",
+          "note": "Dutch Top 40 #1 for 5 weeks, 20 December 1969–17 January 1970"
+        },
+        {
+          "artist": "Shocking Blue",
+          "work": "Mighty Joe",
+          "note": "Dutch Top 40 #1 for 2 weeks from 24 January 1970"
+        },
+        {
+          "artist": "Golden Earring",
+          "work": "Back Home",
+          "note": "Dutch Top 40 #1 for 5 weeks, 22 August–19 September 1970"
+        },
+        {
+          "artist": "Tee-Set",
+          "work": "She Likes Weeds",
+          "note": "Dutch Top 40 #1 for 3 weeks from 12 December 1970 by the compiler’s lists (Wikipedia counts 2, recording no list for 26 December)"
+        },
+        {
+          "artist": "Mouth & MacNeal",
+          "work": "How Do You Do",
+          "note": "Dutch Top 40 #1 for 5 weeks, 18 December 1971–15 January 1972"
+        },
+        {
+          "artist": "Earth & Fire",
+          "work": "Memories",
+          "note": "Dutch Top 40 #1 for 2 weeks from 20 May 1972"
+        },
+        {
+          "artist": "Golden Earring",
+          "work": "Radar Love",
+          "note": "Dutch Top 40 #1 for 3 weeks from 15 September 1973"
+        },
+        {
+          "artist": "George Baker Selection",
+          "work": "Paloma Blanca",
+          "note": "Dutch Top 40 #1 for 3 weeks from 19 April 1975"
+        },
+        {
+          "artist": "Pussycat",
+          "work": "Mississippi",
+          "note": "Dutch Top 40 #1 for 4 weeks, 13 December 1975–3 January 1976"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Dutch Top 40 — the compiler’s weekly lists (example: week 4, 24 January 1970)",
+          "url": "https://www.top40.nl/top40/1970/week-4"
+        },
+        {
+          "label": "Dutch Top 40 — the compiler’s history",
+          "url": "https://www.top40.nl/geschiedenis"
+        },
+        {
+          "label": "Wikipedia — Dutch Top 40",
+          "url": "https://en.wikipedia.org/wiki/Dutch_Top_40"
+        },
+        {
+          "label": "Wikipedia — Dutch Top 40 number ones of 1970",
+          "url": "https://en.wikipedia.org/wiki/List_of_Dutch_Top_40_number-one_singles_of_1970"
+        },
+        {
+          "label": "Wikipedia — Nederbeat",
+          "url": "https://en.wikipedia.org/wiki/Nederbeat"
+        },
+        {
+          "label": "Wikipedia — Radio Veronica",
+          "url": "https://en.wikipedia.org/wiki/Radio_Veronica"
+        },
+        {
+          "label": "Wikipedia (nl) — Nederlandse Top 40",
+          "url": "https://nl.wikipedia.org/wiki/Nederlandse_Top_40"
+        },
+        {
+          "label": "Wikipedia — Billboard Hot 100 number ones of 1970",
+          "url": "https://en.wikipedia.org/wiki/List_of_Billboard_Hot_100_number_ones_of_1970"
+        }
+      ],
+      "model": "claude-fable-5-1 (in-session, research agent + owner-gate verification)",
+      "at": "2026-10-12"
     }
   ]
 }
