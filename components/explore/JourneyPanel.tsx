@@ -75,6 +75,12 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
   const deadRef = useRef<Set<string>>(new Set())
   const tracksRef = useRef<PanelTrack[]>([])
   const disposedRef = useRef(false)
+  // The player exists but isn't ready yet (or is still being built):
+  // a click in that window queues its song instead of calling into a
+  // half-made player or building a second one.
+  const readyRef = useRef(false)
+  const creatingRef = useRef(false)
+  const queuedRef = useRef<string | null>(null)
 
   // A "Songs about" place loads its songs on demand.
   useEffect(() => {
@@ -138,10 +144,15 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
     currentRef.current = index
     setCurrent(index)
     setEnded(false)
-    if (playerRef.current) {
+    if (playerRef.current && readyRef.current) {
       playerRef.current.loadVideoById(track.videoId)
       return
     }
+    if (creatingRef.current || playerRef.current) {
+      queuedRef.current = track.videoId
+      return
+    }
+    creatingRef.current = true
     try {
       const yt = await loadYouTubeApi()
       if (disposedRef.current || !mountRef.current) return
@@ -151,7 +162,16 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
         videoId: track.videoId,
         playerVars: { autoplay: 1, rel: 0, playsinline: 1 },
         events: {
-          onReady: (event) => event.target.playVideo(),
+          onReady: (event) => {
+            readyRef.current = true
+            const queued = queuedRef.current
+            queuedRef.current = null
+            if (queued && queued !== track.videoId) {
+              playerRef.current?.loadVideoById(queued)
+            } else {
+              event.target.playVideo()
+            }
+          },
           onStateChange: (event) => {
             if (event.data === yt.PlayerState.ENDED) advance()
             else if (event.data === yt.PlayerState.PLAYING) setPaused(false)
@@ -171,13 +191,15 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
       })
     } catch {
       setBroken(true)
+    } finally {
+      creatingRef.current = false
     }
   }
 
   /** The current row's button pauses and resumes; any other row plays. */
   function onRowPlay(index: number) {
     const player = playerRef.current
-    if (index === currentRef.current && player && !ended) {
+    if (index === currentRef.current && player && readyRef.current && !ended) {
       if (paused) player.playVideo?.()
       else player.pauseVideo()
       return
