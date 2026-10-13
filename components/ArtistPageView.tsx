@@ -33,10 +33,25 @@ export function ArtistPageView({
       ? `https://www.youtube.com/channel/${content.integrations.youtube.channelId}`
       : undefined)
 
+  // Only sections this page renders get a tab in the section bar.
+  const available = [
+    content.play?.enabled && 'play',
+    content.listen.enabled && 'listen',
+    content.watch.enabled && 'watch',
+    content.story.enabled && 'story',
+    content.shows.enabled && 'shows',
+    content.merch.enabled && 'merch',
+    content.press.enabled && 'press',
+    content.beyond?.enabled && 'beyond',
+    content.membership?.enabled && 'universe',
+  ].filter((id): id is string => Boolean(id))
+
   return (
     <>
       <SiteNav
         anchorBase={anchorBase}
+        artistName={content.hero.name}
+        available={available}
         includePlay={Boolean(content.play?.enabled)}
         includeBeyond={Boolean(content.beyond?.enabled)}
         universeLabel={

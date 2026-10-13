@@ -6,7 +6,7 @@
   width: min(340px, calc(100% - 2rem));
   padding: 0.9rem 1.1rem;
   border-radius: 14px;
-  background: rgba(22, 18, 16, 0.78);
+  background: rgba(var(--bg-rgb), 0.78);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border-strong);

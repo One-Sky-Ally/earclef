@@ -1,0 +1,136 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.filter {
+  flex: 1 1 12rem;
+}
+
+.filterInput,
+.sortSelect {
+  width: 100%;
+  min-height: 42px;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--field);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.92rem;
+}
+
+.filterInput::placeholder {
+  color: var(--text-muted);
+}
+
+.filterInput:focus,
+.sortSelect:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sortLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.sortSelect {
+  width: auto;
+}
+
+/* The list scrolls inside the stage on wide screens (its own visible
+   scrollbar, every row a button); on phones it flows with the page. */
+.rows {
+  list-style: none;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--sage) transparent;
+  border-top: 1px solid var(--border);
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  min-height: 44px;
+  padding: 0.55rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.row:hover {
+  background: var(--hover-wash);
+}
+
+.row[aria-current='true'] {
+  background: var(--sage-soft);
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  color: var(--text);
+}
+
+.count {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.more {
+  align-self: flex-start;
+  min-height: 40px;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.86rem;
+  color: var(--text-soft);
+}
+
+.more:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.footnote,
+.note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.note {
+  padding: 1rem 0;
+}
+
+@media (max-width: 899px) {
+  .rows {
+    overflow: visible;
+  }
+}

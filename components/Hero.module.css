@@ -3,12 +3,12 @@
   background:
     radial-gradient(
       ellipse 90% 70% at 75% 10%,
-      rgba(242, 169, 59, 0.08),
+      rgba(var(--accent-rgb), 0.08),
       transparent 65%
     ),
     radial-gradient(
       ellipse 60% 50% at 10% 100%,
-      rgba(201, 127, 26, 0.05),
+      rgba(var(--accent-rgb), 0.05),
       transparent 70%
     ),
     var(--bg);

@@ -1,0 +1,128 @@
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 2.6 / 1;
+  min-height: 150px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-align: left;
+  color: var(--text);
+  background: #12140f;
+  isolation: isolate;
+  transition: border-color 0.2s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  border-color: rgba(var(--accent-rgb), 0.6);
+}
+
+.current {
+  border-color: var(--accent);
+}
+
+/* The plate under every card: shows through when there is no still. */
+.art {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0.9rem 1rem;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(var(--accent-rgb), 0.22), transparent 55%),
+    radial-gradient(ellipse at 10% 100%, rgba(var(--sage-rgb), 0.55), transparent 65%),
+    #12140f;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) brightness(0.92);
+  transition: transform 0.6s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.03);
+}
+
+.plateText {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: rgba(var(--ink-rgb), 0.28);
+  letter-spacing: 0.04em;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to top,
+    rgba(var(--bg-rgb), 0.92) 0%,
+    rgba(var(--bg-rgb), 0.55) 45%,
+    rgba(var(--bg-rgb), 0.05) 100%
+  );
+}
+
+.text {
+  position: absolute;
+  left: 1.25rem;
+  right: 4.25rem;
+  bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.kind {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.12;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.go {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(var(--ink-rgb), 0.75);
+  border-radius: 50%;
+  background: rgba(var(--bg-rgb), 0.35);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.card:hover .go {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .image {
+    transform: none;
+  }
+}

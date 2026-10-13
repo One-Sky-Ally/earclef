@@ -9,11 +9,15 @@ import {
   type SearchChoice,
   type SearchResult,
 } from '@/lib/explore/panelData'
+import { Icon } from '@/components/ui/Icon'
+import { EXPLORE_SEARCH_ID } from '@/components/SiteNavLinks'
 import styles from './SearchBox.module.css'
 
 interface SearchBoxProps {
   /** A certain match — a place or a MusicBrainz artist — to open on the globe. */
   onResolved: (result: Exclude<SearchChoice, { kind: 'roster' }>) => void
+  /** Rendered beside the field, e.g. the "Surprise me" button. */
+  trailing?: React.ReactNode
 }
 
 type SearchState =
@@ -47,7 +51,7 @@ function choiceDetail(choice: SearchChoice): string {
   }
 }
 
-export function SearchBox({ onResolved }: SearchBoxProps) {
+export function SearchBox({ onResolved, trailing }: SearchBoxProps) {
   const [state, setState] = useState<SearchState>({ status: 'idle' })
   const controllerRef = useRef<AbortController | null>(null)
   const router = useRouter()
@@ -93,24 +97,28 @@ export function SearchBox({ onResolved }: SearchBoxProps) {
 
   return (
     <form className={styles.search} onSubmit={onSubmit} role="search">
-      <div className={styles.row}>
-        <input
-          className={styles.input}
-          type="search"
-          name="place"
-          placeholder="Search a place or artist…"
-          aria-label="Search a city, country, or artist"
-          autoComplete="off"
-          spellCheck={false}
-        />
-        <button
-          className={styles.submit}
-          type="submit"
-          disabled={state.status === 'searching'}
-          aria-label="Search"
-        >
-          {state.status === 'searching' ? '…' : '→'}
-        </button>
+      <div className={styles.line}>
+        <div className={styles.row}>
+          <button
+            className={styles.submit}
+            type="submit"
+            disabled={state.status === 'searching'}
+            aria-label="Search"
+          >
+            <Icon name="search" size={20} />
+          </button>
+          <input
+            id={EXPLORE_SEARCH_ID}
+            className={styles.input}
+            type="search"
+            name="place"
+            placeholder="Search artists, cities, countries"
+            aria-label="Search artists, cities, or countries"
+            autoComplete="off"
+            spellCheck={false}
+          />
+        </div>
+        {trailing}
       </div>
       {state.status === 'error' && (
         <p className={styles.error}>{state.message}</p>

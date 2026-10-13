@@ -1,65 +1,313 @@
-.nav {
+/* ── Site bar ──────────────────────────────────────────────────────── */
+.bar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(22, 18, 16, 0.72);
+  height: var(--nav-h);
+  background: rgba(var(--bg-rgb), 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
 
 .inner {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.1rem;
-  padding-block: 0.8rem;
+  gap: 1.5rem;
+  height: 100%;
+  width: min(100% - 2.5rem, var(--max-width));
+  margin-inline: auto;
+}
+
+.innerWide {
+  width: min(100% - 2.5rem, var(--max-wide));
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  color: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
+  gap: 0.8rem;
+  flex-shrink: 0;
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
+  color: var(--text);
   white-space: nowrap;
 }
 
 .links {
   list-style: none;
   display: flex;
-  /* Tight enough that an artist page's full tab set (including a
-     membership anchor) fits within --max-width without overflow. */
-  gap: clamp(0.65rem, 1.6vw, 1.3rem);
-  overflow-x: auto;
-  scrollbar-width: none;
+  align-self: stretch;
+  gap: clamp(1rem, 2.6vw, 2.4rem);
+  margin-inline: auto;
 }
 
-.links::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hint that the row scrolls when it overflows on small screens */
-@media (max-width: 640px) {
-  .links {
-    mask-image: linear-gradient(to right, black 82%, transparent);
-    -webkit-mask-image: linear-gradient(to right, black 82%, transparent);
-    padding-right: 1.25rem;
-  }
+.links li {
+  display: flex;
 }
 
 .link {
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text-soft);
   white-space: nowrap;
   transition: color 0.2s ease;
 }
 
-.link:hover {
+.link:hover,
+.link[aria-current='page'] {
+  color: var(--text);
+}
+
+/* The current page: a short gold rule along the bar's bottom edge. */
+.links .link[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  left: -0.35rem;
+  right: -0.35rem;
+  bottom: -1px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.iconButton {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  color: var(--text-soft);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.iconButton:hover {
+  color: var(--text);
+  background: var(--hover-wash);
+}
+
+.tasteMap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  padding: 0.25rem 0.9rem 0.25rem 0.3rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  white-space: nowrap;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.tasteMap:hover,
+.tasteMap[aria-current='page'] {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.tasteMapIcon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--sage-soft);
+  color: var(--text);
+}
+
+.menuButton {
+  display: none;
+}
+
+.menu {
+  display: none;
+}
+
+/* ── Artist section bar ────────────────────────────────────────────── */
+.sections {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 90;
+  background: rgba(var(--bg-rgb), 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionsInner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: min(100% - 2.5rem, var(--max-width));
+  margin-inline: auto;
+  min-height: 52px;
+}
+
+.sectionsName {
+  flex-shrink: 0;
+  padding-right: 1.5rem;
+  border-right: 1px solid var(--border-strong);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--text);
+  white-space: nowrap;
+  max-width: 16ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sectionLinks {
+  list-style: none;
+  display: flex;
+  gap: clamp(1rem, 2.4vw, 2rem);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-block: 0.25rem;
+}
+
+.sectionLinks::-webkit-scrollbar {
+  display: none;
+}
+
+.sectionLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.sectionLink:hover {
   color: var(--accent);
+}
+
+/* ── Tablets: the label folds into the avatar ──────────────────────── */
+@media (max-width: 1060px) {
+  .tasteMapLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .tasteMap {
+    padding: 0.25rem;
+    border-color: transparent;
+  }
+}
+
+/* ── Phones: links fold into a menu ────────────────────────────────── */
+@media (max-width: 760px) {
+  .inner,
+  .innerWide {
+    width: calc(100% - 2rem);
+    gap: 0.75rem;
+  }
+
+  .brand {
+    margin-right: auto;
+    gap: 0.6rem;
+  }
+
+  .wordmark {
+    font-size: 0.98rem;
+    letter-spacing: 0.26em;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .tools {
+    gap: 0.15rem;
+  }
+
+  .menuButton {
+    display: grid;
+  }
+
+  .menu:not([hidden]) {
+    display: block;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: -1rem;
+    right: -1rem;
+    padding: 0.5rem 1rem 1rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border-strong);
+    box-shadow: 0 24px 40px -20px rgba(0, 0, 0, 0.8);
+  }
+
+  .menuLinks {
+    list-style: none;
+    display: grid;
+  }
+
+  .menuLinks .link {
+    display: flex;
+    min-height: 52px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .menuLinks .link[aria-current='page'] {
+    color: var(--accent);
+  }
+
+  /* An artist page keeps its section bar pinned instead: two stacked
+     bars would eat a phone screen. */
+  .barWithSections {
+    position: relative;
+  }
+
+  .sections {
+    top: 0;
+  }
+
+  .sectionsInner {
+    width: 100%;
+    padding-left: 1rem;
+    gap: 1rem;
+  }
+
+  .sectionsName {
+    font-size: 1.05rem;
+    padding-right: 1rem;
+    max-width: 11ch;
+  }
+
+  .sectionLinks {
+    padding-right: 1.25rem;
+    mask-image: linear-gradient(to right, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent);
+  }
+}
+
+@media (max-width: 380px) {
+  .wordmark {
+    font-size: 0.86rem;
+    letter-spacing: 0.2em;
+  }
 }

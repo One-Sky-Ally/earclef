@@ -14,7 +14,6 @@ import {
   countInRange,
   heatColor,
   heatValue,
-  loadCounts,
   loadNationCounts,
   loadStateCounts,
   maxForRange,
@@ -42,6 +41,7 @@ import {
   SUBDIVISION_CODE_PATTERN,
   splitSubdivisionFeatures,
 } from '@/lib/explore/subdivisions'
+import { loadCountryShapes, loadSharedCounts } from '@/lib/explore/worldData'
 import type { SelectedCountry } from '@/components/explore/CountryPanel'
 import styles from './GlobeScene.module.css'
 
@@ -57,14 +57,17 @@ const STATE_ZOOM_EXIT = 1.3
 /** Fly-to altitude for a state — below ENTER so the layer lights up. */
 const STATE_FLY_ALTITUDE = 0.95
 
-const SIDE_COLOR = 'rgba(242, 169, 59, 0.03)'
-const STROKE_COLOR = 'rgba(242, 169, 59, 0.35)'
+// A SUBDUED globe (UI handoff, Oct 2026): a dark slate sphere, sage
+// borders, and the heat ramp in lib/explore/counts.ts running from dim
+// sage to restrained gold — no saturated textures.
+const SIDE_COLOR = 'rgba(159, 178, 147, 0.04)'
+const STROKE_COLOR = 'rgba(190, 196, 165, 0.32)'
 // Hot neighbors need a dark seam between their gold fills; cool
 // countries keep the translucent gold wireframe against the dark sea.
 const HOT_STROKE_COLOR = 'rgba(20, 14, 9, 0.95)'
 const HOT_STROKE_THRESHOLD = 3 / 7
-const SPHERE_COLOR = '#1b1613'
-const ATMOSPHERE_COLOR = '#f2a93b'
+const SPHERE_COLOR = '#11160f'
+const ATMOSPHERE_COLOR = '#b9b48e'
 // The selection accent: coral red (owner-chosen, #e4726a) — a hue the
 // ember→gold heat ramp cannot produce at any year, so the selected
 // place can never be confused with a hot neighbour. Gold is the DATA's
@@ -91,6 +94,20 @@ const CLAIMED_MARKER_ALTITUDE = 0.06
 /** Fly-to altitude when a claimed place is opened. */
 const CLAIMED_FLY_ALTITUDE = 1.3
 
+/**
+ * The resting camera altitude that fits the whole globe in its canvas.
+ * globe.gl frames by HEIGHT (a 50° vertical field of view), so a tall,
+ * narrow canvas — the Explore column beside the hero — would crop the
+ * globe's sides at a fixed altitude. Aim the globe's diameter at no
+ * more than ~73% of the height (the old 2.1 look) and ~90% of the width.
+ */
+function fitAltitude(width: number, height: number): number {
+  if (width <= 0 || height <= 0) return 2.1
+  const fraction = Math.min(0.73, (0.9 * width) / height)
+  const halfAngle = Math.atan(fraction * Math.tan((25 * Math.PI) / 180))
+  return Math.max(1.6, 1 / Math.sin(halfAngle) - 1)
+}
+
 /** The selection pill's datum on the html-marker layer. */
 interface PinDatum {
   pin: true
@@ -98,6 +115,8 @@ interface PinDatum {
   lng: number
   name: string
   small: boolean
+  /** The featured journey's place, not a selection. */
+  featured?: boolean
 }
 
 type HtmlMarkerDatum = ClaimedPlace | PinDatum
@@ -110,6 +129,8 @@ export interface FocusRequest {
   code: string
   name: string
   nonce: number
+  /** Turn the globe to the place without opening its panel. */
+  flyOnly?: boolean
 }
 
 /** The globe couldn't render — explore continues without it. */
@@ -141,29 +162,6 @@ function webglSupported(): boolean {
   }
 }
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
-
-/**
- * The countries dataset, with backoff retries. Later attempts add a
- * cache-busting query so a poisoned browser/proxy cache of the static
- * asset can't make the failure permanent.
- */
-async function fetchCountries(): Promise<{ features: CountryFeature[] }> {
-  let lastError: unknown
-  for (let attempt = 1; attempt <= 3; attempt++) {
-    try {
-      const bust = attempt > 1 ? `?retry=${attempt}` : ''
-      const res = await fetch(`/data/countries-110m.geojson${bust}`)
-      if (!res.ok) throw new Error(`countries geojson: HTTP ${res.status}`)
-      return (await res.json()) as { features: CountryFeature[] }
-    } catch (error) {
-      lastError = error
-      if (attempt < 3) await sleep(800 * attempt)
-    }
-  }
-  throw lastError
-}
-
 interface LensState {
   label: string
   countries: GenreCountryDecades
@@ -181,6 +179,15 @@ interface GlobeSceneProps {
   selected: SelectedCountry | null
   onDataSourceChange: (source: DataSource) => void
   onCountryClick: (country: SelectedCountry) => void
+  /**
+   * A place the page is featuring (the curated journey) — named with
+   * the same pill as a selection, but not selected: no fill, no panel.
+   */
+  highlight?: SelectedCountry | null
+  /** Another view (Map, List) is showing: stop drawing frames. */
+  hidden?: boolean
+  /** The 3D globe can't run here — the page offers Map and List. */
+  onUnavailable?: () => void
 }
 
 export function GlobeScene({
@@ -192,6 +199,9 @@ export function GlobeScene({
   selected,
   onDataSourceChange,
   onCountryClick,
+  highlight = null,
+  hidden = false,
+  onUnavailable,
 }: GlobeSceneProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [fallback, setFallback] = useState<GlobeFallback | null>(null)
@@ -204,6 +214,8 @@ export function GlobeScene({
   const rangeMaxCache = useRef<Record<string, number>>({})
   const hoverRef = useRef<object | null>(null)
   const selectedRef = useRef<SelectedCountry | null>(null)
+  const highlightRef = useRef<SelectedCountry | null>(highlight)
+  const hiddenRef = useRef(hidden)
   // Claimed-place marker elements, by place id — kept so the selected
   // marker can be lit without rebuilding the layer.
   const claimedMarkers = useRef<Map<string, HTMLElement>>(new Map())
@@ -358,6 +370,16 @@ export function GlobeScene({
   /** The pill naming the selection — inert, so the globe stays live under it. */
   function buildPinPill(datum: PinDatum): HTMLElement {
     const pill = document.createElement('div')
+    if (datum.featured) {
+      // globe.gl centres the element on the place, so the DOT is the
+      // element and the name hangs to its right.
+      pill.className = styles.pinFeatured
+      const label = document.createElement('span')
+      label.className = styles.pinFeaturedLabel
+      label.textContent = datum.name
+      pill.append(label)
+      return pill
+    }
     pill.className = datum.small
       ? `${styles.pinPill} ${styles.pinPillSmall}`
       : styles.pinPill
@@ -380,7 +402,18 @@ export function GlobeScene({
       )
     }
     const base: HtmlMarkerDatum[] = [...CLAIMED_PLACES]
-    if (!selectedNow || claimedPlaceById(selectedNow.code)) {
+    // Nothing selected: the featured place (if any) wears the pill.
+    const highlighted = highlightRef.current
+    if (!selectedNow) {
+      const pin =
+        highlighted && !claimedPlaceById(highlighted.code)
+          ? pinDatumFor(highlighted.code, highlighted.name)
+          : null
+      const featured = pin ? { ...pin, featured: true } : null
+      globe.htmlElementsData(featured ? [...base, featured] : base)
+      return
+    }
+    if (claimedPlaceById(selectedNow.code)) {
       globe.htmlElementsData(base)
       return
     }
@@ -402,14 +435,44 @@ export function GlobeScene({
   // `selected`, so the pin needs no per-path wiring.
   useEffect(() => {
     selectedRef.current = selected
+    highlightRef.current = highlight
     applySelectionPin()
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- pin follows selection alone
-  }, [selected])
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- pin follows selection + feature alone
+  }, [selected, highlight?.code])
+
+  // Hidden behind the Map or List view: no frames, no drift. The canvas
+  // resizes itself on return through the ResizeObserver below.
+  useEffect(() => {
+    hiddenRef.current = hidden
+    const globe = globeRef.current
+    if (!globe) return
+    if (hidden) globe.pauseAnimation()
+    else globe.resumeAnimation()
+  }, [hidden])
+
+  // Tell the page once when 3D isn't available, so it can offer Map.
+  useEffect(() => {
+    if (fallback) onUnavailable?.()
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- once per fallback
+  }, [fallback])
 
   // Search resolution: fly to the country (when we have its shape) and open it.
   useEffect(() => {
     if (!focusRequest) return
     const { code } = focusRequest
+    if (focusRequest.flyOnly) {
+      const globe = globeRef.current
+      const feature = featureByCode.current.get(code)
+      if (globe && feature) {
+        const { lat, lng } = roughCentroid(feature)
+        const mount = containerRef.current
+        const resting = mount
+          ? fitAltitude(mount.clientWidth, mount.clientHeight)
+          : 2.1
+        globe.pointOfView({ lat, lng, altitude: resting }, 900)
+      }
+      return
+    }
     // Claimed place: fly to the named anchor — never a polygon. The
     // selection pin shows the label while the place stays selected.
     const claimed = claimedPlaceById(code)
@@ -695,7 +758,7 @@ export function GlobeScene({
       // country names, and its fetch retries with cache-busting.
       let countries: { features: CountryFeature[] }
       try {
-        countries = await fetchCountries()
+        countries = await loadCountryShapes()
       } catch (error) {
         if (disposed) return
         reportClientError(
@@ -710,10 +773,11 @@ export function GlobeScene({
 
       // Configured subdivisions (Hawaii) become their own clickable
       // features, split out of the parent country's polygons.
+      // The shapes are shared with the Map and List views — derive, never
+      // mutate.
       const features = splitSubdivisionFeatures(
         countries.features as CountryFeature[],
       )
-      countries.features = features
       countryViewRef.current = features
       // Names by code, before the WebGL decision: the fallback needs
       // them too, to title a deep-linked panel (?c=PG → Papua New Guinea).
@@ -758,7 +822,7 @@ export function GlobeScene({
       }
       if (disposed) return
       const codes = [...featureByCode.current.keys()]
-      const { counts, source } = await loadCounts(codes)
+      const { counts, source } = await loadSharedCounts(codes)
       if (disposed) return
       countsRef.current = counts
       rangeMaxCache.current = {}
@@ -793,7 +857,7 @@ export function GlobeScene({
         .showGraticules(false)
         .atmosphereColor(ATMOSPHERE_COLOR)
         .atmosphereAltitude(0.14)
-        .polygonsData(countries.features)
+        .polygonsData(features)
         .polygonSideColor(() => SIDE_COLOR)
         .polygonStrokeColor(strokeColorFor)
         .polygonsTransitionDuration(150)
@@ -873,9 +937,21 @@ export function GlobeScene({
       // A phone's globe is a block the width of the screen: open a
       // little closer so the world fills it rather than floating in it.
       const narrow = window.matchMedia('(max-width: 640px)').matches
-      globe.pointOfView({ lat: 24, lng: -30, altitude: narrow ? 1.75 : 2.1 }, 0)
+      globe.pointOfView(
+        {
+          lat: 24,
+          lng: -30,
+          altitude: narrow
+            ? 1.75
+            : fitAltitude(mount.clientWidth, mount.clientHeight),
+        },
+        0,
+      )
       applyHeat(globe)
       globeRef.current = globe
+      // A featured place set before the globe existed gets its pill now.
+      applySelectionPin()
+      if (hiddenRef.current) globe.pauseAnimation()
       // Announced only once the globe can act on focus requests — URL
       // deep links (?c=JM) rely on this ordering to fly the camera.
       onDataSourceChange(source)

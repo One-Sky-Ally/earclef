@@ -1,0 +1,67 @@
+.main {
+  width: min(100% - 2.5rem, var(--max-wide));
+  margin-inline: auto;
+  padding-block: clamp(2rem, 5vw, 3.5rem) clamp(3rem, 6vw, 5rem);
+}
+
+.header {
+  max-width: 46rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.overline {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sage-text);
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  margin-bottom: 0.9rem;
+}
+
+.intro {
+  font-size: 1.02rem;
+  color: var(--text-soft);
+  max-width: 62ch;
+}
+
+.group {
+  padding-top: clamp(1.5rem, 3vw, 2.25rem);
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  border-top: 1px solid var(--border);
+}
+
+.groupHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.groupTitle {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.groupNote {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .main {
+    width: calc(100% - 2rem);
+  }
+}

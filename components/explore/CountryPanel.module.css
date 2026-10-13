@@ -1,20 +1,16 @@
 .panel {
+  /* Fills the Explore page's panel slot (ExploreClient .panelSlot) —
+     the column right of the world, where the curated journey sits
+     until a place opens. Above the stage's markers, stated. */
   position: absolute;
-  /* Above the globe stage and its markers — stated, not left to DOM
-     order. */
   z-index: 10;
-  top: 1rem;
-  right: 1rem;
-  bottom: 1rem;
-  width: min(380px, calc(100% - 2rem));
+  inset: 0;
   display: flex;
   flex-direction: column;
-  border-radius: 14px;
-  background: rgba(22, 18, 16, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius);
+  background: var(--panel);
   border: 1px solid var(--border-strong);
-  padding: 1.4rem 1.5rem;
+  padding: 1.4rem 1.4rem 1.25rem;
   overflow: hidden;
   animation: slide-in 0.25s ease;
 }
@@ -39,16 +35,15 @@
 }
 
 .country {
-  font-size: 1.6rem;
-  font-weight: 480;
-  line-height: 1.1;
+  font-size: clamp(1.8rem, 2.6vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1.05;
 }
 
 .year {
   font-family: var(--font-display);
-  font-style: italic;
   color: var(--accent);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
 
 .close {
@@ -89,10 +84,10 @@
 .spotlight {
   margin: 0.2rem 0 0.9rem;
   padding: 0.6rem 0.75rem;
-  border: 1px solid rgba(242, 169, 59, 0.45);
+  border: 1px solid rgba(var(--accent-rgb), 0.45);
   border-radius: 14px;
-  background: rgba(242, 169, 59, 0.07);
-  box-shadow: 0 0 18px rgba(242, 169, 59, 0.12);
+  background: rgba(var(--accent-rgb), 0.07);
+  box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.12);
 }
 
 .spotlightEyebrow {
@@ -122,7 +117,7 @@
 .genreFilterButton,
 .genreFilterButtonActive {
   padding: 0.28rem 0.8rem;
-  border: 1px solid rgba(242, 169, 59, 0.35);
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
   border-radius: 999px;
   font-size: 0.76rem;
   letter-spacing: 0.04em;
@@ -144,7 +139,7 @@
 
 .genreClear {
   padding: 0.28rem 0.55rem;
-  border: 1px solid rgba(242, 237, 228, 0.2);
+  border: 1px solid rgba(var(--ink-rgb), 0.2);
   border-radius: 999px;
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -158,7 +153,7 @@
 
 .genreList {
   flex-basis: 100%;
-  border: 1px solid rgba(242, 237, 228, 0.12);
+  border: 1px solid rgba(var(--ink-rgb), 0.12);
   border-radius: 12px;
   background: rgba(20, 14, 9, 0.6);
   padding: 0.5rem;
@@ -168,8 +163,8 @@
   width: 100%;
   margin-bottom: 0.4rem;
   padding: 0.3rem 0.7rem;
-  background: rgba(242, 237, 228, 0.05);
-  border: 1px solid rgba(242, 237, 228, 0.14);
+  background: rgba(var(--ink-rgb), 0.05);
+  border: 1px solid rgba(var(--ink-rgb), 0.14);
   border-radius: 999px;
   font-size: 0.76rem;
   color: var(--text);
@@ -204,12 +199,12 @@
 }
 
 .genreOption:hover {
-  background: rgba(242, 169, 59, 0.12);
+  background: rgba(var(--accent-rgb), 0.12);
   color: var(--accent);
 }
 
 .genreOptionActive {
-  background: rgba(242, 169, 59, 0.2);
+  background: rgba(var(--accent-rgb), 0.2);
   color: var(--accent);
 }
 
@@ -448,21 +443,17 @@
   color: var(--text-muted);
 }
 
-/* Phones: the panel is a section of the page BELOW the era bar, not a
-   sheet over the bottom of the globe — the sheet hid the year slider
-   the moment a country opened. It takes its natural height and the
-   page scrolls, so its own inner scroller is switched off. */
-@media (max-width: 640px) {
+/* Stacked layouts: the panel is a section of the page BELOW the year
+   bar, not a sheet over the bottom of the globe — the sheet hid the
+   year slider the moment a country opened. It takes its natural
+   height and the page scrolls, so its own inner scroller is off. */
+@media (max-width: 899px) {
   .panel {
     position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
+    inset: auto;
     width: auto;
     max-height: none;
     overflow: visible;
-    grid-column: 1 / -1;
-    order: 6;
     padding: 1.1rem 1rem;
     animation-name: slide-up;
   }

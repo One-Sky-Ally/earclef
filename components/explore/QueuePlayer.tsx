@@ -23,6 +23,7 @@ import {
 import type { RosterByMbid } from './CountryPanel'
 import { LikeButton } from '@/components/fans/LikeButton'
 import { useLikes, type LikeDraft } from '@/components/fans/LikesProvider'
+import { loadYouTubeApi, type YtPlayer } from '@/lib/play/youtubeApi'
 import styles from './QueuePlayer.module.css'
 
 /**
@@ -214,60 +215,6 @@ interface QueuePlayerProps {
    * needs to end in its own words.
    */
   endNote?: string
-}
-
-/** Minimal typing for the pieces of the IFrame API we drive. */
-interface YtPlayer {
-  loadVideoById: (videoId: string) => void
-  pauseVideo: () => void
-  destroy: () => void
-}
-interface YtNamespace {
-  Player: new (
-    element: HTMLElement,
-    options: {
-      videoId: string
-      playerVars: Record<string, number>
-      events: {
-        onReady: (event: { target: { playVideo: () => void } }) => void
-        onStateChange: (event: { data: number }) => void
-        /** 2/5/100/101/150 — malformed id, or gone/unembeddable. */
-        onError: (event: { data: number }) => void
-      }
-    },
-  ) => YtPlayer
-  PlayerState: { ENDED: number }
-}
-
-declare global {
-  interface Window {
-    YT?: YtNamespace
-    onYouTubeIframeAPIReady?: () => void
-  }
-}
-
-let ytApiPromise: Promise<YtNamespace> | null = null
-
-function loadYouTubeApi(): Promise<YtNamespace> {
-  if (typeof window !== 'undefined' && window.YT?.Player) {
-    return Promise.resolve(window.YT)
-  }
-  if (ytApiPromise) return ytApiPromise
-  ytApiPromise = new Promise((resolve, reject) => {
-    const previous = window.onYouTubeIframeAPIReady
-    window.onYouTubeIframeAPIReady = () => {
-      previous?.()
-      if (window.YT) resolve(window.YT)
-    }
-    const script = document.createElement('script')
-    script.src = 'https://www.youtube.com/iframe_api'
-    script.onerror = () => {
-      ytApiPromise = null
-      reject(new Error('YouTube player failed to load'))
-    }
-    document.head.appendChild(script)
-  })
-  return ytApiPromise
 }
 
 export function QueuePlayer({

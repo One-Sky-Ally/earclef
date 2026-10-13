@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { getAllArtists } from '@/lib/content'
 import { SiteNav } from '@/components/SiteNav'
-import { EarClefMark } from '@/components/EarClefMark'
+import { SiteFooterSimple } from '@/components/SiteFooterSimple'
 import { ExploreClient } from '@/components/explore/ExploreClient'
-import { OnThisDayLink } from '@/components/onthisday/OnThisDayLink'
 import type { RosterByMbid } from '@/components/explore/CountryPanel'
+import { ERA_JOURNEYS, SONG_PLACES } from '@/lib/explore/cultures'
 import playing from '@/lib/explore/playing.json'
 import type { PlayingEntry } from '@/lib/explore/playing'
 import styles from './explore.module.css'
@@ -13,7 +12,7 @@ import styles from './explore.module.css'
 export const metadata: Metadata = {
   title: 'Ear Clef — Hear here!',
   description:
-    'A music time-travel globe: pick a year, spin the earth, and see where the music came from. One page per artist universe.',
+    'Where will music take you? Pick a place, choose an era and find your next favorite — a music time-travel globe with one page per artist universe.',
 }
 
 export default function HomePage() {
@@ -28,20 +27,12 @@ export default function HomePage() {
 
   return (
     <>
-      <SiteNav showSections={false} />
+      <SiteNav showSections={false} wide />
       <main className={styles.main}>
-        <div className={`container ${styles.header}`}>
-          <p className={styles.overline}>Music time travel</p>
-          <h1 className={styles.title}>Explore</h1>
-          <p className={styles.subtitle}>
-            Spin the earth. Pick a year. Hear the world.
-          </p>
-          <OnThisDayLink />
-        </div>
         <ExploreClient
           roster={roster}
-          // Documented eras only, stripped server-side to three numbers
-          // each — the stories themselves never ship in the page.
+          // The surprise picker needs only three numbers per documented
+          // era; the curated journeys below carry their own stories.
           surpriseEras={(playing as { entries: PlayingEntry[] }).entries.map(
             (entry) => ({
               country: entry.country,
@@ -49,29 +40,11 @@ export default function HomePage() {
               to: entry.to,
             }),
           )}
+          eras={ERA_JOURNEYS}
+          songPlaces={SONG_PLACES}
         />
-        <p className={styles.hint}>
-          <span className={styles.hintPointer}>
-            Drag to spin · scroll to zoom · slide through time · click a
-            country or search a place for its artists &amp; releases
-          </span>
-          <span className={styles.hintTouch}>
-            Swipe sideways to spin · pinch to zoom · slide through time · tap
-            a country or search a place for its artists &amp; releases
-          </span>
-        </p>
       </main>
-      <footer className={styles.footer}>
-        <EarClefMark size={30} label="Ear Clef" />
-        <p>Music in balance</p>
-        <p className={styles.footerLinks}>
-          <Link href="/manifesto">Manifesto</Link> ·{' '}
-          <Link href="/for-artists">For artists</Link> ·{' '}
-          <Link href="/get-on-the-map">Get on the map</Link> ·{' '}
-          <Link href="/on-this-day">On this day</Link> ·{' '}
-          <Link href="/privacy">Privacy</Link>
-        </p>
-      </footer>
+      <SiteFooterSimple />
     </>
   )
 }
