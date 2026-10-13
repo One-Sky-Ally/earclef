@@ -14,9 +14,10 @@
  *     own channel — it picks which video, never who).
  * PLAYABLE: one batched videos.list per 50 ids (cached in
  * data/songs-about-play-cache.json), public + embeddable + ≥90 s, the
- * queue's content gates, whole-record uploads out, non-official uploads
- * only from a trusted uploader (lib/play/officialVideo). The plain
- * record outranks any version; a version that plays is labelled.
+ * queue's content gates, whole-record uploads out. The bar is On this
+ * day's (owner ruling): a Discogs-attached, title-matched video is
+ * verified whoever uploaded it. The plain record outranks any version;
+ * a version that plays is labelled.
  *
  * Only songs with a verified video reach lib/explore/songs-about-
  * places.json (owner: never list music people cannot listen to). A
@@ -26,11 +27,11 @@
  */
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
-import { videosForArtist, videoIndexAvailable } from './lib/discogsDump.mjs'
+import { videoIndexAvailable, videoReleaseRefsFor, videoReleaseShard, videoReleaseShardOf } from './lib/discogsDump.mjs'
 import { rankCandidates, servedUnder, versionOf } from './lib/songsAboutPlaces.mjs'
 import { recordSongCandidates } from '../lib/play/songIdentity.ts'
 import { aliasKeysOf, normalizeName, titleVariants, variantsIntersect } from '../lib/play/titleVariants.ts'
-import { isTrustedUploader, isWholeRecordUpload, uploadKindOf } from '../lib/play/officialVideo.ts'
+import { isWholeRecordUpload, uploadKindOf } from '../lib/play/officialVideo.ts'
 import { channelId, channelUploads, playableSet, QuotaError } from '../lib/play/channelSongs.ts'
 import { annotationOf, isNonSongUpload, nonMusicVerdict } from '../lib/play/contentGates.ts'
 
@@ -70,34 +71,84 @@ async function retry(fn, tries = 3) {
 /** Uploads of an MB-linked channel, cached per channel URL (≤5 units once). */
 async function uploadsFor(channelUrl) {
   if (cache.channels[channelUrl]) return cache.channels[channelUrl]
-  const id = await retry(() => channelId(channelUrl, KEY))
-  units += /\/channel\//.test(channelUrl) ? 0 : 1
-  const uploads = id ? await retry(() => channelUploads(id, KEY)) : []
-  units += Math.max(1, Math.ceil(uploads.length / 50))
+  let uploads = []
+  try {
+    const id = await retry(() => channelId(channelUrl, KEY))
+    units += /\/channel\//.test(channelUrl) ? 0 : 1
+    uploads = id ? await retry(() => channelUploads(id, KEY)) : []
+    units += Math.max(1, Math.ceil(uploads.length / 50))
+  } catch (error) {
+    // A deleted or renamed channel 404s: that performer simply has no
+    // channel path. Quota trouble is the one error that must stop the run.
+    if (error instanceof QuotaError) throw error
+  }
   cache.channels[channelUrl] = uploads
   return uploads
 }
 
-function discogsRecords(dgIds) {
-  return dgIds.flatMap((id) => videosForArtist(id)).map((record) => ({
-    id: record.id, title: record.title, year: record.year,
-    artists: record.artists.map((credit) => Number(credit.id)),
-    tracklist: record.tracklist.map((track) => ({ title: track.title, duration: track.duration, artists: (track.artists ?? []).map((credit) => Number(credit?.id ?? credit)).filter(Boolean) })),
-    videos: record.videos, labels: [],
-  }))
+/**
+ * Phase 0: the Discogs records every performer needs, loading each of
+ * the 256 video-release shards ONCE (the per-artist reader reloads
+ * shards per call — with 1,300 performers that ran for 14 hours on
+ * Oct 12 without finishing). A record is kept only when a video,
+ * track or record title CONTAINS one of the performer's song keys —
+ * a pre-filter that can only exclude; the identity bar still runs in
+ * full on what remains.
+ */
+const slim = (record) => ({
+  id: record.id, title: record.title, year: record.year,
+  artists: record.artists.map((credit) => Number(credit.id)),
+  tracklist: record.tracklist.map((track) => ({ title: track.title, duration: track.duration, artists: (track.artists ?? []).map((credit) => Number(credit?.id ?? credit)).filter(Boolean) })),
+  videos: record.videos, labels: [],
+})
+
+function loadDiscogsRecords(wantedByDg) {
+  const byShard = new Map()
+  const dgIds = [...wantedByDg.keys()].sort((a, b) => (a % 256) - (b % 256))
+  for (const dgId of dgIds) {
+    for (const ref of videoReleaseRefsFor(dgId)) {
+      const shard = videoReleaseShardOf(ref.releaseId)
+      const releases = byShard.get(shard) ?? byShard.set(shard, new Map()).get(shard)
+      ;(releases.get(ref.releaseId) ?? releases.set(ref.releaseId, new Set()).get(ref.releaseId)).add(dgId)
+    }
+  }
+  const recordsByDg = new Map()
+  let shardsDone = 0
+  for (const [shard, releases] of byShard) {
+    const map = videoReleaseShard(shard)
+    for (const [releaseId, owners] of releases) {
+      const record = map.get(releaseId)
+      if (!record) continue
+      const haystack = [record.title, ...record.tracklist.map((track) => track.title), ...record.videos.map((video) => video.title)].map(normalizeName).join(' ')
+      for (const dgId of owners) {
+        const keys = wantedByDg.get(dgId)
+        if (![...keys].some((key) => key && haystack.includes(key))) continue
+        ;(recordsByDg.get(dgId) ?? recordsByDg.set(dgId, []).get(dgId)).push(slim(record))
+      }
+    }
+    if (++shardsDone % 32 === 0) console.log(`discogs shards ${shardsDone}/${byShard.size}`)
+  }
+  return recordsByDg
 }
+
+let recordsByDg = new Map()
 
 /** Phase A: every candidate video for a song, from every MB performer. */
 async function gather(song) {
   const found = new Map()
-  for (const performer of song.performers.filter((entry) => entry.mbid)) {
-    const link = links.get(performer.mbid)
+  for (const named of song.performers.filter((entry) => entry.mbid)) {
+    const link = links.get(named.mbid)
+    // A Wikidata item without an English label still has its MusicBrainz
+    // name in the link index; an entry is never served nameless.
+    const performer = { ...named, name: named.name ?? link?.n ?? null }
+    if (!performer.name) continue
     const aliases = aliasKeysOf([performer.name, link?.n])
     const wanted = titleVariants(song.title, aliases)
     if (wanted.size === 0) continue
     const dgIds = (link?.dg ?? []).map(Number).filter((id) => id > 0)
-    if (dgIds.length) {
-      for (const candidate of recordSongCandidates(discogsRecords(dgIds), new Set(dgIds), aliases)) {
+    const records = dgIds.flatMap((id) => recordsByDg.get(id) ?? [])
+    if (records.length) {
+      for (const candidate of recordSongCandidates(records, new Set(dgIds), aliases)) {
         if (!variantsIntersect(titleVariants(candidate.songTitle, aliases), wanted)) continue
         if (!found.has(candidate.videoId)) found.set(candidate.videoId, { videoId: candidate.videoId, uploadTitle: candidate.uploadTitle, source: 'discogs', performer, aliases })
       }
@@ -138,8 +189,10 @@ function choose(song, candidates) {
     if (!facts?.ok) return []
     if (isWholeRecordUpload(candidate.uploadTitle, song.title, name)) return []
     if (nonMusicVerdict({ title: candidate.uploadTitle, workTitle: song.title, artistName: name, topicUrls: facts.tp, description: facts.d }).reasons.length) return []
+    // On this day's bar (owner ruling, Oct 12 2026): a video Discogs ties
+    // to the performer's own record, whose title equals the song, is
+    // verified whoever uploaded it — no trusted-uploader rule here.
     const kind = uploadKindOf(candidate.uploadTitle, song.title, name, facts.ch)
-    if (kind !== 'official-video' && candidate.source !== 'channel' && !isTrustedUploader(facts.ch, candidate.aliases, [])) return []
     return [{ ...candidate, kind, uploader: facts.ch, version: versionOf(annotationOf(candidate.uploadTitle, song.title, name)) }]
   })
   return rankCandidates(passing)[0] ?? null
@@ -148,6 +201,17 @@ function choose(song, candidates) {
 async function main() {
   const songs = Object.values(work.songs).filter((song) => song.performers.some((performer) => performer.mbid))
   console.log(`songs with an MB performer: ${songs.length} of ${Object.keys(work.songs).length}`)
+  const wantedByDg = new Map()
+  for (const song of songs) {
+    for (const performer of song.performers.filter((entry) => entry.mbid)) {
+      for (const dgId of (links.get(performer.mbid)?.dg ?? []).map(Number).filter((id) => id > 0)) {
+        ;(wantedByDg.get(dgId) ?? wantedByDg.set(dgId, new Set()).get(dgId)).add(normalizeName(song.title))
+      }
+    }
+  }
+  console.log(`loading Discogs records for ${wantedByDg.size} performers…`)
+  recordsByDg = loadDiscogsRecords(wantedByDg)
+  console.log(`records kept ${[...recordsByDg.values()].reduce((n, list) => n + list.length, 0)} for ${recordsByDg.size} performers`)
   const gathered = new Map()
   try {
     let n = 0
