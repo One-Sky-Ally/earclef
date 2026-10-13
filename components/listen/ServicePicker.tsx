@@ -18,7 +18,7 @@ export function ServicePicker() {
 
   return (
     <label className={styles.picker}>
-      <span className={styles.label}>Listen on</span>
+      <span className={styles.label}>Open music in</span>
       <select
         className={styles.select}
         value={service}

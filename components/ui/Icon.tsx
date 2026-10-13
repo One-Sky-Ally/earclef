@@ -20,6 +20,7 @@ export type IconName =
   | 'menu'
   | 'close'
   | 'calendar'
+  | 'share'
 
 const PATHS: Record<IconName, React.ReactNode> = {
   search: (
@@ -65,6 +66,7 @@ const PATHS: Record<IconName, React.ReactNode> = {
   ),
   menu: <path d="M4 7h16M4 12h16M4 17h16" />,
   close: <path d="m6 6 12 12M18 6 6 18" />,
+  share: <path d="M12 14.5V3.5M8 7.5l4-4 4 4M6 11.5H5v8.5h14v-8.5h-1" />,
   calendar: (
     <>
       <rect x="4" y="5.5" width="16" height="14.5" rx="2" />

@@ -1,0 +1,17 @@
+.share {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.share:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}

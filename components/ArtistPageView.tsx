@@ -66,6 +66,16 @@ export function ArtistPageView({
           content.watch.enabled ? content.watch.videos[0]?.youtubeId : undefined
         }
         followSlug={content.slug}
+        // Membership and native audio exist only on pages the artist
+        // runs themselves; every other page is Ear Clef's editorial work.
+        editorial={!content.membership?.enabled && !content.play?.enabled}
+        primary={
+          content.watch.enabled && content.watch.videos.length > 0
+            ? { href: '#watch', label: 'Watch videos' }
+            : content.listen.enabled
+              ? { href: '#listen', label: 'Start listening' }
+              : undefined
+        }
       />
       <main>
         {content.play?.enabled && (

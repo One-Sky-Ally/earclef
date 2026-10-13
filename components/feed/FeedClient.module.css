@@ -1,14 +1,11 @@
 .note {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  padding-block: 3rem;
+  padding-block: 2rem;
 }
 
 .incomplete {
-  font-size: 0.78rem;
-  font-style: italic;
+  font-size: 0.8rem;
   color: var(--text-muted);
   margin-bottom: 1rem;
 }
@@ -118,40 +115,28 @@ li:last-child .row {
 .featured {
   display: flex;
   flex-direction: column;
-  gap: 1.1rem;
-  margin-bottom: 1.6rem;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Section heads: the dated feed, the editorial picks and the extras
    each say what they are, so "newest first" is only ever claimed where
    it is true. */
 .sectionHead {
-  margin: 2rem 0 0.35rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.sectionHead::before {
-  content: '';
-  display: inline-block;
-  width: 2rem;
-  height: 1px;
-  background: var(--accent-deep);
-  vertical-align: middle;
-  margin-right: 0.9rem;
+  margin: 2rem 0 0.75rem;
+  font-size: 1.35rem;
 }
 
 .sectionNote {
-  margin-bottom: 1rem;
-  font-size: 0.82rem;
-  font-style: italic;
+  margin: -0.4rem 0 1rem;
+  font-size: 0.84rem;
   color: var(--text-muted);
 }
 
 .showMore {
   display: block;
+  width: 100%;
+  min-height: 48px;
   margin-bottom: 1.6rem;
   padding: 0.6rem 1.4rem;
   border: 1px solid var(--border-strong);
@@ -170,15 +155,25 @@ li:last-child .row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.6rem 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.filters > label {
+  margin-left: auto;
+}
+
+/* In the feed's filter row the tier pills sit inline with the rest. */
+.filters > [role='group'] {
+  margin-bottom: 0;
 }
 
 .followPill,
 .followPillActive {
-  padding: 0.35rem 0.95rem;
+  min-height: 40px;
+  padding: 0.35rem 1.05rem;
   border-radius: 999px;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  font-size: 0.88rem;
   transition: background-color 0.2s ease, color 0.2s ease,
     border-color 0.2s ease;
 }
@@ -194,9 +189,9 @@ li:last-child .row {
 }
 
 .followPillActive {
-  border: 1px solid var(--accent);
-  background: var(--accent);
-  color: var(--bg);
+  border: 1px solid var(--sage);
+  background: var(--sage);
+  color: var(--text);
 }
 
 .followList {
@@ -243,13 +238,13 @@ li:last-child .row {
   padding: 0.55rem 0.9rem;
   border: 1px dashed var(--accent-deep);
   border-radius: 12px;
-  background: rgba(201, 162, 39, 0.05);
+  background: rgba(var(--accent-rgb), 0.05);
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .upcomingCard:hover {
   border-color: var(--accent);
-  background: rgba(201, 162, 39, 0.1);
+  background: rgba(var(--accent-rgb), 0.1);
 }
 
 .comingBadge {

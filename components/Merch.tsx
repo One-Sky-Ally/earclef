@@ -10,7 +10,11 @@ export function Merch({ merch }: MerchProps) {
   return (
     <section id="merch" className="section" aria-labelledby="merch-heading">
       <div className="container">
-        <SectionHeader number="05" title="Merch" headingId="merch-heading" />
+        <SectionHeader
+          title="Merch & support"
+          headingId="merch-heading"
+          subtitle="Official stores the artist runs. Purchases happen at the store, not on Ear Clef."
+        />
         <ul className={styles.grid}>
           {merch.items.map((item) => (
             <li key={item.url}>

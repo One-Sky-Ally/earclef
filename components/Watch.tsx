@@ -17,7 +17,7 @@ export function Watch({ watch, artistName, channelId, channelUrl }: WatchProps) 
   return (
     <section id="watch" className="section" aria-labelledby="watch-heading">
       <div className="container">
-        <SectionHeader number="02" title="Watch" headingId="watch-heading" />
+        <SectionHeader number="02" title="Videos" headingId="watch-heading" />
         {featured && (
           <div className={styles.featured}>
             <YouTubeEmbed video={featured} index={1} />

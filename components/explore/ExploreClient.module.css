@@ -387,6 +387,9 @@
   }
 
   .panelSlot {
+    width: 100%;
+    max-width: 640px;
+    justify-self: center;
     margin-top: 1rem;
   }
 

@@ -1,20 +1,21 @@
 import styles from './SectionHeader.module.css'
 
 interface SectionHeaderProps {
-  number: string
+  /** Kept for callers; the redesign shows no section numbers. */
+  number?: string
   title: string
   headingId: string
+  /** One plain line under the heading. */
+  subtitle?: string
 }
 
-export function SectionHeader({ number, title, headingId }: SectionHeaderProps) {
+export function SectionHeader({ title, headingId, subtitle }: SectionHeaderProps) {
   return (
     <div className={styles.header}>
-      <span className={styles.number} aria-hidden="true">
-        {number}
-      </span>
       <h2 id={headingId} className={styles.title}>
         {title}
       </h2>
+      {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
     </div>
   )
 }

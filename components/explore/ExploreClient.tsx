@@ -232,6 +232,12 @@ export function ExploreClient({
         onArrive()
         return
       }
+      // Reduced motion: land at once, no sliding readout.
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        setYear(target)
+        onArrive()
+        return
+      }
       const steps = 12
       let step = 0
       yearTween.current = setInterval(() => {

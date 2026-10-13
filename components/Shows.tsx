@@ -71,7 +71,7 @@ export function Shows({ shows }: ShowsProps) {
   return (
     <section id="shows" className="section" aria-labelledby="shows-heading">
       <div className="container">
-        <SectionHeader number="04" title="Shows" headingId="shows-heading" />
+        <SectionHeader number="04" title="Live & setlists" headingId="shows-heading" />
 
         <h3 className={styles.subheading}>Upcoming</h3>
         {upcoming.length > 0 ? (
