@@ -268,3 +268,8 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+.discoverNote {
+  margin-top: 1.75rem;
+  margin-bottom: 0;
+}

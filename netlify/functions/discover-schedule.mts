@@ -1,8 +1,9 @@
 /**
- * Daily trigger so the Discover pool is fresh before the first visitor
- * (the /api/discover route also lazily triggers on a miss — this just
- * makes the rotation punctual). Runs at 00:10 UTC; the offset avoids the
- * midnight thundering herd on shared infrastructure.
+ * Daily trigger for the SHARED Discover pool (the one every visitor
+ * sees), the only thing that generates it — page loads never do. Runs
+ * at 00:10 UTC; the offset avoids the midnight thundering herd on
+ * shared infrastructure. The owner's own pool follows at 00:40
+ * (discover-owner-schedule).
  */
 export default async function handler(): Promise<Response> {
   const base = process.env.URL

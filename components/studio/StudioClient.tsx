@@ -31,6 +31,8 @@ interface StudioData {
   retierConfigured: boolean
   /** The fan account signed in on this browser, if any. */
   account: { email: string; follows: number; claimedAt: string | null } | null
+  /** The account the owner's own Discover picks follow, if linked. */
+  discoverAccount: string | null
 }
 
 interface ClaimResult {
@@ -64,6 +66,7 @@ export function StudioClient() {
   const [rowStatus, setRowStatus] = useState<Record<string, RowStatus>>({})
   const [copiedMbid, setCopiedMbid] = useState<string | null>(null)
   const [claim, setClaim] = useState<ClaimState>({ kind: 'idle' })
+  const [linkError, setLinkError] = useState<string | null>(null)
 
   const unlock = useCallback(async (key: string) => {
     setState({ status: 'checking' })
@@ -174,8 +177,34 @@ export function StudioClient() {
       }
       if (!res.ok || !body.ok) throw new Error(body.error ?? `HTTP ${res.status}`)
       setClaim({ kind: 'done', result: body as ClaimResult })
+      // The copy also links this account for the owner's Discover picks.
+      setDiscoverAccount(body.email ?? null)
     } catch (error) {
       setClaim({ kind: 'error', message: (error as Error).message })
+    }
+  }
+
+  function setDiscoverAccount(email: string | null) {
+    setState((current) =>
+      current.status === 'ready'
+        ? { ...current, data: { ...current.data, discoverAccount: email } }
+        : current,
+    )
+  }
+
+  async function linkAccount() {
+    if (state.status !== 'ready') return
+    setLinkError(null)
+    try {
+      const res = await fetch('/api/studio/owner-account', {
+        method: 'POST',
+        headers: { 'x-owner-key': state.key },
+      })
+      const body = (await res.json()) as { ok?: boolean; email?: string; error?: string }
+      if (!res.ok || !body.ok) throw new Error(body.error ?? `HTTP ${res.status}`)
+      setDiscoverAccount(body.email ?? null)
+    } catch (error) {
+      setLinkError((error as Error).message)
     }
   }
 
@@ -210,7 +239,7 @@ export function StudioClient() {
     )
   }
 
-  const { queue, roster, retierConfigured, account } = state.data
+  const { queue, roster, retierConfigured, account, discoverAccount } = state.data
   const nameOf = new Map(roster.map((row) => [row.slug, row.name]))
   const groups: { tier: ArtistTier | null; rows: RosterRow[] }[] = [
     ...TIER_ORDER.map((tier) => ({
@@ -373,6 +402,24 @@ export function StudioClient() {
             {claim.message}
           </p>
         )}
+        <p className={`${styles.lead} ${styles.discoverNote}`}>
+          <strong>Your own Discover picks</strong> (shown only on your owner
+          view) come from{' '}
+          {discoverAccount
+            ? `the rows in ${discoverAccount} (your original site-wide tiers stand in while it has fewer than 3 artists in Heavy rotation and In the mix).`
+            : 'your original site-wide tiers until you link an account — copying your groups links it.'}{' '}
+          Everyone else sees the shared picks, drawn from the whole roster.
+        </p>
+        {account && account.email !== discoverAccount && (
+          <button type="button" className={styles.claim} onClick={linkAccount}>
+            Use {account.email} for my Discover picks
+          </button>
+        )}
+        {linkError && (
+          <p className={styles.statusError} role="alert">
+            {linkError}
+          </p>
+        )}
       </section>
 
       <section aria-labelledby="tiers-heading">
@@ -380,10 +427,10 @@ export function StudioClient() {
           Site tier board
         </h2>
         <p className={styles.lead}>
-          The original site-wide copy. It no longer shapes what visitors see —
-          it only seeds the daily Discover picks. Your own rows live in your
-          account: change them with the Follow button on any artist page, or
-          on My Taste Map.
+          The original site-wide copy. It no longer shapes what visitors see,
+          and it stands in for your own Discover picks only while no account
+          is linked. Your own rows live in your account: change them with the
+          Follow button on any artist page, or on My Taste Map.
         </p>
         {!retierConfigured && (
           <p className={styles.quiet}>

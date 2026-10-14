@@ -1,6 +1,7 @@
 /**
  * Daily Discover pool generation: one Claude call proposes 12 off-roster
- * artists tuned to the owner's tiers, then each pick is verified against
+ * artists from a library — the whole roster for the shared pool, the
+ * owner's own rows for theirs (./library) — then each pick is verified against
  * MusicBrainz (real artists only — the site's verified-data bar applies to
  * AI output too). Runs in the background function in production and inline
  * in dev, so it can take its time; callers never block a visitor on it.
@@ -16,6 +17,7 @@ import {
 } from '../play/resolve'
 import type { PlayLink, ReadLink } from '../play/types'
 import roster from './roster.json'
+import { buildPrompt, type DiscoverLibrary } from './prompt'
 import { resolveDiscoverSong, type DiscoverSong } from './song'
 
 export interface DiscoverPick {
@@ -108,33 +110,6 @@ function normalize(name: string): string {
 const ROSTER_KEYS = new Set(
   roster.flatMap((artist) => [normalize(artist.name), normalize(artist.slug)]),
 )
-
-function buildPrompt(date: string, avoid: string[]): string {
-  const byTier = (tier: string) =>
-    roster
-      .filter((artist) => artist.tier === tier)
-      .map((artist) => `- ${artist.name} — ${artist.identity}`)
-      .join('\n')
-
-  return `You are the resident ear at Ear Clef, a small curated music site. Today is ${date}. Recommend ${POOL_SIZE} artists for the owner's daily Discover section.
-
-The owner's library, by personal rotation tier:
-
-HEAVY ROTATION (strongest taste signal):
-${byTier('heavy-rotation')}
-
-IN THE MIX (moderate signal):
-${byTier('in-the-mix')}
-
-Rules:
-- Recommend artists a person with exactly this library would love but has plausibly never tracked down — genuinely lesser-known discoveries, not obvious adjacent stars. No one already famous to a fan of this list.
-- NEVER recommend anyone already in the library above.
-- Also avoid these recently recommended artists: ${avoid.length > 0 ? avoid.join(', ') : '(none yet)'}
-- Only real artists you are confident exist, with the name exactly as credited on releases (they will be verified against MusicBrainz; invented or misspelled names get discarded).
-- Spread the picks across the library's range — don't cluster all ${POOL_SIZE} around one roster artist.
-- "why" must name the roster artist it connects to and be specific about the musical link, in one sentence.
-- "knownFor" is one real album or song title by that artist.`
-}
 
 async function callClaude(prompt: string): Promise<RawPick[]> {
   const client = new Anthropic()
@@ -283,8 +258,9 @@ async function verifiedKnownFor(
 export async function generatePool(
   date: string,
   recentNames: string[],
+  library: DiscoverLibrary,
 ): Promise<DiscoverPool> {
-  const raw = await callClaude(buildPrompt(date, recentNames))
+  const raw = await callClaude(buildPrompt(date, recentNames, library, POOL_SIZE))
 
   const recentKeys = new Set(recentNames.map(normalize))
   const seen = new Set<string>()

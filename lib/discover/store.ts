@@ -1,19 +1,21 @@
 /**
  * Durable storage for Discover pools and pick history, on Netlify Blobs.
- * Every accessor tolerates a missing Blobs context (local `next dev` has
- * none) by returning null / no-op — callers fall back to in-process memos.
+ * Two kinds of pool live side by side: the SHARED pool every visitor
+ * sees (the original keys, unprefixed) and the OWNER's own pool (keys
+ * under `owner/`), each with its own history so neither one's repeat
+ * window blocks the other. Every accessor tolerates a missing Blobs
+ * context (local `next dev` has none) by returning null / no-op —
+ * callers fall back to in-process memos.
  */
 import { getStore } from '@netlify/blobs'
 import type { DiscoverPool } from './generate'
+import type { PoolKind } from './library'
 
 export interface HistoryEntry {
   name: string
   date: string
 }
 
-const HISTORY_KEY = 'history'
-const LATEST_KEY = 'latest-date'
-const LOCK_KEY = 'generation-lock'
 const HISTORY_CAP = 200
 /** Names recommended within this window are excluded from new pools. */
 export const REPEAT_WINDOW_DAYS = 90
@@ -22,9 +24,18 @@ function store() {
   return getStore({ name: 'discover', consistency: 'strong' })
 }
 
-export async function readPool(date: string): Promise<DiscoverPool | null> {
+const prefix = (kind: PoolKind) => (kind === 'owner' ? 'owner/' : '')
+const poolKey = (kind: PoolKind, date: string) => `${prefix(kind)}pool-${date}`
+const latestKey = (kind: PoolKind) => `${prefix(kind)}latest-date`
+const historyKey = (kind: PoolKind) => `${prefix(kind)}history`
+const lockKey = (kind: PoolKind) => `${prefix(kind)}generation-lock`
+
+export async function readPool(
+  date: string,
+  kind: PoolKind = 'shared',
+): Promise<DiscoverPool | null> {
   try {
-    return (await store().get(`pool-${date}`, { type: 'json' })) as
+    return (await store().get(poolKey(kind, date), { type: 'json' })) as
       | DiscoverPool
       | null
   } catch {
@@ -33,31 +44,39 @@ export async function readPool(date: string): Promise<DiscoverPool | null> {
 }
 
 /** Most recent pool on record, regardless of date (stale fallback). */
-export async function readLatestPool(): Promise<DiscoverPool | null> {
+export async function readLatestPool(
+  kind: PoolKind = 'shared',
+): Promise<DiscoverPool | null> {
   try {
-    const latestDate = (await store().get(LATEST_KEY, { type: 'text' })) as
+    const latestDate = (await store().get(latestKey(kind), { type: 'text' })) as
       | string
       | null
     if (!latestDate) return null
-    return await readPool(latestDate)
+    return await readPool(latestDate, kind)
   } catch {
     return null
   }
 }
 
-export async function writePool(pool: DiscoverPool): Promise<void> {
+export async function writePool(
+  pool: DiscoverPool,
+  kind: PoolKind = 'shared',
+): Promise<void> {
   try {
     const s = store()
-    await s.setJSON(`pool-${pool.date}`, pool)
-    await s.set(LATEST_KEY, pool.date)
+    await s.setJSON(poolKey(kind, pool.date), pool)
+    await s.set(latestKey(kind), pool.date)
   } catch {
     // No Blobs context (dev) — in-process memo covers it.
   }
 }
 
-export async function readRecentNames(today: string): Promise<string[]> {
+export async function readRecentNames(
+  today: string,
+  kind: PoolKind = 'shared',
+): Promise<string[]> {
   try {
-    const entries = ((await store().get(HISTORY_KEY, { type: 'json' })) ??
+    const entries = ((await store().get(historyKey(kind), { type: 'json' })) ??
       []) as HistoryEntry[]
     const cutoff = new Date(`${today}T00:00:00Z`)
     cutoff.setUTCDate(cutoff.getUTCDate() - REPEAT_WINDOW_DAYS)
@@ -70,16 +89,19 @@ export async function readRecentNames(today: string): Promise<string[]> {
   }
 }
 
-export async function appendHistory(pool: DiscoverPool): Promise<void> {
+export async function appendHistory(
+  pool: DiscoverPool,
+  kind: PoolKind = 'shared',
+): Promise<void> {
   try {
     const s = store()
-    const entries = ((await s.get(HISTORY_KEY, { type: 'json' })) ??
+    const entries = ((await s.get(historyKey(kind), { type: 'json' })) ??
       []) as HistoryEntry[]
     const merged = [
       ...entries,
       ...pool.picks.map((pick) => ({ name: pick.name, date: pool.date })),
     ].slice(-HISTORY_CAP)
-    await s.setJSON(HISTORY_KEY, merged)
+    await s.setJSON(historyKey(kind), merged)
   } catch {
     // No Blobs context (dev) — history is best-effort there.
   }
@@ -90,12 +112,15 @@ export async function appendHistory(pool: DiscoverPool): Promise<void> {
  * good enough to stop trigger spam from stacking duplicate model calls,
  * with the date-keyed pool write making duplicates harmless anyway.
  */
-export async function claimGeneration(date: string): Promise<boolean> {
+export async function claimGeneration(
+  date: string,
+  kind: PoolKind = 'shared',
+): Promise<boolean> {
   try {
     const s = store()
-    const current = (await s.get(LOCK_KEY, { type: 'text' })) as string | null
+    const current = (await s.get(lockKey(kind), { type: 'text' })) as string | null
     if (current === date) return false
-    await s.set(LOCK_KEY, date)
+    await s.set(lockKey(kind), date)
     return true
   } catch {
     return true // dev: no lock needed, in-process memo dedupes

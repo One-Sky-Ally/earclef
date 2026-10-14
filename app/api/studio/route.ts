@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { isOwner, unauthorized } from '@/lib/curation/auth'
 import { readQueue } from '@/lib/curation/followStore'
 import roster from '@/lib/discover/roster.json'
+import { getOwnerAccount } from '@/lib/curation/ownerAccount'
 import { getFan } from '@/lib/fans/store'
 import { sessionEmail } from '@/lib/membership/session'
 
@@ -35,6 +36,8 @@ export async function GET(request: Request) {
           claimedAt: fan?.siteTiersClaimedAt ?? null,
         }
       : null,
+    // The account the owner's own Discover picks follow, if linked.
+    discoverAccount: await getOwnerAccount(),
   })
   response.headers.set('Cache-Control', 'no-store')
   return response

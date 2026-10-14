@@ -76,7 +76,13 @@ type DiscoverState =
   | { status: 'loading' }
   | { status: 'hidden' }
   | { status: 'warming' }
-  | { status: 'ready'; picks: DiscoverPick[] }
+  /** `own`: the owner's own picks, on the owner's view only. */
+  | { status: 'ready'; picks: DiscoverPick[]; own: boolean }
+
+interface PoolBody {
+  status: 'ready' | 'warming' | 'disabled' | 'none'
+  pool?: { picks: Partial<DiscoverPick>[] }
+}
 
 
 /**
@@ -108,33 +114,45 @@ export function DiscoverSection() {
   const [ownerKey, setOwnerKeyState] = useState<string | null>(null)
   const [queuedMbids, setQueuedMbids] = useState<Set<string>>(new Set())
 
+  // The owner's view shows the owner's own picks (from their rows) when
+  // tonight's run has made them; everyone else — and the owner until
+  // then — gets the shared picks, drawn from the whole roster.
   useEffect(() => {
     const controller = new AbortController()
-    fetch('/api/discover', { signal: controller.signal })
-      .then((res) => {
+    const signal = controller.signal
+    const load = (url: string, init?: RequestInit) =>
+      fetch(url, { ...init, signal }).then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        return res.json()
+        return res.json() as Promise<PoolBody>
       })
-      .then(
-        (body: {
-          status: 'ready' | 'warming' | 'disabled'
-          pool?: { picks: Partial<DiscoverPick>[] }
-        }) => {
-          if (body.status === 'ready' && body.pool) {
-            setState({
-              status: 'ready',
-              picks: body.pool.picks.flatMap(normalizePick),
-            })
-          } else if (body.status === 'warming') {
-            setState({ status: 'warming' })
-          } else {
-            setState({ status: 'hidden' })
+    ;(async () => {
+      const key = getOwnerKey()
+      if (key) {
+        try {
+          const own = await load('/api/discover/owner', {
+            headers: { 'x-owner-key': key },
+          })
+          if (own.status === 'ready' && own.pool) {
+            setState({ status: 'ready', picks: own.pool.picks.flatMap(normalizePick), own: true })
+            return
           }
-        },
-      )
-      .catch(() => {
-        if (!controller.signal.aborted) setState({ status: 'hidden' })
-      })
+        } catch {
+          // Fall through to the shared picks.
+        }
+      }
+      try {
+        const body = await load('/api/discover')
+        if (body.status === 'ready' && body.pool) {
+          setState({ status: 'ready', picks: body.pool.picks.flatMap(normalizePick), own: false })
+        } else if (body.status === 'warming') {
+          setState({ status: 'warming' })
+        } else {
+          setState({ status: 'hidden' })
+        }
+      } catch {
+        if (!signal.aborted) setState({ status: 'hidden' })
+      }
+    })()
     return () => controller.abort()
   }, [])
 
@@ -186,10 +204,11 @@ export function DiscoverSection() {
 
   if (state.status === 'hidden') return null
 
-  // Not personalised yet (no listener follows feed it): one honest,
-  // shared selection for everyone, said plainly.
+  // Said plainly: whose taste the picks come from.
   const note =
-    'Today’s picks for everyone — artists not on Ear Clef yet, chosen each day from the roster’s taste and verified real on MusicBrainz. Not personalised yet.'
+    state.status === 'ready' && state.own
+      ? 'Your own picks — artists not on Ear Clef yet, chosen each day from your rows and verified real on MusicBrainz. Only you see these; visitors get the shared picks.'
+      : 'Today’s picks for everyone — artists not on Ear Clef yet, chosen each day from the whole roster and verified real on MusicBrainz. Not personalised yet.'
 
   if (state.status !== 'ready') {
     return (
