@@ -20,19 +20,20 @@ import {
   type GenreLens,
 } from '@/lib/explore/genreData'
 import {
-  MIN_FEATURED_PLAYABLE,
   cultureRow,
   eraYear,
+  rotationOrder,
   type Culture,
-  type EraJourney,
+  type JourneySummary,
   type SongPlace,
-} from '@/lib/explore/cultures'
+} from '@/lib/explore/cultureTypes'
 import type { SearchChoice } from '@/lib/explore/panelData'
 import type { FocusRequest } from '@/components/explore/GlobeScene'
 import { YearSlider } from '@/components/explore/YearSlider'
 import { SearchBox } from '@/components/explore/SearchBox'
 import { GenreStory } from '@/components/explore/GenreStory'
 import { FlatMap } from '@/components/explore/FlatMap'
+import { MapFullscreen } from '@/components/explore/MapFullscreen'
 import { CountryList } from '@/components/explore/CountryList'
 import { JourneyPanel } from '@/components/explore/JourneyPanel'
 import { MusicCultures } from '@/components/explore/MusicCultures'
@@ -75,8 +76,8 @@ interface ExploreClientProps {
   roster?: RosterByMbid
   /** Documented "What was playing" eras — the surprise picker's 30%. */
   surpriseEras?: SurpriseEra[]
-  /** Curated era journeys (lib/explore/cultures.json). */
-  eras?: EraJourney[]
+  /** Curated journey summaries (lib/explore/cultures.ts). */
+  journeys?: JourneySummary[]
   /** "Songs about" places, for the culture row and ?j= links. */
   songPlaces?: SongPlace[]
 }
@@ -84,7 +85,7 @@ interface ExploreClientProps {
 export function ExploreClient({
   roster = {},
   surpriseEras = [],
-  eras = [],
+  journeys = [],
   songPlaces = [],
 }: ExploreClientProps) {
   const [year, setYear] = useState(DEFAULT_YEAR)
@@ -103,6 +104,7 @@ export function ExploreClient({
   // Globe / Map / List — three views of the same place, year and lens.
   const [view, setView] = useState<ExploreView>('globe')
   const [globeUnavailable, setGlobeUnavailable] = useState(false)
+  const [mapExpanded, setMapExpanded] = useState(false)
   // The curated journey in the panel slot when no place is open. Chosen
   // on mount (daily, or from ?j=), so the server render stays neutral.
   const [journeyId, setJourneyId] = useState<string | null>(null)
@@ -130,18 +132,19 @@ export function ExploreClient({
   const controlsRef = useRef<HTMLDivElement>(null)
   const globeReadyRef = useRef(false)
 
-  const cultures = useMemo(() => cultureRow(eras, songPlaces), [eras, songPlaces])
-  // The daily journey always opens playing: only eras with real songs.
-  const featuredPool = useMemo(
-    () => eras.filter((era) => era.playable >= MIN_FEATURED_PLAYABLE),
-    [eras],
+  const cultures = useMemo(
+    () => cultureRow(journeys, songPlaces),
+    [journeys, songPlaces],
   )
+  // Every journey plays (the data holds only playable songs); the daily
+  // pick walks them in a fixed shuffled order, so places keep changing.
+  const featuredPool = useMemo(() => rotationOrder(journeys), [journeys])
   const cultureById = useMemo(() => {
     const map = new Map<string, Culture>()
-    for (const era of eras) map.set(era.id, era)
+    for (const journey of journeys) map.set(journey.id, journey)
     for (const place of songPlaces) map.set(place.id, place)
     return map
-  }, [eras, songPlaces])
+  }, [journeys, songPlaces])
   const journey = journeyId ? (cultureById.get(journeyId) ?? null) : null
   // The globe captures its ready callback once, at init — it reads the
   // journey through this ref, never a stale closure.
@@ -350,7 +353,7 @@ export function ExploreClient({
         if (linked && chosen.id === linked) setJourneyPinned(true)
         // A plain visit opens on the journey's own era, so the slider and
         // the panel tell the same story. A shared year always wins.
-        if (!yearFromUrl && !code && chosen.kind === 'era') {
+        if (!yearFromUrl && !code && chosen.kind !== 'songs') {
           setYear(eraYear(chosen))
           setPanelYear(eraYear(chosen))
         }
@@ -446,7 +449,7 @@ export function ExploreClient({
     setJourneyId(culture.id)
     setJourneyPinned(true)
     setScrollKey(`j:${culture.id}:${Date.now()}`)
-    if (culture.kind === 'era') {
+    if (culture.kind !== 'songs') {
       tweenYearTo(year, eraYear(culture), () => setPanelYear(eraYear(culture)))
     }
     faceCulture(culture)
@@ -460,7 +463,7 @@ export function ExploreClient({
 
   /** "Open on the globe": the place's full panel, at the era's year. */
   function openCulturePlace(culture: Culture) {
-    if (culture.kind === 'era') {
+    if (culture.kind !== 'songs') {
       const target = eraYear(culture)
       setYear(target)
       setPanelYear(target)
@@ -560,6 +563,7 @@ export function ExploreClient({
               selected={selected}
               highlight={highlight}
               onCountryClick={onCountryClick}
+              onExpand={() => setMapExpanded(true)}
             />
           </div>
         )}
@@ -673,6 +677,17 @@ export function ExploreClient({
           <div className={styles.panelPlaceholder} aria-hidden="true" />
         )}
       </div>
+
+      {mapExpanded && view === 'map' && (
+        <MapFullscreen
+          year={year}
+          onYearChange={setYear}
+          selected={selected}
+          highlight={highlight}
+          onCountryClick={onCountryClick}
+          onClose={() => setMapExpanded(false)}
+        />
+      )}
 
       {cultures.length > 0 && (
         <div className={styles.cultures}>

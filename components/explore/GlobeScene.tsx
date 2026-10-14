@@ -57,17 +57,16 @@ const STATE_ZOOM_EXIT = 1.3
 /** Fly-to altitude for a state — below ENTER so the layer lights up. */
 const STATE_FLY_ALTITUDE = 0.95
 
-// A SUBDUED globe (UI handoff, Oct 2026): a dark slate sphere, sage
-// borders, and the heat ramp in lib/explore/counts.ts running from dim
-// sage to restrained gold — no saturated textures.
-const SIDE_COLOR = 'rgba(159, 178, 147, 0.04)'
-const STROKE_COLOR = 'rgba(190, 196, 165, 0.32)'
+// The original warm globe (owner, Oct 14 2026): gold wireframe borders
+// on a dark sphere, heat from lib/explore/counts.ts.
+const SIDE_COLOR = 'rgba(242, 169, 59, 0.03)'
+const STROKE_COLOR = 'rgba(242, 169, 59, 0.35)'
 // Hot neighbors need a dark seam between their gold fills; cool
 // countries keep the translucent gold wireframe against the dark sea.
 const HOT_STROKE_COLOR = 'rgba(20, 14, 9, 0.95)'
 const HOT_STROKE_THRESHOLD = 3 / 7
-const SPHERE_COLOR = '#11160f'
-const ATMOSPHERE_COLOR = '#b9b48e'
+const SPHERE_COLOR = '#1b1613'
+const ATMOSPHERE_COLOR = '#f2a93b'
 // The selection accent: coral red (owner-chosen, #e4726a) — a hue the
 // ember→gold heat ramp cannot produce at any year, so the selected
 // place can never be confused with a hot neighbour. Gold is the DATA's

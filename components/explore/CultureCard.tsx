@@ -1,7 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import { eraSpan, type Culture } from '@/lib/explore/cultures'
+import {
+  eraSpan,
+  genreList,
+  type Culture,
+} from '@/lib/explore/cultureTypes'
 import { Icon } from '@/components/ui/Icon'
 import { SafeImage } from '@/components/ui/SafeImage'
 import styles from './CultureCard.module.css'
@@ -25,6 +29,13 @@ interface CultureCardProps {
 export function cultureLines(culture: Culture): { title: string; meta: string } {
   if (culture.kind === 'era') {
     return { title: culture.title, meta: `${culture.place} · ${eraSpan(culture)}` }
+  }
+  if (culture.kind === 'decade') {
+    const genres = culture.genres?.slice(0, 2) ?? []
+    return {
+      title: culture.title,
+      meta: `${culture.count} songs${genres.length > 0 ? ` · ${genreList(genres)}` : ''}`,
+    }
   }
   const span =
     culture.firstYear && culture.lastYear && culture.firstYear !== culture.lastYear
@@ -52,7 +63,11 @@ export function CultureCard({ culture, onSelect, href, current }: CultureCardPro
       <span className={styles.shade} aria-hidden="true" />
       <span className={styles.text}>
         <span className={styles.kind}>
-          {culture.kind === 'era' ? 'Era journey' : 'Songs about a place'}
+          {culture.kind === 'era'
+            ? 'Documented era'
+            : culture.kind === 'decade'
+              ? 'Decade journey'
+              : 'Songs about a place'}
         </span>
         <span className={styles.title}>{title}</span>
         <span className={styles.meta}>{meta}</span>

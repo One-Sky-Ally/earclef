@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { YouTubeEmbed } from '@/components/YouTubeEmbed'
 import { getOwnerKey } from '@/lib/curation/ownerClient'
 import { PLAY_LABELS, type PlayLink, type ReadLink } from '@/lib/play/types'
+import { ScrollRow } from '@/components/ui/ScrollRow'
 import styles from './DiscoverSection.module.css'
 
 type SongKind = 'official-video' | 'audio' | 'video'
@@ -77,7 +78,6 @@ type DiscoverState =
   | { status: 'warming' }
   | { status: 'ready'; picks: DiscoverPick[] }
 
-const PAGE_SIZE = 3
 
 /**
  * The API sanitizes legacy pools, but a CDN edge can hand this bundle
@@ -105,7 +105,6 @@ function normalizePick(pick: Partial<DiscoverPick>): DiscoverPick[] {
 
 export function DiscoverSection() {
   const [state, setState] = useState<DiscoverState>({ status: 'loading' })
-  const [offset, setOffset] = useState(0)
   const [ownerKey, setOwnerKeyState] = useState<string | null>(null)
   const [queuedMbids, setQueuedMbids] = useState<Set<string>>(new Set())
 
@@ -187,117 +186,104 @@ export function DiscoverSection() {
 
   if (state.status === 'hidden') return null
 
-  return (
-    <section className={styles.section} aria-labelledby="discover-heading">
-      <h2 id="discover-heading" className={styles.heading}>
-        Discover
-      </h2>
-      <p className={styles.note}>
-        Three new artists a day, picked by ear from the roster&apos;s taste —
-        verified real on MusicBrainz, not on the roster (yet).
-      </p>
+  // Not personalised yet (no listener follows feed it): one honest,
+  // shared selection for everyone, said plainly.
+  const note =
+    'Today’s picks for everyone — artists not on Ear Clef yet, chosen each day from the roster’s taste and verified real on MusicBrainz. Not personalised yet.'
 
-      {state.status === 'loading' && (
-        <p className={styles.quiet}>Listening for new artists…</p>
-      )}
-      {state.status === 'warming' && (
+  if (state.status !== 'ready') {
+    return (
+      <section className={styles.section} aria-labelledby="discover-heading">
+        <h2 id="discover-heading" className={styles.heading}>
+          Discover new artists
+        </h2>
         <p className={styles.quiet}>
-          Today&apos;s first picks are brewing — check back in a minute.
+          {state.status === 'loading'
+            ? 'Listening for new artists…'
+            : 'Today’s first picks are brewing — check back in a minute.'}
         </p>
-      )}
+      </section>
+    )
+  }
 
-      {state.status === 'ready' && (
-        <>
-          <ul className={styles.grid}>
-            {state.picks
-              .slice(offset, offset + PAGE_SIZE)
-              .map((pick) => (
-                <li key={pick.mbid} className={styles.card}>
-                  <span className={styles.name}>{pick.name}</span>
-                  <span className={styles.why}>{pick.why}</span>
-                  {pick.song ? (
-                    // A verified song plays here, on the site. The
-                    // Bandcamp page stays as a small link so listeners
-                    // can buy from the artist directly (owner, Oct 11).
-                    <div className={styles.song}>
-                      <YouTubeEmbed
-                        video={{ youtubeId: pick.song.videoId, title: pick.song.title }}
-                      />
-                      <div className={styles.songMeta}>
-                        <span className={styles.songKind}>
-                          {SONG_KIND_LABELS[pick.song.kind]}
-                        </span>
-                        {pick.bandcamp && (
-                          <a
-                            className={styles.listen}
-                            href={pick.bandcamp}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label={`${pick.name} on Bandcamp`}
-                          >
-                            Bandcamp →
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  ) : pick.play ? (
-                    <a
-                      className={styles.listen}
-                      href={pick.play.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      title={PLAY_LABELS[pick.play.kind]}
-                      aria-label={`${PLAY_LABELS[pick.play.kind]}: ${pick.knownFor} by ${pick.name}`}
-                    >
-                      ▶ {pick.knownFor}
-                    </a>
-                  ) : (
-                    // No verified play destination — an honest read-about
-                    // link, never a search URL that lands on garbage.
-                    <a
-                      className={styles.listen}
-                      href={pick.read.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Read about ${pick.name}`}
-                    >
-                      {pick.knownForVerified
-                        ? `Read about → ${pick.knownFor}`
-                        : 'Read about →'}
-                    </a>
-                  )}
-                  {ownerKey && (
-                    <button
-                      type="button"
-                      className={styles.follow}
-                      disabled={queuedMbids.has(pick.mbid)}
-                      onClick={() => follow(pick)}
-                    >
-                      {queuedMbids.has(pick.mbid)
-                        ? 'Following ✓'
-                        : '+ Follow'}
-                    </button>
-                  )}
-                </li>
-              ))}
-          </ul>
-          {state.picks.length > PAGE_SIZE && (
-            <button
-              type="button"
-              className={styles.more}
-              onClick={() =>
-                setOffset((value) =>
-                  value + PAGE_SIZE >= state.picks.length
-                    ? 0
-                    : value + PAGE_SIZE,
-                )
-              }
-            >
-              Show me 3 more
-            </button>
-          )}
-        </>
-      )}
-    </section>
+  return (
+    <div className={styles.section}>
+      <ScrollRow
+        id="discover"
+        title="Discover new artists"
+        note={note}
+        perView={3}
+        items={state.picks.map((pick) => ({
+          key: pick.mbid,
+          node: (
+            <div className={styles.card}>
+              <span className={styles.name}>{pick.name}</span>
+              <span className={styles.why}>{pick.why}</span>
+              {pick.song ? (
+                // A verified song plays here, on the site. The Bandcamp
+                // page stays as a small link so listeners can buy from
+                // the artist directly (owner, Oct 11).
+                <div className={styles.song}>
+                  <YouTubeEmbed
+                    video={{ youtubeId: pick.song.videoId, title: pick.song.title }}
+                  />
+                  <div className={styles.songMeta}>
+                    <span className={styles.songKind}>
+                      {SONG_KIND_LABELS[pick.song.kind]}
+                    </span>
+                    {pick.bandcamp && (
+                      <a
+                        className={styles.listen}
+                        href={pick.bandcamp}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${pick.name} on Bandcamp`}
+                      >
+                        Bandcamp →
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ) : pick.play ? (
+                <a
+                  className={styles.listen}
+                  href={pick.play.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  title={PLAY_LABELS[pick.play.kind]}
+                  aria-label={`${PLAY_LABELS[pick.play.kind]}: ${pick.knownFor} by ${pick.name}`}
+                >
+                  ▶ {pick.knownFor}
+                </a>
+              ) : (
+                // No verified play destination — an honest read-about
+                // link, never a search URL that lands on garbage.
+                <a
+                  className={styles.listen}
+                  href={pick.read.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Read about ${pick.name}`}
+                >
+                  {pick.knownForVerified
+                    ? `Read about → ${pick.knownFor}`
+                    : 'Read about →'}
+                </a>
+              )}
+              {ownerKey && (
+                <button
+                  type="button"
+                  className={styles.follow}
+                  disabled={queuedMbids.has(pick.mbid)}
+                  onClick={() => follow(pick)}
+                >
+                  {queuedMbids.has(pick.mbid) ? 'Following ✓' : '+ Follow'}
+                </button>
+              )}
+            </div>
+          ),
+        }))}
+      />
+    </div>
   )
 }

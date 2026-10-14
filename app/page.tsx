@@ -4,7 +4,7 @@ import { SiteNav } from '@/components/SiteNav'
 import { SiteFooterSimple } from '@/components/SiteFooterSimple'
 import { ExploreClient } from '@/components/explore/ExploreClient'
 import type { RosterByMbid } from '@/components/explore/CountryPanel'
-import { ERA_JOURNEYS, SONG_PLACES } from '@/lib/explore/cultures'
+import { JOURNEY_SUMMARIES, SONG_PLACES } from '@/lib/explore/cultures'
 import playing from '@/lib/explore/playing.json'
 import type { PlayingEntry } from '@/lib/explore/playing'
 import styles from './explore.module.css'
@@ -40,7 +40,7 @@ export default function HomePage() {
               to: entry.to,
             }),
           )}
-          eras={ERA_JOURNEYS}
+          journeys={JOURNEY_SUMMARIES}
           songPlaces={SONG_PLACES}
         />
       </main>

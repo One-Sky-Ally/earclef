@@ -1,0 +1,201 @@
+.wrap {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.heading {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.sub {
+  margin-top: 0.25rem;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.control select {
+  appearance: none;
+  min-height: 44px;
+  padding: 0.4rem 2.2rem 0.4rem 0.95rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background-color: var(--field);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23a39e90'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.control select:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.control select option {
+  background: var(--bg-elevated);
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  gap: 1.5rem 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.cover {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  margin-bottom: 0.5rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 70% 20%, rgba(var(--accent-rgb), 0.18), transparent 60%),
+    #15130f;
+  border: 1px solid var(--border);
+}
+
+.coverPlate {
+  padding: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.25;
+  text-align: center;
+  color: rgba(var(--ink-rgb), 0.4);
+  overflow-wrap: anywhere;
+}
+
+.coverImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  line-height: 1.2;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.rare {
+  padding: 0 0.4rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.68rem;
+}
+
+.listen,
+.secondary {
+  font-size: 0.84rem;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.listen {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.listen:hover {
+  color: var(--accent-bright);
+}
+
+.secondary {
+  min-height: 28px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.secondary:hover {
+  color: var(--text);
+}
+
+.absent {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.skeleton {
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(100deg, var(--bg-elevated) 35%, var(--accent-soft) 50%, var(--bg-elevated) 65%);
+  background-size: 220% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+.note {
+  color: var(--text-muted);
+}
+
+.note a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.more {
+  margin-top: 1.5rem;
+  min-height: 44px;
+  padding: 0.45rem 1.2rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.more:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 0.9rem;
+  }
+}

@@ -1,15 +1,17 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   eraSpan,
+  genreList,
+  journeySpan,
   type Culture,
   type CultureTrack,
-} from '@/lib/explore/cultures'
+  type Journey,
+} from '@/lib/explore/cultureTypes'
 import type { PlaceSongs } from '@/lib/explore/songsAbout'
-import { resolveListenHref } from '@/lib/listen/services'
-import { loadYouTubeApi, youtubeThumb, type YtPlayer } from '@/lib/play/youtubeApi'
-import { useListenService } from '@/components/listen/ServiceProvider'
+import { youtubeThumb } from '@/lib/play/youtubeApi'
+import { useYouTubeQueue } from '@/components/play/useYouTubeQueue'
 import { LikeButton } from '@/components/fans/LikeButton'
 import { Icon } from '@/components/ui/Icon'
 import { SafeImage } from '@/components/ui/SafeImage'
@@ -17,10 +19,13 @@ import styles from './JourneyPanel.module.css'
 
 /**
  * The curated journey — the Explore panel before a place is opened.
- * An Ear Clef pick (a documented era, or the songs written about a
- * place), with its verified songs playing here in the visible YouTube
- * player. Picks the site has no verified video for stay in the list
- * without a ▶, offering a labelled search on the listener's service.
+ * An Ear Clef pick (a documented era, a place in a decade, or the songs
+ * written about a place) playing here in the visible YouTube player.
+ *
+ * Owner rule (Oct 14, 2026), the Songs-about rule: EVERY song listed
+ * plays on the site. No search links, nothing unplayable is teased —
+ * the data (scripts/lib/cultures.mjs) holds only verified videos, and a
+ * malformed id is dropped here too.
  */
 
 interface PanelTrack extends CultureTrack {
@@ -41,202 +46,132 @@ function songsToTracks(payload: PlaceSongs): PanelTrack[] {
       artist: song.a,
       title: song.t.replace(/^"|"$/g, ''),
       videoId: song.v,
+      group: 'more' as const,
       version: song.ver,
+      mbid: song.mbid,
       note: [song.y, song.about ? `about ${song.about}` : null]
         .filter(Boolean)
         .join(' · '),
     }))
 }
 
+function journeyToTracks(journey: Journey): PanelTrack[] {
+  return journey.tracks
+    .filter((track) => VIDEO_ID.test(track.videoId))
+    .map((track) => ({
+      ...track,
+      key: track.videoId,
+      note: track.note ?? (track.year ? String(track.year) : undefined),
+    }))
+}
+
 const songCount = (count: number) => `${count} song${count === 1 ? '' : 's'}`
+
+type Loaded =
+  | { status: 'loading' }
+  | { status: 'failed' }
+  | { status: 'ready'; tracks: PanelTrack[]; journey: Journey | null }
 
 interface JourneyPanelProps {
   culture: Culture
-  /** Open this place (at the era's year) in the full place panel. */
+  /** Open this place (at the journey's year) in the full place panel. */
   onOpenPlace: (culture: Culture) => void
   /** Feature the next journey. */
   onNext?: () => void
 }
 
 export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps) {
-  const { service } = useListenService()
-  const [songs, setSongs] = useState<PanelTrack[] | null>(null)
-  const [songsFailed, setSongsFailed] = useState(false)
-  const [current, setCurrent] = useState<number | null>(null)
-  const [dead, setDead] = useState<ReadonlySet<string>>(new Set())
-  const [ended, setEnded] = useState(false)
-  const [paused, setPaused] = useState(false)
-  const [broken, setBroken] = useState(false)
+  const [loaded, setLoaded] = useState<Loaded>({ status: 'loading' })
   const [showAll, setShowAll] = useState(false)
   const [storyOpen, setStoryOpen] = useState(false)
-  const mountRef = useRef<HTMLDivElement>(null)
-  const playerRef = useRef<YtPlayer | null>(null)
-  const currentRef = useRef<number | null>(null)
-  const deadRef = useRef<Set<string>>(new Set())
-  const tracksRef = useRef<PanelTrack[]>([])
-  const disposedRef = useRef(false)
-  // The player exists but isn't ready yet (or is still being built):
-  // a click in that window queues its song instead of calling into a
-  // half-made player or building a second one.
-  const readyRef = useRef(false)
-  const creatingRef = useRef(false)
-  const queuedRef = useRef<string | null>(null)
 
-  // A "Songs about" place loads its songs on demand.
+  // The songs load on demand: a journey from the journey route, a
+  // "Songs about" place from its own route.
   useEffect(() => {
-    if (culture.kind !== 'songs') return
     const controller = new AbortController()
-    fetch(`/api/explore/songs-about/${culture.code}`, { signal: controller.signal })
-      .then((res) => (res.ok ? (res.json() as Promise<PlaceSongs>) : null))
-      .then((payload) => {
-        if (payload) setSongs(songsToTracks(payload))
-        else setSongsFailed(true)
+    const url =
+      culture.kind === 'songs'
+        ? `/api/explore/songs-about/${culture.code}`
+        : `/api/explore/journey/${culture.id}`
+    fetch(url, { signal: controller.signal })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((payload: Journey | PlaceSongs | null) => {
+        if (!payload) {
+          setLoaded({ status: 'failed' })
+          return
+        }
+        if (culture.kind === 'songs') {
+          setLoaded({ status: 'ready', tracks: songsToTracks(payload as PlaceSongs), journey: null })
+        } else {
+          const journey = payload as Journey
+          setLoaded({ status: 'ready', tracks: journeyToTracks(journey), journey })
+        }
       })
       .catch(() => {
-        if (!controller.signal.aborted) setSongsFailed(true)
+        if (!controller.signal.aborted) setLoaded({ status: 'failed' })
       })
     return () => controller.abort()
   }, [culture])
 
+  const tracks = loaded.status === 'ready' ? loaded.tracks : []
+  const journey = loaded.status === 'ready' ? loaded.journey : null
   // One player per panel; leaving the panel stops the sound with it.
-  useEffect(() => {
-    disposedRef.current = false
-    return () => {
-      disposedRef.current = true
-      playerRef.current?.destroy()
-      playerRef.current = null
-    }
-  }, [])
-
-  // What plays here comes first; picks with no verified video follow,
-  // each offering a labelled search. Order within each group is kept.
-  const tracks: PanelTrack[] =
-    culture.kind === 'era'
-      ? [
-          ...culture.tracks.filter((track) => track.videoId),
-          ...culture.tracks.filter((track) => !track.videoId),
-        ].map((track, index) => ({ ...track, key: `${index}:${track.title}` }))
-      : (songs ?? [])
-  // Player callbacks read the list through a ref — synced after render.
-  useEffect(() => {
-    tracksRef.current = tracks
-  })
-  const playableCount = tracks.filter((track) => track.videoId).length
-
-  function nextPlayable(from: number): number {
-    const list = tracksRef.current
-    for (let index = from; index < list.length; index++) {
-      const id = list[index].videoId
-      if (id && !deadRef.current.has(id)) return index
-    }
-    return -1
-  }
-
-  function advance() {
-    const next = nextPlayable((currentRef.current ?? -1) + 1)
-    if (next >= 0) void playAt(next)
-    else setEnded(true)
-  }
-
-  async function playAt(index: number) {
-    const track = tracksRef.current[index]
-    if (!track?.videoId) return
-    currentRef.current = index
-    setCurrent(index)
-    setEnded(false)
-    if (playerRef.current && readyRef.current) {
-      playerRef.current.loadVideoById(track.videoId)
-      return
-    }
-    if (creatingRef.current || playerRef.current) {
-      queuedRef.current = track.videoId
-      return
-    }
-    creatingRef.current = true
-    try {
-      const yt = await loadYouTubeApi()
-      if (disposedRef.current || !mountRef.current) return
-      const target = document.createElement('div')
-      mountRef.current.replaceChildren(target)
-      playerRef.current = new yt.Player(target, {
-        videoId: track.videoId,
-        playerVars: { autoplay: 1, rel: 0, playsinline: 1 },
-        events: {
-          onReady: (event) => {
-            readyRef.current = true
-            const queued = queuedRef.current
-            queuedRef.current = null
-            if (queued && queued !== track.videoId) {
-              playerRef.current?.loadVideoById(queued)
-            } else {
-              event.target.playVideo()
-            }
-          },
-          onStateChange: (event) => {
-            if (event.data === yt.PlayerState.ENDED) advance()
-            else if (event.data === yt.PlayerState.PLAYING) setPaused(false)
-            else if (event.data === yt.PlayerState.PAUSED) setPaused(true)
-          },
-          // A video that died since it was verified is skipped, and
-          // its row says so — never a stalled journey.
-          onError: () => {
-            const failed = tracksRef.current[currentRef.current ?? -1]?.videoId
-            if (failed) {
-              deadRef.current = new Set([...deadRef.current, failed])
-              setDead(deadRef.current)
-            }
-            advance()
-          },
-        },
-      })
-    } catch {
-      setBroken(true)
-    } finally {
-      creatingRef.current = false
-    }
-  }
-
-  /** The current row's button pauses and resumes; any other row plays. */
-  function onRowPlay(index: number) {
-    const player = playerRef.current
-    if (index === currentRef.current && player && readyRef.current && !ended) {
-      if (paused) player.playVideo?.()
-      else player.pauseVideo()
-      return
-    }
-    void playAt(index)
-  }
-
-  function playJourney() {
-    const first = nextPlayable(0)
-    if (first >= 0) void playAt(first)
-  }
+  const {
+    mountRef,
+    current,
+    ended,
+    paused,
+    broken,
+    dead,
+    toggleOrPlay,
+    playAll: playJourney,
+  } = useYouTubeQueue(tracks.map((track) => track.videoId))
 
   const playing = current !== null ? tracks[current] : null
-  const firstPlayable = tracks.find((track) => track.videoId)
+  const first = tracks[0]
   const visible = showAll ? tracks : tracks.slice(0, FIRST_ROWS)
+  const span = culture.kind === 'songs' ? null : journeySpan(culture)
   const title =
-    culture.kind === 'era' ? (
-      <>
-        {culture.place}{' '}
-        <span className={styles.titleSpan}>· {eraSpan(culture)}</span>
-      </>
-    ) : (
+    culture.kind === 'songs' ? (
       `Songs about ${culture.place}`
+    ) : (
+      <>
+        {culture.place} <span className={styles.titleSpan}>· {span}</span>
+      </>
     )
   const subtitle =
     culture.kind === 'era'
       ? culture.title
-      : culture.firstYear && culture.lastYear && culture.firstYear !== culture.lastYear
-        ? `${songCount(culture.count)} written about ${culture.place}, ${culture.firstYear}–${culture.lastYear}`
-        : `${songCount(culture.count)} written about ${culture.place}`
+      : culture.kind === 'decade'
+        ? culture.genres && culture.genres.length > 0
+          ? `Mostly ${genreList(culture.genres)}`
+          : `Music from ${culture.place}, ${span}`
+        : culture.firstYear && culture.lastYear && culture.firstYear !== culture.lastYear
+          ? `${songCount(culture.count)} written about ${culture.place}, ${culture.firstYear}–${culture.lastYear}`
+          : `${songCount(culture.count)} written about ${culture.place}`
+  const summary =
+    journey?.kind === 'era'
+      ? journey.summary
+      : culture.kind === 'decade'
+        ? `Songs released in the ${span} by artists from ${culture.place}, each one verified to play here.`
+        : null
   const basisLine =
-    culture.kind === 'era'
-      ? culture.basisKind === 'charted'
-        ? 'An Ear Clef pick, anchored to the national chart archive.'
-        : 'An Ear Clef pick, drawn from documented scene history.'
-      : 'An Ear Clef pick: songs about this place from Wikipedia’s lists — only the ones we can play here.'
+    journey?.kind === 'era'
+      ? `${
+          journey.basisKind === 'charted'
+            ? 'An Ear Clef pick, anchored to the national chart archive.'
+            : 'An Ear Clef pick, drawn from documented scene history.'
+        }${
+          journey.picks < tracks.length
+            ? ` The era’s own picks that play here come first; then songs released in ${culture.place}, ${eraSpan(journey)}.`
+            : ''
+        }`
+      : culture.kind === 'decade'
+        ? 'An Ear Clef pick from the On this day catalogue: releases with an exact date whose video is verified as that release by that artist.'
+        : 'An Ear Clef pick: songs about this place from Wikipedia’s lists — only the ones we can play here.'
   const headingId = `journey-${culture.id}`
+  const firstMore = tracks.findIndex((track) => track.group === 'more')
+  const showGroups = journey?.kind === 'era' && journey.picks > 0 && firstMore > 0
 
   return (
     <section className={styles.panel} aria-labelledby={headingId}>
@@ -247,18 +182,15 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
 
       <div className={styles.media}>
         <div ref={mountRef} className={styles.frame} />
-        {current === null && (
-          firstPlayable?.videoId ? (
+        {current === null &&
+          (first ? (
             <button
               type="button"
               className={styles.facade}
               onClick={playJourney}
-              aria-label={`Play this journey, starting with ${firstPlayable.title} by ${firstPlayable.artist}`}
+              aria-label={`Play this journey, starting with ${first.title} by ${first.artist}`}
             >
-              <SafeImage
-                className={styles.still}
-                src={youtubeThumb(firstPlayable.videoId)}
-              />
+              <SafeImage className={styles.still} src={youtubeThumb(first.videoId)} />
               <span className={styles.facadePlay} aria-hidden="true">
                 <Icon name="play" size={26} />
               </span>
@@ -266,15 +198,13 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
             </button>
           ) : (
             <div className={styles.placeholder} aria-hidden="true">
-              <span className={styles.placeholderPlace}>{culture.place}</span>
-              {culture.kind === 'era' && (
-                <span className={styles.placeholderEra}>{eraSpan(culture)}</span>
+              {culture.thumb && (
+                <SafeImage className={styles.still} src={youtubeThumb(culture.thumb)} />
               )}
             </div>
-          )
-        )}
+          ))}
       </div>
-      {broken && playing?.videoId && (
+      {broken && playing && (
         <p className={styles.notice}>
           The YouTube player didn’t load here.{' '}
           <a
@@ -288,12 +218,12 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
       )}
 
       <h3 className={styles.subtitle}>{subtitle}</h3>
-      {culture.kind === 'era' && (
+      {summary && (
         <p className={`${styles.summary} ${storyOpen ? styles.summaryOpen : ''}`}>
-          {culture.summary}
+          {summary}
         </p>
       )}
-      {culture.kind === 'era' && (
+      {journey?.kind === 'era' && (
         <button
           type="button"
           className={styles.textButton}
@@ -304,33 +234,28 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
         </button>
       )}
 
-      {playableCount > 0 ? (
+      {loaded.status === 'loading' && (
+        <p className={styles.loading}>Loading the songs…</p>
+      )}
+      {loaded.status === 'failed' && (
+        <p className={styles.fine}>These songs didn’t load — try again shortly.</p>
+      )}
+      {tracks.length > 0 && (
         <button
           type="button"
           className={styles.primary}
           onClick={playJourney}
-          aria-label={`Play this journey: ${playableCount} song${playableCount === 1 ? '' : 's'}`}
+          aria-label={`Play this journey: ${songCount(tracks.length)}`}
         >
           <Icon name="play" size={16} />
           {current !== null && !ended ? 'Play from the start' : 'Play this journey'}
-        </button>
-      ) : culture.kind === 'songs' && !songs && !songsFailed ? (
-        <p className={styles.loading}>Loading the songs…</p>
-      ) : (
-        <button
-          type="button"
-          className={styles.primary}
-          onClick={() => onOpenPlace(culture)}
-        >
-          Explore {culture.place} on the globe
-          <Icon name="arrowRight" size={16} />
         </button>
       )}
 
       {playing && (
         <p className={styles.nowPlaying} aria-live="polite">
           {ended
-            ? 'That’s every pick we can play here.'
+            ? 'That’s every song in this journey.'
             : `Now playing: “${playing.title}” — ${playing.artist}`}
         </p>
       )}
@@ -339,22 +264,22 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
         <ol className={styles.tracks}>
           {visible.map((track) => {
             const index = tracks.indexOf(track)
-            const isDead = Boolean(track.videoId && dead.has(track.videoId))
+            const isDead = dead.has(track.videoId)
             const isCurrent = index === current && !ended
-            const listen = track.videoId
-              ? null
-              : resolveListenHref(service, undefined, track.artist, track.title)
             return (
               <li
                 key={track.key}
-                className={`${styles.track} ${isCurrent ? styles.trackCurrent : ''}`}
+                className={`${styles.track} ${isCurrent ? styles.trackCurrent : ''} ${
+                  showGroups && index === firstMore ? styles.trackGroupStart : ''
+                }`}
               >
+                {showGroups && index === firstMore && (
+                  <span className={styles.groupLabel}>
+                    Also released in {culture.place}, {span}
+                  </span>
+                )}
                 <span className={styles.art} aria-hidden="true">
-                  {track.videoId ? (
-                    <SafeImage src={youtubeThumb(track.videoId, 'mq')} />
-                  ) : (
-                    '♪'
-                  )}
+                  <SafeImage src={youtubeThumb(track.videoId, 'mq')} />
                 </span>
                 <span className={styles.trackText}>
                   <span className={styles.trackArtist}>{track.artist}</span>
@@ -372,7 +297,7 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
                     )}
                   </span>
                 </span>
-                {track.videoId && !isDead ? (
+                {!isDead && (
                   <span className={styles.trackActions}>
                     <LikeButton
                       variant="row"
@@ -380,33 +305,22 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
                         videoId: track.videoId,
                         title: track.title,
                         artistName: track.artist,
+                        ...(track.mbid ? { mbid: track.mbid } : {}),
                         placeCode: culture.code,
                         placeName: culture.place,
-                        ...(culture.kind === 'era' ? { year: culture.from } : {}),
+                        ...(track.year ? { year: track.year } : {}),
                       }}
                     />
                     <button
                       type="button"
                       className={styles.trackPlay}
-                      onClick={() => onRowPlay(index)}
+                      onClick={() => toggleOrPlay(index)}
                       aria-label={`${isCurrent && !paused ? 'Pause' : 'Play'} “${track.title}” by ${track.artist}`}
                     >
                       <Icon name={isCurrent && !paused ? 'pause' : 'play'} size={14} />
                     </button>
                   </span>
-                ) : listen?.kind === 'search' ? (
-                  <a
-                    className={styles.trackSearch}
-                    href={listen.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${listen.label}: ${track.title} by ${track.artist}`}
-                    title={`${listen.label} ↗`}
-                  >
-                    Search
-                    <Icon name="external" size={13} />
-                  </a>
-                ) : null}
+                )}
               </li>
             )
           })}
@@ -421,22 +335,6 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
         >
           {showAll ? 'Show fewer' : `Show all ${tracks.length}`}
         </button>
-      )}
-      {culture.kind === 'era' && playableCount === 0 && (
-        <p className={styles.fine}>
-          None of these picks has a verified video on the site yet, so nothing
-          plays in this panel. Open the place on the globe to hear verified
-          songs from {culture.place} in these years.
-        </p>
-      )}
-      {culture.kind === 'era' && playableCount > 0 && playableCount < tracks.length && (
-        <p className={styles.fine}>
-          {playableCount} of {tracks.length} picks play here — the rest link to a
-          labelled search.
-        </p>
-      )}
-      {songsFailed && (
-        <p className={styles.fine}>These songs didn’t load — try again shortly.</p>
       )}
 
       <div className={styles.footer}>
@@ -455,12 +353,12 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
             </button>
           )}
         </div>
-        {culture.kind === 'era' && culture.sources.length > 0 && (
+        {journey?.kind === 'era' && journey.sources.length > 0 && (
           <details className={styles.sources}>
             <summary>Sources</summary>
-            <p className={styles.basis}>{culture.basis}</p>
+            <p className={styles.basis}>{journey.basis}</p>
             <ul>
-              {culture.sources.map((source) => (
+              {journey.sources.map((source) => (
                 <li key={source.url}>
                   <a href={source.url} target="_blank" rel="noreferrer">
                     {source.label} ↗

@@ -1,0 +1,131 @@
+.rowWrap {
+  padding-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--panel);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(var(--accent-rgb), 0.6);
+}
+
+.art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  background:
+    radial-gradient(ellipse at 75% 15%, rgba(var(--accent-rgb), 0.18), transparent 55%),
+    radial-gradient(ellipse at 15% 90%, rgba(var(--sage-rgb), 0.5), transparent 60%),
+    #12140f;
+  overflow: hidden;
+}
+
+.monogram {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: rgba(var(--ink-rgb), 0.35);
+  letter-spacing: 0.06em;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85);
+  transition: transform 0.5s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.03);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem 1.05rem;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.identity {
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--text-soft);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.location {
+  margin-top: 0.15rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.az {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid var(--border);
+}
+
+.azHeading {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  margin-bottom: 1rem;
+}
+
+.azList {
+  list-style: none;
+  columns: 4 14rem;
+  column-gap: 2rem;
+}
+
+.azList li {
+  break-inside: avoid;
+}
+
+.azLink {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.azName {
+  font-size: 0.98rem;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.azLink:hover .azName {
+  color: var(--accent);
+}
+
+.azPlace {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .image {
+    transform: none;
+  }
+}

@@ -76,22 +76,22 @@ export function bandedHeat(t: number): number {
   return Math.ceil(Math.min(t, 1) * HEAT_BANDS) / HEAT_BANDS
 }
 
-// Subdued (UI handoff, Oct 2026): quiet sage land warming through olive
-// to the site's restrained gold — the busiest places glow, nothing
-// shouts. Selection keeps its own coral, a hue this ramp never makes.
+// Ember → deep gold → brand gold → white-gold: the globe's original warm
+// look (owner, Oct 14 2026: kept over the greenish Phase 1 ramp). The
+// selection keeps its own coral, a hue this ramp never makes.
 const HEAT_STOPS: { t: number; rgb: [number, number, number]; a: number }[] = [
-  { t: 0, rgb: [66, 78, 60], a: 0.45 },
-  { t: 0.4, rgb: [92, 106, 80], a: 0.66 },
-  { t: 0.72, rgb: [132, 136, 92], a: 0.78 },
-  { t: 1, rgb: [196, 168, 102], a: 0.86 },
+  { t: 0, rgb: [96, 52, 18], a: 0.22 },
+  { t: 0.4, rgb: [201, 127, 26], a: 0.55 },
+  { t: 0.72, rgb: [242, 169, 59], a: 0.8 },
+  { t: 1, rgb: [255, 236, 200], a: 0.95 },
 ]
 
-const ZERO_HEAT_COLOR = 'rgba(74, 86, 66, 0.22)'
+const ZERO_HEAT_COLOR = 'rgba(242, 169, 59, 0.05)'
 
 /** Map 0..1 heat to a palette color; `hovered` brightens toward white. */
 export function heatColor(t: number, hovered = false): string {
   if (t <= 0) {
-    return hovered ? 'rgba(159, 178, 147, 0.4)' : ZERO_HEAT_COLOR
+    return hovered ? 'rgba(242, 169, 59, 0.28)' : ZERO_HEAT_COLOR
   }
   const clamped = Math.min(t, 1)
   let lower = HEAT_STOPS[0]

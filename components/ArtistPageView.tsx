@@ -14,6 +14,8 @@ import { Press } from '@/components/Press'
 import { UniverseSection } from '@/components/universe/UniverseSection'
 import { StorySection } from '@/components/stories/StorySection'
 import { SiteFooter } from '@/components/SiteFooter'
+import { startHereSongs } from '@/lib/artist/startHere'
+import type { StartHereTrack } from '@/components/artist/StartHere'
 
 interface ArtistPageViewProps {
   content: ArtistContent
@@ -32,6 +34,24 @@ export function ArtistPageView({
     (content.integrations.youtube.channelId
       ? `https://www.youtube.com/channel/${content.integrations.youtube.channelId}`
       : undefined)
+
+  // "Start here": the videos hand-picked for this page, then the
+  // artist's other verified songs (scripts/build-start-here.mjs).
+  const startHere: StartHereTrack[] = [
+    ...(content.watch.enabled ? content.watch.videos : []).map((video) => ({
+      videoId: video.youtubeId,
+      title: video.title,
+      detail: 'Ear Clef pick',
+    })),
+    ...startHereSongs(content.slug).map((song) => ({
+      videoId: song.v,
+      title: song.t,
+      year: song.y,
+      detail: [song.r && song.r !== song.t ? song.r : null, song.y]
+        .filter(Boolean)
+        .join(' · '),
+    })),
+  ]
 
   // Only sections this page renders get a tab in the section bar.
   const available = [
@@ -91,6 +111,7 @@ export function ArtistPageView({
             artistName={content.hero.name}
             mbid={content.integrations.setlistfm.mbid || undefined}
             presence={presenceFromContent(content)}
+            startHere={startHere}
           />
         )}
         {content.watch.enabled && (

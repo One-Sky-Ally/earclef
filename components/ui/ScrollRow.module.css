@@ -12,11 +12,16 @@
 .headText {
   display: flex;
   align-items: baseline;
-  gap: 1.25rem;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
 }
 
 .heading {
   font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+}
+
+.headingSmall {
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
 }
 
 .seeAll {
@@ -36,6 +41,7 @@
 .arrows {
   display: flex;
   gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .arrow {
@@ -61,16 +67,22 @@
 
 .note {
   margin: 0.15rem 0 1rem;
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   color: var(--text-muted);
+  max-width: 70ch;
 }
 
 .scroller {
+  margin-top: 0.75rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   overscroll-behavior-x: contain;
   border-radius: var(--radius);
+}
+
+.note + .scroller {
+  margin-top: 0;
 }
 
 .scroller::-webkit-scrollbar {
@@ -86,28 +98,60 @@
   list-style: none;
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% - 2rem) / 3);
   gap: 1rem;
+}
+
+.per2 {
+  grid-auto-columns: calc((100% - 1rem) / 2);
+}
+
+.per3 {
+  grid-auto-columns: calc((100% - 2rem) / 3);
+}
+
+.per4 {
+  grid-auto-columns: calc((100% - 3rem) / 4);
+}
+
+.per5 {
+  grid-auto-columns: calc((100% - 4rem) / 5);
 }
 
 .item {
   scroll-snap-align: start;
   min-width: 0;
+  display: flex;
+}
+
+.item > * {
+  flex: 1;
+  min-width: 0;
 }
 
 @media (max-width: 1100px) {
-  .row {
+  .per3,
+  .per2 {
     grid-auto-columns: calc((100% - 1rem) / 2);
+  }
+
+  .per4,
+  .per5 {
+    grid-auto-columns: calc((100% - 2rem) / 3);
   }
 }
 
 @media (max-width: 640px) {
   .row {
-    grid-auto-columns: 84%;
     gap: 0.75rem;
   }
 
-  .heading {
-    font-size: 1.5rem;
+  .per2,
+  .per3 {
+    grid-auto-columns: 84%;
+  }
+
+  .per4,
+  .per5 {
+    grid-auto-columns: 62%;
   }
 }
