@@ -2,10 +2,14 @@ import type { PastShow, ShowsContent, UpcomingShow } from '@/lib/types'
 import { byDateAscending, byDateDescending, formatShowDate } from '@/lib/format'
 import { SectionHeader } from '@/components/SectionHeader'
 import { LinkifiedText } from '@/components/LinkifiedText'
+import { SetlistFmLink } from '@/components/artist/SetlistFmLink'
 import styles from './Shows.module.css'
 
 interface ShowsProps {
   shows: ShowsContent
+  artistName: string
+  /** MusicBrainz id — finds the artist's own setlist.fm page. */
+  mbid?: string
 }
 
 function UpcomingRow({ show }: { show: UpcomingShow }) {
@@ -64,7 +68,7 @@ function PastRow({ show }: { show: PastShow }) {
   )
 }
 
-export function Shows({ shows }: ShowsProps) {
+export function Shows({ shows, artistName, mbid }: ShowsProps) {
   const upcoming = byDateAscending(shows.upcoming)
   const past = byDateDescending(shows.past)
 
@@ -72,6 +76,7 @@ export function Shows({ shows }: ShowsProps) {
     <section id="shows" className="section" aria-labelledby="shows-heading">
       <div className="container">
         <SectionHeader number="04" title="Live & setlists" headingId="shows-heading" />
+        <SetlistFmLink mbid={mbid} artistName={artistName} />
 
         <h3 className={styles.subheading}>Upcoming</h3>
         {upcoming.length > 0 ? (

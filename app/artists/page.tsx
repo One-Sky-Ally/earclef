@@ -4,7 +4,8 @@ import { getAllArtists } from '@/lib/content'
 import { youtubeThumbnailUrl } from '@/lib/links'
 import { SiteNav } from '@/components/SiteNav'
 import { SiteFooterSimple } from '@/components/SiteFooterSimple'
-import { ArtistRows, type ArtistCardData } from '@/components/ArtistRows'
+import { ArtistAZ, type ArtistCardData } from '@/components/ArtistRows'
+import { ArtistShelves } from '@/components/artists/ArtistShelves'
 import { DiscoverSection } from '@/components/discover/DiscoverSection'
 import { PendingStrip } from '@/components/curation/PendingStrip'
 import styles from './artists.module.css'
@@ -33,7 +34,6 @@ export default function ArtistsPage() {
       identity: artist.hero.identity,
       location: artist.hero.location,
       thumbUrl,
-      tier: artist.tier,
     }
   })
 
@@ -48,7 +48,8 @@ export default function ArtistsPage() {
           </p>
           <DiscoverSection />
           <PendingStrip />
-          <ArtistRows cards={cards} />
+          <ArtistShelves cards={cards} />
+          <ArtistAZ cards={cards} />
           <p className={styles.suggest}>
             Know someone who belongs here?{' '}
             <Link className={styles.suggestLink} href="/suggest">

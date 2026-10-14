@@ -19,6 +19,10 @@ interface ScrollRowProps {
   items: { key: string; node: React.ReactNode }[]
   /** Heading level — h2 by default. */
   level?: 2 | 3
+  /** Keeps the heading for screen readers only (rows under one heading). */
+  hideTitle?: boolean
+  /** Shown in place of the cards when there are none. */
+  empty?: React.ReactNode
 }
 
 /**
@@ -35,6 +39,8 @@ export function ScrollRow({
   perView = 3,
   items,
   level = 2,
+  hideTitle = false,
+  empty,
 }: ScrollRowProps) {
   const scrollerRef = useRef<HTMLDivElement>(null)
   const [atStart, setAtStart] = useState(true)
@@ -66,6 +72,31 @@ export function ScrollRow({
     })
   }
 
+  const arrows =
+    items.length > 0 && !(atStart && atEnd) ? (
+      <div className={hideTitle ? styles.arrowsOver : styles.arrows}>
+        {!atStart && (
+          <button
+            type="button"
+            className={styles.arrow}
+            onClick={() => page(-1)}
+            aria-label={`Previous in ${title}`}
+          >
+            <Icon name="arrowLeft" size={18} />
+          </button>
+        )}
+        <button
+          type="button"
+          className={styles.arrow}
+          onClick={() => page(1)}
+          disabled={atEnd}
+          aria-label={`Next in ${title}`}
+        >
+          <Icon name="arrowRight" size={18} />
+        </button>
+      </div>
+    ) : null
+
   const Heading = level === 2 ? 'h2' : 'h3'
   const headingId = `${id}-heading`
 
@@ -73,7 +104,16 @@ export function ScrollRow({
     <section className={styles.section} aria-labelledby={headingId}>
       <div className={styles.head}>
         <div className={styles.headText}>
-          <Heading id={headingId} className={level === 2 ? styles.heading : styles.headingSmall}>
+          <Heading
+            id={headingId}
+            className={
+              hideTitle
+                ? 'visually-hidden'
+                : level === 2
+                  ? styles.heading
+                  : styles.headingSmall
+            }
+          >
             {title}
           </Heading>
           {seeAll && (
@@ -83,47 +123,32 @@ export function ScrollRow({
             </Link>
           )}
         </div>
-        {!(atStart && atEnd) && (
-          <div className={styles.arrows}>
-            {!atStart && (
-              <button
-                type="button"
-                className={styles.arrow}
-                onClick={() => page(-1)}
-                aria-label={`Previous in ${title}`}
-              >
-                <Icon name="arrowLeft" size={18} />
-              </button>
-            )}
-            <button
-              type="button"
-              className={styles.arrow}
-              onClick={() => page(1)}
-              disabled={atEnd}
-              aria-label={`Next in ${title}`}
-            >
-              <Icon name="arrowRight" size={18} />
-            </button>
-          </div>
-        )}
+        {!hideTitle && arrows}
       </div>
       {note && <p className={styles.note}>{note}</p>}
-      <div
-        ref={scrollerRef}
-        className={styles.scroller}
-        onScroll={measure}
-        tabIndex={0}
-        role="region"
-        aria-label={`${title}, scrolls sideways`}
-      >
-        <ul className={`${styles.row} ${styles[`per${perView}`]}`}>
-          {items.map((item) => (
-            <li key={item.key} className={styles.item}>
-              {item.node}
-            </li>
-          ))}
-        </ul>
-      </div>
+      {items.length === 0 && empty ? (
+        <div className={styles.empty}>{empty}</div>
+      ) : (
+        <div className={styles.frame}>
+          <div
+            ref={scrollerRef}
+            className={styles.scroller}
+            onScroll={measure}
+            tabIndex={0}
+            role="region"
+            aria-label={`${title}, scrolls sideways`}
+          >
+            <ul className={`${styles.row} ${styles[`per${perView}`]}`}>
+              {items.map((item) => (
+                <li key={item.key} className={styles.item}>
+                  {item.node}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {hideTitle && arrows}
+        </div>
+      )}
     </section>
   )
 }

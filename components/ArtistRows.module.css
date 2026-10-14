@@ -1,7 +1,3 @@
-.rowWrap {
-  padding-top: clamp(2rem, 4vw, 2.75rem);
-}
-
 .card {
   display: flex;
   flex-direction: column;

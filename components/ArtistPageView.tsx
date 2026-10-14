@@ -123,7 +123,13 @@ export function ArtistPageView({
           />
         )}
         {content.story.enabled && <Story story={content.story} />}
-        {content.shows.enabled && <Shows shows={content.shows} />}
+        {content.shows.enabled && (
+          <Shows
+            shows={content.shows}
+            artistName={content.hero.name}
+            mbid={content.integrations.setlistfm.mbid || undefined}
+          />
+        )}
         {content.merch.enabled && <Merch merch={content.merch} />}
         {content.press.enabled && (
           <Press press={content.press} artistName={content.hero.name} />
