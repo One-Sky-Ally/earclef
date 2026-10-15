@@ -192,13 +192,17 @@
 .tierSelect {
   flex-shrink: 0;
   appearance: none;
-  background: var(--bg-elevated);
+  min-height: 40px;
+  background-color: var(--bg-elevated);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23a39e90'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
   border: 1px solid var(--border-strong);
   border-radius: 999px;
   color: var(--text-soft);
-  font-size: 0.74rem;
-  letter-spacing: 0.06em;
-  padding: 0.3rem 0.8rem;
+  font: inherit;
+  font-size: 0.84rem;
+  padding: 0.3rem 2rem 0.3rem 0.9rem;
   cursor: pointer;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
@@ -321,4 +325,114 @@
     align-items: flex-start;
     gap: 0.45rem;
   }
+}
+
+/* Following: every follow by row, sorted with one menu per artist. */
+.following {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.followingIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: -1rem;
+}
+
+.followingHead {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.7rem 0 0.6rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.followingTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+}
+
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.jumpLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 36px;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.jumpLink:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.jumpCount {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.followingHint {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.status {
+  min-height: 1.4em;
+  font-size: 0.86rem;
+  color: var(--text-soft);
+}
+
+.statusError {
+  color: var(--accent);
+}
+
+.undo {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.group {
+  scroll-margin-top: calc(var(--nav-h) + 6.5rem);
+}
+
+@media (max-width: 640px) {
+  .group {
+    scroll-margin-top: calc(var(--nav-h) + 8.5rem);
+  }
+}
+
+.groupEmpty {
+  padding-block: 0.65rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.86rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.tierSelect:disabled {
+  opacity: 0.55;
+  cursor: progress;
+}
+
+.tierSelect option {
+  background: var(--bg-elevated);
+  color: var(--text);
 }

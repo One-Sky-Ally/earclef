@@ -31,6 +31,14 @@ interface FanProfile {
   share?: { enabled: boolean; token?: string; displayName?: string }
 }
 
+type FollowStatus =
+  | { kind: 'moved'; slug: string; tier: ArtistTier }
+  | { kind: 'unfollowed'; slug: string; tier: ArtistTier }
+  | { kind: 'error'; message: string }
+
+/** The dropdown's last option: not a row, the way out. */
+const UNFOLLOW = 'unfollow'
+
 type SignInState =
   | { status: 'idle' }
   | { status: 'sending' }
@@ -44,9 +52,11 @@ function sinceLabel(iso: string): string {
 }
 
 /**
- * The fan's own taste map at /me: follows grouped by their OWN tiers
- * (the same rows the Artists page shows them), permanent first-fan
- * numbers, and an opt-in share link. Everything here is the fan's —
+ * The fan's own taste map at /me: a Following list of every artist they
+ * follow, grouped by their OWN rows (the same rows the Artists page
+ * shows them), A–Z, with a menu on each to move it or unfollow (Undo
+ * available) — a board to sort quickly, for every signed-in listener.
+ * Plus permanent first-fan numbers and an opt-in share link. Everything here is the fan's —
  * separate from the owner Tier Board.
  */
 export function TasteMap({
@@ -62,6 +72,9 @@ export function TasteMap({
   const [nameDraft, setNameDraft] = useState('')
   const [shareBusy, setShareBusy] = useState(false)
   const [copied, setCopied] = useState(false)
+  // The last change on the Following list, with Undo for an unfollow.
+  const [status, setStatus] = useState<FollowStatus | null>(null)
+  const [saving, setSaving] = useState<Set<string>>(new Set())
   const { likes, radarDismissed } = useLikes()
 
   const names = new Map(roster.map((entry) => [entry.slug, entry.name]))
@@ -107,23 +120,93 @@ export function TasteMap({
     }
   }
 
-  async function setTier(slug: string, value: string) {
-    if (!isArtistTier(value)) return
-    const tier = value
+  function markSaving(slug: string, on: boolean) {
+    setSaving((current) => {
+      const next = new Set(current)
+      if (on) next.add(slug)
+      else next.delete(slug)
+      return next
+    })
+  }
+
+  async function postFan(body: unknown): Promise<Partial<FanProfile> | null> {
     try {
       const res = await fetch('/api/fan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slug, tier }),
+        body: JSON.stringify(body),
       })
-      if (!res.ok) return
-      const body = (await res.json()) as { tiers?: Record<string, ArtistTier> }
-      setProfile((current) =>
-        current ? { ...current, tiers: body.tiers ?? {} } : current,
-      )
-    } catch (error) {
-      console.error('Tier update failed:', error)
+      return res.ok ? ((await res.json()) as Partial<FanProfile>) : null
+    } catch {
+      return null
     }
+  }
+
+  function applyProfile(next: Partial<FanProfile>) {
+    setProfile((current) =>
+      current
+        ? {
+            ...current,
+            follows: next.follows ?? current.follows,
+            tiers: next.tiers ?? current.tiers,
+            stamps: next.stamps ?? current.stamps,
+          }
+        : current,
+    )
+  }
+
+  /**
+   * The row dropdown: a tier moves the artist (shown at once, put back
+   * if the save fails); "Unfollow" removes them, with Undo.
+   */
+  async function onRowChange(slug: string, value: string) {
+    if (!profile) return
+    const previous = profile.tiers?.[slug] ?? DEFAULT_FOLLOW_TIER
+    const name = names.get(slug) ?? slug
+    markSaving(slug, true)
+    if (value === UNFOLLOW) {
+      const body = await postFan({ slug, following: false })
+      markSaving(slug, false)
+      if (!body) {
+        setStatus({ kind: 'error', message: `Couldn’t unfollow ${name} — please try again.` })
+        return
+      }
+      applyProfile(body)
+      setStatus({ kind: 'unfollowed', slug, tier: previous })
+      return
+    }
+    if (!isArtistTier(value) || value === previous) {
+      markSaving(slug, false)
+      return
+    }
+    const tier = value
+    setProfile((current) =>
+      current ? { ...current, tiers: { ...current.tiers, [slug]: tier } } : current,
+    )
+    const body = await postFan({ slug, tier })
+    markSaving(slug, false)
+    if (!body) {
+      setProfile((current) =>
+        current ? { ...current, tiers: { ...current.tiers, [slug]: previous } } : current,
+      )
+      setStatus({ kind: 'error', message: `Couldn’t move ${name} — please try again.` })
+      return
+    }
+    applyProfile(body)
+    setStatus({ kind: 'moved', slug, tier })
+  }
+
+  /** Undo an unfollow: same artist, same row, same fan number. */
+  async function undoUnfollow(slug: string, tier: ArtistTier) {
+    markSaving(slug, true)
+    const body = await postFan({ slug, following: true, tier })
+    markSaving(slug, false)
+    if (!body) {
+      setStatus({ kind: 'error', message: 'Couldn’t undo — follow them again from their page.' })
+      return
+    }
+    applyProfile(body)
+    setStatus({ kind: 'moved', slug, tier })
   }
 
   /**
@@ -257,13 +340,16 @@ export function TasteMap({
 
   // Every follow has a tier — the server fills in "In the mix" for any
   // the fan never placed.
+  const byName = (a: string, b: string) =>
+    (names.get(a) ?? a).localeCompare(names.get(b) ?? b)
   const groups = TIER_ORDER.map((tier) => ({
     tier,
     label: TIER_LABELS[tier],
-    slugs: profile.follows.filter(
-      (slug) => (profile.tiers?.[slug] ?? DEFAULT_FOLLOW_TIER) === tier,
-    ),
+    slugs: profile.follows
+      .filter((slug) => (profile.tiers?.[slug] ?? DEFAULT_FOLLOW_TIER) === tier)
+      .sort(byName),
   }))
+  const statusName = (slug: string) => names.get(slug) ?? slug
 
   const radar = deriveRadar({
     likes,
@@ -342,57 +428,101 @@ export function TasteMap({
           </Link>
         </p>
       ) : (
-        groups.map((group) => {
-          const isRadar = group.tier === 'on-the-radar'
-          const derived = isRadar ? radar.artists.length : 0
-          if (group.slugs.length === 0 && !(isRadar && (radar.artists.length > 0 || radar.withoutIdentity > 0))) {
-            return null
-          }
-          return (
-              <section key={group.label} className={styles.group}>
-                <h2 className={styles.groupTitle}>
+        <section className={styles.following} aria-labelledby="following-heading">
+          <div className={styles.followingIntro}>
+            <h2 id="following-heading" className={styles.followingTitle}>
+              Following
+              <span className={styles.groupCount}> · {profile.follows.length}</span>
+            </h2>
+            <p className={styles.followingHint}>
+              Every artist you follow, by row. Use the menu on each one to move it
+              or unfollow — changes save as you go.
+            </p>
+          </div>
+          {/* Stays in view while you work down the list. */}
+          <div className={styles.followingHead}>
+            <nav className={styles.jump} aria-label="Jump to a row">
+              {groups.map((group) => (
+                <a key={group.tier} className={styles.jumpLink} href={`#row-${group.tier}`}>
+                  {group.label} <span className={styles.jumpCount}>{group.slugs.length}</span>
+                </a>
+              ))}
+            </nav>
+            <p className={styles.status} role="status" aria-live="polite">
+              {status?.kind === 'moved' &&
+                `Moved ${statusName(status.slug)} to ${TIER_LABELS[status.tier]}.`}
+              {status?.kind === 'unfollowed' && (
+                <>
+                  Unfollowed {statusName(status.slug)}.{' '}
+                  <button
+                    type="button"
+                    className={styles.undo}
+                    onClick={() => undoUnfollow(status.slug, status.tier)}
+                    disabled={saving.has(status.slug)}
+                  >
+                    Undo
+                  </button>
+                </>
+              )}
+              {status?.kind === 'error' && (
+                <span className={styles.statusError}>{status.message}</span>
+              )}
+            </p>
+          </div>
+
+          {groups.map((group) => {
+            const isRadar = group.tier === 'on-the-radar'
+            const derived = isRadar ? radar.artists.length : 0
+            const showRadar = isRadar && (radar.artists.length > 0 || radar.withoutIdentity > 0)
+            return (
+              <section
+                key={group.tier}
+                id={`row-${group.tier}`}
+                className={styles.group}
+                aria-labelledby={`row-${group.tier}-heading`}
+              >
+                <h3 id={`row-${group.tier}-heading`} className={styles.groupTitle}>
                   {group.label}
-                  {group.slugs.length + derived > 0 && (
-                    <span className={styles.groupCount}>
-                      {' '}
-                      · {group.slugs.length + derived}
-                    </span>
-                  )}
-                </h2>
-                <ul className={styles.rows}>
-                  {group.slugs.map((slug) => {
-                    const stamp = profile.stamps?.[slug]
-                    return (
-                      <li key={slug} className={styles.row}>
-                        <div className={styles.rowText}>
-                          <Link className={styles.artist} href={`/${slug}`}>
-                            {names.get(slug) ?? slug}
-                          </Link>
-                          {stamp && (
-                            <span className={styles.stamp}>
-                              Fan&nbsp;#{stamp.number} · since{' '}
-                              {sinceLabel(stamp.since)}
-                            </span>
-                          )}
-                        </div>
-                        <select
-                          className={styles.tierSelect}
-                          value={profile.tiers?.[slug] ?? DEFAULT_FOLLOW_TIER}
-                          onChange={(event) =>
-                            setTier(slug, event.target.value)
-                          }
-                          aria-label={`Your tier for ${names.get(slug) ?? slug}`}
-                        >
-                          {TIER_ORDER.map((tier) => (
-                            <option key={tier} value={tier}>
-                              {TIER_LABELS[tier]}
-                            </option>
-                          ))}
-                        </select>
-                      </li>
-                    )
-                  })}
-                </ul>
+                  <span className={styles.groupCount}> · {group.slugs.length + derived}</span>
+                </h3>
+                {group.slugs.length === 0 && !showRadar ? (
+                  <p className={styles.groupEmpty}>Nobody here yet.</p>
+                ) : (
+                  <ul className={styles.rows}>
+                    {group.slugs.map((slug) => {
+                      const stamp = profile.stamps?.[slug]
+                      const name = names.get(slug) ?? slug
+                      return (
+                        <li key={slug} className={styles.row}>
+                          <div className={styles.rowText}>
+                            <Link className={styles.artist} href={`/${slug}`}>
+                              {name}
+                            </Link>
+                            {stamp && (
+                              <span className={styles.stamp}>
+                                Fan&nbsp;#{stamp.number} · since {sinceLabel(stamp.since)}
+                              </span>
+                            )}
+                          </div>
+                          <select
+                            className={styles.tierSelect}
+                            value={profile.tiers?.[slug] ?? DEFAULT_FOLLOW_TIER}
+                            onChange={(event) => onRowChange(slug, event.target.value)}
+                            disabled={saving.has(slug)}
+                            aria-label={`Row for ${name}`}
+                          >
+                            {TIER_ORDER.map((tier) => (
+                              <option key={tier} value={tier}>
+                                {TIER_LABELS[tier]}
+                              </option>
+                            ))}
+                            <option value={UNFOLLOW}>Unfollow</option>
+                          </select>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                )}
                 {isRadar && (
                   <RadarFromLikes
                     artists={radar.artists}
@@ -402,8 +532,9 @@ export function TasteMap({
                   />
                 )}
               </section>
-          )
-        })
+            )
+          })}
+        </section>
       )}
     </div>
   )
