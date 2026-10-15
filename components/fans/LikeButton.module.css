@@ -3,6 +3,8 @@
 
 .like {
   flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
   line-height: 1;
   color: var(--text-muted);
   border: 1px solid transparent;
@@ -32,11 +34,16 @@
 }
 
 .now {
+  min-width: 40px;
+  min-height: 40px;
   padding: 0.2rem 0.5rem;
-  font-size: 0.9rem;
+  font-size: 1.15rem;
 }
 
+/* Down a list: still a real tap target (32px), just quieter. */
 .row {
+  min-width: 32px;
+  min-height: 32px;
   padding: 0.1rem 0.35rem;
-  font-size: 0.78rem;
+  font-size: 1rem;
 }

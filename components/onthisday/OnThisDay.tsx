@@ -2,11 +2,14 @@
 
 import Link from 'next/link'
 import { QueuePlayer } from '@/components/explore/QueuePlayer'
+import { LikeButton } from '@/components/fans/LikeButton'
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import type { OnThisDayItem, OnThisDayPayload } from '@/lib/explore/onThisDay'
 import { isGenreLens } from '@/lib/explore/genreData'
 import { Icon } from '@/components/ui/Icon'
 import styles from './OnThisDay.module.css'
+
+const MBID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 
 /**
  * "On this day" (owner, Oct 10 2026). The visitor's OWN today by default
@@ -532,7 +535,19 @@ function DayView({
                 title={`YouTube player: ${selected.vt ?? selected.vs ?? selected.t}`}
               />
             </div>
-            <h3 className={styles.songTitle}>{selected.vs ?? selected.t}</h3>
+            <div className={styles.songRow}>
+              <h3 className={styles.songTitle}>{selected.vs ?? selected.t}</h3>
+              <LikeButton
+                track={{
+                  videoId: selected.v,
+                  title: selected.vs ?? selected.t,
+                  artistName: selected.n,
+                  ...(selected.a && MBID.test(selected.a) ? { mbid: selected.a } : {}),
+                  ...(selected.genres?.length ? { genres: selected.genres } : {}),
+                  year: selected.y,
+                }}
+              />
+            </div>
             <p className={styles.songArtist}>
               <ArtistLink item={selected} />
             </p>

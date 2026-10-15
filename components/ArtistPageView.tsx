@@ -118,6 +118,7 @@ export function ArtistPageView({
           <Watch
             watch={content.watch}
             artistName={content.hero.name}
+            mbid={content.integrations.setlistfm.mbid || undefined}
             channelId={content.integrations.youtube.channelId || undefined}
             channelUrl={youtubeChannelUrl}
           />

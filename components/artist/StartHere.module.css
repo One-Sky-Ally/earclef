@@ -221,3 +221,11 @@
     width: 52px;
   }
 }
+
+.nowRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 40px;
+}

@@ -268,3 +268,10 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.nowRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}

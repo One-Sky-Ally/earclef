@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { YouTubeEmbed } from '@/components/YouTubeEmbed'
+import { LikeButton } from '@/components/fans/LikeButton'
 import { getOwnerKey } from '@/lib/curation/ownerClient'
 import { PLAY_LABELS, type PlayLink, type ReadLink } from '@/lib/play/types'
 import { ScrollRow } from '@/components/ui/ScrollRow'
@@ -318,6 +319,15 @@ export function DiscoverSection() {
                     <span className={styles.songKind}>
                       {SONG_KIND_LABELS[pick.song.kind]}
                     </span>
+                    <LikeButton
+                      variant="row"
+                      track={{
+                        videoId: pick.song.videoId,
+                        title: pick.song.title,
+                        artistName: pick.name,
+                        mbid: pick.mbid,
+                      }}
+                    />
                     {pick.bandcamp && (
                       <a
                         className={styles.listen}

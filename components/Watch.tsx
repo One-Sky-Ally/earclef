@@ -5,11 +5,12 @@ import { VideoExplorer } from '@/components/artist/VideoExplorer'
 interface WatchProps {
   watch: WatchContent
   artistName: string
+  mbid?: string
   channelId?: string
   channelUrl?: string
 }
 
-export function Watch({ watch, artistName, channelId, channelUrl }: WatchProps) {
+export function Watch({ watch, artistName, mbid, channelId, channelUrl }: WatchProps) {
   return (
     <section id="watch" className="section" aria-labelledby="watch-heading">
       <div className="container">
@@ -20,6 +21,7 @@ export function Watch({ watch, artistName, channelId, channelUrl }: WatchProps) 
         />
         <VideoExplorer
           artistName={artistName}
+          mbid={mbid}
           picks={watch.videos}
           channelId={channelId}
           channelUrl={channelUrl}

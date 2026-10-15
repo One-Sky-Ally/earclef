@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { QueuePlayer } from "@/components/explore/QueuePlayer";
+import { LikeButton } from "@/components/fans/LikeButton";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import type { PlaceSong, PlaceSongs } from "@/lib/explore/songsAbout";
 import styles from "./SongsAboutSection.module.css";
@@ -30,6 +31,7 @@ type SectionState =
 const TIER_BASE = 8;
 const TIER_STEP = 20;
 const VIDEO_ID = /^[\w-]{11}$/;
+const MBID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 
 /** Render-time guard over the committed file: a song plays only with a well-formed id. */
 function safeSongs(songs: PlaceSong[]): PlaceSong[] {
@@ -128,6 +130,18 @@ export function SongsAboutSection({
                     {song.about ? ` · about ${song.about}` : ""}
                   </span>
                 </span>
+                <LikeButton
+                  variant="row"
+                  track={{
+                    videoId: song.v,
+                    title: song.t,
+                    artistName: song.a,
+                    ...(MBID.test(song.mbid) ? { mbid: song.mbid } : {}),
+                    placeCode,
+                    placeName,
+                    ...(song.y ? { year: song.y } : {}),
+                  }}
+                />
               </div>
               {isOpen && (
                 <div className={styles.player}>

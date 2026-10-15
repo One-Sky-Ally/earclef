@@ -6,6 +6,7 @@ import type { VideoRef } from '@/lib/types'
 import { youtubeThumb } from '@/lib/play/youtubeApi'
 import { useYouTubeQueue } from '@/components/play/useYouTubeQueue'
 import { Icon } from '@/components/ui/Icon'
+import { LikeButton } from '@/components/fans/LikeButton'
 import { SafeImage } from '@/components/ui/SafeImage'
 import styles from './VideoExplorer.module.css'
 
@@ -53,8 +54,13 @@ type ChannelState =
   | { status: 'error' }
   | { status: 'ready'; videos: VideosResponse }
 
+/** Kinds that are songs: interviews and other uploads get no ♥. */
+const SONG_KINDS: ReadonlySet<Kind> = new Set(['pick', 'main', 'live'])
+
 interface VideoExplorerProps {
   artistName: string
+  /** MusicBrainz id, so a saved song can count toward the listener's radar. */
+  mbid?: string
   picks: VideoRef[]
   channelId?: string
   channelUrl?: string
@@ -68,7 +74,13 @@ function uploadDate(iso?: string): string | null {
     : date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
 }
 
-export function VideoExplorer({ artistName, picks, channelId, channelUrl }: VideoExplorerProps) {
+export function VideoExplorer({
+  artistName,
+  mbid,
+  picks,
+  channelId,
+  channelUrl,
+}: VideoExplorerProps) {
   const [channel, setChannel] = useState<ChannelState>(
     channelId ? { status: 'loading' } : { status: 'none' },
   )
@@ -216,7 +228,19 @@ export function VideoExplorer({ artistName, picks, channelId, channelUrl }: Vide
             )}
           </div>
           <div className={styles.nowText} aria-live="polite">
-            <p className={styles.nowTitle}>{playing ? playing.title : first.title}</p>
+            <div className={styles.nowRow}>
+              <p className={styles.nowTitle}>{playing ? playing.title : first.title}</p>
+              {playing && !ended && SONG_KINDS.has(playing.kind) && (
+                <LikeButton
+                  track={{
+                    videoId: playing.videoId,
+                    title: playing.title,
+                    artistName,
+                    ...(mbid ? { mbid } : {}),
+                  }}
+                />
+              )}
+            </div>
             <p className={styles.nowMeta}>
               {playing && ended
                 ? 'That’s every video in this list.'

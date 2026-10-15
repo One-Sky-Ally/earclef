@@ -13,6 +13,7 @@ import type { PlaceSongs } from '@/lib/explore/songsAbout'
 import { youtubeThumb } from '@/lib/play/youtubeApi'
 import { useYouTubeQueue } from '@/components/play/useYouTubeQueue'
 import { LikeButton } from '@/components/fans/LikeButton'
+import type { LikeDraft } from '@/components/fans/LikesProvider'
 import { Icon } from '@/components/ui/Icon'
 import { SafeImage } from '@/components/ui/SafeImage'
 import styles from './JourneyPanel.module.css'
@@ -128,6 +129,16 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
   } = useYouTubeQueue(tracks.map((track) => track.videoId))
 
   const playing = current !== null ? tracks[current] : null
+  // The ♥ saves the song with the place and year it was heard in.
+  const likeDraft = (track: (typeof tracks)[number]): LikeDraft => ({
+    videoId: track.videoId,
+    title: track.title,
+    artistName: track.artist,
+    ...(track.mbid ? { mbid: track.mbid } : {}),
+    placeCode: culture.code,
+    placeName: culture.place,
+    ...(track.year ? { year: track.year } : {}),
+  })
   const first = tracks[0]
   const visible = showAll ? tracks : tracks.slice(0, FIRST_ROWS)
   const span = culture.kind === 'songs' ? null : journeySpan(culture)
@@ -253,11 +264,14 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
       )}
 
       {playing && (
-        <p className={styles.nowPlaying} aria-live="polite">
-          {ended
-            ? 'That’s every song in this journey.'
-            : `Now playing: “${playing.title}” — ${playing.artist}`}
-        </p>
+        <div className={styles.nowRow}>
+          <p className={styles.nowPlaying} aria-live="polite">
+            {ended
+              ? 'That’s every song in this journey.'
+              : `Now playing: “${playing.title}” — ${playing.artist}`}
+          </p>
+          {!ended && <LikeButton track={likeDraft(playing)} />}
+        </div>
       )}
 
       {tracks.length > 0 && (
@@ -299,18 +313,7 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
                 </span>
                 {!isDead && (
                   <span className={styles.trackActions}>
-                    <LikeButton
-                      variant="row"
-                      track={{
-                        videoId: track.videoId,
-                        title: track.title,
-                        artistName: track.artist,
-                        ...(track.mbid ? { mbid: track.mbid } : {}),
-                        placeCode: culture.code,
-                        placeName: culture.place,
-                        ...(track.year ? { year: track.year } : {}),
-                      }}
-                    />
+                    <LikeButton variant="row" track={likeDraft(track)} />
                     <button
                       type="button"
                       className={styles.trackPlay}

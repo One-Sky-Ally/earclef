@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { youtubeThumb } from '@/lib/play/youtubeApi'
 import { useYouTubeQueue } from '@/components/play/useYouTubeQueue'
 import { LikeButton } from '@/components/fans/LikeButton'
+import type { LikeDraft } from '@/components/fans/LikesProvider'
 import { Icon } from '@/components/ui/Icon'
 import { SafeImage } from '@/components/ui/SafeImage'
 import styles from './StartHere.module.css'
@@ -41,6 +42,13 @@ export function StartHere({
   const visible = showAll ? tracks : tracks.slice(0, FIRST_ROWS)
   const first = tracks[0]
   const playing = current !== null ? tracks[current] : null
+  const likeDraft = (track: StartHereTrack): LikeDraft => ({
+    videoId: track.videoId,
+    title: track.title,
+    artistName,
+    ...(mbid ? { mbid } : {}),
+    ...(track.year ? { year: track.year } : {}),
+  })
 
   return (
     <div className={styles.layout}>
@@ -68,16 +76,7 @@ export function StartHere({
                 </span>
                 {!isDead && (
                   <span className={styles.actions}>
-                    <LikeButton
-                      variant="row"
-                      track={{
-                        videoId: track.videoId,
-                        title: track.title,
-                        artistName,
-                        ...(mbid ? { mbid } : {}),
-                        ...(track.year ? { year: track.year } : {}),
-                      }}
-                    />
+                    <LikeButton variant="row" track={likeDraft(track)} />
                     <button
                       type="button"
                       className={styles.play}
@@ -129,13 +128,16 @@ export function StartHere({
             </a>
           </p>
         )}
-        <p className={styles.note} aria-live="polite">
-          {playing
-            ? ended
-              ? 'That’s every song here.'
-              : `Now playing: “${playing.title}”`
-            : `${tracks.length} song${tracks.length === 1 ? '' : 's'}, each verified to play here.`}
-        </p>
+        <div className={styles.nowRow}>
+          <p className={styles.note} aria-live="polite">
+            {playing
+              ? ended
+                ? 'That’s every song here.'
+                : `Now playing: “${playing.title}”`
+              : `${tracks.length} song${tracks.length === 1 ? '' : 's'}, each verified to play here.`}
+          </p>
+          {playing && !ended && <LikeButton track={likeDraft(playing)} />}
+        </div>
       </div>
     </div>
   )
