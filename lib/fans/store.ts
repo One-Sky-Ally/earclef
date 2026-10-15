@@ -9,7 +9,7 @@
  */
 import { randomBytes } from 'node:crypto'
 import { getStore } from '@netlify/blobs'
-import { isArtistTier, type ArtistTier } from '../tiers'
+import { followTiers, isArtistTier, type ArtistTier } from '../tiers'
 import { normalizeEmail } from '../membership/types'
 import {
   MAX_LIKES,
@@ -21,7 +21,11 @@ import {
 export interface FanRecord {
   email: string
   follows: string[]
-  /** slug → the fan's own tier for that artist (untiered = plain follow). */
+  /**
+   * slug → the fan's own tier for that artist. A follow with no entry
+   * reads as the default tier (followTiers) — never stored, so records
+   * from before tiers were chosen at follow time need no migration.
+   */
   tiers?: Record<string, ArtistTier>
   /**
    * Songs the fan liked while a queue was playing, newest first. The
@@ -40,6 +44,8 @@ export interface FanRecord {
   shareToken?: string
   /** Shown on the share page instead of anything email-derived. */
   displayName?: string
+  /** When the owner moved the site's rotation groups into this account. */
+  siteTiersClaimedAt?: string
   createdAt: string
 }
 
@@ -92,16 +98,29 @@ function baseRecord(email: string, existing: FanRecord | null): FanRecord {
     listenService: existing?.listenService,
     shareToken: existing?.shareToken,
     displayName: existing?.displayName,
+    siteTiersClaimedAt: existing?.siteTiersClaimedAt,
     createdAt: existing?.createdAt ?? new Date().toISOString(),
   }
 }
 
-/** Adds or removes a follow; returns the updated follow list. */
+export interface FollowState {
+  follows: string[]
+  /** Every follow's tier, defaults filled in (followTiers). */
+  tiers: Record<string, ArtistTier>
+}
+
+/**
+ * Adds or removes a follow. A follow can carry the tier the fan picked
+ * for it; without one it keeps whatever tier it already had (or the
+ * default). Unfollowing clears the tier — it only means something on a
+ * follow.
+ */
 export async function setFollow(
   email: string,
   slug: string,
   following: boolean,
-): Promise<string[]> {
+  tier?: ArtistTier,
+): Promise<FollowState> {
   const normalized = normalizeEmail(email)
   const existing = await getFan(normalized)
   const current = existing?.follows ?? []
@@ -111,13 +130,14 @@ export async function setFollow(
 
   const record = baseRecord(normalized, existing)
   record.follows = next
-  if (!following && record.tiers?.[slug]) {
-    // A tier only means something on a follow; unfollowing clears it.
+  if (following && tier && isArtistTier(tier) && next.includes(slug)) {
+    record.tiers = { ...record.tiers, [slug]: tier }
+  } else if (!following && record.tiers?.[slug]) {
     const { [slug]: _dropped, ...rest } = record.tiers
     record.tiers = rest
   }
   await putFan(record)
-  return next
+  return { follows: next, tiers: followTiers(next, record.tiers) }
 }
 
 /** Persists the fan's preferred streaming service. */
@@ -133,8 +153,9 @@ export async function setListenService(
 }
 
 /**
- * Sets or clears the fan's personal tier for a followed artist.
- * Returns the updated tier map, or null when the slug isn't followed.
+ * Sets the fan's tier for a followed artist (null puts it back on the
+ * default). Returns every follow's tier, or null when the slug isn't
+ * followed.
  */
 export async function setPersonalTier(
   email: string,
@@ -154,7 +175,63 @@ export async function setPersonalTier(
     record.tiers = { ...current, [slug]: tier }
   }
   await putFan(record)
-  return record.tiers ?? {}
+  return followTiers(record.follows, record.tiers)
+}
+
+export interface ClaimResult {
+  /** Artists the account did not follow before — followed now. */
+  added: number
+  /** Follows that took the site's tier (new, or never placed by the fan). */
+  placed: Record<ArtistTier, number>
+  /** Slugs where the fan had already chosen a tier — theirs was kept. */
+  kept: string[]
+  claimedAt: string
+}
+
+/**
+ * Moves the owner's original rotation groups (content JSON) into their
+ * own fan account, so nothing is lost now that visitors no longer see
+ * them. Additive and safe to repeat: existing follows stay, a tier the
+ * fan already chose is never overwritten, and fan numbers are not minted
+ * — those record someone pressing Follow, which this is not.
+ */
+export async function claimSiteTiers(
+  email: string,
+  siteTiers: { slug: string; tier: ArtistTier }[],
+): Promise<ClaimResult> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  const record = baseRecord(normalized, existing)
+  const follows = new Set(record.follows)
+  const tiers: Record<string, ArtistTier> = { ...record.tiers }
+  const placed: Record<ArtistTier, number> = {
+    'heavy-rotation': 0,
+    'in-the-mix': 0,
+    'on-the-radar': 0,
+  }
+  const kept: string[] = []
+  let added = 0
+
+  for (const { slug, tier } of siteTiers) {
+    if (!isArtistTier(tier)) continue
+    if (!follows.has(slug)) {
+      if (follows.size >= MAX_FOLLOWS) continue
+      follows.add(slug)
+      added++
+    }
+    if (isArtistTier(tiers[slug])) {
+      if (tiers[slug] !== tier) kept.push(slug)
+      continue
+    }
+    tiers[slug] = tier
+    placed[tier]++
+  }
+
+  record.follows = [...follows]
+  record.tiers = tiers
+  record.siteTiersClaimedAt = new Date().toISOString()
+  await putFan(record)
+  return { added, placed, kept, claimedAt: record.siteTiersClaimedAt }
 }
 
 export interface LikesResult {

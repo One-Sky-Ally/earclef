@@ -1,17 +1,41 @@
+/* Ear Clef palette (UI handoff, Oct 2026): warm near-black, ivory
+   text, restrained gold for actions, muted sage for quiet accents.
+   Sampled from the preferred Explore reference in docs/design/. The
+   *-rgb triplets let modules write rgba(var(--accent-rgb), 0.2)
+   instead of hardcoding a colour that drifts from the theme. */
 :root {
-  --bg: #161210;
-  --bg-elevated: #1e1814;
-  --bg-card: #1b1613;
-  --text: #f2ede4;
-  --text-soft: #cfc7ba;
-  --text-muted: #a89f92;
-  --accent: #f2a93b;
-  --accent-deep: #c97f1a;
-  --accent-soft: rgba(242, 169, 59, 0.12);
-  --border: rgba(242, 237, 228, 0.09);
-  --border-strong: rgba(242, 237, 228, 0.18);
-  --hover-wash: rgba(242, 237, 228, 0.03);
-  --max-width: 1040px;
+  --bg: #0f100c;
+  --bg-rgb: 15, 16, 12;
+  --bg-elevated: #191a14;
+  --bg-card: #15160f;
+  --panel: #171812;
+  --field: #1e1e19;
+  --text: #f3efe6;
+  --ink-rgb: 243, 239, 230;
+  --text-soft: #d4cfc3;
+  --text-muted: #a39e90;
+  --accent: #d7a553;
+  --accent-rgb: 215, 165, 83;
+  --accent-deep: #b08540;
+  --accent-bright: #efc56e;
+  /* Text on a gold surface. */
+  --accent-ink: #18140b;
+  --accent-soft: rgba(215, 165, 83, 0.12);
+  --sage: #5b6a55;
+  --sage-rgb: 91, 106, 85;
+  /* Sage that reads as text on the dark background. */
+  --sage-text: #9fb293;
+  --sage-soft: rgba(91, 106, 85, 0.3);
+  --border: rgba(243, 239, 230, 0.08);
+  --border-strong: rgba(243, 239, 230, 0.16);
+  --hover-wash: rgba(243, 239, 230, 0.04);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --max-width: 1160px;
+  /* The Explore composition runs wider than reading pages. */
+  --max-wide: 1480px;
+  /* Sticky site bar height — sticky children sit just under it. */
+  --nav-h: 64px;
   --font-display: var(--font-fraunces), Georgia, serif;
   --font-body: var(--font-inter), -apple-system, sans-serif;
 }
@@ -37,14 +61,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Analog film grain over everything — pure CSS, no requests */
+/* A whisper of analog grain — pure CSS, no requests. Kept faint: the
+   handoff asks for a quiet surface, not texture. */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
   z-index: 2147483647;
   pointer-events: none;
-  opacity: 0.05;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='128' height='128'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='128' height='128' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -54,6 +79,7 @@ h3 {
   font-family: var(--font-display);
   font-weight: 500;
   line-height: 1.1;
+  letter-spacing: -0.01em;
   text-wrap: balance;
 }
 
@@ -77,11 +103,11 @@ button {
 
 ::selection {
   background: var(--accent);
-  color: var(--bg);
+  color: var(--accent-ink);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--accent-bright);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -92,9 +118,9 @@ button {
 }
 
 .section {
-  padding-block: clamp(4rem, 10vw, 7.5rem);
+  padding-block: clamp(3.5rem, 8vw, 6rem);
   border-top: 1px solid var(--border);
-  scroll-margin-top: 4.5rem;
+  scroll-margin-top: calc(var(--nav-h) + 3.25rem);
 }
 
 .visually-hidden {
@@ -104,6 +130,17 @@ button {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+/* Phones: a 16px side gutter, the same on every page. */
+@media (max-width: 640px) {
+  :root {
+    --nav-h: 56px;
+  }
+
+  .container {
+    width: calc(100% - 2rem);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

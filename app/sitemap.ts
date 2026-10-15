@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/`, changeFrequency: 'daily', priority: 1 },
     { url: `${SITE}/artists`, changeFrequency: 'daily', priority: 0.9 },
     { url: `${SITE}/feed`, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${SITE}/cultures`, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${SITE}/for-artists`, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${SITE}/manifesto`, changeFrequency: 'yearly', priority: 0.6 },
     { url: `${SITE}/suggest`, changeFrequency: 'yearly', priority: 0.4 },

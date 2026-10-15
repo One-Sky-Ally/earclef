@@ -1,41 +1,103 @@
 .wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.4rem;
+  align-items: flex-start;
+  gap: 1.5rem;
   width: 100%;
 }
 
-.readout {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 5vw, 3rem);
-  font-weight: 480;
-  line-height: 1;
-  color: var(--text);
-  font-variant-numeric: tabular-nums;
+/* The precise-year field: quiet serif numerals, an underline on focus. */
+.yearField {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 0.1rem;
+  margin-top: -0.35rem;
 }
 
-/* Two overlaid native ranges: the track paints the span between the
-   thumbs; the inputs are click-through except at their thumbs. */
+.yearLabel {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.yearInput {
+  width: 4.6ch;
+  padding: 0 0 0.1rem;
+  border: 0;
+  border-bottom: 1px solid var(--border-strong);
+  background: none;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.yearInput::-webkit-inner-spin-button,
+.yearInput::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.yearInput:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+.yearInput:focus-visible {
+  outline: 2px solid var(--accent-bright);
+  outline-offset: 4px;
+}
+
+.rail {
+  flex: 1;
+  min-width: 0;
+  /* Native range thumbs travel from half a thumb in, so the decade
+     marks and labels share that inset to sit under the handle. */
+  --thumb: 26px;
+}
+
 .track {
   position: relative;
-  width: 100%;
-  height: 22px;
-  margin-block: 0.6rem;
+  height: 26px;
 }
 
-.track::before {
-  content: '';
+.line {
   position: absolute;
-  inset: 9px 0;
-  border-radius: 999px;
+  top: 50%;
+  left: calc(var(--thumb) / 2);
+  right: calc(var(--thumb) / 2);
+  height: 1px;
   background: linear-gradient(
     to right,
-    rgba(242, 237, 228, 0.16) var(--fill-start),
-    var(--accent) var(--fill-start),
-    var(--accent) var(--fill-end),
-    rgba(242, 237, 228, 0.16) var(--fill-end)
+    rgba(var(--accent-rgb), 0.55) 0 var(--fill),
+    rgba(var(--ink-rgb), 0.22) var(--fill) 100%
   );
+}
+
+/* Marks ride the same inset rail the thumb travels. */
+.ticks {
+  position: absolute;
+  inset: 0 calc(var(--thumb) / 2);
+  pointer-events: none;
+}
+
+.tick {
+  position: absolute;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border: 1px solid rgba(var(--ink-rgb), 0.45);
+  border-radius: 50%;
+  background: var(--bg);
+  transform: translate(-50%, -50%);
+}
+
+.tickActive {
+  border-color: var(--accent);
 }
 
 .range {
@@ -45,67 +107,112 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  background: none;
-  pointer-events: none;
   margin: 0;
+  background: none;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+
+.range::-webkit-slider-runnable-track {
+  height: 26px;
+  background: none;
+}
+
+.range::-moz-range-track {
+  height: 26px;
+  background: none;
 }
 
 .range::-webkit-slider-thumb {
   appearance: none;
   -webkit-appearance: none;
-  pointer-events: auto;
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  background: var(--accent);
-  border: 3px solid var(--bg);
-  box-shadow: 0 0 14px rgba(242, 169, 59, 0.55);
+  background:
+    radial-gradient(circle, var(--accent-bright) 0 6px, transparent 6.5px),
+    var(--bg);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.16);
   transition: transform 0.15s ease;
-  cursor: pointer;
-}
-
-.range::-webkit-slider-thumb:hover {
-  transform: scale(1.15);
 }
 
 .range::-moz-range-thumb {
-  pointer-events: auto;
-  width: 16px;
-  height: 16px;
+  width: 22px;
+  height: 22px;
   border-radius: 50%;
-  background: var(--accent);
-  border: 3px solid var(--bg);
-  box-shadow: 0 0 14px rgba(242, 169, 59, 0.55);
-  cursor: pointer;
+  background:
+    radial-gradient(circle, var(--accent-bright) 0 6px, transparent 6.5px),
+    var(--bg);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.16);
 }
 
-.range:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 6px;
+.range:hover::-webkit-slider-thumb {
+  transform: scale(1.08);
 }
 
-.bounds {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  color: var(--text-muted);
+.range:focus {
+  outline: none;
+}
+
+.range:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px var(--accent-bright);
+}
+
+.range:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 4px var(--accent-bright);
+}
+
+.labels {
+  position: relative;
+  height: 1.6rem;
+  margin-top: 0.35rem;
+  margin-inline: calc(var(--thumb) / 2);
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  padding: 0.1rem 0.2rem;
+  font-size: 0.86rem;
+  color: var(--text-soft);
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.label:hover {
+  color: var(--text);
+}
+
+.labelActive {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+@media (max-width: 1100px) {
+  .labelMinor {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
-  .readout {
-    font-size: 1.45rem;
+  .wrapper {
+    gap: 0.9rem;
   }
 
-  .track {
-    margin-block: 0.25rem;
+  .yearInput {
+    font-size: 1.3rem;
   }
 
-  /* The bar sticks under the nav on a phone; the 1900/2026 labels are
-     the one line it can spare — the track itself shows the span. */
-  .bounds {
-    display: none;
+  .label {
+    font-size: 0.72rem;
+  }
+
+  .labels {
+    height: 1.2rem;
+    margin-top: 0.15rem;
   }
 }

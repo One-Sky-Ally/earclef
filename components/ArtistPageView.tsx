@@ -14,6 +14,8 @@ import { Press } from '@/components/Press'
 import { UniverseSection } from '@/components/universe/UniverseSection'
 import { StorySection } from '@/components/stories/StorySection'
 import { SiteFooter } from '@/components/SiteFooter'
+import { startHereSongs } from '@/lib/artist/startHere'
+import type { StartHereTrack } from '@/components/artist/StartHere'
 
 interface ArtistPageViewProps {
   content: ArtistContent
@@ -33,10 +35,43 @@ export function ArtistPageView({
       ? `https://www.youtube.com/channel/${content.integrations.youtube.channelId}`
       : undefined)
 
+  // "Start here": the videos hand-picked for this page, then the
+  // artist's other verified songs (scripts/build-start-here.mjs).
+  const startHere: StartHereTrack[] = [
+    ...(content.watch.enabled ? content.watch.videos : []).map((video) => ({
+      videoId: video.youtubeId,
+      title: video.title,
+      detail: 'Ear Clef pick',
+    })),
+    ...startHereSongs(content.slug).map((song) => ({
+      videoId: song.v,
+      title: song.t,
+      year: song.y,
+      detail: [song.r && song.r !== song.t ? song.r : null, song.y]
+        .filter(Boolean)
+        .join(' · '),
+    })),
+  ]
+
+  // Only sections this page renders get a tab in the section bar.
+  const available = [
+    content.play?.enabled && 'play',
+    content.listen.enabled && 'listen',
+    content.watch.enabled && 'watch',
+    content.story.enabled && 'story',
+    content.shows.enabled && 'shows',
+    content.merch.enabled && 'merch',
+    content.press.enabled && 'press',
+    content.beyond?.enabled && 'beyond',
+    content.membership?.enabled && 'universe',
+  ].filter((id): id is string => Boolean(id))
+
   return (
     <>
       <SiteNav
         anchorBase={anchorBase}
+        artistName={content.hero.name}
+        available={available}
         includePlay={Boolean(content.play?.enabled)}
         includeBeyond={Boolean(content.beyond?.enabled)}
         universeLabel={
@@ -51,6 +86,16 @@ export function ArtistPageView({
           content.watch.enabled ? content.watch.videos[0]?.youtubeId : undefined
         }
         followSlug={content.slug}
+        // Membership and native audio exist only on pages the artist
+        // runs themselves; every other page is Ear Clef's editorial work.
+        editorial={!content.membership?.enabled && !content.play?.enabled}
+        primary={
+          content.watch.enabled && content.watch.videos.length > 0
+            ? { href: '#watch', label: 'Watch videos' }
+            : content.listen.enabled
+              ? { href: '#listen', label: 'Start listening' }
+              : undefined
+        }
       />
       <main>
         {content.play?.enabled && (
@@ -66,6 +111,7 @@ export function ArtistPageView({
             artistName={content.hero.name}
             mbid={content.integrations.setlistfm.mbid || undefined}
             presence={presenceFromContent(content)}
+            startHere={startHere}
           />
         )}
         {content.watch.enabled && (
@@ -77,7 +123,13 @@ export function ArtistPageView({
           />
         )}
         {content.story.enabled && <Story story={content.story} />}
-        {content.shows.enabled && <Shows shows={content.shows} />}
+        {content.shows.enabled && (
+          <Shows
+            shows={content.shows}
+            artistName={content.hero.name}
+            mbid={content.integrations.setlistfm.mbid || undefined}
+          />
+        )}
         {content.merch.enabled && <Merch merch={content.merch} />}
         {content.press.enabled && (
           <Press press={content.press} artistName={content.hero.name} />

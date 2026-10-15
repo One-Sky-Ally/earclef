@@ -147,7 +147,7 @@
 
 .joinButton:hover:not(:disabled) {
   background: var(--accent-deep);
-  box-shadow: 0 0 0 4px rgba(242, 169, 59, 0.12);
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.12);
 }
 
 .joinButton:disabled {

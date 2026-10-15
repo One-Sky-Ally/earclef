@@ -25,7 +25,12 @@ import {
 } from '@/lib/listen/services'
 import { isSearchUrl } from '@/lib/play/storedHref'
 import type { StoryCard } from '@/lib/stories/types'
-import type { ArtistTier } from '@/lib/tiers'
+import {
+  DEFAULT_FOLLOW_TIER,
+  TIER_LABELS,
+  TIER_ORDER,
+  type ArtistTier,
+} from '@/lib/tiers'
 import { TierFilter, type TierChoice } from '@/components/TierFilter'
 import { FeedPostCard } from '@/components/feed/FeedPostCard'
 import { FeedSkeleton } from '@/components/feed/FeedSkeleton'
@@ -39,7 +44,6 @@ export interface RosterEntry {
   mbid?: string
   channelId?: string
   itunesId?: string
-  tier?: ArtistTier
   presence?: ArtistServicePresence
 }
 
@@ -209,12 +213,13 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   const [extrasCount, setExtrasCount] = useState(PAGE_SIZE)
   const [storiesCount, setStoriesCount] = useState(STORIES_PAGE)
   const [retryTick, setRetryTick] = useState(0)
-  // null = signed out (or unknown): the Following pill stays hidden.
+  // null = signed out (or unknown): no filters — visitors see everything.
   const [follows, setFollows] = useState<string[] | null>(null)
+  // The listener's OWN rows; the site's tiers never filter anyone's feed.
+  const [tiers, setTiers] = useState<Record<string, ArtistTier>>({})
   const [stamps, setStamps] = useState<
     Record<string, { number: number; since: string }>
   >({})
-  const [followingOnly, setFollowingOnly] = useState(false)
   const requestedBlurbs = useRef(new Set<string>())
   const retriedBlurbs = useRef(new Set<string>())
 
@@ -227,10 +232,12 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         const body = (await res.json()) as {
           signedIn: boolean
           follows: string[]
+          tiers?: Record<string, ArtistTier>
           stamps?: Record<string, { number: number; since: string }>
         }
         if (!cancelled && body.signedIn) {
           setFollows(body.follows)
+          setTiers(body.tiers ?? {})
           setStamps(body.stamps ?? {})
         }
       } catch {
@@ -354,6 +361,17 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
 
   const todayIso = new Date().toISOString().slice(0, 10)
 
+  // Visitors (and "All") see everything; a signed-in listener can narrow
+  // to their follows or to one of their own rows.
+  const inChoice = useMemo(() => {
+    const followSet = new Set(follows ?? [])
+    return (slug: string) =>
+      tierChoice === 'all' ||
+      (followSet.has(slug) &&
+        (tierChoice === 'following' ||
+          (tiers[slug] ?? DEFAULT_FOLLOW_TIER) === tierChoice))
+  }, [follows, tiers, tierChoice])
+
   // Filter before the newest-50 cut so each tier surfaces its own latest,
   // not just its members of the overall top 50. Future-dated releases
   // split into the "Coming" strip; on release day they flow back in here.
@@ -367,14 +385,7 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         visible: [] as FeedItem[],
         extras: [] as FeedItem[],
       }
-    const tierBySlug = new Map(roster.map((entry) => [entry.slug, entry.tier]))
-    const followSet = new Set(follows ?? [])
-    const filtered = state.items
-      .filter(
-        (item) =>
-          tierChoice === 'all' || tierBySlug.get(item.slug) === tierChoice,
-      )
-      .filter((item) => !followingOnly || followSet.has(item.slug))
+    const filtered = state.items.filter((item) => inChoice(item.slug))
     const isUpcoming = (item: FeedItem) =>
       item.type === 'release' && item.date.slice(0, 10) > todayIso
     const current = newestFirst(filtered.filter((item) => !isUpcoming(item)))
@@ -390,23 +401,16 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         .filter((item) => item.substance === 'filler')
         .slice(0, FEED_LIMIT),
     }
-  }, [state, tierChoice, roster, follows, followingOnly, todayIso])
+  }, [state, inChoice, todayIso])
 
   // Editorial picks live in their own section, never woven into the
   // dated list — their order rotates daily, which a dated feed can't.
   const stories = useMemo<StoryCard[]>(() => {
-    const tierBySlug = new Map(roster.map((entry) => [entry.slug, entry.tier]))
-    const followSet = new Set(follows ?? [])
     return seededShuffle(
-      storyCards
-        .filter(
-          (card) =>
-            tierChoice === 'all' || tierBySlug.get(card.slug) === tierChoice,
-        )
-        .filter((card) => !followingOnly || followSet.has(card.slug)),
+      storyCards.filter((card) => inChoice(card.slug)),
       mulberry32(daySeed() ^ 0x9e3779b9),
     )
-  }, [storyCards, tierChoice, followingOnly, follows, roster])
+  }, [storyCards, inChoice])
 
   const rendered = useMemo(
     () => [
@@ -496,9 +500,27 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
     )
   }
 
-  const availableTiers = [
-    ...new Set(roster.flatMap((entry) => (entry.tier ? [entry.tier] : []))),
-  ]
+  const rosterSlugs = new Set(roster.map((entry) => entry.slug))
+  const followedHere = (follows ?? []).filter((slug) => rosterSlugs.has(slug))
+  const tierCounts = Object.fromEntries(
+    TIER_ORDER.map((tier) => [
+      tier,
+      followedHere.filter((slug) => (tiers[slug] ?? DEFAULT_FOLLOW_TIER) === tier)
+        .length,
+    ]),
+  ) as Record<ArtistTier, number>
+  const chosenSlugs =
+    tierChoice === 'all'
+      ? []
+      : followedHere.filter(
+          (slug) =>
+            tierChoice === 'following' ||
+            (tiers[slug] ?? DEFAULT_FOLLOW_TIER) === tierChoice,
+        )
+  const choiceLabel =
+    tierChoice === 'all' || tierChoice === 'following'
+      ? 'the artists you follow'
+      : `your ${TIER_LABELS[tierChoice]} artists`
   const remaining = visible.length - Math.min(visibleCount, visible.length)
   const remainingExtras = extras.length - Math.min(extrasCount, extras.length)
   const remainingStories = stories.length - Math.min(storiesCount, stories.length)
@@ -519,7 +541,7 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
     <>
       <div className={styles.filters}>
         <TierFilter
-          available={availableTiers}
+          counts={tierCounts}
           active={tierChoice}
           onChange={(choice) => {
             setTierChoice(choice)
@@ -528,27 +550,17 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
             setStoriesCount(STORIES_PAGE)
           }}
         />
-        {follows && follows.length > 0 && (
-          <button
-            type="button"
-            className={
-              followingOnly ? styles.followPillActive : styles.followPill
-            }
-            onClick={() => {
-              setFollowingOnly((current) => !current)
-              setVisibleCount(PAGE_SIZE)
-              setExtrasCount(PAGE_SIZE)
-              setStoriesCount(STORIES_PAGE)
-            }}
-          >
-            ♥ Following
-          </button>
-        )}
         <ServicePicker />
       </div>
-      {followingOnly && follows && follows.length > 0 && (
+      {follows && followedHere.length === 0 && (
+        <p className={styles.note}>
+          Follow artists from their pages to filter the feed by your own
+          rows — Heavy rotation, In the mix and On the radar.
+        </p>
+      )}
+      {chosenSlugs.length > 0 && (
         <ul className={styles.followList}>
-          {follows.map((slug) => {
+          {chosenSlugs.map((slug) => {
             const entry = roster.find((artist) => artist.slug === slug)
             if (!entry) return null
             const stamp = stamps[slug]
@@ -565,18 +577,13 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
           })}
         </ul>
       )}
-      {followingOnly && visible.length === 0 && (
-        <p className={styles.note}>
-          Nothing new from the artists you follow yet.
-        </p>
-      )}
       {state.incomplete && (
         <p className={styles.incomplete}>
           Some sources didn&apos;t respond — showing what arrived.
         </p>
       )}
-      {visible.length === 0 && (
-        <p className={styles.note}>Nothing in this tier yet.</p>
+      {visible.length === 0 && tierChoice !== 'all' && (
+        <p className={styles.note}>Nothing new from {choiceLabel} yet.</p>
       )}
       {upcoming.length > 0 && (
         <div className={styles.upcomingStrip}>

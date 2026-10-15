@@ -3,11 +3,9 @@ import Link from 'next/link'
 import { getAllArtists } from '@/lib/content'
 import { youtubeThumbnailUrl } from '@/lib/links'
 import { SiteNav } from '@/components/SiteNav'
-import { EarClefMark } from '@/components/EarClefMark'
-import {
-  ArtistIndexGrid,
-  type ArtistCardData,
-} from '@/components/ArtistIndexGrid'
+import { SiteFooterSimple } from '@/components/SiteFooterSimple'
+import { ArtistAZ, type ArtistCardData } from '@/components/ArtistRows'
+import { ArtistShelves } from '@/components/artists/ArtistShelves'
 import { DiscoverSection } from '@/components/discover/DiscoverSection'
 import { PendingStrip } from '@/components/curation/PendingStrip'
 import styles from './artists.module.css'
@@ -36,7 +34,6 @@ export default function ArtistsPage() {
       identity: artist.hero.identity,
       location: artist.hero.location,
       thumbUrl,
-      tier: artist.tier,
     }
   })
 
@@ -45,14 +42,14 @@ export default function ArtistsPage() {
       <SiteNav showSections={false} />
       <main className={styles.main}>
         <div className="container">
-          <p className={styles.overline}>The roster</p>
           <h1 className={styles.title}>Artists</h1>
           <p className={styles.subtitle}>
-            One page per universe. {cards.length} and counting.
+            One page per artist universe — {cards.length} and counting.
           </p>
           <DiscoverSection />
           <PendingStrip />
-          <ArtistIndexGrid cards={cards} />
+          <ArtistShelves cards={cards} />
+          <ArtistAZ cards={cards} />
           <p className={styles.suggest}>
             Know someone who belongs here?{' '}
             <Link className={styles.suggestLink} href="/suggest">
@@ -61,10 +58,7 @@ export default function ArtistsPage() {
           </p>
         </div>
       </main>
-      <footer className={styles.footer}>
-        <EarClefMark size={30} label="Ear Clef" />
-        <p>Music in balance</p>
-      </footer>
+      <SiteFooterSimple />
     </>
   )
 }

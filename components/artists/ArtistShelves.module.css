@@ -1,0 +1,136 @@
+.yours {
+  margin-top: clamp(2rem, 4vw, 2.75rem);
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 70ch;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.link:hover {
+  color: var(--accent-bright);
+}
+
+.rowWrap {
+  padding-top: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+.mix {
+  padding-top: clamp(2rem, 4vw, 2.75rem);
+}
+
+.mixHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+}
+
+.mixTitle {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+}
+
+.shuffle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.4rem 1.1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.shuffle:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.mixNote {
+  margin: 0.15rem 0 0.25rem;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  max-width: 70ch;
+}
+
+.mixRow + .mixRow {
+  margin-top: 1.25rem;
+}
+
+/* Loading: the shape of two rows, so the page doesn't jump. */
+.loading {
+  padding-top: clamp(2rem, 4vw, 2.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.skeletonRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeletonTitle {
+  width: 12rem;
+  height: 1.8rem;
+  border-radius: 6px;
+  background: var(--bg-elevated);
+}
+
+.skeletonCards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.skeletonCard {
+  aspect-ratio: 16 / 15;
+  border-radius: var(--radius);
+  background: linear-gradient(100deg, var(--bg-elevated) 35%, var(--accent-soft) 50%, var(--bg-elevated) 65%);
+  background-size: 220% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 120% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .skeletonCards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .skeletonCard:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .skeletonCards {
+    grid-template-columns: 62% 62%;
+    overflow: hidden;
+  }
+
+  .skeletonCard:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeletonCard {
+    animation: none;
+  }
+}

@@ -1,8 +1,7 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
-import { EarClefMark } from '@/components/EarClefMark'
 import {
   loadSurpriseData,
   pickSurprise,
@@ -20,11 +19,29 @@ import {
   type GenreEmergenceData,
   type GenreLens,
 } from '@/lib/explore/genreData'
+import {
+  cultureRow,
+  eraYear,
+  rotationOrder,
+  type Culture,
+  type JourneySummary,
+  type SongPlace,
+} from '@/lib/explore/cultureTypes'
 import type { SearchChoice } from '@/lib/explore/panelData'
 import type { FocusRequest } from '@/components/explore/GlobeScene'
 import { YearSlider } from '@/components/explore/YearSlider'
 import { SearchBox } from '@/components/explore/SearchBox'
 import { GenreStory } from '@/components/explore/GenreStory'
+import { FlatMap } from '@/components/explore/FlatMap'
+import { MapFullscreen } from '@/components/explore/MapFullscreen'
+import { CountryList } from '@/components/explore/CountryList'
+import { JourneyPanel } from '@/components/explore/JourneyPanel'
+import { MusicCultures } from '@/components/explore/MusicCultures'
+import {
+  EXPLORE_VIEWS,
+  ViewSwitch,
+  type ExploreView,
+} from '@/components/explore/ViewSwitch'
 import {
   ArtistEraPanel,
   type SelectedArtist,
@@ -34,6 +51,8 @@ import {
   type RosterByMbid,
   type SelectedCountry,
 } from '@/components/explore/CountryPanel'
+import { EXPLORE_SEARCH_ID } from '@/components/SiteNavLinks'
+import { Icon } from '@/components/ui/Icon'
 import styles from './ExploreClient.module.css'
 
 const GlobeScene = dynamic(
@@ -44,15 +63,30 @@ const GlobeScene = dynamic(
   },
 )
 
+/** Below this width the page is one column and the panel sits below. */
+const STACKED_QUERY = '(max-width: 899px)'
+
+/** Same journey all day, a different one tomorrow — for every visitor. */
+function dailyIndex(length: number): number {
+  const day = Math.floor(Date.now() / 86_400_000)
+  return length > 0 ? day % length : 0
+}
+
 interface ExploreClientProps {
   roster?: RosterByMbid
   /** Documented "What was playing" eras — the surprise picker's 30%. */
   surpriseEras?: SurpriseEra[]
+  /** Curated journey summaries (lib/explore/cultures.ts). */
+  journeys?: JourneySummary[]
+  /** "Songs about" places, for the culture row and ?j= links. */
+  songPlaces?: SongPlace[]
 }
 
 export function ExploreClient({
   roster = {},
   surpriseEras = [],
+  journeys = [],
+  songPlaces = [],
 }: ExploreClientProps) {
   const [year, setYear] = useState(DEFAULT_YEAR)
   // The SETTLED year: panels key off this, so a drag never storms them
@@ -66,8 +100,17 @@ export function ExploreClient({
   const [focusRequest, setFocusRequest] = useState<FocusRequest | null>(null)
   const [genreData, setGenreData] = useState<GenreEmergenceData | null>(null)
   const [lens, setLens] = useState<GenreLens | null>(null)
-  // Mobile: pills live in a collapsed menu so results stay visible.
   const [lensOpen, setLensOpen] = useState(false)
+  // Globe / Map / List — three views of the same place, year and lens.
+  const [view, setView] = useState<ExploreView>('globe')
+  const [globeUnavailable, setGlobeUnavailable] = useState(false)
+  const [mapExpanded, setMapExpanded] = useState(false)
+  // The curated journey in the panel slot when no place is open. Chosen
+  // on mount (daily, or from ?j=), so the server render stays neutral.
+  const [journeyId, setJourneyId] = useState<string | null>(null)
+  // Picked by the visitor (card, link, "Another journey") — only then
+  // does the journey go into the share URL.
+  const [journeyPinned, setJourneyPinned] = useState(false)
   // Deep-linked country (?c=JM), held until the globe can fly to it.
   const pendingCountry = useRef<string | null>(null)
   // ?noglobe=1 forces the non-globe fallback (testing + weak devices).
@@ -84,50 +127,62 @@ export function ExploreClient({
   const [spotlightKey, setSpotlightKey] = useState<string | null>(null)
   const surpriseSeen = useRef(new Set<string>())
   const yearTween = useRef<ReturnType<typeof setInterval> | null>(null)
-  // Phones: where the open panel begins, and the era bar stuck above it.
+  // Stacked layout: where the panel begins, and the year bar stuck above it.
   const panelAnchorRef = useRef<HTMLDivElement>(null)
   const controlsRef = useRef<HTMLDivElement>(null)
-  const stageRef = useRef<HTMLDivElement>(null)
+  const globeReadyRef = useRef(false)
 
-  // The era bar floats over the bottom of the stage on wider screens,
-  // and its height changes (genre menu open or shut, fonts, widths). The
-  // non-globe fallback list must END above it rather than scroll under
-  // it, so the stage carries the bar's measured footprint as a CSS
-  // variable instead of a guessed constant.
+  const cultures = useMemo(
+    () => cultureRow(journeys, songPlaces),
+    [journeys, songPlaces],
+  )
+  // Every journey plays (the data holds only playable songs); the daily
+  // pick walks them in a fixed shuffled order, so places keep changing.
+  const featuredPool = useMemo(() => rotationOrder(journeys), [journeys])
+  const cultureById = useMemo(() => {
+    const map = new Map<string, Culture>()
+    for (const journey of journeys) map.set(journey.id, journey)
+    for (const place of songPlaces) map.set(place.id, place)
+    return map
+  }, [journeys, songPlaces])
+  const journey = journeyId ? (cultureById.get(journeyId) ?? null) : null
+  // The globe captures its ready callback once, at init — it reads the
+  // journey through this ref, never a stale closure.
+  const journeyRef = useRef<Culture | null>(null)
   useEffect(() => {
-    const stage = stageRef.current
-    const controls = controlsRef.current
-    if (!stage || !controls) return
-    const measure = () => {
-      const clearance =
-        stage.getBoundingClientRect().bottom -
-        controls.getBoundingClientRect().top +
-        12
-      stage.style.setProperty('--controls-clearance', `${Math.max(0, Math.round(clearance))}px`)
-    }
-    measure()
-    const observer = new ResizeObserver(measure)
-    observer.observe(controls)
-    observer.observe(stage)
-    return () => observer.disconnect()
-  }, [])
+    journeyRef.current = journey
+  }, [journey])
+  const highlight =
+    journey && !selected && !artist
+      ? { code: journey.code, name: journey.place }
+      : null
 
-  // On a phone the panel opens BELOW the era bar (one column), so a
-  // place opened from the globe, the search or a surprise would appear
-  // off-screen. Bring its top to just under the stuck era bar. Wider
-  // screens float the panel beside the globe and need no scroll.
-  const openKey = artist ? `a:${artist.mbid}` : selected ? `c:${selected.code}` : null
+  // On a stacked layout the panel opens BELOW the year bar, so a place
+  // opened from the globe, the search or a surprise would appear
+  // off-screen. Bring its top to just under the stuck year bar. Wider
+  // screens show the panel beside the globe and need no scroll.
+  const [scrollKey, setScrollKey] = useState<string | null>(null)
+  const openKey = artist
+    ? `a:${artist.mbid}`
+    : selected
+      ? `c:${selected.code}`
+      : scrollKey
   useEffect(() => {
     if (!openKey) return
-    if (!window.matchMedia('(max-width: 640px)').matches) return
+    if (!window.matchMedia(STACKED_QUERY).matches) return
     const frame = requestAnimationFrame(() => {
       const anchor = panelAnchorRef.current
       const controls = controlsRef.current
       if (!anchor) return
+      const navHeight =
+        parseFloat(
+          getComputedStyle(document.documentElement).getPropertyValue('--nav-h'),
+        ) || 56
       const stuckAbove = controls ? controls.getBoundingClientRect().height : 0
-      // 53px nav + the bar's 0.4rem sticky gap + a little air.
       const top =
-        anchor.getBoundingClientRect().top + window.scrollY - (53 + 6 + stuckAbove + 10)
+        anchor.getBoundingClientRect().top +
+        window.scrollY -
+        (navHeight + stuckAbove + 12)
       window.scrollTo({ top, behavior: 'smooth' })
     })
     return () => cancelAnimationFrame(frame)
@@ -180,6 +235,12 @@ export function ExploreClient({
         onArrive()
         return
       }
+      // Reduced motion: land at once, no sliding readout.
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        setYear(target)
+        onArrive()
+        return
+      }
       const steps = 12
       let step = 0
       yearTween.current = setInterval(() => {
@@ -224,7 +285,7 @@ export function ExploreClient({
     }
   }
 
-  // The lens dataset is optional — absent file, hidden pills.
+  // The lens dataset is optional — absent file, hidden menu.
   useEffect(() => {
     let cancelled = false
     ;(async () => {
@@ -236,11 +297,11 @@ export function ExploreClient({
     }
   }, [])
 
-  // Read the shareable state once on mount: /?y=1969&c=JM. Old range
-  // links (?from=1965&to=1975) migrate to their midpoint year.
-  // Captured synchronously — the URL-writer effect below runs right
-  // after this one and would otherwise wipe the params first. (setState
-  // still runs from a timeout callback, not the effect body.)
+  // Read the shareable state once on mount: /?y=1969&c=JM&v=map&j=BR-…
+  // Old range links (?from=1965&to=1975) migrate to their midpoint
+  // year. Captured synchronously — the URL-writer effect below runs
+  // right after this one and would otherwise wipe the params first.
+  // (setState still runs from a timeout callback, not the effect body.)
   useEffect(() => {
     const search = window.location.search
     const timer = setTimeout(() => {
@@ -248,6 +309,7 @@ export function ExploreClient({
       const single = Number(params.get('y'))
       const from = Number(params.get('from'))
       const to = Number(params.get('to'))
+      let yearFromUrl = false
       if (
         Number.isInteger(single) &&
         single >= YEAR_MIN &&
@@ -255,6 +317,7 @@ export function ExploreClient({
       ) {
         setYear(single)
         setPanelYear(single)
+        yearFromUrl = true
       } else if (
         Number.isInteger(from) &&
         Number.isInteger(to) &&
@@ -265,6 +328,7 @@ export function ExploreClient({
         const migrated = Math.round((from + to) / 2)
         setYear(migrated)
         setPanelYear(migrated)
+        yearFromUrl = true
       }
       const code = params.get('c')
       if (code && /^([A-Z]{2}(-[A-Z]{2,3})?|[a-z]{3,20})$/.test(code)) {
@@ -273,20 +337,52 @@ export function ExploreClient({
       }
       const genre = params.get('g')
       if (isGenreLens(genre)) setLens(genre)
+      const requestedView = params.get('v')
+      if (EXPLORE_VIEWS.includes(requestedView as ExploreView)) {
+        setView(requestedView as ExploreView)
+      }
+
+      // The journey: a shared ?j= link, else today's pick.
+      const linked = params.get('j')
+      const chosen =
+        (linked && cultureById.get(linked)) ||
+        featuredPool[dailyIndex(featuredPool.length)] ||
+        null
+      if (chosen) {
+        setJourneyId(chosen.id)
+        if (linked && chosen.id === linked) setJourneyPinned(true)
+        // A plain visit opens on the journey's own era, so the slider and
+        // the panel tell the same story. A shared year always wins.
+        if (!yearFromUrl && !code && chosen.kind !== 'songs') {
+          setYear(eraYear(chosen))
+          setPanelYear(eraYear(chosen))
+        }
+        // A globe that beat this timeout turns now; otherwise it turns
+        // when it reports ready.
+        if (!code && globeReadyRef.current) faceCulture(chosen)
+      }
+
+      if (params.get('focus') === 'search') {
+        document.getElementById(EXPLORE_SEARCH_ID)?.focus()
+      }
     }, 0)
     return () => clearTimeout(timer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- read the URL once
   }, [])
 
-  // Keep the URL shareable: year + open panel survive reload and paste.
-  // DEBOUNCED and guarded: iOS Safari THROWS when replaceState exceeds
-  // ~100 calls/30s — the per-tick writes during fast slider drags were
-  // killing the page outright (mobile crash report, Aug 2026).
+  // Keep the URL shareable: year, open place, view, lens and a chosen
+  // journey survive reload and paste. DEBOUNCED and guarded: iOS Safari
+  // THROWS when replaceState exceeds ~100 calls/30s — the per-tick
+  // writes during fast slider drags were killing the page outright
+  // (mobile crash report, Aug 2026).
   useEffect(() => {
     const timer = setTimeout(() => {
       const params = new URLSearchParams()
       if (year !== DEFAULT_YEAR) params.set('y', String(year))
       if (selected) params.set('c', selected.code)
       if (lens) params.set('g', lens)
+      if (view !== 'globe') params.set('v', view)
+      if (journeyPinned && journeyId) params.set('j', journeyId)
       if (noGlobe) params.set('noglobe', '1')
       const query = params.toString()
       try {
@@ -302,7 +398,7 @@ export function ExploreClient({
       }
     }, 500)
     return () => clearTimeout(timer)
-  }, [year, selected, lens, noGlobe])
+  }, [year, selected, lens, view, journeyPinned, journeyId, noGlobe])
 
   function onSearchResolved(
     result: Exclude<SearchChoice, { kind: 'roster' }>,
@@ -320,8 +416,19 @@ export function ExploreClient({
     })
   }
 
+  /** Turn the globe toward a culture's place, without opening it. */
+  function faceCulture(culture: Culture) {
+    setFocusRequest((current) => ({
+      code: culture.code,
+      name: culture.place,
+      nonce: (current?.nonce ?? 0) + 1,
+      flyOnly: true,
+    }))
+  }
+
   function onGlobeReady(dataSource: DataSource) {
     setSource(dataSource)
+    globeReadyRef.current = true
     // The globe can now fly — honor a deep-linked country exactly once.
     if (pendingCountry.current) {
       setFocusRequest({
@@ -330,134 +437,267 @@ export function ExploreClient({
         nonce: (focusRequest?.nonce ?? 0) + 1,
       })
       pendingCountry.current = null
+    } else if (journeyRef.current) {
+      faceCulture(journeyRef.current)
     }
   }
 
+  /** A culture card, a link or "Another journey": feature it. */
+  function featureCulture(culture: Culture) {
+    setArtist(null)
+    setSelected(null)
+    setJourneyId(culture.id)
+    setJourneyPinned(true)
+    setScrollKey(`j:${culture.id}:${Date.now()}`)
+    if (culture.kind !== 'songs') {
+      tweenYearTo(year, eraYear(culture), () => setPanelYear(eraYear(culture)))
+    }
+    faceCulture(culture)
+  }
+
+  function nextJourney() {
+    if (featuredPool.length === 0) return
+    const at = featuredPool.findIndex((era) => era.id === journeyId)
+    featureCulture(featuredPool[(at + 1) % featuredPool.length])
+  }
+
+  /** "Open on the globe": the place's full panel, at the era's year. */
+  function openCulturePlace(culture: Culture) {
+    if (culture.kind !== 'songs') {
+      const target = eraYear(culture)
+      setYear(target)
+      setPanelYear(target)
+    }
+    setArtist(null)
+    setFocusRequest((current) => ({
+      code: culture.code,
+      name: culture.place,
+      nonce: (current?.nonce ?? 0) + 1,
+    }))
+  }
+
+  function onCountryClick(country: SelectedCountry) {
+    setArtist(null)
+    setSelected(country)
+  }
+
+  const viewHint =
+    view === 'globe'
+      ? 'Drag to spin · scroll to zoom · click a country or search a place'
+      : view === 'map'
+        ? 'Click a country, or search any city, country or artist'
+        : 'Pick a country, or search any city or artist'
+
   return (
-    <div ref={stageRef} className={styles.stage}>
-      <GlobeScene
-        forceFallback={noGlobe}
-        year={year}
-        lens={
-          lens && genreData?.genres[lens]
-            ? { label: lens, countries: genreData.genres[lens] }
-            : null
-        }
-        paused={selected !== null || artist !== null}
-        focusRequest={focusRequest}
-        selected={selected}
-        onDataSourceChange={onGlobeReady}
-        onCountryClick={(country) => {
-          setArtist(null)
-          setSelected(country)
-        }}
-      />
-      <SearchBox onResolved={onSearchResolved} />
-      {/* One tap, one place+year worth landing on. What it does stays
-          a surprise until clicked — the label only names the promise. */}
-      <button
-        type="button"
-        className={styles.surprise}
-        onClick={onSurprise}
-        disabled={surpriseBusy}
-        aria-label="Surprise me — fly somewhere unexpected"
-      >
-        <span
-          className={
-            surpriseBusy ? styles.surpriseMarkSpinning : styles.surpriseMark
-          }
-          aria-hidden="true"
-        >
-          <EarClefMark size={38} />
-        </span>
-        <span className={styles.surpriseLabel}>Surprise me</span>
-      </button>
-      {lens && <GenreStory key={lens} genre={lens} />}
-      <div ref={panelAnchorRef} className={styles.panelAnchor} aria-hidden="true" />
-      {artist && (
-        <ArtistEraPanel
-          key={`${artist.mbid}:${panelYear}`}
-          artist={artist}
-          year={panelYear}
-          onClose={() => setArtist(null)}
-        />
-      )}
-      {selected && !artist && (
-        <CountryPanel
-          key={`${selected.code}:${panelYear}:${lens ?? ''}`}
-          country={selected}
-          year={panelYear}
-          genre={lens}
-          source={source}
-          roster={roster}
-          spotlight={spotlightKey === `${selected.code}:${panelYear}`}
-          onClose={() => setSelected(null)}
-        />
-      )}
-      <div
-        ref={controlsRef}
-        className={`${styles.controls} ${
-          selected || artist ? styles.controlsBehindPanel : ''
-        }`}
-      >
-        {genreData && (
-          <>
-            <button
-              type="button"
-              className={styles.lensToggle}
-              onClick={() => setLensOpen((open) => !open)}
-              aria-expanded={lensOpen}
-            >
-              ♪ {lens ?? 'All music'}
-              <span aria-hidden="true"> {lensOpen ? '▾' : '▸'}</span>
-            </button>
-            <div className={lensOpen ? styles.lensRowOpen : styles.lensRow}>
+    <div className={styles.explore}>
+      <div className={styles.hero}>
+        <p className={styles.overline}>Music without borders</p>
+        <h1 className={styles.title}>Where will music take you?</h1>
+        <p className={styles.subtitle}>
+          Pick a place. Choose an era. Find your next favorite.
+        </p>
+        <div className={styles.searchRow}>
+          <SearchBox
+            onResolved={onSearchResolved}
+            trailing={
+              // One tap, one place+year worth landing on. What it does
+              // stays a surprise until clicked.
               <button
                 type="button"
-                className={
-                  lens === null ? styles.lensPillActive : styles.lensPill
-                }
-                onClick={() => {
-                  setLens(null)
-                  setLensOpen(false)
-                }}
+                className={styles.surprise}
+                onClick={onSurprise}
+                disabled={surpriseBusy}
+                aria-label="Surprise me — fly somewhere unexpected"
               >
-                All music
-              </button>
-              {Object.keys(genreData.genres).map((genre) => (
-                <button
-                  key={genre}
-                  type="button"
-                  className={
-                    lens === genre ? styles.lensPillActive : styles.lensPill
-                  }
-                  onClick={() => {
-                    setLens(isGenreLens(genre) ? genre : null)
-                    setLensOpen(false)
-                  }}
+                <span
+                  className={surpriseBusy ? styles.surpriseIconBusy : undefined}
+                  aria-hidden="true"
                 >
-                  {genre}
-                </button>
-              ))}
-            </div>
-          </>
+                  <Icon name="shuffle" size={18} />
+                </span>
+                <span className={styles.surpriseLabel}>Surprise me</span>
+              </button>
+            }
+          />
+        </div>
+        <div className={styles.viewRow}>
+          <ViewSwitch
+            view={view}
+            onChange={setView}
+            globeUnavailable={globeUnavailable}
+          />
+        </div>
+      </div>
+
+      <div className={styles.view} data-view={view}>
+        <div
+          className={`${styles.globeLayer} ${view === 'globe' ? '' : styles.layerHidden}`}
+          aria-hidden={view !== 'globe' ? true : undefined}
+        >
+          <GlobeScene
+            forceFallback={noGlobe}
+            year={year}
+            lens={
+              lens && genreData?.genres[lens]
+                ? { label: lens, countries: genreData.genres[lens] }
+                : null
+            }
+            paused={selected !== null || artist !== null || highlight !== null}
+            focusRequest={focusRequest}
+            selected={selected}
+            highlight={highlight}
+            hidden={view !== 'globe'}
+            onDataSourceChange={onGlobeReady}
+            onCountryClick={onCountryClick}
+            onUnavailable={() => {
+              setGlobeUnavailable(true)
+              // Hand the visitor the flat map rather than a fallback note.
+              if (!noGlobe) setView((current) => (current === 'globe' ? 'map' : current))
+            }}
+          />
+        </div>
+        {view === 'map' && (
+          <div className={styles.altView}>
+            <FlatMap
+              year={year}
+              selected={selected}
+              highlight={highlight}
+              onCountryClick={onCountryClick}
+              onExpand={() => setMapExpanded(true)}
+            />
+          </div>
         )}
+        {view === 'list' && (
+          <div className={styles.altView}>
+            <CountryList
+              year={year}
+              selected={selected}
+              onCountryClick={onCountryClick}
+            />
+          </div>
+        )}
+        {lens && view !== 'list' && <GenreStory key={lens} genre={lens} />}
+      </div>
+
+      <div ref={controlsRef} className={styles.time}>
         <YearSlider
           year={year}
           min={YEAR_MIN}
           max={YEAR_MAX}
           onChange={setYear}
         />
-        {source && (
-          <p className={styles.source}>
-            {lens
-              ? `${lens} lens — where artists emerged, by decade`
-              : source === 'live'
-                ? 'MusicBrainz release data'
-                : 'Simulated preview data — the real dataset is precomputing'}
+        <div className={styles.timeMeta}>
+          <p className={styles.caption}>
+            {source && (
+              <span>
+                {lens
+                  ? `${lens} lens — where artists emerged, by decade`
+                  : source === 'live'
+                    ? 'MusicBrainz release data'
+                    : 'Simulated preview data — the real dataset is precomputing'}
+              </span>
+            )}
+            <span className={styles.hint}>{viewHint}</span>
           </p>
+          {genreData && (
+            <div className={styles.lens}>
+              <button
+                type="button"
+                className={styles.lensToggle}
+                onClick={() => setLensOpen((open) => !open)}
+                aria-expanded={lensOpen}
+                aria-controls="explore-genre-menu"
+              >
+                Genre: {lens ?? 'All music'}
+                <Icon name="chevronDown" size={14} />
+              </button>
+              <div
+                id="explore-genre-menu"
+                className={styles.lensMenu}
+                hidden={!lensOpen}
+              >
+                <button
+                  type="button"
+                  className={lens === null ? styles.lensPillActive : styles.lensPill}
+                  onClick={() => {
+                    setLens(null)
+                    setLensOpen(false)
+                  }}
+                >
+                  All music
+                </button>
+                {Object.keys(genreData.genres).map((genre) => (
+                  <button
+                    key={genre}
+                    type="button"
+                    className={
+                      lens === genre ? styles.lensPillActive : styles.lensPill
+                    }
+                    onClick={() => {
+                      setLens(isGenreLens(genre) ? genre : null)
+                      setLensOpen(false)
+                    }}
+                  >
+                    {genre}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div ref={panelAnchorRef} className={styles.panelSlot}>
+        {artist ? (
+          <ArtistEraPanel
+            key={`${artist.mbid}:${panelYear}`}
+            artist={artist}
+            year={panelYear}
+            onClose={() => setArtist(null)}
+          />
+        ) : selected ? (
+          <CountryPanel
+            key={`${selected.code}:${panelYear}:${lens ?? ''}`}
+            country={selected}
+            year={panelYear}
+            genre={lens}
+            source={source}
+            roster={roster}
+            spotlight={spotlightKey === `${selected.code}:${panelYear}`}
+            onClose={() => setSelected(null)}
+          />
+        ) : journey ? (
+          <JourneyPanel
+            key={journey.id}
+            culture={journey}
+            onOpenPlace={openCulturePlace}
+            onNext={featuredPool.length > 1 ? nextJourney : undefined}
+          />
+        ) : (
+          <div className={styles.panelPlaceholder} aria-hidden="true" />
         )}
       </div>
+
+      {mapExpanded && view === 'map' && (
+        <MapFullscreen
+          year={year}
+          onYearChange={setYear}
+          selected={selected}
+          highlight={highlight}
+          onCountryClick={onCountryClick}
+          onClose={() => setMapExpanded(false)}
+        />
+      )}
+
+      {cultures.length > 0 && (
+        <div className={styles.cultures}>
+          <MusicCultures
+            cultures={cultures}
+            currentId={!selected && !artist ? journeyId : null}
+            onSelect={featureCulture}
+          />
+        </div>
+      )}
     </div>
   )
 }

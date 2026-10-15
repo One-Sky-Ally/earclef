@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { getArtistBySlug } from '@/lib/content'
 import { getFollowStamps } from '@/lib/fans/followNumbers'
 import { getFanByShareToken } from '@/lib/fans/store'
+import { followTiers } from '@/lib/tiers'
 
 /**
  * A shared taste map, by unguessable token. Public and read-only:
@@ -26,6 +27,7 @@ export async function GET(
   }
 
   const stamps = await getFollowStamps(fan.email, fan.follows)
+  const tiers = followTiers(fan.follows, fan.tiers)
   const artists = fan.follows.flatMap((slug) => {
     const content = getArtistBySlug(slug)
     if (!content) return []
@@ -33,7 +35,7 @@ export async function GET(
       {
         slug,
         name: content.hero.name,
-        tier: fan.tiers?.[slug] ?? null,
+        tier: tiers[slug],
         stamp: stamps[slug] ?? null,
       },
     ]

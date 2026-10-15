@@ -76,7 +76,9 @@ export function bandedHeat(t: number): number {
   return Math.ceil(Math.min(t, 1) * HEAT_BANDS) / HEAT_BANDS
 }
 
-// Ember → deep gold → brand gold → white-gold, all within the site palette.
+// Ember → deep gold → brand gold → white-gold: the globe's original warm
+// look (owner, Oct 14 2026: kept over the greenish Phase 1 ramp). The
+// selection keeps its own coral, a hue this ramp never makes.
 const HEAT_STOPS: { t: number; rgb: [number, number, number]; a: number }[] = [
   { t: 0, rgb: [96, 52, 18], a: 0.22 },
   { t: 0.4, rgb: [201, 127, 26], a: 0.55 },

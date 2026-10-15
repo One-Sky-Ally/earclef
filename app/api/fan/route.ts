@@ -23,13 +23,14 @@ import {
 } from '@/lib/fans/store'
 import { isListenService } from '@/lib/listen/services'
 import { sessionEmail } from '@/lib/membership/session'
-import { isArtistTier } from '@/lib/tiers'
+import { followTiers, isArtistTier } from '@/lib/tiers'
 
 /**
  * The fan profile: who the session cookie belongs to, which artists
  * they follow, their personal tiers, the songs they liked, and the
  * share state. GET reads; POST changes exactly one thing per call
- * (follow, tier, service, share, or a like). Signed-out visitors get an
+ * (follow — optionally with the tier picked for it — tier, service,
+ * share, or a like). Signed-out visitors get an
  * honest {signedIn: false} — the UI offers magic-link sign-in, and
  * likes made while signed out live in the browser until it happens.
  */
@@ -52,7 +53,9 @@ export async function GET(request: Request) {
     signedIn: true,
     email,
     follows,
-    tiers: fan?.tiers ?? {},
+    // Every follow's tier, defaults filled in: a follow the fan never
+    // placed reads as "In the mix" (owner, Oct 14 2026).
+    tiers: followTiers(follows, fan?.tiers),
     likes: fan?.likes ?? [],
     radarDismissed: fan?.radarDismissed ?? [],
     stamps: await getFollowStamps(email, follows),
@@ -174,7 +177,8 @@ export async function POST(request: Request) {
     return noStore({ error: 'Unknown artist' }, 404)
   }
 
-  if (body.tier !== undefined) {
+  // A tier change on its own (no `following` key) re-files a follow.
+  if (body.tier !== undefined && body.following === undefined) {
     if (body.tier !== null && !isArtistTier(body.tier)) {
       return noStore({ error: 'Unknown tier' }, 400)
     }
@@ -186,13 +190,23 @@ export async function POST(request: Request) {
   }
 
   const following = body.following !== false
-  const follows = await setFollow(email, slug, following)
+  // A follow may carry the tier the fan picked for it.
+  if (following && body.tier != null && !isArtistTier(body.tier)) {
+    return noStore({ error: 'Unknown tier' }, 400)
+  }
+  const { follows, tiers } = await setFollow(
+    email,
+    slug,
+    following,
+    isArtistTier(body.tier) ? body.tier : undefined,
+  )
   // First follow mints a permanent number; refollows return the original.
   if (following) await ensureFollowNumber(slug, email)
   return noStore({
     signedIn: true,
     email,
     follows,
+    tiers,
     stamps: await getFollowStamps(email, follows),
   })
 }

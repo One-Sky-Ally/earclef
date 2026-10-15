@@ -1,11 +1,12 @@
 /**
- * Runtime Discogs reader for Discover songs (owner go, Oct 11 2026:
- * "calling Discogs without a token is OK"). UNAUTHENTICATED on purpose —
- * no secret exists for this path, and DISCOGS_TOKEN never reaches
- * Netlify. The public endpoints answer at 25 calls a minute per IP, so
- * calls are spaced and a 429 is waited out ONCE; anything else returns
- * what was gathered so far. The only consumer runs in the daily
- * background function, never on a visitor's request.
+ * Discogs reader for Discover songs. Its one consumer is the LOCAL
+ * stocking run in /refresh-earclef (scripts/discover-stock.mjs), which
+ * passes the owner's DISCOGS_TOKEN from .env.local (owner go, Oct 15
+ * 2026): authenticated calls answer 60 a minute, so they are spaced
+ * ~1 s apart. Without a token (DISCOGS_TOKEN never reaches Netlify)
+ * the public endpoints answer 25 a minute per IP and calls are spaced
+ * 2.5 s. A 429 is waited out ONCE; anything else returns what was
+ * gathered so far. Never runs on a visitor's request.
  *
  * What is read: the artist's release listing (main credits only, newest
  * first — official videos are a recent-decades thing), then up to
@@ -21,6 +22,11 @@ const USER_AGENT = 'EarClefDiscover/0.1 +https://earclef.com'
 const API = 'https://api.discogs.com'
 /** 25 calls/min unauthenticated: one every 2.5 s, with headroom. */
 const CALL_SPACING_MS = 2500
+/** 60 calls/min with a personal token: one every 1.1 s. */
+const TOKEN_SPACING_MS = 1100
+
+/** Read per call, so a script can set it after this module loads. */
+const discogsToken = () => process.env.DISCOGS_TOKEN || null
 const RATE_LIMIT_WAIT_MS = 35_000
 /** Records read per artist: ~11 calls, ~30 s — the per-pick budget. */
 export const MAX_RECORDS = 10
@@ -76,12 +82,17 @@ class DiscogsClient {
 
   async get(path: string): Promise<unknown | null> {
     if (Date.now() > this.deadline) return null
-    const wait = this.lastCallAt + CALL_SPACING_MS - Date.now()
+    const token = discogsToken()
+    const wait = this.lastCallAt + (token ? TOKEN_SPACING_MS : CALL_SPACING_MS) - Date.now()
     if (wait > 0) await sleep(wait)
     this.lastCallAt = Date.now()
     try {
       const res = await fetch(`${API}${path}`, {
-        headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' },
+        headers: {
+          'User-Agent': USER_AGENT,
+          Accept: 'application/json',
+          ...(token ? { Authorization: `Discogs token=${token}` } : {}),
+        },
         signal: AbortSignal.timeout(10_000),
       })
       if (res.status === 429 && !this.rateLimited) {

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import {
+  DEFAULT_FOLLOW_TIER,
   TIER_LABELS,
   TIER_ORDER,
   isArtistTier,
@@ -43,8 +44,8 @@ function sinceLabel(iso: string): string {
 }
 
 /**
- * The fan's own taste map at /me: follows grouped by PERSONAL tier
- * (same vocabulary as the site's rotation levels), permanent first-fan
+ * The fan's own taste map at /me: follows grouped by their OWN tiers
+ * (the same rows the Artists page shows them), permanent first-fan
  * numbers, and an opt-in share link. Everything here is the fan's —
  * separate from the owner Tier Board.
  */
@@ -107,7 +108,8 @@ export function TasteMap({
   }
 
   async function setTier(slug: string, value: string) {
-    const tier = isArtistTier(value) ? value : null
+    if (!isArtistTier(value)) return
+    const tier = value
     try {
       const res = await fetch('/api/fan', {
         method: 'POST',
@@ -134,11 +136,13 @@ export function TasteMap({
       const res = await fetch('/api/fan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slug, following: true }),
+        // An artist found through likes starts where they came from.
+        body: JSON.stringify({ slug, following: true, tier: 'on-the-radar' }),
       })
       if (!res.ok) return
       const body = (await res.json()) as {
         follows?: string[]
+        tiers?: Record<string, ArtistTier>
         stamps?: Record<string, { number: number; since: string }>
       }
       setProfile((current) =>
@@ -146,6 +150,7 @@ export function TasteMap({
           ? {
               ...current,
               follows: body.follows ?? current.follows,
+              tiers: body.tiers ?? current.tiers,
               stamps: body.stamps ?? current.stamps,
             }
           : current,
@@ -250,21 +255,15 @@ export function TasteMap({
     )
   }
 
-  const groups: { tier: ArtistTier | null; label: string; slugs: string[] }[] =
-    [
-      ...TIER_ORDER.map((tier) => ({
-        tier: tier as ArtistTier | null,
-        label: TIER_LABELS[tier],
-        slugs: profile.follows.filter(
-          (slug) => profile.tiers?.[slug] === tier,
-        ),
-      })),
-      {
-        tier: null,
-        label: 'Following',
-        slugs: profile.follows.filter((slug) => !profile.tiers?.[slug]),
-      },
-    ]
+  // Every follow has a tier — the server fills in "In the mix" for any
+  // the fan never placed.
+  const groups = TIER_ORDER.map((tier) => ({
+    tier,
+    label: TIER_LABELS[tier],
+    slugs: profile.follows.filter(
+      (slug) => (profile.tiers?.[slug] ?? DEFAULT_FOLLOW_TIER) === tier,
+    ),
+  }))
 
   const radar = deriveRadar({
     likes,
@@ -378,13 +377,12 @@ export function TasteMap({
                         </div>
                         <select
                           className={styles.tierSelect}
-                          value={profile.tiers?.[slug] ?? ''}
+                          value={profile.tiers?.[slug] ?? DEFAULT_FOLLOW_TIER}
                           onChange={(event) =>
                             setTier(slug, event.target.value)
                           }
                           aria-label={`Your tier for ${names.get(slug) ?? slug}`}
                         >
-                          <option value="">Following</option>
                           {TIER_ORDER.map((tier) => (
                             <option key={tier} value={tier}>
                               {TIER_LABELS[tier]}

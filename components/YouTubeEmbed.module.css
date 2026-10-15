@@ -52,7 +52,7 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(22, 18, 16, 0.82);
+  background: rgba(var(--bg-rgb), 0.82);
   border: 1px solid var(--accent);
   color: var(--accent);
   transition:

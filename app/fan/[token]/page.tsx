@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { getArtistBySlug } from '@/lib/content'
 import { getFollowStamps } from '@/lib/fans/followNumbers'
 import { getFanByShareToken } from '@/lib/fans/store'
-import { TIER_LABELS, TIER_ORDER, type ArtistTier } from '@/lib/tiers'
+import { TIER_LABELS, TIER_ORDER, followTiers } from '@/lib/tiers'
 import { SiteNav } from '@/components/SiteNav'
 import styles from './shared.module.css'
 
@@ -48,6 +48,7 @@ export default async function SharedTasteMapPage(ctx: SharedPageProps) {
   if (!fan) notFound()
 
   const stamps = await getFollowStamps(fan.email, fan.follows)
+  const tiers = followTiers(fan.follows, fan.tiers)
   const rows = fan.follows.flatMap((slug) => {
     const content = getArtistBySlug(slug)
     if (!content) return []
@@ -55,19 +56,16 @@ export default async function SharedTasteMapPage(ctx: SharedPageProps) {
       {
         slug,
         name: content.hero.name,
-        tier: (fan.tiers?.[slug] ?? null) as ArtistTier | null,
+        tier: tiers[slug],
         stamp: stamps[slug] ?? null,
       },
     ]
   })
 
-  const groups = [
-    ...TIER_ORDER.map((tier) => ({
-      label: TIER_LABELS[tier],
-      rows: rows.filter((row) => row.tier === tier),
-    })),
-    { label: 'Following', rows: rows.filter((row) => row.tier === null) },
-  ].filter((group) => group.rows.length > 0)
+  const groups = TIER_ORDER.map((tier) => ({
+    label: TIER_LABELS[tier],
+    rows: rows.filter((row) => row.tier === tier),
+  })).filter((group) => group.rows.length > 0)
 
   const who = fan.displayName || 'A fan'
 

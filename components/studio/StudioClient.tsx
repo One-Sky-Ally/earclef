@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
+import Link from 'next/link'
 import { safeStoredHref, storedHrefKind } from '@/lib/play/storedHref'
 import {
   TIER_LABELS,
@@ -28,7 +29,26 @@ interface StudioData {
   queue: FollowEntry[]
   roster: RosterRow[]
   retierConfigured: boolean
+  /** The fan account signed in on this browser, if any. */
+  account: { email: string; follows: number; claimedAt: string | null } | null
+  /** The account the owner's own Discover picks follow, if linked. */
+  discoverAccount: string | null
+  discoverStock: { sharedReady: number; sharedThrough: string | null; ownerReady: number }
 }
+
+interface ClaimResult {
+  email: string
+  added: number
+  placed: Record<ArtistTier, number>
+  kept: string[]
+  claimedAt: string
+}
+
+type ClaimState =
+  | { kind: 'idle' }
+  | { kind: 'saving' }
+  | { kind: 'done'; result: ClaimResult }
+  | { kind: 'error'; message: string }
 
 type StudioState =
   | { status: 'locked'; error?: string }
@@ -46,6 +66,8 @@ export function StudioClient() {
   const [passcode, setPasscode] = useState('')
   const [rowStatus, setRowStatus] = useState<Record<string, RowStatus>>({})
   const [copiedMbid, setCopiedMbid] = useState<string | null>(null)
+  const [claim, setClaim] = useState<ClaimState>({ kind: 'idle' })
+  const [linkError, setLinkError] = useState<string | null>(null)
 
   const unlock = useCallback(async (key: string) => {
     setState({ status: 'checking' })
@@ -142,6 +164,51 @@ export function StudioClient() {
     }
   }
 
+  async function claimTiers() {
+    if (state.status !== 'ready') return
+    setClaim({ kind: 'saving' })
+    try {
+      const res = await fetch('/api/studio/claim-tiers', {
+        method: 'POST',
+        headers: { 'x-owner-key': state.key },
+      })
+      const body = (await res.json()) as Partial<ClaimResult> & {
+        ok?: boolean
+        error?: string
+      }
+      if (!res.ok || !body.ok) throw new Error(body.error ?? `HTTP ${res.status}`)
+      setClaim({ kind: 'done', result: body as ClaimResult })
+      // The copy also links this account for the owner's Discover picks.
+      setDiscoverAccount(body.email ?? null)
+    } catch (error) {
+      setClaim({ kind: 'error', message: (error as Error).message })
+    }
+  }
+
+  function setDiscoverAccount(email: string | null) {
+    setState((current) =>
+      current.status === 'ready'
+        ? { ...current, data: { ...current.data, discoverAccount: email } }
+        : current,
+    )
+  }
+
+  async function linkAccount() {
+    if (state.status !== 'ready') return
+    setLinkError(null)
+    try {
+      const res = await fetch('/api/studio/owner-account', {
+        method: 'POST',
+        headers: { 'x-owner-key': state.key },
+      })
+      const body = (await res.json()) as { ok?: boolean; email?: string; error?: string }
+      if (!res.ok || !body.ok) throw new Error(body.error ?? `HTTP ${res.status}`)
+      setDiscoverAccount(body.email ?? null)
+    } catch (error) {
+      setLinkError((error as Error).message)
+    }
+  }
+
   if (state.status === 'checking') {
     return <p className={styles.quiet}>Opening the studio…</p>
   }
@@ -173,7 +240,8 @@ export function StudioClient() {
     )
   }
 
-  const { queue, roster, retierConfigured } = state.data
+  const { queue, roster, retierConfigured, account, discoverAccount, discoverStock } = state.data
+  const nameOf = new Map(roster.map((row) => [row.slug, row.name]))
   const groups: { tier: ArtistTier | null; rows: RosterRow[] }[] = [
     ...TIER_ORDER.map((tier) => ({
       tier: tier as ArtistTier | null,
@@ -274,10 +342,104 @@ export function StudioClient() {
         <StoriesPanel ownerKey={state.key} />
       </section>
 
+      <section aria-labelledby="claim-heading">
+        <h2 id="claim-heading" className={styles.heading}>
+          Your rotation groups → your account
+        </h2>
+        <p className={styles.lead}>
+          Visitors no longer see these groups: the Artists page shows them a
+          random mix, and signed-in listeners see their own rows. To keep
+          yours, copy them into your fan account — the one signed in on this
+          browser. Safe to repeat: nothing you already follow is removed, and
+          a tier you already chose in your account is kept.
+        </p>
+        {!account ? (
+          <p className={styles.quiet}>
+            No fan account is signed in on this browser.{' '}
+            <Link className={styles.inlineLink} href="/me">
+              Sign in on My Taste Map
+            </Link>
+            , then come back here.
+          </p>
+        ) : (
+          <>
+            <p className={styles.quiet}>
+              Signed in as {account.email} · following {account.follows}
+              {account.claimedAt &&
+                ` · groups copied ${account.claimedAt.slice(0, 10)}`}
+            </p>
+            <button
+              type="button"
+              className={styles.claim}
+              onClick={claimTiers}
+              disabled={claim.kind === 'saving'}
+            >
+              {claim.kind === 'saving'
+                ? 'Copying…'
+                : account.claimedAt || claim.kind === 'done'
+                  ? 'Copy them again'
+                  : `Copy my ${roster.filter((row) => row.tier).length} artists into my account`}
+            </button>
+          </>
+        )}
+        {claim.kind === 'done' && (
+          <p className={styles.claimDone} role="status">
+            Done — {claim.result.added} new follows.{' '}
+            {TIER_ORDER.filter((tier) => claim.result.placed[tier] > 0)
+              .map((tier) => `${TIER_LABELS[tier]}: ${claim.result.placed[tier]}`)
+              .join(' · ') || 'Every tier already matched'}
+            .
+            {claim.result.kept.length > 0 &&
+              ` Kept your own tier for ${claim.result.kept
+                .map((slug) => nameOf.get(slug) ?? slug)
+                .join(', ')}.`}{' '}
+            <Link className={styles.inlineLink} href="/artists">
+              See your rows →
+            </Link>
+          </p>
+        )}
+        {claim.kind === 'error' && (
+          <p className={styles.statusError} role="alert">
+            {claim.message}
+          </p>
+        )}
+        <p className={`${styles.lead} ${styles.discoverNote}`}>
+          <strong>Discover picks</strong> are stocked during /refresh-earclef —
+          no paid model calls. Shared picks:{' '}
+          {discoverStock.sharedReady > 0
+            ? `${discoverStock.sharedReady} more days ready (through ${discoverStock.sharedThrough}).`
+            : 'none ahead — visitors see earlier sets from the archive until the next refresh.'}{' '}
+          Your own sets of 8:{' '}
+          {discoverStock.ownerReady > 0
+            ? `${discoverStock.ownerReady} ready.`
+            : 'none ready — you see the shared picks until the next refresh.'}{' '}
+          Your sets are written from{' '}
+          {discoverAccount
+            ? `the rows in ${discoverAccount} (your original site-wide tiers stand in while it has fewer than 3 artists in Heavy rotation and In the mix).`
+            : 'your original site-wide tiers until you link an account — copying your groups links it.'}
+        </p>
+        {account && account.email !== discoverAccount && (
+          <button type="button" className={styles.claim} onClick={linkAccount}>
+            Use {account.email} for my Discover picks
+          </button>
+        )}
+        {linkError && (
+          <p className={styles.statusError} role="alert">
+            {linkError}
+          </p>
+        )}
+      </section>
+
       <section aria-labelledby="tiers-heading">
         <h2 id="tiers-heading" className={styles.heading}>
-          Tier board
+          Site tier board
         </h2>
+        <p className={styles.lead}>
+          The original site-wide copy. It no longer shapes what visitors see,
+          and it stands in for your own Discover sets only while no account
+          is linked. Your own rows live in your account: change them with the
+          Follow button on any artist page, or on My Taste Map.
+        </p>
         {!retierConfigured && (
           <p className={styles.quiet}>
             Read-only for now — add a GITHUB_CONTENT_TOKEN to Netlify to

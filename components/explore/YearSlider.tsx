@@ -20,8 +20,18 @@ interface YearSliderProps {
  */
 const COMMIT_THROTTLE_MS = 160
 
+/** Wall clock for the throttle — read only from event handlers. */
+const clock = () => Date.now()
+
+/**
+ * The thin decade slider from the preferred Explore design: one line,
+ * a dot per decade, a circular handle. The decade marks are landmarks
+ * only — every single year from `min` to `max` stays selectable, by
+ * drag, arrow keys, or the year field beside it.
+ */
 export function YearSlider({ year, min, max, onChange }: YearSliderProps) {
   const [localYear, setLocalYear] = useState(year)
+  const [draft, setDraft] = useState<string | null>(null)
   const lastSentAt = useRef(0)
   const lastSentValue = useRef(year)
   const pending = useRef<number | null>(null)
@@ -34,7 +44,7 @@ export function YearSlider({ year, min, max, onChange }: YearSliderProps) {
   // prop change landing hot on the heels of a send is treated as an
   // echo; genuinely external changes never race a live drag.
   useEffect(() => {
-    const sinceSend = Date.now() - lastSentAt.current
+    const sinceSend = clock() - lastSentAt.current
     if (year !== lastSentValue.current && sinceSend > 600) {
       lastSentValue.current = year
       setLocalYear(year)
@@ -49,14 +59,14 @@ export function YearSlider({ year, min, max, onChange }: YearSliderProps) {
   )
 
   function send(value: number) {
-    lastSentAt.current = Date.now()
+    lastSentAt.current = clock()
     lastSentValue.current = value
     onChange(value)
   }
 
   function handleInput(value: number) {
     setLocalYear(value)
-    const elapsed = Date.now() - lastSentAt.current
+    const elapsed = clock() - lastSentAt.current
     if (elapsed >= COMMIT_THROTTLE_MS) {
       send(value)
       return
@@ -85,34 +95,103 @@ export function YearSlider({ year, min, max, onChange }: YearSliderProps) {
     }
   }
 
-  const pct = ((localYear - min) / (max - min)) * 100
-  const fillVars = {
-    '--fill-start': '0%',
-    '--fill-end': `${pct}%`,
-  } as CSSProperties
+  /** A precise year, typed: lands at once, or reverts if out of range. */
+  function commitDraft() {
+    if (draft === null) return
+    const value = Number(draft)
+    setDraft(null)
+    if (!Number.isInteger(value) || value < min || value > max) return
+    if (timer.current) {
+      clearTimeout(timer.current)
+      timer.current = null
+    }
+    pending.current = null
+    setLocalYear(value)
+    send(value)
+  }
+
+  function jumpTo(value: number) {
+    const clamped = Math.min(max, Math.max(min, value))
+    setLocalYear(clamped)
+    send(clamped)
+  }
+
+  const span = max - min
+  const position = (value: number) => `${((value - min) / span) * 100}%`
+  const decades: number[] = []
+  for (let decade = Math.ceil(min / 10) * 10; decade <= max; decade += 10) {
+    decades.push(decade)
+  }
+  const activeDecade = Math.floor(localYear / 10) * 10
+  const fill = { '--fill': position(localYear) } as CSSProperties
 
   return (
     <div className={styles.wrapper}>
-      <output className={styles.readout}>{localYear}</output>
-      <div className={styles.track} style={fillVars}>
+      <label className={styles.yearField}>
+        <span className={styles.yearLabel}>Year</span>
         <input
-          className={styles.range}
-          type="range"
+          className={styles.yearInput}
+          type="number"
+          inputMode="numeric"
           min={min}
           max={max}
-          step={1}
-          value={localYear}
-          aria-label="Year"
-          onChange={(event) => handleInput(Number(event.target.value))}
-          onPointerUp={commit}
-          onTouchEnd={commit}
-          onKeyUp={commit}
-          onBlur={commit}
+          value={draft ?? String(localYear)}
+          aria-label={`Year, ${min} to ${max}`}
+          onChange={(event) => setDraft(event.target.value)}
+          onBlur={commitDraft}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter') {
+              event.preventDefault()
+              commitDraft()
+            } else if (event.key === 'Escape') {
+              setDraft(null)
+            }
+          }}
         />
-      </div>
-      <div className={styles.bounds} aria-hidden="true">
-        <span>{min}</span>
-        <span>{max}</span>
+      </label>
+      <div className={styles.rail}>
+        <div className={styles.track} style={fill}>
+          <div className={styles.line} aria-hidden="true" />
+          <div className={styles.ticks} aria-hidden="true">
+            {decades.map((decade) => (
+              <span
+                key={decade}
+                className={`${styles.tick} ${decade === activeDecade ? styles.tickActive : ''}`}
+                style={{ left: position(decade) }}
+              />
+            ))}
+          </div>
+          <input
+            className={styles.range}
+            type="range"
+            min={min}
+            max={max}
+            step={1}
+            value={localYear}
+            aria-label="Year"
+            aria-valuetext={`${localYear}`}
+            onChange={(event) => handleInput(Number(event.target.value))}
+            onPointerUp={commit}
+            onTouchEnd={commit}
+            onKeyUp={commit}
+            onBlur={commit}
+          />
+        </div>
+        <div className={styles.labels}>
+          {decades.map((decade, index) => (
+            <button
+              key={decade}
+              type="button"
+              tabIndex={-1}
+              className={`${styles.label} ${index % 2 === 1 ? styles.labelMinor : ''} ${decade === activeDecade ? styles.labelActive : ''}`}
+              style={{ left: position(decade) }}
+              onClick={() => jumpTo(decade)}
+              aria-label={`Jump to ${decade}`}
+            >
+              {decade}s
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   )

@@ -1,6 +1,13 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
+import {
+  DEFAULT_FOLLOW_TIER,
+  TIER_HINTS,
+  TIER_LABELS,
+  TIER_ORDER,
+  type ArtistTier,
+} from '@/lib/tiers'
 import styles from './FollowButton.module.css'
 
 interface FollowButtonProps {
@@ -12,6 +19,7 @@ interface FanProfile {
   signedIn: boolean
   email?: string
   follows: string[]
+  tiers?: Record<string, ArtistTier>
   stamps?: Record<string, { number: number; since: string }>
 }
 
@@ -28,16 +36,25 @@ type SignInState =
   | { status: 'sending' }
   | { status: 'sent'; devLink?: string }
 
+/** Keeps the chooser inside the screen's 16px gutter. */
+const GUTTER = 16
+
 /**
- * Follow an artist with the site-wide fan identity. Signed-out visitors
- * get an inline magic-link form; signed-in fans get a one-click toggle
- * that feeds the /feed "Following" filter.
+ * Follow an artist with the site-wide fan identity. Following means
+ * choosing a row for them — Heavy rotation, In the mix or On the radar —
+ * and the same control moves them later or unfollows. Signed-out
+ * visitors get an inline magic-link form first.
  */
 export function FollowButton({ slug, artistName }: FollowButtonProps) {
   const [profile, setProfile] = useState<FanProfile | null>(null)
   const [busy, setBusy] = useState(false)
+  const [open, setOpen] = useState(false)
   const [signIn, setSignIn] = useState<SignInState>({ status: 'closed' })
   const [email, setEmail] = useState('')
+  const wrapRef = useRef<HTMLDivElement>(null)
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const chooserRef = useRef<HTMLDivElement>(null)
+  const chooserId = useId()
 
   useEffect(() => {
     let cancelled = false
@@ -56,24 +73,80 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
     }
   }, [])
 
-  const following = profile?.follows.includes(slug) ?? false
+  // Outside click or Esc closes the chooser; Esc hands focus back.
+  useEffect(() => {
+    if (!open) return
+    function onPointer(event: PointerEvent) {
+      if (!wrapRef.current?.contains(event.target as Node)) setOpen(false)
+    }
+    function onKey(event: KeyboardEvent) {
+      if (event.key !== 'Escape') return
+      setOpen(false)
+      buttonRef.current?.focus()
+    }
+    document.addEventListener('pointerdown', onPointer)
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.removeEventListener('pointerdown', onPointer)
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [open])
 
-  async function toggle() {
+  // Opened near the right edge of a phone, the chooser slides left
+  // rather than pushing the page sideways.
+  useLayoutEffect(() => {
+    const chooser = chooserRef.current
+    if (!open || !chooser) return
+    const overflow =
+      chooser.getBoundingClientRect().right - (window.innerWidth - GUTTER)
+    chooser.style.transform = overflow > 0 ? `translateX(${-overflow}px)` : ''
+    chooser
+      .querySelector<HTMLButtonElement>('[aria-pressed="true"], button')
+      ?.focus()
+  }, [open])
+
+  const following = profile?.follows.includes(slug) ?? false
+  const tier = following ? (profile?.tiers?.[slug] ?? DEFAULT_FOLLOW_TIER) : null
+
+  function onButton() {
     if (!profile) return
     if (!profile.signedIn) {
       setSignIn({ status: 'open' })
       return
     }
+    setOpen((current) => !current)
+  }
+
+  async function save(body: { following: boolean; tier?: ArtistTier }) {
     setBusy(true)
     try {
       const res = await fetch('/api/fan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slug, following: !following }),
+        body: JSON.stringify(
+          // Moving a followed artist is a tier change; anything else is a
+          // follow (with the chosen tier) or an unfollow.
+          following && body.following && body.tier
+            ? { slug, tier: body.tier }
+            : { slug, ...body },
+        ),
       })
-      if (res.ok) setProfile((await res.json()) as FanProfile)
+      if (!res.ok) return
+      const next = (await res.json()) as Partial<FanProfile>
+      setProfile((current) =>
+        current
+          ? {
+              ...current,
+              follows: next.follows ?? current.follows,
+              tiers: next.tiers ?? current.tiers,
+              stamps: next.stamps ?? current.stamps,
+            }
+          : current,
+      )
+      setOpen(false)
+      buttonRef.current?.focus()
     } catch (error) {
-      console.error('Follow toggle failed:', error)
+      console.error('Follow update failed:', error)
     } finally {
       setBusy(false)
     }
@@ -105,15 +178,74 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
   const stamp = profile.stamps?.[slug]
 
   return (
-    <div className={styles.wrap}>
+    <div className={styles.wrap} ref={wrapRef}>
       <button
+        ref={buttonRef}
         type="button"
         className={following ? styles.following : styles.follow}
-        onClick={toggle}
+        onClick={onButton}
         disabled={busy || signIn.status === 'sending'}
+        aria-expanded={profile.signedIn ? open : undefined}
+        aria-controls={profile.signedIn && open ? chooserId : undefined}
+        aria-label={
+          tier ? `Following ${artistName}, in ${TIER_LABELS[tier]}. Change` : undefined
+        }
       >
-        {following ? '♥ Following' : '♡ Follow'}
+        {tier ? `♥ ${TIER_LABELS[tier]}` : '♡ Follow'}
+        {profile.signedIn && (
+          <span className={styles.caret} aria-hidden="true">
+            ▾
+          </span>
+        )}
       </button>
+
+      {open && profile.signedIn && (
+        <div
+          id={chooserId}
+          ref={chooserRef}
+          className={styles.chooser}
+          role="group"
+          aria-label={tier ? `Move ${artistName} to` : `Follow ${artistName} in`}
+        >
+          <p className={styles.chooserTitle}>
+            {tier ? 'Move to' : `Follow ${artistName} in`}
+          </p>
+          {TIER_ORDER.map((choice) => (
+            <button
+              key={choice}
+              type="button"
+              className={styles.option}
+              aria-pressed={choice === tier}
+              disabled={busy}
+              onClick={() =>
+                choice === tier
+                  ? setOpen(false)
+                  : save({ following: true, tier: choice })
+              }
+            >
+              <span className={styles.optionLabel}>
+                {TIER_LABELS[choice]}
+                {choice === tier && <span className={styles.check}> ✓</span>}
+              </span>
+              <span className={styles.optionHint}>{TIER_HINTS[choice]}</span>
+            </button>
+          ))}
+          {tier && (
+            <button
+              type="button"
+              className={styles.unfollow}
+              disabled={busy}
+              onClick={() => save({ following: false })}
+            >
+              Unfollow
+            </button>
+          )}
+          <p className={styles.chooserNote}>
+            Your rows show on the Artists page and filter your Feed.
+          </p>
+        </div>
+      )}
+
       {following && stamp && (
         <p className={styles.stamp}>
           You&rsquo;re fan&nbsp;
@@ -140,7 +272,9 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
             <form className={styles.form} onSubmit={requestLink}>
               <p className={styles.note}>
                 Follow {artistName} with just your email — a sign-in link,
-                no password, no account to manage.
+                no password, no account to manage. Once you&rsquo;re in, pick
+                the row they belong in: Heavy rotation, In the mix or On the
+                radar.
               </p>
               <div className={styles.formRow}>
                 <input

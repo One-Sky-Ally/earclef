@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import { getAllArtists } from '@/lib/content'
 import { presenceFromContent } from '@/lib/listen/services'
 import { SiteNav } from '@/components/SiteNav'
-import { EarClefMark } from '@/components/EarClefMark'
+import { SiteFooterSimple } from '@/components/SiteFooterSimple'
 import { FeedClient, type RosterEntry } from '@/components/feed/FeedClient'
 import styles from './feed.module.css'
 
 export const metadata: Metadata = {
-  title: 'Latest — Ear Clef',
+  title: 'Feed — Ear Clef',
   description:
     'The music-only feed: new releases and videos from every artist on the Ear Clef roster, newest first.',
 }
@@ -19,7 +19,6 @@ export default function FeedPage() {
     mbid: artist.integrations.setlistfm.mbid || undefined,
     channelId: artist.integrations.youtube.channelId || undefined,
     itunesId: artist.integrations.itunes?.artistId || undefined,
-    tier: artist.tier,
     presence: presenceFromContent(artist),
   }))
 
@@ -27,9 +26,8 @@ export default function FeedPage() {
     <>
       <SiteNav showSections={false} />
       <main className={styles.main}>
-        <div className="container">
-          <p className={styles.overline}>The music-only feed</p>
-          <h1 className={styles.title}>Latest</h1>
+        <div className={styles.column}>
+          <h1 className={styles.title}>Feed</h1>
           <p className={styles.subtitle}>
             New releases and videos from the whole roster, newest first.
             Descriptions are original Ear Clef summaries written from public
@@ -38,10 +36,7 @@ export default function FeedPage() {
           <FeedClient roster={roster} />
         </div>
       </main>
-      <footer className={styles.footer}>
-        <EarClefMark size={30} label="Ear Clef" />
-        <p>Music in balance</p>
-      </footer>
+      <SiteFooterSimple />
     </>
   )
 }
