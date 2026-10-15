@@ -29,6 +29,8 @@ interface DiscoverPick {
   song: DiscoverSong | null
   /** The artist's own Bandcamp page, kept under the player (owner, Oct 11 2026). */
   bandcamp: string | null
+  /** For a signed-in listener: the artists in their rows this pick connects to. */
+  because?: string[]
 }
 
 const SONG_KIND_LABELS: Record<SongKind, string> = {
@@ -76,12 +78,22 @@ type DiscoverState =
   | { status: 'loading' }
   | { status: 'hidden' }
   | { status: 'warming' }
-  /** `own`: the owner's own picks, on the owner's view only. */
-  | { status: 'ready'; picks: DiscoverPick[]; own: boolean }
+  /**
+   * own: the owner's own picks (owner view only); mine: a signed-in
+   * listener's picks matched to their rows, `matched` of them, then
+   * shared ones; shared: the same picks everyone sees.
+   */
+  | { status: 'ready'; picks: DiscoverPick[]; mode: 'own' | 'mine' | 'shared'; matched?: number }
 
 interface PoolBody {
   status: 'ready' | 'warming' | 'disabled' | 'none'
   pool?: { picks: Partial<DiscoverPick>[] }
+}
+
+interface MineBody {
+  status: 'ready' | 'visitor' | 'no-follows' | 'none' | 'no-matches'
+  matched?: number
+  picks?: Partial<DiscoverPick>[]
 }
 
 
@@ -105,6 +117,9 @@ function normalizePick(pick: Partial<DiscoverPick>): DiscoverPick[] {
       listenHref: pick.play?.url ?? pick.read?.url ?? mbUrl,
       song: songOf(pick.song),
       bandcamp: bandcampOf(pick),
+      because: Array.isArray(pick.because)
+        ? pick.because.filter((name): name is string => typeof name === 'string')
+        : undefined,
     },
   ]
 }
@@ -115,35 +130,50 @@ export function DiscoverSection() {
   const [queuedMbids, setQueuedMbids] = useState<Set<string>>(new Set())
 
   // The owner's view shows the owner's own picks (from their rows) when
-  // tonight's run has made them; everyone else — and the owner until
-  // then — gets the shared picks, drawn from the whole roster.
+  // they exist; a signed-in listener gets the week's shared picks that
+  // connect to their rows; everyone else — and anyone with no match —
+  // gets today's shared picks, drawn from the whole roster.
   useEffect(() => {
     const controller = new AbortController()
     const signal = controller.signal
-    const load = (url: string, init?: RequestInit) =>
+    const load = <T,>(url: string, init?: RequestInit) =>
       fetch(url, { ...init, signal }).then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        return res.json() as Promise<PoolBody>
+        return res.json() as Promise<T>
       })
     ;(async () => {
       const key = getOwnerKey()
       if (key) {
         try {
-          const own = await load('/api/discover/owner', {
+          const own = await load<PoolBody>('/api/discover/owner', {
             headers: { 'x-owner-key': key },
           })
           if (own.status === 'ready' && own.pool) {
-            setState({ status: 'ready', picks: own.pool.picks.flatMap(normalizePick), own: true })
+            setState({ status: 'ready', picks: own.pool.picks.flatMap(normalizePick), mode: 'own' })
             return
           }
         } catch {
-          // Fall through to the shared picks.
+          // Fall through to the listener's or the shared picks.
         }
       }
       try {
-        const body = await load('/api/discover')
+        const mine = await load<MineBody>('/api/discover/mine')
+        if (mine.status === 'ready' && mine.picks && (mine.matched ?? 0) > 0) {
+          setState({
+            status: 'ready',
+            picks: mine.picks.flatMap(normalizePick),
+            mode: 'mine',
+            matched: mine.matched,
+          })
+          return
+        }
+      } catch {
+        // Fall through to the shared picks.
+      }
+      try {
+        const body = await load<PoolBody>('/api/discover')
         if (body.status === 'ready' && body.pool) {
-          setState({ status: 'ready', picks: body.pool.picks.flatMap(normalizePick), own: false })
+          setState({ status: 'ready', picks: body.pool.picks.flatMap(normalizePick), mode: 'shared' })
         } else if (body.status === 'warming') {
           setState({ status: 'warming' })
         } else {
@@ -206,9 +236,11 @@ export function DiscoverSection() {
 
   // Said plainly: whose taste the picks come from.
   const note =
-    state.status === 'ready' && state.own
-      ? 'Your own picks — artists not on Ear Clef yet, chosen each day from your rows and verified real on MusicBrainz. Only you see these; visitors get the shared picks.'
-      : 'Today’s picks for everyone — artists not on Ear Clef yet, chosen each day from the whole roster and verified real on MusicBrainz. Not personalised yet.'
+    state.status === 'ready' && state.mode === 'own'
+      ? 'Your own picks — artists not on Ear Clef yet, chosen from your rows and verified real on MusicBrainz. Only you see these; visitors get the shared picks.'
+      : state.status === 'ready' && state.mode === 'mine'
+        ? `${state.matched} ${state.matched === 1 ? 'pick connects' : 'picks connect'} to artists in your rows — from this week’s shared picks, artists not on Ear Clef yet and verified real on MusicBrainz${(state.matched ?? 0) < state.picks.length ? '; the rest are today’s picks for everyone' : ''}.`
+        : 'Today’s picks for everyone — artists not on Ear Clef yet, chosen each day from the whole roster and verified real on MusicBrainz. Not personalised yet.'
 
   if (state.status !== 'ready') {
     return (
@@ -237,6 +269,11 @@ export function DiscoverSection() {
           node: (
             <div className={styles.card}>
               <span className={styles.name}>{pick.name}</span>
+              {pick.because && pick.because.length > 0 && (
+                <span className={styles.because}>
+                  Because you follow {pick.because.join(' and ')}
+                </span>
+              )}
               <span className={styles.why}>{pick.why}</span>
               {pick.song ? (
                 // A verified song plays here, on the site. The Bandcamp

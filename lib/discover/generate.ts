@@ -47,20 +47,54 @@ export interface DiscoverPick {
   song: DiscoverSong | null
   /** The artist's MB-linked Bandcamp page, whatever `play` picked. */
   bandcamp: string | null
+  /**
+   * Roster slugs (1–3) whose fans this pick is for — checked against the
+   * roster, never matched by name. Listeners get the shared picks that
+   * connect to artists in their rows (./match). Absent on older pools.
+   */
+  connectsTo?: string[]
+}
+
+/** What one generation run cost, from the API's own token counts. */
+export interface PoolUsage {
+  model: string
+  inputTokens: number
+  outputTokens: number
+  /** USD at the model's standard rates (no batch or cache discount). */
+  costUsd: number
 }
 
 export interface DiscoverPool {
   date: string
   picks: DiscoverPick[]
+  usage?: PoolUsage
 }
 
 interface RawPick {
   name: string
   why: string
   knownFor: string
+  connectsTo: string[]
 }
 
-const POOL_SIZE = 12
+/**
+ * Picks asked for per pool. The shared set is the bigger one: visitors
+ * see its first VISITOR_PICKS, and each signed-in listener gets the ones
+ * that connect to their rows (owner, Oct 15 2026: "one bigger shared set
+ * daily, each listener sees the picks matching their rows").
+ */
+export const POOL_SIZES = { shared: 24, owner: 12 } as const
+export const VISITOR_PICKS = 12
+
+const MODEL = 'claude-opus-4-8'
+/** USD per million tokens, from the Pricing page (fetched Oct 15 2026). */
+const RATES = { input: 5, output: 25 }
+/**
+ * Hard stop for the whole run, model call included: the background
+ * function is killed at 15 minutes, and a killed run writes no pool.
+ * Picks not reached by then are skipped, never half-written.
+ */
+const RUN_BUDGET_MS = 13 * 60 * 1000
 /**
  * Wall-clock budget for song resolution across the pool (Discogs at 25
  * calls/min, ~30 s a pick). The background function has 15 minutes;
@@ -88,8 +122,14 @@ const PICKS_SCHEMA = {
             type: 'string',
             description: 'One representative album or song title',
           },
+          connectsTo: {
+            type: 'array',
+            items: { type: 'string' },
+            description:
+              'One to three roster slugs (the [bracketed] ids in the list) whose fans this pick is for, the strongest link first',
+          },
         },
-        required: ['name', 'why', 'knownFor'],
+        required: ['name', 'why', 'knownFor', 'connectsTo'],
         additionalProperties: false,
       },
     },
@@ -110,11 +150,22 @@ function normalize(name: string): string {
 const ROSTER_KEYS = new Set(
   roster.flatMap((artist) => [normalize(artist.name), normalize(artist.slug)]),
 )
+const ROSTER_SLUGS = new Set(roster.map((artist) => artist.slug))
 
-async function callClaude(prompt: string): Promise<RawPick[]> {
+/** Only real roster slugs, at most three, in the model's order. */
+function rosterLinks(slugs: unknown): string[] {
+  if (!Array.isArray(slugs)) return []
+  return [...new Set(slugs.filter((slug): slug is string => typeof slug === 'string'))]
+    .filter((slug) => ROSTER_SLUGS.has(slug))
+    .slice(0, 3)
+}
+
+async function callClaude(
+  prompt: string,
+): Promise<{ picks: RawPick[]; usage: PoolUsage }> {
   const client = new Anthropic()
   const response = await client.messages.create({
-    model: 'claude-opus-4-8',
+    model: MODEL,
     max_tokens: 8000,
     thinking: { type: 'adaptive' },
     output_config: { format: { type: 'json_schema', schema: PICKS_SCHEMA } },
@@ -129,7 +180,16 @@ async function callClaude(prompt: string): Promise<RawPick[]> {
     throw new Error('No text block in model response')
   }
   const parsed = JSON.parse(text.text) as { picks: RawPick[] }
-  return parsed.picks
+  // Thinking is billed as output, so output_tokens covers it.
+  const inputTokens = response.usage.input_tokens
+  const outputTokens = response.usage.output_tokens
+  const usage: PoolUsage = {
+    model: MODEL,
+    inputTokens,
+    outputTokens,
+    costUsd: (inputTokens * RATES.input + outputTokens * RATES.output) / 1_000_000,
+  }
+  return { picks: parsed.picks, usage }
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
@@ -259,15 +319,20 @@ export async function generatePool(
   date: string,
   recentNames: string[],
   library: DiscoverLibrary,
+  size: number,
 ): Promise<DiscoverPool> {
-  const raw = await callClaude(buildPrompt(date, recentNames, library, POOL_SIZE))
+  const runDeadline = Date.now() + RUN_BUDGET_MS
+  const { picks: raw, usage } = await callClaude(
+    buildPrompt(date, recentNames, library, size),
+  )
 
   const recentKeys = new Set(recentNames.map(normalize))
   const seen = new Set<string>()
   const picks: DiscoverPick[] = []
-  const songDeadline = Date.now() + SONG_BUDGET_MS
+  const songDeadline = Math.min(Date.now() + SONG_BUDGET_MS, runDeadline)
 
   for (const pick of raw) {
+    if (Date.now() > runDeadline) break // out of time: keep what's verified
     const key = normalize(pick.name)
     if (!key || ROSTER_KEYS.has(key) || recentKeys.has(key) || seen.has(key)) {
       continue
@@ -306,11 +371,12 @@ export async function generatePool(
       listenHref: play?.url ?? read?.url ?? `https://musicbrainz.org/artist/${match.mbid}`,
       song,
       bandcamp: bandcampRel(artist?.relations),
+      connectsTo: rosterLinks(pick.connectsTo),
     })
   }
 
   if (picks.length < 3) {
     throw new Error(`Only ${picks.length} picks survived verification`)
   }
-  return { date, picks }
+  return { date, picks, usage }
 }

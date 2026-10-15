@@ -9,6 +9,8 @@
  */
 
 export interface LibraryArtist {
+  /** Roster id, shown in [brackets] so picks can name it in connectsTo. */
+  slug: string
   name: string
   identity: string
 }
@@ -24,9 +26,7 @@ export type DiscoverLibrary =
       roster: string[]
     }
 
-interface RosterEntry extends LibraryArtist {
-  slug: string
-}
+type RosterEntry = LibraryArtist
 
 /**
  * A listener's rows from their slug → tier map, as prompt input. Slugs
@@ -42,7 +42,9 @@ export function rowsLibrary(
       .filter(([, value]) => value === tier)
       .flatMap(([slug]) => {
         const artist = bySlug.get(slug)
-        return artist ? [{ name: artist.name, identity: artist.identity }] : []
+        return artist
+          ? [{ slug: artist.slug, name: artist.name, identity: artist.identity }]
+          : []
       })
       .sort((a, b) => a.name.localeCompare(b.name))
   return {
@@ -55,11 +57,14 @@ export function rowsLibrary(
 }
 
 const lines = (artists: LibraryArtist[]) =>
-  artists.map((artist) => `- ${artist.name} — ${artist.identity}`).join('\n')
+  artists
+    .map((artist) => `- ${artist.name} [${artist.slug}] — ${artist.identity}`)
+    .join('\n')
 
 const RULES_COMMON = (poolSize: number, avoid: string[]) => `- Also avoid these recently recommended artists: ${avoid.length > 0 ? avoid.join(', ') : '(none yet)'}
 - Only real artists you are confident exist, with the name exactly as credited on releases (they will be verified against MusicBrainz; invented or misspelled names get discarded).
 - "knownFor" is one real album or song title by that artist.
+- "connectsTo" lists one to three [bracketed] ids from the list above whose fans the pick is for, strongest first — copy the ids exactly.
 - Return exactly ${poolSize} picks.`
 
 export function buildPrompt(
@@ -69,14 +74,15 @@ export function buildPrompt(
   poolSize: number,
 ): string {
   if (library.kind === 'roster') {
-    return `You are the resident ear at Ear Clef, a small curated music site. Today is ${date}. Recommend ${poolSize} artists for today's shared Discover section — the same picks every visitor sees.
+    return `You are the resident ear at Ear Clef, a small curated music site. Today is ${date}. Recommend ${poolSize} artists for today's shared Discover set: visitors see the first ${Math.min(12, poolSize)}, and each signed-in listener sees the ones connected to artists they follow.
 
 Every artist on Ear Clef:
 
 ${lines(library.artists)}
 
 Rules:
-- Draw on the WHOLE roster, not anyone's favourites: spread the picks across its range — different places, eras and styles — and never cluster around a few artists.
+- Draw on the WHOLE roster, not anyone's favourites: spread the picks across its range — different places, eras and styles — and never cluster around a few artists. Listeners are shown the picks that connect to artists they follow, so cover as much of the roster as you can.
+- Order the picks so the first ${Math.min(12, poolSize)} alone already span the roster's range: visitors see those.
 - Recommend artists someone exploring this roster would love but has plausibly never tracked down — genuinely lesser-known discoveries, not obvious adjacent stars.
 - NEVER recommend anyone already on Ear Clef (the list above).
 - "why" must name the roster artist it connects to and be specific about the musical link, in one sentence.

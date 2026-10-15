@@ -11,7 +11,7 @@
  * another invocation holds its generation lock, it exits immediately —
  * spam against this endpoint can't stack model calls.
  */
-import { generatePool } from '../../lib/discover/generate'
+import { POOL_SIZES, generatePool } from '../../lib/discover/generate'
 import { ownerLibrary, sharedLibrary, type PoolKind } from '../../lib/discover/library'
 import {
   appendHistory,
@@ -38,12 +38,20 @@ export default async function handler(request: Request): Promise<Response> {
       kind === 'owner'
         ? await ownerLibrary()
         : { library: sharedLibrary(), source: 'roster' }
-    const pool = await generatePool(today, await readRecentNames(today, kind), library)
+    const pool = await generatePool(
+      today,
+      await readRecentNames(today, kind),
+      library,
+      POOL_SIZES[kind],
+    )
     await writePool(pool, kind)
     await appendHistory(pool, kind)
     const withSongs = pool.picks.filter((pick) => pick.song !== null).length
+    const cost = pool.usage
+      ? ` · ${pool.usage.inputTokens} in / ${pool.usage.outputTokens} out tokens ≈ $${pool.usage.costUsd.toFixed(3)} (${pool.usage.model}, standard rates)`
+      : ''
     console.log(
-      `discover (${kind}, from ${source}): generated ${pool.picks.length} picks for ${today} (${withSongs} with a song)`,
+      `discover (${kind}, from ${source}): generated ${pool.picks.length} picks for ${today} (${withSongs} with a song)${cost}`,
     )
     return new Response('generated')
   } catch (error) {

@@ -14,10 +14,14 @@ const roster = [
 
 test('the shared prompt lists every roster artist and no one’s tiers', () => {
   const prompt = buildPrompt('2026-10-14', [], { kind: 'roster', artists: roster }, 12)
-  for (const artist of roster) assert.match(prompt, new RegExp(`- ${artist.name} — `))
+  for (const artist of roster) {
+    assert.match(prompt, new RegExp(`- ${artist.name} \\[${artist.slug}\\] — `))
+  }
+  assert.match(prompt, /"connectsTo" lists one to three \[bracketed\] ids/)
+  assert.match(prompt, /the first 12 alone already span/)
   assert.doesNotMatch(prompt, /HEAVY ROTATION|IN THE MIX|owner/i)
   assert.match(prompt, /WHOLE roster/)
-  assert.match(prompt, /same picks every visitor sees/)
+  assert.match(prompt, /visitors see the first 12, and each signed-in listener sees the ones connected/)
 })
 
 test('a listener’s rows prompt carries their rows, light radar, and roster exclusions', () => {
@@ -31,9 +35,9 @@ test('a listener’s rows prompt carries their rows, light radar, and roster exc
   assert.deepEqual(library.mix.map((a) => a.name), ['Björk'])
   assert.deepEqual(library.radar.map((a) => a.name), ['AURORA'])
   const prompt = buildPrompt('2026-10-14', ['Mipso'], library, 12)
-  assert.match(prompt, /HEAVY ROTATION[^\n]*\n- Radiohead — /)
-  assert.match(prompt, /IN THE MIX[^\n]*\n- Björk — /)
-  assert.match(prompt, /ON THE RADAR[^\n]*\n- AURORA — /)
+  assert.match(prompt, /HEAVY ROTATION[^\n]*\n- Radiohead \[radiohead\] — /)
+  assert.match(prompt, /IN THE MIX[^\n]*\n- Björk \[bjork\] — /)
+  assert.match(prompt, /ON THE RADAR[^\n]*\n- AURORA \[aurora\] — /)
   assert.match(prompt, /never recommend these\): Radiohead, Björk, AURORA, Khruangbin/)
   assert.match(prompt, /recently recommended artists: Mipso/)
 })

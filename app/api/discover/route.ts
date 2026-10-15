@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import type { DiscoverPool } from '@/lib/discover/generate'
+import { POOL_SIZES, VISITOR_PICKS, type DiscoverPool } from '@/lib/discover/generate'
 import { sharedLibrary } from '@/lib/discover/library'
 import { readFixture, sanitizePool } from '@/lib/discover/serve'
 import {
@@ -42,7 +42,13 @@ function secondsUntilUtcMidnight(): number {
   return Math.max(60, Math.floor((midnight.getTime() - now.getTime()) / 1000))
 }
 
+/** Visitors see the first VISITOR_PICKS of the (bigger) shared set. */
+function forVisitors(pool: DiscoverPool): DiscoverPool {
+  return { date: pool.date, picks: pool.picks.slice(0, VISITOR_PICKS) }
+}
+
 function json(body: DiscoverResponse, maxAge: number): NextResponse {
+  if (body.status === 'ready') body = { ...body, pool: forVisitors(body.pool) }
   const response = NextResponse.json(body)
   response.headers.set(
     'Cache-Control',
@@ -58,6 +64,7 @@ async function devGenerate(today: string): Promise<DiscoverPool> {
     today,
     await readRecentNames(today),
     sharedLibrary(),
+    POOL_SIZES.shared,
   ).finally(
     () => {
       devGeneration = null

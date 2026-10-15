@@ -19,7 +19,7 @@ export type PoolKind = 'shared' | 'owner'
 export function sharedLibrary(): DiscoverLibrary {
   return {
     kind: 'roster',
-    artists: roster.map(({ name, identity }) => ({ name, identity })),
+    artists: roster.map(({ slug, name, identity }) => ({ slug, name, identity })),
   }
 }
 
