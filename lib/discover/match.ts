@@ -6,7 +6,7 @@
  * `connectsTo` is not a match. Pure, so it can be tested.
  */
 import type { ArtistTier } from '../tiers'
-import type { DiscoverPick, DiscoverPool } from './generate'
+import type { DiscoverPick, DiscoverPool } from './types'
 
 const WEIGHT: Record<ArtistTier, number> = {
   'heavy-rotation': 3,

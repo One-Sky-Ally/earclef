@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "node scripts/build-roster.mjs && node scripts/build-cultures.mjs && node scripts/build-start-here.mjs && next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "discover-stock": "node --import ./scripts/test/resolve-ts.mjs scripts/discover-stock.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.111.0",

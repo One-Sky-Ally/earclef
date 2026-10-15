@@ -4,7 +4,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { picksForRows } from './match.ts'
-import type { DiscoverPick, DiscoverPool } from './generate.ts'
+import type { DiscoverPick, DiscoverPool } from './types.ts'
 
 const pick = (mbid: string, connectsTo?: string[]): DiscoverPick => ({
   name: mbid,

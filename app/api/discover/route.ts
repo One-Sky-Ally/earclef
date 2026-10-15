@@ -1,35 +1,23 @@
 import { NextResponse } from 'next/server'
-import { POOL_SIZES, VISITOR_PICKS, type DiscoverPool } from '@/lib/discover/generate'
-import { sharedLibrary } from '@/lib/discover/library'
 import { readFixture, sanitizePool } from '@/lib/discover/serve'
-import {
-  readLatestPool,
-  readPool,
-  readRecentNames,
-} from '@/lib/discover/store'
+import { sharedSetFor } from '@/lib/discover/stock'
+import { readIndex, readSet } from '@/lib/discover/stockStore'
+import { readLatestLegacyPool } from '@/lib/discover/store'
+import { VISITOR_PICKS, type DiscoverPool } from '@/lib/discover/types'
 
 /**
- * Serves the SHARED daily Discover pool — the one every visitor sees,
- * drawn from the whole roster (the owner's own pool is
- * /api/discover/owner). This route only ever READS — generation
- * runs solely in the SCHEDULED background function (00:10 UTC daily); page
- * loads never trigger a model call. A cache miss serves the previous
- * day's pool until the schedule fires. Local dev has no Blobs or
- * background functions, so there — and only there — it generates inline.
- *
- * Pools written before the verified-play change carry search-URL
- * listenHrefs and unverified knownFor titles; sanitizePool() strips
- * both at the door (read-about links only) until the next scheduled
- * generation replaces them with verified data.
+ * The SHARED Discover set of the day — what every visitor sees. Picks
+ * are stocked during /refresh-earclef (no model call anywhere on the
+ * site, owner ruling Oct 15 2026) and rotate one set a day; when the
+ * stock runs out, earlier sets come back labelled "from the archive".
+ * Before the first stocked set exists, the last pool the retired
+ * nightly job wrote fills the row, also as the archive — the row is
+ * never empty through the switchover.
  */
 
 type DiscoverResponse =
-  | { status: 'ready'; pool: DiscoverPool }
+  | { status: 'ready'; pool: DiscoverPool; archive: boolean }
   | { status: 'warming' }
-  | { status: 'disabled' }
-
-const memo = new Map<string, DiscoverPool>()
-let devGeneration: Promise<DiscoverPool> | null = null
 
 function utcToday(): string {
   return new Date().toISOString().slice(0, 10)
@@ -42,13 +30,7 @@ function secondsUntilUtcMidnight(): number {
   return Math.max(60, Math.floor((midnight.getTime() - now.getTime()) / 1000))
 }
 
-/** Visitors see the first VISITOR_PICKS of the (bigger) shared set. */
-function forVisitors(pool: DiscoverPool): DiscoverPool {
-  return { date: pool.date, picks: pool.picks.slice(0, VISITOR_PICKS) }
-}
-
 function json(body: DiscoverResponse, maxAge: number): NextResponse {
-  if (body.status === 'ready') body = { ...body, pool: forVisitors(body.pool) }
   const response = NextResponse.json(body)
   response.headers.set(
     'Cache-Control',
@@ -57,58 +39,43 @@ function json(body: DiscoverResponse, maxAge: number): NextResponse {
   return response
 }
 
-async function devGenerate(today: string): Promise<DiscoverPool> {
-  // Inline generation for local dev only — no function timeout applies.
-  const { generatePool } = await import('@/lib/discover/generate')
-  devGeneration ??= generatePool(
-    today,
-    await readRecentNames(today),
-    sharedLibrary(),
-    POOL_SIZES.shared,
-  ).finally(
-    () => {
-      devGeneration = null
-    },
-  )
-  return devGeneration
-}
+const forVisitors = (pool: DiscoverPool): DiscoverPool => ({
+  date: pool.date,
+  picks: pool.picks.slice(0, VISITOR_PICKS),
+})
 
 export async function GET() {
   const fixture = await readFixture(process.env.DISCOVER_FIXTURE)
   if (fixture) {
-    return json({ status: 'ready', pool: sanitizePool(fixture) }, 60)
-  }
-
-  if (!process.env.ANTHROPIC_API_KEY) {
-    return json({ status: 'disabled' }, 300)
+    return json({ status: 'ready', pool: forVisitors(sanitizePool(fixture)), archive: false }, 60)
   }
 
   const today = utcToday()
-
-  const cached = memo.get(today) ?? (await readPool(today))
-  if (cached) {
-    const pool = sanitizePool(cached)
-    memo.set(today, pool)
-    return json({ status: 'ready', pool }, secondsUntilUtcMidnight())
-  }
-
-  if (process.env.NETLIFY === 'true') {
-    // No page-load generation: yesterday's pool carries the section until
-    // the 00:10 UTC schedule produces today's.
-    const stale = await readLatestPool()
-    if (stale) return json({ status: 'ready', pool: sanitizePool(stale) }, 300)
-    return json({ status: 'warming' }, 60)
-  }
-
-  try {
-    const pool = await devGenerate(today)
-    memo.set(today, pool)
-    return json({ status: 'ready', pool }, secondsUntilUtcMidnight())
-  } catch (error) {
-    console.error('Discover dev generation failed:', error)
-    return NextResponse.json(
-      { error: 'Generation failed' },
-      { status: 502 },
+  const todays = sharedSetFor(await readIndex('shared'), today)
+  const set = todays ? await readSet(todays.id) : null
+  if (todays && set && set.picks.length > 0) {
+    return json(
+      {
+        status: 'ready',
+        pool: forVisitors({ date: today, picks: set.picks }),
+        archive: todays.archive,
+      },
+      secondsUntilUtcMidnight(),
     )
   }
+
+  // Switchover: nothing stocked yet — the nightly job's last pool, as
+  // the archive, re-checked often so the first stocked set shows soon.
+  const legacy = await readLatestLegacyPool()
+  if (legacy && legacy.picks.length > 0) {
+    return json(
+      {
+        status: 'ready',
+        pool: forVisitors(sanitizePool(legacy)),
+        archive: legacy.date !== today,
+      },
+      300,
+    )
+  }
+  return json({ status: 'warming' }, 60)
 }

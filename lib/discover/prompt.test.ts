@@ -3,7 +3,7 @@
  */
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { buildPrompt, rowsLibrary } from './prompt.ts'
+import { buildStockPrompt, rowsLibrary } from './prompt.ts'
 
 const roster = [
   { slug: 'radiohead', name: 'Radiohead', identity: 'Oxford art-rock' },
@@ -12,19 +12,24 @@ const roster = [
   { slug: 'khruangbin', name: 'Khruangbin', identity: 'Houston psych-soul trio' },
 ]
 
-test('the shared prompt lists every roster artist and no one’s tiers', () => {
-  const prompt = buildPrompt('2026-10-14', [], { kind: 'roster', artists: roster }, 12)
+test('the shared brief lists every roster artist with its id and no one’s tiers', () => {
+  const prompt = buildStockPrompt({
+    library: { kind: 'roster', artists: roster },
+    count: 220,
+    setSize: 12,
+    avoid: ['Mipso'],
+  })
   for (const artist of roster) {
     assert.match(prompt, new RegExp(`- ${artist.name} \\[${artist.slug}\\] — `))
   }
-  assert.match(prompt, /"connectsTo" lists one to three \[bracketed\] ids/)
-  assert.match(prompt, /the first 12 alone already span/)
   assert.doesNotMatch(prompt, /HEAVY ROTATION|IN THE MIX|owner/i)
   assert.match(prompt, /WHOLE roster/)
-  assert.match(prompt, /visitors see the first 12, and each signed-in listener sees the ones connected/)
+  assert.match(prompt, /daily sets of 12/)
+  assert.match(prompt, /already-stocked list: Mipso/)
+  assert.match(prompt, /Write exactly 220 candidates as JSON/)
 })
 
-test('a listener’s rows prompt carries their rows, light radar, and roster exclusions', () => {
+test('the owner’s brief carries their rows, a light radar and the roster as never-recommend', () => {
   const library = rowsLibrary(
     { radiohead: 'heavy-rotation', bjork: 'in-the-mix', aurora: 'on-the-radar', gone: 'heavy-rotation' },
     roster,
@@ -32,17 +37,15 @@ test('a listener’s rows prompt carries their rows, light radar, and roster exc
   assert.equal(library.kind, 'rows')
   if (library.kind !== 'rows') return
   assert.deepEqual(library.heavy.map((a) => a.name), ['Radiohead'])
-  assert.deepEqual(library.mix.map((a) => a.name), ['Björk'])
-  assert.deepEqual(library.radar.map((a) => a.name), ['AURORA'])
-  const prompt = buildPrompt('2026-10-14', ['Mipso'], library, 12)
+  const prompt = buildStockPrompt({ library, count: 140, setSize: 8, avoid: [] })
   assert.match(prompt, /HEAVY ROTATION[^\n]*\n- Radiohead \[radiohead\] — /)
   assert.match(prompt, /IN THE MIX[^\n]*\n- Björk \[bjork\] — /)
   assert.match(prompt, /ON THE RADAR[^\n]*\n- AURORA \[aurora\] — /)
   assert.match(prompt, /never recommend these\): Radiohead, Björk, AURORA, Khruangbin/)
-  assert.match(prompt, /recently recommended artists: Mipso/)
+  assert.match(prompt, /a fresh set of 8 each day they visit/)
 })
 
 test('no radar section when the radar row is empty', () => {
   const library = rowsLibrary({ radiohead: 'heavy-rotation' }, roster)
-  assert.doesNotMatch(buildPrompt('2026-10-14', [], library, 12), /ON THE RADAR/)
+  assert.doesNotMatch(buildStockPrompt({ library, count: 10, setSize: 8, avoid: [] }), /ON THE RADAR/)
 })

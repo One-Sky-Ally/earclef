@@ -90,11 +90,54 @@ their MusicBrainz link (and, for the cap bypass, a page they control).
 4. Reply to each artist with what actually happened: listed, pinned, or
    why not (usually: no Area or no begin date on their record).
 
+## Phase E — Discover picks (~10 min of attention; checks run in the background)
+
+Discover is stocked here and ONLY here — no model call anywhere on the
+site, no nightly job (owner ruling, Oct 15 2026). Two lists: SHARED,
+one set of 12 a day for everyone (when it runs out, earlier sets come
+back "from the archive" — never empty, never a paid fallback); OWNER,
+the owner's own sets of 8, one per day they visit, from the rows in
+their linked account (when it runs out they see the shared picks).
+Each refresh adds up to two weeks of sets per list, growing toward 60
+shared days / 30 owner sets. Start the checks EARLY — right after
+Phase A's miss list — so they run while you write blurbs.
+
+1. `npm run discover-stock -- recheck` — drops stocked songs whose
+   YouTube video died (the pick stays, with its link).
+2. `npm run discover-stock -- plan` — reads what is ready on the site
+   and writes `data/discover-stock/brief-shared.txt` and
+   `brief-owner.txt` (counts include a margin for failures). Nothing to
+   add → skip to the log line.
+3. Write the candidates IN-SESSION, following each brief exactly, into
+   `data/discover-stock/candidates.json` as
+   `{"shared": [...], "owner": [...]}`, each entry
+   `{"name", "why", "knownFor", "connectsTo": ["<roster id>", …]}`.
+   Real artists you are confident exist, names exactly as credited,
+   genuinely lesser-known, never on the roster or in the brief's
+   already-stocked list; "why" names the roster artist it connects to;
+   the shared list spreads across the WHOLE roster; the owner list
+   follows their rows. Write them in batches if it is long.
+4. `npm run discover-stock -- verify` in the BACKGROUND (default 90-min
+   budget; `--minutes N` to change). Each candidate is checked like
+   every Discover pick: MusicBrainz by exact name, the knownFor title in
+   their catalogue, a verified playable song (Discogs record videos
+   with DISCOGS_TOKEN, then their own channel). ~15 s a pick. Progress
+   is saved after every pick — out of time or interrupted, run it again
+   and it continues. Candidates ran out short of the target → write a
+   few more and verify again, or upload what is done.
+5. `npm run discover-stock -- upload` — sends FULL sets only; leftovers
+   wait in `verified.json` for the next refresh.
+6. `npm run discover-stock -- status` → note "shared N days ahead,
+   owner N sets" for the log line.
+
 ## Close out
 
 - `node scripts/validate-content.mjs` + `npm run build` must pass.
 - One commit/push (playing.json, any content, this doc if amended).
 - Update the handoff refresh-log line: date, blurb misses found →
   seeded → remaining (remaining must be 0), combos added, year-roll
-  result, story-card coverage status.
-- Post-deploy: probe one new combo on earclef.com and one seeded blurb.
+  result, story-card coverage status, Discover stock (shared days
+  ahead, owner sets ready, verified/checked, songs dropped).
+- Post-deploy: probe one new combo on earclef.com and one seeded blurb,
+  and check the Discover row on /artists says "Today's picks for
+  everyone" (not "From the archive").

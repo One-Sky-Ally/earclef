@@ -3,6 +3,8 @@ import { isOwner, unauthorized } from '@/lib/curation/auth'
 import { readQueue } from '@/lib/curation/followStore'
 import roster from '@/lib/discover/roster.json'
 import { getOwnerAccount } from '@/lib/curation/ownerAccount'
+import { sharedReady, sharedThrough } from '@/lib/discover/stock'
+import { readIndex } from '@/lib/discover/stockStore'
 import { getFan } from '@/lib/fans/store'
 import { sessionEmail } from '@/lib/membership/session'
 
@@ -19,6 +21,11 @@ export async function GET(request: Request) {
   // "move my rotation groups" button would put them.
   const email = sessionEmail(request)
   const fan = email ? await getFan(email) : null
+  const today = new Date().toISOString().slice(0, 10)
+  const [sharedStock, ownerStock] = await Promise.all([
+    readIndex('shared'),
+    readIndex('owner'),
+  ])
 
   const response = NextResponse.json({
     queue: await readQueue(),
@@ -38,6 +45,12 @@ export async function GET(request: Request) {
       : null,
     // The account the owner's own Discover picks follow, if linked.
     discoverAccount: await getOwnerAccount(),
+    // Discover is stocked during /refresh-earclef; this is what is left.
+    discoverStock: {
+      sharedReady: sharedReady(sharedStock, today),
+      sharedThrough: sharedThrough(sharedStock),
+      ownerReady: ownerStock?.queue.length ?? 0,
+    },
   })
   response.headers.set('Cache-Control', 'no-store')
   return response

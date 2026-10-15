@@ -1,22 +1,24 @@
 import { NextResponse } from 'next/server'
 import roster from '@/lib/discover/roster.json'
-import { VISITOR_PICKS, type DiscoverPick, type DiscoverPool } from '@/lib/discover/generate'
 import { picksForRows } from '@/lib/discover/match'
 import { readFixture, sanitizePool } from '@/lib/discover/serve'
-import { readPool } from '@/lib/discover/store'
+import { recentSharedIds } from '@/lib/discover/stock'
+import { readIndex, readSets } from '@/lib/discover/stockStore'
+import { VISITOR_PICKS, type DiscoverPick, type DiscoverPool } from '@/lib/discover/types'
 import { getFan } from '@/lib/fans/store'
 import { sessionEmail } from '@/lib/membership/session'
 import { followTiers } from '@/lib/tiers'
 
 /**
  * A signed-in listener's Discover picks — no model call of their own
- * (owner, Oct 15 2026): from the last week of SHARED sets, the picks
+ * (owner, Oct 15 2026): from the last two weeks of SHARED sets, the picks
  * connected (by roster slug) to artists in the listener's rows,
  * strongest row first, then today's shared picks to fill the row.
  * Visitors get {status: 'visitor'} and the page shows the shared picks.
  */
 
-const WINDOW_DAYS = 7
+/** Two weeks of shared sets of 12 — enough for matches without bigger sets. */
+const WINDOW_DAYS = 14
 const nameBySlug = new Map(roster.map((artist) => [artist.slug, artist.name]))
 
 function noStore(body: unknown): NextResponse {
@@ -25,20 +27,15 @@ function noStore(body: unknown): NextResponse {
   return response
 }
 
-function isoDaysAgo(days: number): string {
-  const date = new Date()
-  date.setUTCDate(date.getUTCDate() - days)
-  return date.toISOString().slice(0, 10)
-}
-
 async function recentSharedPools(): Promise<DiscoverPool[]> {
   // Dev only: the fixture stands in for today's shared set.
   const fixture = await readFixture(process.env.DISCOVER_FIXTURE)
   if (fixture) return [sanitizePool(fixture)]
-  const pools = await Promise.all(
-    Array.from({ length: WINDOW_DAYS }, (_, days) => readPool(isoDaysAgo(days))),
-  )
-  return pools.filter((pool): pool is DiscoverPool => pool !== null).map(sanitizePool)
+  const today = new Date().toISOString().slice(0, 10)
+  const ids = recentSharedIds(await readIndex('shared'), today, WINDOW_DAYS)
+  const sets = await readSets(ids)
+  // Keep today-first order: readSets preserves the ids' order.
+  return sets.map((set) => ({ date: today, picks: set.picks }))
 }
 
 export async function GET(request: Request) {

@@ -83,11 +83,22 @@ type DiscoverState =
    * listener's picks matched to their rows, `matched` of them, then
    * shared ones; shared: the same picks everyone sees.
    */
-  | { status: 'ready'; picks: DiscoverPick[]; mode: 'own' | 'mine' | 'shared'; matched?: number }
+  | {
+      status: 'ready'
+      picks: DiscoverPick[]
+      mode: 'own' | 'mine' | 'shared'
+      matched?: number
+      /** Shared picks shown again because the stock ran out (or is not in yet). */
+      archive?: boolean
+      /** Owner's view: more sets ready after this one. */
+      ready?: number
+    }
 
 interface PoolBody {
   status: 'ready' | 'warming' | 'disabled' | 'none'
   pool?: { picks: Partial<DiscoverPick>[] }
+  archive?: boolean
+  ready?: number
 }
 
 interface MineBody {
@@ -149,7 +160,12 @@ export function DiscoverSection() {
             headers: { 'x-owner-key': key },
           })
           if (own.status === 'ready' && own.pool) {
-            setState({ status: 'ready', picks: own.pool.picks.flatMap(normalizePick), mode: 'own' })
+            setState({
+              status: 'ready',
+              picks: own.pool.picks.flatMap(normalizePick),
+              mode: 'own',
+              ready: own.ready ?? 0,
+            })
             return
           }
         } catch {
@@ -173,7 +189,12 @@ export function DiscoverSection() {
       try {
         const body = await load<PoolBody>('/api/discover')
         if (body.status === 'ready' && body.pool) {
-          setState({ status: 'ready', picks: body.pool.picks.flatMap(normalizePick), mode: 'shared' })
+          setState({
+            status: 'ready',
+            picks: body.pool.picks.flatMap(normalizePick),
+            mode: 'shared',
+            archive: body.archive === true,
+          })
         } else if (body.status === 'warming') {
           setState({ status: 'warming' })
         } else {
@@ -234,13 +255,23 @@ export function DiscoverSection() {
 
   if (state.status === 'hidden') return null
 
-  // Said plainly: whose taste the picks come from.
-  const note =
-    state.status === 'ready' && state.mode === 'own'
-      ? 'Your own picks — artists not on Ear Clef yet, chosen from your rows and verified real on MusicBrainz. Only you see these; visitors get the shared picks.'
-      : state.status === 'ready' && state.mode === 'mine'
-        ? `${state.matched} ${state.matched === 1 ? 'pick connects' : 'picks connect'} to artists in your rows — from this week’s shared picks, artists not on Ear Clef yet and verified real on MusicBrainz${(state.matched ?? 0) < state.picks.length ? '; the rest are today’s picks for everyone' : ''}.`
-        : 'Today’s picks for everyone — artists not on Ear Clef yet, chosen each day from the whole roster and verified real on MusicBrainz. Not personalised yet.'
+  // Said plainly: whose taste the picks come from, and how fresh they are.
+  let note = ''
+  if (state.status === 'ready' && state.mode === 'own') {
+    const more =
+      (state.ready ?? 0) > 0
+        ? `${state.ready} more ${state.ready === 1 ? 'set' : 'sets'} ready`
+        : 'the last set until the next refresh'
+    note = `Your own picks — a fresh set each day you visit, from your rows (${more}). Artists not on Ear Clef yet, verified real on MusicBrainz. Only you see these; visitors get the shared picks.`
+  } else if (state.status === 'ready' && state.mode === 'mine') {
+    note = `${state.matched} ${state.matched === 1 ? 'pick connects' : 'picks connect'} to artists in your rows — from the last two weeks of shared picks, artists not on Ear Clef yet and verified real on MusicBrainz${(state.matched ?? 0) < state.picks.length ? '; the rest are today’s picks for everyone' : ''}.`
+  } else if (state.status === 'ready' && state.archive) {
+    note =
+      'From the archive — picks from earlier days, shown again until fresh ones arrive. Artists not on Ear Clef yet, verified real on MusicBrainz.'
+  } else {
+    note =
+      'Today’s picks for everyone — a new set each day, artists not on Ear Clef yet, chosen from the whole roster and verified real on MusicBrainz. Not personalised yet.'
+  }
 
   if (state.status !== 'ready') {
     return (
@@ -251,7 +282,7 @@ export function DiscoverSection() {
         <p className={styles.quiet}>
           {state.status === 'loading'
             ? 'Listening for new artists…'
-            : 'Today’s first picks are brewing — check back in a minute.'}
+            : 'New picks arrive with the next refresh.'}
         </p>
       </section>
     )

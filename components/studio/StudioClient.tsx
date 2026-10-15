@@ -33,6 +33,7 @@ interface StudioData {
   account: { email: string; follows: number; claimedAt: string | null } | null
   /** The account the owner's own Discover picks follow, if linked. */
   discoverAccount: string | null
+  discoverStock: { sharedReady: number; sharedThrough: string | null; ownerReady: number }
 }
 
 interface ClaimResult {
@@ -239,7 +240,7 @@ export function StudioClient() {
     )
   }
 
-  const { queue, roster, retierConfigured, account, discoverAccount } = state.data
+  const { queue, roster, retierConfigured, account, discoverAccount, discoverStock } = state.data
   const nameOf = new Map(roster.map((row) => [row.slug, row.name]))
   const groups: { tier: ArtistTier | null; rows: RosterRow[] }[] = [
     ...TIER_ORDER.map((tier) => ({
@@ -403,12 +404,19 @@ export function StudioClient() {
           </p>
         )}
         <p className={`${styles.lead} ${styles.discoverNote}`}>
-          <strong>Your own Discover picks</strong> (shown only on your owner
-          view) come from{' '}
+          <strong>Discover picks</strong> are stocked during /refresh-earclef —
+          no paid model calls. Shared picks:{' '}
+          {discoverStock.sharedReady > 0
+            ? `${discoverStock.sharedReady} more days ready (through ${discoverStock.sharedThrough}).`
+            : 'none ahead — visitors see earlier sets from the archive until the next refresh.'}{' '}
+          Your own sets of 8:{' '}
+          {discoverStock.ownerReady > 0
+            ? `${discoverStock.ownerReady} ready.`
+            : 'none ready — you see the shared picks until the next refresh.'}{' '}
+          Your sets are written from{' '}
           {discoverAccount
             ? `the rows in ${discoverAccount} (your original site-wide tiers stand in while it has fewer than 3 artists in Heavy rotation and In the mix).`
-            : 'your original site-wide tiers until you link an account — copying your groups links it.'}{' '}
-          Everyone else sees the shared picks, drawn from the whole roster.
+            : 'your original site-wide tiers until you link an account — copying your groups links it.'}
         </p>
         {account && account.email !== discoverAccount && (
           <button type="button" className={styles.claim} onClick={linkAccount}>
@@ -428,7 +436,7 @@ export function StudioClient() {
         </h2>
         <p className={styles.lead}>
           The original site-wide copy. It no longer shapes what visitors see,
-          and it stands in for your own Discover picks only while no account
+          and it stands in for your own Discover sets only while no account
           is linked. Your own rows live in your account: change them with the
           Follow button on any artist page, or on My Taste Map.
         </p>

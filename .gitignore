@@ -100,3 +100,5 @@ data/wikidata-residence-work.json
 data/wikidata-residence-work.json.tmp
 data/mb-artist-places.json
 data/wikidata-residence-work*.json
+# Discover stock work files (plan, candidates, verified picks)
+data/discover-stock/
