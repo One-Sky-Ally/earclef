@@ -11,6 +11,12 @@
  *   npm run discover-stock -- upload    sends full sets to earclef.com
  *   npm run discover-stock -- recheck   drops stocked songs whose video died
  *   npm run discover-stock -- status    what is ready on the site
+ *   npm run discover-stock -- why "toe" ["Hear You"]
+ *                                       one artist, step by step: why a
+ *                                       song was or wasn't found
+ *
+ * Only picks with a verified PLAYABLE song are stocked (owner ruling,
+ * Oct 15 2026 — the Songs-about rule); the rest are skipped and logged.
  *
  * Lists: SHARED — daily sets of 12 for everyone; OWNER — the owner's own
  * sets of 8, from the rows in their linked account. Each refresh adds up
@@ -30,8 +36,14 @@ const PLAN = join(DIR, 'plan.json')
 const CANDIDATES = join(DIR, 'candidates.json')
 const PROGRESS = join(DIR, 'verified.json')
 const KINDS = ['shared', 'owner']
-/** Candidates written per needed pick: about a fifth fail verification. */
-const CANDIDATE_MARGIN = 1.3
+/** Candidates written per needed pick: some fail verification or have no playable song. */
+const CANDIDATE_MARGIN = 1.5
+/**
+ * Discogs records read per artist in this LOCAL run (the site's old
+ * nightly job read 10 inside a 15-minute function; here there is no
+ * such limit, and reading stops early once enough songs verify).
+ */
+const MAX_RECORDS = 25
 const DEFAULT_MINUTES = 90
 
 function env(name) {
@@ -174,7 +186,12 @@ async function verify(minutes) {
       triedKeys.add(key)
       progress[kind].tried.push(key)
       checked++
-      const pick = await verifyCandidate(candidate, { rosterKeys, rosterSlugs, songDeadline: deadline })
+      const { pick, reason } = await verifyCandidate(candidate, {
+        rosterKeys,
+        rosterSlugs,
+        songDeadline: deadline,
+        maxRecords: MAX_RECORDS,
+      })
       const kept = pick && !seenMbids.has(pick.mbid)
       if (kept) {
         seenMbids.add(pick.mbid)
@@ -183,7 +200,7 @@ async function verify(minutes) {
       writeJson(PROGRESS, progress)
       log(
         `[${kind} ${progress[kind].picks.length}/${target(kind)}] ${kept ? '✓' : '✗'} ${candidate.name}${
-          kept ? (pick.song ? ' · song ✓' : ' · no song') : pick ? ' (already stocked)' : ''
+          kept ? ` · ${pick.song.kind}` : pick ? ' (already stocked)' : ` (${reason})`
         }`,
       )
     }
@@ -263,6 +280,29 @@ async function recheck() {
   log(`${dead.length} of ${ids.length} videos gone — ${result.songsDropped} songs dropped (their picks stay, with their links)`)
 }
 
+/** One artist, step by step — why a song was or wasn't found. */
+async function why(name, knownFor) {
+  if (!name) throw new Error('usage: npm run discover-stock -- why "<artist>" ["<known for title>"]')
+  const { normalize, verifyCandidate } = await import('../lib/discover/verify.ts')
+  const token = env('DISCOGS_TOKEN')
+  const youtube = env('YOUTUBE_API_KEY')
+  if (!youtube) throw new Error('YOUTUBE_API_KEY missing from .env.local')
+  if (token) process.env.DISCOGS_TOKEN = token
+  process.env.YOUTUBE_API_KEY = youtube
+  const list = roster()
+  const { pick, reason } = await verifyCandidate(
+    { name, why: '', knownFor: knownFor ?? '', connectsTo: [] },
+    {
+      rosterKeys: new Set(list.flatMap((artist) => [normalize(artist.name), normalize(artist.slug)])),
+      rosterSlugs: new Set(list.map((artist) => artist.slug)),
+      songDeadline: Date.now() + 10 * 60_000,
+      maxRecords: MAX_RECORDS,
+      trace: (line) => log(line),
+    },
+  )
+  log(pick ? `→ would be stocked with "${pick.song.title}" (${pick.song.kind}, ${pick.song.videoId})` : `→ skipped: ${reason}`)
+}
+
 async function status() {
   const s = await site('GET')
   log(`shared: ${s.shared.ready} days ready (through ${s.shared.through ?? '—'})${s.shared.todayArchive ? ' — today is from the archive' : ''}; next refresh adds ${s.shared.add}`)
@@ -273,9 +313,16 @@ async function status() {
 const [command, ...rest] = process.argv.slice(2)
 const minutesFlag = rest.indexOf('--minutes')
 const minutes = minutesFlag >= 0 ? Number(rest[minutesFlag + 1]) || DEFAULT_MINUTES : DEFAULT_MINUTES
-const commands = { plan, verify: () => verify(minutes), upload, recheck, status }
+const commands = {
+  plan,
+  verify: () => verify(minutes),
+  upload,
+  recheck,
+  status,
+  why: () => why(rest[0], rest[1]),
+}
 if (!commands[command]) {
-  console.error('usage: npm run discover-stock -- plan | verify [--minutes 90] | upload | recheck | status')
+  console.error('usage: npm run discover-stock -- plan | verify [--minutes 90] | upload | recheck | status | why "<artist>"')
   process.exit(1)
 }
 commands[command]().catch((error) => {

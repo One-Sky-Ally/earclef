@@ -121,13 +121,25 @@ Phase A's miss list — so they run while you write blurbs.
    budget; `--minutes N` to change). Each candidate is checked like
    every Discover pick: MusicBrainz by exact name, the knownFor title in
    their catalogue, a verified playable song (Discogs record videos
-   with DISCOGS_TOKEN, then their own channel). ~15 s a pick. Progress
-   is saved after every pick — out of time or interrupted, run it again
-   and it continues. Candidates ran out short of the target → write a
-   few more and verify again, or upload what is done.
-5. `npm run discover-stock -- upload` — sends FULL sets only; leftovers
-   wait in `verified.json` for the next refresh.
-6. `npm run discover-stock -- status` → note "shared N days ahead,
+   with DISCOGS_TOKEN — albums first, up to 25 records, stopping once 8
+   songs verify — then their own channel). ~15–30 s a pick. ONLY picks
+   with a verified playable song are stocked (owner ruling, Oct 15
+   2026: same rule as Songs about this place); the rest are skipped and
+   logged with the reason ("no playable song", "not on MusicBrainz",
+   "no catalogue", "on the roster"). Progress is saved after every pick
+   — out of time or interrupted, run it again and it continues.
+   Candidates ran out short of the target → write a few more and verify
+   again, or upload what is done.
+5. A skip that looks wrong (the artist plainly has official videos) →
+   `npm run discover-stock -- why "<artist>" "<knownFor>"` prints every
+   step: the Discogs records read, each video and whether its title
+   passed, the channel path, each candidate's playability and trust,
+   and the verdict. Fix the cause in the matcher if it is a matching
+   gap; never hand-add a song.
+6. `npm run discover-stock -- upload` — sends FULL sets only; leftovers
+   wait in `verified.json` for the next refresh. The upload refuses any
+   pick without a song, and the site never shows one.
+7. `npm run discover-stock -- status` → note "shared N days ahead,
    owner N sets" for the log line.
 
 ## Close out

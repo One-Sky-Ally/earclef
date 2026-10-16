@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { YouTubeEmbed } from '@/components/YouTubeEmbed'
 import { LikeButton } from '@/components/fans/LikeButton'
 import { getOwnerKey } from '@/lib/curation/ownerClient'
-import { PLAY_LABELS, type PlayLink, type ReadLink } from '@/lib/play/types'
+import type { PlayLink, ReadLink } from '@/lib/play/types'
 import { ScrollRow } from '@/components/ui/ScrollRow'
 import styles from './DiscoverSection.module.css'
 
@@ -116,6 +116,10 @@ interface MineBody {
  */
 function normalizePick(pick: Partial<DiscoverPick>): DiscoverPick[] {
   if (!pick.name || !pick.mbid) return []
+  // Only picks that play here (owner, Oct 15 2026 — the Songs-about
+  // rule): a pick without a verified song is not shown at all.
+  const song = songOf(pick.song)
+  if (!song) return []
   const mbUrl = `https://musicbrainz.org/artist/${pick.mbid}`
   return [
     {
@@ -127,7 +131,7 @@ function normalizePick(pick: Partial<DiscoverPick>): DiscoverPick[] {
       play: pick.play ?? null,
       read: pick.read ?? { kind: 'musicbrainz', url: mbUrl },
       listenHref: pick.play?.url ?? pick.read?.url ?? mbUrl,
-      song: songOf(pick.song),
+      song,
       bandcamp: bandcampOf(pick),
       because: Array.isArray(pick.because)
         ? pick.because.filter((name): name is string => typeof name === 'string')
@@ -307,10 +311,10 @@ export function DiscoverSection() {
                 </span>
               )}
               <span className={styles.why}>{pick.why}</span>
-              {pick.song ? (
-                // A verified song plays here, on the site. The Bandcamp
-                // page stays as a small link so listeners can buy from
-                // the artist directly (owner, Oct 11).
+              {pick.song && (
+                // A verified song plays here, on the site. The artist's
+                // Bandcamp page stays as a small link so listeners can
+                // buy from them directly (owner, Oct 11).
                 <div className={styles.song}>
                   <YouTubeEmbed
                     video={{ youtubeId: pick.song.videoId, title: pick.song.title }}
@@ -329,43 +333,18 @@ export function DiscoverSection() {
                       }}
                     />
                     {pick.bandcamp && (
+                      // Says where it goes: the artist's own Bandcamp page.
                       <a
                         className={styles.listen}
                         href={pick.bandcamp}
                         target="_blank"
                         rel="noreferrer"
-                        aria-label={`${pick.name} on Bandcamp`}
                       >
-                        Bandcamp →
+                        {pick.name} on Bandcamp ↗
                       </a>
                     )}
                   </div>
                 </div>
-              ) : pick.play ? (
-                <a
-                  className={styles.listen}
-                  href={pick.play.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  title={PLAY_LABELS[pick.play.kind]}
-                  aria-label={`${PLAY_LABELS[pick.play.kind]}: ${pick.knownFor} by ${pick.name}`}
-                >
-                  ▶ {pick.knownFor}
-                </a>
-              ) : (
-                // No verified play destination — an honest read-about
-                // link, never a search URL that lands on garbage.
-                <a
-                  className={styles.listen}
-                  href={pick.read.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Read about ${pick.name}`}
-                >
-                  {pick.knownForVerified
-                    ? `Read about → ${pick.knownFor}`
-                    : 'Read about →'}
-                </a>
               )}
               {ownerKey && (
                 <button

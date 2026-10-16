@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import roster from '@/lib/discover/roster.json'
 import { picksForRows } from '@/lib/discover/match'
-import { readFixture, sanitizePool } from '@/lib/discover/serve'
+import { playablePicks, readFixture, sanitizePool } from '@/lib/discover/serve'
 import { recentSharedIds } from '@/lib/discover/stock'
 import { readIndex, readSets } from '@/lib/discover/stockStore'
 import { VISITOR_PICKS, type DiscoverPick, type DiscoverPool } from '@/lib/discover/types'
@@ -30,12 +30,15 @@ function noStore(body: unknown): NextResponse {
 async function recentSharedPools(): Promise<DiscoverPool[]> {
   // Dev only: the fixture stands in for today's shared set.
   const fixture = await readFixture(process.env.DISCOVER_FIXTURE)
-  if (fixture) return [sanitizePool(fixture)]
+  if (fixture) {
+    const pool = sanitizePool(fixture)
+    return [{ ...pool, picks: playablePicks(pool.picks) }]
+  }
   const today = new Date().toISOString().slice(0, 10)
   const ids = recentSharedIds(await readIndex('shared'), today, WINDOW_DAYS)
   const sets = await readSets(ids)
   // Keep today-first order: readSets preserves the ids' order.
-  return sets.map((set) => ({ date: today, picks: set.picks }))
+  return sets.map((set) => ({ date: today, picks: playablePicks(set.picks) }))
 }
 
 export async function GET(request: Request) {

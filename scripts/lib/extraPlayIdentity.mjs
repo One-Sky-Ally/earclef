@@ -139,8 +139,21 @@ export function stripDiscogsDisambiguator(name) {
   return name.replace(/\s*\(\d+\)\s*$/, '')
 }
 
-const TRAILING_GROUP = /\s*[([{][^()[\]{}]*[)\]}]\s*$/
-const ANY_GROUP = /\s*[([{][^()[\]{}]*[)\]}]\s*/g
+/**
+ * Bracketed asides, ASCII and full-width: "(Official Video)",
+ * "【MV】", "（Live）", "［Remastered］" — Japanese uploads use the
+ * full-width forms as often as the ASCII ones.
+ */
+const TRAILING_GROUP = /\s*[([{（［【〔][^()[\]{}（）［］【】〔〕]*[)\]}）］】〕]\s*$/
+const ANY_GROUP = /\s*[([{（［【〔][^()[\]{}（）［］【】〔〕]*[)\]}）］】〕]\s*/g
+/**
+ * Quoted titles: double quotes and guillemets, Japanese 「」『』 and
+ * 〈〉《》, and single quotes ‘…’ / '…' — the single ones only as whole
+ * quotes (never an apostrophe inside a word, as in "Don't") and two
+ * characters or more, so "Rock 'n' Roll" yields no one-letter title.
+ */
+const QUOTED_SPAN = /["“«„「『〈《]([^"”»“」』〉》]+)["”»」』〉》]/g
+const SINGLE_QUOTED_SPAN = /(?<![\p{L}\p{N}])['‘]([^'‘’]{2,})['’](?![\p{L}\p{N}])/gu
 const LEADING_TRACK_NUMBER = /^\s*(?:[a-z]?\d{1,2}[.)\-:]?|\d{1,2}\s*[.)\-])\s+/i
 const TRAILING_FEAT = /\s+(?:feat\.?|ft\.?|featuring|avec|con)\s+.+$/i
 /**
@@ -179,7 +192,8 @@ export function titleVariants(title, aliases = new Set()) {
     if (noFeat !== trimmed) expand(noFeat)
     for (const side of trimmed.split(/\s+=\s+/)) if (side !== trimmed) expand(side)
     for (const side of trimmed.split(/\s*\/\s*/)) if (side !== trimmed) expand(side)
-    for (const quoted of trimmed.matchAll(/["“«„]([^"”»“]+)["”»]/g)) expand(quoted[1])
+    for (const quoted of trimmed.matchAll(QUOTED_SPAN)) expand(quoted[1])
+    for (const quoted of trimmed.matchAll(SINGLE_QUOTED_SPAN)) expand(quoted[1])
     const segments = trimmed.split(SEGMENT_SPLIT).filter(Boolean)
     if (segments.length > 1) {
       // Drop segments that are the artist's own name; the rest stand alone.

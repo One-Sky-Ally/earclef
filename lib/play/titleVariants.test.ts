@@ -45,3 +45,22 @@ test('colon durations parse to seconds; empty is unknown, not zero', () => {
   assert.equal(colonDurationSeconds(''), null)
   assert.equal(colonDurationSeconds(undefined), null)
 })
+
+test('Japanese uploads: full-width brackets and 「」 quotes leave the song as a whole unit (toe, Oct 2026)', () => {
+  const aliases = aliasKeysOf(['toe'])
+  const song = titleVariants('グッドバイ', aliases)
+  assert.ok(variantsIntersect(titleVariants('toe / グッドバイ 【Official Music Video】', aliases), song))
+  assert.ok(variantsIntersect(titleVariants('toe「グッドバイ」Music Video', aliases), song))
+  assert.ok(variantsIntersect(titleVariants('【MV】toe - グッドバイ', aliases), song))
+  assert.ok(variantsIntersect(titleVariants('toe『グッドバイ』（Live）', aliases), song))
+  // Still whole units: part of the title is not the title.
+  assert.ok(!variantsIntersect(titleVariants('toe / グッドバイ 【MV】', aliases), titleVariants('バイ', aliases)))
+})
+
+test('single-quoted titles count; apostrophes inside words never split a title', () => {
+  const aliases = aliasKeysOf(['toe'])
+  assert.ok(variantsIntersect(titleVariants("toe 'Goodbye' MV", aliases), titleVariants('Goodbye', aliases)))
+  assert.ok(variantsIntersect(titleVariants('toe ‘Song Silly’ music video', aliases), titleVariants('Song Silly', aliases)))
+  assert.deepEqual([...titleVariants("Don't Look Back")], ['dontlookback'])
+  assert.ok(!titleVariants("Rock 'n' Roll Suicide").has('n'))
+})

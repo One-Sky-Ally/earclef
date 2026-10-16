@@ -54,6 +54,8 @@ export function sanitizeStockPick(
     SONG_KINDS.has(String(rawSong.kind))
       ? (rawSong as unknown as DiscoverPick['song'])
       : null
+  // Only picks that play here are stocked (owner ruling, Oct 15 2026).
+  if (!song) return null
   const bandcamp = httpsUrl(pick.bandcamp)
   const connectsTo = Array.isArray(pick.connectsTo)
     ? [...new Set(pick.connectsTo)]
@@ -102,6 +104,18 @@ export function sanitizePool(pool: DiscoverPool): DiscoverPool {
       }
     }),
   }
+}
+
+/**
+ * What Discover may SHOW: picks with a verified playable song only —
+ * the Songs-about rule (owner, Oct 15 2026). Applied to every pool the
+ * routes serve, including the retired nightly job's last pool during
+ * the switchover, whose song-less picks fell back to a bare link.
+ */
+export function playablePicks(picks: readonly DiscoverPick[]): DiscoverPick[] {
+  return picks.filter(
+    (pick) => typeof pick.song?.videoId === 'string' && VIDEO_ID.test(pick.song.videoId),
+  )
 }
 
 /** Dev-only pool fixture: verify rendering with zero model calls. */

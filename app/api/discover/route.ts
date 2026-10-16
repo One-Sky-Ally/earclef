@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { readFixture, sanitizePool } from '@/lib/discover/serve'
+import { playablePicks, readFixture, sanitizePool } from '@/lib/discover/serve'
 import { sharedSetFor } from '@/lib/discover/stock'
 import { readIndex, readSet } from '@/lib/discover/stockStore'
 import { readLatestLegacyPool } from '@/lib/discover/store'
@@ -39,9 +39,10 @@ function json(body: DiscoverResponse, maxAge: number): NextResponse {
   return response
 }
 
+/** Playable picks only, the day's first VISITOR_PICKS of them. */
 const forVisitors = (pool: DiscoverPool): DiscoverPool => ({
   date: pool.date,
-  picks: pool.picks.slice(0, VISITOR_PICKS),
+  picks: playablePicks(pool.picks).slice(0, VISITOR_PICKS),
 })
 
 export async function GET() {
@@ -53,7 +54,7 @@ export async function GET() {
   const today = utcToday()
   const todays = sharedSetFor(await readIndex('shared'), today)
   const set = todays ? await readSet(todays.id) : null
-  if (todays && set && set.picks.length > 0) {
+  if (todays && set && playablePicks(set.picks).length > 0) {
     return json(
       {
         status: 'ready',
@@ -67,7 +68,7 @@ export async function GET() {
   // Switchover: nothing stocked yet — the nightly job's last pool, as
   // the archive, re-checked often so the first stocked set shows soon.
   const legacy = await readLatestLegacyPool()
-  if (legacy && legacy.picks.length > 0) {
+  if (legacy && playablePicks(legacy.picks).length > 0) {
     return json(
       {
         status: 'ready',

@@ -73,6 +73,10 @@ export interface SongContext {
   titles: readonly string[]
   /** Epoch ms: no new network work after this. */
   deadline: number
+  /** Discogs records read at most (the local stocking run reads deeper). */
+  maxRecords?: number
+  /** Step-by-step notes on how the song was (or wasn't) found — `discover-stock why`. */
+  trace?: (line: string) => void
 }
 
 /** Before playability: what was found and where. */
@@ -98,6 +102,8 @@ interface RankContext {
   labels: readonly string[]
 }
 
+/** Verified Discogs songs that are plenty to rank: reading stops here. */
+const ENOUGH_SONGS = 8
 /** Candidates the batched playability call can take: 50 ids = 1 unit. */
 const MAX_CHECKED = 50
 /** Titles walked on the artist's own channel. */
@@ -146,13 +152,24 @@ function channelCandidates(uploads: readonly Upload[], titles: readonly string[]
 }
 
 async function fromChannel(context: SongContext, apiKey: string): Promise<Found[]> {
+  const trace = context.trace
   const channelUrl = youtubeRel([...context.relations])
+  if (!channelUrl) trace?.('channel: MusicBrainz lists no YouTube channel for the artist')
   if (!channelUrl || context.titles.length === 0 || Date.now() > context.deadline) return []
   try {
     const id = await channelId(channelUrl, apiKey)
-    if (!id) return []
-    return channelCandidates(await channelUploads(id, apiKey), context.titles, context.name)
-  } catch {
+    if (!id) {
+      trace?.(`channel: ${channelUrl} did not resolve to a channel id`)
+      return []
+    }
+    const uploads = await channelUploads(id, apiKey)
+    const found = channelCandidates(uploads, context.titles, context.name)
+    trace?.(
+      `channel: ${uploads.length} uploads; ${found.length} match a release-group title (${context.titles.length} titles walked — album TRACKS are not matched on this path)`,
+    )
+    return found
+  } catch (error) {
+    trace?.(`channel: failed (${(error as Error).message})`)
     return [] // quota or network: the Discogs path still stands
   }
 }
@@ -161,13 +178,32 @@ async function fromDiscogs(
   context: SongContext,
   aliases: ReadonlySet<string>,
 ): Promise<{ found: Found[]; labels: string[] }> {
+  const trace = context.trace
   const ids = discogsIdsOf(context.relations)
-  if (ids.length === 0) return { found: [], labels: [] }
+  if (ids.length === 0) {
+    trace?.('discogs: MusicBrainz lists no Discogs artist for the artist')
+    return { found: [], labels: [] }
+  }
+  const idSet = new Set(ids)
   const { records, labels } = await discogsArtistRecords(ids, {
     deadline: context.deadline,
     preferTitles: [context.knownFor],
+    maxRecords: context.maxRecords,
+    enough: (read) => recordSongCandidates(read, idSet, aliases).length >= ENOUGH_SONGS,
   })
-  const found = recordSongCandidates(records, new Set(ids), aliases).map((candidate) => ({
+  const verified = recordSongCandidates(records, idSet, aliases)
+  if (trace) {
+    trace(`discogs: artist ${ids.join(', ')}; ${records.length} records with videos read`)
+    for (const record of records) {
+      const kept = verified.filter((candidate) => candidate.release === record.title).length
+      trace(`  ${record.year ?? '????'} "${record.title}": ${record.videos.length} videos, ${kept} pass the identity bar`)
+      for (const video of record.videos.slice(0, 12)) {
+        const ok = verified.some((candidate) => candidate.videoId === video.videoId)
+        trace(`    ${ok ? '✓' : '·'} ${video.title}`)
+      }
+    }
+  }
+  const found = verified.map((candidate) => ({
     videoId: candidate.videoId,
     uploadTitle: candidate.uploadTitle,
     songTitle: candidate.songTitle,
@@ -256,7 +292,10 @@ export async function resolveDiscoverSong(context: SongContext): Promise<Discove
     ])
     const context2 = { ...rank, labels: discogs.labels }
     const checked = preRank(dedupe([...channel, ...discogs.found]), context2).slice(0, MAX_CHECKED)
-    if (checked.length === 0) return null
+    if (checked.length === 0) {
+      context.trace?.('result: no verified candidate video on either path')
+      return null
+    }
     const { playable, meta } = await playableSet(
       checked.map((entry) => entry.videoId),
       apiKey,
@@ -277,7 +316,20 @@ export async function resolveDiscoverSong(context: SongContext): Promise<Discove
           }).reasons.length > 0,
       }
     })
-    return chooseSong(inputs, context2)
+    if (context.trace) {
+      for (const input of inputs) {
+        const kind = uploadKindOf(input.uploadTitle, input.songTitle, context.name, input.uploader)
+        const trusted = isTrustedUploader(input.uploader, aliases, discogs.labels)
+        context.trace(
+          `candidate ${input.videoId} "${input.uploadTitle}" by ${input.uploader || '?'} → ${kind}` +
+            `${input.playable ? '' : ', NOT playable'}${input.nonMusic ? ', flagged non-music' : ''}` +
+            `${kind === 'official-video' || input.source === 'channel' || trusted ? '' : ', uploader not trusted'}`,
+        )
+      }
+    }
+    const chosen = chooseSong(inputs, context2)
+    context.trace?.(chosen ? `result: ${chosen.kind} "${chosen.uploadTitle}"` : 'result: every candidate was ruled out')
+    return chosen
   } catch (error) {
     console.error(`discover song for ${context.name} failed:`, error)
     return null

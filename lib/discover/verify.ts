@@ -163,27 +163,49 @@ export interface VerifyContext {
   /** Normalized roster names and slugs: anyone on Ear Clef is never a pick. */
   rosterKeys: ReadonlySet<string>
   rosterSlugs: ReadonlySet<string>
-  /** Epoch ms: no song search starts after this (the pick still counts). */
+  /** Epoch ms: no song search starts after this. */
   songDeadline: number
+  /** Discogs records read at most for the song (the local run reads deeper). */
+  maxRecords?: number
+  /** Step-by-step notes — `npm run discover-stock -- why "<artist>"`. */
+  trace?: (line: string) => void
+}
+
+export interface VerifyResult {
+  pick: DiscoverPick | null
+  /** Why a candidate was left out. */
+  reason?: 'on the roster' | 'not on MusicBrainz' | 'no catalogue' | 'no playable song'
 }
 
 /**
- * One candidate → a verified pick, or null (not on MusicBrainz under
- * that exact name, on the roster already, or no catalogue at all).
- * MusicBrainz is paced at 1 request/s inside; Discogs paces itself.
+ * One candidate → a verified pick, or the reason it was left out: not
+ * on MusicBrainz under that exact name, on the roster already, no
+ * catalogue — or NO PLAYABLE SONG. Discover shows only picks that play
+ * here (owner ruling, Oct 15 2026: the Songs-about rule), so a pick
+ * without a verified song is never stocked. MusicBrainz is paced at
+ * 1 request/s inside; Discogs paces itself.
  */
 export async function verifyCandidate(
   candidate: RawPick,
   context: VerifyContext,
-): Promise<DiscoverPick | null> {
+): Promise<VerifyResult> {
+  const trace = context.trace
   const key = normalize(candidate.name)
-  if (!key || context.rosterKeys.has(key)) return null
+  if (!key || context.rosterKeys.has(key)) return { pick: null, reason: 'on the roster' }
   const match = await verifyOnMusicBrainz(candidate.name)
   await sleep(1100) // MusicBrainz rate limit: 1 req/s
-  if (!match || context.rosterKeys.has(normalize(match.canonicalName))) return null
+  if (!match) {
+    trace?.(`musicbrainz: no artist named exactly "${candidate.name}" (score ≥ 85)`)
+    return { pick: null, reason: 'not on MusicBrainz' }
+  }
+  trace?.(`musicbrainz: ${match.canonicalName} (${match.mbid})`)
+  if (context.rosterKeys.has(normalize(match.canonicalName))) {
+    return { pick: null, reason: 'on the roster' }
+  }
 
   const catalog = await verifiedKnownFor(match.mbid, candidate.knownFor)
-  if (!catalog) return null // no verifiable catalog — the pick is out
+  if (!catalog) return { pick: null, reason: 'no catalogue' }
+  trace?.(`catalogue: known for "${catalog.knownFor}"; ${catalog.titles.length} release-group titles`)
 
   // One MB artist call feeds the play chain AND the song resolver.
   const artist = await fetchMbArtist(match.mbid)
@@ -196,8 +218,11 @@ export async function verifyCandidate(
     aliases: mbAliasNames(artist),
     titles: catalog.titles,
     deadline: context.songDeadline,
+    maxRecords: context.maxRecords,
+    trace,
   })
-  return {
+  if (!song) return { pick: null, reason: 'no playable song' }
+  const pick: DiscoverPick = {
     name: match.canonicalName,
     why: candidate.why,
     knownFor: catalog.knownFor,
@@ -213,4 +238,5 @@ export async function verifyCandidate(
     bandcamp: bandcampRel(artist?.relations),
     connectsTo: rosterLinks(candidate.connectsTo, context.rosterSlugs),
   }
+  return { pick }
 }

@@ -46,3 +46,14 @@ test('words are whole: "Husband", "Console", "Leadership Award" are not roles', 
     assert.equal(isPerformingRole(role), false, role)
   }
 })
+
+test('titleVariants mirror: full-width brackets and Japanese / single quotes (kept in step with lib/play/titleVariants.ts)', async () => {
+  const { titleVariants } = await import('../lib/extraPlayIdentity.mjs')
+  const aliases = new Set(['toe'])
+  const has = (title, key) => titleVariants(title, aliases).has(key)
+  const song = [...titleVariants('グッドバイ', aliases)][0]
+  assert.ok(has('toe / グッドバイ 【Official Music Video】', song))
+  assert.ok(has('toe「グッドバイ」Music Video', song))
+  assert.ok(has("toe 'Goodbye' MV", 'goodbye'))
+  assert.ok(!titleVariants("Rock 'n' Roll Suicide").has('n'))
+})

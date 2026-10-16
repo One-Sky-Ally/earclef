@@ -28,8 +28,9 @@ const TOKEN_SPACING_MS = 1100
 /** Read per call, so a script can set it after this module loads. */
 const discogsToken = () => process.env.DISCOGS_TOKEN || null
 const RATE_LIMIT_WAIT_MS = 35_000
-/** Records read per artist: ~11 calls, ~30 s — the per-pick budget. */
+/** Records read per artist by default: ~11 calls. */
 export const MAX_RECORDS = 10
+
 const YOUTUBE_ID = /[?&]v=([\w-]{11})|youtu\.be\/([\w-]{11})/
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
@@ -67,6 +68,15 @@ interface ApiRecord {
 export interface DiscogsReadOptions {
   /** Epoch ms after which no further call is made. */
   deadline: number
+  /** Records read at most (default MAX_RECORDS; the local stocking run reads deeper). */
+  maxRecords?: number
+  /**
+   * Stop reading once this says the records so far are enough (the
+   * caller counts VERIFIED songs, not raw videos), so a well-documented
+   * artist costs few calls and one whose videos sit on older records
+   * gets the deeper read.
+   */
+  enough?: (records: readonly DiscogsRecord[]) => boolean
   /** Listed titles to read first (the pick's knownFor), exact match. */
   preferTitles?: readonly string[]
 }
@@ -168,13 +178,22 @@ export async function discogsArtistRecords(
     )
   ).flat()
   const listedLabels = [...new Set(listed.flatMap((entry) => (entry.label ? [entry.label] : [])))]
+  // The pick's known title first; then MASTERS (an album or EP with its
+  // pressings — where Discogs users attach the official videos), newest
+  // first; plain releases (singles, splits, one-off pressings) last.
+  // Newest-first alone let a run of recent singles and reissues use up
+  // the reads before the albums carrying the videos (toe, Oct 2026).
+  const preferred = (entry: (typeof listed)[number]) =>
+    prefer.some((title) => sameTitle(title, entry.title ?? ''))
   const ordered = [
-    ...listed.filter((entry) => prefer.some((title) => sameTitle(title, entry.title ?? ''))),
-    ...listed.filter((entry) => !prefer.some((title) => sameTitle(title, entry.title ?? ''))),
-  ].slice(0, MAX_RECORDS)
+    ...listed.filter(preferred),
+    ...listed.filter((entry) => !preferred(entry) && entry.type === 'master'),
+    ...listed.filter((entry) => !preferred(entry) && entry.type !== 'master'),
+  ].slice(0, options.maxRecords ?? MAX_RECORDS)
 
   const records: DiscogsRecord[] = []
   for (const entry of ordered) {
+    if (options.enough?.(records)) break
     const path = entry.type === 'master' ? `/masters/${entry.id}` : `/releases/${entry.id}`
     const body = (await client.get(path)) as ApiRecord | null
     if (!body) continue

@@ -21,7 +21,7 @@ export interface DiscoverPick {
   /** True for freshly generated picks; false only for sanitized legacy pools. */
   knownForVerified: boolean
   mbid: string
-  /** Verified play destination, or null — the card shows read-about. */
+  /** Verified play destination, or null (the card plays `song`, never this). */
   play: PlayLink | null
   read: ReadLink
   /** Back-compat mirror of play?.url ?? read.url. Never a search URL. */
@@ -29,7 +29,7 @@ export interface DiscoverPick {
   /**
    * A verified, playable YouTube song (Oct 11 2026; see ./song): the
    * card embeds it and keeps a small Bandcamp link beside it. null =
-   * no verified song, and the card renders play/read as before.
+   * no verified song: never stocked, never shown (owner, Oct 15 2026).
    */
   song: DiscoverSong | null
   /** The artist's MB-linked Bandcamp page, whatever `play` picked. */
