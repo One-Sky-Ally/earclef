@@ -139,8 +139,10 @@ Phase A's miss list — so they run while you write blurbs.
    with a verified playable song are stocked (owner ruling, Oct 15
    2026: same rule as Songs about this place); the rest are skipped and
    logged with the reason ("no playable song", "not on MusicBrainz",
-   "no catalogue", "on the roster"). Progress is saved after every pick
-   — out of time or interrupted, run it again and it continues.
+   "no catalogue", "on the roster"). "musicbrainz unavailable" is not a
+   verdict: MusicBrainz did not answer after retries, and the next
+   `verify` run tries that candidate again. Progress is saved after every
+   pick — out of time or interrupted, run it again and it continues.
    Candidates ran out short of the target → write a few more and verify
    again, or upload what is done.
 5. A skip that looks wrong (the artist plainly has official videos) →

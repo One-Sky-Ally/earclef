@@ -14,6 +14,7 @@ import {
   mbAliasNames,
   resolveMbArtistPlay,
 } from '../play/resolve'
+import { fetchMusicBrainzJson } from './mbFetch'
 import { resolveDiscoverSong } from './song'
 import type { DiscoverPick, RawPick } from './types'
 
@@ -44,22 +45,19 @@ interface MbArtistMatch {
   canonicalName: string
 }
 
-async function verifyOnMusicBrainz(name: string): Promise<MbArtistMatch | null> {
+/** The exact-name match, null when there is none, 'unavailable' when MusicBrainz never answered. */
+async function verifyOnMusicBrainz(
+  name: string,
+): Promise<MbArtistMatch | null | 'unavailable'> {
   const query = encodeURIComponent(`artist:"${name.replace(/"/g, '')}"`)
   const url = `https://musicbrainz.org/ws/2/artist?query=${query}&limit=3&fmt=json`
-  try {
-    const res = await fetch(url, { headers: { 'User-Agent': MB_USER_AGENT } })
-    if (!res.ok) return null
-    const body = (await res.json()) as {
-      artists?: { id: string; name: string; score: number }[]
-    }
-    const top = body.artists?.[0]
-    if (!top || top.score < 85) return null
-    if (normalize(top.name) !== normalize(name)) return null
-    return { mbid: top.id, canonicalName: top.name }
-  } catch {
-    return null
-  }
+  const res = await fetchMusicBrainzJson(url)
+  if (!res.ok) return res.unavailable ? 'unavailable' : null
+  const body = res.body as { artists?: { id: string; name: string; score: number }[] }
+  const top = body.artists?.[0]
+  if (!top || top.score < 85) return null
+  if (normalize(top.name) !== normalize(name)) return null
+  return { mbid: top.id, canonicalName: top.name }
 }
 
 interface MbReleaseGroup {
@@ -103,16 +101,11 @@ async function verifiedKnownFor(
   proposed: string,
 ): Promise<VerifiedCatalog | null> {
   const rgUrl = `https://musicbrainz.org/ws/2/release-group?artist=${mbid}&limit=100&fmt=json`
-  let groups: MbReleaseGroup[] = []
-  try {
-    const res = await fetch(rgUrl, { headers: { 'User-Agent': MB_USER_AGENT } })
-    if (res.ok) {
-      const body = (await res.json()) as { 'release-groups'?: MbReleaseGroup[] }
-      groups = body['release-groups'] ?? []
-    }
-  } catch {
-    // fall through — treated as an empty catalog below
-  }
+  const rgRes = await fetchMusicBrainzJson(rgUrl)
+  // a failed read is treated as an empty catalog below
+  const groups: MbReleaseGroup[] = rgRes.ok
+    ? ((rgRes.body as { 'release-groups'?: MbReleaseGroup[] })['release-groups'] ?? [])
+    : []
   await sleep(1100) // MusicBrainz rate limit: 1 req/s
 
   const proposedKey = normalize(proposed)
@@ -174,7 +167,12 @@ export interface VerifyContext {
 export interface VerifyResult {
   pick: DiscoverPick | null
   /** Why a candidate was left out. */
-  reason?: 'on the roster' | 'not on MusicBrainz' | 'no catalogue' | 'no playable song'
+  reason?:
+    | 'on the roster'
+    | 'not on MusicBrainz'
+    | 'musicbrainz unavailable'
+    | 'no catalogue'
+    | 'no playable song'
 }
 
 /**
@@ -194,6 +192,10 @@ export async function verifyCandidate(
   if (!key || context.rosterKeys.has(key)) return { pick: null, reason: 'on the roster' }
   const match = await verifyOnMusicBrainz(candidate.name)
   await sleep(1100) // MusicBrainz rate limit: 1 req/s
+  if (match === 'unavailable') {
+    trace?.(`musicbrainz: no answer for "${candidate.name}" after retries`)
+    return { pick: null, reason: 'musicbrainz unavailable' }
+  }
   if (!match) {
     trace?.(`musicbrainz: no artist named exactly "${candidate.name}" (score ≥ 85)`)
     return { pick: null, reason: 'not on MusicBrainz' }
