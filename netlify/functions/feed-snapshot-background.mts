@@ -8,9 +8,14 @@
  * (A sequential single-pass over the whole roster used to stall past
  * ~60 artists as the roster grew — this replaces that.)
  *
- * Idempotent: a fresh snapshot exits early; a heartbeat lock (not a
- * once-per-day flag) prevents two invocations racing the same batch
- * while still letting a dead invocation be reclaimed after LOCK_STALE_MS.
+ * Idempotent: a fresh snapshot exits early; a heartbeat lock (refreshed
+ * after every artist, not a once-per-day flag) prevents two invocations
+ * racing the same batch while still letting a genuinely dead invocation
+ * be reclaimed after LOCK_STALE_MS.
+ *
+ * Triggered by: the hourly feed-snapshot-schedule tick (the 00:20 UTC
+ * one starts the night's rebuild, later ones resume a parked chain), the
+ * previous batch's self-trigger, and /api/feed/snapshot on a stale read.
  */
 import {
   buildBatch,
@@ -22,13 +27,14 @@ import {
   readProgress,
   readSnapshot,
   startProgress,
+  triggerRebuild,
   writeLock,
   writeProgress,
   writeSnapshot,
 } from '../../lib/feed/snapshot'
 
 /**
- * Longer than one batch's realistic worst case (BATCH_SIZE artists with
+ * Longer than the gap between two heartbeats (one artist's fetches with
  * MusicBrainz/iTunes/YouTube retries), short enough that a genuinely-dead
  * invocation doesn't stall the rebuild for long before being reclaimed.
  */
@@ -54,16 +60,24 @@ async function claimLock(today: string): Promise<boolean> {
  * self-trigger can be abandoned mid-dispatch, which is exactly what
  * silently stalled the very first verification of this rebuild (progress
  * persisted correctly at cursor 15/87, but the chain never continued).
+ *
+ * Retried (triggerRebuild): a single dropped POST used to park the chain
+ * until the next trigger. If every attempt fails, progress is already
+ * saved and the hourly tick resumes the chain from its cursor.
  */
 async function triggerNextBatch(): Promise<void> {
   const base = process.env.URL
-  if (!base) return
-  try {
-    await fetch(`${base}/.netlify/functions/feed-snapshot-background`, {
-      method: 'POST',
-    })
-  } catch {
-    // best effort — the nightly cron or next lazy-route trigger resumes it
+  if (!base) {
+    console.error(
+      'feed snapshot: URL env var not set, cannot self-trigger; the hourly tick resumes from saved progress',
+    )
+    return
+  }
+  const result = await triggerRebuild(base, { attempts: 3, timeoutMs: 5000 })
+  if (!result.ok) {
+    console.error(
+      `feed snapshot: next batch not accepted (last status ${result.status ?? 'no response'} after ${result.attempts} attempts); the hourly tick resumes from saved progress`,
+    )
   }
 }
 
@@ -71,8 +85,14 @@ export default async function handler(): Promise<Response> {
   const today = new Date().toISOString().slice(0, 10)
 
   const existing = await readSnapshot()
-  if (existing && isFresh(existing)) return new Response('already fresh')
-  if (!(await claimLock(today))) return new Response('already running')
+  if (existing && isFresh(existing)) {
+    console.log(`feed snapshot: already fresh (built ${existing.builtAt})`)
+    return new Response('already fresh')
+  }
+  if (!(await claimLock(today))) {
+    console.log('feed snapshot: already running (lock held by another batch)')
+    return new Response('already running')
+  }
 
   let done = false
   let cursor = 0
@@ -82,7 +102,9 @@ export default async function handler(): Promise<Response> {
     if (!progress || progress.date !== today) progress = startProgress()
     console.log(`feed snapshot: batch starting at ${progress.cursor}/${progress.rosterLength}`)
 
-    const batch = await buildBatch(progress)
+    const batch = await buildBatch(progress, {
+      heartbeat: () => writeLock({ date: today, updatedAt: Date.now() }),
+    })
     await writeProgress(batch.progress)
     done = batch.done
     cursor = batch.progress.cursor

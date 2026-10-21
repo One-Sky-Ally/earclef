@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { isFresh, readSnapshot } from '@/lib/feed/snapshot'
+import { isFresh, readSnapshot, triggerRebuild } from '@/lib/feed/snapshot'
 
 /**
  * Serves the precomputed feed. A stale-but-present snapshot is still
@@ -15,12 +15,11 @@ export async function GET() {
     // response is returned, abandoning an unawaited fetch (the same failure
     // feed-snapshot-background's self-trigger hit). Background functions
     // answer 202 at once, and the timeout keeps a slow one off the request.
+    // One attempt only — this is a visitor's request; the hourly tick is
+    // the retry.
     const base = process.env.URL
     if (base) {
-      await fetch(`${base}/.netlify/functions/feed-snapshot-background`, {
-        method: 'POST',
-        signal: AbortSignal.timeout(3000),
-      }).catch(() => {})
+      await triggerRebuild(base, { attempts: 1, timeoutMs: 3000 })
     }
   }
 

@@ -18,6 +18,14 @@ import { musicServiceSearchUrl } from '../listen/services'
 import { normalizedTitle } from './blurbKey'
 import { isSubstantiveVideo } from './substance'
 import roster from '../discover/roster.json'
+import { builtToday } from './rebuild'
+
+export {
+  BACKGROUND_FUNCTION_PATH,
+  triggerRebuild,
+  type TriggerOptions,
+  type TriggerResult,
+} from './rebuild'
 
 export interface SnapshotItem {
   type: 'release' | 'video'
@@ -418,8 +426,19 @@ export function startProgress(): BuildProgress {
  * roster completes across several chained batches instead of stalling
  * partway through a single all-in-one pass.
  */
+export interface BuildBatchOptions {
+  /**
+   * Called after each artist so the caller can refresh its lock. A batch
+   * slowed by MusicBrainz 503 retries can outlive a fixed lock age, and
+   * a tick or /feed visit landing then would start a second chain over
+   * the same slice (double the external load, muddled logs).
+   */
+  heartbeat?: () => Promise<void>
+}
+
 export async function buildBatch(
   progress: BuildProgress,
+  options: BuildBatchOptions = {},
 ): Promise<{ progress: BuildProgress; done: boolean }> {
   const list = roster as RosterEntry[]
   const slice = list.slice(progress.cursor, progress.cursor + BATCH_SIZE)
@@ -437,6 +456,7 @@ export async function buildBatch(
       ...mergeReleases(overlay, mb),
       ...(await pruneDeadVideos(videos, verdicts)),
     )
+    await options.heartbeat?.()
     // MusicBrainz 1 req/s + iTunes ~20 req/min shared across the batch.
     await sleep(2600)
   }
@@ -460,16 +480,11 @@ export function finalizeSnapshot(progress: BuildProgress): FeedSnapshot {
  * A snapshot is fresh only if it was built today (UTC) AND covers the
  * current roster. Age alone isn't enough — a same-day snapshot built
  * before new artists were added would otherwise silently block a rebuild
- * every time the roster grows.
- *
- * Freshness is the UTC DATE, not an age window: the old "< 26h" check
- * skipped every other nightly run. The 00:20 cron's pass finishes around
- * 00:35, so at the next 00:20 the snapshot is ~23h40m old — "fresh" — and
- * the scheduled run exited without rebuilding (the Sep 16 skip). Any age
- * window longer than 24h minus the build time does the same.
+ * every time the roster grows. Why the UTC date and not an age window
+ * (the Sep 16 skip, and what the hourly tick relies on): see builtToday
+ * in ./rebuild.
  */
 export function isFresh(snapshot: FeedSnapshot): boolean {
   if (snapshot.rosterLength !== ROSTER_LENGTH) return false
-  const today = new Date().toISOString().slice(0, 10)
-  return snapshot.builtAt.slice(0, 10) === today
+  return builtToday(snapshot.builtAt)
 }

@@ -32,10 +32,23 @@ Only this phase ever writes blurbs, so whatever it leaves stays missing.
    `{"blurbs": {"v2/<slug>/<type>/<normalizedTitle>": "text", ...}}`,
    ≤60 keys per batch. Verify: re-run the miss lister → it must print
    an EMPTY list. Anything left: write and seed it, then re-run again.
-4. The feed snapshot itself self-rebuilds daily server-side (no AI).
-   If /api/feed/snapshot reports stale and you trigger a rebuild, re-run
-   the miss lister after it finishes — a rebuild rotates new items in —
-   and cover those too, back to an empty list.
+4. The feed snapshot itself self-rebuilds every night server-side (no
+   AI): `feed-snapshot-schedule` ticks every hour at :20 UTC, the 00:20
+   tick starts the rebuild (~20 min across chained batches), and later
+   ticks exit "fresh" — or re-trigger a stale snapshot / resume a parked
+   chain. Check it with
+   `curl -H "x-owner-key: $OWNER_KEY" https://earclef.com/api/studio/feed-status`
+   (builtAt, isFresh, progress, lock; the public /api/feed/snapshot is
+   CDN-cached up to 3h and can show an older builtAt than the store).
+   `isFresh: false` with no progress after ~01:00 UTC means the ticks are
+   not reaching the site: read the Netlify function log for
+   `feed-snapshot-schedule` (Netlify → the site → Logs → Functions);
+   every tick logs one line saying fresh/stale and whether the trigger
+   was accepted. Rebuild by hand only after that:
+   `curl -X POST https://earclef.com/.netlify/functions/feed-snapshot-background`
+   (202 = accepted; watch feed-status until progress clears). After ANY
+   rebuild, re-run the miss lister — a rebuild rotates new items in — and
+   cover those too, back to an empty list.
 
 ## Phase B — "What was playing" combos (~15 min)
 
