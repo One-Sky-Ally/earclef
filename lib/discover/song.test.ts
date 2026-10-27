@@ -60,3 +60,13 @@ test('within a tier the knownFor title leads; unplayable, non-music and whole-re
   assert.equal(chooseSong([base({ ...known, nonMusic: true })], ctx), null)
   assert.equal(chooseSong([base({ uploadTitle: 'Mipso - Edges Run (Full Album) [Official Video]', songTitle: 'Edges Run' })], ctx), null)
 })
+
+test('a gone or forbidden channel is an answer; quota, server errors and drops are not', async () => {
+  const { channelFailureIsTransient } = await import('./song.ts')
+  const { QuotaError } = await import('../play/channelSongs.ts')
+  assert.equal(channelFailureIsTransient(new Error('YouTube HTTP 404')), false)
+  assert.equal(channelFailureIsTransient(new Error('YouTube 403')), false)
+  assert.equal(channelFailureIsTransient(new QuotaError()), true)
+  assert.equal(channelFailureIsTransient(new Error('YouTube HTTP 503')), true)
+  assert.equal(channelFailureIsTransient(new TypeError('fetch failed')), true)
+})

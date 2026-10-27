@@ -192,9 +192,9 @@ async function verify(minutes) {
         songDeadline: deadline,
         maxRecords: MAX_RECORDS,
       })
-      if (reason === 'musicbrainz unavailable') {
-        // MusicBrainz never answered: not a verdict on the artist, so the
-        // next `verify` run tries this candidate again.
+      if (reason === 'musicbrainz unavailable' || reason === 'song lookup unavailable') {
+        // MusicBrainz, Discogs or YouTube never answered: not a verdict on
+        // the artist, so the next `verify` run tries this candidate again.
         progress[kind].tried = progress[kind].tried.filter((tried) => tried !== key)
       }
       const kept = pick && !seenMbids.has(pick.mbid)

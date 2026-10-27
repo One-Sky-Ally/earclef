@@ -77,6 +77,8 @@ export interface SongContext {
   maxRecords?: number
   /** Step-by-step notes on how the song was (or wasn't) found — `discover-stock why`. */
   trace?: (line: string) => void
+  /** Called when a Discogs or YouTube call did not answer, so a miss is not a verdict. */
+  onUnavailable?: (where: string) => void
 }
 
 /** Before playability: what was found and where. */
@@ -151,6 +153,16 @@ function channelCandidates(uploads: readonly Upload[], titles: readonly string[]
   })
 }
 
+/**
+ * A channel read that failed because YouTube was busy or unreachable is
+ * not a verdict; a 404 (the MB-linked channel is gone) or a plain 403 is
+ * YouTube's answer and is final (Godspeed You! Black Emperor, Oct 27 2026).
+ */
+export function channelFailureIsTransient(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error)
+  return !/YouTube HTTP 404|^YouTube 403$/.test(message)
+}
+
 async function fromChannel(context: SongContext, apiKey: string): Promise<Found[]> {
   const trace = context.trace
   const channelUrl = youtubeRel([...context.relations])
@@ -170,6 +182,7 @@ async function fromChannel(context: SongContext, apiKey: string): Promise<Found[
     return found
   } catch (error) {
     trace?.(`channel: failed (${(error as Error).message})`)
+    if (channelFailureIsTransient(error)) context.onUnavailable?.('youtube channel')
     return [] // quota or network: the Discogs path still stands
   }
 }
@@ -185,12 +198,16 @@ async function fromDiscogs(
     return { found: [], labels: [] }
   }
   const idSet = new Set(ids)
-  const { records, labels } = await discogsArtistRecords(ids, {
+  const { records, labels, failed } = await discogsArtistRecords(ids, {
     deadline: context.deadline,
     preferTitles: [context.knownFor],
     maxRecords: context.maxRecords,
     enough: (read) => recordSongCandidates(read, idSet, aliases).length >= ENOUGH_SONGS,
   })
+  if (failed) {
+    trace?.('discogs: some calls did not answer')
+    context.onUnavailable?.('discogs')
+  }
   const verified = recordSongCandidates(records, idSet, aliases)
   if (trace) {
     trace(`discogs: artist ${ids.join(', ')}; ${records.length} records with videos read`)
@@ -332,6 +349,7 @@ export async function resolveDiscoverSong(context: SongContext): Promise<Discove
     return chosen
   } catch (error) {
     console.error(`discover song for ${context.name} failed:`, error)
+    context.onUnavailable?.('song lookup')
     return null
   }
 }

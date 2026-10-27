@@ -944,7 +944,7 @@
       "era": "The chart at feed speed",
       "kind": "charted",
       "basis": "Anchored to the Billboard Hot 100 archive, documented week by week through the present.",
-      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen. In 2026 the long run came from Nashville again: [[Ella Langley]]'s Choosin' Texas kept returning to the Hot 100 summit — breaking the all-time record with its twenty-third week in September and reaching twenty-four by October — while [[Taylor Swift]]'s I Knew It, I Knew You, from Toy Story 5, became her fifteenth #1, more than any artist this century.",
+      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen. In 2026 the long run came from Nashville again: [[Ella Langley]]'s Choosin' Texas kept returning to the Hot 100 summit — breaking the all-time record with its twenty-third week in September and returning for a twenty-fifth on the 31 October chart — while [[Taylor Swift]]'s I Knew It, I Knew You, from Toy Story 5, became her fifteenth #1, more than any artist this century.",
       "items": [
         {
           "artist": "The Weeknd",
@@ -979,7 +979,7 @@
         {
           "artist": "Ella Langley",
           "work": "Choosin' Texas",
-          "note": "Hot 100 #1 for 24 non-consecutive weeks by October 2026 — the longest run in Hot 100 history, passing Mariah Carey's All I Want for Christmas Is You"
+          "note": "Hot 100 #1 for 25 non-consecutive weeks by the 31 October 2026 chart — the longest run in Hot 100 history, passing Mariah Carey's All I Want for Christmas Is You"
         },
         {
           "artist": "Taylor Swift",
@@ -1916,6 +1916,121 @@
       ],
       "model": "claude-opus-5-5 (in-session, research agent + owner-gate verification)",
       "at": "2026-10-15"
+    },
+    {
+      "country": "IE",
+      "from": 1962,
+      "to": 1975,
+      "era": "From the showbands to Thin Lizzy — the first Irish charts",
+      "kind": "charted",
+      "basis": "Every week count and date is read from the number-one archive of the Irish Recorded Music Association (irma.ie) for the chart RTÉ first broadcast on 1 October 1962, and cross-read row by row against Wikipedia's per-year lists, which agree on all twelve picks; by IRMA's account the early charts were built from record-company ship-out figures rather than sales to the public.",
+      "story": "Ireland's singles chart began on 1 October 1962, when RTÉ broadcast a Top Ten compiled by Jimmy Magee, with Elvis Presley's She's Not You the first number one. Showbands — dance bands at their peak in the 1960s — were known for chart-topping covers, and on 6 September 1963 [[Brendan Bowyer]] and the Royal Showband became the first Irish act to reach No. 1, holding it for seven weeks with Kiss Me Quick. In spring 1965 Ireland's first Eurovision entry, [[Butch Moore]]'s Walking the Streets in the Rain, spent three weeks at No. 1, and [[Dickie Rock]] and the Miami Showband's Every Step of the Way became the first record by Irish artists to go straight in at the top — one of their seven number ones. [[The Dubliners]]' humorous folk song Seven Drunken Nights reached No. 1 in May 1967 although it was banned from the Irish national broadcasting station, and [[Dana]]'s All Kinds of Everything was already No. 1 on the chart dated 20 March 1970, the day before it won the Eurovision Song Contest in Amsterdam — Ireland's first win. In late 1972 Decca released [[Thin Lizzy]]'s version of the traditional ballad Whiskey in the Jar as a single, though the band felt it did not represent their sound; it topped the Irish chart in December 1972 and again in January 1973, and reached No. 6 in the UK that February.",
+      "items": [
+        {
+          "artist": "Elvis Presley",
+          "work": "She's Not You",
+          "note": "Irish #1 for 4 weeks from 5 October 1962 — the chart’s first number one"
+        },
+        {
+          "artist": "Brendan Bowyer & the Royal Showband",
+          "work": "Kiss Me Quick",
+          "note": "Irish #1 for 7 weeks from 6 September 1963 — the first Irish act to top the chart"
+        },
+        {
+          "artist": "The Beatles",
+          "work": "Can't Buy Me Love",
+          "note": "Irish #1 for 5 weeks from 3 April 1964"
+        },
+        {
+          "artist": "Brendan Bowyer & the Royal Showband",
+          "work": "The Hucklebuck",
+          "note": "Irish #1 for 7 weeks from 18 January 1965 — the band’s greatest success"
+        },
+        {
+          "artist": "Butch Moore & the Capitol Showband",
+          "work": "Walking the Streets in the Rain",
+          "note": "Irish #1 for 3 weeks from 5 April 1965 — Ireland’s first Eurovision entry"
+        },
+        {
+          "artist": "Dickie Rock & the Miami Showband",
+          "work": "Every Step of the Way",
+          "note": "Irish #1 for 3 weeks from 24 May 1965 — the first record by Irish artists to go straight in at number one"
+        },
+        {
+          "artist": "The Dubliners",
+          "work": "Seven Drunken Nights",
+          "note": "Irish #1 for 1 week, 13 May 1967 — despite a ban by the Irish national broadcasting station"
+        },
+        {
+          "artist": "Dana",
+          "work": "All Kinds of Everything",
+          "note": "Irish #1 for 9 weeks from 20 March 1970 — the day before it won Eurovision in Amsterdam, Ireland’s first win"
+        },
+        {
+          "artist": "Big Tom & the Mainliners",
+          "work": "Broken Marriage Vows",
+          "note": "Irish #1 for 2 weeks from 8 April 1972"
+        },
+        {
+          "artist": "Thin Lizzy",
+          "work": "Whiskey in the Jar",
+          "note": "Irish #1 for 3 non-consecutive weeks — 21 and 28 December 1972 and 11 January 1973 — then No. 6 in the UK in February 1973"
+        },
+        {
+          "artist": "Slade",
+          "work": "Cum On Feel the Noize",
+          "note": "Irish #1 for 2 weeks from 15 March 1973"
+        },
+        {
+          "artist": "Bay City Rollers",
+          "work": "Bye Bye Baby",
+          "note": "Irish #1 for 4 weeks from 27 March 1975"
+        }
+      ],
+      "sources": [
+        {
+          "label": "IRMA — The History of Irish Charts",
+          "url": "https://www.irma.ie/chart-history/"
+        },
+        {
+          "label": "IRMA — the chart’s number-one archive (example: 6 September 1963, Kiss Me Quick)",
+          "url": "https://www.irma.ie/birthday-number-ones/?date_day=6&date_month=9&date_year=1963"
+        },
+        {
+          "label": "Wikipedia — Number-one singles of 1963 (Ireland)",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_singles_of_1963_(Ireland)"
+        },
+        {
+          "label": "Wikipedia — Irish showband",
+          "url": "https://en.wikipedia.org/wiki/Irish_showband"
+        },
+        {
+          "label": "Wikipedia — Brendan Bowyer",
+          "url": "https://en.wikipedia.org/wiki/Brendan_Bowyer"
+        },
+        {
+          "label": "Wikipedia — Dickie Rock",
+          "url": "https://en.wikipedia.org/wiki/Dickie_Rock"
+        },
+        {
+          "label": "Wikipedia — Butch Moore",
+          "url": "https://en.wikipedia.org/wiki/Butch_Moore"
+        },
+        {
+          "label": "Wikipedia — Seven Drunken Nights",
+          "url": "https://en.wikipedia.org/wiki/Seven_Drunken_Nights"
+        },
+        {
+          "label": "Wikipedia — All Kinds of Everything",
+          "url": "https://en.wikipedia.org/wiki/All_Kinds_of_Everything"
+        },
+        {
+          "label": "Wikipedia — Thin Lizzy",
+          "url": "https://en.wikipedia.org/wiki/Thin_Lizzy"
+        }
+      ],
+      "model": "claude-opus-5-5 (in-session, research agent + owner-gate verification)",
+      "at": "2026-10-26"
     }
   ]
 }

@@ -6,7 +6,9 @@
  * ~1 s apart. Without a token (DISCOGS_TOKEN never reaches Netlify)
  * the public endpoints answer 25 a minute per IP and calls are spaced
  * 2.5 s. A 429 is waited out ONCE; anything else returns what was
- * gathered so far. Never runs on a visitor's request.
+ * gathered so far, with `failed` set so the caller can tell a call that
+ * did not answer from an artist with nothing to read (a 404 is an
+ * answer). Never runs on a visitor's request.
  *
  * What is read: the artist's release listing (main credits only, newest
  * first — official videos are a recent-decades thing), then up to
@@ -85,6 +87,8 @@ class DiscogsClient {
   private lastCallAt = 0
   private rateLimited = false
   private readonly deadline: number
+  /** Calls that never answered: a server error, a second 429 or a dropped connection. */
+  failures = 0
 
   constructor(deadline: number) {
     this.deadline = deadline
@@ -111,9 +115,13 @@ class DiscogsClient {
         await sleep(RATE_LIMIT_WAIT_MS)
         return this.get(path)
       }
-      if (!res.ok) return null
+      if (!res.ok) {
+        if (res.status !== 404) this.failures++
+        return null
+      }
       return await res.json()
     } catch {
+      this.failures++
       return null
     }
   }
@@ -162,7 +170,7 @@ const sameTitle = (a: string, b: string) =>
 export async function discogsArtistRecords(
   discogsIds: readonly number[],
   options: DiscogsReadOptions,
-): Promise<{ records: DiscogsRecord[]; labels: string[] }> {
+): Promise<{ records: DiscogsRecord[]; labels: string[]; failed: boolean }> {
   const client = new DiscogsClient(options.deadline)
   const prefer = options.preferTitles ?? []
   const listed = (
@@ -201,5 +209,5 @@ export async function discogsArtistRecords(
     if (record && record.videos.length > 0) records.push(record)
   }
   const labels = [...new Set([...listedLabels, ...records.flatMap((record) => record.labels ?? [])])]
-  return { records, labels }
+  return { records, labels, failed: client.failures > 0 }
 }

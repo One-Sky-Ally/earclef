@@ -10,9 +10,9 @@
  */
 import {
   bandcampRel,
-  fetchMbArtist,
   mbAliasNames,
   resolveMbArtistPlay,
+  type MbArtistBody,
 } from '../play/resolve'
 import { fetchMusicBrainzJson } from './mbFetch'
 import { resolveDiscoverSong } from './song'
@@ -171,6 +171,7 @@ export interface VerifyResult {
     | 'on the roster'
     | 'not on MusicBrainz'
     | 'musicbrainz unavailable'
+    | 'song lookup unavailable'
     | 'no catalogue'
     | 'no playable song'
 }
@@ -209,10 +210,24 @@ export async function verifyCandidate(
   if (!catalog) return { pick: null, reason: 'no catalogue' }
   trace?.(`catalogue: known for "${catalog.knownFor}"; ${catalog.titles.length} release-group titles`)
 
-  // One MB artist call feeds the play chain AND the song resolver.
-  const artist = await fetchMbArtist(match.mbid)
+  // One MB artist call feeds the play chain AND the song resolver. Its
+  // url relations are the ONLY way to the artist's Discogs and YouTube
+  // pages, so a call that never answers must not read as "no song"
+  // (Oct 27, 2026: Glass Animals, Kings of Convenience skipped in a burst).
+  const artistRes = await fetchMusicBrainzJson(
+    `https://musicbrainz.org/ws/2/artist/${match.mbid}?inc=url-rels+aliases&fmt=json`,
+  )
   await sleep(1100)
+  if (!artistRes.ok) {
+    if (artistRes.unavailable) {
+      trace?.(`musicbrainz: no answer for the artist record of ${match.canonicalName}`)
+      return { pick: null, reason: 'musicbrainz unavailable' }
+    }
+    trace?.(`musicbrainz: no artist record for ${match.mbid}`)
+  }
+  const artist = artistRes.ok ? (artistRes.body as MbArtistBody) : null
   const { play, read } = await resolveMbArtistPlay(match.mbid, null, artist)
+  let lookupFailed = false
   const song = await resolveDiscoverSong({
     name: match.canonicalName,
     knownFor: catalog.knownFor,
@@ -222,8 +237,12 @@ export async function verifyCandidate(
     deadline: context.songDeadline,
     maxRecords: context.maxRecords,
     trace,
+    onUnavailable: () => {
+      lookupFailed = true
+    },
   })
-  if (!song) return { pick: null, reason: 'no playable song' }
+  // A miss while Discogs or YouTube was not answering is not a verdict.
+  if (!song) return { pick: null, reason: lookupFailed ? 'song lookup unavailable' : 'no playable song' }
   const pick: DiscoverPick = {
     name: match.canonicalName,
     why: candidate.why,
