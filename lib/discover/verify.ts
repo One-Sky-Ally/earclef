@@ -43,6 +43,30 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 interface MbArtistMatch {
   mbid: string
   canonicalName: string
+  /** The top search result: below a namesake, the knownFor title must confirm it. */
+  top: boolean
+}
+
+interface MbSearchArtist {
+  id: string
+  name: string
+  score: number
+}
+
+/**
+ * The best-scoring result named exactly like the candidate (score ≥ 85).
+ * Not just the top result: a namesake can outrank the artist (Oct 27,
+ * 2026: Joseph Saba above the rapper Saba, Massimo Faraò above Farao).
+ */
+export function exactNameMatch(
+  artists: readonly MbSearchArtist[],
+  name: string,
+): MbArtistMatch | null {
+  const key = normalize(name)
+  if (!key) return null
+  const at = artists.findIndex((artist) => artist.score >= 85 && normalize(artist.name) === key)
+  if (at === -1) return null
+  return { mbid: artists[at].id, canonicalName: artists[at].name, top: at === 0 }
 }
 
 /** The exact-name match, null when there is none, 'unavailable' when MusicBrainz never answered. */
@@ -53,11 +77,8 @@ async function verifyOnMusicBrainz(
   const url = `https://musicbrainz.org/ws/2/artist?query=${query}&limit=3&fmt=json`
   const res = await fetchMusicBrainzJson(url)
   if (!res.ok) return res.unavailable ? 'unavailable' : null
-  const body = res.body as { artists?: { id: string; name: string; score: number }[] }
-  const top = body.artists?.[0]
-  if (!top || top.score < 85) return null
-  if (normalize(top.name) !== normalize(name)) return null
-  return { mbid: top.id, canonicalName: top.name }
+  const body = res.body as { artists?: MbSearchArtist[] }
+  return exactNameMatch(body.artists ?? [], name)
 }
 
 interface MbReleaseGroup {
@@ -68,6 +89,8 @@ interface MbReleaseGroup {
 
 interface VerifiedCatalog {
   knownFor: string
+  /** The proposed title was not found and the artist's own top release took its place. */
+  replaced: boolean
   /** The artist's release-group titles, knownFor first then newest first. */
   titles: string[]
 }
@@ -113,7 +136,7 @@ async function verifiedKnownFor(
     proposedKey &&
     groups.some((group) => normalize(group.title ?? '') === proposedKey)
   ) {
-    return { knownFor: proposed, titles: catalogTitles(groups, proposed) }
+    return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed) }
   }
 
   try {
@@ -128,7 +151,7 @@ async function verifiedKnownFor(
       const body = (await res.json()) as { count?: number }
       if ((body.count ?? 0) > 0) {
         await sleep(1100)
-        return { knownFor: proposed, titles: catalogTitles(groups, proposed) }
+        return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed) }
       }
     }
   } catch {
@@ -148,7 +171,7 @@ async function verifiedKnownFor(
     dated[0] ??
     groups.find((group) => group.title)
   return replacement?.title
-    ? { knownFor: replacement.title, titles: catalogTitles(groups, replacement.title) }
+    ? { knownFor: replacement.title, replaced: true, titles: catalogTitles(groups, replacement.title) }
     : null
 }
 
@@ -208,6 +231,12 @@ export async function verifyCandidate(
 
   const catalog = await verifiedKnownFor(match.mbid, candidate.knownFor)
   if (!catalog) return { pick: null, reason: 'no catalogue' }
+  // Below a namesake the name alone is not enough: a crowded name could
+  // be another artist, so the candidate's own title must be theirs.
+  if (!match.top && catalog.replaced) {
+    trace?.(`musicbrainz: ${match.canonicalName} ranks below a namesake and "${candidate.knownFor}" is not in their catalogue`)
+    return { pick: null, reason: 'not on MusicBrainz' }
+  }
   trace?.(`catalogue: known for "${catalog.knownFor}"; ${catalog.titles.length} release-group titles`)
 
   // One MB artist call feeds the play chain AND the song resolver. Its

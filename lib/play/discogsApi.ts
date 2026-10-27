@@ -65,6 +65,7 @@ interface ApiRecord {
     artists?: ApiCredit[]
   }[]
   videos?: { uri?: string; title?: string; duration?: number }[]
+  main_release?: number
 }
 
 export interface DiscogsReadOptions {
@@ -81,6 +82,8 @@ export interface DiscogsReadOptions {
   enough?: (records: readonly DiscogsRecord[]) => boolean
   /** Listed titles to read first (the pick's knownFor), exact match. */
   preferTitles?: readonly string[]
+  /** Records an earlier read already fetched (its `read` keys): not fetched again. */
+  skip?: ReadonlySet<string>
 }
 
 class DiscogsClient {
@@ -155,6 +158,8 @@ function shapeRecord(body: ApiRecord, labels: readonly string[]): DiscogsRecord 
     labels: [
       ...new Set([...labels, ...(body.labels ?? []).flatMap((label) => (label.name ? [label.name] : []))]),
     ],
+    mainRelease:
+      Number.isInteger(body.main_release) && (body.main_release ?? 0) > 0 ? (body.main_release as number) : null,
   }
 }
 
@@ -170,7 +175,15 @@ const sameTitle = (a: string, b: string) =>
 export async function discogsArtistRecords(
   discogsIds: readonly number[],
   options: DiscogsReadOptions,
-): Promise<{ records: DiscogsRecord[]; labels: string[]; failed: boolean }> {
+): Promise<{
+  records: DiscogsRecord[]
+  labels: string[]
+  failed: boolean
+  /** Every record fetched, videos or not — pass as `skip` to read on. */
+  read: string[]
+  /** `enough` ended the read with records left unread. */
+  stoppedEarly: boolean
+}> {
   const client = new DiscogsClient(options.deadline)
   const prefer = options.preferTitles ?? []
   const listed = (
@@ -193,21 +206,49 @@ export async function discogsArtistRecords(
   // the reads before the albums carrying the videos (toe, Oct 2026).
   const preferred = (entry: (typeof listed)[number]) =>
     prefer.some((title) => sameTitle(title, entry.title ?? ''))
+  const pathOf = (entry: (typeof listed)[number]) =>
+    entry.type === 'master' ? `/masters/${entry.id}` : `/releases/${entry.id}`
+  // The cap counts records already read, so reading on never goes deeper.
   const ordered = [
     ...listed.filter(preferred),
     ...listed.filter((entry) => !preferred(entry) && entry.type === 'master'),
     ...listed.filter((entry) => !preferred(entry) && entry.type !== 'master'),
-  ].slice(0, options.maxRecords ?? MAX_RECORDS)
+  ]
+    .slice(0, options.maxRecords ?? MAX_RECORDS)
+    .filter((entry) => !options.skip?.has(pathOf(entry)))
 
   const records: DiscogsRecord[] = []
+  const read: string[] = []
+  let stoppedEarly = false
   for (const entry of ordered) {
-    if (options.enough?.(records)) break
-    const path = entry.type === 'master' ? `/masters/${entry.id}` : `/releases/${entry.id}`
+    if (options.enough?.(records)) {
+      stoppedEarly = true
+      break
+    }
+    const path = pathOf(entry)
+    read.push(path)
     const body = (await client.get(path)) as ApiRecord | null
     if (!body) continue
     const record = shapeRecord(body, listedLabels)
     if (record && record.videos.length > 0) records.push(record)
   }
   const labels = [...new Set([...listedLabels, ...records.flatMap((record) => record.labels ?? [])])]
-  return { records, labels, failed: client.failures > 0 }
+  return { records, labels, failed: client.failures > 0, read, stoppedEarly }
+}
+
+/**
+ * Label names on the given pressings (a master's `mainRelease`): the
+ * trusted-uploader rule's label leg for master-based albums.
+ */
+export async function discogsReleaseLabels(
+  releaseIds: readonly number[],
+  options: { deadline: number },
+): Promise<{ labels: string[]; failed: boolean }> {
+  const client = new DiscogsClient(options.deadline)
+  const labels: string[] = []
+  for (const id of releaseIds) {
+    const body = (await client.get(`/releases/${id}`)) as ApiRecord | null
+    labels.push(...(body?.labels ?? []).flatMap((label) => (label.name ? [label.name] : [])))
+  }
+  return { labels: [...new Set(labels)], failed: client.failures > 0 }
 }

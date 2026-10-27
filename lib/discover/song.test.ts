@@ -70,3 +70,139 @@ test('a gone or forbidden channel is an answer; quota, server errors and drops a
   assert.equal(channelFailureIsTransient(new Error('YouTube HTTP 503')), true)
   assert.equal(channelFailureIsTransient(new TypeError('fetch failed')), true)
 })
+
+/** Discogs routes by path and YouTube videos.list by id, with env restored after. */
+async function withMockedApis<T>(
+  routes: Record<string, unknown>,
+  uploaderOf: (videoId: string) => string,
+  run: () => Promise<T>,
+): Promise<T> {
+  const original = globalThis.fetch
+  const saved = { YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY, DISCOGS_TOKEN: process.env.DISCOGS_TOKEN }
+  process.env.YOUTUBE_API_KEY = 'test'
+  process.env.DISCOGS_TOKEN = 'test'
+  globalThis.fetch = (async (input: string | URL | Request) => {
+    const url = new URL(String(input))
+    if (url.hostname === 'www.googleapis.com') {
+      const items = (url.searchParams.get('id') ?? '').split(',').map((id) => ({
+        id,
+        snippet: { title: '', description: '', channelTitle: uploaderOf(id) },
+        status: { embeddable: true, privacyStatus: 'public' },
+        contentDetails: { duration: 'PT4M' },
+      }))
+      return new Response(JSON.stringify({ items }), { status: 200 })
+    }
+    const body = routes[url.pathname]
+    return new Response(JSON.stringify(body ?? {}), { status: body ? 200 : 404 })
+  }) as typeof fetch
+  try {
+    return await run()
+  } finally {
+    globalThis.fetch = original
+    for (const [name, value] of Object.entries(saved)) {
+      if (value === undefined) delete process.env[name]
+      else process.env[name] = value
+    }
+  }
+}
+
+const discogsArtist = [{ type: 'discogs', url: { resource: 'https://www.discogs.com/artist/1' } }]
+
+test('a miss after an early stop reads on: fan uploads on the first album do not end the search', async () => {
+  const { resolveDiscoverSong } = await import('./song.ts')
+  const tracks = ['Edges Run', 'Hey Coyote', 'Louise', 'Bad Penny', 'Momma', 'People Change', 'Fine Thing', 'Marianne']
+  const fanIds = tracks.map((_, i) => `fan${String(i).padStart(8, '0')}`)
+  const officialId = 'official000'
+  const routes = {
+    '/artists/1/releases': {
+      releases: [
+        { id: 11, title: 'Edges Run', type: 'master', role: 'Main', year: 2017 },
+        { id: 12, title: 'Coming Down the Mountain', type: 'master', role: 'Main', year: 2016 },
+      ],
+    },
+    '/masters/11': {
+      id: 11,
+      title: 'Edges Run',
+      artists: [{ id: 1 }],
+      tracklist: tracks.map((title) => ({ title, type_: 'track' })),
+      videos: tracks.map((title, i) => ({ uri: `https://www.youtube.com/watch?v=${fanIds[i]}`, title: `Mipso - ${title}` })),
+    },
+    '/masters/12': {
+      id: 12,
+      title: 'Coming Down the Mountain',
+      artists: [{ id: 1 }],
+      tracklist: [{ title: 'Water Runs Red', type_: 'track' }],
+      videos: [{ uri: `https://www.youtube.com/watch?v=${officialId}`, title: 'Mipso - Water Runs Red (Official Video)' }],
+    },
+  }
+  const song = await withMockedApis(routes, (id) => (id === officialId ? 'MipsoVEVO' : 'A Fan'), () =>
+    resolveDiscoverSong({
+      name: 'Mipso',
+      knownFor: 'Edges Run',
+      relations: discogsArtist,
+      aliases: ['Mipso'],
+      titles: ['Edges Run', 'Coming Down the Mountain'],
+      deadline: Date.now() + 60_000,
+      maxRecords: 25,
+    }),
+  )
+  assert.equal(song?.videoId, officialId)
+  assert.equal(song?.kind, 'official-video')
+})
+
+test("a label's own upload of a master-based album is trusted through the album's pressing", async () => {
+  const { resolveDiscoverSong } = await import('./song.ts')
+  // Discogs masters carry no label names: Brownswood's Black Focus uploads
+  // read "uploader not trusted" (Yussef Kamaal, Oct 27 2026).
+  const routes = {
+    '/artists/1/releases': { releases: [{ id: 11, title: 'Black Focus', type: 'master', role: 'Main', year: 2016 }] },
+    '/masters/11': {
+      id: 11,
+      title: 'Black Focus',
+      main_release: 99,
+      artists: [{ id: 1 }],
+      tracklist: [{ title: 'Lowrider', type_: 'track' }, { title: "Mansur's Message", type_: 'track' }],
+      videos: [
+        { uri: 'https://www.youtube.com/watch?v=lowrider000', title: 'Yussef Kamaal - Lowrider' },
+        { uri: 'https://www.youtube.com/watch?v=mansur00000', title: "Yussef Kamaal - Mansur's Message" },
+      ],
+    },
+    '/releases/99': { id: 99, title: 'Black Focus', labels: [{ name: 'Brownswood Recordings' }] },
+  }
+  const song = await withMockedApis(routes, () => 'Brownswood Recordings', () =>
+    resolveDiscoverSong({
+      name: 'Yussef Kamaal',
+      knownFor: 'Black Focus',
+      relations: discogsArtist,
+      aliases: ['Yussef Kamaal'],
+      titles: ['Black Focus'],
+      deadline: Date.now() + 60_000,
+      maxRecords: 25,
+    }),
+  )
+  assert.equal(song?.uploader, 'Brownswood Recordings')
+  assert.equal(song?.title, 'Lowrider')
+})
+
+test('a search cut off by the run deadline is not a verdict', async () => {
+  const { resolveDiscoverSong } = await import('./song.ts')
+  const saved = process.env.YOUTUBE_API_KEY
+  process.env.YOUTUBE_API_KEY = 'test'
+  const unavailable: string[] = []
+  try {
+    const song = await resolveDiscoverSong({
+      name: 'Mipso',
+      knownFor: 'Edges Run',
+      relations: discogsArtist,
+      aliases: ['Mipso'],
+      titles: ['Edges Run'],
+      deadline: Date.now() - 1,
+      onUnavailable: (where) => unavailable.push(where),
+    })
+    assert.equal(song, null)
+    assert.deepEqual(unavailable, ['deadline'])
+  } finally {
+    if (saved === undefined) delete process.env.YOUTUBE_API_KEY
+    else process.env.YOUTUBE_API_KEY = saved
+  }
+})

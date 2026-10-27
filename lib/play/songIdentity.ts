@@ -42,6 +42,8 @@ export interface DiscogsRecord {
   tracklist: DiscogsTrack[]
   videos: DiscogsVideo[]
   labels?: string[]
+  /** A master's main pressing: masters carry no label names, their pressings do. */
+  mainRelease?: number | null
 }
 
 export interface SongCandidate {

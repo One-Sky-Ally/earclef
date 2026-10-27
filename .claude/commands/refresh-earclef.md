@@ -135,7 +135,9 @@ Phase A's miss list — so they run while you write blurbs.
    every Discover pick: MusicBrainz by exact name, the knownFor title in
    their catalogue, a verified playable song (Discogs record videos
    with DISCOGS_TOKEN — albums first, up to 25 records, stopping once 8
-   songs verify — then their own channel). ~15–30 s a pick. ONLY picks
+   songs match by title; when none of those plays from a trusted
+   uploader, the rest of the records are read before it is a miss —
+   then their own channel). ~15–30 s a pick. ONLY picks
    with a verified playable song are stocked (owner ruling, Oct 15
    2026: same rule as Songs about this place); the rest are skipped and
    logged with the reason ("no playable song", "not on MusicBrainz",

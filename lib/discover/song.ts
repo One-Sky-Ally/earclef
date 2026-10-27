@@ -39,7 +39,7 @@ import {
   namesTheSelfTitledRecord,
   nonMusicVerdict,
 } from '../play/contentGates'
-import { discogsArtistRecords } from '../play/discogsApi'
+import { discogsArtistRecords, discogsReleaseLabels } from '../play/discogsApi'
 import { isTrustedUploader, isWholeRecordUpload, uploadKindOf, type UploadKind } from '../play/officialVideo'
 import { recordSongCandidates } from '../play/songIdentity'
 import { normalizeName, titleVariants, variantsIntersect } from '../play/titleVariants'
@@ -104,12 +104,14 @@ interface RankContext {
   labels: readonly string[]
 }
 
-/** Verified Discogs songs that are plenty to rank: reading stops here. */
+/** Title-verified Discogs songs that are plenty to rank: the first read stops here (a miss reads on). */
 const ENOUGH_SONGS = 8
 /** Candidates the batched playability call can take: 50 ids = 1 unit. */
 const MAX_CHECKED = 50
 /** Titles walked on the artist's own channel. */
 const MAX_CHANNEL_TITLES = 40
+/** Album pressings read for label names on a miss. */
+const MAX_PRESSINGS = 5
 const TIER: Record<UploadKind, number> = { 'official-video': 0, audio: 1, video: 2 }
 
 export function discogsIdsOf(relations: readonly MbUrlRelation[]): number[] {
@@ -187,22 +189,39 @@ async function fromChannel(context: SongContext, apiKey: string): Promise<Found[
   }
 }
 
+interface DiscogsFound {
+  found: Found[]
+  labels: string[]
+  /** Records fetched, for a read that goes on past them. */
+  read: string[]
+  stoppedEarly: boolean
+  /** Record title → its master's main pressing, for label names. */
+  pressings: ReadonlyMap<string, number>
+}
+
+/**
+ * The artist's verified Discogs videos. The first read stops at
+ * ENOUGH_SONGS title matches; a read given `skip` goes on through the
+ * records left, with no early stop.
+ */
 async function fromDiscogs(
   context: SongContext,
   aliases: ReadonlySet<string>,
-): Promise<{ found: Found[]; labels: string[] }> {
+  skip?: ReadonlySet<string>,
+): Promise<DiscogsFound> {
   const trace = context.trace
   const ids = discogsIdsOf(context.relations)
   if (ids.length === 0) {
-    trace?.('discogs: MusicBrainz lists no Discogs artist for the artist')
-    return { found: [], labels: [] }
+    if (!skip) trace?.('discogs: MusicBrainz lists no Discogs artist for the artist')
+    return { found: [], labels: [], read: [], stoppedEarly: false, pressings: new Map() }
   }
   const idSet = new Set(ids)
-  const { records, labels, failed } = await discogsArtistRecords(ids, {
+  const { records, labels, failed, read, stoppedEarly } = await discogsArtistRecords(ids, {
     deadline: context.deadline,
     preferTitles: [context.knownFor],
     maxRecords: context.maxRecords,
-    enough: (read) => recordSongCandidates(read, idSet, aliases).length >= ENOUGH_SONGS,
+    skip,
+    enough: skip ? undefined : (soFar) => recordSongCandidates(soFar, idSet, aliases).length >= ENOUGH_SONGS,
   })
   if (failed) {
     trace?.('discogs: some calls did not answer')
@@ -210,7 +229,7 @@ async function fromDiscogs(
   }
   const verified = recordSongCandidates(records, idSet, aliases)
   if (trace) {
-    trace(`discogs: artist ${ids.join(', ')}; ${records.length} records with videos read`)
+    trace(`discogs: artist ${ids.join(', ')}; ${records.length} ${skip ? 'more ' : ''}records with videos read`)
     for (const record of records) {
       const kept = verified.filter((candidate) => candidate.release === record.title).length
       trace(`  ${record.year ?? '????'} "${record.title}": ${record.videos.length} videos, ${kept} pass the identity bar`)
@@ -227,7 +246,10 @@ async function fromDiscogs(
     release: candidate.release,
     source: 'discogs' as const,
   }))
-  return { found, labels }
+  const pressings = new Map(
+    records.flatMap((record) => (record.mainRelease ? [[record.title, record.mainRelease] as const] : [])),
+  )
+  return { found, labels, read, stoppedEarly, pressings }
 }
 
 /** Order candidates before the one playability call so the best 50 are checked. */
@@ -296,10 +318,88 @@ export function chooseSong(candidates: readonly RankedInput[], context: RankCont
   }
 }
 
+/** One batched playability call (1 unit for up to 50 ids) and the content gates. */
+async function checkCandidates(
+  checked: readonly Found[],
+  apiKey: string,
+  context: SongContext,
+  rank: RankContext,
+): Promise<RankedInput[]> {
+  const { playable, meta } = await playableSet(
+    checked.map((entry) => entry.videoId),
+    apiKey,
+  )
+  const inputs: RankedInput[] = checked.map((entry) => {
+    const facts = meta.get(entry.videoId)
+    return {
+      ...entry,
+      uploader: facts?.channelTitle ?? '',
+      playable: playable.has(entry.videoId),
+      nonMusic:
+        nonMusicVerdict({
+          title: entry.uploadTitle,
+          workTitle: entry.songTitle,
+          artistName: context.name,
+          topicUrls: facts?.topicUrls,
+          description: facts?.description,
+        }).reasons.length > 0,
+    }
+  })
+  if (context.trace) {
+    for (const input of inputs) {
+      const kind = uploadKindOf(input.uploadTitle, input.songTitle, context.name, input.uploader)
+      const trusted = isTrustedUploader(input.uploader, rank.aliases, rank.labels)
+      context.trace(
+        `candidate ${input.videoId} "${input.uploadTitle}" by ${input.uploader || '?'} → ${kind}` +
+          `${input.playable ? '' : ', NOT playable'}${input.nonMusic ? ', flagged non-music' : ''}` +
+          `${kind === 'official-video' || input.source === 'channel' || trusted ? '' : ', uploader not trusted'}`,
+      )
+    }
+  }
+  return inputs
+}
+
+/**
+ * Discogs masters carry no label names, so a label's own uploads of a
+ * master-based album read "not trusted" (Oct 27, 2026: Brownswood
+ * Recordings' Black Focus uploads, Yussef Kamaal). On a miss the labels
+ * of those albums' main pressings are read and the ranking runs again.
+ */
+async function trustedThroughPressings(
+  inputs: readonly RankedInput[],
+  pressings: ReadonlyMap<string, number>,
+  context: SongContext,
+  rank: RankContext,
+): Promise<DiscoverSong | null> {
+  const ids = [
+    ...new Set(
+      inputs
+        .filter((input) => input.source === 'discogs' && input.playable && !input.nonMusic)
+        .filter((input) => !isTrustedUploader(input.uploader, rank.aliases, rank.labels))
+        .flatMap((input) => {
+          const id = pressings.get(input.release)
+          return id ? [id] : []
+        }),
+    ),
+  ].slice(0, MAX_PRESSINGS)
+  if (ids.length === 0) return null
+  const { labels, failed } = await discogsReleaseLabels(ids, { deadline: context.deadline })
+  if (failed) context.onUnavailable?.('discogs')
+  context.trace?.(`discogs: ${ids.length} album pressings read for labels: ${labels.join(', ') || 'none'}`)
+  return chooseSong(inputs, { ...rank, labels: [...new Set([...rank.labels, ...labels])] })
+}
+
 /** Full resolution for one pick. Never throws: null is the honest miss. */
 export async function resolveDiscoverSong(context: SongContext): Promise<DiscoverSong | null> {
   const apiKey = process.env.YOUTUBE_API_KEY
-  if (!apiKey || Date.now() > context.deadline) return null
+  if (!apiKey) return null
+  // A search the run's deadline cut short is not a verdict: retried next run.
+  const cutShort = (): boolean => {
+    if (Date.now() <= context.deadline) return false
+    context.onUnavailable?.('deadline')
+    return true
+  }
+  if (cutShort()) return null
   const aliases = new Set(context.aliases.map(normalizeName).filter((key) => key !== ''))
   const rank: RankContext = { name: context.name, aliases, knownFor: context.knownFor, labels: [] }
   try {
@@ -308,43 +408,39 @@ export async function resolveDiscoverSong(context: SongContext): Promise<Discove
       fromChannel(context, apiKey),
     ])
     const context2 = { ...rank, labels: discogs.labels }
-    const checked = preRank(dedupe([...channel, ...discogs.found]), context2).slice(0, MAX_CHECKED)
+    const ordered = preRank(dedupe([...channel, ...discogs.found]), context2)
+    const checked = ordered.slice(0, MAX_CHECKED)
     if (checked.length === 0) {
+      cutShort()
       context.trace?.('result: no verified candidate video on either path')
       return null
     }
-    const { playable, meta } = await playableSet(
-      checked.map((entry) => entry.videoId),
-      apiKey,
-    )
-    const inputs: RankedInput[] = checked.map((entry) => {
-      const facts = meta.get(entry.videoId)
-      return {
-        ...entry,
-        uploader: facts?.channelTitle ?? '',
-        playable: playable.has(entry.videoId),
-        nonMusic:
-          nonMusicVerdict({
-            title: entry.uploadTitle,
-            workTitle: entry.songTitle,
-            artistName: context.name,
-            topicUrls: facts?.topicUrls,
-            description: facts?.description,
-          }).reasons.length > 0,
-      }
-    })
-    if (context.trace) {
-      for (const input of inputs) {
-        const kind = uploadKindOf(input.uploadTitle, input.songTitle, context.name, input.uploader)
-        const trusted = isTrustedUploader(input.uploader, aliases, discogs.labels)
-        context.trace(
-          `candidate ${input.videoId} "${input.uploadTitle}" by ${input.uploader || '?'} → ${kind}` +
-            `${input.playable ? '' : ', NOT playable'}${input.nonMusic ? ', flagged non-music' : ''}` +
-            `${kind === 'official-video' || input.source === 'channel' || trusted ? '' : ', uploader not trusted'}`,
-        )
-      }
+    const inputs = await checkCandidates(checked, apiKey, context, context2)
+    let all = inputs
+    let ranked = context2
+    let pressings = discogs.pressings
+    let chosen = chooseSong(inputs, context2)
+    if (!chosen && discogs.stoppedEarly && Date.now() <= context.deadline) {
+      // The early stop counts title matches, not uploads that play: one
+      // album of fan uploads or dead Topic tracks ended the read (Oct 27,
+      // 2026: Doves, Snarky Puppy, Okkervil River skipped "no playable
+      // song"). A miss reads the records left before it is a verdict.
+      context.trace?.('discogs: nothing passed — reading the records past the early stop')
+      const more = await fromDiscogs(context, aliases, new Set(discogs.read))
+      ranked = { ...rank, labels: [...new Set([...discogs.labels, ...more.labels])] }
+      pressings = new Map([...discogs.pressings, ...more.pressings])
+      const seen = new Set(inputs.map((input) => input.videoId))
+      // First-read candidates past the checked 50 get their turn too.
+      const fresh = preRank(dedupe([...ordered.slice(MAX_CHECKED), ...more.found]), ranked)
+        .filter((entry) => !seen.has(entry.videoId))
+        .slice(0, MAX_CHECKED)
+      if (fresh.length > 0) all = [...inputs, ...(await checkCandidates(fresh, apiKey, context, ranked))]
+      chosen = chooseSong(all, ranked)
     }
-    const chosen = chooseSong(inputs, context2)
+    if (!chosen && Date.now() <= context.deadline) {
+      chosen = await trustedThroughPressings(all, pressings, context, ranked)
+    }
+    if (!chosen) cutShort()
     context.trace?.(chosen ? `result: ${chosen.kind} "${chosen.uploadTitle}"` : 'result: every candidate was ruled out')
     return chosen
   } catch (error) {
