@@ -134,7 +134,8 @@ Phase A's miss list — so they run while you write blurbs.
    budget; `--minutes N` to change). Each candidate is checked like
    every Discover pick: MusicBrainz by exact name, the knownFor title in
    their catalogue, a verified playable song (Discogs record videos
-   with DISCOGS_TOKEN — albums first, up to 25 records, stopping once 8
+   with DISCOGS_TOKEN — the knownFor record, then the artist's studio
+   albums from MusicBrainz, then other albums; up to 25 records, stopping once 8
    songs match by title; when none of those plays from a trusted
    uploader, the rest of the records are read before it is a miss —
    then their own channel). ~15–30 s a pick. ONLY picks

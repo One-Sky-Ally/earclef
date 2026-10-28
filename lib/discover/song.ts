@@ -71,6 +71,8 @@ export interface SongContext {
   aliases: readonly string[]
   /** Release-group titles for the channel path. */
   titles: readonly string[]
+  /** Studio album titles, newest first: read on Discogs right after the knownFor. */
+  albums?: readonly string[]
   /** Epoch ms: no new network work after this. */
   deadline: number
   /** Discogs records read at most (the local stocking run reads deeper). */
@@ -218,7 +220,7 @@ async function fromDiscogs(
   const idSet = new Set(ids)
   const { records, labels, failed, read, stoppedEarly } = await discogsArtistRecords(ids, {
     deadline: context.deadline,
-    preferTitles: [context.knownFor],
+    preferTitles: [context.knownFor, ...(context.albums ?? [])],
     maxRecords: context.maxRecords,
     skip,
     enough: skip ? undefined : (soFar) => recordSongCandidates(soFar, idSet, aliases).length >= ENOUGH_SONGS,

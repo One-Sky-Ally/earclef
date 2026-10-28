@@ -85,6 +85,7 @@ interface MbReleaseGroup {
   title?: string
   'first-release-date'?: string
   'primary-type'?: string
+  'secondary-types'?: string[]
 }
 
 interface VerifiedCatalog {
@@ -93,6 +94,17 @@ interface VerifiedCatalog {
   replaced: boolean
   /** The artist's release-group titles, knownFor first then newest first. */
   titles: string[]
+  /** Studio album titles, newest first: the Discogs read takes these next. */
+  albums: string[]
+}
+
+/** Album release groups with no secondary type (no live, compilation, …), newest first. */
+export function studioAlbums(groups: readonly MbReleaseGroup[]): string[] {
+  return groups
+    .filter((group): group is MbReleaseGroup & { title: string } => Boolean(group.title))
+    .filter((group) => group['primary-type'] === 'Album' && (group['secondary-types'] ?? []).length === 0)
+    .sort((a, b) => (b['first-release-date'] ?? '').localeCompare(a['first-release-date'] ?? ''))
+    .map((group) => group.title)
 }
 
 /** Catalog titles for the song resolver's channel path, newest first. */
@@ -136,7 +148,7 @@ async function verifiedKnownFor(
     proposedKey &&
     groups.some((group) => normalize(group.title ?? '') === proposedKey)
   ) {
-    return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed) }
+    return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed), albums: studioAlbums(groups) }
   }
 
   try {
@@ -151,7 +163,7 @@ async function verifiedKnownFor(
       const body = (await res.json()) as { count?: number }
       if ((body.count ?? 0) > 0) {
         await sleep(1100)
-        return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed) }
+        return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed), albums: studioAlbums(groups) }
       }
     }
   } catch {
@@ -171,7 +183,12 @@ async function verifiedKnownFor(
     dated[0] ??
     groups.find((group) => group.title)
   return replacement?.title
-    ? { knownFor: replacement.title, replaced: true, titles: catalogTitles(groups, replacement.title) }
+    ? {
+        knownFor: replacement.title,
+        replaced: true,
+        titles: catalogTitles(groups, replacement.title),
+        albums: studioAlbums(groups),
+      }
     : null
 }
 
@@ -263,6 +280,7 @@ export async function verifyCandidate(
     relations: artist?.relations ?? [],
     aliases: mbAliasNames(artist),
     titles: catalog.titles,
+    albums: catalog.albums,
     deadline: context.songDeadline,
     maxRecords: context.maxRecords,
     trace,

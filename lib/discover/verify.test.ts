@@ -54,3 +54,15 @@ test('a match below a namesake counts only when the knownFor title is in its cat
     globalThis.fetch = original
   }
 })
+
+test('studio albums: Album groups without secondary types, newest first', async () => {
+  const { studioAlbums } = await import('./verify.ts')
+  const groups = [
+    { title: 'Mott', 'primary-type': 'Album', 'secondary-types': [], 'first-release-date': '1973-07' },
+    { title: 'Live', 'primary-type': 'Album', 'secondary-types': ['Live'], 'first-release-date': '1974' },
+    { title: 'The Best Of', 'primary-type': 'Album', 'secondary-types': ['Compilation'], 'first-release-date': '2013' },
+    { title: 'All the Young Dudes', 'primary-type': 'Album', 'first-release-date': '1972-09' },
+    { title: 'Roll Away the Stone', 'primary-type': 'Single', 'secondary-types': [], 'first-release-date': '1973' },
+  ]
+  assert.deepEqual(studioAlbums(groups), ['Mott', 'All the Young Dudes'])
+})

@@ -108,3 +108,24 @@ test("a master keeps its main release id, and that pressing's labels can be read
   const down = await withFetch(() => json(503), () => discogsReleaseLabels([99], { deadline: Date.now() + 60_000 }))
   assert.deepEqual(down, { labels: [], failed: true })
 })
+
+test('preferred titles are read in the order given, ahead of newer records', async () => {
+  const listingByAge = {
+    releases: [
+      { id: 21, title: 'Greatest Hits Live', type: 'master', role: 'Main', year: 2013 },
+      { id: 22, title: 'Old Album', type: 'master', role: 'Main', year: 1972 },
+      { id: 23, title: 'Known', type: 'master', role: 'Main', year: 1973 },
+    ],
+  }
+  const fetched: string[] = []
+  const out = await withFetch(
+    (path) => {
+      if (path.startsWith('/artists/')) return json(200, listingByAge)
+      fetched.push(path)
+      return json(200, { id: Number(path.split('/').pop()), title: 'x', artists: [{ id: 1 }], videos: [] })
+    },
+    () => discogsArtistRecords([1], { deadline: Date.now() + 60_000, maxRecords: 2, preferTitles: ['Known', 'Old Album'] }),
+  )
+  assert.equal(out.failed, false)
+  assert.deepEqual(fetched, ['/masters/23', '/masters/22'])
+})

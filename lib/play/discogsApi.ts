@@ -80,7 +80,7 @@ export interface DiscogsReadOptions {
    * gets the deeper read.
    */
   enough?: (records: readonly DiscogsRecord[]) => boolean
-  /** Listed titles to read first (the pick's knownFor), exact match. */
+  /** Listed titles to read first, in this order (the pick's knownFor, then studio albums), exact match. */
   preferTitles?: readonly string[]
   /** Records an earlier read already fetched (its `read` keys): not fetched again. */
   skip?: ReadonlySet<string>
@@ -199,18 +199,22 @@ export async function discogsArtistRecords(
     )
   ).flat()
   const listedLabels = [...new Set(listed.flatMap((entry) => (entry.label ? [entry.label] : [])))]
-  // The pick's known title first; then MASTERS (an album or EP with its
-  // pressings — where Discogs users attach the official videos), newest
-  // first; plain releases (singles, splits, one-off pressings) last.
-  // Newest-first alone let a run of recent singles and reissues use up
-  // the reads before the albums carrying the videos (toe, Oct 2026).
-  const preferred = (entry: (typeof listed)[number]) =>
-    prefer.some((title) => sameTitle(title, entry.title ?? ''))
+  // The preferred titles first, in the order given (the pick's known
+  // title, then the artist's studio albums); then MASTERS (an album or EP
+  // with its pressings — where Discogs users attach the official videos),
+  // newest first; plain releases (singles, splits, one-off pressings)
+  // last. Newest-first alone let a run of recent singles and reissues use
+  // up the reads before the albums carrying the videos (toe, Oct 2026),
+  // and a classic band's newest compilations and live sets fill the cap
+  // before its 1970s albums (Mott the Hoople, Oct 28 2026).
+  const preferIndex = (entry: (typeof listed)[number]) =>
+    prefer.findIndex((title) => sameTitle(title, entry.title ?? ''))
+  const preferred = (entry: (typeof listed)[number]) => preferIndex(entry) !== -1
   const pathOf = (entry: (typeof listed)[number]) =>
     entry.type === 'master' ? `/masters/${entry.id}` : `/releases/${entry.id}`
   // The cap counts records already read, so reading on never goes deeper.
   const ordered = [
-    ...listed.filter(preferred),
+    ...listed.filter(preferred).sort((a, b) => preferIndex(a) - preferIndex(b)),
     ...listed.filter((entry) => !preferred(entry) && entry.type === 'master'),
     ...listed.filter((entry) => !preferred(entry) && entry.type !== 'master'),
   ]
