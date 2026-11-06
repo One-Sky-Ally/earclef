@@ -944,7 +944,7 @@
       "era": "The chart at feed speed",
       "kind": "charted",
       "basis": "Anchored to the Billboard Hot 100 archive, documented week by week through the present.",
-      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen. In 2026 the long run came from Nashville again: [[Ella Langley]]'s Choosin' Texas kept returning to the Hot 100 summit — breaking the all-time record with its twenty-third week in September and returning for a twenty-fifth on the 31 October chart — while [[Taylor Swift]]'s I Knew It, I Knew You, from Toy Story 5, became her fifteenth #1, more than any artist this century.",
+      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen. In 2026 the long run came from Nashville again: [[Ella Langley]]'s Choosin' Texas kept returning to the Hot 100 summit — breaking the all-time record with its twenty-third week in September and back for a twenty-fifth and twenty-sixth on the 31 October and 7 November charts — while [[Taylor Swift]]'s I Knew It, I Knew You, from Toy Story 5, became her fifteenth #1, more than any artist this century.",
       "items": [
         {
           "artist": "The Weeknd",
@@ -979,7 +979,7 @@
         {
           "artist": "Ella Langley",
           "work": "Choosin' Texas",
-          "note": "Hot 100 #1 for 25 non-consecutive weeks by the 31 October 2026 chart — the longest run in Hot 100 history, passing Mariah Carey's All I Want for Christmas Is You"
+          "note": "Hot 100 #1 for 26 non-consecutive weeks by the 7 November 2026 chart — the longest run in Hot 100 history, passing Mariah Carey's All I Want for Christmas Is You"
         },
         {
           "artist": "Taylor Swift",
@@ -2031,6 +2031,141 @@
       ],
       "model": "claude-opus-5-5 (in-session, research agent + owner-gate verification)",
       "at": "2026-10-26"
+    },
+    {
+      "country": "NO",
+      "from": 1958,
+      "to": 1975,
+      "era": "From Silvery Moon to Love Hurts — VG-lista's first years",
+      "kind": "charted",
+      "basis": "Every week count and date is read from VG-lista's own archived song pages (vglista.no, as kept by the Internet Archive) and IFPI Norway's topplista.no archive of the old VG-lista weeks, cross-read against the Norwegian Wikipedia list of VG-lista number ones; only weeks when a chart was actually published are counted, so a run can come out shorter here than in Wikipedia's tables.",
+      "story": "VG-lista began as Ti på topp, printed in Verdens Gang on Thursday 16 October 1958 and drawn from the ten best-selling singles at 25 Norwegian record shops; its first No. 1 was Billy Vaughn's Sail Along Silvery Moon. A Norwegian act first reached the top in July 1959, when [[Per Asplin]] held it for five weeks with En glad calypso om våren, and in October 1963 sixteen-year-old [[Wenche Myhre]] went to No. 1 with Gi meg en cowboy til mann, her Norwegian version of a German hit. [[Jim Reeves]] played Oslo's Njårdhallen in April 1964; I Love You Because then spent thirteen weeks at No. 1 and was still there the week he died in a plane crash. [[Inger Lise Andersen]]'s Fru Johnsen, a Norwegian Harper Valley PTA, was debated in the Storting after some Christian congregations demanded it be censored, and it topped the chart from late November 1968. [[Lillebjørn Nilsen]]'s Barn av regnbuen, his Norwegian version of Pete Seeger's My Rainbow Race, led the chart for eleven weeks in 1973–74; on 26 April 2012, after the terrorist on trial for the 2011 attacks called its use in schools brainwashing, some 40,000 people sang it with Nilsen on Oslo's Youngstorget.",
+      "items": [
+        {
+          "artist": "Billy Vaughn",
+          "work": "Sail Along Silvery Moon",
+          "note": "No. 1 on VG-lista's very first chart, the week of 13 October 1958, and three weeks at the top"
+        },
+        {
+          "artist": "Per Asplin",
+          "work": "En glad calypso om våren",
+          "note": "Norwegian #1 for 5 weeks from the week of 20 July 1959 — the first Norwegian act to top VG-lista"
+        },
+        {
+          "artist": "Rocco Granata",
+          "work": "Marina",
+          "note": "Norwegian #1 for 15 weeks from the week of 14 March 1960 — the longest run at the top in VG-lista's first decade"
+        },
+        {
+          "artist": "Wenche Myhre",
+          "work": "Gi meg en cowboy til mann",
+          "note": "Norwegian #1 for 5 weeks from the week of 21 October 1963 — her Norwegian version of a German hit"
+        },
+        {
+          "artist": "The Beatles",
+          "work": "She Loves You",
+          "note": "Norwegian #1 for 2 weeks from the week of 6 January 1964 — the first of the band's 21 VG-lista number ones"
+        },
+        {
+          "artist": "Jim Reeves",
+          "work": "I Love You Because",
+          "note": "Norwegian #1 for 13 weeks from the week of 4 May 1964, and 38 weeks on the chart"
+        },
+        {
+          "artist": "Anna-Lena Löfgren",
+          "work": "Lyckliga gatan",
+          "note": "Norwegian #1 for 12 weeks from the week of 22 January 1968 — a Swedish-language song at the top in Norway"
+        },
+        {
+          "artist": "Inger Lise Andersen",
+          "work": "Fru Johnsen",
+          "note": "Norwegian #1 from the week of 25 November 1968, when it entered at the top, into late January 1969 — her Norwegian Harper Valley PTA"
+        },
+        {
+          "artist": "Kirsti Sparboe",
+          "work": "Oj, oj, oj, så glad jeg skal bli",
+          "note": "Norwegian #1 for 4 weeks from the week of 24 March 1969 — Norway's Eurovision song that year"
+        },
+        {
+          "artist": "Lillebjørn Nilsen",
+          "work": "Barn av regnbuen",
+          "note": "Norwegian #1 on 11 charts from the week of 22 October 1973 into January 1974"
+        },
+        {
+          "artist": "Hans Petter Hansen",
+          "work": "Jeg kommer snart igjen",
+          "note": "Norwegian #1 on 10 published charts from the week of 14 October 1974 into January 1975 — his Norwegian version of Demis Roussos's Goodbye My Love, Goodbye"
+        },
+        {
+          "artist": "Nazareth",
+          "work": "Love Hurts",
+          "note": "Norwegian #1 for 14 weeks from the week of 16 June 1975, and 57 weeks on the chart"
+        }
+      ],
+      "sources": [
+        {
+          "label": "VG-lista archive (Internet Archive copy of vglista.no) — En glad calypso om våren",
+          "url": "https://web.archive.org/web/20241218235839/https://www.vglista.no/sanger/en-glad-calypso-om-varen-2/"
+        },
+        {
+          "label": "VG-lista archive — Marina",
+          "url": "https://web.archive.org/web/20220520212848/https://www.vglista.no/sanger/marina/"
+        },
+        {
+          "label": "VG-lista archive — Jim Reeves",
+          "url": "https://web.archive.org/web/20211124211630/https://www.vglista.no/artister/jim-reeves/"
+        },
+        {
+          "label": "VG-lista archive — Barn av regnbuen",
+          "url": "https://web.archive.org/web/20200412223805/https://www.vglista.no/sanger/barn-av-regnbuen/"
+        },
+        {
+          "label": "VG-lista archive — Jeg kommer snart igjen",
+          "url": "https://web.archive.org/web/20200210035354/https://www.vglista.no/sanger/jeg-kommer-snart-igjen/"
+        },
+        {
+          "label": "IFPI Norway topplista.no — VG-lista week 42, 1958 (the first chart)",
+          "url": "https://topplista.no/topplista?liste=singles&uke=1958-W42"
+        },
+        {
+          "label": "topplista.no — VG-lista week 31, 1964",
+          "url": "https://topplista.no/topplista?liste=singles&uke=1964-W31"
+        },
+        {
+          "label": "topplista.no — VG-lista week 48, 1968",
+          "url": "https://topplista.no/topplista?liste=singles&uke=1968-W48"
+        },
+        {
+          "label": "Wikipedia (no) — Liste over førsteplasser på den norske singellisten",
+          "url": "https://no.wikipedia.org/wiki/Liste_over_f%C3%B8rsteplasser_p%C3%A5_den_norske_singellisten"
+        },
+        {
+          "label": "Wikipedia (no) — VG-lista",
+          "url": "https://no.wikipedia.org/wiki/VG-lista"
+        },
+        {
+          "label": "Wikipedia — VG-lista 1964 to 1994",
+          "url": "https://en.wikipedia.org/wiki/VG-lista_1964_to_1994"
+        },
+        {
+          "label": "Wikipedia — Jim Reeves",
+          "url": "https://en.wikipedia.org/wiki/Jim_Reeves"
+        },
+        {
+          "label": "Wikipedia (no) — Harper Valley PTA",
+          "url": "https://no.wikipedia.org/wiki/Harper_Valley_PTA"
+        },
+        {
+          "label": "Wikipedia (no) — Barn av regnbuen",
+          "url": "https://no.wikipedia.org/wiki/Barn_av_regnbuen"
+        },
+        {
+          "label": "Wikipedia (no) — Wenche Myhre",
+          "url": "https://no.wikipedia.org/wiki/Wenche_Myhre"
+        }
+      ],
+      "model": "claude-opus-5-5 (in-session, research agent + owner-gate verification)",
+      "at": "2026-11-04"
     }
   ]
 }
