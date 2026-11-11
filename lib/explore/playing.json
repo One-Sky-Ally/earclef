@@ -944,7 +944,7 @@
       "era": "The chart at feed speed",
       "kind": "charted",
       "basis": "Anchored to the Billboard Hot 100 archive, documented week by week through the present.",
-      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen. In 2026 the long run came from Nashville again: [[Ella Langley]]'s Choosin' Texas kept returning to the Hot 100 summit — breaking the all-time record with its twenty-third week in September and back for a twenty-fifth and twenty-sixth on the 31 October and 7 November charts — while [[Taylor Swift]]'s I Knew It, I Knew You, from Toy Story 5, became her fifteenth #1, more than any artist this century.",
+      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen. In 2026 the long run came from Nashville again: [[Ella Langley]]'s Choosin' Texas kept returning to the Hot 100 summit — breaking the all-time record with its twenty-third week in September and back on top from the 31 October chart, twenty-seven weeks in all by 14 November — while [[Taylor Swift]]'s I Knew It, I Knew You, from Toy Story 5, became her fifteenth #1, more than any artist this century.",
       "items": [
         {
           "artist": "The Weeknd",
@@ -979,7 +979,7 @@
         {
           "artist": "Ella Langley",
           "work": "Choosin' Texas",
-          "note": "Hot 100 #1 for 26 non-consecutive weeks by the 7 November 2026 chart — the longest run in Hot 100 history, passing Mariah Carey's All I Want for Christmas Is You"
+          "note": "Hot 100 #1 for 27 non-consecutive weeks by the 14 November 2026 chart — the longest run in Hot 100 history, passing Mariah Carey's All I Want for Christmas Is You"
         },
         {
           "artist": "Taylor Swift",
@@ -2166,6 +2166,145 @@
       ],
       "model": "claude-opus-5-5 (in-session, research agent + owner-gate verification)",
       "at": "2026-11-04"
+    },
+    {
+      "country": "NZ",
+      "from": 1966,
+      "to": 1975,
+      "era": "From the La De Da's to Space Waltz — the Listener chart years",
+      "kind": "charted",
+      "basis": "Weeks at #1 come from the NZ Listener's weekly chart — a readers' postal vote from March 1966, built from radio-station returns from September 1970 — as tabulated week by week on Wikipedia from Dean Scapolo's chart book, cross-checked against AudioCulture's number-one histories and Billboard's reprints of the chart at the time; two notes give no week count because only one source has it.",
+      "story": "When the NZ Listener began printing a weekly hit parade on 25 March 1966, it was built from readers' postal votes — a popularity poll rather than a sales count — and with teenagers doing most of the voting, adult hits like Frank Sinatra's Strangers in the Night never got a look-in. No local act reached the top until [[The La De Da's]] took Bruce Channel's Hey! Baby to No. 1 in 1967, the first New Zealand No. 1 since 1960. The TV pop show C'mon made [[Mr. Lee Grant]] the biggest pop star the country had seen since Johnny Devlin, and helped [[Shane]]'s Saint Paul to six weeks at No. 1 in 1969. Then came a home-grown classic: [[The Fourmyula]]'s Nature, written by 19-year-old Wayne Mason, topped the chart in 1970 and was later voted the nation's best song of the past 75 years. 1970 was a banner year, with five New Zealand singles at No. 1, and that September the chart, by then called the Pop-O-Meter, switched from readers' coupons to returns from radio stations. TV talent shows kept the hits coming: [[Space Waltz]] went from Studio One to No. 1 with the glam-rock Out on the Street in 1974. The Listener chart ran until 16 May 1975, two weeks after the first public sales chart was issued.",
+      "items": [
+        {
+          "artist": "The La De Da's",
+          "work": "Hey! Baby",
+          "note": "New Zealand #1 for 2 weeks from 14 April 1967 — the first New Zealand act to top the Listener chart"
+        },
+        {
+          "artist": "Mr. Lee Grant",
+          "work": "Thanks To You",
+          "note": "New Zealand #1 for 3 weeks from 1 September 1967 — winner of the 1967 Loxene Golden Disc"
+        },
+        {
+          "artist": "The Royal Guardsmen",
+          "work": "Snoopy's Christmas",
+          "note": "New Zealand #1 on the Listener charts of 22 and 29 December 1967 — widely regarded as the biggest-selling single ever in New Zealand"
+        },
+        {
+          "artist": "Allison Durbin",
+          "work": "I Have Loved Me a Man",
+          "note": "New Zealand #1 for 2 weeks from 27 September 1968"
+        },
+        {
+          "artist": "The Beatles",
+          "work": "Hey Jude",
+          "note": "New Zealand #1 from 11 October 1968, ousting Allison Durbin's I Have Loved Me a Man"
+        },
+        {
+          "artist": "Shane",
+          "work": "Saint Paul",
+          "note": "New Zealand #1 for 6 weeks from 26 September 1969 — the longest-running New Zealand #1 of the 1960s, and the 1969 Loxene Golden Disc winner"
+        },
+        {
+          "artist": "The Fourmyula",
+          "work": "Nature",
+          "note": "New Zealand #1 for 4 weeks in February and March 1970 — later voted the nation's best song of the past 75 years in APRA's 2001 poll"
+        },
+        {
+          "artist": "Maria Dallas",
+          "work": "Pinocchio",
+          "note": "New Zealand #1 for 6 weeks from 28 August 1970 — written by New Zealanders June Littin, Mel Chandler and Des Huia"
+        },
+        {
+          "artist": "The Kinks",
+          "work": "Lola",
+          "note": "New Zealand #1 from 9 October 1970, taking over from Maria Dallas's Pinocchio"
+        },
+        {
+          "artist": "The Rumour",
+          "work": "L'amour est l'enfant de la liberté",
+          "note": "New Zealand #1 for 4 weeks from 22 October 1971 — the only New Zealand single to top the chart that year"
+        },
+        {
+          "artist": "Space Waltz",
+          "work": "Out on the Street",
+          "note": "New Zealand #1 for 2 weeks from 8 November 1974 — New Zealand's biggest glam-rock hit, launched on TV's Studio One"
+        },
+        {
+          "artist": "John Hanlon",
+          "work": "Lovely Lady",
+          "note": "New Zealand #1 for 3 weeks from 17 January 1975 — his only #1, and an APRA Silver Scroll winner"
+        }
+      ],
+      "sources": [
+        {
+          "label": "Wikipedia — Number-one singles in 1967 (New Zealand)",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_singles_in_1967_(New_Zealand)"
+        },
+        {
+          "label": "Wikipedia — Number-one singles in 1968 (New Zealand)",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_singles_in_1968_(New_Zealand)"
+        },
+        {
+          "label": "Wikipedia — Number-one singles in 1969 (New Zealand)",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_singles_in_1969_(New_Zealand)"
+        },
+        {
+          "label": "Wikipedia — Number-one singles in 1970 (New Zealand)",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_singles_in_1970_(New_Zealand)"
+        },
+        {
+          "label": "Wikipedia — Number-one singles in 1971 (New Zealand)",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_singles_in_1971_(New_Zealand)"
+        },
+        {
+          "label": "Wikipedia — Number-one singles in 1974 (New Zealand)",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_singles_in_1974_(New_Zealand)"
+        },
+        {
+          "label": "Wikipedia — Number-one singles in 1975 (New Zealand)",
+          "url": "https://en.wikipedia.org/wiki/List_of_number-one_singles_in_1975_(New_Zealand)"
+        },
+        {
+          "label": "AudioCulture — New Zealand charts: the genesis",
+          "url": "https://audioculture.co.nz/articles/new-zealand-charts-the-genesis"
+        },
+        {
+          "label": "AudioCulture — The Number One Hits 1960–1969",
+          "url": "https://audioculture.co.nz/articles/the-number-one-hits-1960-1969"
+        },
+        {
+          "label": "AudioCulture — The Number One Hits 1970–1979",
+          "url": "https://audioculture.co.nz/articles/the-number-one-hits-1970-1979"
+        },
+        {
+          "label": "AudioCulture — Number one without a bullet",
+          "url": "https://audioculture.co.nz/articles/number-one-without-a-bullet"
+        },
+        {
+          "label": "AudioCulture — Loxene Golden Disc",
+          "url": "https://audioculture.co.nz/articles/loxene-golden-disc"
+        },
+        {
+          "label": "AudioCulture — The Fourmyula",
+          "url": "https://audioculture.co.nz/profile/the-fourmyula"
+        },
+        {
+          "label": "AudioCulture — Space Waltz",
+          "url": "https://audioculture.co.nz/profile/space-waltz"
+        },
+        {
+          "label": "AudioCulture — John Hanlon",
+          "url": "https://audioculture.co.nz/profile/john-hanlon"
+        },
+        {
+          "label": "Billboard, 24 October 1970 — Hits of the World (New Zealand)",
+          "url": "https://books.google.com/books?id=gSkEAAAAMBAJ&pg=PA68"
+        }
+      ],
+      "model": "claude-opus-5-5 (in-session, research agent + owner-gate verification)",
+      "at": "2026-11-11"
     }
   ]
 }

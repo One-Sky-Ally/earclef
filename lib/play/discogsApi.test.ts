@@ -129,3 +129,17 @@ test('preferred titles are read in the order given, ahead of newer records', asy
   assert.equal(out.failed, false)
   assert.deepEqual(fetched, ['/masters/23', '/masters/22'])
 })
+
+test("an artist's main Discogs page is read even when MusicBrainz lists it third", async () => {
+  // Jamie Lidell, Nov 10 2026: MusicBrainz links his real-name and alias
+  // pages before the main one, and only the first two were read.
+  const out = await withFetch(
+    (path) => {
+      if (path === '/artists/3/releases') return json(200, listing)
+      if (path.startsWith('/artists/')) return json(200, { releases: [] })
+      return json(200, { id: 11, title: 'Album', artists: [{ id: 3 }], videos: [{ uri: 'https://youtu.be/aaaaaaaaaaa', title: 'Song' }] })
+    },
+    () => discogsArtistRecords([1, 2, 3], { deadline: Date.now() + 60_000, maxRecords: 1 }),
+  )
+  assert.deepEqual(out.records.map((record) => record.id), [11])
+})

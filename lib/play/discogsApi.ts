@@ -32,6 +32,12 @@ const discogsToken = () => process.env.DISCOGS_TOKEN || null
 const RATE_LIMIT_WAIT_MS = 35_000
 /** Records read per artist by default: ~11 calls. */
 export const MAX_RECORDS = 10
+/**
+ * Linked Discogs pages read per artist. MusicBrainz can list a real-name
+ * or alias page before the main one (Jamie Lidell, Nov 2026: his main
+ * page came third and was never read when only two were).
+ */
+const MAX_ARTIST_PAGES = 4
 
 const YOUTUBE_ID = /[?&]v=([\w-]{11})|youtu\.be\/([\w-]{11})/
 
@@ -188,7 +194,7 @@ export async function discogsArtistRecords(
   const prefer = options.preferTitles ?? []
   const listed = (
     await Promise.all(
-      discogsIds.slice(0, 2).map(async (id) => {
+      discogsIds.slice(0, MAX_ARTIST_PAGES).map(async (id) => {
         const body = (await client.get(
           `/artists/${id}/releases?per_page=100&sort=year&sort_order=desc`,
         )) as Listing | null
