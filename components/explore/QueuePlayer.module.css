@@ -345,3 +345,24 @@
   text-decoration-color: var(--border);
   text-underline-offset: 3px;
 }
+
+/* The quiet start: an extra on the panel, not its main sound. */
+.playButtonQuiet {
+  display: block;
+  width: fit-content;
+  margin: 0.2rem 0 0.7rem;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--text-soft);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.playButtonQuiet:hover {
+  color: var(--accent);
+  border-color: var(--accent-deep);
+}

@@ -95,6 +95,10 @@
 .viewRow {
   margin-top: auto;
   padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 /* ── The world: globe, map or list ── */

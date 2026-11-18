@@ -52,6 +52,7 @@ import {
   type SelectedCountry,
 } from '@/components/explore/CountryPanel'
 import { EXPLORE_SEARCH_ID } from '@/components/SiteNavLinks'
+import { OnThisDayLink } from '@/components/onthisday/OnThisDayLink'
 import { Icon } from '@/components/ui/Icon'
 import styles from './ExploreClient.module.css'
 
@@ -494,7 +495,7 @@ export function ExploreClient({
         <p className={styles.overline}>Music without borders</p>
         <h1 className={styles.title}>Where will music take you?</h1>
         <p className={styles.subtitle}>
-          Pick a place. Choose an era. Find your next favorite.
+          Pick a place. Choose a year. Listen and discover.
         </p>
         <div className={styles.searchRow}>
           <SearchBox
@@ -526,6 +527,9 @@ export function ExploreClient({
             onChange={setView}
             globeUnavailable={globeUnavailable}
           />
+          {/* Off the top navigation (owner, Nov 18 2026): one small
+              button here, the same pill as Songs about this place. */}
+          <OnThisDayLink />
         </div>
       </div>
 

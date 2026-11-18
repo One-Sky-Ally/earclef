@@ -12,7 +12,7 @@ import styles from './explore.module.css'
 export const metadata: Metadata = {
   title: 'Ear Clef — Hear here!',
   description:
-    'Where will music take you? Pick a place, choose an era and find your next favorite — a music time-travel globe with one page per artist universe.',
+    'Where will music take you? Pick a place, choose a year, listen and discover — a music time-travel globe with one page per artist universe.',
 }
 
 export default function HomePage() {

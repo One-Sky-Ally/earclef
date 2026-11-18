@@ -10,19 +10,25 @@ const PAGES = [
   { href: '/', label: 'Explore' },
   { href: '/feed', label: 'Feed' },
   { href: '/artists', label: 'Artists' },
-  { href: '/on-this-day', label: 'On this day' },
 ]
 
 /** The Explore search input's id — the nav's search button focuses it. */
 export const EXPLORE_SEARCH_ID = 'explore-search'
 
 function activeFor(pathname: string): string | null {
-  if (pathname === '/' || pathname.startsWith('/cultures')) return '/'
+  // On this day is reached from a small button on the globe page (owner,
+  // Nov 18 2026: not its own tab), so it sits under Explore.
+  if (
+    pathname === '/' ||
+    pathname.startsWith('/cultures') ||
+    pathname.startsWith('/on-this-day')
+  ) {
+    return '/'
+  }
   if (pathname.startsWith('/feed')) return '/feed'
   if (pathname.startsWith('/artists') || pathname.startsWith('/a/')) {
     return '/artists'
   }
-  if (pathname.startsWith('/on-this-day')) return '/on-this-day'
   if (pathname.startsWith('/me')) return '/me'
   return null
 }

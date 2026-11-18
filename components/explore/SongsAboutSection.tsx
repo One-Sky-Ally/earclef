@@ -5,6 +5,7 @@ import { QueuePlayer } from "@/components/explore/QueuePlayer";
 import { LikeButton } from "@/components/fans/LikeButton";
 import { YouTubeEmbed } from "@/components/YouTubeEmbed";
 import type { PlaceSong, PlaceSongs } from "@/lib/explore/songsAbout";
+import pill from "@/components/ui/SmallPill.module.css";
 import styles from "./SongsAboutSection.module.css";
 
 /**
@@ -16,6 +17,9 @@ import styles from "./SongsAboutSection.module.css";
  * want to tease music people can't listen to"), so an empty answer
  * renders nothing at all. Songs about a city or a state inside the
  * country carry an "about {Place}" tag.
+ *
+ * A fun extra, kept "a little buried" (owner, Nov 18 2026): closed, it
+ * is one small pill; the songs, and a quiet Play all, open beneath it.
  */
 
 interface SongsAboutSectionProps {
@@ -55,6 +59,7 @@ export function SongsAboutSection({
   const [state, setState] = useState<SectionState>({ status: "loading" });
   const [visible, setVisible] = useState(TIER_BASE);
   const [open, setOpen] = useState<string | null>(null);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -81,100 +86,122 @@ export function SongsAboutSection({
     mbid: song.mbid,
   }));
 
+  const listId = `songs-about-${placeCode}`;
+
   return (
     <section className={styles.section} aria-label={`Songs about ${placeName}`}>
-      <h3 className={styles.heading}>Songs about {placeName}</h3>
-      <p className={styles.note}>
-        Songs written about this place, from Wikipedia&rsquo;s lists — only the
-        ones we can play here.
-      </p>
+      <button
+        type="button"
+        className={pill.pill}
+        onClick={() => setExpanded((value) => !value)}
+        aria-expanded={expanded}
+        aria-controls={listId}
+      >
+        <span aria-hidden="true" className={pill.mark}>
+          ♪
+        </span>
+        Songs about {placeName} · {songs.length}
+        <span aria-hidden="true">{expanded ? "▴" : "▾"}</span>
+      </button>
 
-      {/* Touching the queue closes any open row player: one sound at a time. */}
-      <div onClickCapture={() => setOpen(null)}>
-        <QueuePlayer
-          key={`songs-about:${placeCode}`}
-          placeName={placeName}
-          placeCode={placeCode}
-          year={new Date().getFullYear()}
-          pool={[]}
-          roster={{}}
-          preresolved={queue}
-          buttonLabel={`▶ Play all — ${songs.length} song${songs.length === 1 ? "" : "s"} about ${placeName}`}
-          endNote={`That's every song about ${placeName} we can play.`}
-        />
-      </div>
+      {expanded && (
+        <div id={listId} className={styles.body}>
+          <p className={styles.note}>
+            Songs written about this place, from Wikipedia&rsquo;s lists — only
+            the ones we can play here.
+          </p>
 
-      <ol className={styles.list}>
-        {shown.map((song) => {
-          const isOpen = open === song.v;
-          return (
-            <li key={song.v} className={styles.row}>
-              <div className={styles.line}>
-                <button
-                  type="button"
-                  className={`${styles.play} ${isOpen ? styles.playOpen : ""}`}
-                  onClick={() => setOpen(isOpen ? null : song.v)}
-                  aria-expanded={isOpen}
-                  aria-label={`${isOpen ? "Close" : "Play"} “${song.t}” by ${song.a}`}
-                >
-                  {isOpen ? "■" : "▶"}
-                </button>
-                <span className={styles.what}>
-                  <span className={styles.title}>
-                    “{song.t}”
-                    {song.ver && <span className={styles.tag}>{song.ver}</span>}
-                  </span>
-                  <span className={styles.meta}>
-                    {song.a}
-                    {song.y ? ` · ${song.y}` : ""}
-                    {song.about ? ` · about ${song.about}` : ""}
-                  </span>
-                </span>
-                <LikeButton
-                  variant="row"
-                  track={{
-                    videoId: song.v,
-                    title: song.t,
-                    artistName: song.a,
-                    ...(MBID.test(song.mbid) ? { mbid: song.mbid } : {}),
-                    placeCode,
-                    placeName,
-                    ...(song.y ? { year: song.y } : {}),
-                  }}
-                />
-              </div>
-              {isOpen && (
-                <div className={styles.player}>
-                  <YouTubeEmbed
-                    video={{
-                      youtubeId: song.v,
-                      title: `${song.t} — ${song.a}`,
-                    }}
-                  />
-                </div>
-              )}
-            </li>
-          );
-        })}
-      </ol>
+          {/* Touching the queue closes any open row player: one sound at a time. */}
+          <div onClickCapture={() => setOpen(null)}>
+            <QueuePlayer
+              key={`songs-about:${placeCode}`}
+              placeName={placeName}
+              placeCode={placeCode}
+              year={new Date().getFullYear()}
+              pool={[]}
+              roster={{}}
+              preresolved={queue}
+              quietStart
+              buttonLabel="▶ Play all"
+              endNote={`That's every song about ${placeName} we can play.`}
+            />
+          </div>
 
-      {visible < songs.length && (
-        <button
-          type="button"
-          className={styles.more}
-          onClick={() => setVisible((count) => count + TIER_STEP)}
-        >
-          Show {Math.min(TIER_STEP, songs.length - visible)} more ↓
-        </button>
-      )}
-      {visible > TIER_BASE && (
-        <button
-          type="button"
-          className={styles.more}
-          onClick={() => setVisible(TIER_BASE)}
-        >
-          Show fewer
-        </button>
+          <ol className={styles.list}>
+            {shown.map((song) => {
+              const isOpen = open === song.v;
+              return (
+                <li key={song.v} className={styles.row}>
+                  <div className={styles.line}>
+                    <button
+                      type="button"
+                      className={`${styles.play} ${isOpen ? styles.playOpen : ""}`}
+                      onClick={() => setOpen(isOpen ? null : song.v)}
+                      aria-expanded={isOpen}
+                      aria-label={`${isOpen ? "Close" : "Play"} “${song.t}” by ${song.a}`}
+                    >
+                      {isOpen ? "■" : "▶"}
+                    </button>
+                    <span className={styles.what}>
+                      <span className={styles.title}>
+                        “{song.t}”
+                        {song.ver && (
+                          <span className={styles.tag}>{song.ver}</span>
+                        )}
+                      </span>
+                      <span className={styles.meta}>
+                        {song.a}
+                        {song.y ? ` · ${song.y}` : ""}
+                        {song.about ? ` · about ${song.about}` : ""}
+                      </span>
+                    </span>
+                    <LikeButton
+                      variant="row"
+                      track={{
+                        videoId: song.v,
+                        title: song.t,
+                        artistName: song.a,
+                        ...(MBID.test(song.mbid) ? { mbid: song.mbid } : {}),
+                        placeCode,
+                        placeName,
+                        ...(song.y ? { year: song.y } : {}),
+                      }}
+                    />
+                  </div>
+                  {isOpen && (
+                    <div className={styles.player}>
+                      <YouTubeEmbed
+                        video={{
+                          youtubeId: song.v,
+                          title: `${song.t} — ${song.a}`,
+                        }}
+                      />
+                    </div>
+                  )}
+                </li>
+              );
+            })}
+          </ol>
+
+          {visible < songs.length && (
+            <button
+              type="button"
+              className={styles.more}
+              onClick={() => setVisible((count) => count + TIER_STEP)}
+            >
+              Show {Math.min(TIER_STEP, songs.length - visible)} more ↓
+            </button>
+          )}
+          {visible > TIER_BASE && (
+            <button
+              type="button"
+              className={styles.more}
+              onClick={() => setVisible(TIER_BASE)}
+            >
+              Show fewer
+            </button>
+          )}
+        </div>
       )}
     </section>
   );

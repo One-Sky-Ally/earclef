@@ -215,6 +215,12 @@ interface QueuePlayerProps {
    * needs to end in its own words.
    */
   endNote?: string
+  /**
+   * A quiet outlined start button instead of the gold one — for a queue
+   * that is an extra on the panel, not its main sound (Songs about this
+   * place, owner Nov 18 2026: "a little buried").
+   */
+  quietStart?: boolean
 }
 
 export function QueuePlayer({
@@ -231,6 +237,7 @@ export function QueuePlayer({
   spanLabel,
   panelGenre,
   endNote,
+  quietStart = false,
 }: QueuePlayerProps) {
   const [active, setActive] = useState(false)
   const [tracks, setTracks] = useState<ResolvedTrack[]>([])
@@ -238,6 +245,12 @@ export function QueuePlayer({
   const [building, setBuilding] = useState(false)
   const [quotaHit, setQuotaHit] = useState(false)
   const [playerBroken, setPlayerBroken] = useState(false)
+  /**
+   * Pool artists the walk has finished asking about. Shown while
+   * nothing plays yet, so a long walk reads as progress rather than a
+   * frozen "Finding the sound of…" (Egypt 1966, Nov 18 2026).
+   */
+  const [checkedCount, setCheckedCount] = useState(0)
   const { atCapacity: likesAtCapacity, dismissCapacity } = useLikes()
   /**
    * Videos YouTube refused to play — pulled, private, or embedding
@@ -546,55 +559,12 @@ export function QueuePlayer({
               era: 'unknown',
             },
           ])
+          setCheckedCount((count) => count + 1)
           continue
         }
-        try {
-          const res = await fetch(
-            `/api/queue/artist/${artist.id}/${decade}?name=${encodeURIComponent(artist.name)}`,
-            {
-              signal: AbortSignal.any([
-                controller.signal,
-                AbortSignal.timeout(QUEUE_FETCH_TIMEOUT_MS),
-              ]),
-            },
-          )
-          if (res.status === 503) {
-            const body = (await res.json().catch(() => ({}))) as {
-              quota?: boolean
-            }
-            if (body.quota) {
-              setQuotaHit(true)
-              controller.abort()
-              return
-            }
-            continue
-          }
-          if (!res.ok) continue
-          const body = (await res.json()) as {
-            track: { videoId: string; title: string; era?: TrackEra } | null
-            tracks?: { videoId: string; title: string; era?: TrackEra }[]
-          }
-          const found = body.tracks?.length
-            ? body.tracks
-            : body.track
-              ? [body.track]
-              : []
-          if (found.length === 0) continue
-          admit(
-            artist,
-            demoted,
-            // A cached entry from before era ratings carries none: it
-            // is the artist's, not the year's.
-            found.map((track) => ({
-              videoId: track.videoId,
-              title: track.title,
-              era: track.era ?? 'unknown',
-            })),
-          )
-        } catch {
-          // A per-request timeout skips ONE artist; a controller abort
-          // ends the worker. Unmount aborts fall out of the while.
-          if (controller.signal.aborted) return
+        await resolveOne(artist, demoted, decade, controller)
+        if (!controller.signal.aborted) {
+          setCheckedCount((count) => count + 1)
         }
       }
     }
@@ -602,6 +572,65 @@ export function QueuePlayer({
       Array.from({ length: QUEUE_CONCURRENCY }, () => worker()),
     )
     return slice.length
+  }
+
+  /**
+   * Ask the resolver for ONE pool artist and admit what comes back. A
+   * per-request timeout or a failed answer skips this artist only; a
+   * quota answer aborts the whole walk.
+   */
+  async function resolveOne(
+    artist: QueuePoolArtist,
+    demoted: boolean,
+    decade: number,
+    controller: AbortController,
+  ): Promise<void> {
+    try {
+      const res = await fetch(
+        `/api/queue/artist/${artist.id}/${decade}?name=${encodeURIComponent(artist.name)}`,
+        {
+          signal: AbortSignal.any([
+            controller.signal,
+            AbortSignal.timeout(QUEUE_FETCH_TIMEOUT_MS),
+          ]),
+        },
+      )
+      if (res.status === 503) {
+        const body = (await res.json().catch(() => ({}))) as {
+          quota?: boolean
+        }
+        if (body.quota) {
+          setQuotaHit(true)
+          controller.abort()
+        }
+        return
+      }
+      if (!res.ok) return
+      const body = (await res.json()) as {
+        track: { videoId: string; title: string; era?: TrackEra } | null
+        tracks?: { videoId: string; title: string; era?: TrackEra }[]
+      }
+      const found = body.tracks?.length
+        ? body.tracks
+        : body.track
+          ? [body.track]
+          : []
+      if (found.length === 0) return
+      admit(
+        artist,
+        demoted,
+        // A cached entry from before era ratings carries none: it
+        // is the artist's, not the year's.
+        found.map((track) => ({
+          videoId: track.videoId,
+          title: track.title,
+          era: track.era ?? 'unknown',
+        })),
+      )
+    } catch {
+      // A per-request timeout skips ONE artist; a controller abort
+      // ends the walk — the worker's while sees it next.
+    }
   }
 
   /**
@@ -1023,7 +1052,11 @@ export function QueuePlayer({
 
   if (!active) {
     return (
-      <button type="button" className={styles.playButton} onClick={start}>
+      <button
+        type="button"
+        className={quietStart ? styles.playButtonQuiet : styles.playButton}
+        onClick={start}
+      >
         {buttonLabel ?? `▶ Play ${placeName} ${year}`}
       </button>
     )
@@ -1040,6 +1073,24 @@ export function QueuePlayer({
     tracks.length === 0 &&
     offEraCount > 0 &&
     (gaveUp || (exhausted && !building))
+  /**
+   * The walk reached the end of the pool and found NOTHING verified —
+   * not for the year, not for any year. Before Nov 18 2026 no line
+   * covered this end, so "Finding the sound of…" stayed up forever
+   * (Egypt 1966: 68 artists, none resolvable). `gaveUp` has its own
+   * line; this is the same honesty for a walk that finished in time.
+   */
+  const nothingFound =
+    exhausted &&
+    !building &&
+    !gaveUp &&
+    !quotaHit &&
+    tracks.length === 0 &&
+    offEraCount === 0
+  /** The artists this walk will ask about, under the current filter. */
+  const walkTotal = pool.filter((artist) =>
+    genresIncluded(artist.tags, genreFilter),
+  ).length
 
   return (
     <div className={styles.queueBox}>
@@ -1115,11 +1166,27 @@ export function QueuePlayer({
           song says which years it is from.
         </p>
       )}
-      {!nowPlaying && !quotaHit && !gaveUp && !noneForYear && (
+      {!nowPlaying && !quotaHit && !gaveUp && !noneForYear && !nothingFound && (
         <p className={styles.buildNote}>
           {anyYear
             ? `Finding more from ${placeName}, any year…`
             : `Finding the sound of ${placeName} ${year}…`}
+          {!anyYear && checkedCount > 0 && walkTotal > 0 && (
+            <>
+              {' '}
+              Checked {Math.min(checkedCount, walkTotal)} of {walkTotal}{' '}
+              artists.
+            </>
+          )}
+        </p>
+      )}
+      {nothingFound && (
+        <p className={styles.sparseNote}>
+          No verified recordings to play here for {placeName} {year}
+          {isAllGenres(genreFilter) ? '' : ' under this genre filter'} — we
+          checked all {walkTotal} artist{walkTotal === 1 ? '' : 's'} on record.
+          Artists below with a ▶ still link out to a recording.
+          {onWiden && <> {widenButton(false)}</>}
         </p>
       )}
       {gaveUp && tracks.length === 0 && offEraCount === 0 && (
