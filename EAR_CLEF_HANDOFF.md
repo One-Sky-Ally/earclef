@@ -157,6 +157,23 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
     - **Weaknesses found and fixed:** the work label was wrong, though the artist was right, for "Steve Winwood - Valerie" → the compilation "Winwood", and for "High Tone - X Ray - Live" → the album "Live". Hence the name-fragment and generic-title rules.
     - **Search:** 10 searches on obscure sampled artists found nothing (0/8 completed). The Nov 18–19 measurement's two-change hits on prominent artists (6 of 11, all right) are the search-side sample so far.
     - **Not yet seen:** both-scripts channels — 0 in this sample.
+  - **CODE REVIEW BEFORE PUSH** (independent reviewer; all fixed):
+    - **(H1)** A failed MB recordings call made "no titles" look definitive. It was cached as a 180-day null; 24% of pooled artists have no release groups. Now the request fails (502, uncached), and `mbJson` retries timeouts and 5xx.
+    - **(H2)** Discogs lead years skipped album-span corrections and capped titles. 981 rows rated in-era wrongly, e.g. Elvis "Are You Lonesome Tonight?" as 1997. Now MB-catalogue leads take their era from the full era ranking; titles it doesn't hold make no era claim ('catalog'), or are dropped when a per-song correction moved them. The build de-duplicates before capping (cap 2000) and gives Discogs-only titles their earliest year.
+    - **(H3)** One coincidental short-title match could teach a namesake's channel for every decade. Now search hits beyond the searched title, and learned-channel uploads, need a STRONG work: a release title, or a song title of ≥2 words / ≥8 letters / ≥4 CJK characters. A channel is remembered only when corroborated: the teaching find named a release title, or its own uploads name another strong work.
+    - **(M)** A failure in the channel-learning step no longer throws away a paid search.
+    - **(M)** One sweep error skips one key, not the night.
+    - **(M)** Quota-blocked artists count as awaiting a lookup, so the end line stays honest.
+    - **(M)** The nightly background function needs x-owner-key (sent by the schedule from `OWNER_KEY`) and spends nothing before 21:00 Pacific.
+    - **(M)** The wanted list is read through a randomly placed 600-key window in batches of 50. Entries not asked for in 30 days drop, and 4xx answers clear them.
+    - **(L)** The route sets `Netlify-Vary: query=warm` (Netlify ignores query strings otherwise), and warm answers are `no-store`.
+    - **(L)** The searched title is never a name fragment.
+  - **FINAL SAMPLE after the review fixes** (same seeded 130, no searches):
+    - 0 errors; 43 artists, 301 tracks.
+    - By source: 142 channel (112 MB-link + 30 learned), 159 Discogs.
+    - By uploader name: 119 name, 40 alias.
+    - Era: Discogs leads 84 catalog / 60 nearby / 15 in-era. The catalog leads are now honest no-claims.
+    - The 4 tracks new since the hand check were read by hand: all right. One was Supertramp "Asylum (Live In Paris '79)" → their live album "Paris".
   - **NOT DONE:** the privacy and terms pages are drafted and shown to the owner, not published (owner: "Show me the privacy and terms wording before you publish"). No quota request to Google.
 
 - **NEW VERIFICATION PRINCIPLE + SEARCH-BUDGET MEASUREMENT (Nov 19, 2026; owner: "It must be the right artist's music. How that's proven is your job, as long as you check a sample by hand and tell me what you found … Go ahead and build").**

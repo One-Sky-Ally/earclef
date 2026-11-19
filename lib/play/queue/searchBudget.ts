@@ -107,7 +107,8 @@ export async function markWanted(mbid: string, decade: string, name: string): Pr
       decade,
       name,
       asks: (held?.asks ?? 0) + 1,
-      at: held?.at ?? new Date().toISOString(),
+      // The LAST time a visitor needed it: unasked for 30 days → dropped.
+      at: new Date().toISOString(),
     } satisfies WantedArtist)
   } catch {
     // Best-effort: the next visit marks it again.
@@ -124,15 +125,35 @@ export async function clearWanted(mbid: string, decade: string): Promise<void> {
 
 /** Wanted entries read per night — bounds the job's Blobs reads. */
 const WANTED_READ_CAP = 600
+/** A wanted artist nobody asked about again for this long is dropped. */
+const WANTED_MAX_AGE_MS = 30 * 86_400_000
+const READ_BATCH = 50
 
-/** Wanted artists, most-asked first, then oldest (from the first 600 listed). */
+/**
+ * Wanted artists, most-asked first, then oldest. Reads a window of
+ * WANTED_READ_CAP keys starting at a random place, so a long list is
+ * covered over the nights rather than always from the same MBIDs (code
+ * review, Nov 19 2026). Entries in the window older than 30 days are
+ * deleted as they are read.
+ */
 export async function wantedArtists(limit: number): Promise<WantedArtist[]> {
-  const keys = (await logKeys('wanted/')).slice(0, WANTED_READ_CAP)
-  const rows = await Promise.all(
-    keys.map((key) => store().get(key, { type: 'json' }).catch(() => null) as Promise<WantedArtist | null>),
-  )
+  const keys = await logKeys('wanted/')
+  const start = keys.length > WANTED_READ_CAP ? Math.floor(Math.random() * keys.length) : 0
+  const window = [...keys.slice(start), ...keys.slice(0, start)].slice(0, WANTED_READ_CAP)
+  const rows: WantedArtist[] = []
+  for (let at = 0; at < window.length; at += READ_BATCH) {
+    const batch = await Promise.all(
+      window
+        .slice(at, at + READ_BATCH)
+        .map((key) => store().get(key, { type: 'json' }).catch(() => null) as Promise<WantedArtist | null>),
+    )
+    rows.push(...batch.filter((row): row is WantedArtist => Boolean(row?.mbid && row.name)))
+  }
+  const now = Date.now()
+  const stale = rows.filter((row) => now - Date.parse(row.at) > WANTED_MAX_AGE_MS)
+  await Promise.all(stale.map((row) => clearWanted(row.mbid, row.decade)))
   return rows
-    .filter((row): row is WantedArtist => Boolean(row?.mbid && row.name))
+    .filter((row) => now - Date.parse(row.at) <= WANTED_MAX_AGE_MS)
     .sort((a, b) => b.asks - a.asks || a.at.localeCompare(b.at))
     .slice(0, limit)
 }

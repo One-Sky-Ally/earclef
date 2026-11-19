@@ -18,6 +18,7 @@
  * function log reads as the nightly record.
  */
 import { getStore } from '@netlify/blobs'
+import { isOwner } from '../../lib/curation/auth'
 import { clearWanted, pruneLog, searchesToday, wantedArtists } from '../../lib/play/queue/searchBudget'
 import { sweepTonight } from '../../lib/play/queue/sweep'
 
@@ -54,7 +55,20 @@ interface WarmReport {
   stop: string
 }
 
+/** Hour of day in Pacific time — leftovers are only leftovers late in the day. */
+function pacificHour(): number {
+  return Number(
+    new Intl.DateTimeFormat('en-US', { timeZone: 'America/Los_Angeles', hour: 'numeric', hourCycle: 'h23' }).format(new Date()),
+  )
+}
+
+/** Spending starts no earlier than this Pacific hour (ticks land 21:10–23:10). */
+const EARLIEST_PACIFIC_HOUR = 21
+
 async function spendLeftovers(base: string, deadline: number): Promise<WarmReport> {
+  if (pacificHour() < EARLIEST_PACIFIC_HOUR) {
+    return { budget: 0, asked: 0, searched: 0, answeredFree: 0, stop: `too early (Pacific hour ${pacificHour()})` }
+  }
   const books = await searchesToday()
   const budget = DAILY_SEARCH_CAP - books.live - books.overnight - RESERVE
   const report: WarmReport = { budget, asked: 0, searched: 0, answeredFree: 0, stop: 'done' }
@@ -74,6 +88,8 @@ async function spendLeftovers(base: string, deadline: number): Promise<WarmRepor
     }
     const body = (await res.json().catch(() => ({}))) as { quota?: boolean; searched?: boolean; deferred?: boolean }
     if (body.quota) return { ...report, stop: 'quota' }
+    // A 4xx will never answer (a malformed or merged id): stop asking.
+    if (res.status >= 400 && res.status < 500) await clearWanted(artist.mbid, artist.decade)
     if (!res.ok) continue
     if (body.searched) report.searched += 1
     else {
@@ -85,7 +101,15 @@ async function spendLeftovers(base: string, deadline: number): Promise<WarmRepor
   return report
 }
 
-export default async function handler(): Promise<Response> {
+export default async function handler(request: Request): Promise<Response> {
+  // Only the scheduled tick (which sends the owner key) may start a run:
+  // a run spends real searches, so a public trigger would let anyone take
+  // the day's budget (code review, Nov 19 2026).
+  if (!isOwner(request)) {
+    const line = `${TAG} refused: missing or wrong x-owner-key`
+    console.error(line)
+    return new Response(line, { status: 401 })
+  }
   const started = Date.now()
   const deadline = started + RUN_MS
   if (!(await takeLock())) {

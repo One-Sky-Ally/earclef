@@ -19,10 +19,20 @@ export default async function handler(): Promise<Response> {
     console.error(line)
     return new Response(line, { status: 500 })
   }
+  const ownerKey = process.env.OWNER_KEY
+  if (!ownerKey) {
+    const line = `${TAG} NOT triggered: the OWNER_KEY env var is not set for this function`
+    console.error(line)
+    return new Response(line, { status: 500 })
+  }
   let status: number | null = null
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      const res = await fetch(`${base}${BACKGROUND_PATH}`, { method: 'POST', signal: AbortSignal.timeout(2000) })
+      const res = await fetch(`${base}${BACKGROUND_PATH}`, {
+        method: 'POST',
+        headers: { 'x-owner-key': ownerKey },
+        signal: AbortSignal.timeout(2000),
+      })
       status = res.status
       if (res.ok) break
     } catch {

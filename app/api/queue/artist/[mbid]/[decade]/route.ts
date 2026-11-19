@@ -36,9 +36,17 @@ export type { QueueTrack }
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 const DECADE = /^(19|20)\d0$/
 
-function answer(tracks: QueueTrack[], extra: { searched?: boolean } = {}): NextResponse {
+/**
+ * Netlify's CDN ignores query strings in function cache keys unless told
+ * (see app/api/explore/search). `warm` is varied on, so the overnight
+ * job always reaches the function instead of a visitor's cached copy, and
+ * its own answers are never cached. `search` needs no vary: every
+ * cacheable answer is the same whichever way it was asked.
+ */
+function answer(tracks: QueueTrack[], extra: { searched?: boolean } = {}, warm = false): NextResponse {
   const response = NextResponse.json({ track: tracks[0] ?? null, tracks, ...extra })
-  response.headers.set('Cache-Control', 'public, s-maxage=604800, stale-while-revalidate=86400')
+  response.headers.set('Cache-Control', warm ? 'no-store' : 'public, s-maxage=604800, stale-while-revalidate=86400')
+  response.headers.set('Netlify-Vary', 'query=warm')
   return response
 }
 
@@ -70,7 +78,7 @@ export async function GET(request: Request, ctx: { params: Promise<{ mbid: strin
     redatedVersion: dating ? RG_DATING_VERSION : null,
     apiKey,
   })
-  if (verdict.kind === 'serve') return answer(verdict.tracks)
+  if (verdict.kind === 'serve') return answer(verdict.tracks, {}, warm)
   if (verdict.kind === 'deferred') {
     await markWanted(mbid, decade, name)
     return deferred()
@@ -104,7 +112,7 @@ export async function GET(request: Request, ctx: { params: Promise<{ mbid: strin
       ...stamp,
     } satisfies CachedResolve)
     if (result.searched) await clearWanted(mbid, decade)
-    return answer(result.tracks, { searched: result.searched })
+    return answer(result.tracks, { searched: result.searched }, warm)
   } catch (error) {
     if (error instanceof QuotaError) {
       // Never cached — the overnight job or a later visit finishes it.

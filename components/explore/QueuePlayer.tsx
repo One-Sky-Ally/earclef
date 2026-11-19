@@ -650,6 +650,12 @@ export function QueuePlayer({
         if (body.quota) {
           setQuotaHit(true)
           searchesAskedRef.current = SEARCHES_PER_VISIT
+          // Still unanswered: count it among the artists awaiting a
+          // lookup, so the end line never claims "we checked them all"
+          // (code review, Nov 19 2026). The server lists it as wanted.
+          if (!needsSearchRef.current.some((held) => held.id === artist.id)) {
+            needsSearchRef.current = [...needsSearchRef.current, artist]
+          }
         }
         return
       }

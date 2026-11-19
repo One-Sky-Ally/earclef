@@ -16,23 +16,23 @@
    }
   },
   "searchesSpent": 0,
-  "tracks": 303,
+  "tracks": 301,
   "bySource": {
-   "channel": 145,
-   "discogs": 158,
+   "channel": 142,
+   "discogs": 159,
    "search": 0
   },
   "byChannelMatch": {
-   "mb-link": 113,
-   "learned": 32,
+   "mb-link": 112,
+   "learned": 30,
    "name": 119,
-   "alias": 39,
+   "alias": 40,
    "both-scripts": 0
   },
   "byWork": {
    "release": 92,
-   "song": 118,
-   "discogs": 93
+   "song": 115,
+   "discogs": 94
   }
  },
  "rows": [
@@ -317,20 +317,8 @@
      "videoId": "_-N3QlNaWHw",
      "title": "Right Night for Loving (Bra Vibrationer)",
      "source": "discogs",
-     "era": "nearby",
+     "era": "catalog",
      "eraTitle": "Right Night for Loving (Bra Vibrationer)",
-     "how": {
-      "channel": "name",
-      "work": "song"
-     },
-     "uploader": "Kikki Danielsson - Topic"
-    },
-    {
-     "videoId": "ijp4ZmhkXLw",
-     "title": "Här är jag igen",
-     "source": "discogs",
-     "era": "nearby",
-     "eraTitle": "Här är jag igen",
      "how": {
       "channel": "name",
       "work": "song"
@@ -355,6 +343,18 @@
      "source": "discogs",
      "era": "catalog",
      "eraTitle": "Tänker lära mig leva livet",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kikki Danielsson - Topic"
+    },
+    {
+     "videoId": "ijp4ZmhkXLw",
+     "title": "Här är jag igen",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Här är jag igen",
      "how": {
       "channel": "name",
       "work": "song"
@@ -821,18 +821,6 @@
      "uploader": "SupertrampVEVO"
     },
     {
-     "videoId": "VqGQZU2cX1s",
-     "title": "Oh Darling (Remastered 2010)",
-     "source": "discogs",
-     "era": "in-era",
-     "eraTitle": "Oh Darling",
-     "how": {
-      "channel": "name",
-      "work": "song"
-     },
-     "uploader": "Supertramp - Topic"
-    },
-    {
      "videoId": "80MfCqXv5zw",
      "title": "Supertramp - Brother Where You Bound (Official Audio)",
      "source": "discogs",
@@ -891,6 +879,18 @@
       "work": "release"
      },
      "uploader": "Supertramp "
+    },
+    {
+     "videoId": "DRzML_JiXCo",
+     "title": "Supertramp - Asylum (Live In Paris '79)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Paris",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Supertramp "
     }
    ]
   },
@@ -927,6 +927,18 @@
    "searched": false,
    "tracks": [
     {
+     "videoId": "0QXJy-wlZe8",
+     "title": "Tallinn Daggers - Flesh Parade (Official Music Video - HD)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Flesh Parade",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Tallinn Daggers"
+    },
+    {
      "videoId": "YqYtuGkh5w4",
      "title": "Tallinn Daggers - Island Phi Ley (Official Music Video)",
      "source": "discogs",
@@ -935,18 +947,6 @@
      "how": {
       "channel": "name",
       "work": "discogs"
-     },
-     "uploader": "Tallinn Daggers"
-    },
-    {
-     "videoId": "0QXJy-wlZe8",
-     "title": "Tallinn Daggers - Flesh Parade (Official Music Video - HD)",
-     "source": "discogs",
-     "era": "nearby",
-     "eraTitle": "Flesh Parade",
-     "how": {
-      "channel": "name",
-      "work": "release"
      },
      "uploader": "Tallinn Daggers"
     },
@@ -1245,6 +1245,18 @@
    "searched": false,
    "tracks": [
     {
+     "videoId": "W4Mr1jHknYI",
+     "title": "Harem Scarem * OFFICIAL * Die Off Hard",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Die Off Hard",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Harem Scarem"
+    },
+    {
      "videoId": "WAkr45_k9uQ",
      "title": "Harem Scarem Human Nature Live at Firefest IV",
      "source": "channel",
@@ -1253,30 +1265,6 @@
      "how": {
       "channel": "learned",
       "work": "release"
-     },
-     "uploader": "Harem Scarem"
-    },
-    {
-     "videoId": "NeV7wnwwMEQ",
-     "title": "Harem Scarem Firefest IV Dagger",
-     "source": "channel",
-     "era": "in-era",
-     "eraTitle": "Dagger",
-     "how": {
-      "channel": "learned",
-      "work": "song"
-     },
-     "uploader": "Harem Scarem"
-    },
-    {
-     "videoId": "6SFxKhJeXp0",
-     "title": "Harem Scarem * OFFICIAL * Blue",
-     "source": "channel",
-     "era": "in-era",
-     "eraTitle": "Blue",
-     "how": {
-      "channel": "learned",
-      "work": "song"
      },
      "uploader": "Harem Scarem"
     },
@@ -1301,18 +1289,6 @@
      "how": {
       "channel": "learned",
       "work": "song"
-     },
-     "uploader": "Harem Scarem"
-    },
-    {
-     "videoId": "W4Mr1jHknYI",
-     "title": "Harem Scarem * OFFICIAL * Die Off Hard",
-     "source": "discogs",
-     "era": "nearby",
-     "eraTitle": "Die Off Hard",
-     "how": {
-      "channel": "name",
-      "work": "release"
      },
      "uploader": "Harem Scarem"
     },
@@ -1647,18 +1623,6 @@
      "uploader": "Steve Winwood"
     },
     {
-     "videoId": "cbKNICg-REA",
-     "title": "Steve Winwood - Valerie",
-     "source": "channel",
-     "era": "catalog",
-     "eraTitle": "Winwood",
-     "how": {
-      "channel": "mb-link",
-      "work": "release"
-     },
-     "uploader": "SteveWinwoodVEVO"
-    },
-    {
      "videoId": "vkIZACGAKVw",
      "title": "Help Me Angel",
      "source": "discogs",
@@ -1861,6 +1825,18 @@
      "uploader": "Jorgen Ingmann - Topic"
     },
     {
+     "videoId": "UXOBFrA6qNk",
+     "title": "Little Serenade",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Little Serenade",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
      "videoId": "9cXkaH5ScVM",
      "title": "Pinetop's Boogie Woogie",
      "source": "discogs",
@@ -1885,11 +1861,59 @@
      "uploader": "Jorgen Ingmann - Topic"
     },
     {
+     "videoId": "bi4LLCyIe5I",
+     "title": "Anna",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Anna",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "tmaExMJ7bik",
+     "title": "Cherokee",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Cherokee",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "bkfQPTywsOA",
+     "title": "Bonanza",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Bonanza",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
      "videoId": "psaLk0pJGXo",
      "title": "High Noon",
      "source": "discogs",
      "era": "nearby",
      "eraTitle": "High Noon",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "vhu-4gP82nk",
+     "title": "Jalousie",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Jalousie",
      "how": {
       "channel": "alias",
       "work": "song"
@@ -1909,71 +1933,11 @@
      "uploader": "Jorgen Ingmann - Topic"
     },
     {
-     "videoId": "UXOBFrA6qNk",
-     "title": "Little Serenade",
-     "source": "discogs",
-     "era": "catalog",
-     "eraTitle": "Little Serenade",
-     "how": {
-      "channel": "alias",
-      "work": "song"
-     },
-     "uploader": "Jorgen Ingmann - Topic"
-    },
-    {
-     "videoId": "bi4LLCyIe5I",
-     "title": "Anna",
-     "source": "discogs",
-     "era": "catalog",
-     "eraTitle": "Anna",
-     "how": {
-      "channel": "alias",
-      "work": "song"
-     },
-     "uploader": "Jorgen Ingmann - Topic"
-    },
-    {
-     "videoId": "tmaExMJ7bik",
-     "title": "Cherokee",
-     "source": "discogs",
-     "era": "catalog",
-     "eraTitle": "Cherokee",
-     "how": {
-      "channel": "alias",
-      "work": "song"
-     },
-     "uploader": "Jorgen Ingmann - Topic"
-    },
-    {
-     "videoId": "bkfQPTywsOA",
-     "title": "Bonanza",
-     "source": "discogs",
-     "era": "catalog",
-     "eraTitle": "Bonanza",
-     "how": {
-      "channel": "alias",
-      "work": "song"
-     },
-     "uploader": "Jorgen Ingmann - Topic"
-    },
-    {
      "videoId": "ci-wH5tl8MA",
      "title": "Third Man Theme",
      "source": "discogs",
      "era": "catalog",
      "eraTitle": "Third Man Theme",
-     "how": {
-      "channel": "alias",
-      "work": "song"
-     },
-     "uploader": "Jorgen Ingmann - Topic"
-    },
-    {
-     "videoId": "NOfu6t0D4Rk",
-     "title": "Wheels",
-     "source": "discogs",
-     "era": "catalog",
-     "eraTitle": "Wheels",
      "how": {
       "channel": "alias",
       "work": "song"
@@ -2417,6 +2381,18 @@
       "work": "discogs"
      },
      "uploader": "COALTAR OF THE DEEPERS - Topic"
+    },
+    {
+     "videoId": "3e9Q2y7ZOK0",
+     "title": "Hard Reality",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Hard Reality",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "COALTAR OF THE DEEPERS - Topic"
     }
    ]
   },
@@ -2439,6 +2415,18 @@
    "needsSearch": false,
    "searched": false,
    "tracks": [
+    {
+     "videoId": "LE73dYriVaQ",
+     "title": "Djeliya",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Djeliya",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
     {
      "videoId": "yxpoS6jFDFs",
      "title": "Badara",
@@ -2565,18 +2553,6 @@
      "source": "discogs",
      "era": "nearby",
      "eraTitle": "Kelen",
-     "how": {
-      "channel": "name",
-      "work": "discogs"
-     },
-     "uploader": "Babani Koné - Topic"
-    },
-    {
-     "videoId": "LE73dYriVaQ",
-     "title": "Djeliya",
-     "source": "discogs",
-     "era": "catalog",
-     "eraTitle": "Djeliya",
      "how": {
       "channel": "name",
       "work": "discogs"
@@ -3154,7 +3130,7 @@
      "videoId": "t_owMq5etQI",
      "title": "Dungeon Crawler",
      "source": "discogs",
-     "era": "nearby",
+     "era": "in-era",
      "eraTitle": "Dungeon Crawler",
      "how": {
       "channel": "name",
@@ -3340,7 +3316,7 @@
      "videoId": "f8SB0-BV4r0",
      "title": "I'm Gonna Sit Right Down and Write Myself a Letter",
      "source": "discogs",
-     "era": "nearby",
+     "era": "catalog",
      "eraTitle": "I’m Gonna Sit Right Down and Write Myself a Letter",
      "how": {
       "channel": "name",
@@ -3504,11 +3480,11 @@
      "uploader": "Los Alfa 8"
     },
     {
-     "videoId": "fuqWyMmITvM",
-     "title": "Los Alfa 8 - Ella (Letra - Lyric)",
+     "videoId": "pupqB7CmXzY",
+     "title": "Los Alfa 8 - Al Rojo Vivo (EN VIVO)",
      "source": "channel",
      "era": "nearby",
-     "eraTitle": "Ella",
+     "eraTitle": "Al rojo vivo",
      "how": {
       "channel": "learned",
       "work": "song"
@@ -3516,11 +3492,11 @@
      "uploader": "Los Alfa 8"
     },
     {
-     "videoId": "pupqB7CmXzY",
-     "title": "Los Alfa 8 - Al Rojo Vivo (EN VIVO)",
+     "videoId": "NVxn9IhO938",
+     "title": "Los Alfa 8 - Es Esa Mujer (Letra - Lyric)",
      "source": "channel",
      "era": "nearby",
-     "eraTitle": "Al rojo vivo",
+     "eraTitle": "Es esa mujer",
      "how": {
       "channel": "learned",
       "work": "song"
@@ -3631,18 +3607,6 @@
      "uploader": "High Tone"
     },
     {
-     "videoId": "VPelkicNfGs",
-     "title": "High Tone - X Ray - Live",
-     "source": "channel",
-     "era": "in-era",
-     "eraTitle": "Live",
-     "how": {
-      "channel": "mb-link",
-      "work": "release"
-     },
-     "uploader": "High Tone"
-    },
-    {
      "videoId": "qwTSf0vchy8",
      "title": "High Tone - Underground Wobble - Full album",
      "source": "channel",
@@ -3696,6 +3660,18 @@
      "source": "channel",
      "era": "in-era",
      "eraTitle": "Bi Ma Wen - Le Palefrenier des écuries célestes",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "yHZxSojp5js",
+     "title": "High Tone - Afraid of Nothing",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Afraid of Nothing",
      "how": {
       "channel": "mb-link",
       "work": "song"
@@ -4735,6 +4711,18 @@
    "searched": false,
    "tracks": [
     {
+     "videoId": "-exmd6HhbMM",
+     "title": "Giorgos Alkaios - Με δυο μαρμάρινα φιλιά | Summer Mix",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Με δυο μαρμάρινα φιλιά",
+     "how": {
+      "channel": "alias",
+      "work": "release"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
      "videoId": "Q3ljSCXAUZ0",
      "title": "Γιώργος Αλκαίος - Καλύτερα μόνος μου (Audio)",
      "source": "discogs",
@@ -4827,18 +4815,6 @@
      "how": {
       "channel": "alias",
       "work": "discogs"
-     },
-     "uploader": "Giorgos Alkaios"
-    },
-    {
-     "videoId": "iNOo-pKSnks",
-     "title": "Γιώργος Αλκαίος - Και πάλι μόνος (Audio)",
-     "source": "channel",
-     "era": "in-era",
-     "eraTitle": "Μόνος",
-     "how": {
-      "channel": "learned",
-      "work": "song"
      },
      "uploader": "Giorgos Alkaios"
     },

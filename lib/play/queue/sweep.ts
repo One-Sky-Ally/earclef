@@ -31,6 +31,7 @@ export interface SweepReport {
   emptied: number
   channelsChecked: number
   channelsDropped: number
+  errors: number
   stoppedEarly: boolean
 }
 
@@ -63,7 +64,14 @@ async function sweepQueue(slot: number, apiKey: string, deadline: number, report
     }
     const entry = (await queueStore().get(key, { type: 'json' }).catch(() => null)) as CachedResolve | null
     if (!entry || tracksOf(entry).length === 0 || !isStale(entry.checkedAt ?? entry.at, Date.now())) continue
-    const fresh = await refreshEntry(entry, mbidOf(key), entry.name ?? '', apiKey)
+    let fresh: CachedResolve | null
+    try {
+      fresh = await refreshEntry(entry, mbidOf(key), entry.name ?? '', apiKey)
+    } catch {
+      // One bad answer (a 5xx, a timeout) skips this key, not the night.
+      report.errors += 1
+      continue
+    }
     if (!fresh) {
       // Quota refusal: stop; tomorrow's slot differs, so the read path and
       // the next cycle cover what was left.
@@ -90,11 +98,9 @@ async function sweepLearned(slot: number, apiKey: string, deadline: number, repo
   try {
     titles = await channelTitles(due.map((row) => row.held.channelId), apiKey)
   } catch (error) {
-    if (error instanceof QuotaError) {
-      report.stoppedEarly = true
-      return
-    }
-    throw error
+    if (error instanceof QuotaError) report.stoppedEarly = true
+    else report.errors += 1
+    return
   }
   const now = new Date().toISOString()
   for (const { mbid, held } of due) {
@@ -118,6 +124,7 @@ export async function sweepTonight(apiKey: string, deadline: number): Promise<Sw
     emptied: 0,
     channelsChecked: 0,
     channelsDropped: 0,
+    errors: 0,
     stoppedEarly: false,
   }
   await sweepQueue(report.slot, apiKey, deadline, report)

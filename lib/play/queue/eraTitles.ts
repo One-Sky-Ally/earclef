@@ -99,6 +99,7 @@ export function rankEraTitles(
   decade: number,
   dating: ArtistDating | null,
   titleKey: (value: string) => string,
+  limit: number = MAX_TITLES,
 ): EraTitle[] {
   const mid = decade + 5
   const dated: Ranged[] = []
@@ -136,5 +137,5 @@ export function rankEraTitles(
       seen.add(key)
       return true
     })
-    .slice(0, MAX_TITLES)
+    .slice(0, limit)
 }

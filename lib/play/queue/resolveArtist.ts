@@ -30,7 +30,7 @@
  * Zero Anthropic wallet: MusicBrainz + YouTube only.
  */
 import type { ArtistDating } from '../../explore/rgDating'
-import { channelMatchKind, channelNamesFor, findWork, isNameOnly, matchKey, type ArtistAlias } from '../artistMatch'
+import { channelMatchKind, channelNamesFor, findWork, identifies, isNameOnly, matchKey, type ArtistAlias } from '../artistMatch'
 import {
   channelId as resolveChannelId,
   channelUploads,
@@ -99,20 +99,48 @@ interface Identity {
 const workKindOf = (title: string, identity: Identity): WorkKind =>
   identity.releaseKeys.has(matchKey(title)) ? 'release' : 'song'
 
+const CJK = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/u
+
+/**
+ * A work specific enough to stand as the second fact WITHOUT a curated
+ * link behind the channel: any release title, or a song title of two
+ * words or more, at least 8 letters, or 4 CJK characters. A one-word song
+ * title such as "Love" or "Alone" is in too many other artists' uploads
+ * (code review, Nov 19 2026: one such coincidence could teach a
+ * namesake's channel for every decade).
+ */
+function isStrongWork(title: string, identity: Identity): boolean {
+  const key = matchKey(title)
+  if (!key || !identifies(key)) return false
+  if (identity.releaseKeys.has(key)) return true
+  const chars = key.replace(/ /g, '').length
+  return key.includes(' ') || chars >= 8 || (CJK.test(key) && chars >= 4)
+}
+
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 const ERA_RANK: Record<TrackEraRating, number> = { 'in-era': 0, nearby: 1, catalog: 2 }
 
+/** MusicBrainz with retries on rate limits, 5xx, timeouts and network errors. */
 async function mbJson(url: string): Promise<unknown> {
+  let last = 'MusicBrainz unavailable'
   for (let attempt = 1; attempt <= 3; attempt++) {
-    const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT }, signal: AbortSignal.timeout(8000) })
-    if (res.status === 503 || res.status === 429) {
+    let res: Response
+    try {
+      res = await fetch(url, { headers: { 'User-Agent': USER_AGENT }, signal: AbortSignal.timeout(8000) })
+    } catch (error) {
+      last = `MusicBrainz unreachable: ${error instanceof Error ? error.message : String(error)}`
+      await sleep(1400 * attempt)
+      continue
+    }
+    if (res.status === 429 || res.status >= 500) {
+      last = `MusicBrainz HTTP ${res.status}`
       await sleep(1400 * attempt)
       continue
     }
     if (!res.ok) throw new Error(`MusicBrainz HTTP ${res.status}`)
     return res.json()
   }
-  throw new Error('MusicBrainz rate limited')
+  throw new Error(last)
 }
 
 /**
@@ -153,27 +181,44 @@ function channelCandidates(uploads: Upload[], works: EraTitle[], identity: Ident
   return picked
 }
 
-/** Discogs leads with the era each earns; corrected titles move, never copy. */
+/**
+ * Discogs leads with the era each earns. A title in the MB catalogue takes
+ * its era from the full era ranking, so the per-song AND album-span
+ * corrections apply (code review, Nov 19 2026: lead years came from
+ * whichever record listed the video — Elvis's "Are You Lonesome Tonight?"
+ * rated 1997). A title the ranking no longer holds was moved away by a
+ * correction and is dropped: move, don't copy. Discogs-only titles take
+ * their per-song correction, else the earliest year Discogs gives.
+ */
 function discogsCandidates(
   rows: DiscogsVideoRow[],
   decade: number,
   dating: ArtistDating | null,
   titleKey: (value: string) => string,
   identity: Identity,
+  eraOf: Map<string, TrackEraRating>,
 ): Candidate[] {
   return rows.flatMap(([videoId, work, year, source]) => {
+    if (source === 'm') {
+      // Absent from the ranking: a per-song correction may have moved it
+      // (drop it outside the bands); otherwise it is a tracklist title MB's
+      // first 100 recordings did not reach, so it makes no era claim.
+      const corrected = dating?.s[titleKey(work)]
+      const era = eraOf.get(titleKey(work)) ?? (corrected !== undefined ? eraOfYear(corrected, decade) : 'catalog')
+      if (corrected !== undefined && !eraOf.has(titleKey(work)) && era === 'catalog') return []
+      return [{ videoId, title: work, source: 'discogs' as const, era, eraTitle: work, workKind: workKindOf(work, identity), trusted: false }]
+    }
     const corrected = dating?.s[titleKey(work)]
     const era = eraOfYear(corrected ?? year, decade)
     if (corrected !== undefined && era === 'catalog') return []
-    const workKind: WorkKind = source === 'd' ? 'discogs' : workKindOf(work, identity)
-    return [{ videoId, title: work, source: 'discogs' as const, era, eraTitle: work, workKind, trusted: false }]
+    return [{ videoId, title: work, source: 'discogs' as const, era, eraTitle: work, workKind: 'discogs' as const, trusted: false }]
   })
 }
 
 interface Verified {
   tracks: QueueTrack[]
   /** Uploaders of accepted, untrusted finds: channels worth learning. */
-  channels: { channelId: string; channelTitle: string; via: 'discogs' | 'search' }[]
+  channels: { channelId: string; channelTitle: string; via: 'discogs' | 'search'; videoId: string }[]
 }
 
 /** The check every candidate passes, in one batched videos.list. */
@@ -219,7 +264,7 @@ async function verify(candidates: Candidate[], identity: Identity, apiKey: strin
       },
     })
     if (candidate.source !== 'channel' && facts.channelId && facts.channelTitle) {
-      channels.push({ channelId: facts.channelId, channelTitle: facts.channelTitle, via: candidate.source })
+      channels.push({ channelId: facts.channelId, channelTitle: facts.channelTitle, via: candidate.source, videoId: candidate.videoId })
     }
   }
   return { tracks, channels }
@@ -253,11 +298,52 @@ async function searchCandidates(
     const title = item.snippet?.title ? decodeEntities(item.snippet.title) : ''
     if (!videoId || !title || !channelMatchKind(item.snippet?.channelTitle ?? '', name, identity.aliases)) return []
     // A self-titled record is in every upload naming the artist: it
-    // identifies nothing here.
-    const work = findWork(title, works.filter((entry) => !isNameOnly(entry.title, name)))
+    // identifies nothing here. Beyond the searched title, only strong
+    // works confirm a search hit.
+    const work = findWork(
+      title,
+      works.filter(
+        (entry) => !isNameOnly(entry.title, name) && (matchKey(entry.title) === matchKey(pick.title) || isStrongWork(entry.title, identity)),
+      ),
+    )
     if (!work) return []
     return [{ videoId, title, source: 'search' as const, era: work.era, eraTitle: work.title, workKind: workKindOf(work.title, identity), trusted: false }]
   })
+}
+
+/**
+ * A verified find off an unlinked channel teaches that channel. Its uploads
+ * are read at once for more of this decade, and it is remembered for the
+ * artist's other decades, but only when corroborated (code review, Nov 19
+ * 2026): the teaching find named a release title, or the channel's own
+ * uploads name another of the artist's strong works. Any failure here
+ * keeps what was already found, so a search already paid for is never
+ * thrown away.
+ */
+async function withTeacher(
+  found: Verified,
+  scanned: Set<string>,
+  identity: Identity,
+  request: ResolveRequest,
+  allWorks: () => Promise<EraTitle[]>,
+): Promise<QueueTrack[]> {
+  const teacher = found.channels.find((channel) => !scanned.has(channel.channelId))
+  if (!teacher) return found.tracks
+  try {
+    const uploads = await channelUploads(teacher.channelId, request.apiKey)
+    // "Topic" channels' upload lists answer 404: nothing to read or learn.
+    if (uploads.length === 0) return found.tracks
+    const works = (await allWorks()).filter((work) => isStrongWork(work.title, identity))
+    const more = await verify(channelCandidates(uploads, works, identity, false), identity, request.apiKey)
+    const merged = merge(found.tracks, more.tracks)
+    const teaching = found.tracks.find((track) => track.videoId === teacher.videoId)
+    const corroborated = teaching?.how?.work === 'release' || merged.length > found.tracks.length
+    if (!corroborated) return found.tracks
+    await saveLearnedChannel(request.mbid, teacher)
+    return merged
+  } catch {
+    return found.tracks
+  }
 }
 
 function merge(held: QueueTrack[], more: QueueTrack[]): QueueTrack[] {
@@ -289,6 +375,8 @@ export async function resolveArtist(request: ResolveRequest): Promise<ResolveRes
   }
 
   let recordings: DatedTitle[] | null = null
+  /** Set when the recordings call failed — then "no titles" is not an answer. */
+  let recordingsFailed = false
   const songs = async (): Promise<DatedTitle[]> => {
     if (recordings) return recordings
     await sleep(MB_DELAY_MS)
@@ -302,6 +390,7 @@ export async function resolveArtist(request: ResolveRequest): Promise<ResolveRes
         'primary-type': 'Recording',
       }))
     } catch {
+      recordingsFailed = true
       recordings = []
     }
     return recordings
@@ -315,40 +404,43 @@ export async function resolveArtist(request: ResolveRequest): Promise<ResolveRes
     ...(mbChannel ? [{ id: mbChannel, trusted: true }] : []),
     ...(learned && learned.channelId !== mbChannel ? [{ id: learned.channelId, trusted: false }] : []),
   ]
-  let works = worksWith(scan.length > 0 ? await songs() : [])
+  const leadRows = await discogsVideosFor(mbid)
+  let works = worksWith(scan.length > 0 || leadRows.length > 0 ? await songs() : [])
+  const strong = (list: EraTitle[]) => list.filter((work) => isStrongWork(work.title, identity))
 
   const scanned = new Set<string>()
   const fromChannels: Candidate[] = []
   for (const channel of scan) {
     scanned.add(channel.id)
-    fromChannels.push(...channelCandidates(await channelUploads(channel.id, apiKey), works, identity, channel.trusted))
+    // A learned channel has no curated link behind it: strong works only.
+    const usable = channel.trusted ? works : strong(works)
+    fromChannels.push(...channelCandidates(await channelUploads(channel.id, apiKey), usable, identity, channel.trusted))
   }
-  const leads = discogsCandidates(await discogsVideosFor(mbid), decade, dating, titleKey, identity)
+  const eraOf = new Map(
+    rankEraTitles([...groups, ...(recordings ?? [])], decade, dating, titleKey, Infinity).map(
+      (work) => [titleKey(work.title), work.era] as const,
+    ),
+  )
+  const leads = discogsCandidates(leadRows, decade, dating, titleKey, identity, eraOf)
   let found = await verify([...fromChannels, ...leads], identity, apiKey)
   let searched = false
 
   if (found.tracks.length === 0) {
     works = worksWith(await songs())
-    const pick = works[0]
-    if (!pick) return { tracks: [], searched, needsSearch: false }
+    // The searched title must identify something: never "Name Name".
+    const pick = works.find((work) => identifies(matchKey(work.title)) && !isNameOnly(work.title, name))
+    if (!pick) {
+      // A failed recordings call is not "this artist has no titles":
+      // fail this request, so nothing is cached and a later one retries.
+      if (recordingsFailed) throw new Error('MusicBrainz recordings unavailable')
+      return { tracks: [], searched, needsSearch: false }
+    }
     if (!request.allowSearch) return { tracks: [], searched, needsSearch: true }
     searched = true
     found = await verify(await searchCandidates(pick, works, identity, request), identity, apiKey)
   }
 
-  // A verified find off an unlinked channel teaches that channel: read its
-  // uploads now for more of this decade, and remember it for the others.
-  let tracks = found.tracks
-  const teacher = found.channels.find((channel) => !scanned.has(channel.channelId))
-  if (teacher) {
-    works = worksWith(await songs())
-    const uploads = await channelUploads(teacher.channelId, apiKey)
-    // Only a channel whose uploads can be read is worth remembering —
-    // "Topic" channels' upload lists answer 404.
-    if (uploads.length > 0) await saveLearnedChannel(mbid, teacher)
-    const more = await verify(channelCandidates(uploads, works, identity, false), identity, apiKey)
-    tracks = merge(tracks, more.tracks)
-  }
+  const tracks = await withTeacher(found, scanned, identity, request, () => songs().then(worksWith))
 
   const ranked = [...tracks]
     .sort((a, b) => ERA_RANK[a.era] - ERA_RANK[b.era])

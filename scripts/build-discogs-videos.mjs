@@ -129,7 +129,7 @@ function creditedTitles(row, discogsId, kind) {
 /** Scripts written without spaces (artistMatch's containment set). */
 const UNSPACED = /[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}\p{Script=Thai}\p{Script=Lao}\p{Script=Khmer}\p{Script=Myanmar}\p{Script=Tibetan}]/u
 /** MB works considered per artist: plenty for matching, bounded for speed. */
-const WORKS_CAP = 800
+const WORKS_CAP = 2000
 
 /**
  * Keyed once: { key, title, year, source, first } — first token for a
@@ -139,8 +139,11 @@ const WORKS_CAP = 800
  */
 function prepare(list, artistName, cap = Infinity) {
   const seen = new Map()
+  // De-duplicate EVERYTHING first (keeping each title's earliest year), and
+  // only then cap — capping first lost titles' earliest years (code review,
+  // Nov 19 2026). Release-group titles come first in the list, so the cap
+  // keeps them.
   for (const work of list) {
-    if (seen.size >= cap) break
     const key = matchKey(work.title)
     if (!key || !identifies(key) || isNameOnly(work.title, artistName)) continue
     const held = seen.get(key)
@@ -153,7 +156,7 @@ function prepare(list, artistName, cap = Infinity) {
     }
     seen.set(key, { key, title: work.title, year: work.year ?? null, source: work.source, unspaced: UNSPACED.test(key), first: key.split(' ')[0] })
   }
-  return [...seen.values()]
+  return [...seen.values()].slice(0, cap)
 }
 
 /** artistMatch.findWork's rule over prepared works: longest key that the video names. */
@@ -216,7 +219,14 @@ function main() {
         for (const [url, videoTitle] of row.vs) {
           const match = url.match(YOUTUBE_ID)
           const videoId = match?.[1] ?? match?.[2]
-          if (!videoId || videos.has(videoId)) continue
+          if (!videoId) continue
+          const held = videos.get(videoId)
+          if (held) {
+            // A Discogs-only title takes the earliest year of every record
+            // that lists the video.
+            if (held.source === 'd' && row.y && (!held.year || row.y < held.year)) held.year = row.y
+            continue
+          }
           const videoKey = matchKey(videoTitle ?? '')
           if (!videoKey) continue
           const tokens = new Set(videoKey.split(' '))
