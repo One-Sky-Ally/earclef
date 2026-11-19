@@ -21,7 +21,8 @@ export function SiteFooter({ footer }: SiteFooterProps) {
           the press linked above. <Link href="/manifesto">Manifesto</Link> ·{' '}
           <Link href="/for-artists">For artists</Link> ·{' '}
           <Link href="/get-on-the-map">Get on the map</Link> ·{' '}
-          <Link href="/privacy">Privacy</Link>.
+          <Link href="/privacy">Privacy</Link> ·{' '}
+          <Link href="/terms">Terms</Link>.
         </p>
       </div>
     </footer>

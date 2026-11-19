@@ -25,6 +25,9 @@ export function SiteFooterSimple() {
             <li>
               <Link href="/privacy">Privacy</Link>
             </li>
+            <li>
+              <Link href="/terms">Terms</Link>
+            </li>
           </ul>
         </nav>
       </div>

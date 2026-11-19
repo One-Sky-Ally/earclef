@@ -111,6 +111,19 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
 
 **Last updated: Nov 19, 2026 · v1 shipped and far surpassed — see Current state**
 
+- **PRIVACY PAGE REWRITTEN + TERMS PAGE PUBLISHED (Nov 19, 2026; owner approved the wording with two checks: "make every statement on the privacy page accurate for both signed-out and signed-in listeners" and "only keep the Memberships line … if memberships can really be bought today").**
+  - **CHECK 1:** the drafted line "saved in your own browser, not on our servers" was only true signed out. The page is now split into two parts:
+    - **Signed out:** likes, radar removals and the listening service live in localStorage.
+    - **Signed in:** the FanRecord holds email, follows plus personal tiers, likes (with place, year and liked-at), radar removals and the listening service, with a browser copy of the likes and the service. A taste-map share page is optional: it shows the chosen name, follows by tier and first-fan numbers, and is removed when sharing is turned off.
+  - **The old "That is the whole list … no profiles" claim is gone.** These now have their own lines:
+    - the 180-day sign-in cookie;
+    - error reports, which carry the browser user agent;
+    - the get-on-the-map record;
+    - Stripe's payment reference;
+    - deleting membership records on request.
+  - **CHECK 2:** Stripe is still TEST mode — the notes say so, the local key is sk_test, and there is no go-live record — so the Memberships line is LEFT OUT of /terms. Add it back the day live payments open.
+  - **TERMS:** `/terms` is linked from both footers, the privacy page and the sitemap. The privacy page's header comment lists the code each statement was checked against.
+
 - **QUEUE REBUILT: FREE SOURCES FIRST, SEARCH BUDGET, NEW MATCHING, 30-DAY REFRESH, NO-COOKIE PLAYERS (Nov 19, 2026; owner: "Go ahead and build … Hand-check a sample of each and report it … push directly to main as pieces are done").**
   - **CODE:** the 650-line queue route is now a thin handler over `lib/play/queue/`:
     - `resolveArtist.ts` — the sources in order and the checks;
