@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { loadYouTubeApi, type YtPlayer } from '@/lib/play/youtubeApi'
+import { loadYouTubeApi, NO_COOKIE_HOST, type YtPlayer } from '@/lib/play/youtubeApi'
 
 /**
  * One visible YouTube player walking a list of verified videos: play
@@ -86,6 +86,7 @@ export function useYouTubeQueue(videoIds: string[]) {
       const target = document.createElement('div')
       mountRef.current.replaceChildren(target)
       playerRef.current = new yt.Player(target, {
+        host: NO_COOKIE_HOST,
         videoId,
         playerVars: { autoplay: 1, rel: 0, playsinline: 1 },
         events: {

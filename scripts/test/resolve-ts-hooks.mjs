@@ -5,6 +5,11 @@ const EXTENSIONS = ['.ts', '.tsx', '.mts', '.js', '.mjs']
 const HAS_EXTENSION = /\.[a-z]+$/i
 
 export async function resolve(specifier, context, next) {
+  // Next/webpack import JSON without an attribute; Node requires one.
+  if (specifier.endsWith('.json') && !context.importAttributes?.type) {
+    const resolved = await next(specifier, context)
+    return { ...resolved, importAttributes: { ...resolved.importAttributes, type: 'json' } }
+  }
   const relative = specifier.startsWith('./') || specifier.startsWith('../')
   if (relative && !HAS_EXTENSION.test(specifier) && context.parentURL?.startsWith('file:')) {
     const base = new URL(specifier, context.parentURL)

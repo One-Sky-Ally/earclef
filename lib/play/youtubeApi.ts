@@ -18,6 +18,8 @@ export interface YtNamespace {
     element: HTMLElement,
     options: {
       videoId: string
+      /** Embed origin — always NO_COOKIE_HOST (see below). */
+      host?: string
       playerVars: Record<string, number>
       events: {
         onReady: (event: { target: { playVideo: () => void } }) => void
@@ -36,6 +38,14 @@ declare global {
     onYouTubeIframeAPIReady?: () => void
   }
 }
+
+/**
+ * Every IFrame-API player embeds from YouTube's privacy-enhanced domain
+ * (owner go, Nov 19 2026), like the site's plain embeds: YouTube sets no
+ * cookies until the visitor plays a video. Needed for the Developer
+ * Policies (III.A.2) and the privacy page's cookie promise.
+ */
+export const NO_COOKIE_HOST = 'https://www.youtube-nocookie.com'
 
 let ytApiPromise: Promise<YtNamespace> | null = null
 

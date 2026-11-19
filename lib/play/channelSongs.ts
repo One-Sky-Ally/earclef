@@ -102,9 +102,19 @@ export async function channelUploads(id: string, key: string): Promise<Upload[]>
   const pages: Upload[][] = []
   let pageToken = ''
   for (let page = 0; page < UPLOAD_PAGES; page++) {
-    const body = (await ytJson(
-      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlist}&maxResults=50${pageToken ? `&pageToken=${pageToken}` : ''}&key=${key}`,
-    )) as {
+    let raw: unknown
+    try {
+      raw = await ytJson(
+        `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${playlist}&maxResults=50${pageToken ? `&pageToken=${pageToken}` : ''}&key=${key}`,
+      )
+    } catch (error) {
+      // No readable uploads list: YouTube's auto-generated "Artist - Topic"
+      // channels answer 404 here (found Nov 19 2026). That is "no uploads
+      // to read", not a failed resolve.
+      if (error instanceof Error && error.message === 'YouTube HTTP 404') break
+      throw error
+    }
+    const body = raw as {
       nextPageToken?: string
       items?: {
         snippet?: { title?: string; resourceId?: { videoId?: string } }
@@ -128,6 +138,10 @@ export interface VideoFacts {
   description?: string
   topicUrls?: string[]
   channelTitle?: string
+  /** The uploader — lets a verified find teach the artist's channel. */
+  channelId?: string
+  /** The CURRENT title, HTML-decoded: matching re-reads it, never a stale copy. */
+  title?: string
 }
 
 /**
@@ -154,7 +168,7 @@ export async function playableSet(
   )) as {
     items?: {
       id?: string
-      snippet?: { title?: string; description?: string; channelTitle?: string }
+      snippet?: { title?: string; description?: string; channelTitle?: string; channelId?: string }
       status?: { embeddable?: boolean; privacyStatus?: string }
       contentDetails?: { duration?: string }
       topicDetails?: { topicCategories?: string[] }
@@ -167,6 +181,8 @@ export async function playableSet(
       description: item.snippet?.description,
       topicUrls: item.topicDetails?.topicCategories,
       channelTitle: item.snippet?.channelTitle,
+      channelId: item.snippet?.channelId,
+      title: item.snippet?.title ? decodeEntities(item.snippet.title) : undefined,
     })
     if (
       item.status?.embeddable &&
@@ -177,4 +193,42 @@ export async function playableSet(
     }
   }
   return { playable, meta }
+}
+
+/**
+ * playableSet over any number of ids: one videos.list call (1 unit) per
+ * 50. Duplicates are asked once.
+ */
+export async function playableSetAll(
+  videoIds: string[],
+  key: string,
+): Promise<{ playable: Set<string>; meta: Map<string, VideoFacts> }> {
+  const unique = [...new Set(videoIds)]
+  const playable = new Set<string>()
+  const meta = new Map<string, VideoFacts>()
+  for (let at = 0; at < unique.length; at += 50) {
+    const batch = await playableSet(unique.slice(at, at + 50), key)
+    batch.playable.forEach((id) => playable.add(id))
+    batch.meta.forEach((facts, id) => meta.set(id, facts))
+  }
+  return { playable, meta }
+}
+
+/**
+ * Current channel titles for up to 50 channel ids per call (1 unit) —
+ * the 30-day refresh of channels a verified find taught us. A channel
+ * missing from the answer is gone.
+ */
+export async function channelTitles(ids: string[], key: string): Promise<Map<string, string>> {
+  const titles = new Map<string, string>()
+  const unique = [...new Set(ids)]
+  for (let at = 0; at < unique.length; at += 50) {
+    const body = (await ytJson(
+      `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${unique.slice(at, at + 50).join(',')}&key=${key}`,
+    )) as { items?: { id?: string; snippet?: { title?: string } }[] }
+    for (const item of body.items ?? []) {
+      if (item.id && item.snippet?.title) titles.set(item.id, decodeEntities(item.snippet.title))
+    }
+  }
+  return titles
 }

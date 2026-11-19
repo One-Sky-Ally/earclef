@@ -111,6 +111,54 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
 
 **Last updated: Nov 19, 2026 · v1 shipped and far surpassed — see Current state**
 
+- **QUEUE REBUILT: FREE SOURCES FIRST, SEARCH BUDGET, NEW MATCHING, 30-DAY REFRESH, NO-COOKIE PLAYERS (Nov 19, 2026; owner: "Go ahead and build … Hand-check a sample of each and report it … push directly to main as pieces are done").**
+  - **CODE:** the 650-line queue route is now a thin handler over `lib/play/queue/`:
+    - `resolveArtist.ts` — the sources in order and the checks;
+    - `eraTitles.ts` — the era ranking, now with recording titles;
+    - `cacheEntry.ts` — validity, the 30-day refresh, 180-day nulls;
+    - `searchBudget.ts` — the daily search log in Blobs `search-budget`, plus the wanted list;
+    - `learnedChannel.ts` — Blobs `artist-channel`;
+    - `sweep.ts` — the nightly re-read.
+  - **MATCHING** (`lib/play/artistMatch.ts`, 14 tests):
+    - **Uploader:** the MB-linked channel, OR a channel named:
+      - the MB name;
+      - any MB alias except Search hint;
+      - the name and an alias together in either order.
+      Topic, VEVO, Official and Music suffixes are allowed, and spacing and punctuation are ignored.
+    - **Work:** the CURRENT video title names one of the artist's works: a release-group title, a recording title (one extra MB browse, only when needed), or a title Discogs credits to them. Latin titles match on word boundaries; unspaced scripts match by containment. The longest matching title wins.
+    - **Titles ignored as works:** ones too short to identify anything, generic record names ("Live", "Greatest Hits" …), and fragments of the artist's own name.
+    - Every track stores `how: {channel, work}` for audits.
+  - **SOURCE ORDER** (all on the 10,000 bucket except search):
+    1. MB-linked channel uploads + learned-channel uploads.
+    2. Discogs leads: `lib/play/discogs-videos/`, built by `scripts/build-discogs-videos.mjs` from the local dumps. 45,954 artists, ~780k leads, 35 MB in 256 shards. The leads are pre-matched to works; the uploader and current title are re-checked live.
+    3. ONE search (`?search=1`). Results pass the same checks.
+    - A verified find off an unlinked channel teaches that channel: its uploads are read at once, and it is stored for the artist's other decades. Only readable channels are stored; "Topic" upload lists answer 404.
+  - **BUDGET:**
+    - The player (`QueuePlayer.tsx`) asks the whole pool `search=0` first. "Deferred" artists (only a search could answer) get at most `SEARCHES_PER_VISIT` = 10 searches per visit, only while the queue is short — or early, when the opening 15 artists left nothing to play.
+    - A quota answer now ends the visit's searching, not the walk.
+    - End lines say honestly how many artists still await a lookup.
+    - Every deferred or quota-blocked artist is listed as wanted.
+    - `netlify/functions/queue-nightly-{schedule,background}` (ticks 05:10 + 06:10 UTC, before the Pacific reset) spend `100 − today's searches − 10` on the wanted list via the route with `warm=1`, then sweep.
+    - The owner reads the books at `GET /api/studio/search-count` (x-owner-key).
+  - **MEMORY:**
+    - "Nothing found" is kept 180 days (was 30).
+    - `MATCH_VERSION` 1 re-resolves older nulls once.
+    - Found entries are re-read with videos.list after 21 days on read; the nightly sweep visits every key every 14 days and refreshes anything ≥14 days. Max storage between reads < 28 days (Developer Policies III.E.4).
+    - CDN s-maxage is now 7 days (was 30).
+    - An entry the refresh empties is DELETED, not stored as a null.
+  - **PLAYERS:** both IFrame-API players (`QueuePlayer`, `useYouTubeQueue`) embed from youtube-nocookie.com (`NO_COOKIE_HOST`).
+  - **HAND CHECK** (`scripts/sample-queue-matching.mjs`, seeded; 90 random + 40 non-Latin-named artist×decades; `data/queue-matching-sample*.json`):
+    - **Run 1** found a real bug: 28 of 130 artists ERRORED. A Discogs find on a Topic channel made `channelUploads` throw 404. It now reads 404 as "no uploads".
+    - **Run 2** (no searches): 43 of 130 artists got songs, 303 tracks in all:
+      - by source: 145 channel (113 MB-link + 32 learned), 158 Discogs;
+      - by uploader name: 119 name, 39 alias;
+      - by work: 92 release, 118 song, 93 Discogs-only titles.
+    - **Read by hand:** every track was the right artist's music. Namesake checks: "The Shadows" (Arkansas) "Ketchy" is their own 1960s single, and Андрей Соколов (Soviet tenor) is listed on his Discogs records.
+    - **Weaknesses found and fixed:** the work label was wrong, though the artist was right, for "Steve Winwood - Valerie" → the compilation "Winwood", and for "High Tone - X Ray - Live" → the album "Live". Hence the name-fragment and generic-title rules.
+    - **Search:** 10 searches on obscure sampled artists found nothing (0/8 completed). The Nov 18–19 measurement's two-change hits on prominent artists (6 of 11, all right) are the search-side sample so far.
+    - **Not yet seen:** both-scripts channels — 0 in this sample.
+  - **NOT DONE:** the privacy and terms pages are drafted and shown to the owner, not published (owner: "Show me the privacy and terms wording before you publish"). No quota request to Google.
+
 - **NEW VERIFICATION PRINCIPLE + SEARCH-BUDGET MEASUREMENT (Nov 19, 2026; owner: "It must be the right artist's music. How that's proven is your job, as long as you check a sample by hand and tell me what you found … Go ahead and build").**
   - **PRINCIPLE:** see "THE VERIFICATION PRINCIPLE" above the standing lessons; it supersedes the older matching rules.
   - **THE CAP:** owner screenshot of the Google Cloud quotas page. "Search Queries per day" is 100. Since Google's Jun 1, 2026 change, search.list has its own bucket at 1 per call; the 10,000 now covers every other method. Over the cap the API answers 429.

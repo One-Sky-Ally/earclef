@@ -29,14 +29,13 @@
 import { readFileSync, readdirSync, writeFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { gunzipSync } from 'node:zlib'
+import { loadPlaces, walkPools } from './lib/placePools.mjs'
 
 const ROOT = process.cwd()
 const CENSUS_OUT = join(ROOT, 'data/search-budget-census.json')
 /** The verify stage's sampling frame — ~45 MB, kept local (not committed). */
 const FRAME_OUT = join(ROOT, 'data/search-budget-frame.json')
 const VERIFY_OUT = join(ROOT, 'data/search-budget-verify.json')
-const POOL_LIMIT = 300
-const UNDATED_FLOOR = 1980
 const INITIAL_BATCH = 15
 const CANDIDATE_CAP = 24
 const SEED = 20261119
@@ -68,54 +67,6 @@ function quantiles(values) {
   const sorted = [...values].sort((a, b) => a - b)
   const at = (q) => sorted[Math.min(sorted.length - 1, Math.floor(q * sorted.length))] ?? 0
   return { n: sorted.length, median: at(0.5), p75: at(0.75), p90: at(0.9), p99: at(0.99), max: sorted.at(-1) ?? 0 }
-}
-
-// ---- places (same rebuild as measure-alias-census.mjs) -----------------
-function loadPlaces() {
-  const places = new Map()
-  const countryDir = join(ROOT, 'lib/explore/country-artists')
-  for (const file of readdirSync(countryDir)) {
-    const stored = JSON.parse(readFileSync(join(countryDir, file), 'utf8'))
-    places.set(file.replace('.json', ''), { name: stored.name, artists: stored.artists })
-  }
-  for (const file of ['state-artists.json', 'uk-nation-artists.json']) {
-    const stored = JSON.parse(readFileSync(join(ROOT, 'lib/explore', file), 'utf8'))
-    for (const [code, region] of Object.entries(stored.states)) {
-      places.set(code, { name: code, artists: region.artists })
-    }
-  }
-  const historical = JSON.parse(readFileSync(join(ROOT, 'lib/explore/historical-area-artists.json'), 'utf8'))
-  for (const [code, list] of Object.entries(historical.countries)) {
-    const place = places.get(code)
-    if (!place) continue
-    const held = new Set(place.artists.map((artist) => artist.id))
-    const extra = list
-      .filter((artist) => !held.has(artist.mbid))
-      .map((artist) => ({ id: artist.mbid, name: artist.name, cs: artist.lifeBegin ?? null, end: artist.lifeEnd ?? null, w: artist.votes ?? 0 }))
-    places.set(code, { ...place, artists: [...place.artists, ...extra] })
-  }
-  return places
-}
-
-/** Calls visit(code, year, orderedPoolArtists) for every place-year. */
-function walkPools(places, visit) {
-  for (const [code, place] of places) {
-    const ordered = [
-      ...place.artists.filter((artist) => artist.cs !== null).sort((a, b) => b.w - a.w),
-      ...place.artists.filter((artist) => artist.cs === null).sort((a, b) => b.w - a.w),
-    ]
-    for (let year = 1900; year <= 2026; year++) {
-      const pool = []
-      for (const artist of ordered) {
-        if (pool.length >= POOL_LIMIT) break
-        if (artist.cs !== null && artist.cs > year) continue
-        if (artist.end !== null && artist.end < year) continue
-        if (artist.cs === null && year < UNDATED_FLOOR) continue
-        pool.push(artist)
-      }
-      if (pool.length > 0) visit(code, year, pool)
-    }
-  }
 }
 
 // ---- stage 1 -----------------------------------------------------------

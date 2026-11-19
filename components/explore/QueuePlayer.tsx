@@ -23,7 +23,7 @@ import {
 import type { RosterByMbid } from './CountryPanel'
 import { LikeButton } from '@/components/fans/LikeButton'
 import { useLikes, type LikeDraft } from '@/components/fans/LikesProvider'
-import { loadYouTubeApi, type YtPlayer } from '@/lib/play/youtubeApi'
+import { loadYouTubeApi, NO_COOKIE_HOST, type YtPlayer } from '@/lib/play/youtubeApi'
 import styles from './QueuePlayer.module.css'
 
 /**
@@ -57,6 +57,16 @@ const QUEUE_FETCH_TIMEOUT_MS = 20_000
 const FIRST_TRACK_DEADLINE_MS = 60_000
 /** Concurrent resolves: first hit plays sooner; same total API calls. */
 const QUEUE_CONCURRENCY = 4
+/**
+ * YouTube searches one visit may spend (owner go, Nov 19 2026). The
+ * project has 100 a day for everyone, and one cold sparse place used to
+ * take 44 of them in a sitting. The walk asks every artist free-only
+ * first (cache, their channel, Discogs leads); searches go to the artists
+ * nothing free answered, at most this many per visit, and only while
+ * the queue is short. The rest are listed for the overnight job, which
+ * spends each day's unused searches on them.
+ */
+const SEARCHES_PER_VISIT = 10
 /**
  * Below this many playable tracks, say so — never pad the queue.
  * Exported because the panel hides its own thin-year widen while the
@@ -297,6 +307,12 @@ export function QueuePlayer({
   const resolvedIdsRef = useRef(new Set<string>())
   /** Unplayed songs held back from artists already in the queue. */
   const reservesRef = useRef<ArtistReserve[]>([])
+  /** Artists only a search could answer, in pool order (free pass first). */
+  const needsSearchRef = useRef<QueuePoolArtist[]>([])
+  /** Searches this visit has asked for — never more than SEARCHES_PER_VISIT. */
+  const searchesAskedRef = useRef(0)
+  /** Artists still waiting on a search when the walk ended — said out loud. */
+  const [awaitingSearch, setAwaitingSearch] = useState(0)
   /**
    * THE YEAR PROMISE (owner ruling, Oct 12 2026): "▶ Play Paraguay
    * 1910" may only play what is verified for that year. Songs the
@@ -432,6 +448,7 @@ export function QueuePlayer({
       const mount = document.createElement('div')
       mountRef.current.appendChild(mount)
       playerRef.current = new yt.Player(mount, {
+        host: NO_COOKIE_HOST,
         videoId: track.videoId,
         playerVars: { autoplay: 1, rel: 0 },
         events: {
@@ -535,9 +552,37 @@ export function QueuePlayer({
         // that would be hidden the moment it arrived.
         genresIncluded(artist.tags, filterRef.current),
     )
+    // Searches go where nothing free answered: once the free pass has
+    // covered the whole pool, or sooner when the opening batch left
+    // nothing to play (a silent start is the worst outcome).
+    const searchesLeft = SEARCHES_PER_VISIT - searchesAskedRef.current
+    const waiting = needsSearchRef.current.filter((artist) =>
+      genresIncluded(artist.tags, filterRef.current),
+    )
+    const silentStart =
+      !firstPlayedRef.current && resolvedIdsRef.current.size >= INITIAL_BATCH
+    if (waiting.length > 0 && searchesLeft > 0 && (queue.length === 0 || silentStart)) {
+      const searching = waiting.slice(0, Math.min(size, searchesLeft))
+      const asked = new Set(searching.map((artist) => artist.id))
+      needsSearchRef.current = needsSearchRef.current.filter((artist) => !asked.has(artist.id))
+      searchesAskedRef.current += searching.length
+      await runWorkers(searching, decade, controller, true)
+      return searching.length
+    }
     if (queue.length === 0) return 0
     const slice = queue.slice(0, size)
     for (const artist of slice) resolvedIdsRef.current.add(artist.id)
+    await runWorkers(slice, decade, controller, false)
+    return slice.length
+  }
+
+  /** Bounded worker pool over one slice of artists (see resolveBatch). */
+  async function runWorkers(
+    slice: QueuePoolArtist[],
+    decade: number,
+    controller: AbortController,
+    allowSearch: boolean,
+  ): Promise<void> {
     let nextIndex = 0
     const worker = async () => {
       while (!controller.signal.aborted) {
@@ -562,8 +607,9 @@ export function QueuePlayer({
           setCheckedCount((count) => count + 1)
           continue
         }
-        await resolveOne(artist, demoted, decade, controller)
-        if (!controller.signal.aborted) {
+        await resolveOne(artist, demoted, decade, controller, allowSearch)
+        // The search pass re-asks artists the free pass already counted.
+        if (!controller.signal.aborted && !allowSearch) {
           setCheckedCount((count) => count + 1)
         }
       }
@@ -571,23 +617,25 @@ export function QueuePlayer({
     await Promise.all(
       Array.from({ length: QUEUE_CONCURRENCY }, () => worker()),
     )
-    return slice.length
   }
 
   /**
    * Ask the resolver for ONE pool artist and admit what comes back. A
-   * per-request timeout or a failed answer skips this artist only; a
-   * quota answer aborts the whole walk.
+   * per-request timeout or a failed answer skips this artist only. A
+   * "deferred" answer (only a search could find them) lists the artist
+   * for the search pass. A quota answer ends this visit's searching, not
+   * the walk: free answers keep coming.
    */
   async function resolveOne(
     artist: QueuePoolArtist,
     demoted: boolean,
     decade: number,
     controller: AbortController,
+    allowSearch: boolean,
   ): Promise<void> {
     try {
       const res = await fetch(
-        `/api/queue/artist/${artist.id}/${decade}?name=${encodeURIComponent(artist.name)}`,
+        `/api/queue/artist/${artist.id}/${decade}?name=${encodeURIComponent(artist.name)}&search=${allowSearch ? 1 : 0}`,
         {
           signal: AbortSignal.any([
             controller.signal,
@@ -601,7 +649,7 @@ export function QueuePlayer({
         }
         if (body.quota) {
           setQuotaHit(true)
-          controller.abort()
+          searchesAskedRef.current = SEARCHES_PER_VISIT
         }
         return
       }
@@ -609,6 +657,11 @@ export function QueuePlayer({
       const body = (await res.json()) as {
         track: { videoId: string; title: string; era?: TrackEra } | null
         tracks?: { videoId: string; title: string; era?: TrackEra }[]
+        deferred?: boolean
+      }
+      if (body.deferred) {
+        needsSearchRef.current = [...needsSearchRef.current, artist]
+        return
       }
       const found = body.tracks?.length
         ? body.tracks
@@ -769,7 +822,14 @@ export function QueuePlayer({
           // was about position, and a queue that ends in silence
           // while holding playable tracks honours neither.
           if (heldRef.current.length > 0) releaseHeld()
-          else setExhausted(true)
+          else {
+            setAwaitingSearch(
+              needsSearchRef.current.filter((artist) =>
+                genresIncluded(artist.tags, filterRef.current),
+              ).length,
+            )
+            setExhausted(true)
+          }
         }
       }
     } finally {
@@ -824,7 +884,7 @@ export function QueuePlayer({
    * listener who leaves it running never reaches the end of the list.
    */
   useEffect(() => {
-    if (!active || preresolved || quotaHit || gaveUp || exhausted) return
+    if (!active || preresolved || gaveUp || exhausted) return
     if (fillingRef.current) return
     if (tracks.length >= QUEUE_MAX) return
     // Count what is actually PLAYABLE ahead. Counting every track
@@ -841,7 +901,6 @@ export function QueuePlayer({
   }, [
     active,
     preresolved,
-    quotaHit,
     gaveUp,
     exhausted,
     tracks,
@@ -1084,7 +1143,6 @@ export function QueuePlayer({
     exhausted &&
     !building &&
     !gaveUp &&
-    !quotaHit &&
     tracks.length === 0 &&
     offEraCount === 0
   /** The artists this walk will ask about, under the current filter. */
@@ -1166,7 +1224,7 @@ export function QueuePlayer({
           song says which years it is from.
         </p>
       )}
-      {!nowPlaying && !quotaHit && !gaveUp && !noneForYear && !nothingFound && (
+      {!nowPlaying && !gaveUp && !noneForYear && !nothingFound && (
         <p className={styles.buildNote}>
           {anyYear
             ? `Finding more from ${placeName}, any year…`
@@ -1180,7 +1238,17 @@ export function QueuePlayer({
           )}
         </p>
       )}
-      {nothingFound && (
+      {nothingFound && awaitingSearch > 0 && (
+        <p className={styles.sparseNote}>
+          Nothing verified to play for {placeName} {year} yet.{' '}
+          {awaitingSearch === 1 ? 'One artist here still needs' : `${awaitingSearch} artists here still need`}{' '}
+          a YouTube lookup{quotaHit ? ', and we’ve reached today’s limit for those' : ''}.
+          Lookups left over each day run overnight, so try again tomorrow.
+          Artists below with a ▶ still link out to a recording.
+          {onWiden && <> {widenButton(false)}</>}
+        </p>
+      )}
+      {nothingFound && awaitingSearch === 0 && (
         <p className={styles.sparseNote}>
           No verified recordings to play here for {placeName} {year}
           {isAllGenres(genreFilter) ? '' : ' under this genre filter'} — we
@@ -1214,31 +1282,10 @@ export function QueuePlayer({
           {onWiden && <> {widenButton(false)}</>}
         </p>
       )}
-      {/* A quota answer aborts the walk mid-fill, and an aborted fill
-          never clears `building` — without this guard "Still digging"
-          sat on top of "Paused for today". */}
-      {building && nowPlaying && !quotaHit && (
+      {building && nowPlaying && (
         <p className={styles.buildNote}>
           Still digging — {tracks.length} track
           {tracks.length === 1 ? '' : 's'} so far…
-        </p>
-      )}
-      {/* Honest about WHY (owner, Nov 19 2026): this is YouTube's daily
-          limit — units or the separate search cap — not an empty place.
-          Everything already found is cached, so tomorrow resumes. */}
-      {quotaHit && tracks.length === 0 && (
-        <p className={styles.sparseNote}>
-          We&rsquo;ve reached today&rsquo;s limit for looking up new songs on
-          YouTube, so {placeName} {year} is not finished yet — try again
-          tomorrow. Songs already found are saved.
-        </p>
-      )}
-      {quotaHit && tracks.length > 0 && (
-        <p className={styles.buildNote}>
-          Paused for today — we&rsquo;ve reached YouTube&rsquo;s daily limit for
-          looking up new songs. {tracks.length} track
-          {tracks.length === 1 ? '' : 's'} for now; the rest arrive on a later
-          visit.
         </p>
       )}
       {/* ONE end-state line, and only once the fill has actually
@@ -1246,12 +1293,20 @@ export function QueuePlayer({
           N tracks" would otherwise contradict each other mid-build.
           Widening is offered, never performed: it changes what the
           whole panel claims to show, so it stays the visitor's choice. */}
-      {exhausted && !building && !quotaHit && tracks.length > 0 && (
+      {exhausted && !building && tracks.length > 0 && (
         <p className={styles.buildNote}>
           {endNote ??
             (tracks.length < HONEST_MIN
               ? `Only ${tracks.length} verified track${tracks.length === 1 ? '' : 's'} here — honest, not padded.`
-              : `That’s everything verified for ${placeName} ${spanLabel ?? year}.`)}
+              : `That’s everything verified for ${placeName} ${spanLabel ?? year}${awaitingSearch > 0 ? ' so far' : ''}.`)}
+          {awaitingSearch > 0 && (
+            <>
+              {' '}
+              {awaitingSearch === 1 ? 'One more artist still needs' : `${awaitingSearch} more artists still need`}{' '}
+              a YouTube lookup{quotaHit ? ' (today’s limit is reached)' : ''} — more
+              songs may arrive tomorrow.
+            </>
+          )}
           {deadIds.size > 0 && (
             <>
               {' '}

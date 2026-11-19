@@ -1,0 +1,5019 @@
+{
+ "summary": {
+  "sampled": 130,
+  "errors": 0,
+  "artistsWithSongs": 43,
+  "byStratum": {
+   "random": {
+    "of": 90,
+    "withSongs": 35,
+    "needsSearch": 43
+   },
+   "non-latin": {
+    "of": 40,
+    "withSongs": 8,
+    "needsSearch": 24
+   }
+  },
+  "searchesSpent": 0,
+  "tracks": 303,
+  "bySource": {
+   "channel": 145,
+   "discogs": 158,
+   "search": 0
+  },
+  "byChannelMatch": {
+   "mb-link": 113,
+   "learned": 32,
+   "name": 119,
+   "alias": 39,
+   "both-scripts": 0
+  },
+  "byWork": {
+   "release": 92,
+   "song": 118,
+   "discogs": 93
+  }
+ },
+ "rows": [
+  {
+   "mbid": "1ad7df56-5bcb-4b58-802d-71fa0a588700",
+   "name": "Mirela Ivičević",
+   "decade": 1990,
+   "place": "HR",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "549b99af-337b-4df1-9af5-6e9f1b386e2b",
+   "name": "César Miró",
+   "decade": 1970,
+   "place": "PE",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "fd01a668-16b9-40c5-8b0a-84ccb03aa915",
+   "name": "Halgato band",
+   "decade": 2010,
+   "place": "SI",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "18a0af96-4d43-413a-bbbb-e6f765a3f994",
+   "name": "John Matheson",
+   "decade": 1980,
+   "place": "NZ",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "4a2d94a2-4fd8-4a3f-8592-cfc9bbff2d89",
+   "name": "Caldwell",
+   "decade": 2000,
+   "place": "US-SC",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "468b241e-fda1-4253-b5a9-f067aa1943c2",
+   "name": "The Shadows",
+   "decade": 2020,
+   "place": "US-AR",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "cIw5GrSqxNI",
+     "title": "Ketchy",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Ketchy",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "The Shadows - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "b8bc940a-de71-4e1c-b8ea-30d4e2222b34",
+   "name": "Иван Кучин",
+   "decade": 1970,
+   "place": "RU",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "o1A7h8rhRow",
+     "title": "Иван Кучин - Нищенка",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Нищенка",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Иван Кучин"
+    },
+    {
+     "videoId": "Wf80F0R_xDs",
+     "title": "Иван Кучин - Бандитский нож",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Бандитский нож",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Иван Кучин"
+    },
+    {
+     "videoId": "P_2wARVU-7M",
+     "title": "Иван Кучин - Корешок",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Корешок",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Иван Кучин"
+    },
+    {
+     "videoId": "2dbKR3cyX0g",
+     "title": "Иван Кучин - Свидание",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Свидание",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Иван Кучин"
+    },
+    {
+     "videoId": "bJgS5P9BE10",
+     "title": "Иван Кучин  - Куст Рябины",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Куст рябины",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Иван Кучин"
+    },
+    {
+     "videoId": "hoD272OBHQM",
+     "title": "Иван Кучин - Запретная Зона",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Запретная зона",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Иван Кучин"
+    },
+    {
+     "videoId": "6YLBiVP2Fzo",
+     "title": "Иван Кучин - Натаха",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Натаха",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Иван Кучин"
+    },
+    {
+     "videoId": "T9MybQh-VZY",
+     "title": "Иван Кучин - Сентиментальный детектив 1",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Сентиментальный детектив - 1",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Иван Кучин"
+    },
+    {
+     "videoId": "mairWLi5VP0",
+     "title": "Иван Кучин - Заочница",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Заочница",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Иван Кучин"
+    },
+    {
+     "videoId": "iW8hLw2CNGA",
+     "title": "Иван Кучин - Босяцкая Лирическая",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Босяцкая",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Иван Кучин"
+    },
+    {
+     "videoId": "vJaCP5W0NgA",
+     "title": "Иван Кучин - Подруга по жизни",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Подруга по жизни",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Иван Кучин"
+    },
+    {
+     "videoId": "k8-csVGZ9m0",
+     "title": "Иван Кучин - Мостик",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Мостик",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Иван Кучин"
+    }
+   ]
+  },
+  {
+   "mbid": "3a1cb316-38f7-40a4-93ce-67787130dbf0",
+   "name": "ولعت",
+   "decade": 1990,
+   "place": "PS",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "5fbdd226-1bae-40fa-9d57-0fdeec6e6a1d",
+   "name": "دحوم الطلاسي",
+   "decade": 2020,
+   "place": "SA",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "7223d906-df20-4cbc-a662-52c26a9584d4",
+   "name": "Gwenno Morgan",
+   "decade": 2000,
+   "place": "GB-WLS",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "4a3e3a6e-0e83-4d79-9944-30fec2a57814",
+   "name": "Reginald Cooper",
+   "decade": 2000,
+   "place": "US-AR",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "52d0c873-11b8-4868-8771-09c44bcc1933",
+   "name": "Kikki Danielsson",
+   "decade": 2010,
+   "place": "SE",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "_-N3QlNaWHw",
+     "title": "Right Night for Loving (Bra Vibrationer)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Right Night for Loving (Bra Vibrationer)",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kikki Danielsson - Topic"
+    },
+    {
+     "videoId": "ijp4ZmhkXLw",
+     "title": "Här är jag igen",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Här är jag igen",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kikki Danielsson - Topic"
+    },
+    {
+     "videoId": "56kowZxrtFY",
+     "title": "Och vi hörde klockor ringa (The Three Bells)",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Och vi hörde klockor ringa (The Three Bells)",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kikki Danielsson - Topic"
+    },
+    {
+     "videoId": "cKBPL8bDOJI",
+     "title": "Tänker lära mig leva livet",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Tänker lära mig leva livet",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kikki Danielsson - Topic"
+    },
+    {
+     "videoId": "7hvmWw9aN_I",
+     "title": "U. S. Of America",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "U S Of America",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kikki Danielsson - Topic"
+    },
+    {
+     "videoId": "DS2pXXSoOnk",
+     "title": "Nine to Five",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Nine to Five",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kikki Danielsson - Topic"
+    },
+    {
+     "videoId": "TLqDnb3CYGg",
+     "title": "En bra dag att försonas",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "En Bra Dag Att Försonas",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Kikki Danielsson - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "3c86577c-62e6-49ff-afba-c5cbc44e52f1",
+   "name": "Kalamazoo Symphony Orchestra",
+   "decade": 2000,
+   "place": "US-MI",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "9781630c-797b-4164-a539-e1e9ac16eae8",
+   "name": "Lucy Kaplansky",
+   "decade": 2000,
+   "place": "US-IL",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "76PIB-J51Pc",
+     "title": "Secret Journey",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Secret Journey",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    },
+    {
+     "videoId": "d9Mo1U-s7TY",
+     "title": "Ten Year Night",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Ten Year Night",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    },
+    {
+     "videoId": "g_DUhh05fSo",
+     "title": "If You Could See",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "If You Could See",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    },
+    {
+     "videoId": "I-2d1TZwnjw",
+     "title": "The Thief",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "The Thief",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    },
+    {
+     "videoId": "UzS_7iAHYLk",
+     "title": "Love is the Ride",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Love Is The Ride",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    },
+    {
+     "videoId": "FUpKokUq7DU",
+     "title": "Ruby",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Ruby",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    },
+    {
+     "videoId": "HuU2jrwazWA",
+     "title": "Scorpion",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Scorpion",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    },
+    {
+     "videoId": "aaHBkZc4L8M",
+     "title": "This is Mine",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "This Is Mine",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    },
+    {
+     "videoId": "hLiBuDXKNCw",
+     "title": "Don't Renege on Our Love",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Don't Renege On Our Love",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    },
+    {
+     "videoId": "uPferWYC_68",
+     "title": "Mary and the Soldier",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Mary And The Soldier",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    },
+    {
+     "videoId": "bKmfquw-iM4",
+     "title": "(What's So Funny 'Bout) Peace, Love and Understanding",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "(What's So Funny 'Bout) Peace, Love And Understanding",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    },
+    {
+     "videoId": "T3RKkclFx-E",
+     "title": "End of the Day",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "End Of The Day",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Lucy Kaplansky - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "a8a2925a-039a-414c-b141-4ae27f63d670",
+   "name": "신운호",
+   "decade": 1950,
+   "place": "KP",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "9b6d5520-55ab-4df6-9d23-be58ba17c6aa",
+   "name": "Adolf Vedro",
+   "decade": 1910,
+   "place": "EE",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "2e7347dd-3177-4062-b4e9-8f682cbdaf7f",
+   "name": "Yo Majesty",
+   "decade": 2020,
+   "place": "US-FL",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "yoXYOBHNSXs",
+     "title": "Never Be Afraid",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Never Be Afraid",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    },
+    {
+     "videoId": "wtzvhafaY1Y",
+     "title": "Booty Klap",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Booty Klap",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    },
+    {
+     "videoId": "w347PuIhnuA",
+     "title": "Get Down On The Floor",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Get Down On The Floor",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    },
+    {
+     "videoId": "LyiPckwo_RI",
+     "title": "Grindin' And Shakin'",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Grindin’ And Shakin’",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    },
+    {
+     "videoId": "a1LLxwO_G6Q",
+     "title": "Night Riders",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Night Riders",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    },
+    {
+     "videoId": "div5BAoLLzg",
+     "title": "Fucked Up",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Fucked Up",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    },
+    {
+     "videoId": "QOLlU83IWNg",
+     "title": "Party Hardy",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Party Hardy",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    },
+    {
+     "videoId": "KIpXLRx4eIo",
+     "title": "Blame It On The Change",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Blame It On The Change",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    },
+    {
+     "videoId": "xNYu7RhruwE",
+     "title": "Hott",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Hott",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    },
+    {
+     "videoId": "OLp5fjqkBnw",
+     "title": "Kryptonite Pussy",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Kryptonite Pussy",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    },
+    {
+     "videoId": "_-wyM8VNP5Y",
+     "title": "Break Bread",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Break Bread",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    },
+    {
+     "videoId": "kLoshqDInCU",
+     "title": "Monkey",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Monkey",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Yo Majesty - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "d2ff6b6b-fc30-48dc-8952-06f9d8fc64f8",
+   "name": "Supertramp",
+   "decade": 1980,
+   "place": "GB",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "xE_dA479MCs",
+     "title": "Supertramp - Better Days",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Better Days",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "SupertrampVEVO"
+    },
+    {
+     "videoId": "cvfoyXfcwVU",
+     "title": "Supertramp - Cannonball",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Cannonball",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "SupertrampVEVO"
+    },
+    {
+     "videoId": "BznKC3Umc8A",
+     "title": "Supertramp - School",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "School",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "SupertrampVEVO"
+    },
+    {
+     "videoId": "YZUE4_PtOk0",
+     "title": "Supertramp - It's Raining Again",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "It’s Raining Again",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "SupertrampVEVO"
+    },
+    {
+     "videoId": "Q0FXu6bv_8k",
+     "title": "Supertramp - My Kind Of Lady",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "My Kind of Lady",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "SupertrampVEVO"
+    },
+    {
+     "videoId": "7eXxanfQdD0",
+     "title": "Supertramp - Free As A Bird",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Free as a Bird",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "SupertrampVEVO"
+    },
+    {
+     "videoId": "VqGQZU2cX1s",
+     "title": "Oh Darling (Remastered 2010)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Oh Darling",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Supertramp - Topic"
+    },
+    {
+     "videoId": "80MfCqXv5zw",
+     "title": "Supertramp - Brother Where You Bound (Official Audio)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Brother Where You Bound",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Supertramp "
+    },
+    {
+     "videoId": "9F8KKBBKs8U",
+     "title": "Supertramp - Don't Leave Me Now (Official Audio)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Don’t Leave Me Now",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Supertramp "
+    },
+    {
+     "videoId": "mcX2Gfp1jA4",
+     "title": "Supertramp - I'm Beggin You (Official Audio)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "I’m Beggin’ You",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Supertramp "
+    },
+    {
+     "videoId": "eGvdCxz8mPo",
+     "title": "Supertramp - Crazy (Official Audio)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Crazy",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Supertramp "
+    },
+    {
+     "videoId": "riUIl9bWi7U",
+     "title": "Supertramp - It's Alright (Official Audio)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "It’s Alright",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Supertramp "
+    }
+   ]
+  },
+  {
+   "mbid": "42bce35c-4c63-47ad-a68c-78d751374ce3",
+   "name": "Dado Topić",
+   "decade": 1960,
+   "place": "HR",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "IQCMjtrrmR8",
+     "title": "Apsolutno Sve",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Apsolutno sve",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Dado Topić - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "bd832234-c782-4408-a0da-97811fc249d2",
+   "name": "Tallinn Daggers",
+   "decade": 2000,
+   "place": "EE",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "YqYtuGkh5w4",
+     "title": "Tallinn Daggers - Island Phi Ley (Official Music Video)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Island Phi Ley",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Tallinn Daggers"
+    },
+    {
+     "videoId": "0QXJy-wlZe8",
+     "title": "Tallinn Daggers - Flesh Parade (Official Music Video - HD)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Flesh Parade",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Tallinn Daggers"
+    },
+    {
+     "videoId": "7YXwPHlUHCg",
+     "title": "Tallinn Daggers - Night Dancer (Official Music Video - HD)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Night Dancer",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Tallinn Daggers"
+    },
+    {
+     "videoId": "lD-BbXU8zB4",
+     "title": "Tallinn Daggers - God Bless the Radio (Official Music Video)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "God Bless The Radio",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Tallinn Daggers"
+    },
+    {
+     "videoId": "S0CHc9s_rts",
+     "title": "Tallinn Daggers - Not a Sin (Official Music Video)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Not A Sin",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Tallinn Daggers"
+    },
+    {
+     "videoId": "6VgmB_YEw5M",
+     "title": "Tallinn Daggers - Lucifer Rising",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Lucifer Rising",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Tallinn Daggers"
+    },
+    {
+     "videoId": "qfnL926g2bw",
+     "title": "Tallinn Daggers - Flesh Parade (Birchess Italo Remix)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Flesh Parade (Birchess Italo remix)",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Tallinn Daggers"
+    },
+    {
+     "videoId": "t_FGaIh-fJQ",
+     "title": "Tallinn Daggers - Flesh Parade (Barthol Lo Mejor Remix)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Flesh Parade (Barthol Lo Mejor remix)",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Tallinn Daggers"
+    },
+    {
+     "videoId": "LW6onhiwweI",
+     "title": "Tallinn Daggers - Flesh Parade (Kalvik Black Ninja Mix)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Flesh Parade (Kalvik Black Ninja mix)",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Tallinn Daggers"
+    },
+    {
+     "videoId": "bU-JGpFrtOE",
+     "title": "Tallinn Daggers - Highwire Artists",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Highwire Artists",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Tallinn Daggers"
+    },
+    {
+     "videoId": "Z_Gcf4hhDCo",
+     "title": "Tallinn Daggers - Evol And Rockets (Official Audio)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Evol and Rockets",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Tallinn Daggers"
+    }
+   ]
+  },
+  {
+   "mbid": "6b8a2c7d-8a8c-47c5-8136-d50369c48b00",
+   "name": "Aurea",
+   "decade": 2020,
+   "place": "PT",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "F4CdL1BeYkk",
+     "title": "AUREA: BACK INTO LOVE",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Back Into Love",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "AureaCanalOficial"
+    },
+    {
+     "videoId": "DgVyIof54jI",
+     "title": "VOU TIRAR UM BREAK",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Vou Tirar Um Break",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "AureaCanalOficial"
+    },
+    {
+     "videoId": "BeMfhGgitZs",
+     "title": "VOLTA (Participação especial António Zambujo)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Volta",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "AureaCanalOficial"
+    },
+    {
+     "videoId": "CyBw5R907aE",
+     "title": "AUREA \"FRÁGIL\"",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Frágil",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "AureaCanalOficial"
+    },
+    {
+     "videoId": "5KEGlVweSg4",
+     "title": "Aurea - Done With You",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Done With You",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "AureaVEVO"
+    },
+    {
+     "videoId": "EMxbo6LlvpM",
+     "title": "Aurea - Head Over Heels",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Head Over Heels",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "AureaVEVO"
+    },
+    {
+     "videoId": "b7gAsW1n1nU",
+     "title": "Aurea - Thrill Seeker",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Thrill Seeker",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "AureaVEVO"
+    },
+    {
+     "videoId": "EpkvQnu67MM",
+     "title": "Aurea - Hide",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Hide",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "AureaVEVO"
+    },
+    {
+     "videoId": "Q-FYz2dbx_k",
+     "title": "Aurea - Like a Sheet of Coated Paper",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Like A Sheet Of Coated Paper",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "AureaVEVO"
+    },
+    {
+     "videoId": "mvGAvAKJPEI",
+     "title": "Aurea - One Night Fix",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "One Night Fix",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "AureaVEVO"
+    },
+    {
+     "videoId": "EMGD2ZdGNdI",
+     "title": "Aurea - Away From You",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Away From You",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "AureaVEVO"
+    },
+    {
+     "videoId": "bSLRAyBPWy4",
+     "title": "Aurea - I Feel Love Inside (Audio)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "I Feel Love Inside",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "AureaVEVO"
+    }
+   ]
+  },
+  {
+   "mbid": "7b4e6c24-e420-4b4f-817c-12ebabe9b19c",
+   "name": "Nejat Alp",
+   "decade": 1960,
+   "place": "TR",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "14aca8b1-7072-4619-bf32-46893e45d38b",
+   "name": "Gul Mohamad Lakai",
+   "decade": 2020,
+   "place": "AF",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "a736bef0-9ff1-40cc-8937-5637213c2190",
+   "name": "Harem Scarem",
+   "decade": 2000,
+   "place": "CA",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "WAkr45_k9uQ",
+     "title": "Harem Scarem Human Nature Live at Firefest IV",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Human Nature",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Harem Scarem"
+    },
+    {
+     "videoId": "NeV7wnwwMEQ",
+     "title": "Harem Scarem Firefest IV Dagger",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Dagger",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Harem Scarem"
+    },
+    {
+     "videoId": "6SFxKhJeXp0",
+     "title": "Harem Scarem * OFFICIAL * Blue",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Blue",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Harem Scarem"
+    },
+    {
+     "videoId": "1QgJMCfLXBA",
+     "title": "HAREM SCAREM 1 Change Comes Around   Live",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Change Comes Around",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Harem Scarem"
+    },
+    {
+     "videoId": "CN7kJwsU9EI",
+     "title": "Harem Scarem Caught Up In Your World Live at Firefest IV",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Caught Up in Your World",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Harem Scarem"
+    },
+    {
+     "videoId": "W4Mr1jHknYI",
+     "title": "Harem Scarem * OFFICIAL * Die Off Hard",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Die Off Hard",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Harem Scarem"
+    },
+    {
+     "videoId": "z7jXGfvyMlg",
+     "title": "No Regrets (United)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "United",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "HAREM SCAREM - Topic"
+    },
+    {
+     "videoId": "91PXvitVkqE",
+     "title": "Harem Scarem * OFFICIAL * So Blind",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "So Blind",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Harem Scarem"
+    },
+    {
+     "videoId": "QvJY6kIi2lk",
+     "title": "Harem Scarem Karma Cleansing Live at Firefest IV",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Karma Cleansing",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Harem Scarem"
+    },
+    {
+     "videoId": "c25pk5zyMFc",
+     "title": "Harem Scarem * OFFICIAL * Rain",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Rain",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Harem Scarem"
+    },
+    {
+     "videoId": "YmBhPxrdK8I",
+     "title": "Harem Scarem Voice of Reason Live at Firefest IV",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Voice of Reason",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Harem Scarem"
+    },
+    {
+     "videoId": "-wLoeTEiZus",
+     "title": "Harem Scarem If There Was A Time Live at Firefest IV",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "If There Was a Time",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Harem Scarem"
+    }
+   ]
+  },
+  {
+   "mbid": "d17222af-3820-4f26-b715-569a07757531",
+   "name": "Terminus",
+   "decade": 2010,
+   "place": "US-AR",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "1b6d817f-f2d8-4ab6-89c5-264f3f599935",
+   "name": "Paquito Palaviccini",
+   "decade": 1990,
+   "place": "SV",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "JZYi1XgGdVg",
+     "title": "Adentro Cojutepeque",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Adentro Cojutepeque",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Paquito Palaviccini - Topic"
+    },
+    {
+     "videoId": "SSHKamogkzM",
+     "title": "Del Paisnal",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Del Paisnal",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Paquito Palaviccini - Topic"
+    },
+    {
+     "videoId": "QFIcgjHvTLA",
+     "title": "El Xuc",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "El xuc",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Paquito Palaviccini - Topic"
+    },
+    {
+     "videoId": "P1cFj6YFEfs",
+     "title": "El Candelareño",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "El candelareño",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Paquito Palaviccini - Topic"
+    },
+    {
+     "videoId": "hejnjBw-9vg",
+     "title": "El Torito",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "El torito",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Paquito Palaviccini - Topic"
+    },
+    {
+     "videoId": "KcbOenANGGE",
+     "title": "Regalos de Navidad",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Regalos de navidad",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Paquito Palaviccini - Topic"
+    },
+    {
+     "videoId": "P04rSQJJOdM",
+     "title": "Santa Ana Mia",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Santa Ana mía",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Paquito Palaviccini - Topic"
+    },
+    {
+     "videoId": "qDJMAVueOvk",
+     "title": "Cocotero Sonsonateco",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Cocotero sonsonateco",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Paquito Palaviccini - Topic"
+    },
+    {
+     "videoId": "AJG9gfo3kjI",
+     "title": "Carnaval en San Miguel",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Carnaval en San Miguel",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Paquito Palaviccini - Topic"
+    },
+    {
+     "videoId": "iTdtzZgf6mE",
+     "title": "El Cafe de Mi Tierra",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Café de mi tierra",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Paquito Palaviccini - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "45f9798c-1c81-44f7-95ae-fa71aca6a363",
+   "name": "Gene Schroeder",
+   "decade": 1970,
+   "place": "US-WI",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "885f90ef-6bd9-409a-b2df-e165e553c68e",
+   "name": "Steve Winwood",
+   "decade": 2010,
+   "place": "GB",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "FXoEnqldH1E",
+     "title": "Steve Winwood - \"Can't Find My Way Home (Live)\"",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Can’t Find My Way Home",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Steve Winwood"
+    },
+    {
+     "videoId": "Adw772km7PQ",
+     "title": "Steve Winwood - Back In The High Life Again",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Back in the High Life",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "SteveWinwoodVEVO"
+    },
+    {
+     "videoId": "XlVQx-dndFw",
+     "title": "Steve Winwood - Empty Pages (PBS Soundstage 2005)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Soundstage",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Steve Winwood"
+    },
+    {
+     "videoId": "70FPuVd6_qo",
+     "title": "Steve Winwood - Bully (Live at PBS Soundstage 2005)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Bully",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Steve Winwood"
+    },
+    {
+     "videoId": "TwYFRlkTOIw",
+     "title": "Steve Winwood - Why Can't We Live Together  (Live at PBS Soundstage 2005)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Why Can’t We Live Together",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Steve Winwood"
+    },
+    {
+     "videoId": "GoIMZ0TBXkY",
+     "title": "Steve Winwood - I Will Be Here",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "I Will Be Here",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Steve Winwood"
+    },
+    {
+     "videoId": "fUogHq9fqME",
+     "title": "Steve Winwood - Holding On",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Holding On",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Steve Winwood"
+    },
+    {
+     "videoId": "0mcumkwRey0",
+     "title": "Steve Winwood - Hearts On Fire",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Hearts on Fire",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Steve Winwood"
+    },
+    {
+     "videoId": "cbKNICg-REA",
+     "title": "Steve Winwood - Valerie",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Winwood",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "SteveWinwoodVEVO"
+    },
+    {
+     "videoId": "vkIZACGAKVw",
+     "title": "Help Me Angel",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Help Me Angel",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Steve Winwood - Topic"
+    },
+    {
+     "videoId": "qMXVUsFQsww",
+     "title": "Vacant Chair",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Vacant Chair",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Steve Winwood - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "ede5ea68-09c5-4d12-8639-25a671427be4",
+   "name": "Paraseed",
+   "decade": 2010,
+   "place": "AT",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "r6uv7GOAOqM",
+     "title": "Paraseed - Deathless (live)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Deathless",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Paraseed"
+    },
+    {
+     "videoId": "0AL7uGm4ihA",
+     "title": "Paraseed - Music (Is My Cocaine)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Music (Is My Cocaine)",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Paraseed"
+    },
+    {
+     "videoId": "NKW6gJFhJKc",
+     "title": "Paraseed - Trees Falling",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Trees Falling",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Paraseed"
+    },
+    {
+     "videoId": "Uw39cFeHSpQ",
+     "title": "Paraseed - Lost Tracks",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Lost Tracks",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Paraseed"
+    },
+    {
+     "videoId": "tPlgOjv581I",
+     "title": "Paraseed - Eternity",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Eternity",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Paraseed"
+    },
+    {
+     "videoId": "-u-Fqsx3Iqs",
+     "title": "Paraseed - Enough",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Enough",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Paraseed"
+    },
+    {
+     "videoId": "ewlD3fox4V8",
+     "title": "Paraseed - Long Road To Nowhere",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Long Road To Nowhere",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Paraseed"
+    },
+    {
+     "videoId": "YH9F8SZgPMU",
+     "title": "Paraseed - Alright",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Alright",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Paraseed"
+    },
+    {
+     "videoId": "yLH9tMQNlo8",
+     "title": "Paraseed - Deep at Night",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Deep at Night",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Paraseed"
+    },
+    {
+     "videoId": "o_nPDhp_JOE",
+     "title": "Paraseed - One Step Ahead (Part 2)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "One Step Ahead",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Paraseed"
+    },
+    {
+     "videoId": "aCyoE7yzFtY",
+     "title": "Paraseed - One Step Ahead (Part 1)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "One Step Ahead (Part 1)",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Paraseed"
+    }
+   ]
+  },
+  {
+   "mbid": "67e5cdc2-7bf2-4942-930a-c8e3f308429f",
+   "name": "Jørgen Ingmann",
+   "decade": 1950,
+   "place": "DK",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "CK0Ll763CnE",
+     "title": "Oceans Of Love",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Oceans of Love",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "uVQN87kkpoo",
+     "title": "Milord",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Milord",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "9cXkaH5ScVM",
+     "title": "Pinetop's Boogie Woogie",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Pinetop's Boogie Woogie",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "wdmVF0-WG3s",
+     "title": "La Mer",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "La mer",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "psaLk0pJGXo",
+     "title": "High Noon",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "High Noon",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "Z7HdSjG8JNA",
+     "title": "Violetta",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Violetta",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "UXOBFrA6qNk",
+     "title": "Little Serenade",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Little Serenade",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "bi4LLCyIe5I",
+     "title": "Anna",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Anna",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "tmaExMJ7bik",
+     "title": "Cherokee",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Cherokee",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "bkfQPTywsOA",
+     "title": "Bonanza",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Bonanza",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "ci-wH5tl8MA",
+     "title": "Third Man Theme",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Third Man Theme",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    },
+    {
+     "videoId": "NOfu6t0D4Rk",
+     "title": "Wheels",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Wheels",
+     "how": {
+      "channel": "alias",
+      "work": "song"
+     },
+     "uploader": "Jorgen Ingmann - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "fa9fbc89-ccb7-490e-bc14-9d0ce3988043",
+   "name": "Nazi Afshar",
+   "decade": 2010,
+   "place": "IR",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "76693ade-bd4a-4338-b2b7-3a494b1fb5fe",
+   "name": "Moğollar",
+   "decade": 2000,
+   "place": "TR",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "I2Lg16LhHRM",
+     "title": "Moğollar - Yürüdük Durmadan [© 2018 Soundhorus]",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Yürüdük Durmadan",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Moğollar"
+    },
+    {
+     "videoId": "RNrrCAoRtgM",
+     "title": "Moğollar - Umut Yolunu Bulur [© 2018 Soundhorus]",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Umut Yolunu Bulur",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Moğollar"
+    },
+    {
+     "videoId": "pBCitQAzknk",
+     "title": "Moğollar - Beni Hor Görme Kardaşım (Moğollar94) [© 2018 Soundhorus]",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Beni Hor Görme Kardaşım",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Moğollar"
+    },
+    {
+     "videoId": "i8tBMDlzSXM",
+     "title": "Moğollar - Bu Dünya Bizim (Moğollar94) [© 2018 Soundhorus]",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Bu Dünya Bizim",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Moğollar"
+    },
+    {
+     "videoId": "2g_nH-KQdgc",
+     "title": "Moğollar - Çaya Kaç Şeker [© 2018 Soundhorus]",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Çaya Kaç Şeker",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Moğollar"
+    },
+    {
+     "videoId": "Up4VQTep5JM",
+     "title": "Moğollar - Bulutlar Adam Öldürmesin [© 2018 Soundhorus]",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Bulutlar Adam Öldürmesin",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Moğollar"
+    },
+    {
+     "videoId": "-MD29u5-XGw",
+     "title": "Moğollar - Ala Geyik Destanı [© 2018 Soundhorus]",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Ala Geyik",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Moğollar"
+    },
+    {
+     "videoId": "5WvtVPvtuU8",
+     "title": "Cahit Berkay - Bu Nasıl Dünya (SAMDOB Orkestrası - Canlı Performans)   [© 2020 Soundhorus]",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Bu Nasıl Dünya?",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Moğollar"
+    },
+    {
+     "videoId": "Zo4ocEhlZNs",
+     "title": "Moğollar - Bişey Yapmalı (Live) [© 2018 Soundhorus]",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Bişey Yapmalı",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Moğollar"
+    },
+    {
+     "videoId": "fmDTGKmqWi8",
+     "title": "MOĞOLLAR - 7/8 - 9/8 [© 2018 Soundhorus]",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "7/8 - 9/8",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Moğollar"
+    },
+    {
+     "videoId": "UwEmjCI1vmc",
+     "title": "Moğollar - Çığrık [© 2018 Soundhorus]",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Çığrık",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Moğollar"
+    },
+    {
+     "videoId": "NYfwwVtKL_o",
+     "title": "Moğollar - Anadolu Pop Medley (Moğollar 50. Yıl Konseri) [© 2018 Soundhorus]",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Anadolu Pop",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Moğollar"
+    }
+   ]
+  },
+  {
+   "mbid": "851ca156-30f4-41a2-87a4-780e036079d0",
+   "name": "NMI",
+   "decade": 1990,
+   "place": "HT",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "f214eb3c-6f1e-41d2-a243-0650ae314e27",
+   "name": "One P",
+   "decade": 2020,
+   "place": "ML",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "f30f0b96-7bf3-4424-adc1-76105eae1ffc",
+   "name": "한상원",
+   "decade": 1990,
+   "place": "KR",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "d39fba4c-ea5c-44f6-be61-418023c0d0c8",
+   "name": "Killa",
+   "decade": 2020,
+   "place": "ZM",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "86b7d241-4a06-4409-801c-d191115f7320",
+   "name": "Hokusai",
+   "decade": 1980,
+   "place": "US-AR",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "iHSsV0sCdpc",
+     "title": "Hokusai Four - Cold Light (OFFICIAL VIDEO)",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Cold Light",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Hokusai Four"
+    }
+   ]
+  },
+  {
+   "mbid": "523450a4-f074-4e1c-9a60-d1884b8130ea",
+   "name": "Slavko Fumić",
+   "decade": 1930,
+   "place": "HR",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "74d216f1-faac-4f71-8729-82c5d2bcc704",
+   "name": "Tăng Phúc",
+   "decade": 2010,
+   "place": "VN",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "RnmPWzM8fic",
+     "title": "TĂNG PHÚC | TỪ ĐÂY TỪ NAY (Huỳnh Quốc Huy) |TỪ ĐÂY...TỪ NAY...MUSIC SHOW Chapter Đà Lạt",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Từ Đây…Từ Nay…",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "TĂNG PHÚC OFFICIAL"
+    },
+    {
+     "videoId": "zaeDB9rl0-g",
+     "title": "TĂNG PHÚC | KẺ QUA ĐƯỜNG (Huỳnh Quốc Huy) |  OFFICIAL MUSIC VIDEO",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Kẻ Qua Đường",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "TĂNG PHÚC OFFICIAL"
+    },
+    {
+     "videoId": "92XuyjGZH0I",
+     "title": "TĂNG PHÚC | DÒNG THỜI GIAN (Lời Việt: TUẤN KHANH) | Live in MÂY LANG THANG 22.11.2020| ĐÀ LẠT",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "DÒNG THỜI GIAN",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "TĂNG PHÚC OFFICIAL"
+    },
+    {
+     "videoId": "XH0uHT7YkgA",
+     "title": "TĂNG PHÚC | ĐỪNG CHỜ ANH NỮA (Huỳnh Quốc Huy) | Live in MÂY LANG THANG | ĐÀ LẠT",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Đừng Chờ Anh Nữa",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "TĂNG PHÚC OFFICIAL"
+    },
+    {
+     "videoId": "JpSWfuQHh6s",
+     "title": "TĂNG PHÚC | THÀNH PHỐ CÔ ĐƠN (Ngọc Dolil) |TỪ ĐÂY...TỪ NAY...MUSIC SHOW Chapter Đà Lạt",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Thành Phố Cô Đơn",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "TĂNG PHÚC OFFICIAL"
+    }
+   ]
+  },
+  {
+   "mbid": "1db9c5c8-8026-4d61-aaa7-78d8719fe2b2",
+   "name": "Tony Ortiz",
+   "decade": 1980,
+   "place": "GT",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "e031ae5d-db68-4e06-980b-f828fe5b40dd",
+   "name": "COALTAR OF THE DEEPERS",
+   "decade": 2020,
+   "place": "JP",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "h8g--08ffec",
+     "title": "Yukari Telepath",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Yukari Telepath",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "COALTAR OF THE DEEPERS - Topic"
+    },
+    {
+     "videoId": "qK_6I0OkCfs",
+     "title": "NO THANK YOU",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "NO THANK YOU",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "COALTAR OF THE DEEPERS - Topic"
+    },
+    {
+     "videoId": "aJHtWrryGk4",
+     "title": "HEDORIAN FOREVER",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Hedorian Forever",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "COALTAR OF THE DEEPERS - Topic"
+    },
+    {
+     "videoId": "Yc1mqlA8jlg",
+     "title": "Zoei",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Zoei",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "COALTAR OF THE DEEPERS - Topic"
+    },
+    {
+     "videoId": "CduhfiP9tZk",
+     "title": "DEEPLESS",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Deepless",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "COALTAR OF THE DEEPERS - Topic"
+    },
+    {
+     "videoId": "Dbqtup-MAb8",
+     "title": "Lemurian Seed",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Lemurian Seed",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "COALTAR OF THE DEEPERS - Topic"
+    },
+    {
+     "videoId": "EHEuMzvSmec",
+     "title": "AUTOMATION STRUCTURES",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Automation Structures",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "COALTAR OF THE DEEPERS - Topic"
+    },
+    {
+     "videoId": "Ojx4DrQdl5s",
+     "title": "Not A God",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Not A God",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "COALTAR OF THE DEEPERS - Topic"
+    },
+    {
+     "videoId": "fZLDLybHJjI",
+     "title": "The Lightbed",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "The Lightbed",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "COALTAR OF THE DEEPERS - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "47c65d4f-b636-46de-9fa1-f8ed0ae703f7",
+   "name": "Toffo Houssou Gilles",
+   "decade": 2000,
+   "place": "BJ",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "9a1cca99-be62-43ce-bb16-9d5391a24ae0",
+   "name": "Babani Koné",
+   "decade": 2010,
+   "place": "ML",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "yxpoS6jFDFs",
+     "title": "Badara",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Badara",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
+    {
+     "videoId": "1_sD4utF_Ak",
+     "title": "Na Kadiye",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Na Kadiye",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
+    {
+     "videoId": "8nYyIfo_aBY",
+     "title": "Bibihie",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Bibihie",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
+    {
+     "videoId": "lamffxRVwUc",
+     "title": "Douaden",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Douaden",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
+    {
+     "videoId": "r6y-UV0Af9s",
+     "title": "Djatigui Baro",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Djatigui Baro",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
+    {
+     "videoId": "xvyaHJCnKI4",
+     "title": "Maramba",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Maramba",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
+    {
+     "videoId": "-4pUhQrD5SA",
+     "title": "Fimani Yo",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Fimani Yo",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
+    {
+     "videoId": "SBJufEGhTXs",
+     "title": "Bara",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Bara",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
+    {
+     "videoId": "4taBZ7iO0JA",
+     "title": "Fissiriwale",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Fissiriwale",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
+    {
+     "videoId": "AoHiqL9eOjs",
+     "title": "Noumou Balla",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Noumou Balla",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
+    {
+     "videoId": "BsWPv3LeJTg",
+     "title": "Kelen",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Kelen",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    },
+    {
+     "videoId": "LE73dYriVaQ",
+     "title": "Djeliya",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Djeliya",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Babani Koné - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "fb56b001-7793-4892-8f17-ca0278131673",
+   "name": "Ronald Cass",
+   "decade": 1970,
+   "place": "GB-WLS",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "bb25e37e-ceef-41cb-b33b-c29d768e192b",
+   "name": "Ljilja Bela",
+   "decade": 2020,
+   "place": "RS",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "k24iMef3nyI",
+     "title": "Parfem",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Parfem",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Ljilja Bela - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "3638179c-efe8-449e-858a-e1e6f394b9fe",
+   "name": "Howard Wales",
+   "decade": 1950,
+   "place": "US-WI",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "3rRDhz6rfls",
+     "title": "Rendezvous With The Sun (Part I)",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Rendezvous With The Sun (Part I)",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Howard Wales - Topic"
+    },
+    {
+     "videoId": "hKEqQD1InYs",
+     "title": "Rendezvous With The Sun (Part II)",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Rendezvous With The Sun (Part II)",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Howard Wales - Topic"
+    },
+    {
+     "videoId": "iiyQvOrTm2U",
+     "title": "My Blues",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "My Blues",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Howard Wales - Topic"
+    },
+    {
+     "videoId": "mgIh2R8kvRg",
+     "title": "Late Cruiser",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Late Cruiser",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Howard Wales - Topic"
+    },
+    {
+     "videoId": "_BY50bsqEIg",
+     "title": "Tides",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Tides",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Howard Wales - Topic"
+    },
+    {
+     "videoId": "EI-ZktsTNDw",
+     "title": "Distant Children",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Distant Children",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Howard Wales - Topic"
+    },
+    {
+     "videoId": "rbYWbniDn2I",
+     "title": "Karnaval",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Karnaval",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Howard Wales - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "b70dac8e-0aa1-4104-ac1d-968c61dfa7a2",
+   "name": "William Pitt",
+   "decade": 1990,
+   "place": "US-WA",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "2bc4c595-92a1-4b14-a66d-b922c2acd8dd",
+   "name": "Ted \"Muttonleg\" Donnelly",
+   "decade": 1950,
+   "place": "US-OK",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "1ad91ffe-660b-43af-a3ed-783c85da90b4",
+   "name": "Ayten Rasul",
+   "decade": 2010,
+   "place": "AZ",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "bfe7c830-72c6-4574-ace4-c4e1d4ff1b46",
+   "name": "MIT Symphony Orchestra",
+   "decade": 1900,
+   "place": "US-MA",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "d6934654-81ec-417d-a1f3-2c8eb606c8e1",
+   "name": "Ras Taichi",
+   "decade": 2020,
+   "place": "GH",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "F-LyFnq34Q0",
+     "title": "Ras Taichi's live performance of his legendary song CLIMATE CHANGE at MIVA, LOME TOGO.",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Climate Change",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Ras Taichi "
+    },
+    {
+     "videoId": "sh5YwKJcp9Y",
+     "title": "\"The Beat\" on the Realities of Life Album from Ras Taichi Music @rastaichi.",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Realities of Life",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Ras Taichi "
+    }
+   ]
+  },
+  {
+   "mbid": "97004969-c019-4161-ae7e-30d577491830",
+   "name": "Emil Telmányi",
+   "decade": 1920,
+   "place": "HU",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "af575726-1437-4b53-b6e6-343bc5f16817",
+   "name": "Ibrahim Maalouf",
+   "decade": 1990,
+   "place": "FR",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "QWeJfZpea30",
+     "title": "Ibrahim Maalouf - Kalthoum (Movement I) (Duo Version)",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Kalthoum",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    },
+    {
+     "videoId": "DL-n2Q8YlYY",
+     "title": "Ibrahim Maalouf - Red Rose (Duo Version)",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Red Rose",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    },
+    {
+     "videoId": "PPG2IKMyKno",
+     "title": "True Sorry (Live) - Ibrahim Maalouf - 14.12.16 Live in Paris",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "14.12.16: Live in Paris",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    },
+    {
+     "videoId": "78DLVo0Ia7o",
+     "title": "Ibrahim Maalouf - Levantine Symphony No. 1 (Duo Version)",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Levantine Symphony no. 1",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    },
+    {
+     "videoId": "0XjFVYUTOMw",
+     "title": "Ibrahim Maalouf - S3NS (Duo Version)",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "S3NS",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    },
+    {
+     "videoId": "kKW9HXEFpeU",
+     "title": "Ibrahim Maalouf - Celle que vous croyez (Duo Version)",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Celle que vous croyez",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    },
+    {
+     "videoId": "EZrg24kv-9Y",
+     "title": "Ibrahim Maalouf - All Around the Wall (Duo version - Official Music Video)",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "All Around the Wall",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    },
+    {
+     "videoId": "AAHYAqOirlc",
+     "title": "Ibrahim Maalouf - Ave Maria (Charles Gounod)",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Ave Maria (Charles Gounod)",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    },
+    {
+     "videoId": "Hbr5IGa94dE",
+     "title": "Ibrahim Maalouf - Ave Maria (Franz Schubert)",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Ave Maria (Franz Schubert)",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    },
+    {
+     "videoId": "EvvcbKc4Ei4",
+     "title": "Ibrahim Maalouf - All I Want for Christmas Is You",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "All I Want for Christmas Is You",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    },
+    {
+     "videoId": "mA51p2pNmgU",
+     "title": "Ibrahim Maalouf - Adeste Fideles",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Adeste fideles",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    },
+    {
+     "videoId": "7EyShzhOxhk",
+     "title": "Ibrahim Maalouf - Zen  | From the play \"Monsieur X\"",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Monsieur X",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Ibrahim Maalouf Official"
+    }
+   ]
+  },
+  {
+   "mbid": "5cfa6d68-e1f1-493a-a086-20411858a70f",
+   "name": "Tuba Skinny",
+   "decade": 2000,
+   "place": "US-LA",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "fea9402e-51e6-49e3-b11a-f8cefd845fc4",
+   "name": "Marino Marini",
+   "decade": 1930,
+   "place": "IT",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "jv7_oLIE4LE",
+     "title": "Guarda Che Luna",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Guarda che Luna",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Marino Marini - Topic"
+    },
+    {
+     "videoId": "_5DK6hCZxQQ",
+     "title": "Pezzettini Di Bikini",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Pezzettini di bikini",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Marino Marini - Topic"
+    },
+    {
+     "videoId": "xCn9bDS_diU",
+     "title": "Quando Quando Quando",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Quando quando quando",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Marino Marini - Topic"
+    },
+    {
+     "videoId": "U0mgjQs1VIk",
+     "title": "Il Mazzo Di Mammole",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Il mazzo di mammole",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Marino Marini - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "9e259a53-4c81-45fd-b1da-d8457d3e1f50",
+   "name": "Dave Beck",
+   "decade": 1980,
+   "place": "US-IA",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "cc362ea9-ee4c-453c-b537-fed7dd7ac8bc",
+   "name": "Paul Nabor",
+   "decade": 1980,
+   "place": "BZ",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "f8df1096-a808-420d-ba80-aee86d7557e2",
+   "name": "Joe Ashkar",
+   "decade": 2000,
+   "place": "SY",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "Kn1THcvHQzo",
+     "title": "Joe Ashkar - Ya Emmi / جو أشقر - يا امي",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Ya Emmi",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Joe Ashkar"
+    },
+    {
+     "videoId": "_nqcqhaTiyY",
+     "title": "Joe Ashkar - Mili Mili / جو أشقر - ميلي ميلي",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Mili Mili",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Joe Ashkar"
+    },
+    {
+     "videoId": "pcwy8erZah4",
+     "title": "Joe Ashkar - Habibit Albi / جو أشقر - حبيبة قلبي",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Habibit Albi",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Joe Ashkar"
+    },
+    {
+     "videoId": "GP-LGhiT_n4",
+     "title": "Joe Ashkar - Sayerlo / جو اشقر - صايرلو",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Sayerlo",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Joe Ashkar"
+    }
+   ]
+  },
+  {
+   "mbid": "3466c6e5-0cd2-4e8f-b82c-8003b5ae55c6",
+   "name": "Aqua String Band",
+   "decade": 1930,
+   "place": "US-PA",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "1a89068d-c181-49be-93f5-97967895be76",
+   "name": "Domingo Federico",
+   "decade": 1940,
+   "place": "AR",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "70239b66-07db-4d82-989b-e9870ad8c08b",
+   "name": "Dj Phil Peter",
+   "decade": 1990,
+   "place": "RW",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "c045eeb6-b8fb-4a41-9871-6df4d8e932ea",
+   "name": "Paul Hanich",
+   "decade": 2000,
+   "place": "US-NE",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "f5a9251a-a7cc-4acc-bb20-cdc2226ef6ea",
+   "name": "Legendry",
+   "decade": 2020,
+   "place": "US-PA",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "t_owMq5etQI",
+     "title": "Dungeon Crawler",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Dungeon Crawler",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Legendry - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "6d8e5e87-2a6e-43cb-86ce-fe2c6540f240",
+   "name": "Hell Vomit",
+   "decade": 2020,
+   "place": "EC",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "z9ql3XQ17_0",
+     "title": "HELL VOMIT / Posesor de Vìrgenes / Album Guerra Negra",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Posesor De Vírgenes",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "HELL VOMIT"
+    }
+   ]
+  },
+  {
+   "mbid": "05ba0467-3a94-4f44-97c9-b8d7c0683a40",
+   "name": "Shaun Baker",
+   "decade": 2010,
+   "place": "JO",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "GTIESQnQpCU",
+     "title": "Bakerman (Funktune Mix)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Bakerman",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Shaun Baker - Topic"
+    },
+    {
+     "videoId": "S1yPhVmmGhE",
+     "title": "Give! (Michael Mind Mix)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Give!",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Shaun Baker - Topic"
+    },
+    {
+     "videoId": "JBM0WpcXkwE",
+     "title": "Back In Town (Club Mix)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Back In Town (Club Mix)",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Shaun Baker - Topic"
+    },
+    {
+     "videoId": "Tl-udYmHWGw",
+     "title": "Back In Town (Peach & Punch Club Remix)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Back In Town",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Shaun Baker - Topic"
+    },
+    {
+     "videoId": "Ln7qLJhtBWo",
+     "title": "Back In Town (Sample Tools)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Back In Town (Sample Tools)",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Shaun Baker - Topic"
+    },
+    {
+     "videoId": "5KX2AQiMFwE",
+     "title": "On a Helium Trip (Original Club Mix)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "On A Helium Trip (Original Club Mix)",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Shaun Baker - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "f1329521-0939-45e3-a112-5a409ffe785a",
+   "name": "Mystic Instinct",
+   "decade": 2000,
+   "place": "MK",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "1bc64c1d-0a1b-448f-bcba-55d14b2e90b3",
+   "name": "Fănică Luca",
+   "decade": 1910,
+   "place": "RO",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "MrEuI5_cga4",
+     "title": "Ciocârlia",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Ciocârlia",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Fănică Luca - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "569fc5bf-bcb6-4bc5-9a00-bd0d258e34f1",
+   "name": "Fats Waller",
+   "decade": 1910,
+   "place": "US",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "4UWNMYTN5PQ",
+     "title": "Handful of Keys",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Handful of Keys",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Fats Waller - Topic"
+    },
+    {
+     "videoId": "xSWBXzQVmZc",
+     "title": "The Joint Is Jumpin'",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "The Joint Is Jumpin'",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Fats Waller - Topic"
+    },
+    {
+     "videoId": "f8SB0-BV4r0",
+     "title": "I'm Gonna Sit Right Down and Write Myself a Letter",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "I’m Gonna Sit Right Down and Write Myself a Letter",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Fats Waller - Topic"
+    },
+    {
+     "videoId": "s1PCmAKOuUs",
+     "title": "Sweet Sue, Pt. 2",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Sweet Sue",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Fats Waller - Topic"
+    },
+    {
+     "videoId": "8b5npLNQg4o",
+     "title": "Your Feets Too Big",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Your Feets Too Big",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Fats Waller - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "4ad7ccd5-5f21-4d3c-b4ea-efedc76c306a",
+   "name": "Los Alfa 8",
+   "decade": 2000,
+   "place": "CO",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "H_C0r9paYW0",
+     "title": "Los Alfa 8 - Alfa Mix Folclórico (Letra-Lyric)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Alfa Mix Folclórico",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Los Alfa 8"
+    },
+    {
+     "videoId": "bFQd0K-FPNg",
+     "title": "Los Alfa 8 - Y Ya Salió (El Baile De La Tortuga) EN VIVO",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "El baile de la tortuga",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Los Alfa 8"
+    },
+    {
+     "videoId": "AZQtMlce_J8",
+     "title": "Los Alfa 8 - La Plata (Letra - Lyric)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "La Plata",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Los Alfa 8"
+    },
+    {
+     "videoId": "VUe8fzLBpBk",
+     "title": "Los Alfa 8 - La Salsa Llegó (Music Time Sessions)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "La salsa llegó",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Los Alfa 8"
+    },
+    {
+     "videoId": "FOY-hXbWcM8",
+     "title": "Los Alfa 8 - Fútbol Gol ft. Peter Manjarres & Juancho de la Espriella (Video Oficial)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Fútbol gol",
+     "how": {
+      "channel": "name",
+      "work": "release"
+     },
+     "uploader": "Los Alfa 8"
+    },
+    {
+     "videoId": "7NH8gtn4TkA",
+     "title": "Los Alfa 8 - No Quiero Tu Amor (Video Oficial)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "No Quiero Tu Amor",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Los Alfa 8"
+    },
+    {
+     "videoId": "DwE1TwZ-lK4",
+     "title": "Los Alfa 8 - Frio en mí - Letra / Lyric",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Frio En Mi",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Los Alfa 8"
+    },
+    {
+     "videoId": "j7ce1Gpu3mw",
+     "title": "Los Alfa 8 - Noche De Fiesta (Music Time Sessions)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Noche de fiesta",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Los Alfa 8"
+    },
+    {
+     "videoId": "oiX1NSrLsgk",
+     "title": "Los Alfa 8 - Preciosa Mujer (Letra Lyric)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Preciosa mujer",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Los Alfa 8"
+    },
+    {
+     "videoId": "Ng8Q3yFnHP0",
+     "title": "Los Alfa 8 - Caramelo (Lyric - Letra)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Caramelo",
+     "how": {
+      "channel": "learned",
+      "work": "release"
+     },
+     "uploader": "Los Alfa 8"
+    },
+    {
+     "videoId": "fuqWyMmITvM",
+     "title": "Los Alfa 8 - Ella (Letra - Lyric)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Ella",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Los Alfa 8"
+    },
+    {
+     "videoId": "pupqB7CmXzY",
+     "title": "Los Alfa 8 - Al Rojo Vivo (EN VIVO)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Al rojo vivo",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Los Alfa 8"
+    }
+   ]
+  },
+  {
+   "mbid": "3ec78ccc-6a36-4e24-aea6-b381b064a7d4",
+   "name": "신해철",
+   "decade": 2000,
+   "place": "KR",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "6c096b9d-2ab6-4d27-85ff-54fbeedef58b",
+   "name": "Luna Drums",
+   "decade": 2020,
+   "place": "DO",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "1291f699-f20e-43c1-9d95-761d7db60b79",
+   "name": "High Tone",
+   "decade": 2000,
+   "place": "FR",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "demquOds2aA",
+     "title": "High Tone Remixed - Alpha Steppa & Dub Dynasty - Urban Style feat Martin Campbell Remix",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Urban Style",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "8B-CMQHLrQM",
+     "title": "Kaltone - Rocoeur'S",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Kaltone",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "p7H9tvjos78",
+     "title": "High Tone - Bass Temperature",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Bass Température",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "8wxULAYCR4o",
+     "title": "High Tone - Wave Digger - full album",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Wave Digger",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "PVSaw5X40Nk",
+     "title": "Wangtone - K'an",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Wangtone",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "B8pa9I_v6s4",
+     "title": "Zentone - Deeper",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Zentone",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "VPelkicNfGs",
+     "title": "High Tone - X Ray - Live",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Live",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "qwTSf0vchy8",
+     "title": "High Tone - Underground Wobble - Full album",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Underground Wobble",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "cVXMmGUBw34",
+     "title": "High Tone - Acid Dub Nucleik - full album",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Acid Dub Nucleik",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "WId9Fuxiiyc",
+     "title": "High Tone - Dub Box",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Dub Box",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "FodNzlHnVb8",
+     "title": "High Tone - Opus Incertum - full album",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Opus Incertum",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "High Tone"
+    },
+    {
+     "videoId": "vs02YzbOUFw",
+     "title": "Wangtone - Bi Ma Wen / Le palefrenier des écuries célestes",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Bi Ma Wen - Le Palefrenier des écuries célestes",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "High Tone"
+    }
+   ]
+  },
+  {
+   "mbid": "dedae185-d939-4643-ba8e-1af6d75e47fb",
+   "name": "Komitas State Quartet",
+   "decade": 1960,
+   "place": "RU",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "20649f08-17b1-4e00-9a0c-4acb5c346e18",
+   "name": "Deepwater Junction",
+   "decade": 2000,
+   "place": "US-WV",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "d5258315-19bb-4c26-993b-e46f45ead592",
+   "name": "Quách Thành Danh",
+   "decade": 1990,
+   "place": "VN",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "bc4c1e5d-b838-42e9-a2d0-48675931884b",
+   "name": "Paganopath",
+   "decade": 2000,
+   "place": "MK",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "631014f8-66c7-4cca-954e-f6a028a81baf",
+   "name": "František Livora",
+   "decade": 1980,
+   "place": "SK",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "8b7b885d-b744-49f3-ba1c-6241c95c539b",
+   "name": "Abraham Kaplan",
+   "decade": 1970,
+   "place": "IL",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "bf9fcfb1-88e1-474f-bf06-561b2c2840d4",
+   "name": "December",
+   "decade": 2010,
+   "place": "US-NJ",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "810c160c-8390-4fec-a746-67fabd43f9f8",
+   "name": "Kassé Mady Diabaté",
+   "decade": 1970,
+   "place": "ML",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "yt-npfMRG5I",
+     "title": "Balomina Mwanga",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Balomina Mwanga",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kasse Mady Diabate - Topic"
+    },
+    {
+     "videoId": "mgKBzaCJ07c",
+     "title": "Namanike",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Namanike",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kasse Mady Diabate - Topic"
+    },
+    {
+     "videoId": "gH8klZQoa14",
+     "title": "Lafia Jeli",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Lafia Jeli",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kasse Mady Diabate - Topic"
+    },
+    {
+     "videoId": "6YRfvcFuATM",
+     "title": "Balakono",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Balakono",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kasse Mady Diabate - Topic"
+    },
+    {
+     "videoId": "NmIl8xxqaCo",
+     "title": "Jon Kunandi",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Jon Kunandi",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kasse Mady Diabate - Topic"
+    },
+    {
+     "videoId": "XX2iTqkx0dk",
+     "title": "Danya",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Danya",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Kasse Mady Diabate - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "eacd29c9-6821-4dd9-b9ef-28f4ead3e6f1",
+   "name": "Sylvain Poons",
+   "decade": 1970,
+   "place": "NL",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "cvdlAnCs2bY",
+     "title": "Je Moet Me Al Die Domme Dingen Maar Vergeven",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "Je moet me al die domme dingen maar vergeven",
+     "how": {
+      "channel": "name",
+      "work": "song"
+     },
+     "uploader": "Sylvain Poons - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "e0733fbc-aa82-4566-8fc9-b30d29801007",
+   "name": "Benoît Avihoué",
+   "decade": 2000,
+   "place": "BJ",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "8b363942-7936-4368-8e1b-6401be256afd",
+   "name": "Фольклор",
+   "decade": 1980,
+   "place": "MD",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "2a85ae79-d8d9-4bcd-ba0e-ec470be392b8",
+   "name": "Ordo Caper",
+   "decade": 1990,
+   "place": "CR",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "59505426-4b66-467f-bcd5-ce0b0f3ef4d8",
+   "name": "Mississippi Mass Choir",
+   "decade": 2020,
+   "place": "US-MS",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "ed1a854b-8149-4223-bd18-b31d5f87cb50",
+   "name": "Benjamin Carter",
+   "decade": 2010,
+   "place": "US-DC",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "926c3735-cca2-4e93-b8c9-fc7f5a449887",
+   "name": "Ykee Benda",
+   "decade": 2000,
+   "place": "UG",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "ef16c077-f57e-486b-b0f0-f652ca24474a",
+   "name": "Aurelio Reinoso",
+   "decade": 1940,
+   "place": "CU",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "oDeA7ZBDpHs",
+     "title": "Ni dicha, ni amor (Remasterizado)",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Ni Dicha Ni Amor",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Aurelio Reinoso - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "ca2828be-2f45-4a9d-bb51-099fb2211ae9",
+   "name": "Knackeboul",
+   "decade": 1990,
+   "place": "CH",
+   "stratum": "random",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "db1cd69a-4e0d-4a44-9f8d-55cb8f4033fd",
+   "name": "Opera Orchestra of Dushanbe",
+   "decade": 2020,
+   "place": "TJ",
+   "stratum": "random",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "f03de526-c8b2-4854-b894-656d21ae7623",
+   "name": "Исаак Дунаевский",
+   "decade": 1930,
+   "place": "UA",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "f3be49c1-2a97-495b-aeb5-4395f98e79e3",
+   "name": "Александр Варламов",
+   "decade": 1920,
+   "place": "RU",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "2f745f25-7681-4c44-b713-34d37a307575",
+   "name": "Алла Пугачёва",
+   "decade": 2010,
+   "place": "RU",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "8IOjwZJf5Lg",
+     "title": "Алла Пугачёва - Тянет сердце руки [«Новогодняя ночь на Первом»] 2016",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Тянет сердце руки",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Алла Пугачёва"
+    },
+    {
+     "videoId": "IPmLIsnDZSM",
+     "title": "Алла Пугачёва - Нас бьют, мы летаем (Official 4K Video)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Нас бьют, мы летаем",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Алла Пугачёва"
+    },
+    {
+     "videoId": "W7e19OZEPYk",
+     "title": "Алла Пугачёва - Я летала (Official 4K Video)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Я летала",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Алла Пугачёва"
+    },
+    {
+     "videoId": "JPIO0saexgo",
+     "title": "Алла Пугачёва - Harlekino (Official HD Video) «Ein Kessel Buntes» 1976",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Harlekino",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Алла Пугачёва"
+    },
+    {
+     "videoId": "fzDWEeHzN-k",
+     "title": "Алла Пугачёва - Без меня (Official HD Video)",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Без меня",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Алла Пугачёва"
+    },
+    {
+     "videoId": "Nobz5FflXf4",
+     "title": "Алла Пугачёва - Das große Fest ist noch lange nicht aus (Official HD Video) «Ein Kessel Buntes» 1976",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Das große Fest ist noch lange nicht aus",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Алла Пугачёва"
+    },
+    {
+     "videoId": "kFj8PyrLwXk",
+     "title": "Алла Пугачёва - Близкие люди (Official Video) [«Рождественские встречи»]",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Близкие люди",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Алла Пугачёва"
+    },
+    {
+     "videoId": "VCQX7DQYGqc",
+     "title": "Алла Пугачёва - Это любовь [«Новая волна»] Юрмала 2005",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Это любовь",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Алла Пугачёва"
+    },
+    {
+     "videoId": "47IPLBZDcoE",
+     "title": "Алла Пугачёва - «Менты в Кремле» [Мадам Брошкина / Девочка секонд-хэнд] 2000",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Мадам Брошкина",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "Алла Пугачёва"
+    },
+    {
+     "videoId": "EjOiujorIFI",
+     "title": "Алла Пугачёва - Белый снег [«Голубой огонёк на Шаболовке»] 2000",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Белый снег",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Алла Пугачёва"
+    },
+    {
+     "videoId": "C5KuLvpmxdA",
+     "title": "Алла Пугачёва - Бокал (Official HD Video) [«Рождественские встречи»]",
+     "source": "channel",
+     "era": "nearby",
+     "eraTitle": "Бокал",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Алла Пугачёва"
+    },
+    {
+     "videoId": "EbDiGfqt-g8",
+     "title": "Алла Пугачёва - Белая панама («Цветы и песни Сан-Ремо в Москве») 1986",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Белая панама",
+     "how": {
+      "channel": "mb-link",
+      "work": "song"
+     },
+     "uploader": "Алла Пугачёва"
+    }
+   ]
+  },
+  {
+   "mbid": "2bcdf80a-e3e8-4d43-9b15-7a5f18cc1606",
+   "name": "오브코코",
+   "decade": 1980,
+   "place": "KR",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "ab8091af-914a-4d98-8f66-66b03e376297",
+   "name": "Николай Андреевич Малько",
+   "decade": 1950,
+   "place": "UA",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "3f9c2ce4-46dd-44a0-a828-c564cd3f4bfb",
+   "name": "นันทิดา แก้วบัวสาย",
+   "decade": 1980,
+   "place": "TH",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "51cf87e8-ba4f-44e1-8f05-c3fbc4cfb517",
+   "name": "عبد القادر التنير",
+   "decade": 2020,
+   "place": "JO",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "d7f72bf5-32b8-4626-92a7-49cf2f94d655",
+   "name": "Бенцион Елиезер",
+   "decade": 1960,
+   "place": "BG",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "1f510870-785a-4a79-9050-2d678bc4c909",
+   "name": "Александър Райчев",
+   "decade": 1970,
+   "place": "BG",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "a2233590-f480-47d4-915a-a2b4d042460d",
+   "name": "جورج يزبك",
+   "decade": 2000,
+   "place": "LB",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "c106711b-aea9-4ed5-9aff-78eb379b7db3",
+   "name": "Инна Гофф",
+   "decade": 1990,
+   "place": "UA",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "4ab3336f-53a4-4f15-8700-edad02a1a7a7",
+   "name": "הגבעטרון",
+   "decade": 1970,
+   "place": "IL",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "ded4f8ae-e60b-46e5-80fa-6d054ab1559b",
+   "name": "Дмитрий Смольский",
+   "decade": 2010,
+   "place": "BY",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "ccf397b0-46f1-4cdb-bc3c-6c84331bf0ed",
+   "name": "מני בגר",
+   "decade": 1970,
+   "place": "IL",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "yfSxJaQByiI",
+     "title": "מני בגר   לעולם לא מאוחר לרוקנרול",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "לעולם לא מאוחר לרוקנרול ",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Menny Begger"
+    },
+    {
+     "videoId": "dULz8Hgk99E",
+     "title": "עייף מכדי לקום",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "עייף מכדי לקום ",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Meni Beger - Topic"
+    },
+    {
+     "videoId": "qjTm2tGV3Vc",
+     "title": "הלילה לבד",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "הלילה לבד ",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Meni Beger - Topic"
+    },
+    {
+     "videoId": "znyExyF2A-o",
+     "title": "איש לא ידוע (נגן אלמוני)",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "איש לא ידוע (נגן אלמוני)  ",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Meni Beger - Topic"
+    },
+    {
+     "videoId": "I0cZtpOa1C4",
+     "title": "שנת הדובדבן",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "שנת הדובדבן",
+     "how": {
+      "channel": "alias",
+      "work": "release"
+     },
+     "uploader": "Meni Beger - Topic"
+    },
+    {
+     "videoId": "bguCReJslmU",
+     "title": "הכח לאהוב",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "הכח לאהוב",
+     "how": {
+      "channel": "alias",
+      "work": "release"
+     },
+     "uploader": "Meni Beger - Topic"
+    },
+    {
+     "videoId": "DttAPWerL_I",
+     "title": "ימים מדומים",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "ימים מדומים",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Meni Beger - Topic"
+    },
+    {
+     "videoId": "FE6vopawBuM",
+     "title": "הרוחות הרעות",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "הרוחות הרעות",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Meni Beger - Topic"
+    },
+    {
+     "videoId": "7oBXbS6VxTQ",
+     "title": "אין לי זמן",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "אין לי זמן",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Meni Beger - Topic"
+    },
+    {
+     "videoId": "slIxFQ4g5o0",
+     "title": "בדרך אלייך",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "בדרך אלייך",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Meni Beger - Topic"
+    },
+    {
+     "videoId": "gMHUx_4_9nQ",
+     "title": "דנדי",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": " דנדי",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Meni Beger - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "5627c722-0c2b-4ca2-8b44-85c494003b4e",
+   "name": "管平湖",
+   "decade": 1950,
+   "place": "CN",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "105212b3-6174-4b93-b940-710ab8cc23c7",
+   "name": "مطرف المطرف",
+   "decade": 2000,
+   "place": "KW",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "fa3e6e40-4649-482a-9167-abd3bec6bb6e",
+   "name": "محمود الهندي",
+   "decade": 2020,
+   "place": "YE",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "7tFXzOZRRQw",
+     "title": "علق بمولاك قلبك للمؤلف الموسيقي محمود الهندي | مهرجان ألحان الزمن الجميل",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "علق بمولاك قلبك",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "محمود الهندي"
+    },
+    {
+     "videoId": "HOGrgEU7J9U",
+     "title": "ياهج يا بلا إبل | للمؤلف الموسيقي محمود الهندي | مهرجان ألحان الزمن الجميل (المكلا-المسرح الوطني)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "ياهج يا بلا إبل",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "محمود الهندي"
+    },
+    {
+     "videoId": "pkMjYPiLwZA",
+     "title": "مقاصد الخير | للمؤلف الموسيقي محمود الهندي | مهرجان ألحان الزمن الجميل (المكلا-المسرح الوطني)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "مقاصد الخير",
+     "how": {
+      "channel": "mb-link",
+      "work": "release"
+     },
+     "uploader": "محمود الهندي"
+    }
+   ]
+  },
+  {
+   "mbid": "b82569f9-9484-425e-a5d2-96dcbd2093cc",
+   "name": "ชาย เมืองสิงห์",
+   "decade": 2020,
+   "place": "TH",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "b426291d-9af9-482f-892d-a9594d0bd282",
+   "name": "張清芳",
+   "decade": 1980,
+   "place": "TW",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "-XNDZx7ZxxY",
+     "title": "花戒指",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "花戒指",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "張清芳 - Topic"
+    },
+    {
+     "videoId": "BgSrxlB0RLs",
+     "title": "你的眼神",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "你的眼神",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "張清芳 - Topic"
+    },
+    {
+     "videoId": "XS8J1h4vZjY",
+     "title": "讓我們看雲去",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "讓我們看雲去",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "張清芳 - Topic"
+    },
+    {
+     "videoId": "xn7Kfa2Qu18",
+     "title": "雪下得太早",
+     "source": "discogs",
+     "era": "nearby",
+     "eraTitle": "雪下得太早",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "張清芳 - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "2f96acbc-9e4f-4b3b-80cc-d4821ca4e578",
+   "name": "ራሔል ዮሐንስ",
+   "decade": 2020,
+   "place": "ET",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "STDEh3z-CfI",
+     "title": "Menelik",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Menelik",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Rahel Yohannes - Topic"
+    },
+    {
+     "videoId": "I42jDFyhNxw",
+     "title": "Arada",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Arada",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Rahel Yohannes - Topic"
+    },
+    {
+     "videoId": "YGmAPUJ7oYA",
+     "title": "Tizita",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Tizita",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Rahel Yohannes - Topic"
+    },
+    {
+     "videoId": "TTISiZlLw_g",
+     "title": "Yiwedes Gonder",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Yiwedes Gonder",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Rahel Yohannes - Topic"
+    },
+    {
+     "videoId": "MGmM_TPIzA8",
+     "title": "Kurate",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Kurate",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Rahel Yohannes - Topic"
+    },
+    {
+     "videoId": "8RbtgSbOV18",
+     "title": "Mushira",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Mushira",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Rahel Yohannes - Topic"
+    },
+    {
+     "videoId": "cwkQ52ZdcTI",
+     "title": "Hagere Ethiopia",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Hagerë Ethiopia",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Rahel Yohannes - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "43f502d5-b098-49df-949d-e9d898f0dc1f",
+   "name": "Νατάσα Θεοδωρίδου",
+   "decade": 1980,
+   "place": "GR",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "2daa73b2-24bf-478c-af9d-c56f3385fa18",
+   "name": "管波",
+   "decade": 2010,
+   "place": "CN",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "e18c0e35-e904-422d-924c-f75a49dd3817",
+   "name": "Андрей Соколов",
+   "decade": 1920,
+   "place": "RU",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "rO--jFnEFIo",
+     "title": "И поёт бывалый боцман",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "И Поет Бывалый Боцман",
+     "how": {
+      "channel": "name",
+      "work": "discogs"
+     },
+     "uploader": "Андрей Соколов - Topic"
+    }
+   ]
+  },
+  {
+   "mbid": "45124c63-5f6a-4b7c-81e1-8d8e50bd6477",
+   "name": "Антон Григорьев",
+   "decade": 1940,
+   "place": "UA",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "3648fa91-8152-4db5-a596-c459ef572645",
+   "name": "Βλάσσης Μπονάτσος",
+   "decade": 1980,
+   "place": "GR",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "269534da-8d51-46a2-bb3a-8f4ecdf29702",
+   "name": "강룡웅",
+   "decade": 1980,
+   "place": "KP",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "4232481b-b62b-4b88-a9df-29dd00614695",
+   "name": "Владимир Владимирович Софроницкий",
+   "decade": 1910,
+   "place": "RU",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "74f4e209-7d4c-484b-bd62-c9db4b8acea3",
+   "name": "Λαϊκό Συγκρότημα Κυριάκου Κεραυνού",
+   "decade": 2020,
+   "place": "CY",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "e22a57ad-c88f-4216-9bd3-0b67386c96e7",
+   "name": "Γιώργος Αλκαίος",
+   "decade": 1990,
+   "place": "GR",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "Q3ljSCXAUZ0",
+     "title": "Γιώργος Αλκαίος - Καλύτερα μόνος μου (Audio)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Καλύτερα Μόνος Μου",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
+     "videoId": "sOkv6mvoQ_U",
+     "title": "Γιώργος Αλκαίος - Είσαι αλλού (Audio)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Είσαι Αλλού",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
+     "videoId": "WQq06pVK8zE",
+     "title": "Γιώργος Αλκαίος ft Ευρυδίκη - Οι αγάπες (Audio)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Οι Αγάπες",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
+     "videoId": "9SDhgI-H01c",
+     "title": "Γιώργος Αλκαίος - Σ'αλλο στρώμα (Audio)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Σ' Άλλο Στρώμα",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
+     "videoId": "mp5L9CZyhIY",
+     "title": "Γιώργος Αλκαίος - Περασμένα ναι, ξεχασμένα όχι (Audio)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Περασμένα Ναι, Ξεχασμένα Όχι",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
+     "videoId": "WnnIh2bBfwE",
+     "title": "Γιώργος Αλκαίος - Ραγισμένη ματιά (Audio)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Ραγισμένη Ματιά",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
+     "videoId": "tUCi2jSN40w",
+     "title": "Γιώργος Αλκαίος - Τσιγάρο (Audio)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "Τσιγάρο",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
+     "videoId": "kbHsyMfbcuI",
+     "title": "Γιώργος Αλκαίος - 5 μήνες (Audio)",
+     "source": "discogs",
+     "era": "in-era",
+     "eraTitle": "5 Μήνες",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
+     "videoId": "iNOo-pKSnks",
+     "title": "Γιώργος Αλκαίος - Και πάλι μόνος (Audio)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Μόνος",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
+     "videoId": "sCvSTy6dDRc",
+     "title": "Γιώργος Αλκαίος - Πες μου τι είναι αγάπη (Audio)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Πες Μου",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
+     "videoId": "OqqXr828oJc",
+     "title": "Γιώργος Αλκαίος - Με πιάνουν τα κλάματα (Audio)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Με Πιάνουν Τα Κλάματα",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Giorgos Alkaios"
+    },
+    {
+     "videoId": "n0px1L41flg",
+     "title": "Γιώργος Αλκαίος - Μάτια θλιμμενα (Audio)",
+     "source": "channel",
+     "era": "in-era",
+     "eraTitle": "Μάτια Θλιμμένα",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Giorgos Alkaios"
+    }
+   ]
+  },
+  {
+   "mbid": "572c0ebd-2cc3-40c3-9404-efe981a59d7f",
+   "name": "אברהם מור",
+   "decade": 1990,
+   "place": "IL",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "1836cc8c-252a-49dd-8623-384012bf1438",
+   "name": "باسم درويش",
+   "decade": 1990,
+   "place": "EG",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": [
+    {
+     "videoId": "-0h3XgJ3Ow8",
+     "title": "Cairo Steps Basem Darwisch & Matthias Frey- Cairo 2007 * ZDF orient meet JAZZ",
+     "source": "discogs",
+     "era": "catalog",
+     "eraTitle": "Cairo Steps",
+     "how": {
+      "channel": "alias",
+      "work": "discogs"
+     },
+     "uploader": "Basem Darwisch"
+    },
+    {
+     "videoId": "KES1ydY5KzY",
+     "title": "Cairo Steps - Basem Darwisch & Matthias Frey -  Alexandria -Memories in Alexandria -Egypt Tour 2009",
+     "source": "channel",
+     "era": "catalog",
+     "eraTitle": "Memories",
+     "how": {
+      "channel": "learned",
+      "work": "song"
+     },
+     "uploader": "Basem Darwisch"
+    }
+   ]
+  },
+  {
+   "mbid": "ea1a62d5-71ee-4477-a552-156752bed160",
+   "name": "ฉวีวรรณ ดำเนิน",
+   "decade": 2010,
+   "place": "TH",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "ee0e4459-130e-47f5-86b3-ebe0175c0862",
+   "name": "Христофор Кушнарёв",
+   "decade": 1940,
+   "place": "UA",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "e91504af-0b68-4729-8184-f567016658ff",
+   "name": "言承旭",
+   "decade": 2020,
+   "place": "TW",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "c68f804c-ca26-41f1-8bc2-08aff7ec4121",
+   "name": "Михаил Анчаров",
+   "decade": 1930,
+   "place": "RU",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "b0940e9f-3b9f-48b6-8e92-16716bbb3ef4",
+   "name": "李泉",
+   "decade": 1990,
+   "place": "CN",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "fed6e4b3-73be-401b-8d0e-31294129cfd8",
+   "name": "Євген Станкович",
+   "decade": 2010,
+   "place": "UA",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "8e05bc9f-07ce-4300-bbdb-1a334dadcc9f",
+   "name": "Λίνος Κόκοτος",
+   "decade": 1960,
+   "place": "GR",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "199f07c6-14f7-41ba-981a-44a6902d3bd4",
+   "name": "Գուսան Աշոտ",
+   "decade": 1980,
+   "place": "AM",
+   "stratum": "non-latin",
+   "needsSearch": true,
+   "searched": false,
+   "tracks": []
+  },
+  {
+   "mbid": "c7bec749-ba44-4757-b846-63fbe76fc0a1",
+   "name": "Виталий Гевиксман",
+   "decade": 1920,
+   "place": "RU",
+   "stratum": "non-latin",
+   "needsSearch": false,
+   "searched": false,
+   "tracks": []
+  }
+ ]
+}
