@@ -1,0 +1,3065 @@
+{
+ "summary": {
+  "sampled": 200,
+  "seed": 20261119,
+  "videosListCalls": 40,
+  "searchesUsed": 0,
+  "artistsWithVerifiedSong": 73,
+  "latin": {
+   "of": 188,
+   "n": 70
+  },
+  "nonLatin": {
+   "of": 12,
+   "n": 3
+  },
+  "verifiedSongs": 196
+ },
+ "results": [
+  {
+   "id": "bd5d07eb-dcb8-4d11-b873-908401e92ee4",
+   "name": "Rank 1",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": [
+    {
+     "videoId": "mhBIHntKO0Y",
+     "title": "Such Is Life [Mix Cut] (Aly & Fila Intro Mix)",
+     "channel": "RANK 1 - Topic",
+     "work": "Such Is Life",
+     "workYear": 2001
+    },
+    {
+     "videoId": "LcXSCZ0hxN0",
+     "title": "L.E.D. There Be Light (Extended)",
+     "channel": "RANK 1 - Topic",
+     "work": "L.E.D. There Be Light",
+     "workYear": 2008
+    },
+    {
+     "videoId": "wg6l7YQqWTQ",
+     "title": "Strobo",
+     "channel": "RANK 1 - Topic",
+     "work": "Strobo",
+     "workYear": 2025
+    },
+    {
+     "videoId": "_cv8IpXr3q4",
+     "title": "Strobo (Deeper Dub Mix)",
+     "channel": "RANK 1 - Topic",
+     "work": "Strobo",
+     "workYear": 2025
+    }
+   ]
+  },
+  {
+   "id": "3de0b29a-602c-49dc-ba54-81706c98f3c5",
+   "name": "Frank Martin",
+   "nonLatin": false,
+   "candidates": 4,
+   "stillOnYoutube": 4,
+   "verified": []
+  },
+  {
+   "id": "d5087f36-bc25-4212-a706-78419c0b64d6",
+   "name": "Benjamin Ball",
+   "nonLatin": false,
+   "candidates": 4,
+   "stillOnYoutube": 4,
+   "verified": [
+    {
+     "videoId": "OOOGn89FyXk",
+     "title": "Flash a Flashlight (Gerd Janson Dub Edit)",
+     "channel": "Benjamin Ball - Topic",
+     "work": "Flash A Flashlight",
+     "workYear": 2016
+    }
+   ]
+  },
+  {
+   "id": "ca1b0a32-4c01-498a-acc6-b37fc502834f",
+   "name": "The La De Da’s",
+   "nonLatin": false,
+   "candidates": 21,
+   "stillOnYoutube": 17,
+   "verified": []
+  },
+  {
+   "id": "330d466d-bcc4-4a03-bea5-6d2681533787",
+   "name": "Dave Ballou",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": [
+    {
+     "videoId": "qdqdUdWy81E",
+     "title": "Volition",
+     "channel": "Dave Ballou - Topic",
+     "work": "Volition",
+     "workYear": 1999
+    }
+   ]
+  },
+  {
+   "id": "2eaa2462-3063-46b5-a23d-7a878b53fc67",
+   "name": "C.A.F.B.",
+   "nonLatin": false,
+   "candidates": 8,
+   "stillOnYoutube": 8,
+   "verified": []
+  },
+  {
+   "id": "d17a5888-7775-4541-85d6-f6344f9e93b7",
+   "name": "Baccara",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 23,
+   "verified": [
+    {
+     "videoId": "TfesxFLsreQ",
+     "title": "Yes Sir I Can Boogie",
+     "channel": "Baccara - Topic",
+     "work": "Yes Sir, I Can Boogie",
+     "workYear": 1977
+    }
+   ]
+  },
+  {
+   "id": "18191ef1-117c-42c2-ad62-9918ba760a5d",
+   "name": "Terry \"Big T\" Williams",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "b42d111d-5932-4c00-8562-8bbf7203f850",
+   "name": "Amarok",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "c8fc9d07-a910-46ea-bbc8-3258395f8aaf",
+   "name": "Jack",
+   "nonLatin": false,
+   "candidates": 10,
+   "stillOnYoutube": 10,
+   "verified": [
+    {
+     "videoId": "fONhfP-r2uk",
+     "title": "Kid Stardust",
+     "channel": "Jack - Topic",
+     "work": "Kid Stardust",
+     "workYear": 1995
+    },
+    {
+     "videoId": "_qqDUrXeH5Q",
+     "title": "White Jazz",
+     "channel": "Jack - Topic",
+     "work": "White Jazz",
+     "workYear": 1996
+    },
+    {
+     "videoId": "S13Wvn9lPy4",
+     "title": "Steamin'",
+     "channel": "Jack - Topic",
+     "work": "Steamin'",
+     "workYear": 1998
+    }
+   ]
+  },
+  {
+   "id": "ba5770d7-b102-4225-b26c-79f804c136f4",
+   "name": "Holly Waxwing",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": [
+    {
+     "videoId": "mTXEijjn_ZE",
+     "title": "Sister Species",
+     "channel": "Holly Waxwing - Topic",
+     "work": "Sister Species",
+     "workYear": 2022
+    },
+    {
+     "videoId": "nhpoKxB6jsI",
+     "title": "The New Pastoral",
+     "channel": "Holly Waxwing - Topic",
+     "work": "The New Pastoral",
+     "workYear": 2023
+    }
+   ]
+  },
+  {
+   "id": "3594dd1c-1267-471f-a6e2-78978bb3e024",
+   "name": "7Seconds",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 23,
+   "verified": []
+  },
+  {
+   "id": "2e298d87-1e49-4a23-b775-0b242d759b6a",
+   "name": "Morriah",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "dfecf546-e7ec-46d4-8372-c1e7864ec406",
+   "name": "Don Drummond",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 22,
+   "verified": []
+  },
+  {
+   "id": "19ce9c2c-b685-49cb-afed-f6b6ed720646",
+   "name": "The Five Americans",
+   "nonLatin": false,
+   "candidates": 18,
+   "stillOnYoutube": 17,
+   "verified": [
+    {
+     "videoId": "UJexPMk7pxo",
+     "title": "Western Union",
+     "channel": "The Five Americans - Topic",
+     "work": "Western Union",
+     "workYear": 1989
+    },
+    {
+     "videoId": "wy0GackQDfU",
+     "title": "I See the Light",
+     "channel": "The Five Americans - Topic",
+     "work": "I See the Light",
+     "workYear": 1966
+    }
+   ]
+  },
+  {
+   "id": "5480b4df-3cc9-48bc-bdf4-8f28680c015f",
+   "name": "Pagan",
+   "nonLatin": false,
+   "candidates": 4,
+   "stillOnYoutube": 4,
+   "verified": []
+  },
+  {
+   "id": "739eac4c-ce34-43c0-b8bd-a8d44ccf41c6",
+   "name": "Big Bill",
+   "nonLatin": false,
+   "candidates": 6,
+   "stillOnYoutube": 5,
+   "verified": [
+    {
+     "videoId": "XT4nlm9_YB4",
+     "title": "Sit On It",
+     "channel": "Big Bill - Topic",
+     "work": "Sit on It",
+     "workYear": 1978
+    }
+   ]
+  },
+  {
+   "id": "810c7829-2e33-4dd9-876b-77a3d0ce1c2d",
+   "name": "فريد الأطرش",
+   "nonLatin": true,
+   "candidates": 15,
+   "stillOnYoutube": 14,
+   "verified": []
+  },
+  {
+   "id": "a595e9c2-cab5-498c-98d3-bdab389e74ac",
+   "name": "Akrotheism",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "d8ae63c6-6fce-41b2-98ba-e570bc4007ca",
+   "name": "Terry Jacks",
+   "nonLatin": false,
+   "candidates": 14,
+   "stillOnYoutube": 11,
+   "verified": [
+    {
+     "videoId": "plyCJNkOebw",
+     "title": "Just Like That",
+     "channel": "Terry Jacks - Topic",
+     "work": "Just Like That",
+     "workYear": 1987
+    },
+    {
+     "videoId": "mTBI01EtkmM",
+     "title": "Seasons in the Sun (Remastered)",
+     "channel": "Terry Jacks - Topic",
+     "work": "Seasons in the Sun",
+     "workYear": 1974
+    },
+    {
+     "videoId": "MRkGnyVd_as",
+     "title": "Y' Don't Fight the Sea",
+     "channel": "Terry Jacks - Topic",
+     "work": "Y' Don't Fight the Sea",
+     "workYear": 1975
+    }
+   ]
+  },
+  {
+   "id": "4cc23f20-0e93-4994-a382-11a4c9d4de04",
+   "name": "Judy and the Jerks",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "2a43b10c-a5a1-455c-83b6-3f1ae62e2196",
+   "name": "The Terrorways",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": [
+    {
+     "videoId": "C_jWEot1-q8",
+     "title": "Short Haired Rock and Roll",
+     "channel": "The Terrorways - Topic",
+     "work": "Short-Haired Rock and Roll",
+     "workYear": 2008
+    }
+   ]
+  },
+  {
+   "id": "4addfed3-1e81-4157-9a8f-0ee665e6e939",
+   "name": "João Villaret",
+   "nonLatin": false,
+   "candidates": 9,
+   "stillOnYoutube": 9,
+   "verified": []
+  },
+  {
+   "id": "25fb8007-51ee-49e6-94c5-f0d756aa4e61",
+   "name": "Hereford",
+   "nonLatin": false,
+   "candidates": 4,
+   "stillOnYoutube": 4,
+   "verified": [
+    {
+     "videoId": "JwoFagAMYUM",
+     "title": "Ruido",
+     "channel": "Hereford - Topic",
+     "work": "Ruido",
+     "workYear": 2006
+    },
+    {
+     "videoId": "BJPgY_-kuPc",
+     "title": "La Corona del Rey",
+     "channel": "Hereford - Topic",
+     "work": "La corona del rey",
+     "workYear": 2005
+    },
+    {
+     "videoId": "DRGwve1nEcA",
+     "title": "De Cerca",
+     "channel": "Hereford - Topic",
+     "work": "De cerca",
+     "workYear": 2008
+    },
+    {
+     "videoId": "duXVled38Bc",
+     "title": "El Verdugo de Tus Sueños",
+     "channel": "Hereford - Topic",
+     "work": "El verdugo de tus sueños",
+     "workYear": 1999
+    }
+   ]
+  },
+  {
+   "id": "6af15841-1d62-495a-8b52-74eb6d603c5f",
+   "name": "Phil Lynott",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": [
+    {
+     "videoId": "QzEHSHxDeAo",
+     "title": "Yellow Pearl (Live Great Yarmouth 1984)",
+     "channel": "Phil Lynott - Topic",
+     "work": "Yellow Pearl",
+     "workYear": 1980
+    },
+    {
+     "videoId": "oSN0THBXAbo",
+     "title": "King's Call",
+     "channel": "Phil Lynott - Topic",
+     "work": "King’s Call",
+     "workYear": 1980
+    },
+    {
+     "videoId": "IqhkfOlCP0g",
+     "title": "Solo In Soho",
+     "channel": "Phil Lynott - Topic",
+     "work": "Solo in Soho",
+     "workYear": 1980
+    },
+    {
+     "videoId": "nw9kUGFLFw0",
+     "title": "Old Town",
+     "channel": "Phil Lynott - Topic",
+     "work": "Old Town",
+     "workYear": 1982
+    }
+   ]
+  },
+  {
+   "id": "28586660-4d52-4b59-a432-d32b509db1cc",
+   "name": "中川イサト",
+   "nonLatin": true,
+   "candidates": 9,
+   "stillOnYoutube": 9,
+   "verified": []
+  },
+  {
+   "id": "61fc7ef9-8e09-4446-b0f0-6833318c8906",
+   "name": "Giampiero Boneschi",
+   "nonLatin": false,
+   "candidates": 6,
+   "stillOnYoutube": 5,
+   "verified": []
+  },
+  {
+   "id": "4ea20f1a-3c92-49f8-9b43-da12484dfd30",
+   "name": "Tony MacMahon",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 1,
+   "verified": [
+    {
+     "videoId": "BD3AHPyuxas",
+     "title": "O’ Carolan’s Farewell to Music",
+     "channel": "Tony MacMahon - Topic",
+     "work": "Farewell to Music",
+     "workYear": 2016
+    }
+   ]
+  },
+  {
+   "id": "56f0dbab-f304-4a95-8cb5-989c7d321471",
+   "name": "Albert Griffiths",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "9a8ac837-a0e0-4a56-a1cf-b677759a44e2",
+   "name": "Sponge",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 23,
+   "verified": [
+    {
+     "videoId": "qOcCvBpdVyM",
+     "title": "Lavatorium",
+     "channel": "Sponge - Topic",
+     "work": "Lavatorium",
+     "workYear": 2021
+    },
+    {
+     "videoId": "D1EPARDdTbw",
+     "title": "Rotting Piñata",
+     "channel": "Sponge - Topic",
+     "work": "Rotting Piñata",
+     "workYear": 1994
+    },
+    {
+     "videoId": "OGKRr0NmgFM",
+     "title": "Plowed",
+     "channel": "Sponge - Topic",
+     "work": "Plowed",
+     "workYear": 1994
+    },
+    {
+     "videoId": "3X1iyFdKcn8",
+     "title": "Hard to Keep My Cool",
+     "channel": "Sponge - Topic",
+     "work": "Hard to Keep My Cool",
+     "workYear": 2005
+    },
+    {
+     "videoId": "NIc33Z_XA7M",
+     "title": "Plowed (Acoustic Pilot Mix - Bonus Track)",
+     "channel": "Sponge - Topic",
+     "work": "Plowed",
+     "workYear": 1994
+    },
+    {
+     "videoId": "SQH4-N4Y52w",
+     "title": "Molly (16 Candles Down the Drain)",
+     "channel": "Sponge - Topic",
+     "work": "Molly (16 Candles Down the Drain)",
+     "workYear": 1994
+    }
+   ]
+  },
+  {
+   "id": "d250249a-0407-4db4-bc9d-241bd5ad95dd",
+   "name": "Idjah Hadidjah",
+   "nonLatin": false,
+   "candidates": 6,
+   "stillOnYoutube": 6,
+   "verified": []
+  },
+  {
+   "id": "22b19805-adf4-410a-98ee-41fc26176015",
+   "name": "The Peter Moon Band",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "b2071064-744e-40d4-83cf-7222a8d9f1c1",
+   "name": "Onward",
+   "nonLatin": false,
+   "candidates": 5,
+   "stillOnYoutube": 5,
+   "verified": [
+    {
+     "videoId": "jr7bKSopAXE",
+     "title": "New Fathoms Down",
+     "channel": "Onward - Topic",
+     "work": "New Fathoms Down",
+     "workYear": 2014
+    }
+   ]
+  },
+  {
+   "id": "22e50bfa-fc44-41ee-b81c-75b5fc00063b",
+   "name": "Symphonian",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 0,
+   "verified": []
+  },
+  {
+   "id": "356abadf-a35c-4f93-baa2-9977b1c14046",
+   "name": "Johnny Hartman",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 22,
+   "verified": [
+    {
+     "videoId": "Pkt8WCljgH8",
+     "title": "I Just Dropped By To Say Hello",
+     "channel": "Johnny Hartman - Topic",
+     "work": "I Just Dropped By to Say Hello",
+     "workYear": 1964
+    },
+    {
+     "videoId": "g9f70T5gPwk",
+     "title": "All Of Me",
+     "channel": "Johnny Hartman - Topic",
+     "work": "All of Me",
+     "workYear": 1993
+    },
+    {
+     "videoId": "vus36h9Iz0Q",
+     "title": "Unforgettable",
+     "channel": "Johnny Hartman - Topic",
+     "work": "Unforgettable",
+     "workYear": 1995
+    },
+    {
+     "videoId": "r3RMgaRsEuA",
+     "title": "I Thought About You (And I Thought About You)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "And I Thought About You",
+     "workYear": 1989
+    },
+    {
+     "videoId": "97fYhc60p6g",
+     "title": "How Long Has This Been Going on (And I Thought About You)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "And I Thought About You",
+     "workYear": 1989
+    },
+    {
+     "videoId": "Cg8G7wvMWZM",
+     "title": "I'm Glad There's You (Songs from the Heart)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "Songs From the Heart",
+     "workYear": 1956
+    },
+    {
+     "videoId": "jQJCoYxr7zk",
+     "title": "Little Girl Blue (And I Thought About You)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "And I Thought About You",
+     "workYear": 1989
+    },
+    {
+     "videoId": "9la4CGx2pTA",
+     "title": "Long Ago & Far Away (And I Thought About You)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "And I Thought About You",
+     "workYear": 1989
+    },
+    {
+     "videoId": "iq5_00D_unI",
+     "title": "I'll Remember April (Songs from the Heart)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "Songs From the Heart",
+     "workYear": 1956
+    },
+    {
+     "videoId": "bpybB7o8IJo",
+     "title": "I Should Care (And I Thought About You)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "And I Thought About You",
+     "workYear": 1989
+    },
+    {
+     "videoId": "pf7yjoJ6IqI",
+     "title": "To Each His Own (And I Thought About You)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "And I Thought About You",
+     "workYear": 1989
+    },
+    {
+     "videoId": "oXoLc6Ov0yg",
+     "title": "I'll Follow You (All of Me: The Debonair Mr. Hartman)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "All of Me",
+     "workYear": 1993
+    },
+    {
+     "videoId": "5iPDCzcDZyc",
+     "title": "When Your Lover Has Gone (Songs from the Heart)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "Songs From the Heart",
+     "workYear": 1956
+    },
+    {
+     "videoId": "PEBLW-7W9gU",
+     "title": "But Beautiful (And I Thought About You)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "And I Thought About You",
+     "workYear": 1989
+    },
+    {
+     "videoId": "P2S5ysAQsnU",
+     "title": "After You've Gone (And I Thought About You)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "And I Thought About You",
+     "workYear": 1989
+    },
+    {
+     "videoId": "9h25lHcOmZQ",
+     "title": "While We're Young (All of Me: The Debonair Mr. Hartman)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "All of Me",
+     "workYear": 1993
+    },
+    {
+     "videoId": "0Wg7AotRROA",
+     "title": "I Concentrate on You (All of Me: The Debonair Mr. Hartman)",
+     "channel": "Johnny Hartman - Topic",
+     "work": "All of Me",
+     "workYear": 1993
+    }
+   ]
+  },
+  {
+   "id": "e6e727f2-f87c-4310-ac95-57ae32be7da9",
+   "name": "Echospace",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 21,
+   "verified": [
+    {
+     "videoId": "OuyCYU1oBd0",
+     "title": "Sonorous (cv313's Midst of Something Beautiful Mix)",
+     "channel": "Echospace - Topic",
+     "work": "Sonorous",
+     "workYear": 2007
+    },
+    {
+     "videoId": "1N8bAjWwsP4",
+     "title": "Sonorous (Version Dub)",
+     "channel": "Echospace - Topic",
+     "work": "Sonorous",
+     "workYear": 2007
+    }
+   ]
+  },
+  {
+   "id": "73e876ac-aeb8-4575-a269-db673e0ef54e",
+   "name": "Coboy",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "ff734df1-6795-43ec-84a7-ae04b356dad1",
+   "name": "Nach",
+   "nonLatin": false,
+   "candidates": 10,
+   "stillOnYoutube": 8,
+   "verified": [
+    {
+     "videoId": "_-8Vzbgk-7k",
+     "title": "Esclavos Del Destino",
+     "channel": "Nach - Topic",
+     "work": "Destino",
+     "workYear": 2025
+    }
+   ]
+  },
+  {
+   "id": "2d55b18b-1b32-47f7-9c7b-a8cf4b158619",
+   "name": "Мими Иванова",
+   "nonLatin": true,
+   "candidates": 9,
+   "stillOnYoutube": 8,
+   "verified": []
+  },
+  {
+   "id": "afc95ca4-7780-4274-9437-062e6c346f2f",
+   "name": "Cruthu",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": [
+    {
+     "videoId": "sauOgjDPv2E",
+     "title": "Cruthu - The Angle of Eternity (2017) Full Album",
+     "channel": "Cruthu",
+     "work": "The Angle of Eternity",
+     "workYear": 2017
+    }
+   ]
+  },
+  {
+   "id": "c177a0bc-02f8-412c-aeca-e3223487b2b4",
+   "name": "Ekkaia",
+   "nonLatin": false,
+   "candidates": 12,
+   "stillOnYoutube": 12,
+   "verified": []
+  },
+  {
+   "id": "ad8c41f3-5549-499f-adfb-55a6e007bf08",
+   "name": "Big Dance",
+   "nonLatin": false,
+   "candidates": 7,
+   "stillOnYoutube": 7,
+   "verified": [
+    {
+     "videoId": "1A4tzWT4b9U",
+     "title": "Śpiewaj z nami",
+     "channel": "Big Dance - Topic",
+     "work": "Śpiewaj Z Nami",
+     "workYear": 2008
+    }
+   ]
+  },
+  {
+   "id": "6d53a6e4-0410-4efe-bc55-961d8adabe61",
+   "name": "Walter Foini",
+   "nonLatin": false,
+   "candidates": 17,
+   "stillOnYoutube": 12,
+   "verified": [
+    {
+     "videoId": "PkGGZJiuO2k",
+     "title": "Compro Tutto",
+     "channel": "Walter Foini - Topic",
+     "work": "Compro tutto",
+     "workYear": 1977
+    },
+    {
+     "videoId": "ow9olBkBbQc",
+     "title": "Faccia di luna",
+     "channel": "Walter Foini - Topic",
+     "work": "Faccia di luna",
+     "workYear": 1979
+    }
+   ]
+  },
+  {
+   "id": "f8c21bf9-5011-4f61-82ba-75b388a6d02e",
+   "name": "SWAPO Singers",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "b0635f14-7d93-4276-8943-6bc251aea033",
+   "name": "Tacocat",
+   "nonLatin": false,
+   "candidates": 10,
+   "stillOnYoutube": 9,
+   "verified": []
+  },
+  {
+   "id": "6625efc2-9c9e-40c9-a45b-0f1310be5d63",
+   "name": "Лев Лещенко",
+   "nonLatin": true,
+   "candidates": 24,
+   "stillOnYoutube": 20,
+   "verified": [
+    {
+     "videoId": "bULKl8X1V8g",
+     "title": "Горький мёд",
+     "channel": "Лев Лещенко - Topic",
+     "work": "Горький мёд",
+     "workYear": 1979
+    },
+    {
+     "videoId": "cUvz2Z18wPo",
+     "title": "Притяжение Земли",
+     "channel": "Лев Лещенко - Topic",
+     "work": "Притяжение Земли",
+     "workYear": 1979
+    }
+   ]
+  },
+  {
+   "id": "e10dc35f-79f5-49f4-894e-aa4bb6f5b835",
+   "name": "Kontroll Csoport",
+   "nonLatin": false,
+   "candidates": 11,
+   "stillOnYoutube": 11,
+   "verified": []
+  },
+  {
+   "id": "3c9b356d-d1db-4f4e-a7a3-2d00c1d70255",
+   "name": "Kurt Cobain",
+   "nonLatin": false,
+   "candidates": 20,
+   "stillOnYoutube": 11,
+   "verified": [
+    {
+     "videoId": "f8NIOS7XkYY",
+     "title": "And I Love Her",
+     "channel": "Kurt Cobain - Topic",
+     "work": "And I Love Her",
+     "workYear": 2015
+    }
+   ]
+  },
+  {
+   "id": "f7418252-1eba-444a-9096-85a06cee0a87",
+   "name": "Krisdayanti",
+   "nonLatin": false,
+   "candidates": 9,
+   "stillOnYoutube": 9,
+   "verified": []
+  },
+  {
+   "id": "0b6aea55-d855-4a33-ae08-b0280dd28684",
+   "name": "Max Roach",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": []
+  },
+  {
+   "id": "d8e680f3-42ae-4c2f-ab13-2f950de0997a",
+   "name": "Psychotic Turnbuckles",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": [
+    {
+     "videoId": "Tk7n5vLS2TY",
+     "title": "Destroy Dull City",
+     "channel": "Psychotic Turnbuckles - Topic",
+     "work": "Destroy Dull City",
+     "workYear": 2012
+    }
+   ]
+  },
+  {
+   "id": "0d7b216d-821e-4227-9314-dd51521d298c",
+   "name": "Jef Gilson",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": []
+  },
+  {
+   "id": "a244733a-bb19-442e-9cd8-ba02d68bdad9",
+   "name": "Sweet Pill",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": [
+    {
+     "videoId": "AOboURS7bTo",
+     "title": "Where the Heart Is",
+     "channel": "Sweet Pill - Topic",
+     "work": "Where the Heart Is",
+     "workYear": 2022
+    }
+   ]
+  },
+  {
+   "id": "0d2cf864-5e99-472e-845f-5d1579979eee",
+   "name": "Phil Manzanera",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": [
+    {
+     "videoId": "ubLfLB6PGzQ",
+     "title": "K-Scope (2000 Digital Remaster)",
+     "channel": "Phil Manzanera - Topic",
+     "work": "K-Scope",
+     "workYear": 1978
+    }
+   ]
+  },
+  {
+   "id": "f29a7d82-0101-4a07-bb65-542160ea3236",
+   "name": "Jonatan Cerrada",
+   "nonLatin": false,
+   "candidates": 6,
+   "stillOnYoutube": 6,
+   "verified": [
+    {
+     "videoId": "JtY79O09-A4",
+     "title": "Jonatan Cerrada - Lintas Galaksi (Lyric Video)",
+     "channel": "Jonatan Cerrada",
+     "work": "Lintas Galaksi",
+     "workYear": 2018
+    },
+    {
+     "videoId": "p_ueofV4rVc",
+     "title": "Jonatan Cerrada - Lelaki lain di hati",
+     "channel": "Jonatan Cerrada",
+     "work": "Lelaki Lain Di Hati",
+     "workYear": 2016
+    }
+   ]
+  },
+  {
+   "id": "5b3e14e5-bcde-4f8d-bc85-95b06911f20b",
+   "name": "Virtual Terrorist",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": [
+    {
+     "videoId": "fgMpHxGcOAc",
+     "title": "We Are A Hazard",
+     "channel": "Virtual Terrorist - Topic",
+     "work": "We Are a Hazard",
+     "workYear": 2023
+    }
+   ]
+  },
+  {
+   "id": "5c7b6ed2-951d-479c-a856-aa1fcdf24c40",
+   "name": "1280 Almas",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "6757d72a-3ac9-4ccb-b69b-39f691477180",
+   "name": "Big Red Machine",
+   "nonLatin": false,
+   "candidates": 12,
+   "stillOnYoutube": 12,
+   "verified": []
+  },
+  {
+   "id": "06ae7490-4837-47fb-9edf-45e63bc45427",
+   "name": "Bhupen Hazarika",
+   "nonLatin": false,
+   "candidates": 6,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "846cba85-0cf3-4e1c-ad22-732aac5e2f8a",
+   "name": "Bertell",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "8fbf446b-f968-42ca-9d3d-ee9755b4114c",
+   "name": "L'Assassins",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "75687111-1585-4df2-83e6-ce52e7fa2bb0",
+   "name": "Scratch Acid",
+   "nonLatin": false,
+   "candidates": 9,
+   "stillOnYoutube": 9,
+   "verified": []
+  },
+  {
+   "id": "92eaecaa-fd68-4cb5-b1d5-dec23c199019",
+   "name": "Murray McNabb",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "43edb566-1987-4b2a-94ae-58f3ca1daec6",
+   "name": "Vico Torriani",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": []
+  },
+  {
+   "id": "fb232b72-a202-4340-9a3f-88ff29cf253d",
+   "name": "Barney Bentall and the Legendary Hearts",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "65a0ca72-e7e3-480d-89a8-3ffd834a3142",
+   "name": "Yattering",
+   "nonLatin": false,
+   "candidates": 20,
+   "stillOnYoutube": 19,
+   "verified": [
+    {
+     "videoId": "JV18HN9Sz7M",
+     "title": "Genocide",
+     "channel": "Yattering - Topic",
+     "work": "Genocide",
+     "workYear": 2003
+    }
+   ]
+  },
+  {
+   "id": "4b3a2868-4576-4ee8-8c59-c13fc7c4038e",
+   "name": "The Bled",
+   "nonLatin": false,
+   "candidates": 21,
+   "stillOnYoutube": 21,
+   "verified": []
+  },
+  {
+   "id": "393e5448-896f-43e9-b80b-4ee58e1e71a4",
+   "name": "The Ronettes",
+   "nonLatin": false,
+   "candidates": 21,
+   "stillOnYoutube": 21,
+   "verified": [
+    {
+     "videoId": "tAREjl_GPJA",
+     "title": "Baby, I Love You",
+     "channel": "The Ronettes - Topic",
+     "work": "Baby, I Love You",
+     "workYear": 1995
+    },
+    {
+     "videoId": "WO6AjJOtGU4",
+     "title": "Baby, I Love You",
+     "channel": "The Ronettes - Topic",
+     "work": "Baby, I Love You",
+     "workYear": 1995
+    }
+   ]
+  },
+  {
+   "id": "f7162d10-a087-46db-b6c8-6021d9c2bf4d",
+   "name": "Miami Nights 1984",
+   "nonLatin": false,
+   "candidates": 16,
+   "stillOnYoutube": 14,
+   "verified": [
+    {
+     "videoId": "VO5XWwSnK04",
+     "title": "She Didn't Flinch",
+     "channel": "Miami Nights 1984 - Topic",
+     "work": "Flinch",
+     "workYear": 2021
+    },
+    {
+     "videoId": "ppVQY4KIOdo",
+     "title": "MIAMI NIGHTS 1 9 8 4 -  COSMOPOLIS - FULL ALBUM",
+     "channel": "Miami Nights 1984",
+     "work": "Cosmopolis",
+     "workYear": 2025
+    },
+    {
+     "videoId": "hXs3cR383aE",
+     "title": "MIAMI NIGHTS  1984 - GOOSEBUMPS REMIX",
+     "channel": "Miami Nights 1984",
+     "work": "Goosebumps",
+     "workYear": 2025
+    }
+   ]
+  },
+  {
+   "id": "f334f831-33da-4533-8702-1182b362a73b",
+   "name": "C‐Murder",
+   "nonLatin": false,
+   "candidates": 21,
+   "stillOnYoutube": 20,
+   "verified": [
+    {
+     "videoId": "qu0HttR1bho",
+     "title": "Life Or Death",
+     "channel": "C-Murder - Topic",
+     "work": "Life or Death",
+     "workYear": 1998
+    }
+   ]
+  },
+  {
+   "id": "af20c84b-4688-4257-81e6-4eb2781807c7",
+   "name": "Легион",
+   "nonLatin": true,
+   "candidates": 18,
+   "stillOnYoutube": 17,
+   "verified": [
+    {
+     "videoId": "XAEvHyZW8vY",
+     "title": "Легион - Отблески будущего (Полный альбом)",
+     "channel": "Легион ",
+     "work": "Отблески будущего",
+     "workYear": 2022
+    }
+   ]
+  },
+  {
+   "id": "ed4ad43e-5625-43c1-a4f1-184bb0ef6fcc",
+   "name": "Ellya Khadam",
+   "nonLatin": false,
+   "candidates": 5,
+   "stillOnYoutube": 5,
+   "verified": []
+  },
+  {
+   "id": "4d21918a-8fac-4f35-94f9-42180bbc0d7a",
+   "name": "Michala Petri",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 0,
+   "verified": []
+  },
+  {
+   "id": "847ce5cf-2e38-4e91-b14e-8a8724f6e08e",
+   "name": "Pinhead Circus",
+   "nonLatin": false,
+   "candidates": 6,
+   "stillOnYoutube": 6,
+   "verified": []
+  },
+  {
+   "id": "3f235b85-efbe-4ab9-87ce-f5ff232d2fb5",
+   "name": "Gidófalvy Attila",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "0df023cc-06cf-4206-ba70-0e2751564885",
+   "name": "Taarma",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "807f30c7-17ce-46cf-858d-5e6b18c5ab2e",
+   "name": "龍劭華",
+   "nonLatin": true,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": [
+    {
+     "videoId": "ay7fK7RTnvs",
+     "title": "孤單",
+     "channel": "龍劭華 - Topic",
+     "work": "孤單",
+     "workYear": 1996
+    }
+   ]
+  },
+  {
+   "id": "8105ad6a-b583-413f-8aae-ff34de4c1fa5",
+   "name": "Satan’s Host",
+   "nonLatin": false,
+   "candidates": 8,
+   "stillOnYoutube": 7,
+   "verified": []
+  },
+  {
+   "id": "d30137de-a6bc-4330-bbbb-743e3551e892",
+   "name": "Kim Wilson",
+   "nonLatin": false,
+   "candidates": 5,
+   "stillOnYoutube": 5,
+   "verified": [
+    {
+     "videoId": "-WypKmMAjlI",
+     "title": "Smokin' Joint",
+     "channel": "Kim Wilson - Topic",
+     "work": "Smokin' Joint",
+     "workYear": 2001
+    }
+   ]
+  },
+  {
+   "id": "9c687fa6-ea3f-4ef5-babc-a239cb13ab41",
+   "name": "Sally Cowan",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "3566fdf3-1900-4390-b8ad-be2aa95e2ad4",
+   "name": "Buspin Jieber",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "769c301f-f70d-4390-8fe1-19d65ca23492",
+   "name": "Halvdan Sivertsen",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "8c3b0a96-4be8-4721-85a9-8df379e8c7ca",
+   "name": "Rick van der Linden",
+   "nonLatin": false,
+   "candidates": 7,
+   "stillOnYoutube": 7,
+   "verified": [
+    {
+     "videoId": "GE5Bgj8D0Fo",
+     "title": "GX 1",
+     "channel": "Rick Van Der Linden - Topic",
+     "work": "GX 1",
+     "workYear": 1977
+    },
+    {
+     "videoId": "423GcsUIOS8",
+     "title": "Night Of Doom",
+     "channel": "Rick Van Der Linden - Topic",
+     "work": "Night Of Doom",
+     "workYear": 1978
+    },
+    {
+     "videoId": "_NhCVaPT534",
+     "title": "Dance Of The White Ladies",
+     "channel": "Rick Van Der Linden - Topic",
+     "work": "The White Ladies",
+     "workYear": 1976
+    }
+   ]
+  },
+  {
+   "id": "9b87c1f6-23ae-469b-b710-ea5da2d3f848",
+   "name": "Glenn Miller and His Orchestra",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": []
+  },
+  {
+   "id": "7de3b7b4-8288-4baf-929b-98af9224c0cb",
+   "name": "Lebanon Hanover",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 23,
+   "verified": [
+    {
+     "videoId": "WPw7nlluRdc",
+     "title": "Lebanon Hanover -- Gallowdance [official]",
+     "channel": "Lebanon Hanover",
+     "work": "Gallowdance",
+     "workYear": 2013
+    },
+    {
+     "videoId": "ahJGWww1jNc",
+     "title": "Lebanon Hanover - The Last Thing (Official Video)",
+     "channel": "Lebanon Hanover",
+     "work": "The Last Thing",
+     "workYear": 2020
+    },
+    {
+     "videoId": "5et43uJD2k4",
+     "title": "Lebanon Hanover - Better Than Going Under (Official Music Video)",
+     "channel": "Lebanon Hanover",
+     "work": "Better Than Going Under",
+     "workYear": 2023
+    },
+    {
+     "videoId": "8kXFnLI1bzc",
+     "title": "Babes of the 80s",
+     "channel": "Lebanon Hanover - Topic",
+     "work": "Babes of the 80s",
+     "workYear": 2016
+    },
+    {
+     "videoId": "EdKVd8lTboM",
+     "title": "Babes of the 80s (She Past Away)",
+     "channel": "Lebanon Hanover - Topic",
+     "work": "Babes of the 80s",
+     "workYear": 2016
+    },
+    {
+     "videoId": "a1oSXlU0ZUk",
+     "title": "Lebanon Hanover - Babes Of The 80s {Official Video} (Tobias Bernstrup Remix)",
+     "channel": "Lebanon Hanover",
+     "work": "Babes of the 80s",
+     "workYear": 2016
+    },
+    {
+     "videoId": "7UKOE7FaHL4",
+     "title": "Lebanon Hanover - Digital Ocean (Official Video)",
+     "channel": "Lebanon Hanover",
+     "work": "Digital Ocean",
+     "workYear": 2020
+    }
+   ]
+  },
+  {
+   "id": "2a7fb79c-cb5c-4d9e-85a0-f1140c59dc2c",
+   "name": "Vilkduja",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": [
+    {
+     "videoId": "JEIWc2Y-M4g",
+     "title": "VILKDUJA - Numinosum (Full Album Stream)",
+     "channel": "VILKDUJA",
+     "work": "Numinosum",
+     "workYear": 2024
+    }
+   ]
+  },
+  {
+   "id": "450f18e2-aec1-46ae-89cc-d7fba4bff44e",
+   "name": "Umbrellas",
+   "nonLatin": false,
+   "candidates": 4,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "67ed80ac-7d95-4f4a-babf-bd1dbd7d2391",
+   "name": "Terrahsphere",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "f1809410-bbc7-4340-99b1-ab1aac54c2de",
+   "name": "馬兆駿",
+   "nonLatin": true,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "6f1b3d92-a84b-40df-a111-6c0b189ca478",
+   "name": "Rashied Ali",
+   "nonLatin": false,
+   "candidates": 17,
+   "stillOnYoutube": 16,
+   "verified": [
+    {
+     "videoId": "pmCof_fPTc8",
+     "title": "Duo Exchange Part I (Movement 1)",
+     "channel": "Rashied Ali - Topic",
+     "work": "Duo Exchange",
+     "workYear": 1973
+    },
+    {
+     "videoId": "ac1-MPR8H40",
+     "title": "Duo Exchange Part II (Movement 3)",
+     "channel": "Rashied Ali - Topic",
+     "work": "Duo Exchange",
+     "workYear": 1973
+    }
+   ]
+  },
+  {
+   "id": "850ccd7c-31d0-4c06-8543-d0f1072fdc87",
+   "name": "Sergio Bruni",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 0,
+   "verified": []
+  },
+  {
+   "id": "5a05dce1-908f-4637-9771-df986d47a6a2",
+   "name": "Henghel Gualdi",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "1422da98-436d-4be5-9bf1-f8d2df2260c9",
+   "name": "Azúcar Negra",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "32a52e8d-ef6c-4abf-836e-c34ad88ebb1a",
+   "name": "Bloodsoaked",
+   "nonLatin": false,
+   "candidates": 6,
+   "stillOnYoutube": 6,
+   "verified": []
+  },
+  {
+   "id": "9476e65d-4daa-4e1b-ac3e-d470579ca526",
+   "name": "Mount Saturn",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "37bc339b-76aa-4a73-b970-bada74d5deed",
+   "name": "Vadim Neselovskyi",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 2,
+   "verified": [
+    {
+     "videoId": "BK2IiRtujko",
+     "title": "Vadim Neselovskyi / Odesa Railway Station / Odesa - a Musical Walk Through a Legendary City",
+     "channel": "Vadim Neselovskyi",
+     "work": "Odesa: A Musical Walk Through a Legendary City",
+     "workYear": 2022
+    }
+   ]
+  },
+  {
+   "id": "e60957f9-56fd-49f1-823f-e8d15f2b0eec",
+   "name": "竹村延和",
+   "nonLatin": true,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": []
+  },
+  {
+   "id": "95661480-c95f-4a8b-84ee-fbc0df204b99",
+   "name": "Crystal Tears",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "b083866c-6ef3-4c27-b360-7b601503c1e3",
+   "name": "Warren Ellis",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 23,
+   "verified": []
+  },
+  {
+   "id": "262ff6b4-3fb3-464e-a323-6be6c46b94c9",
+   "name": "Feliciano Amaral",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "b9fc4166-4794-489b-ae00-a0d100cb2cc7",
+   "name": "Nina Badrić",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 20,
+   "verified": [
+    {
+     "videoId": "n5UWPc2LlyM",
+     "title": "Nina Badric - Jos i sad",
+     "channel": "Nina Badric",
+     "work": "Nina",
+     "workYear": 2000
+    }
+   ]
+  },
+  {
+   "id": "7547c078-8d05-4bd1-bc40-faa16c5b4f42",
+   "name": "Rachelle Ann Go",
+   "nonLatin": false,
+   "candidates": 17,
+   "stillOnYoutube": 13,
+   "verified": []
+  },
+  {
+   "id": "7d91f5a5-ef65-4962-832d-f253ab644c2a",
+   "name": "Fireballs",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "2c38b459-37ea-4b75-9918-230ccbe37a43",
+   "name": "Shubha Mudgal",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "4f9085ac-40db-4b4b-a749-28d45c52a4b9",
+   "name": "EYE",
+   "nonLatin": false,
+   "candidates": 5,
+   "stillOnYoutube": 5,
+   "verified": []
+  },
+  {
+   "id": "2d1c2062-9cbb-4082-a469-828754a743a4",
+   "name": "VST & Co.",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 23,
+   "verified": []
+  },
+  {
+   "id": "82969842-de3c-483c-bceb-5a51c27071ee",
+   "name": "No To Co",
+   "nonLatin": false,
+   "candidates": 4,
+   "stillOnYoutube": 2,
+   "verified": [
+    {
+     "videoId": "v_kTIh9u_Xg",
+     "title": "Gdybym Mial Forse",
+     "channel": "No To Co - Topic",
+     "work": "Gdybym Mial Forse",
+     "workYear": 2006
+    }
+   ]
+  },
+  {
+   "id": "752f9b80-3d8b-4ec1-86cf-30095a82ff1e",
+   "name": "Aziza Brahim",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "2dd3f1d4-33da-4bca-b20a-eec0f9ffabdb",
+   "name": "Nelson Gonçalves",
+   "nonLatin": false,
+   "candidates": 20,
+   "stillOnYoutube": 18,
+   "verified": [
+    {
+     "videoId": "39iHplR8OTE",
+     "title": "Olhos nos Olhos",
+     "channel": "Nelson Gonçalves - Topic",
+     "work": "Nós",
+     "workYear": 1987
+    },
+    {
+     "videoId": "2lXu78a7ob0",
+     "title": "Escultura",
+     "channel": "Nelson Gonçalves - Topic",
+     "work": "Escultura",
+     "workYear": 1958
+    }
+   ]
+  },
+  {
+   "id": "610a62e8-541b-42e4-a3fe-8dd595be93a8",
+   "name": "Edgar Froese",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": [
+    {
+     "videoId": "5doOm0sDrSc",
+     "title": "Dalinetopia",
+     "channel": "Edgar Froese - Topic",
+     "work": "Dalinetopia",
+     "workYear": 2004
+    },
+    {
+     "videoId": "rLhCzapQCds",
+     "title": "Stuntman",
+     "channel": "Edgar Froese - Topic",
+     "work": "Stuntman",
+     "workYear": 1979
+    },
+    {
+     "videoId": "dxuRAiJAWew",
+     "title": "Pinnacles",
+     "channel": "Edgar Froese - Topic",
+     "work": "Pinnacles",
+     "workYear": 1983
+    },
+    {
+     "videoId": "TIcFj0jtokA",
+     "title": "Pinnacles (1995 Digital Remaster)",
+     "channel": "Edgar Froese - Topic",
+     "work": "Pinnacles",
+     "workYear": 1983
+    },
+    {
+     "videoId": "KBIjp7IlHwQ",
+     "title": "Pinnacles (2012 Remaster)",
+     "channel": "Edgar Froese - Topic",
+     "work": "Pinnacles",
+     "workYear": 1983
+    },
+    {
+     "videoId": "DZ2oCrCxotU",
+     "title": "Aqua",
+     "channel": "Edgar Froese - Topic",
+     "work": "Aqua",
+     "workYear": 1974
+    },
+    {
+     "videoId": "1-KvDT2zfgM",
+     "title": "Aqua",
+     "channel": "Edgar Froese - Topic",
+     "work": "Aqua",
+     "workYear": 1974
+    }
+   ]
+  },
+  {
+   "id": "3763e390-e1e6-4bff-984a-86418a9ed324",
+   "name": "Franco Califano",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 22,
+   "verified": []
+  },
+  {
+   "id": "4f6654b3-0ae3-44bc-9bed-e9477446beab",
+   "name": "Академический ансамбль песни и пляски Российской Армии имени А. В. Александрова",
+   "nonLatin": true,
+   "candidates": 24,
+   "stillOnYoutube": 20,
+   "verified": []
+  },
+  {
+   "id": "e4a87b96-8178-4f5f-bfa1-22fc95078c7e",
+   "name": "Oregon",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 22,
+   "verified": [
+    {
+     "videoId": "wPbIy2X4aLE",
+     "title": "Northwest Passage",
+     "channel": "Oregon - Topic",
+     "work": "Northwest Passage",
+     "workYear": 1997
+    },
+    {
+     "videoId": "Uy6rc2FicAU",
+     "title": "Ecotopia",
+     "channel": "Oregon - Topic",
+     "work": "Ecotopia",
+     "workYear": 1987
+    }
+   ]
+  },
+  {
+   "id": "2804de1f-96dc-4732-8dd7-d6bbeeb55112",
+   "name": "Ove Thue",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "a82ed651-b93c-4d44-aecc-070644c6d136",
+   "name": "Chyno Miranda",
+   "nonLatin": false,
+   "candidates": 10,
+   "stillOnYoutube": 10,
+   "verified": [
+    {
+     "videoId": "6Yg074J0h9U",
+     "title": "El Malquerido - Únicamente Tú \"Chino Miranda\"",
+     "channel": "Chyno Miranda",
+     "work": "El malquerido",
+     "workYear": 2015
+    },
+    {
+     "videoId": "pc-eicg0BEI",
+     "title": "El Malquerido - Frenesí  \"Chino Miranda\"",
+     "channel": "Chyno Miranda",
+     "work": "El malquerido",
+     "workYear": 2015
+    },
+    {
+     "videoId": "tlI95Ryv9BI",
+     "title": "El Malquerido - 1. Ese Bolero es Mío \"Chino Miranda\"",
+     "channel": "Chyno Miranda",
+     "work": "El malquerido",
+     "workYear": 2015
+    },
+    {
+     "videoId": "IV8X7uRX1gQ",
+     "title": "El Malquerido - 6. Cuando estemos viejos \"Chino Miranda\"",
+     "channel": "Chyno Miranda",
+     "work": "El malquerido",
+     "workYear": 2015
+    },
+    {
+     "videoId": "mEmor_CLPRE",
+     "title": "El Malquerido - 7. Entre tu amor y mi amor \"Chino Miranda\"",
+     "channel": "Chyno Miranda",
+     "work": "El malquerido",
+     "workYear": 2015
+    },
+    {
+     "videoId": "ov1ExY3kVq8",
+     "title": "El Malquerido - 10. Tu retirada \"Chino Miranda\"",
+     "channel": "Chyno Miranda",
+     "work": "El malquerido",
+     "workYear": 2015
+    },
+    {
+     "videoId": "GvubgxLCn5c",
+     "title": "El Malquerido - Mosaico Pirela 1 \"Chino Miranda\"",
+     "channel": "Chyno Miranda",
+     "work": "El malquerido",
+     "workYear": 2015
+    },
+    {
+     "videoId": "NoWJq6lSHj0",
+     "title": "El Malquerido - 9. Mosaico Pirela 3 \"Chino Miranda\"",
+     "channel": "Chyno Miranda",
+     "work": "El malquerido",
+     "workYear": 2015
+    }
+   ]
+  },
+  {
+   "id": "fd61f6be-78f7-40bf-a21c-c8470e62d351",
+   "name": "Atritas",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": [
+    {
+     "videoId": "fZ8IqpEB6TI",
+     "title": "Medium Antigod",
+     "channel": "Atritas - Topic",
+     "work": "Medium Antigod",
+     "workYear": 2007
+    }
+   ]
+  },
+  {
+   "id": "6fbfece4-f13a-4cd0-81df-81734821be30",
+   "name": "K. S. Chithra",
+   "nonLatin": false,
+   "candidates": 6,
+   "stillOnYoutube": 5,
+   "verified": []
+  },
+  {
+   "id": "25408a31-7775-4d38-9fe4-642661c41fff",
+   "name": "Peter Lovšin",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "639f7950-e4fb-473c-bc5e-0a0d17756788",
+   "name": "Antix",
+   "nonLatin": false,
+   "candidates": 9,
+   "stillOnYoutube": 9,
+   "verified": []
+  },
+  {
+   "id": "e28ed27c-637c-4adc-b8e4-61c82278648f",
+   "name": "Martire",
+   "nonLatin": false,
+   "candidates": 12,
+   "stillOnYoutube": 6,
+   "verified": []
+  },
+  {
+   "id": "7c1f9644-46dc-47fa-b4a7-a7a9cc8a2a8f",
+   "name": "Monty Alexander",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": [
+    {
+     "videoId": "Fa19SdkGgJs",
+     "title": "D-Day Voices",
+     "channel": "Monty Alexander - Topic",
+     "work": "D Day",
+     "workYear": 2024
+    },
+    {
+     "videoId": "Gw_5AM_kNGg",
+     "title": "East Of The River Nile",
+     "channel": "Monty Alexander - Topic",
+     "work": "The River",
+     "workYear": 1990
+    },
+    {
+     "videoId": "lf0FNHJFM2g",
+     "title": "These Love Notes",
+     "channel": "Monty Alexander - Topic",
+     "work": "Love Notes",
+     "workYear": 2022
+    }
+   ]
+  },
+  {
+   "id": "c64f69a3-c78d-43b5-875e-4f5d791de3c6",
+   "name": "Fausto Papetti",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": []
+  },
+  {
+   "id": "6f2f87e7-3ce9-4f1c-81dd-6f068a78cf26",
+   "name": "the Microphones",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": [
+    {
+     "videoId": "OvpQLUX33Z4",
+     "title": "Microphone, Pt. 1",
+     "channel": "The Microphones - Topic",
+     "work": "Microphone",
+     "workYear": 1996
+    },
+    {
+     "videoId": "N-YAnnxBkv0",
+     "title": "Microphone, Pt. 2",
+     "channel": "The Microphones - Topic",
+     "work": "Microphone",
+     "workYear": 1996
+    },
+    {
+     "videoId": "v3O2hWRmPb0",
+     "title": "It Wouldn't (Window)",
+     "channel": "The Microphones - Topic",
+     "work": "Window",
+     "workYear": 2000
+    },
+    {
+     "videoId": "-7NRxWsy4eA",
+     "title": "Wake Me Up (Window)",
+     "channel": "The Microphones - Topic",
+     "work": "Window",
+     "workYear": 2000
+    },
+    {
+     "videoId": "ljCBb5fsijk",
+     "title": "Feedback Love (Window)",
+     "channel": "The Microphones - Topic",
+     "work": "Window",
+     "workYear": 2000
+    }
+   ]
+  },
+  {
+   "id": "7c687bbb-ba1a-496d-919a-f322530739e4",
+   "name": "Fish",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": [
+    {
+     "videoId": "E6wqjrTTR-0",
+     "title": "Fish: Internal Exile",
+     "channel": "Fish",
+     "work": "Internal Exile",
+     "workYear": 1991
+    },
+    {
+     "videoId": "Jwq3lfBe2KI",
+     "title": "Internal Exile",
+     "channel": "Fish - Topic",
+     "work": "Internal Exile",
+     "workYear": 1991
+    },
+    {
+     "videoId": "lO5El4dwVvk",
+     "title": "Big Wedge",
+     "channel": "Fish - Topic",
+     "work": "Big Wedge",
+     "workYear": 1989
+    },
+    {
+     "videoId": "HBX-_uIHld0",
+     "title": "The Company",
+     "channel": "Fish - Topic",
+     "work": "The Company",
+     "workYear": 1990
+    },
+    {
+     "videoId": "nH_h5C3YoTQ",
+     "title": "State of Mind",
+     "channel": "Fish - Topic",
+     "work": "State of Mind",
+     "workYear": 1989
+    },
+    {
+     "videoId": "3BL1EgIJ_Lo",
+     "title": "A Gentleman's Excuse Me",
+     "channel": "Fish - Topic",
+     "work": "A Gentleman’s Excuse Me",
+     "workYear": 1990
+    },
+    {
+     "videoId": "u1xyehGC0_c",
+     "title": "Fish: Just Good Friends feat. Sam Brown",
+     "channel": "Fish",
+     "work": "Just Good Friends",
+     "workYear": 1995
+    },
+    {
+     "videoId": "V8AzokCPgsY",
+     "title": "Fish: Credo",
+     "channel": "Fish",
+     "work": "Credo",
+     "workYear": 1991
+    },
+    {
+     "videoId": "vv-EVVd3MXE",
+     "title": "Credo",
+     "channel": "Fish - Topic",
+     "work": "Credo",
+     "workYear": 1991
+    },
+    {
+     "videoId": "Sxzy4uFWwqs",
+     "title": "Fortunes of War (The Remasters)",
+     "channel": "Fish - Topic",
+     "work": "Fortunes of War",
+     "workYear": 1998
+    },
+    {
+     "videoId": "Qb9HdOubNec",
+     "title": "Lady Let It Lie (1993 Demo) (The Remasters)",
+     "channel": "Fish - Topic",
+     "work": "Lady Let It Lie",
+     "workYear": 1994
+    }
+   ]
+  },
+  {
+   "id": "0b1a0ca5-52cb-4d1d-8344-746f905ae115",
+   "name": "Tommy Edwards",
+   "nonLatin": false,
+   "candidates": 14,
+   "stillOnYoutube": 13,
+   "verified": [
+    {
+     "videoId": "6CvLIlQUhYk",
+     "title": "It's All In The Game",
+     "channel": "Tommy Edwards - Topic",
+     "work": "It's All in the Game",
+     "workYear": 1993
+    },
+    {
+     "videoId": "ubsb25Ckkbg",
+     "title": "It's All In The Game",
+     "channel": "Tommy Edwards - Topic",
+     "work": "It's All in the Game",
+     "workYear": 1993
+    },
+    {
+     "videoId": "m4IkwQjq7Bw",
+     "title": "The Morning Side Of The Mountain",
+     "channel": "Tommy Edwards - Topic",
+     "work": "The Morning Side Of The Mountain",
+     "workYear": 1959
+    },
+    {
+     "videoId": "Y_DWxUb0vjs",
+     "title": "It's All In The Game",
+     "channel": "Tommy Edwards - Topic",
+     "work": "It's All in the Game",
+     "workYear": 1993
+    }
+   ]
+  },
+  {
+   "id": "892694d8-2560-458b-84e0-581039965409",
+   "name": "Hagood Hardy",
+   "nonLatin": false,
+   "candidates": 8,
+   "stillOnYoutube": 8,
+   "verified": []
+  },
+  {
+   "id": "64c98753-d570-47ec-b5f6-0c0ac0f23811",
+   "name": "Shankar",
+   "nonLatin": false,
+   "candidates": 19,
+   "stillOnYoutube": 15,
+   "verified": [
+    {
+     "videoId": "BmRAjaeNbDk",
+     "title": "Drum Solos - Pancha Nadai Pallavi",
+     "channel": "Shankar - Topic",
+     "work": "Pancha Nadai Pallavi",
+     "workYear": 1990
+    },
+    {
+     "videoId": "lZ_PnjFW1M8",
+     "title": "Sankarabaranam Pancha Nadai Pallavi",
+     "channel": "Shankar - Topic",
+     "work": "Pancha Nadai Pallavi",
+     "workYear": 1990
+    }
+   ]
+  },
+  {
+   "id": "e1deae56-c8f0-4e73-8264-f4b02dfc051c",
+   "name": "Ma Rainey",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 23,
+   "verified": [
+    {
+     "videoId": "nm4FtuEe05g",
+     "title": "Countin' the Blues",
+     "channel": "Ma Rainey - Topic",
+     "work": "Countin' the Blues",
+     "workYear": null
+    }
+   ]
+  },
+  {
+   "id": "a85bbe3a-07c7-41fb-a52c-0f531ad4dbe7",
+   "name": "Aleksander Mežek",
+   "nonLatin": false,
+   "candidates": 7,
+   "stillOnYoutube": 6,
+   "verified": []
+  },
+  {
+   "id": "d0c31d52-b13a-4407-a4f1-b9d01be751b4",
+   "name": "Irina Björklund",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": [
+    {
+     "videoId": "149SpWXTZqE",
+     "title": "Barely Ann-Mari",
+     "channel": "Irina Björklund - Topic",
+     "work": "Barely Ann-Mari",
+     "workYear": 2020
+    }
+   ]
+  },
+  {
+   "id": "b7265676-b5e4-462d-b3e2-0490295f2192",
+   "name": "Danilo Rea",
+   "nonLatin": false,
+   "candidates": 5,
+   "stillOnYoutube": 5,
+   "verified": []
+  },
+  {
+   "id": "e7ee3c01-63c5-49e3-90c5-5e4c68f5069f",
+   "name": "Arcanist",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "050f9969-d9a6-4e0d-b92b-f34d9402f0e7",
+   "name": "In the Pines",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "036c6b57-158f-45d7-9585-daeb2ceb692b",
+   "name": "Poison Blood",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "a7aeb541-5e2d-4552-a2c5-8f73723b78ca",
+   "name": "Mrtvi kanal",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "078e4b63-747f-45e3-8bf3-11df848e567e",
+   "name": "Dry Socket",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "bb5ee247-642f-45ab-888a-2e2d40da5543",
+   "name": "Totta Näslund",
+   "nonLatin": false,
+   "candidates": 4,
+   "stillOnYoutube": 4,
+   "verified": [
+    {
+     "videoId": "ZfrLToKqLVE",
+     "title": "Alltid inom mig",
+     "channel": "Totta Näslund - Topic",
+     "work": "Alltid inom mig",
+     "workYear": 1995
+    }
+   ]
+  },
+  {
+   "id": "428f8c7c-c03e-42d9-975a-82fd948ea12f",
+   "name": "Jarboli",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": [
+    {
+     "videoId": "2aoeG0pzfsg",
+     "title": "Suvišna Sloboda",
+     "channel": "Jarboli - Topic",
+     "work": "Suvišna Sloboda",
+     "workYear": 2001
+    }
+   ]
+  },
+  {
+   "id": "4c7ae6cc-0ec4-4321-8cc7-acca90bc93c4",
+   "name": "David T. Chastain",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": [
+    {
+     "videoId": "dryfTNYnn9o",
+     "title": "Countdown to Infinity",
+     "channel": "David T. Chastain - Topic",
+     "work": "Countdown To Infinity",
+     "workYear": 2007
+    }
+   ]
+  },
+  {
+   "id": "9b5d4e96-4b95-4dae-a618-6cdfcd690ac7",
+   "name": "Art Porter",
+   "nonLatin": false,
+   "candidates": 20,
+   "stillOnYoutube": 19,
+   "verified": [
+    {
+     "videoId": "P1_YBGhXJFM",
+     "title": "Undercover",
+     "channel": "Art Porter - Topic",
+     "work": "Undercover",
+     "workYear": 1994
+    },
+    {
+     "videoId": "RrZCxr3DJhk",
+     "title": "Lay Your Hands On Me",
+     "channel": "Art Porter - Topic",
+     "work": "Lay Your Hands On Me",
+     "workYear": 1996
+    },
+    {
+     "videoId": "V-UkTIxZokk",
+     "title": "Pocket City",
+     "channel": "Art Porter - Topic",
+     "work": "Pocket City",
+     "workYear": 1992
+    },
+    {
+     "videoId": "1lx6EchETMU",
+     "title": "Lay Your Hands On Me",
+     "channel": "Art Porter - Topic",
+     "work": "Lay Your Hands On Me",
+     "workYear": 1996
+    },
+    {
+     "videoId": "FrzQEnkUK4k",
+     "title": "Straight To The Point",
+     "channel": "Art Porter - Topic",
+     "work": "Straight to the Point",
+     "workYear": 1993
+    }
+   ]
+  },
+  {
+   "id": "27c55af5-0d9b-4a59-94d9-460f78dd8130",
+   "name": "Harry Miller",
+   "nonLatin": false,
+   "candidates": 5,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "80768c9d-ab79-4e0b-a1c8-c3135f50d40f",
+   "name": "Jiří Korn",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "6297adeb-4120-418a-ae91-adf6036528fa",
+   "name": "Shy, Low",
+   "nonLatin": false,
+   "candidates": 10,
+   "stillOnYoutube": 10,
+   "verified": []
+  },
+  {
+   "id": "e2b30f71-a5ce-4f94-8a58-0b83905d29a2",
+   "name": "Marc Miralta",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "26da76ed-f577-4926-93d4-50dcc9597066",
+   "name": "Xtematic",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "b09f5c3e-0402-4d76-bbeb-611da59c9d7a",
+   "name": "Ted Curson",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": [
+    {
+     "videoId": "ZdDIzXlU3xk",
+     "title": "Blue Piccolo",
+     "channel": "Ted Curson - Topic",
+     "work": "Blue Piccolo",
+     "workYear": 1976
+    },
+    {
+     "videoId": "9lxS1UoSWHo",
+     "title": "Tears For Dolphy",
+     "channel": "Ted Curson - Topic",
+     "work": "Tears for Dolphy",
+     "workYear": 1965
+    },
+    {
+     "videoId": "3M8fgUrtzQo",
+     "title": "Quicksand",
+     "channel": "Ted Curson - Topic",
+     "work": "Quicksand",
+     "workYear": 1977
+    },
+    {
+     "videoId": "GDrTjix4GWA",
+     "title": "Pop Wine",
+     "channel": "Ted Curson - Topic",
+     "work": "Pop Wine",
+     "workYear": 1971
+    },
+    {
+     "videoId": "8Nmcbx8_2EA",
+     "title": "Flip Top",
+     "channel": "Ted Curson - Topic",
+     "work": "Flip Top",
+     "workYear": 1977
+    },
+    {
+     "videoId": "DjcezruW7pA",
+     "title": "Typical Ted (Cattin' Curson)",
+     "channel": "Ted Curson - Topic",
+     "work": "(Typical Ted)",
+     "workYear": 1975
+    },
+    {
+     "videoId": "kGx-lHQGFA0",
+     "title": "Caravan (Plenty of Horn)",
+     "channel": "Ted Curson - Topic",
+     "work": "Plenty of Horn",
+     "workYear": 1961
+    },
+    {
+     "videoId": "8wAAmi_A-F4",
+     "title": "Ahma (See Ya) (Plenty of Horn)",
+     "channel": "Ted Curson - Topic",
+     "work": "Plenty of Horn",
+     "workYear": 1961
+    },
+    {
+     "videoId": "EiHc8luYIbU",
+     "title": "Nosruc Waltz (Plenty of Horn)",
+     "channel": "Ted Curson - Topic",
+     "work": "Plenty of Horn",
+     "workYear": 1961
+    },
+    {
+     "videoId": "8vmtoHL7wtA",
+     "title": "Antibes (Plenty of Horn)",
+     "channel": "Ted Curson - Topic",
+     "work": "Plenty of Horn",
+     "workYear": 1961
+    },
+    {
+     "videoId": "8y6-zMvtn5I",
+     "title": "Flatted Fifth (Plenty of Horn)",
+     "channel": "Ted Curson - Topic",
+     "work": "Plenty of Horn",
+     "workYear": 1961
+    }
+   ]
+  },
+  {
+   "id": "88186579-8596-41b0-ac96-650c4abed337",
+   "name": "Sinister Feeling",
+   "nonLatin": false,
+   "candidates": 4,
+   "stillOnYoutube": 4,
+   "verified": []
+  },
+  {
+   "id": "e96bed25-e9c7-4fa3-9db6-1ee9e3e0b265",
+   "name": "강타",
+   "nonLatin": true,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "1457949c-1fcf-4983-9363-8ec285da5132",
+   "name": "Sacher-Pelz",
+   "nonLatin": false,
+   "candidates": 12,
+   "stillOnYoutube": 11,
+   "verified": []
+  },
+  {
+   "id": "06859f67-5c97-4046-906e-f09b3da7058b",
+   "name": "...And Sometimes I",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "c00c75ff-c83c-40ec-b37b-f478a6c3b5f5",
+   "name": "Marijonas Mikutavičius",
+   "nonLatin": false,
+   "candidates": 7,
+   "stillOnYoutube": 7,
+   "verified": [
+    {
+     "videoId": "deb94n3dSgg",
+     "title": "Marijonas Mikutavičius \"Pasveikinkit vieni kitus\"",
+     "channel": "Marijonas Mikutavičius",
+     "work": "Pasveikinkit vieni kitus",
+     "workYear": 2004
+    },
+    {
+     "videoId": "Qcv6ZjVIN80",
+     "title": "Marijonas Mikutavičius - Pasveikinkit vieni kitus",
+     "channel": "Marijonas Mikutavičius",
+     "work": "Pasveikinkit vieni kitus",
+     "workYear": 2004
+    },
+    {
+     "videoId": "upucEgwjiJs",
+     "title": "Marijonas Mikutavičius - Trys milijonai",
+     "channel": "Marijonas Mikutavičius",
+     "work": "Trys milijonai",
+     "workYear": 2000
+    },
+    {
+     "videoId": "uInNL6dueZQ",
+     "title": "Marijonas Mikutavičius - Ši vasara",
+     "channel": "Marijonas Mikutavičius",
+     "work": "Ši vasara",
+     "workYear": 2020
+    }
+   ]
+  },
+  {
+   "id": "2660777f-3722-44ab-84a2-acdefc31020e",
+   "name": "Kalevi Aho",
+   "nonLatin": false,
+   "candidates": 4,
+   "stillOnYoutube": 4,
+   "verified": []
+  },
+  {
+   "id": "93ee15bc-ec4f-468a-b68b-a4bd29f3b9c1",
+   "name": "Greyhound Soul",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": [
+    {
+     "videoId": "GbP_oXUfLVk",
+     "title": "Freaks",
+     "channel": "Greyhound Soul - Topic",
+     "work": "Freaks",
+     "workYear": 2000
+    }
+   ]
+  },
+  {
+   "id": "d01f80b3-456c-4fa7-9dc0-b883ac79225c",
+   "name": "许魏洲",
+   "nonLatin": true,
+   "candidates": 24,
+   "stillOnYoutube": 21,
+   "verified": []
+  },
+  {
+   "id": "17484635-07f0-4bd5-9cb9-10394169ff9f",
+   "name": "Joanna Bruzdowicz",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "7ec2d825-bcce-4506-80f7-8ea392d47fd5",
+   "name": "The Pictish Trail",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "ff6c7c4f-b7c8-4a9e-a04c-612386a4a7b0",
+   "name": "Emrah",
+   "nonLatin": false,
+   "candidates": 5,
+   "stillOnYoutube": 1,
+   "verified": [
+    {
+     "videoId": "YfXyNcf75mU",
+     "title": "Ayrılamam",
+     "channel": "Emrah - Topic",
+     "work": "Ayrılamam",
+     "workYear": 1987
+    }
+   ]
+  },
+  {
+   "id": "60e492fd-d953-4de0-a6d1-2d5d27f2e0bb",
+   "name": "Helen Humes",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": [
+    {
+     "videoId": "ZFLJHkPSi10",
+     "title": "Solitude (Swingin’ with Humes)",
+     "channel": "Helen Humes - Topic",
+     "work": "Swingin’ With Humes",
+     "workYear": 1991
+    },
+    {
+     "videoId": "kmjQNoNSDrE",
+     "title": "I Surrender Dear (Swingin’ with Humes)",
+     "channel": "Helen Humes - Topic",
+     "work": "Swingin’ With Humes",
+     "workYear": 1991
+    },
+    {
+     "videoId": "jEy7HRBG43Y",
+     "title": "Some Day My Prince Will Come (Swingin’ with Humes)",
+     "channel": "Helen Humes - Topic",
+     "work": "Swingin’ With Humes",
+     "workYear": 1991
+    },
+    {
+     "videoId": "PS6PjVIPgVQ",
+     "title": "'Tain't Nobody's Biz-Ness If I Do",
+     "channel": "Helen Humes - Topic",
+     "work": "Tain’t Nobody’s Biz-Ness If I Do",
+     "workYear": 1991
+    },
+    {
+     "videoId": "DinRleA6Ujs",
+     "title": "Every Now and Then (Songs I Like to Sing!)",
+     "channel": "Helen Humes - Topic",
+     "work": "Songs I Like to Sing",
+     "workYear": 1988
+    },
+    {
+     "videoId": "MGF-IeuBZmI",
+     "title": "Imagination (Songs I Like to Sing!)",
+     "channel": "Helen Humes - Topic",
+     "work": "Songs I Like to Sing",
+     "workYear": 1988
+    },
+    {
+     "videoId": "pO-jieOHYV0",
+     "title": "I'm Confessin' (Swingin’ with Humes)",
+     "channel": "Helen Humes - Topic",
+     "work": "Swingin’ With Humes",
+     "workYear": 1991
+    },
+    {
+     "videoId": "l0slhEIh2Cs",
+     "title": "If I Could Be with You (Songs I Like to Sing!)",
+     "channel": "Helen Humes - Topic",
+     "work": "Songs I Like to Sing",
+     "workYear": 1988
+    },
+    {
+     "videoId": "3UCeQKdaEl0",
+     "title": "S'posin' (Swingin’ with Humes)",
+     "channel": "Helen Humes - Topic",
+     "work": "Swingin’ With Humes",
+     "workYear": 1991
+    },
+    {
+     "videoId": "DhZTDBmWk-s",
+     "title": "My Blue Heaven (Swingin’ with Humes)",
+     "channel": "Helen Humes - Topic",
+     "work": "Swingin’ With Humes",
+     "workYear": 1991
+    },
+    {
+     "videoId": "4jzJ3W1MgME",
+     "title": "You're Driving Me Crazy (Songs I Like to Sing!)",
+     "channel": "Helen Humes - Topic",
+     "work": "Songs I Like to Sing",
+     "workYear": 1988
+    },
+    {
+     "videoId": "3yFdKSYOLWU",
+     "title": "Love Me or Leave Me (Songs I Like to Sing!)",
+     "channel": "Helen Humes - Topic",
+     "work": "Songs I Like to Sing",
+     "workYear": 1988
+    },
+    {
+     "videoId": "iPsKjZMotl0",
+     "title": "Don't Worry 'Bout Me (Songs I Like to Sing!)",
+     "channel": "Helen Humes - Topic",
+     "work": "Songs I Like to Sing",
+     "workYear": 1988
+    },
+    {
+     "videoId": "S4enK6eXch8",
+     "title": "Million Dollar Secret (Songs I Like to Sing!)",
+     "channel": "Helen Humes - Topic",
+     "work": "Songs I Like to Sing",
+     "workYear": 1988
+    },
+    {
+     "videoId": "OvZT842bFgU",
+     "title": "New Million Dollar Secret (08-?-50)",
+     "channel": "Helen Humes - Topic",
+     "work": "New Million Dollar Secret",
+     "workYear": 1987
+    }
+   ]
+  },
+  {
+   "id": "83decc90-2ce4-4f40-92c9-e80750e16d91",
+   "name": "Your Funeral",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "3bd5f331-196f-497e-acc8-6e97b3df46c9",
+   "name": "Jarema Stępowski",
+   "nonLatin": false,
+   "candidates": 5,
+   "stillOnYoutube": 4,
+   "verified": []
+  },
+  {
+   "id": "4025719a-0a2c-4a21-9ba4-dfae792bb216",
+   "name": "Sir George Dyson",
+   "nonLatin": false,
+   "candidates": 14,
+   "stillOnYoutube": 14,
+   "verified": []
+  },
+  {
+   "id": "5c2be4de-8b3a-46da-b5c5-8950ecf9f91a",
+   "name": "Tomaž Pengov",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "e777b9a2-ef06-474a-a9fb-9e956a311cc9",
+   "name": "Bill Keith",
+   "nonLatin": false,
+   "candidates": 19,
+   "stillOnYoutube": 19,
+   "verified": []
+  },
+  {
+   "id": "716f3af5-d863-450b-9f59-55ed45fdeaf3",
+   "name": "Francesca Solleville",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 13,
+   "verified": [
+    {
+     "videoId": "mLm5SE0WA70",
+     "title": "La petite juive",
+     "channel": "Francesca Solleville - Topic",
+     "work": "La Petite Juive",
+     "workYear": 1966
+    }
+   ]
+  },
+  {
+   "id": "b8468bc4-a202-4c2a-ba1e-7dc75d9cbcf0",
+   "name": "Leo Maslíah",
+   "nonLatin": false,
+   "candidates": 10,
+   "stillOnYoutube": 7,
+   "verified": [
+    {
+     "videoId": "jeMzfD32BMU",
+     "title": "Leo Maslíah / Sin palabras 1 (disco entero)",
+     "channel": "Leo Maslíah",
+     "work": "Sin palabras",
+     "workYear": 2001
+    }
+   ]
+  },
+  {
+   "id": "c999a6dc-ee42-41b0-8b83-270e4587c04c",
+   "name": "Johnny Reid",
+   "nonLatin": false,
+   "candidates": 5,
+   "stillOnYoutube": 5,
+   "verified": []
+  },
+  {
+   "id": "9bdbe965-79f8-433a-80cf-db4b9cb1d21e",
+   "name": "รุ่งเพชร แหลมสิงห์",
+   "nonLatin": true,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "688178e7-2308-4e8c-8e6d-66a025f895fb",
+   "name": "Mirwais",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": [
+    {
+     "videoId": "Gc2C0kp8bwI",
+     "title": "Mirwais - Disco Science (Official Music Video)",
+     "channel": "MIRWAIS",
+     "work": "Disco Science",
+     "workYear": 2000
+    }
+   ]
+  },
+  {
+   "id": "fb7272ba-f130-4f0a-934d-6eeea4c18c9a",
+   "name": "Al Green",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": [
+    {
+     "videoId": "9FBUgdhxe9M",
+     "title": "Al Green - Take Me To The River (Official Audio)",
+     "channel": "Al Green",
+     "work": "Take Me to the River",
+     "workYear": 2000
+    },
+    {
+     "videoId": "PTY6Kv0nPr8",
+     "title": "Al Green - How Can You Mend a Broken Heart (Official Audio)",
+     "channel": "Al Green",
+     "work": "Al",
+     "workYear": 1992
+    }
+   ]
+  },
+  {
+   "id": "f353b91a-2d13-4254-97d1-17ab9599e6e2",
+   "name": "No Name",
+   "nonLatin": false,
+   "candidates": 13,
+   "stillOnYoutube": 13,
+   "verified": [
+    {
+     "videoId": "Vzw4M8C4ai8",
+     "title": "V PÔVODNOM ZNENÍ",
+     "channel": "No Name - Topic",
+     "work": "V pôvodnom znení",
+     "workYear": 2023
+    }
+   ]
+  },
+  {
+   "id": "b855376f-0104-4dd8-8c57-99936c906470",
+   "name": "Liam Weldon",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "bb29386a-49d9-40a7-8b94-f3acdeb2dc0c",
+   "name": "Nite Life",
+   "nonLatin": false,
+   "candidates": 7,
+   "stillOnYoutube": 6,
+   "verified": []
+  },
+  {
+   "id": "2922020f-fe87-48df-bede-81d29899d70e",
+   "name": "Felled",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "06ed4e1e-4416-4a7c-b14b-bc68dfd252aa",
+   "name": "Jimmie Davis",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": []
+  },
+  {
+   "id": "f9d9dd23-7b6e-4644-ae74-163247af2c67",
+   "name": "Lamberto Gardelli",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "1b41f6a4-8749-4faa-8d87-d7b1e3b5d8fd",
+   "name": "Pepel in kri",
+   "nonLatin": false,
+   "candidates": 4,
+   "stillOnYoutube": 3,
+   "verified": [
+    {
+     "videoId": "ZrRHKDu9vLI",
+     "title": "Dan ljubezni",
+     "channel": "Pepel in kri - Topic",
+     "work": "Dan ljubezni",
+     "workYear": 1999
+    }
+   ]
+  },
+  {
+   "id": "c035835b-16d3-40a6-bfa4-19e3f9081531",
+   "name": "John Spencer",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 23,
+   "verified": []
+  },
+  {
+   "id": "89fefacc-26f0-487e-ab02-afe512dd4bad",
+   "name": "Tiki",
+   "nonLatin": false,
+   "candidates": 11,
+   "stillOnYoutube": 10,
+   "verified": []
+  },
+  {
+   "id": "792134d2-22f9-4170-ac66-26fa45051ca6",
+   "name": "Trula Koalicija",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "546ee312-772b-4e4a-a49c-547ce181995d",
+   "name": "Kowalsky meg a Vega",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "46e8a8ee-d2cd-4165-9725-02f72d0027a9",
+   "name": "Matmos",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 20,
+   "verified": []
+  },
+  {
+   "id": "2f54c638-d4c6-41b0-9d7f-2e12c1c0b37f",
+   "name": "Stormheit",
+   "nonLatin": false,
+   "candidates": 7,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "0b59a279-54ef-4723-854e-a12b61e9581a",
+   "name": "Luke Vibert",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 24,
+   "verified": []
+  },
+  {
+   "id": "74249da4-580b-4cdd-b041-a83832861e9d",
+   "name": "Uaral",
+   "nonLatin": false,
+   "candidates": 7,
+   "stillOnYoutube": 7,
+   "verified": []
+  },
+  {
+   "id": "960a1d2f-2b5f-4fcf-bf11-4957529a6508",
+   "name": "Void",
+   "nonLatin": false,
+   "candidates": 8,
+   "stillOnYoutube": 7,
+   "verified": []
+  },
+  {
+   "id": "e9e279cd-1019-464f-8bdc-eb045ec835cf",
+   "name": "Slomatics",
+   "nonLatin": false,
+   "candidates": 7,
+   "stillOnYoutube": 7,
+   "verified": []
+  },
+  {
+   "id": "563201cb-721c-4cfb-acca-c1ba69e3d1fb",
+   "name": "Gerry Rafferty",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 22,
+   "verified": [
+    {
+     "videoId": "Fo6aKnRnBxM",
+     "title": "Gerry Rafferty - Baker Street (UK)",
+     "channel": "Gerry Rafferty",
+     "work": "Baker Street",
+     "workYear": null
+    }
+   ]
+  },
+  {
+   "id": "ee03c284-c6dc-49b5-ba31-e388157f6ed3",
+   "name": "J. Karjalainen",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "3ff99b4e-3824-40d4-8acb-0147c6eae948",
+   "name": "Pilot",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 23,
+   "verified": [
+    {
+     "videoId": "QPJqG0Q5e2c",
+     "title": "Just a Smile",
+     "channel": "Pilot - Topic",
+     "work": "Just a Smile",
+     "workYear": 1975
+    },
+    {
+     "videoId": "ybxOFda8ruQ",
+     "title": "Pilot- Just a Smile HD",
+     "channel": "Pilot",
+     "work": "Just a Smile",
+     "workYear": 1975
+    },
+    {
+     "videoId": "h6o38MN8yqE",
+     "title": "Magic (2003 Remaster)",
+     "channel": "Pilot - Topic",
+     "work": "Magic",
+     "workYear": 1997
+    },
+    {
+     "videoId": "bxgmTQ1Fv18",
+     "title": "January (2003 Remaster)",
+     "channel": "Pilot - Topic",
+     "work": "January",
+     "workYear": 1975
+    },
+    {
+     "videoId": "QlCgeOqBuI0",
+     "title": "Pilot- January Demo",
+     "channel": "Pilot",
+     "work": "January",
+     "workYear": 1975
+    }
+   ]
+  },
+  {
+   "id": "2645702c-97a3-45dd-b408-707362116101",
+   "name": "Pidżama Porno",
+   "nonLatin": false,
+   "candidates": 10,
+   "stillOnYoutube": 10,
+   "verified": [
+    {
+     "videoId": "_dfbmhWSWDQ",
+     "title": "Sprzedawca jutra",
+     "channel": "Pidżama Porno - Topic",
+     "work": "Sprzedawca jutra",
+     "workYear": 2019
+    }
+   ]
+  },
+  {
+   "id": "6cab10de-9971-4e06-b274-3f5b61439fa4",
+   "name": "Baba Salah",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "4a09f5d5-d843-4c16-9851-23efb0583c2a",
+   "name": "Apache",
+   "nonLatin": false,
+   "candidates": 17,
+   "stillOnYoutube": 17,
+   "verified": []
+  },
+  {
+   "id": "dba8be06-3af7-42c7-a218-ca9c199e19c1",
+   "name": "The Go Find",
+   "nonLatin": false,
+   "candidates": 3,
+   "stillOnYoutube": 3,
+   "verified": []
+  },
+  {
+   "id": "62f4eee4-77f4-4cc7-b4f5-9cbf658f9612",
+   "name": "Francis M",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 16,
+   "verified": []
+  },
+  {
+   "id": "c5bdf6e6-44a2-4bae-a70f-6831ffbb13f2",
+   "name": "Tim Pierce",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "7a7142a8-1475-4b87-93f4-b0b1c1c5939c",
+   "name": "Suppression",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  },
+  {
+   "id": "d761e4d3-b96b-4e70-8dac-c3b992aaf075",
+   "name": "The Pussycats",
+   "nonLatin": false,
+   "candidates": 1,
+   "stillOnYoutube": 1,
+   "verified": []
+  },
+  {
+   "id": "4c0bb5bc-95ad-47de-99e3-fbb4fbc5f393",
+   "name": "Aaron Carter",
+   "nonLatin": false,
+   "candidates": 24,
+   "stillOnYoutube": 23,
+   "verified": []
+  },
+  {
+   "id": "581687d6-06c2-46b8-bfeb-e7460ce96544",
+   "name": "Alloy Mental",
+   "nonLatin": false,
+   "candidates": 23,
+   "stillOnYoutube": 23,
+   "verified": [
+    {
+     "videoId": "-BAVUYs_QyI",
+     "title": "God Is Green (Phil Kieran Club Mix)",
+     "channel": "Alloy Mental - Topic",
+     "work": "God Is Green",
+     "workYear": 2007
+    }
+   ]
+  },
+  {
+   "id": "27ba9460-0817-4c63-a921-b1fed030c607",
+   "name": "Brain Police",
+   "nonLatin": false,
+   "candidates": 2,
+   "stillOnYoutube": 2,
+   "verified": []
+  }
+ ]
+}

@@ -1,0 +1,212 @@
+{
+ "summary": {
+  "snapshot": "MB JSON dump 2026-08-29 + Discogs dump 2026-09-01 (local indexes)",
+  "pooledArtists": 92068,
+  "placeYears": 25249,
+  "artistDecadePairs": 369450,
+  "pairsByKind": {
+   "noTitle": 99458,
+   "searchNonLatin": 18153,
+   "searchLatin": 194765,
+   "channel": 57074
+  },
+  "searchBoundPairs": 212918,
+  "searchBoundArtists": 53044,
+  "pairsPerSearchArtist": 4.01,
+  "daysToSearchEveryPairOnceAt100": 2130,
+  "coldWalkSearchesPerPlaceYear": {
+   "n": 25249,
+   "median": 29,
+   "p75": 135,
+   "p90": 196,
+   "p99": 267,
+   "max": 292
+  },
+  "coldWalkNonLatinSearchesPerPlaceYear": {
+   "n": 25249,
+   "median": 0,
+   "p75": 0,
+   "p90": 7,
+   "p99": 153,
+   "max": 256
+  },
+  "placeYearsOver100Searches": 7627,
+  "placeYearsOver50Searches": 10462,
+  "firstBatchSearchesPerPlaceYear": {
+   "n": 25249,
+   "median": 7,
+   "p75": 11,
+   "p90": 13,
+   "p99": 15,
+   "max": 15
+  },
+  "egypt1966": {
+   "code": "EG",
+   "year": 1966,
+   "pool": 68,
+   "noTitle": 24,
+   "channel": 0,
+   "searchLatin": 16,
+   "searchNonLatin": 28,
+   "search": 44,
+   "firstBatchSearch": 14
+  },
+  "hungriest": [
+   {
+    "code": "FI",
+    "year": 1971,
+    "pool": 300,
+    "noTitle": 0,
+    "channel": 8,
+    "searchLatin": 292,
+    "searchNonLatin": 0,
+    "search": 292,
+    "firstBatchSearch": 14
+   },
+   {
+    "code": "FI",
+    "year": 1972,
+    "pool": 300,
+    "noTitle": 0,
+    "channel": 8,
+    "searchLatin": 292,
+    "searchNonLatin": 0,
+    "search": 292,
+    "firstBatchSearch": 14
+   },
+   {
+    "code": "FI",
+    "year": 1973,
+    "pool": 300,
+    "noTitle": 0,
+    "channel": 8,
+    "searchLatin": 292,
+    "searchNonLatin": 0,
+    "search": 292,
+    "firstBatchSearch": 14
+   },
+   {
+    "code": "FI",
+    "year": 1974,
+    "pool": 300,
+    "noTitle": 0,
+    "channel": 8,
+    "searchLatin": 292,
+    "searchNonLatin": 0,
+    "search": 292,
+    "firstBatchSearch": 14
+   },
+   {
+    "code": "FI",
+    "year": 1970,
+    "pool": 299,
+    "noTitle": 0,
+    "channel": 8,
+    "searchLatin": 291,
+    "searchNonLatin": 0,
+    "search": 291,
+    "firstBatchSearch": 14
+   },
+   {
+    "code": "NL",
+    "year": 1964,
+    "pool": 300,
+    "noTitle": 0,
+    "channel": 9,
+    "searchLatin": 291,
+    "searchNonLatin": 0,
+    "search": 291,
+    "firstBatchSearch": 13
+   },
+   {
+    "code": "FI",
+    "year": 1975,
+    "pool": 300,
+    "noTitle": 0,
+    "channel": 10,
+    "searchLatin": 290,
+    "searchNonLatin": 0,
+    "search": 290,
+    "firstBatchSearch": 14
+   },
+   {
+    "code": "FI",
+    "year": 1976,
+    "pool": 300,
+    "noTitle": 0,
+    "channel": 11,
+    "searchLatin": 289,
+    "searchNonLatin": 0,
+    "search": 289,
+    "firstBatchSearch": 15
+   },
+   {
+    "code": "NL",
+    "year": 1965,
+    "pool": 300,
+    "noTitle": 0,
+    "channel": 11,
+    "searchLatin": 289,
+    "searchNonLatin": 0,
+    "search": 289,
+    "firstBatchSearch": 13
+   },
+   {
+    "code": "NL",
+    "year": 1966,
+    "pool": 300,
+    "noTitle": 0,
+    "channel": 11,
+    "searchLatin": 289,
+    "searchNonLatin": 0,
+    "search": 289,
+    "firstBatchSearch": 13
+   },
+   {
+    "code": "NO",
+    "year": 1974,
+    "pool": 300,
+    "noTitle": 0,
+    "channel": 11,
+    "searchLatin": 289,
+    "searchNonLatin": 0,
+    "search": 289,
+    "firstBatchSearch": 12
+   },
+   {
+    "code": "DK",
+    "year": 1978,
+    "pool": 300,
+    "noTitle": 4,
+    "channel": 8,
+    "searchLatin": 288,
+    "searchNonLatin": 0,
+    "search": 288,
+    "firstBatchSearch": 13
+   }
+  ],
+  "discogs": {
+   "searchBoundWithDiscogsLink": {
+    "of": 53044,
+    "n": 39859
+   },
+   "searchBoundWithVideoRecord": {
+    "of": 53044,
+    "n": 34127
+   },
+   "searchBoundWithTitleBarCandidate": {
+    "of": 53044,
+    "n": 24950
+   },
+   "latinWithTitleBarCandidate": {
+    "of": 48624,
+    "n": 23307
+   },
+   "nonLatinWithTitleBarCandidate": {
+    "of": 4420,
+    "n": 1643
+   },
+   "searchBoundPairsWithCandidate": 101579
+  }
+ }
+}
