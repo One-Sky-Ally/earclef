@@ -21,8 +21,17 @@ export const UPLOAD_PAGES = 4
 
 export class QuotaError extends Error {}
 
+/**
+ * Daily limits are quota answers, never errors: the 10,000-unit quota
+ * answers 403 quotaExceeded, but the project's separate "Search
+ * Queries per day" cap answers 429 RESOURCE_EXHAUSTED (found Nov 18,
+ * 2026). Read as a plain error, that 429 made the queue route answer
+ * 502 and the player skip the artist, so a capped day ended on "No
+ * verified recordings" instead of "come back tomorrow".
+ */
 export async function ytJson(url: string): Promise<unknown> {
   const res = await fetch(url, { signal: AbortSignal.timeout(8000) })
+  if (res.status === 429) throw new QuotaError()
   if (res.status === 403) {
     const body = (await res.json().catch(() => ({}))) as {
       error?: { errors?: { reason?: string }[] }

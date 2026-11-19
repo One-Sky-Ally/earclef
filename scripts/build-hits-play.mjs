@@ -186,6 +186,8 @@ const mbJson = (url) => getJson(url, { 'User-Agent': UA })
 async function ytJson(url, cost) {
   const res = await fetch(url, { signal: AbortSignal.timeout(12000) })
   unitsSpent += cost
+  // The separate "Search Queries per day" cap answers 429, not 403.
+  if (res.status === 429) throw new QuotaError('YouTube daily search cap reached')
   if (res.status === 403) {
     const body = await res.json().catch(() => ({}))
     const reason = body?.error?.errors?.[0]?.reason ?? ''

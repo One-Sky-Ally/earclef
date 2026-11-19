@@ -1,0 +1,700 @@
+[
+ {
+  "stratum": "prominent",
+  "id": "0a354a70-b879-4697-ad9b-60bfe2bd1d63",
+  "name": "أم كلثوم",
+  "script": "Arabic",
+  "aliases": [
+   "oum kalsoum",
+   "oum kalthoum",
+   "umm kulthum",
+   "ummu gulsum"
+  ],
+  "place": "EG",
+  "decade": 1960
+ },
+ {
+  "stratum": "prominent",
+  "id": "810c7829-2e33-4dd9-876b-77a3d0ce1c2d",
+  "name": "فريد الأطرش",
+  "script": "Arabic",
+  "aliases": [
+   "farid al atrash"
+  ],
+  "place": "EG",
+  "decade": 1950
+ },
+ {
+  "stratum": "prominent",
+  "id": "0b91b4e7-5c97-4446-8665-27fe6026cd2f",
+  "name": "كاظم الساهر",
+  "script": "Arabic",
+  "aliases": [
+   "kadim al sahir"
+  ],
+  "place": "IQ",
+  "decade": 2000
+ },
+ {
+  "stratum": "prominent",
+  "id": "44b16e44-da77-4580-b851-0d765904573e",
+  "name": "Сергей Васильевич Рахманинов",
+  "script": "Cyrillic",
+  "aliases": [
+   "serge rachmaninoff",
+   "sergei rachmaninoff",
+   "sergei rachmaninov",
+   "sergei rachmaninow",
+   "sergei rahmaninov",
+   "sergei vasilievich rachmaninoff",
+   "sergei vasiljevits rahmaninov",
+   "sergei wassiljewitsch rachmaninow",
+   "sergej rachmaninov",
+   "sergej vasiljevitj rachmaninov",
+   "serguei rachmaninov"
+  ],
+  "place": "RU",
+  "decade": 1910
+ },
+ {
+  "stratum": "prominent",
+  "id": "1d68c830-1c1e-4d53-a391-969f1f53f5b8",
+  "name": "Роза Рымбаева",
+  "script": "Cyrillic",
+  "aliases": [
+   "roza rymbayeva"
+  ],
+  "place": "KZ",
+  "decade": 1980
+ },
+ {
+  "stratum": "prominent",
+  "id": "e5c557a7-2d64-4da4-b97d-4061104f5563",
+  "name": "Щурците",
+  "script": "Cyrillic",
+  "aliases": [
+   "shturcite"
+  ],
+  "place": "BG",
+  "decade": 1990
+ },
+ {
+  "stratum": "prominent",
+  "id": "f96d6a53-2bcc-43af-b0b9-ed1718ea8afa",
+  "name": "阿炳",
+  "script": "Han",
+  "aliases": [
+   "abing",
+   "hua yanjun"
+  ],
+  "place": "CN",
+  "decade": 1940
+ },
+ {
+  "stratum": "prominent",
+  "id": "ffcc8b22-d663-42a1-b17e-b316785c1b01",
+  "name": "劉家昌",
+  "script": "Han",
+  "aliases": [
+   "liu chia chang",
+   "liu jia chang",
+   "liu jiachang",
+   "liu jie chang",
+   "steven liu"
+  ],
+  "place": "TW",
+  "decade": 1970
+ },
+ {
+  "stratum": "prominent",
+  "id": "078be324-de92-4c72-9371-65bdcf324154",
+  "name": "細野晴臣",
+  "script": "Han",
+  "aliases": [
+   "harry hosono",
+   "haruomi hosono"
+  ],
+  "place": "JP",
+  "decade": 1970
+ },
+ {
+  "stratum": "prominent",
+  "id": "605a645c-f6c2-43b8-994b-7dedc2eec469",
+  "name": "엄정화",
+  "script": "Hangul",
+  "aliases": [
+   "uhm jung hwa"
+  ],
+  "place": "KR",
+  "decade": 2000
+ },
+ {
+  "stratum": "prominent",
+  "id": "64bf8e96-63e3-4557-8a84-c0df7ad8d18d",
+  "name": "Βασίλης Τσιτσάνης",
+  "script": "Greek",
+  "aliases": [
+   "v tsitsanis",
+   "vassilis tsitsanis"
+  ],
+  "place": "GR",
+  "decade": 1960
+ },
+ {
+  "stratum": "prominent",
+  "id": "72495349-71ef-4714-b382-d6764a9c5666",
+  "name": "שושנה דמארי",
+  "script": "Hebrew",
+  "aliases": [
+   "shoshana damari"
+  ],
+  "place": "IL",
+  "decade": 1970
+ },
+ {
+  "stratum": "prominent",
+  "id": "9bbad279-738d-4ac1-b672-d76011526ada",
+  "name": "สุรพล สมบัติเจริญ",
+  "script": "Thai",
+  "aliases": [
+   "suraphon sombatcharoen"
+  ],
+  "place": "TH",
+  "decade": 1950
+ },
+ {
+  "stratum": "prominent",
+  "id": "aaa34df8-58a5-4c93-9f93-420be158a516",
+  "name": "ザ・ピーナッツ",
+  "script": "Japanese kana",
+  "aliases": [
+   "the peanuts"
+  ],
+  "place": "JP",
+  "decade": 1960
+ },
+ {
+  "stratum": "prominent",
+  "id": "fa61446c-0a1c-4e1d-8842-1d416a69b346",
+  "name": "စိုင်းထီးဆိုင်",
+  "script": "Myanmar",
+  "aliases": [
+   "sai htee saing"
+  ],
+  "place": "MM",
+  "decade": 1980
+ },
+ {
+  "id": "8f507019-f103-4d27-8a34-5b4540897bbf",
+  "name": "رولا سعد",
+  "script": "Arabic",
+  "aliases": [
+   "rola",
+   "rola saad"
+  ],
+  "place": "LB",
+  "decade": 2010,
+  "stratum": "random"
+ },
+ {
+  "id": "c19ad0d9-4e21-4579-8940-ca61cbca1d8c",
+  "name": "مرسيل خليفة",
+  "script": "Arabic",
+  "aliases": [
+   "marcel khalife"
+  ],
+  "place": "LB",
+  "decade": 2010,
+  "stratum": "random"
+ },
+ {
+  "id": "26de00e4-817e-416b-8478-a8f22cea91e7",
+  "name": "حمادة هلال",
+  "script": "Arabic",
+  "aliases": [
+   "hamada helal"
+  ],
+  "place": "EG",
+  "decade": 2000,
+  "stratum": "random"
+ },
+ {
+  "id": "14e433b5-1aa8-498c-a773-c5a8e8c91c79",
+  "name": "جوزيف صقر",
+  "script": "Arabic",
+  "aliases": [
+   "joseph sakr"
+  ],
+  "place": "LB",
+  "decade": 1950,
+  "stratum": "random"
+ },
+ {
+  "id": "3758c649-c9bd-4aec-88b3-2ded38060965",
+  "name": "Клавдия Шульженко",
+  "script": "Cyrillic",
+  "aliases": [
+   "klavdiya ivanovna shulzhenko",
+   "klavdiya shulzhenko",
+   "klawdija iwanowna schulschenko",
+   "klawdija schulschenko"
+  ],
+  "place": "UA",
+  "decade": 1960,
+  "stratum": "random"
+ },
+ {
+  "id": "aae12a3d-8f00-410a-a87b-f19f8d7fd24e",
+  "name": "Александр Николаевич Черепнин",
+  "script": "Cyrillic",
+  "aliases": [
+   "aleksandr tjerepnin",
+   "aleksandr txerepnin",
+   "alexander nikolajewitsch tscherepnin",
+   "alexander tcherepnin",
+   "alexander tscherepnin"
+  ],
+  "place": "RU",
+  "decade": 1970,
+  "stratum": "random"
+ },
+ {
+  "id": "8ee9e9c6-492c-4765-b27c-9761a04a3192",
+  "name": "Константин Казански",
+  "script": "Cyrillic",
+  "aliases": [
+   "constantin kazanski"
+  ],
+  "place": "BG",
+  "decade": 1990,
+  "stratum": "random"
+ },
+ {
+  "id": "0d17c3cd-2c48-4bc6-a756-ba8bc25b488c",
+  "name": "Яков Флиер",
+  "script": "Cyrillic",
+  "aliases": [
+   "jakov fliere"
+  ],
+  "place": "RU",
+  "decade": 1910,
+  "stratum": "random"
+ },
+ {
+  "id": "9fab30ab-c2f5-45a2-bc9c-f06a69443975",
+  "name": "Натан Рахлин",
+  "script": "Cyrillic",
+  "aliases": [
+   "natan rakhlin"
+  ],
+  "place": "UA",
+  "decade": 1960,
+  "stratum": "random"
+ },
+ {
+  "id": "dd09e6b4-2fff-4315-a84c-4d8b886cd6cf",
+  "name": "Обичайните Заподозрени",
+  "script": "Cyrillic",
+  "aliases": [
+   "obichainite zapodozreni"
+  ],
+  "place": "BG",
+  "decade": 2010,
+  "stratum": "random"
+ },
+ {
+  "id": "4c1321d7-c880-456b-8e9e-2748419fcbaf",
+  "name": "Ирина Богушевская",
+  "script": "Cyrillic",
+  "aliases": [
+   "irina bogushevskaya"
+  ],
+  "place": "RU",
+  "decade": 1960,
+  "stratum": "random"
+ },
+ {
+  "id": "8c0857ce-d0a8-4b14-ae2f-89755351d4a1",
+  "name": "Сузанита",
+  "script": "Cyrillic",
+  "aliases": [
+   "suzanitta"
+  ],
+  "place": "BG",
+  "decade": 1980,
+  "stratum": "random"
+ },
+ {
+  "id": "96a94221-1894-405c-85d7-2c0534414252",
+  "name": "Димана",
+  "script": "Cyrillic",
+  "aliases": [
+   "dimana"
+  ],
+  "place": "BG",
+  "decade": 1990,
+  "stratum": "random"
+ },
+ {
+  "id": "5f773163-cc11-4745-9ff5-f84e58db4c2d",
+  "name": "Любо Киров",
+  "script": "Cyrillic",
+  "aliases": [
+   "lubo kirov"
+  ],
+  "place": "BG",
+  "decade": 1980,
+  "stratum": "random"
+ },
+ {
+  "id": "6badf867-cc3f-4fae-a6e7-9156e1769dc2",
+  "name": "Семён Бычков",
+  "script": "Cyrillic",
+  "aliases": [
+   "semjon bytschkow",
+   "semyon bychkov"
+  ],
+  "place": "RU",
+  "decade": 2000,
+  "stratum": "random"
+ },
+ {
+  "id": "f6533990-1455-4a40-802b-fe5cd976f308",
+  "name": "Конса",
+  "script": "Cyrillic",
+  "aliases": [
+   "consa",
+   "konsa"
+  ],
+  "place": "BG",
+  "decade": 2020,
+  "stratum": "random"
+ },
+ {
+  "id": "09ded9a7-8a07-4fb2-ad6f-668bb1e90a5b",
+  "name": "杉良太郎",
+  "script": "Han",
+  "aliases": [
+   "katsuhiro yamada",
+   "ryoutarou sugi",
+   "ryotaro sugi"
+  ],
+  "place": "JP",
+  "decade": 1960,
+  "stratum": "random"
+ },
+ {
+  "id": "e3a8a1e9-318a-431b-a0fd-2029c2704b25",
+  "name": "子門真人",
+  "script": "Han",
+  "aliases": [
+   "masato shimon"
+  ],
+  "place": "JP",
+  "decade": 1950,
+  "stratum": "random"
+ },
+ {
+  "id": "b25e3a2d-1450-4b09-94d1-3001c2063d32",
+  "name": "罗惠兰",
+  "script": "Han",
+  "aliases": [
+   "luo huilan"
+  ],
+  "place": "CN",
+  "decade": 1990,
+  "stratum": "random"
+ },
+ {
+  "id": "854b0bd7-14ad-4a1c-b1c5-6480d39d5b40",
+  "name": "王霏霏",
+  "script": "Han",
+  "aliases": [
+   "fei",
+   "wang feifei"
+  ],
+  "place": "CN",
+  "decade": 2000,
+  "stratum": "random"
+ },
+ {
+  "id": "0f33231f-8b60-4978-8f7d-126ec62edbce",
+  "name": "史依弘",
+  "script": "Han",
+  "aliases": [
+   "shi yihong"
+  ],
+  "place": "CN",
+  "decade": 2000,
+  "stratum": "random"
+ },
+ {
+  "id": "5ffb73c0-b739-4231-ba22-f8d361be1d45",
+  "name": "菅野よう子",
+  "script": "Han",
+  "aliases": [
+   "yoko kanno"
+  ],
+  "place": "JP",
+  "decade": 2010,
+  "stratum": "random"
+ },
+ {
+  "id": "ca911608-cdba-47e8-b668-d3eabb7abca7",
+  "name": "山本健司",
+  "script": "Han",
+  "aliases": [
+   "kenji yamamoto",
+   "kenz"
+  ],
+  "place": "JP",
+  "decade": 1980,
+  "stratum": "random"
+ },
+ {
+  "id": "80c8cd8b-db54-4c08-882d-8160192f1290",
+  "name": "李炳淑",
+  "script": "Han",
+  "aliases": [
+   "li bingshu"
+  ],
+  "place": "CN",
+  "decade": 1970,
+  "stratum": "random"
+ },
+ {
+  "id": "8bb8cd63-93e4-4077-b0f6-c1a29c925fae",
+  "name": "古今亭志ん朝",
+  "script": "Han",
+  "aliases": [
+   "kokontei shincho"
+  ],
+  "place": "JP",
+  "decade": 1950,
+  "stratum": "random"
+ },
+ {
+  "id": "f5cf6f3e-1fe9-46b6-b1b8-7abf146231bb",
+  "name": "火箭少女101",
+  "script": "Han",
+  "aliases": [
+   "rocket girls 101"
+  ],
+  "place": "CN",
+  "decade": 2020,
+  "stratum": "random"
+ },
+ {
+  "id": "e5a6b905-8e59-4f70-8544-da269e948563",
+  "name": "家家",
+  "script": "Han",
+  "aliases": [
+   "auli purepurepuan",
+   "jia jia",
+   "jiajia"
+  ],
+  "place": "TW",
+  "decade": 2000,
+  "stratum": "random"
+ },
+ {
+  "id": "fcd35ee6-3a28-47b4-bd08-77755296cd24",
+  "name": "寺井尚子",
+  "script": "Han",
+  "aliases": [
+   "naoko terai"
+  ],
+  "place": "JP",
+  "decade": 1980,
+  "stratum": "random"
+ },
+ {
+  "id": "0b7595fc-ae3e-44a0-b62b-7907efd2a15d",
+  "name": "毛不易",
+  "script": "Han",
+  "aliases": [
+   "mao buyi",
+   "wang weijia"
+  ],
+  "place": "CN",
+  "decade": 2000,
+  "stratum": "random"
+ },
+ {
+  "id": "41f5e685-c96f-42ec-8d3e-4c380b3ec5b5",
+  "name": "戴娆",
+  "script": "Han",
+  "aliases": [
+   "dai rao"
+  ],
+  "place": "CN",
+  "decade": 1980,
+  "stratum": "random"
+ },
+ {
+  "id": "b19d5a80-25be-4bab-aded-8252e5c60483",
+  "name": "おニャン子クラブ",
+  "script": "Japanese kana",
+  "aliases": [
+   "onyanko club"
+  ],
+  "place": "JP",
+  "decade": 1980,
+  "stratum": "random"
+ },
+ {
+  "id": "d0dcff7a-cf62-4d3f-b7ae-5d87e87bec8d",
+  "name": "Φίλιππος Νικολάου",
+  "script": "Greek",
+  "aliases": [
+   "filippos nikolaou"
+  ],
+  "place": "GR",
+  "decade": 1970,
+  "stratum": "random"
+ },
+ {
+  "id": "d55702f8-1b33-494e-8c9c-e6fd948bbee8",
+  "name": "Μελίνα Ασλανίδου",
+  "script": "Greek",
+  "aliases": [
+   "melina aslanidou"
+  ],
+  "place": "GR",
+  "decade": 2020,
+  "stratum": "random"
+ },
+ {
+  "id": "77cf7bca-6490-42e7-9f0a-6398aab12f53",
+  "name": "ፀደንያ ገብረማርቆስ",
+  "script": "Ethiopic",
+  "aliases": [
+   "tsedenia gebremarkos"
+  ],
+  "place": "ET",
+  "decade": 2020,
+  "stratum": "random"
+ },
+ {
+  "id": "db7aceb6-136c-4692-bc92-cce0a5c71b2c",
+  "name": "שפי ישי",
+  "script": "Hebrew",
+  "aliases": [
+   "shefi yishai"
+  ],
+  "place": "IL",
+  "decade": 1960,
+  "stratum": "random"
+ },
+ {
+  "id": "7e751821-2024-4f04-81f1-a73634092e61",
+  "name": "ספי ציזלינג",
+  "script": "Hebrew",
+  "aliases": [
+   "sefi zisling"
+  ],
+  "place": "IL",
+  "decade": 2010,
+  "stratum": "random"
+ },
+ {
+  "id": "b2fd016a-7495-4604-9ad3-54dfaebfee1a",
+  "name": "연진",
+  "script": "Hangul",
+  "aliases": [
+   "yeongene wang",
+   "yeongene"
+  ],
+  "place": "KR",
+  "decade": 1990,
+  "stratum": "random"
+ },
+ {
+  "id": "0aba1766-b59a-4461-b7be-89050fef3ec7",
+  "name": "황치열",
+  "script": "Hangul",
+  "aliases": [
+   "hwang chi yeul"
+  ],
+  "place": "KR",
+  "decade": 1990,
+  "stratum": "random"
+ },
+ {
+  "id": "d63ff8fa-6a05-475e-b758-e23783195efd",
+  "name": "언니네 이발관",
+  "script": "Hangul",
+  "aliases": [
+   "sister s barbershop"
+  ],
+  "place": "KR",
+  "decade": 2000,
+  "stratum": "random"
+ },
+ {
+  "id": "65723958-756c-4085-9b0c-02ef1c16203c",
+  "name": "이기찬",
+  "script": "Hangul",
+  "aliases": [
+   "lee ki chan"
+  ],
+  "place": "KR",
+  "decade": 2000,
+  "stratum": "random"
+ },
+ {
+  "id": "df384677-48be-4f7a-8d9f-15bfcc6f9255",
+  "name": "အုပ်စိုးခန့်",
+  "script": "Myanmar",
+  "aliases": [
+   "oak soe khant"
+  ],
+  "place": "MM",
+  "decade": 2010,
+  "stratum": "random"
+ },
+ {
+  "id": "cbc464c6-a3b7-4c7e-a117-e5aa8088a793",
+  "name": "ချစ်သုဝေ",
+  "script": "Myanmar",
+  "aliases": [
+   "chit thu wai"
+  ],
+  "place": "MM",
+  "decade": 2020,
+  "stratum": "random"
+ },
+ {
+  "id": "10fce5b9-8405-4d4a-bb32-6c1a91751ffa",
+  "name": "อ้อย บีเอ็ม",
+  "script": "Thai",
+  "aliases": [
+   "oi bi em"
+  ],
+  "place": "TH",
+  "decade": 1980,
+  "stratum": "random"
+ },
+ {
+  "id": "f8952317-ddba-4fad-87fc-181d83a725f8",
+  "name": "มาลีฮวนน่า",
+  "script": "Thai",
+  "aliases": [
+   "maleehuana"
+  ],
+  "place": "TH",
+  "decade": 1980,
+  "stratum": "random"
+ },
+ {
+  "id": "523f7cd5-be88-4d20-9edf-69bd8b5f78b4",
+  "name": "อาณัติ พุทธมาศ",
+  "script": "Thai",
+  "aliases": [
+   "anat phutthamat"
+  ],
+  "place": "TH",
+  "decade": 1990,
+  "stratum": "random"
+ }
+]

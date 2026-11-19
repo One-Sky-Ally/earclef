@@ -1214,21 +1214,31 @@ export function QueuePlayer({
           {onWiden && <> {widenButton(false)}</>}
         </p>
       )}
-      {building && nowPlaying && (
+      {/* A quota answer aborts the walk mid-fill, and an aborted fill
+          never clears `building` — without this guard "Still digging"
+          sat on top of "Paused for today". */}
+      {building && nowPlaying && !quotaHit && (
         <p className={styles.buildNote}>
           Still digging — {tracks.length} track
           {tracks.length === 1 ? '' : 's'} so far…
         </p>
       )}
+      {/* Honest about WHY (owner, Nov 19 2026): this is YouTube's daily
+          limit — units or the separate search cap — not an empty place.
+          Everything already found is cached, so tomorrow resumes. */}
       {quotaHit && tracks.length === 0 && (
         <p className={styles.sparseNote}>
-          This one&rsquo;s still brewing — try again in a bit.
+          We&rsquo;ve reached today&rsquo;s limit for looking up new songs on
+          YouTube, so {placeName} {year} is not finished yet — try again
+          tomorrow. Songs already found are saved.
         </p>
       )}
       {quotaHit && tracks.length > 0 && (
         <p className={styles.buildNote}>
-          Paused mid-build for today — {tracks.length} tracks for now, the
-          rest arrive on a later visit.
+          Paused for today — we&rsquo;ve reached YouTube&rsquo;s daily limit for
+          looking up new songs. {tracks.length} track
+          {tracks.length === 1 ? '' : 's'} for now; the rest arrive on a later
+          visit.
         </p>
       )}
       {/* ONE end-state line, and only once the fill has actually

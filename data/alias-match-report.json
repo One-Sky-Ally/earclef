@@ -1,0 +1,174 @@
+{
+ "updatedAt": "2026-11-19T09:11:54.663Z",
+ "sampled": 60,
+ "searched": 11,
+ "noTitleNoSearch": 0,
+ "leftToSearch": 49,
+ "gainingAtLeastOneSong": {
+  "T": 0,
+  "A": 1,
+  "B": 1,
+  "T+song": 2,
+  "A+song": 4,
+  "B+song": 6
+ },
+ "byStratum": {
+  "prominent": {
+   "searched": 11,
+   "gaining": {
+    "T": 0,
+    "A": 1,
+    "B": 1,
+    "T+song": 2,
+    "A+song": 4,
+    "B+song": 6
+   }
+  },
+  "random": {
+   "searched": 0,
+   "gaining": {
+    "T": 0,
+    "A": 0,
+    "B": 0,
+    "T+song": 0,
+    "A+song": 0,
+    "B+song": 0
+   }
+  }
+ },
+ "newUnderTwoChange": [
+  {
+   "name": "أم كلثوم",
+   "script": "Arabic",
+   "place": "EG-1960",
+   "songs": [
+    {
+     "videoId": "DlTp2VA3qtw",
+     "title": "النيل Al-Nil أم كلثوم Umm Kulthum [Studio Recording 1948 Version 1]",
+     "channel": "أم كلثوم Umm Kulthum",
+     "work": "Al Nil",
+     "era": "catalog"
+    }
+   ]
+  },
+  {
+   "name": "Щурците",
+   "script": "Cyrillic",
+   "place": "BG-1990",
+   "songs": [
+    {
+     "videoId": "iswwC7mSm0o",
+     "title": "Щурците − Карат (1978 Щурците II)",
+     "channel": "Щурците Shturcite",
+     "work": "Карат",
+     "era": "catalog"
+    }
+   ]
+  },
+  {
+   "name": "阿炳",
+   "script": "Han",
+   "place": "CN-1940",
+   "songs": [
+    {
+     "videoId": "lk6udv3o9f4",
+     "title": "江河水",
+     "channel": "阿炳 - Topic",
+     "work": "江河水",
+     "era": "undated"
+    },
+    {
+     "videoId": "eiM3g1hOOrU",
+     "title": "二泉映月",
+     "channel": "阿炳 - Topic",
+     "work": "二泉映月",
+     "era": "undated"
+    },
+    {
+     "videoId": "egvuj4pSTqU",
+     "title": "江河水",
+     "channel": "阿炳 - Topic",
+     "work": "江河水",
+     "era": "undated"
+    }
+   ]
+  },
+  {
+   "name": "劉家昌",
+   "script": "Han",
+   "place": "TW-1970",
+   "songs": [
+    {
+     "videoId": "aYZAO3kskrc",
+     "title": "我要學時髦",
+     "channel": "劉家昌 - Topic",
+     "work": "我要學時髦",
+     "era": "in-era"
+    },
+    {
+     "videoId": "8Hg5KKc3lbE",
+     "title": "黎明鐘聲",
+     "channel": "劉家昌 - Topic",
+     "work": "黎明鐘聲",
+     "era": "in-era"
+    },
+    {
+     "videoId": "yfhv7PZ3jNg",
+     "title": "保鑼怪聲",
+     "channel": "劉家昌 - Topic",
+     "work": "保鑼怪聲",
+     "era": "in-era"
+    }
+   ]
+  },
+  {
+   "name": "細野晴臣",
+   "script": "Han",
+   "place": "JP-1970",
+   "songs": [
+    {
+     "videoId": "aYuIRxm0Zas",
+     "title": "恋は桃色",
+     "channel": "Haruomi Hosono - Topic",
+     "work": "恋は桃色",
+     "era": "in-era"
+    },
+    {
+     "videoId": "l0aoRUbQdp4",
+     "title": "恋は桃色（New ver.）",
+     "channel": "Haruomi Hosono - Topic",
+     "work": "恋は桃色",
+     "era": "in-era"
+    },
+    {
+     "videoId": "JGmZknUM0Ns",
+     "title": "恋は桃色 (Live at mona records / 2025.03.28)",
+     "channel": "Haruomi Hosono - Topic",
+     "work": "恋は桃色",
+     "era": "in-era"
+    }
+   ]
+  },
+  {
+   "name": "엄정화",
+   "script": "Hangul",
+   "place": "KR-2000",
+   "songs": [
+    {
+     "videoId": "MkKMWRsQh28",
+     "title": "디스코 (D.I.S.C.O Part 2) ft. G-Dragon",
+     "channel": "Uhm Jung Hwa - Topic",
+     "work": "D.I.S.C.O",
+     "era": "in-era"
+    },
+    {
+     "videoId": "C0USKQRvuIc",
+     "title": "디스코 (D.I.S.C.O) ft. T.O.P",
+     "channel": "Uhm Jung Hwa - Topic",
+     "work": "D.I.S.C.O",
+     "era": "in-era"
+    }
+   ]
+  }
+ ]
+}
