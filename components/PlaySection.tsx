@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { PlayContent } from '@/lib/types'
 import { audioUrl, formatDuration } from '@/lib/audio'
 import { SectionHeader } from '@/components/SectionHeader'
+import { useOneSound } from '@/components/play/useOneSound'
 import styles from './PlaySection.module.css'
 
 interface PlaySectionProps {
@@ -20,6 +21,9 @@ export function PlaySection({ play, artistName, slug }: PlaySectionProps) {
   const [current, setCurrent] = useState(0)
   const [playing, setPlaying] = useState(false)
   const [position, setPosition] = useState(0)
+  // One sound at a time (lib/play/oneSound.ts): another player starting
+  // pauses this one; this one starting pauses the other.
+  const { claim } = useOneSound(() => audioRef.current?.pause())
 
   const track = play.tracks[current]
   const trackDuration = track?.duration ?? 0
@@ -205,7 +209,10 @@ export function PlaySection({ play, artistName, slug }: PlaySectionProps) {
         <audio
           ref={audioRef}
           preload="metadata"
-          onPlay={() => setPlaying(true)}
+          onPlay={() => {
+            claim()
+            setPlaying(true)
+          }}
           onPause={() => setPlaying(false)}
           onTimeUpdate={(event) =>
             setPosition(event.currentTarget.currentTime)

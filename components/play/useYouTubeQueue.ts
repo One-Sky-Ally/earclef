@@ -2,13 +2,15 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { loadYouTubeApi, NO_COOKIE_HOST, type YtPlayer } from '@/lib/play/youtubeApi'
+import { useOneSound } from '@/components/play/useOneSound'
 
 /**
  * One visible YouTube player walking a list of verified videos: play
  * any row, play from the top, pause/resume the current row, advance at
  * the end of each video, and skip (and mark) a video that died since it
- * was verified. Unmounting the owner destroys the player — one sound at
- * a time, never a hidden player.
+ * was verified. Unmounting the owner destroys the player — never a
+ * hidden player — and starting any other player on the page pauses
+ * this one (lib/play/oneSound.ts): one sound at a time.
  *
  * Shared by the curated journey, an artist's "Start here" and the video
  * explorer. Render `mountRef` on a positioned element where the player
@@ -34,6 +36,21 @@ export function useYouTubeQueue(videoIds: string[]) {
   const readyRef = useRef(false)
   const creatingRef = useRef(false)
   const queuedRef = useRef<string | null>(null)
+  /** Paused because another player on the page started. */
+  const [yielded, setYielded] = useState(false)
+  const sound = useOneSound(() => {
+    setYielded(true)
+    // Set here, not only on YouTube's PAUSED: a player that lost the
+    // sound while loading never played, so never sends PAUSED — and its
+    // row must offer ▶, not a Pause that does nothing.
+    setPaused(true)
+    if (!readyRef.current) return
+    try {
+      playerRef.current?.pauseVideo()
+    } catch {
+      // Player already gone with its DOM.
+    }
+  })
 
   // Player callbacks read the list through a ref — synced after render.
   useEffect(() => {
@@ -61,18 +78,24 @@ export function useYouTubeQueue(videoIds: string[]) {
   function advance() {
     const at = currentIdRef.current ? idsRef.current.indexOf(currentIdRef.current) : -1
     const next = nextPlayable(at + 1)
-    if (next >= 0) void playAt(next)
+    if (next >= 0) void show(next)
     else setEnded(true)
   }
 
-  async function playAt(index: number) {
+  /**
+   * Put a song in the player. It PLAYS only while this player holds the
+   * sound; paused for another player (a dead video skipped), it is only
+   * cued, and stays quiet.
+   */
+  async function show(index: number) {
     const videoId = idsRef.current[index]
     if (!videoId) return
     currentIdRef.current = videoId
     setCurrentId(videoId)
     setEnded(false)
     if (playerRef.current && readyRef.current) {
-      playerRef.current.loadVideoById(videoId)
+      if (sound.holds()) playerRef.current.loadVideoById(videoId)
+      else playerRef.current.cueVideoById(videoId)
       return
     }
     if (creatingRef.current || playerRef.current) {
@@ -88,21 +111,35 @@ export function useYouTubeQueue(videoIds: string[]) {
       playerRef.current = new yt.Player(target, {
         host: NO_COOKIE_HOST,
         videoId,
-        playerVars: { autoplay: 1, rel: 0, playsinline: 1 },
+        // Built quiet, played on ready — and only if this player still
+        // holds the sound then: another may have started while the API
+        // loaded. (An autoplay flag would start it regardless.)
+        playerVars: { autoplay: 0, rel: 0, playsinline: 1 },
         events: {
           onReady: (event) => {
             readyRef.current = true
             const queued = queuedRef.current
             queuedRef.current = null
-            if (queued && queued !== videoId) {
-              playerRef.current?.loadVideoById(queued)
+            const latest = queued && queued !== videoId ? queued : null
+            if (!sound.holds()) {
+              // The row the listener last chose stays the one cued.
+              if (latest) playerRef.current?.cueVideoById(latest)
+              setPaused(true)
+            } else if (latest) {
+              playerRef.current?.loadVideoById(latest)
             } else {
               event.target.playVideo()
             }
           },
           onStateChange: (event) => {
             if (event.data === yt.PlayerState.ENDED) advance()
-            else if (event.data === yt.PlayerState.PLAYING) setPaused(false)
+            else if (event.data === yt.PlayerState.PLAYING) {
+              // Sounding again (YouTube's own ▶ on a paused player
+              // included): whatever else plays stops.
+              sound.claim()
+              setYielded(false)
+              setPaused(false)
+            }
             else if (event.data === yt.PlayerState.PAUSED) setPaused(true)
           },
           // A video that died since it was verified is skipped, and its
@@ -124,6 +161,13 @@ export function useYouTubeQueue(videoIds: string[]) {
     }
   }
 
+  /** The listener chose a song here: it takes the sound, then plays. */
+  function playAt(index: number) {
+    sound.claim()
+    setYielded(false)
+    void show(index)
+  }
+
   /** The current row's button pauses and resumes; any other row plays. */
   function toggleOrPlay(index: number) {
     const player = playerRef.current
@@ -133,16 +177,22 @@ export function useYouTubeQueue(videoIds: string[]) {
       readyRef.current &&
       !ended
     ) {
-      if (paused) player.playVideo?.()
-      else player.pauseVideo()
+      if (paused) {
+        // Resuming here stops the other player before this one sounds.
+        sound.claim()
+        setYielded(false)
+        player.playVideo?.()
+      } else {
+        player.pauseVideo()
+      }
       return
     }
-    void playAt(index)
+    playAt(index)
   }
 
   function playAll() {
     const first = nextPlayable(0)
-    if (first >= 0) void playAt(first)
+    if (first >= 0) playAt(first)
   }
 
   // Where the playing video sits in the list as it is now (or null).
@@ -155,6 +205,7 @@ export function useYouTubeQueue(videoIds: string[]) {
     currentId,
     ended,
     paused,
+    yielded,
     broken,
     dead,
     playAt,

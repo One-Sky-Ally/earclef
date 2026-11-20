@@ -111,21 +111,21 @@ export function SongsAboutSection({
             the ones we can play here.
           </p>
 
-          {/* Touching the queue closes any open row player: one sound at a time. */}
-          <div onClickCapture={() => setOpen(null)}>
-            <QueuePlayer
-              key={`songs-about:${placeCode}`}
-              placeName={placeName}
-              placeCode={placeCode}
-              year={new Date().getFullYear()}
-              pool={[]}
-              roster={{}}
-              preresolved={queue}
-              quietStart
-              buttonLabel="▶ Play all"
-              endNote={`That's every song about ${placeName} we can play.`}
-            />
-          </div>
+          {/* One sound at a time (lib/play/oneSound.ts): starting the
+              queue closes an open row player, and playing a row pauses
+              the queue. */}
+          <QueuePlayer
+            key={`songs-about:${placeCode}`}
+            placeName={placeName}
+            placeCode={placeCode}
+            year={new Date().getFullYear()}
+            pool={[]}
+            roster={{}}
+            preresolved={queue}
+            quietStart
+            buttonLabel="▶ Play all"
+            endNote={`That's every song about ${placeName} we can play.`}
+          />
 
           <ol className={styles.list}>
             {shown.map((song) => {
@@ -175,6 +175,9 @@ export function SongsAboutSection({
                           youtubeId: song.v,
                           title: `${song.t} — ${song.a}`,
                         }}
+                        onStopped={() =>
+                          setOpen((current) => (current === song.v ? null : current))
+                        }
                       />
                     </div>
                   )}

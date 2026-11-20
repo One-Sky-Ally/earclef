@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type ReactNode, type RefObject } from 'react'
 import { panelFrames, type FrameRole } from '@/lib/explore/panelFrames'
+import type { PlayingPlace } from '@/lib/explore/globePins'
 import { journeySpan, type Culture } from '@/lib/explore/cultureTypes'
 import type { GenreLens } from '@/lib/explore/genreData'
 import type { SelectedArtist } from '@/components/explore/ArtistEraPanel'
@@ -19,7 +20,9 @@ import styles from './ExplorePanels.module.css'
  * playing because its DOM node never moves.
  *
  * A panel counts as playing when any player inside it marks itself
- * data-playing="true" (QueuePlayer, YouTubeEmbed, JourneyPanel). Pressing
+ * data-playing="true" (QueuePlayer, YouTubeEmbed, JourneyPanel); a player
+ * paused because another started marks itself "paused" (lib/play/oneSound.ts)
+ * and never makes its panel the playing one. Pressing
  * play on the panel you are looking at makes it the playing one, and the
  * old one is unmounted, which stops it. Browsing alone never does.
  */
@@ -56,6 +59,19 @@ export function panelLabel(panel: ExplorePanel): string {
         : `${panel.culture.place} ${journeySpan(panel.culture)}`
     default:
       return ''
+  }
+}
+
+/** Where a playing panel's music comes from, for the globe's ♪ mark. */
+export function panelPlace(panel: ExplorePanel): PlayingPlace | null {
+  switch (panel.kind) {
+    case 'country':
+      return { code: panel.country.code, label: panelLabel(panel) }
+    case 'journey':
+      return { code: panel.culture.code, label: panelLabel(panel) }
+    default:
+      // Artist panels link out; they never play on the page.
+      return null
   }
 }
 

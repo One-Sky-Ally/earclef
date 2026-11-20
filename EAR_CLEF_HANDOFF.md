@@ -109,7 +109,31 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
 
 ## 7. BUILD LOG (maintained by Claude Code — read this to resume cold)
 
-**Last updated: Nov 19, 2026 · v1 shipped and far surpassed — see Current state**
+**Last updated: Nov 20, 2026 · v1 shipped and far surpassed — see Current state**
+
+- **ONE SOUND AT A TIME + THE PLAYING PLACE MARKED ON THE GLOBE (Nov 20, 2026; owner: "only one player should ever sound at a time. Starting #1 hits, the main queue, Songs about, or a journey should stop whatever else is playing, including inside the same place" and "mark the place that's currently playing on the globe itself, so I can see where the music is coming from while I browse elsewhere").**
+  - **ONE SOUND:** `lib/play/oneSound.ts` (6 tests) is a page-wide holder. Every player CLAIMS it when it starts sounding: its ▶, a next/previous, a row, or YouTube's own play button (the PLAYING state). The player that held it is stopped first. Unmounting releases it. The React seat is `components/play/useOneSound.ts` (`claim`, `holds`).
+    - **QueuePlayer** (place queue, #1 hits, Songs-about "Play all", On this day, liked songs, archive) PAUSES and shows "Paused because another player started. ▶ Resume". Tracks, position and filters stay; Resume stays silent while every genre is switched off.
+    - **useYouTubeQueue** (curated journeys, an artist's Start here and video list) pauses the same way; its own row button resumes.
+    - **YouTubeEmbed** can't be paused from outside, so it goes back to its still; Songs-about closes that row (`onStopped`). The old "touching the queue closes the row" click-capture is gone.
+    - **Native `<audio>`** (an artist's own PlaySection, Universe audio posts) claims on `play` and pauses when another player starts.
+    - **A paused-for-another player never starts itself.** Both YouTube players are built with `autoplay: 0` and play on ready only while `holds()`. Automatic moves (a dead video skipped, an "only" genre's first track landing, end-of-song advance) only CUE the next video when not holding (`cueVideoById`). Only the listener's ⏮ ⏭, a row, ▶/Resume, or YouTube's own ▶ takes the sound back. (Code review found the autoplay race: a player loading when another started could start anyway and steal the sound.)
+    - `data-playing` is `"true"` for the player holding the sound and `"paused"` for one paused for another. The Explore observer only reacts to `"true"`. A parked panel shows its `"true"` player, or, if nothing in it is sounding (its other player was closed), the paused one, so Resume stays in reach.
+  - **GLOBE MARK:** `lib/explore/globePins.ts` (7 tests) plans the pins: selection pill, featured journey, and where the music plays. The playing pin is a gold dot with a pulsing ring and "♪ Egypt 1966"; reduced motion gets a still ring. When the playing place is the one already pinned, that pin takes the ♪ text ("♪ Egypt 1966" while looking at Egypt 1980, gold edge on the pill) — never two pins on one place. Claimed places light their own marker ("♪ Tibet"). Region pins not yet loaded re-apply once the state layer arrives. The flat Map (inline and full screen) outlines the playing country in pulsing gold.
+  - **TESTED** in the local preview:
+    - UK 1966 queue → #1s paused the queue; Resume and a queue row took the sound back.
+    - A Songs-about row paused the Spain queue; the queue closed the row.
+    - Spain's ▶ ended the parked UK player; a journey's ▶ ended the parked Spain player.
+    - Björk's Start here ↔ video list handed over both ways.
+    - Globe pins at 1280 and 375 widths; flat-map outline.
+    - Only one live iframe each time (a probe on `YT.Player` read player states).
+    - After the review fixes: the first song still starts with `autoplay: 0`; ⏭ on a paused queue took the sound back; the empty-parked-card case shows the paused queue with Resume; Björk's Start here pressed and the video list pressed at once left Start here unstarted with its row reading "Play".
+    - Native `<audio>` is type-checked only: no local artist page renders PlaySection audio today.
+  - **KNOWN LIMITS:**
+    - YouTube's own ▶ on a paused player (and a native audio ▶) is seen a moment after playback starts, so the other player stops a fraction of a second later.
+    - The first song now starts from `playVideo()` on ready instead of the autoplay flag (YouTube's documented pattern; same browser autoplay rules). Not tested on a real iPhone.
+    - On a phone the globe can show the playing pin near its edge with the label cut off until the globe is turned.
+    - On this day's single-release iframe is outside the rule; it already replaces that page's playlist rather than playing beside it.
 
 - **EXPLORE — MUSIC KEEPS PLAYING WHILE YOU KEEP EXPLORING (Nov 19, 2026; owner: "keep exploring other places and years on the globe without the player stopping … shouldn't replace what's playing until I choose to play the new place. Make it clear which place and year is playing and which one I'm just looking at. It should work on phones too").**
   - **HOW:** nothing is lifted out of the panels. The panel whose music is on stays MOUNTED (same React key, same DOM node, so the YouTube iframe never reloads). It is parked above the panel being looked at and shrunk to its player.
@@ -129,7 +153,7 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
     - Open and Stop work.
     - The chip scrolls to the card.
     - No console errors.
-  - **NOT DONE:** no "playing" marker on the globe itself (labels only). Browsers without `:has()` (Firefox before 121, Safari before 15.4) show the whole parked panel instead of just its player; the music still keeps playing.
+  - **NOT DONE:** ~~no "playing" marker on the globe itself~~ (done Nov 20, see above). Browsers without `:has()` (Firefox before 121, Safari before 15.4) show the whole parked panel instead of just its player; the music still keeps playing.
 
 - **PRIVACY PAGE REWRITTEN + TERMS PAGE PUBLISHED (Nov 19, 2026; owner approved the wording with two checks: "make every statement on the privacy page accurate for both signed-out and signed-in listeners" and "only keep the Memberships line … if memberships can really be bought today").**
   - **CHECK 1:** the drafted line "saved in your own browser, not on our servers" was only true signed out. The page is now split into two parts:

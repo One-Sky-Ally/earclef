@@ -6,6 +6,7 @@ import { YEAR_MAX, YEAR_MIN } from '@/lib/explore/counts'
 import { FlatMap } from '@/components/explore/FlatMap'
 import { YearSlider } from '@/components/explore/YearSlider'
 import type { SelectedCountry } from '@/components/explore/CountryPanel'
+import type { PlayingPlace } from '@/lib/explore/globePins'
 import { Icon } from '@/components/ui/Icon'
 import styles from './MapFullscreen.module.css'
 
@@ -14,6 +15,8 @@ interface MapFullscreenProps {
   onYearChange: (year: number) => void
   selected: SelectedCountry | null
   highlight?: SelectedCountry | null
+  /** Where the music is coming from — outlined in gold. */
+  playing?: PlayingPlace | null
   /** A country was picked: the page opens it (and this closes). */
   onCountryClick: (country: SelectedCountry) => void
   onClose: () => void
@@ -30,6 +33,7 @@ export function MapFullscreen({
   onYearChange,
   selected,
   highlight,
+  playing,
   onCountryClick,
   onClose,
 }: MapFullscreenProps) {
@@ -105,6 +109,7 @@ export function MapFullscreen({
           year={year}
           selected={selected}
           highlight={highlight}
+          playing={playing}
           onCountryClick={(country) => {
             onCountryClick(country)
             onClose()

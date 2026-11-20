@@ -7,7 +7,10 @@
 
 /** Minimal typing for the pieces of the IFrame API the site drives. */
 export interface YtPlayer {
+  /** Load and PLAY a video. */
   loadVideoById: (videoId: string) => void
+  /** Load a video WITHOUT playing it (a player paused for another). */
+  cueVideoById: (videoId: string) => void
   playVideo?: () => void
   pauseVideo: () => void
   destroy: () => void

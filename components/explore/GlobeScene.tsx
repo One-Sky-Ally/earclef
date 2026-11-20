@@ -42,6 +42,7 @@ import {
   splitSubdivisionFeatures,
 } from '@/lib/explore/subdivisions'
 import { loadCountryShapes, loadSharedCounts } from '@/lib/explore/worldData'
+import { planPins, type PinRole, type PlayingPlace } from '@/lib/explore/globePins'
 import type { SelectedCountry } from '@/components/explore/CountryPanel'
 import styles from './GlobeScene.module.css'
 
@@ -107,18 +108,18 @@ function fitAltitude(width: number, height: number): number {
   return Math.max(1.6, 1 / Math.sin(halfAngle) - 1)
 }
 
-/** The selection pill's datum on the html-marker layer. */
+/** A pin's datum on the html-marker layer (lib/explore/globePins.ts). */
 interface PinDatum {
   pin: true
   lat: number
   lng: number
   name: string
   small: boolean
-  /** The featured journey's place, not a selection. */
-  featured?: boolean
+  /** Selection pill, featured journey, or where the music plays. */
+  role: PinRole
+  /** The music comes from this place. */
+  playing: boolean
 }
-
-type HtmlMarkerDatum = ClaimedPlace | PinDatum
 
 function isPinDatum(d: object): d is PinDatum {
   return 'pin' in d
@@ -183,6 +184,11 @@ interface GlobeSceneProps {
    * the same pill as a selection, but not selected: no fill, no panel.
    */
   highlight?: SelectedCountry | null
+  /**
+   * Where the music is coming from (owner, Nov 20 2026) — marked while
+   * the visitor looks elsewhere, folded into the pill when they look here.
+   */
+  playing?: PlayingPlace | null
   /** Another view (Map, List) is showing: stop drawing frames. */
   hidden?: boolean
   /** The 3D globe can't run here — the page offers Map and List. */
@@ -199,6 +205,7 @@ export function GlobeScene({
   onDataSourceChange,
   onCountryClick,
   highlight = null,
+  playing = null,
   hidden = false,
   onUnavailable,
 }: GlobeSceneProps) {
@@ -214,6 +221,7 @@ export function GlobeScene({
   const hoverRef = useRef<object | null>(null)
   const selectedRef = useRef<SelectedCountry | null>(null)
   const highlightRef = useRef<SelectedCountry | null>(highlight)
+  const playingRef = useRef<PlayingPlace | null>(playing)
   const hiddenRef = useRef(hidden)
   // Claimed-place marker elements, by place id — kept so the selected
   // marker can be lit without rebuilding the layer.
@@ -352,79 +360,103 @@ export function GlobeScene({
       styles.claimedMarkerSelected,
       selectedRef.current?.code === place.id,
     )
+    marker.classList.toggle(
+      styles.claimedMarkerPlaying,
+      playingRef.current?.code === place.id,
+    )
     claimedMarkers.current.set(place.id, marker)
     return marker
   }
 
-  /** The selection pill's datum, or null when the shape isn't loaded yet. */
-  function pinDatumFor(code: string, name: string): PinDatum | null {
+  /** A pin's datum, or null when the place's shape isn't loaded yet. */
+  function pinDatumFor(
+    code: string,
+    name: string,
+    role: PinRole,
+    playing: boolean,
+  ): PinDatum | null {
     const feature = featureByCode.current.get(code)
     if (!feature) return null
     const { lat, lng } = roughCentroid(feature)
     const small =
       REGION_CODE_PATTERN.test(code) || SUBDIVISION_CODE_PATTERN.test(code)
-    return { pin: true, lat, lng, name, small }
+    return { pin: true, lat, lng, name, small, role, playing }
   }
 
-  /** The pill naming the selection — inert, so the globe stays live under it. */
+  /** The pill naming a place — inert, so the globe stays live under it. */
   function buildPinPill(datum: PinDatum): HTMLElement {
     const pill = document.createElement('div')
-    if (datum.featured) {
+    if (datum.role !== 'selected') {
       // globe.gl centres the element on the place, so the DOT is the
-      // element and the name hangs to its right.
-      pill.className = styles.pinFeatured
+      // element and the name hangs to its right. The playing place's
+      // dot pulses: the music is coming from here.
+      pill.className = datum.playing
+        ? `${styles.pinFeatured} ${styles.pinPlaying}`
+        : styles.pinFeatured
       const label = document.createElement('span')
-      label.className = styles.pinFeaturedLabel
+      label.className = datum.playing
+        ? `${styles.pinFeaturedLabel} ${styles.pinPlayingLabel}`
+        : styles.pinFeaturedLabel
       label.textContent = datum.name
       pill.append(label)
       return pill
     }
-    pill.className = datum.small
-      ? `${styles.pinPill} ${styles.pinPillSmall}`
-      : styles.pinPill
+    pill.className = [
+      styles.pinPill,
+      datum.small ? styles.pinPillSmall : '',
+      datum.playing ? styles.pinPillPlaying : '',
+    ]
+      .filter(Boolean)
+      .join(' ')
     pill.textContent = datum.name
     return pill
   }
 
-  /** Pill + polygon highlight for the current selection (or clears both). */
+  /**
+   * Pins (lib/explore/globePins.ts) + polygon highlight: the selection,
+   * the featured journey, and where the music is playing.
+   */
   function applySelectionPin() {
     const globe = globeRef.current
     if (!globe) return
     applyHeat(globe)
     const selectedNow = selectedRef.current
+    const playingNow = playingRef.current
     // Claimed places carry their own permanent marker — light it as the
-    // selection and never add a pill, which would name them twice.
+    // selection or the playing place and never add a pill, which would
+    // name them twice.
     for (const [id, marker] of claimedMarkers.current) {
       marker.classList.toggle(
         styles.claimedMarkerSelected,
         selectedNow?.code === id,
       )
+      marker.classList.toggle(
+        styles.claimedMarkerPlaying,
+        playingNow?.code === id,
+      )
     }
-    const base: HtmlMarkerDatum[] = [...CLAIMED_PLACES]
-    // Nothing selected: the featured place (if any) wears the pill.
-    const highlighted = highlightRef.current
-    if (!selectedNow) {
-      const pin =
-        highlighted && !claimedPlaceById(highlighted.code)
-          ? pinDatumFor(highlighted.code, highlighted.name)
-          : null
-      const featured = pin ? { ...pin, featured: true } : null
-      globe.htmlElementsData(featured ? [...base, featured] : base)
-      return
-    }
-    if (claimedPlaceById(selectedNow.code)) {
-      globe.htmlElementsData(base)
-      return
-    }
-    const pin = pinDatumFor(selectedNow.code, selectedNow.name)
-    globe.htmlElementsData(pin ? [...base, pin] : base)
-    // A region selected before its layer loaded (surprise from afar):
-    // pin once the features arrive, if it's still the selection.
-    if (!pin && REGION_CODE_PATTERN.test(selectedNow.code)) {
-      void ensureStates().then(() => {
-        if (selectedRef.current?.code !== selectedNow.code) return
-        const late = pinDatumFor(selectedNow.code, selectedNow.name)
-        if (late) globeRef.current?.htmlElementsData([...base, late])
+    const plan = planPins({
+      selected: selectedNow,
+      featured: highlightRef.current,
+      playing: playingNow,
+      claimed: (code) => claimedPlaceById(code) !== undefined,
+    })
+    const pins = plan
+      .map((item) => pinDatumFor(item.code, item.text, item.role, item.playing))
+      .filter((pin): pin is PinDatum => pin !== null)
+    globe.htmlElementsData([...CLAIMED_PLACES, ...pins])
+    // A region pinned before its layer loaded (surprise from afar, or a
+    // state still playing): pin once the features arrive.
+    const late = plan.filter(
+      (item) =>
+        !featureByCode.current.has(item.code) &&
+        REGION_CODE_PATTERN.test(item.code),
+    )
+    if (late.length > 0) {
+      void ensureStates().then((ready) => {
+        if (ready && late.some((item) => featureByCode.current.has(item.code))) {
+          applySelectionPin()
+        }
       })
     }
   }
@@ -435,9 +467,10 @@ export function GlobeScene({
   useEffect(() => {
     selectedRef.current = selected
     highlightRef.current = highlight
+    playingRef.current = playing
     applySelectionPin()
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- pin follows selection + feature alone
-  }, [selected, highlight?.code])
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- pins follow selection, feature and playing alone
+  }, [selected, highlight?.code, playing?.code, playing?.label])
 
   // Hidden behind the Map or List view: no frames, no drift. The canvas
   // resizes itself on return through the ResizeObserver below.

@@ -2,15 +2,25 @@
 
 import { useState } from 'react'
 import type { VideoRef } from '@/lib/types'
+import { useOneSound } from '@/components/play/useOneSound'
 import styles from './YouTubeEmbed.module.css'
 
 interface YouTubeEmbedProps {
   video: VideoRef
   index?: number
+  /** Another player on the page started, and this one closed for it. */
+  onStopped?: () => void
 }
 
-export function YouTubeEmbed({ video, index }: YouTubeEmbedProps) {
+export function YouTubeEmbed({ video, index, onStopped }: YouTubeEmbedProps) {
   const [loaded, setLoaded] = useState(false)
+  // One sound at a time (lib/play/oneSound.ts). A plain embed can't be
+  // paused from outside, so another player starting puts this one back
+  // to its still — the sound stops, and ▶ plays it again.
+  const { claim } = useOneSound(() => {
+    setLoaded(false)
+    onStopped?.()
+  })
 
   return (
     // data-playing once the video is loaded: the Explore page keeps a
@@ -29,7 +39,10 @@ export function YouTubeEmbed({ video, index }: YouTubeEmbedProps) {
           <button
             type="button"
             className={styles.facade}
-            onClick={() => setLoaded(true)}
+            onClick={() => {
+              claim()
+              setLoaded(true)
+            }}
             aria-label={`Play video: ${video.title}`}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -56,6 +56,7 @@ import {
   NowPlayingChip,
   panelKey,
   panelLabel,
+  panelPlace,
   type ExplorePanel,
 } from '@/components/explore/ExplorePanels'
 import type { FrameRole } from '@/lib/explore/panelFrames'
@@ -509,6 +510,8 @@ export function ExploreClient({
         ? { kind: 'journey', culture: journey }
         : { kind: 'empty' }
   const browsingElsewhere = playing !== null && panelKey(playing) !== panelKey(browse)
+  // The globe marks where the music comes from (owner, Nov 20 2026).
+  const playingPlace = playing ? panelPlace(playing) : null
 
   /** The panel being looked at started playing: it replaces what played. */
   function startPlaying(panel: ExplorePanel) {
@@ -648,6 +651,7 @@ export function ExploreClient({
             focusRequest={focusRequest}
             selected={selected}
             highlight={highlight}
+            playing={playingPlace}
             hidden={view !== 'globe'}
             onDataSourceChange={onGlobeReady}
             onCountryClick={onCountryClick}
@@ -664,6 +668,7 @@ export function ExploreClient({
               year={year}
               selected={selected}
               highlight={highlight}
+              playing={playingPlace}
               onCountryClick={onCountryClick}
               onExpand={() => setMapExpanded(true)}
             />
@@ -774,6 +779,7 @@ export function ExploreClient({
           onYearChange={setYear}
           selected={selected}
           highlight={highlight}
+          playing={playingPlace}
           onCountryClick={onCountryClick}
           onClose={() => setMapExpanded(false)}
         />

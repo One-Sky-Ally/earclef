@@ -44,6 +44,25 @@
   stroke-width: 2px;
 }
 
+/* Where the music is coming from: a gold outline that breathes. */
+.countryPlaying {
+  stroke: var(--accent-bright);
+  stroke-width: 2.5px;
+  animation: countryPlayingPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes countryPlayingPulse {
+  50% {
+    stroke-opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .countryPlaying {
+    animation: none;
+  }
+}
+
 .tooltip {
   position: absolute;
   z-index: 3;

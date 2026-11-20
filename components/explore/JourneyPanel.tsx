@@ -122,6 +122,7 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
     current,
     ended,
     paused,
+    yielded,
     broken,
     dead,
     toggleOrPlay,
@@ -192,8 +193,12 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
       </h2>
 
       {/* data-playing while a song is on: Explore keeps this panel alive,
-          shrunk to its player, when the visitor opens somewhere else. */}
-      <div className={styles.media} data-playing={current !== null ? 'true' : undefined}>
+          shrunk to its player, when the visitor opens somewhere else.
+          Paused for another player, it is "paused", not the one playing. */}
+      <div
+        className={styles.media}
+        data-playing={current === null ? undefined : yielded ? 'paused' : 'true'}
+      >
         <div ref={mountRef} className={styles.frame} />
         {current === null &&
           (first ? (

@@ -118,9 +118,18 @@
 }
 
 /* Shrink to the player: everything that neither is, holds, nor sits
-   inside a playing player is hidden — never removed, so going back to
+   inside the playing player is hidden — never removed, so going back to
    the place finds the panel exactly as it was. */
-.nowBody :not(:has([data-playing='true'])):not([data-playing='true']):not([data-playing='true'] *) {
+.nowBody:has([data-playing='true'])
+  :not(:has([data-playing='true'])):not([data-playing='true']):not([data-playing='true'] *) {
+  display: none;
+}
+
+/* Nothing in the panel is sounding — its player was paused for another
+   one that has since closed (data-playing="paused", lib/play/oneSound.ts):
+   show that paused player, so its Resume stays in reach. */
+.nowBody:not(:has([data-playing='true']))
+  :not(:has([data-playing])):not([data-playing]):not([data-playing] *) {
   display: none;
 }
 
@@ -128,7 +137,7 @@
    (Required Minimum Functionality). The player API writes height="360"
    on its iframe, which beats the queue's aspect-ratio rule; parked, the
    frame should take as little of the column as YouTube allows. */
-.nowBody [data-playing='true'] iframe {
+.nowBody [data-playing] iframe {
   height: auto;
   min-height: 200px;
   aspect-ratio: 16 / 9;

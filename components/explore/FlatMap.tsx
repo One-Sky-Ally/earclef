@@ -10,6 +10,7 @@ import {
   type CountryYearCounts,
 } from '@/lib/explore/counts'
 import { featureCode, isoOf, type CountryFeature } from '@/lib/explore/geo'
+import type { PlayingPlace } from '@/lib/explore/globePins'
 import { loadCountryShapes, loadSharedCounts } from '@/lib/explore/worldData'
 import type { SelectedCountry } from '@/components/explore/CountryPanel'
 import { Icon } from '@/components/ui/Icon'
@@ -128,6 +129,11 @@ interface FlatMapProps {
   year: number
   selected: SelectedCountry | null
   highlight?: SelectedCountry | null
+  /**
+   * Where the music is coming from (owner, Nov 20 2026): its outline
+   * pulses gold while the visitor looks elsewhere.
+   */
+  playing?: PlayingPlace | null
   onCountryClick: (country: SelectedCountry) => void
   /** Full screen: zoom and pan on. */
   interactive?: boolean
@@ -139,6 +145,7 @@ export function FlatMap({
   year,
   selected,
   highlight = null,
+  playing = null,
   onCountryClick,
   interactive = false,
   onExpand,
@@ -326,12 +333,19 @@ export function FlatMap({
         {shapes.map((shape) => {
           const isSelected = selected?.code === shape.code
           const isHighlight = !selected && highlight?.code === shape.code
+          const isPlaying = !isSelected && playing?.code === shape.code
           const heat = bandedHeat(heatValue(countFor(shape), yearMax))
           return (
             <path
               key={shape.code}
               d={shape.d}
-              className={`${styles.country} ${isHighlight ? styles.countryHighlight : ''}`}
+              className={[
+                styles.country,
+                isHighlight ? styles.countryHighlight : '',
+                isPlaying ? styles.countryPlaying : '',
+              ]
+                .filter(Boolean)
+                .join(' ')}
               fill={
                 isSelected
                   ? SELECTED_FILL

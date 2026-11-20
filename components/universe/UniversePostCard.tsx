@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import type { UniversePost } from '@/lib/membership/types'
 import { formatDuration } from '@/lib/audio'
+import { useOneSound } from '@/components/play/useOneSound'
 import {
   KIND_LABELS,
   formatPostDate,
@@ -69,6 +70,8 @@ function AudioPostPlayer({
   const [playing, setPlaying] = useState(false)
   const [position, setPosition] = useState(0)
   const [total, setTotal] = useState(duration)
+  // One sound at a time (lib/play/oneSound.ts), across posts and players.
+  const { claim } = useOneSound(() => audioRef.current?.pause())
 
   function toggle() {
     const audio = audioRef.current
@@ -116,7 +119,10 @@ function AudioPostPlayer({
         ref={audioRef}
         src={src}
         preload="metadata"
-        onPlay={() => setPlaying(true)}
+        onPlay={() => {
+          claim()
+          setPlaying(true)
+        }}
         onPause={() => setPlaying(false)}
         onTimeUpdate={(event) => setPosition(event.currentTarget.currentTime)}
         onLoadedMetadata={(event) => {

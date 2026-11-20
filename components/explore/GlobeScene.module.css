@@ -112,6 +112,49 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
+/* Where the music is coming from (owner, Nov 20 2026): the featured
+   dot's shape with a ring that keeps pulsing out of it, and a gold
+   label starting "♪". The selection pill of the same place takes a
+   gold edge instead — one place never wears two pins. */
+.pinPlaying::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-bright);
+  animation: pinPlayingPulse 1.8s ease-out infinite;
+}
+
+.pinPlayingLabel {
+  color: var(--accent-bright);
+  border-color: var(--accent);
+}
+
+.pinPillPlaying {
+  border-color: var(--accent-bright);
+  box-shadow: 0 0 0 2px rgba(239, 197, 110, 0.35), 0 2px 10px rgba(0, 0, 0, 0.55);
+}
+
+@keyframes pinPlayingPulse {
+  from {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+/* Reduced motion: a still ring, no pulse. */
+@media (prefers-reduced-motion: reduce) {
+  .pinPlaying::after {
+    animation: none;
+    transform: scale(1.6);
+    opacity: 0.6;
+  }
+}
+
 /* Claimed places (Tibet and its class): a dashed ring at the anchor,
    permanently on the idle globe so they are findable by spinning like
    anywhere else. The BROKEN stroke is the contested cue — a marked
@@ -199,6 +242,18 @@
 
 .claimedMarkerSelected .claimedName {
   display: block;
+}
+
+/* A claimed place whose music is playing: its name stays up with a ♪,
+   in the playing gold. */
+.claimedMarkerPlaying .claimedName {
+  display: block;
+  color: var(--accent-bright);
+  border-color: var(--accent);
+}
+
+.claimedMarkerPlaying .claimedName::before {
+  content: '♪ ';
 }
 
 /* Selected = the coral accent, matching the selected polygon's outline

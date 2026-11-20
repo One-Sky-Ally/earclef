@@ -24,6 +24,7 @@ import type { RosterByMbid } from './CountryPanel'
 import { LikeButton } from '@/components/fans/LikeButton'
 import { useLikes, type LikeDraft } from '@/components/fans/LikesProvider'
 import { loadYouTubeApi, NO_COOKIE_HOST, type YtPlayer } from '@/lib/play/youtubeApi'
+import { useOneSound } from '@/components/play/useOneSound'
 import styles from './QueuePlayer.module.css'
 
 /**
@@ -293,7 +294,25 @@ export function QueuePlayer({
   const pausedByFilterRef = useRef(false)
 
   const playerRef = useRef<YtPlayer | null>(null)
+  /** The YouTube player answered onReady — its methods exist from then. */
+  const playerReadyRef = useRef(false)
   const mountRef = useRef<HTMLDivElement>(null)
+  /**
+   * One sound at a time (lib/play/oneSound.ts): another player on the
+   * page started, so this queue paused. Its tracks, place in the list
+   * and filters all stay; "Resume" or YouTube's own ▶ takes the sound
+   * back. A queue still finding its first song keeps finding, quietly.
+   */
+  const [yielded, setYielded] = useState(false)
+  const sound = useOneSound(() => {
+    setYielded(true)
+    if (!playerReadyRef.current) return
+    try {
+      playerRef.current?.pauseVideo()
+    } catch {
+      // Player already gone with its DOM.
+    }
+  })
   const abortRef = useRef<AbortController | null>(null)
   const firstPlayedRef = useRef(false)
   const tracksRef = useRef<ResolvedTrack[]>([])
@@ -433,12 +452,36 @@ export function QueuePlayer({
     setDeadIds(deadRef.current)
   }
 
+  /**
+   * Move to a track. It PLAYS only while this queue holds the sound; a
+   * queue paused for another player (a dead video skipped, an "only"
+   * genre's first track landing) just cues it, and stays quiet.
+   */
   function jumpTo(index: number, step: 1 | -1 = 1) {
     const target = seekIncluded(index, step)
     const track = tracksRef.current[target]
     if (!track) return
     setCurrent(target)
-    playerRef.current?.loadVideoById(track.videoId)
+    if (sound.holds()) playerRef.current?.loadVideoById(track.videoId)
+    else playerRef.current?.cueVideoById?.(track.videoId)
+  }
+
+  /** The listener chose a track here (⏮ ⏭ or a row): it takes the sound. */
+  function playTrack(index: number, step: 1 | -1 = 1) {
+    sound.claim()
+    setYielded(false)
+    jumpTo(index, step)
+  }
+
+  /** "Resume" after another player took the sound: take it back. */
+  function resume() {
+    sound.claim()
+    setYielded(false)
+    // Every genre switched off: stay silent — switching one back on
+    // plays, as before. Not ready yet, or no song yet: onReady (or the
+    // first song to land) plays it, now that this queue holds the sound.
+    if (pausedByFilterRef.current) return
+    if (playerReadyRef.current) playerRef.current?.playVideo?.()
   }
 
   async function playFirst(track: ResolvedTrack) {
@@ -447,15 +490,28 @@ export function QueuePlayer({
       if (!mountRef.current || abortRef.current?.signal.aborted) return
       const mount = document.createElement('div')
       mountRef.current.appendChild(mount)
+      // Built quiet, played on ready — and only if this queue still
+      // holds the sound then. A first song that lands after another
+      // player started waits, cued, instead of talking over it. (An
+      // autoplay flag would start it even when another player took the
+      // sound while it loaded.)
       playerRef.current = new yt.Player(mount, {
         host: NO_COOKIE_HOST,
         videoId: track.videoId,
-        playerVars: { autoplay: 1, rel: 0 },
+        playerVars: { autoplay: 0, rel: 0 },
         events: {
-          onReady: (event) => event.target.playVideo(),
+          onReady: (event) => {
+            playerReadyRef.current = true
+            if (sound.holds()) event.target.playVideo()
+          },
           onStateChange: (event) => {
             if (event.data === yt.PlayerState.ENDED) {
               jumpTo(currentRef.current + 1, 1)
+            } else if (event.data === yt.PlayerState.PLAYING) {
+              // Sounding again — a next track, or YouTube's own ▶ on a
+              // paused queue: whatever else plays stops.
+              sound.claim()
+              setYielded(false)
             }
           },
           // Without this, ONE video that died since it was verified
@@ -849,6 +905,10 @@ export function QueuePlayer({
 
   async function start() {
     if (active) return
+    // The listener pressed play HERE: whatever else sounds stops now,
+    // even while this queue is still finding its first song.
+    sound.claim()
+    setYielded(false)
     setActive(true)
     if (preresolved) {
       setTracks(preresolved)
@@ -1161,8 +1221,18 @@ export function QueuePlayer({
     // panel alive, shrunk to its player, while the visitor looks elsewhere
     // (ExploreClient, lib/explore/panelFrames.ts). It finds the player by
     // data-playing and hides the details marked data-player-detail.
-    <div className={styles.queueBox} data-playing="true">
+    // A queue paused for another player is "paused", not the one playing.
+    <div className={styles.queueBox} data-playing={yielded ? 'paused' : 'true'}>
       <div className={styles.playerFrame} ref={mountRef} />
+
+      {yielded && (
+        <p className={styles.buildNote}>
+          Paused because another player started.{' '}
+          <button type="button" className={styles.widenQueueButton} onClick={resume}>
+            ▶ Resume
+          </button>
+        </p>
+      )}
 
       {nowPlaying && includedIndices.length > 0 && (
         <>
@@ -1178,7 +1248,7 @@ export function QueuePlayer({
             <button
               type="button"
               className={styles.controlButton}
-              onClick={() => jumpTo(current - 1, -1)}
+              onClick={() => playTrack(current - 1, -1)}
               disabled={!includedIndices.some((i) => i < current)}
               aria-label="Previous track"
             >
@@ -1187,7 +1257,7 @@ export function QueuePlayer({
             <button
               type="button"
               className={styles.controlButton}
-              onClick={() => jumpTo(current + 1, 1)}
+              onClick={() => playTrack(current + 1, 1)}
               disabled={!includedIndices.some((i) => i > current)}
               aria-label="Next track"
             >
@@ -1455,7 +1525,7 @@ export function QueuePlayer({
               <button
                 type="button"
                 className={styles.rowPlay}
-                onClick={() => jumpTo(index)}
+                onClick={() => playTrack(index)}
                 disabled={dead}
                 aria-label={
                   dead
