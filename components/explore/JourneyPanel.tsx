@@ -191,7 +191,9 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
         {title}
       </h2>
 
-      <div className={styles.media}>
+      {/* data-playing while a song is on: Explore keeps this panel alive,
+          shrunk to its player, when the visitor opens somewhere else. */}
+      <div className={styles.media} data-playing={current !== null ? 'true' : undefined}>
         <div ref={mountRef} className={styles.frame} />
         {current === null &&
           (first ? (

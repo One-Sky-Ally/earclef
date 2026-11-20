@@ -1,0 +1,179 @@
+/* ── The panel column: the playing panel above, the browsed one below ──
+   Wide layouts: the stack fills ExploreClient's .panelSlot; the browsed
+   panel takes what the playing one leaves and scrolls inside.          */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 0;
+}
+
+.browseFrame {
+  position: relative;
+  flex: 1 1 0;
+  min-height: 14rem;
+}
+
+.browseBody {
+  position: absolute;
+  inset: 0;
+}
+
+/* Panels fill their frame (CountryPanel positions itself; the journey,
+   artist and placeholder panels used to take it from the slot). */
+.browseBody > * {
+  position: absolute;
+  inset: 0;
+}
+
+/* ── The playing panel, shrunk to its player ── */
+.nowFrame {
+  position: relative;
+  flex: 0 1 auto;
+  max-height: 64%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--accent-deep);
+  border-radius: var(--radius);
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.nowBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 0.75rem;
+  padding: 0.75rem 0.95rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.nowLine {
+  margin: 0;
+  min-width: 0;
+  line-height: 1.3;
+}
+
+.nowEyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.nowPlace {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.nowActions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.nowButton {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--accent-deep);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nowButton:hover,
+.nowButton:focus-visible {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.lookingAt {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.nowBody {
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+/* The panel inside sizes to its player, not to the slot. Doubled class:
+   it must beat each panel's own positioning (one class each). */
+.nowBody.nowBody > * {
+  position: relative;
+  inset: auto;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  padding: 0.6rem 0.95rem 0.9rem;
+  animation: none;
+}
+
+/* Shrink to the player: everything that neither is, holds, nor sits
+   inside a playing player is hidden — never removed, so going back to
+   the place finds the panel exactly as it was. */
+.nowBody :not(:has([data-playing='true'])):not([data-playing='true']):not([data-playing='true'] *) {
+  display: none;
+}
+
+/* The video at its 16:9 size, never under YouTube's 200px minimum
+   (Required Minimum Functionality). The player API writes height="360"
+   on its iframe, which beats the queue's aspect-ratio rule; parked, the
+   frame should take as little of the column as YouTube allows. */
+.nowBody [data-playing='true'] iframe {
+  height: auto;
+  min-height: 200px;
+  aspect-ratio: 16 / 9;
+}
+
+/* Inside the player: the track list and genre chips wait for "Open". */
+.nowBody [data-player-detail] {
+  display: none;
+}
+
+/* ── Phones: the "Playing" chip in the sticky year bar ── */
+.chip {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .browseFrame {
+    flex: none;
+    min-height: 0;
+  }
+
+  .browseBody,
+  .browseBody > * {
+    position: relative;
+    inset: auto;
+  }
+
+  .nowFrame {
+    max-height: none;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    max-width: 100%;
+    margin-top: 0.45rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--accent-deep);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    color: var(--accent);
+    background: var(--panel);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

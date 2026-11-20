@@ -51,6 +51,14 @@ import {
   type RosterByMbid,
   type SelectedCountry,
 } from '@/components/explore/CountryPanel'
+import {
+  ExplorePanels,
+  NowPlayingChip,
+  panelKey,
+  panelLabel,
+  type ExplorePanel,
+} from '@/components/explore/ExplorePanels'
+import type { FrameRole } from '@/lib/explore/panelFrames'
 import { EXPLORE_SEARCH_ID } from '@/components/SiteNavLinks'
 import { OnThisDayLink } from '@/components/onthisday/OnThisDayLink'
 import { Icon } from '@/components/ui/Icon'
@@ -130,6 +138,11 @@ export function ExploreClient({
   const yearTween = useRef<ReturnType<typeof setInterval> | null>(null)
   // Stacked layout: where the panel begins, and the year bar stuck above it.
   const panelAnchorRef = useRef<HTMLDivElement>(null)
+  // Music keeps playing while you keep exploring (owner, Nov 19 2026): the
+  // panel whose music is on, kept apart from the one being looked at.
+  const [playing, setPlaying] = useState<ExplorePanel | null>(null)
+  const browseFrameRef = useRef<HTMLDivElement>(null)
+  const nowFrameRef = useRef<HTMLDivElement>(null)
   const controlsRef = useRef<HTMLDivElement>(null)
   const globeReadyRef = useRef(false)
 
@@ -168,26 +181,30 @@ export function ExploreClient({
     : selected
       ? `c:${selected.code}`
       : scrollKey
+  /** Scroll so `anchor` starts just under the nav and the stuck year bar. */
+  const scrollBelowBar = useCallback((anchor: HTMLElement | null) => {
+    if (!anchor) return
+    const controls = controlsRef.current
+    const navHeight =
+      parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue('--nav-h'),
+      ) || 56
+    const stuckAbove = controls ? controls.getBoundingClientRect().height : 0
+    const top =
+      anchor.getBoundingClientRect().top +
+      window.scrollY -
+      (navHeight + stuckAbove + 12)
+    window.scrollTo({ top, behavior: 'smooth' })
+  }, [])
   useEffect(() => {
     if (!openKey) return
     if (!window.matchMedia(STACKED_QUERY).matches) return
-    const frame = requestAnimationFrame(() => {
-      const anchor = panelAnchorRef.current
-      const controls = controlsRef.current
-      if (!anchor) return
-      const navHeight =
-        parseFloat(
-          getComputedStyle(document.documentElement).getPropertyValue('--nav-h'),
-        ) || 56
-      const stuckAbove = controls ? controls.getBoundingClientRect().height : 0
-      const top =
-        anchor.getBoundingClientRect().top +
-        window.scrollY -
-        (navHeight + stuckAbove + 12)
-      window.scrollTo({ top, behavior: 'smooth' })
-    })
+    // The panel being opened, not the playing one parked above it.
+    const frame = requestAnimationFrame(() =>
+      scrollBelowBar(browseFrameRef.current ?? panelAnchorRef.current),
+    )
     return () => cancelAnimationFrame(frame)
-  }, [openKey])
+  }, [openKey, scrollBelowBar])
 
   useEffect(
     () => () => {
@@ -482,6 +499,87 @@ export function ExploreClient({
     setSelected(country)
   }
 
+  // What the panel column is showing now — the place, journey or artist
+  // being looked at. The playing panel (if any) is kept beside it.
+  const browse: ExplorePanel = artist
+    ? { kind: 'artist', artist, year: panelYear }
+    : selected
+      ? { kind: 'country', country: selected, year: panelYear, lens }
+      : journey
+        ? { kind: 'journey', culture: journey }
+        : { kind: 'empty' }
+  const browsingElsewhere = playing !== null && panelKey(playing) !== panelKey(browse)
+
+  /** The panel being looked at started playing: it replaces what played. */
+  function startPlaying(panel: ExplorePanel) {
+    setPlaying((current) =>
+      current && panelKey(current) === panelKey(panel) ? current : panel,
+    )
+  }
+
+  /** "Open" on the playing panel: look at that place and year again. */
+  function openPlaying(panel: ExplorePanel) {
+    if (panel.kind === 'country') {
+      setArtist(null)
+      setLens(panel.lens)
+      setYear(panel.year)
+      setPanelYear(panel.year)
+      setSelected(panel.country)
+      setFocusRequest((current) => ({
+        code: panel.country.code,
+        name: panel.country.name,
+        nonce: (current?.nonce ?? 0) + 1,
+        flyOnly: true,
+      }))
+    } else if (panel.kind === 'journey') {
+      featureCulture(panel.culture)
+    } else if (panel.kind === 'artist') {
+      setArtist(panel.artist)
+    }
+  }
+
+  function renderPanel(panel: ExplorePanel, role: FrameRole) {
+    switch (panel.kind) {
+      case 'artist':
+        return (
+          <ArtistEraPanel
+            artist={panel.artist}
+            year={panel.year}
+            onClose={() => setArtist(null)}
+          />
+        )
+      case 'country':
+        return (
+          <CountryPanel
+            country={panel.country}
+            year={panel.year}
+            genre={panel.lens}
+            source={source}
+            roster={roster}
+            spotlight={
+              role !== 'playing' &&
+              spotlightKey === `${panel.country.code}:${panel.year}`
+            }
+            // Closing the place you look at never stops the music; the
+            // playing panel's own close is its Stop.
+            onClose={role === 'playing' ? () => setPlaying(null) : () => setSelected(null)}
+          />
+        )
+      case 'journey':
+        return (
+          <JourneyPanel
+            culture={panel.culture}
+            onOpenPlace={openCulturePlace}
+            onNext={
+              role !== 'playing' && featuredPool.length > 1 ? nextJourney : undefined
+            }
+          />
+        )
+      default:
+        return <div className={styles.panelPlaceholder} aria-hidden="true" />
+    }
+  }
+
   const viewHint =
     view === 'globe'
       ? 'Drag to spin · scroll to zoom · click a country or search a place'
@@ -590,6 +688,12 @@ export function ExploreClient({
           max={YEAR_MAX}
           onChange={setYear}
         />
+        {playing && browsingElsewhere && (
+          <NowPlayingChip
+            label={panelLabel(playing)}
+            onClick={() => scrollBelowBar(nowFrameRef.current)}
+          />
+        )}
         <div className={styles.timeMeta}>
           <p className={styles.caption}>
             {source && (
@@ -652,34 +756,16 @@ export function ExploreClient({
       </div>
 
       <div ref={panelAnchorRef} className={styles.panelSlot}>
-        {artist ? (
-          <ArtistEraPanel
-            key={`${artist.mbid}:${panelYear}`}
-            artist={artist}
-            year={panelYear}
-            onClose={() => setArtist(null)}
-          />
-        ) : selected ? (
-          <CountryPanel
-            key={`${selected.code}:${panelYear}:${lens ?? ''}`}
-            country={selected}
-            year={panelYear}
-            genre={lens}
-            source={source}
-            roster={roster}
-            spotlight={spotlightKey === `${selected.code}:${panelYear}`}
-            onClose={() => setSelected(null)}
-          />
-        ) : journey ? (
-          <JourneyPanel
-            key={journey.id}
-            culture={journey}
-            onOpenPlace={openCulturePlace}
-            onNext={featuredPool.length > 1 ? nextJourney : undefined}
-          />
-        ) : (
-          <div className={styles.panelPlaceholder} aria-hidden="true" />
-        )}
+        <ExplorePanels
+          browse={browse}
+          playing={playing}
+          onPlay={startPlaying}
+          onStop={() => setPlaying(null)}
+          onOpen={openPlaying}
+          renderPanel={renderPanel}
+          browseFrameRef={browseFrameRef}
+          nowFrameRef={nowFrameRef}
+        />
       </div>
 
       {mapExpanded && view === 'map' && (

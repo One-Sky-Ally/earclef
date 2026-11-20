@@ -1157,7 +1157,11 @@ export function QueuePlayer({
   ).length
 
   return (
-    <div className={styles.queueBox}>
+    // data-playing / data-player-detail: the Explore page keeps a playing
+    // panel alive, shrunk to its player, while the visitor looks elsewhere
+    // (ExploreClient, lib/explore/panelFrames.ts). It finds the player by
+    // data-playing and hides the details marked data-player-detail.
+    <div className={styles.queueBox} data-playing="true">
       <div className={styles.playerFrame} ref={mountRef} />
 
       {nowPlaying && includedIndices.length > 0 && (
@@ -1364,7 +1368,7 @@ export function QueuePlayer({
           changed once it is running. This filters what is already
           here and what gets fetched next. */}
       {(genreCounts.length > 1 || !isAllGenres(genreFilter)) && (
-        <div className={styles.genreControl}>
+        <div className={styles.genreControl} data-player-detail="">
           <button
             type="button"
             className={styles.genreToggle}
@@ -1439,7 +1443,7 @@ export function QueuePlayer({
       )}
 
       {includedIndices.length > 0 && (
-        <ol className={styles.queueList}>
+        <ol className={styles.queueList} data-player-detail="">
           {includedIndices.map((index, position) => {
             const track = tracks[index]
             const dead = deadIds.has(track.videoId)

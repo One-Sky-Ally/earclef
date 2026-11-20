@@ -13,7 +13,9 @@ export function YouTubeEmbed({ video, index }: YouTubeEmbedProps) {
   const [loaded, setLoaded] = useState(false)
 
   return (
-    <figure className={styles.wrapper}>
+    // data-playing once the video is loaded: the Explore page keeps a
+    // panel with a playing embed alive while the visitor looks elsewhere.
+    <figure className={styles.wrapper} data-playing={loaded ? 'true' : undefined}>
       <div className={styles.player}>
         {loaded ? (
           <iframe

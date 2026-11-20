@@ -111,6 +111,26 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
 
 **Last updated: Nov 19, 2026 · v1 shipped and far surpassed — see Current state**
 
+- **EXPLORE — MUSIC KEEPS PLAYING WHILE YOU KEEP EXPLORING (Nov 19, 2026; owner: "keep exploring other places and years on the globe without the player stopping … shouldn't replace what's playing until I choose to play the new place. Make it clear which place and year is playing and which one I'm just looking at. It should work on phones too").**
+  - **HOW:** nothing is lifted out of the panels. The panel whose music is on stays MOUNTED (same React key, same DOM node, so the YouTube iframe never reloads). It is parked above the panel being looked at and shrunk to its player.
+    - `lib/explore/panelFrames.ts` (5 tests) orders the frames and always keeps the playing one FIRST. A moved iframe node would reload and stop the music.
+    - `components/explore/ExplorePanels.tsx` renders the frames. It watches the browsed frame with a MutationObserver for `[data-playing="true"]`; when that appears, that panel becomes the playing one and the old one unmounts (stops).
+    - Players mark themselves: QueuePlayer's queueBox, YouTubeEmbed once loaded, and JourneyPanel's media while a song is on. `data-player-detail` marks what the parked view hides (the queue list, genre chips).
+    - The parked view hides everything else with one CSS `:has()` rule — hidden, never unmounted, so "Open" finds the panel as it was. It sizes the video 16:9 with YouTube's 200px minimum (the API's height="360" attribute had beaten the aspect-ratio rule).
+  - **UI:**
+    - The parked card reads "♪ Now playing · Egypt 1966", with Open (look at it again: sets the place, year and lens, and turns the globe flyOnly) and ■ Stop.
+    - Under them: "You're looking at Finland 1971. Egypt 1966 keeps playing until you press ▶ Play there."
+    - On phones (<900px) the sticky year bar carries "♪ Playing Egypt 1966"; tapping it scrolls to the card. Opening a place now scrolls to the BROWSED panel, not the parked one.
+    - Closing the panel you look at never stops the music.
+  - **COVERS** all music started on Explore: the place+year queue, #1 hits, Songs-about (queue and single-song rows) and curated journeys.
+  - **TESTED** in the local preview at 1024, 1400 and 375 (phone) widths:
+    - Playing kept the same iframe with 0 reloads across a year change, a new country (search), and a journey → country.
+    - ▶ on the browsed panel replaced the old player.
+    - Open and Stop work.
+    - The chip scrolls to the card.
+    - No console errors.
+  - **NOT DONE:** no "playing" marker on the globe itself (labels only). Browsers without `:has()` (Firefox before 121, Safari before 15.4) show the whole parked panel instead of just its player; the music still keeps playing.
+
 - **PRIVACY PAGE REWRITTEN + TERMS PAGE PUBLISHED (Nov 19, 2026; owner approved the wording with two checks: "make every statement on the privacy page accurate for both signed-out and signed-in listeners" and "only keep the Memberships line … if memberships can really be bought today").**
   - **CHECK 1:** the drafted line "saved in your own browser, not on our servers" was only true signed out. The page is now split into two parts:
     - **Signed out:** likes, radar removals and the listening service live in localStorage.
@@ -769,7 +789,7 @@ The verified-play sweep is COMPLETE (18,591 swept, 7,226 ▶, 38.9%). These 17 c
 
 ### Feature backlog (owner-requested, NOT built — each needs its own go)
 
-- **EXPLORE — MUSIC KEEPS PLAYING WHILE YOU KEEP EXPLORING, LOGGED NOT BUILT (owner, Nov 18, 2026).** Wanted: when music is playing from the Explore page, the listener can open other places and years without the player stopping. Notes: today the place+year queue (QueuePlayer) lives INSIDE the country panel and is keyed on `country:year:genre`, and its unmount cleanup destroys the YouTube player — so any place or year change ends the music by design. Building this means lifting the playing queue out of CountryPanel into a persistent player owned by ExploreClient (or the layout), with the panel handing it a queue rather than owning one; the Songs-about and #1-hits queues would want the same treatment.
+- ~~**EXPLORE — MUSIC KEEPS PLAYING WHILE YOU KEEP EXPLORING, LOGGED NOT BUILT (owner, Nov 18, 2026).**~~ **BUILT Nov 19, 2026** — see the build-log entry of that date. Wanted: when music is playing from the Explore page, the listener can open other places and years without the player stopping. Notes: today the place+year queue (QueuePlayer) lives INSIDE the country panel and is keyed on `country:year:genre`, and its unmount cleanup destroys the YouTube player — so any place or year change ends the music by design. Building this means lifting the playing queue out of CountryPanel into a persistent player owned by ExploreClient (or the layout), with the panel handing it a queue rather than owning one; the Songs-about and #1-hits queues would want the same treatment.
 - **FEED — "COMING SOON" AS A LINK THAT OPENS A POP-UP, PLUS A "RECENTLY RELEASED" POP-UP, LOGGED NOT BUILT (owner, Nov 18, 2026).** Today the upcoming releases render as an always-open strip of "Coming {date}" cards (components/feed/FeedClient.tsx, `upcomingStrip`, capped at UPCOMING_LIMIT = 6, each card linking out to Apple Music). Wanted: a "Coming soon" link that opens a pop-up with those releases, and a new "Recently released" link that works the same way. The site already has a popup pattern (components/Modal.tsx, CatalogPopup.tsx, popupBrowser.module.css) to reuse.
 - **FEED — DROP CLIPS UNDER A MINUTE, PLAY FEED VIDEOS ON THE SITE, LOGGED NOT BUILT (owner, Nov 18, 2026: "a lot of clips aren't very good").** Wanted: (a) remove anything shorter than one minute; (b) feed videos play inside the site the way they do on artist pages and the globe page, instead of opening YouTube. Notes: the snapshot (lib/feed/snapshot.ts) checks playability by oEmbed, which carries no duration — the length filter needs videos.list `contentDetails` (1 unit per 50 ids, batch it in the nightly rebuild, and remember stored snapshots outlive the generator: filter at read time too). FeedPostCard.tsx links video posts out ("Watch on YouTube", target _blank); the in-site player is components/YouTubeEmbed.tsx, as used by the artist pages and the Songs-about rows.
 
