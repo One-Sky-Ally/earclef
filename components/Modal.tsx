@@ -13,6 +13,16 @@ interface ModalProps {
 export function Modal({ title, subtitle, onClose, children }: ModalProps) {
   const closeRef = useRef<HTMLButtonElement>(null)
 
+  // Closing hands focus back to whatever opened the dialog (the link or
+  // button), not to the top of the page. Mount-only, declared first so it
+  // captures the opener before the effect below moves focus to ✕.
+  useEffect(() => {
+    const opener = document.activeElement
+    return () => {
+      if (opener instanceof HTMLElement && opener.isConnected) opener.focus()
+    }
+  }, [])
+
   useEffect(() => {
     closeRef.current?.focus()
     const previousOverflow = document.body.style.overflow

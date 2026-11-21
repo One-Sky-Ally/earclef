@@ -1,5 +1,10 @@
 import { NextResponse } from 'next/server'
-import { isFresh, readSnapshot, triggerRebuild } from '@/lib/feed/snapshot'
+import {
+  isFresh,
+  readSnapshot,
+  triggerRebuild,
+  withoutShortClips,
+} from '@/lib/feed/snapshot'
 
 /**
  * Serves the precomputed feed. A stale-but-present snapshot is still
@@ -30,7 +35,8 @@ export async function GET() {
     )
   }
 
-  const response = NextResponse.json(snapshot)
+  // Nothing under a minute, including clips stored before that rule.
+  const response = NextResponse.json(await withoutShortClips(snapshot))
   response.headers.set(
     'Cache-Control',
     'public, s-maxage=3600, stale-while-revalidate=7200',

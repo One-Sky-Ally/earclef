@@ -1,12 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import {
   resolveListenHref,
   type ArtistServicePresence,
 } from '@/lib/listen/services'
 import { useListenService } from '@/components/listen/ServiceProvider'
+import { useOneSound } from '@/components/play/useOneSound'
 import { displayTitle } from '@/lib/feed/displayTitle'
 import { Icon } from '@/components/ui/Icon'
 import styles from './FeedPostCard.module.css'
@@ -20,6 +21,8 @@ export interface FeedPostItem {
   image: string
   imageLarge?: string
   href: string
+  /** Videos only — played on the site instead of linking out. */
+  videoId?: string
   presence?: ArtistServicePresence
 }
 
@@ -45,6 +48,17 @@ function initials(name: string): string {
   )
 }
 
+/** The YouTube id a video post plays: stored, or read off its watch URL. */
+function videoIdOf(item: FeedPostItem): string | null {
+  if (item.type !== 'video') return null
+  if (item.videoId) return item.videoId
+  try {
+    return new URL(item.href).searchParams.get('v')
+  } catch {
+    return null
+  }
+}
+
 /** Where the entry's data comes from, named plainly. */
 function sourceLabel(item: FeedPostItem): string {
   if (item.type === 'video') return 'Artist YouTube channel'
@@ -63,18 +77,36 @@ function sourceLabel(item: FeedPostItem): string {
 export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
   const { service } = useListenService()
   const [expanded, setExpanded] = useState(false)
-  // Videos carry verified watch URLs; release links are music-service
-  // searches on the fan's service, labeled as searches.
+  // Videos play right here (owner, Nov 18 2026), like the artist pages
+  // and the globe — one sound at a time: another player starting puts
+  // this one back to its still.
+  const videoId = videoIdOf(item)
+  const [playing, setPlaying] = useState(false)
+  const { claim } = useOneSound(() => setPlaying(false))
+  const frameRef = useRef<HTMLIFrameElement>(null)
+  // The preview button goes away when the player replaces it; keyboard
+  // and screen-reader users land on the player instead of the page top.
+  const focusFrame = useRef(false)
+  useEffect(() => {
+    if (playing && focusFrame.current) frameRef.current?.focus()
+    focusFrame.current = false
+  }, [playing])
+  const play = () => {
+    claim()
+    setPlaying(true)
+  }
   const resolved =
     item.type === 'release'
       ? resolveListenHref(service, item.presence, item.artistName, item.title)
       : null
-  // Videos carry a verified watch URL; a release is a labeled search on
-  // the fan's service — or, when the artist is confirmed absent from
-  // it, a note and no link at all.
+  // A release is a labeled search on the fan's service — or, when the
+  // artist is confirmed absent from it, a note and no link at all. A
+  // video with no id to play (never expected) still links to YouTube.
   const link =
     resolved === null
-      ? { href: item.href, label: 'Watch on YouTube' }
+      ? videoId
+        ? null
+        : { href: item.href, label: 'Watch on YouTube' }
       : resolved.kind === 'search'
         ? { href: resolved.href, label: resolved.label }
         : null
@@ -130,7 +162,30 @@ export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
         <span className={styles.date}>{item.dateLabel}</span>
       </header>
 
-      {link ? (
+      {videoId && playing ? (
+        <div className={styles.media}>
+          <iframe
+            ref={frameRef}
+            className={styles.frame}
+            src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title={`YouTube player: ${headline}`}
+          />
+        </div>
+      ) : videoId ? (
+        <button
+          type="button"
+          className={styles.media}
+          onClick={() => {
+            focusFrame.current = true
+            play()
+          }}
+          aria-label={`Play video: ${headline} by ${item.artistName}`}
+        >
+          {preview}
+        </button>
+      ) : link ? (
         <a
           className={styles.media}
           href={link.href}
@@ -179,8 +234,18 @@ export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
       <footer className={styles.foot}>
         <span className={styles.source}>{sourceLabel(item)}</span>
         {/* Says what the click does before the click: a search on a
-            service, a watch on YouTube, or a confirmed absence. */}
-        {link ? (
+            service, a video that plays here, or a confirmed absence. */}
+        {videoId ? (
+          <button
+            type="button"
+            className={styles.action}
+            onClick={playing ? () => setPlaying(false) : play}
+            aria-label={`${playing ? 'Close player' : 'Play here'}: ${headline}`}
+          >
+            {playing ? 'Close player' : 'Play here'}
+            <Icon name={playing ? 'close' : 'play'} size={14} />
+          </button>
+        ) : link ? (
           <a className={styles.action} href={link.href} target="_blank" rel="noreferrer">
             {link.label}
             <Icon name="external" size={14} />

@@ -17,6 +17,8 @@ import {
 import { musicServiceSearchUrl } from '../listen/services'
 import { normalizedTitle } from './blurbKey'
 import { isSubstantiveVideo } from './substance'
+import { dropShortClips, settledLengths } from './clipLength'
+import { READ_TIMEOUT_MS, learnLengths } from './videoLengths'
 import roster from '../discover/roster.json'
 import { builtToday } from './rebuild'
 
@@ -40,6 +42,8 @@ export interface SnapshotItem {
   videoId?: string
   /** Contextless videos get demoted client-side; absent = substantive. */
   substance?: 'filler'
+  /** Videos only — how long it runs; absent when the lookup failed. */
+  seconds?: number
 }
 
 export interface FeedSnapshot {
@@ -394,6 +398,49 @@ export async function pruneDeadVideos(
   return kept
 }
 
+// --- Length rule: nothing under a minute (owner, Nov 18 2026). ---
+
+function videoIds(items: SnapshotItem[]): string[] {
+  return items.flatMap((item) =>
+    item.type === 'video' && item.videoId && item.seconds === undefined
+      ? [item.videoId]
+      : [],
+  )
+}
+
+/**
+ * Stamps each video with how long it runs (one videos.list call per 50
+ * new ids; remembered after that) and drops the ones under a minute
+ * BEFORE the 600-item cap, so longer entries fill the room they leave.
+ * Live and upcoming broadcasts stay unstamped for the read path.
+ */
+async function keepMinuteLong(items: SnapshotItem[]): Promise<SnapshotItem[]> {
+  const lengths = settledLengths(await learnLengths(videoIds(items)))
+  const stamped = items.map((item) =>
+    item.videoId && lengths[item.videoId] !== undefined
+      ? { ...item, seconds: lengths[item.videoId] }
+      : item,
+  )
+  return dropShortClips(stamped, {})
+}
+
+/**
+ * The served snapshot, short clips removed. Snapshots stored before the
+ * rule (or nights the lookup failed) carry videos with no `seconds`;
+ * those are looked up here once and judged, so clips already in the
+ * feed leave it without waiting for the next rebuild.
+ */
+export async function withoutShortClips(
+  snapshot: FeedSnapshot,
+): Promise<FeedSnapshot> {
+  const unknown = videoIds(snapshot.items)
+  // A visitor is waiting: a short limit, and whatever is still unknown
+  // is kept and judged on a later read.
+  const lengths =
+    unknown.length > 0 ? await learnLengths(unknown, READ_TIMEOUT_MS) : {}
+  return { ...snapshot, items: dropShortClips(snapshot.items, lengths) }
+}
+
 /** iTunes overlay wins duplicate titles (release-day dates on new drops). */
 function mergeReleases(
   overlay: SnapshotItem[],
@@ -442,17 +489,17 @@ export async function buildBatch(
 ): Promise<{ progress: BuildProgress; done: boolean }> {
   const list = roster as RosterEntry[]
   const slice = list.slice(progress.cursor, progress.cursor + BATCH_SIZE)
-  const items = [...progress.items]
   // One verdict-cache read per invocation; refreshed entries are written
   // back after the batch so only new/stale ids hit oEmbed.
   const verdicts = await readVerdicts()
+  const fetched: SnapshotItem[] = []
   for (const entry of slice) {
     const [mb, overlay, videos] = [
       await mbReleases(entry),
       await itunesReleases(entry),
       await rssVideos(entry),
     ]
-    items.push(
+    fetched.push(
       ...mergeReleases(overlay, mb),
       ...(await pruneDeadVideos(videos, verdicts)),
     )
@@ -461,6 +508,7 @@ export async function buildBatch(
     await sleep(2600)
   }
   await writeVerdicts(verdicts)
+  const items = [...progress.items, ...(await keepMinuteLong(fetched))]
   const cursor = progress.cursor + slice.length
   const next: BuildProgress = { ...progress, cursor, items }
   return { progress: next, done: cursor >= list.length }

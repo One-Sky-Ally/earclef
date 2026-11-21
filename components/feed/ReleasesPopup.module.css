@@ -1,0 +1,113 @@
+/* The Feed's "Coming soon" and "Recently released" pop-up lists. */
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-deep) transparent;
+  padding-right: 0.4rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.cover {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background: var(--bg-card);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.date {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.title {
+  font-size: 1rem;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.artist {
+  align-self: flex-start;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  transition: color 0.2s ease;
+}
+
+.artist:hover {
+  color: var(--accent);
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 36px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.action:hover {
+  color: var(--accent-bright);
+}
+
+.absent {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  max-width: 12rem;
+  text-align: right;
+}
+
+/* Phones: the action drops under the title instead of squeezing it. */
+@media (max-width: 520px) {
+  .row {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 0.35rem 0.75rem;
+  }
+
+  .cover {
+    width: 48px;
+    height: 48px;
+    grid-row: span 2;
+  }
+
+  .action,
+  .absent {
+    grid-column: 2;
+    justify-self: start;
+    text-align: left;
+  }
+
+  .title {
+    white-space: normal;
+  }
+}

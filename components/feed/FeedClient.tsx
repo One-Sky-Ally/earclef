@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
   fetchCatalog,
   fetchItunesReleases,
@@ -17,13 +17,15 @@ import {
   youtubeWatchUrl,
 } from '@/lib/links'
 import { blurbKey, normalizedTitle } from '@/lib/feed/blurbKey'
-import { displayTitle } from '@/lib/feed/displayTitle'
 import {
-  SEARCH_LABELS,
+  comingSoon,
+  isUpcoming,
+  recentlyReleased,
+} from '@/lib/feed/releaseLists'
+import {
   musicServiceSearchUrl,
   type ArtistServicePresence,
 } from '@/lib/listen/services'
-import { isSearchUrl } from '@/lib/play/storedHref'
 import type { StoryCard } from '@/lib/stories/types'
 import {
   DEFAULT_FOLLOW_TIER,
@@ -34,6 +36,10 @@ import {
 import { TierFilter, type TierChoice } from '@/components/TierFilter'
 import { FeedPostCard } from '@/components/feed/FeedPostCard'
 import { FeedSkeleton } from '@/components/feed/FeedSkeleton'
+import {
+  ReleasesPopup,
+  type ReleaseRow,
+} from '@/components/feed/ReleasesPopup'
 import { StoryCardView } from '@/components/stories/StoryCardView'
 import { ServicePicker } from '@/components/listen/ServicePicker'
 import styles from './FeedClient.module.css'
@@ -57,6 +63,8 @@ interface FeedItem {
   /** Bigger art for the featured cards; falls back to image, then placeholder. */
   imageLarge?: string
   href: string
+  /** Videos only — what the in-site player plays. */
+  videoId?: string
   /** Contextless videos (snapshot-classified) demote behind everything. */
   substance?: 'filler'
   presence?: ArtistServicePresence
@@ -67,7 +75,6 @@ const FEED_LIMIT = 50
 const PAGE_SIZE = 10
 // Story cards (editorial picks) keep their own section, a few at a time.
 const STORIES_PAGE = 3
-const UPCOMING_LIMIT = 6
 
 // --- Daily-seeded shuffle for the STORIES section: same order all day,
 // fresh order tomorrow. The dated feed itself is never shuffled (owner
@@ -177,6 +184,7 @@ function videoItems(entry: RosterEntry, videos: VideosResponse): FeedItem[] {
       image: youtubeThumbnailUrl(item.videoId),
       imageLarge: youtubeThumbnailLargeUrl(item.videoId),
       href: youtubeWatchUrl(item.videoId),
+      videoId: item.videoId,
     }))
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, VIDEOS_PER_ARTIST)
@@ -220,6 +228,10 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   const [stamps, setStamps] = useState<
     Record<string, { number: number; since: string }>
   >({})
+  // Which release list is open in a pop-up, if any.
+  const [openList, setOpenList] = useState<'coming' | 'recent' | null>(null)
+  // Stable, so the Modal's focus/scroll-lock effect runs once per opening.
+  const closeList = useCallback(() => setOpenList(null), [])
   const requestedBlurbs = useRef(new Set<string>())
   const retriedBlurbs = useRef(new Set<string>())
 
@@ -374,26 +386,26 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
 
   // Filter before the newest-50 cut so each tier surfaces its own latest,
   // not just its members of the overall top 50. Future-dated releases
-  // split into the "Coming" strip; on release day they flow back in here.
-  // Filler-classified videos (no named work, no story) get their own
-  // dated section below the feed — demoted, never silently deleted, and
-  // never out of order inside the main list.
-  const { upcoming, visible, extras } = useMemo(() => {
+  // go to the "Coming soon" pop-up; on release day they flow back in here
+  // (and into "Recently released"). Filler-classified videos (no named
+  // work, no story) get their own dated section below the feed —
+  // demoted, never silently deleted, and never out of order inside the
+  // main list.
+  const { upcoming, recent, visible, extras } = useMemo(() => {
     if (state.status !== 'ready')
       return {
         upcoming: [] as FeedItem[],
+        recent: [] as FeedItem[],
         visible: [] as FeedItem[],
         extras: [] as FeedItem[],
       }
     const filtered = state.items.filter((item) => inChoice(item.slug))
-    const isUpcoming = (item: FeedItem) =>
-      item.type === 'release' && item.date.slice(0, 10) > todayIso
-    const current = newestFirst(filtered.filter((item) => !isUpcoming(item)))
+    const current = newestFirst(
+      filtered.filter((item) => !isUpcoming(item, todayIso)),
+    )
     return {
-      upcoming: filtered
-        .filter(isUpcoming)
-        .sort((a, b) => a.date.localeCompare(b.date))
-        .slice(0, UPCOMING_LIMIT),
+      upcoming: comingSoon(filtered, todayIso),
+      recent: recentlyReleased(filtered, todayIso),
       visible: current
         .filter((item) => item.substance !== 'filler')
         .slice(0, FEED_LIMIT),
@@ -525,6 +537,19 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   const remainingExtras = extras.length - Math.min(extrasCount, extras.length)
   const remainingStories = stories.length - Math.min(storiesCount, stories.length)
 
+  function releaseRows(items: FeedItem[], coming: boolean): ReleaseRow[] {
+    return items.map((item) => ({
+      slug: item.slug,
+      artistName: item.artistName,
+      title: item.title,
+      dateLabel: coming
+        ? `Coming ${formatFeedDate(item.date)}`
+        : formatFeedDate(item.date),
+      image: item.image,
+      presence: item.presence,
+    }))
+  }
+
   function card(item: FeedItem) {
     const key = blurbKey(item.slug, item.type, item.title)
     return (
@@ -585,38 +610,41 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
       {visible.length === 0 && tierChoice !== 'all' && (
         <p className={styles.note}>Nothing new from {choiceLabel} yet.</p>
       )}
-      {upcoming.length > 0 && (
-        <div className={styles.upcomingStrip}>
-          {upcoming.map((item) => (
-            <a
-              key={`${item.slug}-${item.title}`}
-              className={styles.upcomingCard}
-              // Stored snapshots can carry pre-ruling search hrefs —
-              // stored output outlives the generator that wrote it.
-              href={
-                isSearchUrl(item.href)
-                  ? musicServiceSearchUrl(
-                      'appleMusic',
-                      item.artistName,
-                      item.title,
-                    )
-                  : item.href
-              }
-              target="_blank"
-              rel="noreferrer"
+      {(upcoming.length > 0 || recent.length > 0) && (
+        <nav className={styles.releaseLinks} aria-label="Release lists">
+          {upcoming.length > 0 && (
+            <button
+              type="button"
+              className={styles.releaseLink}
+              aria-haspopup="dialog"
+              onClick={() => setOpenList('coming')}
             >
-              <span className={styles.comingBadge}>
-                Coming {formatFeedDate(item.date)}
-              </span>
-              <span className={styles.upcomingTitle}>
-                {item.artistName} — {displayTitle(item.title)}
-              </span>
-              <span className={styles.upcomingAction}>
-                {SEARCH_LABELS.appleMusic} ↗
-              </span>
-            </a>
-          ))}
-        </div>
+              <span className={styles.releaseLabel}>Coming soon</span>
+              <span className={styles.releaseCount}>{upcoming.length}</span>
+            </button>
+          )}
+          {recent.length > 0 && (
+            <button
+              type="button"
+              className={styles.releaseLink}
+              aria-haspopup="dialog"
+              onClick={() => setOpenList('recent')}
+            >
+              <span className={styles.releaseLabel}>Recently released</span>
+              <span className={styles.releaseCount}>{recent.length}</span>
+            </button>
+          )}
+        </nav>
+      )}
+      {openList && (
+        <ReleasesPopup
+          kind={openList}
+          rows={releaseRows(
+            openList === 'coming' ? upcoming : recent,
+            openList === 'coming',
+          )}
+          onClose={closeList}
+        />
       )}
       {stories.length > 0 && (
         <section aria-labelledby="feed-stories-heading">
@@ -664,7 +692,7 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
       {extras.length > 0 && (
         <section aria-labelledby="feed-extras-heading">
           <h2 id="feed-extras-heading" className={styles.sectionHead}>
-            Short clips &amp; extras
+            Clips &amp; extras
           </h2>
           <p className={styles.sectionNote}>
             Channel uploads with no named song or story — kept apart from the
