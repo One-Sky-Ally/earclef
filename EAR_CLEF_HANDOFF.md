@@ -109,7 +109,13 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
 
 ## 7. BUILD LOG (maintained by Claude Code — read this to resume cold)
 
-**Last updated: Nov 21, 2026 · v1 shipped and far surpassed — see Current state**
+**Last updated: Nov 22, 2026 · v1 shipped and far surpassed — see Current state**
+
+- **ON THIS DAY: SORTING AND FILTERS (Nov 22, 2026; owner: "On This Day: add sorting (newest first / oldest first) and filters for year, location and genre"; PR from `claude/project-thread-5oldor`).**
+  - **WHAT CHANGED:** a bar under "Releases through the years" with Order (oldest/newest first), Year (any, before 2000, a whole decade, or one year), Country, Genre, and "Clear filters". It replaces the old "Only before 2000" checkbox (now the Year menu's "Before 2000"). Decade groups follow the chosen order; each menu option shows how many releases picking it would show, counted under the other filters. The day's shuffled playlist plays only verified songs among what is shown.
+  - **WHAT "LOCATION" MEANS:** the artist's country on the site — the list's own Country column. Recording places exist only for some playable songs, so they are not a filter. Genre = the artist's canonical tags as served (`canonicalizeTags`, first 4); a release with none never matches a genre.
+  - **SCOPE:** filters act on the day's LISTED selection (the decade-balanced ~70–90 the API serves), not the full exact-dated total (e.g. 2,009 on Nov 22). The page says "Showing N of the M releases listed". Filtering the full total would need the build to ship every item per day.
+  - **URL:** `?d=11-22&sort=newest&yr=d1960&loc=GB&g=rock` — shareable, and filters stay as the visitor steps day to day. Logic in `lib/explore/onThisDayFilters.ts` (8 tests).
 
 - **STORY CARD VIDEOS PLAY ON THE SITE (Nov 21, 2026; owner, answering the Nov 20 question: "yes, story card videos should play on the site too, on the Feed and on artist pages"; pushed direct to main).**
   - **WHAT CHANGED:** `components/stories/StoryCardView.tsx` (the one card both the Feed's "Ear Clef stories" and the artist pages' "Story & Press" render) turns each YouTube watch link into a "▶ {label}" toggle button (`aria-pressed`, `aria-label="Play here: {label}"`). Pressing it opens a 16:9 youtube-nocookie player (`autoplay=1&playsinline=1&rel=0`) inside the card under the link list, with a "Close player ✕" button; pressing another link in the same card switches the player, and pressing the playing one again closes it. One sound at a time: it claims `useOneSound`, so a Feed video, the artist page's Start here queue or any other player starting closes it, and it starting stops them (the queue pauses, as built).
