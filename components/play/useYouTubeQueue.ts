@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { loadYouTubeApi, NO_COOKIE_HOST, type YtPlayer } from '@/lib/play/youtubeApi'
 import { useOneSound } from '@/components/play/useOneSound'
+import { countPlay } from '@/lib/tally/beacon'
 
 /**
  * One visible YouTube player walking a list of verified videos: play
@@ -137,6 +138,7 @@ export function useYouTubeQueue(videoIds: string[]) {
               // Sounding again (YouTube's own ▶ on a paused player
               // included): whatever else plays stops.
               sound.claim()
+              countPlay(currentIdRef.current)
               setYielded(false)
               setPaused(false)
             }

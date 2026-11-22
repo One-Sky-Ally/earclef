@@ -16,6 +16,7 @@ import {
 import type { FollowEntry } from '@/lib/curation/followStore'
 import { UniversePanel } from '@/components/studio/UniversePanel'
 import { StoriesPanel } from '@/components/studio/StoriesPanel'
+import { TallyPanel } from '@/components/studio/TallyPanel'
 import styles from './StudioClient.module.css'
 
 interface RosterRow {
@@ -252,6 +253,13 @@ export function StudioClient() {
 
   return (
     <div className={styles.studio}>
+      <section aria-labelledby="tally-heading">
+        <h2 id="tally-heading" className={styles.heading}>
+          What visitors do
+        </h2>
+        <TallyPanel ownerKey={state.key} />
+      </section>
+
       <section aria-labelledby="queue-heading">
         <h2 id="queue-heading" className={styles.heading}>
           Following — pages pending

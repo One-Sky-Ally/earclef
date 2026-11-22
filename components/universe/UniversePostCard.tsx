@@ -10,6 +10,7 @@ import {
   mediaUrl,
 } from '@/components/universe/postMeta'
 import styles from './Universe.module.css'
+import { countPlay } from '@/lib/tally/beacon'
 
 interface UniversePostCardProps {
   slug: string
@@ -122,6 +123,7 @@ function AudioPostPlayer({
         onPlay={() => {
           claim()
           setPlaying(true)
+          countPlay(audioRef.current?.currentSrc)
         }}
         onPause={() => setPlaying(false)}
         onTimeUpdate={(event) => setPosition(event.currentTarget.currentTime)}

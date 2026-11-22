@@ -16,8 +16,8 @@ export const metadata: Metadata = {
  * lib/fans/store.ts FanRecord; the one cookie is lib/membership/session.ts
  * (180 days); error reports are lib/clientLog.ts; every YouTube player
  * embeds from youtube-nocookie.com; saved YouTube facts are re-read within
- * 30 days (lib/play/queue/cacheEntry.ts + sweep.ts). Change the code, check
- * this page.
+ * 30 days (lib/play/queue/cacheEntry.ts + sweep.ts); play/save/share
+ * counts are lib/tally/ (Nov 22 2026). Change the code, check this page.
  */
 export default function PrivacyPage() {
   return (
@@ -94,6 +94,16 @@ export default function PrivacyPage() {
               We see totals, never people.
             </p>
             <p>
+              We also count how often songs are played, saved and shared, so
+              we can see which parts of Ear Clef people use. Each count says
+              only what happened (a play, a save or a share) and which part
+              of the site it happened on, such as the Feed or an artist
+              page. It carries no name, account, cookie, IP address, device
+              details or song, and counts are never linked to each other —
+              we keep daily totals and nothing else. If your browser sends
+              Global Privacy Control or Do Not Track, nothing is counted.
+            </p>
+            <p>
               If part of the site breaks in your browser, it sends a short
               error report — what failed, and your browser&rsquo;s name and
               version — to our server logs so it can be fixed. It carries
@@ -128,7 +138,8 @@ export default function PrivacyPage() {
             <p>
               The site runs on Netlify, email goes through Resend,
               payments go through Stripe, aggregate page counts go
-              through Cloudflare, and songs play through YouTube (Google).
+              through Cloudflare, play, save and share totals are kept on
+              Netlify, and songs play through YouTube (Google).
               Nobody&rsquo;s data is sold, shared, or used for anything
               beyond running the features described above.
             </p>

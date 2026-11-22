@@ -17,6 +17,7 @@ import {
   writePendingLikes,
   writeStoredLikes,
 } from '@/lib/fans/likesStorage'
+import { countEvent } from '@/lib/tally/beacon'
 
 /** A like as the player knows it — the timestamp is ours to stamp. */
 export type LikeDraft = Omit<LikedTrack, 'likedAt'>
@@ -204,6 +205,7 @@ export function LikesProvider({ children }: { children: React.ReactNode }) {
 
       const track: LikedTrack = { ...draft, likedAt: new Date().toISOString() }
       commit([track, ...current])
+      countEvent('save')
       // Queued FIRST, cleared only once the record confirms it. A like
       // made signed out — or one whose POST never landed — is exactly
       // what the next signed-in load hands over.

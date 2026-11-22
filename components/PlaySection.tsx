@@ -6,6 +6,7 @@ import { audioUrl, formatDuration } from '@/lib/audio'
 import { SectionHeader } from '@/components/SectionHeader'
 import { useOneSound } from '@/components/play/useOneSound'
 import styles from './PlaySection.module.css'
+import { countPlay } from '@/lib/tally/beacon'
 
 interface PlaySectionProps {
   play: PlayContent
@@ -212,6 +213,7 @@ export function PlaySection({ play, artistName, slug }: PlaySectionProps) {
           onPlay={() => {
             claim()
             setPlaying(true)
+            countPlay(audioRef.current?.currentSrc)
           }}
           onPause={() => setPlaying(false)}
           onTimeUpdate={(event) =>
