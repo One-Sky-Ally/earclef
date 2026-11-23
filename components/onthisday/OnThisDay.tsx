@@ -17,6 +17,7 @@ import {
 } from '@/lib/explore/onThisDayFilters'
 import { Icon } from '@/components/ui/Icon'
 import styles from './OnThisDay.module.css'
+import { countPlay } from '@/lib/tally/beacon'
 
 const MBID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 
@@ -439,6 +440,7 @@ function DayView({
 
   function play(item: OnThisDayItem) {
     setSelected(item)
+    if (item.v) countPlay(item.v)
     // Stacked layout: the panel sits above the list — bring it into view.
     if (window.matchMedia('(max-width: 979px)').matches) {
       requestAnimationFrame(() =>

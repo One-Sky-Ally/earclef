@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Icon } from '@/components/ui/Icon'
+import { countEvent } from '@/lib/tally/beacon'
 import styles from './ShareButton.module.css'
 
 interface ShareButtonProps {
@@ -20,6 +21,7 @@ export function ShareButton({ title }: ShareButtonProps) {
     if (navigator.share) {
       try {
         await navigator.share({ title: `${title} — Ear Clef`, url })
+        countEvent('share')
         return
       } catch (error) {
         // A dismissed sheet is not a failure; anything else falls back.
@@ -28,6 +30,7 @@ export function ShareButton({ title }: ShareButtonProps) {
     }
     try {
       await navigator.clipboard.writeText(url)
+      countEvent('share')
       setCopied(true)
       setTimeout(() => setCopied(false), 2500)
     } catch {

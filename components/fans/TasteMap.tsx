@@ -13,6 +13,7 @@ import { deriveRadar } from '@/lib/fans/radar'
 import { useLikes } from '@/components/fans/LikesProvider'
 import { RadarFromLikes } from '@/components/fans/RadarFromLikes'
 import styles from './TasteMap.module.css'
+import { countEvent } from '@/lib/tally/beacon'
 
 interface RosterName {
   slug: string
@@ -279,6 +280,7 @@ export function TasteMap({
   async function copyShareLink(url: string) {
     try {
       await navigator.clipboard.writeText(url)
+      countEvent('share')
       setCopied(true)
     } catch {
       setCopied(false)

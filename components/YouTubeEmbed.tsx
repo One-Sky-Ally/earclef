@@ -4,6 +4,7 @@ import { useState } from 'react'
 import type { VideoRef } from '@/lib/types'
 import { useOneSound } from '@/components/play/useOneSound'
 import styles from './YouTubeEmbed.module.css'
+import { countPlay } from '@/lib/tally/beacon'
 
 interface YouTubeEmbedProps {
   video: VideoRef
@@ -42,6 +43,7 @@ export function YouTubeEmbed({ video, index, onStopped }: YouTubeEmbedProps) {
             onClick={() => {
               claim()
               setLoaded(true)
+              countPlay(video.youtubeId)
             }}
             aria-label={`Play video: ${video.title}`}
           >

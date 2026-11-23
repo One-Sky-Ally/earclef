@@ -6,6 +6,7 @@ import type { StoryCard } from '@/lib/stories/types'
 import { useOneSound } from '@/components/play/useOneSound'
 import { Icon } from '@/components/ui/Icon'
 import styles from './StoryCardView.module.css'
+import { countPlay } from '@/lib/tally/beacon'
 
 interface StoryCardViewProps {
   card: StoryCard
@@ -50,6 +51,7 @@ export function StoryCardView({ card, showArtist = false }: StoryCardViewProps) 
     }
     claim()
     setPlaying(video)
+    countPlay(video.videoId)
   }
   // "Close player" goes away with the player; keyboard and screen-reader
   // users land back on the link that opened it, not the page top.

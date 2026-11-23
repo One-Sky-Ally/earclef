@@ -26,6 +26,7 @@ import { useLikes, type LikeDraft } from '@/components/fans/LikesProvider'
 import { loadYouTubeApi, NO_COOKIE_HOST, type YtPlayer } from '@/lib/play/youtubeApi'
 import { useOneSound } from '@/components/play/useOneSound'
 import styles from './QueuePlayer.module.css'
+import { countPlay } from '@/lib/tally/beacon'
 
 /**
  * Place+era play queue — discovery ends in sound. One tap builds a
@@ -511,6 +512,7 @@ export function QueuePlayer({
               // Sounding again — a next track, or YouTube's own ▶ on a
               // paused queue: whatever else plays stops.
               sound.claim()
+              countPlay(tracksRef.current[currentRef.current]?.videoId)
               setYielded(false)
             }
           },

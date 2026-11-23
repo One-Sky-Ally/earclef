@@ -11,6 +11,7 @@ import { useOneSound } from '@/components/play/useOneSound'
 import { displayTitle } from '@/lib/feed/displayTitle'
 import { Icon } from '@/components/ui/Icon'
 import styles from './FeedPostCard.module.css'
+import { countPlay } from '@/lib/tally/beacon'
 
 export interface FeedPostItem {
   type: 'release' | 'video'
@@ -94,6 +95,7 @@ export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
   const play = () => {
     claim()
     setPlaying(true)
+    countPlay(videoId)
   }
   const resolved =
     item.type === 'release'
