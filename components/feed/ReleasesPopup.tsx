@@ -6,8 +6,6 @@ import { useListenService } from '@/components/listen/ServiceProvider'
 import { Icon } from '@/components/ui/Icon'
 import { displayTitle } from '@/lib/feed/displayTitle'
 import {
-  SEARCH_LABELS,
-  musicServiceSearchUrl,
   resolveListenHref,
   type ArtistServicePresence,
 } from '@/lib/listen/services'
@@ -33,7 +31,7 @@ const COPY = {
   coming: {
     title: 'Coming soon',
     subtitle:
-      'Announced releases from the roster, soonest first. Each opens a search on Apple Music ↗, not a guaranteed match.',
+      'Announced releases from the roster, soonest first. Each opens a search on your service ↗, not a guaranteed match.',
   },
   recent: {
     title: 'Recently released',
@@ -44,21 +42,15 @@ const COPY = {
 
 /**
  * The Feed's release lists, opened from a link instead of sitting on the
- * page (owner, Nov 18 2026). "Coming soon" keeps the strip's Apple Music
- * search (pre-release albums surface there first); "Recently released"
- * follows the listener's chosen service, like the feed's release cards.
+ * page (owner, Nov 18 2026). Both lists follow the listener's chosen
+ * service, like the feed's release cards (owner, Nov 22 2026: "Coming soon"
+ * used to always open Apple Music).
  */
 export function ReleasesPopup({ kind, rows, onClose }: ReleasesPopupProps) {
   const { service } = useListenService()
   const copy = COPY[kind]
 
   function listenFor(row: ReleaseRow) {
-    if (kind === 'coming') {
-      return {
-        href: musicServiceSearchUrl('appleMusic', row.artistName, row.title),
-        label: SEARCH_LABELS.appleMusic,
-      }
-    }
     const resolved = resolveListenHref(
       service,
       row.presence,
