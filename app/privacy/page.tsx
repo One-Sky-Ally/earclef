@@ -17,7 +17,9 @@ export const metadata: Metadata = {
  * (180 days); error reports are lib/clientLog.ts; every YouTube player
  * embeds from youtube-nocookie.com; saved YouTube facts are re-read within
  * 30 days (lib/play/queue/cacheEntry.ts + sweep.ts); play/save/share
- * counts are lib/tally/ (Nov 22 2026). Change the code, check this page.
+ * counts are lib/tally/ (Nov 22 2026); the Discover artists you've
+ * played are lib/discover/played.ts, this browser only, never sent
+ * (Nov 23 2026). Change the code, check this page.
  */
 export default function PrivacyPage() {
   return (
@@ -32,8 +34,9 @@ export default function PrivacyPage() {
             <h2>If you don&rsquo;t sign in</h2>
             <p>
               Nothing about you is stored on our servers. Your liked songs,
-              the artists you take off your radar, and your choice of
-              listening service are kept in your own browser, so the site
+              the artists you take off your radar, your choice of listening
+              service, and which Discover artists you&rsquo;ve played are
+              kept in your own browser, so the site
               remembers them on this device without an account. Clearing
               this site&rsquo;s data in your browser removes them.
             </p>
@@ -47,17 +50,33 @@ export default function PrivacyPage() {
               them), the artists you take off your radar, and your choice of
               listening service, so they follow you to any device. A copy of
               your likes and your listening service also stays in your
-              browser, so pages show them straight away. If you hold an
+              browser, so pages show them straight away. Which Discover
+              artists you&rsquo;ve played is not part of your account: it
+              stays only in the browser where you played them, even when
+              you&rsquo;re signed in, so it doesn&rsquo;t follow you to other
+              devices. If you hold an
               artist&rsquo;s membership, we also keep its dates (see
               Payments).
             </p>
             <p>
-              Nothing ties what you play or read to you — only what you
-              choose to save is kept. Sharing your taste map is off unless
+              On our servers, nothing ties what you play or read to you —
+              only what you choose to save is kept. Sharing your taste map is off unless
               you turn it on. If you do, a public page shows the name you
               choose (never your email), the artists you follow grouped by
               your tiers, and your first-fan numbers. Turn sharing off and
               that page is gone.
+            </p>
+
+            <h2>Discover artists you&rsquo;ve played</h2>
+            <p>
+              So the{' '}
+              <Link href="/discover/past">past picks</Link> page can show
+              which recommended artists you&rsquo;ve already heard, your
+              browser remembers each one you press play on in Discover, or
+              mark as played yourself: the artist&rsquo;s MusicBrainz id and
+              the day, nothing else. It is never sent to Ear Clef or anyone
+              else, and nobody but you can see it. Clearing this site&rsquo;s
+              data in your browser removes it.
             </p>
 
             <h2>Cookies</h2>
@@ -150,7 +169,9 @@ export default function PrivacyPage() {
               everything Ear Clef kept for you is gone. Signed in? Write to{' '}
               <a href="mailto:oneskyally@gmail.com">oneskyally@gmail.com</a>{' '}
               and your account — email, follows, tiers, likes, settings and
-              any membership records — will be deleted.
+              any membership records — will be deleted. The list of Discover
+              artists you&rsquo;ve played was never on our servers; clear
+              this site&rsquo;s data in your browser to remove it.
             </p>
             <p>
               Song details Ear Clef gets from YouTube — video links and
