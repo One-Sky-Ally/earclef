@@ -31,6 +31,7 @@ import {
   DEFAULT_FOLLOW_TIER,
   TIER_LABELS,
   TIER_ORDER,
+  inTierChoice,
   type ArtistTier,
 } from '@/lib/tiers'
 import { TierFilter, type TierChoice } from '@/components/TierFilter'
@@ -39,6 +40,7 @@ import { FeedSkeleton } from '@/components/feed/FeedSkeleton'
 import {
   ReleasesPopup,
   type ReleaseRow,
+  type RowsFilter,
 } from '@/components/feed/ReleasesPopup'
 import { StoryCardView } from '@/components/stories/StoryCardView'
 import { ServicePicker } from '@/components/listen/ServicePicker'
@@ -203,6 +205,17 @@ function formatFeedDate(date: string): string {
     year: 'numeric',
     timeZone: 'UTC',
   }).format(new Date(date))
+}
+
+/** "November 2026" (a year-only date reads as just the year). */
+function formatMonth(date: string): string {
+  if (date.length === 4) return date
+  const [year, month] = date.split('-')
+  const names = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December',
+  ]
+  return `${names[Number(month) - 1]} ${year}`
 }
 
 type FeedState =
@@ -377,11 +390,7 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   // to their follows or to one of their own rows.
   const inChoice = useMemo(() => {
     const followSet = new Set(follows ?? [])
-    return (slug: string) =>
-      tierChoice === 'all' ||
-      (followSet.has(slug) &&
-        (tierChoice === 'following' ||
-          (tiers[slug] ?? DEFAULT_FOLLOW_TIER) === tierChoice))
+    return (slug: string) => inTierChoice(slug, tierChoice, followSet, tiers)
   }, [follows, tiers, tierChoice])
 
   // Filter before the newest-50 cut so each tier surfaces its own latest,
@@ -391,11 +400,12 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
   // work, no story) get their own dated section below the feed —
   // demoted, never silently deleted, and never out of order inside the
   // main list.
-  const { upcoming, recent, visible, extras } = useMemo(() => {
+  const { upcoming, recent, recentEveryone, visible, extras } = useMemo(() => {
     if (state.status !== 'ready')
       return {
         upcoming: [] as FeedItem[],
         recent: [] as FeedItem[],
+        recentEveryone: [] as FeedItem[],
         visible: [] as FeedItem[],
         extras: [] as FeedItem[],
       }
@@ -406,6 +416,9 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
     return {
       upcoming: comingSoon(filtered, todayIso),
       recent: recentlyReleased(filtered, todayIso),
+      // The pop-up filters by the listener's rows itself, so it gets the
+      // whole year and starts on the Feed's current filter.
+      recentEveryone: recentlyReleased(state.items, todayIso),
       visible: current
         .filter((item) => item.substance !== 'filler')
         .slice(0, FEED_LIMIT),
@@ -547,8 +560,18 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         : formatFeedDate(item.date),
       image: item.image,
       presence: item.presence,
+      monthLabel: coming ? undefined : formatMonth(item.date),
     }))
   }
+
+  const rowsFilter: RowsFilter | undefined = follows
+    ? {
+        follows: followedHere,
+        tiers,
+        counts: tierCounts,
+        initial: tierChoice,
+      }
+    : undefined
 
   function card(item: FeedItem) {
     const key = blurbKey(item.slug, item.type, item.title)
@@ -640,9 +663,10 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         <ReleasesPopup
           kind={openList}
           rows={releaseRows(
-            openList === 'coming' ? upcoming : recent,
+            openList === 'coming' ? upcoming : recentEveryone,
             openList === 'coming',
           )}
+          filter={openList === 'recent' ? rowsFilter : undefined}
           onClose={closeList}
         />
       )}

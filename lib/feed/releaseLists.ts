@@ -4,8 +4,12 @@
  * Pure — the feed's filters run first, these only choose and order.
  */
 
-/** "Recently" means released in the last this-many days, today included. */
-export const RECENT_DAYS = 30
+/**
+ * "Recently" means released in the last this-many days, today included:
+ * a year (owner, Nov 23 2026; it was 30 days, and too much went by
+ * unseen). The pop-up pages through it and filters by the listener's rows.
+ */
+export const RECENT_DAYS = 365
 
 interface Dated {
   type: 'release' | 'video'

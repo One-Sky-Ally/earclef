@@ -131,3 +131,85 @@
     padding-bottom: 0.3rem;
   }
 }
+
+/* Recently released: the listener's own rows, above the list. */
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+/* The shared pill row carries the Feed's page spacing; tighter here. */
+.filters > div {
+  margin-bottom: 0;
+}
+
+.count {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.empty {
+  padding: 1rem 0;
+  color: var(--text-soft);
+}
+
+/* A year runs long: month headings keep it scannable. */
+.monthRow {
+  padding: 1rem 0 0.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.monthRow:first-child {
+  padding-top: 0;
+}
+
+.month {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.moreRow {
+  display: flex;
+  justify-content: center;
+  padding: 0.8rem 0 0.3rem;
+}
+
+.more {
+  min-height: 44px;
+  padding: 0.4rem 1.2rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.more:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+/* Phones: the pills scroll sideways in one line instead of stacking
+   three rows deep and pushing the list off screen. */
+@media (max-width: 520px) {
+  .filters > div {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
+
+  .filters > div::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filters > div > button {
+    flex-shrink: 0;
+    min-height: 44px;
+  }
+}
