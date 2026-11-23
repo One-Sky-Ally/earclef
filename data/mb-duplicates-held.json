@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-23T01:33:51.777Z",
+ "generatedAt": "2026-11-23T01:53:48.071Z",
  "ruledOn": "2026-09-22",
  "ruling": "Owner, Sep 22 2026: for each verified duplicate keep whichever copy is better on the site and move the other to this held file with the evidence attached; nothing gets deleted. The five name-only cases stay in the pool. Mahmoud Darwish stays under the spoken-word ruling: Discogs files \"À L'Ombre Des Mots\" (France 2009) and its Palestinian pressing \"في ظل الكلام\" as joint artist credits with Le Trio Joubran under a music genre — his readings over music, released.",
  "cases": [
@@ -59,9 +59,9 @@
    "mbid": "31219974-a2c8-41a3-9097-553be4b53e94",
    "discogsArtistId": 2297717,
    "why": "Same person: MusicBrainz links this exact Discogs page (2297717) and the same Wikidata item. Kept the MB copy (dated 1959–2024); the pool copy's ▶ is Kong Nay's own track from his 2003 album \"Un barde cambodgien\", on YouTube's official \"Kong Nay - Topic\" channel",
-   "preparedOn": "2026-11-23",
+   "ruledOn": "2026-11-23",
    "kept": "mb",
-   "moved": "pool (already on record)",
+   "moved": "pool",
    "movedRecord": {
     "name": "Kong Nai",
     "source": "discogs",
@@ -163,9 +163,9 @@
    "mbid": "378d1925-e800-46f2-ae05-4407dd6ae2dd",
    "discogsArtistId": 2745828,
    "why": "Same band: both are the Vietnamese symphonic/metal band UnlimiteD, with the same two releases (Tái sinh, Symphony). Kept the MB copy (from 2003); the pool copy's ▶ is the title track \"Tái sinh\", uploaded June 2010, years before an unrelated later hit of the same name",
-   "preparedOn": "2026-11-23",
+   "ruledOn": "2026-11-23",
    "kept": "mb",
-   "moved": "pool (already on record)",
+   "moved": "pool",
    "movedRecord": {
     "name": "UnlimiteD",
     "source": "discogs",
@@ -224,9 +224,9 @@
    "mbid": "9a2cca5b-1cd9-45c8-89ee-c612c227e826",
    "discogsArtistId": 1213338,
    "why": "Same person: MusicBrainz lists Neville Marcano as Growling Tiger's real name and links this exact Discogs page (1213338). Kept the MB copy (1931–1993); the pool copy's ▶ is \"Dingo Lay\" (Decca 1935) by the Keskidee Trio — Attila, Lord Beginner and Neville Marcano (The Tiger) — so he is one of three voices",
-   "preparedOn": "2026-11-23",
+   "ruledOn": "2026-11-23",
    "kept": "mb",
-   "moved": "pool (already on record)",
+   "moved": "pool",
    "movedRecord": {
     "name": "Neville Marcano",
     "source": "discogs",
@@ -406,9 +406,9 @@
    "mbid": "ddefe734-0aee-4986-85f8-52c3425a0edd",
    "discogsArtistId": 3039906,
    "why": "Same person: MusicBrainz links this exact Discogs page (3039906). Kept the MB copy (1941–2008). NOTHING CARRIED: the pool copy's only link was already quarantined (never served), and a hand check shows it is a 2024 Palestine Youth Orchestra concert of his poem set by Marcel Khalifé — not his own voice",
-   "preparedOn": "2026-11-23",
+   "ruledOn": "2026-11-23",
    "kept": "mb",
-   "moved": "pool (already on record)",
+   "moved": "pool",
    "movedRecord": {
     "name": "محمود درويش",
     "source": "discogs",

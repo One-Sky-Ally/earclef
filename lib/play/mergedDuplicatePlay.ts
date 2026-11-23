@@ -17,18 +17,20 @@ import carried from './merged-duplicate-play.json'
 
 interface CarriedPlay {
   fromKey: string
+  /** Shown beside the ▶ (e.g. a group recording: "with the Keskidee Trio, 1935"). */
+  note?: string
   play: PlayLink
   identityEvidence: { anchors: string[]; legs: string[]; verifiedAt: string }
 }
 
 const LINKS = (carried as unknown as { links: Record<string, CarriedPlay> }).links
 
-/** The carried link for an mb:<mbid> key, or null. */
-export function mergedDuplicatePlay(key: string): PlayLink | null {
+/** The carried link (and its note) for an mb:<mbid> key, or null. */
+export function mergedDuplicatePlay(key: string): { play: PlayLink; note?: string } | null {
   if (!key.startsWith('mb:')) return null
   const entry = LINKS[key]
   // Read-time guard: a carried link must still carry its evidence
   // (standing lesson 2 — committed data outlives the pass that wrote it).
   if (!entry?.play || !entry.identityEvidence) return null
-  return entry.play
+  return entry.note ? { play: entry.play, note: entry.note } : { play: entry.play }
 }

@@ -29,9 +29,9 @@ const countryPath = (code) => `lib/explore/country-artists/${code}.json`
 
 const RULED_ON = '2026-09-22'
 const CARRIED_DOC =
-  'Play links carried from a merged duplicate (owner brief, Nov 23 2026): when the owner keeps the MusicBrainz copy of a ' +
+  'Play links carried from a merged duplicate (owner-approved per artist, Nov 23 2026): when the owner keeps the MusicBrainz copy of a ' +
   'duplicated artist, the moved pool copy\'s verified link serves for mb:<mbid> instead. WRITTEN ONLY BY ' +
-  'scripts/apply-mb-duplicate-rulings.mjs from owner-approved rulings, each pair hand-checked (handCheck). Only a link that ' +
+  'scripts/apply-mb-duplicate-rulings.mjs from owner-approved rulings, each pair hand-checked (handCheck). `note` is shown beside the ▶. Only a link that ' +
   'already served for the pool copy (identity evidence, not quarantined) can be carried.'
 const RULING =
   'Owner, Sep 22 2026: for each verified duplicate keep whichever copy is better on the site and move the other ' +
@@ -48,17 +48,19 @@ const RULINGS = {
   893312: { code: 'TT', keep: 'pool', why: 'MB copy undated; pool copy dated 1948–55 from 11 releases with an archive ▶' },
   8529357: { code: 'VN', keep: 'pool', why: 'MB knows the artist but files no copy on the site for VN — nothing to move' },
   2823955: { code: 'KZ', keep: 'pool', why: 'MB copy is filed under the Soviet Union (owner ruling Aug 11 2026: residence, not origin) — nothing on the KZ site to move' },
-  // Owner brief, Nov 23 2026: keep the MusicBrainz copy of each, move
-  // the pool copy here, and carry its play link onto the MB copy — each
-  // pair checked by hand first (evidence on the case), each applied
-  // only once the owner approves THAT artist (drop a line back to
-  // keep: 'deferred' to leave one out; re-running restores nothing). `carryPlay: false`
+  // Owner, Nov 23 2026 — approved artist by artist after a hand check
+  // (evidence on each case): keep the MusicBrainz copy, move the pool
+  // copy here, and carry its play link onto the MB copy. Owner's words:
+  // "I approve all four: Kong Nai: yes, move the link. UnlimiteD: yes,
+  // move the link. Growling Tiger: yes, move the link. If you can, show
+  // that it's a recording with the trio. Mahmoud Darwish: agreed, merge
+  // without moving the link." `playNote` is shown beside the ▶. `carryPlay: false`
   // = the pool copy's link is NOT this artist's own performance, so
   // nothing is carried and the MB copy keeps its own chain.
-  2297717: { code: 'KH', keep: 'mb', carryPlay: true, preparedOn: '2026-11-23', why: 'Same person: MusicBrainz links this exact Discogs page (2297717) and the same Wikidata item. Kept the MB copy (dated 1959–2024); the pool copy\'s ▶ is Kong Nay\'s own track from his 2003 album "Un barde cambodgien", on YouTube\'s official "Kong Nay - Topic" channel' },
-  2745828: { code: 'VN', keep: 'mb', carryPlay: true, preparedOn: '2026-11-23', why: 'Same band: both are the Vietnamese symphonic/metal band UnlimiteD, with the same two releases (Tái sinh, Symphony). Kept the MB copy (from 2003); the pool copy\'s ▶ is the title track "Tái sinh", uploaded June 2010, years before an unrelated later hit of the same name' },
-  1213338: { code: 'TT', keep: 'mb', carryPlay: true, preparedOn: '2026-11-23', why: 'Same person: MusicBrainz lists Neville Marcano as Growling Tiger\'s real name and links this exact Discogs page (1213338). Kept the MB copy (1931–1993); the pool copy\'s ▶ is "Dingo Lay" (Decca 1935) by the Keskidee Trio — Attila, Lord Beginner and Neville Marcano (The Tiger) — so he is one of three voices' },
-  3039906: { code: 'PS', keep: 'mb', carryPlay: false, preparedOn: '2026-11-23', why: 'Same person: MusicBrainz links this exact Discogs page (3039906). Kept the MB copy (1941–2008). NOTHING CARRIED: the pool copy\'s only link was already quarantined (never served), and a hand check shows it is a 2024 Palestine Youth Orchestra concert of his poem set by Marcel Khalifé — not his own voice' },
+  2297717: { code: 'KH', keep: 'mb', carryPlay: true, ruledOn: '2026-11-23', why: 'Same person: MusicBrainz links this exact Discogs page (2297717) and the same Wikidata item. Kept the MB copy (dated 1959–2024); the pool copy\'s ▶ is Kong Nay\'s own track from his 2003 album "Un barde cambodgien", on YouTube\'s official "Kong Nay - Topic" channel' },
+  2745828: { code: 'VN', keep: 'mb', carryPlay: true, ruledOn: '2026-11-23', why: 'Same band: both are the Vietnamese symphonic/metal band UnlimiteD, with the same two releases (Tái sinh, Symphony). Kept the MB copy (from 2003); the pool copy\'s ▶ is the title track "Tái sinh", uploaded June 2010, years before an unrelated later hit of the same name' },
+  1213338: { code: 'TT', keep: 'mb', carryPlay: true, playNote: 'with the Keskidee Trio, 1935', ruledOn: '2026-11-23', why: 'Same person: MusicBrainz lists Neville Marcano as Growling Tiger\'s real name and links this exact Discogs page (1213338). Kept the MB copy (1931–1993); the pool copy\'s ▶ is "Dingo Lay" (Decca 1935) by the Keskidee Trio — Attila, Lord Beginner and Neville Marcano (The Tiger) — so he is one of three voices' },
+  3039906: { code: 'PS', keep: 'mb', carryPlay: false, ruledOn: '2026-11-23', why: 'Same person: MusicBrainz links this exact Discogs page (3039906). Kept the MB copy (1941–2008). NOTHING CARRIED: the pool copy\'s only link was already quarantined (never served), and a hand check shows it is a 2024 Palestine Youth Orchestra concert of his poem set by Marcel Khalifé — not his own voice' },
 }
 
 const readJson = (path) => JSON.parse(readFileSync(path, 'utf8'))
@@ -156,7 +158,12 @@ function main() {
     // already-moved shortcut.
     if (ruling.keep === 'mb' && ruling.carryPlay) {
       const carry = carryFor(ruling, item)
-      carried[`mb:${item.musicbrainz.mbid}`] = { name: item.musicbrainz.nameIndexRecord?.name ?? item.poolEntry.name, ...carry, handCheck: ruling.why }
+      carried[`mb:${item.musicbrainz.mbid}`] = {
+        name: item.musicbrainz.nameIndexRecord?.name ?? item.poolEntry.name,
+        ...carry,
+        ...(ruling.playNote ? { note: ruling.playNote } : {}),
+        handCheck: ruling.why,
+      }
     }
     // Already moved on a previous run: the stored record must survive —
     // an absent record on the site is not "nothing to move".
@@ -170,7 +177,7 @@ function main() {
       const { pool: next, moved } = movePoolCopy(current, item)
       cases.push({
         ...base,
-        ...(ruling.preparedOn ? { preparedOn: ruling.preparedOn } : {}),
+        ...(ruling.ruledOn ? { ruledOn: ruling.ruledOn } : {}),
         kept: 'mb',
         moved: moved ? 'pool' : 'already-absent',
         movedRecord: moved,

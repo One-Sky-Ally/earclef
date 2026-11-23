@@ -1,5 +1,5 @@
 {
-  "_doc": "Play links carried from a merged duplicate (owner brief, Nov 23 2026): when the owner keeps the MusicBrainz copy of a duplicated artist, the moved pool copy's verified link serves for mb:<mbid> instead. WRITTEN ONLY BY scripts/apply-mb-duplicate-rulings.mjs from owner-approved rulings, each pair hand-checked (handCheck). Only a link that already served for the pool copy (identity evidence, not quarantined) can be carried.",
+  "_doc": "Play links carried from a merged duplicate (owner-approved per artist, Nov 23 2026): when the owner keeps the MusicBrainz copy of a duplicated artist, the moved pool copy's verified link serves for mb:<mbid> instead. WRITTEN ONLY BY scripts/apply-mb-duplicate-rulings.mjs from owner-approved rulings, each pair hand-checked (handCheck). `note` is shown beside the ▶. Only a link that already served for the pool copy (identity evidence, not quarantined) can be carried.",
   "links": {
     "mb:31219974-a2c8-41a3-9097-553be4b53e94": {
       "name": "Kong Nai",
@@ -63,6 +63,7 @@
         ],
         "verifiedAt": "2026-09-08"
       },
+      "note": "with the Keskidee Trio, 1935",
       "handCheck": "Same person: MusicBrainz lists Neville Marcano as Growling Tiger's real name and links this exact Discogs page (1213338). Kept the MB copy (1931–1993); the pool copy's ▶ is \"Dingo Lay\" (Decca 1935) by the Keskidee Trio — Attila, Lord Beginner and Neville Marcano (The Tiger) — so he is one of three voices"
     }
   }

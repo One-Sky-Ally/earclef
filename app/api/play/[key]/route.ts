@@ -159,7 +159,8 @@ export async function GET(
   if (carried) {
     return withCacheHeaders(
       NextResponse.json({
-        play: carried,
+        play: carried.play,
+        ...(carried.note ? { note: carried.note } : {}),
         read: { kind: 'musicbrainz', url: `https://musicbrainz.org/artist/${id}` },
       }),
     )

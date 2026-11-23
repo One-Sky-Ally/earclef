@@ -10,8 +10,15 @@ const entries = (extraPlay as { entries: Record<string, { play: { url: string } 
 describe('play links carried from merged duplicates', () => {
   it('serves the carried link for the kept MusicBrainz copy', () => {
     assert.equal(
-      mergedDuplicatePlay('mb:31219974-a2c8-41a3-9097-553be4b53e94')?.url,
+      mergedDuplicatePlay('mb:31219974-a2c8-41a3-9097-553be4b53e94')?.play.url,
       'https://www.youtube.com/watch?v=hHUM1tTZQQQ',
+    )
+  })
+
+  it('says Growling Tiger\'s song is a trio recording', () => {
+    assert.equal(
+      mergedDuplicatePlay('mb:9a2cca5b-1cd9-45c8-89ee-c612c227e826')?.note,
+      'with the Keskidee Trio, 1935',
     )
   })
 
