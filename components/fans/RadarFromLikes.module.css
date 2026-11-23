@@ -123,3 +123,30 @@
   font-size: inherit;
   font-style: normal;
 }
+
+/* Phones: Follow and × are full thumb-sized targets. */
+@media (max-width: 640px) {
+  .lead,
+  .meta {
+    font-size: 0.8rem;
+  }
+
+  .artist {
+    padding-block: 0.25rem;
+  }
+
+  .follow {
+    min-height: 40px;
+    font-size: 0.78rem;
+  }
+
+  .dismiss {
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .note {
+    font-size: 0.8rem;
+  }
+}

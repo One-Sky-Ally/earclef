@@ -191,9 +191,40 @@
   }
 }
 
+/* Phones: where/when drops to its own line under the song (the row
+   used to squeeze the artist and title into a one-word-wide column). */
 @media (max-width: 640px) {
+  .row {
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 0;
+    font-size: 0.88rem;
+  }
+
+  .unlike {
+    min-width: 40px;
+    min-height: 40px;
+    margin-left: -0.4rem;
+    font-size: 1rem;
+  }
+
   .rowWhere {
     width: 100%;
-    padding-left: 1.65rem;
+    /* Lines up under the artist name, past the ♥. */
+    padding: 0 0 0.35rem 3.05rem;
+    font-size: 0.76rem;
+  }
+
+  .rowArtistLink {
+    padding-block: 0.4rem;
+  }
+
+  .chip {
+    min-height: 36px;
+    font-size: 0.76rem;
+  }
+
+  .note {
+    font-size: 0.84rem;
   }
 }

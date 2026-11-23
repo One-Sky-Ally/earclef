@@ -271,7 +271,7 @@ export function JourneyPanel({ culture, onOpenPlace, onNext }: JourneyPanelProps
       )}
 
       {playing && (
-        <div className={styles.nowRow}>
+        <div className={styles.nowRow} data-now-line="">
           <p className={styles.nowPlaying} aria-live="polite">
             {ended
               ? 'That’s every song in this journey.'
