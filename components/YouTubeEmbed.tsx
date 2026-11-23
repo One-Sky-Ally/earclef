@@ -11,9 +11,11 @@ interface YouTubeEmbedProps {
   index?: number
   /** Another player on the page started, and this one closed for it. */
   onStopped?: () => void
+  /** The listener pressed play (e.g. Discover remembers the artist on this device). */
+  onPlay?: () => void
 }
 
-export function YouTubeEmbed({ video, index, onStopped }: YouTubeEmbedProps) {
+export function YouTubeEmbed({ video, index, onStopped, onPlay }: YouTubeEmbedProps) {
   const [loaded, setLoaded] = useState(false)
   // One sound at a time (lib/play/oneSound.ts). A plain embed can't be
   // paused from outside, so another player starting puts this one back
@@ -44,6 +46,7 @@ export function YouTubeEmbed({ video, index, onStopped }: YouTubeEmbedProps) {
               claim()
               setLoaded(true)
               countPlay(video.youtubeId)
+              onPlay?.()
             }}
             aria-label={`Play video: ${video.title}`}
           >

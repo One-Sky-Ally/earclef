@@ -17,6 +17,13 @@ import {
   sameTrack,
   type LikedTrack,
 } from './likes'
+import {
+  mergeMarks,
+  withMark,
+  withoutMark,
+  type PlayedMark,
+  type PlayedMarks,
+} from '../discover/playedMarks'
 
 export interface FanRecord {
   email: string
@@ -38,6 +45,13 @@ export interface FanRecord {
    * radar itself is never stored — only these removals are.
    */
   radarDismissed?: string[]
+  /**
+   * Discover artists the fan has played (or marked as played by hand):
+   * MusicBrainz id → the day and how. Nothing else — no song, no time,
+   * no count. Signed-out visitors keep this in the browser only
+   * (lib/discover/played.ts; owner, Nov 23 2026).
+   */
+  discoverPlayed?: PlayedMarks
   /** Preferred streaming service — follows the fan across devices. */
   listenService?: string
   /** Present while sharing is on; the public page lives at /fan/<token>. */
@@ -95,6 +109,7 @@ function baseRecord(email: string, existing: FanRecord | null): FanRecord {
     tiers: existing?.tiers,
     likes: existing?.likes,
     radarDismissed: existing?.radarDismissed,
+    discoverPlayed: existing?.discoverPlayed,
     listenService: existing?.listenService,
     shareToken: existing?.shareToken,
     displayName: existing?.displayName,
@@ -344,6 +359,38 @@ export async function setRadarDismissed(
   record.radarDismissed = next
   await putFan(record)
   return next
+}
+
+/** Marks a Discover artist as played (mark) or takes the mark off (null). */
+export async function setDiscoverPlayed(
+  email: string,
+  mbid: string,
+  mark: PlayedMark | null,
+): Promise<PlayedMarks> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  const current = existing?.discoverPlayed ?? {}
+  const next = mark ? withMark(current, mbid, mark) : withoutMark(current, mbid)
+  if (next === current) return current
+  const record = baseRecord(normalized, existing)
+  record.discoverPlayed = next
+  await putFan(record)
+  return next
+}
+
+/** Folds in Played marks made before signing in (earlier day wins). */
+export async function mergeDiscoverPlayed(
+  email: string,
+  incoming: PlayedMarks,
+): Promise<PlayedMarks> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  const current = existing?.discoverPlayed ?? {}
+  if (Object.keys(incoming).length === 0) return current
+  const record = baseRecord(normalized, existing)
+  record.discoverPlayed = mergeMarks(current, incoming)
+  await putFan(record)
+  return record.discoverPlayed
 }
 
 function sanitizeDisplayName(raw: string): string {

@@ -140,3 +140,12 @@
   text-transform: uppercase;
   color: var(--accent);
 }
+
+/* "Played ✓" — this listener played the artist (remembered on this device). */
+.played {
+  align-self: flex-start;
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}

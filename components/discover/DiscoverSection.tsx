@@ -6,6 +6,8 @@ import { LikeButton } from '@/components/fans/LikeButton'
 import { getOwnerKey } from '@/lib/curation/ownerClient'
 import type { PlayLink, ReadLink } from '@/lib/play/types'
 import { ScrollRow } from '@/components/ui/ScrollRow'
+import { markPlayed } from '@/lib/discover/played'
+import { usePlayedMarks } from './usePlayedMarks'
 import styles from './DiscoverSection.module.css'
 
 type SongKind = 'official-video' | 'audio' | 'video'
@@ -144,6 +146,8 @@ export function DiscoverSection() {
   const [state, setState] = useState<DiscoverState>({ status: 'loading' })
   const [ownerKey, setOwnerKeyState] = useState<string | null>(null)
   const [queuedMbids, setQueuedMbids] = useState<Set<string>>(new Set())
+  // Played artists: remembered in this browser only (lib/discover/played.ts).
+  const { marks } = usePlayedMarks()
 
   // The owner's view shows the owner's own picks (from their rows) when
   // they exist; a signed-in listener gets the week's shared picks that
@@ -299,12 +303,14 @@ export function DiscoverSection() {
         id="discover"
         title="Discover new artists"
         note={note}
+        seeAll={{ href: '/discover/past', label: 'All past picks' }}
         perView={3}
         items={state.picks.map((pick) => ({
           key: pick.mbid,
           node: (
             <div className={styles.card}>
               <span className={styles.name}>{pick.name}</span>
+              {marks[pick.mbid] && <span className={styles.played}>Played ✓</span>}
               {pick.because && pick.because.length > 0 && (
                 <span className={styles.because}>
                   Because you follow {pick.because.join(' and ')}
@@ -318,6 +324,7 @@ export function DiscoverSection() {
                 <div className={styles.song}>
                   <YouTubeEmbed
                     video={{ youtubeId: pick.song.videoId, title: pick.song.title }}
+                    onPlay={() => markPlayed(pick.mbid)}
                   />
                   <div className={styles.songMeta}>
                     <span className={styles.songKind}>
