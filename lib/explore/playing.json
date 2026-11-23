@@ -944,7 +944,7 @@
       "era": "The chart at feed speed",
       "kind": "charted",
       "basis": "Anchored to the Billboard Hot 100 archive, documented week by week through the present.",
-      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen. In 2026 the long run came from Nashville again: [[Ella Langley]]'s Choosin' Texas kept returning to the Hot 100 summit — breaking the all-time record with its twenty-third week in September and back on top from the 31 October chart, twenty-seven weeks in all by 14 November — while [[Taylor Swift]]'s I Knew It, I Knew You, from Toy Story 5, became her fifteenth #1, more than any artist this century.",
+      "story": "The 2020s Hot 100 moves at the speed of the feed. [[The Weeknd]]'s Blinding Lights opened the decade and never seemed to leave the chart, [[Olivia Rodrigo]]'s Drivers License made her a star overnight, and K-pop planted its flag — [[BTS]]'s Butter held ten weeks in 2021, and in 2025 Golden, sung by [[HUNTR/X]], the fictional trio from KPop Demon Hunters, topped the real chart for eight. [[Shaboozey]]'s A Bar Song (Tipsy) tied the all-time nineteen-week record, and [[Kendrick Lamar]] and [[SZA]]'s Luther held on for thirteen. In 2026 the long run came from Nashville again: [[Ella Langley]]'s Choosin' Texas kept returning to the Hot 100 summit — breaking the all-time record with its twenty-third week in September and back on top from the 31 October chart, twenty-eight weeks in all by 21 November — while [[Taylor Swift]]'s I Knew It, I Knew You, from Toy Story 5, became her fifteenth #1, more than any artist this century.",
       "items": [
         {
           "artist": "The Weeknd",
@@ -979,7 +979,7 @@
         {
           "artist": "Ella Langley",
           "work": "Choosin' Texas",
-          "note": "Hot 100 #1 for 27 non-consecutive weeks by the 14 November 2026 chart — the longest run in Hot 100 history, passing Mariah Carey's All I Want for Christmas Is You"
+          "note": "Hot 100 #1 for 28 non-consecutive weeks by the 21 November 2026 chart — the longest run in Hot 100 history, passing Mariah Carey's All I Want for Christmas Is You"
         },
         {
           "artist": "Taylor Swift",
@@ -2305,6 +2305,137 @@
       ],
       "model": "claude-opus-5-5 (in-session, research agent + owner-gate verification)",
       "at": "2026-11-11"
+    },
+    {
+      "country": "ZA",
+      "from": 1965,
+      "to": 1979,
+      "era": "From Goodbye My Love to Substitute — the Springbok Radio Top 20",
+      "kind": "charted",
+      "basis": "Counts come from the weekly Top 20 broadcast on the SABC's commercial station Springbok Radio from 4 June 1965, read week by week from chart historian John Samson's SA Singles Charts archive and checked against his separately published 1969–1989 number-one list; there is no second, independent compiler, and neither source says how the positions were compiled.",
+      "story": "South Africa's weekly Top 20 was first broadcast on the SABC's commercial station Springbok Radio on 4 June 1965, with Rick Nelson's I Need You at No. 1 and local acts Emil Dean and Gene Rockwell at 3 and 4. That September [[Murray Campbell]] gave the chart its first local No. 1 with Goodbye My Love, his version of Nini Rosso's Il Silenzio. [[Four Jacks and a Jill]] topped it with Timothy in 1967 and Master Jack in 1968 — a song that also reached No. 18 in the US — and no other local act managed two No. 1s in the chart's 1965–89 run. In 1971 [[Charisma]], the brainchild of producer Grahame Beggs, held No. 1 for twelve straight weeks with Mammy Blue, the longest run any local act would manage; only Johnny Nash's I Can See Clearly Now stayed longer, with thirteen. On 14 December 1973 local records held 12 of the 20 places. [[Clout]]'s Substitute became the 30th local No. 1 in January 1978 and went on to No. 2 in Britain, and in 1979 Cape Town singer [[Richard Jon Smith]] spent nine weeks at the top with Michael Row the Boat Ashore.",
+      "items": [
+        {
+          "artist": "Murray Campbell",
+          "work": "Goodbye My Love",
+          "note": "The first local record to top the Springbok Radio Top 20, from 10 September 1965 — six weeks at No. 1 in two spells"
+        },
+        {
+          "artist": "Des Lindberg",
+          "work": "Die Gezoem van die Bye",
+          "note": "Springbok Radio #1 for 3 weeks from 13 May 1966"
+        },
+        {
+          "artist": "Four Jacks and a Jill",
+          "work": "Master Jack",
+          "note": "Springbok Radio #1 from 2 February 1968 — their second #1 after Timothy, and No. 18 in the US"
+        },
+        {
+          "artist": "Hilary",
+          "work": "Sunglasses",
+          "note": "Springbok Radio #1 for 7 straight weeks from 5 July 1968, equalling the chart's longest run to that date"
+        },
+        {
+          "artist": "Charisma",
+          "work": "Mammy Blue",
+          "note": "Springbok Radio #1 for 12 straight weeks from 22 October 1971 — the longest run by a local act"
+        },
+        {
+          "artist": "Johnny Nash",
+          "work": "I Can See Clearly Now",
+          "note": "Springbok Radio #1 for 13 straight weeks from 13 October 1972 — the longest run at the top in the chart's history"
+        },
+        {
+          "artist": "Barbara Ray",
+          "work": "I Don't Wanna Play House",
+          "note": "Springbok Radio #1 for 6 straight weeks from 16 February 1973"
+        },
+        {
+          "artist": "Glenys Lynne",
+          "work": "Ramaja",
+          "note": "Springbok Radio #1 for 3 weeks from 20 August 1976 — a solo #1 for the 'Jill' of Four Jacks and a Jill"
+        },
+        {
+          "artist": "Margaret Singana",
+          "work": "I Never Loved a Man (The Way I Love You)",
+          "note": "Peaked at No. 2 on 13 January 1978, behind Heart's Barracuda, in an 18-week run on the chart"
+        },
+        {
+          "artist": "Clout",
+          "work": "Substitute",
+          "note": "Springbok Radio #1 for 8 straight weeks from 27 January 1978 — the 30th local #1 — before reaching No. 2 in Britain"
+        },
+        {
+          "artist": "Boney M",
+          "work": "Rivers of Babylon",
+          "note": "Springbok Radio #1 for 11 straight weeks from 23 June 1978 — the longest-running #1 of 1978"
+        },
+        {
+          "artist": "Richard Jon Smith",
+          "work": "Michael Row the Boat Ashore",
+          "note": "Springbok Radio #1 for 9 straight weeks from 11 May 1979 — the longest by a local act since Mammy Blue"
+        }
+      ],
+      "sources": [
+        {
+          "label": "SA Singles Charts (John Samson) — About the Springbok Radio chart",
+          "url": "https://sacharts.wordpress.com/about/"
+        },
+        {
+          "label": "SA Singles Charts — Number 1's",
+          "url": "https://sacharts.wordpress.com/2021/11/06/number-1s/"
+        },
+        {
+          "label": "SA Singles Charts — Timeline",
+          "url": "https://sacharts.wordpress.com/2021/12/08/timeline/"
+        },
+        {
+          "label": "SA Singles Charts — the first chart, 4 June 1965",
+          "url": "https://sacharts.wordpress.com/2014/11/13/4-june-1965/"
+        },
+        {
+          "label": "SA Singles Charts — 22 October 1971 (Mammy Blue at No. 1)",
+          "url": "https://sacharts.wordpress.com/2016/10/05/22-october-1971/"
+        },
+        {
+          "label": "SA Singles Charts — 13 October 1972 (I Can See Clearly Now at No. 1)",
+          "url": "https://sacharts.wordpress.com/2017/01/17/13-october-1972/"
+        },
+        {
+          "label": "South African Rock Encyclopedia — SA Number 1s 1969–1989",
+          "url": "http://rock.co.za/files/sa_number_1s_69_89.html"
+        },
+        {
+          "label": "South African Rock Encyclopedia — Weeks at Number 1, 1969–1989",
+          "url": "http://rock.co.za/files/sacharts_weeks_no1.html"
+        },
+        {
+          "label": "SA Singles Charts — Four Jacks & A Jill",
+          "url": "https://sacharts.wordpress.com/2022/03/28/four-jacks-a-jill-sa/"
+        },
+        {
+          "label": "SA Singles Charts — Charisma",
+          "url": "https://sacharts.wordpress.com/2022/02/02/charisma-sa/"
+        },
+        {
+          "label": "SA Singles Charts — Richard Jon Smith",
+          "url": "https://sacharts.wordpress.com/2022/09/01/richard-jon-smith-sa/"
+        },
+        {
+          "label": "Wikipedia — Springbok Radio",
+          "url": "https://en.wikipedia.org/wiki/Springbok_Radio"
+        },
+        {
+          "label": "Wikipedia — Master Jack",
+          "url": "https://en.wikipedia.org/wiki/Master_Jack"
+        },
+        {
+          "label": "Wikipedia — Substitute",
+          "url": "https://en.wikipedia.org/wiki/Substitute_(The_Righteous_Brothers_song)"
+        }
+      ],
+      "model": "claude-opus-5-5 (in-session, research agent + owner-gate verification)",
+      "at": "2026-11-23"
     }
   ]
 }
