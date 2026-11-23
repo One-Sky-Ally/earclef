@@ -5,6 +5,7 @@ import {
   recoveredDiscogsId,
 } from '@/lib/explore/extraPlay'
 import { archivalPlay } from '@/lib/play/archival'
+import { mergedDuplicatePlay } from '@/lib/play/mergedDuplicatePlay'
 import {
   resolveExtraArtistPlay,
   resolveMbArtistPlay,
@@ -147,6 +148,20 @@ export async function GET(
     }
     return withCacheHeaders(
       NextResponse.json({ play: archival, read: read ?? mbRead }),
+    )
+  }
+
+  // A link carried from a merged duplicate (owner-approved, hand-checked
+  // — lib/play/mergedDuplicatePlay.ts) is the MB copy's committed
+  // verdict: it serves before any cache, so a stale cached null or a
+  // weaker live result can never shadow it.
+  const carried = mergedDuplicatePlay(`${source}:${id}`)
+  if (carried) {
+    return withCacheHeaders(
+      NextResponse.json({
+        play: carried,
+        read: { kind: 'musicbrainz', url: `https://musicbrainz.org/artist/${id}` },
+      }),
     )
   }
 

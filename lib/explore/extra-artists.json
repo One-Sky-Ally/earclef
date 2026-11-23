@@ -49706,23 +49706,6 @@
         ]
       },
       {
-        "name": "Kong Nai",
-        "source": "discogs",
-        "firstYear": 2012,
-        "lastYear": 2012,
-        "styles": [
-          "Folk Rock",
-          "Indie Rock",
-          "Rock"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 2297717,
-        "wikidataId": null,
-        "aliases": [
-          "Master Kong Nay"
-        ]
-      },
-      {
         "name": "Krom Skor Sovanna Phum",
         "source": "discogs",
         "firstYear": 2005,
@@ -152281,20 +152264,6 @@
         "wikidataId": null
       },
       {
-        "name": "محمود درويش",
-        "source": "discogs",
-        "firstYear": null,
-        "lastYear": null,
-        "styles": [
-          "Poetry",
-          "Non-Music",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 1,
-        "discogsArtistId": 3039906,
-        "wikidataId": null
-      },
-      {
         "name": "ميسم نحاس",
         "source": "discogs",
         "firstYear": null,
@@ -205628,20 +205597,6 @@
         "pressedAs": [
           "South Vietnam"
         ]
-      },
-      {
-        "name": "UnlimiteD",
-        "source": "discogs",
-        "firstYear": 2009,
-        "lastYear": 2009,
-        "styles": [
-          "Speed Metal",
-          "Symphonic Metal",
-          "Rock"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 2745828,
-        "wikidataId": null
       },
       {
         "name": "Văn Giỏi",
@@ -272399,22 +272354,6 @@
         "releaseCount": 2,
         "discogsArtistId": 5681895,
         "wikidataId": null
-      },
-      {
-        "name": "Neville Marcano",
-        "source": "discogs",
-        "firstYear": 1935,
-        "lastYear": 1935,
-        "styles": [
-          "Calypso",
-          "Folk, World, & Country"
-        ],
-        "releaseCount": 2,
-        "discogsArtistId": 1213338,
-        "wikidataId": null,
-        "aliases": [
-          "Neville Marcano (The Tiger)"
-        ]
       },
       {
         "name": "New Street Rhythm Band",
