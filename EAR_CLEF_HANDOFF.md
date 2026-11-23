@@ -109,7 +109,12 @@ A famously exhaustive dimension list (100+ musical attributes: instrumentation, 
 
 ## 7. BUILD LOG (maintained by Claude Code — read this to resume cold)
 
-**Last updated: Nov 22, 2026 · v1 shipped and far surpassed — see Current state**
+**Last updated: Nov 23, 2026 · v1 shipped and far surpassed — see Current state**
+
+- **LIVE & SETLISTS: ONE PANEL WITH UPCOMING / PAST TABS (Nov 23, 2026; owner: "Artist pages: make Live & setlists one panel with Upcoming and Past tabs, using the past shows we already have. If there are no upcoming shows on record, say so honestly instead of leaving an empty tab."; PR from `claude/project-thread-92qgl4`).**
+  - **WHAT CHANGED:** `components/Shows.tsx` keeps the heading and setlist.fm link; the lists move into `components/artist/ShowsTabs.tsx` (client; `role=tablist`, arrow/Home/End keys, 44px tabs). Each tab shows its count, or "none on record". It opens on Upcoming when there is a future date, else on Past.
+  - **DATES DECIDE THE TAB:** `lib/shows.ts` `splitShows(shows, today)` (6 tests). A show filed under `upcoming` whose date has passed is listed under Past (without its ticket link); same date+venue is listed once. Pages are static, so the split re-runs with the visitor's own date (`useSyncExternalStore`). On Nov 23, 2026 all 16 filed "upcoming" dates (Aurora, Chance the Rapper, Gorillaz, Sigur Rós, Tool) had passed, so no page has a real upcoming show.
+  - **HONEST EMPTY STATE:** "We have no upcoming shows on record for {artist}." plus the page's `upcomingNote`, EXCEPT when that note was written beside dates that have all passed (it would describe a finished tour or "dates below"); then: "The dates we had listed have all gone by, so they now sit under Past." No content JSON edited, no show data added.
 
 - **ON THIS DAY: SORTING AND FILTERS (Nov 22, 2026; owner: "On This Day: add sorting (newest first / oldest first) and filters for year, location and genre"; PR from `claude/project-thread-5oldor`).**
   - **WHAT CHANGED:** a bar under "Releases through the years" with Order (oldest/newest first), Year (any, before 2000, a whole decade, or one year), Country, Genre, and "Clear filters". It replaces the old "Only before 2000" checkbox (now the Year menu's "Before 2000"). Decade groups follow the chosen order; each menu option shows how many releases picking it would show, counted under the other filters. The day's shuffled playlist plays only verified songs among what is shown.
