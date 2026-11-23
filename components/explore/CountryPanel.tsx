@@ -318,11 +318,14 @@ function PanelArtistPill({ artist, decade, rosterEntry }: PanelArtistPillProps) 
           href={play.url}
           target="_blank"
           rel="noreferrer"
-          title={PLAY_LABELS[play.kind]}
-          aria-label={`${PLAY_LABELS[play.kind]}: ${artist.name}`}
+          title={playResult?.note ? `${PLAY_LABELS[play.kind]} — ${playResult.note}` : PLAY_LABELS[play.kind]}
+          aria-label={`${PLAY_LABELS[play.kind]}: ${artist.name}${playResult?.note ? `, ${playResult.note}` : ''}`}
         >
           ▶
         </a>
+      )}
+      {play && playResult?.note && (
+        <span className={styles.undatedTag}> {playResult.note}</span>
       )}
     </li>
   )

@@ -1,0 +1,70 @@
+{
+  "_doc": "Play links carried from a merged duplicate (owner-approved per artist, Nov 23 2026): when the owner keeps the MusicBrainz copy of a duplicated artist, the moved pool copy's verified link serves for mb:<mbid> instead. WRITTEN ONLY BY scripts/apply-mb-duplicate-rulings.mjs from owner-approved rulings, each pair hand-checked (handCheck). `note` is shown beside the ▶. Only a link that already served for the pool copy (identity evidence, not quarantined) can be carried.",
+  "links": {
+    "mb:31219974-a2c8-41a3-9097-553be4b53e94": {
+      "name": "Kong Nai",
+      "fromKey": "dg:2297717",
+      "play": {
+        "kind": "youtube-video",
+        "url": "https://www.youtube.com/watch?v=hHUM1tTZQQQ"
+      },
+      "title": "Prawat poaun kong lene",
+      "durationSeconds": 212,
+      "identityEvidence": {
+        "anchors": [
+          "whole"
+        ],
+        "legs": [
+          "title",
+          "duration",
+          "mb-title",
+          "topic"
+        ],
+        "verifiedAt": "2026-09-08"
+      },
+      "handCheck": "Same person: MusicBrainz links this exact Discogs page (2297717) and the same Wikidata item. Kept the MB copy (dated 1959–2024); the pool copy's ▶ is Kong Nay's own track from his 2003 album \"Un barde cambodgien\", on YouTube's official \"Kong Nay - Topic\" channel"
+    },
+    "mb:378d1925-e800-46f2-ae05-4407dd6ae2dd": {
+      "name": "UnlimiteD",
+      "fromKey": "dg:2745828",
+      "play": {
+        "kind": "youtube-video",
+        "url": "https://www.youtube.com/watch?v=2aJgv66zfIM"
+      },
+      "title": "Tai Sinh - UNLIMITED",
+      "durationSeconds": 117,
+      "identityEvidence": {
+        "anchors": [
+          "whole"
+        ],
+        "legs": [
+          "title",
+          "name"
+        ],
+        "verifiedAt": "2026-09-08"
+      },
+      "handCheck": "Same band: both are the Vietnamese symphonic/metal band UnlimiteD, with the same two releases (Tái sinh, Symphony). Kept the MB copy (from 2003); the pool copy's ▶ is the title track \"Tái sinh\", uploaded June 2010, years before an unrelated later hit of the same name"
+    },
+    "mb:9a2cca5b-1cd9-45c8-89ee-c612c227e826": {
+      "name": "Growling Tiger",
+      "fromKey": "dg:1213338",
+      "play": {
+        "kind": "youtube-video",
+        "url": "https://www.youtube.com/watch?v=27nkX6V2fso"
+      },
+      "title": "Dingo Lay [10 inch] - Keskidee Trio with Gerald Clark & his Caribbean Serenaders",
+      "durationSeconds": 191,
+      "identityEvidence": {
+        "anchors": [
+          "track"
+        ],
+        "legs": [
+          "title"
+        ],
+        "verifiedAt": "2026-09-08"
+      },
+      "note": "with the Keskidee Trio, 1935",
+      "handCheck": "Same person: MusicBrainz lists Neville Marcano as Growling Tiger's real name and links this exact Discogs page (1213338). Kept the MB copy (1931–1993); the pool copy's ▶ is \"Dingo Lay\" (Decca 1935) by the Keskidee Trio — Attila, Lord Beginner and Neville Marcano (The Tiger) — so he is one of three voices"
+    }
+  }
+}

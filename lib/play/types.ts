@@ -74,6 +74,12 @@ export interface ArtistPlay {
    * downgraded to a streaming page, so no list ships alongside those.
    */
   streaming?: PlayLink[]
+  /**
+   * A short owner-approved caption shown beside the ▶ — today only for
+   * links carried from a merged duplicate (lib/play/mergedDuplicatePlay.ts),
+   * e.g. a group recording the artist sings on.
+   */
+  note?: string
 }
 
 export const PLAY_LABELS: Record<PlayKind, string> = {
