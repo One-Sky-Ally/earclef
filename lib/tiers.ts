@@ -35,9 +35,7 @@ export const TIER_HINTS: Record<ArtistTier, string> = {
 export const DEFAULT_FOLLOW_TIER: ArtistTier = 'in-the-mix'
 
 export function isArtistTier(value: unknown): value is ArtistTier {
-  return (
-    typeof value === 'string' && TIER_ORDER.includes(value as ArtistTier)
-  )
+  return typeof value === 'string' && TIER_ORDER.includes(value as ArtistTier)
 }
 
 /**
@@ -55,4 +53,22 @@ export function followTiers(
     result[slug] = isArtistTier(chosen) ? chosen : DEFAULT_FOLLOW_TIER
   }
   return result
+}
+
+/**
+ * Does an artist belong to a filter choice: everything ("all"), every
+ * follow ("following"), or one of the listener's own rows. Shared by the
+ * Feed and its "Recently released" pop-up so both read the same way.
+ */
+export function inTierChoice(
+  slug: string,
+  choice: 'all' | 'following' | ArtistTier,
+  follows: ReadonlySet<string>,
+  tiers: Record<string, ArtistTier | undefined>,
+): boolean {
+  if (choice === 'all') return true
+  if (!follows.has(slug)) return false
+  return (
+    choice === 'following' || (tiers[slug] ?? DEFAULT_FOLLOW_TIER) === choice
+  )
 }

@@ -30,6 +30,9 @@ const items = [
   release('Twenty-nine days ago', '2026-10-23'),
   release('Thirty days ago', '2026-10-22'),
   release('This month, no day', '2026-11'),
+  release('Eight months ago', '2026-03-02'),
+  release('364 days ago', '2025-11-22'),
+  release('A year ago today', '2025-11-21'),
   video('A video today', '2026-11-21'),
   video('A video next week', '2026-11-28'),
 ]
@@ -49,10 +52,25 @@ test('comingSoon: future releases, soonest first, videos never', () => {
   )
 })
 
-test('recentlyReleased: the last 30 days (today and the 29 before), newest first', () => {
-  assert.equal(RECENT_DAYS, 30)
+test('recentlyReleased: the past year (today and the 364 before), newest first', () => {
+  assert.equal(RECENT_DAYS, 365)
   assert.deepEqual(
     recentlyReleased(items, today).map((item) => item.title),
+    [
+      'Today',
+      'Last week',
+      'This month, no day',
+      'Twenty-nine days ago',
+      'Thirty days ago',
+      'Eight months ago',
+      '364 days ago',
+    ],
+  )
+})
+
+test('recentlyReleased: a 30-day window (the old default) still works', () => {
+  assert.deepEqual(
+    recentlyReleased(items, today, 30).map((item) => item.title),
     ['Today', 'Last week', 'This month, no day', 'Twenty-nine days ago'],
   )
 })
