@@ -92,7 +92,7 @@ export function AlbumCard({
       <span className={styles.info}>
         <span className={styles.title}>{album.title}</span>
         {album.year && <span className={styles.year}>{album.year}</span>}
-        {resolved.kind === 'search' ? (
+        {resolved.kind !== 'absent' ? (
           // A search, labeled as one — ▶ would promise playback.
           <span className={styles.listenHint}>{resolved.label} ↗</span>
         ) : (
@@ -106,7 +106,7 @@ export function AlbumCard({
 
   return (
     <article className={styles.card}>
-      {resolved.kind === 'search' ? (
+      {resolved.kind !== 'absent' ? (
         <a
           className={styles.head}
           href={resolved.href}
@@ -170,7 +170,7 @@ export function AlbumCard({
             const link = resolveListenHref(service, presence, artistName, track)
             return (
               <li key={`${index}-${track}`}>
-                {link.kind === 'search' ? (
+                {link.kind !== 'absent' ? (
                   <a
                     className={styles.track}
                     href={link.href}

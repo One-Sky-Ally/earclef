@@ -42,6 +42,8 @@ export interface Integrations {
   youtube: { channelId: string }
   setlistfm: { mbid: string }
   itunes?: { artistId: string }
+  /** Deezer artist pages MusicBrainz links to this artist (scripts/fill-deezer-ids.mjs). */
+  deezer?: { artistIds: string[] }
 }
 
 export interface HeroContent {

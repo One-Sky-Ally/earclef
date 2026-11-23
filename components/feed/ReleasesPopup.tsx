@@ -11,6 +11,7 @@ import {
   resolveListenHref,
   type ArtistServicePresence,
 } from '@/lib/listen/services'
+import type { ReleaseLinks } from '@/lib/listen/releaseLinks'
 import {
   TIER_LABELS,
   TIER_ORDER,
@@ -27,6 +28,8 @@ export interface ReleaseRow {
   dateLabel: string
   image: string
   presence?: ArtistServicePresence
+  /** The release itself on the services the feed confirmed it on. */
+  links?: ReleaseLinks
   /** "November 2026" — the month heading the row files under. */
   monthLabel?: string
 }
@@ -57,12 +60,12 @@ const COPY = {
   coming: {
     title: 'Coming soon',
     subtitle:
-      'Announced releases from the roster, soonest first. Each opens a search on your service ↗, not a guaranteed match.',
+      'Announced releases from the roster, soonest first. Each opens the release on your service ↗ where we could confirm it there, otherwise a search.',
   },
   recent: {
     title: 'Recently released',
     subtitle:
-      'Releases from the roster in the past year, newest first. Each opens a search on your service ↗, not a guaranteed match.',
+      'Releases from the roster in the past year, newest first. Each opens the release on your service ↗ where we could confirm it there, otherwise a search.',
   },
 } as const
 
@@ -119,8 +122,9 @@ export function ReleasesPopup({
       row.presence,
       row.artistName,
       row.title,
+      row.links,
     )
-    return resolved.kind === 'search'
+    return resolved.kind !== 'absent'
       ? { href: resolved.href, label: resolved.label }
       : { note: resolved.note }
   }

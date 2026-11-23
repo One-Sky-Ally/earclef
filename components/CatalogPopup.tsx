@@ -138,7 +138,7 @@ export function CatalogPopup({
                 )
                 return (
                 <li key={item.rgid} className={styles.tileWrap}>
-                  {listen.kind === 'search' ? (
+                  {listen.kind !== 'absent' ? (
                     <a
                       className={styles.tile}
                       href={listen.href}

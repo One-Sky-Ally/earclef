@@ -129,6 +129,10 @@ function checkStructure(slug, c) {
   if (itunes?.artistId && !/^\d{1,12}$/.test(itunes.artistId)) {
     issues.push(`bad itunes id ${itunes.artistId}`)
   }
+  const deezerIds = c.integrations.deezer?.artistIds
+  if (deezerIds !== undefined && (!Array.isArray(deezerIds) || !deezerIds.every((id) => /^\d{1,12}$/.test(id)))) {
+    issues.push(`bad deezer artist ids ${JSON.stringify(deezerIds)}`)
+  }
 
   for (const p of [...c.listen.platforms, ...c.hero.socials]) {
     if (p.platform === 'spotify') issues.push(`spotify link present: ${p.url}`)

@@ -30,6 +30,10 @@ verify EVERYTHING yourself against live sources:
   is name matching in a costume and stays banned; no evidence, no channel.
 - 3–4 official video IDs: EACH verified via oEmbed author match.
 - iTunes artistId: lookup API catalog match.
+- Deezer artist ids: `node scripts/fill-deezer-ids.mjs <slug>` after the
+  content JSON exists — MB url-rels only (evidence, never a name search);
+  none on MB → none stored. The feed reads the Deezer catalogue through
+  them so a release opens on Deezer itself instead of a search.
 - 2–3 featured albums with MB release-group IDs (title + type + year).
 - Streaming artist pages, browser-verified (JS shells defeat fetch): MB
   url-rels first; else find candidates on-platform (search agents / album

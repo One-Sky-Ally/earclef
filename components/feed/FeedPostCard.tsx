@@ -6,6 +6,7 @@ import {
   resolveListenHref,
   type ArtistServicePresence,
 } from '@/lib/listen/services'
+import type { ReleaseLinks } from '@/lib/listen/releaseLinks'
 import { useListenService } from '@/components/listen/ServiceProvider'
 import { useOneSound } from '@/components/play/useOneSound'
 import { displayTitle } from '@/lib/feed/displayTitle'
@@ -24,6 +25,8 @@ export interface FeedPostItem {
   href: string
   /** Videos only — played on the site instead of linking out. */
   videoId?: string
+  /** Releases only — the release itself on the services it was confirmed on. */
+  links?: ReleaseLinks
   presence?: ArtistServicePresence
 }
 
@@ -99,17 +102,24 @@ export function FeedPostCard({ item, blurb, blurbPending }: FeedPostCardProps) {
   }
   const resolved =
     item.type === 'release'
-      ? resolveListenHref(service, item.presence, item.artistName, item.title)
+      ? resolveListenHref(
+          service,
+          item.presence,
+          item.artistName,
+          item.title,
+          item.links,
+        )
       : null
-  // A release is a labeled search on the fan's service — or, when the
-  // artist is confirmed absent from it, a note and no link at all. A
+  // A release opens itself on the fan's service when the feed confirmed
+  // it there, else a labeled search — or, when the artist is confirmed
+  // absent from it, a note and no link at all. A
   // video with no id to play (never expected) still links to YouTube.
   const link =
     resolved === null
       ? videoId
         ? null
         : { href: item.href, label: 'Watch on YouTube' }
-      : resolved.kind === 'search'
+      : resolved.kind !== 'absent'
         ? { href: resolved.href, label: resolved.label }
         : null
   // Raw hashtags are metadata, not a headline.

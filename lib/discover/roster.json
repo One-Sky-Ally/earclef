@@ -7,6 +7,9 @@
     "mbid": "4bdcee62-4902-4773-8cd1-e252e2e31225",
     "channelId": "UCrTC0tOY5aujQFYDRf65xiw",
     "itunesId": "1092859",
+    "deezerIds": [
+      "177"
+    ],
     "membership": false
   },
   {
@@ -17,6 +20,9 @@
     "mbid": "1d779dfd-d292-48b5-b232-a09687b9881a",
     "channelId": "UCvYnfuCRhq6PRYK2MltekXA",
     "itunesId": "896764341",
+    "deezerIds": [
+      "6081632"
+    ],
     "membership": false
   },
   {
@@ -27,6 +33,9 @@
     "mbid": "1fb60b6c-0f4d-42b4-8a5e-de705ec76660",
     "channelId": "UCY14wC6ulRJSlQTfs1qdpRA",
     "itunesId": "56371449",
+    "deezerIds": [
+      "5"
+    ],
     "membership": false
   },
   {
@@ -37,6 +46,9 @@
     "mbid": "c926bc4a-97c9-4412-b56e-7e5844f09579",
     "channelId": "UCurYp7uH6wCzrc9ugUxz2Xw",
     "itunesId": "316671793",
+    "deezerIds": [
+      "440787"
+    ],
     "membership": false
   },
   {
@@ -47,6 +59,9 @@
     "mbid": "081b133e-ce74-42ba-92c1-c18234acb532",
     "channelId": "UC2NgiwU_-fa2TV95KG3jFLg",
     "itunesId": "3883114",
+    "deezerIds": [
+      "1124"
+    ],
     "membership": false
   },
   {
@@ -57,6 +72,9 @@
     "mbid": "d735497b-25f9-4503-8fb5-f50150730c18",
     "channelId": "UChihnFNbUit9rhVXCNeTsrQ",
     "itunesId": "24134087",
+    "deezerIds": [
+      "9691"
+    ],
     "membership": false
   },
   {
@@ -67,6 +85,9 @@
     "mbid": "f22942a1-6f70-4f48-866e-238cb2308fbd",
     "channelId": "UC4hfA78X-lqiRERBZLTnLBw",
     "itunesId": "39883194",
+    "deezerIds": [
+      "580"
+    ],
     "membership": false
   },
   {
@@ -77,6 +98,7 @@
     "mbid": null,
     "channelId": "UC2Yf-Wykss1jm73UAiIzmPw",
     "itunesId": "1517579184",
+    "deezerIds": [],
     "membership": true
   },
   {
@@ -87,6 +109,9 @@
     "mbid": "9e299bee-d7e2-49f3-8cd7-d6b28ab204d1",
     "channelId": "UCRSuBl_3qMMTjwpa18X74kA",
     "itunesId": "547192558",
+    "deezerIds": [
+      "3629661"
+    ],
     "membership": false
   },
   {
@@ -97,6 +122,9 @@
     "mbid": "484a4e90-6899-4e4b-a948-a2255d365340",
     "channelId": "UC7Lhhngb9lLW6tuPddEM62A",
     "itunesId": "947171999",
+    "deezerIds": [
+      "7699874"
+    ],
     "membership": false
   },
   {
@@ -107,6 +135,9 @@
     "mbid": "78404fdf-23b4-465e-ab02-21adf9ad6d28",
     "channelId": "UC51Uv4RHH2JGEOQpSsngvoA",
     "itunesId": "22482658",
+    "deezerIds": [
+      "1681"
+    ],
     "membership": false
   },
   {
@@ -117,6 +148,9 @@
     "mbid": "754294d5-d7d2-4ea2-8184-1dcaaf55a56f",
     "channelId": "UCoYAFe4DypQIUqMd1YynPVg",
     "itunesId": "505464105",
+    "deezerIds": [
+      "1635715"
+    ],
     "membership": false
   },
   {
@@ -127,6 +161,9 @@
     "mbid": "5eb38f71-96c3-48a3-9b69-2995cfb74982",
     "channelId": "UCNvD7-2NpnvLY2YhUZFVmUA",
     "itunesId": "275162219",
+    "deezerIds": [
+      "397893"
+    ],
     "membership": false
   },
   {
@@ -137,6 +174,9 @@
     "mbid": "e1a889b7-5e45-447f-baa0-b9c6cbc0d39f",
     "channelId": "UCptlnsqjPBIf4-C9XuXek_Q",
     "itunesId": "543347",
+    "deezerIds": [
+      "10519"
+    ],
     "membership": false
   },
   {
@@ -147,6 +187,10 @@
     "mbid": "830dce6f-c9ff-4ebe-944b-2ea2ab22fcdf",
     "channelId": "UCIPqGlegPPjhwC_USix63gQ",
     "itunesId": "158010792",
+    "deezerIds": [
+      "70538",
+      "7119"
+    ],
     "membership": false
   },
   {
@@ -157,6 +201,9 @@
     "mbid": "87c5dedd-371d-4a53-9f7f-80522fb7f3cb",
     "channelId": "UCFbRdRGijPR4oBjQ0fVCSmw",
     "itunesId": "295015",
+    "deezerIds": [
+      "630"
+    ],
     "membership": false
   },
   {
@@ -167,6 +214,9 @@
     "mbid": "72c536dc-7137-4477-a521-567eeb840fa8",
     "channelId": "UCnRI0ay61tY-fKYzzB3fCnw",
     "itunesId": "462006",
+    "deezerIds": [
+      "808"
+    ],
     "membership": false
   },
   {
@@ -177,6 +227,9 @@
     "mbid": "ed2ac1e9-d51d-4eff-a2c2-85e81abd6360",
     "channelId": "UCAlTDckOOQ2jREOvuCShGbw",
     "itunesId": "121982",
+    "deezerIds": [
+      "719"
+    ],
     "membership": false
   },
   {
@@ -187,6 +240,9 @@
     "mbid": "20db01e0-20a4-49fe-a82e-dfadf117f36f",
     "channelId": "UCFj0Hi17IGIzZOyyOLA4Djw",
     "itunesId": "81841288",
+    "deezerIds": [
+      "388194"
+    ],
     "membership": false
   },
   {
@@ -197,6 +253,9 @@
     "mbid": "437a0e49-c6ae-42f6-a6c1-84f25ed366bc",
     "channelId": "UCci2c90HJbY0VAS3_eLF3Wg",
     "itunesId": "273428126",
+    "deezerIds": [
+      "78668"
+    ],
     "membership": false
   },
   {
@@ -207,6 +266,9 @@
     "mbid": "9a709693-b4f8-4da9-8cc1-038c911a61be",
     "channelId": "UCgyl5xVlLLUZVpgfMGw-ETA",
     "itunesId": "416281071",
+    "deezerIds": [
+      "2108"
+    ],
     "membership": false
   },
   {
@@ -217,6 +279,9 @@
     "mbid": "c391fd22-da05-4e97-ad55-41bf91e0c1cc",
     "channelId": "UC0eI3QLoAt9jWvJ8WmTNyzA",
     "itunesId": "404011901",
+    "deezerIds": [
+      "406988"
+    ],
     "membership": false
   },
   {
@@ -227,6 +292,9 @@
     "mbid": "9ddce51c-2b75-4b3e-ac8c-1db09e7c89c6",
     "channelId": "UCNvfjGiZOuh78KYMojvugeQ",
     "itunesId": "468355684",
+    "deezerIds": [
+      "6281"
+    ],
     "membership": false
   },
   {
@@ -237,6 +305,9 @@
     "mbid": "fa7b9055-3703-473a-8a09-adf2fe031a24",
     "channelId": "UCrsQjTspfhJwe6GfNydRV5A",
     "itunesId": "472322",
+    "deezerIds": [
+      "428"
+    ],
     "membership": false
   },
   {
@@ -247,6 +318,9 @@
     "mbid": "13501c7d-d181-45ba-af52-5f101d8516a0",
     "channelId": null,
     "itunesId": "647564",
+    "deezerIds": [
+      "2344"
+    ],
     "membership": false
   },
   {
@@ -257,6 +331,9 @@
     "mbid": "735e3514-a8ae-401f-af3b-6300df1b8d2c",
     "channelId": "UCBvCrmhpqZpDdyy4f4uwVXA",
     "itunesId": "45464574",
+    "deezerIds": [
+      "3892"
+    ],
     "membership": false
   },
   {
@@ -267,6 +344,10 @@
     "mbid": "373a4c98-a46b-48e4-86ec-f6ca65b4f438",
     "channelId": "UCeXp3EC97_rUl_e2vgM3gLg",
     "itunesId": "563355119",
+    "deezerIds": [
+      "318290791",
+      "4400138"
+    ],
     "membership": false
   },
   {
@@ -277,6 +358,10 @@
     "mbid": "e2052f3c-3ecc-4bc5-8718-d97326852527",
     "channelId": "UCMzTWO4jSsPZvVs-0NVvCYQ",
     "itunesId": "4513363",
+    "deezerIds": [
+      "16468",
+      "248810972"
+    ],
     "membership": false
   },
   {
@@ -287,6 +372,9 @@
     "mbid": "9b21f670-8359-4e11-be1d-bf75b649a719",
     "channelId": "UCnMe2Ys-i4gbzs4MEhB2SFg",
     "itunesId": "3446106",
+    "deezerIds": [
+      "2114"
+    ],
     "membership": false
   },
   {
@@ -297,6 +385,9 @@
     "mbid": "e162b2eb-6a42-4240-8c1b-c94d9a0acb73",
     "channelId": "UC7jSCj67GB8OFGEm_hwR2DQ",
     "itunesId": "14945387",
+    "deezerIds": [
+      "1096"
+    ],
     "membership": false
   },
   {
@@ -307,6 +398,9 @@
     "mbid": "cc197bad-dc9c-440d-a5b5-d52ba2e14234",
     "channelId": "UCDPM_n1atn2ijUwHd0NNRQw",
     "itunesId": "471744",
+    "deezerIds": [
+      "892"
+    ],
     "membership": false
   },
   {
@@ -317,6 +411,9 @@
     "mbid": "5e290025-aca1-4035-b26d-bd36e105eb52",
     "channelId": "UCemfPumiBw4l7FIfQWS1FIg",
     "itunesId": "299572800",
+    "deezerIds": [
+      "382428"
+    ],
     "membership": false
   },
   {
@@ -327,6 +424,9 @@
     "mbid": "4dca4bb2-23ba-4103-97e6-5810311db33a",
     "channelId": "UCmE8miF_yQSEysOtTJvbFyA",
     "itunesId": "169711",
+    "deezerIds": [
+      "2027"
+    ],
     "membership": false
   },
   {
@@ -337,6 +437,9 @@
     "mbid": "07e748f1-075e-428d-85dc-ce3be434e906",
     "channelId": "UCQv0bxIpI_K0zmmCBTOttAQ",
     "itunesId": "60288452",
+    "deezerIds": [
+      "245"
+    ],
     "membership": false
   },
   {
@@ -347,6 +450,9 @@
     "mbid": "ccda046a-2674-4f7d-97e6-f23d6c156432",
     "channelId": "UCZn4_LiKXOu-ArkS4sJTG5w",
     "itunesId": "7576985",
+    "deezerIds": [
+      "605"
+    ],
     "membership": false
   },
   {
@@ -357,6 +463,9 @@
     "mbid": "71a94ed8-03cc-459a-bd35-a081ca88a402",
     "channelId": "UCl7tq6_e6cnyzt8eXlsH4FA",
     "itunesId": "42056970",
+    "deezerIds": [
+      "16935"
+    ],
     "membership": false
   },
   {
@@ -367,6 +476,9 @@
     "mbid": "25c76eb2-a92d-4624-9e30-093fc16ed5eb",
     "channelId": "UC2u9ro2QWTlZ4pGJwwaJyxA",
     "itunesId": "65379653",
+    "deezerIds": [
+      "7251"
+    ],
     "membership": false
   },
   {
@@ -377,6 +489,7 @@
     "mbid": "0cee95e3-a61d-4cd1-a39c-75464a05b606",
     "channelId": "UCgfcVxUTpxMByamflWUc3IA",
     "itunesId": "21356860",
+    "deezerIds": [],
     "membership": false
   },
   {
@@ -387,6 +500,9 @@
     "mbid": "aa1d4315-5246-42b2-b62b-f997d046d8b2",
     "channelId": "UCWCuFrZ4kdOMWhdmmDamW-Q",
     "itunesId": "209711341",
+    "deezerIds": [
+      "375308"
+    ],
     "membership": false
   },
   {
@@ -397,6 +513,9 @@
     "mbid": "321531fc-db73-4ffa-a959-61a61a2908c1",
     "channelId": "UCDOZs-fcPo0ab9mqUnyN4cw",
     "itunesId": "54556",
+    "deezerIds": [
+      "2056"
+    ],
     "membership": false
   },
   {
@@ -407,6 +526,9 @@
     "mbid": "5c12b265-5e59-44e0-b657-5cf4169f7316",
     "channelId": "UC_ghFm78RhT2eg6rPIVHRVg",
     "itunesId": "73212782",
+    "deezerIds": [
+      "116532"
+    ],
     "membership": false
   },
   {
@@ -417,6 +539,9 @@
     "mbid": "4236acde-2ce2-441c-a3d4-38d55f1b5474",
     "channelId": "UCbEPHUUi5JgsLMfA6S_R-Yg",
     "itunesId": "27051074",
+    "deezerIds": [
+      "1234"
+    ],
     "membership": false
   },
   {
@@ -427,6 +552,9 @@
     "mbid": "6514cffa-fbe0-4965-ad88-e998ead8a82a",
     "channelId": "UCiSx_RyMYooNKnxTl80983w",
     "itunesId": "55088",
+    "deezerIds": [
+      "9440"
+    ],
     "membership": false
   },
   {
@@ -437,6 +565,9 @@
     "mbid": "2dc7a305-7a8c-4fcc-add4-5e9def0a9a0d",
     "channelId": "UCRdIhqH_RuIdhtEa9gjwYQg",
     "itunesId": "463953572",
+    "deezerIds": [
+      "67485"
+    ],
     "membership": false
   },
   {
@@ -447,6 +578,9 @@
     "mbid": "fa97dd36-1b82-43d7-a6e4-2adeafd59cef",
     "channelId": "UCna-InS-5L5qv82diztOT7A",
     "itunesId": "275727569",
+    "deezerIds": [
+      "74444"
+    ],
     "membership": false
   },
   {
@@ -457,6 +591,9 @@
     "mbid": "c3694ddc-f7e5-40dd-9fad-90d11a2c50fa",
     "channelId": "UC8zwfTwx1vTZzM-fEclayuw",
     "itunesId": "22327570",
+    "deezerIds": [
+      "1386"
+    ],
     "membership": false
   },
   {
@@ -467,6 +604,9 @@
     "mbid": "5fee3020-513b-48c2-b1f7-4681b01db0c6",
     "channelId": "UC5MujsH-hrVWHBBfSSmv18A",
     "itunesId": "281070699",
+    "deezerIds": [
+      "183716"
+    ],
     "membership": false
   },
   {
@@ -477,6 +617,9 @@
     "mbid": "bca46a0c-25c9-42ca-98c2-e64c8a5e337e",
     "channelId": "UCXF6DMVLIVRr2OQAqyfEGeg",
     "itunesId": "1455262408",
+    "deezerIds": [
+      "76053262"
+    ],
     "membership": false
   },
   {
@@ -487,6 +630,9 @@
     "mbid": "44a7f7d5-79df-4f44-8f5e-02dfc0626904",
     "channelId": "UCMSvtHZgu0-n6ISejwL8rAw",
     "itunesId": "553517",
+    "deezerIds": [
+      "723"
+    ],
     "membership": false
   },
   {
@@ -497,6 +643,9 @@
     "mbid": "f47fc54d-b334-4321-8218-00c5b11d4dd1",
     "channelId": "UCMIR3hEDm2gMtN8DfgvS-yQ",
     "itunesId": "6808996",
+    "deezerIds": [
+      "5361"
+    ],
     "membership": false
   },
   {
@@ -507,6 +656,9 @@
     "mbid": "e21857d5-3256-4547-afb3-4b6ded592596",
     "channelId": "UCfIXdjDQH9Fau7y99_Orpjw",
     "itunesId": "567072",
+    "deezerIds": [
+      "14"
+    ],
     "membership": false
   },
   {
@@ -517,6 +669,9 @@
     "mbid": "27613b78-1b9d-4ec3-9db5-fa0743465fdd",
     "channelId": "UC-w3aQyKGcYe9JnhnhExaNQ",
     "itunesId": "51639",
+    "deezerIds": [
+      "1406"
+    ],
     "membership": false
   },
   {
@@ -527,6 +682,9 @@
     "mbid": "55c03773-59ea-4d4e-9057-87c2ecab005d",
     "channelId": "UCmD8TDgJxofPfxA8GTpaCCQ",
     "itunesId": "514090753",
+    "deezerIds": [
+      "4050763"
+    ],
     "membership": false
   },
   {
@@ -537,6 +695,9 @@
     "mbid": "b4691384-50c3-4afd-9988-51d3ec5db65d",
     "channelId": "UCwAam3W_VLfb6mEKPW2nDFg",
     "itunesId": "342260741",
+    "deezerIds": [
+      "5062414"
+    ],
     "membership": false
   },
   {
@@ -547,6 +708,9 @@
     "mbid": "49d461f0-3abf-422e-9569-8813e90074d7",
     "channelId": "UCPQSuyuiW5IdvEjgjzA-NbQ",
     "itunesId": "515391293",
+    "deezerIds": [
+      "3629721"
+    ],
     "membership": false
   },
   {
@@ -557,6 +721,9 @@
     "mbid": "ef4db186-ff43-4708-a713-3ce1e05657a1",
     "channelId": "UC877kk3HLR31M26Xst_0ENA",
     "itunesId": "19999718",
+    "deezerIds": [
+      "3525"
+    ],
     "membership": false
   },
   {
@@ -567,6 +734,9 @@
     "mbid": "328d146c-79f1-4eb6-9e40-8ee5710c14e5",
     "channelId": "UC07ZTiBUTi6qMu74EGZY8DA",
     "itunesId": "22873602",
+    "deezerIds": [
+      "1354"
+    ],
     "membership": false
   },
   {
@@ -577,6 +747,9 @@
     "mbid": "c3f28da8-662d-4f09-bdc7-3084bf685930",
     "channelId": "UCzEOgPvZv8BZjVkfmwjtpAQ",
     "itunesId": "3274302",
+    "deezerIds": [
+      "1653"
+    ],
     "membership": false
   },
   {
@@ -587,6 +760,9 @@
     "mbid": "1df15ee0-b52b-4315-9cb9-bc5a27a685e9",
     "channelId": "UCtmY49Zn4l0RMJnTWfV7Wsg",
     "itunesId": "730498854",
+    "deezerIds": [
+      "6563333"
+    ],
     "membership": false
   },
   {
@@ -597,6 +773,9 @@
     "mbid": "8dc08b1f-e393-4f85-a5dd-300f7693a8b8",
     "channelId": "UCIZ4NEJamsWybup2TJUdoPA",
     "itunesId": "59504818",
+    "deezerIds": [
+      "812409"
+    ],
     "membership": false
   },
   {
@@ -607,6 +786,9 @@
     "mbid": "82eb8936-7bf6-4577-8320-a2639465206d",
     "channelId": "UC8ey1FYCmgHPa9f5KxWb0mw",
     "itunesId": "156987",
+    "deezerIds": [
+      "4011"
+    ],
     "membership": false
   },
   {
@@ -617,6 +799,9 @@
     "mbid": "e6e879c0-3d56-4f12-b3c5-3ce459661a8e",
     "channelId": "UCK5ogJnijds9TBP8lcKo6iA",
     "itunesId": "872190",
+    "deezerIds": [
+      "664"
+    ],
     "membership": false
   },
   {
@@ -627,6 +812,9 @@
     "mbid": "b5330942-ffdf-49cb-8a13-b5d7b5d67bff",
     "channelId": "UCTgE1c7tDrDMPuGb5kmYVjA",
     "itunesId": "41870788",
+    "deezerIds": [
+      "259042"
+    ],
     "membership": false
   },
   {
@@ -637,6 +825,9 @@
     "mbid": "cb69e1f1-bc76-4df5-93c9-cf97dd8a3b5c",
     "channelId": null,
     "itunesId": "5565555",
+    "deezerIds": [
+      "6349"
+    ],
     "membership": false
   },
   {
@@ -647,6 +838,9 @@
     "mbid": "b625448e-bf4a-41c3-a421-72ad46cdb831",
     "channelId": "UCGiKlUaxFFNXkEYIW6mfbBQ",
     "itunesId": "120199",
+    "deezerIds": [
+      "2449"
+    ],
     "membership": false
   },
   {
@@ -657,6 +851,9 @@
     "mbid": "f1571db1-c672-4a54-a2cf-aaa329f26f0b",
     "channelId": "UC5euVM9CQMQHsJr6syGXwUw",
     "itunesId": "876741",
+    "deezerIds": [
+      "1200"
+    ],
     "membership": false
   },
   {
@@ -667,6 +864,9 @@
     "mbid": "e9fcfbbf-1743-4f73-8744-ada8da7394ea",
     "channelId": null,
     "itunesId": "5787786",
+    "deezerIds": [
+      "210650"
+    ],
     "membership": false
   },
   {
@@ -677,6 +877,9 @@
     "mbid": "812c46e5-3d65-4e80-ada8-269450c5621b",
     "channelId": "UC4ZVH32PCUG_iL7UI2ulmLw",
     "itunesId": "705284964",
+    "deezerIds": [
+      "6581343"
+    ],
     "membership": false
   },
   {
@@ -687,6 +890,9 @@
     "mbid": "11c6b106-1c1f-429d-8407-b1ee155d7f72",
     "channelId": "UCChAp5Odpt8t65nDhWUilfw",
     "itunesId": "107156",
+    "deezerIds": [
+      "2952"
+    ],
     "membership": false
   },
   {
@@ -697,6 +903,9 @@
     "mbid": "aea4c9b9-9f8d-49dc-b2ca-57d6f26e8634",
     "channelId": "UCZGBua-dvwfSdcF9AskDIgw",
     "itunesId": "478520598",
+    "deezerIds": [
+      "5328540"
+    ],
     "membership": false
   },
   {
@@ -707,6 +916,9 @@
     "mbid": "f58384a4-2ad2-4f24-89c5-c7b74ae1cce7",
     "channelId": "UCNiyS8zr2RIddszLwtoyUow",
     "itunesId": "440629621",
+    "deezerIds": [
+      "3973121"
+    ],
     "membership": false
   },
   {
@@ -717,6 +929,9 @@
     "mbid": "678d88b2-87b0-403b-b63d-5da7465aecc3",
     "channelId": "UCaKZA66vM_TUpetUNohmR0A",
     "itunesId": "994656",
+    "deezerIds": [
+      "848"
+    ],
     "membership": false
   },
   {
@@ -727,6 +942,9 @@
     "mbid": "c8a9ae11-63bf-409b-8bf3-a96b3712a2ff",
     "channelId": "UC9BvsAu_LU1McWVnpSKmReA",
     "itunesId": "258535972",
+    "deezerIds": [
+      "16952"
+    ],
     "membership": false
   },
   {
@@ -737,6 +955,9 @@
     "mbid": "43967d0a-1857-4cb9-a2f3-1a8f6fe5a2ad",
     "channelId": "UCqZKc23a7IWL0cUp1nvoLFA",
     "itunesId": "1313071523",
+    "deezerIds": [
+      "152253"
+    ],
     "membership": false
   },
   {
@@ -747,6 +968,9 @@
     "mbid": "2921ca1d-206e-411a-8d2e-e12494dcfa9a",
     "channelId": "UCyhqBfYUdAlECQtfmNIlbuw",
     "itunesId": "475538413",
+    "deezerIds": [
+      "1458571"
+    ],
     "membership": false
   },
   {
@@ -757,6 +981,9 @@
     "mbid": "ccecffbf-6631-46a3-8e32-ece2669ace37",
     "channelId": "UCvsE0LFDNAdH4lCd0HH3Dag",
     "itunesId": "321268620",
+    "deezerIds": [
+      "271899"
+    ],
     "membership": false
   },
   {
@@ -767,6 +994,9 @@
     "mbid": "d85defaf-b82e-48be-beb5-2672099e392e",
     "channelId": "UCpGx1YQ4KbGGBcOca3lr0gw",
     "itunesId": "552742374",
+    "deezerIds": [
+      "3787071"
+    ],
     "membership": false
   },
   {
@@ -777,6 +1007,9 @@
     "mbid": "c47267ed-7482-40bb-a4ea-e1399cc8ce04",
     "channelId": "UC6FaEzX8vrnrir6XaIIdQSw",
     "itunesId": "207226479",
+    "deezerIds": [
+      "74289"
+    ],
     "membership": false
   },
   {
@@ -787,6 +1020,9 @@
     "mbid": "188711ed-c99b-439c-844a-ca831f63a727",
     "channelId": "UC6Y8dX3XdGsp2akU-SKfreA",
     "itunesId": "3864756",
+    "deezerIds": [
+      "2857"
+    ],
     "membership": false
   },
   {
@@ -797,6 +1033,9 @@
     "mbid": "f27ec8db-af05-4f36-916e-3d57f91ecf5e",
     "channelId": "UC5OrDvL9DscpcAstz7JnQGA",
     "itunesId": "32940",
+    "deezerIds": [
+      "259"
+    ],
     "membership": false
   },
   {
@@ -807,6 +1046,10 @@
     "mbid": "11f570ff-44d9-4e9c-8812-e6d56103c5c1",
     "channelId": "UCycTYb9eH0T1gx8xGOsHrcw",
     "itunesId": "433457346",
+    "deezerIds": [
+      "372320041",
+      "459578"
+    ],
     "membership": false
   },
   {
@@ -817,6 +1060,9 @@
     "mbid": "561d854a-6a28-4aa7-8c99-323e6ce46c2a",
     "channelId": "UC1ZS17c0DlqUjsXZK3K_bgA",
     "itunesId": "44984",
+    "deezerIds": [
+      "1910"
+    ],
     "membership": false
   },
   {
@@ -827,6 +1073,9 @@
     "mbid": "9d607685-73ff-49e4-9ac5-479142b4e651",
     "channelId": "UC9cXNJvBCiG0Qg6Xjkp7P9w",
     "itunesId": "354711782",
+    "deezerIds": [
+      "441562"
+    ],
     "membership": false
   },
   {
@@ -837,6 +1086,9 @@
     "mbid": "a96ac800-bfcb-412a-8a63-0a98df600700",
     "channelId": "UCBEGcyJUC-0SFTJ1t45yOzw",
     "itunesId": "467112",
+    "deezerIds": [
+      "1237"
+    ],
     "membership": false
   },
   {
@@ -847,6 +1099,9 @@
     "mbid": "89c081d4-2ab2-4d3e-8589-ad77dfc40384",
     "channelId": "UCdmO-zG8p3fN_qZDwS9_n3A",
     "itunesId": "843536848",
+    "deezerIds": [
+      "5621293"
+    ],
     "membership": false
   },
   {
@@ -857,6 +1112,9 @@
     "mbid": "277e21a9-2d64-452d-96c4-2d23a7af5891",
     "channelId": "UCc642qPt-Rgsek6xJlyaGrQ",
     "itunesId": "161620",
+    "deezerIds": [
+      "2193"
+    ],
     "membership": false
   },
   {
@@ -867,6 +1125,9 @@
     "mbid": "2b64e811-cbcd-45f7-b29d-296444cad4f1",
     "channelId": "UCLUFu22ANri-wKqnT39EZuw",
     "itunesId": "4504094",
+    "deezerIds": [
+      "1672"
+    ],
     "membership": false
   },
   {
@@ -877,6 +1138,9 @@
     "mbid": "a506f761-2c22-4b2f-8a94-bd748c2c8f75",
     "channelId": "UC61ntWQBhbZWj3g9Vua3rug",
     "itunesId": "5611466",
+    "deezerIds": [
+      "2189"
+    ],
     "membership": false
   },
   {
@@ -887,6 +1151,9 @@
     "mbid": "99ea432a-e3d8-42cb-9d5e-db316a6a8458",
     "channelId": "UCw00GrG5ax6BsymeAgU3wmw",
     "itunesId": "1285818",
+    "deezerIds": [
+      "2062"
+    ],
     "membership": false
   },
   {
@@ -897,6 +1164,9 @@
     "mbid": "ab1b3f93-99ba-4a5b-868f-e412ab0a57fb",
     "channelId": "UCJkO_DGRZiFcKx8oW8OmIpw",
     "itunesId": "2901257",
+    "deezerIds": [
+      "7629"
+    ],
     "membership": false
   },
   {
@@ -907,6 +1177,9 @@
     "mbid": "2013f3af-51a3-404d-9afc-91b3f277ea4e",
     "channelId": "UCdyPkcbix5sQsch8BBoeFBQ",
     "itunesId": "6760152",
+    "deezerIds": [
+      "15929"
+    ],
     "membership": false
   },
   {
@@ -917,6 +1190,9 @@
     "mbid": "7bc8dd01-35ea-4b18-a64d-3a364dc76a52",
     "channelId": "UCUkrKItyTd7Vp5BPapGkVlw",
     "itunesId": "870157",
+    "deezerIds": [
+      "3293"
+    ],
     "membership": false
   },
   {
@@ -927,6 +1203,9 @@
     "mbid": "c4ff10e0-ae5a-467d-a409-6e0b4bf241eb",
     "channelId": "UCbdULJagJxPyVr3mad8qUcg",
     "itunesId": "374887266",
+    "deezerIds": [
+      "467549"
+    ],
     "membership": false
   },
   {
@@ -937,6 +1216,9 @@
     "mbid": "83d91898-7763-47d7-b03b-b92132375c47",
     "channelId": "UCY2qt3dw2TQJxvBrDiYGHdQ",
     "itunesId": "487143",
+    "deezerIds": [
+      "860"
+    ],
     "membership": false
   },
   {
@@ -947,6 +1229,9 @@
     "mbid": "8f6bd1e4-fbe1-4f50-aa9b-94c450ec0f11",
     "channelId": "UC243a5RnwmItLvwhl0YOxbg",
     "itunesId": "853090",
+    "deezerIds": [
+      "1069"
+    ],
     "membership": false
   },
   {
@@ -957,6 +1242,9 @@
     "mbid": "0383dadf-2a4e-4d10-a46a-e9e041da8eb3",
     "channelId": "UCiMhD4jzUqG-IgPzUmmytRQ",
     "itunesId": "3296287",
+    "deezerIds": [
+      "412"
+    ],
     "membership": false
   },
   {
@@ -967,6 +1255,9 @@
     "mbid": "a74b1b7f-71a5-4011-9441-d0b5e4122711",
     "channelId": "UCq19-LqvG35A-30oyAiPiqA",
     "itunesId": "657515",
+    "deezerIds": [
+      "399"
+    ],
     "membership": false
   },
   {
@@ -977,6 +1268,9 @@
     "mbid": "3798b104-01cb-484c-a3b0-56adc6399b80",
     "channelId": "UCm_W_hbwbzJE8w52jZ2NO0A",
     "itunesId": "899409",
+    "deezerIds": [
+      "113"
+    ],
     "membership": false
   },
   {
@@ -987,6 +1281,9 @@
     "mbid": "f467181e-d5e0-4285-b47e-e853dcc89ee7",
     "channelId": "UCTcraSQKl7F8GFiLydv6eDg",
     "itunesId": "7057812",
+    "deezerIds": [
+      "6058"
+    ],
     "membership": false
   },
   {
@@ -997,6 +1294,9 @@
     "mbid": "8bfac288-ccc5-448d-9573-c33ea2aa5c30",
     "channelId": "UCEuOwB9vSL1oPKGNdONB4ig",
     "itunesId": "889780",
+    "deezerIds": [
+      "182"
+    ],
     "membership": false
   },
   {
@@ -1007,6 +1307,9 @@
     "mbid": "858db18f-1e09-4f0d-96d3-c15d28762c15",
     "channelId": "UCAaRIJe8RIT3tXZiZM4rfWw",
     "itunesId": "3572356",
+    "deezerIds": [
+      "6241"
+    ],
     "membership": false
   },
   {
@@ -1017,6 +1320,9 @@
     "mbid": "97b20fe3-0924-4a5f-9955-d0b5c5f9587f",
     "channelId": "UCai-drGTTaIIvJ6OTnn5ixw",
     "itunesId": "271500846",
+    "deezerIds": [
+      "170008"
+    ],
     "membership": false
   },
   {
@@ -1027,6 +1333,9 @@
     "mbid": "f6f2326f-6b25-4170-b89d-e235b25508e8",
     "channelId": "UCAmt29QykFXnuIqQoEEnEFg",
     "itunesId": "73720797",
+    "deezerIds": [
+      "1417"
+    ],
     "membership": false
   },
   {
@@ -1037,6 +1346,9 @@
     "mbid": "0fc78799-38c2-4ee1-8c0f-0b8f7009b7ba",
     "channelId": "UCoUM-UJ7rirJYP8CQ0EIaHA",
     "itunesId": "1556097160",
+    "deezerIds": [
+      "125094672"
+    ],
     "membership": false
   },
   {
@@ -1047,6 +1359,9 @@
     "mbid": "5d02f264-e225-41ff-83f7-d9b1f0b1874a",
     "channelId": "UCvj9Q8jeaaXlj2OprcRraaw",
     "itunesId": "461503",
+    "deezerIds": [
+      "2707"
+    ],
     "membership": false
   },
   {
@@ -1057,6 +1372,9 @@
     "mbid": "afcd292c-3c1e-4708-af4a-991aadf957e4",
     "channelId": "UCvaVEjRMc91tuAxO3b3JuQw",
     "itunesId": "272690127",
+    "deezerIds": [
+      "1256645"
+    ],
     "membership": false
   },
   {
@@ -1067,6 +1385,9 @@
     "mbid": "5334edc0-5faf-4ca5-b1df-000de3e1f752",
     "channelId": "UC76cjhGZXsVeYcC2ERml_BA",
     "itunesId": "198271209",
+    "deezerIds": [
+      "14630"
+    ],
     "membership": false
   },
   {
@@ -1077,6 +1398,10 @@
     "mbid": "1ee18fb3-18a6-4c7f-8ba0-bc41cdd0462e",
     "channelId": "UCGD7CfG3JgZF52QpIRivV1Q",
     "itunesId": "46726",
+    "deezerIds": [
+      "166",
+      "268175382"
+    ],
     "membership": false
   },
   {
@@ -1087,6 +1412,9 @@
     "mbid": "95f5b748-d370-47fe-85bd-0af2dc450bc0",
     "channelId": "UCEJ-A6sXsxg0PxdUjgrF2Jw",
     "itunesId": "63480",
+    "deezerIds": [
+      "410"
+    ],
     "membership": false
   },
   {
@@ -1097,6 +1425,9 @@
     "mbid": "01d3c51b-9b98-418a-8d8e-37f6fab59d8c",
     "channelId": "UCMi8tQF_L7rd6YcmSt7MXrQ",
     "itunesId": "4273404",
+    "deezerIds": [
+      "1999"
+    ],
     "membership": false
   },
   {
@@ -1107,6 +1438,9 @@
     "mbid": "f2394946-07cc-4af7-8d77-58fea451dd59",
     "channelId": "UCLP4QDvzdH9lyyHoPAYiH0g",
     "itunesId": "443465419",
+    "deezerIds": [
+      "517413"
+    ],
     "membership": false
   },
   {
@@ -1117,6 +1451,9 @@
     "mbid": "c4593b34-2a94-4e44-ae10-4a0f4c0b4da8",
     "channelId": "UCb8sEm2FC4V0bM2p4Gg7oNA",
     "itunesId": "661273932",
+    "deezerIds": [
+      "4888025"
+    ],
     "membership": false
   },
   {
@@ -1127,6 +1464,9 @@
     "mbid": "63aa26c3-d59b-4da4-84ac-716b54f1ef4d",
     "channelId": "UCdI8MAC5HoPJSJ4zrgDDI-Q",
     "itunesId": "290242959",
+    "deezerIds": [
+      "134790"
+    ],
     "membership": false
   },
   {
@@ -1137,6 +1477,9 @@
     "mbid": "148ddea2-6839-4354-8e2c-5dfadf136b7f",
     "channelId": "UCH-Uobgd_TrFNnxuphSnbeQ",
     "itunesId": "1166315",
+    "deezerIds": [
+      "445"
+    ],
     "membership": false
   },
   {
@@ -1147,6 +1490,9 @@
     "mbid": "b10bbbfc-cf9e-42e0-be17-e2c3e1d2600d",
     "channelId": "UCc4K7bAqpdBP8jh1j9XZAww",
     "itunesId": "136975",
+    "deezerIds": [
+      "1"
+    ],
     "membership": false
   },
   {
@@ -1157,6 +1503,9 @@
     "mbid": "1270af14-9c17-4400-8ebb-3f0ac40dcfb0",
     "channelId": null,
     "itunesId": "105400698",
+    "deezerIds": [
+      "9058"
+    ],
     "membership": false
   },
   {
@@ -1167,6 +1516,9 @@
     "mbid": "41e2d679-43a3-4b9b-8469-ce748ad7b1ca",
     "channelId": null,
     "itunesId": "858682",
+    "deezerIds": [
+      "77506"
+    ],
     "membership": false
   },
   {
@@ -1177,6 +1529,9 @@
     "mbid": "b6fa9b9b-41cf-45a6-adc0-0a4c9a8c0d3c",
     "channelId": "UCk-mGwj4feV8QftdUD31FDw",
     "itunesId": "107334056",
+    "deezerIds": [
+      "62379"
+    ],
     "membership": false
   },
   {
@@ -1187,6 +1542,9 @@
     "mbid": "97b1142f-c71e-4971-8736-4a8ceaf6b4c3",
     "channelId": "UCf0uVkfr1g6PhD1QwtNE3kg",
     "itunesId": "3205453",
+    "deezerIds": [
+      "2071"
+    ],
     "membership": false
   },
   {
@@ -1197,6 +1555,9 @@
     "mbid": "9055fca5-69bc-4d47-b569-ab2012a19565",
     "channelId": "UCym53v2ao-wXBhSUIKxAekw",
     "itunesId": "1603491177",
+    "deezerIds": [
+      "5143097"
+    ],
     "membership": false
   },
   {
@@ -1207,6 +1568,9 @@
     "mbid": "a505bb48-ad65-4af4-ae47-29149715bff9",
     "channelId": "UCzFpkcvn4ulINJsS5SpLaJQ",
     "itunesId": "2726532",
+    "deezerIds": [
+      "366"
+    ],
     "membership": false
   },
   {
@@ -1217,6 +1581,9 @@
     "mbid": "8ed2e0b3-aa4c-4e13-bec3-dc7393ed4d6b",
     "channelId": "UC9BJwi8Q2AiLtLHdGlWqsrQ",
     "itunesId": "39753073",
+    "deezerIds": [
+      "5806"
+    ],
     "membership": false
   },
   {
@@ -1227,6 +1594,9 @@
     "mbid": "5c98fc12-be83-4246-ae5b-2184192913b9",
     "channelId": "UCZ3wH-v5zOcq4ZZWI58TGKA",
     "itunesId": "7420812",
+    "deezerIds": [
+      "8209"
+    ],
     "membership": false
   },
   {
@@ -1237,6 +1607,9 @@
     "mbid": "c3cf7f15-4a5e-4e9e-bce7-5e5b101fa29c",
     "channelId": "UCRNYMDBXBW9t0rjuGpJltlA",
     "itunesId": "79601102",
+    "deezerIds": [
+      "11270"
+    ],
     "membership": false
   },
   {
@@ -1247,6 +1620,9 @@
     "mbid": "66fc5bf8-daa4-4241-b378-9bc9077939d2",
     "channelId": "UCINawo364C-NCXc_n-3bxOw",
     "itunesId": "140870416",
+    "deezerIds": [
+      "689"
+    ],
     "membership": false
   },
   {
@@ -1257,6 +1633,9 @@
     "mbid": "c0b2500e-0cef-4130-869d-732b23ed9df5",
     "channelId": "UCd1WSgpR4RrgyYaBjA7eYHQ",
     "itunesId": "163916",
+    "deezerIds": [
+      "854"
+    ],
     "membership": false
   },
   {
@@ -1267,6 +1646,9 @@
     "mbid": "e0953daa-860f-4dc8-9f1a-b12587cdaf17",
     "channelId": null,
     "itunesId": "5506415",
+    "deezerIds": [
+      "7244"
+    ],
     "membership": false
   },
   {
@@ -1277,6 +1659,7 @@
     "mbid": null,
     "channelId": "UCGKURphmIziTYopcAlNb6Iw",
     "itunesId": "1620116878",
+    "deezerIds": [],
     "membership": false
   },
   {
@@ -1287,6 +1670,9 @@
     "mbid": "fac3ff34-6ba4-425a-8f01-b181ef4a908a",
     "channelId": "UCeo49u1owRF9cHq8F8FiJGw",
     "itunesId": "308179967",
+    "deezerIds": [
+      "261213"
+    ],
     "membership": false
   },
   {
@@ -1297,6 +1683,9 @@
     "mbid": "3c8ff4c9-b5b9-4e78-ad9d-5157c323de24",
     "channelId": "UC7EnxwiT0NeM83IAlSXJRgw",
     "itunesId": "276566673",
+    "deezerIds": [
+      "181770"
+    ],
     "membership": false
   },
   {
@@ -1307,6 +1696,9 @@
     "mbid": "3f542031-b054-454d-b57b-812fa2a81b11",
     "channelId": "UC_489i4uwfiz5UJcTuUIXiw",
     "itunesId": "2959228",
+    "deezerIds": [
+      "1587"
+    ],
     "membership": false
   }
 ]

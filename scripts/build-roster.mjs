@@ -21,6 +21,7 @@ const roster = readdirSync(CONTENT_DIR)
     mbid: artist.integrations?.setlistfm?.mbid || null,
     channelId: artist.integrations?.youtube?.channelId || null,
     itunesId: artist.integrations?.itunes?.artistId || null,
+    deezerIds: artist.integrations?.deezer?.artistIds ?? [],
     membership: Boolean(artist.membership?.enabled),
   }))
   .sort((a, b) => a.name.localeCompare(b.name))

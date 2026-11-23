@@ -15,12 +15,25 @@ import {
   youtubeWatchUrl,
 } from '../links'
 import { musicServiceSearchUrl } from '../listen/services'
+import { appleCollectionUrl, type ReleaseLinks } from '../listen/releaseLinks'
 import { normalizedTitle } from './blurbKey'
 import { isSubstantiveVideo } from './substance'
 import { dropShortClips, settledLengths } from './clipLength'
 import { READ_TIMEOUT_MS, learnLengths } from './videoLengths'
 import roster from '../discover/roster.json'
 import { builtToday } from './rebuild'
+import {
+  closestGroup,
+  confirmRelease,
+  deezerAlbums,
+  inReleaseWindow,
+  readChecks,
+  refreshChecks,
+  writeChecks,
+  type CheckCache,
+  type GroupRef,
+  type ReleaseKind,
+} from './releaseConfirm'
 
 export {
   BACKGROUND_FUNCTION_PATH,
@@ -44,6 +57,35 @@ export interface SnapshotItem {
   substance?: 'filler'
   /** Videos only — how long it runs; absent when the lookup failed. */
   seconds?: number
+  /**
+   * Releases only — the release itself on each service it was confirmed
+   * on (lib/listen/releaseLinks). Missing services keep a labelled search.
+   */
+  links?: ReleaseLinks
+}
+
+/**
+ * A release while the batch is built: its MusicBrainz group (id and
+ * primary type) when it has one, and an Apple release's kind.
+ */
+type BuiltRelease = SnapshotItem & {
+  rgId?: string
+  rgType?: string
+  kind?: ReleaseKind
+}
+
+/** A MusicBrainz primary type as a release kind; Broadcast, Other … are unknown. */
+function kindOf(type: string | undefined): ReleaseKind | undefined {
+  return type === 'Album' || type === 'Single' || type === 'EP' ? type : undefined
+}
+
+/** Build state stays behind: only feed fields reach the snapshot. */
+const BUILD_STATE = new Set(['rgId', 'rgType', 'kind'])
+
+function feedItem(built: BuiltRelease): SnapshotItem {
+  return Object.fromEntries(
+    Object.entries(built).filter(([key]) => !BUILD_STATE.has(key)),
+  ) as unknown as SnapshotItem
 }
 
 export interface FeedSnapshot {
@@ -74,6 +116,12 @@ const MAX_ITEMS = 600
  * across several self-chained invocations instead of stalling partway.
  */
 export const BATCH_SIZE = 15
+/**
+ * No new artist starts after this long in a batch: with the release
+ * checks a slow MusicBrainz night could otherwise run a batch past
+ * Netlify's 15 minutes and lose all of it.
+ */
+const BATCH_DEADLINE_MS = 10 * 60 * 1000
 
 let devSnapshot: FeedSnapshot | null = null
 let devProgress: BuildProgress | null = null
@@ -159,10 +207,16 @@ export async function clearLock(): Promise<void> {
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
+const FETCH_TIMEOUT_MS = 20_000
+
 async function fetchWithRetry(url: string): Promise<Response | null> {
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT } })
+      // A hung upstream must not eat the batch's 15 minutes.
+      const res = await fetch(url, {
+        headers: { 'User-Agent': USER_AGENT },
+        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+      })
       if ((res.status === 503 || res.status === 429) && attempt < 3) {
         await sleep(2000 * attempt)
         continue
@@ -176,38 +230,63 @@ async function fetchWithRetry(url: string): Promise<Response | null> {
   return null
 }
 
-interface RosterEntry {
+export interface RosterEntry {
   slug: string
   name: string
   mbid: string | null
   channelId: string | null
   itunesId: string | null
+  /** Deezer artist pages MusicBrainz links to the artist. */
+  deezerIds?: string[]
 }
 
 /** Current roster size — a snapshot covering fewer artists is stale. */
 export const ROSTER_LENGTH = (roster as RosterEntry[]).length
 
-async function mbReleases(entry: RosterEntry): Promise<SnapshotItem[]> {
-  if (!entry.mbid) return []
-  const items: SnapshotItem[] = []
+/** Not music releases by the artist: an interview, a podcast, an audiobook. */
+const NOT_RELEASES = new Set(['Interview', 'Audiobook', 'Audio drama'])
+
+/** The artist's MusicBrainz release groups; `answered` is false when a page never came. */
+async function mbReleases(
+  entry: RosterEntry,
+): Promise<{ items: BuiltRelease[]; answered: boolean }> {
+  if (!entry.mbid) return { items: [], answered: true }
+  const items: BuiltRelease[] = []
+  let answered = true
   interface MbRg {
     id: string
     title: string
     'first-release-date'?: string
+    'primary-type'?: string
+    'secondary-types'?: string[]
   }
   for (let offset = 0; offset < 300; offset += 100) {
+    // website-default: groups with an OFFICIAL release only — bootlegs,
+    // promos and withdrawn releases stay out (owner, Nov 23 2026).
     const res = await fetchWithRetry(
-      `https://musicbrainz.org/ws/2/release-group?artist=${entry.mbid}&limit=100&offset=${offset}&fmt=json`,
+      `https://musicbrainz.org/ws/2/release-group?artist=${entry.mbid}&release-group-status=website-default&limit=100&offset=${offset}&fmt=json`,
     )
-    if (!res?.ok) break
-    const body = (await res.json()) as {
-      'release-group-count': number
-      'release-groups': MbRg[]
+    if (!res?.ok) {
+      answered = false
+      break
+    }
+    // The fetch timeout also covers the body: a slow one is no answer.
+    const body = (await res.json().catch(() => null)) as {
+      'release-group-count'?: number
+      'release-groups'?: MbRg[]
+    } | null
+    // A busy MusicBrainz can answer 200 with an error body.
+    if (!body || !Array.isArray(body['release-groups'])) {
+      answered = false
+      break
     }
     for (const rg of body['release-groups']) {
       const date = rg['first-release-date']
       if (!date) continue
+      if ((rg['secondary-types'] ?? []).some((type) => NOT_RELEASES.has(type))) continue
       items.push({
+        rgId: rg.id,
+        rgType: rg['primary-type'],
         type: 'release',
         slug: entry.slug,
         artistName: entry.name,
@@ -219,46 +298,76 @@ async function mbReleases(entry: RosterEntry): Promise<SnapshotItem[]> {
         href: musicServiceSearchUrl('appleMusic', entry.name, rg.title),
       })
     }
-    if (offset + 100 >= body['release-group-count']) break
+    if (offset + 100 >= (body['release-group-count'] ?? 0)) break
     await sleep(1100)
   }
-  return items
+  return { items, answered }
 }
 
-async function itunesReleases(entry: RosterEntry): Promise<SnapshotItem[]> {
-  if (!entry.itunesId) return []
-  const res = await fetchWithRetry(
-    `https://itunes.apple.com/lookup?id=${entry.itunesId}&entity=album&limit=200&sort=recent`,
-  )
-  if (!res?.ok) return []
-  interface ItunesCollection {
-    wrapperType?: string
-    collectionName?: string
-    releaseDate?: string
-    artworkUrl100?: string
-  }
-  const body = (await res.json()) as { results?: ItunesCollection[] }
-  return (body.results ?? [])
-    .filter(
-      (result) =>
-        result.wrapperType === 'collection' &&
-        result.collectionName &&
-        result.releaseDate,
+interface ItunesCollection {
+  wrapperType?: string
+  collectionName?: string
+  collectionViewUrl?: string
+  releaseDate?: string
+  artworkUrl100?: string
+}
+
+/** The artist's Apple Music collections; null when Apple did not answer. */
+async function itunesCollections(entry: RosterEntry): Promise<ItunesCollection[] | null> {
+  // Apple sometimes answers an artist with no collections at all, and the
+  // whole catalogue a moment later (Nov 23 2026: John Coltrane): one more try.
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const res = await fetchWithRetry(
+      `https://itunes.apple.com/lookup?id=${entry.itunesId}&entity=album&limit=200&sort=recent`,
     )
-    .map((result) => ({
-      type: 'release' as const,
-      slug: entry.slug,
-      artistName: entry.name,
-      title: result.collectionName!.replace(/ - (Single|EP)$/i, ''),
-      date: result.releaseDate!.slice(0, 10),
-      image: result.artworkUrl100 ?? '/images/hero-placeholder.svg',
-      imageLarge: result.artworkUrl100?.replace('100x100', '600x600'),
-      href: musicServiceSearchUrl(
-        'appleMusic',
-        entry.name,
-        result.collectionName!,
-      ),
-    }))
+    const body = res?.ok
+      ? ((await res.json().catch(() => null)) as { results?: ItunesCollection[] } | null)
+      : null
+    const collections = (body?.results ?? []).filter((result) => result.wrapperType === 'collection')
+    if (collections.length > 0) return collections
+    if (attempt === 1) await sleep(3000)
+  }
+  return null
+}
+
+async function itunesReleases(
+  entry: RosterEntry,
+): Promise<{ items: BuiltRelease[]; answered: boolean; ids: ReadonlySet<string> }> {
+  if (!entry.itunesId) return { items: [], answered: true, ids: new Set() }
+  const collections = await itunesCollections(entry)
+  if (!collections) return { items: [], answered: false, ids: new Set() }
+  const ids = new Set(
+    collections.flatMap((result) => {
+      const id = appleCollectionUrl(result.collectionViewUrl)?.match(/\/(\d+)$/)?.[1]
+      return id ? [id] : []
+    }),
+  )
+  const items = collections
+    .filter((result) => result.collectionName && result.releaseDate)
+    .map((result): BuiltRelease => {
+      // The collection itself, from the artist's own catalogue.
+      const apple = appleCollectionUrl(result.collectionViewUrl)
+      const kind = / - Single$/i.test(result.collectionName!)
+        ? 'Single'
+        : / - EP$/i.test(result.collectionName!)
+          ? 'EP'
+          : 'Album'
+      return {
+        type: 'release' as const,
+        slug: entry.slug,
+        artistName: entry.name,
+        title: result.collectionName!.replace(/ - (Single|EP)$/i, ''),
+        date: result.releaseDate!.slice(0, 10),
+        image: result.artworkUrl100 ?? '/images/hero-placeholder.svg',
+        imageLarge: result.artworkUrl100?.replace('100x100', '600x600'),
+        href:
+          apple ??
+          musicServiceSearchUrl('appleMusic', entry.name, result.collectionName!),
+        ...(apple ? { links: { appleMusic: apple } } : {}),
+        kind,
+      }
+    })
+  return { items, answered: true, ids }
 }
 
 function unescapeXml(value: string): string {
@@ -276,7 +385,8 @@ async function rssVideos(entry: RosterEntry): Promise<SnapshotItem[]> {
     `https://www.youtube.com/feeds/videos.xml?channel_id=${entry.channelId}`,
   )
   if (!res?.ok) return []
-  const xml = await res.text()
+  const xml = await res.text().catch(() => null)
+  if (xml === null) return []
   const entries = [...xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)]
   return entries
     .flatMap((match) => {
@@ -441,17 +551,112 @@ export async function withoutShortClips(
   return { ...snapshot, items: dropShortClips(snapshot.items, lengths) }
 }
 
-/** iTunes overlay wins duplicate titles (release-day dates on new drops). */
+/**
+ * iTunes overlay wins duplicate titles (release-day dates on new drops).
+ * An Apple release keeps the MusicBrainz group it IS — same title, same
+ * time, same kind first — so that group's links count; a title-track
+ * single never lends its links to the album (Björk's "Fossora").
+ */
 function mergeReleases(
-  overlay: SnapshotItem[],
-  musicbrainz: SnapshotItem[],
-): SnapshotItem[] {
-  const seen = new Map<string, SnapshotItem>()
+  overlay: BuiltRelease[],
+  musicbrainz: BuiltRelease[],
+): BuiltRelease[] {
+  const groups = musicbrainz.reduce((byTitle, item) => {
+    const key = normalizedTitle(item.title)
+    if (!key || !item.rgId) return byTitle
+    const ref: GroupRef = { id: item.rgId, date: item.date, type: item.rgType }
+    return byTitle.set(key, [...(byTitle.get(key) ?? []), ref])
+  }, new Map<string, GroupRef[]>())
+  const seen = new Map<string, BuiltRelease>()
   for (const item of [...overlay, ...musicbrainz]) {
     const key = normalizedTitle(item.title)
-    if (!seen.has(key)) seen.set(key, item)
+    if (seen.has(key)) continue
+    const rgId =
+      item.rgId ??
+      (key && item.kind ? closestGroup(item.date, item.kind, groups.get(key) ?? []) : undefined)
+    seen.set(key, rgId ? { ...item, rgId } : item)
   }
   return [...seen.values()]
+}
+
+/**
+ * One artist's releases for the snapshot: MusicBrainz and iTunes merged,
+ * the past year's and the announced ones confirmed or left out. Exported
+ * for the local hand-check (the nightly build is the only other caller).
+ */
+export async function artistReleases(
+  entry: RosterEntry,
+  checks: CheckCache,
+  todayIso: string,
+): Promise<{ items: SnapshotItem[]; checks: CheckCache; complete: boolean }> {
+  const musicbrainz = await mbReleases(entry)
+  const overlay = await itunesReleases(entry)
+  const confirmed = await confirmedReleases(
+    entry,
+    mergeReleases(overlay.items, musicbrainz.items),
+    checks,
+    todayIso,
+    { appleAnswered: overlay.answered, appleIds: overlay.ids, today: todayIso },
+  )
+  return { ...confirmed, complete: musicbrainz.answered && overlay.answered }
+}
+
+/**
+ * When MusicBrainz or Apple did not answer for an artist, the releases
+ * last night's snapshot confirmed for them stay (not answering is never
+ * a verdict). Only rows built under the confirmation rule (they carry
+ * `links`) are carried, so a bootleg from an older snapshot never is.
+ */
+export function carriedReleases(
+  slug: string,
+  fresh: readonly SnapshotItem[],
+  previous: readonly SnapshotItem[],
+): SnapshotItem[] {
+  const have = new Set(
+    fresh.filter((item) => item.type === 'release').map((item) => normalizedTitle(item.title)),
+  )
+  return previous.filter(
+    (item) =>
+      item.type === 'release' &&
+      item.slug === slug &&
+      item.links !== undefined &&
+      !have.has(normalizedTitle(item.title)),
+  )
+}
+
+/**
+ * The past year's and the announced releases, confirmed or left out
+ * (lib/feed/releaseConfirm); older ones pass through as they are. The
+ * MusicBrainz group id stays behind — it is build state, not feed data.
+ */
+async function confirmedReleases(
+  entry: RosterEntry,
+  releases: BuiltRelease[],
+  checks: CheckCache,
+  todayIso: string,
+  apple: { appleAnswered: boolean; appleIds: ReadonlySet<string>; today: string },
+): Promise<{ items: SnapshotItem[]; checks: CheckCache }> {
+  const windowed = releases.filter((item) => inReleaseWindow(item.date, todayIso))
+  const nextChecks = await refreshChecks(
+    windowed.flatMap((item) => (item.rgId ? [item.rgId] : [])),
+    checks,
+    fetchWithRetry,
+    async () => {
+      await sleep(1100)
+    },
+  )
+  const deezer =
+    windowed.length > 0 && entry.deezerIds?.length
+      ? await deezerAlbums(entry.deezerIds, fetchWithRetry)
+      : { albums: [], answered: true }
+  const items = releases.flatMap((built) => {
+    const item = feedItem(built)
+    if (!inReleaseWindow(item.date, todayIso)) return [item]
+    const check = built.rgId ? nextChecks[built.rgId] : undefined
+    const confirmed = confirmRelease(item, check, { deezer, ...apple }, built.kind ?? kindOf(built.rgType))
+    return confirmed ? [confirmed] : []
+  })
+  return { items, checks: nextChecks }
 }
 
 export function startProgress(): BuildProgress {
@@ -492,24 +697,35 @@ export async function buildBatch(
   // One verdict-cache read per invocation; refreshed entries are written
   // back after the batch so only new/stale ids hit oEmbed.
   const verdicts = await readVerdicts()
+  const previous = (await readSnapshot())?.items ?? []
+  // A failed read must not be written back over the whole cache.
+  const stored = await readChecks()
+  let checks = stored.cache
+  const todayIso = new Date().toISOString().slice(0, 10)
+  const started = Date.now()
   const fetched: SnapshotItem[] = []
+  let processed = 0
   for (const entry of slice) {
-    const [mb, overlay, videos] = [
-      await mbReleases(entry),
-      await itunesReleases(entry),
-      await rssVideos(entry),
-    ]
+    // Past the deadline, the rest of the slice waits for the next batch
+    // (the first artist always runs, so the chain always moves).
+    if (processed > 0 && Date.now() - started > BATCH_DEADLINE_MS) break
+    const releases = await artistReleases(entry, checks, todayIso)
+    const videos = await rssVideos(entry)
+    if (stored.read && releases.checks !== checks) await writeChecks(releases.checks)
+    checks = releases.checks
     fetched.push(
-      ...mergeReleases(overlay, mb),
+      ...releases.items,
+      ...(releases.complete ? [] : carriedReleases(entry.slug, releases.items, previous)),
       ...(await pruneDeadVideos(videos, verdicts)),
     )
+    processed++
     await options.heartbeat?.()
     // MusicBrainz 1 req/s + iTunes ~20 req/min shared across the batch.
     await sleep(2600)
   }
   await writeVerdicts(verdicts)
   const items = [...progress.items, ...(await keepMinuteLong(fetched))]
-  const cursor = progress.cursor + slice.length
+  const cursor = progress.cursor + processed
   const next: BuildProgress = { ...progress, cursor, items }
   return { progress: next, done: cursor >= list.length }
 }

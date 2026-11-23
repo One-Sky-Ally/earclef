@@ -26,6 +26,7 @@ import {
   musicServiceSearchUrl,
   type ArtistServicePresence,
 } from '@/lib/listen/services'
+import type { ReleaseLinks } from '@/lib/listen/releaseLinks'
 import type { StoryCard } from '@/lib/stories/types'
 import {
   DEFAULT_FOLLOW_TIER,
@@ -69,6 +70,8 @@ interface FeedItem {
   videoId?: string
   /** Contextless videos (snapshot-classified) demote behind everything. */
   substance?: 'filler'
+  /** Releases only — the release itself on the services it was confirmed on. */
+  links?: ReleaseLinks
   presence?: ArtistServicePresence
 }
 
@@ -560,6 +563,7 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
         : formatFeedDate(item.date),
       image: item.image,
       presence: item.presence,
+      links: item.links,
       monthLabel: coming ? undefined : formatMonth(item.date),
     }))
   }
@@ -577,7 +581,8 @@ export function FeedClient({ roster }: { roster: RosterEntry[] }) {
     const key = blurbKey(item.slug, item.type, item.title)
     return (
       <FeedPostCard
-        key={`${item.type}-${item.href}`}
+        // Two roster artists can share one album link (Kind of Blue).
+        key={`${item.type}-${item.slug}-${item.title}-${item.href}`}
         item={{ ...item, dateLabel: formatFeedDate(item.date) }}
         blurb={blurbs[key]}
         blurbPending={!settledKeys.has(key)}

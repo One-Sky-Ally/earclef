@@ -20,6 +20,11 @@
     },
     "itunes": {
       "artistId": "59504818"
+    },
+    "deezer": {
+      "artistIds": [
+        "812409"
+      ]
     }
   },
   "hero": {

@@ -185,7 +185,7 @@ export function Discography({ mbid, artistName, presence, hasBandcamp }: Discogr
                       </span>
                     )}
                   </span>
-                  {listen.kind === 'search' ? (
+                  {listen.kind !== 'absent' ? (
                     <a
                       className={styles.listen}
                       href={listen.href}

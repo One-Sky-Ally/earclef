@@ -1,11 +1,13 @@
 /**
  * Fan-chosen listening service (v1 — links only, no APIs). The site
  * hosts no music: every listen click resolves to the fan's service
- * using per-artist data from the content JSONs; release-level links
- * are search URLs on that service (we hold no per-release IDs),
- * labeled as searches — "Search on X ↗", never a ▶ that promises
- * playback (owner rule, Oct 13 2026: music-service links are fine when
- * labeled honestly; ▶ means only a verified video that plays here).
+ * using per-artist data from the content JSONs. A release opens the
+ * release itself on that service when the feed confirmed it there
+ * (lib/listen/releaseLinks, owner Nov 23 2026) — "Open on X ↗";
+ * otherwise it is a search on that service, labeled as one — "Search on
+ * X ↗". Never a ▶ that promises playback (owner rule, Oct 13 2026:
+ * music-service links are fine when labeled honestly; ▶ means only a
+ * verified video that plays here).
  *
  * YouTube Music is a listening option like the others (owner ruling,
  * Oct 13 2026, replacing the Aug 8 ban on YouTube searches): a release
@@ -22,6 +24,7 @@
  * reroute to another service.
  */
 import type { ArtistContent } from '../types'
+import type { ReleaseLinks } from './releaseLinks'
 import { confirmedAbsences } from './serviceAbsence'
 
 export type ListenService =
@@ -148,6 +151,16 @@ export const SEARCH_LABELS: Record<MusicSearchService, string> = {
   tidal: 'Search on TIDAL',
 }
 
+/** Honest action labels: these links open the confirmed release itself. */
+export const OPEN_LABELS: Record<MusicSearchService, string> = {
+  youtubeMusic: 'Open on YouTube Music',
+  spotify: 'Open on Spotify',
+  appleMusic: 'Open on Apple Music',
+  amazonMusic: 'Open on Amazon Music',
+  deezer: 'Open on Deezer',
+  tidal: 'Open on TIDAL',
+}
+
 export function musicServiceSearchUrl(
   service: MusicSearchService,
   artistName: string,
@@ -196,6 +209,15 @@ export type ResolvedListen =
       rerouted: boolean
     }
   | {
+      /** The release itself on the chosen service, confirmed by the feed. */
+      kind: 'release'
+      href: string
+      service: MusicSearchService
+      /** Honest action label for the link: "Open on X". */
+      label: string
+      rerouted: boolean
+    }
+  | {
       /** The artist is confirmed absent from the chosen service: a
        * note, not a link, and never a silent reroute elsewhere. */
       kind: 'absent'
@@ -205,15 +227,17 @@ export type ResolvedListen =
     }
 
 /**
- * A release-level listen link for the chosen service — a labeled
- * search; an artist confirmed absent from the chosen service gets a
- * note instead.
+ * A release-level listen link for the chosen service — the release
+ * itself when `links` holds a confirmed one for that service, else a
+ * labeled search; an artist confirmed absent from the chosen service
+ * gets a note instead.
  */
 export function resolveListenHref(
   service: ListenService,
   presence: ArtistServicePresence | undefined,
   artistName: string,
   title: string,
+  links?: ReleaseLinks,
 ): ResolvedListen {
   const requested = searchServiceFor(service)
   const absence = absenceFor(requested, presence)
@@ -223,6 +247,16 @@ export function resolveListenHref(
       service: requested,
       note: absenceNote(absence),
       absence,
+    }
+  }
+  const release = links?.[requested]
+  if (release) {
+    return {
+      kind: 'release',
+      href: release,
+      service: requested,
+      label: OPEN_LABELS[requested],
+      rerouted: requested !== service,
     }
   }
   return {

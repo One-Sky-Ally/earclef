@@ -18,16 +18,47 @@ import { fetchMusicBrainzJson } from './mbFetch'
 import { resolveDiscoverSong } from './song'
 import type { DiscoverPick, RawPick } from './types'
 
-const MB_USER_AGENT =
-  'EarClefDiscover/0.1 (https://earclef.com; fiohmemorial@gmail.com)'
+/**
+ * Letters NFD leaves whole, spelled out: "Mediæval Bæbes" on MusicBrainz
+ * is "Mediaeval Baebes" as credited elsewhere (owner, Nov 23 2026: a
+ * spelling form never decides whether it is the right artist).
+ */
+const LETTER_FOLDS: Readonly<Record<string, string>> = {
+  æ: 'ae',
+  œ: 'oe',
+  ø: 'o',
+  ß: 'ss',
+  ł: 'l',
+  đ: 'd',
+  ð: 'd',
+  þ: 'th',
+  ı: 'i',
+}
 
 export function normalize(name: string): string {
   return name
     .toLowerCase()
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
+    .replace(/[æœøßłđðþı]/g, (letter) => LETTER_FOLDS[letter] ?? letter)
     .replace(/\band\b/g, '&')
     .replace(/[^a-z0-9&]+/g, '')
+}
+
+/** The name without a leading "The": "Mike Flowers Pops" meets "The Mike Flowers Pops". */
+export function withoutArticle(name: string): string {
+  return normalize(name.replace(/^\s*the\s+/i, ''))
+}
+
+/**
+ * What to search MusicBrainz for: the name without a leading "The", so
+ * "The Dirty Heads" also finds "Dirty Heads" (a phrase search needs every
+ * word) — except when nothing but "The" would be left ("The The").
+ */
+export function searchName(name: string): string {
+  const bare = name.replace(/^\s*the\s+/i, '').trim()
+  const key = normalize(bare)
+  return key && key !== 'the' ? bare : name.trim()
 }
 
 /** Only real roster slugs, at most three, in the candidate's order. */
@@ -45,6 +76,8 @@ interface MbArtistMatch {
   canonicalName: string
   /** The top search result: below a namesake, the knownFor title must confirm it. */
   top: boolean
+  /** Named alike only once a leading "The" is set aside: the knownFor title must confirm it too. */
+  article: boolean
 }
 
 interface MbSearchArtist {
@@ -57,28 +90,55 @@ interface MbSearchArtist {
  * The best-scoring result named exactly like the candidate (score ≥ 85).
  * Not just the top result: a namesake can outrank the artist (Oct 27,
  * 2026: Joseph Saba above the rapper Saba, Massimo Faraò above Farao).
+ * The same name with or without a leading "The" counts only when no
+ * result matches as written, and then needs its knownFor confirmed.
  */
 export function exactNameMatch(
   artists: readonly MbSearchArtist[],
   name: string,
 ): MbArtistMatch | null {
-  const key = normalize(name)
-  if (!key) return null
-  const at = artists.findIndex((artist) => artist.score >= 85 && normalize(artist.name) === key)
+  const find = (keyOf: (value: string) => string): number => {
+    const key = keyOf(name)
+    if (!key) return -1
+    return artists.findIndex((artist) => artist.score >= 85 && keyOf(artist.name) === key)
+  }
+  const exact = find(normalize)
+  const at = exact !== -1 ? exact : find(withoutArticle)
   if (at === -1) return null
-  return { mbid: artists[at].id, canonicalName: artists[at].name, top: at === 0 }
+  return {
+    mbid: artists[at].id,
+    canonicalName: artists[at].name,
+    top: at === 0,
+    article: exact === -1,
+  }
 }
 
 /** The exact-name match, null when there is none, 'unavailable' when MusicBrainz never answered. */
-async function verifyOnMusicBrainz(
+async function searchMusicBrainz(
   name: string,
+  asked: string,
 ): Promise<MbArtistMatch | null | 'unavailable'> {
-  const query = encodeURIComponent(`artist:"${name.replace(/"/g, '')}"`)
+  const query = encodeURIComponent(`artist:"${asked.replace(/"/g, '')}"`)
   const url = `https://musicbrainz.org/ws/2/artist?query=${query}&limit=3&fmt=json`
   const res = await fetchMusicBrainzJson(url)
   if (!res.ok) return res.unavailable ? 'unavailable' : null
   const body = res.body as { artists?: MbSearchArtist[] }
   return exactNameMatch(body.artists ?? [], name)
+}
+
+/**
+ * The name as written first; only when that finds no one, the name
+ * without a leading "The" ("The Dirty Heads" are "Dirty Heads"). Searching
+ * the bare name first would bury "The Heads" under Talking Heads.
+ */
+async function verifyOnMusicBrainz(
+  name: string,
+): Promise<MbArtistMatch | null | 'unavailable'> {
+  const asWritten = await searchMusicBrainz(name, name)
+  const bare = searchName(name)
+  if (asWritten !== null || bare === name.trim()) return asWritten
+  await sleep(1100) // MusicBrainz rate limit: 1 req/s
+  return searchMusicBrainz(name, bare)
 }
 
 interface MbReleaseGroup {
@@ -129,15 +189,18 @@ function catalogTitles(groups: MbReleaseGroup[], knownFor: string): string[] {
  * a normalized match among their release groups, else one recording
  * search. No match → the artist's own top release replaces it (latest
  * dated album, else latest dated anything, else the first group). An
- * artist with no catalog at all returns null and the pick is dropped.
+ * artist with no catalog at all returns null and the pick is dropped;
+ * MusicBrainz not answering is 'unavailable', never "no catalogue"
+ * (Nov 23, 2026: Dirty Heads skipped while MusicBrainz was busy).
  */
 async function verifiedKnownFor(
   mbid: string,
   proposed: string,
-): Promise<VerifiedCatalog | null> {
+): Promise<VerifiedCatalog | null | 'unavailable'> {
   const rgUrl = `https://musicbrainz.org/ws/2/release-group?artist=${mbid}&limit=100&fmt=json`
   const rgRes = await fetchMusicBrainzJson(rgUrl)
-  // a failed read is treated as an empty catalog below
+  if (!rgRes.ok && rgRes.unavailable) return 'unavailable'
+  // any other failed read is treated as an empty catalog below
   const groups: MbReleaseGroup[] = rgRes.ok
     ? ((rgRes.body as { 'release-groups'?: MbReleaseGroup[] })['release-groups'] ?? [])
     : []
@@ -151,25 +214,19 @@ async function verifiedKnownFor(
     return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed), albums: studioAlbums(groups) }
   }
 
-  try {
-    const query = encodeURIComponent(
-      `recording:"${proposed.replace(/"/g, '')}" AND arid:${mbid}`,
-    )
-    const res = await fetch(
-      `https://musicbrainz.org/ws/2/recording?query=${query}&limit=1&fmt=json`,
-      { headers: { 'User-Agent': MB_USER_AGENT } },
-    )
-    if (res.ok) {
-      const body = (await res.json()) as { count?: number }
-      if ((body.count ?? 0) > 0) {
-        await sleep(1100)
-        return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed), albums: studioAlbums(groups) }
-      }
-    }
-  } catch {
-    // fall through to the catalog-sourced replacement
-  }
+  const query = encodeURIComponent(
+    `recording:"${proposed.replace(/"/g, '')}" AND arid:${mbid}`,
+  )
+  const recordings = await fetchMusicBrainzJson(
+    `https://musicbrainz.org/ws/2/recording?query=${query}&limit=1&fmt=json`,
+  )
   await sleep(1100)
+  // Busy is not "the title isn't theirs": a replaced title would reject
+  // a match found below a namesake or without "The".
+  if (!recordings.ok && recordings.unavailable) return 'unavailable'
+  if (recordings.ok && ((recordings.body as { count?: number }).count ?? 0) > 0) {
+    return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed), albums: studioAlbums(groups) }
+  }
 
   const dated = groups
     .filter((group) => group.title && group['first-release-date'])
@@ -247,11 +304,18 @@ export async function verifyCandidate(
   }
 
   const catalog = await verifiedKnownFor(match.mbid, candidate.knownFor)
+  if (catalog === 'unavailable') {
+    trace?.(`musicbrainz: no answer for the catalogue of ${match.canonicalName}`)
+    return { pick: null, reason: 'musicbrainz unavailable' }
+  }
   if (!catalog) return { pick: null, reason: 'no catalogue' }
-  // Below a namesake the name alone is not enough: a crowded name could
-  // be another artist, so the candidate's own title must be theirs.
-  if (!match.top && catalog.replaced) {
-    trace?.(`musicbrainz: ${match.canonicalName} ranks below a namesake and "${candidate.knownFor}" is not in their catalogue`)
+  // Below a namesake, or named alike only without "The", the name alone
+  // is not enough: it could be another artist, so the candidate's own
+  // title must be theirs.
+  if ((!match.top || match.article) && catalog.replaced) {
+    trace?.(
+      `musicbrainz: ${match.canonicalName} ${match.article ? 'matches only without "The"' : 'ranks below a namesake'} and "${candidate.knownFor}" is not in their catalogue`,
+    )
     return { pick: null, reason: 'not on MusicBrainz' }
   }
   trace?.(`catalogue: known for "${catalog.knownFor}"; ${catalog.titles.length} release-group titles`)
