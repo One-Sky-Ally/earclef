@@ -40,7 +40,7 @@
 }
 
 .date {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
@@ -69,7 +69,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  min-height: 36px;
+  min-height: 44px;
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--accent);
@@ -81,7 +81,8 @@
 }
 
 .absent {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
   color: var(--text-muted);
   max-width: 12rem;
   text-align: right;
@@ -98,6 +99,16 @@
     width: 48px;
     height: 48px;
     grid-row: span 2;
+    align-self: start;
+    margin-top: 0.2rem;
+  }
+
+  /* The artist name is a link: give a thumb something to land on. */
+  .artist {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    font-size: 0.9rem;
   }
 
   .action,
@@ -109,5 +120,14 @@
 
   .title {
     white-space: normal;
+    line-height: 1.35;
+  }
+
+  .action {
+    margin-top: -0.35rem;
+  }
+
+  .absent {
+    padding-bottom: 0.3rem;
   }
 }
