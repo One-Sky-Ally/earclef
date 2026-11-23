@@ -6,6 +6,15 @@ import { LikeButton } from '@/components/fans/LikeButton'
 import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import type { OnThisDayItem, OnThisDayPayload } from '@/lib/explore/onThisDay'
 import { isGenreLens } from '@/lib/explore/genreData'
+import {
+  DEFAULT_FILTERS,
+  applyFilters,
+  filterOptions,
+  filtersToParams,
+  hasActiveFilter,
+  matchesFilters,
+  type OnThisDayFilters,
+} from '@/lib/explore/onThisDayFilters'
 import { Icon } from '@/components/ui/Icon'
 import styles from './OnThisDay.module.css'
 
@@ -165,11 +174,18 @@ function Item({
   )
 }
 
-export function OnThisDay({ initialDate }: { initialDate: string | null }) {
+export function OnThisDay({
+  initialDate,
+  initialFilters = DEFAULT_FILTERS,
+}: {
+  initialDate: string | null
+  initialFilters?: OnThisDayFilters
+}) {
   const today = useLocalToday()
   const [chosen, setChosen] = useState<string | null>(initialDate)
   const [answer, setAnswer] = useState<Answer | null>(null)
-  const [oldOnly, setOldOnly] = useState(false)
+  // Sorting and filters stay as the visitor moves from day to day.
+  const [filters, setFilters] = useState<OnThisDayFilters>(initialFilters)
   // One random number per visit: the playlist's order is random, but a
   // re-render never reshuffles it.
   const [seed] = useState(() => Math.floor(Math.random() * 2 ** 31))
@@ -178,10 +194,18 @@ export function OnThisDay({ initialDate }: { initialDate: string | null }) {
 
   useEffect(() => {
     if (date === null) return
-    let cancelled = false
     const url = new URL(window.location.href)
     url.searchParams.set('d', date)
+    for (const [key, value] of Object.entries(filtersToParams(filters))) {
+      if (value === null) url.searchParams.delete(key)
+      else url.searchParams.set(key, value)
+    }
     window.history.replaceState(null, '', url)
+  }, [date, filters])
+
+  useEffect(() => {
+    if (date === null) return
+    let cancelled = false
     fetch(`/api/on-this-day/${date}`)
       .then((res) => (res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`))))
       .then((payload: OnThisDayPayload) => {
@@ -266,8 +290,8 @@ export function OnThisDay({ initialDate }: { initialDate: string | null }) {
         <DayView
           key={current.payload.date}
           payload={current.payload}
-          oldOnly={oldOnly}
-          setOldOnly={setOldOnly}
+          filters={filters}
+          setFilters={setFilters}
           seed={seed}
         />
       )}
@@ -370,13 +394,13 @@ function Context({
 
 function DayView({
   payload,
-  oldOnly,
-  setOldOnly,
+  filters,
+  setFilters,
   seed,
 }: {
   payload: OnThisDayPayload
-  oldOnly: boolean
-  setOldOnly: (value: boolean) => void
+  filters: OnThisDayFilters
+  setFilters: (value: OnThisDayFilters) => void
   seed: number
 }) {
   // The one release chosen from the list; null = the day's playlist.
@@ -390,25 +414,28 @@ function DayView({
     .filter(([decade]) => Number(decade) < 2000)
     .reduce((sum, [, count]) => sum + count, 0)
   const countries = Object.keys(payload.byCountry).length
-  const shown = payload.items.filter((item) => !oldOnly || item.y < 2000)
-  // The playlist: verified songs among what is SHOWN, in random order.
-  const playlist = useMemo(
-    () =>
-      shuffled(
-        payload.items.filter((item) => item.v),
-        seed ^ dateSeed(payload.date),
-      ).map((item) => ({
-        videoId: item.v as string,
-        title: item.vs ?? item.t,
-        artistName: item.n,
-        mbid: item.a ?? '',
-        genres: item.genres,
-        place: item.place,
-        y: item.y,
-      })),
+  const filtering = hasActiveFilter(filters)
+  const shown = applyFilters(payload.items, filters)
+  const countryOf = (item: OnThisDayItem) => payload.countryNames[item.c] ?? item.c
+  const options = filterOptions(payload.items, filters, (code) => payload.countryNames[code] ?? code)
+  const setFilter = (key: keyof OnThisDayFilters, value: string) =>
+    setFilters({ ...filters, [key]: value })
+  // Every verified song of the day, shuffled once; the playlist is the
+  // ones among what is SHOWN, so a filter narrows what plays too.
+  const verified = useMemo(
+    () => shuffled(payload.items.filter((item) => item.v), seed ^ dateSeed(payload.date)),
     [payload, seed],
   )
-  const playable = playlist.filter((track) => !oldOnly || track.y < 2000)
+  const playable = verified
+    .filter((item) => matchesFilters(item, filters))
+    .map((item) => ({
+      videoId: item.v as string,
+      title: item.vs ?? item.t,
+      artistName: item.n,
+      mbid: item.a ?? '',
+      genres: item.genres,
+      place: item.place,
+    }))
 
   function play(item: OnThisDayItem) {
     setSelected(item)
@@ -441,12 +468,12 @@ function DayView({
     )
   }
 
+  // `shown` is already in the chosen order, so the decades follow it.
   const grouped = new Map<string, OnThisDayItem[]>()
   for (const item of shown) {
     const decade = String(Math.floor(item.y / 10) * 10)
     grouped.set(decade, [...(grouped.get(decade) ?? []), item])
   }
-  const countryOf = (item: OnThisDayItem) => payload.countryNames[item.c] ?? item.c
 
   return (
     <div className={styles.layout}>
@@ -467,14 +494,88 @@ function DayView({
 
         <div className={styles.listHead}>
           <h2 className={styles.listTitle}>Releases through the years</h2>
-          <label className={styles.toggle}>
-            <input type="checkbox" checked={oldOnly} onChange={(event) => setOldOnly(event.target.checked)} />
-            Only before 2000
-          </label>
         </div>
 
+        <form
+          className={styles.filters}
+          onSubmit={(event) => event.preventDefault()}
+          aria-label="Sort and filter the releases"
+        >
+          <label className={styles.filter}>
+            <span className={styles.filterLabel}>Order</span>
+            <select value={filters.sort} onChange={(event) => setFilter('sort', event.target.value)}>
+              <option value="oldest">Oldest first</option>
+              <option value="newest">Newest first</option>
+            </select>
+          </label>
+          <label className={styles.filter}>
+            <span className={styles.filterLabel}>Year</span>
+            <select value={filters.year} onChange={(event) => setFilter('year', event.target.value)}>
+              <option value="">Any year</option>
+              <option value="pre2000">Before 2000 ({options.pre2000})</option>
+              {options.decades.map(({ decade, years }) => (
+                <optgroup key={decade.value} label={`${decade.value.slice(1)}s`}>
+                  <option value={decade.value}>
+                    {decade.label} ({decade.count})
+                  </option>
+                  {years.map((year) => (
+                    <option key={year.value} value={year.value}>
+                      {year.label} ({year.count})
+                    </option>
+                  ))}
+                </optgroup>
+              ))}
+            </select>
+          </label>
+          <label className={styles.filter}>
+            <span className={styles.filterLabel}>Country</span>
+            <select value={filters.country} onChange={(event) => setFilter('country', event.target.value)}>
+              <option value="">Any country</option>
+              {options.countries.map((country) => (
+                <option key={country.value} value={country.value}>
+                  {country.label} ({country.count})
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className={styles.filter}>
+            <span className={styles.filterLabel}>Genre</span>
+            <select value={filters.genre} onChange={(event) => setFilter('genre', event.target.value)}>
+              <option value="">Any genre</option>
+              {options.genres.map((genre) => (
+                <option key={genre.value} value={genre.value}>
+                  {genre.label} ({genre.count})
+                </option>
+              ))}
+            </select>
+          </label>
+          {filtering && (
+            <button
+              type="button"
+              className={styles.clear}
+              onClick={() => setFilters({ ...DEFAULT_FILTERS, sort: filters.sort })}
+            >
+              Clear filters
+            </button>
+          )}
+        </form>
+        <p className={styles.filterNote} aria-live="polite">
+          {filtering
+            ? `Showing ${shown.length} of the ${payload.items.length} releases listed for ${label(payload.date)}.`
+            : `Country is the artist’s country on Ear Clef; genres are the artist’s own tags.`}
+        </p>
+
         {shown.length === 0 && (
-          <p className={styles.note}>Nothing from before 2000 carries this exact date.</p>
+          <p className={styles.note}>
+            No release listed for {label(payload.date)} matches these filters.{' '}
+            <button
+              type="button"
+              className={styles.inlineButton}
+              onClick={() => setFilters({ ...DEFAULT_FILTERS, sort: filters.sort })}
+            >
+              Clear filters
+            </button>
+          </p>
         )}
         {[...grouped.entries()].map(([decade, items]) => {
           const all = payload.byDecade[decade] ?? items.length
@@ -483,7 +584,9 @@ function DayView({
               <h3 className={styles.decadeTitle}>
                 {decade}s
                 <span className={styles.decadeCount}>
-                  {items.length < all
+                  {filtering
+                    ? `${items.length} ${items.length === 1 ? 'match' : 'matches'}`
+                    : items.length < all
                     ? `${items.length} of ${formatCount(all)} shown`
                     : `${formatCount(all)} with this exact date`}
                 </span>
@@ -556,8 +659,10 @@ function DayView({
         ) : playable.length > 0 ? (
           <div className={styles.player}>
             <p className={styles.panelNote}>
-              Every verified song released on {label(payload.date)}, shuffled — or press ▶
-              on any release to explore it.
+              {filtering
+                ? `Every verified song among the releases shown, shuffled`
+                : `Every verified song released on ${label(payload.date)}, shuffled`}{' '}
+              — or press ▶ on any release to explore it.
             </p>
             <QueuePlayer
               key={`on-this-day:${payload.date}`}
@@ -574,7 +679,11 @@ function DayView({
                 ...(track.place && { place: track.place }),
               }))}
               buttonLabel={`▶ Play ${label(payload.date)} — ${playable.length} song${playable.length === 1 ? '' : 's'}, shuffled`}
-              endNote={`That’s every verified song listed for ${label(payload.date)}.`}
+              endNote={
+                filtering
+                  ? `That’s every verified song matching these filters for ${label(payload.date)}.`
+                  : `That’s every verified song listed for ${label(payload.date)}.`
+              }
             />
             <p className={styles.playNote}>
               {playable.length} of the {shown.length} listed releases can play: a play button
@@ -583,8 +692,9 @@ function DayView({
           </div>
         ) : (
           <p className={styles.playNote}>
-            None of the releases listed here has a verified video yet, so nothing plays
-            for this day.
+            {filtering
+              ? 'None of the releases shown has a verified video yet, so nothing plays for these filters.'
+              : 'None of the releases listed here has a verified video yet, so nothing plays for this day.'}
           </p>
         )}
       </aside>
