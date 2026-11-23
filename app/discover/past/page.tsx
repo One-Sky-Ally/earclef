@@ -24,7 +24,8 @@ export default function PastPicksPage() {
           <h1 className={styles.title}>All past picks</h1>
           <p className={styles.subtitle}>
             Every artist Discover has recommended, newest first. Press play on one and
-            it&rsquo;s marked as played. That list stays in this browser only &mdash;{' '}
+            it&rsquo;s marked as played. Signed in, your marks follow you to any device;
+            signed out, they stay in this browser &mdash;{' '}
             <Link href="/privacy">see Privacy</Link>.
           </p>
           <PastPicks />
