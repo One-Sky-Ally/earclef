@@ -61,8 +61,12 @@ export function aliasKeysOf(names: readonly (string | null | undefined)[]): Set<
   )
 }
 
-/** Every decoration-stripped form of a title span, recursively. */
-function expandForms(title: string): string[] {
+/**
+ * Every decoration-stripped form of a title span, recursively. Without
+ * `split`, only decorations come off (brackets, a track number, a
+ * featured credit) — the title is never cut into sides or segments.
+ */
+function expandForms(title: string, split = true): string[] {
   const forms = new Set<string>()
   const ordered: string[] = []
   const expand = (value: string): void => {
@@ -78,6 +82,7 @@ function expandForms(title: string): string[] {
     if (noNumber !== trimmed) expand(noNumber)
     const noFeat = trimmed.replace(TRAILING_FEAT, '')
     if (noFeat !== trimmed) expand(noFeat)
+    if (!split) return
     for (const side of trimmed.split(/\s+=\s+/)) if (side !== trimmed) expand(side)
     for (const side of trimmed.split(/\s*\/\s*/)) if (side !== trimmed) expand(side)
     for (const quoted of trimmed.matchAll(QUOTED_SPAN)) expand(quoted[1])
@@ -116,6 +121,28 @@ export function titleVariants(
     }),
   )
   return new Set([...keys, ...withEdges].filter((key) => key !== '' && !aliases.has(key)))
+}
+
+/**
+ * A catalogue title as WHOLE titles only: decorations off, never split
+ * into sides or segments, and never with the artist's name cut out of
+ * it (a title that IS the artist's name gives nothing). For matching an
+ * upload against a release-group title on the artist's own channel
+ * (Nov 24, 2026): splitting "2016/07/20 | Big Sky Brewing Company" gave
+ * "20", which met an upload dated "6/20/26"; cutting Abigail Washburn out
+ * of "Wu Fei & Abigail Washburn" left "Wu Fei", which met "Four Seasons -
+ * Abigail Washburn & Wu Fei". Upload titles keep every variant
+ * (titleVariants) — they carry the artist's name and annotations.
+ */
+export function wholeTitleKeys(
+  title: string | null | undefined,
+  aliases: ReadonlySet<string> = new Set(),
+): Set<string> {
+  return new Set(
+    expandForms(title ?? '', false)
+      .map(normalizeName)
+      .filter((key) => key !== '' && !aliases.has(key)),
+  )
 }
 
 /** Does any variant of `a` equal any variant of `b`? Exact keys only. */

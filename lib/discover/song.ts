@@ -42,7 +42,7 @@ import {
 import { discogsArtistRecords, discogsReleaseLabels } from '../play/discogsApi'
 import { isTrustedUploader, isWholeRecordUpload, uploadKindOf, type UploadKind } from '../play/officialVideo'
 import { recordSongCandidates } from '../play/songIdentity'
-import { normalizeName, titleVariants, variantsIntersect } from '../play/titleVariants'
+import { normalizeName, titleVariants, variantsIntersect, wholeTitleKeys } from '../play/titleVariants'
 
 export interface DiscoverSong {
   videoId: string
@@ -144,11 +144,24 @@ export function discogsIdsOf(relations: readonly MbUrlRelation[]): number[] {
  * not here). The channel is the artist's own MB-linked one, so it never
  * decides WHO — but it does decide which song the pick is shown as, so
  * the upload must name the title as a whole unit (./titleVariants), the
- * same bar as the Discogs path. Until Nov 24, 2026 any upload merely
+ * same bar as the Discogs path — and the catalogue title only as a whole
+ * title (wholeTitleKeys: never a fragment of it, never what is left once
+ * the artist's own name is cut out). Until Nov 24, 2026 any upload merely
  * CONTAINING the title passed: Mediæval Bæbes' livestream "MediaevalBaebes
  * is live" became their album "Live" (owner: "A pick should only play a
  * real song, shown under its real title").
  */
+/**
+ * A title carrying the artist's own name ("Wu Fei & Abigail Washburn"):
+ * uploads lead with the artist's credit, so on the channel path such a
+ * title meets uploads of any song (Nov 24, 2026: "Wu Fei & Abigail
+ * Washburn :: Water is Wide / Wusuli Boat Song" became the album). Their
+ * songs still come through the Discogs path, track by track.
+ */
+function namesTheArtist(keys: ReadonlySet<string>, aliases: ReadonlySet<string>): boolean {
+  return [...aliases].some((alias) => alias.length >= 3 && [...keys].some((key) => key.includes(alias)))
+}
+
 export function channelCandidates(
   uploads: readonly Upload[],
   titles: readonly string[],
@@ -160,8 +173,8 @@ export function channelCandidates(
   return titles.slice(0, MAX_CHANNEL_TITLES).flatMap((title) => {
     // A self-titled record leaves no variant once the artist's name is
     // set aside, so it is never matched here — it names the artist, not a song.
-    const wanted = titleVariants(title, aliases)
-    if (wanted.size === 0) return []
+    const wanted = wholeTitleKeys(title, aliases)
+    if (wanted.size === 0 || namesTheArtist(wanted, aliases)) return []
     const best = named
       .filter(({ upload, variants }) => !taken.has(upload.videoId) && variantsIntersect(variants, wanted))
       .map(({ upload }) => upload)

@@ -233,3 +233,32 @@ test('a livestream recording is never the song, however it is titled; a premiere
   assert.equal(chooseSong([live], ctx), null)
   assert.equal(chooseSong([live, real], ctx)?.videoId, 'rrrrrrrrrrr')
 })
+
+test('a catalogue title is matched whole: no date fragments, no collaborator left over (Nov 24, 2026)', async () => {
+  const { channelCandidates } = await import('./song.ts')
+  const cheese = channelCandidates(
+    [{ videoId: 'lllllllllll', title: 'The String Cheese Incident - "Lightning Sky" - Charlottesville, VA - 6/20/26' }],
+    ['2016/07/20 | Big Sky Brewing Company | Missoula, MT', 'Lightning Sky'],
+    'The String Cheese Incident',
+    aliasKeysOf(['The String Cheese Incident']),
+  )
+  assert.deepEqual(cheese.map((entry) => entry.songTitle), ['Lightning Sky'])
+  const washburn = channelCandidates(
+    [{ videoId: 'fffffffffff', title: '"Four Seasons" - Abigail Washburn & Wu Fei' }],
+    ['Wu Fei & Abigail Washburn', 'Four Seasons'],
+    'Abigail Washburn',
+    aliasKeysOf(['Abigail Washburn']),
+  )
+  assert.deepEqual(washburn.map((entry) => entry.songTitle), ['Four Seasons'])
+})
+
+test("a catalogue title carrying the artist's name is not matched on the channel path", async () => {
+  const { channelCandidates } = await import('./song.ts')
+  const found = channelCandidates(
+    [{ videoId: 'wwwwwwwwwww', title: 'Wu Fei & Abigail Washburn :: Water is Wide / Wusuli Boat Song (Live at Old Town School)' }],
+    ['Wu Fei & Abigail Washburn'],
+    'Abigail Washburn',
+    aliasKeysOf(['Abigail Washburn']),
+  )
+  assert.deepEqual(found, [])
+})

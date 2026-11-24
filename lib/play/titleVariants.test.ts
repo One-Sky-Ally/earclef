@@ -64,3 +64,12 @@ test('single-quoted titles count; apostrophes inside words never split a title',
   assert.deepEqual([...titleVariants("Don't Look Back")], ['dontlookback'])
   assert.ok(!titleVariants("Rock 'n' Roll Suicide").has('n'))
 })
+
+test('wholeTitleKeys: decorations come off, the title is never split or cut around the artist', async () => {
+  const { wholeTitleKeys, aliasKeysOf } = await import('./titleVariants.ts')
+  const aliases = aliasKeysOf(['Abigail Washburn'])
+  assert.deepEqual([...wholeTitleKeys('Salva Nos (Live)')], ['salvanoslive', 'salvanos'])
+  assert.deepEqual([...wholeTitleKeys('2016/07/20 | Big Sky')], ['20160720bigsky'])
+  assert.deepEqual([...wholeTitleKeys('Wu Fei & Abigail Washburn', aliases)], ['wufeiabigailwashburn'])
+  assert.deepEqual([...wholeTitleKeys('Abigail Washburn', aliases)], [])
+})
