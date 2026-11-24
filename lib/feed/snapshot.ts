@@ -22,6 +22,9 @@ import { dropShortClips, settledLengths } from './clipLength'
 import { READ_TIMEOUT_MS, learnLengths } from './videoLengths'
 import roster from '../discover/roster.json'
 import { builtToday } from './rebuild'
+import { batchFetcher, fetchWithRetry as patientFetch } from './patientFetch'
+import { buildIsDone, carriedReleases, inRetryPass, noteForRetry, replaceArtistReleases } from './retryPass'
+export { carriedReleases } from './retryPass'
 import {
   closestGroup,
   confirmRelease,
@@ -93,6 +96,8 @@ export interface FeedSnapshot {
   /** Roster size this snapshot covers — used to detect a grown roster. */
   rosterLength: number
   items: SnapshotItem[]
+  /** Artists whose MusicBrainz or Apple lookup never fully answered, second try included. */
+  releasesUnanswered?: string[]
 }
 
 /** Resumable build state: which roster slice has been fetched so far. */
@@ -101,6 +106,10 @@ export interface BuildProgress {
   cursor: number
   rosterLength: number
   items: SnapshotItem[]
+  /** Artists whose MusicBrainz or Apple lookup did not answer: asked again at the end (./retryPass). */
+  retry?: string[]
+  /** Asked again and still no full answer: their kept rows stay. */
+  unanswered?: string[]
 }
 
 const SNAPSHOT_KEY = 'snapshot/v1'
@@ -119,9 +128,11 @@ export const BATCH_SIZE = 15
 /**
  * No new artist starts after this long in a batch: with the release
  * checks a slow MusicBrainz night could otherwise run a batch past
- * Netlify's 15 minutes and lose all of it.
+ * Netlify's 15 minutes and lose all of it. Nine, not ten, since the
+ * patient MusicBrainz retries (./patientFetch) can hold one artist
+ * about three minutes on a night it never answers.
  */
-const BATCH_DEADLINE_MS = 10 * 60 * 1000
+const BATCH_DEADLINE_MS = 9 * 60 * 1000
 
 let devSnapshot: FeedSnapshot | null = null
 let devProgress: BuildProgress | null = null
@@ -209,25 +220,27 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const FETCH_TIMEOUT_MS = 20_000
 
-async function fetchWithRetry(url: string): Promise<Response | null> {
-  for (let attempt = 1; attempt <= 3; attempt++) {
-    try {
-      // A hung upstream must not eat the batch's 15 minutes.
-      const res = await fetch(url, {
-        headers: { 'User-Agent': USER_AGENT },
-        signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
-      })
-      if ((res.status === 503 || res.status === 429) && attempt < 3) {
-        await sleep(2000 * attempt)
-        continue
-      }
-      return res
-    } catch {
-      if (attempt === 3) return null
-      await sleep(2000 * attempt)
-    }
-  }
-  return null
+/** MusicBrainz gets five patient tries (./patientFetch); others three quick ones. */
+function fetchWithRetry(url: string): Promise<Response | null> {
+  return patientFetch(url, { timeoutMs: FETCH_TIMEOUT_MS, userAgent: USER_AGENT })
+}
+
+type Fetcher = (url: string) => Promise<Response | null>
+
+/** No request starts after this long in a batch: Netlify stops it at 15 minutes. */
+const HARD_STOP_MS = 13 * 60 * 1000
+/** Retry waiting a whole batch may spend on busy upstreams (./patientFetch). */
+const RETRY_BUDGET_MS = 4 * 60 * 1000
+
+/** The batch's one fetcher: patient, inside the hard stop and the retry budget. */
+function fetcherFor(started: number, heartbeat?: () => Promise<void>): Fetcher {
+  return batchFetcher({
+    hardStop: started + HARD_STOP_MS,
+    retryBudgetMs: RETRY_BUDGET_MS,
+    timeoutMs: FETCH_TIMEOUT_MS,
+    userAgent: USER_AGENT,
+    heartbeat,
+  })
 }
 
 export interface RosterEntry {
@@ -249,6 +262,7 @@ const NOT_RELEASES = new Set(['Interview', 'Audiobook', 'Audio drama'])
 /** The artist's MusicBrainz release groups; `answered` is false when a page never came. */
 async function mbReleases(
   entry: RosterEntry,
+  fetcher: Fetcher,
 ): Promise<{ items: BuiltRelease[]; answered: boolean }> {
   if (!entry.mbid) return { items: [], answered: true }
   const items: BuiltRelease[] = []
@@ -263,7 +277,7 @@ async function mbReleases(
   for (let offset = 0; offset < 300; offset += 100) {
     // website-default: groups with an OFFICIAL release only — bootlegs,
     // promos and withdrawn releases stay out (owner, Nov 23 2026).
-    const res = await fetchWithRetry(
+    const res = await fetcher(
       `https://musicbrainz.org/ws/2/release-group?artist=${entry.mbid}&release-group-status=website-default&limit=100&offset=${offset}&fmt=json`,
     )
     if (!res?.ok) {
@@ -313,11 +327,11 @@ interface ItunesCollection {
 }
 
 /** The artist's Apple Music collections; null when Apple did not answer. */
-async function itunesCollections(entry: RosterEntry): Promise<ItunesCollection[] | null> {
+async function itunesCollections(entry: RosterEntry, fetcher: Fetcher): Promise<ItunesCollection[] | null> {
   // Apple sometimes answers an artist with no collections at all, and the
   // whole catalogue a moment later (Nov 23 2026: John Coltrane): one more try.
   for (let attempt = 1; attempt <= 2; attempt++) {
-    const res = await fetchWithRetry(
+    const res = await fetcher(
       `https://itunes.apple.com/lookup?id=${entry.itunesId}&entity=album&limit=200&sort=recent`,
     )
     const body = res?.ok
@@ -332,9 +346,10 @@ async function itunesCollections(entry: RosterEntry): Promise<ItunesCollection[]
 
 async function itunesReleases(
   entry: RosterEntry,
+  fetcher: Fetcher,
 ): Promise<{ items: BuiltRelease[]; answered: boolean; ids: ReadonlySet<string> }> {
   if (!entry.itunesId) return { items: [], answered: true, ids: new Set() }
-  const collections = await itunesCollections(entry)
+  const collections = await itunesCollections(entry, fetcher)
   if (!collections) return { items: [], answered: false, ids: new Set() }
   const ids = new Set(
     collections.flatMap((result) => {
@@ -379,9 +394,9 @@ function unescapeXml(value: string): string {
     .replace(/&#39;/g, "'")
 }
 
-async function rssVideos(entry: RosterEntry): Promise<SnapshotItem[]> {
+async function rssVideos(entry: RosterEntry, fetcher: Fetcher = fetchWithRetry): Promise<SnapshotItem[]> {
   if (!entry.channelId) return []
-  const res = await fetchWithRetry(
+  const res = await fetcher(
     `https://www.youtube.com/feeds/videos.xml?channel_id=${entry.channelId}`,
   )
   if (!res?.ok) return []
@@ -588,40 +603,21 @@ export async function artistReleases(
   entry: RosterEntry,
   checks: CheckCache,
   todayIso: string,
+  fetcher: Fetcher = fetchWithRetry,
 ): Promise<{ items: SnapshotItem[]; checks: CheckCache; complete: boolean }> {
-  const musicbrainz = await mbReleases(entry)
-  const overlay = await itunesReleases(entry)
+  const musicbrainz = await mbReleases(entry, fetcher)
+  const overlay = await itunesReleases(entry, fetcher)
   const confirmed = await confirmedReleases(
     entry,
     mergeReleases(overlay.items, musicbrainz.items),
     checks,
     todayIso,
     { appleAnswered: overlay.answered, appleIds: overlay.ids, today: todayIso },
+    // An artist MusicBrainz did not fully answer for goes to the second
+    // try anyway: its release checks wait for it (review, Nov 24 2026).
+    { fetcher, check: musicbrainz.answered },
   )
   return { ...confirmed, complete: musicbrainz.answered && overlay.answered }
-}
-
-/**
- * When MusicBrainz or Apple did not answer for an artist, the releases
- * last night's snapshot confirmed for them stay (not answering is never
- * a verdict). Only rows built under the confirmation rule (they carry
- * `links`) are carried, so a bootleg from an older snapshot never is.
- */
-export function carriedReleases(
-  slug: string,
-  fresh: readonly SnapshotItem[],
-  previous: readonly SnapshotItem[],
-): SnapshotItem[] {
-  const have = new Set(
-    fresh.filter((item) => item.type === 'release').map((item) => normalizedTitle(item.title)),
-  )
-  return previous.filter(
-    (item) =>
-      item.type === 'release' &&
-      item.slug === slug &&
-      item.links !== undefined &&
-      !have.has(normalizedTitle(item.title)),
-  )
 }
 
 /**
@@ -635,19 +631,22 @@ async function confirmedReleases(
   checks: CheckCache,
   todayIso: string,
   apple: { appleAnswered: boolean; appleIds: ReadonlySet<string>; today: string },
+  lookup: { fetcher: Fetcher; check: boolean },
 ): Promise<{ items: SnapshotItem[]; checks: CheckCache }> {
   const windowed = releases.filter((item) => inReleaseWindow(item.date, todayIso))
-  const nextChecks = await refreshChecks(
-    windowed.flatMap((item) => (item.rgId ? [item.rgId] : [])),
-    checks,
-    fetchWithRetry,
-    async () => {
-      await sleep(1100)
-    },
-  )
+  const nextChecks = lookup.check
+    ? await refreshChecks(
+        windowed.flatMap((item) => (item.rgId ? [item.rgId] : [])),
+        checks,
+        lookup.fetcher,
+        async () => {
+          await sleep(1100)
+        },
+      )
+    : checks
   const deezer =
     windowed.length > 0 && entry.deezerIds?.length
-      ? await deezerAlbums(entry.deezerIds, fetchWithRetry)
+      ? await deezerAlbums(entry.deezerIds, lookup.fetcher)
       : { albums: [], answered: true }
   const items = releases.flatMap((built) => {
     const item = feedItem(built)
@@ -693,6 +692,7 @@ export async function buildBatch(
   options: BuildBatchOptions = {},
 ): Promise<{ progress: BuildProgress; done: boolean }> {
   const list = roster as RosterEntry[]
+  if (inRetryPass(progress, list.length)) return retryBatch(progress, list, options)
   const slice = list.slice(progress.cursor, progress.cursor + BATCH_SIZE)
   // One verdict-cache read per invocation; refreshed entries are written
   // back after the batch so only new/stale ids hit oEmbed.
@@ -703,16 +703,19 @@ export async function buildBatch(
   let checks = stored.cache
   const todayIso = new Date().toISOString().slice(0, 10)
   const started = Date.now()
+  const fetcher = fetcherFor(started, options.heartbeat)
   const fetched: SnapshotItem[] = []
+  let retry = progress.retry ?? []
   let processed = 0
   for (const entry of slice) {
     // Past the deadline, the rest of the slice waits for the next batch
     // (the first artist always runs, so the chain always moves).
     if (processed > 0 && Date.now() - started > BATCH_DEADLINE_MS) break
-    const releases = await artistReleases(entry, checks, todayIso)
-    const videos = await rssVideos(entry)
+    const releases = await artistReleases(entry, checks, todayIso, fetcher)
+    const videos = await rssVideos(entry, fetcher)
     if (stored.read && releases.checks !== checks) await writeChecks(releases.checks)
     checks = releases.checks
+    if (!releases.complete) retry = noteForRetry(retry, entry.slug)
     fetched.push(
       ...releases.items,
       ...(releases.complete ? [] : carriedReleases(entry.slug, releases.items, previous)),
@@ -726,8 +729,49 @@ export async function buildBatch(
   await writeVerdicts(verdicts)
   const items = [...progress.items, ...(await keepMinuteLong(fetched))]
   const cursor = progress.cursor + processed
-  const next: BuildProgress = { ...progress, cursor, items }
-  return { progress: next, done: cursor >= list.length }
+  const next: BuildProgress = { ...progress, cursor, items, retry }
+  return { progress: next, done: buildIsDone(next, list.length) }
+}
+
+/** Before the second try: a busy MusicBrainz often settles within a minute. */
+const RETRY_COOL_DOWN_MS = 60_000
+
+/**
+ * The second try (./retryPass): each artist noted in the main pass is
+ * asked once more; a full answer replaces their rows, another partial
+ * one leaves the kept rows as they are. Bounded by the batch deadline —
+ * the rest wait for the next batch, so the chain always moves.
+ */
+async function retryBatch(
+  progress: BuildProgress,
+  list: readonly RosterEntry[],
+  options: BuildBatchOptions,
+): Promise<{ progress: BuildProgress; done: boolean }> {
+  const stored = await readChecks()
+  let checks = stored.cache
+  const todayIso = new Date().toISOString().slice(0, 10)
+  const started = Date.now()
+  const fetcher = fetcherFor(started, options.heartbeat)
+  const pending = progress.retry ?? []
+  let items = progress.items
+  let unanswered = progress.unanswered ?? []
+  let asked = 0
+  await sleep(RETRY_COOL_DOWN_MS)
+  for (const slug of pending) {
+    if (asked > 0 && Date.now() - started > BATCH_DEADLINE_MS) break
+    asked++
+    const entry = list.find((candidate) => candidate.slug === slug)
+    if (!entry) continue
+    const releases = await artistReleases(entry, checks, todayIso, fetcher)
+    if (stored.read && releases.checks !== checks) await writeChecks(releases.checks)
+    checks = releases.checks
+    if (releases.complete) items = replaceArtistReleases(items, slug, releases.items)
+    else unanswered = noteForRetry(unanswered, slug)
+    await options.heartbeat?.()
+    await sleep(2600)
+  }
+  const next: BuildProgress = { ...progress, items, retry: pending.slice(asked), unanswered }
+  return { progress: next, done: buildIsDone(next, list.length) }
 }
 
 /** Sort, cap, and stamp a completed progress pass as the live snapshot. */
@@ -737,6 +781,7 @@ export function finalizeSnapshot(progress: BuildProgress): FeedSnapshot {
     builtAt: new Date().toISOString(),
     rosterLength: progress.rosterLength,
     items: items.slice(0, MAX_ITEMS),
+    releasesUnanswered: [...(progress.unanswered ?? []), ...(progress.retry ?? [])],
   }
 }
 

@@ -206,3 +206,30 @@ test('a search cut off by the run deadline is not a verdict', async () => {
     else process.env.YOUTUBE_API_KEY = saved
   }
 })
+
+test('the own-channel path needs the whole title, not a word inside an upload title (Nov 24, 2026: Mediæval Bæbes)', async () => {
+  const { channelCandidates } = await import('./song.ts')
+  const aliases = aliasKeysOf(['Mediæval Bæbes', 'Mediaeval Baebes'])
+  const uploads = [
+    { videoId: 'lllllllllll', title: 'MediaevalBaebes is live' },
+    { videoId: 'sssssssssss', title: 'Mediaeval Baebes - Salva Nos (Official Video)' },
+    { videoId: 'ddddddddddd', title: 'Deliverance tour diary' },
+  ]
+  const found = channelCandidates(uploads, ['Live', 'Salva Nos'], 'Mediæval Bæbes', aliases)
+  assert.deepEqual(
+    found.map((entry) => [entry.videoId, entry.songTitle]),
+    [['sssssssssss', 'Salva Nos']],
+  )
+})
+
+test('a livestream recording is never the song, however it is titled; a premiered music video is', async () => {
+  const { isBroadcast } = await import('./song.ts')
+  assert.equal(isBroadcast({ streamed: true, seconds: 2 * 3600 }), true)
+  assert.equal(isBroadcast({ streamed: true, seconds: 4 * 60 }), false, 'a Premiere keeps live details too')
+  assert.equal(isBroadcast({ streamed: false, seconds: 25 * 60 }), false, 'a long track is still a song')
+  assert.equal(isBroadcast(undefined), false)
+  const live = base({ videoId: 'lllllllllll', uploadTitle: 'Mipso - Edges Run (Official Video)', songTitle: 'Edges Run', broadcast: true })
+  const real = base({ videoId: 'rrrrrrrrrrr', uploadTitle: 'Mipso - Edges Run (Official Audio)', songTitle: 'Edges Run', uploader: 'Mipso' })
+  assert.equal(chooseSong([live], ctx), null)
+  assert.equal(chooseSong([live, real], ctx)?.videoId, 'rrrrrrrrrrr')
+})

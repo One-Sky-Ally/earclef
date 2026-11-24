@@ -2,11 +2,13 @@ import { NextResponse } from 'next/server'
 import { isOwner, unauthorized } from '@/lib/curation/auth'
 import { ownerLibrary } from '@/lib/discover/library'
 import roster from '@/lib/discover/roster.json'
-import { sanitizeStockPick } from '@/lib/discover/serve'
+import { sanitizeSong, sanitizeStockPick } from '@/lib/discover/serve'
 import {
   appendOwner,
   appendShared,
+  replacePickSongs,
   setsToAdd,
+  songKey,
   sharedReady,
   sharedSetFor,
   sharedThrough,
@@ -83,6 +85,17 @@ export async function GET(request: Request) {
     videos: [...new Set(picks.flatMap((pick) => (pick.song ? [pick.song.videoId] : [])))],
     ownerLibrary: rows.library,
     ownerLibrarySource: rows.source,
+    // ?songs=1 — every stocked pick's song, for the song re-check (Nov 24, 2026).
+    ...(new URL(request.url).searchParams.get('songs') === '1'
+      ? {
+          songs: picks.map((pick) => ({
+            name: pick.name,
+            mbid: pick.mbid,
+            knownFor: pick.knownFor,
+            song: pick.song,
+          })),
+        }
+      : {}),
   })
 }
 
@@ -97,9 +110,38 @@ interface DropSongsBody {
   videoIds?: unknown
 }
 
+interface ReplaceSongsBody {
+  action: 'replace-songs'
+  /** [{ mbid, videoId: the stocked song's id, song: the re-verified song, or null to take it away }] */
+  replacements?: unknown
+}
+
+/** At most this many songs replaced per call. */
+const MAX_REPLACEMENTS = 300
+const MBID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
+
+/**
+ * The whole list, or null when any entry is malformed — a bad song is
+ * never stored, and never silently turned into a removal: only an
+ * explicit `song: null` takes a song away.
+ */
+function replacementMap(raw: unknown): Map<string, DiscoverPick['song']> | null {
+  if (!Array.isArray(raw) || raw.length === 0 || raw.length > MAX_REPLACEMENTS) return null
+  const entries = raw.flatMap((entry): [string, DiscoverPick['song']][] => {
+    if (!entry || typeof entry !== 'object') return []
+    const { mbid, videoId, song } = entry as { mbid?: unknown; videoId?: unknown; song?: unknown }
+    if (typeof mbid !== 'string' || !MBID.test(mbid)) return []
+    if (typeof videoId !== 'string' || !/^[A-Za-z0-9_-]{11}$/.test(videoId)) return []
+    if (song === null) return [[songKey(mbid, videoId), null]]
+    const clean = sanitizeSong(song)
+    return clean ? [[songKey(mbid, videoId), clean]] : []
+  })
+  return entries.length === raw.length ? new Map(entries) : null
+}
+
 export async function POST(request: Request) {
   if (!isOwner(request)) return unauthorized()
-  let body: AppendBody | DropSongsBody
+  let body: AppendBody | DropSongsBody | ReplaceSongsBody
   try {
     body = await request.json()
   } catch {
@@ -128,6 +170,23 @@ export async function POST(request: Request) {
       if (changed) await writeSet({ ...set, picks })
     }
     return noStore({ ok: true, songsDropped })
+  }
+
+  if (body.action === 'replace-songs') {
+    const replacements = replacementMap(body.replacements)
+    if (!replacements) return noStore({ error: `1–${MAX_REPLACEMENTS} replacements, each { mbid, videoId, song } with a valid song or null` }, 400)
+    const [shared, owner] = await Promise.all([readIndex('shared'), readIndex('owner')])
+    const sets = await readSets(referencedIds(shared, owner))
+    let replaced = 0
+    let dropped = 0
+    for (const set of sets) {
+      const result = replacePickSongs(set.picks, replacements)
+      if (result.replaced + result.dropped === 0) continue
+      replaced += result.replaced
+      dropped += result.dropped
+      await writeSet({ ...set, picks: result.picks })
+    }
+    return noStore({ ok: true, replaced, dropped })
   }
 
   if (body.action !== 'append') return noStore({ error: 'Unknown action' }, 400)

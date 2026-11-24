@@ -16,6 +16,7 @@ import {
 } from '../play/resolve'
 import { fetchMusicBrainzJson } from './mbFetch'
 import { resolveDiscoverSong } from './song'
+import { titleVariants, variantsIntersect } from '../play/titleVariants'
 import type { DiscoverPick, RawPick } from './types'
 
 /**
@@ -71,59 +72,88 @@ export function rosterLinks(slugs: unknown, rosterSlugs: ReadonlySet<string>): s
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-interface MbArtistMatch {
+/** How a MusicBrainz artist is named like the candidate. */
+export type NamedBy = 'name' | 'alias' | 'article'
+
+export interface MbArtistMatch {
   mbid: string
   canonicalName: string
-  /** The top search result: below a namesake, the knownFor title must confirm it. */
-  top: boolean
-  /** Named alike only once a leading "The" is set aside: the knownFor title must confirm it too. */
-  article: boolean
+  namedBy: NamedBy
+}
+
+export interface NameMatches {
+  /** Every result named like the candidate: as written first, then an alternate name, then without "The". */
+  matches: MbArtistMatch[]
+  /**
+   * The name alone proves who it is: the top result, named as written,
+   * and no other result shares the name. Anything less and the
+   * candidate's knownFor title must be in the artist's catalogue.
+   */
+  byNameAlone: boolean
 }
 
 interface MbSearchArtist {
   id: string
   name: string
   score: number
+  'sort-name'?: string
+  aliases?: { name?: string; 'sort-name'?: string }[]
+}
+
+/** The artist's other names on MusicBrainz: sort name and aliases. */
+function otherNames(artist: MbSearchArtist): string[] {
+  return [
+    artist['sort-name'] ?? '',
+    ...(artist.aliases ?? []).flatMap((alias) => [alias.name ?? '', alias['sort-name'] ?? '']),
+  ].filter(Boolean)
 }
 
 /**
- * The best-scoring result named exactly like the candidate (score ≥ 85).
- * Not just the top result: a namesake can outrank the artist (Oct 27,
- * 2026: Joseph Saba above the rapper Saba, Massimo Faraò above Farao).
- * The same name with or without a leading "The" counts only when no
- * result matches as written, and then needs its knownFor confirmed.
+ * Every search result named like the candidate — the right-artist rule
+ * (owner, Nov 19 + Nov 24 2026): a name, an alternate name or a spelling
+ * never decides on its own WHICH artist it is; the knownFor title does.
+ *   · as written (spacing, case, accents and ligatures aside): DANGERDOOM
+ *     is "Danger Doom";
+ *   · an alternate name MusicBrainz lists — sort name or alias: 幾何学模様
+ *     is "Kikagaku Moyo", DJ Cheb i Sabbah is "Cheb i Sabbah";
+ *   · the same name once a leading "The" is set aside.
+ * No search-score bar: the score ranks namesakes, it never proved anyone
+ * (TOPS scored 82 under the Four Tops, Pullman 83 under Philip Pullman).
  */
-export function exactNameMatch(
-  artists: readonly MbSearchArtist[],
-  name: string,
-): MbArtistMatch | null {
-  const find = (keyOf: (value: string) => string): number => {
-    const key = keyOf(name)
-    if (!key) return -1
-    return artists.findIndex((artist) => artist.score >= 85 && keyOf(artist.name) === key)
+export function nameMatches(artists: readonly MbSearchArtist[], name: string): NameMatches {
+  const key = normalize(name)
+  const bare = withoutArticle(name)
+  if (!key) return { matches: [], byNameAlone: false }
+  const namedBy = (artist: MbSearchArtist): NamedBy | null => {
+    if (normalize(artist.name) === key) return 'name'
+    if (otherNames(artist).some((other) => normalize(other) === key)) return 'alias'
+    if (bare && bare !== 'the' && withoutArticle(artist.name) === bare) return 'article'
+    return null
   }
-  const exact = find(normalize)
-  const at = exact !== -1 ? exact : find(withoutArticle)
-  if (at === -1) return null
-  return {
-    mbid: artists[at].id,
-    canonicalName: artists[at].name,
-    top: at === 0,
-    article: exact === -1,
-  }
+  const ranked = artists.flatMap((artist, at) => {
+    const how = namedBy(artist)
+    return how ? [{ at, match: { mbid: artist.id, canonicalName: artist.name, namedBy: how } }] : []
+  })
+  const order: Record<NamedBy, number> = { name: 0, alias: 1, article: 2 }
+  const matches = [...ranked]
+    .sort((a, b) => order[a.match.namedBy] - order[b.match.namedBy] || a.at - b.at)
+    .map((entry) => entry.match)
+  const only = ranked.length === 1 ? ranked[0] : null
+  return { matches, byNameAlone: only !== null && only.at === 0 && only.match.namedBy === 'name' }
 }
 
-/** The exact-name match, null when there is none, 'unavailable' when MusicBrainz never answered. */
-async function searchMusicBrainz(
-  name: string,
-  asked: string,
-): Promise<MbArtistMatch | null | 'unavailable'> {
-  const query = encodeURIComponent(`artist:"${asked.replace(/"/g, '')}"`)
-  const url = `https://musicbrainz.org/ws/2/artist?query=${query}&limit=3&fmt=json`
+/** Results named like the candidate, null when MusicBrainz never answered. */
+async function searchMusicBrainz(name: string, asked: string): Promise<NameMatches | null> {
+  // No field: MusicBrainz then searches names, aliases and sort names, so
+  // "Danger Doom" finds DANGERDOOM and "Kikagaku Moyo" finds 幾何学模様.
+  const query = encodeURIComponent(`"${asked.replace(/["\\]/g, '')}"`)
+  const url = `https://musicbrainz.org/ws/2/artist?query=${query}&limit=10&fmt=json`
   const res = await fetchMusicBrainzJson(url)
-  if (!res.ok) return res.unavailable ? 'unavailable' : null
-  const body = res.body as { artists?: MbSearchArtist[] }
-  return exactNameMatch(body.artists ?? [], name)
+  if (!res.ok) return res.unavailable ? null : { matches: [], byNameAlone: false }
+  const body = res.body as { artists?: MbSearchArtist[] } | null
+  // A busy MusicBrainz can answer 200 with an error body: not an answer.
+  if (!Array.isArray(body?.artists)) return null
+  return nameMatches(body.artists, name)
 }
 
 /**
@@ -131,14 +161,13 @@ async function searchMusicBrainz(
  * without a leading "The" ("The Dirty Heads" are "Dirty Heads"). Searching
  * the bare name first would bury "The Heads" under Talking Heads.
  */
-async function verifyOnMusicBrainz(
-  name: string,
-): Promise<MbArtistMatch | null | 'unavailable'> {
+async function verifyOnMusicBrainz(name: string): Promise<NameMatches | 'unavailable'> {
   const asWritten = await searchMusicBrainz(name, name)
+  if (asWritten === null) return 'unavailable'
   const bare = searchName(name)
-  if (asWritten !== null || bare === name.trim()) return asWritten
+  if (asWritten.matches.length > 0 || bare === name.trim()) return asWritten
   await sleep(1100) // MusicBrainz rate limit: 1 req/s
-  return searchMusicBrainz(name, bare)
+  return (await searchMusicBrainz(name, bare)) ?? 'unavailable'
 }
 
 interface MbReleaseGroup {
@@ -165,6 +194,17 @@ export function studioAlbums(groups: readonly MbReleaseGroup[]): string[] {
     .filter((group) => group['primary-type'] === 'Album' && (group['secondary-types'] ?? []).length === 0)
     .sort((a, b) => (b['first-release-date'] ?? '').localeCompare(a['first-release-date'] ?? ''))
     .map((group) => group.title)
+}
+
+/**
+ * One of the artist's recordings IS the title, as a whole unit — the
+ * search is a phrase match, so "Blue" also returns "Blue Moon" and
+ * "Feeling Blue" (review, Nov 24 2026: with namesakes judged by this,
+ * containment could choose the wrong artist).
+ */
+export function namesRecording(recordings: readonly { title?: string }[], proposed: string): boolean {
+  const wanted = titleVariants(proposed)
+  return wanted.size > 0 && recordings.some((recording) => variantsIntersect(titleVariants(recording.title), wanted))
 }
 
 /** Catalog titles for the song resolver's channel path, newest first. */
@@ -200,10 +240,11 @@ async function verifiedKnownFor(
   const rgUrl = `https://musicbrainz.org/ws/2/release-group?artist=${mbid}&limit=100&fmt=json`
   const rgRes = await fetchMusicBrainzJson(rgUrl)
   if (!rgRes.ok && rgRes.unavailable) return 'unavailable'
+  const rgBody = rgRes.ok ? (rgRes.body as { 'release-groups'?: MbReleaseGroup[] } | null) : null
+  // A 200 with an error body is a busy server, not an empty catalogue.
+  if (rgRes.ok && !Array.isArray(rgBody?.['release-groups'])) return 'unavailable'
   // any other failed read is treated as an empty catalog below
-  const groups: MbReleaseGroup[] = rgRes.ok
-    ? ((rgRes.body as { 'release-groups'?: MbReleaseGroup[] })['release-groups'] ?? [])
-    : []
+  const groups: MbReleaseGroup[] = rgBody?.['release-groups'] ?? []
   await sleep(1100) // MusicBrainz rate limit: 1 req/s
 
   const proposedKey = normalize(proposed)
@@ -218,13 +259,15 @@ async function verifiedKnownFor(
     `recording:"${proposed.replace(/"/g, '')}" AND arid:${mbid}`,
   )
   const recordings = await fetchMusicBrainzJson(
-    `https://musicbrainz.org/ws/2/recording?query=${query}&limit=1&fmt=json`,
+    `https://musicbrainz.org/ws/2/recording?query=${query}&limit=25&fmt=json`,
   )
   await sleep(1100)
   // Busy is not "the title isn't theirs": a replaced title would reject
   // a match found below a namesake or without "The".
   if (!recordings.ok && recordings.unavailable) return 'unavailable'
-  if (recordings.ok && ((recordings.body as { count?: number }).count ?? 0) > 0) {
+  const recordingBody = recordings.ok ? (recordings.body as { recordings?: { title?: string }[] } | null) : null
+  if (recordings.ok && !Array.isArray(recordingBody?.recordings)) return 'unavailable'
+  if (namesRecording(recordingBody?.recordings ?? [], proposed)) {
     return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed), albums: studioAlbums(groups) }
   }
 
@@ -249,9 +292,64 @@ async function verifiedKnownFor(
     : null
 }
 
+/**
+ * The names the song step knows the artist by: their MusicBrainz name,
+ * every alias except search hints (misspellings people type), and the
+ * alternate name that found them. Untyped aliases count (Nov 24, 2026):
+ * "Rufus & Chaka Khan" and "Cheb I Sabbah" are untyped on MusicBrainz,
+ * so their own Topic channels read "not trusted". Discover only — the
+ * play resolver's identity names (mbAliasNames) stay typed-only.
+ */
+export function songNames(artist: MbArtistBody | null, foundAs: string | null): string[] {
+  const listed = (artist?.aliases ?? []).flatMap((alias) =>
+    alias.name && alias.type !== 'Search hint' ? [alias.name] : [],
+  )
+  return [...new Set([...mbAliasNames(artist), ...listed, ...(foundAs ? [foundAs] : [])])]
+}
+
+/** Namesakes whose catalogue is read at most, best named first. */
+const MAX_NAMESAKES = 5
+
+type Chosen = { match: MbArtistMatch; catalog: VerifiedCatalog }
+
+/**
+ * Which artist the candidate is. When the name alone proves it, that
+ * artist — their own top release stands in if the knownFor title is not
+ * theirs. Otherwise every artist named like the candidate is judged by
+ * the knownFor title (owner, Nov 24 2026: TOPS sits under the Four Tops
+ * beside a J-pop TOPS and a schlager Tops; "Sugar at the Gate" says which).
+ */
+async function chooseArtist(
+  found: NameMatches,
+  knownFor: string,
+  trace?: (line: string) => void,
+): Promise<Chosen | null | 'unavailable' | 'no catalogue'> {
+  if (found.byNameAlone) {
+    const match = found.matches[0]
+    trace?.(`musicbrainz: ${match.canonicalName} (${match.mbid}), the only artist by that name`)
+    const catalog = await verifiedKnownFor(match.mbid, knownFor)
+    if (catalog === 'unavailable') return 'unavailable'
+    return catalog ? { match, catalog } : 'no catalogue'
+  }
+  const confirmed: Chosen[] = []
+  for (const match of found.matches.slice(0, MAX_NAMESAKES)) {
+    const catalog = await verifiedKnownFor(match.mbid, knownFor)
+    if (catalog === 'unavailable') return 'unavailable'
+    const how = match.namedBy === 'name' ? 'named alike' : match.namedBy === 'alias' ? 'by an alternate name' : 'without "The"'
+    const theirs = Boolean(catalog && !catalog.replaced)
+    trace?.(`musicbrainz: ${match.canonicalName} (${match.mbid}), ${how}; "${knownFor}" ${theirs ? 'is theirs' : 'is not in their catalogue'}`)
+    if (catalog && theirs) confirmed.push({ match, catalog })
+  }
+  // Every namesake is judged: two who both have the title leave it open.
+  if (confirmed.length > 1) trace?.(`musicbrainz: ${confirmed.length} artists named alike have "${knownFor}" — no way to tell which`)
+  return confirmed.length === 1 ? confirmed[0] : null
+}
+
 export interface VerifyContext {
   /** Normalized roster names and slugs: anyone on Ear Clef is never a pick. */
   rosterKeys: ReadonlySet<string>
+  /** Roster MusicBrainz ids: an artist found by another spelling is still on the roster. */
+  rosterMbids?: ReadonlySet<string>
   rosterSlugs: ReadonlySet<string>
   /** Epoch ms: no song search starts after this. */
   songDeadline: number
@@ -288,35 +386,26 @@ export async function verifyCandidate(
   const trace = context.trace
   const key = normalize(candidate.name)
   if (!key || context.rosterKeys.has(key)) return { pick: null, reason: 'on the roster' }
-  const match = await verifyOnMusicBrainz(candidate.name)
+  const found = await verifyOnMusicBrainz(candidate.name)
   await sleep(1100) // MusicBrainz rate limit: 1 req/s
-  if (match === 'unavailable') {
+  if (found === 'unavailable') {
     trace?.(`musicbrainz: no answer for "${candidate.name}" after retries`)
     return { pick: null, reason: 'musicbrainz unavailable' }
   }
-  if (!match) {
-    trace?.(`musicbrainz: no artist named exactly "${candidate.name}" (score ≥ 85)`)
+  if (found.matches.length === 0) {
+    trace?.(`musicbrainz: no artist named "${candidate.name}" (name, alias or sort name)`)
     return { pick: null, reason: 'not on MusicBrainz' }
   }
-  trace?.(`musicbrainz: ${match.canonicalName} (${match.mbid})`)
-  if (context.rosterKeys.has(normalize(match.canonicalName))) {
-    return { pick: null, reason: 'on the roster' }
-  }
-
-  const catalog = await verifiedKnownFor(match.mbid, candidate.knownFor)
-  if (catalog === 'unavailable') {
-    trace?.(`musicbrainz: no answer for the catalogue of ${match.canonicalName}`)
+  const chosen = await chooseArtist(found, candidate.knownFor, trace)
+  if (chosen === 'unavailable') {
+    trace?.(`musicbrainz: no answer for a catalogue of "${candidate.name}"`)
     return { pick: null, reason: 'musicbrainz unavailable' }
   }
-  if (!catalog) return { pick: null, reason: 'no catalogue' }
-  // Below a namesake, or named alike only without "The", the name alone
-  // is not enough: it could be another artist, so the candidate's own
-  // title must be theirs.
-  if ((!match.top || match.article) && catalog.replaced) {
-    trace?.(
-      `musicbrainz: ${match.canonicalName} ${match.article ? 'matches only without "The"' : 'ranks below a namesake'} and "${candidate.knownFor}" is not in their catalogue`,
-    )
-    return { pick: null, reason: 'not on MusicBrainz' }
+  if (chosen === 'no catalogue') return { pick: null, reason: 'no catalogue' }
+  if (!chosen) return { pick: null, reason: 'not on MusicBrainz' }
+  const { match, catalog } = chosen
+  if (context.rosterKeys.has(normalize(match.canonicalName)) || context.rosterMbids?.has(match.mbid)) {
+    return { pick: null, reason: 'on the roster' }
   }
   trace?.(`catalogue: known for "${catalog.knownFor}"; ${catalog.titles.length} release-group titles`)
 
@@ -342,7 +431,7 @@ export async function verifyCandidate(
     name: match.canonicalName,
     knownFor: catalog.knownFor,
     relations: artist?.relations ?? [],
-    aliases: mbAliasNames(artist),
+    aliases: songNames(artist, match.namedBy === 'alias' ? candidate.name : null),
     titles: catalog.titles,
     albums: catalog.albums,
     deadline: context.songDeadline,

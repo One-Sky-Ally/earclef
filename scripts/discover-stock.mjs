@@ -162,6 +162,7 @@ async function verify(minutes) {
   const list = roster()
   const rosterKeys = new Set(list.flatMap((artist) => [normalize(artist.name), normalize(artist.slug)]))
   const rosterSlugs = new Set(list.map((artist) => artist.slug))
+  const rosterMbids = new Set(list.flatMap((artist) => (artist.mbid ? [artist.mbid] : [])))
   const seenMbids = new Set([
     ...planned.stockedMbids,
     ...KINDS.flatMap((kind) => progress[kind].picks.map((pick) => pick.mbid)),
@@ -189,6 +190,7 @@ async function verify(minutes) {
       const { pick, reason } = await verifyCandidate(candidate, {
         rosterKeys,
         rosterSlugs,
+        rosterMbids,
         songDeadline: deadline,
         maxRecords: MAX_RECORDS,
       })
@@ -300,6 +302,7 @@ async function why(name, knownFor) {
     {
       rosterKeys: new Set(list.flatMap((artist) => [normalize(artist.name), normalize(artist.slug)])),
       rosterSlugs: new Set(list.map((artist) => artist.slug)),
+      rosterMbids: new Set(list.flatMap((artist) => (artist.mbid ? [artist.mbid] : []))),
       songDeadline: Date.now() + 10 * 60_000,
       maxRecords: MAX_RECORDS,
       trace: (line) => log(line),

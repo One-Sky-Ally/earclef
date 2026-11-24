@@ -99,3 +99,31 @@ test('refresh sizes: about two weeks first, then growth toward the ceiling', () 
   assert.equal(setsToAdd('owner', 0), 14)
   assert.equal(setsToAdd('owner', 20), 10)
 })
+
+test('re-verified songs replace stocked ones by artist and old video id; null takes the song away (Nov 24, 2026)', async () => {
+  const { replacePickSongs, songKey } = await import('./stock.ts')
+  const song = (videoId: string, title: string) =>
+    ({ videoId, title, uploadTitle: title, kind: 'official-video', source: 'discogs', uploader: 'x' }) as const
+  const pick = (mbid: string, videoId: string, title: string) =>
+    ({ name: mbid, mbid, song: song(videoId, title) }) as unknown as import('./types.ts').DiscoverPick
+  const picks = [
+    pick('mfp', 'aaaaaaaaaaa', 'I Dreamt I Was Dreaming'),
+    pick('baebes', 'bbbbbbbbbbb', 'Live'),
+    pick('mipso', 'ccccccccccc', 'Edges Run'),
+    // A collaboration: another artist's pick shares the video.
+    pick('partner', 'aaaaaaaaaaa', 'I Dreamt I Was Dreaming'),
+  ]
+  const out = replacePickSongs(
+    picks,
+    new Map([
+      [songKey('mfp', 'aaaaaaaaaaa'), song('ddddddddddd', 'Light My Fire')],
+      [songKey('baebes', 'bbbbbbbbbbb'), null],
+    ]),
+  )
+  assert.deepEqual(out.picks.map((p) => p.song?.title ?? null), ['Light My Fire', null, 'Edges Run', 'I Dreamt I Was Dreaming'])
+  assert.equal(out.replaced, 1)
+  assert.equal(out.dropped, 1)
+  assert.equal(out.picks[2], picks[2], 'untouched picks are the same objects')
+  assert.equal(out.picks[3], picks[3], "a shared video never changes another artist's pick")
+  assert.equal(picks[0].song?.title, 'I Dreamt I Was Dreaming', 'the input is not changed')
+})

@@ -13,6 +13,7 @@
  * takes the next unseen set, later visits that day see the same set,
  * and days without a visit use nothing. Seen sets are remembered.
  */
+import type { DiscoverPick } from './types'
 
 export interface StockDay {
   id: string
@@ -183,4 +184,30 @@ export function appendOwner(
 /** Sets a refresh should add, given how many are ready. */
 export function setsToAdd(kind: keyof typeof AHEAD_MAX, ready: number): number {
   return Math.max(0, Math.min(REFRESH_STEP, AHEAD_MAX[kind] - ready))
+}
+
+/** Replacement key: the pick's artist and its current video — a shared video never crosses artists. */
+export const songKey = (mbid: string, videoId: string): string => `${mbid}:${videoId}`
+
+/**
+ * Stocked songs swapped for re-verified ones (Nov 24, 2026: "A pick
+ * should only play a real song, shown under its real title"). Keyed by
+ * songKey(mbid, old video id); null takes the song away, and a pick
+ * without a song is never shown. Picks not named are returned as they were.
+ */
+export function replacePickSongs(
+  picks: readonly DiscoverPick[],
+  replacements: ReadonlyMap<string, DiscoverPick['song']>,
+): { picks: DiscoverPick[]; replaced: number; dropped: number } {
+  let replaced = 0
+  let dropped = 0
+  const next = picks.map((pick) => {
+    const key = pick.song ? songKey(pick.mbid, pick.song.videoId) : null
+    if (!key || !replacements.has(key)) return pick
+    const song = replacements.get(key) ?? null
+    if (song) replaced++
+    else dropped++
+    return { ...pick, song }
+  })
+  return { picks: next, replaced, dropped }
 }

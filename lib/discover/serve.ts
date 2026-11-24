@@ -27,6 +27,18 @@ function link<K extends string>(value: unknown): { kind: K; url: string } | null
   return typeof kind === 'string' && safe ? { kind: kind as K, url: safe } : null
 }
 
+/** A stocked song as uploaded: a real video id, a title, a known kind — else null. */
+export function sanitizeSong(raw: unknown): DiscoverPick['song'] {
+  if (!raw || typeof raw !== 'object') return null
+  const song = raw as Record<string, unknown>
+  return typeof song.videoId === 'string' &&
+    VIDEO_ID.test(song.videoId) &&
+    text(song.title, 300) &&
+    SONG_KINDS.has(String(song.kind))
+    ? (song as unknown as DiscoverPick['song'])
+    : null
+}
+
 /**
  * A stocked pick as uploaded by the refresh script — checked at the
  * door even though only the owner key can upload: stored output
@@ -45,15 +57,7 @@ export function sanitizeStockPick(
   const read =
     link<DiscoverPick['read']['kind']>(pick.read) ??
     ({ kind: 'musicbrainz', url: `https://musicbrainz.org/artist/${mbid}` } as const)
-  const rawSong = pick.song as Record<string, unknown> | null | undefined
-  const song =
-    rawSong &&
-    typeof rawSong.videoId === 'string' &&
-    VIDEO_ID.test(rawSong.videoId) &&
-    text(rawSong.title, 300) &&
-    SONG_KINDS.has(String(rawSong.kind))
-      ? (rawSong as unknown as DiscoverPick['song'])
-      : null
+  const song = sanitizeSong(pick.song)
   // Only picks that play here are stocked (owner ruling, Oct 15 2026).
   if (!song) return null
   const bandcamp = httpsUrl(pick.bandcamp)

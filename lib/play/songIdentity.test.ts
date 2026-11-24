@@ -64,3 +64,34 @@ test('the same video on two records is offered once; records keep their order', 
   const found = pick([record({ id: 1, videos }), record({ id: 3, videos }), later])
   assert.deepEqual(found.map((c) => c.videoId), ['aaaaaaaaaaa', 'eeeeeeeeeee'])
 })
+
+test('Discover names a video by its title only: a matching length never names the song (Nov 24, 2026)', () => {
+  // The Mike Flowers Pops: the official "Don't Cry For My Argentina" video
+  // ran the length of the B-side, "I Dreamt I Was Dreaming".
+  const single = record({
+    title: 'Light My Fire',
+    tracklist: [track('Light My Fire', '3:59'), track('I Dreamt I Was Dreaming', '4:12')],
+    videos: [video('eeeeeeeeeee', "The Mike Flowers Pops - Don't Cry For My Argentina (Official Video)", 251)],
+  })
+  const aliases = aliasKeysOf(['The Mike Flowers Pops'])
+  assert.deepEqual(recordSongCandidates([single], new Set([ME]), aliases, { byLength: false }), [])
+  // Callers that still allow the length leg (Songs about this place) are unchanged.
+  assert.equal(recordSongCandidates([single], new Set([ME]), aliases)[0]?.leg, 'duration')
+  // A video that names its track still passes with the length leg off.
+  const named = record({ videos: [video('fffffffffff', 'The Beach Boys - Good Vibrations', 215)] })
+  assert.equal(
+    recordSongCandidates([named], new Set([ME]), aliasKeysOf(['The Beach Boys']), { byLength: false })[0]?.songTitle,
+    'Good Vibrations',
+  )
+})
+
+test("a track credited to someone else is theirs, even on this artist's DJ mix (Nov 24, 2026: Cheb i Sabbah)", () => {
+  const mix = record({
+    title: 'As Far As - A DJ Mix',
+    tracklist: [track('Sinikan', '5:10', [OTHER]), track('Kese Kese', '6:00', [ME])],
+    videos: [video('sssssssssss', 'Sekouba Bambino - Sinikan (Clip Officiel)'), video('kkkkkkkkkkk', 'Kese Kese')],
+  })
+  assert.deepEqual(pick([mix]).map((c) => c.songTitle), ['Kese Kese'])
+  // A whole-credit record whose tracks carry no credit of their own is still the artist's.
+  assert.deepEqual(pick([record({ videos: [video('aaaaaaaaaaa', 'Good Vibrations')] })]).map((c) => c.songTitle), ['Good Vibrations'])
+})

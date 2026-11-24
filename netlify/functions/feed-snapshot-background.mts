@@ -109,7 +109,9 @@ export default async function handler(): Promise<Response> {
     done = batch.done
     cursor = batch.progress.cursor
     rosterLength = batch.progress.rosterLength
-    console.log(`feed snapshot: batch finished, now at ${cursor}/${rosterLength}`)
+    console.log(
+      `feed snapshot: batch finished, now at ${cursor}/${rosterLength}; second try waiting ${batch.progress.retry?.length ?? 0}, still unanswered ${batch.progress.unanswered?.length ?? 0}`,
+    )
 
     if (done) {
       const snapshot = finalizeSnapshot(batch.progress)

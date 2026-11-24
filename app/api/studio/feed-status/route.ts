@@ -30,6 +30,7 @@ export async function GET(request: Request) {
           rosterLength: snapshot.rosterLength,
           itemCount: snapshot.items.length,
           isFresh: isFresh(snapshot),
+          releasesUnanswered: snapshot.releasesUnanswered ?? null,
         }
       : null,
     progress: progress
@@ -38,6 +39,8 @@ export async function GET(request: Request) {
           cursor: progress.cursor,
           rosterLength: progress.rosterLength,
           itemsSoFar: progress.items.length,
+          retry: progress.retry ?? [],
+          unanswered: progress.unanswered ?? [],
         }
       : null,
     lock: lock

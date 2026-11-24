@@ -240,7 +240,10 @@ export async function writeChecks(cache: CheckCache, now: number = Date.now()): 
 /**
  * Reads the release groups whose check is missing or stale, at most
  * `max` of them. A read that fails keeps whatever was there before:
- * MusicBrainz being busy is never a verdict.
+ * MusicBrainz being busy is never a verdict. A busy answer (after the
+ * patient retries) ends the reads for this artist — asking on would
+ * only spend the batch's time; the rest wait for the next night (a
+ * missing check never takes a row off, it only leaves its links out).
  */
 export async function refreshChecks(
   releaseGroupIds: readonly string[],
@@ -259,7 +262,8 @@ export async function refreshChecks(
       `https://musicbrainz.org/ws/2/release?release-group=${id}&inc=url-rels&fmt=json&limit=100`,
     )
     await pause()
-    if (!res?.ok) continue
+    if (!res || res.status === 503 || res.status === 429) break
+    if (!res.ok) continue
     const body = (await res.json().catch(() => null)) as { releases?: MbReleaseWithLinks[] } | null
     if (!body || !Array.isArray(body.releases)) continue
     fresh[id] = { ...checkFromReleases(body.releases), at: new Date(now).toISOString() }

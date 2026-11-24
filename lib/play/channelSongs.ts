@@ -7,7 +7,7 @@
  *
  * Relative imports only: bundled into the Netlify background function.
  */
-import { isSongLength } from './contentGates'
+import { durationSeconds, isSongLength } from './contentGates'
 
 /**
  * Upload pages (of 50) scanned on the artist's own channel. Raised
@@ -142,6 +142,10 @@ export interface VideoFacts {
   channelId?: string
   /** The CURRENT title, HTML-decoded: matching re-reads it, never a stale copy. */
   title?: string
+  /** Length in seconds (0 when YouTube gave none). */
+  seconds?: number
+  /** Went out as a live broadcast (or a Premiere): YouTube keeps liveStreamingDetails for it. */
+  streamed?: boolean
 }
 
 /**
@@ -160,11 +164,11 @@ export async function playableSet(
   const playable = new Set<string>()
   const meta = new Map<string, VideoFacts>()
   if (videoIds.length === 0) return { playable, meta }
-  // `snippet` and `topicDetails` ride along FREE: videos.list costs one
-  // unit per call whatever parts are asked for, and this call already
-  // happens for every candidate.
+  // `snippet`, `topicDetails` and `liveStreamingDetails` ride along FREE:
+  // videos.list costs one unit per call whatever parts are asked for, and
+  // this call already happens for every candidate.
   const body = (await ytJson(
-    `https://www.googleapis.com/youtube/v3/videos?part=snippet,status,contentDetails,topicDetails&id=${videoIds.slice(0, 50).join(',')}&key=${key}`,
+    `https://www.googleapis.com/youtube/v3/videos?part=snippet,status,contentDetails,topicDetails,liveStreamingDetails&id=${videoIds.slice(0, 50).join(',')}&key=${key}`,
   )) as {
     items?: {
       id?: string
@@ -172,6 +176,7 @@ export async function playableSet(
       status?: { embeddable?: boolean; privacyStatus?: string }
       contentDetails?: { duration?: string }
       topicDetails?: { topicCategories?: string[] }
+      liveStreamingDetails?: { actualStartTime?: string; scheduledStartTime?: string }
     }[]
   }
   for (const item of body.items ?? []) {
@@ -183,6 +188,8 @@ export async function playableSet(
       channelTitle: item.snippet?.channelTitle,
       channelId: item.snippet?.channelId,
       title: item.snippet?.title ? decodeEntities(item.snippet.title) : undefined,
+      seconds: durationSeconds(item.contentDetails?.duration),
+      streamed: item.liveStreamingDetails !== undefined,
     })
     if (
       item.status?.embeddable &&

@@ -10,8 +10,10 @@
  *      equals a track's. Measured Oct 11 on 21 real picks: 21 songs, 14
  *      official videos, 5 quota units.
  *   2. The artist's MB-linked YouTube channel, matched to their release-
- *      group titles — the queue resolver's channel path. Adds the odd
- *      official video Discogs users have not attached yet.
+ *      group titles as whole units (no containment since Nov 24, 2026).
+ *      Adds the odd official video Discogs users have not attached yet.
+ *   Discogs videos are named by title only — never by length (Nov 24).
+ *   A livestream's recording is never a pick (isBroadcast).
  *   The verified-search path is NOT used here: 100 units a pick for
  *   audio at best, measured.
  *
@@ -35,8 +37,6 @@ import {
 import {
   annotationOf,
   isNonSongUpload,
-  isSelfTitled,
-  namesTheSelfTitledRecord,
   nonMusicVerdict,
 } from '../play/contentGates'
 import { discogsArtistRecords, discogsReleaseLabels } from '../play/discogsApi'
@@ -97,6 +97,8 @@ export interface RankedInput extends Found {
   uploader: string
   playable: boolean
   nonMusic: boolean
+  /** A livestream's recording: never a pick, whatever its title. */
+  broadcast?: boolean
 }
 
 interface RankContext {
@@ -115,6 +117,19 @@ const MAX_CHANNEL_TITLES = 40
 /** Album pressings read for label names on a miss. */
 const MAX_PRESSINGS = 5
 const TIER: Record<UploadKind, number> = { 'official-video': 0, audio: 1, video: 2 }
+/** A pick is named by its title, never by its length (./songIdentity IdentityOptions). */
+const BY_TITLE_ONLY = { byLength: false } as const
+/**
+ * Longer than this AND sent out live: a broadcast, not a song. A
+ * Premiere also carries live-stream details, so length tells them apart
+ * — a premiered music video runs minutes, a livestream far longer.
+ */
+const BROADCAST_SECONDS = 12 * 60
+
+/** A live broadcast's recording (a livestream), not a song. */
+export function isBroadcast(facts: { streamed?: boolean; seconds?: number } | undefined): boolean {
+  return Boolean(facts?.streamed) && (facts?.seconds ?? 0) > BROADCAST_SECONDS
+}
 
 export function discogsIdsOf(relations: readonly MbUrlRelation[]): number[] {
   return relations.flatMap((relation) => {
@@ -124,23 +139,33 @@ export function discogsIdsOf(relations: readonly MbUrlRelation[]): number[] {
 }
 
 /**
- * The queue resolver's channel walk, era-free: for each catalog title
- * the upload whose annotation adds least (official video preferred by
- * the ranking later, not here). Containment is safe HERE only because
- * the channel is the artist's own MB-linked one — it picks WHICH
- * video, never WHO.
+ * The channel walk, era-free: for each catalog title the upload whose
+ * annotation adds least (official video preferred by the ranking later,
+ * not here). The channel is the artist's own MB-linked one, so it never
+ * decides WHO — but it does decide which song the pick is shown as, so
+ * the upload must name the title as a whole unit (./titleVariants), the
+ * same bar as the Discogs path. Until Nov 24, 2026 any upload merely
+ * CONTAINING the title passed: Mediæval Bæbes' livestream "MediaevalBaebes
+ * is live" became their album "Live" (owner: "A pick should only play a
+ * real song, shown under its real title").
  */
-function channelCandidates(uploads: readonly Upload[], titles: readonly string[], name: string): Found[] {
+export function channelCandidates(
+  uploads: readonly Upload[],
+  titles: readonly string[],
+  name: string,
+  aliases: ReadonlySet<string> = new Set(),
+): Found[] {
   const taken = new Set<string>()
+  const named = uploads.map((upload) => ({ upload, variants: titleVariants(upload.title, aliases) }))
   return titles.slice(0, MAX_CHANNEL_TITLES).flatMap((title) => {
-    const wanted = normalizeName(title)
-    if (!wanted) return []
-    const selfTitled = isSelfTitled(title, name)
-    const best = uploads
-      .filter((upload) => !taken.has(upload.videoId))
-      .filter((upload) => normalizeName(upload.title).includes(wanted))
+    // A self-titled record leaves no variant once the artist's name is
+    // set aside, so it is never matched here — it names the artist, not a song.
+    const wanted = titleVariants(title, aliases)
+    if (wanted.size === 0) return []
+    const best = named
+      .filter(({ upload, variants }) => !taken.has(upload.videoId) && variantsIntersect(variants, wanted))
+      .map(({ upload }) => upload)
       .filter((upload) => !isNonSongUpload(upload.title, title, name))
-      .filter((upload) => !selfTitled || namesTheSelfTitledRecord(upload.title, title, name))
       .map((upload) => ({ upload, noise: annotationOf(upload.title, title, name).length }))
       .sort((a, b) => a.noise - b.noise)[0]
     if (!best) return []
@@ -167,7 +192,11 @@ export function channelFailureIsTransient(error: unknown): boolean {
   return !/YouTube HTTP 404|^YouTube 403$/.test(message)
 }
 
-async function fromChannel(context: SongContext, apiKey: string): Promise<Found[]> {
+async function fromChannel(
+  context: SongContext,
+  apiKey: string,
+  aliases: ReadonlySet<string>,
+): Promise<Found[]> {
   const trace = context.trace
   const channelUrl = youtubeRel([...context.relations])
   if (!channelUrl) trace?.('channel: MusicBrainz lists no YouTube channel for the artist')
@@ -179,9 +208,9 @@ async function fromChannel(context: SongContext, apiKey: string): Promise<Found[
       return []
     }
     const uploads = await channelUploads(id, apiKey)
-    const found = channelCandidates(uploads, context.titles, context.name)
+    const found = channelCandidates(uploads, context.titles, context.name, aliases)
     trace?.(
-      `channel: ${uploads.length} uploads; ${found.length} match a release-group title (${context.titles.length} titles walked — album TRACKS are not matched on this path)`,
+      `channel: ${uploads.length} uploads; ${found.length} name a release-group title as a whole (${context.titles.length} titles walked — album TRACKS are not matched on this path)`,
     )
     return found
   } catch (error) {
@@ -223,13 +252,15 @@ async function fromDiscogs(
     preferTitles: [context.knownFor, ...(context.albums ?? [])],
     maxRecords: context.maxRecords,
     skip,
-    enough: skip ? undefined : (soFar) => recordSongCandidates(soFar, idSet, aliases).length >= ENOUGH_SONGS,
+    enough: skip
+      ? undefined
+      : (soFar) => recordSongCandidates(soFar, idSet, aliases, BY_TITLE_ONLY).length >= ENOUGH_SONGS,
   })
   if (failed) {
     trace?.('discogs: some calls did not answer')
     context.onUnavailable?.('discogs')
   }
-  const verified = recordSongCandidates(records, idSet, aliases)
+  const verified = recordSongCandidates(records, idSet, aliases, BY_TITLE_ONLY)
   if (trace) {
     trace(`discogs: artist ${ids.join(', ')}; ${records.length} ${skip ? 'more ' : ''}records with videos read`)
     for (const record of records) {
@@ -283,7 +314,7 @@ function dedupe(found: readonly Found[]): Found[] {
 export function chooseSong(candidates: readonly RankedInput[], context: RankContext): DiscoverSong | null {
   const knownFor = titleVariants(context.knownFor, context.aliases)
   const ranked = candidates
-    .filter((entry) => entry.playable && !entry.nonMusic)
+    .filter((entry) => entry.playable && !entry.nonMusic && !entry.broadcast)
     .filter((entry) => !isWholeRecordUpload(entry.uploadTitle, entry.songTitle, context.name))
     .map((entry) => ({
       entry,
@@ -337,6 +368,7 @@ async function checkCandidates(
       ...entry,
       uploader: facts?.channelTitle ?? '',
       playable: playable.has(entry.videoId),
+      broadcast: isBroadcast(facts),
       nonMusic:
         nonMusicVerdict({
           title: entry.uploadTitle,
@@ -354,6 +386,7 @@ async function checkCandidates(
       context.trace(
         `candidate ${input.videoId} "${input.uploadTitle}" by ${input.uploader || '?'} → ${kind}` +
           `${input.playable ? '' : ', NOT playable'}${input.nonMusic ? ', flagged non-music' : ''}` +
+          `${input.broadcast ? ', a livestream recording' : ''}` +
           `${kind === 'official-video' || input.source === 'channel' || trusted ? '' : ', uploader not trusted'}`,
       )
     }
@@ -376,7 +409,7 @@ async function trustedThroughPressings(
   const ids = [
     ...new Set(
       inputs
-        .filter((input) => input.source === 'discogs' && input.playable && !input.nonMusic)
+        .filter((input) => input.source === 'discogs' && input.playable && !input.nonMusic && !input.broadcast)
         .filter((input) => !isTrustedUploader(input.uploader, rank.aliases, rank.labels))
         .flatMap((input) => {
           const id = pressings.get(input.release)
@@ -407,7 +440,7 @@ export async function resolveDiscoverSong(context: SongContext): Promise<Discove
   try {
     const [discogs, channel] = await Promise.all([
       fromDiscogs(context, aliases),
-      fromChannel(context, apiKey),
+      fromChannel(context, apiKey, aliases),
     ])
     const context2 = { ...rank, labels: discogs.labels }
     const ordered = preRank(dedupe([...channel, ...discogs.found]), context2)

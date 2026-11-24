@@ -223,6 +223,33 @@ test('release checks: stale ones read again, fresh ones kept, a failed read keep
   assert.deepEqual(asked, ['a', 'b'])
 })
 
+test('a busy MusicBrainz (503 after the patient retries, or no answer) ends the checks for that artist', async () => {
+  const now = Date.parse('2026-11-24T00:00:00Z')
+  const asked: string[] = []
+  const answers: Record<string, Response | null> = {
+    a: json({ releases: [{ status: 'Official', date: '2026-10-01', barcode: '012345678905' }] }),
+    b: new Response('busy', { status: 503 }),
+  }
+  const fetcher = async (url: string) => {
+    const id = new URL(url).searchParams.get('release-group') ?? ''
+    asked.push(id)
+    return id in answers ? answers[id] : json({ releases: [] })
+  }
+  const next = await refreshChecks(['a', 'b', 'c', 'd'], {}, fetcher, async () => {}, now)
+  assert.deepEqual(asked, ['a', 'b'])
+  assert.deepEqual(Object.keys(next), ['a'])
+
+  asked.length = 0
+  answers.a = null
+  await refreshChecks(['a', 'b'], {}, fetcher, async () => {}, now)
+  assert.deepEqual(asked, ['a'])
+
+  asked.length = 0
+  answers.a = new Response('gone', { status: 404 })
+  await refreshChecks(['a', 'c'], {}, fetcher, async () => {}, now)
+  assert.deepEqual(asked, ['a', 'c'], 'a 404 is an answer about that group, not a busy server')
+})
+
 test('an Apple Music link from MusicBrainz counts only when the album is in the artist’s own Apple catalogue', () => {
   const linked = official({ links: { appleMusic: 'https://music.apple.com/us/album/6819756090', spotify: 'https://open.spotify.com/album/0Ad99OHFX3OjhZ410joegz' } })
   const out = confirmRelease(mbItem('Björk Orkestral With the Hamrahlíð Choir', '2026-05-26'), linked, answered([], ['6833893635']))
