@@ -262,3 +262,15 @@ test("a catalogue title carrying the artist's name is not matched on the channel
   )
   assert.deepEqual(found, [])
 })
+
+test("a catalogue note the video doesn't carry is not shown (Slowdive, Nov 25 2026)", () => {
+  const video = base({
+    videoId: 'iiiiiiiiiii',
+    uploadTitle: 'Slowdive - kisses (Official Video)',
+    songTitle: 'kisses (remixes)',
+    release: 'kisses (remixes)',
+    uploader: 'SlowdiveVEVO',
+  })
+  const song = chooseSong([video], { name: 'Slowdive', aliases: aliasKeysOf(['Slowdive']), knownFor: 'Souvlaki', labels: [] })
+  assert.equal(song?.title, 'kisses')
+})

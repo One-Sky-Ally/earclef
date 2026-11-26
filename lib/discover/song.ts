@@ -42,7 +42,7 @@ import {
 import { discogsArtistRecords, discogsReleaseLabels } from '../play/discogsApi'
 import { isTrustedUploader, isWholeRecordUpload, uploadKindOf, type UploadKind } from '../play/officialVideo'
 import { recordSongCandidates } from '../play/songIdentity'
-import { normalizeName, titleVariants, variantsIntersect, wholeTitleKeys } from '../play/titleVariants'
+import { normalizeName, shownSongTitle, titleVariants, variantsIntersect, wholeTitleKeys } from '../play/titleVariants'
 
 export interface DiscoverSong {
   videoId: string
@@ -355,7 +355,7 @@ export function chooseSong(candidates: readonly RankedInput[], context: RankCont
   if (!best) return null
   return {
     videoId: best.entry.videoId,
-    title: best.entry.songTitle,
+    title: shownSongTitle(best.entry.songTitle, best.entry.uploadTitle, context.aliases),
     uploadTitle: best.entry.uploadTitle,
     kind: best.kind,
     source: best.entry.source,

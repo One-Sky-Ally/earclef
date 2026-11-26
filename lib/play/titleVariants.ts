@@ -158,3 +158,32 @@ export function colonDurationSeconds(value: string | null | undefined): number |
   if (parts.some((part) => !Number.isFinite(part))) return null
   return parts.reduce((total, part) => total * 60 + part, 0) || null
 }
+
+/**
+ * The title to show for the song an upload was matched to (Nov 25,
+ * 2026; owner: "A pick should only play a real song, shown under its
+ * real title"). Matching sets bracketed notes aside, so "Lost Where I
+ * Belong (Flying Lotus Remix)" matched Andreya Triana's original video.
+ * A trailing note — "(… Remix)", "(Interlude)", "(Extended)", "(Verse
+ * 1)" — is shown only when the upload's own title carries it; otherwise
+ * it comes off, as long as the upload still names the bare title whole.
+ * Reading the upload for the note only decides what to SHOW; whether
+ * the video is the song was settled by whole-unit matching.
+ */
+export function shownSongTitle(
+  songTitle: string,
+  uploadTitle: string,
+  aliases: ReadonlySet<string> = new Set(),
+): string {
+  const upload = normalizeName(uploadTitle)
+  const uploadKeys = titleVariants(uploadTitle, aliases)
+  let title = songTitle.replace(/\s+/g, ' ').trim()
+  for (let match = title.match(TRAILING_GROUP); match; match = title.match(TRAILING_GROUP)) {
+    const note = normalizeName(match[0])
+    if (note === '' || upload.includes(note)) break
+    const bare = title.slice(0, match.index).trim()
+    if (bare === '' || !variantsIntersect(uploadKeys, wholeTitleKeys(bare, aliases))) break
+    title = bare
+  }
+  return title
+}

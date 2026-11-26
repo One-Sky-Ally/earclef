@@ -79,6 +79,20 @@ function orgKeys(value: string): Set<string> {
 }
 
 /**
+ * "And", "&" and "+" between two words join the same names: YouTube's
+ * "Mimi And Richard Farina - Topic" is MusicBrainz's "Mimi & Richard
+ * Fariña" (Nov 25, 2026: the Fariñas were skipped as "uploader not
+ * trusted"). A channel name is read with the connector as "and" and
+ * without it; each reading must still EQUAL an alias — a connector only
+ * counts as a whole word between spaces, so "Brand" stays "Brand".
+ */
+const CONNECTOR = /\s+(?:and|&|\+)\s+/gi
+
+function connectorForms(value: string): string[] {
+  return [...new Set([value, value.replace(CONNECTOR, ' and '), value.replace(CONNECTOR, ' ')])]
+}
+
+/**
  * Uploaders whose non-official upload may still play: the artist
  * (their own, VEVO, "official" or Topic channel) or a label credited on
  * their Discogs records. Exact equality after the symmetric org-word
@@ -91,8 +105,8 @@ export function isTrustedUploader(
 ): boolean {
   if (!channelTitle) return false
   const topic = channelTitle.match(/^(.*?)\s-\s*topic$/i)
-  if (topic) return aliases.has(normalizeName(topic[1]))
-  const channel = orgKeys(channelTitle)
+  if (topic) return connectorForms(topic[1]).some((form) => aliases.has(normalizeName(form)))
+  const channel = new Set(connectorForms(channelTitle).flatMap((form) => [...orgKeys(form)]))
   for (const alias of aliases) {
     if (channel.has(alias)) return true
   }

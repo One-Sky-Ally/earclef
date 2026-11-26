@@ -73,3 +73,23 @@ test('wholeTitleKeys: decorations come off, the title is never split or cut arou
   assert.deepEqual([...wholeTitleKeys('Wu Fei & Abigail Washburn', aliases)], ['wufeiabigailwashburn'])
   assert.deepEqual([...wholeTitleKeys('Abigail Washburn', aliases)], [])
 })
+
+test('a version note is shown only when the video carries it (Nov 25, 2026: "shown under its real title")', async () => {
+  const { shownSongTitle } = await import('./titleVariants.ts')
+  // The video is another version of the song: the catalogue's note goes.
+  assert.equal(shownSongTitle('Lost Where I Belong (Flying Lotus Remix)', 'Andreya Triana - Lost Where I Belong (Official Video)'), 'Lost Where I Belong')
+  assert.equal(shownSongTitle('Exodus / Revisited (Extended)', 'Exodus / Revisited (Edit)'), 'Exodus / Revisited')
+  assert.equal(shownSongTitle('4 Better Or 4 Worse (Interlude)', 'The Pharcyde - 4 Better Or 4 Worse (Official Music Video)', aliasKeysOf(['The Pharcyde'])), '4 Better Or 4 Worse')
+  assert.equal(shownSongTitle('Dreaming With Alice (Verse 1)', 'Dreaming with Alice (Verses 8 & 9)'), 'Dreaming With Alice')
+  assert.equal(shownSongTitle('kisses (remixes)', 'Slowdive - kisses (Official Video)', aliasKeysOf(['Slowdive'])), 'kisses')
+  assert.equal(shownSongTitle('Shri Durga (The Jagad Yoni Mix: Womb Of The World)', 'Shri Durga'), 'Shri Durga')
+  // The video carries the note: it stays.
+  assert.equal(shownSongTitle('Text (Totally Enormous Extinct Dinosaurs Remix)', 'Darkstar - Text (Totally Enormous Extinct Dinosaurs Remix) [Official Audio]'), 'Text (Totally Enormous Extinct Dinosaurs Remix)')
+  assert.equal(shownSongTitle('Make Me Smile (Come Up And See)', 'Steve Harley & Cockney Rebel - Make Me Smile (Come Up And See Me) (Official Music Video)'), 'Make Me Smile (Come Up And See)')
+  assert.equal(shownSongTitle('Section 9 (Light & Day/Reach For The Sun)', 'Light & Day / Reach for the Sun'), 'Section 9 (Light & Day/Reach For The Sun)')
+  // Without the note the upload would not name it whole: the title stays as it was.
+  assert.equal(shownSongTitle('Untrustable / Part 2 (About Someone Else)', 'Untrustable | (Higher Quality) Official Music Video'), 'Untrustable / Part 2 (About Someone Else)')
+  // Stray spaces never reach the page.
+  assert.equal(shownSongTitle(' The Viscid Substance', 'The Viscid Substance'), 'The Viscid Substance')
+  assert.equal(shownSongTitle('A Mothers Love ', "A Mother's Love"), 'A Mothers Love')
+})

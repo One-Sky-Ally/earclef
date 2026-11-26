@@ -47,3 +47,19 @@ test('trusted uploaders: the artist, their VEVO or official channel, their Topic
   assert.ok(!isTrustedUploader('Mary Lattimore Fan Archive', aliases, labels))
   assert.ok(!isTrustedUploader('', aliases, labels))
 })
+
+test('"And" and "&" name the same act: a Topic channel spelling the other one is still theirs (Nov 25, 2026)', () => {
+  // YouTube's channel is "Mimi And Richard Farina - Topic"; MusicBrainz says "Mimi & Richard Fariña".
+  const farinas = aliasKeysOf(['Richard & Mimi Fariña', 'Mimi & Richard Fariña'])
+  assert.ok(isTrustedUploader('Mimi And Richard Farina - Topic', farinas, []))
+  assert.ok(isTrustedUploader('Mimi and Richard Fariña', farinas, []))
+  // …and the other way round.
+  const simon = aliasKeysOf(['Simon and Garfunkel'])
+  assert.ok(isTrustedUploader('Simon & Garfunkel - Topic', simon, []))
+  assert.ok(isTrustedUploader('Simon + Garfunkel', simon, []))
+  // Only a whole word between spaces is a connector, and the rest must still be equal.
+  assert.ok(!isTrustedUploader('Mimi And Richard - Topic', farinas, []))
+  assert.ok(!isTrustedUploader('Mimi And Richard Farina Tribute - Topic', farinas, []))
+  assert.ok(!isTrustedUploader('Brand New - Topic', aliasKeysOf(['Br New']), []))
+  assert.ok(!isTrustedUploader('Sandra - Topic', aliasKeysOf(['S & ra']), []))
+})
