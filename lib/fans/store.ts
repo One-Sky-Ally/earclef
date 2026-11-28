@@ -11,6 +11,8 @@ import { randomBytes } from 'node:crypto'
 import { getStore } from '@netlify/blobs'
 import { followTiers, isArtistTier, type ArtistTier } from '../tiers'
 import { normalizeEmail } from '../membership/types'
+import { mbidOfKey, promoteRostered, type PagelessArtist } from './artistKeys'
+import { ensureFollowNumber } from './followNumbers'
 import {
   MAX_LIKES,
   byNewestFirst,
@@ -34,6 +36,13 @@ export interface FanRecord {
    * from before tiers were chosen at follow time need no migration.
    */
   tiers?: Record<string, ArtistTier>
+  /**
+   * Follows of artists with no Ear Clef page yet (follows key
+   * `mb:<id>`, ./artistKeys): the name to show and one verified video
+   * for the card. Removed with the follow, and when the artist gets a
+   * page (the follow becomes the page's).
+   */
+  artistNames?: Record<string, PagelessArtist>
   /**
    * Songs the fan liked while a queue was playing, newest first. The
    * artists behind them are what the taste map's radar tier derives
@@ -107,6 +116,7 @@ function baseRecord(email: string, existing: FanRecord | null): FanRecord {
     email,
     follows: existing?.follows ?? [],
     tiers: existing?.tiers,
+    artistNames: existing?.artistNames,
     likes: existing?.likes,
     radarDismissed: existing?.radarDismissed,
     discoverPlayed: existing?.discoverPlayed,
@@ -122,6 +132,8 @@ export interface FollowState {
   follows: string[]
   /** Every follow's tier, defaults filled in (followTiers). */
   tiers: Record<string, ArtistTier>
+  /** Who the page-less follows are (./artistKeys). */
+  artistNames: Record<string, PagelessArtist>
 }
 
 /**
@@ -135,6 +147,8 @@ export async function setFollow(
   slug: string,
   following: boolean,
   tier?: ArtistTier,
+  /** For an artist without a page (`mb:` key): who they are. */
+  artist?: PagelessArtist,
 ): Promise<FollowState> {
   const normalized = normalizeEmail(email)
   const existing = await getFan(normalized)
@@ -145,6 +159,11 @@ export async function setFollow(
 
   const record = baseRecord(normalized, existing)
   record.follows = next
+  if (mbidOfKey(slug)) {
+    const { [slug]: previous, ...others } = record.artistNames ?? {}
+    const kept = following && next.includes(slug) ? (artist ?? previous) : undefined
+    record.artistNames = kept ? { ...others, [slug]: kept } : others
+  }
   if (following && tier && isArtistTier(tier) && next.includes(slug)) {
     record.tiers = { ...record.tiers, [slug]: tier }
   } else if (!following && record.tiers?.[slug]) {
@@ -152,7 +171,78 @@ export async function setFollow(
     record.tiers = rest
   }
   await putFan(record)
-  return { follows: next, tiers: followTiers(next, record.tiers) }
+  return { follows: next, tiers: followTiers(next, record.tiers), artistNames: record.artistNames ?? {} }
+}
+
+/**
+ * The record as it stands today: page-less follows whose artist now has
+ * a page become that page's follow (./artistKeys promoteRostered),
+ * written back only when something changed. The fan pressed Follow
+ * before the page existed, so the page's fan number is minted for them
+ * now — they were early. Null for an unknown fan.
+ */
+export async function promoteRosteredFollows(
+  email: string,
+  slugByMbid: Readonly<Record<string, string>>,
+): Promise<FanRecord | null> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  if (!existing) return null
+  const promoted = promoteRostered(existing, slugByMbid)
+  if (!promoted.changed) return existing
+  const record = baseRecord(normalized, existing)
+  record.follows = promoted.follows
+  record.tiers = promoted.tiers
+  record.artistNames = promoted.artistNames
+  await putFan(record)
+  const added = promoted.follows.filter((key) => !existing.follows.includes(key))
+  await Promise.all(added.map((slug) => ensureFollowNumber(slug, normalized)))
+  return record
+}
+
+export interface PagelessFollow extends PagelessArtist {
+  key: string
+  tier: ArtistTier
+}
+
+/**
+ * Adds page-less follows (the Discover follows the owner made before
+ * they reached the account, Nov 28 2026). Additive and safe to repeat:
+ * an artist already followed keeps the row the fan gave them.
+ */
+export async function addPagelessFollows(
+  email: string,
+  entries: readonly PagelessFollow[],
+): Promise<{ added: string[]; kept: string[]; skipped: PagelessFollow[] }> {
+  const normalized = normalizeEmail(email)
+  const existing = await getFan(normalized)
+  const record = baseRecord(normalized, existing)
+  const follows = [...record.follows]
+  const tiers: Record<string, ArtistTier> = { ...record.tiers }
+  const artistNames: Record<string, PagelessArtist> = { ...record.artistNames }
+  const added: string[] = []
+  const kept: string[] = []
+  // Never dropped quietly: what could not be placed goes back to the caller.
+  const skipped: PagelessFollow[] = []
+  for (const entry of entries) {
+    if (follows.includes(entry.key)) {
+      kept.push(entry.name)
+      continue
+    }
+    if (!mbidOfKey(entry.key) || !isArtistTier(entry.tier) || follows.length >= MAX_FOLLOWS) {
+      skipped.push(entry)
+      continue
+    }
+    follows.push(entry.key)
+    tiers[entry.key] = entry.tier
+    artistNames[entry.key] = entry.videoId ? { name: entry.name, videoId: entry.videoId } : { name: entry.name }
+    added.push(entry.name)
+  }
+  record.follows = follows
+  record.tiers = tiers
+  record.artistNames = artistNames
+  await putFan(record)
+  return { added, kept, skipped }
 }
 
 /** Persists the fan's preferred streaming service. */

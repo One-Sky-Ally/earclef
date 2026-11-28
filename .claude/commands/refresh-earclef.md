@@ -180,6 +180,34 @@ lib/explore/songs-about-places.json (and, when songs came off, the
 regenerated lib/explore/cultures.json and lib/artist/start-here.json
 that `npm run build` writes). Log line: "Songs-about: N checked, M off".
 
+## Phase G — at least one full artist page from the owner's follows (every run)
+
+Owner rule (Nov 28 2026): "every time I run the weekly refresh, add at
+least 1 full artist page, taken from the artists I follow who don't
+have a page yet." Not optional, not "if there is time": a run that
+adds no page has not finished.
+
+1. List them (oldest follow first):
+   `curl -s -H "x-owner-key: $OWNER_KEY" https://earclef.com/api/studio`
+   → `waiting` = the owner's followed artists with no page
+   ({mbid, name, tier}). Empty list → say so in the log; nothing to
+   build this run.
+2. Take the FIRST one and run the full /add-artist pipeline
+   (.claude/commands/add-artist.md) for that exact MusicBrainz id — same
+   verified research, same bar as every roster page, tier
+   "on-the-radar" unless the owner's row for them says otherwise (use
+   the `tier` from the list). The id is the identity: never swap in a
+   namesake.
+3. If the research cannot verify a page for them (no MBID match, no
+   official channel and no verified video), do not ship a thin page:
+   say why in the log and take the next one in the list. More than one
+   page is welcome when time allows.
+4. Nothing to move by hand: once the page deploys, the owner's follow
+   becomes the page's follow, in the same row, the next time their
+   account is read (lib/fans/artistKeys promoteRostered). After the
+   deploy, re-run step 1 and confirm the artist has left `waiting`.
+   Log line: "Pages: <name> added (N still waiting)".
+
 ## Close out
 
 - `node scripts/validate-content.mjs` + `npm run build` must pass.
@@ -187,7 +215,9 @@ that `npm run build` writes). Log line: "Songs-about: N checked, M off".
 - Update the handoff refresh-log line: date, blurb misses found →
   seeded → remaining (remaining must be 0), combos added, year-roll
   result, story-card coverage status, Discover stock (shared days
-  ahead, owner sets ready, verified/checked, songs dropped).
+  ahead, owner sets ready, verified/checked, songs dropped),
+  Songs-about re-check (checked, off), pages added from follows (and
+  how many still wait).
 - Post-deploy: probe one new combo on earclef.com and one seeded blurb,
   and check the Discover row on /artists says "Today's picks for
   everyone" (not "From the archive").

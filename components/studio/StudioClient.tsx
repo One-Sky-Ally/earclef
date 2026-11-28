@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
-import { safeStoredHref, storedHrefKind } from '@/lib/play/storedHref'
 import {
   TIER_LABELS,
   TIER_ORDER,
@@ -13,7 +12,6 @@ import {
   getOwnerKey,
   setOwnerKey,
 } from '@/lib/curation/ownerClient'
-import type { FollowEntry } from '@/lib/curation/followStore'
 import { UniversePanel } from '@/components/studio/UniversePanel'
 import { StoriesPanel } from '@/components/studio/StoriesPanel'
 import { TallyPanel } from '@/components/studio/TallyPanel'
@@ -26,8 +24,15 @@ interface RosterRow {
   membership?: boolean
 }
 
+/** A followed artist with no page yet, in the owner's linked account. */
+interface WaitingArtist {
+  mbid: string
+  name: string
+  tier: ArtistTier
+}
+
 interface StudioData {
-  queue: FollowEntry[]
+  waiting: WaitingArtist[]
   roster: RosterRow[]
   retierConfigured: boolean
   /** The fan account signed in on this browser, if any. */
@@ -58,8 +63,8 @@ type StudioState =
 
 type RowStatus = { kind: 'saving' } | { kind: 'committed' } | { kind: 'error'; message: string }
 
-function buildRequestText(entry: FollowEntry): string {
-  return `Add ${entry.name} (MusicBrainz ID ${entry.mbid}) to the Ear Clef roster using the standard verified-research process. Start them at tier "on-the-radar". Once the page is live, remove them from the following queue.`
+function buildRequestText(entry: WaitingArtist): string {
+  return `/add-artist ${entry.name} (MusicBrainz ID ${entry.mbid}) — the standard verified-research process, starting at tier "on-the-radar". My follow of them moves to the page by itself once it is live.`
 }
 
 export function StudioClient() {
@@ -98,26 +103,7 @@ export function StudioClient() {
     else setState({ status: 'locked' })
   }, [unlock])
 
-  async function removeFromQueue(mbid: string) {
-    if (state.status !== 'ready') return
-    const res = await fetch('/api/follow', {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-owner-key': state.key,
-      },
-      body: JSON.stringify({ mbid }),
-    })
-    if (res.ok) {
-      const body = (await res.json()) as { entries: FollowEntry[] }
-      setState({
-        ...state,
-        data: { ...state.data, queue: body.entries },
-      })
-    }
-  }
-
-  async function copyBuildRequest(entry: FollowEntry) {
+  async function copyBuildRequest(entry: WaitingArtist) {
     try {
       await navigator.clipboard.writeText(buildRequestText(entry))
       setCopiedMbid(entry.mbid)
@@ -241,7 +227,7 @@ export function StudioClient() {
     )
   }
 
-  const { queue, roster, retierConfigured, account, discoverAccount, discoverStock } = state.data
+  const { waiting, roster, retierConfigured, account, discoverAccount, discoverStock } = state.data
   const nameOf = new Map(roster.map((row) => [row.slug, row.name]))
   const groups: { tier: ArtistTier | null; rows: RosterRow[] }[] = [
     ...TIER_ORDER.map((tier) => ({
@@ -262,57 +248,28 @@ export function StudioClient() {
 
       <section aria-labelledby="queue-heading">
         <h2 id="queue-heading" className={styles.heading}>
-          Following — pages pending
+          Followed — no page yet
         </h2>
-        {queue.length === 0 ? (
+        {waiting.length === 0 ? (
           <p className={styles.quiet}>
-            Nothing queued. Follow an artist from Discover and they land here.
+            {discoverAccount
+              ? 'Everyone you follow has a page. Follow an artist from Discover and they wait here for theirs.'
+              : 'Link your account above to see the artists you follow who have no page yet.'}
           </p>
         ) : (
           <ul className={styles.queue}>
-            {queue.map((entry) => (
-              <li
-                key={entry.mbid}
-                className={styles.queueRow}
-                title={buildRequestText(entry)}
-              >
+            {waiting.map((entry) => (
+              <li key={entry.mbid} className={styles.queueRow} title={buildRequestText(entry)}>
                 <div className={styles.queueText}>
                   <span className={styles.queueName}>{entry.name}</span>
-                  {entry.why && (
-                    <span className={styles.queueWhy}>{entry.why}</span>
-                  )}
-                  <span className={styles.queueMeta}>
-                    followed {entry.followedAt} · starts on-the-radar
-                  </span>
+                  <span className={styles.queueMeta}>in your {TIER_LABELS[entry.tier]}</span>
                 </div>
                 <div className={styles.queueActions}>
-                  {entry.listenHref && (
-                    <a
-                      className={styles.action}
-                      href={safeStoredHref(entry.listenHref, entry.mbid)}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {storedHrefKind(
-                        safeStoredHref(entry.listenHref, entry.mbid),
-                      ) === 'play'
-                        ? '▶ Listen'
-                        : 'About'}
-                    </a>
-                  )}
-                  <button
-                    type="button"
-                    className={styles.action}
-                    onClick={() => copyBuildRequest(entry)}
-                  >
+                  <Link className={styles.action} href={`/a/${entry.mbid}`}>
+                    Archive card
+                  </Link>
+                  <button type="button" className={styles.action} onClick={() => copyBuildRequest(entry)}>
                     {copiedMbid === entry.mbid ? 'Copied ✓' : 'Copy build request'}
-                  </button>
-                  <button
-                    type="button"
-                    className={styles.actionMuted}
-                    onClick={() => removeFromQueue(entry.mbid)}
-                  >
-                    Remove
                   </button>
                 </div>
               </li>
@@ -320,8 +277,8 @@ export function StudioClient() {
           </ul>
         )}
         <p className={styles.hint}>
-          Paste a build request into a Claude session to grow the roster —
-          pages go through the same verified research as everyone else.
+          Each weekly refresh builds at least one of these pages, oldest follow first. Unfollow
+          on My Taste Map.
         </p>
       </section>
 

@@ -4,6 +4,7 @@ import { sharedSetFor } from '@/lib/discover/stock'
 import { readIndex, readSet } from '@/lib/discover/stockStore'
 import { readLatestLegacyPool } from '@/lib/discover/store'
 import { VISITOR_PICKS, type DiscoverPool } from '@/lib/discover/types'
+import { withPageSlugs } from '@/lib/discover/pages'
 
 /**
  * The SHARED Discover set of the day — what every visitor sees. Picks
@@ -42,7 +43,7 @@ function json(body: DiscoverResponse, maxAge: number): NextResponse {
 /** Playable picks only, the day's first VISITOR_PICKS of them. */
 const forVisitors = (pool: DiscoverPool): DiscoverPool => ({
   date: pool.date,
-  picks: playablePicks(pool.picks).slice(0, VISITOR_PICKS),
+  picks: withPageSlugs(playablePicks(pool.picks).slice(0, VISITOR_PICKS)),
 })
 
 export async function GET() {

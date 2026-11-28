@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { YouTubeEmbed } from '@/components/YouTubeEmbed'
 import { LikeButton } from '@/components/fans/LikeButton'
+import { FollowButton } from '@/components/fans/FollowButton'
 import { getOwnerKey } from '@/lib/curation/ownerClient'
 import type { PlayLink, ReadLink } from '@/lib/play/types'
 import { ScrollRow } from '@/components/ui/ScrollRow'
@@ -34,6 +35,8 @@ interface DiscoverPick {
   bandcamp: string | null
   /** For a signed-in listener: the artists in their rows this pick connects to. */
   because?: string[]
+  /** Set once the artist has an Ear Clef page: Follow follows the page. */
+  slug?: string
 }
 
 const SONG_KIND_LABELS: Record<SongKind, string> = {
@@ -138,14 +141,13 @@ function normalizePick(pick: Partial<DiscoverPick>): DiscoverPick[] {
       because: Array.isArray(pick.because)
         ? pick.because.filter((name): name is string => typeof name === 'string')
         : undefined,
+      slug: typeof pick.slug === 'string' && /^[a-z0-9-]+$/.test(pick.slug) ? pick.slug : undefined,
     },
   ]
 }
 
 export function DiscoverSection() {
   const [state, setState] = useState<DiscoverState>({ status: 'loading' })
-  const [ownerKey, setOwnerKeyState] = useState<string | null>(null)
-  const [queuedMbids, setQueuedMbids] = useState<Set<string>>(new Set())
   // Played artists: remembered in this browser only (lib/discover/played.ts).
   const { marks } = usePlayedMarks()
 
@@ -215,52 +217,6 @@ export function DiscoverSection() {
     })()
     return () => controller.abort()
   }, [])
-
-  // Owner mode: show Follow buttons and which picks are already queued.
-  useEffect(() => {
-    const key = getOwnerKey()
-    if (!key) return
-    const controller = new AbortController()
-    fetch('/api/follow', { signal: controller.signal })
-      .then((res) => (res.ok ? res.json() : { entries: [] }))
-      .then((body: { entries: { mbid: string }[] }) => {
-        setOwnerKeyState(key)
-        setQueuedMbids(new Set(body.entries.map((entry) => entry.mbid)))
-      })
-      .catch(() => {
-        if (!controller.signal.aborted) setOwnerKeyState(key)
-      })
-    return () => controller.abort()
-  }, [])
-
-  async function follow(pick: DiscoverPick) {
-    if (!ownerKey) return
-    setQueuedMbids((current) => new Set(current).add(pick.mbid))
-    try {
-      const res = await fetch('/api/follow', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-owner-key': ownerKey,
-        },
-        body: JSON.stringify({
-          name: pick.name,
-          mbid: pick.mbid,
-          why: pick.why,
-          knownFor: pick.knownFor,
-          listenHref: pick.listenHref,
-        }),
-      })
-      if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    } catch (error) {
-      console.error('Follow failed:', error)
-      setQueuedMbids((current) => {
-        const next = new Set(current)
-        next.delete(pick.mbid)
-        return next
-      })
-    }
-  }
 
   if (state.status === 'hidden') return null
 
@@ -353,15 +309,18 @@ export function DiscoverSection() {
                   </div>
                 </div>
               )}
-              {ownerKey && (
-                <button
-                  type="button"
-                  className={styles.follow}
-                  disabled={queuedMbids.has(pick.mbid)}
-                  onClick={() => follow(pick)}
-                >
-                  {queuedMbids.has(pick.mbid) ? 'Following ✓' : '+ Follow'}
-                </button>
+              {/* The same Follow as every artist page (Nov 28 2026): into the
+                  listener's own rows, by MusicBrainz id until they have a page. */}
+              {pick.slug ? (
+                <FollowButton artistName={pick.name} slug={pick.slug} inline />
+              ) : (
+                <FollowButton
+                  artistName={pick.name}
+                  mbid={pick.mbid}
+                  videoId={pick.song?.videoId}
+                  signInDest="/artists"
+                  inline
+                />
               )}
             </div>
           ),

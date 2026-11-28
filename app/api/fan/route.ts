@@ -10,10 +10,12 @@ import {
   sanitizeLikedTrack,
   type LikedTrack,
 } from '@/lib/fans/likes'
+import { mbidOfKey, pagelessView, sanitizePageless } from '@/lib/fans/artistKeys'
+import { rosterSlugByMbid } from '@/lib/fans/rosterIndex'
 import {
   addLike,
-  getFan,
   mergeLikes,
+  promoteRosteredFollows,
   removeLike,
   setFollow,
   setListenService,
@@ -47,7 +49,8 @@ function noStore(body: unknown, status = 200): NextResponse {
 export async function GET(request: Request) {
   const email = sessionEmail(request)
   if (!email) return noStore({ signedIn: false, follows: [], likes: [] })
-  const fan = await getFan(email)
+  // A page-less follow whose artist now has a page is read as the page's.
+  const fan = await promoteRosteredFollows(email, rosterSlugByMbid())
   const follows = fan?.follows ?? []
   return noStore({
     signedIn: true,
@@ -56,9 +59,11 @@ export async function GET(request: Request) {
     // Every follow's tier, defaults filled in: a follow the fan never
     // placed reads as "In the mix" (owner, Oct 14 2026).
     tiers: followTiers(follows, fan?.tiers),
+    // Followed artists with no page yet (`mb:` keys): who they are.
+    artists: pagelessView(follows, fan?.artistNames),
     likes: fan?.likes ?? [],
     radarDismissed: fan?.radarDismissed ?? [],
-    stamps: await getFollowStamps(email, follows),
+    stamps: await getFollowStamps(email, rosterKeys(follows)),
     listenService: fan?.listenService,
     share: {
       enabled: Boolean(fan?.shareToken),
@@ -68,8 +73,14 @@ export async function GET(request: Request) {
   })
 }
 
+/** Fan numbers belong to roster pages: page-less follows have none. */
+const rosterKeys = (follows: readonly string[]) => follows.filter((key) => !mbidOfKey(key))
+
 interface FanPostBody {
+  /** A roster slug, or `mb:<MusicBrainz id>` for an artist with no page yet. */
   slug?: string
+  /** For an `mb:` follow: the artist's name and a video for the card — validated, never trusted. */
+  artist?: unknown
   following?: boolean
   tier?: string | null
   listenService?: string
@@ -172,10 +183,16 @@ export async function POST(request: Request) {
     return noStore({ signedIn: true, radarDismissed })
   }
 
-  const slug = body.slug ?? ''
-  if (!getArtistBySlug(slug)) {
+  // An `mb:` key is an artist with no page — unless they have one now.
+  const slugByMbid = rosterSlugByMbid()
+  const requested = String(body.slug ?? '')
+  const pagelessMbid = mbidOfKey(requested.toLowerCase())
+  const slug = pagelessMbid ? (slugByMbid[pagelessMbid] ?? `mb:${pagelessMbid}`) : requested
+  const pageless = mbidOfKey(slug) !== null
+  if (!pageless && !getArtistBySlug(slug)) {
     return noStore({ error: 'Unknown artist' }, 404)
   }
+  const current = await promoteRosteredFollows(email, slugByMbid)
 
   // A tier change on its own (no `following` key) re-files a follow.
   if (body.tier !== undefined && body.following === undefined) {
@@ -194,19 +211,26 @@ export async function POST(request: Request) {
   if (following && body.tier != null && !isArtistTier(body.tier)) {
     return noStore({ error: 'Unknown tier' }, 400)
   }
-  const { follows, tiers } = await setFollow(
+  const artist = pageless ? sanitizePageless(body.artist) : null
+  if (pageless && following && !artist && !current?.artistNames?.[slug]) {
+    return noStore({ error: 'A follow needs the artist’s name' }, 400)
+  }
+  const { follows, tiers, artistNames } = await setFollow(
     email,
     slug,
     following,
     isArtistTier(body.tier) ? body.tier : undefined,
+    artist ?? undefined,
   )
   // First follow mints a permanent number; refollows return the original.
-  if (following) await ensureFollowNumber(slug, email)
+  // Numbers belong to roster pages.
+  if (following && !pageless) await ensureFollowNumber(slug, email)
   return noStore({
     signedIn: true,
     email,
     follows,
     tiers,
-    stamps: await getFollowStamps(email, follows),
+    artists: pagelessView(follows, artistNames),
+    stamps: await getFollowStamps(email, rosterKeys(follows)),
   })
 }

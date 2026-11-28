@@ -3,6 +3,7 @@ import { isOwner, unauthorized } from '@/lib/curation/auth'
 import { playablePicks, readFixture, sanitizePool } from '@/lib/discover/serve'
 import { ownerSetFor } from '@/lib/discover/stock'
 import { deleteSets, readIndex, readSet, writeIndex } from '@/lib/discover/stockStore'
+import { withPageSlugs } from '@/lib/discover/pages'
 
 /**
  * The OWNER's own Discover picks: sets of 8 stocked during
@@ -24,7 +25,7 @@ export async function GET(request: Request) {
   const fixture = await readFixture(process.env.DISCOVER_OWNER_FIXTURE)
   if (fixture) {
     const pool = sanitizePool(fixture)
-    return privateJson({ status: 'ready', pool: { ...pool, picks: playablePicks(pool.picks) }, ready: 0 })
+    return privateJson({ status: 'ready', pool: { ...pool, picks: withPageSlugs(playablePicks(pool.picks)) }, ready: 0 })
   }
 
   const today = new Date().toISOString().slice(0, 10)
@@ -34,7 +35,7 @@ export async function GET(request: Request) {
     if (result.evicted.length > 0) await deleteSets(result.evicted)
   }
   const set = result.id ? await readSet(result.id) : null
-  const picks = set ? playablePicks(set.picks) : []
+  const picks = set ? withPageSlugs(playablePicks(set.picks)) : []
   if (picks.length === 0) return privateJson({ status: 'none' })
   return privateJson({
     status: 'ready',

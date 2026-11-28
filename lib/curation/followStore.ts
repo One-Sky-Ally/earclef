@@ -1,7 +1,14 @@
 /**
- * The "following" queue — Discover picks the owner wants roster pages for.
- * Durable copy lives in Netlify Blobs; local dev (no Blobs context) falls
- * back to an in-process array so the flow is testable end-to-end.
+ * RETIRED (Nov 28 2026): the old Discover "following" queue — Discover
+ * picks the owner wanted roster pages for, kept apart from the owner's
+ * account and shown publicly as "Following — pages pending". The owner
+ * thought those follows were in their Following; they never were.
+ * Discover's Follow is now the ordinary account follow (artists with no
+ * page by MusicBrainz id, lib/fans/artistKeys), and the weekly refresh
+ * builds at least one page from the owner's page-less follows. This
+ * file only lets the one-time move (/api/studio/move-discover-follows)
+ * read the queue and empty it — keeping
+ * anything it could not place. Netlify Blobs "curation" store.
  */
 import { getStore } from '@netlify/blobs'
 
@@ -12,47 +19,22 @@ export interface FollowEntry {
   knownFor?: string
   listenHref?: string
   followedAt: string
-  /** Tier the artist's page starts at when it gets built. */
   tier: 'on-the-radar'
 }
 
 const QUEUE_KEY = 'following'
 
-let devQueue: FollowEntry[] = []
-
 function store() {
   return getStore({ name: 'curation', consistency: 'strong' })
 }
 
+/** The queue; a read that fails THROWS — "empty" must mean empty, never "could not read". */
 export async function readQueue(): Promise<FollowEntry[]> {
-  try {
-    return ((await store().get(QUEUE_KEY, { type: 'json' })) ??
-      []) as FollowEntry[]
-  } catch {
-    return devQueue
-  }
+  const value = await store().get(QUEUE_KEY, { type: 'json' })
+  return Array.isArray(value) ? (value as FollowEntry[]) : []
 }
 
-async function writeQueue(entries: FollowEntry[]): Promise<void> {
-  try {
-    await store().setJSON(QUEUE_KEY, entries)
-  } catch {
-    devQueue = entries
-  }
-}
-
-/** Adds an entry unless the MBID is already queued. Returns the queue. */
-export async function addFollow(entry: FollowEntry): Promise<FollowEntry[]> {
-  const queue = await readQueue()
-  if (queue.some((existing) => existing.mbid === entry.mbid)) return queue
-  const next = [...queue, entry]
-  await writeQueue(next)
-  return next
-}
-
-export async function removeFollow(mbid: string): Promise<FollowEntry[]> {
-  const queue = await readQueue()
-  const next = queue.filter((entry) => entry.mbid !== mbid)
-  if (next.length !== queue.length) await writeQueue(next)
-  return next
+/** Keeps only the entries the move could not place (none: the queue is empty). */
+export async function writeQueue(entries: readonly FollowEntry[]): Promise<void> {
+  await store().setJSON(QUEUE_KEY, entries)
 }

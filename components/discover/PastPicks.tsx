@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { YouTubeEmbed } from '@/components/YouTubeEmbed'
 import { LikeButton } from '@/components/fans/LikeButton'
+import { FollowButton } from '@/components/fans/FollowButton'
 import { getOwnerKey } from '@/lib/curation/ownerClient'
 import { markPlayed, unmarkPlayed, type PlayedMark } from '@/lib/discover/played'
 import { usePlayedMarks } from './usePlayedMarks'
@@ -20,6 +21,8 @@ interface PastArtist {
   lastDate: string
   firstDate: string
   sources: ('own' | 'shared')[]
+  /** Set once the artist has an Ear Clef page: Follow follows the page. */
+  slug?: string
 }
 
 interface PastBody {
@@ -148,7 +151,8 @@ export function PastPicks() {
         </p>
       ) : (
         <ul className={styles.grid}>
-          {shown.map(({ pick, lastDate, firstDate, sources }) => {
+          {shown.map(({ pick, lastDate, firstDate, sources, slug: rawSlug }) => {
+            const slug = typeof rawSlug === 'string' && /^[a-z0-9-]+$/.test(rawSlug) ? rawSlug : undefined
             const mark = marks[pick.mbid]
             const bandcamp = bandcampOf(pick.bandcamp)
             return (
@@ -169,6 +173,18 @@ export function PastPicks() {
                   <YouTubeEmbed
                     video={{ youtubeId: pick.song.videoId, title: pick.song.title }}
                     onPlay={() => markPlayed(pick.mbid)}
+                  />
+                )}
+                {/* The same Follow as every artist page (Nov 28 2026). */}
+                {slug ? (
+                  <FollowButton artistName={pick.name} slug={slug} inline />
+                ) : (
+                  <FollowButton
+                    artistName={pick.name}
+                    mbid={pick.mbid}
+                    videoId={pick.song?.videoId}
+                    signInDest="/discover/past"
+                    inline
                   />
                 )}
                 <div className={styles.actions}>

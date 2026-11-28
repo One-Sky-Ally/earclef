@@ -12,6 +12,8 @@ import { getOwnerAccount } from '../curation/ownerAccount'
 import { getFan } from '../fans/store'
 import { followTiers } from '../tiers'
 import { rowsLibrary, type DiscoverLibrary } from './prompt'
+import { promoteRostered } from '../fans/artistKeys'
+import { rosterSlugByMbid } from '../fans/rosterIndex'
 
 const enoughRows = (library: DiscoverLibrary) =>
   library.kind === 'rows' && library.heavy.length + library.mix.length >= 3
@@ -23,7 +25,9 @@ export async function ownerLibrary(): Promise<{
   const email = await getOwnerAccount()
   const fan = email ? await getFan(email) : null
   if (fan) {
-    const library = rowsLibrary(followTiers(fan.follows, fan.tiers), roster)
+    // A followed artist who has a page by now counts as the page.
+    const view = promoteRostered(fan, rosterSlugByMbid())
+    const library = rowsLibrary(followTiers(view.follows, view.tiers), roster)
     if (enoughRows(library)) return { library, source: 'account' }
   }
   const siteTiers = Object.fromEntries(

@@ -9,6 +9,8 @@ export interface ArtistCardData {
   location: string
   /** Real hero photo if set, else first-video thumbnail — null shows a monogram plate. */
   thumbUrl: string | null
+  /** Where the card opens when it is not a roster page (an archive card). */
+  href?: string
 }
 
 function monogram(name: string): string {
@@ -18,7 +20,7 @@ function monogram(name: string): string {
 
 export function ArtistCard({ card }: { card: ArtistCardData }) {
   return (
-    <Link className={styles.card} href={`/${card.slug}`}>
+    <Link className={styles.card} href={card.href ?? `/${card.slug}`}>
       <span className={styles.art} aria-hidden="true">
         <span className={styles.monogram}>{monogram(card.name)}</span>
         {card.thumbUrl && <SafeImage className={styles.image} src={card.thumbUrl} />}

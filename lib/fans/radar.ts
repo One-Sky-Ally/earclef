@@ -48,7 +48,10 @@ interface DeriveRadarInput {
   /** MBIDs the listener has taken off the radar. */
   dismissed: string[]
   rosterByMbid: Record<string, { slug: string; name: string }>
-  /** Slugs already followed — they are placed on the map elsewhere. */
+  /**
+   * Follows already on the map elsewhere: roster slugs, and `mb:<id>`
+   * keys for artists with no page (lib/fans/artistKeys).
+   */
   followedSlugs: string[]
 }
 
@@ -78,6 +81,7 @@ export function deriveRadar({
     // An artist the listener already follows is on the map under
     // whatever tier they chose; the radar must not shadow that.
     if (rostered && followed.has(rostered.slug)) continue
+    if (followed.has(`mb:${track.mbid}`)) continue
 
     const existing = byMbid.get(track.mbid)
     if (!existing) {

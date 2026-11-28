@@ -10,6 +10,7 @@ import {
   type ArtistTier,
 } from '@/lib/tiers'
 import { deriveRadar } from '@/lib/fans/radar'
+import { mbidOfKey, type PagelessView } from '@/lib/fans/artistKeys'
 import { useLikes } from '@/components/fans/LikesProvider'
 import { RadarFromLikes } from '@/components/fans/RadarFromLikes'
 import styles from './TasteMap.module.css'
@@ -29,12 +30,15 @@ interface FanProfile {
   follows: string[]
   tiers?: Record<string, ArtistTier>
   stamps?: Record<string, { number: number; since: string }>
+  /** Followed artists with no page yet, by `mb:` key. */
+  artists?: Record<string, PagelessView>
   share?: { enabled: boolean; token?: string; displayName?: string }
 }
 
 type FollowStatus =
   | { kind: 'moved'; slug: string; tier: ArtistTier }
-  | { kind: 'unfollowed'; slug: string; tier: ArtistTier }
+  /** A page-less artist's undo has to say who they were. */
+  | { kind: 'unfollowed'; slug: string; tier: ArtistTier; artist?: PagelessView }
   | { kind: 'error'; message: string }
 
 /** The dropdown's last option: not a row, the way out. */
@@ -79,6 +83,7 @@ export function TasteMap({
   const { likes, radarDismissed } = useLikes()
 
   const names = new Map(roster.map((entry) => [entry.slug, entry.name]))
+  const nameOf = (slug: string) => names.get(slug) ?? profile?.artists?.[slug]?.name ?? slug
 
   useEffect(() => {
     let cancelled = false
@@ -151,6 +156,7 @@ export function TasteMap({
             follows: next.follows ?? current.follows,
             tiers: next.tiers ?? current.tiers,
             stamps: next.stamps ?? current.stamps,
+            artists: next.artists ?? current.artists,
           }
         : current,
     )
@@ -163,7 +169,8 @@ export function TasteMap({
   async function onRowChange(slug: string, value: string) {
     if (!profile) return
     const previous = profile.tiers?.[slug] ?? DEFAULT_FOLLOW_TIER
-    const name = names.get(slug) ?? slug
+    const name = nameOf(slug)
+    const artist = profile.artists?.[slug]
     markSaving(slug, true)
     if (value === UNFOLLOW) {
       const body = await postFan({ slug, following: false })
@@ -173,7 +180,7 @@ export function TasteMap({
         return
       }
       applyProfile(body)
-      setStatus({ kind: 'unfollowed', slug, tier: previous })
+      setStatus({ kind: 'unfollowed', slug, tier: previous, artist })
       return
     }
     if (!isArtistTier(value) || value === previous) {
@@ -198,9 +205,14 @@ export function TasteMap({
   }
 
   /** Undo an unfollow: same artist, same row, same fan number. */
-  async function undoUnfollow(slug: string, tier: ArtistTier) {
+  async function undoUnfollow(slug: string, tier: ArtistTier, artist?: PagelessView) {
     markSaving(slug, true)
-    const body = await postFan({ slug, following: true, tier })
+    const body = await postFan({
+      slug,
+      following: true,
+      tier,
+      ...(artist && { artist: { name: artist.name, videoId: artist.videoId } }),
+    })
     markSaving(slug, false)
     if (!body) {
       setStatus({ kind: 'error', message: 'Couldn’t undo — follow them again from their page.' })
@@ -215,30 +227,22 @@ export function TasteMap({
    * follow list and its fan stamps, so the row moves out of the derived
    * radar and into the map proper on the next render.
    */
-  async function followFromRadar(slug: string) {
+  async function followFromRadar(artist: { slug?: string; mbid: string; name: string }) {
     try {
       const res = await fetch('/api/fan', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        // An artist found through likes starts where they came from.
-        body: JSON.stringify({ slug, following: true, tier: 'on-the-radar' }),
+        // An artist found through likes starts where they came from; one
+        // with no page is followed by their MusicBrainz id (Nov 28 2026).
+        body: JSON.stringify({
+          slug: artist.slug ?? `mb:${artist.mbid}`,
+          following: true,
+          tier: 'on-the-radar',
+          ...(!artist.slug && { artist: { name: artist.name } }),
+        }),
       })
       if (!res.ok) return
-      const body = (await res.json()) as {
-        follows?: string[]
-        tiers?: Record<string, ArtistTier>
-        stamps?: Record<string, { number: number; since: string }>
-      }
-      setProfile((current) =>
-        current
-          ? {
-              ...current,
-              follows: body.follows ?? current.follows,
-              tiers: body.tiers ?? current.tiers,
-              stamps: body.stamps ?? current.stamps,
-            }
-          : current,
-      )
+      applyProfile((await res.json()) as Partial<FanProfile>)
     } catch (error) {
       console.error('Follow from radar failed:', error)
     }
@@ -342,8 +346,7 @@ export function TasteMap({
 
   // Every follow has a tier — the server fills in "In the mix" for any
   // the fan never placed.
-  const byName = (a: string, b: string) =>
-    (names.get(a) ?? a).localeCompare(names.get(b) ?? b)
+  const byName = (a: string, b: string) => nameOf(a).localeCompare(nameOf(b))
   const groups = TIER_ORDER.map((tier) => ({
     tier,
     label: TIER_LABELS[tier],
@@ -351,7 +354,7 @@ export function TasteMap({
       .filter((slug) => (profile.tiers?.[slug] ?? DEFAULT_FOLLOW_TIER) === tier)
       .sort(byName),
   }))
-  const statusName = (slug: string) => names.get(slug) ?? slug
+  const statusName = nameOf
 
   const radar = deriveRadar({
     likes,
@@ -459,7 +462,7 @@ export function TasteMap({
                   <button
                     type="button"
                     className={styles.undo}
-                    onClick={() => undoUnfollow(status.slug, status.tier)}
+                    onClick={() => undoUnfollow(status.slug, status.tier, status.artist)}
                     disabled={saving.has(status.slug)}
                   >
                     Undo
@@ -493,13 +496,16 @@ export function TasteMap({
                   <ul className={styles.rows}>
                     {group.slugs.map((slug) => {
                       const stamp = profile.stamps?.[slug]
-                      const name = names.get(slug) ?? slug
+                      const name = nameOf(slug)
+                      // No page yet: the archive card, said plainly.
+                      const mbid = mbidOfKey(slug)
                       return (
                         <li key={slug} className={styles.row}>
                           <div className={styles.rowText}>
-                            <Link className={styles.artist} href={`/${slug}`}>
+                            <Link className={styles.artist} href={mbid ? `/a/${mbid}` : `/${slug}`}>
                               {name}
                             </Link>
+                            {mbid && <span className={styles.stamp}>Not on Ear Clef yet · archive card</span>}
                             {stamp && (
                               <span className={styles.stamp}>
                                 Fan&nbsp;#{stamp.number} · since {sinceLabel(stamp.since)}

@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
+import { artistKey } from '@/lib/fans/artistKeys'
+import type { SignInDestination } from '@/lib/membership/signInDest'
 import {
   DEFAULT_FOLLOW_TIER,
   TIER_HINTS,
@@ -8,19 +10,24 @@ import {
   TIER_ORDER,
   type ArtistTier,
 } from '@/lib/tiers'
+import { mergeFanProfile, useFanProfile, type FanProfile } from './useFanProfile'
 import styles from './FollowButton.module.css'
 
 interface FollowButtonProps {
-  slug: string
   artistName: string
-}
-
-interface FanProfile {
-  signedIn: boolean
-  email?: string
-  follows: string[]
-  tiers?: Record<string, ArtistTier>
-  stamps?: Record<string, { number: number; since: string }>
+  /** A roster artist's page slug. */
+  slug?: string
+  /**
+   * An artist with no page yet (Discover, Nov 28 2026): followed by
+   * their MusicBrainz id, opening on their archive card.
+   */
+  mbid?: string
+  /** A verified video of theirs, for their card in the rows. */
+  videoId?: string
+  /** Where sign-in returns to when there is no page to return to. */
+  signInDest?: SignInDestination
+  /** Inside a card in a sideways-scrolling row: the row chooser opens in the card. */
+  inline?: boolean
 }
 
 /** "2026-07-16" → "July 2026". */
@@ -45,8 +52,18 @@ const GUTTER = 16
  * and the same control moves them later or unfollows. Signed-out
  * visitors get an inline magic-link form first.
  */
-export function FollowButton({ slug, artistName }: FollowButtonProps) {
-  const [profile, setProfile] = useState<FanProfile | null>(null)
+export function FollowButton({
+  artistName,
+  slug,
+  mbid,
+  videoId,
+  signInDest,
+  inline = false,
+}: FollowButtonProps) {
+  const fan = useFanProfile()
+  const profile: FanProfile | null = fan.status === 'ready' ? fan.profile : null
+  // The follows-list key: the page's slug, or `mb:<id>` for a page-less artist.
+  const key = slug ?? (mbid ? artistKey(mbid) : null)
   const [busy, setBusy] = useState(false)
   const [open, setOpen] = useState(false)
   const [signIn, setSignIn] = useState<SignInState>({ status: 'closed' })
@@ -55,23 +72,6 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
   const buttonRef = useRef<HTMLButtonElement>(null)
   const chooserRef = useRef<HTMLDivElement>(null)
   const chooserId = useId()
-
-  useEffect(() => {
-    let cancelled = false
-    ;(async () => {
-      try {
-        const res = await fetch('/api/fan')
-        if (!res.ok) return
-        const body = (await res.json()) as FanProfile
-        if (!cancelled) setProfile(body)
-      } catch {
-        // Signed-out rendering is the safe default.
-      }
-    })()
-    return () => {
-      cancelled = true
-    }
-  }, [])
 
   // Outside click or Esc closes the chooser; Esc hands focus back.
   useEffect(() => {
@@ -99,14 +99,14 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
     if (!open || !chooser) return
     const overflow =
       chooser.getBoundingClientRect().right - (window.innerWidth - GUTTER)
-    chooser.style.transform = overflow > 0 ? `translateX(${-overflow}px)` : ''
+    chooser.style.transform = !inline && overflow > 0 ? `translateX(${-overflow}px)` : ''
     chooser
       .querySelector<HTMLButtonElement>('[aria-pressed="true"], button')
       ?.focus()
-  }, [open])
+  }, [open, inline])
 
-  const following = profile?.follows.includes(slug) ?? false
-  const tier = following ? (profile?.tiers?.[slug] ?? DEFAULT_FOLLOW_TIER) : null
+  const following = key ? (profile?.follows.includes(key) ?? false) : false
+  const tier = following && key ? (profile?.tiers?.[key] ?? DEFAULT_FOLLOW_TIER) : null
 
   function onButton() {
     if (!profile) return
@@ -118,7 +118,10 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
   }
 
   async function save(body: { following: boolean; tier?: ArtistTier }) {
+    if (!key) return
     setBusy(true)
+    // A page-less artist's follow carries who they are.
+    const who = slug ? {} : { artist: { name: artistName, ...(videoId && { videoId }) } }
     try {
       const res = await fetch('/api/fan', {
         method: 'POST',
@@ -127,22 +130,12 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
           // Moving a followed artist is a tier change; anything else is a
           // follow (with the chosen tier) or an unfollow.
           following && body.following && body.tier
-            ? { slug, tier: body.tier }
-            : { slug, ...body },
+            ? { slug: key, tier: body.tier }
+            : { slug: key, ...body, ...who },
         ),
       })
       if (!res.ok) return
-      const next = (await res.json()) as Partial<FanProfile>
-      setProfile((current) =>
-        current
-          ? {
-              ...current,
-              follows: next.follows ?? current.follows,
-              tiers: next.tiers ?? current.tiers,
-              stamps: next.stamps ?? current.stamps,
-            }
-          : current,
-      )
+      mergeFanProfile((await res.json()) as Partial<FanProfile>)
       setOpen(false)
       buttonRef.current?.focus()
     } catch (error) {
@@ -160,7 +153,9 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
       const res = await fetch('/api/auth/request-link', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim(), slug }),
+        body: JSON.stringify(
+          slug ? { email: email.trim(), slug } : { email: email.trim(), dest: signInDest ?? '/me' },
+        ),
       })
       const body = (await res.json()) as { sent?: boolean; devLink?: string }
       setSignIn(
@@ -173,12 +168,12 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
     }
   }
 
-  if (!profile) return null
+  if (!profile || !key) return null
 
-  const stamp = profile.stamps?.[slug]
+  const stamp = slug ? profile.stamps?.[slug] : undefined
 
   return (
-    <div className={styles.wrap} ref={wrapRef}>
+    <div className={`${styles.wrap} ${inline ? styles.inline : ''}`} ref={wrapRef}>
       <button
         ref={buttonRef}
         type="button"
@@ -241,7 +236,9 @@ export function FollowButton({ slug, artistName }: FollowButtonProps) {
             </button>
           )}
           <p className={styles.chooserNote}>
-            Your rows show on the Artists page and filter your Feed.
+            {slug
+              ? 'Your rows show on the Artists page and filter your Feed.'
+              : 'Your rows show on the Artists page and My Taste Map.'}
           </p>
         </div>
       )}

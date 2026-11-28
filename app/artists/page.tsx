@@ -7,7 +7,6 @@ import { SiteFooterSimple } from '@/components/SiteFooterSimple'
 import { ArtistAZ, type ArtistCardData } from '@/components/ArtistRows'
 import { ArtistShelves } from '@/components/artists/ArtistShelves'
 import { DiscoverSection } from '@/components/discover/DiscoverSection'
-import { PendingStrip } from '@/components/curation/PendingStrip'
 import styles from './artists.module.css'
 
 export const metadata: Metadata = {
@@ -47,7 +46,6 @@ export default function ArtistsPage() {
             One page per artist universe — {cards.length} and counting.
           </p>
           <DiscoverSection />
-          <PendingStrip />
           <ArtistShelves cards={cards} />
           <ArtistAZ cards={cards} />
           <p className={styles.suggest}>

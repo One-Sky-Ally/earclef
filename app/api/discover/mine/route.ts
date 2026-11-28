@@ -8,6 +8,9 @@ import { VISITOR_PICKS, type DiscoverPick, type DiscoverPool } from '@/lib/disco
 import { getFan } from '@/lib/fans/store'
 import { sessionEmail } from '@/lib/membership/session'
 import { followTiers } from '@/lib/tiers'
+import { withPageSlugs } from '@/lib/discover/pages'
+import { promoteRostered } from '@/lib/fans/artistKeys'
+import { rosterSlugByMbid } from '@/lib/fans/rosterIndex'
 
 /**
  * A signed-in listener's Discover picks — no model call of their own
@@ -46,7 +49,9 @@ export async function GET(request: Request) {
   if (!email) return noStore({ status: 'visitor' })
 
   const fan = await getFan(email)
-  const tiers = followTiers(fan?.follows ?? [], fan?.tiers)
+  // A followed artist who has a page by now counts as the page.
+  const view = fan ? promoteRostered(fan, rosterSlugByMbid()) : null
+  const tiers = followTiers(view?.follows ?? [], view?.tiers)
   if (Object.keys(tiers).length === 0) return noStore({ status: 'no-follows' })
 
   const pools = await recentSharedPools()
@@ -64,12 +69,12 @@ export async function GET(request: Request) {
   return noStore({
     status: 'ready',
     matched: matches.length,
-    picks: [
+    picks: withPageSlugs([
       ...matches.map(({ pick, because }) => ({
         ...pick,
         because: because.map((slug) => nameBySlug.get(slug) ?? slug),
       })),
       ...filler,
-    ],
+    ]),
   })
 }

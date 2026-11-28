@@ -204,3 +204,25 @@
     z-index: 60;
   }
 }
+
+/*
+ * Inside a card in a sideways-scrolling row (Discover, Nov 28 2026): a
+ * pop-up would be clipped by the row, so the chooser opens in the card,
+ * on every screen size.
+ */
+.inline {
+  margin-top: 0;
+}
+
+.inline .chooser {
+  position: static;
+  width: auto;
+  margin-top: 0.4rem;
+  box-shadow: none;
+  transform: none;
+}
+
+.inline .follow,
+.inline .following {
+  padding: 0.4rem 0.95rem;
+}

@@ -9,6 +9,7 @@ import {
   signToken,
 } from '@/lib/membership/tokens'
 import { EMAIL_PATTERN, normalizeEmail } from '@/lib/membership/types'
+import { signInDestination } from '@/lib/membership/signInDest'
 
 /**
  * Magic-link sign-in, step 1. Always answers "sent" for a well-formed
@@ -50,7 +51,7 @@ export async function POST(request: Request) {
     return noStore({ error: 'Invalid JSON body' }, 400)
   }
   // Fixed allowlist — never a caller-supplied path.
-  const dest = body.dest === '/me' ? '/me' : undefined
+  const dest = signInDestination(body.dest)
 
   const email = normalizeEmail(body.email ?? '')
   const slug = body.slug ?? ''
@@ -60,7 +61,8 @@ export async function POST(request: Request) {
   }
   // Any roster page can request sign-in: the session is the site-wide fan
   // identity (follows), and doubles as membership access where one exists.
-  // The profile page (dest /me) signs in without naming an artist at all.
+  // The profile page and Discover's pages (signInDest) sign in without
+  // naming an artist at all.
   if (!content && !dest) {
     return noStore({ error: 'Unknown artist' }, 404)
   }

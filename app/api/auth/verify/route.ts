@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { claimOnce } from '@/lib/membership/markers'
 import { sessionCookieHeader } from '@/lib/membership/session'
+import { signInLanding } from '@/lib/membership/signInDest'
 import { verifyToken } from '@/lib/membership/tokens'
 
 /**
@@ -24,12 +25,7 @@ export async function GET(request: Request) {
   }
 
   // The signed allowlisted destination wins; artist page is the default.
-  const destination = new URL(
-    payload.d === '/me'
-      ? '/me?signin=ok'
-      : `/${payload.slug ?? ''}?signin=ok#universe`,
-    request.url,
-  )
+  const destination = new URL(signInLanding(payload.d, payload.slug), request.url)
   const response = NextResponse.redirect(destination, { status: 302 })
   response.headers.set('Set-Cookie', sessionCookieHeader(payload.email))
   return response

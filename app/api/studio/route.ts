@@ -1,11 +1,13 @@
 import { NextResponse } from 'next/server'
 import { isOwner, unauthorized } from '@/lib/curation/auth'
-import { readQueue } from '@/lib/curation/followStore'
 import roster from '@/lib/discover/roster.json'
 import { getOwnerAccount } from '@/lib/curation/ownerAccount'
 import { sharedReady, sharedThrough } from '@/lib/discover/stock'
 import { readIndex } from '@/lib/discover/stockStore'
-import { getFan } from '@/lib/fans/store'
+import { pagelessView } from '@/lib/fans/artistKeys'
+import { rosterSlugByMbid } from '@/lib/fans/rosterIndex'
+import { getFan, promoteRosteredFollows } from '@/lib/fans/store'
+import { followTiers } from '@/lib/tiers'
 import { sessionEmail } from '@/lib/membership/session'
 
 /**
@@ -22,13 +24,22 @@ export async function GET(request: Request) {
   const email = sessionEmail(request)
   const fan = email ? await getFan(email) : null
   const today = new Date().toISOString().slice(0, 10)
-  const [sharedStock, ownerStock] = await Promise.all([
+  const [sharedStock, ownerStock, ownerEmail] = await Promise.all([
     readIndex('shared'),
     readIndex('owner'),
+    getOwnerAccount(),
   ])
+  // The owner's followed artists with no page yet, oldest follow first:
+  // the weekly refresh builds at least one of these pages (owner, Nov 28
+  // 2026). A page that went live meanwhile has already taken its follow.
+  const ownerFan = ownerEmail ? await promoteRosteredFollows(ownerEmail, rosterSlugByMbid()) : null
+  const ownerTiers = followTiers(ownerFan?.follows ?? [], ownerFan?.tiers)
+  const waiting = Object.entries(pagelessView(ownerFan?.follows ?? [], ownerFan?.artistNames)).map(
+    ([key, artist]) => ({ mbid: artist.mbid, name: artist.name, tier: ownerTiers[key] }),
+  )
 
   const response = NextResponse.json({
-    queue: await readQueue(),
+    waiting,
     roster: roster.map((artist) => ({
       slug: artist.slug,
       name: artist.name,
@@ -44,7 +55,7 @@ export async function GET(request: Request) {
         }
       : null,
     // The account the owner's own Discover picks follow, if linked.
-    discoverAccount: await getOwnerAccount(),
+    discoverAccount: ownerEmail,
     // Discover is stocked during /refresh-earclef; this is what is left.
     discoverStock: {
       sharedReady: sharedReady(sharedStock, today),

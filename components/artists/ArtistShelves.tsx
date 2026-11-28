@@ -1,8 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { mixRows, shuffle } from '@/lib/artists/mix'
+import { mbidOfKey } from '@/lib/fans/artistKeys'
+import { youtubeThumbnailUrl } from '@/lib/links'
 import {
   DEFAULT_FOLLOW_TIER,
   TIER_HINTS,
@@ -12,6 +14,7 @@ import {
 } from '@/lib/tiers'
 import { ArtistCard, type ArtistCardData } from '@/components/ArtistRows'
 import { ScrollRow } from '@/components/ui/ScrollRow'
+import { useFanProfile, type FanProfile } from '@/components/fans/useFanProfile'
 import styles from './ArtistShelves.module.css'
 
 /**
@@ -22,7 +25,10 @@ import styles from './ArtistShelves.module.css'
  *   / On the radar (On the radar always, with a hint when it is empty),
  *   then a random mix of the artists they don't follow yet.
  * Rows wait for the account check and the shuffle, so the server never
- * renders an order the browser would then reshuffle.
+ * renders an order the browser would then reshuffle. The account comes
+ * from the shared profile (useFanProfile), so a Follow pressed on a
+ * Discover card above shows in these rows at once; an artist with no
+ * page yet (Nov 28 2026) is a card that opens their archive card.
  */
 
 type Viewer =
@@ -32,59 +38,57 @@ type Viewer =
       status: 'fan'
       follows: string[]
       tiers: Record<string, ArtistTier>
+      artists: NonNullable<FanProfile['artists']>
       order: string[]
     }
 
-interface FanProfile {
-  signedIn: boolean
-  follows?: string[]
-  tiers?: Record<string, ArtistTier>
-}
-
 const PER_VIEW = 4
+
+/** A followed artist with no page: their card opens the archive card. */
+function pagelessCard(key: string, artists: NonNullable<FanProfile['artists']>): ArtistCardData[] {
+  const artist = artists[key]
+  const mbid = mbidOfKey(key)
+  if (!artist || !mbid) return []
+  return [
+    {
+      slug: key,
+      name: artist.name,
+      identity: 'Not on Ear Clef yet',
+      location: 'Archive card',
+      thumbUrl: artist.videoId ? youtubeThumbnailUrl(artist.videoId) : null,
+      href: `/a/${mbid}`,
+    },
+  ]
+}
 
 function plural(count: number): string {
   return `${count} artist${count === 1 ? '' : 's'}`
 }
 
 export function ArtistShelves({ cards }: { cards: ArtistCardData[] }) {
-  const [viewer, setViewer] = useState<Viewer>({ status: 'loading' })
-
-  useEffect(() => {
-    let cancelled = false
-    const slugs = cards.map((card) => card.slug)
-    ;(async () => {
-      let profile: FanProfile | null = null
-      try {
-        const res = await fetch('/api/fan')
-        if (res.ok) profile = (await res.json()) as FanProfile
-      } catch {
-        // Visitor rendering is the safe default.
-      }
-      if (cancelled) return
-      const order = shuffle(slugs, Math.random)
-      setViewer(
-        profile?.signedIn
-          ? {
-              status: 'fan',
-              follows: profile.follows ?? [],
-              tiers: profile.tiers ?? {},
-              order,
-            }
-          : { status: 'visitor', order },
-      )
-    })()
-    return () => {
-      cancelled = true
-    }
-  }, [cards])
+  const fan = useFanProfile()
+  // Shuffled once the account check has answered; Shuffle reshuffles.
+  const [order, setOrder] = useState<string[] | null>(null)
+  if (fan.status !== 'loading' && order === null) {
+    setOrder(shuffle(cards.map((card) => card.slug), Math.random))
+  }
+  // A failed account check renders as a visitor: the safe default.
+  const profile = fan.status === 'ready' && fan.profile.signedIn ? fan.profile : null
+  const viewer: Viewer =
+    order === null
+      ? { status: 'loading' }
+      : profile
+        ? {
+            status: 'fan',
+            follows: profile.follows,
+            tiers: profile.tiers ?? {},
+            artists: profile.artists ?? {},
+            order,
+          }
+        : { status: 'visitor', order }
 
   function reshuffle() {
-    setViewer((current) =>
-      current.status === 'loading'
-        ? current
-        : { ...current, order: shuffle(current.order, Math.random) },
-    )
+    setOrder((current) => (current ? shuffle(current, Math.random) : current))
   }
 
   if (viewer.status === 'loading') {
@@ -108,7 +112,7 @@ export function ArtistShelves({ cards }: { cards: ArtistCardData[] }) {
   const bySlug = new Map(cards.map((card) => [card.slug, card]))
   const followed =
     viewer.status === 'fan'
-      ? new Set(viewer.follows.filter((slug) => bySlug.has(slug)))
+      ? new Set(viewer.follows.filter((slug) => bySlug.has(slug) || Boolean(viewer.artists[slug])))
       : new Set<string>()
   const mix = viewer.order
     .filter((slug) => !followed.has(slug))
@@ -155,7 +159,7 @@ export function ArtistShelves({ cards }: { cards: ArtistCardData[] }) {
     tier,
     cards: [...followed]
       .filter((slug) => (viewer.tiers[slug] ?? DEFAULT_FOLLOW_TIER) === tier)
-      .flatMap((slug) => bySlug.get(slug) ?? [])
+      .flatMap((slug) => bySlug.get(slug) ?? pagelessCard(slug, viewer.artists))
       .sort(byName),
   })).filter((group) => group.cards.length > 0 || group.tier === 'on-the-radar')
 

@@ -7,6 +7,8 @@ import { getFanByShareToken } from '@/lib/fans/store'
 import { TIER_LABELS, TIER_ORDER, followTiers } from '@/lib/tiers'
 import { SiteNav } from '@/components/SiteNav'
 import styles from './shared.module.css'
+import { mbidOfKey, pagelessView, promoteRostered } from '@/lib/fans/artistKeys'
+import { rosterSlugByMbid } from '@/lib/fans/rosterIndex'
 
 /**
  * A shared taste map — the public, read-only face of /me, reachable
@@ -47,17 +49,27 @@ export default async function SharedTasteMapPage(ctx: SharedPageProps) {
   const fan = await getFanByShareToken(token)
   if (!fan) notFound()
 
-  const stamps = await getFollowStamps(fan.email, fan.follows)
-  const tiers = followTiers(fan.follows, fan.tiers)
-  const rows = fan.follows.flatMap((slug) => {
+  // As it stands today: a followed artist who has a page by now is the
+  // page's follow (read only — the fan's own visit writes it).
+  const view = promoteRostered(fan, rosterSlugByMbid())
+  const stamps = await getFollowStamps(
+    fan.email,
+    view.follows.filter((key) => !mbidOfKey(key)),
+  )
+  const tiers = followTiers(view.follows, view.tiers)
+  // Artists with no page yet (Nov 28 2026) open on their archive card.
+  const pageless = pagelessView(view.follows, view.artistNames)
+  const rows = view.follows.flatMap((slug) => {
     const content = getArtistBySlug(slug)
-    if (!content) return []
+    const archive = pageless[slug]
+    if (!content && !archive) return []
     return [
       {
         slug,
-        name: content.hero.name,
+        name: content ? content.hero.name : archive.name,
         tier: tiers[slug],
         stamp: stamps[slug] ?? null,
+        href: content ? `/${slug}` : `/a/${archive.mbid}`,
       },
     ]
   })
@@ -87,7 +99,7 @@ export default async function SharedTasteMapPage(ctx: SharedPageProps) {
               <ul className={styles.rows}>
                 {group.rows.map((row) => (
                   <li key={row.slug} className={styles.row}>
-                    <Link className={styles.artist} href={`/${row.slug}`}>
+                    <Link className={styles.artist} href={row.href}>
                       {row.name}
                     </Link>
                     {row.stamp && (
@@ -103,7 +115,9 @@ export default async function SharedTasteMapPage(ctx: SharedPageProps) {
           ))}
 
           <p className={styles.footerNote}>
-            Every artist here has a home on Ear Clef —{' '}
+            {rows.some((row) => row.href.startsWith('/a/'))
+              ? 'Artists with an Ear Clef page open on it; the rest open on their archive card —'
+              : 'Every artist here has a home on Ear Clef —'}{' '}
             <Link className={styles.footerLink} href="/">
               start exploring
             </Link>

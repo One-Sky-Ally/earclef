@@ -4,6 +4,7 @@ import { collectPastPicks, ownerPastDays, sharedPastDays, type PastSetDay } from
 import { playablePicks, readFixture, sanitizePool } from '@/lib/discover/serve'
 import { readIndex, readSets } from '@/lib/discover/stockStore'
 import type { DiscoverPick } from '@/lib/discover/types'
+import { withPageSlugs } from '@/lib/discover/pages'
 
 /**
  * Every artist Discover has recommended, newest first (lib/discover/past):
@@ -12,7 +13,14 @@ import type { DiscoverPick } from '@/lib/discover/types'
  * answer is never handed to the owner). Read-only — it never advances the owner's set of the day.
  * Whether the listener has played each artist is NOT here: that list
  * lives only in the listener's own browser (lib/discover/played.ts).
+ * A past pick who has since got an Ear Clef page carries its `slug`
+ * (./pages), so the card's Follow follows the page.
  */
+function withPages<T extends { pick: { mbid: string } }>(artists: T[]): (T & { slug?: string })[] {
+  const slugs = withPageSlugs(artists.map((artist) => artist.pick))
+  return artists.map((artist, i) => (slugs[i].slug ? { ...artist, slug: slugs[i].slug } : artist))
+}
+
 function json(body: unknown, privateAnswer: boolean): NextResponse {
   const response = NextResponse.json(body)
   response.headers.set(
@@ -37,7 +45,7 @@ export async function GET(request: Request) {
       days.push({ date: today, id: 'own-fixture', source: 'own' })
       sets.set('own-fixture', playablePicks(sanitizePool(ownFixture).picks))
     }
-    return json({ status: 'ready', since: today, artists: collectPastPicks(days, sets) }, asksOwn)
+    return json({ status: 'ready', since: today, artists: withPages(collectPastPicks(days, sets)) }, asksOwn)
   }
 
   const days = [
@@ -53,5 +61,5 @@ export async function GET(request: Request) {
     (oldest, day) => (oldest === null || day.date < oldest ? day.date : oldest),
     null,
   )
-  return json({ status: 'ready', since, artists: collectPastPicks(kept, picksBySet) }, asksOwn)
+  return json({ status: 'ready', since, artists: withPages(collectPastPicks(kept, picksBySet)) }, asksOwn)
 }

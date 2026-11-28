@@ -12,15 +12,19 @@ interface RadarFromLikesProps {
   withoutIdentity: number
   /** Dismissed artists still behind saved songs — restorable. */
   dismissedMbids: string[]
-  /** Follows the artist and moves them into the map proper. */
-  onFollow: (slug: string) => Promise<void>
+  /**
+   * Follows the artist and moves them into the map proper — by their
+   * page, or by their MusicBrainz id when they have none (Nov 28 2026).
+   */
+  onFollow: (artist: RadarArtist) => Promise<void>
 }
 
 /**
  * The part of "On the radar" that the listener never assigned: artists
- * their saved songs put there. Rostered ones can be followed in a tap,
- * which moves them out of here and into the map proper; anyone can be
- * dismissed, which is the only radar state that is ever stored.
+ * their saved songs put there. Any of them can be followed in a tap
+ * (artists with no page by their MusicBrainz id), which moves them out
+ * of here and into the map proper; anyone can be dismissed, which is
+ * the only radar state that is ever stored.
  */
 export function RadarFromLikes({
   artists,
@@ -39,10 +43,10 @@ export function RadarFromLikes({
     return null
   }
 
-  async function follow(slug: string) {
-    setBusy(slug)
+  async function follow(artist: RadarArtist) {
+    setBusy(artist.mbid)
     try {
-      await onFollow(slug)
+      await onFollow(artist)
     } finally {
       setBusy(null)
     }
@@ -76,16 +80,14 @@ export function RadarFromLikes({
                   </span>
                 </div>
                 <div className={styles.actions}>
-                  {artist.slug && (
-                    <button
-                      type="button"
-                      className={styles.follow}
-                      onClick={() => follow(artist.slug as string)}
-                      disabled={busy === artist.slug}
-                    >
-                      {busy === artist.slug ? '…' : '♡ Follow'}
-                    </button>
-                  )}
+                  <button
+                    type="button"
+                    className={styles.follow}
+                    onClick={() => follow(artist)}
+                    disabled={busy === artist.mbid}
+                  >
+                    {busy === artist.mbid ? '…' : '♡ Follow'}
+                  </button>
                   <button
                     type="button"
                     className={styles.dismiss}

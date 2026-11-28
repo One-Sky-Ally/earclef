@@ -3,6 +3,8 @@ import { getArtistBySlug } from '@/lib/content'
 import { getFollowStamps } from '@/lib/fans/followNumbers'
 import { getFanByShareToken } from '@/lib/fans/store'
 import { followTiers } from '@/lib/tiers'
+import { mbidOfKey, pagelessView, promoteRostered } from '@/lib/fans/artistKeys'
+import { rosterSlugByMbid } from '@/lib/fans/rosterIndex'
 
 /**
  * A shared taste map, by unguessable token. Public and read-only:
@@ -26,17 +28,27 @@ export async function GET(
     return miss
   }
 
-  const stamps = await getFollowStamps(fan.email, fan.follows)
-  const tiers = followTiers(fan.follows, fan.tiers)
-  const artists = fan.follows.flatMap((slug) => {
+  // As it stands today: a followed artist who has a page by now is the
+  // page's follow (read only — the fan's own visit writes it).
+  const view = promoteRostered(fan, rosterSlugByMbid())
+  const stamps = await getFollowStamps(
+    fan.email,
+    view.follows.filter((key) => !mbidOfKey(key)),
+  )
+  const tiers = followTiers(view.follows, view.tiers)
+  // Artists with no page yet (Nov 28 2026) open on their archive card.
+  const pageless = pagelessView(view.follows, view.artistNames)
+  const artists = view.follows.flatMap((slug) => {
     const content = getArtistBySlug(slug)
-    if (!content) return []
+    const archive = pageless[slug]
+    if (!content && !archive) return []
     return [
       {
         slug,
-        name: content.hero.name,
+        name: content ? content.hero.name : archive.name,
         tier: tiers[slug],
         stamp: stamps[slug] ?? null,
+        href: content ? `/${slug}` : `/a/${archive.mbid}`,
       },
     ]
   })
