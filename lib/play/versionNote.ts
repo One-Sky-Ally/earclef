@@ -27,7 +27,7 @@ const words = (pattern: string) => new RegExp(`(?<![\\p{L}\\p{N}])(?:${pattern})
 /** By meaning, first match wins: "extended remix" is a remix. Read over spaced, folded text. */
 const KINDS: readonly (readonly [RegExp, string])[] = [
   [words('remix(?:es)?|rmx|re mix|mix|rework|refix|re edit|bootleg|mash ?up|vip|dub'), 'Remix'],
-  [words('live|unplugged|in concert|sessions?'), 'Live'],
+  [words('live|unplugged|in concert|sessions?|en vivo|ao vivo|en directo|en concierto'), 'Live'],
   [words('demo'), 'Demo'],
   [words('acoustic|acustic[oa]|acoustique'), 'Acoustic'],
   [words('instrumental'), 'Instrumental'],
@@ -119,6 +119,11 @@ function notePieces(uploadTitle: string): string[] {
   return [...groups, ...segments, ...(afterQuote ? [afterQuote] : [])]
     .map((piece) => piece.trim())
     .filter(Boolean)
+}
+
+/** Does this text name a version (a live take, a remix, a demo …)? */
+export function namesVersion(text: string): boolean {
+  return kindOf(text) !== null
 }
 
 function kindOf(text: string): string | null {

@@ -88,3 +88,12 @@ test('a description that opens as an EPK, trailer or interview is a promo', () =
   // First line only, as before.
   assert.deepEqual(verdict('Official video\nFilmed for an interview series in 1998'), [])
 })
+
+test('a behind-the-camera clip is not the song, in English or Spanish (Proyecto Uno, Nov 28 2026)', () => {
+  assert.equal(
+    isNonSongUpload('PROYECTO UNO DETRAS DE CAMARA VIDEO "MUSICA FELIZ" (DAME ALEGRIA) BEHIND CAMERA', 'Música feliz (Dame alegría)', 'Proyecto Uno'),
+    true,
+  )
+  assert.equal(isNonSongUpload('Artist - Song (Detrás de Escenas)', 'Song', 'Artist'), true)
+  assert.equal(isNonSongUpload('Artist - Behind the Camera (Official Video)', 'Behind the Camera', 'Artist'), false)
+})

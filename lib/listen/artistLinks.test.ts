@@ -37,6 +37,8 @@ test('albums, tracks, playlists and other sites are not artist pages', () => {
       'https://tidal.com/browse/album/1',
       'https://music.youtube.com/playlist?list=OLAK5uy_abc',
       'https://www.youtube.com/channel/UCabcdefghijklmnopqrstuv',
+      'https://music.amazon.evil.example/artists/B000QJPJ5Q',
+      'https://music.amazon.co.uk.phish.net/artists/B000QJPJ5Q',
       'javascript:alert(1)',
       'not a url',
     ]),

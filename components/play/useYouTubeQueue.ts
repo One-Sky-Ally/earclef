@@ -17,7 +17,12 @@ import { countPlay } from '@/lib/tally/beacon'
  * explorer. Render `mountRef` on a positioned element where the player
  * should appear.
  */
-export function useYouTubeQueue(videoIds: string[]) {
+export interface QueueOptions {
+  /** A song started sounding (YouTube's PLAYING) — not merely loaded or skipped. */
+  onPlaying?: (videoId: string) => void
+}
+
+export function useYouTubeQueue(videoIds: string[], options: QueueOptions = {}) {
   // The playing video, by id: a list re-filtered mid-song (the video
   // explorer) keeps the right row lit and moves on from the right place.
   const [currentId, setCurrentId] = useState<string | null>(null)
@@ -30,6 +35,7 @@ export function useYouTubeQueue(videoIds: string[]) {
   const currentIdRef = useRef<string | null>(null)
   const deadRef = useRef<Set<string>>(new Set())
   const idsRef = useRef<string[]>(videoIds)
+  const optionsRef = useRef<QueueOptions>(options)
   const disposedRef = useRef(false)
   // The player exists but isn't ready yet (or is still being built):
   // a click in that window queues its song instead of calling into a
@@ -53,9 +59,10 @@ export function useYouTubeQueue(videoIds: string[]) {
     }
   })
 
-  // Player callbacks read the list through a ref — synced after render.
+  // Player callbacks read the list (and the options) through refs — synced after render.
   useEffect(() => {
     idsRef.current = videoIds
+    optionsRef.current = options
   })
 
   useEffect(() => {
@@ -139,6 +146,7 @@ export function useYouTubeQueue(videoIds: string[]) {
               // included): whatever else plays stops.
               sound.claim()
               countPlay(currentIdRef.current)
+              if (currentIdRef.current) optionsRef.current.onPlaying?.(currentIdRef.current)
               setYielded(false)
               setPaused(false)
             }

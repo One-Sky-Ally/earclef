@@ -1,29 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { YouTubeEmbed } from '@/components/YouTubeEmbed'
-import { LikeButton } from '@/components/fans/LikeButton'
-import { FollowButton } from '@/components/fans/FollowButton'
+import { ShufflePicks, type ShuffleTrack } from './ShufflePicks'
+import { PastPickCard, dayLabel, type PastArtist } from './PastPickCard'
 import { getOwnerKey } from '@/lib/curation/ownerClient'
-import { markPlayed, unmarkPlayed, type PlayedMark } from '@/lib/discover/played'
 import { usePlayedMarks } from './usePlayedMarks'
 import styles from './PastPicks.module.css'
-
-/** One past pick as the route sends it (lib/discover/past.ts PastPick). */
-interface PastArtist {
-  pick: {
-    name: string
-    why: string
-    mbid: string
-    song: { videoId: string; title: string } | null
-    bandcamp: string | null
-  }
-  lastDate: string
-  firstDate: string
-  sources: ('own' | 'shared')[]
-  /** Set once the artist has an Ear Clef page: Follow follows the page. */
-  slug?: string
-}
 
 interface PastBody {
   status: 'ready'
@@ -50,35 +32,15 @@ function usable(entry: Partial<PastArtist>): entry is PastArtist {
   )
 }
 
-function bandcampOf(url: unknown): string | null {
-  if (typeof url !== 'string') return null
-  try {
-    const parsed = new URL(url)
-    const host = parsed.hostname.replace(/^www\./, '')
-    return parsed.protocol === 'https:' && (host === 'bandcamp.com' || host.endsWith('.bandcamp.com'))
-      ? url
-      : null
-  } catch {
-    return null
-  }
-}
-
-const dayLabel = (date: string) =>
-  new Date(`${date}T12:00:00Z`).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'short',
-    timeZone: 'UTC',
-  })
-
-function markLabel(mark: PlayedMark): string {
-  return mark.how === 'hand' ? `Marked as played ${dayLabel(mark.on)}` : `Played ${dayLabel(mark.on)}`
-}
-
 export function PastPicks() {
   const [state, setState] = useState<
     { status: 'loading' } | { status: 'error' } | { status: 'ready'; since: string | null; artists: PastArtist[] }
   >({ status: 'loading' })
   const [filter, setFilter] = useState<Filter>('all')
+  // A filter keeps the cards it showed when chosen: pressing ▶ under "Not
+  // played yet" marks the artist, and the card (and its player) must not
+  // vanish mid-song. Choosing the filter again refreshes it.
+  const [kept, setKept] = useState<ReadonlySet<string> | null>(null)
   const { marks, ready } = usePlayedMarks()
 
   useEffect(() => {
@@ -116,7 +78,7 @@ export function PastPicks() {
 
   const played = state.artists.filter((artist) => marks[artist.pick.mbid])
   const notYet = state.artists.filter((artist) => !marks[artist.pick.mbid])
-  const shown = filter === 'played' ? played : filter === 'not-yet' ? notYet : state.artists
+  const shown = filter === 'all' || !kept ? state.artists : state.artists.filter((artist) => kept.has(artist.pick.mbid))
   const filters: { id: Filter; label: string; count: number }[] = [
     { id: 'all', label: 'All', count: state.artists.length },
     { id: 'not-yet', label: 'Not played yet', count: notYet.length },
@@ -132,7 +94,11 @@ export function PastPicks() {
             type="button"
             className={styles.filter}
             aria-pressed={filter === option.id}
-            onClick={() => setFilter(option.id)}
+            onClick={() => {
+              setFilter(option.id)
+              const chosen = option.id === 'played' ? played : option.id === 'not-yet' ? notYet : null
+              setKept(chosen ? new Set(chosen.map((artist) => artist.pick.mbid)) : null)
+            }}
           >
             {option.label} <span className={styles.count}>{ready ? option.count : '…'}</span>
           </button>
@@ -145,76 +111,39 @@ export function PastPicks() {
         </p>
       )}
 
+      {/* Shuffles what the filter shows: every past pick by default. */}
+      <ShufflePicks
+        tracks={shown.flatMap(({ pick, slug }): ShuffleTrack[] =>
+          pick.song
+            ? [
+                {
+                  videoId: pick.song.videoId,
+                  title: pick.song.title,
+                  artistName: pick.name,
+                  mbid: pick.mbid,
+                  ...(typeof slug === 'string' && /^[a-z0-9-]+$/.test(slug) ? { slug } : {}),
+                },
+              ]
+            : [],
+        )}
+        label={
+          filter === 'all'
+            ? `Shuffle all ${shown.length} past picks`
+            : filter === 'not-yet'
+              ? `Shuffle the ${shown.length} not played yet`
+              : `Shuffle the ${shown.length} played`
+        }
+      />
+
       {shown.length === 0 ? (
         <p className={styles.quiet}>
           {filter === 'played' ? 'Nothing played yet.' : 'You’ve played every past pick.'}
         </p>
       ) : (
         <ul className={styles.grid}>
-          {shown.map(({ pick, lastDate, firstDate, sources, slug: rawSlug }) => {
-            const slug = typeof rawSlug === 'string' && /^[a-z0-9-]+$/.test(rawSlug) ? rawSlug : undefined
-            const mark = marks[pick.mbid]
-            const bandcamp = bandcampOf(pick.bandcamp)
-            return (
-              <li key={pick.mbid} className={styles.card} data-played={mark ? 'true' : undefined}>
-                <div className={styles.top}>
-                  <span className={styles.name}>{pick.name}</span>
-                  <span className={mark ? styles.markPlayed : styles.markNotYet}>
-                    {mark ? `✓ ${markLabel(mark)}` : 'Not played yet'}
-                  </span>
-                </div>
-                <span className={styles.when}>
-                  Recommended {dayLabel(lastDate)}
-                  {firstDate !== lastDate && ` (first ${dayLabel(firstDate)})`}
-                  {sources.includes('own') && ' · in your own picks'}
-                </span>
-                {pick.why && <span className={styles.why}>{pick.why}</span>}
-                {pick.song && (
-                  <YouTubeEmbed
-                    video={{ youtubeId: pick.song.videoId, title: pick.song.title }}
-                    onPlay={() => markPlayed(pick.mbid)}
-                  />
-                )}
-                {/* The same Follow as every artist page (Nov 28 2026). */}
-                {slug ? (
-                  <FollowButton artistName={pick.name} slug={slug} inline />
-                ) : (
-                  <FollowButton
-                    artistName={pick.name}
-                    mbid={pick.mbid}
-                    videoId={pick.song?.videoId}
-                    signInDest="/discover/past"
-                    inline
-                  />
-                )}
-                <div className={styles.actions}>
-                  {pick.song && (
-                    <LikeButton
-                      variant="row"
-                      track={{
-                        videoId: pick.song.videoId,
-                        title: pick.song.title,
-                        artistName: pick.name,
-                        mbid: pick.mbid,
-                      }}
-                    />
-                  )}
-                  <button
-                    type="button"
-                    className={styles.toggle}
-                    onClick={() => (mark ? unmarkPlayed(pick.mbid) : markPlayed(pick.mbid, 'hand'))}
-                  >
-                    {mark ? 'Mark as not played' : 'Mark as played'}
-                  </button>
-                  {bandcamp && (
-                    <a className={styles.link} href={bandcamp} target="_blank" rel="noreferrer">
-                      Bandcamp ↗
-                    </a>
-                  )}
-                </div>
-              </li>
-            )
-          })}
+          {shown.map((entry) => (
+            <PastPickCard key={entry.pick.mbid} entry={entry} mark={marks[entry.pick.mbid]} />
+          ))}
         </ul>
       )}
     </>

@@ -280,9 +280,10 @@ export function refreshSongFacts(
   facts: ReadonlyMap<string, SongFacts>,
 ): { picks: DiscoverPick[]; refreshed: number } {
   let refreshed = 0
+  // Only what YouTube now says differently is rewritten (a set nothing changed in is not written).
   const fresh = <T extends NonNullable<DiscoverPick['song']>>(song: T): T => {
     const now = facts.get(song.videoId)
-    if (!now) return song
+    if (!now || (now.uploadTitle === song.uploadTitle && now.uploader === song.uploader)) return song
     refreshed++
     return { ...song, uploadTitle: now.uploadTitle, uploader: now.uploader }
   }

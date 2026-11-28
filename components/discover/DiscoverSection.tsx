@@ -1,9 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { YouTubeEmbed } from '@/components/YouTubeEmbed'
-import { LikeButton } from '@/components/fans/LikeButton'
 import { FollowButton } from '@/components/fans/FollowButton'
+import { PickListenOn } from './PickListenOn'
+import { PickPlayer, playableSongs, type PickSong } from './PickPlayer'
+import { ShuffleAllPast } from './ShufflePicks'
 import { getOwnerKey } from '@/lib/curation/ownerClient'
 import type { PlayLink, ReadLink } from '@/lib/play/types'
 import { ScrollRow } from '@/components/ui/ScrollRow'
@@ -31,6 +32,10 @@ interface DiscoverPick {
   read: ReadLink
   listenHref: string
   song: DiscoverSong | null
+  /** More of the artist's own verified songs (owner, Nov 28 2026). */
+  more: PickSong[]
+  /** The artist's own pages on music services, checked again at render. */
+  services: unknown
   /** The artist's own Bandcamp page, kept under the player (owner, Oct 11 2026). */
   bandcamp: string | null
   /** For a signed-in listener: the artists in their rows this pick connects to. */
@@ -137,6 +142,8 @@ function normalizePick(pick: Partial<DiscoverPick>): DiscoverPick[] {
       read: pick.read ?? { kind: 'musicbrainz', url: mbUrl },
       listenHref: pick.play?.url ?? pick.read?.url ?? mbUrl,
       song,
+      more: playableSongs(pick.more, song.videoId),
+      services: pick.services,
       bandcamp: bandcampOf(pick),
       because: Array.isArray(pick.because)
         ? pick.because.filter((name): name is string => typeof name === 'string')
@@ -274,29 +281,22 @@ export function DiscoverSection() {
               )}
               <span className={styles.why}>{pick.why}</span>
               {pick.song && (
-                // A verified song plays here, on the site. The artist's
-                // Bandcamp page stays as a small link so listeners can
-                // buy from them directly (owner, Oct 11).
+                // A verified song plays here, on the site; "More from"
+                // keeps going through the artist's own songs (Nov 28
+                // 2026). The artist's Bandcamp page stays as a small link
+                // so listeners can buy from them directly (owner, Oct 11).
                 <div className={styles.song}>
-                  <YouTubeEmbed
-                    video={{ youtubeId: pick.song.videoId, title: pick.song.title }}
+                  <PickPlayer
+                    artistName={pick.name}
+                    mbid={pick.mbid}
+                    song={pick.song}
+                    more={pick.more}
                     onPlay={() => markPlayed(pick.mbid)}
+                    songNote={SONG_KIND_LABELS[pick.song.kind]}
                   />
-                  <div className={styles.songMeta}>
-                    <span className={styles.songKind}>
-                      {SONG_KIND_LABELS[pick.song.kind]}
-                    </span>
-                    <LikeButton
-                      variant="row"
-                      track={{
-                        videoId: pick.song.videoId,
-                        title: pick.song.title,
-                        artistName: pick.name,
-                        mbid: pick.mbid,
-                      }}
-                    />
-                    {pick.bandcamp && (
-                      // Says where it goes: the artist's own Bandcamp page.
+                  {pick.bandcamp && (
+                    <div className={styles.songMeta}>
+                      {/* Says where it goes: the artist's own Bandcamp page. */}
                       <a
                         className={styles.listen}
                         href={pick.bandcamp}
@@ -305,8 +305,8 @@ export function DiscoverSection() {
                       >
                         {pick.name} on Bandcamp ↗
                       </a>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               )}
               {/* The same Follow as every artist page (Nov 28 2026): into the
@@ -322,10 +322,15 @@ export function DiscoverSection() {
                   inline
                 />
               )}
+              <PickListenOn artistName={pick.name} services={pick.services} />
             </div>
           ),
         }))}
       />
+      {/* Every past pick in random order, as on All past picks (Nov 28 2026). */}
+      <div className={styles.shuffle}>
+        <ShuffleAllPast />
+      </div>
     </div>
   )
 }

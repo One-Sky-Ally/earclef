@@ -116,7 +116,21 @@ shared days / 30 owner sets. Start the checks EARLY — right after
 Phase A's miss list — so they run while you write blurbs.
 
 1. `npm run discover-stock -- recheck` — drops stocked songs whose
-   YouTube video died (the pick stays, with its link).
+   YouTube video died (the pick stays, with its link; a dead song also
+   leaves "more from this artist"), and refreshes the upload title and
+   channel kept for every other stocked video, so nothing stored from
+   the YouTube API is older than 30 days. ~25 units per 1,250 videos.
+   Never skip it.
+1b. `npm run discover-stock -- enrich` in the BACKGROUND (owner, Nov 28
+   2026: "more from this artist" + the "Listen on" links). New picks
+   get both at `verify`; this reads any stocked artist still without
+   them, already-shown picks first, by the stored MusicBrainz id (~10 s
+   an artist, a few units each, no searches), uploads in batches, and
+   ends with a list of stocked songs that no longer pass today's rules.
+   HAND-CHECK each one (oEmbed: the uploader is the artist, their
+   Topic/VEVO channel or a label; the title is the song) and swap it
+   with `replace-songs`, never automatically. Hand-check a random sample
+   of 40 "more" songs the same way and log what it found.
 2. `npm run discover-stock -- plan` — reads what is ready on the site
    and writes `data/discover-stock/brief-shared.txt` and
    `brief-owner.txt` (counts include a margin for failures). Nothing to

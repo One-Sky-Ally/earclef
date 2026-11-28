@@ -16,9 +16,12 @@ import { withPageSlugs } from '@/lib/discover/pages'
  * A past pick who has since got an Ear Clef page carries its `slug`
  * (./pages), so the card's Follow follows the page.
  */
-function withPages<T extends { pick: { mbid: string } }>(artists: T[]): (T & { slug?: string })[] {
-  const slugs = withPageSlugs(artists.map((artist) => artist.pick))
-  return artists.map((artist, i) => (slugs[i].slug ? { ...artist, slug: slugs[i].slug } : artist))
+function withPages<T extends { pick: DiscoverPick }>(artists: T[]): (T & { slug?: string })[] {
+  const picks = withPageSlugs(artists.map((artist) => artist.pick))
+  return artists.map((artist, i) => {
+    const { slug, ...pick } = picks[i]
+    return slug ? { ...artist, pick, slug } : { ...artist, pick }
+  })
 }
 
 function json(body: unknown, privateAnswer: boolean): NextResponse {

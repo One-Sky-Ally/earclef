@@ -147,7 +147,7 @@ export const VERSION_MARKERS =
 /** Named by meaning, not by position: "extended remix" is a remix. */
 const VERSION_WORDS = [
   ['remix', /(?<![\p{L}\p{N}])(remix(es)?|rmx|refix|re edit|vip)(?![\p{L}\p{N}])/iu],
-  ['live', /(?<![\p{L}\p{N}])(live|unplugged|in concert|sessions?)(?![\p{L}\p{N}])/iu],
+  ['live', /(?<![\p{L}\p{N}])(live|unplugged|in concert|sessions?|en vivo|ao vivo|en directo|en concierto)(?![\p{L}\p{N}])/iu],
   ['demo', /(?<![\p{L}\p{N}])demo(?![\p{L}\p{N}])/iu],
   ['acoustic', /(?<![\p{L}\p{N}])(acoustic|acustic[oa]|acoustique)(?![\p{L}\p{N}])/iu],
   ['instrumental', /(?<![\p{L}\p{N}])instrumental(?![\p{L}\p{N}])/iu],

@@ -186,6 +186,15 @@ interface VerifiedCatalog {
   titles: string[]
   /** Studio album titles, newest first: the Discogs read takes these next. */
   albums: string[]
+  /** Album and EP titles of every kind: on the channel path a record's title is not always a song. */
+  records: string[]
+}
+
+/** Album and EP release-group titles, any secondary type. */
+export function recordTitles(groups: readonly MbReleaseGroup[]): string[] {
+  return groups.flatMap((group) =>
+    group.title && (group['primary-type'] === 'Album' || group['primary-type'] === 'EP') ? [group.title] : [],
+  )
 }
 
 /** Album release groups with no secondary type (no live, compilation, …), newest first. */
@@ -253,7 +262,7 @@ async function verifiedKnownFor(
     proposedKey &&
     groups.some((group) => normalize(group.title ?? '') === proposedKey)
   ) {
-    return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed), albums: studioAlbums(groups) }
+    return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed), albums: studioAlbums(groups), records: recordTitles(groups) }
   }
 
   const query = encodeURIComponent(
@@ -269,7 +278,7 @@ async function verifiedKnownFor(
   const recordingBody = recordings.ok ? (recordings.body as { recordings?: { title?: string }[] } | null) : null
   if (recordings.ok && !Array.isArray(recordingBody?.recordings)) return 'unavailable'
   if (namesRecording(recordingBody?.recordings ?? [], proposed)) {
-    return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed), albums: studioAlbums(groups) }
+    return { knownFor: proposed, replaced: false, titles: catalogTitles(groups, proposed), albums: studioAlbums(groups), records: recordTitles(groups) }
   }
 
   const dated = groups
@@ -289,6 +298,7 @@ async function verifiedKnownFor(
         replaced: true,
         titles: catalogTitles(groups, replacement.title),
         albums: studioAlbums(groups),
+        records: recordTitles(groups),
       }
     : null
 }
@@ -436,6 +446,7 @@ export async function verifyCandidate(
     aliases,
     titles: catalog.titles,
     albums: catalog.albums,
+    records: catalog.records,
     deadline: context.songDeadline,
     maxRecords: context.maxRecords,
     trace,
@@ -522,6 +533,7 @@ export async function enrichPick(
     aliases,
     titles: catalog?.titles ?? [pick.knownFor],
     albums: catalog?.albums ?? [],
+    records: catalog?.records ?? [],
     deadline: context.songDeadline,
     maxRecords: context.maxRecords,
     trace: context.trace,

@@ -300,3 +300,52 @@ test('more from this artist: every song that passes, one video per song, the pic
   )
   assert.equal(chooseSong([fan, second, liveTake, sameSongAudio, official], ctx)?.videoId, songs[0].videoId)
 })
+
+test('a record title on the channel path: never a track of it, never the whole record (Nov 28 2026)', async () => {
+  const { channelCandidates, rankSongs } = await import('./song.ts')
+  const aliases = aliasKeysOf(['Blue Sky Black Death'])
+  const records = new Set(['Noir'])
+  // "Starry" is the song; "NOIR" is the album it comes from.
+  const starry = channelCandidates(
+    [{ videoId: 'sssssssssss', title: 'Blue Sky Black Death - Starry -NOIR- OFFICIAL HQ' }],
+    ['Noir'],
+    'Blue Sky Black Death',
+    aliases,
+    records,
+  )
+  assert.deepEqual(starry, [])
+  // The title track, with nothing else named beside it, still passes — and is known to be a record's title.
+  const titleTrack = channelCandidates(
+    [{ videoId: 'nnnnnnnnnnn', title: 'Blue Sky Black Death - Noir (Official Audio)' }],
+    ['Noir'],
+    'Blue Sky Black Death',
+    aliases,
+    records,
+  )
+  assert.deepEqual(titleTrack.map((entry) => [entry.songTitle, entry.record]), [['Noir', true]])
+  // A version note beside a record title is not another song.
+  const live = channelCandidates(
+    [{ videoId: 'lllllllllll', title: 'Blue Sky Black Death - Noir (Live at Neumos)' }],
+    ['Noir'],
+    'Blue Sky Black Death',
+    aliases,
+    records,
+  )
+  assert.equal(live.length, 1)
+  // Matched on a record's title and longer than any song: the whole EP (Yves Tumor).
+  const ctxTumor = { name: 'Yves Tumor', aliases: aliasKeysOf(['Yves Tumor']), knownFor: 'Jackie', labels: [] }
+  const ep = base({ videoId: 'eeeeeeeeeee', uploadTitle: 'The Asymptotical World EP (Official Audio)', songTitle: 'The Asymptotical World EP', source: 'channel', uploader: 'Yves Tumor', record: true, seconds: 17 * 60 })
+  const song = base({ videoId: 'jjjjjjjjjjj', uploadTitle: 'Yves Tumor - Jackie (Official Video)', songTitle: 'Jackie', source: 'channel', uploader: 'Yves Tumor', seconds: 4 * 60 })
+  assert.deepEqual(rankSongs([ep, song], ctxTumor).map((entry) => entry.videoId), ['jjjjjjjjjjj'])
+})
+
+test("an untrusted channel's official video plays only when it names the artist (review, Nov 28 2026)", async () => {
+  const { uploadNamesArtist } = await import('./song.ts')
+  const strangers = base({ videoId: 'ooooooooooo', uploadTitle: 'Other Band - Edges Run (Official Video)', songTitle: 'Edges Run', uploader: 'Some Channel' })
+  const named = base({ videoId: 'nnnnnnnnnnn', uploadTitle: 'Mipso - Edges Run (Official Video)', songTitle: 'Edges Run', uploader: 'Some Channel' })
+  assert.deepEqual(rankSongs([strangers], ctx), [])
+  assert.equal(rankSongs([strangers, named], ctx)[0]?.videoId, 'nnnnnnnnnnn')
+  // Short names only as a whole word.
+  assert.equal(uploadNamesArtist('Mew - "Special" Live from Copenhagen', 'Mew', aliasKeysOf(['Mew'])), true)
+  assert.equal(uploadNamesArtist('Mewtwo Theme (Official Video)', 'Mew', aliasKeysOf(['Mew'])), false)
+})

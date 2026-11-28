@@ -68,8 +68,15 @@ export const MIN_DURATION_SECONDS = 90
  * preview, snippet, teaser — and the 90 s floor already stops short
  * clips by length.
  */
+/*
+ * `behind camera` / `detras de camara(s)` / `detras de escena(s)` added
+ * Nov 28 2026: Proyecto Uno's own channel carries "DETRAS DE CAMARA
+ * VIDEO "MUSICA FELIZ" (DAME ALEGRIA) BEHIND CAMERA", which "more from
+ * this artist" would have played as the song. Read on the annotation
+ * only, accents folded, like every marker here.
+ */
 export const NON_SONG_MARKERS =
-  /\b(trailer|teaser|behind the scenes|making of|documentary|interview|preview|snippet|reaction|announcement|album sampler|karaoke|karaoke version|documentaire|documental|reportage|entrevista|entretien|bande annonce|episode|epk|press kit|aftershow|listening party|webisode|docuseries)\b/i
+  /\b(trailer|teaser|behind the scenes|behind (?:the )?cameras?|detras de (?:camaras?|escenas?)|making of|documentary|interview|preview|snippet|reaction|announcement|album sampler|karaoke|karaoke version|documentaire|documental|reportage|entrevista|entretien|bande annonce|episode|epk|press kit|aftershow|listening party|webisode|docuseries)\b/i
 
 /**
  * PROMO, TALK AND PRODUCT MARKERS (owner, Oct 10 2026 — the Uruguay 1996

@@ -1,0 +1,193 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.player {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #0b0c09;
+}
+
+.frame,
+.frame iframe,
+.frame > div {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.facade {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.still {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.8) brightness(0.8) sepia(0.08);
+  transition: filter 0.3s ease;
+}
+
+.facade:hover .still {
+  filter: none;
+}
+
+.facadePlay {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  padding-left: 3px;
+  border-radius: 50%;
+  background: rgba(var(--bg-rgb), 0.82);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.nowRow {
+  outline: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.title {
+  min-width: 0;
+  font-size: 0.92rem;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.songNote {
+  margin-top: -0.25rem;
+  font-size: 0.64rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.position {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.more,
+.listToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 36px;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.more {
+  align-self: flex-start;
+  border-color: var(--accent-deep);
+  color: var(--accent);
+}
+
+.more:hover:not(:disabled),
+.listToggle:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.more:disabled {
+  border-color: var(--border);
+  color: var(--text-muted);
+  cursor: default;
+}
+
+.listToggle {
+  border-color: transparent;
+  padding-inline: 0.4rem;
+}
+
+.moreRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.6rem;
+}
+
+.note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.note a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.rowCurrent .rowTitle {
+  color: var(--accent);
+}
+
+.rowTitle {
+  min-width: 0;
+  font-size: 0.84rem;
+  color: var(--text-soft);
+  overflow-wrap: anywhere;
+}
+
+.rowActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.rowPlay {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--text-soft);
+}
+
+.rowPlay:hover {
+  color: var(--accent);
+}

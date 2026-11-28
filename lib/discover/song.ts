@@ -43,7 +43,7 @@ import { discogsArtistRecords, discogsReleaseLabels } from '../play/discogsApi'
 import { isTrustedUploader, isWholeRecordUpload, uploadKindOf, type UploadKind } from '../play/officialVideo'
 import { recordSongCandidates } from '../play/songIdentity'
 import { normalizeName, titleVariants, variantsIntersect, wholeTitleKeys } from '../play/titleVariants'
-import { labelledSongTitle } from '../play/versionNote'
+import { labelledSongTitle, namesVersion } from '../play/versionNote'
 
 export interface DiscoverSong {
   videoId: string
@@ -72,6 +72,11 @@ export interface SongContext {
   aliases: readonly string[]
   /** Release-group titles for the channel path. */
   titles: readonly string[]
+  /**
+   * Album and EP titles among them: on the channel path such a title may
+   * be a track's album, or the whole record, rather than a song.
+   */
+  records?: readonly string[]
   /** Studio album titles, newest first: read on Discogs right after the knownFor. */
   albums?: readonly string[]
   /** Epoch ms: no new network work after this. */
@@ -91,6 +96,8 @@ interface Found {
   songTitle: string
   release: string
   source: DiscoverSong['source']
+  /** Matched on an album's or EP's own title (the channel path). */
+  record?: boolean
 }
 
 /** After playability: what the ranking reads. */
@@ -100,6 +107,8 @@ export interface RankedInput extends Found {
   nonMusic: boolean
   /** A livestream's recording: never a pick, whatever its title. */
   broadcast?: boolean
+  /** The video's length, when YouTube said. */
+  seconds?: number
 }
 
 interface RankContext {
@@ -126,6 +135,13 @@ const BY_TITLE_ONLY = { byLength: false } as const
  * — a premiered music video runs minutes, a livestream far longer.
  */
 const BROADCAST_SECONDS = 12 * 60
+
+/**
+ * Longer than this AND matched on an album's or EP's own title: the
+ * whole record in one video, not a song (Nov 28 2026: Yves Tumor's
+ * "The Asymptotical World EP (Official Audio)").
+ */
+const WHOLE_RECORD_SECONDS = 12 * 60
 
 /** A live broadcast's recording (a livestream), not a song. */
 export function isBroadcast(facts: { streamed?: boolean; seconds?: number } | undefined): boolean {
@@ -163,23 +179,57 @@ function namesTheArtist(keys: ReadonlySet<string>, aliases: ReadonlySet<string>)
   return [...aliases].some((alias) => alias.length >= 3 && [...keys].some((key) => key.includes(alias)))
 }
 
+/** Where an upload title divides into parts: dashes, bars, slashes, quotes and brackets. */
+const TITLE_PARTS = /\s+[-–—|·:~/]+\s*|\s*[-–—|·~/]+\s+|\s-(?=\S)|(?<=\S)-\s|["“”«»„「」『』()[\]{}（）［］【】]|\s{2,}/
+/** Words that say what kind of upload it is, never which song. */
+const UPLOAD_WORDS =
+  /^(?:(?:official|officiel|oficial|music|video|vídeo|videoclip|clip|audio|lyrics?|visuali[sz]er|hq|hd|4k|mv|m\/v|full|remaster(?:ed)?|\d{2,4})\s*)+$/iu
+const CREDIT = /^(?:feat\.?|ft\.?|featuring|with|w\/|&|\+|x|vs\.?|prod\.?|produced by)(?![\p{L}\p{N}])/iu
+
+/**
+ * Does the upload name a song besides the matched title? On the channel
+ * path an album's title is often the album a track comes from: "Blue
+ * Sky Black Death - Starry -NOIR- OFFICIAL HQ" is "Starry", and "The
+ * Twilight Sad - It Never Was The Same | Òran Mór Session" is "It Never
+ * Was The Same" (Nov 28 2026). The artist's name, upload words ("Official
+ * Audio"), credits and version notes ("Live at …") are not songs.
+ */
+export function namesAnotherSong(uploadTitle: string, title: string, aliases: ReadonlySet<string>): boolean {
+  const wanted = titleVariants(title, aliases)
+  return decodeEntities(uploadTitle)
+    .split(TITLE_PARTS)
+    .map((part) => part.trim())
+    .filter((part) => part !== '')
+    .some((part) => {
+      const variants = titleVariants(part, aliases)
+      if (variants.size === 0 || variantsIntersect(variants, wanted)) return false
+      return !UPLOAD_WORDS.test(part) && !CREDIT.test(part) && !namesVersion(part)
+    })
+}
+
 export function channelCandidates(
   uploads: readonly Upload[],
   titles: readonly string[],
   name: string,
   aliases: ReadonlySet<string> = new Set(),
+  /** Album and EP titles (SongContext.records). */
+  records: ReadonlySet<string> = new Set(),
 ): Found[] {
   const taken = new Set<string>()
+  const recordKeys = new Set([...records].map(normalizeName))
   const named = uploads.map((upload) => ({ upload, variants: titleVariants(upload.title, aliases) }))
   return titles.slice(0, MAX_CHANNEL_TITLES).flatMap((title) => {
     // A self-titled record leaves no variant once the artist's name is
     // set aside, so it is never matched here — it names the artist, not a song.
     const wanted = wholeTitleKeys(title, aliases)
     if (wanted.size === 0 || namesTheArtist(wanted, aliases)) return []
+    const record = recordKeys.has(normalizeName(title))
     const best = named
       .filter(({ upload, variants }) => !taken.has(upload.videoId) && variantsIntersect(variants, wanted))
       .map(({ upload }) => upload)
       .filter((upload) => !isNonSongUpload(upload.title, title, name))
+      // A record's title beside another song's: that song, from the record — not this title.
+      .filter((upload) => !record || !namesAnotherSong(upload.title, title, aliases))
       .map((upload) => ({ upload, noise: annotationOf(upload.title, title, name).length }))
       .sort((a, b) => a.noise - b.noise)[0]
     if (!best) return []
@@ -191,6 +241,7 @@ export function channelCandidates(
         songTitle: title,
         release: title,
         source: 'channel' as const,
+        ...(record ? { record: true } : {}),
       },
     ]
   })
@@ -222,7 +273,7 @@ async function fromChannel(
       return []
     }
     const uploads = await channelUploads(id, apiKey)
-    const found = channelCandidates(uploads, context.titles, context.name, aliases)
+    const found = channelCandidates(uploads, context.titles, context.name, aliases, new Set(context.records ?? []))
     trace?.(
       `channel: ${uploads.length} uploads; ${found.length} name a release-group title as a whole (${context.titles.length} titles walked — album TRACKS are not matched on this path)`,
     )
@@ -333,12 +384,18 @@ export function rankSongs(candidates: readonly RankedInput[], context: RankConte
   const knownFor = titleVariants(context.knownFor, context.aliases)
   const ranked = candidates
     .filter((entry) => entry.playable && !entry.nonMusic && !entry.broadcast)
+    // Matched on a record's own title and far longer than a song: the whole record.
+    .filter((entry) => !(entry.record && (entry.seconds ?? 0) > WHOLE_RECORD_SECONDS))
     .filter((entry) => !isWholeRecordUpload(entry.uploadTitle, entry.songTitle, context.name))
     .map((entry) => {
       const trusted = entry.source === 'channel' || isTrustedUploader(entry.uploader, context.aliases, context.labels)
       return { entry, trusted, kind: uploadKindOf(entry.uploadTitle, entry.songTitle, context.name, entry.uploader, trusted) }
     })
-    .filter(({ kind, trusted }) => kind === 'official-video' || trusted)
+    // An untrusted uploader's song plays only as an official video that names the artist.
+    .filter(
+      ({ entry, kind, trusted }) =>
+        trusted || (kind === 'official-video' && uploadNamesArtist(entry.uploadTitle, context.name, context.aliases)),
+    )
     .map(({ entry, kind }, order) => ({
       entry,
       kind,
@@ -370,6 +427,31 @@ export function rankSongs(candidates: readonly RankedInput[], context: RankConte
   })
 }
 
+const spacedWords = (value: string) =>
+  ` ${value
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/&/g, ' and ')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim()} `
+
+/**
+ * Does the upload's title name the artist? An "Official Video" from a
+ * channel that is not the artist's or a credited label's must (review,
+ * Nov 28 2026): a Discogs user can attach another act's official video
+ * of a same-titled song to the artist's record, and "more from this
+ * artist" plays up to ten songs a pick with no hand-check. Names of four
+ * letters or more match inside the folded title; shorter ones ("Mew")
+ * only as a whole word.
+ */
+export function uploadNamesArtist(uploadTitle: string, name: string, aliases: ReadonlySet<string>): boolean {
+  const joined = normalizeName(uploadTitle)
+  if ([...aliases, normalizeName(name)].some((key) => key.length >= 4 && joined.includes(key))) return true
+  const words = spacedWords(name)
+  return words.trim() !== '' && spacedWords(uploadTitle).includes(words)
+}
+
 /** The pick's song: the best of rankSongs. */
 export function chooseSong(candidates: readonly RankedInput[], context: RankContext): DiscoverSong | null {
   return rankSongs(candidates, context)[0] ?? null
@@ -393,6 +475,7 @@ async function checkCandidates(
       uploader: facts?.channelTitle ?? '',
       playable: playable.has(entry.videoId),
       broadcast: isBroadcast(facts),
+      seconds: facts?.seconds,
       nonMusic:
         nonMusicVerdict({
           title: entry.uploadTitle,

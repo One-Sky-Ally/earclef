@@ -31,7 +31,8 @@ const READERS: [MusicSearchService, Reader][] = [
   [
     'amazonMusic',
     (url) => {
-      if (!/^music\.amazon\.[a-z.]+$/.test(url.hostname)) return null
+      // Amazon's own music domains only — MusicBrainz links are community-edited.
+      if (!/^music\.amazon\.(?:com|co\.uk|de|fr|it|es|co\.jp|ca|com\.au|com\.br|com\.mx|in|nl|se|pl)$/.test(url.hostname)) return null
       const asin = url.pathname.match(/^\/artists\/([A-Z0-9]{10})(?:\/|$)/)?.[1]
       return asin ? `https://${url.hostname}/artists/${asin}` : null
     },

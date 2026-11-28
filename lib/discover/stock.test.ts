@@ -181,4 +181,6 @@ test('the weekly re-check refreshes the upload title and channel kept from YouTu
   assert.equal(picks[0].song?.uploadTitle, 'Rhye - Open (Official Audio)')
   assert.equal(picks[0].song?.title, 'Open')
   assert.equal(picks[0].more?.[0].uploader, 'Rhye Official')
+  // Nothing new from YouTube: nothing counted, nothing to write.
+  assert.equal(refreshSongFacts(picks, new Map([['aaaaaaaaaaa', { uploadTitle: 'Rhye - Open (Official Audio)', uploader: 'Rhye Official' }]])).refreshed, 0)
 })

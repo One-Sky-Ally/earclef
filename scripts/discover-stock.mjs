@@ -40,9 +40,13 @@ const DIR = join(ROOT, 'data', 'discover-stock')
 const PLAN = join(DIR, 'plan.json')
 const CANDIDATES = join(DIR, 'candidates.json')
 const PROGRESS = join(DIR, 'verified.json')
-/** Enrich progress (gitignored): entries older than 29 days are read again, never served. */
+/**
+ * Enrich progress (gitignored). An entry is read again after 21 days and
+ * deleted from disk then: with the weekly recheck refreshing what the
+ * site keeps, nothing from the YouTube API ever ages past 30 days.
+ */
 const ENRICHED = join(DIR, 'enriched.json')
-const ENRICH_FRESH_DAYS = 29
+const ENRICH_FRESH_DAYS = 21
 const ENRICH_BATCH = 100
 const KINDS = ['shared', 'owner']
 /** Candidates written per needed pick: some fail verification or have no playable song. */
@@ -272,6 +276,7 @@ const decodeEntities = (value) =>
   value.replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
 
 async function recheck() {
+  readEnriched() // old enrich entries leave the disk on every weekly run too
   const youtube = env('YOUTUBE_API_KEY')
   if (!youtube) throw new Error('YOUTUBE_API_KEY missing from .env.local')
   const status = await site('GET')
@@ -315,15 +320,36 @@ async function recheck() {
   log(`refreshed what YouTube says about ${facts.length} videos (${refreshed} stored songs updated)`)
 }
 
+/** The enrich file with old entries gone — from disk too, at once. */
 function readEnriched() {
   const state = readJson(ENRICHED, { done: {}, uploaded: [] })
   const cutoff = Date.now() - ENRICH_FRESH_DAYS * 86_400_000
-  // YouTube data kept here is never older than the 30-day rule allows.
+  const before = Object.keys(state.done).length
   for (const [mbid, entry] of Object.entries(state.done)) {
-    if (Date.parse(entry.at) < cutoff) delete state.done[mbid]
+    if (!(Date.parse(entry.at) >= cutoff)) delete state.done[mbid]
   }
   state.uploaded = state.uploaded.filter((mbid) => state.done[mbid])
+  if (existsSync(ENRICHED) && Object.keys(state.done).length !== before) writeJson(ENRICHED, state)
   return state
+}
+
+/**
+ * Once uploaded, an entry keeps only what a later run needs: when it was
+ * read, and — for a stocked song that no longer passes — the old and the
+ * proposed song for the hand-check. The songs themselves live on the site.
+ */
+function slimUploaded(entry) {
+  return entry.ownStillVerified
+    ? { name: entry.name, at: entry.at, ownStillVerified: true }
+    : { name: entry.name, at: entry.at, ownStillVerified: false, own: entry.own, best: entry.best }
+}
+
+/** MusicBrainz id → position on All past picks (owner's view, newest first). */
+async function pastMbids() {
+  const res = await fetch(`${BASE}/api/discover/past?own=1`, { headers: { 'x-owner-key': env('OWNER_KEY') ?? '' } })
+  if (!res.ok) return new Map()
+  const body = await res.json()
+  return new Map((body.artists ?? []).map((artist, i) => [artist.pick.mbid, i]))
 }
 
 /**
@@ -366,7 +392,11 @@ async function enrich(minutes, uploadOnly) {
       seen.add(entry.mbid)
       return true
     })
-    log(`${todo.length} stocked artists to read (${Object.keys(state.done).length} read on earlier runs)`)
+    // Picks already shown (All past picks, newest first) before the ones still to come.
+    const shown = await pastMbids()
+    const rank = (mbid) => (shown.has(mbid) ? shown.get(mbid) : Number.MAX_SAFE_INTEGER)
+    todo.sort((a, b) => rank(a.mbid) - rank(b.mbid))
+    log(`${todo.length} stocked artists to read, ${todo.filter((entry) => shown.has(entry.mbid)).length} of them already shown (${Object.keys(state.done).length} read on earlier runs)`)
     let n = 0
     for (const entry of todo) {
       if (Date.now() >= deadline) break
@@ -402,6 +432,7 @@ async function enrich(minutes, uploadOnly) {
       entries: batch.map(([mbid, entry]) => ({ mbid, more: entry.more, services: entry.services })),
     })
     state.uploaded.push(...batch.map(([mbid]) => mbid))
+    for (const [mbid] of batch) state.done[mbid] = slimUploaded(state.done[mbid])
     writeJson(ENRICHED, state)
     log(`uploaded ${batch.length} artists (${result.enriched} stocked picks enriched)`)
   }

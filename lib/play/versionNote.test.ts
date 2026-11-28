@@ -114,3 +114,8 @@ test('code-review cases (Nov 26 2026): credits, nested brackets, inch marks, qua
   assert.equal(label('Song', 'Artist - Song (Cover Art)', 'Artist'), 'Song')
   assert.equal(label('Song', 'Artist - Song (Japanese Ver.)', 'Artist'), 'Song (Japanese Ver.)')
 })
+
+test('live takes are named in Spanish and Portuguese too (Proyecto Uno, Nov 28 2026)', () => {
+  assert.equal(label('25 horas', 'PROYECTO UNO-25 HORAS (EN VIVO DESDE CASA LA MORADA)', 'Proyecto Uno'), '25 horas (EN VIVO DESDE CASA LA MORADA)')
+  assert.equal(versionNote('Song (Ao Vivo)', 'Song', 'Artist'), 'Ao Vivo')
+})

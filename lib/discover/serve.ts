@@ -58,6 +58,20 @@ export function sanitizeMore(raw: unknown, ownVideoId: string | undefined): NonN
 }
 
 /**
+ * A pick as a page needs it: "more from this artist" carries only what
+ * plays and what is shown (id, title, kind) — the stored upload titles,
+ * channels and records stay on the server (the past picks list is
+ * hundreds of picks long).
+ */
+export function servedPick<T extends Pick<DiscoverPick, 'more'>>(pick: T): T {
+  if (!pick.more) return pick
+  return {
+    ...pick,
+    more: pick.more.map((song) => ({ videoId: song.videoId, title: song.title, kind: song.kind }) as NonNullable<DiscoverPick['more']>[number]),
+  }
+}
+
+/**
  * A stocked pick as uploaded by the refresh script — checked at the
  * door even though only the owner key can upload: stored output
  * outlives the code that wrote it. Returns null for anything unusable.

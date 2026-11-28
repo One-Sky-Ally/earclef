@@ -88,7 +88,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-top: auto;
   padding-top: 0.5rem;
 }
 
@@ -102,12 +101,6 @@
   margin-top: 0;
 }
 
-.songKind {
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
 
 .because {
   font-size: 0.74rem;
@@ -123,4 +116,8 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+.shuffle {
+  margin-top: 0.9rem;
 }
