@@ -38,6 +38,10 @@
  * places.json (owner: never list music people cannot listen to). A
  * quota stop saves the cache and exits; rerun to continue.
  *
+ * A FULL REBUILD, run only when the owner asks (Nov 28 2026: Songs
+ * about this place is low priority — no growing it). The weekly
+ * keep-alive is scripts/recheck-songs-about.mjs.
+ *
  *   node --import ./scripts/test/resolve-ts.mjs --env-file=.env.local scripts/verify-songs-about-play.mjs
  */
 import { existsSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'

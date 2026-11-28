@@ -194,3 +194,23 @@ export function rankCandidates(candidates) {
     )
     .map(({ candidate }) => candidate)
 }
+
+/**
+ * The weekly re-check (owner, Nov 28 2026: keep only the small re-check
+ * of the videos already listed, inside the 30-day rule): every song
+ * whose video no longer plays comes off, and a place with nothing left
+ * is not listed. Nothing is added. Returns new objects; the input stays.
+ */
+export function withoutDeadVideos(places, alive) {
+  const dropped = []
+  const kept = {}
+  for (const [code, place] of Object.entries(places)) {
+    const songs = place.songs.filter((song) => {
+      if (alive.has(song.v)) return true
+      dropped.push({ place: code, ...song })
+      return false
+    })
+    if (songs.length > 0) kept[code] = { ...place, songs }
+  }
+  return { places: kept, dropped }
+}

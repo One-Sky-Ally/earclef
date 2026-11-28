@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { YouTubeEmbed } from '@/components/YouTubeEmbed'
+import { LikeButton } from '@/components/fans/LikeButton'
 import { getOwnerKey } from '@/lib/curation/ownerClient'
 import { markPlayed, unmarkPlayed, type PlayedMark } from '@/lib/discover/played'
 import { usePlayedMarks } from './usePlayedMarks'
@@ -171,6 +172,17 @@ export function PastPicks() {
                   />
                 )}
                 <div className={styles.actions}>
+                  {pick.song && (
+                    <LikeButton
+                      variant="row"
+                      track={{
+                        videoId: pick.song.videoId,
+                        title: pick.song.title,
+                        artistName: pick.name,
+                        mbid: pick.mbid,
+                      }}
+                    />
+                  )}
                   <button
                     type="button"
                     className={styles.toggle}

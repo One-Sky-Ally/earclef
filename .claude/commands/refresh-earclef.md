@@ -162,6 +162,24 @@ Phase A's miss list — so they run while you write blurbs.
 7. `npm run discover-stock -- status` → note "shared N days ahead,
    owner N sets" for the log line.
 
+## Phase F — Songs about this place: the weekly re-check (~1 min, every run)
+
+Low priority, keep-alive only (owner, Nov 28 2026): "Only keep the small
+weekly re-check of the videos already listed, so it stays within the
+30-day rule. Don't spend time or searches growing it." No new songs, no
+searches, no rebuild (scripts/verify-songs-about-play.mjs runs only when
+the owner asks).
+
+    node --import ./scripts/test/resolve-ts.mjs --env-file=.env.local scripts/recheck-songs-about.mjs
+
+About 25 units (one videos.list per 50 listed videos). Every song whose
+video no longer plays here comes off; the file's `videosCheckedAt` is
+stamped. Never skip it two runs in a row: a listed video must not go 30
+days without YouTube vouching for it. Commit
+lib/explore/songs-about-places.json (and, when songs came off, the
+regenerated lib/explore/cultures.json and lib/artist/start-here.json
+that `npm run build` writes). Log line: "Songs-about: N checked, M off".
+
 ## Close out
 
 - `node scripts/validate-content.mjs` + `npm run build` must pass.

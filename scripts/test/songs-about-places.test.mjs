@@ -12,6 +12,7 @@ import {
   rankCandidates,
   servedUnder,
   versionOf,
+  withoutDeadVideos,
 } from '../lib/songsAboutPlaces.mjs'
 
 const maps = placeMaps({
@@ -89,4 +90,18 @@ test('the plain record outranks any version; then official video, audio, video',
     { videoId: 'd', kind: 'official-video', version: null },
   ])
   assert.deepEqual(ranked.map((c) => c.videoId), ['d', 'c', 'b', 'a'])
+})
+
+test('the weekly re-check takes off only the songs whose video stopped playing (owner, Nov 28 2026)', () => {
+  const places = {
+    GB: { name: 'United Kingdom', kind: 'country', songs: [{ t: 'London', v: 'aaaaaaaaaaa' }, { t: 'Warwick Avenue', v: 'bbbbbbbbbbb' }] },
+    'GB-SCT': { name: 'Scotland', kind: 'nation', songs: [{ t: 'Caledonia', v: 'ccccccccccc' }] },
+  }
+  const { places: kept, dropped } = withoutDeadVideos(places, new Set(['aaaaaaaaaaa']))
+  assert.deepEqual(kept.GB.songs.map((song) => song.t), ['London'])
+  // A place with nothing left to play is not listed at all.
+  assert.equal(kept['GB-SCT'], undefined)
+  assert.deepEqual(dropped.map((row) => `${row.place}:${row.t}`), ['GB:Warwick Avenue', 'GB-SCT:Caledonia'])
+  // The input is left as it was.
+  assert.equal(places.GB.songs.length, 2)
 })
