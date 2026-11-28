@@ -15,6 +15,7 @@ import {
   matchesFilters,
   type OnThisDayFilters,
 } from '@/lib/explore/onThisDayFilters'
+import { dayFilePath, decodeDayFile } from '@/lib/explore/onThisDayAll'
 import { Icon } from '@/components/ui/Icon'
 import styles from './OnThisDay.module.css'
 import { countPlay } from '@/lib/tally/beacon'
@@ -42,6 +43,11 @@ const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
  * page says why the past looks thin (most days: around one in ten).
  */
 const FEW_OLD_SHARE = 0.15
+/**
+ * A filter can match two thousand releases; the list draws this many at
+ * a time, with a button for the next batch, so the page stays quick.
+ */
+const PAGE_SIZE = 150
 
 const pad = (value: number) => String(value).padStart(2, '0')
 const localToday = () => {
@@ -108,6 +114,55 @@ function itemHref(item: OnThisDayItem): { href: string; external: boolean } | nu
 }
 
 const itemKey = (item: OnThisDayItem) => `${item.a ?? item.dg}-${item.y}-${item.t}`
+
+/** Every release of the day (lib/explore/onThisDayAll.ts): loading, loaded, or not available. */
+type EveryRelease =
+  | { status: 'loading' }
+  | { status: 'ready'; items: OnThisDayItem[]; countryNames: Record<string, string> }
+  | { status: 'missing' }
+
+/**
+ * The day's whole release list, fetched only once the listed day is on
+ * screen: at once when a filter is already on, otherwise when the
+ * browser is idle, so the unfiltered view never waits for it. A missing
+ * file means the filters work on the listed releases, as before.
+ */
+function useEveryRelease(payload: OnThisDayPayload, filtering: boolean): EveryRelease {
+  const [state, setState] = useState<EveryRelease>({ status: 'loading' })
+  const [wanted, setWanted] = useState(filtering)
+  if (filtering && !wanted) setWanted(true)
+
+  useEffect(() => {
+    if (wanted) return
+    const idle = window.requestIdleCallback
+      ? window.requestIdleCallback(() => setWanted(true), { timeout: 4000 })
+      : window.setTimeout(() => setWanted(true), 1500)
+    return () => {
+      if (window.cancelIdleCallback) window.cancelIdleCallback(idle)
+      else window.clearTimeout(idle)
+    }
+  }, [wanted])
+
+  useEffect(() => {
+    if (!wanted || payload.total === 0) return
+    let cancelled = false
+    fetch(dayFilePath(payload.date))
+      .then((res) => (res.ok ? res.json() : Promise.reject(new Error(`HTTP ${res.status}`))))
+      .then((value: unknown) => {
+        if (cancelled) return
+        const day = decodeDayFile(value, payload.date, payload.items)
+        setState(day ? { status: 'ready', ...day } : { status: 'missing' })
+      })
+      .catch(() => {
+        if (!cancelled) setState({ status: 'missing' })
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [wanted, payload])
+
+  return state
+}
 
 function ArtistLink({ item }: { item: OnThisDayItem }) {
   const target = itemHref(item)
@@ -416,9 +471,29 @@ function DayView({
     .reduce((sum, [, count]) => sum + count, 0)
   const countries = Object.keys(payload.byCountry).length
   const filtering = hasActiveFilter(filters)
-  const shown = applyFilters(payload.items, filters)
-  const countryOf = (item: OnThisDayItem) => payload.countryNames[item.c] ?? item.c
-  const options = filterOptions(payload.items, filters, (code) => payload.countryNames[code] ?? code)
+  // Unfiltered, the page lists the day's selection exactly as before. A
+  // filter searches EVERY release of the day once that has loaded.
+  const every = useEveryRelease(payload, filtering)
+  const everyItems = every.status === 'ready' ? every.items : null
+  const pool = everyItems ?? payload.items
+  const countryNames = useMemo(
+    () => (every.status === 'ready' ? { ...every.countryNames, ...payload.countryNames } : payload.countryNames),
+    [every, payload.countryNames],
+  )
+  const shown = useMemo(
+    () => applyFilters(filtering ? pool : payload.items, filters),
+    [filtering, pool, payload.items, filters],
+  )
+  // The menus count over every release when known, so each number says
+  // how many picking it will show.
+  const options = useMemo(
+    () => filterOptions(pool, filters, (code) => countryNames[code] ?? code),
+    [pool, filters, countryNames],
+  )
+  const [limit, setLimit] = useState({ for: shown, count: PAGE_SIZE })
+  const visibleCount = limit.for === shown ? limit.count : PAGE_SIZE
+  const visible = shown.slice(0, visibleCount)
+  const countryOf = (item: OnThisDayItem) => countryNames[item.c] ?? item.c
   const setFilter = (key: keyof OnThisDayFilters, value: string) =>
     setFilters({ ...filters, [key]: value })
   // Every verified song of the day, shuffled once; the playlist is the
@@ -471,11 +546,17 @@ function DayView({
   }
 
   // `shown` is already in the chosen order, so the decades follow it.
+  // Counts are over every match; the list draws `visible` of them.
+  const decadeOf = (item: OnThisDayItem) => String(Math.floor(item.y / 10) * 10)
+  const matchesPerDecade = new Map<string, number>()
+  for (const item of shown) matchesPerDecade.set(decadeOf(item), (matchesPerDecade.get(decadeOf(item)) ?? 0) + 1)
   const grouped = new Map<string, OnThisDayItem[]>()
-  for (const item of shown) {
-    const decade = String(Math.floor(item.y / 10) * 10)
+  for (const item of visible) {
+    const decade = decadeOf(item)
     grouped.set(decade, [...(grouped.get(decade) ?? []), item])
   }
+  const searchedAll = filtering && everyItems !== null
+  const searching = filtering && every.status === 'loading'
 
   return (
     <div className={styles.layout}>
@@ -562,14 +643,18 @@ function DayView({
           )}
         </form>
         <p className={styles.filterNote} aria-live="polite">
-          {filtering
-            ? `Showing ${shown.length} of the ${payload.items.length} releases listed for ${label(payload.date)}.`
-            : `Country is the artist’s country on Ear Clef; genres are the artist’s own tags.`}
+          {!filtering
+            ? `Country is the artist’s country on Ear Clef; genres are the artist’s own tags.`
+            : searchedAll
+            ? `${formatCount(shown.length)} of all ${formatCount(pool.length)} releases on ${label(payload.date)} match.`
+            : searching
+            ? `Searching all ${formatCount(payload.total)} releases on ${label(payload.date)}… ${shown.length} of the listed ones match so far.`
+            : `Showing ${shown.length} of the ${payload.items.length} releases listed for ${label(payload.date)}.`}
         </p>
 
-        {shown.length === 0 && (
+        {shown.length === 0 && !searching && (
           <p className={styles.note}>
-            No release listed for {label(payload.date)} matches these filters.{' '}
+            No release {searchedAll ? 'on' : 'listed for'} {label(payload.date)} matches these filters.{' '}
             <button
               type="button"
               className={styles.inlineButton}
@@ -587,7 +672,10 @@ function DayView({
                 {decade}s
                 <span className={styles.decadeCount}>
                   {filtering
-                    ? `${items.length} ${items.length === 1 ? 'match' : 'matches'}`
+                    ? (() => {
+                        const matches = matchesPerDecade.get(decade) ?? items.length
+                        return `${formatCount(matches)} ${matches === 1 ? 'match' : 'matches'}`
+                      })()
                     : items.length < all
                     ? `${items.length} of ${formatCount(all)} shown`
                     : `${formatCount(all)} with this exact date`}
@@ -607,6 +695,19 @@ function DayView({
             </div>
           )
         })}
+
+        {shown.length > visible.length && (
+          <button
+            type="button"
+            className={styles.more}
+            onClick={() => setLimit({ for: shown, count: visibleCount + PAGE_SIZE })}
+          >
+            Show {formatCount(Math.min(PAGE_SIZE, shown.length - visible.length))} more
+            <span className={styles.moreCount}>
+              {formatCount(visible.length)} of {formatCount(shown.length)} shown
+            </span>
+          </button>
+        )}
 
         <p className={styles.method}>
           Only exact release dates are used: the first release date of an original album,
@@ -688,7 +789,7 @@ function DayView({
               }
             />
             <p className={styles.playNote}>
-              {playable.length} of the {shown.length} listed releases can play: a play button
+              {playable.length} of the {formatCount(shown.length)} releases shown can play: a play button
               appears only where a video is verified as this release by this artist.
             </p>
           </div>

@@ -24,8 +24,17 @@
  * Resumable: the Discogs pass (~19M rows) is cached in
  * data/on-this-day-work.json (gitignored); --fresh redoes it.
  *
- *   node scripts/build-on-this-day.mjs [--fresh]
- * Output: lib/explore/on-this-day/{01..12}.json + index.json
+ * EVERY RELEASE (owner, Nov 22 2026): the page's filters reach every
+ * exact-dated original of a day, not only the listed selection, so each
+ * day is also written whole to public/data/on-this-day/MM-DD.json
+ * (lib/explore/onThisDayAll.ts reads it). Static and fetched only when
+ * the page needs it. --every-release writes ONLY those files and leaves
+ * the listed shards (and the verified videos added to them) untouched;
+ * any listed release the new pass lacks is carried into its day file.
+ *
+ *   node scripts/build-on-this-day.mjs [--fresh] [--every-release]
+ * Output: lib/explore/on-this-day/{01..12}.json + index.json,
+ *         public/data/on-this-day/{MM-DD}.json
  */
 import { createReadStream, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
@@ -44,6 +53,8 @@ const WORK_PATH = 'data/on-this-day-work.json'
 const WORK_VERSION = 2
 const OUT_DIR = 'lib/explore/on-this-day'
 const FRESH = process.argv.includes('--fresh')
+const EVERY_RELEASE_ONLY = process.argv.includes('--every-release')
+const ALL_DIR = 'public/data/on-this-day'
 /** Listed per decade on a day, dealt round-robin across countries. */
 const PER_DECADE = 12
 /** Discogs "Various" (the dump's own id). */
@@ -232,6 +243,65 @@ async function discogsItems(pool) {
   return items
 }
 
+/**
+ * One day, whole, for the page's filters: every exact-dated original,
+ * oldest first, the most-followed artist first within a year. Artists
+ * are stored once per day (name, country, MusicBrainz id, raw tags),
+ * with the names of the day's countries;
+ * a release is [year, title, kind, artist index, Discogs release id or 0].
+ * Listed releases the pass lacks are carried in, so a filter never
+ * hides what the unfiltered list shows.
+ */
+function writeEveryRelease(byDay, listedByDay) {
+  mkdirSync(ALL_DIR, { recursive: true })
+  const key = (item) => `${item.a ?? item.dg}-${item.y}-${item.t}`
+  let written = 0
+  let releases = 0
+  let carried = 0
+  const days = [...new Set([...byDay.keys(), ...listedByDay.keys()])].sort()
+  for (const monthDay of days) {
+    const all = [...(byDay.get(monthDay) ?? [])]
+    const seen = new Set(all.map(key))
+    for (const listed of listedByDay.get(monthDay) ?? []) {
+      if (seen.has(key(listed))) continue
+      seen.add(key(listed))
+      all.push({ ...listed, w: listed.w ?? 0 })
+      carried++
+    }
+    all.sort((a, b) => a.y - b.y || (b.w ?? 0) - (a.w ?? 0) || a.t.localeCompare(b.t))
+    const artists = []
+    const artistIndex = new Map()
+    const rows = []
+    for (const item of all) {
+      const id = item.a ?? `dg:${item.ga ?? item.n}`
+      if (!artistIndex.has(id)) {
+        artistIndex.set(id, artists.length)
+        artists.push([item.n, item.c, item.a ?? null, item.g ?? []])
+      }
+      rows.push([item.y, item.t, item.k, artistIndex.get(id), item.dg ?? 0])
+    }
+    // Names for the day's countries, so the Country menu never shows a bare code.
+    const names = Object.fromEntries(
+      [...new Set(artists.map(([, code]) => code))].sort().map((code) => [code, countryNames[code] ?? code]),
+    )
+    writeFileSync(join(ALL_DIR, `${monthDay}.json`), JSON.stringify({ date: monthDay, countryNames: names, artists, items: rows }))
+    written++
+    releases += rows.length
+  }
+  console.log(`Every release → ${ALL_DIR}: ${releases.toLocaleString()} releases over ${written} days (${carried} listed releases carried in)`)
+}
+
+/** The listed releases per day, as the committed shards hold them now. */
+function listedByDay() {
+  const out = new Map()
+  for (let month = 1; month <= 12; month++) {
+    const path = join(OUT_DIR, `${String(month).padStart(2, '0')}.json`)
+    if (!existsSync(path)) continue
+    for (const [monthDay, day] of Object.entries(readJson(path).days ?? {})) out.set(monthDay, day.items ?? [])
+  }
+  return out
+}
+
 async function main() {
   const { byId: artists, placements } = siteArtists()
   console.log(`site artists: ${artists.size.toLocaleString()}`)
@@ -241,6 +311,10 @@ async function main() {
   for (const item of [...mb, ...dg]) {
     if (!byDay.has(item.md)) byDay.set(item.md, [])
     byDay.get(item.md).push(item)
+  }
+  if (EVERY_RELEASE_ONLY) {
+    writeEveryRelease(byDay, listedByDay())
+    return
   }
   mkdirSync(OUT_DIR, { recursive: true })
   const months = {}
@@ -271,6 +345,7 @@ async function main() {
     countryNames,
   }, null, 2)}\n`)
   console.log(`Done → ${OUT_DIR}: ${mb.length + dg.length} exact-dated originals over ${byDay.size} days`)
+  writeEveryRelease(byDay, listedByDay())
 }
 
 main().catch((error) => {
