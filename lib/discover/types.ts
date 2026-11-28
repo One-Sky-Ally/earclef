@@ -4,6 +4,7 @@
  * Shared by the site (serving the stocked sets) and the local stocking
  * script (scripts/discover-stock.mjs). No I/O here.
  */
+import type { ArtistLinks } from '../listen/artistLinks'
 import type { PlayLink, ReadLink } from '../play/types'
 import type { DiscoverSong } from './song'
 
@@ -32,6 +33,20 @@ export interface DiscoverPick {
    * no verified song: never stocked, never shown (owner, Oct 15 2026).
    */
   song: DiscoverSong | null
+  /**
+   * More of the artist's own songs, best first (owner, Nov 28 2026:
+   * "Keep listening to more music from that artist. It must be that
+   * artist's music only"): each passed the same identity bar as `song`
+   * (./song rankSongs), one video per song, never `song` again. Absent
+   * until the refresh's enrich step has read the artist.
+   */
+  more?: DiscoverSong[]
+  /**
+   * The artist's own pages on music services, from MusicBrainz's url
+   * relations (../listen/artistLinks) — the "Listen on" picker opens
+   * these, else an honestly labelled search. Absent until enriched.
+   */
+  services?: ArtistLinks
   /** The artist's MB-linked Bandcamp page, whatever `play` picked. */
   bandcamp: string | null
   /**
@@ -64,3 +79,6 @@ export const SET_SIZES = { shared: 12, owner: 8 } as const
 export const VISITOR_PICKS = SET_SIZES.shared
 
 export type StockKind = keyof typeof SET_SIZES
+
+/** Songs kept beyond the pick's own: "more from this artist" plays up to 10 in all. */
+export const MAX_MORE_SONGS = 9

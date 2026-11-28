@@ -2,11 +2,17 @@ import { NextResponse } from 'next/server'
 import { isOwner, unauthorized } from '@/lib/curation/auth'
 import { ownerLibrary } from '@/lib/discover/library'
 import roster from '@/lib/discover/roster.json'
-import { sanitizeSong, sanitizeStockPick } from '@/lib/discover/serve'
+import { sanitizeArtistLinks } from '@/lib/listen/artistLinks'
+import { sanitizeMore, sanitizeSong, sanitizeStockPick } from '@/lib/discover/serve'
 import {
   appendOwner,
   appendShared,
+  enrichPicks,
+  refreshSongFacts,
   replacePickSongs,
+  withoutDeadSongs,
+  type PickEnrichment,
+  type SongFacts,
   setsToAdd,
   songKey,
   sharedReady,
@@ -31,7 +37,10 @@ import { SET_SIZES, type DiscoverPick, type StockKind } from '@/lib/discover/typ
  * every artist already stocked (so nothing repeats), every stocked
  * video (for the playability re-check) and the owner's rows (the taste
  * the owner's sets are written from). POST: `append` full sets the
- * local script verified, or `drop-songs` for videos that died.
+ * local script verified, `drop-songs` for videos that died,
+ * `refresh-songs` for what YouTube says about the rest today (the
+ * 30-day rule), `replace-songs` for re-verified songs, and `enrich` for
+ * "more from this artist" and the "Listen on" links (Nov 28 2026).
  * Nothing here calls a model.
  */
 
@@ -82,7 +91,12 @@ export async function GET(request: Request) {
       names: [...new Set(picks.map((pick) => pick.name))],
       mbids: [...new Set(picks.map((pick) => pick.mbid))],
     },
-    videos: [...new Set(picks.flatMap((pick) => (pick.song ? [pick.song.videoId] : [])))],
+    // Every stocked video, "more from this artist" included: the weekly re-check reads them all.
+    videos: [
+      ...new Set(
+        picks.flatMap((pick) => [...(pick.song ? [pick.song.videoId] : []), ...(pick.more ?? []).map((song) => song.videoId)]),
+      ),
+    ],
     ownerLibrary: rows.library,
     ownerLibrarySource: rows.source,
     // ?songs=1 — every stocked pick's song, for the song re-check (Nov 24, 2026).
@@ -93,6 +107,7 @@ export async function GET(request: Request) {
             mbid: pick.mbid,
             knownFor: pick.knownFor,
             song: pick.song,
+            enriched: Array.isArray(pick.more),
           })),
         }
       : {}),
@@ -108,6 +123,45 @@ interface AppendBody {
 interface DropSongsBody {
   action: 'drop-songs'
   videoIds?: unknown
+}
+
+interface EnrichBody {
+  action: 'enrich'
+  /** [{ mbid, more: [songs], services: { service: artist page } }] */
+  entries?: unknown
+}
+
+interface RefreshSongsBody {
+  action: 'refresh-songs'
+  /** [{ videoId, uploadTitle, uploader }] as YouTube answers today. */
+  songs?: unknown
+}
+
+/** At most this many artists enriched, or songs refreshed, per call. */
+const MAX_ENRICH = 200
+const MAX_REFRESH = 2000
+
+function enrichmentMap(raw: unknown): Map<string, PickEnrichment> | null {
+  if (!Array.isArray(raw) || raw.length === 0 || raw.length > MAX_ENRICH) return null
+  const entries = raw.flatMap((entry): [string, PickEnrichment][] => {
+    if (!entry || typeof entry !== 'object') return []
+    const { mbid, more, services } = entry as { mbid?: unknown; more?: unknown; services?: unknown }
+    if (typeof mbid !== 'string' || !MBID.test(mbid) || !Array.isArray(more)) return []
+    return [[mbid, { more: sanitizeMore(more, undefined), services: sanitizeArtistLinks(services) }]]
+  })
+  return entries.length === raw.length ? new Map(entries) : null
+}
+
+function factsMap(raw: unknown): Map<string, SongFacts> | null {
+  if (!Array.isArray(raw) || raw.length === 0 || raw.length > MAX_REFRESH) return null
+  const entries = raw.flatMap((entry): [string, SongFacts][] => {
+    if (!entry || typeof entry !== 'object') return []
+    const { videoId, uploadTitle, uploader } = entry as Record<string, unknown>
+    if (typeof videoId !== 'string' || !/^[A-Za-z0-9_-]{11}$/.test(videoId)) return []
+    if (typeof uploadTitle !== 'string' || typeof uploader !== 'string') return []
+    return [[videoId, { uploadTitle: uploadTitle.slice(0, 300), uploader: uploader.slice(0, 200) }]]
+  })
+  return entries.length === raw.length ? new Map(entries) : null
 }
 
 interface ReplaceSongsBody {
@@ -141,7 +195,7 @@ function replacementMap(raw: unknown): Map<string, DiscoverPick['song']> | null 
 
 export async function POST(request: Request) {
   if (!isOwner(request)) return unauthorized()
-  let body: AppendBody | DropSongsBody | ReplaceSongsBody
+  let body: AppendBody | DropSongsBody | ReplaceSongsBody | EnrichBody | RefreshSongsBody
   try {
     body = await request.json()
   } catch {
@@ -157,19 +211,35 @@ export async function POST(request: Request) {
     )
     const [shared, owner] = await Promise.all([readIndex('shared'), readIndex('owner')])
     const sets = await readSets(referencedIds(shared, owner))
-    let songsDropped = 0
-    for (const set of sets) {
-      let changed = false
-      const picks = set.picks.map((pick): DiscoverPick => {
-        if (!pick.song || !dead.has(pick.song.videoId)) return pick
-        changed = true
-        songsDropped++
-        // The pick stays — its play/read link still works; only the song goes.
-        return { ...pick, song: null }
-      })
-      if (changed) await writeSet({ ...set, picks })
-    }
-    return noStore({ ok: true, songsDropped })
+    // The pick stays — its play/read link still works; only the song goes.
+    const results = sets.map((set) => ({ set, ...withoutDeadSongs(set.picks, dead) }))
+    const changed = results.filter((result) => result.songsDropped + result.moreDropped > 0)
+    await Promise.all(changed.map(({ set, picks }) => writeSet({ ...set, picks })))
+    return noStore({
+      ok: true,
+      songsDropped: changed.reduce((sum, result) => sum + result.songsDropped, 0),
+      moreDropped: changed.reduce((sum, result) => sum + result.moreDropped, 0),
+    })
+  }
+
+  if (body.action === 'refresh-songs') {
+    const facts = factsMap(body.songs)
+    if (!facts) return noStore({ error: `1–${MAX_REFRESH} songs, each { videoId, uploadTitle, uploader }` }, 400)
+    const [shared, owner] = await Promise.all([readIndex('shared'), readIndex('owner')])
+    const sets = await readSets(referencedIds(shared, owner))
+    const changed = sets.map((set) => ({ set, ...refreshSongFacts(set.picks, facts) })).filter((result) => result.refreshed > 0)
+    await Promise.all(changed.map(({ set, picks }) => writeSet({ ...set, picks })))
+    return noStore({ ok: true, refreshed: changed.reduce((sum, result) => sum + result.refreshed, 0) })
+  }
+
+  if (body.action === 'enrich') {
+    const entries = enrichmentMap(body.entries)
+    if (!entries) return noStore({ error: `1–${MAX_ENRICH} entries, each { mbid, more: [...], services: {...} }` }, 400)
+    const [shared, owner] = await Promise.all([readIndex('shared'), readIndex('owner')])
+    const sets = await readSets(referencedIds(shared, owner))
+    const changed = sets.map((set) => ({ set, ...enrichPicks(set.picks, entries) })).filter((result) => result.enriched > 0)
+    await Promise.all(changed.map(({ set, picks }) => writeSet({ ...set, picks })))
+    return noStore({ ok: true, enriched: changed.reduce((sum, result) => sum + result.enriched, 0) })
   }
 
   if (body.action === 'replace-songs') {

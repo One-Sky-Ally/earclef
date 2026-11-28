@@ -14,10 +14,11 @@ import {
   resolveMbArtistPlay,
   type MbArtistBody,
 } from '../play/resolve'
+import { artistLinksFromRelations, type ArtistLinks } from '../listen/artistLinks'
 import { fetchMusicBrainzJson } from './mbFetch'
-import { resolveDiscoverSong } from './song'
-import { titleVariants, variantsIntersect } from '../play/titleVariants'
-import type { DiscoverPick, RawPick } from './types'
+import { resolveDiscoverSongs, type DiscoverSong } from './song'
+import { normalizeName, titleVariants, variantsIntersect } from '../play/titleVariants'
+import { MAX_MORE_SONGS, type DiscoverPick, type RawPick } from './types'
 
 /**
  * Letters NFD leaves whole, spelled out: "Mediæval Bæbes" on MusicBrainz
@@ -427,11 +428,12 @@ export async function verifyCandidate(
   const artist = artistRes.ok ? (artistRes.body as MbArtistBody) : null
   const { play, read } = await resolveMbArtistPlay(match.mbid, null, artist)
   let lookupFailed = false
-  const song = await resolveDiscoverSong({
+  const aliases = songNames(artist, match.namedBy === 'alias' ? candidate.name : null)
+  const songs = await resolveDiscoverSongs({
     name: match.canonicalName,
     knownFor: catalog.knownFor,
     relations: artist?.relations ?? [],
-    aliases: songNames(artist, match.namedBy === 'alias' ? candidate.name : null),
+    aliases,
     titles: catalog.titles,
     albums: catalog.albums,
     deadline: context.songDeadline,
@@ -441,6 +443,7 @@ export async function verifyCandidate(
       lookupFailed = true
     },
   })
+  const song = songs[0] ?? null
   // A miss while Discogs or YouTube was not answering is not a verdict.
   if (!song) return { pick: null, reason: lookupFailed ? 'song lookup unavailable' : 'no playable song' }
   const pick: DiscoverPick = {
@@ -456,8 +459,81 @@ export async function verifyCandidate(
     },
     listenHref: play?.url ?? read?.url ?? `https://musicbrainz.org/artist/${match.mbid}`,
     song,
+    more: moreSongs(songs, song, aliases),
+    services: artistLinksFromRelations(artist?.relations),
     bandcamp: bandcampRel(artist?.relations),
     connectsTo: rosterLinks(candidate.connectsTo, context.rosterSlugs),
   }
   return { pick }
+}
+
+/**
+ * "More from this artist" (owner, Nov 28 2026): the ranked songs after
+ * the pick's own — never its video, never the same song again under
+ * another title form, at most MAX_MORE_SONGS. Every one passed the same
+ * identity bar as the pick's song (./song rankSongs).
+ */
+export function moreSongs(
+  songs: readonly DiscoverSong[],
+  own: Pick<DiscoverSong, 'videoId' | 'title'> | null,
+  aliases: readonly string[],
+): DiscoverSong[] {
+  const keys = new Set(aliases.map(normalizeName).filter((key) => key !== ''))
+  const ownTitle = own ? titleVariants(own.title, keys) : new Set<string>()
+  return songs
+    .filter((song) => song.videoId !== own?.videoId && !variantsIntersect(titleVariants(song.title, keys), ownTitle))
+    .slice(0, MAX_MORE_SONGS)
+}
+
+export interface Enriched {
+  more: DiscoverSong[]
+  services: ArtistLinks
+  /** The pick's stored song is still among the verified songs under today's rules. */
+  ownStillVerified: boolean
+  /** Today's best verified song — the replacement to hand-check when the stored one fell out. */
+  best: DiscoverSong | null
+}
+
+/**
+ * More songs and the "Listen on" links for a pick ALREADY stocked: the
+ * same artist by the stored MusicBrainz id (never a new name search),
+ * the same song chain and bar as stocking. 'unavailable' when
+ * MusicBrainz, Discogs or YouTube did not answer — not a verdict; the
+ * next run reads the artist again.
+ */
+export async function enrichPick(
+  pick: Pick<DiscoverPick, 'mbid' | 'name' | 'knownFor' | 'song'>,
+  context: Pick<VerifyContext, 'songDeadline' | 'maxRecords' | 'trace'>,
+): Promise<Enriched | 'unavailable'> {
+  const catalog = await verifiedKnownFor(pick.mbid, pick.knownFor)
+  if (catalog === 'unavailable') return 'unavailable'
+  const artistRes = await fetchMusicBrainzJson(
+    `https://musicbrainz.org/ws/2/artist/${pick.mbid}?inc=url-rels+aliases&fmt=json`,
+  )
+  await sleep(1100)
+  if (!artistRes.ok && artistRes.unavailable) return 'unavailable'
+  const artist = artistRes.ok ? (artistRes.body as MbArtistBody) : null
+  const aliases = songNames(artist, null)
+  let lookupFailed = false
+  const songs = await resolveDiscoverSongs({
+    name: pick.name,
+    knownFor: catalog?.knownFor ?? pick.knownFor,
+    relations: artist?.relations ?? [],
+    aliases,
+    titles: catalog?.titles ?? [pick.knownFor],
+    albums: catalog?.albums ?? [],
+    deadline: context.songDeadline,
+    maxRecords: context.maxRecords,
+    trace: context.trace,
+    onUnavailable: () => {
+      lookupFailed = true
+    },
+  })
+  if (songs.length === 0 && lookupFailed) return 'unavailable'
+  return {
+    more: moreSongs(songs, pick.song, aliases),
+    services: artistLinksFromRelations(artist?.relations),
+    ownStillVerified: Boolean(pick.song && songs.some((song) => song.videoId === pick.song?.videoId)),
+    best: songs[0] ?? null,
+  }
 }

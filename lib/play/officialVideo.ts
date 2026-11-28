@@ -24,7 +24,16 @@ export type UploadKind = 'official-video' | 'audio' | 'video'
  * unambiguous.
  */
 export const OFFICIAL_VIDEO_MARKERS =
-  /(?<![\p{L}\p{N}])(official (music |hd |4k )?video|official (video )?clip|music video|video oficial|videoclip oficial|video clip oficial|clip officiel|vid[eé]o officielle|official mv|m\/v|offizielles (musik)?video|video ufficiale|videoclipe oficial|official promo)(?![\p{L}\p{N}])/iu
+  /(?<![\p{L}\p{N}])(official (music |hd |4k )?video|official (video )?clip|video oficial|videoclip oficial|video clip oficial|clip officiel|vid[eé]o officielle|official mv|m\/v|offizielles (musik)?video|video ufficiale|videoclipe oficial|official promo)(?![\p{L}\p{N}])/iu
+
+/**
+ * "Music video" WITHOUT "official": the artist's or their label's own
+ * upload says it plainly, but so does any fan who set the record to
+ * pictures (Nov 28 2026: Zager & Evans played "In The Year 2525 - COVID
+ * Massive LOCKDOWN- music video clip in 2020" by VietView, labelled
+ * Official video). It counts as official only from a trusted uploader.
+ */
+export const MUSIC_VIDEO_MARKER = /(?<![\p{L}\p{N}])music video(?![\p{L}\p{N}])/iu
 
 /** Audio-only or lyric uploads: the record, without a film. */
 export const AUDIO_MARKERS =
@@ -45,9 +54,12 @@ export function uploadKindOf(
   workTitle: string,
   artistName: string,
   uploader?: string,
+  /** The uploader is the artist, their own channel or a label credited on their records. */
+  trusted = false,
 ): UploadKind {
   const annotation = annotationOf(uploadTitle, workTitle, artistName)
   if (OFFICIAL_VIDEO_MARKERS.test(annotation)) return 'official-video'
+  if (trusted && MUSIC_VIDEO_MARKER.test(annotation)) return 'official-video'
   if (AUDIO_MARKERS.test(annotation)) return 'audio'
   // A "- Topic" channel is YouTube's auto-generated audio of the record.
   if (uploader && TOPIC_CHANNEL.test(uploader)) return 'audio'

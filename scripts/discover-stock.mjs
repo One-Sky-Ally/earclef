@@ -9,7 +9,12 @@
  *   (write data/discover-stock/candidates.json in-session)
  *   npm run discover-stock -- verify    checks candidates (resumable; --minutes 90)
  *   npm run discover-stock -- upload    sends full sets to earclef.com
- *   npm run discover-stock -- recheck   drops stocked songs whose video died
+ *   npm run discover-stock -- recheck   drops stocked songs whose video died and
+ *                                       refreshes what YouTube says about the
+ *                                       rest (the 30-day rule)
+ *   npm run discover-stock -- enrich    "more from this artist" + "Listen on"
+ *                                       links for stocked picks (resumable;
+ *                                       --minutes 90; --upload-only)
  *   npm run discover-stock -- status    what is ready on the site
  *   npm run discover-stock -- why "toe" ["Hear You"]
  *                                       one artist, step by step: why a
@@ -35,6 +40,10 @@ const DIR = join(ROOT, 'data', 'discover-stock')
 const PLAN = join(DIR, 'plan.json')
 const CANDIDATES = join(DIR, 'candidates.json')
 const PROGRESS = join(DIR, 'verified.json')
+/** Enrich progress (gitignored): entries older than 29 days are read again, never served. */
+const ENRICHED = join(DIR, 'enriched.json')
+const ENRICH_FRESH_DAYS = 29
+const ENRICH_BATCH = 100
 const KINDS = ['shared', 'owner']
 /** Candidates written per needed pick: some fail verification or have no playable song. */
 const CANDIDATE_MARGIN = 1.5
@@ -70,10 +79,10 @@ function writeJson(path, value) {
 
 const BASE = (env('EARCLEF_URL') ?? 'https://earclef.com').replace(/\/$/, '')
 
-async function site(method, body) {
+async function site(method, body, query = '') {
   const key = env('OWNER_KEY')
   if (!key) throw new Error('OWNER_KEY missing from .env.local')
-  const res = await fetch(`${BASE}/api/studio/discover-stock`, {
+  const res = await fetch(`${BASE}/api/studio/discover-stock${query}`, {
     method,
     headers: { 'x-owner-key': key, 'Content-Type': 'application/json' },
     body: body ? JSON.stringify(body) : undefined,
@@ -259,15 +268,22 @@ async function upload() {
   }
 }
 
+const decodeEntities = (value) =>
+  value.replace(/&amp;/g, '&').replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+
 async function recheck() {
   const youtube = env('YOUTUBE_API_KEY')
   if (!youtube) throw new Error('YOUTUBE_API_KEY missing from .env.local')
   const status = await site('GET')
   const ids = status.videos
   const alive = new Set()
+  // What YouTube says today about every video still playing: the stored
+  // upload title and channel are refreshed, so nothing kept from the
+  // YouTube API is older than 30 days (the privacy page's promise).
+  const facts = []
   for (let i = 0; i < ids.length; i += 50) {
     const chunk = ids.slice(i, i + 50)
-    const url = `https://www.googleapis.com/youtube/v3/videos?part=status&id=${chunk.join(',')}&key=${youtube}`
+    const url = `https://www.googleapis.com/youtube/v3/videos?part=status,snippet&id=${chunk.join(',')}&key=${youtube}`
     const res = await fetch(url)
     if (!res.ok) throw new Error(`YouTube videos.list → HTTP ${res.status}`)
     const body = await res.json()
@@ -275,16 +291,127 @@ async function recheck() {
       const s = item.status ?? {}
       if (s.privacyStatus === 'public' && s.embeddable !== false && s.uploadStatus === 'processed') {
         alive.add(item.id)
+        facts.push({
+          videoId: item.id,
+          uploadTitle: decodeEntities(item.snippet?.title ?? ''),
+          uploader: decodeEntities(item.snippet?.channelTitle ?? ''),
+        })
       }
     }
   }
   const dead = ids.filter((id) => !alive.has(id))
-  if (dead.length === 0) {
-    log(`all ${ids.length} stocked songs still play`)
-    return
+  if (dead.length === 0) log(`all ${ids.length} stocked videos still play (${Math.ceil(ids.length / 50)} units)`)
+  else {
+    const result = await site('POST', { action: 'drop-songs', videoIds: dead })
+    log(
+      `${dead.length} of ${ids.length} videos gone — ${result.songsDropped} pick songs dropped (their picks stay, with their links), ${result.moreDropped ?? 0} taken out of "more from this artist"`,
+    )
   }
-  const result = await site('POST', { action: 'drop-songs', videoIds: dead })
-  log(`${dead.length} of ${ids.length} videos gone — ${result.songsDropped} songs dropped (their picks stay, with their links)`)
+  let refreshed = 0
+  for (let i = 0; i < facts.length; i += 2000) {
+    const result = await site('POST', { action: 'refresh-songs', songs: facts.slice(i, i + 2000) })
+    refreshed += result.refreshed
+  }
+  log(`refreshed what YouTube says about ${facts.length} videos (${refreshed} stored songs updated)`)
+}
+
+function readEnriched() {
+  const state = readJson(ENRICHED, { done: {}, uploaded: [] })
+  const cutoff = Date.now() - ENRICH_FRESH_DAYS * 86_400_000
+  // YouTube data kept here is never older than the 30-day rule allows.
+  for (const [mbid, entry] of Object.entries(state.done)) {
+    if (Date.parse(entry.at) < cutoff) delete state.done[mbid]
+  }
+  state.uploaded = state.uploaded.filter((mbid) => state.done[mbid])
+  return state
+}
+
+/**
+ * "More from this artist" and the "Listen on" links for picks already
+ * stocked (owner, Nov 28 2026): each artist read again by the stored
+ * MusicBrainz id through the same song chain and bar as stocking. Picks
+ * whose stored song no longer passes today's rules are listed for a
+ * hand-check (and replaced with `replace-songs`, never automatically).
+ */
+async function enrich(minutes, uploadOnly) {
+  const state = readEnriched()
+  if (!uploadOnly) {
+    const { enrichPick } = await import('../lib/discover/verify.ts')
+    const token = env('DISCOGS_TOKEN')
+    const youtube = env('YOUTUBE_API_KEY')
+    if (!youtube) throw new Error('YOUTUBE_API_KEY missing from .env.local')
+    if (token) process.env.DISCOGS_TOKEN = token
+    process.env.YOUTUBE_API_KEY = youtube
+    const deadline = Date.now() + minutes * 60_000
+    const context = { songDeadline: deadline, maxRecords: MAX_RECORDS }
+
+    // Picks verified but not uploaded yet (verified before this step existed).
+    const progress = readJson(PROGRESS, emptyProgress())
+    for (const kind of KINDS) {
+      for (const pick of progress[kind].picks) {
+        if (Array.isArray(pick.more) || Date.now() >= deadline) continue
+        const result = await enrichPick(pick, context)
+        if (result === 'unavailable') continue
+        pick.more = result.more
+        pick.services = result.services
+        writeJson(PROGRESS, progress)
+        log(`[waiting ${kind}] ${pick.name}: +${result.more.length} songs`)
+      }
+    }
+
+    const status = await site('GET', undefined, '?songs=1')
+    const seen = new Set()
+    const todo = status.songs.filter((entry) => {
+      if (!entry.song || entry.enriched || state.done[entry.mbid] || seen.has(entry.mbid)) return false
+      seen.add(entry.mbid)
+      return true
+    })
+    log(`${todo.length} stocked artists to read (${Object.keys(state.done).length} read on earlier runs)`)
+    let n = 0
+    for (const entry of todo) {
+      if (Date.now() >= deadline) break
+      n++
+      const result = await enrichPick(entry, context)
+      if (result === 'unavailable') {
+        log(`[${n}/${todo.length}] ${entry.name}: no answer from MusicBrainz, Discogs or YouTube — next run`)
+        continue
+      }
+      state.done[entry.mbid] = {
+        name: entry.name,
+        own: entry.song,
+        more: result.more,
+        services: result.services,
+        ownStillVerified: result.ownStillVerified,
+        best: result.best,
+        at: new Date().toISOString(),
+      }
+      writeJson(ENRICHED, state)
+      log(
+        `[${n}/${todo.length}] ${entry.name}: +${result.more.length} songs, ${Object.keys(result.services).length} services` +
+          (result.ownStillVerified ? '' : ' — its stocked song no longer passes; listed for a hand-check'),
+      )
+    }
+    if (todo.some((entry) => !state.done[entry.mbid])) log('not every artist was read — run `enrich` again to continue')
+  }
+
+  const pending = Object.entries(state.done).filter(([mbid]) => !state.uploaded.includes(mbid))
+  for (let i = 0; i < pending.length; i += ENRICH_BATCH) {
+    const batch = pending.slice(i, i + ENRICH_BATCH)
+    const result = await site('POST', {
+      action: 'enrich',
+      entries: batch.map(([mbid, entry]) => ({ mbid, more: entry.more, services: entry.services })),
+    })
+    state.uploaded.push(...batch.map(([mbid]) => mbid))
+    writeJson(ENRICHED, state)
+    log(`uploaded ${batch.length} artists (${result.enriched} stocked picks enriched)`)
+  }
+  const stale = Object.entries(state.done).filter(([, entry]) => !entry.ownStillVerified)
+  if (stale.length > 0) {
+    log(`${stale.length} stocked songs no longer pass today's rules — hand-check, then replace-songs:`)
+    for (const [mbid, entry] of stale) {
+      log(`  ${entry.name} (${mbid}): "${entry.own?.uploadTitle}" by ${entry.own?.uploader} → ${entry.best ? `"${entry.best.uploadTitle}" by ${entry.best.uploader} (${entry.best.videoId})` : 'no verified song now'}`)
+    }
+  }
 }
 
 /** One artist, step by step — why a song was or wasn't found. */
@@ -326,11 +453,12 @@ const commands = {
   verify: () => verify(minutes),
   upload,
   recheck,
+  enrich: () => enrich(minutes, rest.includes('--upload-only')),
   status,
   why: () => why(rest[0], rest[1]),
 }
 if (!commands[command]) {
-  console.error('usage: npm run discover-stock -- plan | verify [--minutes 90] | upload | recheck | status | why "<artist>"')
+  console.error('usage: npm run discover-stock -- plan | verify [--minutes 90] | upload | recheck | enrich [--minutes 90] [--upload-only] | status | why "<artist>"')
   process.exit(1)
 }
 commands[command]().catch((error) => {

@@ -63,3 +63,14 @@ test('"And" and "&" name the same act: a Topic channel spelling the other one is
   assert.ok(!isTrustedUploader('Brand New - Topic', aliasKeysOf(['Br New']), []))
   assert.ok(!isTrustedUploader('Sandra - Topic', aliasKeysOf(['S & ra']), []))
 })
+
+test('a bare "music video" is official only from a trusted uploader (Zager & Evans, Nov 28 2026)', () => {
+  // A fan's lockdown clip set to the record: titled "music video", uploaded by a stranger.
+  assert.equal(
+    uploadKindOf('In The Year 2525 - COVID Massive LOCKDOWN- music video clip in 2020', 'In The Year 2525', 'Zager & Evans', 'VietView'),
+    'video',
+  )
+  assert.equal(uploadKindOf('Mipso - Edges Run (Music Video)', 'Edges Run', 'Mipso', 'Rounder', true), 'official-video')
+  // Said "official", it stays official whoever uploaded it.
+  assert.equal(uploadKindOf('Mipso - Edges Run (Official Music Video)', 'Edges Run', 'Mipso', 'Someone'), 'official-video')
+})

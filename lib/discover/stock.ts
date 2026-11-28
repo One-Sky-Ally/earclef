@@ -207,7 +207,89 @@ export function replacePickSongs(
     const song = replacements.get(key) ?? null
     if (song) replaced++
     else dropped++
-    return { ...pick, song }
+    // "More from this artist" never repeats the song the pick now plays.
+    const more = song && pick.more ? { more: pick.more.filter((entry) => entry.videoId !== song.videoId) } : {}
+    return { ...pick, song, ...more }
   })
   return { picks: next, replaced, dropped }
+}
+
+/** What the enrich step read for one artist (owner, Nov 28 2026). */
+export interface PickEnrichment {
+  more: NonNullable<DiscoverPick['more']>
+  services: NonNullable<DiscoverPick['services']>
+}
+
+/**
+ * Every stocked pick of an enriched artist gets their "more from this
+ * artist" songs and "Listen on" links; the rest are returned as they
+ * were. Keyed by MusicBrainz id — the same artist may sit in several sets.
+ */
+export function enrichPicks(
+  picks: readonly DiscoverPick[],
+  entries: ReadonlyMap<string, PickEnrichment>,
+): { picks: DiscoverPick[]; enriched: number } {
+  let enriched = 0
+  const next = picks.map((pick) => {
+    const entry = entries.get(pick.mbid)
+    if (!entry) return pick
+    enriched++
+    const own = pick.song?.videoId
+    return { ...pick, more: entry.more.filter((song) => song.videoId !== own), services: entry.services }
+  })
+  return { picks: next, enriched }
+}
+
+/**
+ * Videos that stopped playing (the weekly re-check): a pick's own song
+ * goes (the pick stays, with its links, and is no longer shown), and a
+ * dead song leaves "more from this artist".
+ */
+export function withoutDeadSongs(
+  picks: readonly DiscoverPick[],
+  dead: ReadonlySet<string>,
+): { picks: DiscoverPick[]; songsDropped: number; moreDropped: number } {
+  let songsDropped = 0
+  let moreDropped = 0
+  const next = picks.map((pick) => {
+    const songDead = Boolean(pick.song && dead.has(pick.song.videoId))
+    const more = pick.more?.filter((song) => !dead.has(song.videoId))
+    const moreGone = (pick.more?.length ?? 0) - (more?.length ?? 0)
+    if (!songDead && moreGone === 0) return pick
+    if (songDead) songsDropped++
+    moreDropped += moreGone
+    return { ...pick, ...(songDead ? { song: null } : {}), ...(more ? { more } : {}) }
+  })
+  return { picks: next, songsDropped, moreDropped }
+}
+
+/** What YouTube says about a stocked video today (the weekly re-check). */
+export interface SongFacts {
+  uploadTitle: string
+  uploader: string
+}
+
+/**
+ * The weekly re-check also refreshes what is kept from YouTube — the
+ * upload's title and channel name — so nothing stored from the YouTube
+ * API is older than 30 days (the privacy page's promise). Only those
+ * two fields change; the song, its kind and its place stay.
+ */
+export function refreshSongFacts(
+  picks: readonly DiscoverPick[],
+  facts: ReadonlyMap<string, SongFacts>,
+): { picks: DiscoverPick[]; refreshed: number } {
+  let refreshed = 0
+  const fresh = <T extends NonNullable<DiscoverPick['song']>>(song: T): T => {
+    const now = facts.get(song.videoId)
+    if (!now) return song
+    refreshed++
+    return { ...song, uploadTitle: now.uploadTitle, uploader: now.uploader }
+  }
+  const next = picks.map((pick) => ({
+    ...pick,
+    song: pick.song ? fresh(pick.song) : null,
+    ...(pick.more ? { more: pick.more.map(fresh) } : {}),
+  }))
+  return { picks: next, refreshed }
 }

@@ -6,7 +6,7 @@
  */
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { chooseSong, type RankedInput } from './song.ts'
+import { chooseSong, rankSongs, type RankedInput } from './song.ts'
 import { aliasKeysOf } from '../play/titleVariants.ts'
 
 const base = (over: Partial<RankedInput>): RankedInput => ({
@@ -109,7 +109,7 @@ async function withMockedApis<T>(
 const discogsArtist = [{ type: 'discogs', url: { resource: 'https://www.discogs.com/artist/1' } }]
 
 test('a miss after an early stop reads on: fan uploads on the first album do not end the search', async () => {
-  const { resolveDiscoverSong } = await import('./song.ts')
+  const { resolveDiscoverSongs } = await import('./song.ts')
   const tracks = ['Edges Run', 'Hey Coyote', 'Louise', 'Bad Penny', 'Momma', 'People Change', 'Fine Thing', 'Marianne']
   const fanIds = tracks.map((_, i) => `fan${String(i).padStart(8, '0')}`)
   const officialId = 'official000'
@@ -135,8 +135,8 @@ test('a miss after an early stop reads on: fan uploads on the first album do not
       videos: [{ uri: `https://www.youtube.com/watch?v=${officialId}`, title: 'Mipso - Water Runs Red (Official Video)' }],
     },
   }
-  const song = await withMockedApis(routes, (id) => (id === officialId ? 'MipsoVEVO' : 'A Fan'), () =>
-    resolveDiscoverSong({
+  const [song] = await withMockedApis(routes, (id) => (id === officialId ? 'MipsoVEVO' : 'A Fan'), () =>
+    resolveDiscoverSongs({
       name: 'Mipso',
       knownFor: 'Edges Run',
       relations: discogsArtist,
@@ -151,7 +151,7 @@ test('a miss after an early stop reads on: fan uploads on the first album do not
 })
 
 test("a label's own upload of a master-based album is trusted through the album's pressing", async () => {
-  const { resolveDiscoverSong } = await import('./song.ts')
+  const { resolveDiscoverSongs } = await import('./song.ts')
   // Discogs masters carry no label names: Brownswood's Black Focus uploads
   // read "uploader not trusted" (Yussef Kamaal, Oct 27 2026).
   const routes = {
@@ -169,8 +169,8 @@ test("a label's own upload of a master-based album is trusted through the album'
     },
     '/releases/99': { id: 99, title: 'Black Focus', labels: [{ name: 'Brownswood Recordings' }] },
   }
-  const song = await withMockedApis(routes, () => 'Brownswood Recordings', () =>
-    resolveDiscoverSong({
+  const [song] = await withMockedApis(routes, () => 'Brownswood Recordings', () =>
+    resolveDiscoverSongs({
       name: 'Yussef Kamaal',
       knownFor: 'Black Focus',
       relations: discogsArtist,
@@ -185,12 +185,12 @@ test("a label's own upload of a master-based album is trusted through the album'
 })
 
 test('a search cut off by the run deadline is not a verdict', async () => {
-  const { resolveDiscoverSong } = await import('./song.ts')
+  const { resolveDiscoverSongs } = await import('./song.ts')
   const saved = process.env.YOUTUBE_API_KEY
   process.env.YOUTUBE_API_KEY = 'test'
   const unavailable: string[] = []
   try {
-    const song = await resolveDiscoverSong({
+    const songs = await resolveDiscoverSongs({
       name: 'Mipso',
       knownFor: 'Edges Run',
       relations: discogsArtist,
@@ -199,7 +199,7 @@ test('a search cut off by the run deadline is not a verdict', async () => {
       deadline: Date.now() - 1,
       onUnavailable: (where) => unavailable.push(where),
     })
-    assert.equal(song, null)
+    assert.deepEqual(songs, [])
     assert.deepEqual(unavailable, ['deadline'])
   } finally {
     if (saved === undefined) delete process.env.YOUTUBE_API_KEY
@@ -285,4 +285,18 @@ test('a remix the video plays is named in the title (dead prez, Nov 26 2026)', (
   })
   const song = chooseSong([video], { name: 'dead prez', aliases: aliasKeysOf(['dead prez']), knownFor: "Let's Get Free", labels: [] })
   assert.equal(song?.title, 'Hell Yeah (Pimp The System) (Remix)')
+})
+
+test('more from this artist: every song that passes, one video per song, the pick song first (Nov 28 2026)', () => {
+  const official = base({ videoId: 'aaaaaaaaaa1', uploadTitle: 'Mipso - Edges Run (Official Video)', songTitle: 'Edges Run' })
+  const sameSongAudio = base({ videoId: 'aaaaaaaaaa2', uploadTitle: 'Edges Run', songTitle: 'Edges Run', uploader: 'Mipso - Topic' })
+  const liveTake = base({ videoId: 'aaaaaaaaaa3', uploadTitle: 'Mipso - Edges Run (Live)', songTitle: 'Edges Run (Live)', uploader: 'Mipso - Topic' })
+  const second = base({ videoId: 'aaaaaaaaaa4', uploadTitle: 'Coming Down the Mountain', songTitle: 'Coming Down the Mountain', uploader: 'Rounder' })
+  const fan = base({ videoId: 'aaaaaaaaaa5', uploadTitle: 'Mipso - Bad Penny', songTitle: 'Bad Penny', uploader: 'Norbert Tebarts' })
+  const songs = rankSongs([fan, second, liveTake, sameSongAudio, official], ctx)
+  assert.deepEqual(
+    songs.map((song) => song.videoId),
+    ['aaaaaaaaaa1', 'aaaaaaaaaa4'],
+  )
+  assert.equal(chooseSong([fan, second, liveTake, sameSongAudio, official], ctx)?.videoId, songs[0].videoId)
 })

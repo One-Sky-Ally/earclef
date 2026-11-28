@@ -322,24 +322,23 @@ function dedupe(found: readonly Found[]): Found[] {
 }
 
 /**
- * The ranking over playability-checked candidates. Pure, so the rules
- * are testable without the network.
+ * The ranking over playability-checked candidates: every song that
+ * passes, best first, ONE per song — another video or a live take of a
+ * song already listed is not another song. The first is the pick's
+ * song; the rest are "more from this artist" (owner, Nov 28 2026: "It
+ * must be that artist's music only" — each one passed the same identity
+ * bar as the first). Pure, so the rules are testable without the network.
  */
-export function chooseSong(candidates: readonly RankedInput[], context: RankContext): DiscoverSong | null {
+export function rankSongs(candidates: readonly RankedInput[], context: RankContext): DiscoverSong[] {
   const knownFor = titleVariants(context.knownFor, context.aliases)
   const ranked = candidates
     .filter((entry) => entry.playable && !entry.nonMusic && !entry.broadcast)
     .filter((entry) => !isWholeRecordUpload(entry.uploadTitle, entry.songTitle, context.name))
-    .map((entry) => ({
-      entry,
-      kind: uploadKindOf(entry.uploadTitle, entry.songTitle, context.name, entry.uploader),
-    }))
-    .filter(
-      ({ entry, kind }) =>
-        kind === 'official-video' ||
-        entry.source === 'channel' ||
-        isTrustedUploader(entry.uploader, context.aliases, context.labels),
-    )
+    .map((entry) => {
+      const trusted = entry.source === 'channel' || isTrustedUploader(entry.uploader, context.aliases, context.labels)
+      return { entry, trusted, kind: uploadKindOf(entry.uploadTitle, entry.songTitle, context.name, entry.uploader, trusted) }
+    })
+    .filter(({ kind, trusted }) => kind === 'official-video' || trusted)
     .map(({ entry, kind }, order) => ({
       entry,
       kind,
@@ -352,17 +351,28 @@ export function chooseSong(candidates: readonly RankedInput[], context: RankCont
       order,
     }))
     .sort((a, b) => a.tier - b.tier || a.known - b.known || a.order - b.order)
-  const best = ranked[0]
-  if (!best) return null
-  return {
-    videoId: best.entry.videoId,
-    title: labelledSongTitle(best.entry.songTitle, best.entry.uploadTitle, context.name, context.aliases),
-    uploadTitle: best.entry.uploadTitle,
-    kind: best.kind,
-    source: best.entry.source,
-    uploader: best.entry.uploader,
-    ...(best.entry.source === 'discogs' ? { release: best.entry.release } : {}),
-  }
+  const listed: Set<string>[] = []
+  return ranked.flatMap(({ entry, kind }) => {
+    const variants = titleVariants(entry.songTitle, context.aliases)
+    if (variants.size === 0 || listed.some((seen) => variantsIntersect(seen, variants))) return []
+    listed.push(variants)
+    return [
+      {
+        videoId: entry.videoId,
+        title: labelledSongTitle(entry.songTitle, entry.uploadTitle, context.name, context.aliases),
+        uploadTitle: entry.uploadTitle,
+        kind,
+        source: entry.source,
+        uploader: entry.uploader,
+        ...(entry.source === 'discogs' ? { release: entry.release } : {}),
+      },
+    ]
+  })
+}
+
+/** The pick's song: the best of rankSongs. */
+export function chooseSong(candidates: readonly RankedInput[], context: RankContext): DiscoverSong | null {
+  return rankSongs(candidates, context)[0] ?? null
 }
 
 /** One batched playability call (1 unit for up to 50 ids) and the content gates. */
@@ -395,8 +405,8 @@ async function checkCandidates(
   })
   if (context.trace) {
     for (const input of inputs) {
-      const kind = uploadKindOf(input.uploadTitle, input.songTitle, context.name, input.uploader)
-      const trusted = isTrustedUploader(input.uploader, rank.aliases, rank.labels)
+      const trusted = input.source === 'channel' || isTrustedUploader(input.uploader, rank.aliases, rank.labels)
+      const kind = uploadKindOf(input.uploadTitle, input.songTitle, context.name, input.uploader, trusted)
       context.trace(
         `candidate ${input.videoId} "${input.uploadTitle}" by ${input.uploader || '?'} → ${kind}` +
           `${input.playable ? '' : ', NOT playable'}${input.nonMusic ? ', flagged non-music' : ''}` +
@@ -419,7 +429,7 @@ async function trustedThroughPressings(
   pressings: ReadonlyMap<string, number>,
   context: SongContext,
   rank: RankContext,
-): Promise<DiscoverSong | null> {
+): Promise<DiscoverSong[]> {
   const ids = [
     ...new Set(
       inputs
@@ -431,24 +441,28 @@ async function trustedThroughPressings(
         }),
     ),
   ].slice(0, MAX_PRESSINGS)
-  if (ids.length === 0) return null
+  if (ids.length === 0) return []
   const { labels, failed } = await discogsReleaseLabels(ids, { deadline: context.deadline })
   if (failed) context.onUnavailable?.('discogs')
   context.trace?.(`discogs: ${ids.length} album pressings read for labels: ${labels.join(', ') || 'none'}`)
-  return chooseSong(inputs, { ...rank, labels: [...new Set([...rank.labels, ...labels])] })
+  return rankSongs(inputs, { ...rank, labels: [...new Set([...rank.labels, ...labels])] })
 }
 
-/** Full resolution for one pick. Never throws: null is the honest miss. */
-export async function resolveDiscoverSong(context: SongContext): Promise<DiscoverSong | null> {
+/**
+ * Full resolution for one artist: every verified song, best first
+ * (rankSongs) — the first is the pick's song, the rest "more from this
+ * artist". Never throws: an empty list is the honest miss.
+ */
+export async function resolveDiscoverSongs(context: SongContext): Promise<DiscoverSong[]> {
   const apiKey = process.env.YOUTUBE_API_KEY
-  if (!apiKey) return null
+  if (!apiKey) return []
   // A search the run's deadline cut short is not a verdict: retried next run.
   const cutShort = (): boolean => {
     if (Date.now() <= context.deadline) return false
     context.onUnavailable?.('deadline')
     return true
   }
-  if (cutShort()) return null
+  if (cutShort()) return []
   const aliases = new Set(context.aliases.map(normalizeName).filter((key) => key !== ''))
   const rank: RankContext = { name: context.name, aliases, knownFor: context.knownFor, labels: [] }
   try {
@@ -462,14 +476,14 @@ export async function resolveDiscoverSong(context: SongContext): Promise<Discove
     if (checked.length === 0) {
       cutShort()
       context.trace?.('result: no verified candidate video on either path')
-      return null
+      return []
     }
     const inputs = await checkCandidates(checked, apiKey, context, context2)
     let all = inputs
     let ranked = context2
     let pressings = discogs.pressings
-    let chosen = chooseSong(inputs, context2)
-    if (!chosen && discogs.stoppedEarly && Date.now() <= context.deadline) {
+    let songs = rankSongs(inputs, context2)
+    if (songs.length === 0 && discogs.stoppedEarly && Date.now() <= context.deadline) {
       // The early stop counts title matches, not uploads that play: one
       // album of fan uploads or dead Topic tracks ended the read (Oct 27,
       // 2026: Doves, Snarky Puppy, Okkervil River skipped "no playable
@@ -484,17 +498,21 @@ export async function resolveDiscoverSong(context: SongContext): Promise<Discove
         .filter((entry) => !seen.has(entry.videoId))
         .slice(0, MAX_CHECKED)
       if (fresh.length > 0) all = [...inputs, ...(await checkCandidates(fresh, apiKey, context, ranked))]
-      chosen = chooseSong(all, ranked)
+      songs = rankSongs(all, ranked)
     }
-    if (!chosen && Date.now() <= context.deadline) {
-      chosen = await trustedThroughPressings(all, pressings, context, ranked)
+    if (songs.length === 0 && Date.now() <= context.deadline) {
+      songs = await trustedThroughPressings(all, pressings, context, ranked)
     }
-    if (!chosen) cutShort()
-    context.trace?.(chosen ? `result: ${chosen.kind} "${chosen.uploadTitle}"` : 'result: every candidate was ruled out')
-    return chosen
+    if (songs.length === 0) cutShort()
+    context.trace?.(
+      songs[0]
+        ? `result: ${songs[0].kind} "${songs[0].uploadTitle}" (+${songs.length - 1} more)`
+        : 'result: every candidate was ruled out',
+    )
+    return songs
   } catch (error) {
     console.error(`discover song for ${context.name} failed:`, error)
     context.onUnavailable?.('song lookup')
-    return null
+    return []
   }
 }

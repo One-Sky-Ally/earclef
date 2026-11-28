@@ -309,3 +309,20 @@ test('a busy MusicBrainz answering 200 with an error body is not "not on MusicBr
     globalThis.fetch = original
   }
 })
+
+test('more from this artist leaves out the pick song, under any title form, and stops at nine (Nov 28 2026)', async () => {
+  const { moreSongs } = await import('./verify.ts')
+  const song = (videoId: string, title: string) =>
+    ({ videoId, title, uploadTitle: title, kind: 'audio', source: 'channel', uploader: 'Rhye - Topic' }) as const
+  const own = song('aaaaaaaaaaa', 'Open')
+  const list = [
+    own,
+    song('bbbbbbbbbbb', 'Open (Remix)'),
+    song('ccccccccccc', 'The Fall'),
+    ...Array.from({ length: 12 }, (_, i) => song(`d${String(i).padStart(10, '0')}`, `Song ${i}`)),
+  ]
+  const more = moreSongs(list, own, ['Rhye'])
+  assert.equal(more[0].title, 'The Fall')
+  assert.equal(more.some((entry) => entry.videoId === own.videoId || entry.title.startsWith('Open')), false)
+  assert.equal(more.length, 9)
+})

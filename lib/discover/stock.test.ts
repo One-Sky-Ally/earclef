@@ -127,3 +127,58 @@ test('re-verified songs replace stocked ones by artist and old video id; null ta
   assert.equal(out.picks[3], picks[3], "a shared video never changes another artist's pick")
   assert.equal(picks[0].song?.title, 'I Dreamt I Was Dreaming', 'the input is not changed')
 })
+
+test('enrich gives every stocked pick of the artist their more songs and links, never the pick song again', async () => {
+  const { enrichPicks, replacePickSongs, songKey, withoutDeadSongs } = await import('./stock.ts')
+  const song = (videoId: string, title: string) =>
+    ({ videoId, title, uploadTitle: title, kind: 'audio', source: 'channel', uploader: 'Rhye - Topic' }) as const
+  const pick = (mbid: string, own: string) => ({
+    name: 'Rhye',
+    why: '',
+    knownFor: 'Woman',
+    knownForVerified: true,
+    mbid,
+    play: null,
+    read: { kind: 'musicbrainz', url: `https://musicbrainz.org/artist/${mbid}` },
+    listenHref: `https://musicbrainz.org/artist/${mbid}`,
+    song: song(own, 'Open'),
+    bandcamp: null,
+  }) as const
+  const rhye = 'aa914efa-d6cb-4816-906f-8edafb08418e'
+  const other = '46713d05-4143-4704-a9c3-71b482a13944'
+  const entries = new Map([
+    [rhye, { more: [song('aaaaaaaaaaa', 'Open'), song('bbbbbbbbbbb', 'The Fall')], services: { spotify: 'https://open.spotify.com/artist/X' } }],
+  ])
+  const { picks, enriched } = enrichPicks([pick(rhye, 'aaaaaaaaaaa'), pick(other, 'zzzzzzzzzzz')], entries)
+  assert.equal(enriched, 1)
+  assert.deepEqual(picks[0].more?.map((entry) => entry.videoId), ['bbbbbbbbbbb'])
+  assert.equal(picks[0].services?.spotify, 'https://open.spotify.com/artist/X')
+  assert.equal(picks[1].more, undefined)
+
+  // A replaced song leaves "more"; a dead one leaves it too, and a dead pick song goes.
+  const replaced = replacePickSongs(picks, new Map([[songKey(rhye, 'aaaaaaaaaaa'), song('bbbbbbbbbbb', 'The Fall')]]))
+  assert.deepEqual(replaced.picks[0].more, [])
+  const dead = withoutDeadSongs(picks, new Set(['bbbbbbbbbbb', 'zzzzzzzzzzz']))
+  assert.deepEqual(dead.picks[0].more, [])
+  assert.equal(dead.picks[1].song, null)
+  assert.equal(dead.songsDropped, 1)
+  assert.equal(dead.moreDropped, 1)
+})
+
+test('the weekly re-check refreshes the upload title and channel kept from YouTube, nothing else', async () => {
+  const { refreshSongFacts } = await import('./stock.ts')
+  const song = { videoId: 'aaaaaaaaaaa', title: 'Open', uploadTitle: 'Rhye - Open', kind: 'audio', source: 'channel', uploader: 'Rhye' } as const
+  const pick = {
+    name: 'Rhye', why: '', knownFor: 'Woman', knownForVerified: true, mbid: 'aa914efa-d6cb-4816-906f-8edafb08418e',
+    play: null, read: { kind: 'musicbrainz', url: 'https://musicbrainz.org/artist/x' }, listenHref: 'https://musicbrainz.org/artist/x',
+    song, more: [{ ...song, videoId: 'bbbbbbbbbbb' }], bandcamp: null,
+  } as const
+  const { picks, refreshed } = refreshSongFacts([pick], new Map([
+    ['aaaaaaaaaaa', { uploadTitle: 'Rhye - Open (Official Audio)', uploader: 'Rhye Official' }],
+    ['bbbbbbbbbbb', { uploadTitle: 'Rhye - Open (Live)', uploader: 'Rhye Official' }],
+  ]))
+  assert.equal(refreshed, 2)
+  assert.equal(picks[0].song?.uploadTitle, 'Rhye - Open (Official Audio)')
+  assert.equal(picks[0].song?.title, 'Open')
+  assert.equal(picks[0].more?.[0].uploader, 'Rhye Official')
+})

@@ -2,7 +2,8 @@
  * Helpers shared by the Discover routes: the legacy-pool sanitizer, the
  * stocked-pick check at upload, and dev fixtures.
  */
-import type { DiscoverPick, DiscoverPool } from './types'
+import { sanitizeArtistLinks } from '../listen/artistLinks'
+import { MAX_MORE_SONGS, type DiscoverPick, type DiscoverPool } from './types'
 
 const MBID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 const VIDEO_ID = /^[\w-]{11}$/
@@ -37,6 +38,23 @@ export function sanitizeSong(raw: unknown): DiscoverPick['song'] {
     SONG_KINDS.has(String(song.kind))
     ? (song as unknown as DiscoverPick['song'])
     : null
+}
+
+/**
+ * "More from this artist" as uploaded: well-formed songs only, each
+ * video once, never the pick's own song, at most MAX_MORE_SONGS.
+ */
+export function sanitizeMore(raw: unknown, ownVideoId: string | undefined): NonNullable<DiscoverPick['more']> {
+  if (!Array.isArray(raw)) return []
+  const seen = new Set(ownVideoId ? [ownVideoId] : [])
+  return raw
+    .map(sanitizeSong)
+    .filter((song): song is NonNullable<DiscoverPick['song']> => {
+      if (!song || seen.has(song.videoId)) return false
+      seen.add(song.videoId)
+      return true
+    })
+    .slice(0, MAX_MORE_SONGS)
 }
 
 /**
@@ -79,6 +97,9 @@ export function sanitizeStockPick(
     bandcamp:
       bandcamp && /(^|\.)bandcamp\.com$/.test(new URL(bandcamp).hostname) ? bandcamp : null,
     connectsTo,
+    // Enriched picks only (Nov 28 2026): absent means "not read yet".
+    ...(Array.isArray(pick.more) ? { more: sanitizeMore(pick.more, song.videoId) } : {}),
+    ...(pick.services !== undefined ? { services: sanitizeArtistLinks(pick.services) } : {}),
   }
 }
 
