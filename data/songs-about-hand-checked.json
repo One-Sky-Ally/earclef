@@ -1,0 +1,352 @@
+{
+ "about": "Hand-checked \"Songs about this place\" videos (scripts/verify-songs-about-play.mjs). right: a video checked by its YouTube page (oEmbed title + channel) or by listening, found to be this song by this performer where the title alone cannot say so — served if it still plays. wrong: never served for that song, whatever matches it. Keyed by Wikipedia page (wp) + YouTube video id (v); mbid = the performer it is served under.",
+ "right": [
+  {
+   "wp": "(I Don't Want to Go to) Chelsea",
+   "v": "XvRQDsH0Yho",
+   "mbid": "8a338e06-d182-46f2-bd16-30a09bc840ba",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "A Rainy Night in Soho",
+   "v": "PSyL-TrD_2g",
+   "mbid": "d41a6875-b626-4c0f-89a1-aecb643d29ff",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Big Man on Mulberry Street",
+   "v": "7pRIIUKNX90",
+   "mbid": "64b94289-9474-4d43-8c93-918ccc1920d1",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Cabaret (Cabaret song)",
+   "v": "-K0EsuglJOg",
+   "mbid": "eea8a864-fcda-4602-9569-38ab446decd6",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Ein Lama in Yokohama",
+   "v": "bpd5HekKnKk",
+   "mbid": "e557d666-3595-4d82-8830-9cef343ab3a6",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Fire on the Mountain (The Marshall Tucker Band song)",
+   "v": "rGdMPZYWwwY",
+   "mbid": "568045b3-c3cb-4100-9bc5-ef9cdcebe643",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Gadigal Land",
+   "v": "wuWgE-u4keg",
+   "mbid": "05072650-4b05-4e8b-83d0-dba2576e306a",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Galway Bay (song)",
+   "v": "geCEqzD3LYI",
+   "mbid": "4d483147-c871-48c4-8470-85e5a66381c5",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Hello, Dolly! (song)",
+   "v": "SKdYLV55-3k",
+   "mbid": "eea8a864-fcda-4602-9569-38ab446decd6",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Lake Shore Drive (song)",
+   "v": "WhYIYb44wFs",
+   "mbid": "04f5f62b-7c4d-4f5f-8dda-ff3bfb43db62",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Let's Go to Vegas",
+   "v": "VI2tb8P-Fn8",
+   "mbid": "406552d4-5ba1-4226-b7c0-367bc50fc767",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Meet Me in St. Louis, Louis",
+   "v": "riYAtGtM4tk",
+   "mbid": "b9348d59-b91b-423f-847b-8db155a0653b",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Montego Bay (song)",
+   "v": "RBFU5YnhPqc",
+   "mbid": "44c0262f-97b2-4227-b5eb-fac46f1e8880",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Nebraska (song)",
+   "v": "uTHc_ZXsqXU",
+   "mbid": "70248960-cb53-4ea4-943a-edb18f7d336f",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "One Night in Bangkok",
+   "v": "rgc_LRjlbTU",
+   "mbid": "071ab0f1-ac3f-48f6-9ee6-11b72eb73e57",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "One Night in Ibiza",
+   "v": "0NwCuvNmnJc",
+   "mbid": "d22704f3-dcf9-4318-b6bb-9eedf565aafa",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Piccadilly Circus (song)",
+   "v": "Brp13eosUU4",
+   "mbid": "34e3047b-f35d-4a12-8d21-a87bcc6d178a",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Save Me, San Francisco (song)",
+   "v": "-e8tlPE3kjI",
+   "mbid": "bfd5aec5-62a2-4560-a316-7c46c17babda",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "The Foggy Dew (Irish songs)",
+   "v": "HA3V15DE7Lk",
+   "mbid": "d201e6c0-103d-4a9a-9969-909bd421ddad",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "The Fresh Prince of Bel-Air theme song",
+   "v": "AVbQo3IOC_A",
+   "mbid": "a663d7d0-754b-40e2-9ea3-3c6c39fd5937",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "They Don't Make 'em Like My Daddy (song)",
+   "v": "xuC-5hzBN2o",
+   "mbid": "613260c3-d620-4645-94cd-33cd55f29b1e",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Three Coins in the Fountain (song)",
+   "v": "ZZ1mkbFkLmM",
+   "mbid": "197450cd-0124-4164-b723-3c22dd16494d",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Tom Dooley (song)",
+   "v": "I8grIno58BM",
+   "mbid": "78977492-5888-4c7a-92b3-95293e90a653",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Trem das Onze",
+   "v": "ceBdGz3eTFg",
+   "mbid": "b3cf1138-7300-4c6a-9f5d-79457848499b",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Viva la Quinta Brigada",
+   "v": "sItC92RXi80",
+   "mbid": "d201e6c0-103d-4a9a-9969-909bd421ddad",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "We No Speak Americano",
+   "v": "6ko2hExHwUY",
+   "mbid": "bd90e308-9904-48fb-9318-918d3f595d73",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Witch Hunt (song)",
+   "v": "goPrGdsrW4k",
+   "mbid": "534ee493-bfac-4575-a44a-0ae41e2c3fe4",
+   "checked": "2026-11-25",
+   "how": "YouTube page title and channel name the song and the performer"
+  },
+  {
+   "wp": "Warwick Avenue (song)",
+   "v": "HhZ5-L9znt8",
+   "mbid": "2c4dae8c-e591-49e0-9c5a-62b310a15788",
+   "checked": "2026-11-26",
+   "how": "the song's own Wikidata video (P1651); YouTube page: \"Duffy - Warwick Avenue (Official Video)\" on Polydor"
+  },
+  {
+   "wp": "Hind's Hall",
+   "v": "fgDQyFeBBIo",
+   "mbid": "b6d7ec94-830c-44dd-b699-ce66556b7e55",
+   "checked": "2026-11-26",
+   "how": "the song's own Wikidata video (P1651); YouTube page: \"MACKLEMORE - HIND'S HALL\" on Macklemore's channel"
+  },
+  {
+   "wp": "We Will Dance Again (song)",
+   "v": "lymQN62rvE0",
+   "mbid": "2787bddf-6439-4c73-8162-5f4a1e5fa030",
+   "checked": "2026-11-26",
+   "how": "the song's own Wikidata video (P1651); YouTube page: \"We Will Dance Again\" on Boy George - Topic"
+  },
+  {
+   "wp": "We Like to Party",
+   "v": "6Zbi0XmGtMw",
+   "mbid": "90c7177f-4be5-413d-aabd-d228934c2b9b",
+   "checked": "2026-11-26",
+   "how": "MusicBrainz recording link; YouTube page: \"Vengaboys - We like to Party! (The Vengabus)\" on Vengaboys' channel"
+  },
+  {
+   "wp": "Greece (song)",
+   "v": "OJJdJO7FJaA",
+   "mbid": "081a2d60-9791-4e05-a075-f1890355eeee",
+   "checked": "2026-11-26",
+   "how": "YouTube page: \"GREECE\" on DJ Khaled - Topic (found Oct 12 on the artist's Topic channel by whole title; YouTube no longer lists Topic uploads)"
+  },
+  {
+   "wp": "Marryuna",
+   "v": "pwHMlvKVlmg",
+   "mbid": "90fbaa1e-a466-4135-833c-ff96438b3b21",
+   "checked": "2026-11-26",
+   "how": "YouTube page: \"Marryuna\" on Baker Boy - Topic (found Oct 12 by whole title on the artist's Topic channel)"
+  },
+  {
+   "wp": "Meditjin",
+   "v": "tEJujERQuoE",
+   "mbid": "90fbaa1e-a466-4135-833c-ff96438b3b21",
+   "checked": "2026-11-26",
+   "how": "YouTube page: \"Meditjin\" on Baker Boy - Topic (found Oct 12 by whole title on the artist's Topic channel)"
+  },
+  {
+   "wp": "Se Necesita Un Milagro",
+   "v": "z9e6vTAMxJw",
+   "mbid": "5dbcdee8-ad17-460f-b993-b63450c72f12",
+   "checked": "2026-11-26",
+   "how": "YouTube page: \"Se Necesita Un Milagro\" on Domingo Quiñones - Topic (found Oct 12 by whole title on the artist's Topic channel)"
+  },
+  {
+   "wp": "London (Pet Shop Boys song)",
+   "v": "2p8Tu56UU4M",
+   "mbid": "be540c02-7898-4b79-9acc-c8122c7d9e83",
+   "checked": "2026-11-26",
+   "how": "YouTube search; \"Pet Shop Boys - London\" on PetShopBoys Parlophone (their label channel), description: \"Music video by Pet Shop Boys performing London\""
+  },
+  {
+   "wp": "Tokyo (Yui song)",
+   "v": "vXWiHtwEIx0",
+   "mbid": "80d1d7e0-fdab-4009-8375-54bd63d74c0e",
+   "checked": "2026-11-26",
+   "how": "YouTube search; \"『TOKYO』 - YUI\" on YUI OFFICIAL YouTube CHANNEL, 4:57, the full song"
+  },
+  {
+   "wp": "Hawaii (Elmer Bernstein song)",
+   "v": "Nnk5CDEc8kI",
+   "mbid": "e2c7d7a5-b520-4232-b7cf-aaceead17b6c",
+   "checked": "2026-11-26",
+   "how": "YouTube search; \"Hawaii\" on Elmer Bernstein - Topic (album \"Elmer Bernstein by Elmer Bernstein\", 2009)"
+  },
+  {
+   "wp": "Miami (Counting Crows song)",
+   "v": "l8f6D96YohU",
+   "mbid": "a0327dc2-dc76-44d5-aec6-47cd2dff1469",
+   "checked": "2026-11-26",
+   "how": "YouTube search; \"Miami\" on Counting Crows - Topic, album Hard Candy (2002) — the studio recording"
+  }
+ ],
+ "wrong": [
+  {
+   "wp": "Gold (John Stewart song)",
+   "v": "UWJcgczvZ8o",
+   "checked": "2026-11-25",
+   "why": "plays \"Gold and Braid\" (live, 1983)"
+  },
+  {
+   "wp": "Hind's Hall",
+   "v": "qRRoTR9HGFU",
+   "checked": "2026-11-25",
+   "why": "plays \"Hind's Hall 2\", the sequel"
+  },
+  {
+   "wp": "L.A. (Neil Young song)",
+   "v": "8RPCiLB2hOM",
+   "checked": "2026-11-25",
+   "why": "plays \"Flags of Freedom\""
+  },
+  {
+   "wp": "London (Pet Shop Boys song)",
+   "v": "_UkWcVusbKE",
+   "checked": "2026-11-25",
+   "why": "plays \"New London Boy\""
+  },
+  {
+   "wp": "Miami (Counting Crows song)",
+   "v": "LJP45k1HsB4",
+   "checked": "2026-11-25",
+   "why": "plays \"The Music of Shrek 2\", a DVD extra, not \"Miami\""
+  },
+  {
+   "wp": "Mon Pays",
+   "v": "g6hJ7t6sRys",
+   "checked": "2026-11-25",
+   "why": "plays \"Les gens de mon pays\""
+  },
+  {
+   "wp": "Preciosa (song)",
+   "v": "Zkq4Is5GOI4",
+   "checked": "2026-11-25",
+   "why": "plays Cultura Profética's recording, not Rafael Hernández's"
+  },
+  {
+   "wp": "Warwick Avenue (song)",
+   "v": "_RnoDEjSu8I",
+   "checked": "2026-11-25",
+   "why": "plays \"Fool For You\""
+  },
+  {
+   "wp": "We Will Dance Again (song)",
+   "v": "B8OVEI0FfWU",
+   "checked": "2026-11-26",
+   "why": "a news channel's upload titled as a news story, not the song's release"
+  },
+  {
+   "wp": "Wild Man (Kate Bush song)",
+   "v": "HIF40L-_HjA",
+   "checked": "2026-11-26",
+   "why": "\"Wild Man Segment - Animation\": a segment, not the song"
+  },
+  {
+   "wp": "Tokyo (Yui song)",
+   "v": "8yp5M_NIjYU",
+   "checked": "2026-11-26",
+   "why": "\"TOKYO-short ver.-\": a cut-down version, not the song"
+  },
+  {
+   "wp": "We Like to Party",
+   "v": "tWTXtIQDTBw",
+   "checked": "2026-11-26",
+   "why": "\"Silent Music Video\": not the record"
+  }
+ ]
+}

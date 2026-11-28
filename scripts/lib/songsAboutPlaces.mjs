@@ -142,23 +142,37 @@ export function servedUnder(place) {
  * like are not versions.
  */
 export const VERSION_MARKERS =
-  /(?<![\p{L}\p{N}])(remix|remixes|dub|live|instrumental|demo|acoustic|rework|extended|unplugged|session|cover|alternate|alternative|take \d+|edit|mix|version|versione|versión|reprise|medley|sped up|slowed|mashup|bootleg)(?![\p{L}\p{N}])/iu
+  /(?<![\p{L}\p{N}])(remix|remixes|rmx|dub|live|instrumental|demo|acoustic|rework|extended|unplugged|session|cover|alternate|alternative|take \d+|edit|mix|version|versione|versión|reprise|medley|sped up|slowed|mashup|bootleg)(?![\p{L}\p{N}])/iu
 
 /** Named by meaning, not by position: "extended remix" is a remix. */
 const VERSION_WORDS = [
-  ['remix', /(?<![\p{L}\p{N}])remix(es)?(?![\p{L}\p{N}])/iu],
-  ['live', /(?<![\p{L}\p{N}])(live|unplugged|session)(?![\p{L}\p{N}])/iu],
+  ['remix', /(?<![\p{L}\p{N}])(remix(es)?|rmx|refix|re edit|vip)(?![\p{L}\p{N}])/iu],
+  ['live', /(?<![\p{L}\p{N}])(live|unplugged|in concert|sessions?)(?![\p{L}\p{N}])/iu],
   ['demo', /(?<![\p{L}\p{N}])demo(?![\p{L}\p{N}])/iu],
-  ['acoustic', /(?<![\p{L}\p{N}])acoustic(?![\p{L}\p{N}])/iu],
+  ['acoustic', /(?<![\p{L}\p{N}])(acoustic|acustic[oa]|acoustique)(?![\p{L}\p{N}])/iu],
   ['instrumental', /(?<![\p{L}\p{N}])instrumental(?![\p{L}\p{N}])/iu],
   ['cover', /(?<![\p{L}\p{N}])cover(?![\p{L}\p{N}])/iu],
   ['dub', /(?<![\p{L}\p{N}])dub(?![\p{L}\p{N}])/iu],
-  ['alternate', /(?<![\p{L}\p{N}])(alternate|alternative|take \d+|reprise|medley|mashup|bootleg|sped up|slowed)(?![\p{L}\p{N}])/iu],
-  ['edit', /(?<![\p{L}\p{N}])(rework|extended|edit|mix|version|versione|versión)(?![\p{L}\p{N}])/iu],
+  ['alternate', /(?<![\p{L}\p{N}])(alternate|alternative|take \d+|reprise|medley|mashup|bootleg|sped up|slowed|en (espanol|ingles|frances|italiano|portugues|anglais|francais)|in (english|spanish|french|german|italian|portuguese|japanese|korean))(?![\p{L}\p{N}])/iu],
+  ['edit', /(?<![\p{L}\p{N}])(rework|extended|edit|mix|version|versione|versión|tv size|[\p{L}\p{N}]+ ver)(?![\p{L}\p{N}])/iu],
 ]
 
+/**
+ * The plain record under another name — "Album Version", "Original
+ * Mix", "Clean Version" — is not a version (Nov 26, 2026: such uploads
+ * were tagged "edit"). A stereo or mono MIX stays a version: "Penny Lane
+ * (Stereo Mix 2017)" is a new remix and Patti Page's "(Columbia Stereo
+ * version)" a 1966 re-recording, and both must rank below the record.
+ * Mirrored in lib/play/versionNote.ts.
+ */
+const PLAIN_QUALIFIER = 'album|single|lp|original[ea]?|full|official|explicit|clean|dirty|main|video|music video|remaster|remastered'
+const PLAIN_VERSION = new RegExp(
+  `(?<![\\p{L}\\p{N}])((\\d{4} )?(${PLAIN_QUALIFIER})( \\d{4})? (version[ei]?|ver|mix)|(version[ei]?|ver) (${PLAIN_QUALIFIER})|cover art|album cover)(?![\\p{L}\\p{N}])`,
+  'giu',
+)
+
 export function versionOf(annotation) {
-  const text = annotation ?? ''
+  const text = (annotation ?? '').replace(PLAIN_VERSION, ' ')
   for (const [name, pattern] of VERSION_WORDS) if (pattern.test(text)) return name
   return null
 }

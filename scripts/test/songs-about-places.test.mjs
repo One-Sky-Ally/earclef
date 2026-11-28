@@ -65,6 +65,20 @@ test('versions are named from the annotation; remasters and official tags are no
   assert.equal(versionOf('official audio'), null)
   assert.equal(versionOf('remastered 2011'), null)
   assert.equal(versionOf(''), null)
+  // Nov 26, 2026: the plain record under another name is not a version; a short cut is.
+  assert.equal(versionOf('album version'), null)
+  assert.equal(versionOf('original mix'), null)
+  assert.equal(versionOf('clean version official audio'), null)
+  assert.equal(versionOf('short ver'), 'edit')
+  // A new stereo mix or a re-recording is a version; a sung translation is another recording.
+  assert.equal(versionOf('stereo mix 2017'), 'edit')
+  assert.equal(versionOf('columbia stereo version patti page 1966'), 'edit')
+  assert.equal(versionOf('en espanol'), 'alternate')
+  assert.equal(versionOf('hitclub airplay rmx'), 'remix')
+  assert.equal(versionOf('japanese ver'), 'edit')
+  assert.equal(versionOf('version original'), null)
+  assert.equal(versionOf('remastered 2009 version'), null)
+  assert.equal(versionOf('music video version'), null)
 })
 
 test('the plain record outranks any version; then official video, audio, video', () => {

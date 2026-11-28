@@ -274,3 +274,15 @@ test("a catalogue note the video doesn't carry is not shown (Slowdive, Nov 25 20
   const song = chooseSong([video], { name: 'Slowdive', aliases: aliasKeysOf(['Slowdive']), knownFor: 'Souvlaki', labels: [] })
   assert.equal(song?.title, 'kisses')
 })
+
+test('a remix the video plays is named in the title (dead prez, Nov 26 2026)', () => {
+  const video = base({
+    videoId: 'jjjjjjjjjjj',
+    uploadTitle: 'Hell Yeah (Pimp the System) (Remix)',
+    songTitle: 'Hell Yeah (Pimp The System)',
+    release: "Turn Off The Radio: The Mixtape Vol. 2: Get Free Or Die Tryin'",
+    uploader: 'dead prez - Topic',
+  })
+  const song = chooseSong([video], { name: 'dead prez', aliases: aliasKeysOf(['dead prez']), knownFor: "Let's Get Free", labels: [] })
+  assert.equal(song?.title, 'Hell Yeah (Pimp The System) (Remix)')
+})

@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-13T00:30:45.355Z",
+ "generatedAt": "2026-11-26T15:14:37.205Z",
  "source": "en.wikipedia \"Songs about <place>\" categories; videos verified under the site's play bar",
  "places": {
   "DE": {
@@ -242,8 +242,8 @@
      "t": "England Swings",
      "a": "Roger Miller",
      "mbid": "102045e3-577c-4b10-b01b-424b7e461094",
-     "v": "VXaSj9DT67o",
-     "k": "audio",
+     "v": "2I7yAC1Pz6Y",
+     "k": "video",
      "wp": "England Swings",
      "y": 1965,
      "about": "England"
@@ -472,7 +472,7 @@
      "t": "(I Don't Want to Go to) Chelsea",
      "a": "Elvis Costello",
      "mbid": "8a338e06-d182-46f2-bd16-30a09bc840ba",
-     "v": "XvRQDsH0Yho",
+     "v": "es9rPv9YPlY",
      "k": "video",
      "wp": "(I Don't Want to Go to) Chelsea",
      "y": 1978,
@@ -662,8 +662,8 @@
      "t": "Electric Avenue",
      "a": "Eddy Grant",
      "mbid": "0cf0583a-fcfd-4f07-b573-95273ec4bdb5",
-     "v": "VrzhHblmd2A",
-     "k": "audio",
+     "v": "Yxep-9BQ6Uo",
+     "k": "video",
      "wp": "Electric Avenue",
      "y": 1982,
      "about": "London"
@@ -903,8 +903,8 @@
      "t": "London",
      "a": "Pet Shop Boys",
      "mbid": "be540c02-7898-4b79-9acc-c8122c7d9e83",
-     "v": "_UkWcVusbKE",
-     "k": "audio",
+     "v": "2p8Tu56UU4M",
+     "k": "video",
      "wp": "London (Pet Shop Boys song)",
      "y": 2002,
      "about": "London"
@@ -1013,8 +1013,8 @@
      "t": "Warwick Avenue",
      "a": "Duffy",
      "mbid": "2c4dae8c-e591-49e0-9c5a-62b310a15788",
-     "v": "_RnoDEjSu8I",
-     "k": "audio",
+     "v": "HhZ5-L9znt8",
+     "k": "official-video",
      "wp": "Warwick Avenue (song)",
      "y": 2008,
      "about": "London"
@@ -1681,8 +1681,7 @@
      "v": "zE9Q2d7ORVU",
      "k": "video",
      "wp": "Hello America (song)",
-     "y": 1980,
-     "ver": "edit"
+     "y": 1980
     },
     {
      "t": "America",
@@ -2177,7 +2176,8 @@
      "v": "sr--GVIoluU",
      "k": "video",
      "wp": "U.S.A. (Da Pump song)",
-     "y": 2018
+     "y": 2018,
+     "ver": "edit"
     },
     {
      "t": "Blinding Lights",
@@ -2186,6 +2186,15 @@
      "v": "4NRXx6U8ABQ",
      "k": "official-video",
      "wp": "Blinding Lights",
+     "y": 2019
+    },
+    {
+     "t": "Looking for America (song)",
+     "a": "Lana Del Rey",
+     "mbid": "b7539c32-53e7-4908-bda3-81449c367da6",
+     "v": "em1pHFTvK1s",
+     "k": "audio",
+     "wp": "Looking for America (song)",
      "y": 2019
     },
     {
@@ -2445,7 +2454,6 @@
      "k": "audio",
      "wp": "Slumming on Park Avenue",
      "y": 1937,
-     "ver": "edit",
      "about": "New York City"
     },
     {
@@ -3082,8 +3090,8 @@
      "t": "The Little Old Lady from Pasadena",
      "a": "Jan and Dean",
      "mbid": "b02cc1b7-35ef-4804-9678-e95085e106ae",
-     "v": "5BFGFv04VJA",
-     "k": "audio",
+     "v": "B8iV0v9GRPk",
+     "k": "video",
      "wp": "The Little Old Lady (from Pasadena)",
      "y": 1964,
      "about": "California"
@@ -3182,8 +3190,8 @@
      "t": "Hawaii",
      "a": "Elmer Bernstein",
      "mbid": "e2c7d7a5-b520-4232-b7cf-aaceead17b6c",
-     "v": "aQe6bG50JRE",
-     "k": "video",
+     "v": "Nnk5CDEc8kI",
+     "k": "audio",
      "wp": "Hawaii (Elmer Bernstein song)",
      "y": 1966,
      "about": "Hawaii"
@@ -3602,8 +3610,8 @@
      "t": "The Only Living Boy in New York",
      "a": "Simon & Garfunkel",
      "mbid": "5d02f264-e225-41ff-83f7-d9b1f0b1874a",
-     "v": "x7vAzAtfbaY",
-     "k": "video",
+     "v": "5biEjyXNa2o",
+     "k": "audio",
      "wp": "The Only Living Boy in New York",
      "y": 1969,
      "about": "New York City"
@@ -4146,8 +4154,8 @@
      "t": "L.A.",
      "a": "Neil Young",
      "mbid": "75167b8b-44e4-407b-9d35-effe87b223cf",
-     "v": "8RPCiLB2hOM",
-     "k": "official-video",
+     "v": "zHRWR_G_5Ww",
+     "k": "audio",
      "wp": "L.A. (Neil Young song)",
      "y": 1973,
      "about": "Los Angeles"
@@ -4429,7 +4437,7 @@
      "t": "They Don't Make 'em Like My Daddy",
      "a": "Loretta Lynn",
      "mbid": "613260c3-d620-4645-94cd-33cd55f29b1e",
-     "v": "xuC-5hzBN2o",
+     "v": "WD0fY3rWj1E",
      "k": "video",
      "wp": "They Don't Make 'em Like My Daddy (song)",
      "y": 1974,
@@ -4857,6 +4865,16 @@
      "about": "New York City"
     },
     {
+     "t": "Shattered",
+     "a": "The Rolling Stones",
+     "mbid": "b071f9fa-14b0-4217-8e97-eb41da73f598",
+     "v": "Wjz6l_4MqHM",
+     "k": "audio",
+     "wp": "Shattered (song)",
+     "y": 1978,
+     "about": "New York City"
+    },
+    {
      "t": "Tulsa Time",
      "a": "Don Williams",
      "mbid": "741bd697-e595-4e47-a97d-688b4b9e0df2",
@@ -4918,13 +4936,12 @@
     },
     {
      "t": "Gold",
-     "a": "Stevie Nicks",
-     "mbid": "b7f2cca2-72c6-41fb-ae33-53370fc62fe7",
-     "v": "UWJcgczvZ8o",
+     "a": "John Stewart",
+     "mbid": "775f55c0-1ea8-43fd-a5d0-0817a5085575",
+     "v": "zGR_aI-_XDo",
      "k": "video",
      "wp": "Gold (John Stewart song)",
      "y": 1979,
-     "ver": "live",
      "about": "Los Angeles"
     },
     {
@@ -5222,7 +5239,7 @@
      "t": "Nebraska",
      "a": "Bruce Springsteen",
      "mbid": "70248960-cb53-4ea4-943a-edb18f7d336f",
-     "v": "uTHc_ZXsqXU",
+     "v": "hCpL_ImsiDo",
      "k": "audio",
      "wp": "Nebraska (song)",
      "y": 1982,
@@ -5303,7 +5320,7 @@
      "a": "Alabama",
      "mbid": "7ac055fa-e357-4890-9098-010b8094a900",
      "v": "Xqgr7R4zUMg",
-     "k": "video",
+     "k": "official-video",
      "wp": "Dixieland Delight",
      "y": 1983,
      "about": "Tennessee"
@@ -5332,7 +5349,7 @@
      "t": "New York / N.Y.",
      "a": "Nina Hagen",
      "mbid": "e4d32f51-bc57-42a4-8165-b80f7a86496d",
-     "v": "YZh3zd691L0",
+     "v": "NMSQ-7BGtlY",
      "k": "video",
      "wp": "New York / N.Y.",
      "y": 1983,
@@ -5573,8 +5590,8 @@
      "t": "Christmas in Hollis",
      "a": "Run-DMC",
      "mbid": "5ecc3f72-20a6-47a0-8dc5-fb0b3dadeea0",
-     "v": "C0b8FqocXcU",
-     "k": "audio",
+     "v": "OR07r0ZMFb8",
+     "k": "official-video",
      "wp": "Christmas in Hollis",
      "y": 1987,
      "about": "New York City"
@@ -5963,8 +5980,8 @@
      "t": "Motownphilly",
      "a": "Boyz II Men",
      "mbid": "b42eca0f-9381-43db-badb-1cba080a7dc2",
-     "v": "82W8jwv6GZA",
-     "k": "audio",
+     "v": "Rciee-oQLoI",
+     "k": "video",
      "wp": "Motownphilly",
      "y": 1991,
      "about": "Philadelphia"
@@ -6253,8 +6270,8 @@
      "t": "Southernplayalisticadillacmuzik",
      "a": "OutKast",
      "mbid": "73fdb566-a9b1-494c-9f32-51768ec9fd27",
-     "v": "RIaDSpLpbg4",
-     "k": "audio",
+     "v": "0yPagRrAgIU",
+     "k": "official-video",
      "wp": "Southernplayalisticadillacmuzik (song)",
      "y": 1994,
      "about": "Atlanta"
@@ -6465,7 +6482,7 @@
      "a": "Alabama",
      "mbid": "7ac055fa-e357-4890-9098-010b8094a900",
      "v": "zZYOJQ79DOw",
-     "k": "video",
+     "k": "official-video",
      "wp": "Dancin', Shaggin' on the Boulevard",
      "y": 1997,
      "about": "South Carolina"
@@ -6544,8 +6561,8 @@
      "t": "The Rascal King",
      "a": "The Mighty Mighty Bosstones",
      "mbid": "779353f3-6401-4cda-a8a2-6fd3ec9bc11b",
-     "v": "L2LZYHRzKlU",
-     "k": "audio",
+     "v": "9NxMlG3M40k",
+     "k": "video",
      "wp": "The Rascal King (song)",
      "y": 1997,
      "about": "Boston"
@@ -6564,8 +6581,8 @@
      "t": "A Little Past Little Rock",
      "a": "Lee Ann Womack",
      "mbid": "16c5bb7a-35b7-418d-880e-7ed3399f1b40",
-     "v": "79uXbYcC138",
-     "k": "audio",
+     "v": "8PAEQvoVfO0",
+     "k": "video",
      "wp": "A Little Past Little Rock",
      "y": 1998,
      "about": "Arkansas"
@@ -6644,8 +6661,8 @@
      "t": "We Like to Party",
      "a": "Vengaboys",
      "mbid": "90c7177f-4be5-413d-aabd-d228934c2b9b",
-     "v": "tWTXtIQDTBw",
-     "k": "official-video",
+     "v": "VaGOFlw-E4M",
+     "k": "audio",
      "wp": "We Like to Party",
      "y": 1998,
      "about": "New York"
@@ -6884,8 +6901,8 @@
      "t": "Miami",
      "a": "Counting Crows",
      "mbid": "a0327dc2-dc76-44d5-aec6-47cd2dff1469",
-     "v": "LJP45k1HsB4",
-     "k": "video",
+     "v": "l8f6D96YohU",
+     "k": "audio",
      "wp": "Miami (Counting Crows song)",
      "y": 2002,
      "about": "Miami"
@@ -7035,8 +7052,8 @@
      "t": "Los Angeles Is Burning",
      "a": "Bad Religion",
      "mbid": "149e6720-4e4a-41a4-afca-6d29083fc091",
-     "v": "pn_8zrnaIDM",
-     "k": "audio",
+     "v": "BxoD9zWY9Rg",
+     "k": "video",
      "wp": "Los Angeles Is Burning",
      "y": 2004,
      "about": "Los Angeles"
@@ -7356,8 +7373,8 @@
      "t": "Homecoming",
      "a": "Ye",
      "mbid": "164f0d73-1234-4e2c-8743-d77bf2191051",
-     "v": "YOzAdMs5dEc",
-     "k": "audio",
+     "v": "LQ488QrqGE4",
+     "k": "video",
      "wp": "Homecoming (Kanye West song)",
      "y": 2008,
      "about": "Chicago"
@@ -7617,7 +7634,7 @@
      "a": "Michael Jackson",
      "mbid": "f27ec8db-af05-4f36-916e-3d57f91ecf5e",
      "v": "zjGtTUfPcI4",
-     "k": "video",
+     "k": "official-video",
      "wp": "Hollywood Tonight",
      "y": 2011,
      "about": "Los Angeles"
@@ -7667,7 +7684,7 @@
      "t": "Save Me, San Francisco",
      "a": "Train",
      "mbid": "bfd5aec5-62a2-4560-a316-7c46c17babda",
-     "v": "-e8tlPE3kjI",
+     "v": "zftcZYdOl3Y",
      "k": "video",
      "wp": "Save Me, San Francisco (song)",
      "y": 2011,
@@ -7768,10 +7785,20 @@
      "a": "Dierks Bentley",
      "mbid": "6bd7faa9-601f-44db-a2a6-239209f83156",
      "v": "GDZlAryz9oU",
-     "k": "video",
+     "k": "official-video",
      "wp": "Bourbon in Kentucky",
      "y": 2013,
      "about": "Kentucky"
+    },
+    {
+     "t": "Christmas in L.A.",
+     "a": "The Killers",
+     "mbid": "95e1ead9-4d31-4808-a7ac-32c3614c116b",
+     "v": "938GYJjxBeU",
+     "k": "video",
+     "wp": "Christmas in L.A.",
+     "y": 2013,
+     "about": "Los Angeles"
     },
     {
      "t": "Brooklyn Baby",
@@ -7924,6 +7951,16 @@
      "about": "Los Angeles"
     },
     {
+     "t": "Freak (Lana Del Rey song)",
+     "a": "Lana Del Rey",
+     "mbid": "b7539c32-53e7-4908-bda3-81449c367da6",
+     "v": "jq30l5-vBbo",
+     "k": "video",
+     "wp": "Freak (Lana Del Rey song)",
+     "y": 2016,
+     "about": "California"
+    },
+    {
      "t": "Huntin', Fishin' and Lovin' Every Day",
      "a": "Luke Bryan",
      "mbid": "aab35942-f176-4f77-bbf9-1d6aa98ccf3f",
@@ -7989,7 +8026,7 @@
      "a": "Travis Scott",
      "mbid": "e4a51f17-a57b-47b1-b37b-f552d0f8e9e6",
      "v": "_EyZUTDAH0U",
-     "k": "video",
+     "k": "official-video",
      "wp": "Butterfly Effect (Travis Scott song)",
      "y": 2017,
      "about": "Atlanta"
@@ -8225,6 +8262,16 @@
      "about": "Louisville"
     },
     {
+     "t": "Circles Around This Town",
+     "a": "Maren Morris",
+     "mbid": "109357f0-eb37-4672-9697-dca8c83a61b5",
+     "v": "_EmOYuzBP1I",
+     "k": "official-video",
+     "wp": "Circles Around This Town",
+     "y": 2022,
+     "about": "Nashville"
+    },
+    {
      "t": "Did You Know That There's a Tunnel Under Ocean Blvd",
      "a": "Lana Del Rey",
      "mbid": "b7539c32-53e7-4908-bda3-81449c367da6",
@@ -8308,7 +8355,7 @@
      "t": "Ain't in LA",
      "a": "Adéla",
      "mbid": "f40856e6-079f-4a0a-916e-9e6a5e04f646",
-     "v": "87JpuRKYIzI",
+     "v": "ofzqEFV8wyQ",
      "k": "audio",
      "wp": "Ain't in LA",
      "y": 2026,
@@ -8525,11 +8572,20 @@
      "about": "Hawaii"
     },
     {
+     "t": "Viva Las Vengeance (song)",
+     "a": "Panic! at the Disco",
+     "mbid": "b9472588-93f3-4922-a1a2-74082cdf9ce8",
+     "v": "MiD_CP_Pios",
+     "k": "official-video",
+     "wp": "Viva Las Vengeance (song)",
+     "about": "Las Vegas"
+    },
+    {
      "t": "Where I'm From",
      "a": "JAŸ-Z",
      "mbid": "f82bcf78-5b69-4622-a5ef-73800768d9ac",
-     "v": "dTy5WMOgRUE",
-     "k": "video",
+     "v": "QL6TLmxw7GM",
+     "k": "audio",
      "wp": "Where I'm From (Jay-Z song)",
      "about": "New York City"
     },
@@ -8798,15 +8854,6 @@
      "y": 1929
     },
     {
-     "t": "Preciosa",
-     "a": "Rafael Hernández Marín",
-     "mbid": "7f4a2478-31ec-421a-be96-dad394ef5cc8",
-     "v": "Zkq4Is5GOI4",
-     "k": "audio",
-     "wp": "Preciosa (song)",
-     "y": 1937
-    },
-    {
      "t": "En mi Viejo San Juan",
      "a": "Noel Estrada",
      "mbid": "45831f52-b19d-477d-9089-fa4bfb496ec1",
@@ -8855,7 +8902,7 @@
      "t": "Despacito",
      "a": "Luis Fonsi",
      "mbid": "d68fda90-ab8d-4799-be56-317ba4ae700f",
-     "v": "dr_GAJZviR0",
+     "v": "kJQP7kiw5Fk",
      "k": "video",
      "wp": "Despacito",
      "y": 2017
@@ -8908,8 +8955,7 @@
      "v": "93H2Oo7sQYQ",
      "k": "audio",
      "wp": "Street Fighting Man",
-     "y": 1968,
-     "ver": "edit"
+     "y": 1968
     },
     {
      "t": "Lost in France",
@@ -9424,7 +9470,7 @@
      "t": "Tokyo",
      "a": "Yui",
      "mbid": "80d1d7e0-fdab-4009-8375-54bd63d74c0e",
-     "v": "8yp5M_NIjYU",
+     "v": "vXWiHtwEIx0",
      "k": "video",
      "wp": "Tokyo (Yui song)",
      "y": 2006,
@@ -9651,8 +9697,8 @@
      "t": "A Little Past Little Rock",
      "a": "Lee Ann Womack",
      "mbid": "16c5bb7a-35b7-418d-880e-7ed3399f1b40",
-     "v": "79uXbYcC138",
-     "k": "audio",
+     "v": "8PAEQvoVfO0",
+     "k": "video",
      "wp": "A Little Past Little Rock",
      "y": 1998
     },
@@ -9857,8 +9903,8 @@
      "t": "England Swings",
      "a": "Roger Miller",
      "mbid": "102045e3-577c-4b10-b01b-424b7e461094",
-     "v": "VXaSj9DT67o",
-     "k": "audio",
+     "v": "2I7yAC1Pz6Y",
+     "k": "video",
      "wp": "England Swings",
      "y": 1965
     },
@@ -10217,8 +10263,7 @@
      "v": "xpv3TBtUcTQ",
      "k": "video",
      "wp": "Anthonio (song)",
-     "y": 2009,
-     "ver": "edit"
+     "y": 2009
     },
     {
      "t": "Brazil",
@@ -10299,11 +10344,10 @@
      "t": "De Janeiro",
      "a": "R.I.O.",
      "mbid": "2f38efa1-ac38-4a24-8f22-1660a55fba40",
-     "v": "8yt6syj092E",
-     "k": "audio",
+     "v": "HzsOM625Np0",
+     "k": "video",
      "wp": "De Janeiro",
      "y": 2007,
-     "ver": "remix",
      "about": "Rio de Janeiro"
     },
     {
@@ -10558,7 +10602,7 @@
      "t": "The Newcastle Song",
      "a": "Bob Hudson",
      "mbid": "ca2a9eb5-6a3f-426e-a576-138853d42cbd",
-     "v": "TkLUCMHsQ94",
+     "v": "0yXinPYK-Jk",
      "k": "video",
      "wp": "The Newcastle Song",
      "y": 1975
@@ -11259,7 +11303,7 @@
      "t": "We're Going to Ibiza",
      "a": "Vengaboys",
      "mbid": "90c7177f-4be5-413d-aabd-d228934c2b9b",
-     "v": "59OIa1FhoKs",
+     "v": "Z9_sCkuRkog",
      "k": "audio",
      "wp": "We're Going to Ibiza",
      "y": 1999,
@@ -11540,8 +11584,8 @@
      "t": "The Little Old Lady from Pasadena",
      "a": "Jan and Dean",
      "mbid": "b02cc1b7-35ef-4804-9678-e95085e106ae",
-     "v": "5BFGFv04VJA",
-     "k": "audio",
+     "v": "B8iV0v9GRPk",
+     "k": "video",
      "wp": "The Little Old Lady (from Pasadena)",
      "y": 1964
     },
@@ -12097,6 +12141,15 @@
      "y": 2014
     },
     {
+     "t": "Freak (Lana Del Rey song)",
+     "a": "Lana Del Rey",
+     "mbid": "b7539c32-53e7-4908-bda3-81449c367da6",
+     "v": "jq30l5-vBbo",
+     "k": "video",
+     "wp": "Freak (Lana Del Rey song)",
+     "y": 2016
+    },
+    {
      "t": "California",
      "a": "Big & Rich",
      "mbid": "9c76170f-0d77-4aa3-b3c9-52f1ce07b9ec",
@@ -12285,8 +12338,8 @@
      "t": "Mon pays",
      "a": "Gilles Vigneault",
      "mbid": "afcc2c8b-d5c9-44d9-b2ae-4cc8cfc9a19c",
-     "v": "g6hJ7t6sRys",
-     "k": "audio",
+     "v": "9AdDigOJeNA",
+     "k": "video",
      "wp": "Mon Pays",
      "y": 1964
     },
@@ -12357,7 +12410,7 @@
      "t": "Witch Hunt",
      "a": "Rush",
      "mbid": "534ee493-bfac-4575-a44a-0ae41e2c3fe4",
-     "v": "goPrGdsrW4k",
+     "v": "q7V-AkPi540",
      "k": "audio",
      "wp": "Witch Hunt (song)",
      "y": 1981
@@ -12906,7 +12959,7 @@
      "a": "Alabama",
      "mbid": "7ac055fa-e357-4890-9098-010b8094a900",
      "v": "Xqgr7R4zUMg",
-     "k": "video",
+     "k": "official-video",
      "wp": "Dixieland Delight",
      "y": 1983
     },
@@ -13291,8 +13344,8 @@
      "t": "Hawaii",
      "a": "Elmer Bernstein",
      "mbid": "e2c7d7a5-b520-4232-b7cf-aaceead17b6c",
-     "v": "aQe6bG50JRE",
-     "k": "video",
+     "v": "Nnk5CDEc8kI",
+     "k": "audio",
      "wp": "Hawaii (Elmer Bernstein song)",
      "y": 1966
     },
@@ -13430,7 +13483,7 @@
      "a": "Dierks Bentley",
      "mbid": "6bd7faa9-601f-44db-a2a6-239209f83156",
      "v": "GDZlAryz9oU",
-     "k": "video",
+     "k": "official-video",
      "wp": "Bourbon in Kentucky",
      "y": 2013
     }
@@ -13641,7 +13694,7 @@
      "a": "Amanda Lear",
      "mbid": "2f2608ed-ff2b-400e-b614-8c648bfaae7b",
      "v": "qI7UYv5fk8w",
-     "k": "video",
+     "k": "official-video",
      "wp": "Chinese Walk",
      "y": 2011
     },
@@ -13649,10 +13702,11 @@
      "t": "Wild Man",
      "a": "Kate Bush",
      "mbid": "4b585938-f271-45e2-b19a-91c634b5e396",
-     "v": "HIF40L-_HjA",
+     "v": "a3BzjfAjug4",
      "k": "video",
      "wp": "Wild Man (Kate Bush song)",
-     "y": 2011
+     "y": 2011,
+     "ver": "edit"
     },
     {
      "t": "Princess of China",
@@ -13729,7 +13783,7 @@
      "t": "They Don't Make 'em Like My Daddy",
      "a": "Loretta Lynn",
      "mbid": "613260c3-d620-4645-94cd-33cd55f29b1e",
-     "v": "xuC-5hzBN2o",
+     "v": "WD0fY3rWj1E",
      "k": "video",
      "wp": "They Don't Make 'em Like My Daddy (song)",
      "y": 1974
@@ -13842,9 +13896,9 @@
     },
     {
      "t": "Three Coins in the Fountain",
-     "a": "Frank Sinatra",
-     "mbid": "197450cd-0124-4164-b723-3c22dd16494d",
-     "v": "ZZ1mkbFkLmM",
+     "a": "The Four Aces",
+     "mbid": "908e99b8-b2b0-49e8-a85b-0a41a98f3926",
+     "v": "4aZAf37ocyM",
      "k": "video",
      "wp": "Three Coins in the Fountain (song)",
      "y": 1954,
@@ -14000,7 +14054,7 @@
      "a": "Alabama",
      "mbid": "7ac055fa-e357-4890-9098-010b8094a900",
      "v": "zZYOJQ79DOw",
-     "k": "video",
+     "k": "official-video",
      "wp": "Dancin', Shaggin' on the Boulevard",
      "y": 1997
     }
@@ -14247,7 +14301,7 @@
      "t": "Uncle John from Jamaica",
      "a": "Vengaboys",
      "mbid": "90c7177f-4be5-413d-aabd-d228934c2b9b",
-     "v": "WnL8NX_bgH4",
+     "v": "7oh0HQKKyLk",
      "k": "audio",
      "wp": "Uncle John from Jamaica",
      "y": 2000
@@ -14262,7 +14316,7 @@
      "t": "Hind's Hall",
      "a": "Macklemore",
      "mbid": "b6d7ec94-830c-44dd-b699-ce66556b7e55",
-     "v": "qRRoTR9HGFU",
+     "v": "wmg6vbt04TY",
      "k": "audio",
      "wp": "Hind's Hall",
      "y": 2024
@@ -14635,8 +14689,8 @@
      "t": "We Will Dance Again",
      "a": "Boy George",
      "mbid": "2787bddf-6439-4c73-8162-5f4a1e5fa030",
-     "v": "B8OVEI0FfWU",
-     "k": "video",
+     "v": "lymQN62rvE0",
+     "k": "audio",
      "wp": "We Will Dance Again (song)",
      "y": 2026
     },
@@ -14967,7 +15021,7 @@
      "t": "Nebraska",
      "a": "Bruce Springsteen",
      "mbid": "70248960-cb53-4ea4-943a-edb18f7d336f",
-     "v": "uTHc_ZXsqXU",
+     "v": "hCpL_ImsiDo",
      "k": "audio",
      "wp": "Nebraska (song)",
      "y": 1982
@@ -15009,8 +15063,8 @@
      "t": "We Like to Party",
      "a": "Vengaboys",
      "mbid": "90c7177f-4be5-413d-aabd-d228934c2b9b",
-     "v": "tWTXtIQDTBw",
-     "k": "official-video",
+     "v": "VaGOFlw-E4M",
+     "k": "audio",
      "wp": "We Like to Party",
      "y": 1998
     }
@@ -15048,8 +15102,8 @@
      "t": "One Night in Bangkok",
      "a": "Murray Head",
      "mbid": "071ab0f1-ac3f-48f6-9ee6-11b72eb73e57",
-     "v": "rgc_LRjlbTU",
-     "k": "official-video",
+     "v": "Ix3WVxFzW_M",
+     "k": "audio",
      "wp": "One Night in Bangkok",
      "y": 1984
     },

@@ -103,3 +103,4 @@ data/wikidata-residence-work*.json
 # Discover stock work files (plan, candidates, verified picks)
 data/discover-stock/
 data/search-budget-frame.json
+data/songs-about-play-cache.json
